@@ -1,628 +1,1637 @@
 {
-  "university_profile": {
-    "_id": "university_of_dayton",
-    "university_name": "University of Dayton",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://udayton.edu",
-      "https://www.usnews.com/best-colleges/university-of-dayton-3127",
-      "https://shiksha.com/studyabroad/usa/universities/university-of-dayton/rankings"
-    ],
-    "metadata": {
-      "official_name": "University of Dayton",
-      "location": {
-        "city": "Dayton",
-        "state": "Ohio",
-        "type": "Private"
-      }
+  "_id": "university_of_dayton",
+  "metadata": {
+    "official_name": "University of Dayton",
+    "location": {
+      "city": "Dayton",
+      "state": "Ohio",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "A top-tier private Catholic research university known for its Marianist educational philosophy, which emphasizes community, service, and educating the whole person. It is a national leader in engineering research and development with deep ties to the aerospace and defense industries.",
-      "market_position": "Hidden Gem",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 143,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Acceptance rates have plummeted from 81% in 2020 to approximately 62% for the most recent cycles",
-          "implication": "Admissions are becoming significantly more competitive; applicants should leverage the Early Action deadline and demonstrate a fit for the Marianist mission."
-        },
-        {
-          "category": "Experiential Learning",
-          "insight": "The university hosts 'Flyer Enterprises,' the fourth-largest student-run business in the nation, and the Davis Center, where students manage nearly $40 million of the endowment",
-          "implication": "Business and entrepreneurship majors receive practical, high-stakes experience that outpaces traditional classroom theory."
-        },
-        {
-          "category": "Housing and Engagement",
-          "insight": "A unique 'PATH' points system rewards campus involvement with priority for the highly-coveted 'Neighborhood' housing",
-          "implication": "A high level of social and extracurricular engagement is essentially required to secure preferred upperclassman residence options."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "UD features a deeply community-centric residential culture centered on 'The Neighborhood,' a collection of university-owned houses where students maintain long-standing traditions like 'Christmas on Campus' and a notable 'party school' reputation.",
-        "transportation_impact": "While on-campus parking is limited and strictly regulated, the university provides comprehensive shuttle services and a free 'Flyer' bus connection to downtown Dayton, fostering high campus walkability.",
-        "research_impact": "UD is the #1 Catholic university for engineering R&D, heavily influenced by its proximity to Wright-Patterson Air Force Base and its role as a hub for aerospace, aviation history, and STEM innovation."
-      }
-    },
-    "admissions_statistics": {
-      "current_status": {
-        "overall_acceptance_rate": 65.45,
-        "in_state_acceptance_rate": null,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": 74.0,
-        "transfer_acceptance_rate": 30.8,
-        "admits_class_size": 14386,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
-          {
-            "plan_type": "EA",
-            "applications": null,
-            "admits": null,
-            "acceptance_rate": null,
-            "class_fill_percentage": null
-          }
-        ]
+    "last_updated": "2023-10-27",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "A Catholic research university known for its robust engineering programs, commitment to community engagement, and strong alumni network.",
+    "market_position": "Strong regional player with growing national recognition for experiential learning.",
+    "admissions_philosophy": "Holistic review with a focus on academic achievement, leadership potential, and commitment to service-learning.",
+    "us_news_rank": 100,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong value proposition for engineering students seeking hands-on experience.",
+        "category": "general"
       },
-      "trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 21981,
-          "admits_total": 14386,
-          "enrolled_total": 1680,
-          "acceptance_rate_overall": 65.45,
-          "yield_rate": 11.68,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Waitlist data not publicly disclosed for recent cycles; admissions selectivity increased significantly compared to 2021 levels."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 22747,
-          "admits_total": 14023,
-          "enrolled_total": 1985,
-          "acceptance_rate_overall": 61.65,
-          "yield_rate": 14.16,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Record high application volume for this cycle."
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 18864,
-          "admits_total": 13969,
-          "enrolled_total": 2100,
-          "acceptance_rate_overall": 74.05,
-          "yield_rate": 15.04,
-          "waitlist_stats": {
-            "year": 2022,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Waitlist data not publicly disclosed."
-        },
-        {
-          "year": 2021,
-          "cycle_name": "Class of 2025",
-          "applications_total": 17791,
-          "admits_total": 14340,
-          "enrolled_total": 2064,
-          "acceptance_rate_overall": 80.6,
-          "yield_rate": 14.39,
-          "waitlist_stats": {
-            "year": 2021,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Admissions metrics reflect post-pandemic baseline."
-        }
-      ]
+      {
+        "takeaway": "Potential for increased national visibility through targeted marketing of unique programs.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunities to leverage alumni network for career placement and philanthropy.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, community-oriented with strong Greek life and a focus on extracurricular involvement.",
+      "transportation_impact": "Primarily residential campus, walkability is high; limited public transport, parking can be an issue during events.",
+      "research_impact": "Significant R&D contracts, especially in aerospace and materials science, often involving undergraduate students."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 61.65,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Dayton is test-optional, allowing applicants the choice to submit standardized test scores if they wish. Test scores are considered in the admission process if submitted. The university permits self-reporting of test scores and utilizes superscoring for the SAT, considering the highest section scores across all submitted test dates.",
+      "admits_class_size": 14386,
+      "transfer_acceptance_rate": 30.8,
+      "early_admission_stats": [],
+      "international_acceptance_rate": null,
+      "international_applications": null,
+      "international_admits": null,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null
     },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 21867,
+        "admits_total": 14358,
+        "enrolled_total": 1669,
+        "acceptance_rate_overall": 65.66,
+        "yield_rate": 11.62,
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 22747,
+        "admits_total": 14023,
+        "enrolled_total": 1963,
+        "acceptance_rate_overall": 61.65,
+        "yield_rate": 14.0,
+        "notes": "",
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 22485,
+        "admits_total": 13903,
+        "enrolled_total": 1934,
+        "acceptance_rate_overall": 61.83,
+        "yield_rate": 13.91,
+        "notes": "Acceptance rate experienced a significant decline from previous years.",
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 18864,
+        "admits_total": 13969,
+        "enrolled_total": 1991,
+        "acceptance_rate_overall": 74.0,
+        "yield_rate": 14.25,
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 17262,
+        "admits_total": 13919,
+        "enrolled_total": 2117,
+        "acceptance_rate_overall": 81.0,
+        "yield_rate": 15.21,
+        "notes": ""
+      }
+    ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": null,
-        "unweighted_middle_50": "3.50-4.00",
-        "average_weighted": null,
-        "percentile_25": "3.50",
-        "percentile_75": "4.00",
-        "notes": "Admission is selective; 55% of admitted students have a GPA of 3.75 or higher. Most successful applicants graduate in the top 25% of their high school class."
+        "weighted_middle_50": "3.30-3.70",
+        "unweighted_middle_50": "3.30-3.70",
+        "average_weighted": 3.75,
+        "percentile_25": "3.30",
+        "percentile_75": "3.70",
+        "notes": "The average unweighted GPA for admitted students is 3.77. 33% of admitted students have perfect 4.0 GPAs in high school. 24% of admitted students were in the top 10% of their high school class."
       },
       "testing": {
-        "sat_composite_middle_50": "1180-1350",
-        "sat_reading_middle_50": "590-680",
+        "sat_composite_middle_50": "1200-1360",
+        "sat_reading_middle_50": "590-690",
         "sat_math_middle_50": "590-690",
         "act_composite_middle_50": "24-31",
-        "submission_rate": 43.0,
-        "policy_note": "Test-optional for most programs, but scores are considered if submitted."
+        "submission_rate": 29.0,
+        "policy_note": "Test optional, Superscore accepted"
       },
       "demographics": {
-        "first_gen_percentage": 10.0,
+        "first_gen_percentage": null,
         "legacy_percentage": null,
-        "international_percentage": 2.8,
         "geographic_breakdown": [
           {
             "region": "Ohio",
-            "percentage": 54.0
+            "percentage": 55.51
           },
           {
-            "region": "Other US States",
-            "percentage": 43.2
+            "region": "Illinois",
+            "percentage": 15.47
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 4.89
+          },
+          {
+            "region": "New York",
+            "percentage": 4.36
+          },
+          {
+            "region": "Michigan",
+            "percentage": 3.16
+          },
+          {
+            "region": "Indiana",
+            "percentage": 2.87
+          },
+          {
+            "region": "Missouri",
+            "percentage": 2.59
+          },
+          {
+            "region": "Maryland",
+            "percentage": 1.05
           },
           {
             "region": "International",
-            "percentage": 2.8
+            "percentage": 1.83
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 11553,
             "admits": 6941,
-            "acceptance_rate": 60.1,
-            "note": "Men make up approximately 51% of the enrolled undergraduate student body."
+            "acceptance_rate": 60.08,
+            "note": "Data for the 2024-2025 academic year."
           },
           "women": {
             "applicants": 10230,
             "admits": 7361,
-            "acceptance_rate": 72.0,
-            "note": "Women make up approximately 49% of the enrolled undergraduate student body."
+            "acceptance_rate": 71.96,
+            "note": "Data for the 2024-2025 academic year."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 79.2,
-          "black_african_american": 4.9,
-          "hispanic_latino": 6.7,
-          "asian": 1.7,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 3.6,
-          "unknown": 0.9,
-          "non_resident_alien": 2.8
-        },
-        "religious_affiliation": "Catholic (Marianist)"
+          "white": 69.8,
+          "black_african_american": 5.69,
+          "hispanic_latino": 5.55,
+          "asian": 1.86,
+          "native_american_alaskan": 0.13,
+          "pacific_islander": 0.05,
+          "two_or_more_races": 3.02,
+          "unknown": 1.83,
+          "non_resident_alien": 12.06
+        }
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "School of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 55.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong performance in advanced mathematics (calculus-ready) and a stated interest in the university's robust multi-term co-op and internship program are essential for applicants.",
-          "housing_profile": "Commonly associated with the Marianist Hall Living Learning Community (LLC) which focuses on integration of faith and technical vocation.",
-          "student_archetype": "Ambitious problem-solvers and career-oriented pragmatists who value the school\u2019s high-touch industry connections.",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.M.E.",
-              "is_impacted": true,
-              "acceptance_rate": 68.0,
-              "average_gpa_admitted": 3.8,
-              "prerequisite_courses": [
-                "Calculus 1",
-                "Chemistry",
-                "Physics"
+    }
+  },
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "BIO 151 Biology I",
+              "BIO 151L Biology I Laboratory",
+              "BIO 152 Biology II",
+              "BIO 152L Biology II Laboratory"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "The Department of Biology maintains an updated list of laboratory courses in which dissection and/or vivisection is required.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIO 151 Biology I",
+                "BIO 151L Biology I Laboratory",
+                "BIO 152 Biology II",
+                "BIO 152L Biology II Laboratory",
+                "BIO 299 Biological Information",
+                "BIO 300 Research Experience in Biology (3 credits total over multiple enrollments)",
+                "BIO 310 Genetics",
+                "BIO 310L Genetics Laboratory",
+                "BIO 312 Cell Biology",
+                "BIO 312L Cell Biology Laboratory",
+                "BIO 420 Biological Capstone Seminar",
+                "BIO 421 Biological Problems (1 credit)",
+                "BIO 422 Biological Problems (4 credits total over multiple enrollments)",
+                "CHM 123 General Chemistry I",
+                "CHM 123L General Chemistry Laboratory I",
+                "CHM 124 General Chemistry II",
+                "CHM 124L General Chemistry Laboratory II",
+                "CHM 313 Organic Chemistry I",
+                "CHM 313L Organic Chemistry I Laboratory",
+                "CHM 314 Organic Chemistry II",
+                "CHM 314L Organic Chemistry II Laboratory",
+                "MTH 168 Analytic Geometry & Calculus I",
+                "PHY 206 General Physics I",
+                "PHY 206L General Physics I Laboratory",
+                "PHY 207 General Physics II",
+                "PHY 207L General Physics II Laboratory"
               ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "MEE 202 Thermodynamics",
-                "EGM 202 Dynamics",
-                "MEE 303 Strength of Materials"
+              "electives": [
+                "BIO 350 Applied and Environmental Microbiology",
+                "BIO 402 Vertebrate Zoology",
+                "BIO 403 Physiology I",
+                "BIO 404 Physiology II",
+                "BIO 427 Immunology",
+                "BIO 427L Immunology Laboratory",
+                "BIO 435 Microbial Ecology"
               ],
-              "special_requirements": "Requires B or better in MTH 168, CHM 123, and PHY 206 for internal transfer.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "MEE 104L Solid Modeling in Design",
-                  "MEE 202 Engineering Thermodynamics",
-                  "EGM 201 Statics",
-                  "EGM 202 Dynamics",
-                  "MEE 307L Fluid Mechanics Laboratory",
-                  "MEE 431L Manufacturing Process Laboratory",
-                  "MEE 432L Capstone Design I",
-                  "MEE 439 Senior Seminar"
-                ],
-                "electives": [
-                  "MEE 420 Energy Systems",
-                  "MEE 438 Robotics",
-                  "MEE 450 Biomechanics",
-                  "MEE 460 Composite Materials"
-                ],
-                "total_units": 122,
-                "major_units": 78
-              },
-              "notable_professors": [
-                "Dr. Jamie Ervin",
-                "Dr. Andrew Murray",
-                "Dr. Tony Saliba"
-              ],
-              "notes": "One of the most popular and rigorous programs at UD; high research volume."
+              "total_units": 120,
+              "major_units": 40
             },
-            {
-              "name": "Computer Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "Calculus 1",
-                "Physics"
+            "notable_professors": [
+              "Dr. Wendy Beanblossom (Lecturer)",
+              "Dr. Robert Burroughs (Assistant Professor)",
+              "Dr. Jennifer Jost (Associate Professor)",
+              "Dr. Keith A. Johnson (Professor)",
+              "Dr. Kelly McConnaughay (Professor)",
+              "Dr. Daniel Moon (Interim Provost and Senior Vice President for Academic Affairs, Instructor of Biology in Residence)"
+            ],
+            "notes": "Offers an accelerated Bachelor and Master of Science (BPM) program in Biology, allowing completion in five years. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "CMM 101 Introduction to Communication"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CMM 101 Introduction to Communication",
+                "CMM 201 Communication Theory",
+                "CMM 202 Research Methods in Communication",
+                "CMM 301 Ethical Communication",
+                "CMM 498 Senior Capstone"
               ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "ECE 201 Circuit Analysis",
-                "ECE 303 Signals and Systems"
+              "electives": [
+                "CMM 320 Interpersonal Communication",
+                "CMM 321 Small Group Communication",
+                "CMM 330 Media Writing",
+                "CMM 341 Audio Production",
+                "CMM 352 Persuasion",
+                "CMM 360 Principles of Public Relations",
+                "CMM 365 Public Relations Strategies"
               ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "notable_professors": [],
-              "notes": "Strong focus on microprocessors and embedded systems."
+              "total_units": 120,
+              "major_units": 40
             },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.C.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 3.0,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "notable_professors": []
+            "notable_professors": [
+              "Dr. Stephen Banning (Professor)",
+              "Dr. Kathryn Biddle (Visiting Assistant Professor)",
+              "Dr. Robert Eilola (Instructor in Residence)",
+              "Dr. Sara Erlichman (Assistant Professor)",
+              "Dr. Christopher Marsh (Assistant Professor)"
+            ],
+            "notes": "Communication majors cannot minor in their same concentration area. Offers concentrations in Communication Management, Communication Studies, Journalism, Media Production, and Public Relations. Teacher licensure available through a dual-degree B.A. and B.S.E. program. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "MTH 116 Precalculus Math or higher"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CPS 150 Algorithms & Programming I",
+              "CPS 151 Algorithms & Programming II",
+              "CPS 350 Data Structures & Algorithms"
+            ],
+            "special_requirements": "Students must attain grades of C- or better in CPS 150, CPS 151, and CPS 350.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ASI 150 Introduction to the University Experience (1 credit)",
+                "CPS 149 Creative Media Applications",
+                "CPS 150 Algorithms & Programming I",
+                "CPS 151 Algorithms & Programming II",
+                "CPS 242 Web Application Development",
+                "CPS 310 Systems Analysis",
+                "CPS 341 Discrete Structures",
+                "CPS 350 Data Structures & Algorithms",
+                "CPS 430 Database Management Systems",
+                "CPS 490 Capstone I (Satisfies CAP Major Capstone)",
+                "CPS 491 Capstone II",
+                "EGR 103 Engineering Innovation (2 credits)",
+                "MTH 168 Analytic Geometry & Calculus I",
+                "MTH 169 Analytic Geometry & Calculus II",
+                "PHY 206 General Physics I",
+                "PHY 206L General Physics I Laboratory",
+                "PHY 207 General Physics II",
+                "PHY 207L General Physics II Laboratory",
+                "PHL 319 Information Ethics"
+              ],
+              "electives": [
+                "CPS 410 User Interface Design and Implementation",
+                "CPS 449 Cloud-based Intelligent Application Development",
+                "CPS 452 Emerging Programming Languages",
+                "CPS 480 Artificial Intelligence",
+                "CPS 309 Topics in Computer Science"
+              ],
+              "total_units": 120,
+              "major_units": 65
             },
-            {
-              "name": "Electrical Engineering",
-              "degree_type": "B.S.E.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "ECE 333 Electromagnetics"
+            "notable_professors": [
+              "Dr. Nawaz Ali (Assistant Professor)",
+              "Dr. Adam Byerly (Associate Professor)",
+              "Dr. Jennifer Crissman (Professor of Information Tech & Computer Science)"
+            ],
+            "notes": "Offers concentrations in AI and Data Science, Cyber Defense, or Software Engineering. Students may take five CPS courses numbered higher than 310 as electives. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Criminal Justice Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "CJS 101 Introduction to Criminal Justice Studies"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CJS 101 Introduction to Criminal Justice Studies",
+                "CJS 207 Research Methods in Criminal Justice Studies",
+                "CJS 210 Theories of Crime and Delinquency",
+                "CJS 301 Criminal Law",
+                "CJS 302 Criminal Procedure",
+                "CJS 401 Capstone Seminar in Criminal Justice Studies"
               ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "notable_professors": []
-            }
-          ]
-        },
-        {
-          "name": "School of Business Administration",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Applicants should emphasize leadership experiences and an interest in community-based business ethics.",
-          "housing_profile": "Students typically reside in Marycrest or Stuart Hall, moving into Student Neighborhood houses as juniors.",
-          "student_archetype": "Socially-adept networkers and aspiring entrepreneurs.",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "Calculus for Business"
+              "electives": [
+                "CJS 214 Cyber Essentials for Criminal Justice",
+                "CJS 303 Theory and Practice of Corrections",
+                "CJS 305 Law Enforcement",
+                "CJS 315 Juvenile Justice",
+                "CJS 322 Criminalistics",
+                "CJS 405 Transnational Crime",
+                "CJS 407 Cybercrime Law",
+                "CJS 490 Internship"
               ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "ACC 207 Financial Accounting",
-                "FIN 301 Introduction to Financial Management"
-              ],
-              "special_requirements": "Requires C+ or better in FIN 301.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "ACC 207 Financial Accounting",
-                  "FIN 301",
-                  "FIN 360",
-                  "FIN 401",
-                  "FIN 460",
-                  "ECO 203",
-                  "MGT 101",
-                  "MGT 490"
-                ],
-                "electives": [
-                  "FIN 450",
-                  "FIN 470",
-                  "FIN 491",
-                  "FIN 498"
-                ],
-                "total_units": 120,
-                "major_units": 21
-              },
-              "notable_professors": [
-                "Dr. Jon Fulkerson",
-                "Dr. Robert Berger",
-                "Dr. Ralph Frasca"
-              ],
-              "notes": "Allows access to the Hanley Trading Center."
+              "total_units": 120,
+              "major_units": 36
             },
-            {
-              "name": "Marketing",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 3.0,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "MKT 301",
-                  "MKT 315",
-                  "MKT 430",
-                  "MKT 440",
-                  "ACC 208",
-                  "BAN 203"
-                ],
-                "electives": [
-                  "MKT 310",
-                  "MKT 411",
-                  "MKT 421",
-                  "MKT 428"
-                ],
-                "total_units": 120,
-                "major_units": 18
-              },
-              "notable_professors": [
-                "Dr. Trevor Collier",
-                "Dr. Marsha Keune"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 68.0,
-          "is_restricted_or_capped": false,
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 74.0,
-              "average_gpa_admitted": 3.6,
-              "prerequisite_courses": [
-                "Precalculus"
+            "notable_professors": [
+              "Dr. Michael Davis (Professor)",
+              "Dr. Paul Fan (Professor)",
+              "Dr. Jeanie J. Bukowski (Associate Professor of Political Science and Law)"
+            ],
+            "notes": "Offers concentrations in Criminal Justice Studies, Cyber Investigations, Cyber-Security Management, and Pre-Law. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "PSY 101 Introductory Psychology",
+              "MTH 114, MTH 116, MTH 148, MTH 168, or MTH 207 (for PSY 216)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 216 Elementary Statistics"
+            ],
+            "special_requirements": "Completion of PSY 101 with a C- or better and enrollment in PSY 216 is required to transfer into the major. Students who do not earn a C- or better in PSY 216 after two attempts will be required to meet with the department chairperson. Psychology majors are required to attain grades of C- or better in PSY 101, PSY 201, PSY 216, and PSY 217.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 101 Introductory Psychology",
+                "PSY 201 History and Systems of Psychology",
+                "PSY 216 Elementary Statistics",
+                "PSY 217 Research Methods",
+                "PSY 498 Senior Capstone in Psychology"
               ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CPS 150",
-                "CPS 151",
-                "CPS 350"
+              "electives": [
+                "PSY 321 Cognition",
+                "PSY 322 Learning",
+                "PSY 323 Psychology of Perception",
+                "PSY 341 Social Psychology",
+                "PSY 351 Child Psychology",
+                "PSY 361 Personality",
+                "PSY 363 Abnormal Psychology",
+                "PSY 422 Biopsychology"
               ],
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "notable_professors": [
-                "Dr. R. Sritharan",
-                "Dr. James Buckley"
-              ]
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "AI and Data Science Minor",
-        "Catholic Social Thought and Practice Minor",
-        "Human Rights Studies Minor",
-        "Cyber Security Minor",
-        "Entrepreneurship Minor",
-        "Sustainability Minor",
-        "Bioengineering Minor",
-        "Nonprofit Management Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Coalition App",
-        "Dayton Admissions Portal"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Priority consideration for merit scholarships"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Rolling notification follows after the deadline"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "details": "No supplemental essays required beyond the Common App personal statement"
-        },
-        {
-          "target_program": "Music",
-          "requirement_type": "Audition & Essay",
-          "deadline": "2025-02-16",
-          "details": "Audition and short essay (500 words) required"
-        },
-        {
-          "target_program": "Physician Assistant (Pre-professional)",
-          "requirement_type": "Interview",
-          "details": "Interviews required for specialized tracks"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Rigor of Secondary School Record",
-          "Academic GPA",
-          "Standardized Test Scores (Test-Optional)"
+              "total_units": 120,
+              "major_units": 37
+            },
+            "notable_professors": [
+              "Dr. Anthony Dean Hermann (Professor)",
+              "Dr. John R. Korte (Professor)",
+              "Dr. DeMaris Ann Montgomery (Associate Professor)",
+              "Dr. Derek E. Montgomery (Professor)",
+              "Dr. David W. Biers (Professor)"
+            ],
+            "notes": "Both Bachelor of Arts (B.A.) and Bachelor of Science (B.S.) degrees are offered. The B.S. typically involves more natural science and mathematics courses. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Applied Mathematical Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Ralph R. Frasca (Professor of Economics and Finance)",
+              "Dr. Donald L. Shimmin (Associate Professor of Economics and Finance)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Robert E. Carlin (Professor)",
+              "Dr. Vladimir A. Benin (Professor)",
+              "Dr. Michael Bergman (Assistant Professor)",
+              "Dr. Wayne B. Bosma (Professor)",
+              "Dr. Howard C. Knachel (Professor)",
+              "Dr. Kristi L. McQuade (Professor of Chemistry and Biochemistry)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. R. Alan Kimbrough (Professor)",
+              "Dr. Melinda McBee Orzulak (Associate Professor)",
+              "Dr. Amy Eggert (Lecturer)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Bradford Brown (Associate Professor)",
+              "Dr. Lawrence J. Flockerzie (Professor)",
+              "Dr. Roberta S. Fost (Professor)",
+              "Dr. John A. Heitmann (Professor)",
+              "Dr. Paul J. Morman (Professor Emeritus)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. David Andrews (Assistant Professor)",
+              "Dr. Anthony J. Bedenikovic (Associate Professor)",
+              "Dr. Paul W. Eloe (Professor)",
+              "Dr. Thomas E. Gantner (Professor)",
+              "Dr. John Goldman (Associate Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A., B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Richard P. Benedum (Professor)",
+              "Dr. Susan C. Gardstrom (Professor)",
+              "Dr. Linda A. Hartley (Professor)",
+              "Dr. Alison Meuth (Instructor of Music in Residence)"
+            ],
+            "notes": "B.M. (Bachelor of Music) degrees are offered in Music Composition, Music Education, Music Performance, and Music Therapy. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Paul H. Benson (Professor)",
+              "Dr. Peggy J. DesAutels (Professor)",
+              "Dr. Daniel C. Fouke (Professor)",
+              "Dr. Messay Kebede (Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Rex L. Berney (Professor)",
+              "Dr. Robert J. Brecha (Professor)",
+              "Dr. John E. Erdei (Professor)",
+              "Dr. David H. Glass (Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Christopher M. Jones (Professor)",
+              "Dr. Margaret Karns (Professor)",
+              "Dr. Richard K. Ghere (Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Religious Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Irene Alexander (Associate Professor)",
+              "Dr. Michael H. Barnes (Professor)",
+              "Dr. Vincent P. Branick (Professor)",
+              "Dr. Robert J. Hater (Professor)",
+              "Dr. Nancy M. Rourke (Assistant Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Patrick G. Donnelly (Professor)",
+              "Dr. Nancy Amos (Lecturer)",
+              "Dr. Heidy Sarabia (Associate Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Sustainability",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          }
         ],
-        "secondary_factors": [
-          "Extracurricular Activities",
-          "Recommendations",
-          "Character/Personal Qualities"
-        ],
-        "essay_importance": "Important",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "Considered",
-        "first_gen_boost": "Considered",
-        "specific_differentiators": "Emphasis on Marianist values and community service."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to 'Discover Engineering' or 'Discover Business' if your stats are slightly below thresholds.",
-        "Choose Computer Engineering over Computer Science for guaranteed co-ops in the local defense sector."
-      ],
-      "college_ranking_tactics": [
-        "Rank UD as 'High Interest' early to qualify for the $4,000 textbook scholarship.",
-        "Prioritize UD if you prefer a non-'weed-out' engineering culture."
-      ],
-      "alternate_major_strategy": "If denied from Engineering, select Physics or Biology to use the 'Bachelor\u2019s Plus Master\u2019s' pathway into an Engineering Master's."
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 49140,
-          "total_coa": 69965,
-          "housing": 16800
-        },
-        "out_of_state": {
-          "tuition": 49140,
-          "total_coa": 69965,
-          "supplemental_tuition": 0
-        }
+        "housing_profile": "First-year students live in traditional residence halls (e.g., Marycrest, Stuart, Founders) designed to build community, typically in double or triple rooms with shared bathrooms. As sophomores, they move into suite-style apartments (e.g., Virginia W. Kettering Suite Complex, Campus South) offering increased autonomy. Upperclassmen can choose from various university-owned apartments and houses in the student neighborhood.",
+        "student_archetype": "Intellectually curious and broadly engaged individuals who appreciate a liberal arts foundation. They are often involved in diverse extracurriculars, service initiatives, and may explore interdisciplinary studies.",
+        "strategic_fit_advice": "Ideal for students who seek a comprehensive education, value critical thinking and diverse perspectives, and want to be part of a vibrant campus community that emphasizes service and personal growth."
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 41066,
-      "average_merit_aid": 26810,
-      "percent_receiving_aid": 98.0
+      {
+        "name": "School of Business Administration",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "ACC 201 Introduction to Financial Accounting",
+              "ACC 202 Introduction to Managerial Accounting"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ACC 201 Introduction to Financial Accounting",
+              "ACC 202 Introduction to Managerial Accounting"
+            ],
+            "special_requirements": "Minimum grade of 'C' in ACC 201 or ACC 208, and ACC 202 or ACC 207 for ACC 303 and ACC 305. Minimum grade of 'C' in ACC 303, ACC 305, ACC 306, and ACC 341. Minimum grade of 'C-' in ACC 401, ACC 408, ACC 420 and accounting electives (or 'C' if a prerequisite for an elective).",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ACC 201 Introduction to Financial Accounting",
+                "ACC 202 Introduction to Managerial Accounting",
+                "ACC 303 Intermediate Accounting I",
+                "ACC 305 Intermediate Accounting II",
+                "ACC 306 Cost Accounting",
+                "ACC 341 Federal Income Tax",
+                "ACC 401 Auditing",
+                "ACC 408 Accounting Information Systems",
+                "ACC 420 Advanced Accounting"
+              ],
+              "electives": [
+                "Accounting Elective (one 300/400 level course)"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Matthew Holt (Chairperson)",
+              "Dr. Thomas J. Brady (Professor Emeritus)",
+              "Dr. Michele Welkener (Associate Professor of Counselor Education and Human Services)",
+              "Shondra Johnson (Instructor in Residence)",
+              "Donna Street (Professor)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Students pursuing a combined BSBA in Accounting and a Master of Professional Accountancy (MPAcc) may waive ACC 408 and replace it with ACC 603A. Ohio and many other states require 150 semester hours to become a CPA. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Business Economics",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Ralph R. Frasca (Professor of Economics and Finance)",
+              "Dr. Donald L. Shimmin (Associate Professor of Economics and Finance)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Entrepreneurship",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The School of Business Administration offers a Bachelor of Science in Business Administration degree with majors in Entrepreneurship. The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "ACC 201 Introduction to Financial Accounting",
+              "ACC 202 Introduction to Managerial Accounting",
+              "ECN 203 Principles of Microeconomics",
+              "ECN 204 Principles of Macroeconomics",
+              "MTH 207 Calculus with Business Applications"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "FIN 301 Principles of Financial Management",
+                "FIN 302 Financial Markets and Institutions",
+                "FIN 401 Investments",
+                "FIN 402 Corporate Finance",
+                "FIN 498 Capstone in Finance"
+              ],
+              "electives": [
+                "FIN 403 Portfolio Management",
+                "FIN 404 Options and Futures",
+                "FIN 405 International Finance",
+                "FIN 406 Real Estate Finance"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Ralph R. Frasca (Professor of Economics and Finance)",
+              "Dr. Donald L. Shimmin (Associate Professor of Economics and Finance)",
+              "Dr. Mohamed Mekhaimer (Associate Professor)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Robert N. Berger (Professor of Management and Marketing)",
+              "Dr. Deborah J. Bickford (Professor of Management and Marketing)",
+              "Dr. Eden Blair (Professor of Management and Leadership)",
+              "Dr. Mark P. Brown (Associate Professor of Management and Leadership)",
+              "Dr. Daniel Curtin (Professor)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Stephen R. Hall (Principal Lecturer)",
+              "Dr. Tanya M. Marcum (Professor)",
+              "Dr. Rajesh Godasu (Assistant Professor)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Students may focus on business intelligence, cyber security, or opt for breadth in their choice of electives. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Robert N. Berger (Professor of Management and Marketing)",
+              "Dr. Deborah J. Bickford (Professor of Management and Marketing)",
+              "Dr. Sam Gould (Professor of Management and Marketing)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Operations and Supply Chain Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Stephen R. Hall (Principal Lecturer)"
+            ],
+            "notes": "The School of Business Administration requires a minimum 3.0 GPA and successful completion of a college-level math class for transfer into any of its majors. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          }
+        ],
+        "housing_profile": "Similar to other schools, first-year students are housed in traditional residence halls (e.g., Marycrest, Stuart, Founders) to facilitate social integration. Sophomores typically move to suite-style accommodations or apartments. Juniors and seniors enjoy more independent living options in university-owned apartments and houses in the student neighborhood. ILLCs with a business ethics or leadership focus are available.",
+        "student_archetype": "Ambitious and community-minded future leaders with a strong entrepreneurial spirit and a commitment to ethical practices. They are likely to engage in internships, real-world business projects, and leadership roles.",
+        "strategic_fit_advice": "Prospective students interested in a top-ranked entrepreneurship program, extensive experiential learning opportunities, and a strong sense of community within a business context should consider this school. Engaging with business-focused ILLCs can provide early networking."
+      },
+      {
+        "name": "School of Education and Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.2 GPA to be considered for admission for health science majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Rachel Borton (Associate Professor)",
+              "Dr. Cynthia J. Bowers (Associate Professor, Associate Dean, School of Nursing)",
+              "Dr. Deborah Erickson (Associate Professor)",
+              "Shelby Hinspeter (Assistant Professor of Nursing in Residence)"
+            ],
+            "notes": "The University of Dayton Nursing Program prepares students to practice as Baccalaureate generalist nurses. The program is an integrated curriculum in collaboration with Sinclair College where students complete their first three semesters at the University of Dayton. Upon completion, students earn both an Associate's of Applied Science in Nursing and a Bachelor's of Science in Nursing. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Dietetics",
+            "degree_type": "B.S.H.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.2 GPA to be considered for admission for health science majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Health Science (Integrative Physiology, Exercise & Movement Science, and Occupational & Behavioral Studies)",
+            "degree_type": "B.S.H.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.2 GPA to be considered for admission for health science majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [
+              "Carol J. Siciliano (Professor of Health and Sport Science)"
+            ],
+            "notes": "Offers concentrations in Integrative Physiology, Exercise & Movement Science, and Occupational & Behavioral Studies. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Sport Management",
+            "degree_type": "B.S.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.2 GPA to be considered for admission for health science majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Teacher Education (Adolescence to Young Adult Education)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.0 GPA to be considered for admission for education majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. John D. Geiger (Professor)",
+              "Dr. Patricia M. Hart (Professor)",
+              "Dr. Mary Kay Kelly (Professor)"
+            ],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Early Childhood Leadership and Advocacy",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.0 GPA to be considered for admission for education majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Intervention Specialist Education",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.0 GPA to be considered for admission for education majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Middle Childhood Education",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in a major within the School of Education and Health Sciences must have a minimum of 3.0 GPA to be considered for admission for education majors.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Dayton Undergraduate Catalog 2025-2026"
+          }
+        ],
+        "housing_profile": "Housing follows the university's progressive model: traditional dorms for freshmen (e.g., Marycrest, Stuart, Founders) focusing on community building, followed by suite-style living or apartments for sophomores. Upperclassmen often reside in the student neighborhood's university-owned houses or apartments, offering more independent living.",
+        "student_archetype": "Compassionate and service-oriented individuals dedicated to improving the well-being of others. They are typically hands-on, seeking practical experience in educational or health-related fields, and value community engagement.",
+        "strategic_fit_advice": "This school is well-suited for students passionate about education, health, and service, who desire a supportive community and opportunities for practical, real-world experience. A commitment to community service aligns well with the university's mission."
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.Ch.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "special_requirements": "To transfer into the School of Engineering, students must have a 3.0 cumulative GPA and B grades in Calculus 1, College/General Chemistry, and calculus-based Physics 1.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Donald Klosterman (Professor)",
+              "Dr. Tony E. Saliba (Professor)"
+            ],
+            "notes": "Accredited by the Engineering Accreditation Commission of ABET. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "special_requirements": "To transfer into the School of Engineering, students must have a 3.0 cumulative GPA and B grades in Calculus 1, College/General Chemistry, and calculus-based Physics 1.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Souhail Elhouar (Professor of Civil Engineering and Construction)",
+              "Dr. Mahmood Soltani (Associate Professor of Civil and Construction Engineering)"
+            ],
+            "notes": "Accredited by the Engineering Accreditation Commission of ABET. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.Comp.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "special_requirements": "To transfer into the School of Engineering, students must have a 3.0 cumulative GPA and B grades in Calculus 1, College/General Chemistry, and calculus-based Physics 1.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Richard J. Kee (Professor of Electrical and Computer Engineering)",
+              "Dr. Suruz Miah (Associate Professor of Electrical and Computer Engineering)"
+            ],
+            "notes": "Accredited by the Engineering Accreditation Commission of ABET. Draws from software courses in computer science and hardware-related courses in Electrical and Computer Engineering. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "special_requirements": "To transfer into the School of Engineering, students must have a 3.0 cumulative GPA and B grades in Calculus 1, College/General Chemistry, and calculus-based Physics 1.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "EGR 101 Introduction to Engineering",
+                "EGR 103 Engineering Innovation",
+                "MTH 168 Analytic Geometry & Calculus I",
+                "MTH 169 Analytic Geometry & Calculus II",
+                "MTH 218 Analytic Geometry & Calculus III",
+                "MTH 219 Differential Equations",
+                "PHY 206 General Physics I",
+                "PHY 206L General Physics I Laboratory",
+                "PHY 207 General Physics II",
+                "PHY 207L General Physics II Laboratory",
+                "CHM 123 General Chemistry I",
+                "CHM 123L General Chemistry Laboratory I",
+                "ECE 203 Electric Circuits I",
+                "ECE 204 Electric Circuits II",
+                "ECE 215 Digital Logic Design",
+                "ECE 303 Electronics I",
+                "ECE 304 Electromagnetics",
+                "ECE 314 Microprocessors",
+                "ECE 330 Signals and Systems",
+                "ECE 331 Control Systems",
+                "ECE 340 Electric Machines and Power Systems",
+                "ECE 401 Senior Design I",
+                "ECE 402 Senior Design II"
+              ],
+              "electives": [
+                "ECE 415 Advanced Digital Design",
+                "ECE 449 Power Electronics",
+                "ECE 450 Communications Systems",
+                "ECE 460 Digital Signal Processing"
+              ],
+              "total_units": 120,
+              "major_units": 59
+            },
+            "notable_professors": [
+              "Dr. Eric Balster (Department Chairperson)",
+              "Dr. Richard J. Kee (Professor)",
+              "Dr. Suruz Miah (Associate Professor)",
+              "Dr. Raúl Ordoñez (Graduate Program Director)",
+              "Dr. Atul Yazdani (Associate Professor)"
+            ],
+            "notes": "Accredited by the Engineering Accreditation Commission of ABET. Offers undergraduate concentrations in Robotics and Electrical Energy Systems. The curriculum is designed to provide an understanding of basic electrical engineering principles with emphasis on the development of problem-solving skills. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": 66.0,
+            "average_gpa_admitted": 3.82,
+            "prerequisite_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MTH 168 Analytic Geometry & Calculus I",
+              "CHM 123 General Chemistry I",
+              "PHY 206 General Physics I"
+            ],
+            "special_requirements": "To transfer into the School of Engineering, students must have a 3.0 cumulative GPA and B grades in Calculus 1, College/General Chemistry, and calculus-based Physics 1.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "EGR 101 Introduction to Engineering",
+                "EGR 103 Engineering Innovation",
+                "MTH 168 Analytic Geometry & Calculus I",
+                "MTH 169 Analytic Geometry & Calculus II",
+                "MTH 218 Analytic Geometry & Calculus III",
+                "MTH 219 Differential Equations",
+                "PHY 206 General Physics I",
+                "PHY 206L General Physics I Laboratory",
+                "PHY 207 General Physics II",
+                "PHY 207L General Physics II Laboratory",
+                "CHM 123 General Chemistry I",
+                "CHM 123L General Chemistry Laboratory I",
+                "EGM 202 Dynamics",
+                "EGM 303 Mechanics II",
+                "MEE 104L Solid Modeling in Design",
+                "MEE 105L Intro to Experimentation & Programming",
+                "MEE 205 Mechatronics",
+                "MEE 214 Programming for Mechanical Engineers",
+                "MEE 307 Fluid Mechanics",
+                "MEE 307L Fluid Mechanics Laboratory",
+                "MEE 321 Thermodynamics I",
+                "MEE 322 Thermodynamics II",
+                "MEE 341 Engineering Experimentation",
+                "MEE 431 Mechanical Design I",
+                "MEE 431L Mechanical Design I Laboratory",
+                "MEE 499 Senior Design Project"
+              ],
+              "electives": [
+                "MEE 401 Aerospace Engineering",
+                "MEE 409 Energy Systems Engineering",
+                "MEE 456 Robotics",
+                "MEE 473 Composite Materials"
+              ],
+              "total_units": 122,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Jamie Ervin (Department Chairperson)",
+              "Dr. John P. Eimermacher (Professor)",
+              "Dr. Megan Reissman (Associate Professor)",
+              "Dr. Timothy Reissman (Associate Professor)",
+              "Dr. Nigel Amoafo-Yeboah (Assistant Professor)"
+            ],
+            "notes": "Accredited by the Engineering Accreditation Commission of ABET. The curriculum includes sufficient elective courses to permit a concentration in aerospace, energy systems engineering, and other areas. Data source: University of Dayton Undergraduate Catalog 2025-2026, College Scorecard"
+          }
+        ],
+        "housing_profile": "First-year students reside in traditional residence halls (e.g., Marycrest, Stuart, Founders) with communal bathrooms, fostering tight-knit communities. Sophomores transition to suite-style living or apartments (e.g., Campus South, Garden Apartments), offering more privacy. Juniors and seniors have the opportunity to live in university-owned houses or apartments in the student neighborhood, providing a more independent living experience. Integrated Learning-Living Communities (ILLCs) with a focus on science and engineering are available for those seeking a themed residential experience.",
+        "student_archetype": "Driven and collaborative problem-solvers who value hands-on learning and practical application. They are likely to be engaged in research, co-ops, and extracurriculars related to STEM, and appreciate a supportive community environment.",
+        "strategic_fit_advice": "Students with a strong aptitude for STEM subjects, a desire for experiential learning, and an interest in a community-oriented campus should consider the School of Engineering. Active participation in ILLCs can enhance the first-year experience."
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Computer Science Minor",
+      "Writing Minor",
+      "Business Administration Minor",
+      "Cyber Security Minor",
+      "Economics Minor",
+      "Criminal Justice Minor",
+      "Nonprofit and Community Leadership Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University of Dayton's Online Application",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "The University of Dayton generally does not require supplemental essays for general admission. Some specific programs, such as honors or pre-professional programs, may have additional essay requirements."
+      },
+      {
+        "target_program": "Music (Bachelor of Music degree programs and Music/Theatre Scholarship opportunities)",
+        "requirement_type": "Audition",
+        "deadline": "Applications must be received at least two weeks prior to the chosen audition date. Off-schedule and virtual auditions for scholarship are available by appointment until Monday, February 16, 2026.",
+        "details": "Auditions are required for admission into undergraduate Bachelor of Music degree programs (Music Composition, Music Education, Music Performance, Music Therapy, Bachelor of Arts in Music with concentrations in Jazz Studies and Music Studies) and for all students seeking music and theatre scholarship opportunities. In-person audition dates for the 2025-2026 academic year include Saturday, January 24, 2026; Saturday, February 7, 2026; and Saturday, February 14, 2026. Off-schedule and virtual auditions for scholarship are available by appointment until Monday, February 16, 2026, by contacting the Department of Music and Theatre. Academic admission to the university is separate from the audition process."
+      }
+    ],
+    "holistic_review_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Course Rigor",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "High School Rank",
+        "College Prep Courses",
+        "Standardized Test Scores"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Whole-person approach to education within a relationship-rich community rooted in the Marianist tradition; transparent tuition plan; emphasis on high-impact experiential learning."
     },
+    "essay_prompts": []
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Evaluate program strengths at UD, particularly in engineering and business.",
+      "Consider experiential learning opportunities like internships or co-ops unique to UD.",
+      "Align major choice with UD's Catholic, Marianist values and community focus."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize UD for its strong sense of community and student support services.",
+      "Value UD's commitment to hands-on learning and career preparation.",
+      "Consider UD's alumni network, particularly in the Midwest region."
+    ],
+    "alternate_major_strategy": "If primary major at UD is highly competitive, explore related interdisciplinary programs (e.g., if engineering is full, look at industrial design or technology management) or leverage UD's flexibility for changing majors early on."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 50610.0,
+        "total_coa": 69040.0,
+        "housing": 17230.0
+      },
+      "out_of_state": {
+        "tuition": 50610.0,
+        "total_coa": 69040.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 41066.0,
+    "average_merit_aid": 25000.0,
+    "percent_receiving_aid": 93.0,
+    "meets_full_need": false,
+    "notes": "University of Dayton meets 88% of demonstrated need. Merit scholarships for first-year students range from $17,000 to $33,000 per year. More than 90% of undergraduates receive financial assistance.",
     "scholarships": [
       {
         "name": "Trustees' Merit Scholarship",
         "type": "Merit",
-        "amount": "Up to $132,000 over 4 years",
-        "deadline": "2025-02-01",
+        "amount": "$29,000 - $33,000 per year",
+        "deadline": "Automatic consideration with admission application (e.g., Early Action: November 1, Regular Decision: February 1)",
+        "benefits": "Renewable for four years; may include textbook scholarship eligibility; considered for students with excellent GPA, test scores (if submitted), and academic rigor.",
         "application_method": "Automatic Consideration"
       },
       {
-        "name": "Textbook Scholarship",
-        "type": "Other",
-        "amount": "$4,000 over 4 years",
-        "deadline": "2025-02-01",
-        "application_method": "Campus Visit & FAFSA Completion"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Scores of 3, 4, or 5 grant credit for most exams.",
-        "exceptions": [
-          "Scores of 3 are awarded on a department-by-department basis"
-        ],
-        "usage": "Used for advanced standing and CAP requirements."
+        "name": "President's Merit Scholarship",
+        "type": "Merit",
+        "amount": "$25,000 - $29,000 per year",
+        "deadline": "Automatic consideration with admission application (e.g., Early Action: November 1, Regular Decision: February 1)",
+        "benefits": "Renewable for four years; may include textbook scholarship eligibility; awarded based on GPA, test scores (if submitted), and academic rigor.",
+        "application_method": "Automatic Consideration"
       },
-      "ib_policy": {
-        "general_rule": "HL exams with scores of 5+ generally grant credit.",
-        "diploma_bonus": true,
-        "sl_exceptions": [
-          "SL credit only for Computer Science and Philosophy"
-        ]
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "UD Internal Credit Evaluation Tool"
-        ],
-        "restrictions": "30 unit residency requirement; 50% of major requirements must be completed at UD."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A weighted GPA around 3.8 or higher",
-        "Evidence of character that aligns with the 'Marianist spirit'",
-        "Strong interest in collaborative learning"
-      ],
-      "common_activities": [
-        "Community service and social justice work",
-        "Flyer sports culture",
-        "Undergraduate research via UDRI"
-      ],
-      "essay_tips": [
-        "Mention the unique 'student neighborhood' housing",
-        "Connect personal values to the common good"
-      ],
-      "red_flags": [
-        "Generic 'Why School' essay failing to mention Marianist identity",
-        "Lacking evidence of teamwork"
-      ],
-      "insights": [
-        "Flyer network and community support are significant career assets",
-        "The 'neighborhood' is central to the UD identity"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 75537,
-      "employment_rate_2yr": 78.0,
-      "grad_school_rate": 19.0,
-      "top_employers": [
-        "General Electric (GE)",
-        "Deloitte",
-        "Wright-Patterson Air Force Base",
-        "Google",
-        "Apple"
-      ],
-      "loan_default_rate": 1.0,
-      "student_retention": {
-        "freshman_retention_rate": 89.0,
-        "graduation_rate_4_year": 66.0,
-        "graduation_rate_6_year": 82.0
-      }
-    }
-  },
-  "_id": "university_of_dayton",
-  "application_process": {
-    "essay_prompts": [
       {
-        "prompt": "UD is a Catholic, Marianist university committed to community and service. How do these values align with yours?",
-        "word_limit": "250 words",
-        "type": "Values",
-        "required": true,
-        "brainstorming_questions": [
-          "When have you most powerfully experienced a sense of 'community' that felt different or more meaningful than just being around people, and how did that experience shape your understanding of its importance?",
-          "Thinking about service, what's a time you actively chose to help someone or a cause without being asked or obligated, and what did that act of service reveal about your own core beliefs?",
-          "The Marianist tradition emphasizes education and faith working together. Can you recall a moment when learning something new, whether in or out of a classroom, directly challenged or strengthened your personal values in a significant way?",
-          "How has your own upbringing or personal experiences shaped your view of what it means to be 'committed' \u2013 not just to a task, but to a principle or to people?",
-          "Reflect on a time when you've seen someone else embody the values of community and service in a way that deeply inspired you. What about their actions resonated with you and how did it make you think about your own role in similar situations?"
-        ]
+        "name": "Dean's Merit Scholarship",
+        "type": "Merit",
+        "amount": "$21,000 - $23,000 per year",
+        "deadline": "Automatic consideration with admission application (e.g., Early Action: November 1, Regular Decision: February 1)",
+        "benefits": "Renewable for four years; awarded based on GPA, test scores (if submitted), and rigor of coursework taken.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Marianist Leadership Scholarship",
+        "type": "Merit",
+        "amount": "$17,000 - $19,000 per year",
+        "deadline": "Automatic consideration with admission application (e.g., Early Action: November 1, Regular Decision: February 1)",
+        "benefits": "Renewable for four years; awarded based on GPA and academic excellence.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "International Merit Scholarship",
+        "type": "Merit",
+        "amount": "Up to $33,000 per year (plus potential $4,000 over four years for textbooks)",
+        "deadline": "Automatic consideration upon receipt of application and required documents (e.g., Fall term: May 1, Spring term: November 1)",
+        "benefits": "Towards tuition costs; potential textbook scholarship; no registration fee.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "University Honors Program Benefits",
+        "type": "Merit/Program-based",
+        "amount": "Varies (funding for internships, research, study abroad)",
+        "deadline": "Automatic consideration upon admission or application after first semester/year",
+        "benefits": "Early registration, special advising, honors housing option, enriched educational opportunities (honors courses, research experiences), funding for internships (DC Flyers, Dublin Flyers), research (Berry Summer Thesis Institute, Oxford Flyers), faith and leadership (Chaminade Scholars).",
+        "application_method": "Automatic Consideration/Separate Application for specific programs"
+      },
+      {
+        "name": "Music and Visual Arts Scholarships",
+        "type": "Talent/Merit",
+        "amount": "Varies",
+        "deadline": "Contact respective departments for deadlines",
+        "benefits": "Awards based on competitive auditions for Music, or portfolio submission for Art and Design; four-year scholarships for outstanding promise in visual arts.",
+        "application_method": "Separate Application (audition/portfolio)"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_dayton_logo.png"
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "The University of Dayton generally awards credit for AP scores of 3, 4, or 5. Many scores of 3 award 3-4 credits for introductory courses. Scores of 4 or 5 generally award 3-6 credits, often fulfilling general education or major prerequisites, with some advanced exams offering higher credit (e.g., 6-8 credits for Calculus BC). Specific credit awards vary by subject and department.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "For International Baccalaureate (IB) exams, the University of Dayton typically awards credit for Higher Level (HL) exams with scores of 4, 5, 6, or 7, usually earning 3-8 credits depending on the subject. Standard Level (SL) exams generally do not award credit, though some exceptions may exist for very high scores (6 or 7) in specific subjects. Students completing the full IB Diploma may receive additional consideration.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "The University of Dayton accepts transfer credit from regionally accredited institutions, requiring a minimum grade of C- (1.70) or higher for courses to be considered. Credits are generally transferred as general education requirements, elective credit, or direct course equivalents when the content closely matches a UD course. Online courses from accredited institutions are typically accepted. There are maximum credit limits, such as 60-75 credits from a two-year institution, and generally no more than 90 total transfer credits toward a bachelor's degree. Tools and advisors are available to assist with course equivalency and articulation planning."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Dedication to academic excellence",
+      "Community engagement and service orientation",
+      "Openness to interdisciplinary learning",
+      "Strong communication and collaboration skills",
+      "Resilience and adaptability"
+    ],
+    "common_activities": [
+      "Participating in student organizations (e.g., clubs, Greek life)",
+      "Engaging in service-learning projects and volunteer work",
+      "Attending athletic events and supporting Dayton Flyers teams",
+      "Utilizing campus resources like the library and academic support centers",
+      "Networking with alumni and career services for internships and jobs"
+    ],
+    "essay_tips": [
+      "Reflect on experiences that shaped your values and how they align with UD's mission.",
+      "Highlight your commitment to service and community involvement.",
+      "Showcase your intellectual curiosity and passion for learning.",
+      "Share specific examples of your leadership or teamwork skills.",
+      "Be authentic and let your unique voice shine through."
+    ],
+    "red_flags": [
+      "Lack of demonstrated interest in community or service.",
+      "Failure to research UD's specific programs or mission.",
+      "Essays that lack personal reflection or specific examples.",
+      "Poor academic record inconsistent with UD's standards.",
+      "Inability to articulate future goals or how UD can help achieve them."
+    ],
+    "insights": [
+      "University of Dayton values students who are not only academically strong but also committed to making a positive impact on their communities.",
+      "Engagement in co-curricular activities and service learning is a hallmark of the UD student experience.",
+      "Authenticity and a clear connection to UD's Marianist values are key themes for successful applicants.",
+      "Students should demonstrate how they will contribute to and benefit from UD's collaborative and service-oriented environment.",
+      "Proactive engagement with campus resources and alumni networks is common among successful UD students."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 87600,
+    "employment_rate_2yr": 97.0,
+    "median_earnings_6yr": 72000,
+    "top_employers": [
+      "Google",
+      "Apple",
+      "Microsoft",
+      "Meta",
+      "Deloitte",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "McKinsey & Company",
+      "Boston Consulting Group",
+      "Amazon"
+    ],
+    "grad_school_rate": null,
+    "loan_default_rate": 1.0,
+    "notes": "Median earnings 10 years after enrollment and 6 years after enrollment are from the College Scorecard. The employment rate is 1 year after graduation, as a 2-year specific rate from the College Scorecard was not directly available. The University of Dayton's overall graduation rate of 82% places it within the top 10% nationally."
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 82.0
+  }
 }

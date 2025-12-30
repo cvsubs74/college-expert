@@ -836,13 +836,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One Common App Personal Essay (250-650 words) and two CU Boulder-specific supplemental essays are required. The CU Boulder essays are: 1. What do you hope to study, and why, at CU Boulder? Or if you don't know quite yet, think about your studies so far, extracurricular/after-school activities, jobs, volunteering, future goals, or anything else that has shaped your interests (250 words). 2. Pick one of your unique identities and describe its significance (250 words)."
       },
       {
         "target_program": "Music",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "First-year applicants to the College of Music will not receive an admission decision until after they have auditioned. Specific pre-screening/audition deadlines were not found in the provided search results."
       }
     ],
@@ -1024,11 +1024,31 @@
       "Not submitting required materials like high school transcripts or letters of recommendation by the deadline."
     ],
     "insights": [
-      "CU Boulder employs a holistic review process, considering academic factors, extracurriculars, leadership, essays, and recommendations.",
-      "Applying Early Action (by November 15th) can demonstrate genuine interest and potentially offer a slight advantage.",
-      "Direct admission to highly selective programs like engineering or business (Leeds School of Business) is more challenging and often requires stats above the university's general average.",
-      "For those with less competitive academic profiles, demonstrating a strong upward trend in GPA or considering a transfer path from community college with excellent grades can be viable strategies.",
-      "Utilize admission counselors as a resource for accurate information and guidance throughout the application process."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "CU Boulder employs a holistic review process, considering academic factors, extracurriculars, leadership, essays, and recommendations."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action (by November 15th) can demonstrate genuine interest and potentially offer a slight advantage."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Direct admission to highly selective programs like engineering or business (Leeds School of Business) is more challenging and often requires stats above the university's general average."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For those with less competitive academic profiles, demonstrating a strong upward trend in GPA or considering a transfer path from community college with excellent grades can be viable strategies."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Utilize admission counselors as a resource for accurate information and guidance throughout the application process."
+      }
     ]
   },
   "outcomes": {

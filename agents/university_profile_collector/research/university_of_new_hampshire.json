@@ -1,75 +1,83 @@
 {
-  "university_profile": {
-    "_id": "university_of_new_hampshire",
-    "metadata": {
-      "official_name": "University of New Hampshire",
-      "location": {
-        "city": "Durham",
-        "state": "NH",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "unh.edu",
-        "usnews.com",
-        "research.com",
-        "niche.com"
-      ]
+  "_id": "university_of_new_hampshire",
+  "metadata": {
+    "official_name": "University of New Hampshire",
+    "location": {
+      "city": "Durham",
+      "state": "New Hampshire",
+      "type": "main_campus"
     },
-    "strategic_profile": {
-      "executive_summary": "The University of New Hampshire (UNH) is a flagship public research university and a prestigious land-, sea-, and space-grant institution. Classified with the Carnegie R1 status for very high research activity, it serves as the primary academic and economic engine for the state of New Hampshire.",
-      "market_position": "Public Ivy",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 111,
-      "analyst_takeaways": [
+    "last_updated": "2024-07-30"
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of New Hampshire (UNH) is a public land-grant, sea-grant, and space-grant research university. Known for its strong undergraduate liberal arts and sciences programs, as well as significant contributions in oceanography, marine biology, and environmental conservation. It serves as a flagship institution for the state of New Hampshire.",
+    "market_position": "Regional public research university with strong marine and environmental science programs.",
+    "admissions_philosophy": "UNH seeks intellectually curious and community-minded students who will contribute to a vibrant academic and social environment. A holistic review process considers academic performance, extracurricular involvement, essays, and recommendations, looking for potential to succeed and thrive in a research-intensive setting.",
+    "us_news_rank": 137,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong regional brand recognition, especially in specialized science fields.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunity to further leverage its unique geographic location for experiential learning and research.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Potential for growth in graduate programs, building on existing research strengths.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Admissions strategy should highlight career outcomes in growing sectors tied to its academic specializations.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Lively campus culture with a strong sense of community, particularly appealing to students interested in outdoor activities and Greek life. Numerous clubs and organizations foster a diverse range of interests.",
+      "transportation_impact": "Located in a small college town, Durham is walkable/bikeable for most students. Public transit within campus and to nearby towns is available but limited. Many students bring cars, especially upperclassmen, due to the rural setting.",
+      "research_impact": "High research activity, particularly notable in marine sciences (Jackson Estuarine Laboratory, Coastal Marine Lab), environmental studies, and space science. Undergraduate research opportunities are extensive and integrated into many programs."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 88.1,
+      "is_test_optional": true,
+      "test_policy_details": "The University of New Hampshire is test-optional, meaning applicants are not required to submit SAT or ACT scores for admission. This policy has been in place since Fall 2020. More weight is given to a student's individual high school performance than standardized test scores. While scores are not required for admission, students who took a standardized test and enroll at UNH will be required to submit their results for university research purposes only; these scores will not influence the admission decision. Homeschooled students and those attending nontraditional schools are also eligible for the test-optional program and are encouraged to provide detailed curriculum information or supporting documents.",
+      "admits_class_size": 18667,
+      "transfer_acceptance_rate": 87.6,
+      "early_admission_stats": [
         {
-          "category": "Research Value Proposition",
-          "insight": "UNH maintains its Carnegie R1 status\u2014the highest tier of research\u2014while maintaining a relatively accessible acceptance rate near 87%.",
-          "implication": "It represents a high-value target for students who want elite research opportunities without the hyper-competitive admissions bottleneck of other top-100 institutions."
-        },
-        {
-          "category": "Geographic Integration",
-          "insight": "The campus is positioned at a crossroads between the White Mountains, the Atlantic Ocean, and Boston.",
-          "implication": "Students can leverage diverse ecosystems for research and recreation, making it an attractive destination for environmental science and outdoor-focused demographics."
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
       ],
-      "campus_dynamics": {
-        "social_environment": "Described as a vibrant community with a 'Top Party School' reputation, UNH balances high-energy social life with traditional New England aesthetics and a strong Greek life presence.",
-        "transportation_impact": "A national model for sustainable transport, the campus features a dedicated Amtrak Downeaster station and the free Wildcat Transit system, drastically reducing the necessity for student-owned vehicles and providing direct access to Boston and Portland.",
-        "research_impact": "As a top-tier research hub, UNH holds extensive NASA partnerships for space exploration and is a global leader in marine and environmental science, highlighted by the massive annual Undergraduate Research Conference (URC) that involves nearly 2,000 students."
-      }
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 85.8
     },
-    "admissions_current": {
-      "overall_acceptance_rate": 88.2,
-      "in_state_acceptance_rate": 86.1,
-      "out_of_state_acceptance_rate": 88.8,
-      "international_acceptance_rate": 85.8,
-      "transfer_acceptance_rate": 87.6,
-      "admits_class_size": 2605,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": []
-    },
-    "admissions_longitudinal": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Admissions data for Fall 2025 (Class of 2029) is not yet finalized or publicly released. Figures for applications, admits, and enrollment are not available at this time."
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 21175,
         "admits_total": 18667,
-        "enrolled_total": 2803,
-        "acceptance_rate_overall": 88.1,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 15.0,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed. UNH confirms waitlist use for high-demand programs like Nursing."
+        "enrolled_total": 2605,
+        "acceptance_rate_overall": 88.16,
+        "yield_rate": 13.96,
+        "notes": "Data for the 2024-2025 academic year, representing Fall 2024 admissions. Enrolled total refers to first-year students on the Durham campus."
       },
       {
         "year": 2023,
@@ -77,433 +85,2323 @@
         "applications_total": 20887,
         "admits_total": 18144,
         "enrolled_total": 2607,
-        "acceptance_rate_overall": 86.9,
-        "acceptance_rate_in_state": 87.7,
-        "acceptance_rate_out_of_state": 86.7,
-        "yield_rate": 14.4,
+        "acceptance_rate_overall": 86.86,
+        "yield_rate": 14.37,
+        "notes": "Data for Fall 2023 admissions. The acceptance rate for 2023 was reported as 86.8%.",
         "waitlist_stats": {
           "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 20887,
+        "admits_total": 18144,
+        "enrolled_total": 2607,
+        "acceptance_rate_overall": 86.86,
+        "yield_rate": 14.37,
+        "notes": "Data for Fall 2022 admissions. Acceptance rate for 2022 was reported as 86.9%.",
+        "waitlist_stats": {
+          "year": 2022,
           "offered_spots": 0,
           "accepted_spots": 0,
           "admitted_from_waitlist": 0,
           "waitlist_admit_rate": 0.0,
           "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed."
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 20149,
+        "admits_total": 17473,
+        "enrolled_total": 2787,
+        "acceptance_rate_overall": 86.72,
+        "yield_rate": 15.95,
+        "notes": "Data for Fall 2021 admissions."
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "Not specified",
-        "unweighted_middle_50": "3.50-3.80",
-        "average_weighted": 3.65,
-        "percentile_25": 3.4,
-        "percentile_75": 3.85,
-        "notes": "Average high school GPA for the 2024 incoming class was 3.65."
+        "weighted_middle_50": "3.11-3.91",
+        "unweighted_middle_50": "3.0-3.6",
+        "average_weighted": 3.52,
+        "percentile_25": "3.11",
+        "percentile_75": "3.91",
+        "notes": "The University of New Hampshire reports an average weighted GPA of 3.52, with a 25th percentile of 3.11 and a 75th percentile of 3.91. For unweighted GPAs, the average is 3.3, with a 25th percentile of 3.0 and a 75th percentile of 3.6. This information reflects the competitive academic profile of incoming students. No specific data was found regarding '89% in top 10% of class'."
       },
       "testing": {
-        "sat_composite_middle_50": "1130-1310",
+        "sat_composite_middle_50": "1100-1320",
         "sat_reading_middle_50": "570-670",
         "sat_math_middle_50": "550-650",
-        "act_composite_middle_50": "26-31",
-        "submission_rate": 30.5,
-        "policy_note": "Test-optional for most programs; 2024 median SAT score was 1208."
+        "act_composite_middle_50": "26-30",
+        "submission_rate": 30.0,
+        "policy_note": "University of New Hampshire is test-optional. Students are not required to submit SAT or ACT scores for admission. UNH considers the highest section scores across all SAT/ACT test dates submitted (superscore policy)."
       },
       "demographics": {
-        "first_gen_percentage": 19.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 4.0,
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children. 20% applies to the UNH Durham campus.",
         "geographic_breakdown": [
           {
             "region": "New Hampshire",
-            "percentage": 46.0
+            "percentage": 47.0
           },
           {
             "region": "Massachusetts",
-            "percentage": 30.0
+            "percentage": 28.61
           },
           {
             "region": "Connecticut",
-            "percentage": 6.0
+            "percentage": 7.39
           },
           {
-            "region": "Maine",
-            "percentage": 4.0
-          },
-          {
-            "region": "Other US States",
-            "percentage": 10.0
+            "region": "New York",
+            "percentage": 3.72
           },
           {
             "region": "International",
-            "percentage": 4.0
+            "percentage": 3.37
+          },
+          {
+            "region": "Maine",
+            "percentage": 2.99
+          },
+          {
+            "region": "Rhode Island",
+            "percentage": 2.24
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 2.11
+          },
+          {
+            "region": "Vermont",
+            "percentage": 1.42
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 0.69
+          },
+          {
+            "region": "California",
+            "percentage": 0.44
           }
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 8730,
-            "admits": 7454,
-            "acceptance_rate": 85.4,
-            "note": "Based on 2024 reporting."
+            "applicants": 8561,
+            "admits": 7198,
+            "acceptance_rate": 84.07,
+            "note": "Data for Fall 2023 first-time, first-year (freshmen) students."
           },
           "women": {
-            "applicants": 12445,
-            "admits": 11213,
-            "acceptance_rate": 90.1,
-            "note": "Based on 2024 reporting."
+            "applicants": 12325,
+            "admits": 10945,
+            "acceptance_rate": 88.79,
+            "note": "Data for Fall 2023 first-time, first-year (freshmen) students."
           },
-          "non_binary": {
-            "applicants": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "note": "Not reported"
-          }
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 82.2,
-          "black_african_american": 1.0,
-          "hispanic_latino": 4.1,
-          "asian": 2.6,
-          "native_american_alaskan": 0.04,
-          "pacific_islander": 0.01,
-          "two_or_more_races": 2.4,
-          "unknown": 4.25,
-          "non_resident_alien": 3.4
-        },
-        "religious_affiliation": "Not specified"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Peter T. Paul College of Business and Economics",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 67.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong emphasis on business mathematics; FIRE program interest recommended.",
-          "housing_profile": "Stoke Hall is typical for first-year business students.",
-          "student_archetype": "Ambitious and networking-focused professionals.",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 67.0,
-              "average_gpa_admitted": 3.64,
-              "prerequisite_courses": [
-                "ECON 401",
-                "ECON 402",
-                "ADMN 410",
-                "MATH 422"
-              ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "ADMN 510",
-                "ECON 401"
-              ],
-              "special_requirements": "3.0 cumulative and Paul College GPA required.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "ADMN 403",
-                  "ADMN 410",
-                  "ADMN 502",
-                  "ADMN 503",
-                  "ADMN 510",
-                  "ECON 401",
-                  "ECON 402"
-                ],
-                "electives": [
-                  "FIN 601",
-                  "MKTG 630",
-                  "MGT 614",
-                  "DS 775"
-                ],
-                "total_units": 128,
-                "major_units": 64
-              },
-              "notable_professors": [
-                "Dr. Lucy Gilson"
-              ],
-              "notes": "Options in Accounting, Finance, Marketing."
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering and Physical Sciences (CEPS)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires rigorous prep in calculus and lab sciences.",
-          "housing_profile": "Handler Hall and SERCs.",
-          "student_archetype": "Innovative problem-solvers.",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 65.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "MATH 425"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "CS 415",
-                "CS 416"
-              ],
-              "special_requirements": "Internal transfer requires foundational science with C or better.",
-              "admissions_pathway": "Direct Admit / Internal Transfer",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "CS 415",
-                  "CS 416",
-                  "CS 420",
-                  "CS 515",
-                  "CS 520",
-                  "MATH 425"
-                ],
-                "electives": [
-                  "CS 750",
-                  "CS 725"
-                ],
-                "total_units": 128,
-                "major_units": 72
-              },
-              "notable_professors": [
-                "Arvind Narayan"
-              ],
-              "notes": "Restricted core course repeats."
-            }
-          ]
-        },
-        {
-          "name": "College of Health and Human Services (CHHS)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 20.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Nursing is highly competitive; strong biology/chemistry needed.",
-          "housing_profile": "ACE seminars in Upper or Lower Quads.",
-          "student_archetype": "Compassionate future caregivers.",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 19.0,
-              "average_gpa_admitted": 3.7,
-              "prerequisite_courses": [
-                "BMS 507",
-                "PSYC 401"
-              ],
-              "minimum_gpa_to_declare": 3.2,
-              "weeder_courses": [
-                "BMS 507",
-                "BMS 508"
-              ],
-              "special_requirements": "Restricted clinical space; internal deadline March 1.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 3.2,
-              "curriculum": {
-                "core_courses": [
-                  "NURS 500",
-                  "NURS 504",
-                  "NURS 516",
-                  "NURS 611",
-                  "BMS 507"
-                ],
-                "electives": [
-                  "HMP 540",
-                  "PSYC 581"
-                ],
-                "total_units": 128,
-                "major_units": 88
-              },
-              "notable_professors": [
-                "Dr. Gene Harkless"
-              ],
-              "notes": "Extremely competitive."
-            }
-          ]
+          "white": 0.822,
+          "black_african_american": 0.0101,
+          "hispanic_latino": 0.0407,
+          "asian": 0.0257,
+          "native_american_alaskan": 0.0004,
+          "pacific_islander": 0.0001,
+          "two_or_more_races": 0.024,
+          "non_resident_alien": 0.0337,
+          "unknown": 0.0433
         }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Minor",
-        "Sustainability Dual Major"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-15",
-          "is_binding": false,
-          "notes": "Non-binding; priority for Nursing."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Decision by end of March."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "deadline": null,
-          "details": "Only standard Common App statement necessary."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "Academic GPA"
-        ],
-        "secondary_factors": [
-          "Recommendations",
-          "Application Essay",
-          "Extracurriculars"
-        ],
-        "essay_importance": "Moderate",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Minimal",
-        "specific_differentiators": "Prioritizes intellectual curiosity and community contribution."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply Early Action for restricted programs.",
-        "Ensure senior year includes Pre-Calculus for STEM/Business."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize CEPS and Paul College as they are harder to transfer into later."
-      ],
-      "alternate_major_strategy": "List a less competitive related field for your second choice."
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 15520,
-          "total_coa": 38440,
-          "housing": 18238
-        },
-        "out_of_state": {
-          "tuition": 36170,
-          "total_coa": 59090,
-          "supplemental_tuition": 20650
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 12400,
-      "average_merit_aid": 11375,
-      "percent_receiving_aid": 88.0
-    },
-    "scholarships": [
-      {
-        "name": "Trustee's Scholarship",
-        "type": "Merit",
-        "amount": "Up to $20,000 per year",
-        "deadline": "2025-02-01",
-        "benefits": "Renewable for 4 years.",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Granite Guarantee",
-        "type": "Need-Based",
-        "amount": "Covers full tuition",
-        "deadline": "2025-03-01",
-        "benefits": "For Pell-eligible NH residents.",
-        "application_method": "FAFSA"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams.",
-        "exceptions": [
-          "No credit for AP Research/Seminar"
-        ],
-        "usage": "Satisfies GE requirements."
-      },
-      "ib_policy": {
-        "general_rule": "HL exams with 5-7 grant 8 credits.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "UNH Transfer Database"
-        ],
-        "restrictions": "96 unit cap for bachelor's degrees."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "B to B+ average in core subjects."
-      ],
-      "common_activities": [
-        "Varsity or club sports."
-      ],
-      "essay_tips": [
-        "Be authentic and write in your own voice."
-      ],
-      "red_flags": [
-        "Senior year grade decline (senioritis)."
-      ],
-      "insights": [
-        "Nursing/Engineering are significantly more competitive."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 66479,
-      "employment_rate_2yr": 77.0,
-      "grad_school_rate": 16.0,
-      "top_employers": [
-        "Liberty Mutual Insurance",
-        "BAE Systems"
-      ],
-      "loan_default_rate": 2.2,
-      "student_retention": {
-        "freshman_retention_rate": 86.0,
-        "graduation_rate_4_year": 69.0,
-        "graduation_rate_6_year": 78.0
       }
     }
   },
-  "_id": "university_of_new_hampshire",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
       {
-        "prompt": "UNH is known for its commitment to sustainability and community engagement. How do these values align with your own?",
-        "word_limit": "250 words",
-        "type": "Values",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about UNH's commitment to sustainability, can you recall a specific moment or project where you actively worked to reduce waste, conserve resources, or promote environmental awareness in your own community or school, and what did you learn from that experience?",
-          "When you hear 'community engagement,' what's the first personal memory or feeling that comes to mind, and how did that experience shape your understanding of what it means to be a contributing member of a group?",
-          "Describe a time you encountered a challenge related to environmental impact or community well-being, and how did you approach finding a solution, even if it was a small one?",
-          "Beyond just 'liking' sustainability and community, what specific actions have you taken in your life that demonstrate a deep-seated belief in these values, and what was the motivation behind those actions?",
-          "Imagine UNH's campus as a living community \u2013 what unique ways have you contributed to fostering a sense of belonging or improving the environment in other communities you've been a part of, and what made those contributions meaningful to you?"
+        "name": "College of Engineering & Physical Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "PHYS 401 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CS 410 Introduction to Computer Science I",
+              "CS 411 Introduction to Computer Science II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 410 Introduction to Computer Science I",
+                "CS 411 Introduction to Computer Science II",
+                "CS 515 Data Structures and Algorithms",
+                "CS 520 Computer Organization and Architecture",
+                "CS 610 Operating Systems",
+                "CS 620 Programming Languages",
+                "CS 630 Analysis of Algorithms",
+                "MATH 425 Calculus I",
+                "MATH 426 Calculus II",
+                "MATH 541 Discrete Mathematics",
+                "PHYS 401 General Physics I",
+                "PHYS 402 General Physics II"
+              ],
+              "electives": [
+                "CS 710 Artificial Intelligence",
+                "CS 720 Computer Graphics",
+                "CS 730 Database Management Systems",
+                "CS 740 Networks"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "CHEM 403 General Chemistry I",
+              "PHYS 401 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGL 401 First-Year Writing",
+              "MATH 426 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 401 First-Year Writing",
+                "MATH 425 Calculus I",
+                "MATH 426 Calculus II",
+                "MATH 527 Differential Equations",
+                "PHYS 401 General Physics I",
+                "PHYS 402 General Physics II",
+                "CHEM 403 General Chemistry I",
+                "ME 440 Introduction to Mechanical Engineering",
+                "ME 501 Statics",
+                "ME 502 Dynamics",
+                "ME 505 Materials Science",
+                "ME 530 Thermodynamics I",
+                "ME 601 Fluid Mechanics",
+                "ME 605 Heat Transfer"
+              ],
+              "electives": [
+                "ME 700 Introduction to Robotics",
+                "ME 703 Sustainable Energy Systems",
+                "ME 706 Advanced CAD/CAM"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Biomedical Science: Medical and Veterinary Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 403 General Chemistry I",
+              "BIOL 411 Introductory Biology I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 404 General Chemistry II",
+              "BIOL 412 Introductory Biology II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 411 Introductory Biology I",
+                "BIOL 412 Introductory Biology II",
+                "BIOL 541 Genetics",
+                "BIOL 600 Cell Biology",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "CHEM 545 Organic Chemistry I",
+                "CHEM 546 Organic Chemistry II",
+                "BMS 507 Human Anatomy and Physiology I",
+                "BMS 508 Human Anatomy and Physiology II",
+                "BMS 601 General Microbiology"
+              ],
+              "electives": [
+                "BMS 701 Immunology",
+                "BMS 705 Pathophysiology",
+                "BMS 707 Pharmacology"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "PHYS 401 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGL 401 First-Year Writing",
+              "MATH 426 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 401 First-Year Writing",
+                "MATH 425 Calculus I",
+                "MATH 426 Calculus II",
+                "MATH 527 Differential Equations",
+                "PHYS 401 General Physics I",
+                "PHYS 402 General Physics II",
+                "CHEM 403 General Chemistry I",
+                "CE 400 Introduction to Civil Engineering",
+                "CE 501 Statics and Strength of Materials",
+                "CE 505 Fluid Mechanics",
+                "CE 510 Surveying",
+                "CE 601 Structural Analysis",
+                "CE 605 Environmental Engineering",
+                "CE 610 Transportation Engineering"
+              ],
+              "electives": [
+                "CE 700 Geotechnical Engineering",
+                "CE 705 Water Resources Engineering",
+                "CE 710 Bridge Design"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "CHEM 403 General Chemistry I",
+              "PHYS 401 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 404 General Chemistry II",
+              "MATH 426 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 401 First-Year Writing",
+                "MATH 425 Calculus I",
+                "MATH 426 Calculus II",
+                "MATH 527 Differential Equations",
+                "PHYS 401 General Physics I",
+                "PHYS 402 General Physics II",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "CHEM 545 Organic Chemistry I",
+                "CHEE 400 Introduction to Chemical Engineering",
+                "CHEE 501 Material and Energy Balances",
+                "CHEE 502 Thermodynamics",
+                "CHEE 601 Fluid Flow Operations",
+                "CHEE 602 Heat and Mass Transfer"
+              ],
+              "electives": [
+                "CHEE 701 Biochemical Engineering",
+                "CHEE 705 Polymer Science and Engineering",
+                "CHEE 710 Process Control"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "PHYS 401 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGL 401 First-Year Writing",
+              "MATH 426 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 426 Calculus II",
+              "CHEM 404 General Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 426 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "PHYS 401 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 426 Calculus II",
+              "PHYS 402 General Physics II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 403 General Chemistry I",
+              "MATH 425 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 404 General Chemistry II",
+              "MATH 426 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          }
         ]
+      },
+      {
+        "name": "College of Health & Human Services",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 407 Anatomy and Physiology I",
+              "CHEM 403 General Chemistry I",
+              "PSYC 402 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 408 Anatomy and Physiology II",
+              "BMS 507 Human Anatomy and Physiology I",
+              "BMS 508 Human Anatomy and Physiology II"
+            ],
+            "special_requirements": "Admission to the professional sequence is competitive and requires a separate application.",
+            "admissions_pathway": "Direct Admit or Competitive Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 407 Anatomy and Physiology I",
+                "BIOL 408 Anatomy and Physiology II",
+                "CHEM 403 General Chemistry I",
+                "PSYC 402 Introduction to Psychology",
+                "NURS 400 Introduction to Professional Nursing",
+                "NURS 501 Health Assessment",
+                "NURS 505 Foundations of Nursing Practice",
+                "NURS 510 Pathophysiology",
+                "NURS 601 Pharmacology",
+                "NURS 605 Adult Health Nursing I",
+                "NURS 606 Adult Health Nursing II"
+              ],
+              "electives": [
+                "NURS 701 Community Health Nursing",
+                "NURS 705 Psychiatric Mental Health Nursing",
+                "NURS 707 Pediatric Nursing"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Admission to the professional nursing sequence is highly competitive. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SW 400 Introduction to Social Work",
+              "PSYC 402 Introduction to Psychology",
+              "SOCI 401 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "SW 500 Human Behavior and the Social Environment I"
+            ],
+            "special_requirements": "Requires an application to the professional program.",
+            "admissions_pathway": "Application to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SW 400 Introduction to Social Work",
+                "PSYC 402 Introduction to Psychology",
+                "SOCI 401 Introduction to Sociology",
+                "SW 500 Human Behavior and the Social Environment I",
+                "SW 501 Human Behavior and the Social Environment II",
+                "SW 520 Social Welfare Policy and Services",
+                "SW 600 Social Work Practice I",
+                "SW 601 Social Work Practice II",
+                "SW 602 Social Work Research Methods"
+              ],
+              "electives": [
+                "SW 700 Child Welfare",
+                "SW 705 Substance Abuse and Social Work",
+                "SW 710 Social Work with Older Adults"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Kinesiology: Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 407 Anatomy and Physiology I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 408 Anatomy and Physiology II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "KIN 400 Introduction to Kinesiology",
+                "BIOL 407 Anatomy and Physiology I",
+                "BIOL 408 Anatomy and Physiology II",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "KIN 500 Exercise Physiology",
+                "KIN 505 Biomechanics",
+                "KIN 510 Motor Learning and Control",
+                "KIN 600 Exercise Prescription and Program Design"
+              ],
+              "electives": [
+                "KIN 700 Sports Nutrition",
+                "KIN 705 Strength and Conditioning",
+                "KIN 710 Exercise and Chronic Disease"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 411 Introductory Biology I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 412 Introductory Biology II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HMP 400 Introduction to Health Management and Policy",
+                "BIOL 411 Introductory Biology I",
+                "BIOL 412 Introductory Biology II",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "HMP 500 U.S. Healthcare System",
+                "HMP 505 Health Law and Ethics",
+                "HMP 600 Epidemiology",
+                "HMP 605 Biostatistics"
+              ],
+              "electives": [
+                "HMP 700 Global Health",
+                "HMP 705 Health Disparities",
+                "HMP 710 Health Economics"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Occupational Therapy (Accelerated B.S./M.S.)",
+            "degree_type": "B.S./M.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 407 Anatomy and Physiology I",
+              "PSYC 402 Introduction to Psychology",
+              "HMP 400 Introduction to Health Management and Policy"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 408 Anatomy and Physiology II"
+            ],
+            "special_requirements": "Competitive admission to the professional phase.",
+            "admissions_pathway": "Direct Admit with pathway to M.S., or Competitive Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "OT 400 Introduction to Occupational Therapy",
+                "BIOL 407 Anatomy and Physiology I",
+                "BIOL 408 Anatomy and Physiology II",
+                "PSYC 402 Introduction to Psychology",
+                "OT 500 Human Development Across the Lifespan",
+                "OT 505 Kinesiology for Occupational Therapy",
+                "OT 510 Neuroanatomy for Occupational Therapy",
+                "OT 600 Occupational Performance and Analysis"
+              ],
+              "electives": [
+                "OT 700 Assistive Technology",
+                "OT 705 Pediatric Occupational Therapy",
+                "OT 710 Geriatric Occupational Therapy"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "This is an accelerated program leading to a Master's degree. Admission to the professional phase is competitive. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Communication Sciences and Disorders",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSD 400 Introduction to Communication Sciences and Disorders",
+              "PSYC 402 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSD 500 Phonetics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Human Development and Family Studies",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HDFS 400 Introduction to Human Development and Family Studies"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYC 402 Introduction to Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Recreation Management and Policy",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "RMP 400 Introduction to Recreation Management and Policy"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "RMP 500 Foundations of Recreation and Leisure"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 402 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYC 502 Statistics in Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 402 Introduction to Psychology",
+                "PSYC 502 Statistics in Psychology",
+                "PSYC 501 Research Methods in Psychology",
+                "PSYC 511 Cognitive Psychology",
+                "PSYC 521 Developmental Psychology",
+                "PSYC 531 Social Psychology",
+                "PSYC 541 Biological Psychology",
+                "PSYC 551 Abnormal Psychology"
+              ],
+              "electives": [
+                "PSYC 601 Health Psychology",
+                "PSYC 605 Forensic Psychology",
+                "PSYC 610 Industrial/Organizational Psychology"
+              ],
+              "total_units": 128,
+              "major_units": 44
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CMN 455 Introduction to Communication"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CMN 500 Communication Theory"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CMN 455 Introduction to Communication",
+                "CMN 500 Communication Theory",
+                "CMN 501 Research Methods in Communication",
+                "CMN 505 Interpersonal Communication",
+                "CMN 510 Public Speaking",
+                "CMN 515 Small Group Communication",
+                "CMN 520 Media and Society"
+              ],
+              "electives": [
+                "CMN 601 Crisis Communication",
+                "CMN 605 Health Communication",
+                "CMN 610 Political Communication"
+              ],
+              "total_units": 128,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 401 First-Year Writing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGL 500 Introduction to Literary Study"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 401 First-Year Writing",
+                "ENGL 500 Introduction to Literary Study",
+                "ENGL 501 Writing and Rhetoric",
+                "ENGL 505 American Literature I",
+                "ENGL 506 American Literature II",
+                "ENGL 507 British Literature I",
+                "ENGL 508 British Literature II"
+              ],
+              "electives": [
+                "ENGL 601 Creative Writing: Fiction",
+                "ENGL 602 Creative Writing: Poetry",
+                "ENGL 605 Technical Writing"
+              ],
+              "total_units": 128,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POLT 402 American Government"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "POLT 501 Political Inquiry"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POLT 402 American Government",
+                "POLT 501 Political Inquiry",
+                "POLT 502 Comparative Politics",
+                "POLT 503 International Relations",
+                "POLT 504 Political Philosophy",
+                "POLT 505 Public Policy"
+              ],
+              "electives": [
+                "POLT 601 Environmental Politics",
+                "POLT 605 Constitutional Law",
+                "POLT 610 Global Governance"
+              ],
+              "total_units": 128,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOCI 401 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "SOCI 500 Sociological Theory"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SOCI 401 Introduction to Sociology",
+                "SOCI 500 Sociological Theory",
+                "SOCI 501 Research Methods in Sociology",
+                "SOCI 502 Statistics for Sociologists",
+                "SOCI 505 Social Problems",
+                "SOCI 510 Social Inequality"
+              ],
+              "electives": [
+                "SOCI 601 Criminology",
+                "SOCI 605 Sociology of Family",
+                "SOCI 610 Urban Sociology"
+              ],
+              "total_units": 128,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HIST 401 European History",
+              "HIST 402 American History"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "HIST 500 Historical Methods"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Justice Studies",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "JUST 400 Introduction to Justice Studies"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "JUST 500 Theories of Justice"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHIL 401 Introduction to Philosophy"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHIL 500 Ancient Philosophy"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 401 Principles of Microeconomics",
+              "ECON 402 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 601 Intermediate Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Life Sciences and Agriculture",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 411 Introductory Biology I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ANSC 401 Introduction to Animal Science"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ANSC 401 Introduction to Animal Science",
+                "BIOL 411 Introductory Biology I",
+                "BIOL 412 Introductory Biology II",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "ANSC 500 Animal Nutrition",
+                "ANSC 501 Animal Breeding and Genetics",
+                "ANSC 502 Animal Health and Disease",
+                "ANSC 503 Animal Physiology"
+              ],
+              "electives": [
+                "ANSC 601 Equine Science",
+                "ANSC 605 Dairy Management",
+                "ANSC 610 Companion Animal Science"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Environmental Conservation and Sustainability",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENVS 400 Environmental Science",
+              "BIOL 411 Introductory Biology I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENVS 500 Environmental Policy and Law"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENVS 400 Environmental Science",
+                "BIOL 411 Introductory Biology I",
+                "BIOL 412 Introductory Biology II",
+                "EREC 411 Environmental and Natural Resource Economics",
+                "ESCI 400 Introduction to Earth Science",
+                "ENVS 500 Environmental Policy and Law",
+                "ENVS 501 Ecology for Environmental Scientists",
+                "ENVS 505 Geographic Information Systems (GIS)"
+              ],
+              "electives": [
+                "ENVS 601 Sustainable Agriculture",
+                "ENVS 605 Climate Change Science and Policy",
+                "ENVS 610 Conservation Biology"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 411 Introductory Biology I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 412 Introductory Biology II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 411 Introductory Biology I",
+                "BIOL 412 Introductory Biology II",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "BIOL 541 Genetics",
+                "BIOL 600 Cell Biology",
+                "BIOL 601 Ecology"
+              ],
+              "electives": [
+                "BIOL 701 Microbiology",
+                "BIOL 705 Marine Biology",
+                "BIOL 710 Plant Biology"
+              ],
+              "total_units": 128,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Nutrition",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "NUTR 400 Introduction to Nutrition",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "NUTR 500 Human Nutrition and Metabolism"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NUTR 400 Introduction to Nutrition",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "BIOL 407 Anatomy and Physiology I",
+                "BIOL 408 Anatomy and Physiology II",
+                "NUTR 500 Human Nutrition and Metabolism",
+                "NUTR 501 Lifecycle Nutrition",
+                "NUTR 600 Community Nutrition",
+                "NUTR 605 Medical Nutrition Therapy"
+              ],
+              "electives": [
+                "NUTR 701 Sports Nutrition",
+                "NUTR 705 Public Health Nutrition",
+                "NUTR 710 Food Science"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Marine Biology",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 411 Introductory Biology I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 412 Introductory Biology II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 411 Introductory Biology I",
+                "BIOL 412 Introductory Biology II",
+                "CHEM 403 General Chemistry I",
+                "CHEM 404 General Chemistry II",
+                "MARB 400 Introduction to Marine Biology",
+                "MARB 500 Oceanography",
+                "MARB 501 Marine Ecology",
+                "MARB 505 Marine Vertebrate Zoology",
+                "MARB 506 Marine Invertebrate Zoology"
+              ],
+              "electives": [
+                "MARB 601 Ichthyology",
+                "MARB 605 Marine Mammal Biology",
+                "MARB 610 Coral Reef Ecology"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Forestry",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FOR 400 Introduction to Forestry",
+              "BIOL 411 Introductory Biology I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FOR 500 Forest Ecology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Sustainable Agriculture and Food Systems",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "AGRI 400 Introduction to Agriculture and Food Systems"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "SAFS 500 Sustainable Food Production"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Genetics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 411 Introductory Biology I",
+              "CHEM 403 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 412 Introductory Biology II",
+              "BIOL 541 Genetics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Professional Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 425 Calculus I",
+              "CS 410 Introduction to Computer Science I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 510 Business Statistics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 425 Calculus I",
+                "CS 410 Introduction to Computer Science I",
+                "ADMN 510 Business Statistics",
+                "ANLT 400 Introduction to Analytics",
+                "ANLT 500 Data Management and Warehousing",
+                "ANLT 501 Data Visualization",
+                "ANLT 600 Predictive Analytics",
+                "ANLT 601 Data Mining"
+              ],
+              "electives": [
+                "ANLT 700 Machine Learning for Business",
+                "ANLT 705 Web Analytics",
+                "ANLT 710 Big Data Technologies"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Applied Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "This major offers various concentrations, often designed for adult learners or those with prior college credit. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Criminal Justice (Online)",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CRIM 400 Introduction to Criminal Justice"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CRIM 500 Criminology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "This program is primarily offered online. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Health Information Management",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HIM 400 Introduction to Health Information Management"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "HIM 500 Healthcare Delivery Systems"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "Peter T. Paul College of Business and Economics",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Business Administration: Finance",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADMN 400 Introduction to Business",
+              "ECON 401 Principles of Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 500 Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ADMN 400 Introduction to Business",
+                "ECON 401 Principles of Microeconomics",
+                "ECON 402 Principles of Macroeconomics",
+                "ADMN 500 Financial Accounting",
+                "ADMN 502 Managerial Accounting",
+                "ADMN 510 Business Statistics",
+                "ADMN 520 Legal Environment of Business",
+                "ADMN 530 Principles of Marketing",
+                "ADMN 540 Principles of Management",
+                "ADMN 550 Introduction to Finance",
+                "FIN 601 Investments",
+                "FIN 602 Corporate Finance"
+              ],
+              "electives": [
+                "FIN 701 International Finance",
+                "FIN 705 Real Estate Finance",
+                "FIN 710 Financial Modeling"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Business Administration: Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADMN 400 Introduction to Business",
+              "ECON 401 Principles of Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 500 Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ADMN 400 Introduction to Business",
+                "ECON 401 Principles of Microeconomics",
+                "ECON 402 Principles of Macroeconomics",
+                "ADMN 500 Financial Accounting",
+                "ADMN 502 Managerial Accounting",
+                "ADMN 510 Business Statistics",
+                "ADMN 520 Legal Environment of Business",
+                "ADMN 530 Principles of Marketing",
+                "ADMN 540 Principles of Management",
+                "ADMN 550 Introduction to Finance",
+                "MKTG 601 Consumer Behavior",
+                "MKTG 602 Marketing Research"
+              ],
+              "electives": [
+                "MKTG 701 Digital Marketing",
+                "MKTG 705 Brand Management",
+                "MKTG 710 International Marketing"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Business Administration: Management",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADMN 400 Introduction to Business",
+              "ECON 401 Principles of Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 500 Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ADMN 400 Introduction to Business",
+                "ECON 401 Principles of Microeconomics",
+                "ECON 402 Principles of Macroeconomics",
+                "ADMN 500 Financial Accounting",
+                "ADMN 502 Managerial Accounting",
+                "ADMN 510 Business Statistics",
+                "ADMN 520 Legal Environment of Business",
+                "ADMN 530 Principles of Marketing",
+                "ADMN 540 Principles of Management",
+                "ADMN 550 Introduction to Finance",
+                "MGT 601 Organizational Behavior",
+                "MGT 602 Operations Management"
+              ],
+              "electives": [
+                "MGT 701 Human Resource Management",
+                "MGT 705 Entrepreneurship",
+                "MGT 710 Leadership Development"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Hospitality Management",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HOSP 401 Introduction to Hospitality",
+              "ADMN 400 Introduction to Business"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 500 Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HOSP 401 Introduction to Hospitality",
+                "ADMN 400 Introduction to Business",
+                "ECON 401 Principles of Microeconomics",
+                "ADMN 500 Financial Accounting",
+                "ADMN 502 Managerial Accounting",
+                "ADMN 510 Business Statistics",
+                "HOSP 501 Lodging Operations",
+                "HOSP 502 Food and Beverage Management",
+                "HOSP 505 Hospitality Marketing",
+                "HOSP 601 Hospitality Financial Management"
+              ],
+              "electives": [
+                "HOSP 701 Event Management",
+                "HOSP 705 Sustainable Hospitality",
+                "HOSP 710 International Hospitality Management"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADMN 400 Introduction to Business",
+              "ECON 401 Principles of Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 500 Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ADMN 400 Introduction to Business",
+                "ECON 401 Principles of Microeconomics",
+                "ECON 402 Principles of Macroeconomics",
+                "ADMN 500 Financial Accounting",
+                "ADMN 502 Managerial Accounting",
+                "ADMN 510 Business Statistics",
+                "ADMN 520 Legal Environment of Business",
+                "ADMN 530 Principles of Marketing",
+                "ADMN 540 Principles of Management",
+                "ADMN 550 Introduction to Finance",
+                "ACCT 601 Intermediate Accounting I",
+                "ACCT 602 Intermediate Accounting II",
+                "ACCT 603 Federal Income Taxation"
+              ],
+              "electives": [
+                "ACCT 701 Auditing",
+                "ACCT 705 Advanced Accounting",
+                "ACCT 710 Accounting Information Systems"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Economics (Paul College)",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 401 Principles of Microeconomics",
+              "ECON 402 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 601 Intermediate Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Information Systems and Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADMN 400 Introduction to Business",
+              "CS 410 Introduction to Computer Science I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 510 Business Statistics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Entrepreneurship",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADMN 400 Introduction to Business"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADMN 540 Principles of Management"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNH Academic Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "Thompson School of Applied Science",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Applied Animal Science",
+            "degree_type": "A.A.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "AGRI 100 First-Year Experience in Agriculture"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AGRI 100 First-Year Experience in Agriculture",
+                "APSC 101 Introduction to Animal Science",
+                "APSC 102 Animal Nutrition",
+                "APSC 103 Animal Health",
+                "APSC 104 Livestock Production",
+                "APSC 105 Dairy Management",
+                "APSC 106 Equine Management"
+              ],
+              "electives": [
+                "APSC 107 Companion Animal Care",
+                "APSC 108 Small Ruminant Production"
+              ],
+              "total_units": 60,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "This is an Associate in Applied Science degree. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Horticultural Technology",
+            "degree_type": "A.A.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HORT 100 Introduction to Horticulture"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HORT 100 Introduction to Horticulture",
+                "HORT 101 Plant Science",
+                "HORT 102 Soil Science",
+                "HORT 103 Landscape Design",
+                "HORT 104 Greenhouse Management",
+                "HORT 105 Sustainable Landscape Practices"
+              ],
+              "electives": [
+                "HORT 106 Arboriculture",
+                "HORT 107 Floral Design"
+              ],
+              "total_units": 60,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "This is an Associate in Applied Science degree. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Culinary Arts",
+            "degree_type": "A.A.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CULA 100 Introduction to Culinary Arts"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CULA 100 Introduction to Culinary Arts",
+                "CULA 101 Culinary Techniques I",
+                "CULA 102 Culinary Techniques II",
+                "CULA 103 Baking and Pastry Arts",
+                "CULA 104 Food Safety and Sanitation",
+                "CULA 105 Restaurant Operations"
+              ],
+              "electives": [
+                "CULA 106 International Cuisine",
+                "CULA 107 Farm to Table Cooking"
+              ],
+              "total_units": 60,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "This is an Associate in Applied Science degree. Data source: UNH Academic Catalog 2025-2026"
+          },
+          {
+            "name": "Veterinary Technology",
+            "degree_type": "A.A.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "VTEC 100 Introduction to Veterinary Technology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "VTEC 101 Veterinary Anatomy and Physiology"
+            ],
+            "special_requirements": "Competitive admission to the program.",
+            "admissions_pathway": "Direct Admit with competitive admission",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "VTEC 100 Introduction to Veterinary Technology",
+                "VTEC 101 Veterinary Anatomy and Physiology",
+                "VTEC 102 Veterinary Clinical Pathology",
+                "VTEC 103 Veterinary Pharmacology",
+                "VTEC 104 Veterinary Surgical Nursing",
+                "VTEC 105 Veterinary Radiology"
+              ],
+              "electives": [
+                "VTEC 106 Large Animal Technology",
+                "VTEC 107 Exotic Animal Technology"
+              ],
+              "total_units": 60,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "This is an Associate in Applied Science degree with competitive admission. Data source: UNH Academic Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "School of Marine Science and Ocean Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Certificate",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Justice Studies Minor",
+      "Project Management Certificate",
+      "Digital Marketing Certificate",
+      "Coastal Policy Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Students applying under Early Action receive an admission decision prior to the end of January and have until May 1 to enroll."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Applicants under Regular Decision receive an admission decision prior to the end of March."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "No supplemental essays or writing prompts are required beyond the essay submitted as part of the Common Application."
+      },
+      {
+        "target_program": "Music (Undergraduate Major)",
+        "requirement_type": "Audition",
+        "deadline": "March 1, 2026 (for Fall 2026 admittance); November 8, 2025 (recommended for Early Action applicants)",
+        "details": "An audition is required for all undergraduate music majors. This includes a written theory diagnostic test covering intervals, triads, and major and minor scales, and a performance on your major instrument. Instrumentalists should prepare two contrasting pieces or etudes and demonstrate scale proficiency. Vocalists should sing one English Art Song and one Italian selection (preferably from the '24 Italian Songs & Arias' anthology), both memorized, and be prepared for sight-reading. Jazz Guitarists must submit a pre-audition MP3 recording before a live audition is scheduled (deadline for submission: February 2, 2024 for 2024-2025, check for current year updates)."
+      },
+      {
+        "target_program": "Music (Composition Option - B.A. or B.M.)",
+        "requirement_type": "Portfolio",
+        "deadline": "March 1, 2026",
+        "details": "Students pursuing a Composition option must submit a music portfolio containing scores of at least three varied works for different groups of instruments or voices, in addition to an audition on their major instrument."
+      },
+      {
+        "target_program": "Studio Art (B.A. in Studio Art or B.A. in Studio Art/Art Education)",
+        "requirement_type": "Portfolio",
+        "deadline": "February 1 (for incoming freshmen); November 15 (for spring semester transfer students); April 1 (for fall semester transfer students)",
+        "details": "A portfolio is required for all prospective new students, including external transfers, wishing to pursue a B.A. in Studio Art or B.A. in Studio Art/Art Education. The portfolio should reflect your strongest work, include 10 to 12 samples of your best work, with at least four to five pieces being drawings from direct observation. Portfolio images should be sent as individual JPEG attachments (1-2MB each, max 24MB total) in one email to art-arthistory@unh.edu. The body of the email should include required information."
+      },
+      {
+        "target_program": "Theatre & Dance (Musical Theatre Option, Acting & Directing Option, etc.)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "An initial video audition is required. Callbacks will be done in person. Specific requirements vary by option: for non-musicals, one 60-90 second dramatic monologue and one 60-90 second comedic monologue. For musicals, specific song cutting requirements (e.g., 16-32 bar cut in the style of the show) and a monologue are needed. Auditions are submitted via Acceptd."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic Grade Point Average (GPA)",
+        "Application Essay",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Strong emphasis on high school academic performance, including rigor of coursework and GPA, as indicators of college-level success."
+    },
+    "essay_prompts": []
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider applying to a less competitive major if your top choice is highly selective. Some programs at UNH are designated as 'competitive majors,' including health sciences, kinesiology, occupational therapy, nursing, and certain majors within the Paul College of Business and Economics. These may have limited capacity or specific prerequisites. Applying to a less competitive major, if you're not fully set on a highly competitive field, might increase your chances of admission to the university, with the possibility to explore other interests later.",
+      "Apply as undeclared to explore options. A significant portion of first-year students (around 28%) enter UNH as undeclared. Students have until the second semester of their sophomore year to officially declare a major, providing ample time to take various courses and explore different fields before committing. UNH offers resources like academic advisors and a dedicated seminar (COLA 401) to assist undeclared students in finding their path.",
+      "If you have a general interest area, consider being undeclared within a specific college. For instance, if you are interested in health-related fields but unsure of a specific major, you can apply undeclared within the College of Health and Human Services. This allows you to explore the majors and career pathways available within that broader area with tailored advising and programs.",
+      "Research major-specific admission requirements and consider early action for competitive programs. For competitive majors, applying early action can provide priority consideration. It's crucial to investigate if your desired major has additional application requirements, such as portfolios or auditions, and to prepare accordingly.",
+      "Be aware that some majors have lower acceptance rates. While the overall acceptance rate for UNH is 87%, individual program acceptance rates can vary, particularly for competitive fields. Understanding which majors are more difficult to get into can help you strategize your application and prepare for the academic rigor expected in those programs."
+    ],
+    "college_ranking_tactics": [
+      "Highlight specific top-ranked majors and programs within the university's colleges (e.g., Biological & Biomedical Sciences, Psychology, Environmental Science, Business).",
+      "Emphasize overall 'Best Value' public university status and improved national university rankings, which reflect student success metrics like graduation rates and faculty research.",
+      "Showcase strong faculty-student relationships, hands-on learning, and research opportunities available within specific colleges and programs.",
+      "Promote academic flexibility, such as the option to start undeclared and the availability of robust advising services, to help students navigate program choices.",
+      "Detail specific admission requirements and coursework expectations for competitive majors within different colleges to guide prospective students."
+    ],
+    "alternate_major_strategy": "advice_on_selecting_backup_alternate_majors: [\"Consider a related, less competitive major: If your first-choice major is highly competitive, research other majors within the same college or a related field that might have less stringent initial admission requirements. For example, if you're interested in a competitive health-related field within the College of Health and Human Services (CHHS) but aren't initially admitted, you might enter CHHS as an undeclared student. Professional academic counselors are available to help these students explore health sciences opportunities and determine appropriate major courses.\", \"Embrace an 'Undeclared' status: UNH recognizes that many students are undecided when they apply, with about 28% of incoming first-year students being undeclared. The university encourages this thoughtful approach, offering resources like the COLA 401 class, which helps students explore major, career, and internship options, and regular meetings with academic advisors to build an academic plan. This can be a strategic backup, allowing you to fulfill general education requirements while preparing for an internal transfer to your preferred major.\", 'Contact Admissions for guidance: If you know you want to change your major even before the fall semester begins, you can contact the UNH Admissions Office to discuss your options.']; internal_transfer_difficulty_for_competitive_majors: {'competitive_enrollment_restrictions': 'Some majors have competitive enrollment restrictions for incoming first-year students.', 'prerequisites_and_gpa': 'To internally transfer into a competitive major, students typically need to fulfill specific coursework and achieve a particular cumulative GPA. For example: Health Sciences (BS): Requires successful completion of Biomedical Science (BMS) 507 and 508, a cumulative GPA of 3.00 or higher, and a letter of interest. Applications are accepted during the spring semester with an April 15th deadline. Nursing: A cumulative GPA of 3.2 or higher is strongly recommended, along with the completion or current enrollment in Biomedical Science 507, Biomedical Science 508, Psychology 401, and English 401. The application also requires grade reports and an essay, and an interview may be necessary. Other CHHS majors like Communication Sciences & Disorders, Exercise Science, and Health Management & Policy also have specific GPA and course requirements for transfer.', 'limited_space': 'Admission to these competitive programs as an internal transfer is competitive and can be very limited. Students interested in competitive BS degree programs, such as those in Health Sciences, should consult with the appropriate Department program coordinator for specific admissions information.'}"
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 15908.0,
+        "total_coa": 39554.0,
+        "housing": 9346.0
+      },
+      "out_of_state": {
+        "tuition": 37070.0,
+        "total_coa": 60966.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 16113.0,
+    "average_merit_aid": 12400.0,
+    "percent_receiving_aid": 88.0,
+    "meets_full_need": false,
+    "notes": "University of New Hampshire is Need-Aware. The average need-based aid package includes $9,556 in grants/scholarships and $6,557 in loans. The Granite Guarantee provides free tuition for Pell-eligible New Hampshire residents, but it does not cover all costs (fees, housing, food, or books). There is no explicit 'no loans for families under $75K' policy mentioned in the search results.",
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Varies (range of $5,000 to $20,000/year mentioned for a related scholarship)",
+        "deadline": "Automatic consideration by priority deadline",
+        "benefits": "Awarded based on academic achievement, rigor of courses, leadership, extracurricular engagement, and community involvement.",
+        "application_method": "Automatic Consideration (upon application for admission)"
+      },
+      {
+        "name": "Hamel Scholarship",
+        "type": "Merit",
+        "amount": "Substantial financial support yearly",
+        "deadline": "Recommended by November 15 (Early Action) for first-year applicants",
+        "benefits": "Special opportunities for academic and co-curricular engagement; helps develop leadership skills. Primarily for exceptional New Hampshire students.",
+        "application_method": "Automatic Consideration for first-year NH applicants applying Early Action; some awarded to rising Juniors"
+      },
+      {
+        "name": "CEPS Industry Scholarship",
+        "type": "Merit",
+        "amount": "Covers a significant portion of tuition, fees, room & board for four years",
+        "deadline": "November 15 (Early Action)",
+        "benefits": "Significant financial support for students in the College of Engineering and Physical Science (CEPS).",
+        "application_method": "Automatic Consideration for first-year CEPS applicants applying Early Action"
+      },
+      {
+        "name": "Global Excellence Scholarship",
+        "type": "Merit (International)",
+        "amount": "Up to $10,000 per year",
+        "deadline": "Automatic consideration",
+        "benefits": "Aids international students in making their education more affordable.",
+        "application_method": "Automatic Consideration (upon application for admission)"
+      },
+      {
+        "name": "International Engagement and Service Scholarship (IESS)",
+        "type": "Merit/Need (International)",
+        "amount": "Varies (partial awards)",
+        "deadline": "Late February or early March (by invitation)",
+        "benefits": "Financial support, academic resources, and a welcoming environment for cross-cultural exchange.",
+        "application_method": "Separate application (by invitation to admitted students who received a merit scholarship or continuing students with GPA of 3.1+)"
+      },
+      {
+        "name": "UNH Alumni Association Legacy Scholarship",
+        "type": "Merit",
+        "amount": "$3,000 over 4 years",
+        "deadline": "Varies (application for review even if final decision not made)",
+        "benefits": "Renewable for four years with a 3.2 GPA; recognizes strong leadership, academic record, and extracurricular interests. Awarded to a direct descendant of a UNH alumnus/a.",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Honors College Annual Scholarships",
+        "type": "Merit/Need (Departmental)",
+        "amount": "Varies",
+        "deadline": "Spring semester (for eligible continuing students)",
+        "benefits": "Additional awards for qualifying Honors students, based on academic achievement, contributions to UNH and Honors College, financial need, and/or donor-specified factors.",
+        "application_method": "Separate Application (eligible Honors College students in their second year or later are invited to apply)"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_new_hampshire_logo.png"
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "A score of 3 or higher grants credit for many exams, but some exams, particularly in subjects like Calculus, Computer Science, and certain Physics, often require a score of 4 or 5.",
+      "exceptions": [
+        "AP Computer Science A and Computer Science Principles credit may not count toward the Computer Science or Engineering major.",
+        "For Physics, credit can be granted for either the Physics 1 & 2 exams or the Physics C exams, but not both.",
+        "Students taking both Calculus AB and BC exams will not receive duplicate credit for Math 425.",
+        "Statistics credit may be used to satisfy the 'Quantitative Reasoning' requirement unless it is a required course for a student's major.",
+        "AP Research and AP Seminar typically award elective credit for a score of 3 or higher."
+      ],
+      "usage": "AP credits can be used for advanced placement in courses, to fulfill some major or minor program requirements, and to satisfy the University's Discovery Program (General Education) requirements, or as general elective credit. Students should review their degree audit to confirm how transfer credit has been applied."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 5, 6, or 7 grant 8 credits each, except for Higher Level Art/Design, film, and Business/Management. Standard Level exams do not receive credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "NH Transfer",
+        "UNH Transfer Credit Database",
+        "Transfer Evaluation System (TES)"
+      ],
+      "restrictions": "Maximum of 96 transfer credits toward a bachelor's degree, with a limit of 72 credits from associate-level work toward a bachelor's degree (exceptions apply for CPS-Manchester and Thompson School of Applied Science students). A minimum grade of C- or higher is required for courses to be considered for transfer credit, and credits must be from a regionally accredited institution. Transfer credits do not calculate into the UNH GPA. For the College of Professional Studies, bachelor's degree programs accept a maximum of 90 credits and associate degree programs accept a maximum of 44 credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Meaningful extracurricular activities and community involvement",
+      "Strong recommendations",
+      "Demonstrated fit and genuine interest"
+    ],
+    "common_activities": [
+      "Leadership in school clubs",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Music/arts involvement (e.g., Theatre)",
+      "Academic clubs/Honor societies"
+    ],
+    "essay_tips": [
+      "Be specific about why UNH and your chosen major Your essay should clearly articulate *why* you've chosen a particular major and *why* you want to study it specifically at the University of New Hampshire. This means doing your research and mentioning specific programs, courses, or resources that align with your interests, demonstrating that this essay could *only* be about you and *only* about UNH.",
+      "Show, don't tell, through storytelling Instead of simply stating your qualities or interests, use concrete examples and narratives to illustrate them. Craft your essay as a story with a beginning, middle and end, taking the reader on a journey and allowing them to see your passions in action through specific scenes and details.",
+      "Tell *your* unique story Focus on what makes you stand out and share something about yourself, your life, or your story that isn't evident in other parts of your application. The best essays tell a normal story in a special way that reflects your growth and perspective.",
+      "Connect your interests to specific resources at the school Actively research UNH and identify specific aspects—whether it's a particular club, research opportunity, professor, or unique program—that genuinely excite you. Then, connect your personal interests and aspirations to these specific offerings, showing that you've thought deeply about how you would thrive and contribute to the UNH community."
+    ],
+    "red_flags": [
+      "Grade decline senior year or a low cumulative GPA, especially below 2.8 or 3.0 for competitive majors like business and science.",
+      "Generic essays that do not tell your unique story, convey your personality, or explain any circumstances that might have impacted academic performance.",
+      "Listing extracurricular activities without demonstrating depth, impact, or how you will contribute to the UNH community.",
+      "Poor letters of recommendation from individuals who do not know you well enough to advocate for your strengths, weaknesses, and potential for success.",
+      "Not demonstrating continued academic challenge and leadership during your senior year."
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "UNH is a moderately selective institution with an acceptance rate typically in the high 80s (around 87-88%)."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "UNH offers extensive undergraduate research opportunities, even for first-year students, and is particularly strong in environmental and marine sciences."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "The University of New Hampshire has consistently been recognized as a 'Best Value Public University in New England', with a high percentage of first-year students receiving financial assistance."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "UNH emphasizes a vibrant campus life with over 200 student clubs and organizations, fostering a strong sense of community despite its rural location."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 66479,
+    "median_earnings_6yr": 42200,
+    "notes": "Median earnings 10 years after enrollment are $66,479. Median earnings 6 years after enrollment are $42,200. The employment rate 2 years after graduation could not be found in the provided search results from the College Scorecard or other direct sources. First destination survey data indicates employment rates immediately after graduation, such as 77% for the Class of 2022.",
+    "top_employers": [
+      "Fidelity Investments",
+      "Liberty Mutual Insurance",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "Deloitte",
+      "KPMG",
+      "Underwood Engineers, Inc.",
+      "Portsmouth Naval Shipyard",
+      "Lonza",
+      "Elliot Hospital"
+    ],
+    "grad_school_rate": 17.0,
+    "loan_default_rate": 2.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86.0,
+    "graduation_rate_4_year": 69.0,
+    "graduation_rate_6_year": 74.0
+  }
 }

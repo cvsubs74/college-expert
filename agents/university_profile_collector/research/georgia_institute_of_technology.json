@@ -1065,7 +1065,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay required for the 2025-2026 admissions cycle: 'Why do you want to study your chosen major, and why do you want to study that major at Georgia Tech?' (300 words maximum)."
       }
     ],
@@ -1251,11 +1251,31 @@
       "A significant decline in grades during senior year, as a strong academic performance is a foundational requirement"
     ],
     "insights": [
-      "Georgia Tech emphasizes a rigorous academic environment with a strong focus on STEM fields, particularly engineering and computer science.",
-      "Admissions is highly selective, with an acceptance rate around 16% and admitted students often having high SAT/ACT scores (1330-1530 SAT, 28-34 ACT) and GPAs (average 3.99 on a 4.0 scale).",
-      "The institution employs holistic review, considering a wide variety of factors beyond just scores and GPA, including a student's context and contributions to their community.",
-      "Opportunities for hands-on learning, research, internships, and co-ops are abundant and highly valued, preparing students for the job market.",
-      "Majors, especially high-demand ones like Computer Science, can be competitive, and applying to under-subscribed majors might, in some cases, be perceived as easier, though admissions claims not to admit by major."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Georgia Tech emphasizes a rigorous academic environment with a strong focus on STEM fields, particularly engineering and computer science."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admissions is highly selective, with an acceptance rate around 16% and admitted students often having high SAT/ACT scores (1330-1530 SAT, 28-34 ACT) and GPAs (average 3.99 on a 4.0 scale)."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The institution employs holistic review, considering a wide variety of factors beyond just scores and GPA, including a student's context and contributions to their community."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Opportunities for hands-on learning, research, internships, and co-ops are abundant and highly valued, preparing students for the job market."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Majors, especially high-demand ones like Computer Science, can be competitive, and applying to under-subscribed majors might, in some cases, be perceived as easier, though admissions claims not to admit by major."
+      }
     ]
   },
   "outcomes": {

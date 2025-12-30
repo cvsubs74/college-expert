@@ -46,7 +46,7 @@
       "admits_class_size": 6629,
       "is_test_optional": true,
       "test_policy_details": "Test Blind",
-      "early_admission_stats": null
+      "early_admission_stats": []
     },
     "longitudinal_trends": [
       {
@@ -776,7 +776,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "No supplemental essays or personal statements are required for general undergraduate admission."
       },
       {
@@ -961,7 +961,7 @@
       "Focus on the Weber Honors College essay if applying (typically a 500-word limit)",
       "Clearly articulate how your background prepares you for the rigor of your specific major",
       "Use the 'Special Consideration' section to detail any life obstacles or hardships overcome",
-      "Avoid clich\u00e9s about San Diego\u2019s weather or beach culture; focus on academic and career goals"
+      "Avoid clichés about San Diego’s weather or beach culture; focus on academic and career goals"
     ],
     "red_flags": [
       "Significant grade decline during senior year (admissions are frequently rescinded for D or F grades)",
@@ -970,10 +970,26 @@
       "Failing to meet the strict November 30th application deadline"
     ],
     "insights": [
-      "SDSU is currently test-blind for admissions, meaning SAT/ACT scores are not used for the entry decision",
-      "Out-of-state students often see slightly higher acceptance rates as the university looks to diversify",
-      "Student reviews emphasize that while it's a 'party school,' the academic workload in upper-division courses is intense",
-      "Campus housing is extremely limited, so applying for the housing license early is critical after admission"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "SDSU is currently test-blind for admissions, meaning SAT/ACT scores are not used for the entry decision"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Out-of-state students often see slightly higher acceptance rates as the university looks to diversify"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Student reviews emphasize that while it's a 'party school,' the academic workload in upper-division courses is intense"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Campus housing is extremely limited, so applying for the housing license early is critical after admission"
+      }
     ]
   },
   "outcomes": {

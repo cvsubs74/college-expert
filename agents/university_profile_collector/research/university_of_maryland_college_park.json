@@ -1304,7 +1304,7 @@
       {
         "target_program": "All Undergraduate",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Six required 'complete this sentence' prompts (650 characters each). One prompt focuses on diversity. The personal statement is the Common App essay."
       }
     ],
@@ -1492,11 +1492,31 @@
       "Not carefully reading and adhering to all application instructions and requirements"
     ],
     "insights": [
-      "UMD utilizes a holistic review process, looking beyond just GPA and test scores",
-      "The university is becoming increasingly selective, particularly for competitive programs like Computer Science",
-      "Strong academics, especially in challenging subjects, are highly valued",
-      "Demonstrated interest does not strongly impact admissions decisions at UMD College Park",
-      "Applying Early Action can provide a slight edge due to showing eagerness to attend"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UMD utilizes a holistic review process, looking beyond just GPA and test scores"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university is becoming increasingly selective, particularly for competitive programs like Computer Science"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Strong academics, especially in challenging subjects, are highly valued"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest does not strongly impact admissions decisions at UMD College Park"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action can provide a slight edge due to showing eagerness to attend"
+      }
     ]
   },
   "outcomes": {

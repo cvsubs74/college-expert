@@ -786,13 +786,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: one 'Why Us' essay (200 words) and one choice from four community/cultural awareness/service prompts (150 words)."
       },
       {
         "target_program": "Music Performance Track",
         "requirement_type": "Supplemental Recording",
-        "deadline": null,
+        "deadline": "",
         "details": "Students interested in the Performance Track may be invited to submit supplemental recordings after submitting their application for admission. These recordings are not required for regular admission. Auditions are required for Music Merit Scholarship consideration."
       }
     ],
@@ -984,11 +984,31 @@
       "Over-committing to too many advanced courses or activities that lead to poor performance."
     ],
     "insights": [
-      "Emory uses a holistic review process, considering your overall profile beyond just scores and GPA.",
-      "Applying Early Decision (ED) can increase your chances of acceptance, especially if finances are not a primary concern.",
-      "Emory meets 100% of demonstrated financial need for accepted domestic students.",
-      "Professors are generally accessible and supportive, invested in student success and career preparation.",
-      "Admission to Emory University does not typically accept applicants based on their major; specific programs like nursing or business require application after completing prerequisites."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Emory uses a holistic review process, considering your overall profile beyond just scores and GPA."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED) can increase your chances of acceptance, especially if finances are not a primary concern."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Emory meets 100% of demonstrated financial need for accepted domestic students."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Professors are generally accessible and supportive, invested in student success and career preparation."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admission to Emory University does not typically accept applicants based on their major; specific programs like nursing or business require application after completing prerequisites."
+      }
     ]
   },
   "outcomes": {

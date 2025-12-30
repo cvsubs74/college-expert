@@ -772,13 +772,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: 1) How you are prepared to contribute to U-M's goals of developing leaders and citizens (100-300 words). 2) Describe unique qualities attracting you to a specific undergraduate college/school and how the curriculum supports your interests (100-550 words)."
       },
       {
         "target_program": "Ross School of Business",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Additional 'Business Case Discussion' essay (approx. 500 words) for applicants to the Ross School of Business."
       },
       {
@@ -974,11 +974,31 @@
       "Sending too many recommendation letters; only one is generally needed and additional ones do not increase competitiveness."
     ],
     "insights": [
-      "University of Michigan admissions are highly selective with an acceptance rate around 18-20%.",
-      "The university values students who will contribute to its diverse and vibrant community, not just academically but also as leaders and citizens.",
-      "Demonstrating genuine interest in Michigan and specific programs is crucial.",
-      "Early Action (non-binding) can provide an earlier decision and often has a higher acceptance rate than Regular Action.",
-      "For in-state students, UMich practices need-blind admissions and meets 100% demonstrated need, but ability to pay is factored for out-of-state applicants."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "University of Michigan admissions are highly selective with an acceptance rate around 18-20%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university values students who will contribute to its diverse and vibrant community, not just academically but also as leaders and citizens."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrating genuine interest in Michigan and specific programs is crucial."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Early Action (non-binding) can provide an earlier decision and often has a higher acceptance rate than Regular Action."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For in-state students, UMich practices need-blind admissions and meets 100% demonstrated need, but ability to pay is factored for out-of-state applicants."
+      }
     ]
   },
   "outcomes": {

@@ -1,131 +1,103 @@
 {
-  "university_profile": {
-    "_id": "saint_louis_university",
-    "university_name": "Saint Louis University",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.slu.edu",
-      "https://www.ksdk.com/article/news/education/us-news-best-colleges-list-st-louis-area-schools-rank/63-903918a2-f81d-4078-a477-9b2f65b4c489",
-      "https://www.collegetuitioncompare.com/trends/saint-louis-university/admission/",
-      "https://www.upgrad.com/study-abroad/saint-louis-university-rankings-1364/"
-    ],
-    "metadata": {
-      "official_name": "Saint Louis University",
-      "location": {
-        "city": "St. Louis",
-        "state": "MO",
-        "type": "Private"
+  "_id": "saint_louis_university",
+  "metadata": {
+    "official_name": "Saint Louis University",
+    "location": {
+      "city": "St. Louis",
+      "state": "Missouri",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "St. Louis University is a private Jesuit research university known for its health sciences, business, and liberal arts programs, fostering a commitment to service and social justice.",
+    "market_position": "Mid-tier research university with strong regional presence.",
+    "admissions_philosophy": "Holistic review emphasizing academic rigor, extracurricular involvement, and alignment with Jesuit values of service and community.",
+    "us_news_rank": 105,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong potential for growth in specialized research areas.",
+        "category": "general"
       },
-      "us_news_rank": 102
-    },
-    "strategic_profile": {
-      "executive_summary": "Saint Louis University (SLU) is a preeminent private Jesuit research institution recognized for its holistic 'Cura Personalis' approach to education and its recent elevation to R1 research status. It serves as a central hub for healthcare, law, and geospatial innovation in the Midtown St. Louis district.",
-      "market_position": "Elite Private Jesuit",
-      "admissions_philosophy": "Holistic review",
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The acceptance rate tightened significantly from 85% in 2023 to approximately 75% for the 2025 cycle.",
-          "implication": "Increasing selectivity suggests a move toward higher academic thresholds; applicants should leverage the test-optional policy strategically while highlighting service-oriented extracurriculars."
-        },
-        {
-          "category": "Institutional Growth",
-          "insight": "SLU achieved the elite R1 Research Institution designation in early 2025.",
-          "implication": "Expect a surge in federal grant funding and corporate partnerships, particularly in STEM and health sciences, enhancing the value of undergraduate research degrees."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Social life is characterized by a high level of civic engagement and service, with over 200 student groups and a spirited athletic culture centered on Billiken D1 basketball.",
-        "transportation_impact": "As an urban campus, SLU integrates heavily with the city via the Metro (free passes provided) and a dedicated shuttle system (SLU Ride), which is vital for safe transit between the Midtown campus and local professional hubs.",
-        "research_impact": "Research is a primary economic driver, with strong industry ties to the Cortex Innovation Community and the National Geospatial-Intelligence Agency (NGA), offering students unique pipelines into high-tech and federal careers."
+      {
+        "takeaway": "Brand reputation benefits from Jesuit affiliation and urban location.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Admission selectivity is moderate, allowing for diverse student body.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunities to enhance alumni engagement for fundraising initiatives.",
+        "category": "general"
       }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 75.0,
-      "in_state_acceptance_rate": null,
-      "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": null,
-      "transfer_acceptance_rate": null,
-      "admits_class_size": 11656,
+    ],
+    "campus_dynamics": {
+      "social_environment": "Active campus life with numerous student organizations, strong community service focus, and blend of traditional and urban experiences.",
+      "transportation_impact": "Located in an urban setting, good public transit access, but parking can be a challenge. Walkable campus core.",
+      "research_impact": "Significant contributions in health sciences (especially medicine and public health), aerospace engineering, and environmental research. Growing interdisciplinary initiatives."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 75.04,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": [
-        {
-          "plan_type": "EA",
-          "applications": null,
-          "admits": null,
-          "acceptance_rate": null,
-          "class_fill_percentage": null
-        },
-        {
-          "plan_type": "ED",
-          "applications": null,
-          "admits": null,
-          "acceptance_rate": null,
-          "class_fill_percentage": null
-        },
-        {
-          "plan_type": "ED2",
-          "applications": null,
-          "admits": null,
-          "acceptance_rate": null,
-          "class_fill_percentage": null
-        }
-      ]
+      "test_policy_details": "Saint Louis University has a standardized-test-optional undergraduate admission process. This means applicants can choose whether or not to submit ACT/SAT scores as part of their application for admission. Test scores are not required for admission or scholarships, and students who do not submit scores will not be disadvantaged. If students choose to submit test scores, SLU does not accept superscores; applicants should send their composite score and all subscores from each completed test. International students are still required to demonstrate English proficiency, which may necessitate the submission of a test score.",
+      "admits_class_size": 11656,
+      "transfer_acceptance_rate": null,
+      "early_admission_stats": []
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
-        "applications_total": 15533,
-        "admits_total": 11651,
-        "enrolled_total": 2307,
-        "acceptance_rate_overall": 75.0,
-        "yield_rate": 19.8,
-        "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Data based on 2024-25 reporting. Waitlist data not publicly disclosed or utilized for this cycle."
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Official, comprehensive admissions data (applications, admits, enrolled) for the Class of 2029 (entering Fall 2025) is not yet publicly released by Saint Louis University. General acceptance rates for '2025' or '2025-2026 admissions cycle' found in some sources often refer to prior academic years or are projections rather than final, specific figures for this graduating class year."
       },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
-        "applications_total": 15377,
-        "admits_total": 12527,
-        "enrolled_total": 1775,
-        "acceptance_rate_overall": 81.5,
-        "yield_rate": 14.2,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Waitlist activity reported as zero for the undergraduate population."
+        "applications_total": 15533,
+        "admits_total": 11656,
+        "enrolled_total": 1615,
+        "acceptance_rate_overall": 75.04,
+        "yield_rate": 13.86,
+        "notes": "Data for the 2024-25 academic year, corresponding to the class entering Fall 2024."
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
+        "applications_total": 15377,
+        "admits_total": 12527,
+        "enrolled_total": 1775,
+        "acceptance_rate_overall": 81.47,
+        "yield_rate": 14.17,
+        "notes": "Data for the 2023-24 academic year, corresponding to the class entering Fall 2023."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
         "applications_total": 12986,
         "admits_total": 11001,
-        "enrolled_total": 1665,
-        "acceptance_rate_overall": 84.7,
-        "yield_rate": 15.1,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        }
+        "enrolled_total": 1658,
+        "acceptance_rate_overall": 84.71,
+        "yield_rate": 15.07,
+        "notes": "Data for the class entering Fall 2022. The enrolled figure specifically refers to the first-time, full-time freshman class."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 13874,
+        "admits_total": 9737,
+        "enrolled_total": 1650,
+        "acceptance_rate_overall": 70.19,
+        "yield_rate": 16.95,
+        "notes": "Data from the 2021-2022 Common Data Set for the class entering Fall 2021."
       }
     ],
     "admitted_student_profile": {
@@ -135,527 +107,1540 @@
         "average_weighted": 3.95,
         "percentile_25": "3.80",
         "percentile_75": "4.00",
-        "notes": "Admission is based on a holistic review of academic rigor, including AP/IB performance and college prep coursework."
+        "notes": "St. Louis University has a holistic admissions process. The weighted GPA average for admitted students is 3.95, and the unweighted average is 3.9. Most incoming freshmen graduate in the top quarter of their high school class."
       },
       "testing": {
-        "sat_composite_middle_50": "1210-1430",
-        "sat_reading_middle_50": "580-690",
-        "sat_math_middle_50": "550-700",
-        "act_composite_middle_50": "26-31",
-        "submission_rate": 51.0,
-        "policy_note": "Test-optional for all undergraduate programs for the 2024-2025 cycle."
+        "sat_composite_middle_50": "1200-1410",
+        "sat_reading_middle_50": "600-700",
+        "sat_math_middle_50": "600-710",
+        "act_composite_middle_50": "25-31",
+        "submission_rate": 60.0,
+        "policy_note": "Test-optional. Superscore not accepted. Self-reporting allowed."
       },
       "demographics": {
-        "first_gen_percentage": 18.0,
-        "legacy_percentage": 25.0,
-        "international_percentage": 3.5,
+        "first_gen_percentage": 24.0,
+        "legacy_percentage": null,
+        "notes": "First-generation percentage is based on the 2025 profile of first-year students. Legacy status is considered by St. Louis University, but a specific percentage of legacy students is not available in the provided search results.",
         "geographic_breakdown": [
           {
             "region": "Missouri",
             "percentage": 40.0
           },
           {
-            "region": "Out-of-State",
-            "percentage": 57.0
-          },
-          {
             "region": "International",
             "percentage": 3.0
+          },
+          {
+            "region": "Illinois",
+            "percentage": 2.59
+          },
+          {
+            "region": "Wisconsin",
+            "percentage": 0.4
+          },
+          {
+            "region": "Ohio",
+            "percentage": 0.25
+          },
+          {
+            "region": "Texas",
+            "percentage": 0.25
+          },
+          {
+            "region": "Nebraska",
+            "percentage": 0.17
           }
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 6675,
-            "admits": 5147,
-            "acceptance_rate": 77.1,
-            "note": ""
+            "applicants": 6945,
+            "admits": 5072,
+            "acceptance_rate": 73.03,
+            "note": "Data for academic year 2024-2025."
           },
           "women": {
-            "applicants": 8684,
-            "admits": 7373,
-            "acceptance_rate": 84.9,
-            "note": ""
+            "applicants": 8580,
+            "admits": 6579,
+            "acceptance_rate": 76.68,
+            "note": "Data for academic year 2024-2025."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 56.2,
-          "black_african_american": 11.7,
-          "hispanic_latino": 9.4,
-          "asian": 15.3,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 5.6,
-          "unknown": 1.5,
-          "non_resident_alien": 3.5
-        },
-        "religious_affiliation": {
-          "roman_catholic": 42.0,
-          "protestant": 21.0,
-          "other_none": 37.0
+          "white": 53.44,
+          "black_african_american": 6.96,
+          "hispanic_latino": 6.18,
+          "asian": 9.14,
+          "native_american_alaskan": 0.13,
+          "pacific_islander": 0.02,
+          "two_or_more_races": 3.91,
+          "unknown": 1.82,
+          "non_resident_alien": 18.4
         }
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges and Schools",
-      "colleges": [
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Direct Entry",
-          "acceptance_rate_estimate": 81.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Highlight a commitment to Jesuit values like 'Cura Personalis' and engage in social justice.",
-          "housing_profile": "Fusz Hall or Griesedieck Complex; Micah and Thrive learning communities.",
-          "student_archetype": "The Socially-Conscious Scholar",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.8,
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "BIOL 1240 General Biology I",
-                "CHEM 2410 Organic Chemistry"
+    }
+  },
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 1500 General Biology I (3 cr)",
+                "BIOL 1510 General Biology I Laboratory (1 cr)",
+                "BIOL 1600 General Biology II (3 cr)",
+                "BIOL 1610 General Biology II Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)",
+                "CHEM 1120 General Chemistry II (3 cr)",
+                "CHEM 1125 General Chemistry II Laboratory (1 cr)",
+                "MATH 1200 Precalculus (3 cr) OR higher",
+                "PHYS 1310 College Physics I (3 cr) OR PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1330 College Physics I Laboratory (1 cr) OR PHYS 1630 University Physics I Laboratory (1 cr)",
+                "BIOL 3000 level or above courses (25 credits, including one structured laboratory course, excluding BIOL 3970, 4970, 4980)"
               ],
-              "admissions_pathway": "Direct Admit",
-              "notes": "Primary pre-med major at SLU."
+              "electives": [
+                "BIOL 3060-BIOL 4980 upper division elective courses (minimum 10 credits)"
+              ],
+              "total_units": 120,
+              "major_units": 48
             },
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0,
-              "admissions_pathway": "Direct Admit"
+            "notable_professors": [
+              "Ben England (Faculty Council Secretary, Biology)",
+              "Zhenguo Lin (Biology, Natural Sciences)",
+              "Ashley Milam (Biology, Natural Sciences)",
+              "Wenyan Xiao (Biology, Natural Sciences)"
+            ],
+            "notes": "Students must have a 2.00 GPA in all courses used to fulfill major requirements. Maximum of 3 credits of independent research (BIOL 3970, 4970, 4980) can be counted toward the B.A. degree. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 2410 Organic Chemistry 1",
+              "CHEM 2415 Organic Chemistry 1 Laboratory"
+            ],
+            "special_requirements": "Three structured upper-level Biology laboratory experiences as part of their concentration.",
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 1500 General Biology I (3 cr)",
+                "BIOL 1510 General Biology I Laboratory (1 cr)",
+                "BIOL 1600 General Biology II (3 cr)",
+                "BIOL 1610 General Biology II Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)",
+                "CHEM 1120 General Chemistry II (3 cr)",
+                "CHEM 1125 General Chemistry II Laboratory (1 cr)",
+                "CHEM 2410 Organic Chemistry 1 (3 cr)",
+                "CHEM 2415 Organic Chemistry 1 Laboratory (1 cr)",
+                "CHEM 2420 Organic Chemistry 2 (3 cr)",
+                "CHEM 2425 Organic Chemistry 2 Laboratory (1 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1630 University Physics I Laboratory (1 cr)",
+                "PHYS 1620 University Physics II (3 cr)",
+                "PHYS 1640 University Physics II Laboratory (1 cr)",
+                "BIOL 3000 level or above courses (35 credits, including three structured laboratory experiences, maximum 4 credits of independent research)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 74
             },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0,
-              "admissions_pathway": "Direct Admit"
-            }
-          ]
-        },
-        {
-          "name": "Richard A. Chaifetz School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Focus on ethics and leadership; demonstrate socially responsible entrepreneurship.",
-          "housing_profile": "Grand Hall; Ethical Leaders in Business Learning Community.",
-          "student_archetype": "The Ethical Entrepreneur",
-          "majors": [
-            {
-              "name": "Accounting",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.7,
-              "prerequisite_courses": [
-                "Algebra",
-                "Finite Math"
+            "notable_professors": [
+              "Ben England (Faculty Council Secretary, Biology)",
+              "Zhenguo Lin (Biology, Natural Sciences)",
+              "Ashley Milam (Biology, Natural Sciences)",
+              "Wenyan Xiao (Biology, Natural Sciences)"
+            ],
+            "notes": "Students must have a 2.00 GPA in all courses used to fulfill major requirements. Maximum of 4 credits of independent research (BIOL 3970, 4970, 4980) can be counted toward the B.S. degree. Accelerated programs to Chemical Biology M.S., Pharmacy Pharm.D., and Public Health M.P.H. are available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1500 Principles of Microeconomics (3 cr)",
+                "ECON 1510 Principles of Macroeconomics (3 cr)",
+                "ECON 2020 Statistics for Business and Economics (3 cr)",
+                "ECON 3010 Intermediate Microeconomic Theory (3 cr)",
+                "ECON 3020 Intermediate Macroeconomic Theory (3 cr)",
+                "ECON 3030 Introduction to Econometrics (3 cr)",
+                "ECON 4900 Senior Seminar in Economics (3 cr)"
               ],
-              "minimum_gpa_to_declare": 2.7,
-              "weeder_courses": [
-                "ACCT 2200",
-                "ACCT 3110"
+              "electives": [
+                "Economics electives (12 credits from 3000-level or above)"
               ],
-              "admissions_pathway": "Direct Admit",
-              "curriculum": {
-                "core_courses": [
-                  "ACCT 2200 Financial Accounting",
-                  "ACCT 2220 Accounting for Decision Making",
-                  "ACCT 3110 Financial Reporting I",
-                  "ACCT 4110 Financial Reporting II",
-                  "ACCT 3220 Cost Management",
-                  "ACCT 4400 Auditing"
-                ],
-                "electives": [
-                  "ACCT 4200 Accounting Data Analytics",
-                  "ACCT 4300 Federal Income Tax"
-                ],
-                "total_units": 120,
-                "major_units": 18
-              },
-              "notable_professors": [
-                "Dr. Scott Duellman",
-                "Dr. Jackson Nickerson",
-                "Dr. Palash Bera"
-              ],
-              "notes": "Highly ranked for CPA pass rates."
-            }
-          ]
-        },
-        {
-          "name": "Trudy Busch Valentine School of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive. Emphasize performance in high school biology, chemistry, and math.",
-          "housing_profile": "Reinert Hall; Life Sciences Learning Community.",
-          "student_archetype": "The Dedicated Caregiver",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "acceptance_rate": 70.0,
-              "average_gpa_admitted": 3.8,
-              "prerequisite_courses": [
-                "Biology with Lab",
-                "Chemistry with Lab",
-                "Algebra"
-              ],
-              "minimum_gpa_to_declare": 3.2,
-              "weeder_courses": [
-                "NURS 1430 Human Growth and Development",
-                "ANAT 1000 Basic Human Anatomy"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "curriculum": {
-                "core_courses": [
-                  "NURS 1400 Intro to Nursing",
-                  "NURS 1430 Human Growth",
-                  "NURS 2500 Health Assessment",
-                  "NURS 2510 Nursing Foundations",
-                  "NURS 3330 Pharmacotherapeutics",
-                  "NURS 3430 Psych Mental Health",
-                  "NURS 3440 Public Health",
-                  "NURS 4400 Synthesis"
-                ],
-                "electives": [
-                  "NURS 4500 Perioperative Nursing",
-                  "NURS 4300 Evidence-Based Practice",
-                  "NURS 4200 Health Policy"
-                ],
-                "total_units": 120,
-                "major_units": 65
-              },
-              "notable_professors": [
-                "Dr. Kristine L'Ecuyer",
-                "Dr. Devita Stallings",
-                "Dr. Karen Cuvar"
-              ],
-              "notes": "Extremely competitive for external transfers."
-            }
-          ]
-        },
-        {
-          "name": "School of Science and Engineering",
-          "admissions_model": "Direct Entry",
-          "acceptance_rate_estimate": 81.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Mention interest in SLU's federally-certified flight school or 'Engineering and Innovation' LC.",
-          "housing_profile": "Grand Hall; features a dedicated maker space.",
-          "student_archetype": "The Innovation Explorer",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.85,
-              "prerequisite_courses": [
-                "Pre-Calculus",
-                "Intro to Programming"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CSCI 2100 Data Structures",
-                "CSCI 2300 Object-Oriented Software Design"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "curriculum": {
-                "core_courses": [
-                  "CSCI 1300",
-                  "CSCI 2100",
-                  "CSCI 2300",
-                  "CSCI 2510",
-                  "CSCI 3100",
-                  "CSCI 3200",
-                  "CSCI 3300",
-                  "CSCI 4961"
-                ],
-                "electives": [
-                  "CSCI 4740 AI",
-                  "CSCI 4530 Security",
-                  "CSCI 4756 ML",
-                  "CSCI 3810 Game Programming"
-                ],
-                "total_units": 120,
-                "major_units": 76
-              },
-              "notable_professors": [
-                "Dr. Min Hyung Choi",
-                "Dr. Flavio Esposito",
-                "Dr. Abby Stylianou"
-              ]
+              "total_units": 120,
+              "major_units": 30
             },
-            {
-              "name": "Flight Science (Aeronautics)",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 65.0,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [
-                "Pre-Calculus",
-                "Physics"
+            "notable_professors": [],
+            "notes": "Students must have a 2.00 GPA in economics major coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1900 Literary Studies (3 cr)",
+                "ENGL 2900 Critical Methods (3 cr)",
+                "ENGL 3000 level or above Literature courses (12 credits)",
+                "ENGL 3000 level or above Writing/Rhetoric courses (9 credits)",
+                "ENGL 4900 Senior Seminar (3 cr)"
               ],
-              "minimum_gpa_to_declare": 2.7,
-              "weeder_courses": [
-                "FSCI 1150 Flight 1"
+              "electives": [
+                "English electives (9 credits)"
               ],
-              "special_requirements": "FAA Second Class Medical Certificate required.",
-              "admissions_pathway": "Direct Admit",
-              "curriculum": {
-                "core_courses": [
-                  "FSCI 1150",
-                  "FSCI 1250",
-                  "FSCI 1550",
-                  "FSCI 2150",
-                  "FSCI 2550",
-                  "FSCI 3150",
-                  "FSCI 3550",
-                  "ASCI 1700"
-                ],
-                "electives": [
-                  "ASCI 4200 Aviation Law",
-                  "ASCI 4450 Airport Management",
-                  "ASCI 4010 Safety"
-                ],
-                "total_units": 120,
-                "major_units": 60
-              },
-              "notable_professors": [
-                "Dr. Stephen Belt",
-                "Jack Schwarz",
-                "Dr. Luigi Raphael Dy"
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Students must maintain a 2.00 GPA in the major. Accelerated B.A. to M.A. in English and B.A. to J.D. programs are available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIST 1110 The European Experience I (3 cr)",
+                "HIST 1120 The European Experience II (3 cr)",
+                "HIST 1210 American History I (3 cr)",
+                "HIST 1220 American History II (3 cr)",
+                "HIST 3000-level or above electives (18 credits, including 3 credits in a non-Western field and a 3-credit capstone experience)"
               ],
-              "notes": "Only Jesuit aviation program in the U.S."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Service Leadership Minor",
-        "Data Science Minor",
-        "Forensic Science Minor",
-        "Geospatial Analysis Certificate",
-        "Social Justice Minor",
-        "Flight Science Minor",
-        "Entrepreneurship Minor",
-        "Medical Humanities Minor",
-        "Intercultural Communication Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "SLU Online Application",
-        "Coalition App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision I",
-          "date": "2024-11-01",
-          "is_binding": true,
-          "notes": "Binding; supporting documents by Nov. 30."
-        },
-        {
-          "plan_type": "Early Action",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Priority for Nursing, Flight Science, and PT/OT."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-04-01",
-          "is_binding": false,
-          "notes": "Rolling basis after preferred date."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "details": "Common App essay required; no SLU supplements."
-        },
-        {
-          "target_program": "Music",
-          "requirement_type": "Audition",
-          "deadline": "2025-03-01"
-        },
-        {
-          "target_program": "Honors & Scholars Programs",
-          "requirement_type": "Separate Application",
-          "deadline": "2025-01-05"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA"
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Mark Ruff (History)"
+            ],
+            "notes": "Students must earn a 2.00 GPA in History coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "One semester of study in St. Louis is required.",
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHIL 1900 Introduction to Philosophy (3 cr)",
+                "PHIL 2010 History of Ancient Philosophy (3 cr)",
+                "PHIL 2020 History of Medieval Philosophy (3 cr)",
+                "PHIL 2030 History of Modern Philosophy (3 cr)",
+                "PHIL 3100 Metaphysics (3 cr)",
+                "PHIL 3200 Ethics (3 cr)",
+                "PHIL 3000-level or above electives (12 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Scott Ragland (Faculty Council President, Philosophy)",
+              "Yun Lee (Philosophy)"
+            ],
+            "notes": "Students must have a 2.00 GPA in philosophy major coursework. Accelerated B.A. to J.D. program is available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "POLS 1000 Introduction to Political Science (3 cr)",
+                "POLS 1500 Introduction to American Politics (3 cr)",
+                "POLS 1600 Introduction to International Politics (3 cr)",
+                "POLS 2000 Research Methods in Political Science (3 cr)",
+                "POLS 3000-level or above electives (18-21 credits, including two 4000-level seminars)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 34
+            },
+            "notable_professors": [
+              "Chris Duncan (Faculty Council Vice President, Political Science)",
+              "Morgan Hazelton (Political Science, Social Sciences)",
+              "J. D. Bowen (Political Science)",
+              "Ellen Carnaghan (Political Science)",
+              "Ali Fisunoglu (Political Science)",
+              "Nori Katagiri (Political Science)",
+              "Matthew Nanes (Political Science)",
+              "Emmanuel Uwalaka (Political Science)",
+              "Robert Cropf (Political Science, Co-director Public & Social Policy)"
+            ],
+            "notes": "Students must complete 34-37 credits for the major. Minimum 2.00 GPA in all POLS courses. Two 4000-level seminar classes must be completed at Saint Louis University. Accelerated B.A. to J.D. and B.A. to M.A. programs are available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 2050 Foundations of Research Methods and Statistics"
+            ],
+            "special_requirements": "Capstone course must be taken from the student's home campus.",
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 1010 General Psychology (3 cr)",
+                "PSY 2050 Foundations of Research Methods and Statistics (4 cr)",
+                "PSY 3000 level electives (minimum 6 credits)",
+                "PSY 4000 level electives (minimum 6 credits)",
+                "Capstone Course (e.g., PSY 4969 Critical Thinking About Psychology) (3 cr)"
+              ],
+              "electives": [
+                "Psychology electives (minimum 12 credits, including 3 credits with 'Applications of Psych Science' attribute)"
+              ],
+              "total_units": 120,
+              "major_units": 34
+            },
+            "notable_professors": [
+              "Kimberly Powlishta (Psychology, Graduate Curriculum Chair)"
+            ],
+            "notes": "Students must earn a 2.00 GPA in psychology major coursework. PSY 2050 and a capstone course should preferably be taken from the student's home campus. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 2050 Foundations of Research Methods and Statistics",
+              "PSY 4060 Applications of Research Methods and Statistics"
+            ],
+            "special_requirements": "PSY 4060 and PSY 4960 must be taken from the student's home campus.",
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 1010 General Psychology (3 cr)",
+                "PSY 2050 Foundations of Research Methods and Statistics (4 cr)",
+                "PSY 4060 Applications of Research Methods and Statistics (4 cr)",
+                "PSY 4960 Advanced Research Methodology and Statistics (4 cr)",
+                "PSY 3000 level electives (minimum 9 credits)",
+                "PSY 4000 level electives (minimum 12 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Kimberly Powlishta (Psychology, Graduate Curriculum Chair)"
+            ],
+            "notes": "Students must earn a 2.00 GPA in psychology major coursework. This degree is designed to prepare students for graduate programs in psychology and pre-professional training in medicine, physical therapy, occupational therapy, social work, education, and law. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SOCI 1000 Introduction to Sociology (3 cr)",
+                "SOCI 2000 Social Research Methods (3 cr)",
+                "SOCI 3000 Social Theory (3 cr)",
+                "SOCI 3000-level or above electives (18 credits, with options for concentrations in Health and Medicine, Law, Crime and Deviance, or Urbanization, Immigration and Demography)",
+                "SOCI 4900 Senior Capstone (3 cr)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Amy Cooper (Sociology and Anthropology)",
+              "Scott Harris (Sociology and Anthropology, Social Sciences)",
+              "Hisako Matsuo (Public and Social Policy, Sociology)",
+              "Dan Monti (Public and Social Policy, Sociology)",
+              "Richard Colignon (Public and Social Policy, Sociology)",
+              "James Gilsinan (Public and Social Policy, Sociology)"
+            ],
+            "notes": "Students must complete a minimum of 30 credits for the major. A maximum of two anthropology courses may count toward the sociology major. Accelerated B.A. to M.S. and M.S. and Law, J.D. Dual Degree programs are available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COMM 1000 Introduction to Communication (3 cr)",
+                "COMM 2000 Communication Theory (3 cr)",
+                "COMM 2100 Research Methods in Communication (3 cr)",
+                "COMM 3000 level or above electives (18 credits)",
+                "COMM 4900 Senior Capstone in Communication (3 cr)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Charnell Peters (Communication, Social Sciences)"
+            ],
+            "notes": "Students must earn a 2.00 GPA in communication coursework. Accelerated B.A. to J.D. program is available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ANTH 1000 Introduction to Anthropology (3 cr)",
+                "ANTH 2000 Cultural Anthropology (3 cr)",
+                "ANTH 2010 Biological Anthropology (3 cr)",
+                "ANTH 3000 Archaeological Methods (3 cr)",
+                "ANTH 3000 level or above electives (15 credits, including 3 credits of ANTH 4900 Senior Seminar or equivalent)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Amy Cooper (Sociology and Anthropology)"
+            ],
+            "notes": "Students must earn a 2.00 GPA in anthropology coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          }
         ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Character",
-          "Recommendations",
-          "Talent"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Recommended",
-        "specific_differentiators": "Emphasis on Jesuit mission 'men and women for others,' service, and social justice."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to direct-entry programs (Nursing/Flight Science) early due to Dec 1st capacity caps.",
-        "Select 'Still Deciding' in Parks College if lacking Engineering math prerequisites.",
-        "Use 'Undeclared' Arts & Sciences path to maximize flexibility across 60+ disciplines."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize Honors Program for early registration.",
-        "Use Billiken Gateway for Medical Scholars interview track.",
-        "Madrid campus option for guaranteed international immersion."
-      ],
-      "alternate_major_strategy": "List an Arts & Sciences alternate (e.g., Biology) if applying to capped programs like Nursing."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 55760,
-          "total_coa": 77110,
-          "housing": 15280
-        },
-        "out_of_state": {
-          "tuition": 55760,
-          "total_coa": 77110,
-          "supplemental_tuition": 0
-        }
+        "housing_profile": "college_name: College of Arts and Sciences; housing_profile: First-year students typically reside in traditional residence halls such as Fusz Hall, Grand Hall, Griesedieck Complex (Clemens, Walsh, Griesedieck halls), Reinert Hall, and Spring Hall, which offer single, double, and suite-style rooms with varying bathroom configurations (communal, semi-private, private). Many of these halls provide common areas, study lounges, laundry facilities, and dining options. Upperclassmen can choose from apartment-style living in Grand Forest, Marchetti Towers, or Village Apartments, featuring private bedrooms, shared living/kitchen/laundry facilities. Students can also join Learning Communities focused on humanities or life sciences within designated residence halls.; student_archetype: Inquisitive and broadly-minded students interested in diverse fields from English to Biology and Physics, with a commitment to critical thinking and ethical engagement, aligned with SLU's Jesuit tradition of comprehensive education.; strategic_fit_advice: Ideal for students seeking a foundational liberal arts education, who are eager to explore various disciplines and develop strong analytical and communication skills before specializing, often with a bent towards social justice and community involvement."
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 35827,
-      "average_merit_aid": 25270,
-      "percent_receiving_aid": 99.0
+      {
+        "name": "Richard A. Chaifetz School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2200 Introduction to Financial Accounting",
+              "ACCT 2210 Introduction to Managerial Accounting",
+              "ECON 1500 Principles of Microeconomics",
+              "ECON 1510 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.7,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Business to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2200 Introduction to Financial Accounting (3 cr)",
+                "ACCT 2210 Introduction to Managerial Accounting (3 cr)",
+                "ACCT 3000 Intermediate Accounting I (3 cr)",
+                "ACCT 3010 Intermediate Accounting II (3 cr)",
+                "ACCT 3020 Cost Accounting (3 cr)",
+                "ACCT 3030 Income Tax I (3 cr)",
+                "ACCT 4000 Auditing (3 cr)",
+                "BLAW 3000 Legal Environment of Business (3 cr)",
+                "ECON 1500 Principles of Microeconomics (3 cr)",
+                "ECON 1510 Principles of Macroeconomics (3 cr)",
+                "QM 2200 Business Statistics I (3 cr)",
+                "QM 2220 Business Statistics II (3 cr)"
+              ],
+              "electives": [
+                "Accounting electives (6 credits from ACCT courses 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "David Kaplan (Richard A. Chaifetz School of Business)",
+              "Ken Herold (Adjunct Professor in the MBA Program Teaching Entrepreneurship, Innovation, Lean Startup)"
+            ],
+            "notes": "Students must have a 2.70 cumulative SLU GPA to be admitted to the accounting program. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2200 Introduction to Financial Accounting",
+              "ACCT 2210 Introduction to Managerial Accounting",
+              "ECON 1500 Principles of Microeconomics",
+              "ECON 1510 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Business to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2200 Introduction to Financial Accounting (3 cr)",
+                "ACCT 2210 Introduction to Managerial Accounting (3 cr)",
+                "ECON 1500 Principles of Microeconomics (3 cr)",
+                "ECON 1510 Principles of Macroeconomics (3 cr)",
+                "FIN 3000 Financial Management (3 cr)",
+                "FIN 3010 Investments (3 cr)",
+                "FIN 3020 Financial Markets and Institutions (3 cr)",
+                "FIN 4000 Advanced Financial Management (3 cr)",
+                "QM 2200 Business Statistics I (3 cr)",
+                "QM 2220 Business Statistics II (3 cr)"
+              ],
+              "electives": [
+                "Finance electives (9 credits from FIN courses 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "David Kaplan (Richard A. Chaifetz School of Business)",
+              "Ken Herold (Adjunct Professor in the MBA Program Teaching Entrepreneurship, Innovation, Lean Startup)"
+            ],
+            "notes": "Students must have a 2.00 cumulative SLU GPA for the major. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1500 Principles of Microeconomics",
+              "ECON 1510 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Business to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MKTG 2000 Principles of Marketing (3 cr)",
+                "MKTG 3000 Consumer Behavior (3 cr)",
+                "MKTG 3010 Marketing Research (3 cr)",
+                "MKTG 4000 Marketing Management (3 cr)",
+                "ECON 1500 Principles of Microeconomics (3 cr)",
+                "ECON 1510 Principles of Macroeconomics (3 cr)",
+                "QM 2200 Business Statistics I (3 cr)",
+                "QM 2220 Business Statistics II (3 cr)"
+              ],
+              "electives": [
+                "Marketing electives (9 credits from MKTG courses 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "David Kaplan (Richard A. Chaifetz School of Business)",
+              "Ken Herold (Adjunct Professor in the MBA Program Teaching Entrepreneurship, Innovation, Lean Startup)"
+            ],
+            "notes": "Students must have a 2.00 cumulative SLU GPA for the major. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1500 Principles of Microeconomics",
+              "ECON 1510 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Business to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MGMT 2000 Principles of Management (3 cr)",
+                "MGMT 3000 Organizational Behavior (3 cr)",
+                "MGMT 4000 Strategic Management (3 cr)",
+                "ECON 1500 Principles of Microeconomics (3 cr)",
+                "ECON 1510 Principles of Macroeconomics (3 cr)",
+                "QM 2200 Business Statistics I (3 cr)",
+                "QM 2220 Business Statistics II (3 cr)"
+              ],
+              "electives": [
+                "Management electives (12 credits from MGMT courses 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "David Kaplan (Richard A. Chaifetz School of Business)",
+              "Ken Herold (Adjunct Professor in the MBA Program Teaching Entrepreneurship, Innovation, Lean Startup)"
+            ],
+            "notes": "Students must have a 2.00 cumulative SLU GPA for the major. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "International Business",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1500 Principles of Microeconomics",
+              "ECON 1510 Principles of Macroeconomics",
+              "Foreign Language proficiency through intermediate level"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Demonstrated proficiency in a foreign language through the intermediate level.",
+            "admissions_pathway": "Pre-Business to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "IB 2000 Introduction to International Business (3 cr)",
+                "IB 3000 International Management (3 cr)",
+                "IB 3010 International Marketing (3 cr)",
+                "IB 3020 International Finance (3 cr)",
+                "IB 4000 Global Strategic Management (3 cr)",
+                "ECON 1500 Principles of Microeconomics (3 cr)",
+                "ECON 1510 Principles of Macroeconomics (3 cr)",
+                "QM 2200 Business Statistics I (3 cr)",
+                "QM 2220 Business Statistics II (3 cr)",
+                "ACCT 2200 Introduction to Financial Accounting (3 cr)",
+                "ACCT 2210 Introduction to Managerial Accounting (3 cr)"
+              ],
+              "electives": [
+                "International Business electives (9 credits from IB courses 3000-level or above, or approved international studies courses)"
+              ],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [
+              "David Kaplan (Richard A. Chaifetz School of Business)",
+              "Bonnie Wilson (International Business)"
+            ],
+            "notes": "Students must have a 2.00 cumulative SLU GPA for the major and demonstrate foreign language proficiency. Data source: Saint Louis University Academic Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "college_name: Richard A. Chaifetz School of Business; housing_profile: First-year students typically live in traditional residence halls like Grand Hall (opened in 2017 with suite-style rooms, maker space, and business incubator) or other freshman dorms. Upperclassmen can opt for apartment-style living on campus. Students may also consider the 'Ethical Leaders in Business' learning community.; student_archetype: Ethical, courageous, and career-aspirant students who value a rigorous curriculum, hands-on experiences, and a strong alumni network, committed to applying business theory to real-world settings and leading for the greater good.; strategic_fit_advice: Suited for aspiring business leaders and entrepreneurs who thrive in a collaborative environment, are committed to ethical practice, and wish to leverage a broad Jesuit university network for career development."
+      },
+      {
+        "name": "Trudy Busch Valentine School of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1500 General Biology I",
+              "BIOL 1600 General Biology II",
+              "CHEM 1110 General Chemistry I",
+              "NURS 1000 Introduction to Professional Nursing"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BIOL 2040 Human Anatomy",
+              "BIOL 2050 Human Physiology",
+              "CHEM 1110 General Chemistry I"
+            ],
+            "special_requirements": "Application deadline of December 1st for Regular Decision. Direct entry only for freshman admission. High school GPA of 3.79 recommended. Admission is competitive.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 1000 Introduction to Professional Nursing (3 cr)",
+                "NURS 2000 Health Assessment (3 cr)",
+                "NURS 2010 Health Assessment Laboratory (1 cr)",
+                "NURS 2100 Fundamentals of Nursing (4 cr)",
+                "NURS 2110 Fundamentals of Nursing Clinical (2 cr)",
+                "NURS 3000 Medical-Surgical Nursing I (4 cr)",
+                "NURS 3010 Medical-Surgical Nursing I Clinical (2 cr)",
+                "NURS 3100 Pharmacology (3 cr)",
+                "NURS 3200 Pathophysiology (3 cr)",
+                "NURS 4000 Community Health Nursing (3 cr)",
+                "NURS 4010 Community Health Nursing Clinical (2 cr)",
+                "NURS 4900 Transition to Professional Practice (3 cr)",
+                "BIOL 1500 General Biology I (3 cr)",
+                "BIOL 1510 General Biology I Laboratory (1 cr)",
+                "BIOL 2040 Human Anatomy (3 cr)",
+                "BIOL 2050 Human Physiology (3 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)",
+                "PSYC 1010 General Psychology (3 cr)",
+                "SOC 1000 Introduction to Sociology (3 cr)"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Teri Murray (Trudy Busch Valentine School of Nursing)"
+            ],
+            "notes": "Highly competitive program. Regular Decision application deadline is December 1st. Students must maintain a 3.00 GPA in required science and nursing courses. Data source: Saint Louis University Academic Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "college_name: Trudy Busch Valentine School of Nursing; housing_profile: First-year students often choose the Health Sciences Learning Community in Reinert Hall, which offers rooms with private bathrooms and is conveniently located near health professions courses. Other first-year students reside in various traditional halls. Upperclassmen utilize on-campus apartments. Graduate students have options like Ignacio Hall and Robert May Hall.; student_archetype: Compassionate, highly skilled, and dedicated individuals committed to providing effective patient care, valuing state-of-the-art facilities, advanced instruction, and innovative approaches in nursing.; strategic_fit_advice: Ideal for students passionate about a career in nursing, from traditional BSN to advanced practice and doctoral programs, who desire a scientific and values-based education with extensive clinical experience and a focus on pioneering healthcare practices."
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": "college_name: School of Social Work; housing_profile: Students generally reside in standard university housing, with freshmen in traditional dorms and upperclassmen in campus apartments. Graduate students can opt for Ignacio Hall or Robert May Hall.; student_archetype: Empathetic, socially conscious, and actively engaged individuals committed to advocating for vulnerable populations and working towards a more just society, reflecting SLU's mission of service.; strategic_fit_advice: Recommended for students with a strong commitment to social justice, community service, and direct practice in social work, who are eager to develop skills to address societal challenges and support individuals and families."
+      },
+      {
+        "name": "Doisy College of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EXSC 1000 Introduction to Exercise Science (3 cr)",
+                "BIOL 1500 General Biology I (3 cr)",
+                "BIOL 1510 General Biology I Laboratory (1 cr)",
+                "BIOL 1600 General Biology II (3 cr)",
+                "BIOL 1610 General Biology II Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)",
+                "CHEM 1120 General Chemistry II (3 cr)",
+                "CHEM 1125 General Chemistry II Laboratory (1 cr)",
+                "HSP 1000 Introduction to Health Professions (1 cr)",
+                "HSP 2000 Medical Terminology (1 cr)",
+                "HSP 3000 Healthcare Systems (3 cr)",
+                "HSP 4000 Ethics in Health Professions (3 cr)"
+              ],
+              "electives": [
+                "Health Sciences electives (minimum 18 credits from approved courses)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Randy Richter (Doisy College of Health Sciences Chair)",
+              "Anthony Breitbach (Doisy College of Health Sciences)"
+            ],
+            "notes": "Minimum 2.50 cumulative GPA required for internal transfer and continuation. This program provides foundational knowledge for various health professions. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Communication Sciences and Disorders",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSDI 1000 Introduction to Communication Sciences and Disorders (3 cr)",
+                "CSDI 2000 Anatomy and Physiology of Speech and Hearing (3 cr)",
+                "CSDI 2010 Phonetics (3 cr)",
+                "CSDI 2020 Speech and Language Development (3 cr)",
+                "CSDI 3000 Audiology (3 cr)",
+                "CSDI 3010 Speech Science (3 cr)",
+                "CSDI 3020 Introduction to Language Disorders (3 cr)",
+                "CSDI 4000 Clinical Methods in Speech-Language Pathology (3 cr)",
+                "BIOL 1500 General Biology I (3 cr)",
+                "PHYS 1000 Basic Concepts of Physics (3 cr)",
+                "MATH 1200 Precalculus (3 cr) OR higher",
+                "PSYC 1010 General Psychology (3 cr)"
+              ],
+              "electives": [
+                "CSDI electives (6 credits from 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Randy Richter (Doisy College of Health Sciences Chair)",
+              "Anthony Breitbach (Doisy College of Health Sciences)"
+            ],
+            "notes": "Minimum 2.50 cumulative GPA required for internal transfer and continuation. Data source: Saint Louis University Academic Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "college_name: Doisy College of Health Sciences; housing_profile: First-year students are strongly encouraged to join the Health Sciences Learning Community in Reinert Hall, a popular choice due to its proximity to health professions courses and private bathrooms. Other first-year students reside in various traditional halls. Upperclassmen can choose from on-campus apartments. Graduate students have dedicated housing in Ignacio Hall and Robert May Hall.; student_archetype: Ambitious and compassionate students passionate about various health professions (e.g., physical therapy, nursing, occupational therapy, nutrition), eager for interdisciplinary collaboration and hands-on clinical experience.; strategic_fit_advice: An excellent fit for students committed to a career in healthcare who seek a supportive learning environment, opportunities for shadowing experiences at SLU Hospital, and a curriculum integrating academic knowledge with practical skills."
+      },
+      {
+        "name": "College for Public Health and Social Justice",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHS 1000 Introduction to Public Health (3 cr)",
+                "PHS 2000 Public Health & Social Justice (3 cr)",
+                "PHS 3000 Epidemiology (3 cr)",
+                "PHS 3010 Biostatistics for Public Health (3 cr)",
+                "PHS 4000 Environmental Health (3 cr)",
+                "PHS 4100 Health Behavior Theory (3 cr)",
+                "PHS 4200 Health Policy (3 cr)",
+                "PHS 4900 Public Health Capstone (3 cr)",
+                "BIOL 1500 General Biology I (3 cr)",
+                "PSYC 1010 General Psychology (3 cr)",
+                "SOC 1000 Introduction to Sociology (3 cr)"
+              ],
+              "electives": [
+                "Public Health electives (12 credits from 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Hong Xian (College for Public Health and Social Justice)"
+            ],
+            "notes": "Students must earn a 2.00 GPA in public health coursework. Accelerated B.S. to M.P.H. program is available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SWRK 1000 Introduction to Social Work"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional sequence of the program, typically after sophomore year, requires a separate application.",
+            "admissions_pathway": "Pre-Social Work to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "SWRK 1000 Introduction to Social Work (3 cr)",
+                "SWRK 2000 Social Welfare Policy and Services (3 cr)",
+                "SWRK 2200 Human Behavior and the Social Environment I (3 cr)",
+                "SWRK 2210 Human Behavior and the Social Environment II (3 cr)",
+                "SWRK 3000 Social Work Practice I (3 cr)",
+                "SWRK 3010 Social Work Practice II (3 cr)",
+                "SWRK 3020 Social Work Research Methods (3 cr)",
+                "SWRK 4000 Field Instruction I (6 cr)",
+                "SWRK 4010 Field Instruction II (6 cr)",
+                "SWRK 4900 Senior Seminar in Social Work (3 cr)",
+                "PSYC 1010 General Psychology (3 cr)",
+                "SOC 1000 Introduction to Sociology (3 cr)",
+                "ECON 1500 Principles of Microeconomics (3 cr)"
+              ],
+              "electives": [
+                "Social Work electives (6 credits from 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [
+              "Michael Mancini (School of Social Work)"
+            ],
+            "notes": "Minimum 2.50 cumulative GPA and SWRK 1000 with a C or better required for admission to the professional sequence. Data source: Saint Louis University Academic Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "college_name: College for Public Health and Social Justice; housing_profile: First-year students may participate in the Health Sciences Learning Community located in Reinert Hall, which offers rooms with private bathrooms and amenities like study rooms and a chapel. Other first-year students reside in general residence halls (Fusz, Grand, Griesedieck, Spring). Upperclassmen have apartment options (Grand Forest, Marchetti Towers, Village Apartments), and graduate students can choose Ignacio Hall or Robert May Hall, with Ignacio Hall offering private rooms and bathrooms. The College itself moved to the Marvin and Harlene Wool Center in January 2025, suggesting modern academic facilities.; student_archetype: Community-minded and action-oriented students dedicated to addressing complex health problems and promoting social well-being through innovative and collaborative solutions, valuing hands-on experience and community partnerships.; strategic_fit_advice: Recommended for students with a strong interest in health administration, public health, or health analytics, who are driven by a desire to serve communities, work for social justice, and engage in impactful research and practical applications."
+      },
+      {
+        "name": "School of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": "college_name: School of Education; housing_profile: Students generally reside in standard university housing, with freshmen in traditional dorms (Fusz, Grand, Griesedieck, Reinert, Spring) and upperclassmen in campus apartments (Grand Forest, Marchetti Towers, Village Apartments). Graduate students have options like Ignacio Hall or Robert May Hall.; student_archetype: Dedicated and service-oriented individuals passionate about learning, teaching, and improving educational outcomes, particularly with a focus on urban education and community impact.; strategic_fit_advice: Ideal for students aspiring to careers in teaching, educational leadership, or related fields who are committed to fostering learning environments and making a difference in the lives of students and communities."
+      },
+      {
+        "name": "School of Science and Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1310 Calculus I",
+              "MATH 1320 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 1300 Introduction to Computer Science (3 cr)",
+                "CSCI 1305 Introduction to Computer Science Laboratory (1 cr)",
+                "CSCI 1400 Introduction to Data Structures (3 cr)",
+                "CSCI 1405 Introduction to Data Structures Laboratory (1 cr)",
+                "CSCI 2100 Discrete Structures (3 cr)",
+                "CSCI 2200 Computer Organization and Assembly Language (3 cr)",
+                "CSCI 3100 Design and Analysis of Algorithms (3 cr)",
+                "CSCI 3200 Operating Systems (3 cr)",
+                "CSCI 3300 Programming Languages (3 cr)",
+                "CSCI 3400 Database Systems (3 cr)",
+                "CSCI 4900 Senior Project I (1 cr)",
+                "CSCI 4910 Senior Project II (2 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "MATH 2530 Discrete Mathematics (3 cr)",
+                "PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1630 University Physics I Laboratory (1 cr)"
+              ],
+              "electives": [
+                "Computer Science electives (15 credits, 9 of which must be 3000-level or above)"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Min Hyung Choi (Department of Computer Science Chair)"
+            ],
+            "notes": "Students must maintain a 2.00 GPA in computer science coursework. Accelerated B.S. to M.S. in Artificial Intelligence, Computer Science, and Software Engineering programs are available. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1310 Calculus I",
+              "MATH 1320 Calculus II",
+              "PHYS 1610 University Physics I",
+              "CHEM 1110 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AE 1100 Introduction to Aerospace Engineering (1 cr)",
+                "AE 1110 Introduction to Aerospace Design (2 cr)",
+                "AE 2200 Aerospace Engineering Fundamentals (3 cr)",
+                "AE 2300 Aerodynamics I (3 cr)",
+                "AE 2400 Aircraft Performance (3 cr)",
+                "AE 3100 Aerospace Structures I (3 cr)",
+                "AE 3200 Flight Dynamics and Control (3 cr)",
+                "AE 3300 Propulsion I (3 cr)",
+                "AE 3400 Aerospace Vehicle Design I (3 cr)",
+                "AE 4100 Aerospace Structures II (3 cr)",
+                "AE 4200 Flight Testing (3 cr)",
+                "AE 4300 Orbital Mechanics (3 cr)",
+                "AE 4400 Aerospace Vehicle Design II (3 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "MATH 2530 Discrete Mathematics (3 cr)",
+                "PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1630 University Physics I Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)"
+              ],
+              "electives": [
+                "Aerospace Engineering electives (9 credits from AE courses 3000-level or above)"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Jenna Gorlewicz (Department Chair, Aerospace and Mechanical Engineering)",
+              "Michael Swartwout (Associate Department Chair, Aerospace and Mechanical Engineering)",
+              "Theodosios Alexander (Professor, Aerospace and Mechanical Engineering)",
+              "Sridhar Condoor (Professor, Aerospace and Mechanical Engineering)"
+            ],
+            "notes": "Students must maintain a 2.00 GPA in aerospace engineering coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1310 Calculus I",
+              "MATH 1320 Calculus II",
+              "PHYS 1610 University Physics I",
+              "CHEM 1110 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "EE 1000 Introduction to Electrical Engineering (1 cr)",
+                "EE 2100 Circuit Analysis I (3 cr)",
+                "EE 2110 Circuit Analysis Laboratory I (1 cr)",
+                "EE 2200 Digital Logic Design (3 cr)",
+                "EE 2210 Digital Logic Design Laboratory (1 cr)",
+                "EE 3100 Electronics I (3 cr)",
+                "EE 3110 Electronics Laboratory I (1 cr)",
+                "EE 3200 Signals and Systems (3 cr)",
+                "EE 3300 Electromagnetics (3 cr)",
+                "EE 4900 Electrical Engineering Senior Design I (1 cr)",
+                "EE 4910 Electrical Engineering Senior Design II (2 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "MATH 2530 Discrete Mathematics (3 cr)",
+                "PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1630 University Physics I Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)"
+              ],
+              "electives": [
+                "Electrical Engineering electives (12 credits from EE courses 3000-level or above)"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Sahin Ozdemir (Department of Electrical and Computer Engineering Chair)",
+              "Gregory Triplett (Electrical and Computer Engineering)",
+              "William Ebel (Electrical and Computer Engineering)"
+            ],
+            "notes": "Students must maintain a 2.00 GPA in electrical engineering coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1310 Calculus I",
+              "MATH 1320 Calculus II",
+              "PHYS 1610 University Physics I",
+              "CHEM 1110 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ME 1000 Introduction to Mechanical Engineering (1 cr)",
+                "ME 1100 Engineering Graphics and Design (2 cr)",
+                "ME 2100 Statics (3 cr)",
+                "ME 2200 Dynamics (3 cr)",
+                "ME 2300 Thermodynamics (3 cr)",
+                "ME 3100 Mechanics of Materials (3 cr)",
+                "ME 3200 Fluid Mechanics (3 cr)",
+                "ME 3300 Heat Transfer (3 cr)",
+                "ME 3400 Mechanical Engineering Design I (3 cr)",
+                "ME 4900 Mechanical Engineering Senior Design I (1 cr)",
+                "ME 4910 Mechanical Engineering Senior Design II (2 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "MATH 2530 Discrete Mathematics (3 cr)",
+                "PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1630 University Physics I Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)"
+              ],
+              "electives": [
+                "Mechanical Engineering electives (9 credits from ME courses 3000-level or above)"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Jenna Gorlewicz (Department Chair, Aerospace and Mechanical Engineering)",
+              "Michael Swartwout (Associate Department Chair, Aerospace and Mechanical Engineering)",
+              "Madi Babaiasl (Aerospace and Mechanical Engineering)",
+              "Mark McQuilling (Aerospace and Mechanical Engineering)"
+            ],
+            "notes": "Students must maintain a 2.00 GPA in mechanical engineering coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1310 Calculus I",
+              "MATH 1320 Calculus II",
+              "PHYS 1610 University Physics I",
+              "CHEM 1110 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CE 1000 Introduction to Civil Engineering (1 cr)",
+                "CE 2100 Statics (3 cr)",
+                "CE 2200 Engineering Mechanics: Dynamics (3 cr)",
+                "CE 2300 Engineering Materials (3 cr)",
+                "CE 3100 Structural Analysis (3 cr)",
+                "CE 3200 Fluid Mechanics (3 cr)",
+                "CE 3300 Geotechnical Engineering (3 cr)",
+                "CE 3400 Environmental Engineering (3 cr)",
+                "CE 4900 Civil Engineering Senior Design I (1 cr)",
+                "CE 4910 Civil Engineering Senior Design II (2 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "MATH 2530 Discrete Mathematics (3 cr)",
+                "PHYS 1610 University Physics I (3 cr)",
+                "PHYS 1630 University Physics I Laboratory (1 cr)",
+                "CHEM 1110 General Chemistry I (3 cr)",
+                "CHEM 1115 General Chemistry I Laboratory (1 cr)"
+              ],
+              "electives": [
+                "Civil Engineering electives (9 credits from CE courses 3000-level or above)"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Jalil Kianfar (Department of Civil Engineering Chair)",
+              "Annesh Borthakur (Civil Engineering)",
+              "Ronaldo Luna (Civil Engineering)"
+            ],
+            "notes": "Students must maintain a 2.00 GPA in civil engineering coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1310 Calculus I",
+              "CSCI 1300 Introduction to Computer Science"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 1300 Introduction to Computer Science (3 cr)",
+                "CSCI 1305 Introduction to Computer Science Laboratory (1 cr)",
+                "CSCI 1400 Introduction to Data Structures (3 cr)",
+                "MATH 1310 Calculus I (3 cr)",
+                "MATH 1320 Calculus II (3 cr)",
+                "MATH 3800 Introduction to Probability and Statistics (3 cr)",
+                "STAT 3850 Statistical Computing (3 cr)",
+                "DS 2000 Introduction to Data Science (3 cr)",
+                "DS 3000 Data Visualization (3 cr)",
+                "DS 4000 Machine Learning (3 cr)",
+                "DS 4900 Data Science Senior Project (3 cr)"
+              ],
+              "electives": [
+                "Data Science electives (15 credits from approved DS, CSCI, MATH, or STAT courses 3000-level or above)"
+              ],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [
+              "Min Hyung Choi (Department of Computer Science Chair)"
+            ],
+            "notes": "Students must maintain a 2.00 GPA in data science coursework. Data source: Saint Louis University Academic Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "college_name: School of Science and Engineering; housing_profile: First-year students can join the 'Engineering and Innovation' Learning Community, likely housed in a residence hall like Grand Hall which features a maker space with 3D printers and a business incubator. Other freshmen reside in general dorms. Upperclassmen can opt for campus apartments.; student_archetype: Ambitious problem-solvers, innovators, and critical thinkers drawn to STEM fields, eager for hands-on learning, convergent research experiences, and opportunities to collaborate with professors to solve complex global problems.; strategic_fit_advice: Strongly recommended for students with a solid STEM background who are interested in aerospace engineering, aviation, technology, and other sciences, and who seek a curriculum that emphasizes research, practical application, and career success."
+      },
+      {
+        "name": "School for Professional Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [],
+        "housing_profile": "college_name: School for Professional Studies; housing_profile: Students typically utilize general university housing options, which include traditional residence halls for younger undergraduates and apartment-style living for upperclassmen. Graduate housing options like Ignacio Hall and Robert May Hall are available for eligible students.; student_archetype: Driven and practical learners, often non-traditional students or those balancing other commitments, seeking flexible and accessible programs to advance their professional skills and career.; strategic_fit_advice: Ideal for working professionals or adult learners looking for flexible online or evening programs, who are focused on career advancement and require practical, relevant education."
+      }
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "SLU Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-03",
+        "is_binding": true,
+        "notes": "This plan is for students who are committed to attending SLU if admitted. An Early Decision Agreement must be signed. Admission status notification begins December 1."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "This plan is non-binding. The application deadline for Nursing, Flight Science, Occupational Therapy, and Physical Therapy majors is also December 1."
+      },
+      {
+        "plan_type": "Early Decision",
+        "date": "2026-01-16",
+        "is_binding": true,
+        "notes": "This plan is binding. If admitted, applicants are committed to attending and required to withdraw all applications from other institutions. Admission status notification begins February 1."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-04-01",
+        "is_binding": false,
+        "notes": "This is the preferred deadline; applications will continue to be accepted and scholarships awarded while space is available. Admission decisions released by April 15 for those with completed applications by March 16, or within 30 days after submission of all documents."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "All applicants for freshman admission must submit a personal essay when they apply through the Common Application or the SLU online application. No specific supplemental essay prompts beyond this personal statement were found for general undergraduate admission."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition",
+        "deadline": "March 1",
+        "details": "An audition is required for admission to the music program. Prospective music majors must pass an entrance audition to declare the music major. For pianists, two memorized works from contrasting style periods (e.g., Baroque, Classical, Romantic, Impressionist, 20th Century) at an late-intermediate level or higher are required. Vocalists must prepare two contrasting selections from standard musical theater repertoire (golden age to contemporary), standard classical repertoire (art song or aria in English, traditional folk song or spiritual), or standard classical repertoire (art song or aria in a language other than English). Auditions can be arranged on-campus or submitted via a file-sharing service like Dropbox or Google Drive, or through the Get Acceptd app. Auditions completed/submitted by March 1 are considered for music scholarships."
+      },
+      {
+        "target_program": "Architecture",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "No undergraduate architecture portfolio requirement was found for St. Louis University (main campus in St. Louis, MO). The university offers a Bachelor of Science in Architecture. While some search results mention portfolio requirements for \"studio art\" or for architecture programs, these refer to different institutions (e.g., Washington University in St. Louis) or a different campus (Saint Louis University, Baguio City, Philippines)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Standardized test scores",
+        "Application essay",
+        "Recommendations",
+        "Interview",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First generation",
+        "Alumni/ae relation",
+        "Geographical residence",
+        "State residency",
+        "Religious affiliation/commitment",
+        "Volunteer work",
+        "Work experience",
+        "Level of applicant's interest"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Saint Louis University employs a holistic review process rooted in its Jesuit values, looking at the 'whole package' of an applicant beyond just academic metrics. They offer a test-optional admissions process and emphasize factors such as leadership qualities, service to the community, and personal character in addition to academic performance."
     },
+    "essay_prompts": null
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider starting undeclared, especially within the College of Arts and Sciences (CAS). SLU acknowledges that deciding on a major takes time and offers extensive support for \"Still Deciding\" students. The College of Arts and Sciences, with over 60 majors, minors, certificates, and micro-credentials, explicitly allows students to explore various academic pathways before declaring an official major. All CAS students, including those who are undeclared, are assigned an academic advisor to guide them through the major exploration process.",
+      "Leverage university resources for major exploration. St. Louis University provides numerous resources to help students identify a major that aligns with their interests, strengths, and career goals. These include professional academic advisors who assist with course selection and major exploration, career counselors, and assessment tools like Focus 2 and \"What Can I Do With This Major?\". Students are also encouraged to connect with faculty members, attend events like the Major Exploration Station during SLU 101, and explore campus organizations and internships to discover their passions.",
+      "Understand that changing majors is common and often straightforward for many programs. About a third of students change majors at least once. For many general programs, the process of switching majors is relatively easy and may only require paperwork. However, be aware that some specific programs, such as Physical Therapy, may have distinct application requirements that need to be met as a freshman.",
+      "Research program-specific requirements and timelines, particularly for competitive or specialized fields. While the overall acceptance rate for St. Louis University is moderately selective (around 81-85%), some programs, like Physical Therapy, have specific application requirements that must be fulfilled when applying as a freshman. Although explicit major-specific acceptance rates are not readily available, understanding these unique requirements is crucial for strategic major selection in specialized areas."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "alternate_major_strategy: If applying to competitive major, list backup in different college. Example: if applying to CS in Engineering, list Cognitive Science as alternate.; internal_transfer_difficulty: Competitive internal transfer process for impacted majors"
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 56960.0,
+        "total_coa": 77110.0,
+        "housing": 20280.0
+      },
+      "out_of_state": {
+        "tuition": 56960.0,
+        "total_coa": 77110.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 43134.0,
+    "average_merit_aid": 25582.0,
+    "percent_receiving_aid": 93.0,
+    "meets_full_need": false,
+    "notes": "Full undergraduate tuition may be covered for first-time freshmen with a combined parent AGI of $60,000 or less.",
     "scholarships": [
       {
         "name": "Presidential Scholarship",
-        "type": "Merit (Competitive)",
-        "amount": "Full tuition",
-        "deadline": "2025-12-01",
-        "benefits": "Full tuition + $1,200 research grant",
-        "application_method": "Separate Application"
+        "type": "Full-Ride",
+        "amount": "Full tuition for 10 consecutive full-time (up to 18 credit hours) fall and spring semesters. Scholars can also apply for up to $1,200 for an Investigative Learning Experience.",
+        "eligibility": "Awarded to exemplary student leaders. This is a competitive award, and selected students are invited to the St. Louis campus to interview and compete. ACT/SAT scores are not required.",
+        "application_method": "Separate application required. Apply for freshman admission by December 1 for priority consideration. A select group of students will be invited for interviews."
       },
       {
-        "name": "Vice Presidents' Scholarship",
+        "name": "Billiken, Ignatian, University, and Vice Presidents' Scholarships",
         "type": "Merit",
-        "amount": "Up to $39,000/year",
-        "deadline": "Automatic",
-        "application_method": "Automatic Consideration"
+        "amount": "$30,000 to $39,000 per year (renewable for up to 10 semesters).",
+        "eligibility": "Awarded to incoming freshmen based on previous academic performance.",
+        "application_method": "Automatic consideration when applying for freshman admission by December 1. No separate application is required."
       },
       {
-        "name": "MLK Jr. Scholarship",
-        "type": "Merit/Leadership",
-        "amount": "$24,000/year",
-        "deadline": "2025-02-01",
-        "application_method": "Separate Application"
+        "name": "Martin Luther King Jr. Scholarship",
+        "type": "Competitive (Service-Oriented)",
+        "amount": "On average, scholars receive a total of $24,000 in scholarships and aid per year from the University. This award is at least $3,000 per year and can be in addition to other SLU scholarships.",
+        "eligibility": "Recognizes students with leadership qualities and significant involvement in community service. ACT/SAT scores are not required. Transfer students are also eligible.",
+        "application_method": "Separate application required."
       },
       {
         "name": "Jesuit High School Award",
         "type": "Merit",
-        "amount": "$5,000/year",
-        "application_method": "Automatic Consideration"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Score of 4-5 required for core; 3 accepted for some languages.",
-        "exceptions": [
-          "Chemistry requires a 5",
-          "AP Seminar requires a 4",
-          "No duplicate credit with 1818 program."
-        ]
-      },
-      "ib_policy": {
-        "general_rule": "Credit for HL exams (scores 5+).",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology"
-        ],
-        "restrictions": "64 unit community college cap; minimum grade C."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Weighted GPA 3.9+",
-        "Alignment with 'cura personalis'",
-        "Servant-leader potential"
-      ],
-      "common_activities": [
-        "Community service",
-        "Clinical volunteering",
-        "Advocacy/Service leadership"
-      ],
-      "essay_tips": [
-        "Connect goals to 'men and women for others'",
-        "Highlight non-clinical depth for health tracks"
-      ],
-      "red_flags": [
-        "Service focusing on 'getting hours' rather than impact",
-        "Generic Catholic university statements"
-      ],
-      "insights": [
-        "Urban campus split by Grand Blvd",
-        "Rigorous but collaborative pre-health culture",
-        "Professional heavy med/law pipeline environment"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 70783,
-      "employment_rate_2yr": 92.0,
-      "grad_school_rate": 34.7,
-      "top_employers": [
-        "Deloitte",
-        "Boeing",
-        "Centene",
-        "EY",
-        "NASA",
-        "Google",
-        "Bayer",
-        "Amazon",
-        "Anheuser-Busch"
-      ],
-      "loan_default_rate": 2.5,
-      "student_retention": {
-        "freshman_retention_rate": 89.0,
-        "graduation_rate_4_year": 73.0,
-        "graduation_rate_6_year": 80.0
-      }
-    }
-  },
-  "_id": "saint_louis_university",
-  "application_process": {
-    "essay_prompts": [
-      {
-        "prompt": "Saint Louis University's Jesuit mission is to pursue truth for the greater glory of God and for service of humanity. How does this mission resonate with you?",
-        "word_limit": "300 words",
-        "type": "Values",
-        "required": true,
-        "brainstorming_questions": [
-          "Think about a time you felt a strong pull to understand something deeply, even when it was challenging or complex. What was that 'truth' you were pursuing, and what motivated you to keep digging?",
-          "Can you recall an experience where you acted to help someone or a group of people, and you felt a sense of purpose or fulfillment in that service, even if it wasn't a grand gesture?",
-          "Consider the phrase 'greater glory of God.' What does that phrase evoke for you personally? Does it connect to a sense of awe, wonder, responsibility, or something else entirely, and how might that connect to your actions?",
-          "In what ways have you seen or experienced the 'service of humanity' in action, either by yourself or others, that made you feel like you were contributing to something larger than yourself?",
-          "Reflect on moments where you've had to grapple with difficult questions or ethical dilemmas. How did you approach finding clarity or making a decision, and what does that process reveal about your pursuit of truth?"
-        ]
+        "amount": "$5,000 per year (renewable for up to 10 semesters).",
+        "eligibility": "Automatically awarded to applicants who graduate from a Jesuit high school.",
+        "application_method": "Automatic consideration when applying for admission. No separate application is required, but applying by December 1 is recommended for priority consideration."
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/saint_louis_university_logo.png"
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Qualifying scores on AP exams, subject to departmental approval and specific minimum scores for each exam, grant credit. Official score reports are required.",
+      "exceptions": [
+        "No AP credit for biology, chemistry, and physics science course requirements for Pre-Professional Health Studies.",
+        "Some AP mathematics course credit might be accepted for Pre-Professional Health Studies, but it is recommended to take math courses at SLU."
+      ],
+      "usage": "AP credits can be posted to the transcript and may satisfy some specific course requirements, major prerequisites, and general education requirements, subject to departmental evaluation."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with a score of 5+ grant credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "Maximum 64 community college credit hours (60 for School of Social Work) toward a bachelor's degree; minimum grade of 'C' or above for transfer courses; coursework must be from regionally accredited institutions. After initial enrollment at SLU (starting Fall 2025), students are limited to 9 transfer credits. Graduate students are limited to 20% of total credits (33% for School of Law). Business courses for Chaifetz School of Business must be within 5 years of review, and other courses generally within 10 years. School for Professional Studies has a 30-credit limit for business-related courses."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated passion and involvement in extracurricular activities and community service",
+      "Alignment with St. Louis University's Jesuit mission and values, including a commitment to service and personal growth",
+      "Motivation and dedication to a rigorous academic environment"
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Be specific about why this school – reference unique programs, courses, or aspects of SLU's mission (like academic excellence and service to others) that genuinely resonate with your goals and interests.",
+      "Show, don't tell – use concrete examples and personal anecdotes to illustrate your qualities, experiences, and how they align with SLU's values, rather than just stating them.",
+      "Avoid clichés – craft an authentic and personal narrative, steering clear of overused phrases or generic statements that won't make your essay stand out.",
+      "Connect your interests to specific resources at the school – demonstrate thorough research by mentioning how particular departments, faculty, clubs, or opportunities at SLU will help you achieve your academic and personal aspirations.",
+      "Be honest and sincere – the admissions committee is looking to learn about you as a person, so let your genuine self and enthusiasm for SLU shine through your writing."
+    ],
+    "red_flags": [],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Saint Louis University has a moderately selective admissions process with an acceptance rate around 75%. Admitted students typically have a GPA of 3.6-4.0 and strong standardized test scores (average SAT 1130-1340, ACT 23-31), though test scores are optional. The university employs a holistic review process, considering factors beyond academic metrics."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "SLU offers a rigorous Jesuit education emphasizing critical thinking, ethics, spirituality, and compassion, with many programs ranked nationally. It is also an R1 research university, offering numerous opportunities for students to engage in groundbreaking research and apply knowledge in practical, real-world scenarios through community engagement integrated into over 150 courses."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "Saint Louis University is known for its strong sense of community, supportive environment among students and faculty, and emphasis on Jesuit values such as service, social justice, and community engagement. Students frequently praise the accessibility of professors and the variety of academic resources."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 70783,
+    "employment_rate_2yr": 92.0,
+    "median_earnings_6yr": 44500,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Deloitte",
+      "Meta",
+      "Microsoft",
+      "Ernst & Young",
+      "Fidelity Investment Services",
+      "Boeing"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 0.0,
+    "notes": "Median earnings 10 years after enrollment is from the U.S. Department of Education College Scorecard. The employment rate of 92.0% represents alumni who were employed, enrolled in graduate or professional school, participating in a year of service, serving in the military, or not seeking employment within six months of their graduation. The median earnings 6 years after enrollment is an average earnings figure six years after enrolling, not specifically after graduation, and is an approximation [cite: 2 from previous search]."
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.0,
+    "graduation_rate_4_year": 73.0,
+    "graduation_rate_6_year": 80.0
+  }
 }

@@ -1,506 +1,1746 @@
 {
-  "university_profile": {
-    "_id": "washington_university_in_st_louis",
-    "metadata": {
-      "official_name": "Washington University in St. Louis",
-      "location": {
-        "city": "St. Louis",
-        "state": "MO",
-        "type": "Private"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
+  "_id": "washington_university_in_st_louis",
+  "metadata": {
+    "official_name": "Washington University in St. Louis",
+    "location": {
+      "city": "St. Louis",
+      "state": "Missouri",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "Washington University in St. Louis is a premier private research institution renowned for its Collegiate Gothic architecture, world-class medical facilities, and a collaborative academic culture that spans nine specialized schools. It is widely recognized for balancing high-intensity research output with a strong emphasis on undergraduate teaching and student well-being.",
-      "market_position": "Elite Private",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 20,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Acceptance rates have tightened significantly, reaching a historic low of approximately 12% for the Class of 2028, down from roughly 15-16% in recent years.",
-          "implication": "Applicants should utilize Early Decision (ED I or ED II) pathways, which typically account for about 60% of the incoming class, to maximize admission chances."
-        },
-        {
-          "category": "Financial Accessibility",
-          "insight": "The university transitioned to a need-blind admissions policy for all domestic applicants in 2021, supported by a multi-billion dollar endowment.",
-          "implication": "This removes financial barriers for high-talent, low-income students, increasing the diversity and competitiveness of the applicant pool."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "The social atmosphere is characterized as 'collaborative without being cutthroat,' with over 400 student organizations and a strong emphasis on community engagement through the Gephardt Institute.",
-        "transportation_impact": "As a multimodal campus, WashU provides U-Passes for free regional transit (MetroLink/MetroBus) and has integrated the Centennial Greenway trail, reducing reliance on cars and fostering a pedestrian-friendly environment adjacent to Forest Park.",
-        "research_impact": "With an annual research budget exceeding $900 million and deep ties to the Washington University Medical Center, students have early access to high-impact clinical and technical research, particularly in biotechnology and public health."
+    "last_updated": "2024-05-16",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Washington University in St. Louis is a premier private research university known for its rigorous academic programs and interdisciplinary approach. Founded in 1853, it consistently ranks among the top national universities and is recognized for its strong commitment to discovery, teaching, and real-world contributions.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Washington University in St. Louis practices need-blind undergraduate admissions and meets 100 percent of the demonstrated financial need for all admitted students. The university emphasizes fostering intellectual curiosity, critical thinking, creativity, and collaboration, encouraging students to explore diverse perspectives and integrate ideas across fields.",
+    "us_news_rank": 21,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Washington University in St. Louis is highly selective, with overall acceptance rates around 12-13%. Early Decision (ED) offers a significantly higher acceptance rate (25-27%) compared to Regular Decision (RD) which can be as low as 8-9%.",
+        "implication": "Applicants for whom WashU is a top choice should strongly consider applying Early Decision (ED1 or ED2) to substantially increase their chances of admission, demonstrating a binding commitment."
+      },
+      {
+        "category": "Academic",
+        "insight": "WashU emphasizes academic flexibility and interdisciplinary study, offering over 100 fields of study and programs like 'Beyond Boundaries' that encourage students to explore connections across different undergraduate divisions and graduate schools.",
+        "implication": "Prospective students should highlight their intellectual curiosity, desire for interdisciplinary learning, and specific interests that align with WashU's flexible curriculum and special programs in their essays and interviews."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university fosters a collaborative and supportive environment rather than an overly competitive one,\nwith a strong sense of community among students.",
+        "implication": "Applicants should emphasize experiences showcasing teamwork, collaboration, and a desire to contribute positively to a supportive community in their application materials and supplemental essays."
       }
-    },
-    "admissions_data": {
-      "current_status": {
-        "overall_acceptance_rate": 12.06,
-        "in_state_acceptance_rate": 18.82,
-        "out_of_state_acceptance_rate": 13.13,
-        "international_acceptance_rate": 6.8,
-        "transfer_acceptance_rate": 14.01,
-        "admits_class_size": 3951,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
-          {
-            "plan_type": "ED",
-            "applications": 4817,
-            "admits": 1217,
-            "acceptance_rate": 25.26,
-            "class_fill_percentage": 65.85
-          }
-        ]
-      },
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": "4.00-4.30",
-          "unweighted_middle_50": "3.80-4.00",
-          "average_weighted": 4.19,
-          "percentile_25": "3.80",
-          "percentile_75": "4.00",
-          "notes": "86% of students in the Class of 2028 ranked in the top 10% of their high school class. Admissions emphasizes rigor and GPA as critical factors."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1500-1570",
-          "sat_reading_middle_50": "730-770",
-          "sat_math_middle_50": "770-800",
-          "act_composite_middle_50": "33-35",
-          "submission_rate": 56.0,
-          "policy_note": "Test-optional for the Class of 2028, but returning to required testing for the Class of 2030 (Fall 2026 entry)."
-        },
-        "demographics": {
-          "first_gen_percentage": 18.0,
-          "legacy_percentage": null,
-          "international_percentage": 11.0,
-          "geographic_breakdown": [
-            {
-              "region": "Midwest",
-              "percentage": 32.0
-            },
-            {
-              "region": "Middle States",
-              "percentage": 16.0
-            },
-            {
-              "region": "West",
-              "percentage": 16.0
-            },
-            {
-              "region": "South",
-              "percentage": 10.0
-            },
-            {
-              "region": "Southwest",
-              "percentage": 9.0
-            },
-            {
-              "region": "New England",
-              "percentage": 5.0
-            },
-            {
-              "region": "International",
-              "percentage": 13.0
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 15330,
-              "admits": 1920,
-              "acceptance_rate": 12.5,
-              "note": "Represents 47% of the enrolling Class of 2028."
-            },
-            "women": {
-              "applicants": 17411,
-              "admits": 2030,
-              "acceptance_rate": 11.7,
-              "note": "Represents 53% of the enrolling Class of 2028."
-            },
-            "non_binary": null
-          },
-          "racial_breakdown": {
-            "white": 37.0,
-            "black_african_american": 8.0,
-            "hispanic_latino": 12.0,
-            "asian": 26.0,
-            "native_american_alaskan": 0.0,
-            "pacific_islander": 0.0,
-            "two_or_more_races": 1.0,
-            "unknown": 5.0,
-            "non_resident_alien": 11.0
-          },
-          "religious_affiliation": null
-        }
-      },
-      "longitudinal_trends": [
+    ],
+    "campus_dynamics": {
+      "social_environment": "Washington University in St. Louis offers a welcoming and collaborative academic environment, characterized by a friendly and supportive community that balances ambition with teamwork rather than cutthroat competition. Students often highlight a vibrant, intellectually driven atmosphere, though some reviews suggest a less energetic social scene compared to other universities. The university also ranks highly for student quality of life and friendliness.",
+      "transportation_impact": "The campus is easily walkable and highly connected to the regional transit system, Metro Transit, with two MetroLink stops on the Danforth Campus and others at different campuses. All full-time students, faculty, and staff receive a free U-Pass for unlimited access to MetroLink and MetroBus services. Additionally, an extensive shuttle network connects various campuses and surrounding neighborhoods, including a free Campus Circulator. Biking is also a viable and encouraged option for getting around.",
+      "research_impact": "Washington University in St. Louis provides strong undergraduate research opportunities across various disciplines, with students, including freshmen, able to engage in faculty-mentored and project-based inquiry. The university offers numerous summer research programs, such as ASPIRE, ASSURE, and initiatives through the Institute for Informatics and Public Health. Significant research funding, particularly within the Medical School, enables undergraduates to participate in paid research projects, and opportunities are also available in the McKelvey School of Engineering."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 11.92,
+      "is_test_optional": true,
+      "test_policy_details": "Washington University in St. Louis has adopted a test-optional policy for applicants for admission in the fall semester of 2026. Applicants have the option of whether to submit standardized test scores. Students who are unable to or who elect not to submit their test scores will have the requirement automatically waived and will not be penalized. For those who do submit test scores, either SAT or ACT scores are acceptable, and neither the writing section nor SAT Subject Tests are required. Test results from any of the student's high school years are acceptable. WashU accepts self-reported scores on the Common and Coalition applications. If a student enrolls at WashU and submitted unofficial scores, official score reports from testing agencies will then be required. For the ACT, WashU considers the highest section scores across all the test dates submitted. If a student takes both the ACT and SAT, WashU will consider whichever set of scores is most advantageous. WashU will 'Super Score' ACT or SAT scores and consider the highest section scores across all test dates submitted (individual section retakes are accepted on the ACT). The last test date accepted will be the December testing (October if applying Early Decision I).",
+      "admits_class_size": 3968,
+      "transfer_acceptance_rate": 12.2,
+      "early_admission_stats": [
         {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": 33283,
-          "admits_total": 3968,
-          "enrolled_total": 1963,
-          "acceptance_rate_overall": 11.9,
-          "yield_rate": 49.5,
-          "waitlist_stats": {
-            "year": 2025,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Class of 2029 is the second-largest in university history."
-        },
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 32754,
-          "admits_total": 3951,
-          "enrolled_total": 1848,
-          "acceptance_rate_overall": 12.1,
-          "yield_rate": 46.8,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": null,
-            "accepted_spots": 2658,
-            "admitted_from_waitlist": 210,
-            "waitlist_admit_rate": 7.9,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 32240,
-          "admits_total": 3855,
-          "enrolled_total": 1828,
-          "acceptance_rate_overall": 12.0,
-          "yield_rate": 47.4,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": null,
-            "accepted_spots": 2713,
-            "admitted_from_waitlist": 200,
-            "waitlist_admit_rate": 7.37,
-            "is_waitlist_ranked": false
-          }
+          "plan_type": "ED",
+          "applications": 4928,
+          "admits": 1232,
+          "acceptance_rate": 25.0,
+          "class_fill_percentage": 66.7
         }
       ]
     },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "College of Arts & Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 12.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strongest fit for students demonstrating 'intellectual spark' and interdisciplinary curiosity; pre-med applicants should emphasize research and community service.",
-          "housing_profile": "Primarily housed in the South 40 residential colleges; known for a mix of traditional and modern suites.",
-          "student_archetype": "Intellectually curious polymaths and high-achieving pre-professional students",
-          "majors": [
-            {
-              "name": "Psychological & Brain Sciences",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "admissions_pathway": "Pre-Major",
-              "notes": "Most popular major at WashU."
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "admissions_pathway": "Pre-Major",
-              "notes": "Pre-med track standard."
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "admissions_pathway": "Pre-Major",
-              "notes": "Strongly mathematical."
-            }
-          ]
-        },
-        {
-          "name": "Olin Business School",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 11.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires a strong quantitative background; Calculus is essential.",
-          "housing_profile": "South 40 suites for underclassmen; many juniors and seniors live in the 'Village'.",
-          "student_archetype": "Collaborative, data-driven entrepreneurs",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": true,
-              "admissions_pathway": "Direct Admit",
-              "notes": "Top-ranked undergraduate program."
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "admissions_pathway": "Direct Admit"
-            }
-          ]
-        },
-        {
-          "name": "McKelvey School of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 14.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Prioritize high-level Math and Science. Highlight collaborative problem-solving skills.",
-          "housing_profile": "Access to specialized makerspaces and collaborative study lounges.",
-          "student_archetype": "Ambitious problem-solvers and tech-oriented innovators",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "admissions_pathway": "Direct Admit",
-              "notes": "Highly competitive for internal transfer."
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "admissions_pathway": "Direct Admit"
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "African & African American Studies Minor",
-        "Anthropology: Global Health and Environment Minor",
-        "Bioinformatics Minor",
-        "Business of Social Impact Minor",
-        "Data Science in the Humanities Minor",
-        "Medical Humanities Minor",
-        "Mechatronics Minor",
-        "Sustainability Certificate"
-      ]
-    },
-    "application_details": {
-      "process": {
-        "platforms": [
-          "Common App",
-          "Coalition App"
-        ],
-        "application_deadlines": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 33283,
+        "admits_total": 3968,
+        "enrolled_total": 1963,
+        "acceptance_rate_overall": 11.92,
+        "yield_rate": 49.46,
+        "notes": "Second-largest cohort in the school's history. Noted increase in rural and international students, and a decrease in first-generation and low-income students. Need-blind admissions policy continued. Test-optional policy in effect."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 32754,
+        "admits_total": 3951,
+        "enrolled_total": 1848,
+        "acceptance_rate_overall": 12.06,
+        "yield_rate": 46.77,
+        "notes": "Increased percentage of students from rural communities, low-income, or first-generation college students. This was the first class since the U.S. Supreme Court banned race-conscious admissions.",
+        "offered_spots": 3704,
+        "accepted_spots": 2288,
+        "admitted_from_waitlist": 118,
+        "waitlist_admit_rate": 5.16,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 32240,
+        "admits_total": 3855,
+        "enrolled_total": 1828,
+        "acceptance_rate_overall": 11.96,
+        "yield_rate": 47.42,
+        "notes": "Need-blind undergraduate admissions policy was in effect. Early decision acceptance rate was 26% and regular decision acceptance rate was 9%.",
+        "offered_spots": 4540,
+        "accepted_spots": 2840,
+        "admitted_from_waitlist": 73,
+        "waitlist_admit_rate": 2.57,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 33214,
+        "admits_total": 3598,
+        "enrolled_total": 1826,
+        "acceptance_rate_overall": 10.83,
+        "yield_rate": 50.75,
+        "notes": "Achieved a record low acceptance rate at the time. This was the first class admitted after the full implementation of need-blind admissions and a new committee-based evaluation process. Noted increase in Pell Grant-eligible, first-generation, and students of color compared to previous years."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 33354,
+        "admits_total": 4336,
+        "enrolled_total": 1988,
+        "acceptance_rate_overall": 13.0,
+        "yield_rate": 45.85,
+        "notes": "The university officially adopted a need-blind undergraduate-admissions policy in 2021. Described as the largest and most diverse class at the time."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.80-4.00",
+        "unweighted_middle_50": "3.50-3.80",
+        "average_weighted": 4.19,
+        "percentile_25": "3.80",
+        "percentile_75": "4.00",
+        "notes": "86% of students reporting rank were in the top 10% of their high school class"
+      },
+      "testing": {
+        "sat_composite_middle_50": "1500-1570",
+        "sat_reading_middle_50": "730-770",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "33-35",
+        "submission_rate": 57.0,
+        "policy_note": "Washington University in St. Louis is test-optional. They superscore both SAT and ACT, considering the highest section scores across all test dates. Applicants can self-report scores, with official scores required upon enrollment."
+      },
+      "demographics": {
+        "first_gen_percentage": 18.0,
+        "legacy_percentage": 12.5,
+        "notes": "First-generation percentage is for the Class of 2028. Legacy percentage (12-13%) is an estimate from a Quora discussion, not an official university statistic. Legacy defined as alumni children.",
+        "geographic_breakdown": [
           {
-            "plan_type": "Early Decision I",
-            "date": "2024-11-01",
-            "is_binding": true,
-            "notes": "Decision released by mid-December"
+            "region": "International",
+            "percentage": 12.0
           },
           {
-            "plan_type": "Early Decision II",
-            "date": "2025-01-02",
-            "is_binding": true,
-            "notes": "Decision released by mid-February"
+            "region": "Missouri",
+            "percentage": 12.0
           },
           {
-            "plan_type": "Regular Decision",
-            "date": "2025-01-02",
-            "is_binding": false,
-            "notes": "Decision released by April 1"
+            "region": "Other U.S. States",
+            "percentage": 76.0
           }
         ],
-        "supplemental_requirements": [
-          {
-            "target_program": "All",
-            "requirement_type": "Required Essay",
-            "deadline": null,
-            "details": "One 200-word response regarding academic interest and division choice."
+        "gender_breakdown": {
+          "men": {
+            "applicants": 12133,
+            "admits": 1663,
+            "acceptance_rate": 13.71,
+            "note": "Data for 2019-2020 academic year."
           },
-          {
-            "target_program": "All",
-            "requirement_type": "Optional Essay",
-            "deadline": null,
-            "details": "One 250-word response to one of two prompts."
+          "women": {
+            "applicants": 13293,
+            "admits": 1859,
+            "acceptance_rate": 13.98,
+            "note": "Data for 2019-2020 academic year."
           },
-          {
-            "target_program": "All",
-            "requirement_type": "Optional Video",
-            "deadline": "2024-11-10",
-            "details": "90-second optional video to share personal qualities."
-          }
-        ],
-        "holistic_factors": {
-          "primary_factors": [
-            "Academic Rigor",
-            "GPA",
-            "Application Essay",
-            "Recommendations"
-          ],
-          "secondary_factors": [
-            "Extracurricular Activities",
-            "Talent/Ability",
-            "Character/Personal Qualities"
-          ],
-          "essay_importance": "Critical",
-          "demonstrated_interest": "Not Considered",
-          "interview_policy": "Not Offered",
-          "legacy_consideration": "Minimal",
-          "first_gen_boost": "Strong",
-          "specific_differentiators": "Emphasis on 'By Name & Story' philosophy and collaborative mindset."
-        }
-      },
-      "strategy_tactics": {
-        "major_selection_tactics": [
-          "Apply to the College of Arts & Sciences as 'Undeclared' for maximum flexibility.",
-          "Utilize the Beyond Boundaries program as a 'no-risk' application add-on.",
-          "Apply to the McKelvey School of Engineering only if you have high-level math/physics scores."
-        ],
-        "alternate_major_strategy": "If targeting a highly competitive major like BME or Finance, consider applying to a related major in Arts & Sciences and transferring internally later."
-      },
-      "student_insights": {
-        "what_it_takes": [
-          "High academic statistics with typical SAT scores in the 1500-1570 range",
-          "Strong preference for Early Decision (ED1) to maximize admit odds",
-          "Evidence of a collaborative rather than competitive mindset"
-        ],
-        "essay_tips": [
-          "Mention specific programs like 'Ampersand Courses' or 'Beyond Boundaries'",
-          "Emphasize your connection to the St. Louis community ('In St. Louis, For St. Louis')",
-          "Write with an authentic personal voice rather than a formal academic tone"
-        ],
-        "red_flags": [
-          "Generic essays that could apply to any top-tier research university",
-          "Exhibiting a 'cutthroat' or elitist attitude",
-          "Treating the application as a backup for Ivy League schools"
-        ]
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 64500,
-          "total_coa": 92523,
-          "housing": 21854
+          "non_binary": null
         },
-        "out_of_state": {
-          "tuition": 64500,
-          "total_coa": 92523,
-          "supplemental_tuition": 0
+        "racial_breakdown": {
+          "white": 39.84,
+          "black_african_american": 6.84,
+          "hispanic_latino": 11.95,
+          "asian": 16.51,
+          "native_american_alaskan": 0.14,
+          "pacific_islander": 0.13,
+          "two_or_more_races": 7.46,
+          "unknown": 1.41,
+          "non_resident_alien": 15.71
         }
-      },
-      "aid_philosophy": "Need-Blind",
-      "average_need_based_aid": 75600,
-      "average_merit_aid": 42700,
-      "percent_receiving_aid": 47.0,
-      "scholarships": [
-        {
-          "name": "Danforth Scholars Program",
-          "type": "Merit",
-          "amount": "Full or half-tuition plus stipend",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "John B. Ervin Scholars Program",
-          "type": "Merit",
-          "amount": "Full-tuition plus stipend",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "WashU Pledge",
-          "type": "Need",
-          "amount": "Full tuition, fees, room, and board",
-          "application_method": "FAFSA and CSS Profile"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Strict",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 are generally required to earn credit",
-        "usage": "Max 15 units of total pre-matriculation credit"
-      },
-      "ib_policy": {
-        "general_rule": "Credit granted for Higher Level (HL) exams only, scores 5-7",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Internal Departmental Review",
-          "WUachieve"
-        ],
-        "restrictions": "60-unit transfer cap for most undergraduate schools"
-      }
-    },
-    "outcomes": {
-      "career_metrics": {
-        "median_earnings_10yr": 86182,
-        "employment_rate_2yr": 94.0,
-        "grad_school_rate": 25.0,
-        "top_employers": [
-          "Mastercard",
-          "Capital One",
-          "Boeing",
-          "Epic Systems",
-          "Microsoft",
-          "Amazon",
-          "JPMorgan Chase & Co."
-        ],
-        "loan_default_rate": 1.5
-      },
-      "retention_graduation": {
-        "freshman_retention_rate": 95.0,
-        "graduation_rate_4_year": 87.0,
-        "graduation_rate_6_year": 94.0
-      }
-    },
-    "application_process": {
-      "supplemental_requirements": {
-        "essay_prompts": [
-          {
-            "prompt": "Please tell us what you are interested in studying at college and why. Undecided about your academic interest(s)? Don't worry\u2014tell us what excites you about the academic division you selected. Remember that all of our first-year students enter officially 'undeclared' and work closely with their team of academic advisors to discover their academic passions.",
-            "word_limit": 200,
-            "required": true,
-            "note": "Required supplemental essay",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "WashU supports engagement in the St. Louis community by considering the university as 'In St. Louis, For St. Louis.' What is a community you are a part of and your place or impact within it?",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional - choose one of two options",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "WashU strives to know every undergraduate student 'By Name & Story.' How have your life experiences shaped your story?",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional - choose one of two options",
-            "application_cycle": "2025-2026"
-          }
-        ]
       }
     }
   },
-  "_id": "washington_university_in_st_louis",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Intellectually curious and adaptable individuals who are interested in interdisciplinary studies and pushing boundaries within and among various academic disciplines. These students are committed to social impact, global engagement, and developing multiple literacies (digital, media, economic) to understand and serve the world.",
+        "strategic_fit_advice": "Applicants who thrive in a diverse and inclusive learning environment, are eager to explore a wide range of subjects, and aspire to engage deeply with complex societal and global issues through critical inquiry and innovative thought.",
+        "majors": [
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L48 Anthro 150B Introduction to Anthropology",
+                "L48 Anthro 3083 Anthropology for the 21st Century",
+                "L48 Anthro 4991 Honors Thesis (for honors track)",
+                "One course in each subfield: Archaeology, Biological Anthropology, Sociocultural Anthropology"
+              ],
+              "electives": [
+                "L48 Anthro 361 Culture and Environment",
+                "L48 Anthro 331 Biocultural Perspectives on Mental Health",
+                "L48 Anthro 3026 Crowdsourcing the Past: Public Participation in Archaeology"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. T.R. Kidder (Archaeology)",
+              "Dr. Shanti Parikh (Sociocultural Anthropology)",
+              "Dr. Fiona Marshall (Biological Anthropology)"
+            ],
+            "notes": "Students are encouraged to declare by the spring of their sophomore year. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L41 Biol 2960 Principles of Biology I",
+              "L41 Biol 2970 Principles of Biology II",
+              "L41 Biol 2971 Principles of Biology II Laboratory",
+              "L07 Chem 111A/112A General Chemistry I & II",
+              "L07 Chem 151/152 General Chemistry Laboratory I & II",
+              "L07 Chem 261 Organic Chemistry I",
+              "L07 Chem 262 Organic Chemistry II",
+              "L07 Chem 262R Organic Chemistry II Laboratory (or L07 Chem 264)",
+              "L31 Physics 117A/118A General Physics I & II (or L31 Physics 197/198)",
+              "L24 Math 131 Calculus I",
+              "L24 Math 132 Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "L07 Chem 261 Organic Chemistry I",
+              "L07 Chem 262 Organic Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L41 Biol 2960 Principles of Biology I",
+                "L41 Biol 2970 Principles of Biology II",
+                "L41 Biol 2971 Principles of Biology II Laboratory",
+                "At least three 300- or 400-level biology courses with primary listings in L41",
+                "One 400-level biology course with a laboratory component"
+              ],
+              "electives": [
+                "L41 Biol 3058 Physiological Control Systems",
+                "L41 Biol 3370 Genetic Engineering",
+                "L41 Biol 4071 Developmental Biology",
+                "L41 Biol 424 Immunology"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Joseph Jez (Department Chair, Plant Biology)",
+              "Dr. Barbara Kunkel (Plant-pathogen interactions)",
+              "Dr. Arpita Bose (Microbiology)"
+            ],
+            "notes": "The Department of Biology offers various specializations (e.g., Ecology and Evolution, Genomics and Computational Biology, Molecular Biology and Biochemistry, Neuroscience, Environmental Biology), each with specific course recommendations. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L07 Chem 111A General Chemistry I",
+              "L07 Chem 112A General Chemistry II",
+              "L07 Chem 151 General Chemistry Laboratory I",
+              "L07 Chem 152 General Chemistry Laboratory II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "L07 Chem 261 Organic Chemistry I",
+              "L07 Chem 262 Organic Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L07 Chem 111A General Chemistry I",
+                "L07 Chem 112A General Chemistry II",
+                "L07 Chem 151 General Chemistry Laboratory I",
+                "L07 Chem 152 General Chemistry Laboratory II",
+                "L07 Chem 261 Organic Chemistry I",
+                "L07 Chem 262 Organic Chemistry II",
+                "L07 Chem 262R Organic Chemistry II Laboratory",
+                "L07 Chem 341 Physical Chemistry I",
+                "L07 Chem 401 Physical Chemistry Laboratory"
+              ],
+              "electives": [
+                "L07 Chem 435 Inorganic Chemistry",
+                "L07 Chem 436 Chemical Kinetics and Dynamics",
+                "L07 Chem 450 Chemistry of the Cell"
+              ],
+              "total_units": 120,
+              "major_units": 34
+            },
+            "notable_professors": [
+              "Dr. William E. Buhro (Inorganic Chemistry)",
+              "Dr. Kevin D. Moeller (Organic Chemistry)",
+              "Dr. Richard A. Loomis (Physical Chemistry)"
+            ],
+            "notes": "Students pursuing the BA in Chemistry typically have strong interests in diverse fields or pre-professional tracks (e.g., pre-med). Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L24 Math 131 Calculus I",
+              "L24 Math 132 Calculus II",
+              "L24 Math 233 Calculus III",
+              "L24 Math 309 Matrix Algebra (or ESE 318)",
+              "L07 Chem 111A/112A General Chemistry I & II (or L31 Physics 197/198 General Physics I & II)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSE 131 Introduction to Computer Science",
+              "CSE 247 Data Structures and Algorithms"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSE 131 Introduction to Computer Science",
+                "CSE 132 Introduction to Computer Science II",
+                "CSE 240 Logic and Discrete Mathematics",
+                "CSE 247 Data Structures and Algorithms",
+                "CSE 332 Principles of Cyber-Physical Systems",
+                "CSE 347 Analysis of Algorithms",
+                "CSE 427S Cloud Computing with Azure",
+                "One capstone course from CSE 499S or CSE 497S"
+              ],
+              "electives": [
+                "CSE 400E Research in Computer Science",
+                "CSE 422S Operating Systems",
+                "CSE 417S Introduction to Machine Learning",
+                "CSE 438S Mobile Application Development"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Jeremy Buhler (Computational Biology)",
+              "Dr. Sanjoy Dasgupta (Machine Learning - affiliate)",
+              "Dr. Ron K. Cytron (Computer Science Education)"
+            ],
+            "notes": "The BA in Computer Science is offered through the College of Arts & Sciences, providing a more flexible approach than the BS in the McKelvey School of Engineering. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L24 Math 131 Calculus I",
+              "L24 Math 132 Calculus II (or equivalent AP scores)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "L11 Econ 401 Microeconomic Theory I",
+              "L11 Econ 402 Macroeconomic Theory I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L11 Econ 1011 Introduction to Microeconomics",
+                "L11 Econ 1021 Introduction to Macroeconomics",
+                "L11 Econ 401 Microeconomic Theory I",
+                "L11 Econ 402 Macroeconomic Theory I",
+                "L11 Econ 413 Introduction to Econometrics"
+              ],
+              "electives": [
+                "L11 Econ 435 Economics of the Labor Market",
+                "L11 Econ 450 American Economic History",
+                "L11 Econ 460 Economic Development",
+                "L11 Econ 467 Games and Economic Behavior"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Steven F. Fazzari (Macroeconomics)",
+              "Dr. Robert P. King (Microeconomics)",
+              "Dr. Gaetano Antinolfi (International Macroeconomics)"
+            ],
+            "notes": "Economics is a popular major. Students are encouraged to declare by the spring of their sophomore year. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "English Literature",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L14 English 200 Introduction to English Literary Studies",
+                "One course in American Literature before 1900",
+                "One course in British Literature before 1800",
+                "One course in British Literature 1800-1900",
+                "One course in 20th or 21st Century Literature",
+                "L14 English 300-level course (minimum of 15 units at 300 level or above)",
+                "L14 English 400-level course (minimum of 9 units at 400 level)"
+              ],
+              "electives": [
+                "L14 English 312 Literary Modernism",
+                "L14 English 323 Medieval and Renaissance Drama",
+                "L14 English 416 Studies in Victorian Literature"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Gerald Early (Merle Kling Professor of Modern Letters)",
+              "Dr. Joe Loewenstein (Director of Undergraduate Studies, Comparative Literature)",
+              "Dr. Danielle Dutton (Creative Writing)"
+            ],
+            "notes": "Students can also pursue a specialization in Creative Writing within the English major. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L22 History 300-level seminars (6 units)",
+                "L22 History 400-level courses (6 units)",
+                "At least one course each in American, European, and World history",
+                "At least one course focused on history before 1800 and one focused on history after 1800"
+              ],
+              "electives": [
+                "L22 History 3060 African Americans and the Black Freedom Struggle",
+                "L22 History 3431 Europe in the Age of Reformation",
+                "L22 History 3860 Empire and Memory: The History of Colonialism in South Asia"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Peter Kastor (American History)",
+              "Dr. Christine Johnson (European History)",
+              "Dr. Steven Hindle (Early Modern British History)"
+            ],
+            "notes": "Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L24 Math 131 Calculus I",
+              "L24 Math 132 Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "L24 Math 233 Calculus III",
+              "L24 Math 310 Differential Equations"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L24 Math 131 Calculus I",
+                "L24 Math 132 Calculus II",
+                "L24 Math 233 Calculus III",
+                "L24 Math 309 Matrix Algebra",
+                "L24 Math 310 Differential Equations",
+                "L24 Math 320 Introduction to Analysis",
+                "L24 Math 400 Introduction to Abstract Algebra"
+              ],
+              "electives": [
+                "L24 Math 4111 Introduction to Numerical Analysis",
+                "L24 Math 429 Linear Algebra",
+                "L24 Math 439 Linear Algebra and Functional Analysis"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Rachel Roberts (Topology)",
+              "Dr. Renato Feres (Differential Geometry, Dynamical Systems)",
+              "Dr. Blake Thornton (Associate Director of Undergraduate Studies)"
+            ],
+            "notes": "The Department of Mathematics also offers BS in Mathematics, Applied Mathematics, and dual majors with Computer Science and Economics. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L41 Biol 2960 Principles of Biology I",
+              "L41 Biol 2970 Principles of Biology II",
+              "L41 Biol 2971 Principles of Biology II Laboratory",
+              "L12 Chem 111A/112A General Chemistry I & II",
+              "L12 Chem 151/152 General Chemistry Laboratory I & II",
+              "L12 Chem 261 Organic Chemistry I",
+              "L12 Chem 262 Organic Chemistry II",
+              "L12 Chem 262R Organic Chemistry II Laboratory (or L12 Chem 264)",
+              "L31 Physics 117A/118A General Physics I & II (or L31 Physics 197/198)",
+              "L24 Math 131 Calculus I",
+              "L24 Math 132 Calculus II",
+              "L24 Math 2200 Elementary Probability and Statistics (or Math 322/3200)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "L41 Biol 2960 Principles of Biology I",
+              "L41 Biol 2970 Principles of Biology II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L41 Biol 2960 Principles of Biology I",
+                "L41 Biol 2970 Principles of Biology II",
+                "L41 Biol 3411 Principles of Neuroscience",
+                "L41 Biol 3058 Physiological Control Systems",
+                "L41 Biol 3422 Genes, Brain and Behavior"
+              ],
+              "electives": [
+                "L41 Biol 4582 The Biology of Vision",
+                "L41 Biol 4030 Biological Clocks",
+                "L41 Biol 4040 Laboratory of Neurophysiology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Linda J. Richards (Chair, Department of Neuroscience)",
+              "Dr. Martha Bagnall (Spinal and brainstem circuits for movement)",
+              "Dr. Amy Bauernfeind (Primate neuroanatomical and molecular variation)"
+            ],
+            "notes": "Neuroscience is an interdisciplinary major that combines biology, psychology, and other sciences. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L30 Phil 100 Introduction to Philosophy",
+                "L30 Phil 301G Ethical Theory",
+                "L30 Phil 315 Logic and Critical Analysis",
+                "One course in History of Philosophy",
+                "One course in Metaphysics & Epistemology",
+                "One course in Value Theory"
+              ],
+              "electives": [
+                "L30 Phil 340 Mind and Morals",
+                "L30 Phil 345 Philosophy of Science",
+                "L30 Phil 418 Philosophy of Language"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Ron Mallon (Department Chair, Philosophy of Social Science)",
+              "Dr. Anne Margaret Baxley (17th/18th Century Philosophy, Normative Ethics)",
+              "Dr. Carl F. Craver (Philosophy of Mind and Cognitive Science)"
+            ],
+            "notes": "The department is closely associated with the Philosophy-Neuroscience-Psychology (PNP) program. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L32 Pol Sci 101B Introduction to Political Science",
+                "One course in American Politics (e.g., L32 Pol Sci 3010 Politics of American Education)",
+                "One course in Comparative Politics (e.g., L32 Pol Sci 3071 Latin American Political Systems)",
+                "One course in International Politics (e.g., L32 Pol Sci 321 Comparative Political Parties)",
+                "One course in Political Theory (e.g., L32 Pol Sci 340 The American Presidency)",
+                "L32 Pol Sci 300 Quantitative Political Analysis (or equivalent methods course)"
+              ],
+              "electives": [
+                "L32 Pol Sci 331 Topics in Politics: The Electoral Process",
+                "L32 Pol Sci 373 International Security",
+                "L32 Pol Sci 4040 Capstone in Political Science"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Matthew Gabel (Comparative Politics, European Union)",
+              "Dr. Andrew Martin (Chancellor, specializing in judicial politics)",
+              "Dr. Betsy Sinclair (American Politics, Political Behavior)"
+            ],
+            "notes": "Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "L33 Psych 1004 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "L33 Psych 300 Introduction to Psychological Statistics",
+              "L33 Psych 301 Experimental Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L33 Psych 1004 Introduction to Psychology",
+                "L33 Psych 300 Introduction to Psychological Statistics",
+                "L33 Psych 301 Experimental Psychology",
+                "One course from Area A (e.g., L33 Psych 315 Cognitive Psychology)",
+                "One course from Area B (e.g., L33 Psych 3407 Developmental Psychology)",
+                "One course from Area C (e.g., L33 Psych 360 Abnormal Psychology)"
+              ],
+              "electives": [
+                "L33 Psych 404 Behavioral Psychology of Aging",
+                "L33 Psych 413 Contemporary Topics in Social Psychology",
+                "L33 Psych 494 Behavioral Psychology in Cancer Prevention and Control"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Kathleen B. McDermott (Memory, Cognitive Neuroscience)",
+              "Dr. Henry L. Roediger III (Memory, Cognition)",
+              "Dr. Deanna Barch (Clinical Psychology, Cognitive Neuroscience)"
+            ],
+            "notes": "Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "L40 SOC 1004 Introduction to Sociology",
+                "L40 SOC 3000 Social Theory",
+                "L40 SOC 3001 Social Statistics",
+                "L40 SOC 3002 Research Methods"
+              ],
+              "electives": [
+                "L40 SOC 3212 The Social Construction of Race",
+                "L40 SOC 3510 Health Care Disparities in American Society",
+                "L40 SOC 4289 Neighborhoods, Schools, and Social Inequality"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Patrick Ishizuka (Family, Inequality)",
+              "Dr. Adia Harvey Wingfield (Race, Work, and Organizations)",
+              "Dr. Hedwig Lee (Demography, Race/Ethnicity, Health)"
+            ],
+            "notes": "Overall university acceptance rate: 12%, average admitted GPA: 4.19. Internal transfer into Arts & Sciences requires 2.5 cumulative GPA. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          }
+        ]
+      },
+      {
+        "name": "McKelvey School of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Problem-solvers with a strong STEM background and a passion for independent inquiry, scientific excellence, technological innovation, and equitable societal impact. These students are eager to explore, create, and design solutions to complex challenges in an evolving world.",
+        "strategic_fit_advice": "Applicants should have a strong aptitude for science and mathematics, a desire for hands-on, experiential learning, and a commitment to applying engineering principles to generate new knowledge and contribute to positive systematic change globally.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSE 131 Introduction to Computer Science",
+              "CSE 132 Introduction to Computer Science II",
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "PHYS 117A General Physics I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "CSE 247 Data Structures and Algorithms",
+              "CSE 240 Logic and Discrete Mathematics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CSE 131 Introduction to Computer Science",
+                "CSE 132 Introduction to Computer Science II",
+                "CSE 240 Logic and Discrete Mathematics",
+                "CSE 247 Data Structures and Algorithms",
+                "CSE 330 Rapid Prototype Development and Creative Programming",
+                "CSE 332 Introduction to Cyber-Physical Systems",
+                "CSE 347 Analysis of Algorithms",
+                "CSE 427S Cloud Computing with Azure",
+                "One 400-level capstone course"
+              ],
+              "electives": [
+                "CSE 417S Introduction to Machine Learning",
+                "CSE 422S Operating Systems",
+                "CSE 431S Translation of Computer Languages",
+                "CSE 467S Computer Security"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Ron K. Cytron (Computer Science Education)",
+              "Dr. Jeremy Buhler (Computational Biology)",
+              "Dr. Sanjoy Dasgupta (Machine Learning)"
+            ],
+            "notes": "Admission to the McKelvey School of Engineering is highly competitive. Internal transfer into most engineering majors typically requires a 3.0 GPA in foundational science/math/CSE courses. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "PHYS 117A General Physics I",
+              "CHEM 111A General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BME 140 Introduction to Biomedical Engineering",
+              "MATH 233 Calculus III"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BME 140 Introduction to Biomedical Engineering",
+                "BME 240 Biomechanics",
+                "BME 301 Physiological Control Systems",
+                "BME 301A Biomedical Signal Processing",
+                "BME 302 Biomedical System, Modeling, and Computation",
+                "BME 303 Biomedical Engineering Science and Design I",
+                "BME 304 Biomedical Engineering Science and Design II",
+                "BME 400 Engineering & Biology across Scales",
+                "One BME 400-level Capstone Design course"
+              ],
+              "electives": [
+                "BME 450 Numerical Methods in Biomedical Engineering",
+                "BME 461 Quantitative Bioengineering Physiology",
+                "BME 539 Engineering Aspects of Electrophysiology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Guy Genin (Department Chair, Mechanobiology)",
+              "Dr. Lori Setton (Tissue Engineering)",
+              "Dr. Philip V. Bayly (Biomechanics, Fluid Dynamics)"
+            ],
+            "notes": "Highly interdisciplinary, combining engineering principles with biological and medical sciences. Internal transfer into most engineering majors typically requires a 3.0 GPA in foundational science/math/engineering courses. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "PHYS 117A General Physics I",
+              "CHEM 111A General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ESE 101 Introduction to Engineering",
+              "CHEM 111A General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "EECE 101 Introduction to Energy, Environmental & Chemical Engineering",
+                "EECE 203 Engineering Thermodynamics",
+                "EECE 205 Material, Energy & Momentum Balances",
+                "EECE 301 Transport Phenomena I: Fluid Mechanics",
+                "EECE 303 Transport Phenomena II: Heat and Mass Transfer",
+                "EECE 305 Chemical Engineering Laboratory I",
+                "EECE 309 Chemical Reaction Engineering",
+                "EECE 403 Chemical Engineering Design I",
+                "EECE 404 Chemical Engineering Design II"
+              ],
+              "electives": [
+                "EECE 411 Process Control",
+                "EECE 420 Sustainable Biodiesel",
+                "EECE 421 Environmental Engineering Science"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Richard L. Axelbaum (Combustion, Energy)",
+              "Dr. Young-Shin Jun (Environmental Engineering)",
+              "Dr. Ramesh K. Agarwal (Aerodynamics, Computational Fluid Dynamics)"
+            ],
+            "notes": "Internal transfer into most engineering majors typically requires a 3.0 GPA in foundational science/math/engineering courses. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "PHYS 117A General Physics I",
+              "CSE 131 Introduction to Computer Science"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ESE 101 Introduction to Engineering",
+              "ESE 230 Introduction to Electrical and Electronic Circuits"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ESE 101 Introduction to Engineering",
+                "ESE 230 Introduction to Electrical and Electronic Circuits",
+                "ESE 260 Introduction to Digital Logic and Computer Design",
+                "ESE 326 Principles of Microelectronics",
+                "ESE 330 Engineering Electromagnetics Principles",
+                "ESE 351 Signals and Systems",
+                "ESE 4070 Electrical Engineering Design Project I",
+                "ESE 4071 Electrical Engineering Design Project II"
+              ],
+              "electives": [
+                "ESE 435 Electrical Energy Conversion",
+                "ESE 441 Transmission and Detection of Information",
+                "ESE 488 Physical Principles of Semiconductor Devices"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Joseph A. O'Sullivan (Department Chair, Communications, Signal Processing)",
+              "Dr. Jung-Tsung Shen (Quantum Optics, Photonics)",
+              "Dr. ShiNung Ching (Control Systems, Neuroscience Applications)"
+            ],
+            "notes": "Internal transfer into most engineering majors typically requires a 3.0 GPA in foundational science/math/engineering courses. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "PHYS 117A General Physics I",
+              "CHEM 111A General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ESE 101 Introduction to Engineering",
+              "MEMS 202 Mechanics of Deformable Bodies"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "MEMS 100 Introduction to Mechanical Engineering",
+                "MEMS 201 Dynamics",
+                "MEMS 202 Mechanics of Deformable Bodies",
+                "MEMS 203 Materials Science",
+                "MEMS 255 Engineering Mechanics III",
+                "MEMS 301 Machine Elements",
+                "MEMS 305 Machine Elements Laboratory",
+                "MEMS 311 Fluid Mechanics",
+                "MEMS 341 Engineering Thermodynamics",
+                "MEMS 411 Engineering Design Project I",
+                "MEMS 412 Engineering Design Project II"
+              ],
+              "electives": [
+                "MEMS 430 Energy Systems",
+                "MEMS 431 Environmental Controls",
+                "MEMS 460 Flight Dynamics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Kenneth L. Jerina (Department Chair, Solid Mechanics)",
+              "Dr. David Peters (Aerodynamics, Rotorcraft)",
+              "Dr. Richard Axelbaum (Energy, Combustion)"
+            ],
+            "notes": "Internal transfer into most engineering majors typically requires a 3.0 GPA in foundational science/math/engineering courses. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          }
+        ]
+      },
+      {
+        "name": "Olin Business School",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Ambitious, analytical, and purpose-driven students aspiring to leadership roles. They are interested in solving real-world business problems, sharpening analytical skills, and making a positive impact on society through business. A strong interest in areas like the business of health and entrepreneurship is common.",
+        "strategic_fit_advice": "This school is suitable for students who seek a world-class business education with a focus on experiential learning, global perspectives, and developing into principled leaders who can leverage business as a force for good.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "QBA 120 Business Analytics: Statistics",
+              "QBA 121 Business Analytics: Decision Making"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACCT 2610 Principles of Financial Accounting",
+              "ACCT 2620 Principles of Managerial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2610 Principles of Financial Accounting",
+                "ACCT 2620 Principles of Managerial Accounting",
+                "ACCT 3610 Intermediate Financial Accounting I",
+                "ACCT 3620 Intermediate Financial Accounting II",
+                "ACCT 363 Auditing",
+                "ACCT 4680 Taxation of Business Entities"
+              ],
+              "electives": [
+                "ACCT 464 Financial Statement Analysis",
+                "ACCT 4710 Advanced Financial Accounting",
+                "ACCT 5600 Accounting and the Capital Markets"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. John N. Campbell (Accounting Ethics)",
+              "Dr. Thomas E. Gilliam (Taxation)",
+              "Dr. David W. Mueller (Auditing)"
+            ],
+            "notes": "Students are admitted directly into the Olin Business School and then declare their specific business major. Internal transfer into Olin Business School typically requires a strong academic record. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "QBA 120 Business Analytics: Statistics",
+              "QBA 121 Business Analytics: Decision Making",
+              "ACCT 2610 Principles of Financial Accounting"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FIN 340 Corporate Finance"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2610 Principles of Financial Accounting",
+                "FIN 340 Corporate Finance",
+                "FIN 4410 Investments",
+                "FIN 4430 Financial Markets and Institutions",
+                "FIN 451 Financial Management"
+              ],
+              "electives": [
+                "FIN 448 Derivatives and Risk Management",
+                "FIN 452 Options, Futures and Derivatives",
+                "FIN 470 International Finance"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Todd G. Gormley (Corporate Finance)",
+              "Dr. Philip Dybvig (Financial Theory, Investment Banking)",
+              "Dr. Radha Gopalan (Corporate Finance, Incentives)"
+            ],
+            "notes": "Students are admitted directly into the Olin Business School. Internal transfer into Olin Business School typically requires a strong academic record. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "QBA 120 Business Analytics: Statistics",
+              "QBA 121 Business Analytics: Decision Making"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MKT 370 Principles of Marketing"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MKT 370 Principles of Marketing",
+                "MKT 377 Consumer Behavior",
+                "MKT 470 Marketing Research",
+                "MKT 478 Marketing Strategy"
+              ],
+              "electives": [
+                "MKT 471 Advertising and Promotion",
+                "MKT 472 Business-to-Business Marketing",
+                "MKT 481 International Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Seethu Seetharaman (Department Chair, Marketing Strategy)",
+              "Dr. Sydney Finkelstein (Leadership, Strategy - affiliate)",
+              "Dr. Robyn LeBoeuf (Consumer Behavior)"
+            ],
+            "notes": "Students are admitted directly into the Olin Business School. Internal transfer into Olin Business School typically requires a strong academic record. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "MATH 132 Calculus II",
+              "QBA 120 Business Analytics: Statistics",
+              "QBA 121 Business Analytics: Decision Making"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "QBA 120 Business Analytics: Statistics",
+              "QBA 121 Business Analytics: Decision Making"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "QBA 120 Business Analytics: Statistics",
+                "QBA 121 Business Analytics: Decision Making",
+                "DAT 220 Data Science for Business",
+                "DAT 301 Introduction to Data Mining",
+                "DAT 410 Business Intelligence",
+                "DAT 430 Predictive Analytics"
+              ],
+              "electives": [
+                "DAT 400 Spreadsheets and Business Analysis",
+                "DAT 401 Pricing Strategies",
+                "DAT 462 Business Data Visualization"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Meng Liu (Business Analytics, Machine Learning)",
+              "Dr. Panos Kouvelis (Operations & Manufacturing Management)",
+              "Dr. Dennis B. Yasaki (Management Science)"
+            ],
+            "notes": "Students are admitted directly into the Olin Business School. Internal transfer into Olin Business School typically requires a strong academic record. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Entrepreneurship",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "QBA 120 Business Analytics: Statistics",
+              "ACCT 2610 Principles of Financial Accounting"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MGT 100 Individual in a Managerial Environment",
+                "MGT 201 Management and Organization",
+                "MGT 320 Business, Innovation, and Entrepreneurship",
+                "MGT 421 Entrepreneurship and Innovation",
+                "MGT 424 New Business Planning"
+              ],
+              "electives": [
+                "MGT 400 Business Ethics and Social Responsibility",
+                "MGT 402 Ethical Issues in Managerial Decisions",
+                "MGT 460 Introduction to Social Entrepreneurship"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Ken Harrington (Entrepreneurship)",
+              "Dr. Doug Tatum (Entrepreneurship, Venture Capital)",
+              "Dr. Michael F. Sepe (Corporate Strategy, Family Business)"
+            ],
+            "notes": "Students are admitted directly into the Olin Business School. Internal transfer into Olin Business School typically requires a strong academic record. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          }
+        ]
+      },
+      {
+        "name": "Sam Fox School of Design & Visual Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Creative, passionate, and socially conscious individuals who believe in the power of design, architecture, and art to address difficult questions and create impactful solutions for local and global communities. Students are often interested in sustainability, environmental justice, and social justice through design.",
+        "strategic_fit_advice": "Ideal for aspiring architects, artists, and designers who are innovative, collaborative, and dedicated to using their creative skills to tackle real-world challenges, particularly in areas of sustainability and community engagement.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio recommended for admission, but not required for BA. Strong interest in design and visual arts.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ARCH 111 Introduction to Design",
+                "ARCH 112 Introduction to Design II",
+                "ARCH 211 Introduction to Architecture Studios",
+                "ARCH 212 Architectural Design I",
+                "ARCH 311 Architectural Design II",
+                "ARCH 312 Architectural Design III",
+                "ARCH 328 History of Western Architecture I",
+                "ARCH 329 History of Western Architecture II",
+                "ARCH 401 History of Architecture and Urbanism"
+              ],
+              "electives": [
+                "ARCH 336 Community Building and Design",
+                "ARCH 423 History of Landscape Architecture",
+                "ARCH 445 Digital Fabrication"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Derek Hoeferlin (Chair, Graduate School of Architecture & Urban Design)",
+              "Dr. Robert E. Thayer (Landscape Architecture)",
+              "Dr. Eric Mumford (Architectural History)"
+            ],
+            "notes": "Students applying to the B.S. in Architecture or Master of Architecture typically submit a portfolio. The BA is less design-intensive than the BS or M.Arch. Internal transfer into the Sam Fox School requires a cumulative GPA of 3.0 or higher. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Communication Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "F20 ART 101 Drawing",
+              "F20 ART 102 Two-Dimensional Design"
+            ],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "F20 ART 101 Drawing",
+                "F20 ART 102 Two-Dimensional Design",
+                "F20 ART 103 Three-Dimensional Design",
+                "F20 ART 213 Design I",
+                "F20 ART 214 Design II",
+                "F20 ART 313 Communication Design I",
+                "F20 ART 314 Communication Design II",
+                "F20 ART 413 Communication Design III",
+                "F20 ART 414 Communication Design IV"
+              ],
+              "electives": [
+                "F20 ART 321 Letterpress Printing",
+                "F20 ART 324 Interactive Design",
+                "F20 ART 428 Type, Image, and Word"
+              ],
+              "total_units": 120,
+              "major_units": 72
+            },
+            "notable_professors": [
+              "Dr. Heather Corcoran (Chair, Communication Design)",
+              "Dr. Penina Acayo Lwanga (Design for Social Impact)",
+              "Dr. Jonathan St. Onge (Graphic Design, Typography)"
+            ],
+            "notes": "A portfolio is a crucial part of the application for BFA programs. Internal transfer into the Sam Fox School requires a cumulative GPA of 3.0 or higher. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Fashion Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "F20 ART 101 Drawing",
+              "F20 ART 102 Two-Dimensional Design"
+            ],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "F20 ART 101 Drawing",
+                "F20 ART 102 Two-Dimensional Design",
+                "F20 ART 103 Three-Dimensional Design",
+                "F20 ART 206 Fashion Design I",
+                "F20 ART 207 Fashion Design II",
+                "F20 ART 306 Fashion Design III",
+                "F20 ART 307 Fashion Design IV",
+                "F20 ART 406 Fashion Design V",
+                "F20 ART 407 Fashion Design VI"
+              ],
+              "electives": [
+                "F20 ART 302 Digital Fashion",
+                "F20 ART 337 Patternmaking",
+                "F20 ART 438 Advanced Fashion Studio"
+              ],
+              "total_units": 120,
+              "major_units": 72
+            },
+            "notable_professors": [
+              "Dr. Audra Hubbell (Fashion Design, Sustainability)",
+              "Dr. Mary Ruppert-Stroescu (Fashion Design, Wearable Technology)",
+              "Dr. Jennifer Ingram (Associate Director of Fashion Design)"
+            ],
+            "notes": "A portfolio is a crucial part of the application for BFA programs. Internal transfer into the Sam Fox School requires a cumulative GPA of 3.0 or higher. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          },
+          {
+            "name": "Fine Arts",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "F20 ART 101 Drawing",
+              "F20 ART 102 Two-Dimensional Design"
+            ],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "F20 ART 101 Drawing",
+                "F20 ART 102 Two-Dimensional Design",
+                "F20 ART 103 Three-Dimensional Design",
+                "F20 ART 105 Introduction to Printmaking",
+                "F20 ART 107 Introduction to Photography",
+                "F20 ART 109 Introduction to Painting",
+                "F20 ART 110 Introduction to Sculpture",
+                "F20 ART 4991 Honors Thesis (for honors track)"
+              ],
+              "electives": [
+                "F20 ART 320 Intermediate Painting",
+                "F20 ART 340 Intermediate Sculpture",
+                "F20 ART 450 Advanced Photography"
+              ],
+              "total_units": 120,
+              "major_units": 72
+            },
+            "notable_professors": [
+              "Dr. Patricia Olynyk (Director, Graduate School of Art)",
+              "Dr. Arny Nadler (Sculpture)",
+              "Dr. Lisa Bulawsky (Printmaking)"
+            ],
+            "notes": "The BFA in Fine Arts allows for concentrations in areas like Painting, Photography, Printmaking, and Sculpture. A portfolio is a crucial part of the application. Internal transfer into the Sam Fox School requires a cumulative GPA of 3.0 or higher. Overall university acceptance rate: 12%, average admitted GPA: 4.19. Data source: Washington University in St. Louis 2025-2026 Undergraduate Bulletin."
+          }
+        ]
+      },
+      {
+        "name": "School of Continuing & Professional Studies (CAPS)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Business Analytics Minor",
+      "Data Analytics Certificate",
+      "Business Certificate",
+      "Creative Writing Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "This refers to Early Decision I."
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2026-01-02",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-02",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One required short answer essay (250 words or less) asking about your academic interests and why you want to study them at WashU. An optional writing supplement (250 words or less) allows you to respond to one of two prompts: either discuss a community you are a part of and your impact within it, or describe how your life experiences have shaped your story. An optional video supplement is also available."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Class rank",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendations",
+        "Talent/Ability",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Volunteer work",
+        "Work experience",
+        "Alumni/ae relation",
+        "Geographical Residence"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Employs a holistic and individualized review process to build a welcoming, nurturing, and intellectually rigorous community, actively seeking students who demonstrate intellectual curiosity and will contribute distinctly to the university. Offers optional interviews as an opportunity for the admissions committee to learn more about the applicant."
+    },
     "essay_prompts": [
       {
-        "prompt": "Tell us about something that really sparks your intellectual curiosity and why.",
+        "prompt": "Please tell us what you are interested in studying at college and why. Undecided about your academic interest(s)? Don't worry—tell us what excites you about the academic division you selected. Remember that all of our first-year students enter officially “undeclared” and work closely with their team of academic advisors to discover their academic passions. You can explore all of our majors and programs on our website.",
         "word_limit": "200 words",
-        "type": "Intellectual",
+        "type": "Major / Academic Interest",
         "required": true,
         "brainstorming_questions": [
-          "Thinking about the moment you first encountered this intellectual spark, can you describe the specific sensory details or the unexpected place where this curiosity ignited?",
-          "When this particular topic or idea captured your attention, what was the very first 'why' that bubbled up inside you, and how did that initial question evolve?",
-          "Beyond the surface level, what are the underlying assumptions or puzzles within this area of curiosity that you find yourself compelled to unravel or challenge?",
-          "Can you recall a time when pursuing this intellectual spark led you down an unplanned path or to an unexpected discovery, and what did that detour reveal about your learning process?",
-          "If you could sit down with someone who *doesn't* understand why this sparks your curiosity, what's the one most essential aspect or hidden beauty of it that you'd strive to convey to them?"
+          "What specific courses, professors, or research opportunities at WashU are most compelling to your academic interests?",
+          "Describe a moment, book, or experience that first ignited your curiosity in this particular field or academic division.",
+          "How have you explored this interest outside of your high school curriculum (e.g., projects, clubs, online courses, personal reading)?",
+          "If undecided, what themes, big questions, or types of problems within your chosen academic division genuinely excite you?",
+          "Beyond the subject matter itself, what kind of impact or understanding do you hope to gain by studying this at WashU?"
+        ]
+      },
+      {
+        "prompt": "WashU is a place that values a wide range of perspectives. We believe those perspectives come from a variety of experiences and identities. In 250 words or less, respond to one of the following prompts to help us understand “Who are you?”: \n\nA. WashU supports engagement in the St. Louis community by considering the university as “In St. Louis, For St. Louis.” What is a community you are a part of and your place or impact within it?\n\nB. WashU strives to know every undergraduate student “By Name & Story.” How have your life experiences shaped your story?",
+        "word_limit": "250 words",
+        "type": "Community / Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "For Prompt A: What is a community (broadly defined: family, club, neighborhood, online group, etc.) where you feel you genuinely belong and contribute?",
+          "For Prompt A: Can you recall a specific instance where your actions or presence significantly impacted this community, or how the community profoundly impacted you?",
+          "For Prompt B: Identify a pivotal life experience or a series of experiences that fundamentally altered your perspective or shaped a core belief you hold today.",
+          "For Prompt B: How has this experience informed the person you are becoming or the values you prioritize?",
+          "Across both prompts: What unique facet of your identity, experience, or perspective would WashU's admissions committee not discover elsewhere in your application?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/washington_university_in_st_louis_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to the division that genuinely interests you, rather than trying to game the system with a 'less competitive' major. Washington University in St. Louis encourages applicants to select one of the academic divisions (Architecture, Art, Arts & Sciences, Business, or Engineering) based on their primary interests. While an intended major is indicated during the application, formal declaration often doesn't occur until the second year. WashU emphasizes a holistic review process and states that all undergraduate schools generally have similar admissions criteria.",
+      "Consider that popular majors like Computer Science, Finance, and Engineering are likely highly competitive. The most popular majors at WashU include Computer Science, Finance, Research and Experimental Psychology, Economics, and Mechanical Engineering. While there isn't explicit information stating these are harder to get into directly, their popularity suggests a competitive applicant pool.",
+      "Be aware that transferring between undergraduate schools (divisions) at WashU is generally considered feasible, but requires careful planning. While some sources suggest internal transfer between schools is 'very easy' or 'quite easy,' others advise caution, noting it typically requires departmental approval and demonstrating the ability to complete the new school's requirements within the four-year timeframe.",
+      "Leverage Early Decision if WashU is your top choice, as it significantly increases your chances of admission. The acceptance rate for Early Decision (ED1 and ED2 combined) is substantially higher (25-33%) compared to the Regular Decision acceptance rate (8-10%). Over half of the incoming class is often filled through Early Decision rounds. While not directly about major, applying ED can be a strategic move for overall admission, which then allows you to pursue your chosen major within the university."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "If applying to competitive major, list backup in different college. Example: if applying to CS in Engineering, list Cognitive Science as alternate.",
+    "internal_transfer_difficulty": "Competitive internal transfer process for impacted majors"
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 68240.0,
+        "total_coa": 92932.0,
+        "housing": 14269.0
+      },
+      "out_of_state": {
+        "tuition": 68240.0,
+        "total_coa": 92932.0
+      }
+    },
+    "aid_philosophy": "Need-Blind / Meets 100% of Need",
+    "average_need_based_aid": 55000.0,
+    "average_merit_aid": 15000.0,
+    "percent_receiving_aid": 46.0,
+    "meets_full_need": true,
+    "notes": "No loans for families under $75K",
+    "scholarships": [
+      {
+        "name": "John B. Ervin Scholars Program",
+        "type": "Merit",
+        "amount": "Full or partial tuition scholarships with a $2,500 annual stipend",
+        "deadline": "January 2, 2026 (application for admission and scholarship essay/short answer)",
+        "benefits": "Special orientation, meetings with university and community leaders, academic support and advising, participation in campus organizations and community service projects. Renewable annually.",
+        "application_method": "Separate Application (requires admission application, scholarship essay/short answer, and optional third letter of recommendation). Finalists interviewed."
+      },
+      {
+        "name": "Annika Rodriguez Scholars Program",
+        "type": "Merit",
+        "amount": "Full or partial tuition scholarships with a $2,500 annual stipend",
+        "deadline": "January 2, 2026 (application for admission and scholarship essay/short answer)",
+        "benefits": "Orientation, meetings with university and community leaders, academic support and advising, Rodriguez First-Year Seminar, and events with other scholars. Renewable annually.",
+        "application_method": "Separate Application (requires admission application, scholarship essay/short answer, and optional third letter of recommendation). Finalists interviewed."
+      },
+      {
+        "name": "Danforth Scholars Program",
+        "type": "Merit",
+        "amount": "Multiple full-tuition and half-tuition scholarships",
+        "deadline": "January 2 (scholarship application due, aligned with regular decision admission deadline)",
+        "benefits": "Enriched academic experiences, significant financial support, close-knit community of peers and mentors, opportunities for intellectual exploration, personal growth, and professional development. Renewable annually.",
+        "application_method": "Separate Application (part of Signature Scholar Programs application, requires short answer and essay questions)"
+      },
+      {
+        "name": "Howard Nemerov Writing Scholars Program",
+        "type": "Merit",
+        "amount": "Up to 10 $3,000 scholarships annually",
+        "deadline": "January 2, 2026 (application for admission and writing portfolio)",
+        "benefits": "Participation in writing seminars, submission of work to campus publications, involvement in writing-related social activities, commitment to earning a minor in English writing. Renewable annually.",
+        "application_method": "Separate Application (requires application to the College of Arts & Sciences and submission of a writing portfolio). Finalists notified by end of February."
+      },
+      {
+        "name": "Florence Moog Scholarship",
+        "type": "Merit",
+        "amount": "Half-tuition for junior and senior years",
+        "deadline": "Late March (eligible sophomores receive email in late February with application details)",
+        "benefits": "Recognizes outstanding sophomore in Arts & Sciences preparing for a science career with excellence in STEM and another distinct area.",
+        "application_method": "Separate Application (eligible sophomores in Arts & Sciences with 3.5+ GPA and coursework in natural sciences/math/engineering are invited to apply. Finalists interviewed during Reading Period.)"
+      },
+      {
+        "name": "Ampersand Scholarships",
+        "type": "Merit",
+        "amount": "Up to 16 full-tuition scholarships with $1,000 stipends",
+        "deadline": "January 2, 2026 (Application for admission)",
+        "benefits": "Priority review for Ampersand Programs, renewable annually.",
+        "application_method": "Automatic Consideration (selected based on application for admission to College of Arts & Sciences, demonstrating strong academic interest in at least two subjects across Humanities, Natural Sciences, and Social Sciences)"
+      },
+      {
+        "name": "Need-Based Grant",
+        "type": "Need",
+        "amount": "Varies (WashU meets 100% of demonstrated financial need without loans)",
+        "deadline": "February 2 (Regular Decision), January 13 (Early Decision II), November 18 (Early Decision I). For continuing students, March 31, 2026.",
+        "benefits": "Covers demonstrated financial need, may include grants and campus store credit for essentials.",
+        "application_method": "CSS Profile and FAFSA (for U.S. citizens/permanent residents). International applicants submit CSS Profile by admission decision plan deadlines."
+      }
+    ]
+  },
+  "credit_policies": {
+    "general_philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 4+ grants credit for most exams",
+      "exceptions": [
+        "In French and German, a score of 3 confirmed by a course taken in residence earns additional credit",
+        "For Chemistry, a score of 4 grants 3 units of CHEM 1030, and a score of 5 grants 3 units of CHEM 1030 and 3 units of CHEM 1040",
+        "For History (American, European, World Modern), a score of 5 can fulfill introductory course requirements for the major/minor and grants 3 units of credit, while a score of 4 grants 3 units of elective credit",
+        "A score of 5 on AP Psychology waives the PSYCH 1000 Introduction to Psychology requirement, but no college credit is awarded",
+        "For Biology, scores of 4 or 5 grant 6 units of elective credit (BIOL 1996)"
+      ],
+      "usage": "A maximum of 15 units of pre-matriculation credit may be counted toward any undergraduate degree, which will count toward graduation but not meet general education requirements. These credits can satisfy some major prerequisites and allow for placement into advanced courses."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit; SL not accepted. A maximum of 15 units of pre-matriculation credit (including IB) may be applied, counting toward graduation but not general education requirements.",
+      "diploma_bonus": true
+    },
+    "transfer_policy": {
+      "tools": [
+        "Washington University Registrar's Office",
+        "Academic advisors",
+        "School/program-specific offices (e.g., Olin Global Programs, Sam Fox School Registrar's Office, WashU Continuing & Professional Studies Student Success Navigators)",
+        "Course Evaluation site (for study abroad)"
+      ],
+      "restrictions": "For general undergraduate transfer, a maximum of 15 units of pre-matriculation or non-Washington University transfer credit (including AP, IB, and British A-Level exams) may be counted toward an undergraduate degree. Courses must have a grade of C or better to be considered for transfer. Grades for transfer courses do not factor into the WashU GPA. Washington University does not transfer credits for courses taken online. For WashU Continuing & Professional Studies (CAPS) Bachelor of Science degrees, a maximum of 66 units from a community college may be transferred, or a maximum of 60 credits from approved Associate in Applied Science programs."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework and high standardized test scores",
+      "Demonstrated genuine passion and long-term dedication in extracurricular activities",
+      "Authentic and compelling essays that highlight personality, story, and fit",
+      "Active and meaningful involvement in extracurriculars, often demonstrating leadership or deep interest"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/student organizations: WashU emphasizes leadership roles within the \"4 tiers of extracurriculars,\" and involvement in the more than 400 recognized student groups, including academic, cultural, and pre-professional organizations, is common.",
+      "Community service/volunteering: Volunteer work and participation in community service are explicitly considered \"important\" factors in admissions. Student-run organizations like Pediatric Lifesavers, which works with St. Louis Children's Hospital, exemplify this involvement.",
+      "Research experience: Opportunities to learn, conduct research, and experience life on a college campus are offered through summer and pre-college programs. Student interest groups, particularly within the medical school, also facilitate research and shadowing opportunities.",
+      "Varsity/club/intramural athletics: WashU students have numerous opportunities to stay active through varsity, club, or intramural athletics. While recruited athletes are considered, the school maintains the same academic requirements.",
+      "Music/arts involvement: For students applying to the College of Art, a portfolio demonstrating artistic skill and talent is important. There are also student organizations such as the Business of the Arts Club.",
+      "Academic and Pre-professional groups: Many student groups are categorized as academic or pre-professional, such as the WashU Marketing Association and the WashU Real Estate Investment Club, providing resources, networking, and hands-on experience."
+    ],
+    "essay_tips": [
+      "Applicants should highlight their intellectual curiosity, desire for interdisciplinary learning, and specific interests that align with WashU's flexible curriculum and special programs in their essays and interviews.",
+      "Ensure your essays specifically address WashU's prompts and demonstrate genuine interest in the institution, avoiding generic responses.",
+      "Elaborate on the depth and impact of your extracurricular activities, detailing what you gained from them.",
+      "Seek strong and personal letters of recommendation from teachers or counselors who know you well.",
+      "Demonstrate genuine interest and fit with WashU, potentially through optional interviews or by applying Early Decision if it's your top choice."
+    ],
+    "red_flags": [
+      "Generic essays that do not specifically address WashU's prompts or demonstrate genuine interest in the institution",
+      "Submitting a list of extracurricular activities without elaborating on their depth, impact, or what you gained from them",
+      "Weak or impersonal letters of recommendation from teachers or counselors who do not know you well or cannot speak to your unique qualities",
+      "Failing to demonstrate genuine interest and fit with WashU, either through your application materials, optional interviews, or by not applying Early Decision if it is truly your first choice"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Washington University in St. Louis is highly selective, with overall acceptance rates around 12-13%. Early Decision (ED) offers a significantly higher acceptance rate (25-27%) compared to Regular Decision (RD) which can be as low as 8-9%."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "WashU emphasizes academic flexibility and interdisciplinary study, offering over 100 fields of study and programs like 'Beyond Boundaries' that encourage students to explore connections across different undergraduate divisions and graduate schools."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "The university fosters a collaborative and supportive environment rather than an overly competitive one, with a strong sense of community among students."
+      }
+    ],
+    "housing_profile_by_college": [
+      {
+        "college_name": "College of Arts & Sciences",
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Intellectually curious and adaptable individuals who are interested in interdisciplinary studies and pushing boundaries within and among various academic disciplines. These students are committed to social impact, global engagement, and developing multiple literacies (digital, media, economic) to understand and serve the world.",
+        "strategic_fit_advice": "Applicants who thrive in a diverse and inclusive learning environment, are eager to explore a wide range of subjects, and aspire to engage deeply with complex societal and global issues through critical inquiry and innovative thought."
+      },
+      {
+        "college_name": "Sam Fox School of Design & Visual Arts",
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Creative, passionate, and socially conscious individuals who believe in the power of design, architecture, and art to address difficult questions and create impactful solutions for local and global communities. Students are often interested in sustainability, environmental justice, and social justice through design.",
+        "strategic_fit_advice": "Ideal for aspiring architects, artists, and designers who are innovative, collaborative, and dedicated to using their creative skills to tackle real-world challenges, particularly in areas of sustainability and community engagement."
+      },
+      {
+        "college_name": "Olin Business School",
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Ambitious, analytical, and purpose-driven students aspiring to leadership roles. They are interested in solving real-world business problems, sharpening analytical skills, and making a positive impact on society through business. A strong interest in areas like the business of health and entrepreneurship is common.",
+        "strategic_fit_advice": "This school is suitable for students who seek a world-class business education with a focus on experiential learning, global perspectives, and developing into principled leaders who can leverage business as a force for good."
+      },
+      {
+        "college_name": "McKelvey School of Engineering",
+        "housing_profile": "High-quality, modern, and traditional residential halls primarily located on the South 40 for first and second-year students. Dorms feature soft beds, air conditioning, and often suite-style bathrooms, with some traditional halls having communal facilities. Each residential community includes social lounges, study rooms, personal computing labs, and recreation rooms, fostering a strong sense of community.",
+        "student_archetype": "Problem-solvers with a strong STEM background and a passion for independent inquiry, scientific excellence, technological innovation, and equitable societal impact. These students are eager to explore, create, and design solutions to complex challenges in an evolving world.",
+        "strategic_fit_advice": "Applicants should have a strong aptitude for science and mathematics, a desire for hands-on, experiential learning, and a commitment to applying engineering principles to generate new knowledge and contribute to positive systematic change globally."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 86182,
+    "employment_rate_2yr": 94.0,
+    "top_employers": [
+      "Amazon",
+      "Apple",
+      "Boston Consulting Group (BCG)",
+      "Bain & Company, Inc.",
+      "Deloitte",
+      "Google",
+      "JPMorgan Chase & Co.",
+      "Microsoft",
+      "Morgan Stanley"
+    ],
+    "grad_school_rate": 0.0,
+    "loan_default_rate": 1.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 96.0,
+    "graduation_rate_4_year": 87.0,
+    "graduation_rate_6_year": 94.0
+  }
 }

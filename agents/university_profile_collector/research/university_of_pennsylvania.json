@@ -1067,7 +1067,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: a short thank-you note (150-200 words) and an essay on how you will explore community at Penn and how your experiences will shape Penn (150-200 words). Additionally, there is a school-specific prompt based on the undergraduate school or dual-degree program to which you are applying."
       }
     ],
@@ -1244,11 +1244,31 @@
       "Not completing all parts of the application or missing 'optional' essays, which can signal a lack of effort"
     ],
     "insights": [
-      "Penn has a 'work hard/play hard' culture with a strong emphasis on pre-professionalism",
-      "Interdisciplinary opportunities are a highlight, allowing students to explore interests from multiple perspectives",
-      "The campus community is diverse and offers niches for various interests",
-      "Mental health support and inclusivity initiatives are areas students desire improvement in",
-      "The admissions committee looks for applicants' drive, leadership, passions, intellect, and background, and how they might contribute to Penn's culture"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Penn has a 'work hard/play hard' culture with a strong emphasis on pre-professionalism"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Interdisciplinary opportunities are a highlight, allowing students to explore interests from multiple perspectives"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The campus community is diverse and offers niches for various interests"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Mental health support and inclusivity initiatives are areas students desire improvement in"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The admissions committee looks for applicants' drive, leadership, passions, intellect, and background, and how they might contribute to Penn's culture"
+      }
     ]
   },
   "outcomes": {

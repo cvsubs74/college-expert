@@ -807,7 +807,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay (250 words, technically optional but strongly encouraged): 'American University students identify as changemakers and describe themselves as passionate. Elaborate on a belief, hobby, idea, issue, or topic about which you're excited.' Additional essays are required for Honors and other Special Academic Programs."
       }
     ],
@@ -961,7 +961,7 @@
     },
     "transfer_articulation": {
       "tools": [
-        "Transfer Evaluation System (TES\u00ae)",
+        "Transfer Evaluation System (TES®)",
         "Transfer Articulation Database"
       ],
       "restrictions": "Maximum of 60 cumulative credit hours from two-year or four-year institutions; courses must be from regionally accredited institutions with a grade of C or higher; remedial, technical, and vocational courses are generally not accepted; Independent Study courses do not receive credit; grades for transfer courses are not included in the AU GPA"
@@ -996,11 +996,31 @@
       "Applying to American University as a 'safety pick' without demonstrating genuine interest, as AU highly values demonstrated interest."
     ],
     "insights": [
-      "American University is particularly strong in Political Science, International Service, and Communications, with many professors actively involved in their fields.",
-      "The university is known for its liberal environment and attracts students often described as 'policy nerds' or 'wonks'.",
-      "The campus environment is generally supportive, with a diverse international student community.",
-      "While many students appreciate the academic environment and D.C. location for internships, some feel that resources for job openings and internships could be improved.",
-      "American University's acceptance rate has varied, and it's no longer considered an easy target school for many applicants, emphasizing the importance of a strong, tailored application."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "American University is particularly strong in Political Science, International Service, and Communications, with many professors actively involved in their fields."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university is known for its liberal environment and attracts students often described as 'policy nerds' or 'wonks'."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The campus environment is generally supportive, with a diverse international student community."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While many students appreciate the academic environment and D.C. location for internships, some feel that resources for job openings and internships could be improved."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "American University's acceptance rate has varied, and it's no longer considered an easy target school for many applicants, emphasizing the importance of a strong, tailored application."
+      }
     ]
   },
   "outcomes": {

@@ -1,522 +1,1108 @@
 {
-  "university_profile": {
-    "_id": "depaul_university",
-    "metadata": {
-      "official_name": "DePaul University",
-      "location": {
-        "city": "Chicago",
-        "state": "Illinois",
-        "type": "Private"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
+  "_id": "depaul_university",
+  "metadata": {
+    "official_name": "DePaul University",
+    "location": {
+      "city": "Chicago",
+      "state": "Illinois",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "DePaul University is the largest Catholic research university in the United States, characterized by its dual-campus urban presence in Chicago and a mission rooted in Vincentian values of inclusivity and social justice. It is classified as an R2 Doctoral University with high research activity, balancing a strong liberal arts foundation with professional programs in business, law, and technology.",
-      "market_position": "Diverse Urban Private",
-      "admissions_philosophy": "Holistic review / Test-optional",
-      "us_news_rank": 169,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The university maintains a stable acceptance rate around 74% while prioritizing a diverse student body.",
-          "implication": "High-achieving students with strong GPAs (average 3.8) are well-positioned, especially if they demonstrate community engagement."
-        },
-        {
-          "category": "Curriculum",
-          "insight": "DePaul has a significant focus on experiential learning in Chicago's urban environment.",
-          "implication": "Students seeking internships and industry connections in the Loop should prioritize business and tech programs here."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "The social scene is highly decentralized due to a large commuter population and two distinct campuses (Lincoln Park and the Loop), fostering a 'city-as-campus' vibe rather than a traditional isolated college experience.",
-        "transportation_impact": "The CTA U-Pass is a critical component of student life, enabling seamless transit between the residential Lincoln Park campus and the professional Loop campus while encouraging exploration of Chicago's 77 neighborhoods.",
-        "research_impact": "Research is heavily geared toward urban and social issues, exemplified by institutes like the Chaddick Institute for Metropolitan Development, which leads influential studies on transportation and urban planning."
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "DePaul University is a large private Catholic research institution based in Chicago, recognized for its strong programs in business, communication, and theatre. It emphasizes practical, career-oriented education and community engagement, leveraging its urban location for extensive internship and networking opportunities.",
+    "market_position": "Urban Private University with Strong Professional Programs",
+    "admissions_philosophy": "Holistic review emphasizing academic performance (GPA), standardized test scores (optional for many programs), letters of recommendation, and a personal statement.",
+    "us_news_rank": 165,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "DePaul University has a moderately competitive admissions process with an acceptance rate typically ranging from 70-75%, employing a holistic review approach that considers various applicant qualities beyond just grades.",
+        "implication": "Applicants should present a well-rounded profile by highlighting personal achievements, leadership experiences, and submitting a compelling personal essay, especially if opting for the test-optional route. Applying Early Action can also provide stronger consideration for academic scholarships."
+      },
+      {
+        "category": "Academic",
+        "insight": "DePaul excels in practical, career-focused academic programs, particularly in Business (Driehaus College of Business), Communication, and Performing Arts (The Theatre School), leveraging its Chicago location for extensive internship and networking opportunities.",
+        "implication": "Applicants interested in these high-ranking fields should emphasize relevant experiences, projects, and career aspirations in their application materials, showcasing how they intend to utilize Chicago's vibrant urban environment and the faculty's real-world expertise."
+      },
+      {
+        "category": "Culture",
+        "insight": "DePaul's identity as a Vincentian Catholic university in a major urban center fosters a diverse, service-oriented student body that views Chicago itself as an integral part of its learning and social experience.",
+        "implication": "Prospective students should highlight their commitment to community engagement, social justice, and their enthusiasm for leveraging an urban environment for personal and academic growth in their applications and essays."
+      },
+      {
+        "category": "Value",
+        "insight": "While DePaul's advertised tuition and fees are higher than the national average for comparable R2 universities, a significant majority (over 90%) of undergraduates receive substantial financial aid, including grants and scholarships, making the net price considerably lower for many.",
+        "implication": "Prospective students should thoroughly research and apply for financial aid, including grants and scholarships, as the advertised tuition may not reflect the actual out-of-pocket cost. Utilizing the university's net price calculator is recommended for a personalized estimate."
       }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to the College of Liberal Arts and Social Sciences (LAS) as a 'backdoor' if your GPA is below 2.7, as it typically has a lower entry threshold (around 2.0) compared to Business or CDM.",
-        "Choose 'Undecided' within a specific college (like Driehaus or CDM) to secure your spot in the school without the pressure of choosing a competitive specific track immediately.",
-        "Avoid the School of Music or The Theatre School unless you are fully prepared for auditions; these programs have strict fall-only admission and highly selective portfolio requirements.",
-        "Research 'CS + X' programs (e.g., CS + Animation, CS + Geography) which can sometimes be less saturated than the standard Computer Science major while providing the same CDM resources.",
-        "Consider the School of Continuing and Professional Studies if you are an adult learner or have significant transfer credits, as they offer the most flexible credit-transfer policies."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize the Lincoln Park campus programs if you want a traditional residential 'college feel' with dorms and green space.",
-        "Rank the Loop campus colleges (Business, Law, CDM) higher if you are focused on professional networking and proximity to Chicago's financial district.",
-        "Factor in the Quarter System speed (10-week terms) when comparing DePaul to semester-based schools like UIC; it allows for more classes but requires a faster academic pace.",
-        "Evaluate the 'Small Class Size' promise (typically under 35 students) as a key differentiator against larger public research universities in the region.",
-        "Look at the 'Pathways Program' for Health Sciences if you are pre-med, as it offers a strategic partnership with Rosalind Franklin University."
-      ],
-      "alternate_major_strategy": "If applying to the Driehaus College of Business (requires ~2.7 GPA) or the College of Computing and Digital Media (CDM), list a related major in the College of Liberal Arts and Social Sciences (LAS) as your alternate. For example, if you want a Finance degree, list Economics in LAS as your backup. This allows you to gain university admission with a lower GPA (2.0 threshold) and then perform an Inter-College Transfer (ICT) after completing 12 quarter hours with a solid DePaul GPA."
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Evidence of academic resilience and a clear upward grade trend",
-        "Alignment with the Vincentian mission of social justice and service",
-        "Strong performance in challenging courses like AP, IB, or Honors",
-        "Resourcefulness and the ability to thrive in a fast-paced urban environment",
-        "Demonstrated 'grit' or the ability to overcome personal or academic obstacles"
-      ],
-      "common_activities": [
-        "Community service and philanthropic work (e.g., DemonTHON)",
-        "Leadership in mission-driven or identity-based student organizations",
-        "Arts and media involvement with a focus on professional portfolios",
-        "Part-time work or internships within the Chicago area",
-        "Participation in service-learning or volunteer initiatives"
-      ],
-      "essay_tips": [
-        "Explicitly address the Vincentian question: 'What must be done?'",
-        "Connect your personal narrative to DePaul's 'urban campus' identity",
-        "Discuss specific community engagement goals you want to pursue in Chicago",
-        "Be authentic about past failures if they led to growth and better grades",
-        "Mention interest in the University Honors Program for a small-college feel"
-      ],
-      "red_flags": [
-        "Using AI to write personal statements or supplemental essays",
-        "Lack of awareness regarding the school's specific Catholic/Vincentian mission",
-        "Static or declining GPA throughout junior and senior years",
-        "Generic essays that do not reference Chicago-specific opportunities",
-        "Grammatical errors that suggest a lack of attention to detail"
-      ],
-      "insights": [
-        "DePaul is highly supportive of first-generation and minority applicants",
-        "The 10-week quarter system is very fast; admissions looks for students who can manage high workloads",
-        "Service is not just an activity here; it is an academic requirement through service-learning",
-        "The 'commuter school' reputation means you must show proactive social initiative",
-        "Chicago is treated as a classroom; internships often start as early as freshman year"
-      ]
-    },
-    "admitted_student_profile": {
-      "gpa": {
-        "weighted_middle_50": null,
-        "unweighted_middle_50": "3.00-3.80",
-        "average_weighted": 3.8,
-        "percentile_25": "3.00",
-        "percentile_75": "3.80",
-        "notes": "Admitted students typically maintain a B+/A- average; approximately 48% of the incoming class holds a GPA of 3.75 or higher."
-      },
-      "testing": {
-        "sat_composite_middle_50": "1090-1300",
-        "sat_reading_middle_50": "550-660",
-        "sat_math_middle_50": "530-650",
-        "act_composite_middle_50": "24-30",
-        "submission_rate": 42.0,
-        "policy_note": "Test-optional; 58% of the 2023 freshman cohort enrolled without submitting scores."
-      },
-      "demographics": {
-        "first_gen_percentage": 41.0,
-        "legacy_percentage": null,
-        "international_percentage": 6.0,
-        "geographic_breakdown": [
-          {
-            "region": "Illinois",
-            "percentage": 70.0
-          },
-          {
-            "region": "Other US States",
-            "percentage": 24.0
-          },
-          {
-            "region": "International",
-            "percentage": 6.0
-          }
-        ],
-        "gender_breakdown": {
-          "men": {
-            "applicants": 12658,
-            "admits": 9290,
-            "acceptance_rate": 73.4,
-            "note": "Based on 2024-2025 cycle data."
-          },
-          "women": {
-            "applicants": 18608,
-            "admits": 14439,
-            "acceptance_rate": 77.6,
-            "note": "Based on 2024-2025 cycle data."
-          },
-          "non_binary": null
-        },
-        "racial_breakdown": {
-          "white": 42.7,
-          "black_african_american": 8.7,
-          "hispanic_latino": 20.2,
-          "asian": 10.8,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 3.8,
-          "unknown": 2.6,
-          "non_resident_alien": 11.0
-        },
-        "religious_affiliation": "Roman Catholic"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Jarvis College of Computing and Digital Media (CDM)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strongly emphasizes the intersection of technical skill and creative artistry; animation and game design programs often require a creative portfolio for best placement.",
-          "housing_profile": "Students split time between Lincoln Park and the Loop; heavy usage of specialized digital labs in the Loop.",
-          "student_archetype": "Tech-savvy creators and digital storytellers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": null,
-              "average_gpa_admitted": null,
-              "prerequisite_courses": [
-                "MAT 130 Pre-Calculus"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CSC 241 Intro to Computer Science I",
-                "CSC 242 Intro to Computer Science II"
-              ],
-              "special_requirements": null,
-              "admissions_pathway": "Direct/Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "CSC 241 Intro to Computer Science I",
-                  "CSC 242 Intro to Computer Science II",
-                  "CSC 300 Data Structures I",
-                  "CSC 301 Data Structures II",
-                  "CSC 373 Computer Systems I",
-                  "CSC 374 Computer Systems II",
-                  "MAT 140 Discrete Mathematics I"
-                ],
-                "electives": [
-                  "CSC 383 Algorithm Design",
-                  "CSC 355 Database Systems",
-                  "SE 350 Object-Oriented Software Development"
-                ],
-                "total_units": 192,
-                "major_units": 84
-              },
-              "notable_professors": [
-                "Dr. Bamshad Mobasher (Data Mining)",
-                "Dr. Daniela Stan-Raicu (Artificial Intelligence)",
-                "Dr. Jacob Furst (Computer Security)"
-              ],
-              "notes": "Offers concentrations in Software Development, AI, and Game Systems."
-            },
-            {
-              "name": "Film and Television",
-              "degree_type": "B.F.A.",
-              "is_impacted": true,
-              "acceptance_rate": null,
-              "average_gpa_admitted": null,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "FILM 101 Foundations of Cinema",
-                "FILM 110 Digital Cinema Production I"
-              ],
-              "special_requirements": "Portfolio review may be required for certain concentrations",
-              "admissions_pathway": "Direct Admit/Special Application",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "FILM 101 Foundations of Cinema",
-                  "FILM 105 Introduction to Visual Design",
-                  "FILM 110 Digital Cinema Production I",
-                  "POST 110 Editing I",
-                  "SCWR 101 Screenwriting for Majors"
-                ],
-                "electives": [
-                  "FILM 323 Cinematography",
-                  "POST 330 Sound Design for Cinema",
-                  "VFX 200 Introduction to Visual Effects"
-                ],
-                "total_units": 192,
-                "major_units": 96
-              },
-              "notable_professors": [
-                "Scott Roberts (Founding Chair)",
-                "Gary Novak (Director of Cinematic Arts)",
-                "Brad Riddell (Screenwriting)"
-              ],
-              "notes": "Includes 12 concentrations like Cinematography, Directing, and Screenwriting."
-            }
-          ]
-        },
-        {
-          "name": "The Theatre School",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 6.2,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Operates as a highly selective conservatory; requires a rigorous audition or interview process. Candidates should demonstrate professional-grade commitment.",
-          "housing_profile": "Concentrated in LeCompte Hall (Lincoln Park), which serves as a specialized community hub for theater students.",
-          "student_archetype": "Disciplined performers and technical artisans",
-          "majors": [
-            {
-              "name": "Acting",
-              "degree_type": "B.F.A.",
-              "is_impacted": true,
-              "acceptance_rate": null,
-              "average_gpa_admitted": null,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [],
-              "special_requirements": "Audition and video prescreen required",
-              "admissions_pathway": "Direct Admit Only",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": null,
-              "notable_professors": [],
-              "notes": null
-            }
-          ]
-        },
-        {
-          "name": "Driehaus College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 68.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking immediate integration into Chicago\u2019s financial district; values networking and practical internship experience.",
-          "housing_profile": "Commonly reside in the University Center in the Loop to be near downtown business classes.",
-          "student_archetype": "Career-focused professional networkers",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.",
-              "is_impacted": false,
-              "acceptance_rate": null,
-              "average_gpa_admitted": null,
-              "prerequisite_courses": [
-                "MAT 137 Business Statistics",
-                "ACC 101 Intro Accounting I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "FIN 310 Introduction to Finance",
-                "ACC 102 Intro Accounting II"
-              ],
-              "special_requirements": "B+ or higher in FIN 310 required for Finance Honors",
-              "admissions_pathway": "Direct/Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "ACC 101 Introduction to Accounting I",
-                  "ACC 102 Introduction to Accounting II",
-                  "BUS 101 Business Fundamentals",
-                  "ECO 105 Principles of Microeconomics",
-                  "FIN 310 Introduction to Finance",
-                  "FIN 311 Corporate Finance",
-                  "FIN 330 Investments"
-                ],
-                "electives": [
-                  "FIN 313 Investment Banking",
-                  "FIN 340 International Finance",
-                  "FIN 381 Behavioral Finance"
-                ],
-                "total_units": 192,
-                "major_units": 94
-              },
-              "notable_professors": [
-                "Dr. Werner DeBondt (Behavioral Finance Pioneer)",
-                "Dr. James Shilling (Real Estate)",
-                "Pavel Savor (Asset Pricing)"
-              ],
-              "notes": "Heavily recruits for the 'Keeley Academy' for investment management."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Animation Minor",
-        "Data Science Minor",
-        "Entrepreneurship Certificate",
-        "Geographic Information Systems (GIS) Certificate",
-        "Game Design Minor",
-        "Modern Languages Certificate",
-        "Cybersecurity Minor",
-        "User Experience (UX) Design Minor"
-      ]
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 45405,
-          "total_coa": 68433,
-          "housing": 19095
-        },
-        "out_of_state": {
-          "tuition": 45405,
-          "total_coa": 68433,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 27990,
-      "average_merit_aid": 21443,
-      "percent_receiving_aid": 90.0,
-      "scholarships": [
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "Up to $96,000 over 4 years ($24,000/year)",
-          "deadline": "November 15 (Priority)",
-          "benefits": "Renewable for four years; highest academic award for incoming freshmen",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-15",
-          "is_binding": false,
-          "notes": "Non-binding; priority consideration for scholarships and housing."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Rolling basis after this date if space is available."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "deadline": null,
-          "details": "Common App personal essay is required."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "Academic GPA"
-        ],
-        "secondary_factors": [
-          "Application Essay",
-          "Recommendations",
-          "Extracurricular Activities",
-          "Talent/Ability",
-          "Character",
-          "First Generation Status"
-        ],
-        "essay_importance": "Important",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Emphasis on Vincentian values, community service, and personal drive; test-optional since 2012 with a heavy focus on the high school transcript and rigor."
-      }
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "A score of 3 or higher grants credit for most Advanced Placement exams.",
-        "exceptions": [
-          "Computer Science A requires CSC 243 for credit toward major requirements",
-          "Calculus BC credit for MAT 155 is awarded only if the subscore is below 3",
-          "History exams may require a 4 or 5 for maximum credit (up to 12 quarter hours)"
-        ],
-        "usage": "Credits can satisfy Liberal Studies (General Education) requirements, major prerequisites, or open electives."
-      },
-      "ib_policy": {
-        "general_rule": "DePaul awards course credit for both Higher Level (HL) and Standard Level (SL) exams, typically with scores of 5 or higher.",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "DePaul Transfer Guides (for Illinois Community Colleges)",
-          "Course Lists"
-        ],
-        "restrictions": "Maximum of 99 quarter hours from community colleges; 132 quarter hours total transfer cap; final 60 quarter hours must be completed in residency at DePaul."
-      }
-    },
+    ],
+    "campus_dynamics": {
+      "social_environment": "DePaul University offers a dynamic and culturally diverse social environment, deeply integrated with the city of Chicago. With over 350 student organizations, there are ample opportunities for students to find communities that cater to their interests, ranging from professional development to cultural appreciation and community service. The social scene often extends into the local neighborhoods of Lincoln Park and the Loop, with students exploring coffee shops, theaters, and parks. The university fosters a welcoming atmosphere where it is easy to make friends and engage with campus events, reflecting a diverse student body in terms of race, gender, religion, and orientation.",
+      "transportation_impact": "DePaul University's location in Chicago significantly impacts campus life by integrating the city into the student experience. The university operates on two main campuses, one in downtown and another in Lincoln Park, with activities often planned to allow students sufficient time to travel between them via public transportation. For many, especially those transitioning from areas reliant on driving, the lifestyle involves a shift to public transportation and walking. The city itself is considered an extension of the campus, providing extensive opportunities for cultural experiences, internships, and social activities. A considerable portion of DePaul's student population, nearly 90%, commutes or lives off campus, highlighting the urban-integrated, rather than a traditional 'college town,' feel.",
+      "research_impact": "DePaul University offers strong undergraduate research opportunities across all colleges and majors, with students frequently receiving academic credit or stipends for their participation. The university hosts various platforms for students to showcase their work, including Undergraduate Research Showcases, the Undergraduate STEM Research Showcase, the Chicago Area Undergraduate Research Symposium (CAURS), and the BIG EAST Student Research Poster Symposium. DePaul also publishes peer-reviewed undergraduate research journals such as 'DePaul Discoveries' (College of Science and Health) and 'Creating Knowledge' (College of Liberal Arts and Social Sciences). Several programs support student research, including the Summer Undergraduate Research Grant (SURG), Undergraduate Research Fund (URF), Undergraduate Research Assistant Program (URAP), and the Undergraduate Summer Research Program (USRP). The Jarvis College of Computing and Digital Media (CDM) specifically offers programs like the URAP and Motorola Solutions Foundation Scholars Program, providing hands-on experience and faculty collaboration. Furthermore, the university's location in Chicago facilitates access to thousands of internships and external research opportunities through resources like Handshake and partnerships such as the DePaul/Rosalind Franklin University of Medicine and Science Summer Research Program."
+    }
+  },
+  "admissions_data": {
     "current_status": {
       "overall_acceptance_rate": 75.9,
+      "is_test_optional": true,
+      "test_policy_details": "DePaul University has adopted a test-optional policy for freshman admission, allowing students to choose whether to submit ACT or SAT scores as part of their application. The university conducts a holistic review, emphasizing the applicant's high school record, particularly grades in challenging core subjects. Test-optional applicants are reviewed separately from those who submit scores. Self-reporting of scores is permitted. While not required for application review, test-optional applicants are encouraged to submit the optional personal essay through the Common App. After enrollment, DePaul asks students to submit their ACT or SAT scores (if taken) for research purposes.",
+      "admits_class_size": 23729,
+      "transfer_acceptance_rate": 62.9,
       "in_state_acceptance_rate": null,
       "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": null,
-      "transfer_acceptance_rate": 62.9,
-      "admits_class_size": 2566,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": []
-    },
-    "outcomes": {
-      "median_earnings_10yr": 68751,
-      "employment_rate_2yr": 92.0,
-      "grad_school_rate": 12.0,
-      "top_employers": [
-        "Deloitte",
-        "Amazon",
-        "Google",
-        "Apple",
-        "Meta",
-        "Goldman Sachs",
-        "Bank of America"
-      ],
-      "loan_default_rate": 0.0
-    },
-    "student_retention": {
-      "freshman_retention_rate": 87.0,
-      "graduation_rate_4_year": 58.0,
-      "graduation_rate_6_year": 71.0
+      "international_acceptance_rate": 73.5,
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 12800,
+          "admits": 10225,
+          "acceptance_rate": 79.88,
+          "class_fill_percentage": null
+        }
+      ]
     },
     "longitudinal_trends": [
       {
         "year": 2024,
-        "cycle_name": "Class of 2028",
-        "applications_total": 31266,
-        "admits_total": 23729,
-        "enrolled_total": 2566,
-        "acceptance_rate_overall": 75.9,
-        "yield_rate": 10.8,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 809,
-          "accepted_spots": 282,
-          "admitted_from_waitlist": 228,
-          "waitlist_admit_rate": 80.85,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist statistics derived from Common Data Set 2024-2025."
+        "offered_spots": 809,
+        "accepted_spots": 282,
+        "admitted_from_waitlist": 228,
+        "waitlist_admit_rate": 80.85,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2023,
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
       }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "N/A",
+        "unweighted_middle_50": "2.50-3.70",
+        "average_weighted": 3.6,
+        "percentile_25": "N/A",
+        "percentile_75": "N/A",
+        "notes": "DePaul University reports an average weighted GPA of 3.6 for admitted students, but the 25th and 75th percentiles for weighted GPA are not disclosed. The unweighted GPA for incoming students has an average of 3.4, with the 25th percentile at 2.5 and the 75th percentile at 3.7. DePaul takes a holistic approach to admissions, considering academic GPA and rigor of secondary school record as very important factors. Test scores are not required but will be considered if submitted."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1340",
+        "sat_reading_middle_50": "570-680",
+        "sat_math_middle_50": "560-660",
+        "act_composite_middle_50": "25-31",
+        "submission_rate": 41.7,
+        "policy_note": "Test-optional; SAT superscore not accepted."
+      },
+      "demographics": {
+        "first_gen_percentage": 41.0,
+        "legacy_percentage": null,
+        "notes": "First-generation percentage is for the 2023 freshman cohort. Legacy percentage is unavailable.",
+        "geographic_breakdown": [
+          {
+            "region": "Illinois",
+            "percentage": 69.0
+          },
+          {
+            "region": "Out-of-State (excluding Illinois)",
+            "percentage": 30.0
+          },
+          {
+            "region": "International",
+            "percentage": 1.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": null,
+          "women": null,
+          "non_binary": null,
+          "note": "Specific detailed breakdown of applicants and admits by gender for DePaul University's Common Data Set (Section C1) for the most recent available year (2022-2023 was identified) could not be directly extracted from the provided search results. While a Common Data Set for 2022-2023 was found [2], the direct numerical content for applicants and admits by gender in Section C1 was not present in the snippets. This information is typically found within the full Common Data Set document."
+        },
+        "racial_breakdown": {
+          "White": 42.7,
+          "Black/African American": 8.69,
+          "Hispanic/Latino": 20.2,
+          "Asian": 10.8,
+          "Native American/Alaskan": 0.06,
+          "Pacific Islander": 0.08,
+          "Two or More Races": 3.79,
+          "Non-Resident Alien (International Students)": 11.18,
+          "Unknown": 2.49
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "Driehaus College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily Loop Campus housing (e.g., University Center), offering apartment-style living with private bedrooms, shared kitchens, living areas, fitness centers, and study rooms. Traditional dorms in Lincoln Park are also an option for first-year students.",
+        "student_archetype": "Ambitious, career-focused individuals with an entrepreneurial spirit, eager to engage with Chicago's dynamic business environment. They value real-world experience, networking, and developing analytical and technological business skills.",
+        "strategic_fit_advice": "Ideal for students seeking a rigorous business education with strong ties to the Chicago professional scene. Applicants should highlight leadership, analytical abilities, and any entrepreneurial endeavors. Consider the Loop campus for proximity to business classes and internship opportunities.",
+        "majors": [
+          {
+            "name": "Accountancy",
+            "degree_type": "B.S.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 101 Introduction to Accounting I",
+              "ACC 102 Introduction to Accounting II",
+              "BUS 101 Introduction to Business",
+              "BUS 102 Business and Professional Communication",
+              "BUS 103 Critical Business Skills",
+              "BUS 202 Applied Business Statistics",
+              "ECO 105 Principles of Microeconomics",
+              "ECO 106 Principles of Macroeconomics",
+              "MAT 137 Applied Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ACC 101 Introduction to Accounting I",
+              "ACC 102 Introduction to Accounting II",
+              "MAT 137 Applied Calculus I",
+              "ECO 105 Principles of Microeconomics",
+              "ECO 106 Principles of Macroeconomics"
+            ],
+            "special_requirements": "Minimum grade of C- required for ACC 101, ACC 102, BUS 101, BUS 102, BUS 103, BUS 202, ECO 105, ECO 106, MAT 137, and all Accountancy (ACC) courses. Combined GPA of 2.000 or higher for all ACC courses and courses used toward the major.",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACC 250 Career Management for Accountants",
+                "ACC 300 Accounting Analytics",
+                "ACC 301 Accounting Information Systems",
+                "ACC 303 Cost & Managerial Accounting",
+                "ACC 304 Financial Reporting I",
+                "ACC 305 Financial Reporting II",
+                "ACC 306 Financial Reporting III",
+                "ACC 308 Advanced Financial Accounting I",
+                "ACC 312 Advanced Financial Accounting II",
+                "ACC 372 Auditing I",
+                "ACC 374 Auditing II",
+                "ACC 380 Tax Treatment of Individuals and Property",
+                "ACC 383 Tax Treatment of Corporations and Partnerships"
+              ],
+              "electives": [
+                "ACC 211 Red Flag Mania Investigations",
+                "ACC 212 Practical Application of Individual Tax Skills"
+              ],
+              "total_units": 192,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. Ning Du (MSA Program Director, Accounting Information Systems)",
+              "Dr. Molly Mercer (Professor and Ezerski Chair of Accountancy)",
+              "Kenton Klaus (Senior Instructor, Certified Public Accountant)",
+              "Dr. Kelly Richmond Pope (Dr. Barry Jay Epstein Endowed Professor of Accounting)",
+              "Dr. John E. McEnroe (Professor Emeritus, Financial Accounting)"
+            ],
+            "notes": "Major requirements are 50.0 hours in addition to ACC 101 and ACC 102, which are part of the 60.0-hour Business Core. Students must complete one of the general Business Core courses (MGT 248 or PHL 248 or MGT 228 or REL 228) for Business Ethics. Data source: DePaul University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 101 Introduction to Accounting I",
+              "ACC 102 Introduction to Accounting II",
+              "BUS 101 Introduction to Business",
+              "BUS 102 Business and Professional Communication",
+              "BUS 103 Critical Business Skills",
+              "BUS 202 Applied Business Statistics",
+              "ECO 105 Principles of Microeconomics",
+              "ECO 106 Principles of Macroeconomics",
+              "FIN 310 Introduction to Finance",
+              "MAT 137 Applied Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ACC 101 Introduction to Accounting I",
+              "ACC 102 Introduction to Accounting II",
+              "ECO 105 Principles of Microeconomics",
+              "ECO 106 Principles of Macroeconomics",
+              "MAT 137 Applied Calculus I",
+              "FIN 310 Introduction to Finance"
+            ],
+            "special_requirements": "Minimum grade of C- required for ACC 101, ACC 102, BUS 101, BUS 102, BUS 103, BUS 202, ECO 105, ECO 106, FIN 310, MAT 137, and any FIN course used for Global Business Perspective. All Finance (FIN) courses and any courses used toward the Finance major must be completed with a combined GPA of 2.000 or higher. [cite: 17, 39 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "FIN 311 Corporate Finance",
+                "FIN 315 Data Analytics in Finance",
+                "FIN 320 Money and Banking",
+                "FIN 330 Investment Management",
+                "FIN 340 Options and Futures",
+                "FIN 350 Real Estate Analysis I",
+                "FIN 360 International Financial Management",
+                "FIN 370 Risk Management",
+                "FIN 380 Financial Modeling"
+              ],
+              "electives": [
+                "FIN 313 Investment Banking",
+                "FIN 323 Commercial Banking",
+                "FIN 324 Credit Risk Management",
+                "FIN 393 Finance Internship"
+              ],
+              "total_units": 192,
+              "major_units": 34
+            },
+            "notable_professors": [
+              "Dr. Werner DeBondt (Richard H. Driehaus Professor of Behavioral Finance)",
+              "Dr. James Shilling (Michael J. Horne Professor of Real Estate)",
+              "Dr. Harold P. Welsch (Coleman Professor of Entrepreneurship)"
+            ],
+            "notes": "Major requirements are 34.0 hours. Students are encouraged to complete an internship. Students must complete one of the general Business Core courses (MGT 248 or PHL 248 or MGT 228 or REL 228) for Business Ethics. Data source: DePaul University Academic Catalog 2025-2026. [cite: 17, 21, 25, 39 in previous turn]"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 101 Introduction to Accounting I",
+              "ACC 102 Introduction to Accounting II",
+              "BUS 101 Introduction to Business",
+              "BUS 102 Business and Professional Communication",
+              "BUS 103 Critical Business Skills",
+              "BUS 202 Applied Business Statistics",
+              "ECO 105 Principles of Microeconomics",
+              "ECO 106 Principles of Macroeconomics",
+              "MAT 137 Applied Calculus I",
+              "MKT 301 Principles of Marketing",
+              "MKT 276 Effective Business Communication"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ACC 101 Introduction to Accounting I",
+              "ACC 102 Introduction to Accounting II",
+              "ECO 105 Principles of Microeconomics",
+              "ECO 106 Principles of Macroeconomics",
+              "MAT 137 Applied Calculus I",
+              "MKT 301 Principles of Marketing"
+            ],
+            "special_requirements": "Minimum grade of C- required for ACC 101, ACC 102, BUS 101, BUS 102, BUS 103, BUS 202, ECO 105, ECO 106, MAT 137, MKT 301, MKT 276, and any MKT course used for Global Business Perspective. All Marketing (MKT) courses and any other courses used toward the Marketing major must be completed with a combined GPA of 2.000 or higher. [cite: 6, 20, 32 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MKT 250 Navigating Marketing Careers",
+                "MKT 305 Introduction to Marketing Research",
+                "MKT 310 Consumer Behavior"
+              ],
+              "electives": [
+                "MKT 321 Social Media Marketing (Digital Marketing concentration)",
+                "MKT 322 Search Engine Marketing & Analytics (Digital Marketing concentration)",
+                "MKT 393 Marketing Internship",
+                "MKT 395 Digital Marketing Analytics and Planning",
+                "MKT 396 Mobile Marketing",
+                "MKT 315 Strategic Tools for Marketers"
+              ],
+              "total_units": 192,
+              "major_units": 42
+            },
+            "notable_professors": [],
+            "notes": "Major requirements are 38.0 hours plus 4.0 hours shared with the Business Core (MKT 276), totaling 42.0 hours. Students must choose one of three concentrations: Digital Marketing, Sales Leadership, or Marketing Insights. Students must complete one of the general Business Core courses (MGT 248 or PHL 248 or MGT 228 or REL 228) for Business Ethics. Data source: DePaul University Academic Catalog 2025-2026. [cite: 6, 20, 24, 27, 35, 36, 45 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "College of Communication",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Located in the Loop, students may opt for Loop Campus apartment-style living at the University Center or traditional Lincoln Park dorms for a more campus-like feel during their first year. All options are furnished and offer standard amenities.",
+        "student_archetype": "Creative storytellers, media enthusiasts, and strategic communicators. They are often engaged in student media organizations and seek hands-on experience in journalism, public relations, advertising, and digital media.",
+        "strategic_fit_advice": "Suited for students passionate about various forms of communication and media. Emphasize experience in writing, digital content creation, public speaking, or media production. The Loop campus offers a direct connection to media industries.",
+        "majors": [
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Modern Language Requirement. Students must have a C- or better in WRD 103 and WRD 104. [cite: 4, 34, 35 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CMN 101 Introduction to Human Communication",
+                "CMN 102 Introduction to Mass Communication",
+                "CMN 103 Intercultural Dialogue",
+                "CMN 104 Public Speaking"
+              ],
+              "electives": [],
+              "total_units": 192,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "All majors in the College of Communication consist of a four-course common core plus additional program requirements and electives. Students are encouraged to complete the four core courses prior to taking additional coursework in the major. College Core Requirements are 16.0 hours. Data source: DePaul University Academic Catalog 2025-2026. [cite: 3, 4, 34, 35 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "Jarvis College of Computing and Digital Media",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Mainly Loop Campus housing (e.g., University Center) with apartment-style units, ideal for students whose classes are primarily downtown. Features shared kitchens, living spaces, technology labs, and social lounges. Traditional Lincoln Park dorms are also an option for freshmen.",
+        "student_archetype": "Innovative problem-solvers with a passion for technology, digital arts, and creative design. They are often interested in gaming, animation, film, cybersecurity, and information sciences.",
+        "strategic_fit_advice": "Excellent for students with a strong aptitude for STEM and creative technology. Showcase projects, coding experience, or digital portfolio work. Living on the Loop campus provides easy access to CDM's specialized facilities.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSC 241 Object-Oriented Programming I",
+              "CSC 242 Object-Oriented Programming II",
+              "MAT 140 Discrete Mathematics I",
+              "MAT 141 Discrete Mathematics II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CSC 241 Object-Oriented Programming I",
+              "CSC 242 Object-Oriented Programming II",
+              "CSC 300 Data Structures I",
+              "MAT 140 Discrete Mathematics I",
+              "MAT 141 Discrete Mathematics II"
+            ],
+            "special_requirements": "Transfer students need a minimum of 45 quarter/30 semester hours of transfer credit and completed one semester of Java or C++. Must earn a grade of C- or higher in WRD 103, WRD 104, and all Major and Minor courses. Maintain a cumulative GPA of 2.0 or higher. [cite: 25, 26, 30 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CSC 299 Sophomore Lab in Applied Computing",
+                "CSC 300 Data Structures I",
+                "CSC 301 Data Structures II",
+                "CSC 321 Object-Oriented Software Development",
+                "CSC 373 Computer System Concepts I",
+                "CSC 374 Computer System Concepts II",
+                "CSC 376 Design and Analysis of Algorithms",
+                "WRD 204 Technical Writing"
+              ],
+              "electives": [
+                "CSC 233 Codes and Ciphers",
+                "CSC 235 Introduction to Parallel and Distributed Computing",
+                "CSC 309 Web Development",
+                "CSC 343 Introduction to Game Programming",
+                "CSC 355 Introduction to Databases"
+              ],
+              "total_units": 192,
+              "major_units": 96
+            },
+            "notable_professors": [],
+            "notes": "Students choose one of three concentrations: Artificial Intelligence, Game Systems, or Software Development. Data source: DePaul University Academic Catalog 2025-2026. [cite: 18, 20, 25, 26, 28, 30, 39, 40 in previous turn]"
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSC 241 Object-Oriented Programming I",
+              "CSC 242 Object-Oriented Programming II",
+              "MAT 140 Discrete Mathematics I",
+              "MAT 150 Calculus I",
+              "MAT 151 Calculus II",
+              "MAT 152 Calculus III"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CSC 241 Object-Oriented Programming I",
+              "CSC 242 Object-Oriented Programming II",
+              "MAT 140 Discrete Mathematics I",
+              "MAT 150 Calculus I",
+              "MAT 151 Calculus II",
+              "MAT 152 Calculus III"
+            ],
+            "special_requirements": "Must earn a grade of C- or higher in WRD 103, WRD 104, and all Major and Minor courses. Maintain a cumulative GPA of 2.0 or higher. Students must complete an ethics class (CSC 208, PHL 248/MGT 248, or REL 228/MGT 228) for Philosophical Inquiry or Religious Dimensions. [cite: 14, 17 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "DSC 323 Data Analysis and Regression",
+                "DSC 324 Advanced Data Analysis",
+                "DSC 333 Introduction to Big Data Processing",
+                "DSC 341 Foundations of Data Science",
+                "DSC 345 Machine Learning",
+                "DSC 365 Data Visualization",
+                "CSC 300 Data Structures I",
+                "IT 223 Data Analysis (Stats)"
+              ],
+              "electives": [
+                "CSC 483 Applied Deep Learning",
+                "CSC 484 Ethics in Artificial Intelligence",
+                "DSC 390 Topics in Data Science",
+                "DSC 394 Data Science Project"
+              ],
+              "total_units": 192,
+              "major_units": 100
+            },
+            "notable_professors": [
+              "Dr. Alexander Rasin (Databases, Computer Security, Natural Language)",
+              "Dr. Eli Brown (Visual Computing, Data Analysis, HCI)",
+              "Dr. Jacob Furst (Visual Computing, Computer Security)",
+              "Dr. John McDonald (Graphics/Animation, Data Science)",
+              "Dr. Roselyne Tchoua (Information Extraction, Machine Learning, NLP)",
+              "Dr. Jamshid Sourati (Machine Learning, AI)",
+              "Dr. Bamshad Mobasher (Director, Center for Web Intelligence; Co-founder, Center for Data Science)",
+              "Dr. Tanu Malik (Databases, High Performance and Scientific Computing)",
+              "Dr. Ilyas Ustun (Center Director, Data Science)",
+              "Dr. Thiru Ramaraj (Computational Biology, Applied Bioinformatics)",
+              "Dr. Sharief Oteafy (IoT, Big Sensed Data)",
+              "Dr. Marina Girju (Marketing)",
+              "Dr. Jonathan Gemmell"
+            ],
+            "notes": "The two Data Science degrees (B.S. in CDM and B.A. in CSH) share a common core for the first two years. This program is STEM-designated. Data source: DePaul University Academic Catalog 2025-2026. [cite: 3, 8, 13, 14, 15, 17, 22, 26, 27, 32, 37, 38 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Predominantly Lincoln Park Campus housing, offering traditional dorms for first-year students (Corcoran, Seton, University Hall) and apartment-style options for upperclassmen. These facilities are furnished and include study and social spaces.",
+        "student_archetype": "Service-oriented individuals dedicated to learning, development, and social justice. They are passionate about teaching, counseling, educational leadership, and making a positive impact in diverse learning environments.",
+        "strategic_fit_advice": "Best for students committed to a career in education or human services. Highlight experiences in tutoring, mentoring, community service, or leadership roles working with youth or in educational settings.",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Minimum 2.500 DePaul GPA for transfer into the College of Education. Students are responsible for meeting general and particular policies and deadlines outlined in the catalog and handbook. [cite: 6, 7 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Curriculum details would require a deeper dive into the College of Education handbook or specific program page. Data source: DePaul University Academic Catalog 2025-2026. [cite: 6, 7 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts and Social Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Located primarily on the Lincoln Park Campus, offering a variety of traditional dorms for freshmen and apartment-style housing for upperclassmen. These residences foster a strong community environment with convenient access to campus facilities.",
+        "student_archetype": "Intellectually curious and critically thinking individuals with broad interests in humanities, social sciences, and interdisciplinary studies. They are often engaged in social issues and value diverse perspectives.",
+        "strategic_fit_advice": "Suitable for students who enjoy exploring a wide range of subjects and developing strong analytical and communication skills. Showcase diverse academic interests, research, or involvement in social and cultural initiatives.",
+        "majors": []
+      },
+      {
+        "name": "College of Science and Health",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily Lincoln Park Campus housing, including traditional dorms and apartment options, with access to campus amenities like the Ray Meyer Fitness Center and libraries. These are standard furnished accommodations.",
+        "student_archetype": "Inquisitive, analytical, and detail-oriented students driven to understand the natural world and improve health outcomes. Many are aspiring healthcare professionals or researchers, engaged in scientific inquiry and internships.",
+        "strategic_fit_advice": "Well-suited for students with a strong foundation in science and mathematics. Highlight lab experience, research projects, or volunteer work in healthcare settings. Strong academic performance in STEM subjects is crucial.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 105 Introductory Psychology I",
+              "PSY 106 Introductory Psychology II",
+              "PSY 240 Statistics I",
+              "PSY 241 Research Methods I",
+              "PSY 242 Research Methods II",
+              "MAT 120 Quantitative Reasoning"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 240 Statistics I",
+              "MAT 120 Quantitative Reasoning"
+            ],
+            "special_requirements": "Modern Language Requirement equivalent to one year of college-level study. Psychology courses numbered PSY 317 and above count toward the major field. Must earn a grade of C- or higher in WRD 103 and WRD 104. [cite: 16, 29, 38 in previous turn]",
+            "admissions_pathway": "Internal Transfer Allowed",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 105 Introductory Psychology I",
+                "PSY 106 Introductory Psychology II",
+                "PSY 240 Statistics I",
+                "PSY 241 Research Methods I",
+                "PSY 242 Research Methods II",
+                "PSY 347 Social Psychology",
+                "PSY 351 Theories of Personality",
+                "PSY 360 Theories of Learning and Cognition",
+                "PSY 377 Physiological Psychology"
+              ],
+              "electives": [
+                "PSY 340 Statistics II",
+                "PSY 342 Research Methods III",
+                "PSY 343 Introduction to Psychological Measurement",
+                "PSY 317-399 level courses"
+              ],
+              "total_units": 192,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Megan Greeson (Gender-based violence, program evaluation)",
+              "Dr. Leonard A. Jason (Public policy, prevention, chronic illness)",
+              "Dr. Susan Dvorak McMahon (Violence against educators, school-based intervention)",
+              "Dr. Olya Glantsman (Cultural diversity, academic settings, food/housing security)",
+              "Dr. Joseph Mikels (Community interventions with older adults, adulthood & aging)",
+              "Dr. Christine E. Reyna (Identity, stereotypes, intergroup violence, political psychology)"
+            ],
+            "notes": "Students must select one of five B.A. concentrations: Standard, Human Development, Human Services, Industrial/Organizational, or Community. Major Core Requirements are 24.0 hours, and Major Concentration Requirements are 32-104 hours. Data source: DePaul University Academic Catalog 2025-2026. [cite: 2, 10, 16, 19, 23, 28, 29, 38 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "School of Music",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily Lincoln Park Campus housing, with traditional dorms for freshmen and apartment options for upperclassmen. While not specialized, living on campus offers convenience for access to performance spaces and practice rooms. LeCompte Hall is sometimes noted for attracting Theatre School students, implying creative communities may form in certain halls.",
+        "student_archetype": "Dedicated and disciplined artists committed to musical excellence. They are often performers, composers, music educators, or sound recording technologists, seeking intensive training within a vibrant urban music scene.",
+        "strategic_fit_advice": "Designed for highly talented and committed musicians. Applicants should demonstrate exceptional musical ability through auditions and a strong academic record. Proximity to the Lincoln Park campus is beneficial for music facilities.",
+        "majors": [
+          {
+            "name": "Music Performance",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for admission. Undergraduate students in classical performance will perform a checkpoint audition at the end of their sophomore year for continuation in the degree. [cite: 1, 9, 12, 30 in previous turn]",
+            "admissions_pathway": "Audition Required",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MUS 110A Music Theory I",
+                "MUS 120A Music Theory II",
+                "MUS 130A Music Theory III",
+                "MUS 111 Aural Training I",
+                "MUS 121 Aural Training II",
+                "MUS 131 Aural Training III",
+                "MUS 113 Group Piano I",
+                "MUS 123 Group Piano II",
+                "MUS 133 Group Piano III",
+                "MUS 212A Music Theory IV",
+                "MUS 222-A Music Theory V - A",
+                "MUS 232A Music Theory VI-A: Concepts and Materials in Contemporary Music",
+                "MUS 211 Aural Training IV",
+                "MUS 221 Aural Training V",
+                "MUS 231 Aural Training VI",
+                "MUS 213 Group Piano IV",
+                "MUS 223 Group Piano V",
+                "MUS 233 Group Piano VI",
+                "MUS 224 Music, History, and Culture I",
+                "MUS 225 Music, History, and Culture II",
+                "MUS 226 Global Music Cultures",
+                "MUS 303 Basic Conducting Practicum",
+                "MUS 304 Basic Conducting",
+                "MUS 323 Musicology Seminar"
+              ],
+              "electives": [],
+              "total_units": 192,
+              "major_units": 94
+            },
+            "notable_professors": [],
+            "notes": "Major units (Music Core + Specialization) range from 94-103 + 50-69, totaling 144-172, depending on the specific concentration (e.g., Brass, Guitar, Piano, Voice). The 94 major units listed here refer to the Music Core Requirements. Data source: DePaul University Academic Catalog 2025-2026. [cite: 1, 9, 12, 30 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "School of Continuing and Professional Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily caters to adult learners, with many classes offered online or at night on the Loop Campus. On-campus housing is less common, but apartment-style options in the Loop (e.g., University Center) or Lincoln Park are available for those who choose it.",
+        "student_archetype": "Motivated adult learners and working professionals seeking to advance or change their careers. They value flexibility, practical skills, and programs designed to accommodate adult obligations.",
+        "strategic_fit_advice": "Ideal for experienced adults looking for flexible and career-focused education. Emphasize professional experience, clear career goals, and the ability to balance studies with other commitments. Online and evening programs are key features.",
+        "majors": []
+      },
+      {
+        "name": "The Theatre School",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily Lincoln Park Campus housing, offering traditional dorms (e.g., LeCompte Hall is noted as a common residence for theatre students) and apartment-style living. Facilities are furnished, and location provides easy access to the Theatre School's custom-designed building.",
+        "student_archetype": "Passionate and highly disciplined aspiring theatre professionals dedicated to intensive conservatory training. They are creative, collaborative, and deeply engaged in performance and production.",
+        "strategic_fit_advice": "Best for students with exceptional talent and a strong commitment to a career in theatre. The admission process includes stringent auditions/interviews, so focus on performance or technical theatre experience and potential. Living on the Lincoln Park campus provides immediate access to the Theatre School's resources.",
+        "majors": [
+          {
+            "name": "Acting",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAT 120 Quantitative Reasoning"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MAT 120 Quantitative Reasoning"
+            ],
+            "special_requirements": "Audition required for admission. Intensive, highly disciplined training program. Some production assignments may require participation outside of the university's academic calendar. Must earn a C- or better in WRD 103 and WRD 104. [cite: 8, 18, 19, 44 in previous turn]",
+            "admissions_pathway": "Audition Required",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 214,
+              "major_units": 162
+            },
+            "notable_professors": [],
+            "notes": "The Theatre School has an extensive production-oriented approach. Notable alumni include Kevin Anderson, David Dastmalchian, Michael Rooker, and Sean Gunn. Data source: DePaul University Academic Catalog 2025-2026. [cite: 8, 18, 19, 44 in previous turn]"
+          }
+        ]
+      },
+      {
+        "name": "College of Law",
+        "housing_profile": "Primarily Loop Campus housing, such as the University Center, offering suite and apartment options. These are modern facilities with study rooms, fitness centers, and easy access to downtown Chicago's legal district. Many law students also live off-campus in surrounding neighborhoods.",
+        "student_archetype": "Analytical, driven, and civically engaged individuals pursuing legal careers. They value rigorous academic training, practical legal skills, and networking within the legal community.",
+        "strategic_fit_advice": "Ideal for academically strong students with a keen interest in law and social justice. Emphasize critical thinking, research skills, and any experiences related to legal studies or advocacy. The Loop location is highly advantageous for law students.",
+        "admissions_model": "Direct Admit"
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Computer Science Minor",
+      "User Experience Design Minor",
+      "Film Production Minor",
+      "Journalism Minor",
+      "Public Relations and Advertising Minor",
+      "Spanish for Healthcare Certificate"
     ]
   },
-  "_id": "depaul_university",
   "application_process": {
+    "platforms": [
+      "Common App",
+      "DePaul Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "Applicants receive an admission decision by December 15, 2025. This option offers the strongest consideration for academic scholarships and a chance to apply for additional community service and leadership scholarships. DePaul University does not offer an Early Decision (binding) plan for undergraduate admissions."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "Applicants receive an admission decision by March 15, 2026."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate (Freshman)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal essay is required, typically submitted through the Common Application. For test-optional applicants, supplemental essays can be submitted in lieu of test scores."
+      },
+      {
+        "target_program": "All Undergraduate (Freshman)",
+        "requirement_type": "Letters of Recommendation",
+        "deadline": "",
+        "details": "One letter of recommendation is typically required, with the option to submit up to three additional letters."
+      },
+      {
+        "target_program": "School of Music (BM, BA, BME, etc. - Performance Tracks)",
+        "requirement_type": "Audition",
+        "deadline": "Live auditions: Weekends throughout February. Recorded auditions: February 1 (request by January 15).",
+        "details": "All applicants (except SRT non-performance and PAM Bachelor of Science) must perform an audition. Live auditions are encouraged and take place on weekends in February. Recorded video auditions are available by request and must be submitted by February 1, with requests made by January 15. Specific repertoire and interview requirements vary by instrument and program."
+      },
+      {
+        "target_program": "School of Music (Performing Arts Management BS, Sound Recording Technology BS)",
+        "requirement_type": "Interview",
+        "deadline": "",
+        "details": "Admission to the non-performance track (BS) in Performing Arts Management requires an interview with program faculty."
+      },
+      {
+        "target_program": "School of Music (Performing Arts Management BS)",
+        "requirement_type": "Essays",
+        "deadline": "January 6",
+        "details": "A writing sample is required. The prompt is provided by the Performing Arts Management Department after application submission and must be submitted by January 6."
+      },
+      {
+        "target_program": "School of Music (Sound Recording Technology - non-performance track BS)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Applicants pursuing a non-performance track (BS) in Sound Recording Technology must submit a video audition performing one selection that demonstrates their facility and musical understanding."
+      },
+      {
+        "target_program": "School of Music (Sound Recording Technology - all undergraduate applicants)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Undergraduate applicants intending to major in Sound Recording Technology must submit 2-3 files of their work."
+      },
+      {
+        "target_program": "The Theatre School (BFA Acting)",
+        "requirement_type": "Audition",
+        "deadline": "December 1 (for prescreen video, audition fee, and photograph)",
+        "details": "A two-step audition is required: a video prescreen and a live callback audition. The prescreen video, audition fee, and a photograph must be uploaded to the Blue Demon Domain by December 1. Callback decisions are communicated within two weeks of prescreen submission."
+      },
+      {
+        "target_program": "The Theatre School (All BFA programs other than BFA Acting)",
+        "requirement_type": "Interview",
+        "deadline": "Interviews take place from November through mid-February.",
+        "details": "Interviews are required. Applicants must submit an application and program-specific application materials (resume, writing sample, portfolio, etc.) prior to registering for an interview. Interviews take place in-person or virtually."
+      },
+      {
+        "target_program": "The Theatre School (BFA Stage Management)",
+        "requirement_type": "Portfolio",
+        "deadline": "December 1 (all supplemental application items)",
+        "details": "A Stage Management Portfolio is required."
+      },
+      {
+        "target_program": "The Theatre School (BFA Stage Management)",
+        "requirement_type": "Essays",
+        "deadline": "December 1 (all supplemental application items)",
+        "details": "A one-page writing sample answering 'What are the skills and qualities of a successful stage manager?' and 'What is it about managing that you most enjoy?' is required."
+      },
+      {
+        "target_program": "The Theatre School (MFA Acting)",
+        "requirement_type": "Audition",
+        "deadline": "Prescreen video: December 15. All remaining materials: by callback audition completion.",
+        "details": "Admission to the MFA Acting program requires an audition consisting of a pre-recorded prescreen and an in-person or virtual callback. Two contrasting monologues are required for the prescreen, which must be submitted through the Application Status Portal by December 15. Callback auditions are held in January and February."
+      },
+      {
+        "target_program": "Jarvis College of Computing and Digital Media (Animation BA and BFA)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A Creative Statement is required (one to one and a half pages addressing creative inspirations, why Animation, and why DePaul)."
+      },
+      {
+        "target_program": "Jarvis College of Computing and Digital Media (Animation BA and BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A Creative Portfolio is required, demonstrating creativity and interests. It can include 5-10 still images (drawings, digital art, photography, etc.), a video sample (up to 3 minutes), writing samples (up to 3 pages), and/or website links."
+      },
+      {
+        "target_program": "Jarvis College of Computing and Digital Media (Film and Television BA and BFA)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A Creative Statement is required (one to one and a half pages addressing creative inspirations, why Film and Television, and why DePaul)."
+      },
+      {
+        "target_program": "Jarvis College of Computing and Digital Media (Film and Television BA and BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A Creative Portfolio is strongly encouraged but not required. It can include 5-10 still images, a video sample (up to 3 minutes), writing samples (up to 3 pages), and/or website links."
+      },
+      {
+        "target_program": "College of Liberal Arts and Social Sciences (Graduate Programs - specific programs may vary)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Most programs require a one- to two-page statement explaining academic goals, career plans, and reasons for selecting the program. Some programs may require additional or specific information."
+      },
+      {
+        "target_program": "College of Liberal Arts and Social Sciences (MA in Sociology)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Personal statement reflecting coursework and/or experience in sociology and related fields, future goals, and reasons for choosing the program."
+      },
+      {
+        "target_program": "College of Liberal Arts and Social Sciences (MA in Writing and Publishing)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A reflective essay (500-750 words) describing objectives for applying to the program and future plans."
+      },
+      {
+        "target_program": "College of Liberal Arts and Social Sciences (MA in Writing and Publishing)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio (approximately 25 pages) of representative creative writing (creative nonfiction, fiction, poetry, or a combination; at least half prose if submitting poetry)."
+      },
+      {
+        "target_program": "College of Law (JD)",
+        "requirement_type": "Essays",
+        "deadline": "April 1, 2026",
+        "details": "A personal statement, not exceeding two pages, is required. It should provide information on intellectual interests, personal/educational background, experiences, and reasons for applying to law school. Applicants may also describe how their admission would contribute to the College of Law's mission."
+      },
+      {
+        "target_program": "College of Law (Joint-Degree Programs)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A supplemental essay is required."
+      },
+      {
+        "target_program": "College of Law (JD/LLM Programs)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A brief essay (no more than two pages) discussing the reason(s) for interest in earning a JD/LLM in a specific area of law."
+      },
+      {
+        "target_program": "College of Education (Doctoral Programs)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Response to specific questions regarding understanding of education for social justice and equity, demonstrated leadership and commitment to these concepts, and plans for the future. Includes references to relevant literature and research. Also requires discussion of an ethical dilemma in education or leadership."
+      },
+      {
+        "target_program": "College of Education (Curriculum Studies)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Response to specific questions regarding work for justice and educational opportunity in professional life and how the program will help in the future. Includes references to relevant literature and research. Also requires discussion of an ethical dilemma in education or leadership."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Class Rank",
+        "Standardized Test Scores",
+        "Volunteer Work",
+        "Work Experience",
+        "Geographical Residence",
+        "State Residency"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "DePaul University emphasizes a holistic review process that includes a long-standing test-optional policy since 2012. The university is known for its commitment to social justice and Vincentian values, and it seeks students who demonstrate intellectual curiosity, personal development, and community engagement through a strong academic record and personal qualities."
+    },
     "essay_prompts": [
       {
-        "prompt": "DePaul University is the nation's largest Catholic university, guided by the Vincentian mission of access and service to all. How does this mission resonate with you?",
-        "word_limit": "250 words",
-        "type": "Values",
-        "required": false,
+        "prompt": "Most students choose their intended major or area of study based on a passion or inspiration that's developed over time—what passion or inspiration led you to choose this area of study?",
+        "word_limit": "300 words",
+        "type": "Major",
+        "required": "Optional/Program Specific (Generally not required for all applicants; may appear for specific programs or as an optional submission)",
         "brainstorming_questions": [
-          "Thinking about the 'access' aspect of the Vincentian mission, can you recall a time when you either provided or received access to something that was previously difficult to obtain, and what did that experience teach you about opportunity?",
-          "The Vincentian mission emphasizes 'service to all.' What specific act of service, big or small, has left the most lasting impression on you, and how does DePaul's commitment to this ideal connect with that memory?",
-          "Beyond just attending classes, how do you envision yourself actively participating in and contributing to DePaul's mission of service once you are a student here, and what experiences have prepared you for that?",
-          "The Catholic identity of DePaul, combined with its Vincentian mission, suggests a particular approach to education. Can you think of a time when your beliefs or values guided you to help someone who might have been overlooked or underserved, and how does that align with what you know about DePaul?",
-          "When you hear the phrase 'access and service to all,' what immediate personal experience or aspiration comes to mind that makes this mission feel not just like a university slogan, but a genuine part of who you are and who you want to become?"
+          "When did you first become interested in this specific field? Was there a pivotal moment, a long-standing curiosity, or a particular experience that sparked this interest?",
+          "Beyond academic success, what deeper problems or questions within this area of study genuinely excite or challenge you?",
+          "How have you actively pursued or explored this passion outside of formal schooling (e.g., through personal projects, readings, online courses, volunteer work, discussions, or hobbies)?",
+          "What specific aspects of this area of study at DePaul University, such as particular courses, faculty research, or unique programs, align with and further fuel your inspiration?",
+          "Imagine yourself contributing to this field in the future. What kind of impact do you hope to make, or what kind of discoveries do you aspire to be a part of, and how does your current passion connect to that vision?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/depaul_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [],
+    "college_ranking_tactics": [
+      "Focus on General Education (GE) requirements beyond just the program's prestige. While a program's reputation is important, understanding the specific GE curriculum for each college can reveal how well it aligns with a student's broader academic interests and preferred learning style. Some colleges might have more flexible or interdisciplinary GE options than others.",
+      "Evaluate housing quality and availability pertinent to the specific college's campus. DePaul has two main campuses: Lincoln Park and the Loop. Some colleges are primarily based on one campus (e.g., the College of Law is in the Loop, while the College of Liberal Arts and Social Sciences is in Lincoln Park). A student should investigate housing options, whether on-campus or off-campus, that are convenient and suitable for their chosen college's primary location.",
+      "Investigate the 4-year graduation rates specific to each college or major. While university-wide graduation rates are available (DePaul graduates 70% of its students), looking at the rates for particular colleges or even specific programs within them can provide a more granular understanding of student success and support within that academic unit."
+    ],
+    "alternate_major_strategy": "DePaul University offers flexibility for students exploring their academic paths, both during the application process and after enrollment. While explicit \"alternate major strategies\" with specific pairings (like \"CS in Engineering, list Cognitive Science as alternate\") are not detailed in general advisories, the university encourages applicants to list a second-choice major and provides clear pathways for internal transfers.\n\n### Alternate Major Strategies for Admission\n\nDePaul University's admissions process considers a second-choice major, particularly for competitive programs, without disadvantaging an applicant's primary selection. If an applicant isn't admitted to their first-choice major, their second choice will then be reviewed. This suggests that strategically choosing a backup major can increase the chances of admission to the university, even if the primary, highly competitive program is not immediately accessible. Applicants are encouraged to list a second choice, and this second choice can be within the same college as their first choice or in a different college.\n\nWhile specific strategic pairings are not provided, prospective students could consider the following:\n\n*   **Complementary Fields:** Choosing a second major in a related but less competitive field might leverage existing interests and preparation. For example, if a highly competitive STEM field is the first choice, a related major in the College of Liberal Arts and Social Sciences (LAS) or a broader science major in the College of Science and Health (CSH) could be a viable alternate.\n*   **Meeting College-Specific Requirements:** When listing a second major in a different college, it is crucial to understand and meet the admission requirements for that specific college. All admission requirements for each college where declared majors are located must be met, including any audition or portfolio requirements if applicable.\n\n### Changing Major After Admission (Internal Transfer)\n\nDePaul University provides a clear process for students to change their major or transfer between colleges after admission. This process is managed through the \"Declarations and Inter-College Transfer\" tool in Campus Connect.\n\n**Key aspects of changing majors or colleges internally include:**\n\n*   **Consulting an Advisor:** Students are strongly encouraged to meet with an academic advisor, particularly those in the Office for Academic Advising Support (OAAS), to explore academic options, understand requirements, and discuss the impact of a change on their degree progress and time to graduation. OAAS specifically assists undeclared students and those considering changing or adding a major or minor.\n*   **Eligibility for Inter-College Transfer:** To transfer to another college within DePaul, students must be currently enrolled or have been absent for no more than two consecutive quarters (excluding summer sessions), be in good academic standing, and have a minimum 2.000 DePaul GPA (a 2.500 GPA is required for transfer into the College of Education). Students must also have earned a minimum of 12 quarter hours as a degree-seeking student at DePaul, with those hours posted on their official transcript.\n*   **Impact on Scholarships:** While it's generally possible to retain scholarships when changing majors, it's advisable to confirm this with an admissions advisor or the OneDePaul office.\n*   **Time to Graduation:** Switching majors later in an academic career may cause a delay in graduation, making early consultation with an advisor beneficial.\n*   **What-If Degree Progress Report:** Before making an official change, students can run a a \"What-If Degree Progress Report\" in Campus Connect to see how a new major might impact their time to graduation.\n*   **Competitive Internal Transfer Process:** While DePaul is generally transfer-friendly, with transfer students making up a significant portion of its undergraduate population, certain majors, especially in fields like Computer Science, can be highly competitive. Some Reddit discussions indicate that attempting to \"game the system\" by applying to an \"easier\" major with the intent to transfer into a highly competitive one (like Computer Science) might not always be effective, as some schools make internal transfers into impacted majors difficult. However, other student experiences suggest that DePaul is generally flexible with internal transfers and major changes.\n\nFor transfer students specifically, DePaul evaluates applications holistically and recommends minimum cumulative GPAs for admission consideration to specific colleges (e.g., 2.0 for Liberal Arts & Social Sciences, Communication, Computing & Digital Media, and The Theatre School; 2.5 for Driehaus College of Business, College of Education, and School of Music). Transfer guides and counselors are also available to help plan course selections to best fit an intended DePaul major and ensure credit transfer.\n\nIn summary, DePaul provides a supportive environment for students to explore and change their academic paths. Strategic use of the second-choice major option during application and proactive engagement with academic advisors for internal transfers are key to successfully navigating academic goals at DePaul University."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 45195.0,
+        "total_coa": 71395.0,
+        "housing": 19536.0
+      },
+      "out_of_state": {
+        "tuition": 45195.0,
+        "total_coa": 71395.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 25282.0,
+    "average_merit_aid": 21443.0,
+    "percent_receiving_aid": 90.0,
+    "meets_full_need": false,
+    "notes": "DePaul University offers both need-based aid and merit scholarships. The average net price for freshmen varies by family income level, indicating that the university does not meet 100% of demonstrated financial need for all students. For families with incomes $0-30k, the average net price is $26,173 per year.",
+    "scholarships": [
+      {
+        "name": "State Scholar Plus Scholarship",
+        "type": "Merit",
+        "amount": "Up to $100,000 over 4 years",
+        "deadline": "November 15 (Early Action Program)",
+        "benefits": "Tuition matching for top Illinois public institutions (making DePaul as affordable), based on academic achievement.",
+        "application_method": "Automatic consideration upon admission application. Requires 3.75 GPA or higher, top 10% class rank (or SAT 1300/ACT 28 for international students if rank not available)."
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Up to $25,000",
+        "deadline": "November 15 (priority consideration)",
+        "benefits": "Significant financial assistance for full-time entering freshmen.",
+        "application_method": "Automatic consideration with admission application. Selection based on strong academic records, community service, and extracurricular activities."
+      },
+      {
+        "name": "DePaul Global Gateway Scholarship",
+        "type": "Merit",
+        "amount": "Partial tuition coverage",
+        "deadline": "Varies by admission deadline",
+        "benefits": "Reduced tuition expenses for international students.",
+        "application_method": "Automatic consideration for international students demonstrating a strong academic background."
+      },
+      {
+        "name": "Vincentian Service Scholars Program",
+        "type": "Merit/Service",
+        "amount": "Up to $6,000 per year for three consecutive academic years",
+        "deadline": "February 2, 2025 (online application)",
+        "benefits": "Opportunities for spiritual growth, leadership development, community service, and interfaith reflection through an intentional community.",
+        "application_method": "Separate application on Scholarship Connect (search 'Vincentian Service'). Requires current first-year students who will have sophomore standing, financial need, and participation in a service engagement experience."
+      },
+      {
+        "name": "DePaul Transfer Scholarship",
+        "type": "Merit",
+        "amount": "$12,000-$23,000 annually",
+        "deadline": "Automatic consideration upon admission application (typically July 1 for transfers)",
+        "benefits": "Financial assistance for continuing education.",
+        "application_method": "Automatic consideration based on academic performance (cumulative college GPA of 3.5 or higher from previous institutions). High school academic information is not considered."
+      },
+      {
+        "name": "Graduate Presidential Scholarship for International Students (CSH)",
+        "type": "Merit",
+        "amount": "$12,000 (disbursed as $2,000 per quarter over six quarters)",
+        "deadline": "Awarded based on program of study and term applied for",
+        "benefits": "Tuition support for select graduate programs in the College of Science and Health.",
+        "application_method": "Automatic consideration for qualified international students admitted to specific MS programs (e.g., Applied Mathematics, Applied Statistics, Chemistry, Environmental Science, Pure Mathematics, Research Psychology). Requires continuous, full-time enrollment."
+      },
+      {
+        "name": "St. Vincent DePaul Scholarship",
+        "type": "Merit",
+        "amount": "Part of the freshman academic scholarship package (range $9,000 to $25,000 annually)",
+        "deadline": "November 15 (priority consideration)",
+        "benefits": "Financial assistance for incoming freshmen.",
+        "application_method": "Automatic consideration with admission application. Selection based on strong academic credentials, high school curriculum, and community/extracurricular activities. Renewable with a minimum 2.5 GPA."
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams, though some require a 4 or 5.",
+      "exceptions": [
+        "No credit for AP Research (implied by absence from chart)",
+        "AP African American Studies requires 4",
+        "AP Art History requires 4",
+        "AP Biology requires 5 for maximum credit (12 credits), but 3 or 4 can yield partial credit",
+        "AP Computer Science A awards 4 credits for a score of 3 (CSC 243) and 8 credits for a score of 4 or 5 (CSC 243 & CSC 242)",
+        "AP Computer Science Principles awards 4 credits for a score of 3 (IT 105) and 8 credits for a score of 4 or 5 (IT 105 & IT 223)"
+      ],
+      "usage": "Can satisfy general education requirements, major field requirements, or elective requirements, and may grant placement into advanced courses."
+    },
+    "ib_policy": {
+      "general_rule": "Both Higher Level (HL) and Standard Level (SL) IB exams can grant credit, with specific score requirements for individual courses. Students should refer to DePaul's official IB Credit Awards page for detailed information on score requirements and corresponding course credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "DePaul Transfer Guides",
+        "DePaul Transfer Course Lists"
+      ],
+      "restrictions": "A maximum of 88 semester (132 quarter) hours of transfer credit can be applied to a DePaul degree. Of these, a maximum of 66 semester (99 quarter) hours may come from two-year/community colleges and credit by examination (such as CLEP, AP, IB, ACE military credit). The final 60 quarter hours of the degree must be earned in residency at DePaul University, and at least half of the major coursework must be DePaul University credit. A minimum cumulative GPA is required, and admission may be rescinded if grades drop below college requirements after submission."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": {
+      "key_factors": [
+        "Strong Academic Record with Challenging Coursework: While DePaul considers applicants with a range of GPAs (average high school GPA for admitted students is around 3.6), success often involves demonstrating academic excellence in a challenging curriculum, including honors, AP, and/or IB classes.",
+        "Demonstrated Motivation and Commitment: DePaul values applicants who show \"motivation and commitment to a quest for higher education\" and who can articulate \"who you are as a person.\" This suggests that essays and other application components that reveal a genuine interest in learning and personal growth are important.",
+        "Meaningful Extracurricular Activities: While not strictly a requisite for acceptance, extracurricular activities can make an applicant stand out, especially for scholarship consideration. This implies that sustained involvement and leadership in activities that align with an applicant's interests can be beneficial.",
+        "Authentic Essays: Although not explicitly detailed in the provided snippets regarding \"student perspectives\" on essays, the emphasis on DePaul's holistic review and caring \"about who you are as a person\" strongly suggests that authentic and reflective essays would be crucial for conveying one's personality, motivations, and commitment. This is a common element in holistic reviews across many universities."
+      ]
+    },
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics/club sports",
+      "Music/arts involvement",
+      "Academic/pre-professional clubs",
+      "Cultural/special interest groups"
+    ],
+    "essay_tips": [
+      "Showcase your character, values, and aspirations, aligning them with DePaul's Vincentian mission and emphasis on authenticity, social responsibility, and a passion for learning.",
+      "Use concrete and specific examples from your experiences to illustrate your points and strengthen your narrative, rather than just listing achievements.",
+      "Research DePaul's specific programs, values, and opportunities, and weave references to these aspects into your essay to demonstrate why DePaul is the right fit for you.",
+      "Be authentic in your writing and let your personality shine through, as DePaul appreciates diversity of thought and experience."
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "DePaul University has a moderately competitive admissions process with an acceptance rate typically ranging from 70-75%, employing a holistic review approach that considers various applicant qualities beyond just grades."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "DePaul excels in practical, career-focused academic programs, particularly in Business (Driehaus College of Business), Communication, and Performing Arts (The Theatre School), leveraging its Chicago location for extensive internship and networking opportunities."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "DePaul's identity as a Vincentian Catholic university in a major urban center fosters a diverse, service-oriented student body that views Chicago itself as an integral part of its learning and social experience."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "While DePaul's advertised tuition and fees are higher than the national average for comparable R2 universities, a significant majority (over 90%) of undergraduates receive substantial financial aid, including grants and scholarships, making the net price considerably lower for many."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 68751,
+    "employment_rate_2yr": 94.0,
+    "median_earnings_6yr": 54695,
+    "notes": "DePaul University alumni have a high employment rate, with 94% employed one year after graduation. The university is also ranked in the top 10% of all schools nationally by College Factual in 2025.",
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Apple",
+      "Deloitte",
+      "JPMorgan Chase",
+      "United Airlines",
+      "Boeing"
+    ],
+    "grad_school_rate": 12.0,
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 87.0,
+    "graduation_rate_4_year": 58.0,
+    "graduation_rate_6_year": 68.0
+  }
 }

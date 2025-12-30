@@ -560,7 +560,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: a 'Why Us' essay (how UChicago satisfies desire for learning, community, and future) and an Extended Essay (choose from several creative prompts or craft your own). No strict word limits, but 300-600 words recommended for the first essay."
       }
     ],
@@ -748,11 +748,31 @@
       "An application that appears to be a checklist of extracurriculars without genuine passion or depth"
     ],
     "insights": [
-      "UChicago emphasizes a holistic review process where no single component determines admission; all aspects of the application are considered",
-      "The admissions committee places a disproportionate emphasis on essays and 'fit' in general, making them crucial for demonstrating your alignment with the school's intellectual environment",
-      "Applying Early Decision (ED) can significantly increase the chances of acceptance, as UChicago has a high ED yield rate",
-      "The 'No Harm' test-optional policy means submitted SAT/ACT scores will only be used if they positively impact an applicant's chance of admission",
-      "Students admitted often appreciate the rigorous academic environment, the Core Curriculum, and the vibrant community that encourages critical thinking and diverse discussions"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UChicago emphasizes a holistic review process where no single component determines admission; all aspects of the application are considered"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The admissions committee places a disproportionate emphasis on essays and 'fit' in general, making them crucial for demonstrating your alignment with the school's intellectual environment"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED) can significantly increase the chances of acceptance, as UChicago has a high ED yield rate"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The 'No Harm' test-optional policy means submitted SAT/ACT scores will only be used if they positively impact an applicant's chance of admission"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Students admitted often appreciate the rigorous academic environment, the Core Curriculum, and the vibrant community that encourages critical thinking and diverse discussions"
+      }
     ]
   },
   "outcomes": {

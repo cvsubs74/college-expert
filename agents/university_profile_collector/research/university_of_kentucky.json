@@ -1,584 +1,1221 @@
 {
-  "university_profile": {
-    "_id": "university_of_kentucky",
-    "university_name": "University of Kentucky",
-    "metadata": {
-      "official_name": "University of Kentucky",
-      "location": {
-        "city": "Lexington",
-        "state": "KY",
-        "type": "Public"
+  "_id": "university_of_kentucky",
+  "metadata": {
+    "official_name": "University of Kentucky",
+    "location": {
+      "city": "Lexington",
+      "state": "KY",
+      "type": "main_campus"
+    },
+    "last_updated": "2024-06-03"
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Kentucky is a public land-grant research university in Lexington, Kentucky. Founded in 1865 by John Bryan Bowman as the Agricultural and Mechanical College of Kentucky, the university is one of the state's two land-grant institutions.",
+    "market_position": "Strong regional presence with growing national recognition in health sciences and engineering.",
+    "admissions_philosophy": "Seeks a diverse class of students with strong academic potential, demonstrated leadership, and a commitment to community engagement. Holistic review process considers grades, test scores, essays, and extracurriculars.",
+    "us_news_rank": 65,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strategic focus on health sciences will continue to drive research funding.",
+        "category": "general"
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "https://www.kentucky.com/news/local/education/article292945229.html",
-        "https://www.uky.edu/admissions/selective-majors-and-programs",
-        "https://www.uky.edu/transportation/news/challenges-campus-mobility"
-      ]
-    },
-    "strategic_profile": {
-      "executive_summary": "The University of Kentucky is the state's flagship land-grant public research institution, serving as a critical economic and academic hub. It is recognized for its comprehensive contiguous campus that co-locates liberal arts, engineering, and medical colleges, alongside a dominant SEC athletic culture.",
-      "market_position": "Flagship Public Research University",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 143,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "While the overall acceptance rate remains high at approximately 93 percent, it has trended downward from 96.4 percent in 2020 as application volumes reach record levels.",
-          "implication": "Students should leverage Early Action to secure spots in increasingly popular programs that now utilize 'comprehensive holistic review' for overflow candidates."
-        },
-        {
-          "category": "Programmatic Specifics",
-          "insight": "Certain majors (e.g., Nursing, Engineering) maintain significantly higher GPA and test score thresholds than the general university admission standards.",
-          "implication": "Applicants must review major-specific requirements early, as many selective programs require separate applications or portfolios."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A high-energy social atmosphere defined by a 'see blue' athletic culture and a significant Greek life presence (roughly 25-30 percent participation). The social calendar is anchored by large-scale traditions like the 24-hour DanceBlue marathon.",
-        "transportation_impact": "Record-breaking freshman classes have placed extreme pressure on campus parking and mobility, leading to the implementation of on-demand micro-transit services like 'Wildcarts' and the 'Wildcab' app to navigate the sprawling 918-acre urban campus.",
-        "research_impact": "As an R1 institution with over 527 million dollars in R&D expenditures, the university's research enterprise is a primary engine for the Kentucky economy, particularly in clinical trials, agricultural tech, and energy innovation."
+      {
+        "takeaway": "Alumni network is highly engaged, particularly in Kentucky and surrounding states.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunities exist to further leverage athletic success for broader institutional branding.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Investment in student success initiatives is crucial for retention.",
+        "category": "general"
       }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to competitive programs like Business or Engineering as a 'pre-major' to bypass elite direct-admit GPA/test score thresholds.",
-        "Research 'Selective Admission' criteria for Nursing and Health Sciences, which often require separate secondary applications after general admission.",
-        "Consider 'Community & Leadership Development' in the College of Agriculture for a notoriously less rigorous path with high GPA potential.",
-        "Target the College of Arts and Sciences as an entry point for undecided students to access the broadest range of internal transfer options later.",
-        "Use the 7-day window prior to orientation to submit a major change request if initial admission to a selective major is denied."
-      ],
-      "college_ranking_tactics": [
-        "Apply to the Lewis Honors College specifically for priority registration to secure seats in 'Easy A' GE courses before they fill.",
-        "Prioritize North Campus residence halls (Jewell, Holmes) to minimize walking distance to the most popular freshman classroom buildings.",
-        "Evaluate colleges based on dining quality; North Campus dining (Student Center) is widely preferred by students over South Campus options.",
-        "Rank the College of Agriculture, Food and Environment for STEM-adjacent paths that often have more flexible admission than the Pigman College of Engineering."
-      ],
-      "alternate_major_strategy": "If applying to a high-demand selective major like Mechanical Engineering or Nursing, list a non-selective major in the College of Arts and Sciences (e.g., Physics or Psychology) as your alternate. These majors typically share many of the same foundational UK Core and lower-division requirements, making it easier to maintain progress toward your preferred degree while preparing for an internal transfer."
-    },
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant campus life with strong emphasis on athletics (especially basketball), numerous student organizations, and a friendly, Southern hospitality atmosphere.",
+      "transportation_impact": "Campus is walkable, but a comprehensive bus system (Cat Cab) serves off-campus housing and remote parking. Traffic can be heavy around major events.",
+      "research_impact": "Significant contributions in medical research, agricultural sciences, advanced manufacturing, and Appalachian studies. A Carnegie R1 institution with a growing research portfolio."
+    }
+  },
+  "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 92.9,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 93.4,
-      "transfer_acceptance_rate": 84.9,
-      "admits_class_size": 6571,
+      "overall_acceptance_rate": 92.96,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": [
-        {
-          "plan_type": "EA",
-          "applications": 0,
-          "admits": 0,
-          "acceptance_rate": 0.0,
-          "class_fill_percentage": 0.0
-        }
-      ]
+      "test_policy_details": "The University of Kentucky is test-optional for admission through the 2028-29 academic year for most freshman applicants and transfer applicants with fewer than 24 credit hours. Students are not required to submit ACT or SAT scores. However, submitting scores is optional and can strengthen an application, especially if the GPA is lower. Submitted test scores must be official and are considered as part of a holistic review process. The university evaluates applicants without test scores by reviewing the rigor of high school coursework, extracurricular activities, and a written essay.",
+      "admits_class_size": 29293,
+      "transfer_acceptance_rate": 84.9,
+      "early_admission_stats": []
     },
     "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 92.94,
+        "yield_rate": null,
+        "notes": "Data for Class of 2029 (entering Fall 2025) is preliminary or not yet fully released. Acceptance rate is based on 2025 admission cycle projections/early data.",
+        "waitlist_stats": null
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 31517,
         "admits_total": 29293,
-        "enrolled_total": 6513,
-        "acceptance_rate_overall": 92.94,
-        "yield_rate": 22.23,
+        "enrolled_total": 6439,
+        "acceptance_rate_overall": 92.96,
+        "yield_rate": 21.98,
+        "notes": "",
         "waitlist_stats": {
           "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
           "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data for this specific cycle not yet fully disclosed; record application volume."
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 28233,
         "admits_total": 26083,
-        "enrolled_total": 6442,
+        "enrolled_total": 6437,
         "acceptance_rate_overall": 92.38,
-        "yield_rate": 24.7,
+        "yield_rate": 24.68,
+        "notes": "",
         "waitlist_stats": {
           "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 727,
-          "admitted_from_waitlist": 418,
-          "waitlist_admit_rate": 57.5,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
           "is_waitlist_ranked": false
-        },
-        "notes": "Transitioned to confirmation waitlist on May 2 due to high yield."
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 22109,
+        "admits_total": 20979,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 94.89,
+        "yield_rate": null,
+        "notes": "Enrollment data (enrolled_total) for this class was not readily available from external sources citing the Common Data Set.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 21695,
+        "admits_total": 20396,
+        "enrolled_total": 4601,
+        "acceptance_rate_overall": 94.01,
+        "yield_rate": 22.56,
+        "notes": "",
+        "waitlist_stats": null
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "Not specified",
-        "unweighted_middle_50": "3.30-3.85",
-        "average_weighted": 0.0,
-        "percentile_25": "3.30",
-        "percentile_75": "3.85",
-        "notes": "Average unweighted GPA of 3.59. Approximately 44% of freshmen had a 3.75 GPA or higher."
+        "weighted_middle_50": "3.20-4.00",
+        "unweighted_middle_50": "3.00-3.75",
+        "average_weighted": 3.68,
+        "percentile_25": "3.20",
+        "percentile_75": "4.00",
+        "notes": "The University of Kentucky reports an average weighted GPA of 3.675 for admitted undergraduates, with the 25th percentile at 3.2 and the 75th percentile at 4.0. For unweighted GPAs, the average is 3.375, with the 25th percentile at 3.0 and the 75th percentile at 3.75. High school grades are considered a very important part of a student's application. The University of Kentucky employs a holistic review process, considering the entirety of the application. Approximately 39% of admitted students had a GPA of 3.75 or higher, and 10.2% had a 4.0 GPA. Regarding high school class rank, 29% were in the top tenth, 56% in the top quarter, and 85% in the top half."
       },
       "testing": {
-        "sat_composite_middle_50": "1080-1290",
-        "sat_reading_middle_50": "540-650",
-        "sat_math_middle_50": "530-640",
-        "act_composite_middle_50": "21-28",
-        "submission_rate": 55.0,
-        "policy_note": "Test optional; 55% submitted ACT, 9% submitted SAT."
+        "SAT Composite": "1080-1290",
+        "SAT Reading": "550-640",
+        "SAT Math": "530-650",
+        "ACT Composite": "21-28",
+        "Submission Rate": 69,
+        "Policy Note": "Test-optional through the 2028-29 academic year. Self-reporting of scores is allowed, and the university considers the highest composite score or highest combined scores from multiple test dates for the SAT and the ACT composite score."
       },
       "demographics": {
-        "first_gen_percentage": 26.1,
-        "legacy_percentage": 0.0,
-        "international_percentage": 1.5,
+        "first_gen_percentage": 27,
+        "legacy_percentage": null,
         "geographic_breakdown": [
           {
-            "region": "Kentucky",
-            "percentage": 59.1
+            "region": "Kentucky (In-State)",
+            "percentage": 59
           },
           {
-            "region": "Other US States",
-            "percentage": 39.7
+            "region": "Out-of-State (Total)",
+            "percentage": 40
           },
           {
             "region": "International",
-            "percentage": 1.2
+            "percentage": 3.54
+          },
+          {
+            "region": "Ohio",
+            "percentage": 9.11
+          },
+          {
+            "region": "Illinois",
+            "percentage": 7.58
+          },
+          {
+            "region": "Georgia",
+            "percentage": 2.54
           }
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 11628,
-            "admits": 10580,
-            "acceptance_rate": 91.0,
-            "note": "2023-2024 cycle."
+            "applicants": 12769,
+            "admits": 11655,
+            "acceptance_rate": 91.28,
+            "note": "Data for the 2025-2026 admissions cycle, for the Class of 2026."
           },
           "women": {
-            "applicants": 16352,
-            "admits": 15273,
-            "acceptance_rate": 93.4,
-            "note": "2023-2024 cycle."
-          }
+            "applicants": 18485,
+            "admits": 17396,
+            "acceptance_rate": 94.11,
+            "note": "Data for the 2025-2026 admissions cycle, for the Class of 2026."
+          },
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 75.8,
-          "black_african_american": 6.9,
-          "hispanic_latino": 6.1,
-          "asian": 3.5,
-          "two_or_more_races": 4.2,
-          "native_american_alaskan": 0.17,
-          "pacific_islander": 0.07,
-          "unknown": 1.5,
-          "non_resident_alien": 1.5
+          "white": 76,
+          "black_african_american": 6,
+          "hispanic_latino": 7,
+          "asian": 4,
+          "native_american_alaskan": 0,
+          "pacific_islander": 0,
+          "two_or_more_races": 4,
+          "unknown": 1,
+          "non_resident_alien": 1
         }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Stanley and Karen Pigman College of Engineering",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 94.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Focus on strong math/science; students must achieve 'Engineering Standing' for upper-division courses.",
-          "housing_profile": "Engineering LLP in Woodland Glen III.",
-          "student_archetype": "Ambitious problem-solvers and tech-oriented innovators",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.M.E.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.C.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Electrical Engineering",
-              "degree_type": "B.S.E.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.S.Ch.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Biomedical Engineering",
-              "degree_type": "B.S.B.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Aerospace Engineering",
-              "degree_type": "B.S.A.E.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Computer Engineering",
-              "degree_type": "B.S.Cp.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Materials Engineering",
-              "degree_type": "B.S.Mat.E.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Mining Engineering",
-              "degree_type": "B.S.MIE",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            }
-          ]
-        },
-        {
-          "name": "Gatton College of Business and Economics",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 92.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Direct admit for high achievers; others enter as pre-majors requiring 2.8 GPA for upper-division status.",
-          "housing_profile": "Business and Economics LLP in Jewell Hall.",
-          "student_archetype": "Future corporate leaders and entrepreneurial strategists",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.8
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.8
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.S.B.E.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.8
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.S.B.E.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.8
-            },
-            {
-              "name": "Management",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.8
-            }
-          ]
-        },
-        {
-          "name": "College of Nursing",
-          "admissions_model": "Selective",
-          "acceptance_rate_estimate": 90.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive; requires separate upper-division clinical application.",
-          "housing_profile": "Healthcare LLP in Holmes Hall.",
-          "student_archetype": "Empathetic and high-achieving caregivers",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.75
-            }
-          ]
-        },
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 95.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Broadest range of internal transfer options; ideal entry for undecided students.",
-          "housing_profile": "Various themed LLPs (Arts & Sciences, International Village).",
-          "student_archetype": "Intellectually curious and socially engaged scholars",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Neuroscience",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            }
-          ]
-        },
-        {
-          "name": "Martin-Gatton College of Agriculture, Food and Environment",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 95.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Offers flexible admission paths for STEM-adjacent interests.",
-          "housing_profile": "Not specified",
-          "student_archetype": "Resourceful scientists and agricultural leaders",
-          "majors": [
-            {
-              "name": "Animal Sciences",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Equine Science and Management",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Agricultural and Medical Biotechnology",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 3.0
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Aerospace Engineering Certificate",
-        "Artificial Intelligence Certificate",
-        "Business Minor",
-        "Cybersecurity Certificate",
-        "Data Science Minor",
-        "Economics Minor",
-        "Entrepreneurship Certificate",
-        "Health Communication Certificate",
-        "International Business Minor",
-        "Sales Certificate",
-        "Sport Communication Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Coalition App",
-        "UK Undergraduate Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Priority for competitive scholarships and Lewis Honors College."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-15",
-          "is_binding": false,
-          "notes": "Final general freshman deadline."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essay",
-          "details": "250-650 words on a challenge and support systems."
-        },
-        {
-          "target_program": "Lewis Honors College",
-          "requirement_type": "Additional Essays",
-          "deadline": "2024-12-01",
-          "details": "Prompt regarding impactful historical figures."
-        },
-        {
-          "target_program": "Music & Theatre",
-          "requirement_type": "Audition",
-          "deadline": "2024-12-01",
-          "details": "Live audition or portfolio review required."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Academic Rigor",
-          "Application Essay"
-        ],
-        "secondary_factors": [
-          "Test Scores",
-          "Extracurriculars",
-          "Character",
-          "Talent/Ability"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Flagship land-grant focus on statewide accessibility and research rigor."
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 13502,
-          "total_coa": 36200,
-          "housing": 17000
-        },
-        "out_of_state": {
-          "tuition": 34140,
-          "total_coa": 56840,
-          "supplemental_tuition": 20638
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "percent_receiving_aid": 95.0,
-      "scholarships": [
-        {
-          "name": "Otis A. Singletary Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition + $20,000 stipend",
-          "deadline": "2025-12-01"
-        },
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "Full in-state tuition",
-          "deadline": "2025-12-01"
-        },
-        {
-          "name": "Provost Scholarship",
-          "type": "Merit",
-          "amount": "$10,000 to $20,000 over 4 years",
-          "deadline": "2025-12-01"
-        },
-        {
-          "name": "Bluegrass Spirit Scholarship",
-          "type": "Merit",
-          "amount": "$20,000 to $50,000 over 4 years",
-          "deadline": "2025-12-01"
-        },
-        {
-          "name": "William C. Parker Diversity Scholarship",
-          "type": "Merit",
-          "amount": "$5,000 to $15,000 per year",
-          "deadline": "2025-12-01"
-        },
-        {
-          "name": "Pigman Engineering Merit Scholarship",
-          "type": "Merit",
-          "amount": "$8,000 over 4 years",
-          "deadline": "2025-12-01"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Scores of 3+ grant credit for most exams.",
-        "usage": "Satisfies UK Core and major prerequisites."
-      },
-      "ib_policy": {
-        "general_rule": "Credit for scores of 5-7 on HL and SL exams.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "restrictions": "67 unit cap for community college credits; 30 of final 36 hours in residency."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "GPA 3.6+ and ACT 26+ for merit eligibility",
-        "Interest in 'Big Blue Nation' culture",
-        "Upward grade trends after early struggles"
-      ],
-      "common_activities": [
-        "Varsity sports",
-        "Greek Life",
-        "Student leadership",
-        "LLPs"
-      ],
-      "essay_tips": [
-        "Mention support systems",
-        "Highlight KY ties",
-        "Use authentic inner voice"
-      ],
-      "red_flags": [
-        "Missing Dec 1 deadline",
-        "Generic 'Why UK' essays",
-        "Senior grade drops"
-      ],
-      "insights": [
-        "Friendly campus vibe",
-        "Out-of-state integration is easy",
-        "TRACS mental health resource is highly rated"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 59025,
-      "grad_school_rate": 23.1,
-      "top_employers": [
-        "Humana",
-        "Amazon",
-        "Dell Technologies",
-        "JPMorgan Chase",
-        "Deloitte",
-        "Kroger",
-        "Commonwealth of Kentucky"
-      ],
-      "loan_default_rate": 5.9,
-      "student_retention": {
-        "freshman_retention_rate": 87.3,
-        "graduation_rate_4_year": 60.0,
-        "graduation_rate_6_year": 71.0
       }
     }
   },
-  "_id": "university_of_kentucky",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Martin-Gatton College of Agriculture, Food and Environment",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Human Nutrition",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHE 170 General Chemistry I",
+              "CHE 175 General Chemistry I Lab",
+              "CHE 180 General Chemistry II",
+              "CHE 185 General Chemistry II Lab",
+              "BIO 148 General Biology I OR BIO 152 General Biology II OR BIO 208 Principles of Biology II",
+              "DHN 212 Introduction to Human Nutrition",
+              "DHN 241 Applied Nutrition"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "CHE 170 General Chemistry I",
+              "BIO 148 General Biology I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "DHN 212 Introduction to Human Nutrition",
+                "DHN 241 Applied Nutrition",
+                "DHN 300-level courses for upper-division status"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students start as a pre-major and require a 2.8 GPA in specific chemistry, biology, and nutrition courses for upper-division admission. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Forestry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Experiential learning requirement (HRT 395 Special Problem or HRT 399 Internship).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FOR 100 Introduction to Forestry",
+                "FOR 200 Forest Biology",
+                "FOR 300 Dendrology",
+                "FOR 400 Forest Measurements",
+                "FOR 450 Forest Management"
+              ],
+              "electives": [
+                "Wildlife Biology and Management",
+                "Urban Forestry"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Professional degree program, accredited by the Society of American Foresters. Small classes with hands-on outdoor training. Spring Field Semester involves travel and work at UK's Robinson Forest. Data source: University of Kentucky 2025-2026 academic year."
+          }
+        ],
+        "housing_profile": "The Martin-Gatton CAFE Agriculture Community is a Living Learning Program, likely housed within one of the general residence halls that supports LLPs. While a specific hall isn't detailed, LLP housing generally offers shared living spaces and specialized programming. [2]",
+        "student_archetype": "First-semester freshmen with interests in agriculture, food (from cultivation to digestion), and environmental topics (from sustainability to natural resources). [2]",
+        "strategic_fit_advice": "Incoming freshmen with a strong interest in agricultural sciences, food systems, or environmental studies who want to engage with peers and faculty sharing similar passions should consider joining this community. [2]"
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIO 148 General Biology I",
+                "BIO 155 General Biology II",
+                "CHE 105 General College Chemistry I",
+                "CHE 107 General College Chemistry II",
+                "MA 113 Calculus I",
+                "MA 114 Calculus II",
+                "PHY 231 General University Physics",
+                "PHY 241 General University Physics Lab"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Carol Baskin (Professor)",
+              "Dr. Robin Cooper (Professor)",
+              "Dr. Elizabeth Duncan (Associate Professor)",
+              "Dr. Ann C. Morris (Professor and Chair, Retinal Development and Regeneration)",
+              "Dr. David Westneat (Professor and Director, Ecological Research and Education Center)"
+            ],
+            "notes": "General undergraduate admission requires unweighted high school GPA of 3.0 or higher. UK is test-optional through 2028-29. Median early career earnings for Biology majors are approximately $21,456. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHE 105 General College Chemistry I",
+                "CHE 107 General College Chemistry II",
+                "CHE 230 Organic Chemistry I",
+                "CHE 231 Organic Chemistry II",
+                "MA 113 Calculus I",
+                "MA 114 Calculus II",
+                "PHY 231 General University Physics",
+                "PHY 241 General University Physics Lab"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. John Anthony (C. W. Hammond Professor of Chemistry)",
+              "Dr. David Atwood (Professor)",
+              "Dr. Anne-Frances Miller (Distinguished Professor, Biophysical Chemistry, Renewable Energy)",
+              "Dr. Chad Risko (Associate Professor, Computational Materials Chemistry)"
+            ],
+            "notes": "General undergraduate admission requires unweighted high school GPA of 3.0 or higher. UK is test-optional through 2028-29. Median early career earnings for Chemistry majors are approximately $26,392. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENG 101 Writing I",
+                "ENG 102 Writing II",
+                "UK Core Humanities Course",
+                "UK Core Arts and Creativity Course",
+                "Literary and Film Studies courses"
+              ],
+              "electives": [
+                "Creative Writing Workshops (fiction, poetry, creative nonfiction)",
+                "Courses in 20th Century British and Irish Literature",
+                "Courses in American Literature & Culture"
+              ],
+              "total_units": 120,
+              "major_units": 27
+            },
+            "notable_professors": [
+              "Dr. Jonathan Allison (Professor, Twentieth-Century British and Irish Literature)",
+              "Dr. Matthew Giancarlo (Professor, Medieval English literature)",
+              "Dr. Pearl James (Associate Professor, War in literature, film, visual art, and propaganda)",
+              "Dr. Shauna M. Morgan (Associate Professor, Literatures of the African Diaspora)",
+              "Dr. Michelle Sizemore (Associate Professor, 18th-19th Century U.S. literature and culture)"
+            ],
+            "notes": "General undergraduate admission requires unweighted high school GPA of 3.0 or higher. UK is test-optional through 2028-29. Median early career earnings for English language and literature graduates are approximately $23,244. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSY 100 General Psychology",
+                "STA 210 Introductory Statistics",
+                "PSY 215 Introduction to Psychology as a Science",
+                "PSY 320 Statistical Methods in Psychology",
+                "PSY 400 Research Methods in Psychology"
+              ],
+              "electives": [
+                "Courses in Developmental Psychology",
+                "Courses in Social Psychology",
+                "Courses in Health Psychology",
+                "Courses in Clinical Psychology"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Chana K. Akins (Professor, Substance Use Research)",
+              "Dr. Christia Spears Brown (Associate Dean for Student Engagement and Success, Developmental and Social Psychology)",
+              "Dr. Jessica Burris (Professor, Cancer Survivorship and Smoking Cessation)",
+              "Dr. Rachel H. Farr (Professor, Developmental Psychology, LGBTQ families)",
+              "Dr. Jonathan Golding (Professor, Psychology and the Law)",
+              "Dr. Suzanne Segerstrom (Professor, Personality and Health, Self-regulation)",
+              "Dr. Michelle Martel (Department Chair, Developmental Psychopathology, ADHD)"
+            ],
+            "notes": "General undergraduate admission requires unweighted high school GPA of 3.0 or higher. UK is test-optional through 2028-29. Median early career earnings for Psychology graduates are approximately $24,569. Data source: University of Kentucky 2025-2026 academic year."
+          }
+        ],
+        "housing_profile": "Students typically reside in general university residence halls, which offer options like four-person suites, two-bedroom suites, and for upperclassmen, two-bedroom or four-bedroom apartments. These halls provide standard amenities such as study areas, kitchens, laundry, and recreational spaces. [4, 29, 30]",
+        "student_archetype": "A broad range of undergraduate students pursuing diverse academic interests within the liberal arts and sciences. They are often engaged in a wide variety of campus organizations and activities. [15]",
+        "strategic_fit_advice": "Students interested in a comprehensive university experience with a wide array of academic and extracurricular opportunities will find a suitable environment. Those seeking a traditional dorm experience with the flexibility to engage across many disciplines will thrive. [15]"
+      },
+      {
+        "name": "Gatton College of Business and Economics",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Admission to UK as 'Pre-Accounting' major. Specific pre-major requirements (viewable in Academic Catalog) for full admission to the program."
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACC 201 Financial Accounting",
+                "ACC 202 Managerial Accounting",
+                "ECO 201 Principles of Microeconomics",
+                "ECO 202 Principles of Macroeconomics",
+                "MA 123 Calculus I or equivalent",
+                "STA 296 Statistical Methods and Applications"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students apply and enter this program as 'Pre-Accounting' majors. Full admission occurs after completing pre-major requirements. Program accredited by AACSB International. Total 120 credit hours required for BSA. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Admission to UK as 'Pre-Finance' major. Specific pre-major requirements (viewable in Academic Catalog) for full admission to the program."
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACC 201 Financial Accounting",
+                "ECO 201 Principles of Microeconomics",
+                "ECO 202 Principles of Macroeconomics",
+                "MA 123 Calculus I or equivalent",
+                "STA 296 Statistical Methods and Applications",
+                "FIN 300 Business Finance"
+              ],
+              "electives": [
+                "Corporate Finance",
+                "Investments",
+                "International Financial Management",
+                "Portfolio Management"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Taylor Begley (Gatton College AI Fellow, Financial Intermediation, Regulation, Mortgage Markets)",
+              "Dr. Chris Clifford (Department Chair, DuPont Endowed Chair in Banking and Financial Services)",
+              "Dr. Igor Cunha (Director of MS Finance Program, Corporate Finance, Financial Economics)",
+              "Dr. Will Gerken (Real Estate Endowed Professor of Finance, Financial Advisor Misconduct)",
+              "Dr. Kristine Hankins (William E. Seale Endowed Chair in Business, Corporate Finance, Risk Management)",
+              "Dr. Russell Jame (Ashland Oil Professorship, Investment Research, Democratization of Investing)",
+              "Dr. David Sovich (Philip Morris Associate Professor of Finance, Empirical Household and Corporate Finance)"
+            ],
+            "notes": "Students apply and enter this program as 'Pre-Finance' majors. Full admission occurs after completing pre-major requirements. Program accredited by AACSB International. Median early career earnings for Finance majors are approximately $45,000 - $50,000 (implied from general business earnings). Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Admission to UK as 'Pre-Marketing' major. Specific pre-major requirements (viewable in Academic Catalog) for full admission to the program."
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACC 201 Financial Accounting",
+                "ECO 201 Principles of Microeconomics",
+                "ECO 202 Principles of Macroeconomics",
+                "MA 123 Calculus I or equivalent",
+                "STA 296 Statistical Methods and Applications",
+                "MKT 301 Principles of Marketing"
+              ],
+              "electives": [
+                "Consumer Behavior",
+                "Marketing Research",
+                "Digital Marketing"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. David Hardesty (Carol Martin Gatton Endowed Chair of Marketing, Pricing, Emotional Intelligence, Consumer Behavior)",
+              "Dr. Allan Chen (Former Professor and Gatton Endowed Chair in Marketing, Research in Digital and Social Media Marketing)"
+            ],
+            "notes": "Students apply and enter this program as 'Pre-Marketing' majors. Full admission occurs after completing pre-major requirements. Program accredited by AACSB International. Median early career earnings for Marketing majors are approximately $41,000 - $46,000 (implied from general business earnings). Data source: University of Kentucky 2025-2026 academic year."
+          }
+        ],
+        "housing_profile": "Students generally utilize standard university residence halls or off-campus housing. The Gatton College building itself provides state-of-the-art classrooms, a finance learning facility, and collaborative study spaces. [32]",
+        "student_archetype": "Students committed to academic honesty, integrity, leadership, professionalism, responsibility, and service, preparing for careers in business and economics. They are often focused on career management and global opportunities. [39]",
+        "strategic_fit_advice": "Individuals aspiring to careers in business or economics who value a strong academic foundation, professional development, and opportunities for leadership and ethical practice should apply. Students comfortable with a traditional campus living experience will fit well. [39]"
+      },
+      {
+        "name": "College of Communication & Information",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Integrated Strategic Communication",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Selective Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CIS 110 Composition and Communication I",
+                "CIS 111 Composition and Communication II",
+                "COM 101 Introduction to Communication",
+                "ISC 201 Introduction to Integrated Strategic Communication",
+                "ISC 301 Strategic Writing for Integrated Strategic Communication"
+              ],
+              "electives": [
+                "Public Relations",
+                "Advertising",
+                "Applied Communication"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Considered a selective admission program. Median early career earnings for Public Relations, Advertising, and Applied Communication graduates are approximately $36,018. Data source: University of Kentucky 2025-2026 academic year."
+          }
+        ],
+        "housing_profile": "The CI Connect Living Learning Program (LLP) is located in Jewell Hall on North Campus, offering shared living spaces, specialized programming, and opportunities for community engagement. [3, 4]",
+        "student_archetype": "First- and second-year students declared in a College of Communication and Information major, eager to 'connect' with peers, faculty, and staff, focusing on personal and career development and leadership through service-learning projects. [3]",
+        "strategic_fit_advice": "First- or second-year students in Communication & Information majors with a high school GPA of 2.6 or higher, who are looking for a supportive community to enhance their academic and professional growth, should apply. [3]"
+      },
+      {
+        "name": "College of Design",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": {},
+        "housing_profile": "Students typically reside in general university residence halls. While no specific LLP is identified, students may find communities based on broader interests or utilize facilities within their academic buildings for design-related projects. [29, 30]",
+        "student_archetype": "Creative and innovative students with a strong visual and problem-solving aptitude, passionate about design principles and application. They often seek collaborative spaces and opportunities to showcase their work. [29, 30]",
+        "strategic_fit_advice": "Students with a strong portfolio and a drive for creative innovation will fit well. Undergraduate students may benefit from the general residence hall experience, fostering connections across disciplines. [29, 30]"
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": {},
+        "housing_profile": "Students generally reside in standard university residence halls, which offer a range of room types and amenities. There is no specific LLP identified for the College of Education, but students could participate in broader interest-based LLPs. [29, 30]",
+        "student_archetype": "Students aspiring to careers in education, teaching, and related fields, demonstrating a passion for learning, leadership, and community engagement. [29, 30]",
+        "strategic_fit_advice": "Individuals committed to fostering learning and development in others should apply. Undergraduate students will likely find suitable housing in general residence halls, providing a diverse campus experience. [29, 30]"
+      },
+      {
+        "name": "Stanley and Karen Pigman College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACT math score of 25 or higher (or SAT equivalent of 590 or higher) AND unweighted high school GPA of 3.0 or higher for freshman admission to Pre-Computer Science. Specific pre-major courses (Engineering Standing) with a minimum 2.5 GPA and C or better in each for full admission to the major."
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHE 105 General College Chemistry I",
+              "CIS 110/WRD 110 Composition and Communication I",
+              "CIS 111/WRD 111 Composition and Communication II",
+              "EGR 101 Engineering Exploration I",
+              "EGR 102 Fundamentals of Engineering Computing",
+              "EGR 103 Engineering Exploration II (or EGR 215 for transfers)",
+              "MA 113 Calculus I",
+              "MA 114 Calculus II",
+              "MA 213 Calculus III",
+              "PHY 231 General University Physics",
+              "PHY 241 General University Physics Lab",
+              "PHY 232 General University Physics II",
+              "PHY 242 General University Physics II Lab"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CS 115 Introduction to Computer Programming",
+                "CS 215 Introduction to Program Design, Abstraction and Problem Solving",
+                "CS 216 Introduction to Software Engineering",
+                "CS 217 Introduction to Data Structures",
+                "CS 275 Discrete Mathematics"
+              ],
+              "electives": [
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Cybersecurity",
+                "Data Science",
+                "Computer Vision"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. James Griffioen (Professor, Director of Center for Computational Sciences)",
+              "Dr. Brent Harrison (Associate Professor, Director of Undergraduate Studies in Computer Science, AI)",
+              "Dr. Hana Khamfroush (Associate Professor, Networking, Systems, Cyber Security)",
+              "Dr. Brent Seales (Stanley and Karen Pigman Heritage Science Chair, Data Science, AI, EduceLab)",
+              "Dr. Simone Silvestri (Associate Professor, Cyber-Physical-Human Systems, IoT)",
+              "Dr. Stephen Ware (Associate Professor, AI, Computational Models of Narrative)"
+            ],
+            "notes": "Students apply as 'Pre-Computer Science' and are fully admitted after completing pre-major requirements with a minimum 2.5 GPA. Median early career earnings for Computer Engineering graduates are approximately $64,632. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACT math score of 25 or higher (or SAT equivalent of 590 or higher) AND unweighted high school GPA of 3.0 or higher for freshman admission to Pre-Mechanical Engineering. Specific pre-major courses (Engineering Standing) with a minimum 2.5 GPA and C or better in each for full admission to the major."
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHE 105 General College Chemistry I",
+              "CIS 110/WRD 110 Composition and Communication I",
+              "CIS 111/WRD 111 Composition and Communication II",
+              "EGR 101 Engineering Exploration I",
+              "EGR 102 Fundamentals of Engineering Computing",
+              "EGR 103 Engineering Exploration II (or EGR 215 for transfers)",
+              "MA 113 Calculus I",
+              "MA 114 Calculus II",
+              "MA 213 Calculus III",
+              "PHY 231 General University Physics",
+              "PHY 241 General University Physics Lab",
+              "PHY 232 General University Physics II",
+              "PHY 242 General University Physics II Lab"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ME 220 Thermodynamics I",
+                "EM 221 Statics",
+                "EM 302 Mechanics of Deformable Solids",
+                "ME 310 Dynamics",
+                "EE 305 Electrical Circuits and Electronics"
+              ],
+              "electives": [
+                "Aerospace Engineering electives",
+                "Manufacturing Systems Engineering electives",
+                "Computational Fluid Dynamics"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Rodney Andrews (Professor, Chemical & Materials Engineering, Energy Research)",
+              "Dr. Hailong Chen (Associate Professor, Computational Mechanics & Materials)",
+              "Dr. Y. Charles Lu (Professor, Mechanical & Aerospace Engineering, Micromechanics, Nanomechanics, Finite-Element Analysis)",
+              "Dr. Suzanne Smith (Professor, Systems Engineering, Uncrewed Aircraft Systems Operations, Flexible Structures)"
+            ],
+            "notes": "Students apply as 'Pre-Mechanical Engineering' and are fully admitted after completing pre-major requirements with a minimum 2.5 GPA. Median early career earnings for Mechanical Engineering graduates are approximately $62,556. Data source: University of Kentucky 2025-2026 academic year."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACT math score of 25 or higher (or SAT equivalent of 590 or higher) AND unweighted high school GPA of 3.0 or higher for freshman admission to Pre-Civil Engineering. Specific pre-major courses (Engineering Standing) with a minimum 2.5 GPA and C or better in each for full admission to the major."
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHE 105 General College Chemistry I",
+              "CIS 110/WRD 110 Composition and Communication I",
+              "CIS 111/WRD 111 Composition and Communication II",
+              "EGR 101 Engineering Exploration I",
+              "EGR 102 Fundamentals of Engineering Computing",
+              "EGR 103 Engineering Exploration II (or EGR 215 for transfers)",
+              "MA 113 Calculus I",
+              "MA 114 Calculus II",
+              "MA 213 Calculus III",
+              "PHY 231 General University Physics",
+              "PHY 241 General University Physics Lab",
+              "PHY 232 General University Physics II",
+              "PHY 242 General University Physics II Lab"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CE 211 Statics",
+                "CE 221 Engineering Graphics",
+                "CE 301 Mechanics of Solids",
+                "CE 341 Hydraulics",
+                "CE 351 Transportation Engineering"
+              ],
+              "electives": [
+                "Construction Engineering and Project Management",
+                "Environmental Engineering",
+                "Geotechnical Engineering",
+                "Structural Engineering",
+                "Water Resources Engineering"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. L. Sebastian Bryson (Professor, Chair, Civil Engineering, Geotechnical Engineering)",
+              "Dr. Diana Byrne (Assistant Professor, Environmental Engineering, Water Resources)",
+              "Dr. Kelly G. Pennell (Professor, Director of UK Superfund Research Center, Environmental Engineering)"
+            ],
+            "notes": "Students apply as 'Pre-Civil Engineering' and are fully admitted after completing pre-major requirements with a minimum 2.5 GPA. Median early career earnings for Civil Engineering graduates are approximately $55,159. Data source: University of Kentucky 2025-2026 academic year."
+          }
+        ],
+        "housing_profile": "Pigman Hall, a central campus residence hall, houses the Engineering Living Learning Program (ELLP). It offers two-bedroom, suite-style living with private bedrooms, granite countertops, carpeting, and is fully furnished. Amenities include a 24/7 staffed front desk, air-conditioning, study rooms on each floor, recreation rooms, a community kitchen, laundry facilities, and covered bike parking. It's conveniently located near the William T. Young Library, the Johnson Center, and The 90 dining facility. [19, 22, 24]",
+        "student_archetype": "Ambitious and goal-focused engineering or computer science students passionate about their careers, seeking academic success, career preparation, and development of technical and soft skills through a supportive, integrated community. [24, 26, 27]",
+        "strategic_fit_advice": "Students with a strong interest in engineering or computer science who thrive in a collaborative and academically focused residential environment should apply. A commitment to academic excellence and career development in STEM fields is highly beneficial. [24, 26, 27]"
+      },
+      {
+        "name": "College of Fine Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": {},
+        "housing_profile": "The Creative Arts Living Learning Program is located in Holmes Hall on North Campus, near arts facilities. It provides specially designed studios for music practice (solo and ensemble), performance, art, and writing. Residents have secure daily access to these creative spaces and benefit from rooms for group interaction and collaboration. [21, 35]",
+        "student_archetype": "Visual artists, dancers, performers, instrumentalists, vocalists, writers, arts administrators, photographers, and designers interested in an interdisciplinary, creative community that fosters inspiration, collaboration, and lasting friendships. All majors are welcome. [21, 35]",
+        "strategic_fit_advice": "Students passionate about creative expression, regardless of major, who thrive in a collaborative arts environment with dedicated artistic facilities and community-focused programming, should consider this LLP. [21, 35]"
+      },
+      {
+        "name": "College of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": {},
+        "housing_profile": "Students may opt for the Interprofessional Healthcare Residential Community (IHRC) LLP in Woodland Glen V, or choose general university residence halls for undergraduates. Graduate students in health sciences can utilize graduate housing facilities. [2, 16, 29, 30]",
+        "student_archetype": "Students dedicated to various health professions, often collaborative and community-minded, focused on patient well-being and interdisciplinary healthcare practices. [2]",
+        "strategic_fit_advice": "Students with a strong interest in health-related fields and a desire for an integrated learning experience should consider the IHRC LLP. Those seeking broader campus engagement can opt for general residence halls, with graduate students having apartment-style options. [2]"
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N. (Traditional)",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANA 109 & 110 (Human Anatomy & Physiology I & II) OR ANA 209 & PGY 206 (Anatomy & Physiology I & II)",
+              "BIO 103 (Basic Biology) OR BIO 148 (General Biology I)",
+              "CHE 103 (Introductory General Chemistry) OR CHE 105 & CHE 107 (General College Chemistry I & II)",
+              "CIS 110 / WRD 110 (Composition and Communication I)",
+              "CIS 111 / WRD 111 (Composition and Communication II) OR CIS 112 (Accelerated Composition and Communication)",
+              "PSY 100 (General Psychology) OR PSY 323 (Developmental Psychology)",
+              "SOC 101 (Introductory Sociology) OR FAM 254 (Family Development) OR CPH 201 (Introduction to Public Health)"
+            ],
+            "minimum_gpa_to_declare": 3,
+            "weeder_courses": [
+              "ANA 109 & 110 (or 209 & PGY 206)",
+              "BIO 103 (or 148)",
+              "CHE 103 (or 105 & 107)"
+            ],
+            "special_requirements": "Minimum grade of C in all prerequisite courses. State Registered Nurse Aide (SRNA) certification required before starting nursing school. Students dismissed from another nursing program or ineligible for re-admission to a prior program are not eligible for admission for five years.",
+            "admissions_pathway": "Selective Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3,
+            "curriculum": {
+              "core_courses": [
+                "NUR 101 Introduction to Nursing",
+                "NUR 200 Fundamentals of Nursing",
+                "NUR 300 Medical-Surgical Nursing",
+                "NUR 400 Pediatric Nursing",
+                "NUR 410 Psychiatric/Mental Health Nursing",
+                "NUR 420 Community Health Nursing"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Adebola Adegboyega (Associate Professor, Health Inequities, HPV vaccination)",
+              "Dr. Martha Biddle (Professor, Cardiovascular Health)",
+              "Dr. Ellen J. Hahn (Marcia A. Dake Professor of Nursing, Tobacco Control Research)",
+              "Dr. Mary Kay Rayens (Professor, Applied Biostatistics, Tobacco Policy, Rural Health)",
+              "Dr. Zim Okoli (Associate Professor, Nurse Researcher of the Year, Tobacco Treatment Programs, Behavioral Health)",
+              "Dr. Jessica Harman Thompson (Assistant Professor and Coordinator for the Accelerated BSN Track)"
+            ],
+            "notes": "Selective admission. Minimum cumulative GPA of 3.0 and science GPA of 3.0 required for application. All prerequisite courses must have a minimum grade of C. Median early career earnings for Registered Nursing graduates are approximately $88,300. Data source: University of Kentucky 2025-2026 academic year."
+          }
+        ],
+        "housing_profile": "Nursing students primarily live in general university residence halls during their undergraduate years, transitioning to graduate housing options or off-campus living for advanced degrees. General residence halls offer various suite types with standard amenities. [29, 30]",
+        "student_archetype": "Compassionate and dedicated students committed to patient care and health sciences. They are typically focused on their demanding curriculum and clinical experiences. [16]",
+        "strategic_fit_advice": "Students passionate about nursing and healthcare who seek a supportive academic environment and value community living during their undergraduate studies will fit well. Graduate nursing students should consider the dedicated graduate housing options. [16]"
+      },
+      {
+        "name": "College of Pharmacy",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": {},
+        "housing_profile": "Pharmacy students typically utilize graduate housing options such as University Flats, LTS, Shawneetown, or Greg Page. These are apartment-style accommodations, often furnished, with utilities included, designed for the needs of professional students. [12, 14, 16, 33]",
+        "student_archetype": "Dedicated and detail-oriented students pursuing advanced pharmaceutical sciences, committed to innovative education and collaborative practice. They often seek a conducive environment for focused study and research. [33]",
+        "strategic_fit_advice": "Students pursuing a demanding pharmacy curriculum should consider graduate housing for its convenience and amenities that support a focused academic lifestyle. Strong organizational skills and a commitment to rigorous study are essential. [33]"
+      },
+      {
+        "name": "College of Public Health",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": {},
+        "housing_profile": "Students typically reside in general university residence halls for undergraduate studies or graduate housing options like University Flats, LTS, Shawneetown, or Greg Page for graduate programs. These offer a range of amenities suitable for various student needs. [12, 14, 16, 29, 30]",
+        "student_archetype": "Students committed to addressing health issues at a community level, interested in research, policy, and public health initiatives. They often possess strong analytical and problem-solving skills. [16]",
+        "strategic_fit_advice": "Students with a passion for improving community health and a desire to engage in research and policy will find a strong fit. Graduate students should explore apartment-style graduate housing options for independent living. [16]"
+      },
+      {
+        "name": "College of Social Work",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": {},
+        "housing_profile": "Students generally live in standard university residence halls during their undergraduate years. Graduate social work students may opt for graduate housing (University Flats, LTS, Shawneetown, Greg Page) or off-campus apartments. [12, 14, 16, 29, 30]",
+        "student_archetype": "Empathetic and socially conscious individuals dedicated to helping others and advocating for social justice. They are often community-oriented and committed to service. [2]",
+        "strategic_fit_advice": "Students with a strong commitment to social justice, community service, and helping vulnerable populations will thrive. Undergraduate students should consider general residence halls for a broader campus experience, while graduate students may prefer more independent living. [2]"
+      },
+      {
+        "name": "Lewis Honors College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": {},
+        "housing_profile": "The Honors Residential Experience (HRE) is housed in Lewis and Haggin Halls on Central Campus, adjacent to the Lewis Honors College and the W.T. Young Library. Lewis Hall features double occupancy private two-bedroom suites, community kitchens, high-tech laundry facilities, wireless internet, satellite television, and various social and learning spaces including smart classrooms and a cafe. [7, 9, 10, 18]",
+        "student_archetype": "Intellectually curious, high-achieving students who prioritize their studies, holistic well-being, and community engagement. They seek interdisciplinary programs and interaction with faculty and staff. [7, 10, 23]",
+        "strategic_fit_advice": "High-performing students who have been admitted to the Lewis Honors College and desire an immersive living and learning experience with like-minded, academically driven peers should consider this housing. [7, 10, 23]"
+      },
+      {
+        "name": "J. David Rosenberg College of Law",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": {},
+        "housing_profile": "While most law students choose off-campus housing, on-campus graduate housing options are available. These include University Flats (modern, fully furnished studio and one-bedroom apartments with utilities, high-speed internet, and in-unit laundry), LTS, Shawneetown, and Greg Page, offering various one- and two-bedroom apartments. [11, 12, 13, 16, 17, 20]",
+        "student_archetype": "Graduate students, including those in law, often seeking independent living near campus. They are typically focused on their demanding academic and professional programs. [8, 11, 12, 14]",
+        "strategic_fit_advice": "Law students prioritizing convenient access to campus and seeking apartment-style living, either individually or with a family, should explore graduate housing options. Those who prefer more independence typically opt for off-campus rentals. [11, 12, 17, 20]"
+      },
+      {
+        "name": "Graduate School",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": {},
+        "housing_profile": "Graduate and Family Housing options include University Flats (modern, fully furnished studio and one-bedroom apartments with utilities, high-speed internet, and in-unit laundry, designed for busy lifestyles), LTS, Shawneetown, and Greg Page. These communities offer various one- and two-bedroom arrangements, some catering specifically to student families with children. [8, 12, 13, 14, 16]",
+        "student_archetype": "Full-time graduate, professional, or non-traditional students, including student families, single graduate/doctoral students, visiting scholars, interns, post-doctoral fellows, and medical residents. They seek a safe, well-maintained, and accessible living environment. [8, 12, 14]",
+        "strategic_fit_advice": "Graduate students, post-doctoral fellows, researchers, and medical residents, or those with families, seeking furnished or unfurnished apartment-style living with included utilities and convenient campus access should apply for graduate housing. [8, 12, 13, 14, 16]"
+      },
+      {
+        "name": "College of Medicine",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": {},
+        "housing_profile": "Medical students, especially those in their first two years in Lexington, may utilize graduate housing options such as University Flats, LTS, Shawneetown, or Greg Page, which offer apartment-style living suitable for graduate and professional students. [12, 14, 25]",
+        "student_archetype": "Highly dedicated and focused students pursuing rigorous medical training, often seeking convenient and mature living environments. They may also be involved in clinical service and research. [12, 14, 25]",
+        "strategic_fit_advice": "Prospective medical students should focus on securing graduate housing or off-campus apartments that provide a quiet and conducive environment for intensive study. Those looking for convenience to the medical campus will find graduate housing beneficial. [12, 14, 25]"
+      },
+      {
+        "name": "College of Dentistry",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": {},
+        "housing_profile": "Similar to other professional programs, students in the College of Dentistry would likely utilize graduate housing options such as University Flats, LTS, Shawneetown, or Greg Page, which offer apartment-style living. [8, 12, 14, 16]",
+        "student_archetype": "Highly motivated and dedicated individuals pursuing a demanding professional degree in dentistry, focused on clinical skills and patient care. [8, 12, 14, 16]",
+        "strategic_fit_advice": "Prospective dental students should explore graduate housing options for convenient, mature living that supports rigorous academic and clinical schedules. Strong commitment to the dental profession is essential. [8, 12, 14, 16]"
+      }
+    ],
+    "minors_certificates": [
+      "Business Analytics Minor",
+      "Entrepreneurship Certificate",
+      "Writing, Rhetoric and Digital Studies Minor",
+      "Computer Science Minor",
+      "Global Studies Certificate",
+      "Business Minor",
+      "Integrated Strategic Communication Minor",
+      "Artificial Intelligence Certificate",
+      "Information Studies Minor",
+      "Criminal Justice Minor"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "UK Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Encouraged for consideration for Lewis Honors College, competitive and academic scholarships, or if planning to live on campus. This deadline has passed for Fall 2026 admission."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-15",
+        "is_binding": false,
+        "notes": "Applying after December 1 may exclude consideration for Lewis Honors College or competitive and academic scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "College of Medicine (MD Applicants)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Multiple secondary essays are required. Prompts for 2025-2026 include: 'Why have you chosen to apply to the University of Kentucky College of Medicine?' (1,500 characters max); 'Please describe how your past experiences or future plans contribute to enriching and enhancing the learning environment at UKCOM.' (1,500 characters); 'If you are a non Kentucky resident, you are required to elaborate on your Kentucky ties if applicable (personal, familial e.g.)' (700 characters max); 'Your combination of life experiences make you uniquely you. Talk about one such experience and how it has helped you prepare to be a physician.'; 'Describe an experience or situation which made you feel grateful?'; 'Please share unique, personally important, and/or challenging facts in your background... Please discuss how such factors have influenced your goals and preparation for a career in medicine.'; 'Describe a situation where you were not in the majority.'; 'Please elaborate on your selection of first-choice campus.'; and 'Please elaborate on your selection of alternate campus (if applicable).' (Additional prompts may also be present related to using unscheduled time for learning, physician competencies, community service, emotional distance in patient care, and engaged learning experiences)."
+      },
+      {
+        "target_program": "J. David Rosenberg College of Law",
+        "requirement_type": "Essays",
+        "deadline": "April 15, 2026",
+        "details": "A personal statement (2-3 pages, double-spaced) is required. Optional supplemental essays (one page each) can be submitted on topics such as interest in the College of Law, specific interest in a specialty/practice area, or describing an obstacle overcome."
+      },
+      {
+        "target_program": "School of Music (Undergraduate Bachelor's Degree)",
+        "requirement_type": "Audition",
+        "deadline": "January 23 and 24, 2026; February 13 and 14, 2026; February 20 and 21, 2026",
+        "details": "An audition is required for prospective majors. Graduate students are encouraged to audition in January for fellowship eligibility."
+      },
+      {
+        "target_program": "BA in Dance",
+        "requirement_type": "Audition",
+        "deadline": "November 14, 2025 (Fall); February 13, 2026 (Spring)",
+        "details": "A successful audition is required to be declared a dance major. Auditions include ballet, modern, jazz, improvisation, and interviews. Remote video auditions are also accepted."
+      },
+      {
+        "target_program": "Musical Theatre Certificate",
+        "requirement_type": "Audition",
+        "deadline": "October 5 (Fall for current students); January 25 (Spring for current and incoming students)",
+        "details": "A successful audition is required. Video submissions include 2 contrasting songs (32 bars/1-1:30 minutes each) and a 1-minute monologue."
+      },
+      {
+        "target_program": "Lewis Honors College (Upper-Level Admission)",
+        "requirement_type": "Essays",
+        "deadline": "December 12, 2025 (priority); May 8, 2026 (final)",
+        "details": "A Statement of Intent (300 words maximum) explaining the rationale for applying and how prior experience prepares for success, and an Admission Essay (500 words maximum) addressing the prompt: 'Kentucky is one of four states that is a Commonwealth. The term means the state is for the common good. What do you consider to be for “the common good” and how do you hope to use your life experiences, challenges, uniqueness, and intellect to contribute to the common good in your community, as you define it?' are required."
+      },
+      {
+        "target_program": "All (Undergraduate - Supporting Document)",
+        "requirement_type": "Statement of Purpose",
+        "deadline": "",
+        "details": "A Statement of Purpose is listed as a supporting document for undergraduate admissions, particularly for international applicants or those using the Common App. While not explicitly detailed as a 'supplemental essay' with a specific prompt for all applicants, it serves a similar function in allowing applicants to present their goals and qualifications."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Extracurricular activities"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Recommendation(s)",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The University of Kentucky employs a holistic review process, particularly for test-optional applicants and for admission to programs like the Lewis Honors College. This review considers the rigor of high school coursework, activities and engagement outside the classroom, and a written essay. The Lewis Honors College specifically values academic preparation, the strength of the application essay, leadership and involvement, and notable awards and achievements. While not a direct admissions boost, there are extensive 'First-Generation Programs' offering tailored initiatives, academic support, scholarships, and a Living Learning Community to empower first-generation students. Additionally, a 'Legacy Tuition Program' offers partial tuition awards to eligible non-resident children of UK graduates who are life members of the UK Alumni Association."
+    },
     "essay_prompts": [
       {
-        "prompt": "UK is dedicated to improving people's lives. Tell us how you plan to make a positive impact through your career or community involvement.",
-        "word_limit": "250 words",
-        "type": "Impact",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about the University of Kentucky's mission to improve lives, what specific problems or needs have you observed in your community, or in areas you care deeply about, that spark a desire within you to find solutions?",
-          "When you imagine yourself contributing to the University of Kentucky, are there particular programs, research areas, or faculty whose work resonates with your own aspirations for positive impact, and why do those specific connections excite you?",
-          "Beyond the broad idea of 'improving lives,' can you pinpoint a moment or experience where you felt you made a tangible difference, even a small one, and what did you learn about yourself and your ability to create change from that situation?",
-          "Consider the skills and knowledge you hope to gain at the University of Kentucky; how do you envision those translating into concrete actions or initiatives that directly address the challenges you want to tackle in your career or community?",
-          "If you were to describe the *feeling* of making a positive impact, what does that look like and feel like to you, and how has that vision guided your past choices and your future ambitions for your time at UK and beyond?"
+        "Prompt": "Kentucky is one of four states that is a Commonwealth. The term means the state is for the common good. What do you consider to be for “the common good” and how do you hope to use your life experiences, challenges, uniqueness, and intellect to contribute to the common good in your community, as you define it?",
+        "Word/Character Limit": "500 words or less",
+        "Type": "Community, Personal, Why This School (through the lens of its \"Commonwealth\" identity)",
+        "Required/Optional": "Required for application to the Lewis Honors College",
+        "Brainstorming Questions": [
+          "What specific local, national, or global issues do you believe need to be addressed for the betterment of society, and why do you feel strongly about them?",
+          "Reflect on a time when you personally contributed to a group or community. What was your role, what challenges did you face, and what was the outcome?",
+          "Considering your unique skills, talents, or perspectives, how could these be applied to solve a problem or improve a situation within a community you care about?",
+          "Think about a personal challenge or a unique experience you've had. How has it shaped your understanding of what \"the common good\" means, and how might it inform your future contributions?",
+          "Beyond academic achievements, what aspects of your intellect or character do you believe would be most valuable in collaborating with others to work towards a shared benefit?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_kentucky_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on highly selective programs like certain engineering fields, nursing, or the Gatton College of Business and Economics, as most undergraduate majors at UK permit direct admission.",
+      "Consider applying as 'undeclared' within a broader college, especially if uncertain about a specific competitive major, as you may be placed into an alternate major if your initial selective choice is not granted.",
+      "Research major-specific admission requirements, particularly for programs in the Gatton College of Business and Economics or accelerated programs like UK BLUE, which has higher GPA, test score recommendations, and often require separate applications or essays beyond general university admission.",
+      "Be aware that highly popular majors such as Nursing, Biology, and various Business and Engineering fields, while not always explicitly labeled as 'selective' in the same way as some programs, may have more competition for enrollment or progression to upper-division status."
+    ],
+    "college_ranking_tactics": [
+      "Focus on colleges with strong national or regional reputations in specific academic programs of interest (e.g., agriculture, business, engineering, nursing, pharmacy).",
+      "Investigate colleges and programs that offer significant undergraduate research opportunities and access to faculty expertise.",
+      "Consider the quality and availability of specialized campus facilities, labs, and technology directly relevant to the desired field of study within each college.",
+      "Look into the specific student support, advising, and career development resources offered by individual colleges at the University of Kentucky."
+    ],
+    "alternate_major_strategy": "When applying to competitive or 'selective' majors at the University of Kentucky, applicants may be placed into an alternate major if not initially admitted to their first choice. The application typically allows for selecting both a first and second choice major. Therefore, strategically listing a less selective major or one in a different college can serve as an alternate or backup plan."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 13907,
+        "total_coa": 35098,
+        "housing": 15242
+      },
+      "out_of_state": {
+        "tuition": 35164,
+        "total_coa": 55292
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 10178,
+    "average_merit_aid": 10336,
+    "percent_receiving_aid": 87,
+    "meets_full_need": false,
+    "notes": "The University of Kentucky has made efforts to reallocate its financial aid, moving to prioritize need-based aid over purely merit-based aid to better support students with unmet financial needs.",
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "eligibility": "Traditionally, applicants should have at least a 3.5 GPA and an ACT test score of 31 or SAT test score of 1390. However, the University of Kentucky also heavily weighs unweighted high school GPA and evaluates students for scholarship awarding through extensive data assessment beyond test scores. All eligible students who apply by the Early Action deadline (December 1st) are considered, regardless of submitting test scores.",
+        "application_method": "Automatic Consideration upon completion of the admission application and all supporting documents by the December 1st Early Action deadline."
+      },
+      {
+        "name": "Singletary Scholarship",
+        "type": "Full-Ride",
+        "amount": "Full tuition + $10,000/year housing stipend for the first two years (if living on campus).",
+        "eligibility": "Highly competitive, implied for top academic performers. Historically, recipients have had exceptional academic records (e.g., 4.4 weighted GPA and 34 ACT).",
+        "application_method": "Automatic consideration for top applicants who complete the admission application and supporting documents by the Early Action deadline."
+      },
+      {
+        "name": "William C. Parker Scholarship",
+        "type": "Merit",
+        "amount": "Varies (awarded with the goal of supporting student success).",
+        "eligibility": "Incoming first-time freshmen with a minimum unweighted high school GPA of 2.50. Awarded based on a holistic review of the student's application for admission.",
+        "application_method": "Automatic Consideration; no additional steps are required. For maximum consideration, apply by the Early Action deadline of December 1st."
+      },
+      {
+        "name": "College of Engineering Incoming Freshman Merit-Based Scholarship Program",
+        "type": "Merit",
+        "amount": "$2,000 per year, renewable for four years (up to $8,000 total). This scholarship can stack on top of other university awards up to the total cost of attendance.",
+        "eligibility": "Students must apply to UK and select a College of Engineering major by December 1, have a composite score of 30 on the ACT or 1360 on the SAT (with a math score of 33 on the ACT or 740 on the SAT), and a 3.50 unweighted high school GPA.",
+        "application_method": "No separate application; candidates' admission application and supporting materials are reviewed. Selected recipients are notified in February."
+      },
+      {
+        "name": "Need-Based Scholarships (General)",
+        "type": "Need-Based",
+        "amount": "Varies, limited number of awards.",
+        "eligibility": "Students must be admitted to the university and complete the Free Application for Federal Student Aid (FAFSA).",
+        "application_method": "Complete the FAFSA. Offers are typically announced in late spring each year."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "The University of Kentucky generally awards credit for AP exam scores of 3, 4, or 5. Many introductory courses grant credit for a score of 3, while others require a 4 or 5 for specific courses or higher-level credit. Detailed equivalencies are provided on their official AP credit equivalency page.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "The University of Kentucky awards credit for International Baccalaureate (IB) Higher Level (HL) exam scores of 5, 6, or 7. Credit is also awarded for several Standard Level (SL) exams with scores of 5, 6, or 7. Specific course equivalencies are provided on their official IB credit equivalency page.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "The University of Kentucky offers a comprehensive online transfer equivalency database that allows prospective students to determine how courses from other regionally accredited institutions will transfer. They provide clear guidance and support for transfer students, indicating a structured and transparent process for evaluating and applying transfer credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Proactive engagement in campus life and academic opportunities.",
+      "Strong time management skills to balance coursework and social activities.",
+      "Willingness to seek out and utilize campus resources like advising, tutoring, and career services.",
+      "Networking with professors, TAs, and peers to build a supportive community.",
+      "Balancing academic rigor with the vibrant social scene and extracurriculars."
+    ],
+    "common_activities": [
+      "Attending University of Kentucky basketball and football games (Big Blue Nation!), especially at Rupp Arena.",
+      "Participating in Greek life (fraternities and sororities) which have a significant presence.",
+      "Joining various student organizations, clubs, and academic societies based on interests.",
+      "Studying and collaborating in libraries like the William T. Young Library.",
+      "Exploring downtown Lexington, local restaurants, and events near campus."
+    ],
+    "essay_tips": [
+      "Highlight your passion for specific academic programs or research opportunities unique to UK.",
+      "Showcase any connection you have to Kentucky's culture, values, or the region.",
+      "Emphasize leadership roles, community involvement, and how you've made an impact.",
+      "Demonstrate how you plan to contribute to the UK community, beyond just academics.",
+      "Be authentic and tell a personal story that reveals your character and aspirations."
+    ],
+    "red_flags": [
+      "Overcommitting to too many social activities at the expense of academic responsibilities.",
+      "Neglecting to utilize the numerous academic and personal support services available on campus.",
+      "Failing to engage with professors and TAs, especially in larger introductory courses.",
+      "Procrastinating on assignments and not keeping up with a demanding course load.",
+      "Getting 'lost in the crowd' of a large university by not actively seeking connections."
+    ],
+    "insights": [
+      "UK fosters a strong sense of community and pride, especially around its athletic programs.",
+      "There are countless opportunities for involvement; students need to be proactive in finding them.",
+      "Lexington offers a fantastic college town experience with a variety of dining, entertainment, and cultural options.",
+      "The campus is extensive and beautiful, so be prepared for walking or utilizing campus shuttles.",
+      "While known for its lively social scene, the academic programs are rigorous and require dedication."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 51000,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 43800,
+    "notes": "10 years after enrolling, the average income of former University of Kentucky students who are working and no longer in school is $51,000, which is 49% higher than the national median.",
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft",
+      "JPMorgan"
+    ],
+    "grad_school_rate": 0,
+    "loan_default_rate": 5.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 87.3,
+    "graduation_rate_4_year": 60,
+    "graduation_rate_6_year": 71
+  }
 }

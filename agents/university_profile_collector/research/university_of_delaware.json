@@ -11,7 +11,7 @@
     "report_source_files": []
   },
   "strategic_profile": {
-    "executive_summary": "The University of Delaware is a privately governed, state-assisted land-grant research university in Newark, Delaware, offering a wide array of undergraduate, master's, and doctoral programs. It is classified among 'R1: Doctoral Universities \u2013 Very high research activity' and emphasizes a balance of academic pursuit and extracurricular involvement in a vibrant college town setting.",
+    "executive_summary": "The University of Delaware is a privately governed, state-assisted land-grant research university in Newark, Delaware, offering a wide array of undergraduate, master's, and doctoral programs. It is classified among 'R1: Doctoral Universities – Very high research activity' and emphasizes a balance of academic pursuit and extracurricular involvement in a vibrant college town setting.",
     "market_position": "Public University with Very High Research Activity",
     "admissions_philosophy": "Holistic review and Test-optional. Applicants choosing not to submit test scores will have their application reviewed holistically without negative effect, with decisions based on all provided materials.",
     "analyst_takeaways": [
@@ -27,7 +27,7 @@
       },
       {
         "category": "Research Prowess",
-        "insight": "The University of Delaware is classified as an R1 Doctoral University \u2013 Very high research activity. It offers extensive research opportunities for both undergraduate and graduate students across numerous disciplines, including dedicated summer research programs.",
+        "insight": "The University of Delaware is classified as an R1 Doctoral University – Very high research activity. It offers extensive research opportunities for both undergraduate and graduate students across numerous disciplines, including dedicated summer research programs.",
         "implication": "Students interested in research should actively seek out faculty projects and summer programs, as these are abundant and well-supported, providing valuable hands-on experience and mentorship. The university's strong ties to state and national research initiatives also provide diverse avenues for engagement."
       }
     ],
@@ -381,13 +381,13 @@
       {
         "target_program": "All (Test-Optional Applicants)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Supplemental essays are required for students who choose not to submit test scores."
       },
       {
         "target_program": "Honors College",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Three short written answer prompts, including a question about contributing to a diverse and inclusive community."
       },
       {
@@ -428,7 +428,7 @@
         "brainstorming_questions": [
           "Beyond the impressive faculty and curriculum, what specific resource or opportunity at UD, perhaps a research lab, a unique club, or an interdisciplinary program, resonates deeply with your personal learning style and sparks your curiosity for your intended major?",
           "Think about a moment when your passion for your intended major first truly ignited. How does the University of Delaware's approach or specific offerings in this field connect with the origins of that passion, and how could UD nurture its continued growth?",
-          "When you envision yourself as a student at UD, what specific kinds of experiences \u2013 be it a challenging project, a collaborative learning environment, or an off-campus opportunity \u2013 do you see yourself actively seeking that will directly prepare you for your future career aspirations?",
+          "When you envision yourself as a student at UD, what specific kinds of experiences – be it a challenging project, a collaborative learning environment, or an off-campus opportunity – do you see yourself actively seeking that will directly prepare you for your future career aspirations?",
           "Looking at UD's campus culture and values, is there anything about the community that particularly draws you in, and how do you see yourself contributing to or benefiting from that unique environment as you pursue your academic and personal goals?",
           "Beyond the immediate academic and career aspects, how does the University of Delaware's broader mission or its commitment to certain principles align with your own personal values and what kind of impact you hope to make in the world through your chosen field?"
         ]
@@ -575,11 +575,31 @@
       "For transfer students, not clearly articulating why you want to transfer to UD and what you did at your previous institution."
     ],
     "insights": [
-      "The University of Delaware provides a wide range of academic opportunities and strong professor support, particularly in programs like engineering and business.",
-      "Connecting to campus life can sometimes be a challenge for freshmen initially, but there are numerous clubs and organizations (over 400) to help students find their niche.",
-      "The social scene is known for its Greek life, which some students feel can overshadow other activities.",
-      "The campus is described as beautiful and well-maintained, and its location allows for quick train access to major cities like Philadelphia, NYC, Baltimore, and D.C.",
-      "Some students have expressed concerns regarding mental health resources, campus safety, and the quality of dining hall food and housing."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The University of Delaware provides a wide range of academic opportunities and strong professor support, particularly in programs like engineering and business."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Connecting to campus life can sometimes be a challenge for freshmen initially, but there are numerous clubs and organizations (over 400) to help students find their niche."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The social scene is known for its Greek life, which some students feel can overshadow other activities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The campus is described as beautiful and well-maintained, and its location allows for quick train access to major cities like Philadelphia, NYC, Baltimore, and D.C."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Some students have expressed concerns regarding mental health resources, campus safety, and the quality of dining hall food and housing."
+      }
     ]
   },
   "outcomes": {

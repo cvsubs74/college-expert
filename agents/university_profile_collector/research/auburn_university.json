@@ -49,7 +49,7 @@
       },
       {
         "category": "Research Prowess",
-        "insight": "The university holds an R1 'Doctoral Universities \u2013 Very high research activity' classification.",
+        "insight": "The university holds an R1 'Doctoral Universities – Very high research activity' classification.",
         "implication": "Students interested in research will find extensive opportunities and a strong research-focused environment across various disciplines."
       },
       {
@@ -1248,13 +1248,13 @@
       {
         "target_program": "All (General Admission)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "No personal essay required for first-year general admission."
       },
       {
         "target_program": "Honors College",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Requires specific essays reflecting on educational goals, values, philosophy, and engagement with the Honors College experience."
       }
     ],
@@ -1431,11 +1431,31 @@
       "Not submitting an optional resume, which can demonstrate interest and engagement."
     ],
     "insights": [
-      "Auburn has a holistic review process that considers academic achievement, course rigor, grade trends, and student engagement.",
-      "Connecting with your admissions advisor and sending thank you notes can help you stand out.",
-      "If not admitted directly, attending a community college like Southern Union with a 'Path to the Plains' program can be a viable transfer option.",
-      "Auburn does not accept the Common Application or Coalition Application for general freshman admission; applicants use their online portal.",
-      "The university has a strong sense of community and school spirit, often referred to as the 'Auburn Family.'"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Auburn has a holistic review process that considers academic achievement, course rigor, grade trends, and student engagement."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Connecting with your admissions advisor and sending thank you notes can help you stand out."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "If not admitted directly, attending a community college like Southern Union with a 'Path to the Plains' program can be a viable transfer option."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Auburn does not accept the Common Application or Coalition Application for general freshman admission; applicants use their online portal."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university has a strong sense of community and school spirit, often referred to as the 'Auburn Family.'"
+      }
     ]
   },
   "outcomes": {

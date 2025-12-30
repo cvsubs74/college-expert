@@ -793,7 +793,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: one choice from four prompts (or a fifth specific to Human-Centered Engineering majors) with a 400-word limit, and the Common Application personal statement."
       },
       {
@@ -981,11 +981,31 @@
       "Sub-par GPA without compensating factors like very high test scores or compelling extracurriculars."
     ],
     "insights": [
-      "Boston College values a strong sense of community and school spirit among its students.",
-      "While a Jesuit university, it welcomes students of all backgrounds and belief systems, with Jesuit values often manifesting in a focus on service and social justice.",
-      "The campus is known for its beauty and Gothic architecture.",
-      "Early Decision (ED1 and ED2) acceptance rates at Boston College can be significantly higher than the overall regular decision rate.",
-      "Many students highlight the supportive atmosphere and opportunities for connections through numerous clubs and extracurricular activities."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Boston College values a strong sense of community and school spirit among its students."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While a Jesuit university, it welcomes students of all backgrounds and belief systems, with Jesuit values often manifesting in a focus on service and social justice."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The campus is known for its beauty and Gothic architecture."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Early Decision (ED1 and ED2) acceptance rates at Boston College can be significantly higher than the overall regular decision rate."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Many students highlight the supportive atmosphere and opportunities for connections through numerous clubs and extracurricular activities."
+      }
     ]
   },
   "outcomes": {

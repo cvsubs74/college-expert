@@ -693,13 +693,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay required: Reflect on how one or more aspects of your identity, culture, or background has played a role in your personal growth, and how it will contribute to our campus community as you dare to grow at Vanderbilt (approximately 250 words)."
       },
       {
         "target_program": "Peabody College of Education and Human Development (Elementary Education, Secondary Education, or Special Education majors)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "A second short answer question about your interest in becoming an educator is required."
       },
       {
@@ -887,11 +887,31 @@
       "Trying to be someone you aren't in your application, as the process is subjective and seeks authenticity."
     ],
     "insights": [
-      "Vanderbilt employs a holistic, context-based admissions review process that considers all parts of your application, including your academic profile, extracurriculars, essays, and circumstances.",
-      "Applying Early Decision (ED1 or ED2) can significantly boost your chances of admission, with early decision acceptance rates being notably higher than regular decision rates.",
-      "Demonstrated interest is not officially considered in the admissions review process, though visiting campus or engaging with admissions is welcomed.",
-      "Admissions officers are trained to find reasons to admit each candidate rather than reasons to deny, approaching the selection process with positive advocacy.",
-      "While strong academics are a critical foundation, successful applicants often possess a compelling personal narrative and clear articulation of their goals and experiences."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Vanderbilt employs a holistic, context-based admissions review process that considers all parts of your application, including your academic profile, extracurriculars, essays, and circumstances."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED1 or ED2) can significantly boost your chances of admission, with early decision acceptance rates being notably higher than regular decision rates."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest is not officially considered in the admissions review process, though visiting campus or engaging with admissions is welcomed."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admissions officers are trained to find reasons to admit each candidate rather than reasons to deny, approaching the selection process with positive advocacy."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While strong academics are a critical foundation, successful applicants often possess a compelling personal narrative and clear articulation of their goals and experiences."
+      }
     ]
   },
   "outcomes": {

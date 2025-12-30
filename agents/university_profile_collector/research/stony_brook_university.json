@@ -940,11 +940,31 @@
       "Assuming test-optional policies are universal across all schools or programs without verifying Stony Brook's specific approach. [8]"
     ],
     "insights": [
-      "Stony Brook is highly regarded for its rigorous academic environment, especially in STEM fields, and is considered an affordable university with a good return on investment. [9, 10, 24]",
-      "The university has a selective admissions process with an acceptance rate of 49%. [3, 9]",
-      "It is important for students, particularly in large introductory classes, to actively seek out and build relationships with professors for potential recommendation letters. [3, 10]",
-      "Stony Brook can feel like a 'commuter school' on weekends, with a quieter campus, so residential students should plan to actively engage in clubs and activities. [3, 9, 10]",
-      "A strong alumni network, particularly in big tech companies for Computer Science majors, offers valuable career support and referral opportunities. [24]"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Stony Brook is highly regarded for its rigorous academic environment, especially in STEM fields, and is considered an affordable university with a good return on investment. [9, 10, 24]"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university has a selective admissions process with an acceptance rate of 49%. [3, 9]"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "It is important for students, particularly in large introductory classes, to actively seek out and build relationships with professors for potential recommendation letters. [3, 10]"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Stony Brook can feel like a 'commuter school' on weekends, with a quieter campus, so residential students should plan to actively engage in clubs and activities. [3, 9, 10]"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "A strong alumni network, particularly in big tech companies for Computer Science majors, offers valuable career support and referral opportunities. [24]"
+      }
     ]
   },
   "outcomes": {

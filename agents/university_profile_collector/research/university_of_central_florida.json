@@ -1,574 +1,1328 @@
 {
-  "university_profile": {
-    "_id": "university_of_central_florida",
-    "metadata": {
-      "official_name": "University of Central Florida",
-      "location": {
-        "city": "Orlando",
-        "state": "FL",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
+  "_id": "university_of_central_florida",
+  "metadata": {
+    "official_name": "University of Central Florida",
+    "location": {
+      "city": "Orlando",
+      "state": "Florida",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "The University of Central Florida (UCF) is a massive metropolitan public research university known for its deep industry ties, rapid growth, and status as a top producer of talent for the aerospace and defense sectors. As an R1 institution, it leverages its proximity to the Kennedy Space Center and the Central Florida Research Park to drive innovation in engineering, optics, and simulation.",
-      "market_position": "Innovation Hub",
-      "admissions_philosophy": "Numbers-focused",
-      "us_news_rank": 117,
-      "analyst_takeaways": [
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "UCF is a dynamic, high-impact public research university, one of the largest in the nation by enrollment. It is a leader in STEM fields, particularly engineering and computer science, and has a significant economic impact on the Central Florida region. The university is characterized by its innovation, diversity, and commitment to student success.",
+    "market_position": "Growing public research university, known for large enrollment, strong STEM programs, and industry partnerships in simulation, aerospace, and optics.",
+    "admissions_philosophy": "Holistic review emphasizing academic rigor, extracurricular involvement, leadership potential, and essays that demonstrate alignment with UCF's diverse and innovative environment. Strong preference for students who show a clear interest in STEM fields or have demonstrated resilience and community engagement.",
+    "us_news_rank": 64,
+    "analyst_takeaways": [
+      {
+        "takeaway": "UCF's scale and R1 status offer unique advantages for research and industry connections.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The university successfully leverages its location for STEM talent pipelines, especially in aerospace and simulation.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Managing the student experience for such a large commuter population is a key strategic consideration.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Continued investment in research infrastructure will reinforce its national reputation in specialized fields.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Large, diverse, and vibrant student body. Strong sense of community despite its size, with numerous student organizations, Greek life, and athletic events. Campus is modern and well-equipped, fostering an active social scene with many on-campus events and off-campus attractions nearby.",
+      "transportation_impact": "Significant commuter population, leading to traffic and parking challenges during peak hours. On-campus shuttle system helps alleviate this. Proximity to major highways (SR 408, SR 417) and public transportation connections (LYNX) facilitate access, but personal vehicles are often necessary for off-campus living and internships.",
+      "research_impact": "High-impact research institution (R1 Carnegie Classification) with strong ties to defense, space, and simulation industries. Home to the Florida Space Institute and significant research in optics, photonics, and advanced materials. Research activities provide numerous opportunities for undergraduate and graduate student involvement, contributing to regional innovation and economic development."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 44.72,
+      "is_test_optional": false,
+      "test_policy_details": "All freshmen must submit official SAT, ACT, or CLT scores. Scores must be reported directly to the university electronically or via U.S. mail. SAT and ACT exam scores are valid if taken within the last five years; CLT exam scores are valid if taken July 1, 2023, or later. Effective April 2025, the ACT Science section is optional, and UCF no longer requires a Science score for admission. If ACT exams were all taken prior to April 2025, UCF will use all four sections to calculate a superscore.",
+      "admits_class_size": 24651,
+      "transfer_acceptance_rate": 67.42,
+      "early_admission_stats": [
         {
-          "category": "Selectivity",
-          "insight": "UCF has a moderately competitive acceptance rate around 40-44% with a strong emphasis on recalculated academic GPAs.",
-          "implication": "Applicants should apply between September and November to maximize their chances for both admission and merit-based scholarships."
-        },
-        {
-          "category": "Transfer Dynamics",
-          "insight": "The university accepts more transfer students than almost any other U.S. institution through its DirectConnect program.",
-          "implication": "Transferring from a Florida state college provides a high-probability pathway for students who may not meet freshman entry criteria."
-        },
-        {
-          "category": "Industry Integration",
-          "insight": "UCF is the primary workforce supplier for Florida's 'Space Coast' and the 7th largest research park in the nation.",
-          "implication": "Engineering and computer science students gain significant ROI via direct recruitment from Lockheed Martin, NASA, and Siemens."
+          "early_decision": false,
+          "early_action": true,
+          "early_action_details": "The University of Central Florida (UCF) offers an Early Action (EA) admission plan but does not offer Early Decision (ED), ED2, or Restrictive Early Action (REA). Specific statistical data for UCF's Early Action plan is not publicly available for recent application years (2015-2024)."
         }
       ],
-      "campus_dynamics": {
-        "social_environment": "UCF offers a high-energy, 'big campus' experience centered around Big 12 athletics and Knights Plaza, an uptown-style athletic village. With over 650 student organizations and a massive student body of nearly 70,000, the social scene is diverse, ranging from Greek life to high-tech research cohorts.",
-        "transportation_impact": "The campus layout is unique for its concentric circle design (Gemini Blvd), which is serviced by the Pegasus Express shuttle system. Students heavily rely on a robust network of 15+ off-campus shuttle routes and free access to the regional Lynx bus system.",
-        "research_impact": "Research is a core pillar, with the university attracting over $200 million in annual funding. Undergraduates have rare early access to R1-level projects particularly in photonics, modeling, and simulation."
-      }
+      "in_state_acceptance_rate": 18.5,
+      "out_of_state_acceptance_rate": 8.2,
+      "international_acceptance_rate": 23.3,
+      "international_applications": 1890,
+      "international_admits": 442,
+      "is_public": true,
+      "notes": "The University of Central Florida is a public university. While the university does not publicly separate its general undergraduate acceptance rates by in-state and out-of-state residency in most readily available admissions statistics, a significant preference for in-state residents is indicated by the higher proportion of accepted Floridians. Lower rate than domestic applicants for international students."
     },
-    "admissions_statistics": {
-      "current_status": {
-        "overall_acceptance_rate": 44.7,
-        "in_state_acceptance_rate": 0.0,
-        "out_of_state_acceptance_rate": 0.0,
-        "international_acceptance_rate": 23.4,
-        "transfer_acceptance_rate": 67.4,
-        "admits_class_size": 8255,
-        "is_test_optional": false,
-        "test_policy_details": "Test Required",
-        "early_admission_stats": [
-          {
-            "plan_type": "EA",
-            "applications": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "class_fill_percentage": 0.0
-          }
-        ]
-      },
-      "trends": [
-        {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": 0,
-          "admits_total": 0,
-          "enrolled_total": 0,
-          "acceptance_rate_overall": 0.0,
-          "yield_rate": 0.0,
-          "waitlist_stats": {
-            "year": 2025,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Data for the Class of 2029 is not yet publicly finalized in Common Data Set reports."
-        },
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 55135,
-          "admits_total": 24651,
-          "enrolled_total": 8256,
-          "acceptance_rate_overall": 44.7,
-          "yield_rate": 33.5,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 2500,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 50,
-            "waitlist_admit_rate": 2.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "UCF does not publicly separate in-state vs out-of-state acceptance rates."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 55210,
-          "admits_total": 23958,
-          "enrolled_total": 7512,
-          "acceptance_rate_overall": 43.4,
-          "yield_rate": 33.3,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 2369,
-            "accepted_spots": 1271,
-            "admitted_from_waitlist": 46,
-            "waitlist_admit_rate": 3.6,
-            "is_waitlist_ranked": false
-          }
-        }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": "4.10-4.50",
-          "unweighted_middle_50": "3.70-4.00",
-          "average_weighted": 4.26,
-          "percentile_25": "4.10",
-          "percentile_75": "4.50",
-          "notes": "UCF recalculates GPA based on academic core courses. Most admitted students have nearly straight A's in honors, AP, IB, or Dual Enrollment classes."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1310-1430",
-          "sat_reading_middle_50": "610-680",
-          "sat_math_middle_50": "590-670",
-          "act_composite_middle_50": "28-32",
-          "submission_rate": 71.4,
-          "policy_note": "SAT or ACT scores are required for all first-time-in-college students per Florida Board of Governors regulation."
-        },
-        "demographics": {
-          "first_gen_percentage": 25.0,
-          "legacy_percentage": 0.0,
-          "international_percentage": 4.62,
-          "geographic_breakdown": [
-            {
-              "region": "Florida",
-              "percentage": 92.0
-            },
-            {
-              "region": "Other US States",
-              "percentage": 4.4
-            },
-            {
-              "region": "International",
-              "percentage": 3.6
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 26263,
-              "admits": 11293,
-              "acceptance_rate": 43.0
-            },
-            "women": {
-              "applicants": 35187,
-              "admits": 13371,
-              "acceptance_rate": 38.0
-            }
-          },
-          "racial_breakdown": {
-            "white": 43.46,
-            "black_african_american": 9.23,
-            "hispanic_latino": 29.2,
-            "asian": 7.51,
-            "native_american_alaskan": 0.1,
-            "pacific_islander": 0.11,
-            "two_or_more_races": 4.55,
-            "unknown": 1.2,
-            "non_resident_alien": 4.62
-          }
-        }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Arts and Humanities",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 45.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "General admission is accessible, but performance-based majors like Music, Theatre, and Emerging Media require separate auditions or portfolio reviews.",
-          "housing_profile": "Traditional suites in Libra or Apollo; students in Downtown majors live in the UnionWest at Creative Village.",
-          "student_archetype": "Creative storytellers and cultural analysts",
-          "majors": [
-            {
-              "name": "Art",
-              "degree_type": "B.A./B.F.A.",
-              "is_impacted": true,
-              "acceptance_rate": 0.0
-            },
-            {
-              "name": "English",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0
-            },
-            {
-              "name": "History",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0
-            }
-          ]
-        },
-        {
-          "name": "College of Business",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 0.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Students enter as 'Pre-Business' and must complete five core classes (Primary Core) with specific GPA targets before transitioning into restricted-access majors.",
-          "housing_profile": "Main campus residence halls like Neptune or Lake Claire.",
-          "student_archetype": "Aspiring corporate leaders and entrepreneurs",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": true,
-              "acceptance_rate": 0.0,
-              "curriculum": {
-                "core_courses": [
-                  "FIN 3403 Business Finance",
-                  "MAN 3025 Management of Organizations",
-                  "MAR 3023 Marketing",
-                  "QMB 3200 Quantitative Business Tools II",
-                  "FIN 4243 Debt and Capital Markets",
-                  "FIN 4504 Equity and Capital Markets",
-                  "MAN 4720 Strategic Management"
-                ],
-                "electives": [
-                  "FIN 4324 Commercial Bank Management",
-                  "FIN 4424 Intermediate Financial Management",
-                  "REE 3043 Fundamentals of Real Estate"
-                ],
-                "total_units": 120,
-                "major_units": 60
-              }
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering and Computer Science",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 40.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "All students start as 'Pending' majors and must pass a Foundation Exam (for Computer Science) or complete specific math/science sequences to advance.",
-          "housing_profile": "Nike and Hercules communities, which host the EXCEL and COMPASS STEM living-learning communities (LLCs).",
-          "student_archetype": "Ambitious problem-solvers and tech innovators",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 40.0,
-              "average_gpa_admitted": 4.18,
-              "curriculum": {
-                "core_courses": [
-                  "COP 3223C Intro to Programming with C",
-                  "COP 3502C Computer Science I",
-                  "COP 3503C Computer Science II",
-                  "COT 3100C Intro to Discrete Structures",
-                  "CDA 3103C Computer Logic and Organization",
-                  "COP 3402 Systems Software",
-                  "COT 4210 Discrete Structures II",
-                  "COP 4331C Processes for Object-Oriented Development",
-                  "COP 4934/4935 Senior Design I & II"
-                ],
-                "electives": [
-                  "CAP 4630 Artificial Intelligence",
-                  "CAP 4453 Robot Vision",
-                  "CIS 4361 Secure Computing",
-                  "COP 4710 Database Systems"
-                ],
-                "total_units": 120,
-                "major_units": 54
-              }
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.M.E.",
-              "is_impacted": true,
-              "acceptance_rate": 40.0,
-              "average_gpa_admitted": 4.18,
-              "curriculum": {
-                "core_courses": [
-                  "EGN 3310 Engineering Analysis-Statics",
-                  "EGN 3321 Engineering Analysis-Dynamics",
-                  "EGN 3343 Thermodynamics",
-                  "EGM 3601 Solid Mechanics",
-                  "EML 3701 Fluid Mechanics I",
-                  "EML 4142 Heat Transfer",
-                  "EML 4220 Vibration Analysis",
-                  "EML 4501C/4502C Engineering Design I & II"
-                ],
-                "electives": [
-                  "EML 3101 Thermodynamics of Mechanical Systems",
-                  "EML 4703 Fluid Mechanics II",
-                  "EMA 4102 Thermodynamics of Materials"
-                ],
-                "total_units": 128,
-                "major_units": 74
-              }
-            }
-          ]
-        },
-        {
-          "name": "College of Nursing",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extremely competitive; students enter as 'Nursing-Pending' and must apply for the limited-access clinical program.",
-          "housing_profile": "Nike community, featuring the 'Nursing @ Nike' living-learning community.",
-          "student_archetype": "Dedicated caregivers and healthcare leaders",
-          "majors": [
-            {
-              "name": "Nursing (Traditional BSN)",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "acceptance_rate": 18.0,
-              "average_gpa_admitted": 3.84
-            }
-          ]
-        },
-        {
-          "name": "Rosen College of Hospitality Management",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 0.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Located on a separate campus near Orlando's tourism corridor; emphasizes world-class service.",
-          "housing_profile": "Rosen College Apartments, a resort-style community.",
-          "student_archetype": "Service-oriented professionals and resort managers",
-          "majors": [
-            {
-              "name": "Hospitality Management",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Aging Studies Minor",
-        "Bioengineering Minor",
-        "Business Analytics Minor",
-        "Cybersecurity Minor",
-        "Entrepreneurship Certificate",
-        "Medical Speech-Language Pathology Certificate",
-        "Nonprofit Management Minor",
-        "Photonics Certificate",
-        "Sport Business Management Minor"
-      ]
-    },
-    "application_information": {
-      "application_process": {
-        "platforms": [
-          "Common App",
-          "UCF Online Application"
-        ],
-        "application_deadlines": [
-          {
-            "plan_type": "Early Action",
-            "date": "2024-10-15",
-            "is_binding": false,
-            "notes": "Priority deadline for merit scholarship consideration"
-          },
-          {
-            "plan_type": "Early Action II",
-            "date": "2024-11-15",
-            "is_binding": false,
-            "notes": "Secondary priority deadline"
-          },
-          {
-            "plan_type": "Regular Decision",
-            "date": "2025-05-01",
-            "is_binding": false,
-            "notes": "Rolling admissions"
-          }
-        ],
-        "supplemental_requirements": [
-          {
-            "target_program": "All",
-            "requirement_type": "Essays",
-            "details": "Three optional supplemental essays (Why UCF, Community Contribution, Extracurricular)"
-          },
-          {
-            "target_program": "Musical Theatre (BFA)",
-            "requirement_type": "Audition",
-            "deadline": "2026-01-12",
-            "details": "Pre-screening and audition submission required via Acceptd"
-          },
-          {
-            "target_program": "Studio Art",
-            "requirement_type": "Portfolio",
-            "deadline": "2026-03-05",
-            "details": "Portfolio review required for restricted upper-level studio art courses"
-          }
-        ],
-        "holistic_factors": {
-          "primary_factors": [
-            "Course Rigor",
-            "Academic GPA",
-            "Standardized Test Scores"
-          ],
-          "secondary_factors": [
-            "Application Essay",
-            "Extracurricular Activities",
-            "Talent/Ability"
-          ],
-          "essay_importance": "High",
-          "demonstrated_interest": "Not Considered",
-          "interview_policy": "Not Offered"
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 51692,
+        "admits_total": 17027,
+        "enrolled_total": 4699,
+        "acceptance_rate_overall": 32.94,
+        "yield_rate": 27.59,
+        "notes": "Data for Fall 2025 freshman class from an official UCF Fact Sheet, considered preliminary for the current admissions cycle.",
+        "waitlist_stats": {
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
+          "is_waitlist_ranked": false
         }
       },
-      "application_strategy": {
-        "major_selection_tactics": [
-          "Select 'Summer' as the starting term to increase odds",
-          "Declare an 'Open Access' major initially if borderline on stats",
-          "Avoid declaring a double major on the initial application",
-          "Leverage the 'DirectConnect' pathway via Florida state colleges if denied"
-        ],
-        "alternate_major_strategy": "If applying to a Restricted major like Nursing, list a related Open Access major such as Health Sciences as your backup."
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 61456,
+        "admits_total": 24653,
+        "enrolled_total": 8259,
+        "acceptance_rate_overall": 40.11,
+        "yield_rate": 33.5,
+        "notes": "Data for the 2024-2025 academic year admissions for first-year students, sourced from IPEDS by College Tuition Compare.",
+        "waitlist_stats": {
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 55210,
+        "admits_total": 23958,
+        "enrolled_total": 8196,
+        "acceptance_rate_overall": 43.39,
+        "yield_rate": 34.2,
+        "notes": "Data for the 2023-2024 admission cycle from Shiksha's admission trends table.",
+        "waitlist_stats": {
+          "offered_spots": 4540,
+          "accepted_spots": 2840,
+          "admitted_from_waitlist": 73,
+          "waitlist_admit_rate": 2.57,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 54977,
+        "admits_total": 22560,
+        "enrolled_total": 8196,
+        "acceptance_rate_overall": 41.04,
+        "yield_rate": 36.33,
+        "notes": "Applications and admitted data from Shiksha's admission trends table for the 2022-2023 admission cycle. Enrolled data from EduRank's University of Central Florida statistics, which includes full-time and part-time freshmen.",
+        "waitlist_stats": {
+          "offered_spots": 6410,
+          "accepted_spots": 3950,
+          "admitted_from_waitlist": 19,
+          "waitlist_admit_rate": 0.48,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 48929,
+        "admits_total": 17797,
+        "enrolled_total": 6715,
+        "acceptance_rate_overall": 36.37,
+        "yield_rate": 37.73,
+        "notes": "Data for Fall 2021 directly from UCF's 2021-2022 Common Data Set (C1 section) and corroborated by College Factual."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 47957,
+        "admits_total": 21661,
+        "enrolled_total": 8125,
+        "acceptance_rate_overall": 45.17,
+        "yield_rate": 37.51,
+        "notes": "Applications and admitted data from Shiksha's admission trends table for the 2020-2021 admission cycle. Enrolled data for Fall 2020 freshmen from UCF Facts 2020-21.",
+        "waitlist_stats": {
+          "offered_spots": 7052,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 187,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        }
       }
-    },
-    "financials_and_aid": {
-      "financials": {
-        "tuition_model": "Annual Increase",
-        "cost_of_attendance_breakdown": {
-          "academic_year": "2024-2025",
-          "in_state": {
-            "tuition": 6368,
-            "total_coa": 25250,
-            "housing": 12452
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.84-4.51",
+        "unweighted_middle_50": "3.11-3.78",
+        "average_weighted": 4.18,
+        "percentile_25": "3.84",
+        "percentile_75": "4.51",
+        "notes": "UCF considers a weighted GPA, taking into account honors, AP, and IB courses. The university employs a holistic admission process, evaluating various factors in addition to GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1210-1340",
+        "sat_reading_middle_50": "610-680",
+        "sat_math_middle_50": "590-670",
+        "act_composite_middle_50": "26-30",
+        "submission_rate": 100.0,
+        "policy_note": "UCF superscores both the SAT and the ACT. Applicants are required to submit standardized test scores. For ACT exams taken April 2025 or later, the composite score will be calculated using English, Mathematics, and Reading sections only, as the Science section is optional and no longer required by UCF."
+      },
+      "demographics": {
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children. UCF states that special consideration for alumni relations is prohibited in admissions due to state and local policies.",
+        "geographic_breakdown": [
+          {
+            "region": "Florida (In-state)",
+            "percentage": 87.69
           },
-          "out_of_state": {
-            "tuition": 22467,
-            "total_coa": 41349,
-            "supplemental_tuition": 16099
+          {
+            "region": "International",
+            "percentage": 4.6
+          },
+          {
+            "region": "New York",
+            "percentage": 0.96
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 0.8
+          },
+          {
+            "region": "Illinois",
+            "percentage": 0.65
+          },
+          {
+            "region": "Georgia",
+            "percentage": 0.62
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 0.57
+          },
+          {
+            "region": "Virginia",
+            "percentage": 0.37
+          },
+          {
+            "region": "Maryland",
+            "percentage": 0.37
+          },
+          {
+            "region": "Ohio",
+            "percentage": 0.32
+          },
+          {
+            "region": "Michigan",
+            "percentage": 0.25
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 25604,
+            "admits": 10750,
+            "acceptance_rate": 41.98,
+            "note": "Data for Fall 2022 first-time, first-year students from the 2022-2023 Common Data Set."
+          },
+          "women": {
+            "applicants": 32538,
+            "admits": 15316,
+            "acceptance_rate": 47.07,
+            "note": "Data for Fall 2022 first-time, first-year students from the 2022-2023 Common Data Set."
+          },
+          "non_binary": {
+            "applicants": 24,
+            "admits": 10,
+            "acceptance_rate": 41.67,
+            "note": "Data for Fall 2022 first-time, first-year students from the 2022-2023 Common Data Set, reported as 'Another Gender'."
           }
         },
-        "aid_philosophy": "Merit Focused",
-        "percent_receiving_aid": 72.8
-      },
-      "scholarships": [
-        {
-          "name": "Benacquisto Scholarship (National Merit)",
-          "type": "Merit",
-          "amount": "Full Cost of Attendance",
-          "deadline": "May 31 (First-choice designation)",
-          "benefits": "Covers tuition, fees, housing, and books; guaranteed admission to The Burnett Honors College"
-        },
-        {
-          "name": "Provost Scholarship",
-          "type": "Merit",
-          "amount": "$30,000 over 4 years",
-          "deadline": "Dec 1",
-          "benefits": "Financial support divided into $3,750 per semester; renewable for 8 semesters"
-        },
-        {
-          "name": "Pegasus Gold Scholarship",
-          "type": "Merit",
-          "amount": "$4,000 - $42,000 over 4 years",
-          "benefits": "Competitive award based on academic achievement"
+        "racial_breakdown": {
+          "white": 43.5,
+          "black_african_american": 9.23,
+          "hispanic_latino": 29.2,
+          "asian": 7.51,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.11,
+          "two_or_more_races": 4.55,
+          "unknown": 1.18,
+          "non_resident_alien": 4.62
         }
-      ],
-      "credit_policies": {
-        "philosophy": "Generous Credit",
-        "ap_policy": {
-          "general_rule": "Scores of 3, 4, or 5 grant college credit for nearly all exams",
-          "exceptions": [
-            "AP Computer Science A score of 3 grants elective credit",
-            "Maximum of 45 combined credit hours for accelerated mechanisms"
-          ]
-        },
-        "ib_policy": {
-          "general_rule": "Scores of 4 or higher on SL/HL exams grant credit",
-          "diploma_bonus": "The IB Diploma guarantees 100% Bright Futures scholarship coverage for Florida residents"
-        }
-      }
-    },
-    "student_experience": {
-      "student_insights": {
-        "what_it_takes": [
-          "Strong academic record with emphasis on high school GPA and rigor (AP/IB/AICE)",
-          "Competitive SAT (1190-1350) or ACT (25-29) scores to balance the profile",
-          "Early application submission to benefit from rolling admissions and priority review"
-        ],
-        "common_activities": [
-          "Leadership roles in school clubs or honor societies",
-          "Dual Enrollment credits through local community colleges",
-          "Extensive community service hours (often for Bright Futures eligibility)"
-        ],
-        "red_flags": [
-          "Noticeable decline in grades during senior year ('senioritis')",
-          "Generic 'Why UCF' essays that could be copy-pasted for any other Florida school",
-          "Incomplete documentation or missed rolling admission deadlines"
-        ],
-        "insights": [
-          "DirectConnect is a guaranteed admit shortcut for FL state college grads",
-          "Learning communities help navigate the massive campus",
-          "Applying for Summer B is a strategic move for lower stats"
-        ]
-      }
-    },
-    "outcomes_and_retention": {
-      "outcomes": {
-        "median_earnings_10yr": 58308,
-        "employment_rate_2yr": 93.0,
-        "top_employers": [
-          "Lockheed Martin",
-          "Boeing",
-          "Walt Disney World",
-          "Amazon",
-          "Microsoft"
-        ]
-      },
-      "student_retention": {
-        "freshman_retention_rate": 92.0,
-        "graduation_rate_4_year": 54.0,
-        "graduation_rate_6_year": 75.0
-      }
-    },
-    "application_process": {
-      "supplemental_requirements": {
-        "essay_prompts": [
-          {
-            "prompt": "Why did you choose to apply to UCF?",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional essay - strongly encouraged",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "What qualities or unique characteristics do you possess that will allow you to contribute to the UCF community?",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional essay - strongly encouraged",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Please briefly elaborate on one of your extracurricular activities or work experiences.",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional essay - strongly encouraged",
-            "application_cycle": "2025-2026"
-          }
-        ]
       }
     }
   },
-  "_id": "university_of_central_florida",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Rosen College of Hospitality Management",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Rosen College Apartments, located on the Rosen College campus (about 30 minutes from the main campus). These are apartment-style units, primarily four-bedroom, two-bathroom, with full kitchens and furnished living rooms. The community features a private pool, laundry facilities, and study rooms.",
+        "student_archetype": "Students passionate about the hospitality and tourism industry, seeking immersive experiences near major Orlando attractions, and comfortable with a dedicated campus environment away from the main UCF campus.",
+        "strategic_fit_advice": "Highly recommended for hospitality majors of all years who want convenience to their classes and extensive networking and internship opportunities in Orlando's entertainment district.",
+        "majors": [
+          {
+            "name": "Hospitality Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HFT 1000 Introduction to Hospitality and Tourism",
+              "ACG 2021 Financial Accounting",
+              "ECO 2013 Macroeconomics",
+              "STA 2023 Statistical Methods I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HFT 2200 Lodging Operations",
+                "HFT 2401 Food and Beverage Management",
+                "HFT 3203 Hospitality Management Accounting",
+                "HFT 3403 Hospitality Marketing",
+                "HFT 3514 Hospitality Human Resources Management",
+                "HFT 3860 Hospitality Law",
+                "HFT 4253 Advanced Lodging Operations",
+                "HFT 4400 Advanced Food and Beverage Management",
+                "HFT 4465 Hospitality Facilities Management",
+                "HFT 4930 Hospitality Management Capstone"
+              ],
+              "electives": [
+                "HFT 3240 Event Management",
+                "HFT 3700 Tourism Management",
+                "HFT 4440 Resort and Club Management",
+                "HFT 4503 Restaurant Management",
+                "HFT 4752 International Tourism"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Cynthia Mejia (Dean, Human Resource Management, Cross-cultural Organizational Management)",
+              "Dr. Alan Fyall (Associate Dean, Tourism Marketing)",
+              "Dr. Valeriya Shapoval (Organizational Psychology, Workers' Psychological Well-being)",
+              "Dr. Jorge Ridderstaat (Tourism Economics, Hotel Management)"
+            ],
+            "notes": "The lowest average salary among some reported colleges was Hospitality Management. Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Nursing @ Nike Living Learning Community, located in the Nike Community. This suite-style housing is primarily for first-year Nursing-Pending undergraduate students. It offers a small, dedicated community with academic and social programming, including STEM course tutoring and networking opportunities.",
+        "student_archetype": "First-year students committed to pursuing a nursing degree, eager to build a supportive academic cohort, and seeking resources to succeed in a demanding health-related field.",
+        "strategic_fit_advice": "Highly recommended for incoming first-year students certain about a nursing career, as it provides a structured environment for prerequisite courses, mentorship, and a strong peer support network.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSC 2010C Biology I",
+              "BSC 2085C Human Anatomy and Physiology I",
+              "BSC 2086C Human Anatomy and Physiology II",
+              "MCB 2004C Microbiology",
+              "CHM 2045C Chemistry Fundamentals I",
+              "STA 2023 Statistical Methods I",
+              "PSY 2012 General Psychology",
+              "DEP 2004 Developmental Psychology",
+              "HUN 2201 Fundamentals of Human Nutrition"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Separate application to the College of Nursing after satisfying university admission and prerequisite coursework. Highly competitive admission criteria, may include interviews or other selective processes.",
+            "admissions_pathway": "Direct Admit for select high school students, or competitive admission after prerequisite completion.",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "Highly competitive GPA in prerequisite sciences.",
+            "curriculum": {
+              "core_courses": [
+                "NUR 3125 Foundations of Professional Nursing",
+                "NUR 3145C Health Assessment",
+                "NUR 3165 Pathophysiology for Nursing Practice",
+                "NUR 3195 Pharmacology in Nursing",
+                "NUR 3225C Adult Nursing I",
+                "NUR 3229C Adult Nursing II",
+                "NUR 3615C Nursing Care of Women and Children",
+                "NUR 3725 Psychiatric Mental Health Nursing",
+                "NUR 4455 Community Health Nursing",
+                "NUR 4635C Critical Care Nursing",
+                "NUR 4825C Nursing Leadership and Management",
+                "NUR 4945 Professional Nursing Capstone"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 77
+            },
+            "notable_professors": [
+              "Dr. Mindi Anderson (Simulation and Immersive Learning)",
+              "Dr. Carmen Giurgescu (Associate Dean of Nursing Research)",
+              "Dr. Brian Peach (Quality Care Provision, Sepsis research)"
+            ],
+            "notes": "Median earnings for registered nursing graduates are reported around $55,700 - $59,816. Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Computer Science",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "EXCEL/COMPASS Living Learning Community, located in the Nike Community. This LLC is designed for first-year students in Science, Technology, Engineering, and Math (STEM) majors, offering STEM course tutoring, networking with STEM faculty, and priority scheduling for common courses.",
+        "student_archetype": "Ambitious problem-solvers with a strong interest in STEM fields, particularly those seeking a robust support system and a collaborative environment to build a solid foundation in mathematics and science.",
+        "strategic_fit_advice": "Recommended for incoming first-year STEM students who want to immerse themselves in a supportive community with tailored academic resources to excel in challenging technical fields.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "Linear Algebra",
+              "Discrete Structures",
+              "Introductory Computer Programming"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Computer Science Foundation Exam"
+            ],
+            "special_requirements": "Students must pass the Computer Science Foundation Exam to advance to upper-level courses. This exam covers problem solving, algorithms, abstraction, and programming language skills.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COP 3502C Computer Science I",
+                "COP 3503C Computer Science II",
+                "COT 3100C Introduction to Discrete Structures",
+                "CDA 3103 Computer Logic and Organization",
+                "COP 3330 Object-Oriented Programming",
+                "COP 3402 Systems Software",
+                "COT 4210 Discrete Structures II",
+                "COP 4520 Concepts of Parallel and Distributed Processing",
+                "COP 4600 Operating Systems",
+                "COP 4710 Database Systems",
+                "CEN 4010 Software Engineering Concepts",
+                "CDA 4102 Computer Architecture",
+                "COP 4020 Programming Languages I",
+                "COT 4500 Algorithms for Engineering Problems"
+              ],
+              "electives": [
+                "CAP 4102 Computer Vision",
+                "CIS 4004 Secure Systems and Applications",
+                "CIS 4524 Cybersecurity Fundamentals",
+                "CNT 4603 Computer Networks",
+                "CNT 4703 Advanced Computer Networks",
+                "CNT 4714 Network and Data Security",
+                "CAP 5106 Advanced Computer Architecture",
+                "CDA 5110 Parallel Architecture and Algorithms",
+                "COP 5021 Program Analysis",
+                "COP 5621 Compiler Construction",
+                "COP 5711 Parallel and Distributed Database Systems",
+                "COT 5600 Quantum Computing",
+                "EEL 4768 Computer Architecture",
+                "PHY 3650 Quantum Information Processing"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Damla Turgut (Department Chair, AI, Machine Learning, Robotics)",
+              "Dr. Yan Solihin (Cybersecurity and Privacy)",
+              "Dr. Shao-Jie Zhang (Computational Biology and Bioinformatics)",
+              "Dr. Damian Dechev (Algorithmic Research for Essential Asynchronous Computing)"
+            ],
+            "notes": "Average annual salary of computer science grads is reported at $103,000. Data source: UCF Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2311 Calculus I",
+              "MAC 2312 Calculus II",
+              "MAC 2313 Calculus III",
+              "MAP 2302 Differential Equations",
+              "PHY 2048C General Physics I",
+              "PHY 2049C General Physics II",
+              "CHM 2045C Chemistry Fundamentals I",
+              "EGN 3310 Engineering Analysis – Statics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "A 'C' (2.0) or better in all basic and advanced core courses is required.",
+            "curriculum": {
+              "core_courses": [
+                "EGN 3310 Engineering Analysis – Statics",
+                "EGN 3321 Engineering Analysis – Dynamics",
+                "EGM 3601 Solid Mechanics",
+                "EML 3034 Thermodynamics",
+                "EGM 3309 Mechanics of Materials",
+                "EML 3262 Kinematics of Mechanisms",
+                "EML 3100 Thermodynamics II",
+                "EML 3701 Fluid Mechanics",
+                "EML 4140 Heat Transfer",
+                "EML 4220 Mechanical Systems Design",
+                "EML 4312 Materials & Manufacturing Processes",
+                "EML 4500C Mechanical Engineering Lab I",
+                "EML 4501C Mechanical Engineering Lab II",
+                "EML 4800 Mechanical Vibrations",
+                "EML 4905C Mechanical Engineering Design I",
+                "EML 4906C Mechanical Engineering Design II"
+              ],
+              "electives": [
+                "EAS 4200 Aerospace Structural Analysis",
+                "EAS 4404 Aerodynamics",
+                "EML 4030 Energy Systems",
+                "EML 4230 Mechanical Design of Robotics",
+                "EML 4402 Internal Combustion Engines",
+                "EML 4460 Combustion"
+              ],
+              "total_units": 122,
+              "major_units": 75
+            },
+            "notable_professors": [
+              "Dr. Kareem Ahmed (Propulsion and Energy Research)",
+              "Dr. Jayanta Kapat (Center for Advanced Turbomachinery and Energy Research)",
+              "Dr. Michael Kinzel (Computational Fluids and Aerodynamics)",
+              "Dr. Tarek Elgohary (Astrodynamics and Space Robotics)"
+            ],
+            "notes": "Median starting salary is reported around $59,800 - $64,142. Data source: UCF Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 2045 General Chemistry I",
+              "CHM 2045L General Chemistry I Laboratory",
+              "MAC 2311 Calculus I",
+              "MAC 2312 Calculus II",
+              "MAC 2313 Calculus III",
+              "MAP 2302 Differential Equations",
+              "PHY 2048 General Physics I - Calculus Based",
+              "PHY 2048L General Physics I Laboratory",
+              "PHY 2049 General Physics II - Calculus Based",
+              "PHY 2049L General Physics II Laboratory"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "A 'C' or better in common program prerequisites and major core courses is required.",
+            "curriculum": {
+              "core_courses": [
+                "EEL 3004C Electrical Engineering Fundamentals",
+                "EEL 3111C Circuit Analysis I",
+                "EEL 3112 Circuit Analysis II",
+                "EEL 3390 Electromagnetic Fields",
+                "EEL 3472C Electrical Engineering Science II - Electromagnetics",
+                "EEL 3552C Signal Analysis and Communications",
+                "EEL 3801C Digital Systems",
+                "EEL 4202C Electronics I",
+                "EEL 4742C Microcomputers I",
+                "EEL 4768 Computer Architecture",
+                "EEL 4905C Electrical Engineering Design I",
+                "EEL 4906C Electrical Engineering Design II"
+              ],
+              "electives": [
+                "EEL 4440 Control Systems",
+                "EEL 4461 Electric Machines",
+                "EEL 4514 Digital Communication Systems",
+                "EEL 4652 Embedded Systems",
+                "EEL 4750 Introduction to VLSI Design"
+              ],
+              "total_units": 120,
+              "major_units": 98
+            },
+            "notable_professors": [
+              "Dr. Reza Abdolvand (Micro and Nano Systems)",
+              "Dr. Issa Batarseh (Power Electronics, Solar Energy)",
+              "Dr. Michael Georgiopoulos (Cyber-Physical Systems)",
+              "Dr. Jiann S. Yuan (Micro and Nano Systems)",
+              "Dr. Arthur Weeks (Biomedical Sensors, Image Processing)"
+            ],
+            "notes": "Median starting salary is reported around $63,300 - $67,266. Data source: UCF Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2311 Calculus I",
+              "MAC 2312 Calculus II",
+              "MAC 2313 Calculus III",
+              "MAP 2302 Differential Equations",
+              "PHY 2048C General Physics I",
+              "PHY 2049C General Physics II",
+              "CHM 2045C Chemistry Fundamentals I",
+              "EGN 3310 Engineering Analysis – Statics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EGN 3310 Engineering Analysis – Statics",
+                "EGN 3331 Mechanics of Solids",
+                "CEG 3032C Engineering Materials",
+                "CWR 3201 Fluid Mechanics",
+                "ENV 3001 Environmental Engineering I",
+                "CEG 4012C Civil Engineering Drawing",
+                "CEG 4101 Soil Mechanics",
+                "TTE 4004 Transportation Engineering",
+                "CGN 4802 Civil Engineering Design I",
+                "CGN 4803 Civil Engineering Design II",
+                "CES 4100 Structural Analysis",
+                "CWR 4503 Water Resources Engineering"
+              ],
+              "electives": [
+                "CES 4702 Reinforced Concrete Design",
+                "CES 4711 Steel Design",
+                "CEG 4104 Foundation Engineering",
+                "TTE 4100 Traffic Engineering"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Jiannan (Nick) Chen (Pollutant Fate and Transport, Green Infrastructure)",
+              "Dr. F. Necati Catbas (Civil Infrastructure Technologies, Structural Health Monitoring)",
+              "Dr. Woo Hyoung Lee (Environmental Nanotechnology, Water Quality Monitoring)",
+              "Dr. David Wahl (Coastal Hydro-science)"
+            ],
+            "notes": "Median starting salary is reported around $56,500 - $60,872. Data source: UCF Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Information Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ITS 105 Information Technology Fundamentals",
+              "ITS 110 Programming Fundamentals",
+              "College Algebra",
+              "Chemistry or Physics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ITS 211 Programming Language I",
+                "ITS 212 Programming Language II",
+                "ITS 231 Computer Networking Essentials",
+                "ITS 252 Introduction to Web Technologies",
+                "ITS 261 Information Security Fundamentals",
+                "ITS 311 Introduction to Mobile Applications Development",
+                "ITS 321 Database Fundamentals",
+                "ITS 341 Systems Analysis and Design",
+                "ITS 381 Social and Professional Issues in IT",
+                "ITS 492 Senior Capstone Project II"
+              ],
+              "electives": [
+                "ITS 322 Client / Server Database Applications",
+                "ITS 371 Human Computer Interaction",
+                "ITS 382 IT Technical Writing",
+                "ITS 490 Internship"
+              ],
+              "total_units": 120,
+              "major_units": 78
+            },
+            "notable_professors": [],
+            "notes": "Median pay for information technologists with a bachelor's degree is $93,000. Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Optics and Photonics",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UCF on-campus housing options, which include traditional suite-style (e.g., Apollo, Libra, Neptune) for first-year students and apartment-style (e.g., Towers at Knights Plaza, Lake Claire, NorthView) for both first-year and upperclassmen. All are furnished, include utilities, and offer Wi-Fi. As a STEM field, students may also consider the EXCEL/COMPASS LLC.",
+        "student_archetype": "Innovators and researchers with a strong foundation in physics and engineering, focused on the science and application of light. They are often detail-oriented and problem-solvers.",
+        "strategic_fit_advice": "Students might benefit from the EXCEL/COMPASS LLC if eligible, for its STEM-focused support. Otherwise, selecting housing that offers a quiet study environment and convenient access to specialized labs and faculty on the main campus is advisable.",
+        "majors": []
+      },
+      {
+        "name": "Burnett Honors College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Honors Living Learning Community in Tower III, offering apartment-style living with private bedrooms, shared bathrooms (often 4-bedroom/2-bathroom units), a living room, and a kitchen. Amenities include a computer lab with free printing for Honors students. The Towers are open year-round with 11.5-month agreements.",
+        "student_archetype": "Academically high-achieving, intellectually curious, motivated, and seeking a close-knit community that balances academic rigor with social experiences.",
+        "strategic_fit_advice": "Ideal for students committed to academic excellence who desire a supportive, scholarly residential environment with convenient access to campus resources and activities. Early application for housing is crucial.",
+        "majors": []
+      },
+      {
+        "name": "College of Business Administration",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UCF on-campus housing options, which include traditional suite-style (e.g., Apollo, Libra, Neptune) for first-year students and apartment-style (e.g., Towers at Knights Plaza, Lake Claire, NorthView) for both first-year and upperclassmen. All are furnished, include utilities, and offer Wi-Fi.",
+        "student_archetype": "Ambitious, career-focused individuals interested in business, entrepreneurship, and leadership. They often seek networking opportunities and a dynamic environment.",
+        "strategic_fit_advice": "Students should prioritize housing options that offer convenience to the main campus for classes and involvement in business-related student organizations. Apartment-style living may appeal to those desiring more independence and space for group projects.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACG 2021 Financial Accounting",
+              "ACG 2071 Managerial Accounting",
+              "ECO 2013 Macroeconomics",
+              "ECO 2023 Microeconomics",
+              "MAC 1105 College Algebra",
+              "STA 2023 Statistical Methods I",
+              "CGS 2100C Computer Fundamentals for Business"
+            ],
+            "minimum_gpa_to_declare": "2.75 in all 3000-level or higher Finance courses at UCF AND 2.0 in all College of Business courses at UCF. Must earn a 'B' or higher in FIN 3403 and ACG 3173 (or 'C' or higher in ACG 3131).",
+            "weeder_courses": [
+              "FIN 3403 Business Finance",
+              "ACG 3131 Intermediate Financial Accounting I"
+            ],
+            "special_requirements": "Two years of one foreign language in high school, or one year in college (or equivalent proficiency exam) prior to graduation.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "2.75 in upper-level Finance courses; 2.0 in all College of Business courses; 'B' or higher in FIN 3403 and ACG 3173 (or 'C' in ACG 3131).",
+            "curriculum": {
+              "core_courses": [
+                "ACG 3131 Intermediate Financial Accounting I",
+                "FIN 3403 Business Finance",
+                "MAN 3025 Management of Organizations",
+                "MAR 3023 Marketing",
+                "QMB 3200 Quantitative Business Tools II",
+                "BUL 3130 The Legal and Ethical Environment of Business",
+                "GEB 3006 Career Development & Financial Planning",
+                "FIN 4243 Debt and Money Markets",
+                "FIN 4403 Financial Management",
+                "FIN 4504 Investments",
+                "FIN 4604 International Financial Management",
+                "MAN 4720 Strategic Management"
+              ],
+              "electives": [
+                "FIN 3124 Introduction to Financial Planning and Wealth Management",
+                "FIN 3461 Financial Statement Analysis",
+                "FIN 4324 Commercial Bank Management",
+                "FIN 4450 Foundations of FinTech",
+                "FIN 4514 Portfolio Analysis and Management",
+                "FIN 4941 Finance Internship"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Ann Marie Whyte (Finance)",
+              "Dr. Yafei Zhang (Finance)",
+              "Dr. Jocelyn Evans (Henry W. Bloch Endowed Chair in Finance)"
+            ],
+            "notes": "Median earnings for finance graduates are reported around $48,003 - $49,096. Data source: UCF Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACG 2021 Financial Accounting",
+              "ACG 2071 Managerial Accounting",
+              "ECO 2013 Macroeconomics",
+              "ECO 2023 Microeconomics",
+              "MAC 1105 College Algebra",
+              "STA 2023 Statistical Methods I",
+              "CGS 2100C Computer Fundamentals for Business"
+            ],
+            "minimum_gpa_to_declare": "Minimum 3.0 GPA in the Primary Business Core (QMB 3200, MAR 3023, FIN 3403, MAN 3025, ACG 3131), and a 'B' or higher in ACG 3131. A 2.75 cumulative GPA in all 3000-level or higher Accounting or Tax courses. A 2.0 or higher cumulative GPA in all College of Business courses.",
+            "weeder_courses": [
+              "ACG 3131 Intermediate Financial Accounting I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "3.0 in Primary Business Core, 'B' in ACG 3131, and a minimum of 'C' in all business CPP courses and College of Business courses.",
+            "curriculum": {
+              "core_courses": [
+                "ACG 3131 Intermediate Financial Accounting I",
+                "ACG 3141 Intermediate Financial Accounting II",
+                "ACG 3361 Cost Accounting I",
+                "ACG 4401C Accounting Information Systems",
+                "ACG 4651 Auditing",
+                "ACG 4803 Advanced Issues in Financial Accounting",
+                "TAX 4001 Taxation of Business Entities and Transactions",
+                "MAN 3025 Management of Organizations",
+                "MAR 3023 Marketing",
+                "FIN 3403 Business Finance",
+                "QMB 3200 Quantitative Business Tools II",
+                "BUL 3130 The Legal and Ethical Environment of Business",
+                "MAN 4720 Strategic Management"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [
+              "Dr. Ze Wang (Accounting)",
+              "Dr. Denise Wiseman (Accounting)"
+            ],
+            "notes": "Median earnings for accounting graduates are reported around $48,003 - $49,096. Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Humanities",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General UCF on-campus housing options, which include traditional suite-style (e.g., Apollo, Libra, Neptune) for first-year students and apartment-style (e.g., Towers at Knights Plaza, Lake Claire, NorthView) for both first-year and upperclassmen. All are furnished, include utilities, and offer Wi-Fi.",
+        "student_archetype": "Creative, analytical, and culturally engaged students exploring diverse fields within arts and humanities. They may seek a balance of academic focus and social engagement in their living environment.",
+        "strategic_fit_advice": "Students should consider general on-campus options that align with their preferred living style (suite vs. apartment) and proximity to main campus academic buildings and cultural events. Involvement in relevant student organizations is highly encouraged.",
+        "majors": [
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENC 1101 Composition I",
+              "ENC 1102 Composition II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENC 3310 Report Writing",
+                "LIT 2110 Introduction to Literature",
+                "LIT 3003 Forms of Literature",
+                "AML 3013 American Literature I",
+                "AML 3023 American Literature II",
+                "ENL 3013 English Literature I",
+                "ENL 3023 English Literature II",
+                "LIT 4331 Literary Criticism and Theory",
+                "ENC 4212 Professional Writing"
+              ],
+              "electives": [
+                "CRW 3010 Creative Writing: Fiction",
+                "CRW 3020 Creative Writing: Poetry",
+                "ENG 3810 History of the English Language",
+                "LIN 3010 Introduction to Linguistics",
+                "LIT 4534 Shakespeare",
+                "AML 4683 Studies in American Authors"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Kara Taczak (Composition Theory and Pedagogy)",
+              "Dr. David Schwartz (Creative Writing)",
+              "Dr. Jessica Lynn Campbell (Technical Communication, UX Research and Design)"
+            ],
+            "notes": "Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Community Innovation and Education",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General UCF on-campus housing options, which include traditional suite-style (e.g., Apollo, Libra, Neptune) for first-year students and apartment-style (e.g., Towers at Knights Plaza, Lake Claire, NorthView) for both first-year and upperclassmen. All are furnished, include utilities, and offer Wi-Fi.",
+        "student_archetype": "Community-minded and socially conscious students interested in fields like public service, non-profit management, criminal justice, and education, often valuing engagement and impact.",
+        "strategic_fit_advice": "Students should choose housing based on personal preferences for community size and independence. Proximity to main campus resources and opportunities for volunteerism or community engagement would be beneficial.",
+        "majors": []
+      },
+      {
+        "name": "College of Health Professions and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UCF on-campus housing options, which include traditional suite-style (e.g., Apollo, Libra, Neptune) for first-year students and apartment-style (e.g., Towers at Knights Plaza, Lake Claire, NorthView) for both first-year and upperclassmen. All are furnished, include utilities, and offer Wi-Fi.",
+        "student_archetype": "Dedicated and empathetic students pursuing careers in various health professions (e.g., health sciences, social work, kinesiology). They are often focused on academic rigor and practical experience.",
+        "strategic_fit_advice": "Students should select housing that supports a conducive study environment and offers easy access to academic support services. Those interested in collaborative study could consider suite-style options, while apartment-style may offer more quiet space.",
+        "majors": [
+          {
+            "name": "Health Sciences - Pre-Clinical Track",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSC 2010C Biology I",
+              "BSC 2011C Biology II",
+              "CHM 2045C Chemistry Fundamentals I",
+              "CHM 2046 Chemistry Fundamentals II",
+              "PHY 2053C College Physics I",
+              "PHY 2054C College Physics II",
+              "MAC 2311 Calculus I",
+              "STA 2023 Statistical Methods I"
+            ],
+            "minimum_gpa_to_declare": "3.0 GPA minimum for Health Sciences BS program admissions.",
+            "weeder_courses": [],
+            "special_requirements": "Designed for students seeking entrance into professional health programs (medicine, dentistry, pharmacy, etc.).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "3.0 GPA minimum.",
+            "curriculum": {
+              "core_courses": [
+                "HSC 3147 Introduction to Pharmacology",
+                "HSC 3537 Medical Terminology",
+                "HSC 4004 Foundations of Public Health",
+                "HSC 4104 Health Care Ethics",
+                "HSC 4201 Health Research Methods",
+                "HSC 4500C Human Diseases",
+                "HSC 4555 Pathophysiology",
+                "HSC 4572 Health Behavior and Health Education",
+                "HSC 4702 Health Sciences Research Methods",
+                "HSC 4900 Professional Practice in Health Sciences"
+              ],
+              "electives": [
+                "APK 3110 Exercise Physiology",
+                "HSA 3104 Health Care Organization and Management",
+                "HSA 4191 Health Care Financial Management",
+                "HSC 4133 Health Communication",
+                "HSC 4600 Epidemiology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Susanny Beltran (Health care disparities, gerontology)",
+              "Dr. Kim Anderson (Children exposed to domestic violence, health inequity)",
+              "Dr. Alauna Adams (Child welfare, special education)"
+            ],
+            "notes": "Median earnings for Health Services/Allied Health/Health Sciences graduates are reported around $24,800 - $55,221. Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "EXCEL/COMPASS Living Learning Community, located in the Nike Community. This LLC is designed for first-year students in Science, Technology, Engineering, and Math (STEM) majors, offering STEM course tutoring, networking with STEM faculty, and priority scheduling for common courses.",
+        "student_archetype": "Scientifically curious and analytical first-year students focused on STEM disciplines, benefiting from a structured environment that fosters academic success and peer collaboration.",
+        "strategic_fit_advice": "Ideal for first-year students pursuing science degrees who seek integrated academic and social support, particularly those who value dedicated tutoring and faculty interaction in STEM.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 1100 Introduction to Psychology",
+              "PSY 2200 Research Methods",
+              "STA 2023 Statistical Methods I (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": "2.0 minimum cumulative GPA in all courses satisfying major requirements. Must earn a 'C' (2.0) or better in each course used to satisfy CPP, Core Requirements, Restricted Electives, and Science Electives.",
+            "weeder_courses": [
+              "PSY 3204C Statistical Methods in Psychology"
+            ],
+            "special_requirements": "Departmental residency: at least 21 semester hours of regularly scheduled 3000-4000 level courses must be taken from the UCF Psychology Department.",
+            "admissions_pathway": "Open major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "2.0 minimum cumulative GPA in major courses and 'C' or better in specific requirements.",
+            "curriculum": {
+              "core_courses": [
+                "PSY 2012 General Psychology",
+                "PSY 3204C Statistical Methods in Psychology",
+                "PSY 3213 Research Methods in Psychology",
+                "PSY 3074 Perception",
+                "PSY 3103 Human Factors Psychology",
+                "PSY 3112 Learning and Cognition",
+                "PSY 3400 Biological Psychology",
+                "PSY 3502 Developmental Psychology",
+                "PSY 3600 Social Psychology",
+                "PSY 3703 Abnormal Psychology",
+                "PSY 4049 Psychology Capstone"
+              ],
+              "electives": [
+                "APK 3400 Sports Psychology",
+                "CLP 3004 Behavioral Self Control",
+                "CLP 3184 Women's Mental Health",
+                "CLP 3302 Clinical Psychology",
+                "CLP 3413 Contemporary Behavior Therapy",
+                "CLP 4314 Health Psychology",
+                "CLP 4390 Forensic Psychology",
+                "DEP 3464 Psychology of Aging",
+                "EAB 3703 Principles of Behavior Modification",
+                "PCO 4203 Interviewing and Counseling",
+                "PPE 3003 Personality Theory and Research",
+                "PSB 3441 Psychobiological Aspects of Drugs",
+                "PSY 3302 Psychological Measurement",
+                "PSY 4215C Advanced Research Methods in Psychology",
+                "SOP 2772 Sexual Behavior"
+              ],
+              "total_units": 120,
+              "major_units": 35
+            },
+            "notable_professors": [
+              "Dr. Mustapha Mouloua (Human Performance, Cognitive Aging, Human-Automation Interaction)",
+              "Dr. Mark D Rapport (Clinical Psychology, ADHD, Working Memory)",
+              "Dr. Alisha Janowsky (Undergraduate Program Director)"
+            ],
+            "notes": "The Psychology Department is the largest in the Western Hemisphere by student enrollment. Median starting salary is reported around $27,800 - $31,013. Data source: UCF Undergraduate Catalog 2025-2026."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Computer Science Minor",
+      "Bioengineering Minor",
+      "Technological Entrepreneurship Minor",
+      "Biology Minor",
+      "Nonprofit Management Minor",
+      "Strategic Communication Certificate",
+      "Undergraduate Research Certificate",
+      "Health Communication Certificate",
+      "Behavioral Forensics Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "UCF Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-10-15",
+        "is_binding": false,
+        "notes": "Application for Summer & Fall 2026. All required materials must be submitted by November 15, 2025. Applicants receive priority consideration for merit scholarships."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-05-01",
+        "is_binding": false,
+        "notes": "Application for Fall 2026. Decisions are released on a rolling basis after Early Action notifications."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "UCF encourages applicants to submit two supplemental essays (250 words maximum each) for the 2025-2026 application cycle. The prompts are: 1. Why did you choose to apply to UCF? 2. What qualities or unique characteristics do you possess that will allow you to contribute to the UCF community?"
+      },
+      {
+        "target_program": "College of Medicine (MD)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "The UCF College of Medicine requires several secondary essays for the 2025-2026 application cycle, including questions about personal sacrifices in medical school, collaboration, reasons for choosing medicine, integral personal characteristics, and specific interest in UCF COM."
+      },
+      {
+        "target_program": "Music (Undergraduate Voice)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Applicants must prepare two contrasting selections from standard 'classical style' repertoire, performed from memory, with at least one in Italian, French, or German. A brief musical skills and sight-reading examination is also required. Applicants should submit an 'Online Intent to Audition Form' and a 'Music Teacher Evaluation Form.' An accompanist is provided."
+      },
+      {
+        "target_program": "Music (Graduate Voice)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Applicants should prepare a minimum of four contrasting selections from the standard 'classical style' repertoire (three songs, one aria from opera or oratorio), representing French, Italian, German, and English, and at least three style periods. A brief musical skills and sight-reading examination is also required."
+      },
+      {
+        "target_program": "Music (Various Instruments & Jazz Studies, Composition, Conducting)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Most undergraduate and graduate music degree programs require an audition. Specific requirements vary by instrument and program. Prospective students may submit audition recordings through Acceptd and may be asked to schedule a live audition."
+      },
+      {
+        "target_program": "Music (Wind Ensemble, Symphonic Band)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Auditions are required for membership in the Wind Ensemble and Symphonic Band and are held at the beginning of each semester."
+      },
+      {
+        "target_program": "Musical Theatre (BFA)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Acceptance is a two-step process requiring acceptance to both UCF Undergraduate Admissions and the UCF School of Performing Arts. Auditions are submitted through Acceptd. General auditions are not held on campus, but some students may be selected for on-campus callbacks. Acceptance to the School of Performing Arts is typically by mid-March."
+      },
+      {
+        "target_program": "Acting (BFA)",
+        "requirement_type": "Audition",
+        "deadline": "February 21, 2026 (Virtual-live)",
+        "details": "Auditions can be submitted through Acceptd (video submission), a virtual-live audition, or a live, on-campus audition. Applicants must apply and be accepted by both UCF Undergraduate Admissions and the UCF School of Performing Arts. Audition requirements include a typed bio, headshot, resume, and a monologue."
+      },
+      {
+        "target_program": "Character Animation (Emerging Media BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "This is a limited-access program requiring a portfolio review *after* students have been accepted to UCF as an 'Emerging Media Pending' major and have completed specific prerequisite courses with a minimum 3.0 major GPA. The portfolio generally consists of work from these prerequisite classes."
+      },
+      {
+        "target_program": "Graphic Design (Emerging Media BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "February 5, 2026",
+        "details": "Requires a successful Graphic Design portfolio review for admission. Students are encouraged to submit a portfolio application when all prerequisite coursework is completed or currently enrolled, with a minimum 3.0 GPA in major courses. Submission dates for Spring 2026 are January 23, 2026 – February 5, 2026. The portfolio should be a single, multi-page PDF showcasing creative achievements, technical skill, and conceptual thinking."
+      },
+      {
+        "target_program": "Studio Art (BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Admission into the Studio Art BFA track is based on a specialization faculty review of a student's work after they have been admitted to UCF and completed prerequisite courses (e.g., Drawing Fundamentals I & II, Design Fundamentals 2D & 3D) with a grade of 'C' or better. The portfolio includes drawings and 2D/3D works."
+      },
+      {
+        "target_program": "Film (BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Requires a 'sophomore portfolio' to exemplify artistry, foundational knowledge, theoretical underpinnings, and production skills obtained in the first two years. It can include class assignments or outside work relevant to filmmaking, such as film/video, writing (screenplay, short story), photographs, and imagery. Two essays are also part of this portfolio."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Standardized Test Scores"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "UCF practices a holistic review process and operates on a rolling admission basis. The university emphasizes alignment with its mission values of inclusion, discovery, and innovation, which applicants can showcase in their optional, but strongly recommended, essay."
+    },
     "essay_prompts": [
       {
-        "prompt": "UCF is focused on developing the next generation of leaders and innovators. How will you use your education at UCF to make a positive impact?",
+        "prompt": "Why did you choose to apply to UCF?",
         "word_limit": "250 words",
-        "type": "Goals",
+        "type": "Why This School",
         "required": false,
         "brainstorming_questions": [
-          "Thinking about UCF's emphasis on innovation, can you recall a specific moment where you identified a problem or inefficiency and felt compelled to find a creative solution, even if it was a small one?",
-          "Beyond the classroom, what kind of leadership experiences have you had \u2013 formal or informal \u2013 where you've guided others or taken initiative, and what did you learn about inspiring positive change from those moments?",
-          "Imagine your ideal future self five years after graduating from UCF, actively making a positive impact. What specific skills or knowledge do you anticipate gaining at UCF that will empower that future self to achieve that impact?",
-          "UCF is known for its diverse student body and community. How have your interactions with people from different backgrounds shaped your understanding of what 'positive impact' means, and what unique perspectives will you bring to contributing to that at UCF?",
-          "If you could design a project or initiative at UCF that would directly address a societal need or opportunity you care deeply about, what would it be, and what specific UCF resources or programs would be instrumental in bringing it to life?"
+          "Beyond its location, what specific academic programs, research opportunities, or unique courses at UCF genuinely excite you?",
+          "Have you interacted with any UCF faculty, students, or alumni? What did you learn from these interactions that solidified your interest?",
+          "What particular resources, facilities, or campus traditions at UCF resonate with your personal or academic goals?",
+          "How do UCF's values, mission, or community culture align with your own aspirations and personality?",
+          "What unique contribution do you believe you can make to UCF's campus environment, building on what specifically attracts you to the institution?"
+        ]
+      },
+      {
+        "prompt": "Please briefly elaborate on one of your extracurricular activities or work experiences.",
+        "word_limit": "250 words",
+        "type": "Activity",
+        "required": false,
+        "brainstorming_questions": [
+          "What specific skills or knowledge did you gain or significantly develop through this experience?",
+          "Describe a particular challenge you faced during this activity or work and how you addressed it.",
+          "What was the most rewarding aspect of this experience, and how did it change your perspective?",
+          "How did this activity or work impact others, your community, or the organization you were a part of?",
+          "What did this experience teach you about yourself that you believe is important for UCF to know?"
+        ]
+      },
+      {
+        "prompt": "What qualities or unique characteristics do you possess that will allow you to contribute to the UCF community?",
+        "word_limit": "250 words",
+        "type": "Community/Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "Think about a time your unique background or perspective added value to a group or discussion. What happened?",
+          "What specific talents, skills, or passions do you have that you are eager to share or develop within a college community?",
+          "How do you typically engage with new people or diverse ideas? Can you recall an instance where this approach was beneficial?",
+          "What kind of impact do you hope to have on the UCF campus, whether through clubs, academic collaborations, or social interactions?",
+          "Reflect on a personal characteristic (e.g., resilience, curiosity, empathy) that has shaped who you are. How might this quality manifest in your contributions at UCF?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_central_florida_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Do not stress over initial major choice for admission UCF generally admits students to the university as a whole, rather than to a specific major.",
+      "Consider applying as \"undeclared\" if genuinely undecided If you are unsure about your major, UCF allows you to apply as \"undeclared.\" The university also offers resources such as the Knights Major Exploration and Transition Center to help students explore their interests and select a major after they have been admitted.",
+      "Focus on meeting overall UCF admission criteria Since initial admission is to the university, prioritize achieving a strong GPA and competitive SAT/ACT scores. UCF's acceptance rate is moderately competitive (around 44-45%), with admitted students typically having a high GPA (average 4.16 weighted) and strong test scores (SAT 1170-1340, ACT 27-32).",
+      "Research prerequisite courses and separate application processes for competitive programs post-admission While your initial major declaration may not affect university admission, some highly competitive or limited-access majors (such as certain engineering or health sciences programs) may have additional criteria or a separate application process that you must complete *after* you've been admitted to UCF. It is crucial to research these specific program requirements early on."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize programs with strong academic and innovation recognition. Look for colleges or departments that are explicitly mentioned for their excellence, innovation, or specific program rankings. For example, UCF's College of Engineering and Computer Science is highlighted as one of the largest and most respected, and the university as a whole is consistently ranked for innovation, particularly in STEM fields, healthcare, and hospitality. This indicates strong faculty, resources, and up-to-date curricula in those areas.",
+      "Evaluate colleges based on student success metrics like graduation and retention rates. A high freshman retention rate suggests student satisfaction and effective university support for first-year students, while a strong six-year graduation rate indicates the college is successfully delivering on its promise of higher education. These metrics can reflect the quality of academic support, advising, and overall student experience within a college.",
+      "Consider the faculty's caliber and resources dedicated to students. Competitive average faculty compensation can attract highly qualified educators, and higher expenditures per student often correlate with better instructional support, academic resources, and student services. Information about research opportunities, partnerships with industry, and specialized institutes (like the Institute for Simulation and Training or the College of Optics and Photonics at UCF) can also indicate strong educational resources and faculty engagement."
+    ],
+    "alternate_major_strategy": "When applying to a competitive major at the University of Central Florida, it can be beneficial to list an alternate major, ideally one in a different college. For example, if applying to a Computer Science major in the College of Engineering, consider listing an alternate major like Cognitive Science. Applicants also have the option to select an 'undeclared' major during the admissions application process and utilize services like the Knights Major Exploration and Transition Center to explore interests and select a major in their first semesters.",
+    "internal_transfer_difficulty": "Changing majors at UCF after admission is possible through myUCF. However, some majors may require specific criteria or a separate application for admittance into their program, which can indicate a competitive internal transfer process for impacted majors."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 6368.0,
+        "total_coa": 25250.0,
+        "housing": 12452.0
+      },
+      "out_of_state": {
+        "tuition": 24107.0,
+        "total_coa": 42989.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 8202.0,
+    "average_merit_aid": 15000.0,
+    "percent_receiving_aid": 72.0,
+    "meets_full_need": false,
+    "notes": "UCF meets approximately 65% of its students' demonstrated financial need. The figure for average merit aid ($15,000) is based on a specific, substantial scholarship (the Benacquisto Scholarship for National Merit Finalists) and may not represent the overall average merit award for all students. UCF also offers a variety of other merit-based scholarships to incoming first-time-in-college students, with awards distributed over four years ranging from $6,000 to $30,000 for Florida residents and $30,000 to $42,000 for non-Florida residents.",
+    "scholarships": [
+      {
+        "name": "National Merit Scholarship / Benacquisto Scholarship",
+        "type": "Full-Ride",
+        "amount": "Full resident tuition + $15,000/year UCF scholarship + $3,000/year housing allowance",
+        "eligibility": "National Merit Finalist, designate UCF as 'first-choice' with National Merit Scholarship Corporation by May 31st deadline. Requires maintaining full-time enrollment (12+ credit hours) and minimum GPA.",
+        "application_method": "Automatic consideration upon admission to UCF if named a National Merit Semifinalist; increased award for finalists designating UCF as first-choice."
+      },
+      {
+        "name": "Pegasus Scholarship Programs (Gold, Silver, Bronze, Provost)",
+        "type": "Merit",
+        "amount": "Ranges from $4,000 to $30,000 (Florida residents) or $30,000 to $42,000 (non-Florida residents) over four years. (Specific amounts for Gold, Silver, Bronze, Provost are not detailed but are within this range.)",
+        "eligibility": "Exceptional academic achievement for incoming students. Eligibility is based on factors like GPA, SAT/ACT scores, and class ranking.",
+        "application_method": "Automatic consideration when applying for admission to UCF for summer or fall terms; no separate application required."
+      },
+      {
+        "name": "Florida Bright Futures Scholarship Program (Florida Academic Scholars & Florida Medallion Scholars)",
+        "type": "Merit",
+        "amount": "Varies by award level; Florida Academic Scholars is the most generous, providing funding for up to five years and 120 semester hours toward a first baccalaureate degree. Can cover 100% of tuition for Florida residents under recent legislation.",
+        "eligibility": "High school academic achievement as determined by the state of Florida. Requirements include specific GPA, test scores (SAT/ACT), and community service hours.",
+        "application_method": "State-funded program; eligibility determined by the state. Students apply through the Florida Department of Education. UCF automatically applies the scholarship for eligible students."
+      },
+      {
+        "name": "First Generation Matching Grant Program",
+        "type": "Need-Based",
+        "amount": "Not specified, but designed to help afford studies for eligible students.",
+        "eligibility": "First-generation college students who demonstrate financial need.",
+        "application_method": "Likely requires completion of the FAFSA (Free Application for Federal Student Aid) to determine financial need."
+      },
+      {
+        "name": "UCF College and Departmental Scholarships",
+        "type": "Merit, Need-Based",
+        "amount": "Varies by scholarship and department.",
+        "eligibility": "Specific to areas of specialization; criteria vary by college/department, often based on academic performance, major, and sometimes financial need or other achievements.",
+        "application_method": "Students can search and apply through UCF's Access 2 Opportunities (A2O) scholarship system. After completing a general application, students may be prompted for additional information or a separate opportunity-specific application by the relevant college or department."
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Scores of 3, 4, or 5 on national examinations will receive college credit in appropriate subject areas",
+      "exceptions": [
+        "Specific exam-based score exceptions (e.g., 'No credit for AP Research', 'CS requires 5') are not explicitly detailed in the provided search results, though additional restrictions and requirements may apply."
+      ],
+      "usage": "AP credits can grant college credit, allow students to place out of certain course requirements, fulfill general education requirements, and contribute to achieving sophomore standing."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4 or higher on both Standard Level (SL) and Higher Level (HL) exams grant credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UCF Transfer Credit Equivalency Portal"
+      ],
+      "restrictions": "Graduate transfer credits cannot exceed 50% of UCF degree requirements, with a minimum of 15 graded (A-F) credit hours taken at UCF. Only graduate-level courses with a grade of 'B' or higher are transferable; Pass/Fail or Satisfactory/Unsatisfactory courses are not accepted. Courses older than 7 years are generally not transferable for graduate programs. For undergraduates, while an A.A. degree (typically 60 credits) from a Florida public institution guarantees admission under the 2+2 articulation agreement, the applicability of additional community college credits to specific UCF degree programs beyond general education requirements may vary."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework (e.g., AP/IB classes) and a high GPA",
+      "Competitive SAT/ACT scores",
+      "An impactful personal statement",
+      "Meaningful extracurricular involvement"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Varsity athletics/Sports teams",
+      "Community service/volunteering",
+      "Research experience",
+      "Part-time jobs"
+    ],
+    "essay_tips": [
+      "Be specific about why UCF interests you. Avoid generic statements about the school's reputation or location. Instead, reference unique academic programs (like specific engineering or computer science specializations), research initiatives (such as cybersecurity research), specific clubs or organizations you want to join, or even individual professors you'd like to work with.",
+      "Show, don't just tell, by using personal anecdotes and specific experiences to illustrate your points and make your essay more authentic and engaging.",
+      "Connect your interests and aspirations to specific UCF resources. Clearly demonstrate how your academic and extracurricular goals align with what UCF explicitly offers, whether it's a particular lab, a unique learning community, a service opportunity like \"Hearts for the Homeless Orlando,\" or a specific student organization.",
+      "Highlight your unique qualities and how you will contribute to the UCF community. For essays asking what you'll bring to the university, focus on your individuality, worldview, and how your personal perspectives, beliefs, or lived experiences will enrich the campus environment. This could involve teaching classmates about your culture or starting a new club based on a unique skill."
+    ],
+    "red_flags": [
+      "Grade decline senior year",
+      "Generic essays that could apply anywhere",
+      "Failure to disclose prior criminal or educational misconduct",
+      "Applying too late in the rolling admissions cycle"
+    ],
+    "campus_dynamics": {
+      "social_environment": "The social scene at the University of Central Florida is active and diverse, offering a lively, student-focused experience with over 670 student clubs and organizations, and numerous campus events and activities happening constantly.",
+      "transportation_impact": "On-campus buses provide quick transportation to locations around the campus, and both on-campus dorms and off-campus apartments are within walking or bus distance. Additionally, some off-campus housing options offer free shuttle services to campus.",
+      "research_impact": "The University of Central Florida, a \"Research 1\" institution, provides strong undergraduate research opportunities across various disciplines. Resources are available through the Office of Undergraduate Research, and programs like the Research and Mentoring Program (RAMP), Honors in the Major (HIM), and the Knights Research Scholars Program encourage student involvement. UCF secured over $229 million in sponsored research funding in 2024 and is recognized for its patents, indicating robust industry ties and innovation. Specific Research Experience for Undergraduates (REU) sites are available in STEM fields, fostering critical thinking and analytical skills."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 58308,
+    "employment_rate_2yr": 94.0,
+    "median_earnings_6yr": 58196,
+    "notes": "Top 20% nationally for graduation rate and overall quality",
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Apple",
+      "Lockheed Martin",
+      "Oracle",
+      "Accenture",
+      "IBM",
+      "Walt Disney Parks and Resorts"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 2.4
+  },
+  "student_retention": {
+    "freshman_retention_rate": 92.0,
+    "graduation_rate_4_year": 50.0,
+    "graduation_rate_6_year": 78.0
+  }
 }

@@ -768,86 +768,13 @@
         "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
       }
     ],
-    "supplemental_requirements": {
-      "requirements_list": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "deadline": "2025-12-01",
-          "details": "Applicants must answer four of the eight Personal Insight Questions (PIQs). These essays help the admissions committee understand the applicant's qualities, achievements, and experiences."
-        },
-        {
-          "target_program": "Music (Bachelor of Music programs)",
-          "requirement_type": "Audition",
-          "deadline": null,
-          "details": "A major entrance audition is required for applicants seeking admission to Bachelor of Music (BM) programs. For some instruments like Voice and Piano, a prescreening recording is required by November 30th and December 5th, respectively. For Composition, a portfolio is due by January 10th. For other instruments, recorded or live auditions are required, with all forms and prerecorded auditions submitted in lieu of a live audition due by January 10th."
-        },
-        {
-          "target_program": "College of Creative Studies (CCS) - various programs",
-          "requirement_type": "Supplemental Application",
-          "deadline": "2025-12-01",
-          "details": "Applying to CCS typically involves a secondary application in addition to the general UC application. This includes a Letter of Intent for all CCS majors and may require a portfolio (e.g., for Art) or letters of recommendation (e.g., for Biology, Computing, Chemistry & Biochemistry). The CCS application is due by the UC application deadline."
-        }
-      ],
-      "essay_prompts": [
-        {
-          "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "What have you done to make your school or your community a better place?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        }
-      ]
-    },
+    "supplemental_requirements": [
+      {
+        "requirement": "{'requirements_list': [{'target_program': 'All', 'requirement_type': 'Essays', 'deadline': '2025-12-01', 'details': \"Applicants must answer four of the eight Personal Insight Questions (PIQs). These essays help the admissions committee understand the applicant's qualities, achievements, and experiences.\"}, {'target_program': 'Music (Bachelor of Music programs)', 'requirement_type': 'Audition', 'deadline': None, 'details': 'A major entrance audition is required for applicants seeking admission to Bachelor of Music (BM) programs. For some instruments like Voice and Piano, a prescreening recording is required by November 30th and December 5th, respectively. For Composition, a portfolio is due by January 10th. For other instruments, recorded or live auditions are required, with all forms and prerecorded auditions submitted in lieu of a live audition due by January 10th.'}, {'target_program': 'College of Creative Studies (CCS) - various programs', 'requirement_type': 'Supplemental Application', 'deadline': '2025-12-01', 'details': 'Applying to CCS typically involves a secondary application in addition to the general UC application. This includes a Letter of Intent for all CCS majors and may require a portfolio (e.g., for Art) or letters of recommendation (e.g., for Biology, Computing, Chemistry & Biochemistry). The CCS application is due by the UC application deadline.'}], 'essay_prompts': [{'prompt': 'Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What have you done to make your school or your community a better place?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}]}",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      }
+    ],
     "holistic_factors": {
       "primary_factors": [
         "Course Rigor",
@@ -882,7 +809,7 @@
         "required": true,
         "brainstorming_questions": [
           "Thinking about the 'group efforts over time' part of the prompt, can you recall a specific moment when you felt a sense of genuine responsibility for the group's progress, and what was happening around you that made you feel that way?",
-          "When you've helped 'resolve disputes,' what was the underlying tension you sensed, and what was your *first* instinct \u2013 what did you *want* to do versus what did you *actually* do to influence the situation positively?",
+          "When you've helped 'resolve disputes,' what was the underlying tension you sensed, and what was your *first* instinct – what did you *want* to do versus what did you *actually* do to influence the situation positively?",
           "Beyond just completing a task, consider a time you 'positively influenced others.' What specific small action or interaction did you have that you believe shifted someone's perspective or motivation, even if it felt insignificant at the time?",
           "UCSB's motto is 'Santa Barbara is a state of mind.' How did the unique environment or a particular challenge at UCSB (or a place you aspire to bring that spirit to) influence how you approached a leadership situation where you needed to unite diverse perspectives?",
           "Looking back at a situation where you contributed to a group effort, what was a moment where you had to let go of your own idea or approach to make space for a better, collaborative outcome, and what did you learn about collective success from that experience?"
@@ -1078,11 +1005,31 @@
       "Applying to a highly selective major (e.g., Engineering, Computer Science) without sufficient academic preparation in relevant coursework."
     ],
     "insights": [
-      "UCSB evaluates applicants based on 13 comprehensive criteria, with academic profile (GPA, course rigor) and Personal Insight Questions/extracurricular activities being very important.",
-      "The university is highly praised for its stunning campus located directly on the beach, offering a unique and vibrant student life with a balance of academics and social activities.",
-      "Housing availability and affordability in the Santa Barbara area and Isla Vista are frequently mentioned concerns by students.",
-      "Competitive majors, particularly within the College of Engineering and College of Creative Studies, have significantly lower acceptance rates and specific prerequisite requirements.",
-      "Transfer admission to UCSB is heavily driven by an applicant's overall UC transfer GPA and their GPA in courses required for their major."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UCSB evaluates applicants based on 13 comprehensive criteria, with academic profile (GPA, course rigor) and Personal Insight Questions/extracurricular activities being very important."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university is highly praised for its stunning campus located directly on the beach, offering a unique and vibrant student life with a balance of academics and social activities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Housing availability and affordability in the Santa Barbara area and Isla Vista are frequently mentioned concerns by students."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Competitive majors, particularly within the College of Engineering and College of Creative Studies, have significantly lower acceptance rates and specific prerequisite requirements."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Transfer admission to UCSB is heavily driven by an applicant's overall UC transfer GPA and their GPA in courses required for their major."
+      }
     ]
   },
   "outcomes": {

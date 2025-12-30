@@ -34,7 +34,7 @@
     "campus_dynamics": {
       "social_environment": "Illinois Tech offers a vibrant campus life with over 150 student organizations, including cultural clubs, professional societies, a student-run radio station, esports, and 10 Greek life chapters. The university hosts numerous events and festivals throughout the year, such as Welcome Week and cultural days. While some reviews mention limited activities due to the small campus, students actively engage with Chicago's urban environment for cultural experiences, internships, and networking.",
       "transportation_impact": "Located in Chicago's Bronzeville neighborhood, approximately 3 miles south of the Loop, Illinois Tech boasts excellent public transportation access. All undergraduate students receive a Ventra U-Pass for unlimited CTA public transit citywide, with Green and Red Line 'L' (elevated train) stops directly next to campus, connecting to downtown and both major airports. Numerous city bus stops also serve the campus. This extensive network makes commuting easy and provides students with access to Chicago's vast opportunities.",
-      "research_impact": "Illinois Tech is classified as an 'R2: Doctoral Universities \u2013 High research activity' institution and offers countless research opportunities for both undergraduate and graduate students. Students can engage in on-campus lab work, national and international funded programs, and benefit from grants from organizations like the National Science Foundation and Argonne National Laboratory. The university also houses the University Technology Park, an incubator and life sciences/tech start-up facility. Research is a core component of its 'knowing by doing' philosophy and is integral to its tech-focused curriculum and experiential learning initiatives like the Elevate program."
+      "research_impact": "Illinois Tech is classified as an 'R2: Doctoral Universities – High research activity' institution and offers countless research opportunities for both undergraduate and graduate students. Students can engage in on-campus lab work, national and international funded programs, and benefit from grants from organizations like the National Science Foundation and Argonne National Laboratory. The university also houses the University Technology Park, an incubator and life sciences/tech start-up facility. Research is a core component of its 'knowing by doing' philosophy and is integral to its tech-focused curriculum and experiential learning initiatives like the Elevate program."
     },
     "us_news_rank": 105
   },
@@ -844,7 +844,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays are generally provided: 'Why are you interested in Illinois Institute of Technology?' (Why Us) and 'How have your background and lived experiences shaped your perspective, and how would you bring those insights to the classroom and community at Illinois Tech?' (Community). These are officially optional but strongly encouraged to provide as much information as possible and are considered in a holistic review; opting out will not negatively impact admission decisions."
       }
     ],
@@ -1032,11 +1032,31 @@
       "Focusing broadly on \"curious about different cultures\" without specific personal experiences or concrete examples in diversity essays."
     ],
     "insights": [
-      "Illinois Tech admissions takes a holistic approach, considering high school performance, essays, choice of major, and optional test scores.",
-      "The university has a selective admissions rate of 55%, with admitted students typically having SAT scores between 1180-1410 or ACT scores between 25-31.",
-      "Many students highlight the strong academic environment, rigorous curriculum, and dedication of professors, especially in STEM disciplines.",
-      "There's a significant focus on hands-on learning and real-world problem-solving, often through interdisciplinary projects.",
-      "The campus fosters a small community feel with a diverse student body, including many international students, but some students note a quieter social life."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Illinois Tech admissions takes a holistic approach, considering high school performance, essays, choice of major, and optional test scores."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university has a selective admissions rate of 55%, with admitted students typically having SAT scores between 1180-1410 or ACT scores between 25-31."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Many students highlight the strong academic environment, rigorous curriculum, and dedication of professors, especially in STEM disciplines."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "There's a significant focus on hands-on learning and real-world problem-solving, often through interdisciplinary projects."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The campus fosters a small community feel with a diverse student body, including many international students, but some students note a quieter social life."
+      }
     ]
   },
   "outcomes": {

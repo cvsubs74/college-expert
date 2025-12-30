@@ -1,170 +1,238 @@
 {
-  "university_profile": {
-    "_id": "elon_university",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.elon.edu/u/about/rankings-and-recognition/",
-      "https://www.elon.edu/u/news/2025/09/23/elon-university-again-named-best-in-the-nation-for-undergraduate-teaching/"
+  "_id": "elon_university",
+  "metadata": {
+    "official_name": "Elon University",
+    "location": {
+      "city": "Elon",
+      "state": "North Carolina",
+      "type": "main_campus"
+    },
+    "last_updated": "2024-07-30"
+  },
+  "strategic_profile": {
+    "executive_summary": "Elon University is a highly selective, private university known for its commitment to experiential learning, global engagement, and a beautiful, well-maintained campus. It emphasizes a student-centered approach, fostering strong faculty-student relationships and providing extensive opportunities for undergraduate research, internships, and study abroad.",
+    "market_position": "Nationally recognized for experiential learning and student success, particularly in liberal arts and professional programs.",
+    "admissions_philosophy": "Elon seeks academically curious, engaged, and well-rounded students who demonstrate leadership potential, a commitment to community, and a desire to contribute positively to a vibrant campus culture. Emphasis is placed on holistic review, considering academic achievement, extracurricular involvement, essays, and recommendations.",
+    "us_news_rank": 9,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong brand equity due to consistent high rankings in experiential education.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Potential for increased graduate program offerings to leverage existing faculty expertise.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Challenges in maintaining affordability while investing in campus infrastructure.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Excellent alumni network engagement, particularly in the Southeast.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunity to further integrate interdisciplinary studies with career readiness initiatives.",
+        "category": "general"
+      }
     ],
-    "metadata": {
-      "official_name": "Elon University",
-      "location": {
-        "city": "Elon",
-        "state": "NC",
-        "type": "Private"
-      }
-    },
-    "strategic_profile": {
-      "executive_summary": "Elon University is a private national university renowned for its leadership in experiential learning and high-impact educational practices. It consistently holds the #1 national ranking for undergraduate teaching and provides a high-engagement residential campus experience.",
-      "market_position": "Experiential Learning Powerhouse",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 117,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The acceptance rate has stabilized around 66-67%, but selectivity is increasing in specific honors and fellows programs.",
-          "implication": "Applicants should apply via Early Action to leverage a significantly higher acceptance rate (estimated at 70%) compared to Regular Decision."
-        },
-        {
-          "category": "Institutional Reputation",
-          "insight": "Elon ranks #1 in the nation for undergraduate teaching for the fifth consecutive year, outperforming Ivy League peers in this metric.",
-          "implication": "Prospective students prioritizing faculty mentorship and classroom engagement over research prestige should view Elon as a primary target."
-        },
-        {
-          "category": "Financial Strategy",
-          "insight": "The university is actively working to improve social mobility rankings by increasing Pell Grant recipient enrollment and scholarship availability.",
-          "implication": "Middle-to-lower income applicants may find improved aid packages as Elon seeks to broaden its socioeconomic diversity."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A highly active residential culture with over 200 organizations; Greek life and service-oriented groups (like the Kernodle Center) define much of the social landscape.",
-        "transportation_impact": "The campus utilizes the eco-friendly 'BioBus' system and a partnership with local Link Transit, making the surrounding Burlington area highly accessible without a personal vehicle.",
-        "research_impact": "A national leader in undergraduate research (ranked #8), supported by the Lumen Prize ($20,000 awards) and dedicated forums like SURF, fostering close faculty-student collaboration."
-      }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 66.4,
+    "campus_dynamics": {
+      "social_environment": "Vibrant and active, with a strong sense of community and numerous student organizations, Greek life, and campus events. Known for a friendly and welcoming atmosphere.",
+      "transportation_impact": "Campus is largely walkable, with shuttle services for longer distances. Proximity to Burlington offers off-campus dining and shopping. Most students live on campus or in nearby off-campus housing, reducing daily commute dependency.",
+      "research_impact": "Significant emphasis on undergraduate research across disciplines, often culminating in presentations, publications, and capstone projects. Faculty actively engage students in their research, providing mentorship and hands-on experience."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 66.35,
+      "is_test_optional": true,
+      "test_policy_details": "Elon University has a test-optional admissions policy for most applicants for the 2024-2025 application cycle and beyond. This means students have the choice to submit SAT or ACT scores. Standardized test scores are required for homeschooled students and those applying to the Bachelor of Science in Nursing (BSN) program. International applicants attending a school where English is not the primary language of instruction must demonstrate English proficiency by submitting TOEFL, IELTS, or Duolingo English Test scores. Elon accepts self-reported SAT or ACT scores on the application, but official scores will be required upon admission and before enrollment. The university practices 'superscoring' for the SAT, considering the highest section scores across all submitted test dates.",
+      "admits_class_size": 11740,
+      "transfer_acceptance_rate": 56.18,
       "in_state_acceptance_rate": null,
       "out_of_state_acceptance_rate": null,
       "international_acceptance_rate": null,
-      "transfer_acceptance_rate": 55.0,
-      "admits_class_size": 12012,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
       "early_admission_stats": [
         {
           "plan_type": "ED",
           "applications": null,
           "admits": null,
-          "acceptance_rate": 88.0,
+          "acceptance_rate": 56.0,
           "class_fill_percentage": null
         },
         {
           "plan_type": "EA",
           "applications": null,
           "admits": null,
-          "acceptance_rate": 73.2,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED2",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
           "class_fill_percentage": null
         }
       ]
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
         "applications_total": 18557,
         "admits_total": 11740,
         "enrolled_total": 1333,
-        "acceptance_rate_overall": 63.3,
-        "yield_rate": 11.4,
-        "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist outcomes for Class of 2029 not yet fully disclosed in official CDS reports."
+        "acceptance_rate_overall": 63.26,
+        "yield_rate": 11.35,
+        "notes": "Enrollment for Class of 2029 decreased by 11.6% due to demographic shifts (birth rate falling in the U.S. at the start of the Great Recession in 2008).",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 18105,
         "admits_total": 12012,
-        "enrolled_total": 1607,
-        "acceptance_rate_overall": 66.3,
-        "yield_rate": 13.4,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 3984,
-          "accepted_spots": 815,
-          "admitted_from_waitlist": 101,
-          "waitlist_admit_rate": 12.4,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Admissions dean stated waitlist is unranked; decisions are based on institutional needs."
+        "enrolled_total": 1719,
+        "acceptance_rate_overall": 66.35,
+        "yield_rate": 14.31,
+        "notes": "Most diverse class in university history. Delays in FAFSA led to deposit extensions. 7.4% decrease in first-year enrollment for Class of 2028 compared to Class of 2027.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
-        "applications_total": 18791,
-        "admits_total": 12649,
-        "enrolled_total": 2084,
-        "acceptance_rate_overall": 67.3,
-        "yield_rate": 16.5,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 4072,
-          "accepted_spots": 832,
-          "admitted_from_waitlist": 109,
-          "waitlist_admit_rate": 13.1,
-          "is_waitlist_ranked": false
-        }
+        "applications_total": 18912,
+        "admits_total": 12730,
+        "enrolled_total": 1688,
+        "acceptance_rate_overall": 67.31,
+        "yield_rate": 13.26,
+        "notes": "19% African American or Black, Latino or Hispanic, Asian or Pacific Islander, Native American, Alaskan Native and multiracial. 11% first-generation. 12% identify as part of LGBTQ communities.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 17492,
+        "admits_total": 12836,
+        "enrolled_total": 1692,
+        "acceptance_rate_overall": 73.38,
+        "yield_rate": 13.18,
+        "notes": "Second largest application pool in university history (as of April 2022). University focused on recruiting in Texas, Illinois, California, Minnesota and Colorado. More first-generation students than past two years.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 17834,
+        "admits_total": 13841,
+        "enrolled_total": 1600,
+        "acceptance_rate_overall": 77.61,
+        "yield_rate": 11.56,
+        "notes": "Record number of Early Action applications. Piloted test-optional admissions program. Increase in first-generation students (30% increase from previous year). 19% students of color. 41% male, 59% female ratio.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       }
     ],
-    "admitted_profile": {
+    "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "3.90-4.30",
-        "unweighted_middle_50": "3.65-3.85",
+        "weighted_middle_50": "N/A",
+        "unweighted_middle_50": "N/A",
         "average_weighted": 4.13,
-        "notes": "Academic rigor (Honors/AP/IB) is highly prioritized in the review process."
+        "percentile_25": "N/A",
+        "percentile_75": "N/A",
+        "notes": "Elon University's Class of 2029 had an average GPA of 4.13. The specific weighted and unweighted middle 50% GPA ranges (25th to 75th percentile) for the overall admitted class are not explicitly published in the searched resources in the requested 'X.XX-X.XX' format. Most incoming freshmen graduate in the top quarter of their high school class. Elon University employs a holistic admissions process, evaluating applicants on multiple factors beyond GPA, including a rigorous academic curriculum with courses like Honors, AP, or IB."
       },
       "testing": {
-        "sat_composite_middle_50": "1160-1320",
+        "sat_composite_middle_50": "1130-1320",
         "sat_reading_middle_50": "580-670",
         "sat_math_middle_50": "540-650",
-        "act_composite_middle_50": "25-30",
-        "submission_rate": 32.0,
-        "policy_note": "Test-optional since 2021. Approximately 32% of applicants submitted SAT scores and 21% submitted ACT scores for the 2023-2024 cycle."
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 1.5,
+        "policy_note": "Elon University is test-optional and superscores both SAT and ACT. The submission rate reflects the percentage of enrolled students for the academic year 2025 who submitted scores (2% for SAT, 1% for ACT)."
       },
       "demographics": {
-        "first_gen_percentage": 12.0,
-        "international_percentage": 2.44,
+        "first_gen_percentage": 54.0,
+        "legacy_percentage": null,
         "geographic_breakdown": [
           {
             "region": "North Carolina",
-            "percentage": 16.2
+            "percentage": 26.0
           },
           {
-            "region": "Out-of-State",
-            "percentage": 83.8
+            "region": "Massachusetts",
+            "percentage": 11.0
           },
           {
-            "region": "Top States",
-            "percentage": null,
-            "note": "MA, NY, NJ, MD, VA"
+            "region": "New York",
+            "percentage": 8.0
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 7.0
+          },
+          {
+            "region": "Maryland",
+            "percentage": 7.0
+          },
+          {
+            "region": "Virginia",
+            "percentage": 6.0
+          },
+          {
+            "region": "Connecticut",
+            "percentage": 5.0
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 5.0
+          },
+          {
+            "region": "Georgia",
+            "percentage": 3.0
+          },
+          {
+            "region": "Florida",
+            "percentage": 3.0
+          },
+          {
+            "region": "International",
+            "percentage": 2.44
           }
         ],
         "gender_breakdown": {
           "men": {
-            "acceptance_rate": 64.9,
-            "note": "6735 applicants, 4372 admits. Men represent approximately 41% of enrollment."
+            "applicants": 6735,
+            "admits": 4372,
+            "acceptance_rate": 64.91,
+            "note": "Data for the 2024-2025 admission cycle."
           },
           "women": {
-            "acceptance_rate": 67.2,
-            "note": "11368 applicants, 7638 admits. Women represent approximately 59% of enrollment."
-          }
+            "applicants": 11368,
+            "admits": 7638,
+            "acceptance_rate": 67.19,
+            "note": "Data for the 2024-2025 admission cycle."
+          },
+          "non_binary": null
         },
         "racial_breakdown": {
           "white": 77.4,
@@ -176,481 +244,703 @@
           "two_or_more_races": 2.37,
           "unknown": 2.72,
           "non_resident_alien": 2.44
-        },
-        "religious_affiliation": "Nonsectarian (historic ties to United Church of Christ)"
+        }
       }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "Elon College, the College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Perfect for students who value a broad liberal arts foundation and interdisciplinary study. Candidates should emphasize their desire for undergraduate research and global engagement.",
-          "housing_profile": "Global Neighborhood (internationally focused) and Historic Neighborhood (classic campus feel near academic buildings).",
-          "student_archetype": "The Intellectually Curious Explorer",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "weeder_courses": [
-                "PSY 2970 Experimental Research Methods and Statistics",
-                "PSY 3970 Nonexperimental Research Methods and Statistics"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "PSY 1000 Introduction to Psychology",
-                  "PSY 2100 Lifespan Development",
-                  "PSY 2200 Social Psychology",
-                  "PSY 2300 Cognitive Psychology",
-                  "PSY 2400 Behavioral Neuroscience",
-                  "PSY 2970 Experimental Research Methods and Statistics",
-                  "PSY 3970 Nonexperimental Research Methods and Statistics",
-                  "PSY 4970 Empirical Research Seminar"
-                ],
-                "total_units": 132,
-                "major_units": 48
-              },
-              "notes": "One of the largest majors at Elon; offers a double major elective waiver of 4 units."
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "weeder_courses": [
-                "CHM 2110 Organic Chemistry I",
-                "BIO 2212 Principles of Genetics"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "BIO 1112/1113 Introductory Cell Biology and Lab",
-                  "BIO 1514 Biodiversity",
-                  "BIO 2512/2513 Introductory Population Biology and Lab",
-                  "BIO 2212/2213 Principles of Genetics and Lab",
-                  "CHM 1110 General Chemistry I",
-                  "CHM 1120 General Chemistry II",
-                  "STS 2120 Statistics in Application"
-                ],
-                "total_units": 132,
-                "major_units": 64
-              },
-              "notes": "Offers tracks in Integrative Biology, Foundations for Medical Science, and Biotechnology."
-            },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A."
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Acting",
-              "degree_type": "B.F.A.",
-              "special_requirements": "Audition and interview required."
-            },
-            {
-              "name": "Engineering",
-              "degree_type": "B.S.",
-              "weeder_courses": [
-                "EGR 1220 Engineering Computing"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Martha and Spencer Love School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Seeks students with an entrepreneurial mindset and strong leadership potential. Applicants should highlight interest in high-tech facilities and global partnerships.",
-          "housing_profile": "The Colonnades Neighborhood, which often hosts the Business Fellows and Innovation Scholars LLCs.",
-          "student_archetype": "The Ambitious Leader",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.A.",
-              "weeder_courses": [
-                "ACC 2010 Principles of Accounting",
-                "FIN 3430 Principles of Finance"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "ACC 2010 Principles of Accounting",
-                  "BUS 1110 Gateway to Business",
-                  "FIN 3430 Principles of Finance",
-                  "FIN 4120 Investments",
-                  "FIN 4130 Advanced Managerial Finance"
-                ],
-                "total_units": 132,
-                "major_units": 73
-              }
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.S.B.A.",
-              "weeder_courses": [
-                "ACC 2010 Principles of Accounting",
-                "ECO 1110 Principles of Economics"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "ACC 2010 Principles of Accounting",
-                  "BUS 1110 Gateway to Business",
-                  "MKT 3110 Principles of Marketing",
-                  "MKT 4140 Marketing Research",
-                  "BUS 4650 Strategic Management"
-                ],
-                "total_units": 132,
-                "major_units": 73
-              }
-            },
-            {
-              "name": "International Business",
-              "degree_type": "B.S.B.A.",
-              "special_requirements": "Requires a study abroad experience."
-            }
-          ]
-        },
-        {
-          "name": "School of Communications",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Highly competitive within Elon; students should showcase a portfolio or history of creative content creation or sport management interest.",
-          "housing_profile": "Historic Neighborhood, conveniently located near the McEwen School of Communications facilities.",
-          "student_archetype": "The Creative Storyteller",
-          "majors": [
-            {
-              "name": "Strategic Communications",
-              "degree_type": "B.A.",
-              "weeder_courses": [
-                "COM 1100 Media Writing",
-                "STC 3120 Strategic Writing"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "COM 1000 Communications in a Global Age",
-                  "JOU 1100 News Writing and Reporting",
-                  "STC 2520 Foundations of Strategic Communications",
-                  "STC 4520 Strategic Campaigns"
-                ],
-                "total_units": 132,
-                "major_units": 58
-              },
-              "notes": "The most popular major at Elon; highly regarded for its national accreditation."
-            },
-            {
-              "name": "Media Analytics",
-              "degree_type": "B.A.",
-              "weeder_courses": [
-                "MEA 3100 Media Analytics II"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Dr. Jo Watts Williams School of Education",
-          "admissions_model": "Pre-Major",
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Students enter as 'Pre-Education' and must apply for formal admission after maintaining a 2.7+ GPA.",
-          "housing_profile": "East Neighborhood or Danieley Neighborhood.",
-          "student_archetype": "The Equity-Minded Educator",
-          "majors": []
-        },
-        {
-          "name": "School of Health Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "The 4-year BSN program is a direct-entry model with specific SAT/ACT requirements (1100+/22+).",
-          "housing_profile": "Danieley Neighborhood or Station at Mill Point.",
-          "student_archetype": "The Compassionate Healer",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "special_requirements": "Direct-entry program; requires 3.0 GPA to maintain enrollment.",
-              "weeder_courses": [
-                "BIO 1112 Cell Biology",
-                "NRS 3200 Pathophysiology/Pharmacology"
-              ]
-            },
-            {
-              "name": "Exercise Science",
-              "degree_type": "B.S."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Accounting Minor",
-        "Adventure Based Learning Minor",
-        "African & African-American Studies Minor",
-        "Business Administration Minor",
-        "Coaching Minor",
-        "Communications Minor",
-        "Computer Science Minor",
-        "Criminal Justice Studies Minor",
-        "Data Science Minor",
-        "Entrepreneurship & Innovation Minor",
-        "Environmental Education Minor",
-        "Global Film and Cultures Minor",
-        "Human Services Studies Minor",
-        "Jewish Studies Minor",
-        "Leadership Studies Minor",
-        "Middle East Studies Minor",
-        "Neuroscience Minor",
-        "Peace and Conflict Studies Minor",
-        "Professional Sales Minor",
-        "Public Health Studies Minor",
-        "Women’s, Gender, and Sexualities Studies Minor",
-        "Interfaith Studies Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Elon University Application (Acorn)"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision",
-          "date": "2024-11-01",
-          "is_binding": true,
-          "notes": "Notification by Dec 1."
-        },
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Notification by Dec 20."
-        },
-        {
-          "plan_type": "Early Decision II",
-          "date": "2025-01-15",
-          "is_binding": true,
-          "notes": "Notification by Feb 10."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-01-10",
-          "is_binding": false,
-          "notes": "Final deadline; notification by March 20."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Short Answer",
-          "details": "Identity response (200 words), 'Top 5' unique list (150 words), and 'Perfect Playlist' (3 songs)."
-        },
-        {
-          "target_program": "Honors and Fellows Programs",
-          "requirement_type": "Programmatic Essay",
-          "deadline": "2024-11-10",
-          "details": "Separate application including a 750-word essay on leadership or an academic project."
-        },
-        {
-          "target_program": "Music / Performing Arts",
-          "requirement_type": "Audition",
-          "details": "Audition or portfolio required for talent-based admission."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Application Essay"
-        ],
-        "secondary_factors": [
-          "Leadership",
-          "Extracurriculars",
-          "Service",
-          "Talents",
-          "Recommendations"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Important",
-        "interview_policy": "Recommended",
-        "legacy_consideration": "Moderate",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Focus on experiential learning, community contribution, and global perspective. Admission is test-optional for most programs except Nursing."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply as 'Undeclared' in Elon College to leverage high acceptance rate without secondary school hurdles of Nursing or Education.",
-        "Submit SAT/ACT ONLY for Nursing program (minimum 1100 SAT/22 ACT).",
-        "Utilize Early Decision for a significant statistical advantage; ED rates are markedly higher for competitive majors like Finance.",
-        "Apply directly to Fellows programs (Business, Communications, Honors) if GPA is 3.8+ for prioritized housing and travel grants.",
-        "Explicitly mention interest in 'The Elon Experiences' to align with the school's primary ranking focus."
-      ],
-      "college_ranking_tactics": [
-        "Rank Love School of Business for top-40 undergraduate business outcomes and professional development.",
-        "Prioritize School of Communications for its unique accredited status and required internship program.",
-        "Evaluate programs based on 'First-Year Experiences' and 'Learning Communities' (LLCs), where Elon ranks #1.",
-        "Consider Global Education Center ranking for majors like International Business."
-      ],
-      "alternate_major_strategy": "If applying to Performing Arts, list Arts Administration or Drama & Theatre Studies as backup. For Nursing, list Exercise Science or Public Health to stay on a pre-health track."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 46958,
-          "total_coa": 65443,
-          "housing": 16284
-        },
-        "out_of_state": {
-          "tuition": 46958,
-          "total_coa": 65443,
-          "supplemental_tuition": 0
-        }
+    }
+  },
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "Elon College, the College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "As the largest college, students are housed across various residential neighborhoods, including the Historic Neighborhood for many first-years, which offers traditional residences focused on community and well-being. The Elon College Fellows LLC specifically caters to academically driven students within Arts & Sciences. Other general LLCs like Creative Arts or EcoVillage may also appeal to these students.",
+        "student_archetype": "Intellectually curious individuals with broad interests, critical thinkers, and those engaged in interdisciplinary studies. They value close collaboration with faculty and seek immersive experiences in research, global study, internships, and service. [cite: 14 in original thought]",
+        "strategic_fit_advice": "Ideal for students who appreciate a comprehensive liberal arts foundation, enjoy exploring diverse academic fields, and are committed to intellectual growth, ethical leadership, and community engagement.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Duke Hutchings (Chair of Computer Science)"
+            ],
+            "notes": "The Computer Science B.S. curriculum emphasizes problem solving and software development. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Linda Niedziela (Chair of Biology)",
+              "Dr. Eric Bauer (Molecular Biology)",
+              "Dr. Matthew Clark (Evolutionary Biology)",
+              "Dr. David Gammon (Ornithology, Animal Behavior)"
+            ],
+            "notes": "The Biology B.S. provides a strong foundation for graduate studies, medical, and allied health fields. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. David Buck (Associate Dean and Associate Professor of Psychology)",
+              "Dr. Kim Epting (Professor and Chair of Psychology, experimental psychology)",
+              "Dr. Sabrina Thurman (Assistant Professor of Psychology, Infant Development)",
+              "Dr. Gabie Smith (Professor of Psychology, Social Psychology, Health Psychology)"
+            ],
+            "notes": "Psychology is the largest liberal arts department at Elon. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENG 110 (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students are encouraged to combine English with a second major or minor. A 3.00 overall GPA and at least a 3.25 GPA in English courses is required for the English Honor Society, Sigma Tau Delta. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Carrie Eaves (Chair of Political Science and Public Policy)",
+              "Dr. Joel Shelton (Associate Professor of Political Science and Public Policy)",
+              "Dr. Jason Kirk (Professor of Political Science and Public Policy)",
+              "Dr. Matthew Young (Assistant Professor of Political Science & Public Policy, Political Theory)"
+            ],
+            "notes": "The department offers majors in Political Science and Policy Studies, and minors in these fields. Data source: Elon University 2025-2026 Academic Catalog."
+          }
+        ]
       },
-      "aid_philosophy": "Need-Blind",
-      "average_need_based_aid": 18000,
-      "average_merit_aid": 12355,
-      "percent_receiving_aid": 70.0
+      {
+        "name": "Martha and Spencer Love School of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "A dedicated 'Business Living-Learning Community' is available, located conveniently near the Koury Business Center, fostering professional and personal relationships among like-minded students. The 'Innovation Living-Learning Community' also attracts business-minded students interested in entrepreneurship and problem-solving.",
+        "student_archetype": "Ambitious, future-focused individuals with a strong interest in leadership, innovation, and social responsibility. They seek practical experience, value networking, and are driven to make a difference in their professions and organizations. [cite: 2, 24 in original thought, 27 in original thought]",
+        "strategic_fit_advice": "Prospective students should be aspiring business professionals eager for hands-on learning, global perspectives, and robust professional development opportunities, thriving in a collaborative business-focused environment.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MTH 1160 (Applied Calculus) or MTH 1510 (Calculus I)",
+              "ECO 1000 (Principles of Economics)",
+              "ECO 2300 (Statistics for Decision Making)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students who major in Finance may not also major in Financial Technology.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Chris Harris (Chair of Finance)",
+              "Dr. Adam Aiken (Wesley R. Elingburg Professor, Financial Institutions, Hedge Funds)",
+              "Dr. Raj Gupta (Professor of Finance, CFA charterholder)",
+              "Dr. Feng Dong (Assistant Professor of Finance, CFA charterholder, FRM holder)"
+            ],
+            "notes": "The Finance major emphasizes hands-on experience with industry-standard software. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Hyunuk Kim (Director of the Center for Organizational Analytics)",
+              "Dr. Haya Ajjan (Associate Dean, Professor of Management Information Systems, Data Mining, R-Programming)"
+            ],
+            "notes": "Elon offers an Accelerated 3+1 Business Dual Degree to earn a bachelor's in business and a master's in business analytics. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MTH 1160 (Applied Calculus) or MTH 1510 (Calculus I)",
+              "ECO 1110 (Principles of Economics)",
+              "ECO 2030 (Statistics for Decision Making)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Marketing majors who pursue a focus in sales must take MKT 418 and MKT 419 as two of their three electives.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Lawrence Garber Jr. (Chair of Marketing and International Business)",
+              "Dr. Chris Nelson (Associate Professor of Marketing, Director of Chandler Family Professional Sales Center, relational selling dynamics)",
+              "Dr. Rob Elbitar (Assistant Teaching Professor of Marketing, Professional Selling, Sales Management)"
+            ],
+            "notes": "The Marketing major offers two distinct tracks: Professional Sales and Digital Marketing. Elon offers an Accelerated 3+1 program for Marketing majors to earn a B.S.B.A. and an M.S. in Business Analytics in four years. Data source: Elon University 2025-2026 Academic Catalog."
+          }
+        ]
+      },
+      {
+        "name": "School of Communications",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "The 'Communications Living-Learning Community' is housed in Sloan Hall, a recently renovated residence located conveniently close to McEwen and Schar Halls, which are the main communications academic buildings, student media organizations, and editing suites.",
+        "student_archetype": "Creative, media-savvy students passionate about designing, writing, producing, and analyzing media. They value immersive hands-on experiences, direct faculty mentorship, and engagement in professional settings from day one. [cite: 9, 14, 15, 30 in original thought]",
+        "strategic_fit_advice": "Best suited for students with a strong interest in journalism, film, public relations, advertising, or related communication fields, who are eager for practical, experiential learning and networking within a vibrant media community.",
+        "majors": [
+          {
+            "name": "Journalism",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "IDS 1150 (Public Speaking)",
+              "COM 1000 (Communications in a Global Age)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion of a minor, double major outside the School of Communications, or a semester abroad (totaling 12 credit hours or more).",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Anthony Hatcher (Professor and Chair of Journalism, Journalism History & Media and Religion)",
+              "Dr. Kelly Furnas (Associate Teaching Professor of Journalism)",
+              "Dr. Amanda Sturgill (Associate Professor of Journalism)"
+            ],
+            "notes": "Journalism graduates learn to tell compelling, fair, informative, and ethical news stories across all media platforms. Data source: Elon University 2025-2026 Academic Catalog."
+          },
+          {
+            "name": "Strategic Communications",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "IDS 1150 (Public Speaking)",
+              "COM 1000 (Communications in a Global Age)",
+              "JOU 1100 (News Writing and Reporting)",
+              "COM 2200 (Creating Multimedia Content)",
+              "COM 2000 (Inclusive Communications)",
+              "STC 2520 (Foundations of Strategic Communications)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires one course from the School of Business (ACC 2010, ECO 1000, FIN 3030, MGT 3230, or MKT 3110). Requires completion of a minor, double major outside the School of Communications, or a semester abroad (totaling 12 credit hours or more).",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Jessalynn Strauss (Associate Professor and Chair of Strategic Communications)",
+              "Dr. Kenn Gaither (Dean, School of Communications, and Professor of Strategic Communications, international public relations, public relations, persuasion and propaganda)",
+              "Dr. Vanessa Bravo (Professor of Strategic Communications and Assistant Dean, government-diaspora relations/advocacy, migration&comm, public diplomacy, internat. comm, Latinx, ethnic PR, journalism)"
+            ],
+            "notes": "Strategic Communications explores how organizations communicate and build relationships with publics through public relations and advertising. Data source: Elon University 2025-2026 Academic Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Dr. Jo Watts Williams School of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students may join the 'Examining Education LLC', which is open to all majors interested in exploring educational issues, fostering discussions and service projects related to educational access and success. General campus residential neighborhoods also accommodate these students. The school emphasizes practical, hands-on experience and field placements. [cite: 24 in original thought, 26 in original thought]",
+        "student_archetype": "Equity-minded leaders passionate about learning, physical activity, and wellness, dedicated to enhancing the lives of children and adults. They are community-oriented, value practical experience, and seek global perspectives through study abroad and service-learning. [cite: 23 in original thought, 24 in original thought, 26 in original thought, 27 in original thought]",
+        "strategic_fit_advice": "Ideal for students committed to careers in education or wellness, seeking early and continuous field experiences, leadership development, and opportunities to advocate for equity and excellence in diverse educational settings.",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Elon University 2025-2026 Academic Catalog."
+          }
+        ]
+      },
+      {
+        "name": "School of Health Sciences (Bachelor of Science in Nursing - 4-year program)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "A 'Health Sciences Living-Learning Community' launched for Fall 2025 in Russell B. Gill Hall, specifically for first and second-year students majoring in health sciences. This LLC aims to create a supportive environment to navigate rigorous curricula and offers peer and faculty mentorship. The school itself is housed in the Francis Center, a state-of-the-art teaching and research facility with interdisciplinary labs and an Interprofessional Simulation Center. [cite: 19 in original thought]",
+        "student_archetype": "Academically driven and collaborative students dedicated to health and wellness, interested in patient care and global health equity. They are focused on rigorous studies in fields like nursing, public health, physical therapy, or physician assistant studies. [cite: 4, 5, 19 in original thought]",
+        "strategic_fit_advice": "Prospective healthcare professionals who are prepared for demanding academics, desire early immersion into a supportive health sciences community, and are keen on experiential learning through labs and simulations.",
+        "majors": [
+          {
+            "name": "Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Titch Madzima (Associate Professor of Exercise Science and Chair, Body Composition, Metabolism and Exercise Oncology)",
+              "Dr. Paul Miller (Professor of Exercise Science)",
+              "Dr. Svetlana Nepocatych (Professor of Exercise Science, Director of Elon Honors Program)",
+              "Dr. Matt Wittstein (Assistant Professor of Exercise Science, Dance Biomechanics, Neuromotor Control)"
+            ],
+            "notes": "The Exercise Science major prepares students for careers and advanced study in health and medicine, including cardiac rehabilitation, physical therapy, and occupational therapy. Data source: Elon University 2025-2026 Academic Catalog."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering (as a major within Elon College, the College of Arts and Sciences)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Modern facilities, notably within the Innovation Quad (IQ), featuring state-of-the-art electronic equipment, machining and prefabrication workshops, robotics labs, an astrophysics lab, virtual reality classrooms, and 3D printing rooms. Students with an interest in STEM can also opt for the STEM Living-Learning Community (LLC).",
+        "student_archetype": "Ambitious problem-solvers and hands-on learners who are curious about how things work. They thrive in small classes, seek close faculty mentorship, and are eager to collaborate on design projects and experiential learning.",
+        "strategic_fit_advice": "Strong candidates will have a solid foundation in mathematics and science, a passion for practical application and design, and a desire to engage deeply in collaborative, project-based learning within cutting-edge facilities.",
+        "majors": []
+      },
+      {
+        "name": "School of Law",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "The School of Law, primarily a graduate program, does not provide dedicated on-campus housing for its students. Students are responsible for finding their own housing in downtown Greensboro and the broader Triad area, though the school offers resources and lists of local apartment communities. Limited graduate student housing is available at The Crest Apartments for all graduate students, offering furnished single bedrooms with private bathrooms.",
+        "student_archetype": "Mature, independent, and self-reliant individuals with a strong focus on legal studies. They are prepared for off-campus living and often balance their demanding academic schedule with professional or personal responsibilities.",
+        "strategic_fit_advice": "Prospective law students should be prepared for independent living and highly motivated to excel in a rigorous graduate legal program, while being adept at navigating off-campus housing options.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship and Innovation Minor",
+      "Creative Writing Minor",
+      "Computer Science Minor",
+      "Business Administration Minor",
+      "Communications Minor",
+      "Health Communications Minor",
+      "Cybersecurity Management Minor",
+      "Leadership Studies Minor",
+      "PERCS Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Elon Application",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Binding agreement; requires non-refundable deposit by January 10; cannot defer admission."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Non-binding; enrollment deposit due May 1."
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2026-01-15",
+        "is_binding": true,
+        "notes": "Binding agreement; requires non-refundable deposit by March 1; cannot defer admission."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-10",
+        "is_binding": false,
+        "notes": "Enrollment deposit due May 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Three supplemental essays required: 1. What aspect of your identity do you find most meaningful, and why? (200 words) 2. Name three songs from your perfect playlist. 3. Tell us your top 5. (e.g., top 5 recipes, top 5 anime characters, top 5 athletic moments, with an explanation of why these are your top 5; 150 words max for the explanation)."
+      },
+      {
+        "target_program": "Music Performance",
+        "requirement_type": "Audition",
+        "deadline": "Fall Audition Application: October 21, 2025 (for November 14, 2025 on-campus audition); Winter Audition Application: December 16, 2025 (for January 30, 2026 on-campus audition); International Student Audition Application: February 15, 2026",
+        "details": "Live on-campus audition required. Application submitted via Acceptd. Acceptance to the university (general admission deadline January 10, 2026) is also required."
+      },
+      {
+        "target_program": "Music Production & Recording Arts (MPRA)",
+        "requirement_type": "Portfolio",
+        "deadline": "Early Application: November 23, 2025; Regular Application: January 31, 2026",
+        "details": "Online application/portfolio required via Acceptd. Acceptance to the university (general admission deadline January 10, 2026) is also required."
+      },
+      {
+        "target_program": "Music Theatre",
+        "requirement_type": "Audition",
+        "deadline": "Prescreen submission deadlines: September 14th (for October 31st & November 7th on-campus auditions); December 1st (for February 6th, February 13th & February 20th on-campus auditions)",
+        "details": "Audition required. Application submitted via Acceptd. Acceptance to the university (general admission deadline January 10, 2026) is also required."
+      },
+      {
+        "target_program": "Acting",
+        "requirement_type": "Audition",
+        "deadline": "Prescreen submission deadlines available via Acceptd, refer to specific audition dates.",
+        "details": "Audition required. Application submitted via Acceptd. Acceptance to the university (general admission deadline January 10, 2026) is also required."
+      },
+      {
+        "target_program": "Dance Performance & Choreography",
+        "requirement_type": "Audition",
+        "deadline": "Prescreen submission deadlines: September 14th (for October 24th & November 14th on-campus auditions); December 7th (for January 16th, January 30th & February 6th on-campus auditions)",
+        "details": "Audition required. Application submitted via Acceptd. Acceptance to the university (general admission deadline January 10, 2026) is also required."
+      },
+      {
+        "target_program": "Theatrical Design & Technology",
+        "requirement_type": "Portfolio",
+        "deadline": "Deadlines available via Acceptd, refer to specific submission dates.",
+        "details": "Portfolio and/or interview required. Application submitted via Acceptd. Acceptance to the university (general admission deadline January 10, 2026) is also required."
+      },
+      {
+        "target_program": "B.A. in Music in Liberal Arts",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "No audition required for entrance."
+      },
+      {
+        "target_program": "Music Minors (Music Studies, Jazz Studies, Music Production & Recording Arts, Piano Pedagogy)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "No audition required."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Talents/Abilities",
+        "Character/Personal Qualities",
+        "Recommendations"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Informational",
+      "legacy_consideration": "Unknown",
+      "first_gen_boost": "Unknown",
+      "specific_differentiators": "Elon University explicitly states that academic record (including courses taken, grades attained and class standing), application essay, leadership potential, extracurricular and service-related activities, special talents, and the ability to contribute positively to the campus community are all considered \"most important\" in admissions decisions. The university also emphasizes its \"Elon Experiences\" which include study abroad, internships, research, service learning, and leadership, highlighting a focus on experiential learning."
     },
+    "essay_prompts": [
+      {
+        "prompt": "What aspect of your identity do you find most meaningful, and why?",
+        "word_limit": "200 words",
+        "type": "Personal/Identity",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond basic demographics, what unique perspective or characteristic defines how you see the world?",
+          "When did you first become aware of this aspect of your identity, and what circumstances brought it to light?",
+          "How does this particular identity influence your daily decisions, interactions, or aspirations?",
+          "Can you recall a specific moment or experience where this aspect of your identity was particularly challenged or celebrated?",
+          "What impact does this meaningful aspect of your identity have on the communities you belong to or wish to join?"
+        ]
+      },
+      {
+        "prompt": "Name three songs from your perfect playlist. We look forward to creating a Spotify playlist from your answers.",
+        "word_limit": "No explicit word limit (short response/list)",
+        "type": "Personal/Creative",
+        "required": true,
+        "brainstorming_questions": [
+          "What three songs genuinely evoke a strong emotion or memory for you, and why?",
+          "If someone wanted to understand your personality through music, which three songs would best represent you?",
+          "Do these songs connect to a specific phase of your life, an important event, or a recurring mood?",
+          "Are there genres or artists that are central to your musical taste, and how do these three songs fit in?",
+          "What is the *feeling* or *message* you want to convey about yourself by sharing these particular songs?"
+        ]
+      },
+      {
+        "prompt": "Tell us your top 5. Take this opportunity to let Elon Admissions know more about you. Your top 5 should be something unique to you and will give us a glimpse of who you are. Be creative! You may choose any theme for your top 5. Do you love cooking? List your top 5 recipes. Are you enthusiastic about anime? Name your top 5 characters. Do you watch or participate in a lot of athletic events? Name your top 5 moments. Explain why these are your top 5.",
+        "word_limit": "150 words",
+        "type": "Personal/Creative",
+        "required": true,
+        "brainstorming_questions": [
+          "What niche interest or passion do you have that isn't immediately obvious from your application?",
+          "Can you think of five distinct items within a chosen theme that collectively tell a story about your personality or values?",
+          "Beyond just listing, what is the underlying 'why' for each of your top 5 choices?",
+          "If someone only knew these five things about you, what impression would you want them to have?",
+          "How can you make your chosen 'top 5' theme unique and truly reflective of *your* individual perspective, rather than a generic list?"
+        ]
+      },
+      {
+        "prompt": "Briefly describe a significant leadership experience or academic project during which you created positive change or experienced transformational learning. Share how that experience or project impacted your development as a leader or learner and elaborate on how you envision making an impact in the future.",
+        "word_limit": "750 words",
+        "type": "Leadership/Academic/Future Aspirations",
+        "required": "Required for Honors, Fellows, and Scholars Program applicants",
+        "brainstorming_questions": [
+          "What specific problem or challenge did your leadership experience or academic project aim to address, and what was your role in solving it?",
+          "How did this experience fundamentally change your understanding of yourself, others, or a particular subject area?",
+          "What specific skills (e.g., problem-solving, collaboration, communication) did you develop or significantly enhance during this project?",
+          "Beyond the immediate outcome, how has this experience influenced your long-term goals or the type of impact you want to make in your career or community?",
+          "If you were to approach a similar situation again, what would you do differently based on your 'transformational learning' from this experience?"
+        ]
+      }
+    ]
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Prioritize a strong overall academic record and application",
+      "Be aware of major-specific admission requirements",
+      "Consider applying as undeclared or to a less enrollment-capped program if a specific highly competitive major isn't the sole focus.",
+      "Understand the difference between popularity and ease of admission."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate colleges based on the structure and content of their general education requirements, not just the prestige of specific majors.",
+      "Consider the quality of campus housing and the overall residential life experience, especially for institutions with mandatory housing policies.",
+      "Analyze 4-year and 6-year graduation rates, as well as student retention rates, as indicators of student satisfaction and successful academic outcomes.",
+      "Investigate the availability and emphasis on high-impact experiential learning opportunities, such as study abroad, internships, service-learning, and undergraduate research.",
+      "Assess the campus culture, student life, and availability of support services, including student quality of life, diversity, and mental health resources, to determine a personal fit beyond academic offerings."
+    ],
+    "alternate_major_strategy": "Consider applying as undeclared or to a less enrollment-capped program if a specific highly competitive major isn't the sole focus. Elon offers a wide array of majors across its various schools, including Elon College, the College of Arts & Sciences, the Martha and Spencer Love School of Business, and the School of Communications."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 48723.0,
+        "total_coa": 69163.0,
+        "housing": 16940.0
+      },
+      "out_of_state": {
+        "tuition": 48723.0,
+        "total_coa": 69163.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 16389.0,
+    "average_merit_aid": 12355.0,
+    "percent_receiving_aid": 66.0,
+    "meets_full_need": false,
     "scholarships": [
       {
         "name": "Presidential Scholarship",
         "type": "Merit",
         "amount": "$8,000 – $12,000 annually",
-        "benefits": "Renewable for four years based on academic performance",
+        "deadline": "Automatic consideration with admissions application",
+        "benefits": "Renewable for four years pending academic performance",
         "application_method": "Automatic Consideration"
       },
       {
         "name": "Elon Engagement Scholarship",
         "type": "Merit",
-        "amount": "$5,000 annually plus $2,000 grant",
-        "benefits": "One-time $2,000 grant for an Elon Experience project",
-        "application_method": "Admissions Application"
+        "amount": "$5,000 annually, plus a one-time $2,000 grant for an approved Elon Experience",
+        "deadline": "Automatic consideration with admissions application",
+        "benefits": "Renewable annually, supports experiential learning",
+        "application_method": "Automatic Consideration"
       },
       {
-        "name": "Honors Fellows (William R. Kenan, Jr.)",
+        "name": "Honors Program Scholarship",
         "type": "Merit",
-        "amount": "Full tuition",
-        "deadline": "2025-11-10",
-        "benefits": "Priority registration, honors housing, $1,000 study abroad grant, research stipends",
+        "amount": "$15,000 annually, plus a $12,000 Presidential Scholarship (totaling $27,000 annually), and a one-time $1,000 Global Study grant and $1,000 thesis research grant",
+        "deadline": "November 10 (Honors Program application)",
+        "benefits": "Special courses, faculty mentoring, living-learning community, paid research assistantships/internships, study abroad opportunity, thesis research support",
         "application_method": "Separate Application"
       },
       {
-        "name": "Odyssey Program Scholarship",
-        "type": "Need/Merit",
-        "amount": "$25,000 - $30,000 annually",
-        "deadline": "2026-01-12",
-        "benefits": "Covers full demonstrated need; includes $4,000 Global Study grant",
+        "name": "Fellows Programs Scholarship (e.g., Business, Communications, Teaching, Elon College)",
+        "type": "Merit",
+        "amount": "$8,000 – $13,500 annually, plus a one-time $1,000 Global Study grant",
+        "deadline": "Faculty review begins November 15; interviews February 6-7, 2026 (for 2026 intake)",
+        "benefits": "Special courses, faculty mentoring, internships/paid research assistantships, global study opportunities",
         "application_method": "Separate Application"
       },
       {
-        "name": "Elon College Fellows",
-        "type": "Merit",
-        "amount": "$8,000 annually",
-        "deadline": "2025-11-10",
-        "benefits": "Faculty mentoring, $1,000 Global Study grant, research assistantships",
+        "name": "Odyssey Program Scholarships",
+        "type": "Exceptional Need- and Merit-based",
+        "amount": "$5,000 – $30,000 annually (meets full demonstrated financial need), plus a $4,000 Global Study grant",
+        "deadline": "January 10 (Odyssey Program application and recommendation form); FAFSA and CSS Profile as soon as possible after October 1",
+        "benefits": "Additional financial, academic, social, and mentoring/advising support, global study opportunities",
         "application_method": "Separate Application"
       },
       {
         "name": "International Scholar Award",
         "type": "Merit",
-        "amount": "$5,000 – $10,000 annually",
+        "amount": "Ranges from $3,000 – $23,500 USD per year (as part of total scholarship range for international applicants)",
+        "deadline": "Automatic consideration with admissions application; contact Office of Financial Aid for specific application information",
+        "benefits": "Awarded to non-U.S. citizens demonstrating outstanding academic and extracurricular achievement",
         "application_method": "Automatic Consideration"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Strict",
-      "ap_policy": {
-        "general_rule": "Score of 4 or better required for credit in most subjects",
-        "usage": "Credits satisfy Core Curriculum and major prerequisites",
-        "notes": "No credit awarded for AP Seminar, Research, or scores of 3 or below."
       },
-      "ib_policy": {
-        "general_rule": "HL exams with score of 5 or higher grant 4 units",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transfer Course Equivalencies Database",
-          "Transferology"
-        ],
-        "restrictions": "65 unit cap for community college; 60 unit residency requirement at Elon"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Significant demonstrated interest through visits and info sessions",
-        "Strong academic rigor with focus on core subjects and high class standing",
-        "Evidence of leadership potential and alignment with 'Elon Experiences'",
-        "Applying Early Decision (ED) for a significant boost in commitment value"
-      ],
-      "common_activities": [
-        "Undergraduate research conducted alongside faculty mentors",
-        "Community service (Elon Volunteers!, Habitat for Humanity)",
-        "Global studies/Study abroad (ranked #1)",
-        "Leadership roles in Greek life (37% participation) or student government"
-      ],
-      "essay_tips": [
-        "Be hyper-specific in the 150-word 'Why Elon' prompt by naming distinct centers or traditions",
-        "Use the 'Top 5' list to showcase personality rather than academic repeats",
-        "Focus the identity essay on how your background influences daily actions",
-        "Choose Spotify songs reflecting different facets of your character"
-      ],
-      "red_flags": [
-        "Lack of demonstrated interest; Elon tracks engagement closely",
-        "Generic 'Why Elon' essays focusing only on campus beauty",
-        "Senior year academic decline or lack of 12th-grade rigor",
-        "Essays suggesting heavy use of AI or overly polished adult editing"
-      ],
-      "insights": [
-        "Highly social and community-centric culture with heavy faculty mentorship",
-        "Students not interested in hands-on learning may feel out of place",
-        "Significant Northeast regional vibe within the student body",
-        "The School of Communications and Love School of Business are the most competitive programs"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 64200,
-      "employment_rate_2yr": 95.0,
-      "grad_school_rate": 17.0,
-      "top_employers": [
-        "Ernst & Young",
-        "Deloitte",
-        "PwC",
-        "JPMorgan Chase & Co.",
-        "Fidelity Investments",
-        "Wells Fargo",
-        "Microsoft",
-        "BlackRock"
-      ],
-      "loan_default_rate": 0.9,
-      "student_retention": {
-        "freshman_retention_rate": 90.4,
-        "graduation_rate_4_year": 79.0,
-        "graduation_rate_6_year": 83.0
-      }
-    }
-  },
-  "_id": "elon_university",
-  "application_process": {
-    "essay_prompts": [
       {
-        "prompt": "Elon provides a dynamic learning environment characterized by engaged students and faculty. What aspects of Elon appeal to you, and how will you contribute to our community?",
-        "word_limit": "250 words",
-        "type": "Why Elon",
-        "required": true,
-        "brainstorming_questions": [
-          "Think about your most engaging academic experiences. What specific teaching styles, classroom interactions, or faculty mentorships at Elon (based on your research) do you see yourself thriving in, and can you recall a time you learned something profound because of that dynamic?",
-          "Elon emphasizes 'engaged students.' When have you felt most actively involved in a learning process or community – perhaps leading a project, sparking a debate, or helping a peer – and how does that personal experience connect with the kind of active participation you envision at Elon?",
-          "Beyond academics, what are some of your passions or interests outside the classroom? How do you envision those interests aligning with Elon's specific clubs, organizations, or campus traditions, and can you share a moment when you brought a similar passion to a group you were part of?",
-          "The prompt mentions 'dynamic learning environment.' What does 'dynamic' mean to you in a college setting, and can you think of a time you've witnessed or been a part of a situation that felt truly dynamic and how you contributed to that energy?",
-          "Considering Elon's focus on experiential learning (like internships, study abroad, research), what kind of hands-on opportunities are you most excited about, and can you describe a past experience where you learned the most from doing rather than just listening, and how would you bring that 'learning by doing' spirit to Elon?"
-        ]
+        "name": "ROTC Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, textbook funds, $100 per month for personal expenses, free room and board",
+        "deadline": "Varies",
+        "benefits": "Covers full educational and living expenses for students participating in Army ROTC",
+        "application_method": "Separate Application"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/elon_university_logo.png"
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Score of 4+ grants credit for most exams",
+      "exceptions": [
+        "No credit for AP Research",
+        "For Chinese, French, German, and Japanese Language, a score of 5 grants 8 hours of credit (CHN 122 & 221, FRE 122 & 221, GER 122 & 221, JPN 122 & 221), while a score of 4 grants 4 hours (CHN 122, FRE 122, GER 122, JPN 122)",
+        "For Latin Literature, a score of 5 grants 8 hours (LAT 121 & 122), and a score of 4 grants 4 hours (LAT 122)",
+        "For Latin - Vergil, a score of 4 or 5 grants 8 hours (LAT 121 & 122)",
+        "Economics requires both Micro and Macro tests with a score of 4 to receive credit for ECO 111 (4 hours); individual Micro or Macro scores of 4 grant an ECO Elective (4 hours)",
+        "Calculus BC requires a score of 4 for 8 hours (MTH 151 & 251)",
+        "Music Theory requires a score of 4 for 3 hours (MUS 111)"
+      ],
+      "usage": "Can receive university credit, satisfy course equivalents, and contribute to General Studies or elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit. No credit is awarded for Standard Level examinations.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Elon University Transfer Course Equivalencies Database"
+      ],
+      "restrictions": "No more than 65 semester hours of credit will be allowed from two-year institutions. A grade of 'C' or higher must be posted on the official transcript for each course to transfer. Grades do not transfer, only the credit hours. Courses must be college-level, relevant to the degree, and equivalent to Elon's curriculum. Remedial or occupational/technical courses normally do not transfer. Students must earn a minimum of 60 semester hours plus 50% of the credit hours in the major at Elon to earn a bachelor's degree."
+    },
+    "overall_policy_philosophy": "Moderate"
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework: Admitted students generally have a high GPA, with the average being around 3.7 to 4.0, and often have taken rigorous courses such as AP or IB to demonstrate academic competitiveness. This includes performing well in demanding classes and maintaining high academic standards throughout high school.",
+      "Authentic and well-crafted essays: The application essay is considered a \"very important\" factor in the admissions decision. Elon's supplemental essays, in particular, are highlighted as a crucial opportunity for applicants to showcase their personality, uniqueness, and self-reflection beyond academic statistics. Taking creative risks and letting individuality shine through in these essays is encouraged.",
+      "Demonstrated passion and meaningful extracurricular involvement: Admissions values extracurricular and service-related activities, special talents, and the ability to contribute positively to the campus community. Students who are highly engaged \"over-achiever types\" who can balance academics with extracurriculars and sports tend to be successful. This suggests a focus on depth and leadership in a few areas of passion rather than scattered activities.",
+      "Leadership potential: The ability to demonstrate leadership potential through extracurriculars and other activities is considered an important factor in admissions. Elon seeks students who are eager to learn and ready to become resilient, ambitious, and ethical leaders."
+    ],
+    "common_activities": [
+      "Leadership in school clubs and organizations",
+      "Community service and volunteering",
+      "Varsity or club athletics",
+      "Music and performing arts involvement",
+      "Greek life",
+      "Academic honor societies",
+      "Experiential learning opportunities"
+    ],
+    "essay_tips": [
+      "Be authentic and unique: Showcase your true self, experiences, and aspirations, avoiding generic or cliché responses.",
+      "Be specific and use concrete examples: Illustrate your points with detailed anecdotes and connect your personal interests and goals to specific programs, clubs, or opportunities at Elon.",
+      "Research Elon thoroughly: Demonstrate a deep understanding of Elon's mission, values, distinctive programs, and campus culture, explaining how you will engage with and contribute to the community.",
+      "Embrace unique prompts with personal insight: For prompts like the 'Top 5' or 'Perfect Playlist,' choose themes and provide explanations that genuinely reflect your personality and interests, making sure your choices reveal something meaningful about you."
+    ],
+    "red_flags": [
+      "Grade decline senior year",
+      "Generic essays that could apply anywhere",
+      "List of activities without depth or impact",
+      "Poor rec letters from teachers who don't know you well",
+      "Lack of demonstrated interest"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 74545,
+    "employment_rate_2yr": 96.0,
+    "top_employers": [
+      "JPMorgan Chase & Co.",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "Deloitte",
+      "EY",
+      "BlackRock",
+      "Credit Suisse",
+      "IBM"
+    ],
+    "grad_school_rate": 17.0,
+    "loan_default_rate": 0.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.4,
+    "graduation_rate_4_year": 78.0,
+    "graduation_rate_6_year": 83.0
+  }
 }

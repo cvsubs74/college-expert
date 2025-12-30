@@ -1,0 +1,1702 @@
+{
+  "_id": "northern_illinois_university",
+  "metadata": {
+    "official_name": "Northern Illinois University",
+    "location": {
+      "city": "DeKalb",
+      "state": "Illinois",
+      "type": "Public"
+    },
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "us_news_rank": 301,
+    "market_position": "Public Research University",
+    "executive_summary": "Northern Illinois University (NIU) is a public research institution located in DeKalb, Illinois, founded in 1895. It is recognized for its high research activity and offers a diverse range of academic programs across seven colleges. The university maintains an acceptance rate of approximately 70%.",
+    "admissions_philosophy": "Holistic Review"
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 70.4,
+      "is_test_optional": true,
+      "test_policy_details": "Northern Illinois University is test-optional, meaning applicants are not required to submit standardized test scores (SAT/ACT) for admission. The university also allows self-reporting of scores, enabling students to include their test results on their application without sending official documents. For applicants with a cumulative high school GPA of 3.0 or above, the university has adopted a 'test-blind' policy, guaranteeing admission and automatically considering them for merit scholarships based solely on their GPA, starting with the fall 2021 applicants. Applicants with a GPA below 3.0 are considered for admission based on a holistic review of factors such as academic preparation, performance, motivation, resilience, and resourcefulness.",
+      "admits_class_size": 17033,
+      "transfer_acceptance_rate": null,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "international_applications": null,
+      "international_admits": null
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 23651,
+        "admits_total": 16505,
+        "enrolled_total": 2435,
+        "acceptance_rate_overall": 69.79,
+        "yield_rate": 14.75,
+        "notes": "Applications, admits, and acceptance/yield rates refer to the 2024-2025 admission cycle for the Fall 2025 entering class. Enrolled total is for new freshmen in Fall 2025. Yield rate calculated as (enrolled_total / admits_total) * 100.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 23651,
+        "admits_total": 16505,
+        "enrolled_total": 1991,
+        "acceptance_rate_overall": 69.79,
+        "yield_rate": 12.06,
+        "notes": "Data for applications, admits, and enrolled is explicitly for the 2024-2025 academic year, referring to Fall 2024 first-year student admissions.",
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 24177,
+        "admits_total": 17033,
+        "enrolled_total": 2202,
+        "acceptance_rate_overall": 70.5,
+        "yield_rate": 12.93,
+        "notes": "Applications and admits are for the 2023 application year. Enrolled total is for new freshmen in Fall 2023. Yield rate calculated as (enrolled_total / admits_total) * 100.",
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 25961,
+        "admits_total": 18348,
+        "enrolled_total": 2440,
+        "acceptance_rate_overall": 70.65,
+        "yield_rate": 13.29,
+        "notes": "Applications, admits, and acceptance rate are for the 2022 application year. Enrolled total is for new freshmen in Fall 2022. Yield rate calculated as (enrolled_total / admits_total) * 100.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": 2285,
+        "acceptance_rate_overall": 70.45,
+        "yield_rate": null,
+        "notes": "Enrolled total is for new freshmen in Fall 2021. Applications and admits data for this specific year could not be found explicitly for first-time, first-year students to calculate acceptance and yield rates.",
+        "waitlist_stats": null
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.39-3.88",
+        "unweighted_middle_50": "3.07-3.50",
+        "average_weighted": 3.59,
+        "percentile_25": "3.39",
+        "percentile_75": "3.88",
+        "notes": "Northern Illinois University uses a holistic admissions process. Guaranteed general admission is offered for a cumulative high school GPA of 3.0 or higher on a 4.0 scale. If the GPA is below 3.0, a holistic review is conducted, considering academic preparation, performance, motivation, resilience, and resourcefulness. NIU has adopted a test-free admission policy and does not consider ACT or SAT scores for general admission or merit scholarships."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1010-1180",
+        "sat_reading_middle_50": "490-600",
+        "sat_math_middle_50": "480-590",
+        "act_composite_middle_50": "19-25",
+        "submission_rate": 51.0,
+        "policy_note": "Northern Illinois University has a test-blind policy for general admission and merit scholarships starting Fall 2021, meaning SAT/ACT scores are not considered for these decisions, even if submitted. Superscoring is allowed if scores are submitted."
+      },
+      "demographics": {
+        "first_gen_percentage": 54.0,
+        "legacy_percentage": null,
+        "geographic_breakdown": [
+          {
+            "region": "Illinois (In-state)",
+            "percentage": 93.0
+          },
+          {
+            "region": "Out-of-state (Other U.S. States)",
+            "percentage": 5.0
+          },
+          {
+            "region": "International",
+            "percentage": 1.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "percentage": 39.92131532589548
+          },
+          "women": {
+            "percentage": 60.07868467410452
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 44.4,
+          "black_african_american": 17.5,
+          "hispanic_latino": 21.3,
+          "asian": 6.3,
+          "native_american_alaskan": 0.39,
+          "pacific_islander": 0.08,
+          "two_or_more_races": 2.13,
+          "unknown": 1.19,
+          "non_resident_alien": 6.71
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "College of Business",
+        "majors": [
+          {
+            "name": "Accountancy",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCY 206 Accounting I",
+              "ACCY 207 Accounting II",
+              "ECON 260 Principles of Macroeconomics",
+              "ECON 261 Principles of Microeconomics",
+              "ENGL 103 Composition I",
+              "MATH 155 Precalculus",
+              "MATH 211 Calculus for Business and Social Science",
+              "OMIS 259 Business Statistics I",
+              "OMIS 260 Business Statistics II",
+              "UBUS 100 Introduction to Business (optional for transfer students with 45+ hours)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCY 206 Accounting I",
+              "ACCY 207 Accounting II",
+              "UBUS 310 Business Core: Lecture"
+            ],
+            "special_requirements": "All 100- and 200-level business core courses must have a grade of C or better. Students must complete a grade of C or better in UBUS 310 to continue as a business major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCY 304 Intermediate Financial Accounting I",
+                "ACCY 305 Intermediate Financial Accounting II",
+                "ACCY 320 Cost Management",
+                "ACCY 330 Federal Income Tax I",
+                "ACCY 340 Accounting Information Systems",
+                "ACCY 450 Auditing",
+                "FINA 320 Principles of Finance",
+                "MGMT 335 Managing Individuals, Teams, and Organizations",
+                "MGMT 468 Strategic Management in a Global Economy",
+                "MKTG 295 Principles of Marketing",
+                "OMIS 338 Principles of Operations Management",
+                "OMIS 351 Information Systems in Organizations",
+                "UBUS 310 Business Core: Lecture",
+                "UBUS 311 Business Core: Applications Seminar"
+              ],
+              "electives": [
+                "ACCY 402 Advanced Financial Accounting",
+                "ACCY 403 Governmental and Not-for-Profit Accounting",
+                "ACCY 430 Federal Income Tax II",
+                "ACCY 460 Advanced Auditing"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Business is competitive based on overall GPA and performance in selected tool courses. Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $54,900."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCY 206 Accounting I",
+              "ACCY 207 Accounting II",
+              "ECON 260 Principles of Macroeconomics",
+              "ECON 261 Principles of Microeconomics",
+              "ENGL 103 Composition I",
+              "MATH 155 Precalculus",
+              "MATH 211 Calculus for Business and Social Science",
+              "OMIS 259 Business Statistics I",
+              "OMIS 260 Business Statistics II",
+              "UBUS 100 Introduction to Business (optional for transfer students with 45+ hours)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "FINA 320 Principles of Finance",
+              "UBUS 310 Business Core: Lecture"
+            ],
+            "special_requirements": "All 100- and 200-level business core courses must have a grade of C or better. Students must complete a grade of C or better in UBUS 310 to continue as a business major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCY 206 Accounting I",
+                "ACCY 207 Accounting II",
+                "FINA 320 Principles of Finance",
+                "FINA 340 Intermediate Financial Management",
+                "FINA 410 Investments",
+                "MGMT 335 Managing Individuals, Teams, and Organizations",
+                "MGMT 468 Strategic Management in a Global Economy",
+                "MKTG 295 Principles of Marketing",
+                "OMIS 338 Principles of Operations Management",
+                "OMIS 351 Information Systems in Organizations",
+                "UBUS 310 Business Core: Lecture",
+                "UBUS 311 Business Core: Applications Seminar"
+              ],
+              "electives": [
+                "FINA 420 Commercial Bank Management",
+                "FINA 430 Real Estate Finance",
+                "FINA 450 International Finance",
+                "FINA 470 Futures and Options"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Business is competitive based on overall GPA and performance in selected tool courses. Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $53,726."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCY 206 Accounting I",
+              "ACCY 207 Accounting II",
+              "ECON 260 Principles of Macroeconomics",
+              "ECON 261 Principles of Microeconomics",
+              "ENGL 103 Composition I",
+              "MATH 155 Precalculus",
+              "MATH 211 Calculus for Business and Social Science",
+              "OMIS 259 Business Statistics I",
+              "OMIS 260 Business Statistics II",
+              "UBUS 100 Introduction to Business (optional for transfer students with 45+ hours)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MGMT 335 Managing Individuals, Teams, and Organizations",
+              "UBUS 310 Business Core: Lecture"
+            ],
+            "special_requirements": "All 100- and 200-level business core courses must have a grade of C or better. Students must complete a grade of C or better in UBUS 310 to continue as a business major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCY 206 Accounting I",
+                "ACCY 207 Accounting II",
+                "FINA 320 Principles of Finance",
+                "MGMT 335 Managing Individuals, Teams, and Organizations",
+                "MGMT 346 Human Resource Management",
+                "MGMT 468 Strategic Management in a Global Economy",
+                "MKTG 295 Principles of Marketing",
+                "OMIS 338 Principles of Operations Management",
+                "OMIS 351 Information Systems in Organizations",
+                "UBUS 310 Business Core: Lecture",
+                "UBUS 311 Business Core: Applications Seminar"
+              ],
+              "electives": [
+                "MGMT 325 Small Business Management",
+                "MGMT 350 Organizational Behavior",
+                "MGMT 448 Leadership and Motivation",
+                "MGMT 452 International Management"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Business is competitive based on overall GPA and performance in selected tool courses. Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $48,290."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCY 206 Accounting I",
+              "ACCY 207 Accounting II",
+              "ECON 260 Principles of Macroeconomics",
+              "ECON 261 Principles of Microeconomics",
+              "ENGL 103 Composition I",
+              "MATH 155 Precalculus",
+              "MATH 211 Calculus for Business and Social Science",
+              "OMIS 259 Business Statistics I",
+              "OMIS 260 Business Statistics II",
+              "UBUS 100 Introduction to Business (optional for transfer students with 45+ hours)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "MKTG 295 Principles of Marketing",
+              "UBUS 310 Business Core: Lecture"
+            ],
+            "special_requirements": "All 100- and 200-level business core courses must have a grade of C or better. Students must complete a grade of C or better in UBUS 310 to continue as a business major. A portfolio of marketing assignments is required for graduation.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "ACCY 206 Accounting I",
+                "ACCY 207 Accounting II",
+                "FINA 320 Principles of Finance",
+                "MGMT 335 Managing Individuals, Teams, and Organizations",
+                "MGMT 468 Strategic Management in a Global Economy",
+                "MKTG 295 Principles of Marketing",
+                "MKTG 325 Buyer Behavior",
+                "MKTG 350 Principles of Selling",
+                "MKTG 443 Marketing Research",
+                "MKTG 495 Marketing Strategy",
+                "OMIS 338 Principles of Operations Management",
+                "OMIS 351 Information Systems in Organizations",
+                "UBUS 310 Business Core: Lecture",
+                "UBUS 311 Business Core: Applications Seminar"
+              ],
+              "electives": [
+                "MKTG 367 Principles of Global Marketing",
+                "MKTG 415 Digital Marketing Strategy",
+                "MKTG 467 Global Marketing Management",
+                "MKTG 458 Internship in Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [
+              "Vijaykumar Krishnan Palghat (Associate Professor, Chair)",
+              "Timothy W. Aurand (Professor, James E. Thompson Professor of Marketing)"
+            ],
+            "notes": "Admission to the College of Business is competitive based on overall GPA and performance in selected tool courses. Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $44,627 - $45,481."
+          },
+          {
+            "name": "Operations and Information Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCY 206 Accounting I",
+              "ACCY 207 Accounting II",
+              "ECON 260 Principles of Macroeconomics",
+              "ECON 261 Principles of Microeconomics",
+              "ENGL 103 Composition I",
+              "MATH 155 Precalculus",
+              "MATH 211 Calculus for Business and Social Science",
+              "OMIS 259 Business Statistics I",
+              "OMIS 260 Business Statistics II",
+              "UBUS 100 Introduction to Business (optional for transfer students with 45+ hours)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "OMIS 338 Principles of Operations Management",
+              "OMIS 351 Information Systems in Organizations",
+              "UBUS 310 Business Core: Lecture"
+            ],
+            "special_requirements": "All 100- and 200-level business core courses must have a grade of C or better. Students must complete a grade of C or better in UBUS 310 to continue as a business major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCY 206 Accounting I",
+                "ACCY 207 Accounting II",
+                "FINA 320 Principles of Finance",
+                "MGMT 335 Managing Individuals, Teams, and Organizations",
+                "MGMT 468 Strategic Management in a Global Economy",
+                "MKTG 295 Principles of Marketing",
+                "OMIS 338 Principles of Operations Management",
+                "OMIS 351 Information Systems in Organizations",
+                "OMIS 425 Project Management",
+                "OMIS 451 Business Analytics",
+                "UBUS 310 Business Core: Lecture",
+                "UBUS 311 Business Core: Applications Seminar"
+              ],
+              "electives": [
+                "OMIS 440 Supply Chain Management",
+                "OMIS 460 Business Process Management",
+                "OMIS 470 Information Systems Security",
+                "OMIS 480 Data Warehousing"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Business is competitive based on overall GPA and performance in selected tool courses. Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Actuarial Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "MATH 240 Linear Algebra and Applications",
+              "STAT 350 Introduction to Probability and Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MATH 229 Calculus I",
+                "MATH 230 Calculus II",
+                "MATH 232 Calculus III",
+                "MATH 240 Linear Algebra and Applications",
+                "MATH 360 Introduction to Actuarial Science",
+                "MATH 460 Theory of Interest",
+                "STAT 350 Introduction to Probability and Statistics",
+                "STAT 470 Actuarial Models I",
+                "STAT 471 Actuarial Models II"
+              ],
+              "electives": [
+                "FINA 320 Principles of Finance",
+                "FINA 410 Investments",
+                "ECON 260 Principles of Macroeconomics",
+                "ECON 261 Principles of Microeconomics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          }
+        ],
+        "housing_profile": "General university housing is available. The 'Business Careers House' living-learning community is specifically designed for students pursuing business disciplines, offering a residential environment conducive to professional development and peer interaction.",
+        "student_archetype": "Motivated individuals interested in commerce, finance, management, and entrepreneurship. They are often career-focused, eager to develop leadership skills, and value networking opportunities.",
+        "strategic_fit_advice": "Prospective business students should highlight leadership roles, organizational skills, and any relevant experience in business-related clubs or activities. Engaging with the Business Careers House can provide a significant advantage for career readiness and mentorship.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "College of Education",
+        "majors": [
+          {
+            "name": "Early Childhood Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ILAS 201 Introduction to Education",
+              "EPS 200 Educational Psychology",
+              "TLCI 280 The Teaching Profession"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Successful completion of a background check and entrance into educator licensure program.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "TLCI 301 Child Development and Learning",
+                "TLCI 302 Observing and Documenting Learning",
+                "TLCI 303 Integrated Curriculum in Early Childhood I",
+                "TLCI 304 Integrated Curriculum in Early Childhood II",
+                "TLCI 305 Language and Literacy in Early Childhood",
+                "TLCI 306 Assessment in Early Childhood",
+                "TLCI 490 Student Teaching in Early Childhood Education"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ILAS 201 Introduction to Education",
+              "EPS 200 Educational Psychology",
+              "TLCI 280 The Teaching Profession"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Successful completion of a background check and entrance into educator licensure program.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "TLCI 310 Elementary School Curriculum",
+                "TLCI 311 Methods of Teaching Reading",
+                "TLCI 312 Methods of Teaching Language Arts",
+                "TLCI 313 Methods of Teaching Mathematics",
+                "TLCI 314 Methods of Teaching Social Studies",
+                "TLCI 315 Methods of Teaching Science",
+                "TLCI 492 Student Teaching in Elementary Education"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Kinesiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOS 213 Introductory Bacteriology",
+              "CHEM 110 Chemistry",
+              "CHEM 111 Chemistry Laboratory",
+              "KNPE 200 Foundations of Kinesiology",
+              "PHYS 210 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "KNPE 201 First Aid and CPR",
+                "KNPE 202 Introduction to Exercise Science",
+                "KNPE 300 Motor Learning and Control",
+                "KNPE 310 Exercise Physiology",
+                "KNPE 320 Biomechanics",
+                "KNPE 330 Measurement and Evaluation in Kinesiology",
+                "KNPE 400 Exercise Program Design"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          }
+        ],
+        "housing_profile": "Standard university housing is available. The 'Teacher Education and Certification House' living-learning community offers a tailored residential experience for students committed to a career in education, fostering a supportive environment among future educators.",
+        "student_archetype": "Passionate and empathetic individuals dedicated to shaping future generations. They are often community-minded, possess strong communication skills, and are committed to continuous learning and professional development.",
+        "strategic_fit_advice": "Applicants to the College of Education should demonstrate their commitment to teaching, experience with mentoring or tutoring, and an understanding of educational challenges. Joining the Teacher Education and Certification House can offer valuable peer support and exposure to educational resources.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "College of Engineering and Engineering Technology",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSCI 240 Computer Programming in C++",
+              "CSCI 241 Intermediate Programming",
+              "MATH 206 Introductory Discrete Mathematics",
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "PHYS 253 Fundamentals of Physics I: Mechanics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CSCI 240 Computer Programming in C++",
+              "CSCI 241 Intermediate Programming",
+              "MATH 229 Calculus I"
+            ],
+            "special_requirements": "Admission is competitive and limited by available resources. Internal transfers compete with other NIU students, and external transfers compete in their own pool. Students must have a minimum of 30 semester hours and a 2.50 cumulative GPA in specific prerequisite courses to apply. Must maintain a 2.00 GPA in computer science courses once admitted.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 240 Computer Programming in C++",
+                "CSCI 241 Intermediate Programming",
+                "CSCI 330 UNIX and Network Programming",
+                "CSCI 340 Data Structures and Algorithm Analysis",
+                "CSCI 360 Computer Programming in Assembler Language",
+                "CSCI 463 Computer Architecture and Systems Organization",
+                "CSCI 466 Databases",
+                "CSCI 467 Introduction to Software Engineering",
+                "CSCI 480 Principles of Operating Systems",
+                "MATH 206 Introductory Discrete Mathematics",
+                "MATH 229 Calculus I",
+                "MATH 230 Calculus II",
+                "MATH 232 Calculus III",
+                "MATH 240 Linear Algebra and Applications",
+                "PHYS 253 Fundamentals of Physics I: Mechanics",
+                "STAT 350 Introduction to Probability and Statistics"
+              ],
+              "electives": [
+                "CSCI 401 Theory of Computation",
+                "CSCI 430 Artificial Intelligence",
+                "CSCI 440 Operating Systems Internals",
+                "CSCI 450 Computer Networks"
+              ],
+              "total_units": 120,
+              "major_units": 61
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $58,306 - $60,848."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 103 Composition I",
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "PHYS 253 Fundamentals of Physics I: Mechanics",
+              "PHYS 273 Fundamentals of Physics II: Electricity and Magnetism"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 229 Calculus I",
+              "PHYS 273 Fundamentals of Physics II: Electricity and Magnetism"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ELEC 210 Circuit Analysis I",
+                "ELEC 211 Circuit Analysis II",
+                "ELEC 220 Digital Logic Design",
+                "ELEC 250 Electronics I",
+                "ELEC 310 Electromagnetics",
+                "ELEC 330 Signals and Systems",
+                "ELEC 340 Microprocessors",
+                "ELEC 490 Electrical Engineering Design I",
+                "ELEC 491 Electrical Engineering Design II"
+              ],
+              "electives": [
+                "ELEC 400 Power Systems",
+                "ELEC 405 Control Systems",
+                "ELEC 415 Communication Systems",
+                "ELEC 420 Digital Signal Processing"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $64,100 - $70,234."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 103 Composition I",
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "PHYS 253 Fundamentals of Physics I: Mechanics",
+              "MEE 210 Engineering Graphics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 229 Calculus I",
+              "PHYS 253 Fundamentals of Physics I: Mechanics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MEE 207 Engineering Mechanics: Statics",
+                "MEE 208 Engineering Mechanics: Dynamics",
+                "MEE 212 Strength of Materials",
+                "MEE 213 Materials Science and Engineering",
+                "MEE 305 Thermodynamics",
+                "MEE 306 Fluid Mechanics",
+                "MEE 308 Heat Transfer",
+                "MEE 320 Machine Design I",
+                "MEE 490 Mechanical Engineering Design I",
+                "MEE 491 Mechanical Engineering Design II"
+              ],
+              "electives": [
+                "MEE 410 Mechatronics",
+                "MEE 420 Advanced Thermodynamics",
+                "MEE 430 Vibrations",
+                "MEE 440 Manufacturing Processes"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Douglas Matson (Professor, Solidification processes, thermal manufacturing)",
+              "Markus Nemitz (Assistant Professor, 3D-printable robots, adaptive additive manufacturing)",
+              "Chris Rogers (John R. Beaver Professor, Engineering Education, Human Robot Interaction)"
+            ],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $59,900 - $65,180."
+          },
+          {
+            "name": "Industrial and Systems Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 103 Composition I",
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "PHYS 253 Fundamentals of Physics I: Mechanics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 229 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ISYE 200 Introduction to Industrial and Systems Engineering",
+                "ISYE 300 Engineering Economy",
+                "ISYE 310 Operations Research I",
+                "ISYE 320 Statistical Quality Control",
+                "ISYE 330 Facilities Design and Material Handling",
+                "ISYE 340 Human Factors Engineering",
+                "ISYE 490 Industrial and Systems Engineering Design I",
+                "ISYE 491 Industrial and Systems Engineering Design II"
+              ],
+              "electives": [
+                "ISYE 410 Simulation",
+                "ISYE 420 Production Planning and Control",
+                "ISYE 430 Logistics and Supply Chain Systems"
+              ],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $58,020."
+          },
+          {
+            "name": "Mechatronics Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 103 Composition I",
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "PHYS 253 Fundamentals of Physics I: Mechanics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 229 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MET 200 Introduction to Mechatronics",
+                "MET 201 Digital Electronics",
+                "MET 202 Analog Electronics",
+                "MET 300 Mechatronics Systems Design",
+                "MET 301 Automation and Robotics",
+                "MET 302 Control Systems",
+                "MET 490 Mechatronics Engineering Design I",
+                "MET 491 Mechatronics Engineering Design II"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          }
+        ],
+        "housing_profile": "Students may opt for general university housing, with a strong recommendation for the 'Science, Technology, Engineering & Mathematics House' living-learning community, which provides a focused residential experience alongside peers in related fields. These communities often offer additional academic support and collaborative opportunities.",
+        "student_archetype": "Ambitious problem-solvers with a keen interest in scientific inquiry, technological innovation, or practical application of mathematical principles. They are likely detail-oriented, enjoy hands-on projects, and thrive in collaborative learning environments.",
+        "strategic_fit_advice": "Aspiring engineers and technologists should emphasize their STEM aptitude, problem-solving skills, and any relevant project experience. Participation in the STEM living-learning community is highly recommended to foster academic success and networking within their field.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "College of Health and Human Sciences",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOS 103 General Biology",
+              "BIOS 105 General Biology Laboratory",
+              "BIOS 213 Introductory Bacteriology",
+              "BIOS 357 Human Anatomy and Physiology",
+              "CHEM 110 Chemistry",
+              "CHEM 111 Chemistry Laboratory",
+              "ENGL 203 Composition II",
+              "PSY 102 Introduction to Psychology",
+              "STAT 100 Introduction to Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "BIOS 357 Human Anatomy and Physiology",
+              "CHEM 110 Chemistry"
+            ],
+            "special_requirements": "Admission is competitive. All prerequisite courses must be completed with a grade of C or better prior to beginning nursing courses. Students must have an NIU prerequisite GPA and an overall/cumulative GPA of at least 2.75. Unprofessional behavior can lead to academic warning.",
+            "admissions_pathway": "Competitive Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "NURS 302 Professional Nursing",
+                "NURS 303 Foundations of Nursing Clinical",
+                "NURS 304 Health Assessment",
+                "NURS 305 Foundations of Nursing",
+                "NURS 308 Alterations in Biological Systems",
+                "NURS 313 Adult Health Across the Lifespan Clinical",
+                "NURS 314 Mental Health Nursing",
+                "NURS 315 Adult Health Across the Lifespan I",
+                "NURS 316 Pharmacology",
+                "NURS 317 Nursing Research and Evidence-Based Practice",
+                "NURS 318 Child Health Nursing",
+                "NURS 319 Complex Health Problems",
+                "NURS 323 Health Promotion and Wellness",
+                "NURS 333 Child Health Nursing Clinical",
+                "NURS 343 Community Health Nursing",
+                "NURS 419 Population-Focused Nursing",
+                "NURS 422 Nursing Leadership and Management",
+                "NURS 431 Advanced Clinical Judgment in Nursing",
+                "NURS 432 Processes for Nursing Leadership",
+                "NURS 433 Child Health Nursing Clinical",
+                "NURS 443 Population-Focused Nursing Clinical",
+                "NURS 453 Capstone Clinical"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $61,111 - $65,924."
+          },
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOS 103 General Biology",
+              "CHEM 110 Chemistry",
+              "CHEM 111 Chemistry Laboratory",
+              "PSY 102 Introduction to Psychology",
+              "SOCI 170 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AHLS 200 Medical Terminology",
+                "AHLS 250 Introduction to Health Care Systems",
+                "AHLS 300 Health Communication",
+                "AHLS 350 Health Ethics and Law",
+                "AHLS 400 Research Methods in Health Sciences"
+              ],
+              "electives": [
+                "AHLS 410 Health Informatics",
+                "AHLS 420 Public Health Policy",
+                "AHLS 430 Global Health Issues"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Nutrition, Dietetics, and Wellness",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 110 Chemistry",
+              "CHEM 111 Chemistry Laboratory",
+              "BIOS 103 General Biology",
+              "FCNS 200 Introduction to Nutrition"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FCNS 250 Food Science",
+                "FCNS 300 Human Nutrition",
+                "FCNS 310 Community Nutrition",
+                "FCNS 320 Medical Nutrition Therapy I",
+                "FCNS 321 Medical Nutrition Therapy II",
+                "FCNS 400 Advanced Nutrition",
+                "FCNS 450 Professional Practice in Dietetics"
+              ],
+              "electives": [
+                "FCNS 410 Food Service Management",
+                "FCNS 420 Sports Nutrition",
+                "FCNS 430 Weight Management"
+              ],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          }
+        ],
+        "housing_profile": "General university housing options are available. The 'Health Professions House' living-learning community is tailored for students on a path to various health-related careers, providing a community focused on health and wellness studies.",
+        "student_archetype": "Compassionate and driven students with a strong interest in health, wellness, and human services. They are often scientifically curious, possess good interpersonal skills, and are dedicated to helping others.",
+        "strategic_fit_advice": "Students interested in health professions should showcase their scientific aptitude, volunteer experience in healthcare settings, and their commitment to patient care or public health. The Health Professions House offers an ideal environment for connecting with like-minded peers and resources.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 102 Introduction to Psychology",
+              "PSYC 305 Research Methods",
+              "STAT 200 Elementary Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC 305 Research Methods"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 101 University Experience in Psychology",
+                "PSYC 102 Introduction to Psychology",
+                "PSYC 305 Research Methods",
+                "PSYC 306 Advanced Research Methods",
+                "STAT 200 Elementary Statistics"
+              ],
+              "electives": [
+                "PSYC 315 Developmental Psychopathology",
+                "PSYC 332 Personality",
+                "PSYC 345 Cognitive Psychology",
+                "PSYC 410 Experimental Psychology: Perception",
+                "PSYC 411 Experimental Psychology: Conditioning and Learning",
+                "PSYC 431 Physiological Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 38
+            },
+            "notable_professors": [],
+            "notes": "A foreign language is required for the B.A. degree. Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $28,265 - $33,150."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOS 208 Fundamentals of Cellular Biology",
+              "BIOS 209 Fundamentals of Organismal Biology",
+              "CHEM 210 General Chemistry I",
+              "CHEM 211 General Chemistry II",
+              "MATH 229 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOS 208 Fundamentals of Cellular Biology",
+              "CHEM 210 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOS 208 Fundamentals of Cellular Biology",
+                "BIOS 209 Fundamentals of Organismal Biology",
+                "BIOS 302 Genetics",
+                "BIOS 303 Ecology",
+                "BIOS 304 Evolution"
+              ],
+              "electives": [
+                "BIOS 313 Microbiology",
+                "BIOS 350 Plant Biology",
+                "BIOS 360 Animal Biology",
+                "BIOS 400 Cell Biology"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 210 General Chemistry I",
+              "CHEM 211 General Chemistry II",
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "PHYS 253 Fundamentals of Physics I: Mechanics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 210 General Chemistry I",
+              "MATH 229 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 212 Analytical Chemistry",
+                "CHEM 330 Organic Chemistry I",
+                "CHEM 331 Organic Chemistry II",
+                "CHEM 340 Physical Chemistry I",
+                "CHEM 341 Physical Chemistry II",
+                "CHEM 460 Inorganic Chemistry"
+              ],
+              "electives": [
+                "CHEM 410 Instrumental Analysis",
+                "CHEM 420 Biochemistry I",
+                "CHEM 430 Polymer Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 260 Principles of Macroeconomics",
+              "ECON 261 Principles of Microeconomics",
+              "MATH 155 Precalculus"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 260 Principles of Macroeconomics",
+                "ECON 261 Principles of Microeconomics",
+                "ECON 300 Intermediate Microeconomics",
+                "ECON 301 Intermediate Macroeconomics",
+                "ECON 340 Introduction to Econometrics"
+              ],
+              "electives": [
+                "ECON 350 Money and Banking",
+                "ECON 360 Public Finance",
+                "ECON 370 International Economics",
+                "ECON 400 Economic Development"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "A foreign language is required for the B.A. degree. Data source: NIU Undergraduate Catalog 2024-2025. Median first-year earnings for graduates: $41,822."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 103 Composition I",
+              "ENGL 203 Composition II",
+              "ENGL 260 Introduction to Literature"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 200 Introduction to English Studies",
+                "ENGL 300 History of the English Language",
+                "ENGL 301 Critical Theory",
+                "ENGL 400 Senior Seminar"
+              ],
+              "electives": [
+                "ENGL 305 Creative Writing: Fiction",
+                "ENGL 306 Creative Writing: Poetry",
+                "ENGL 350 Shakespeare",
+                "ENGL 370 American Literature"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "A foreign language is required for the B.A. degree. Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Mathematical Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 229 Calculus I",
+              "MATH 230 Calculus II",
+              "MATH 240 Linear Algebra and Applications",
+              "MATH 280 Introduction to Abstract Mathematics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 229 Calculus I",
+              "MATH 280 Introduction to Abstract Mathematics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 229 Calculus I",
+                "MATH 230 Calculus II",
+                "MATH 232 Calculus III",
+                "MATH 240 Linear Algebra and Applications",
+                "MATH 280 Introduction to Abstract Mathematics",
+                "MATH 300 Differential Equations",
+                "MATH 330 Abstract Algebra",
+                "MATH 340 Real Analysis"
+              ],
+              "electives": [
+                "MATH 350 Complex Variables",
+                "MATH 400 Numerical Analysis",
+                "MATH 410 Topology",
+                "MATH 420 Geometry"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          }
+        ],
+        "housing_profile": "Northern Illinois University provides a range of on-campus living options including traditional double and single rooms with community bathrooms (Gilbert Hall, Grant Towers), single and double rooms with air conditioning (Neptune Hall), and single mini-suites in New Residence Hall. Many halls feature amenities such as 24-hour computer labs, WiFi, dining halls, laundry facilities, fitness rooms, and study areas. Newer facilities like New Residence Hall offer cluster living with enhanced privacy, shared semi-private restrooms, and common spaces with study and living room areas, and kitchenettes. The Northern View Community offers apartment-style living for upperclassmen, graduate students, or students with dependents. While some dorms like Gilbert Hall are highly recommended for their modern facilities and amenities, others like Neptune Hall are noted for affordability and central campus location, despite some older reviews mentioning cleanliness issues.",
+        "student_archetype": "NIU attracts a diverse student population, with a significant representation of students of color (approximately 55%). A substantial portion are traditional college-age (18-21 years old), but there's also a notable population of non-traditional and graduate students. Students often seek a blend of academic opportunities and a vibrant campus community, valuing the university's commitment to diversity and inclusion. Many are commuters, indicating a practical, value-conscious approach to higher education.",
+        "strategic_fit_advice": null,
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "College of Visual and Performing Arts",
+        "majors": [
+          {
+            "name": "Art Studio and Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ART 100 Visual Arts and the Human Experience",
+              "ART 102 Two-Dimensional Foundations",
+              "ART 103 Three-Dimensional Foundations",
+              "ART 104 Drawing I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires an interview with Visual Communication faculty selection committee and submission of a portfolio. Admission is limited.",
+            "admissions_pathway": "Portfolio Review",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ART 200 Art History: Ancient to Medieval",
+                "ART 201 Art History: Renaissance to Modern",
+                "ART 204 Drawing II",
+                "ART 210 Painting I",
+                "ART 220 Sculpture I",
+                "ART 230 Printmaking I",
+                "ART 240 Photography I",
+                "ART 250 Graphic Design I"
+              ],
+              "electives": [
+                "ART 310 Painting II",
+                "ART 320 Sculpture II",
+                "ART 350 Graphic Design II",
+                "ART 360 Ceramics I"
+              ],
+              "total_units": 120,
+              "major_units": 75
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Music (Performance)",
+            "degree_type": "B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MUSC 101 Music Theory I",
+              "MUSC 102 Aural Skills I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MUSC 101 Music Theory I",
+              "MUSC 102 Aural Skills I"
+            ],
+            "special_requirements": "Requires a successful audition.",
+            "admissions_pathway": "Audition",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MUSC 103 Music Theory II",
+                "MUSC 104 Aural Skills II",
+                "MUSC 201 Music History I",
+                "MUSC 202 Music History II",
+                "MUSP 100 Applied Music (Instrument/Voice)",
+                "MUTC 300 Counterpoint",
+                "MUTC 301 Form and Analysis"
+              ],
+              "electives": [
+                "MUED 300 Introduction to Music Education",
+                "MUSC 305 Jazz History",
+                "MUSP 200 Ensemble Participation"
+              ],
+              "total_units": 120,
+              "major_units": 80
+            },
+            "notable_professors": [],
+            "notes": "Data source: NIU Undergraduate Catalog 2024-2025."
+          },
+          {
+            "name": "Theatre Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "THEA 100 Introduction to Theatre"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "THEA 101 Acting I",
+                "THEA 200 Theatre History I",
+                "THEA 201 Theatre History II",
+                "THEA 203 Stagecraft I",
+                "THEA 300 Play Analysis",
+                "THEA 301 Directing I"
+              ],
+              "electives": [
+                "THEA 302 Scenic Design I",
+                "THEA 303 Costume Design I",
+                "THEA 304 Lighting Design I",
+                "THEA 400 Advanced Acting"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "A foreign language is required for the B.A. degree. Data source: NIU Undergraduate Catalog 2024-2025."
+          }
+        ],
+        "housing_profile": "Traditional university housing is offered to all students. The 'Fine Arts House' living-learning community provides a dedicated space for students pursuing artistic and performance disciplines, fostering creativity and collaboration among peers.",
+        "student_archetype": "Creative, expressive, and imaginative individuals passionate about visual arts, music, theatre, or dance. They are often self-disciplined in their craft, open to feedback, and collaborative in artistic endeavors.",
+        "strategic_fit_advice": "Prospective students should highlight their artistic portfolios, performance experience, and creative achievements. Engaging with the Fine Arts House can provide a supportive community and opportunities for interdisciplinary artistic collaboration.",
+        "admissions_model": "Direct Admit"
+      }
+    ],
+    "minors_certificates": [
+      "Business Administration Minor",
+      "Data Analytics Minor",
+      "Professional Writing Minor",
+      "Information Systems Minor",
+      "Public Health Minor",
+      "Business Analytics Certificate of Undergraduate Study",
+      "Creative Writing Certificate of Undergraduate Study",
+      "Web Development Certificate of Undergraduate Study",
+      "Leadership Certificate of Undergraduate Study",
+      "Nonprofit and NGO Studies Certificate of Undergraduate Study"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "NIU Application (website)"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision (Priority for Scholarships)",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Northern Illinois University has a rolling admissions process. Applying by December 1st is recommended for full consideration for merit-based scholarships and financial aid. Applications are reviewed as they are received, and decisions are typically made within 4-6 weeks."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All (Undergraduate)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal essay is recommended to strengthen your application. It typically prompts applicants to reflect on their experiences and future goals, with a suggested length of 250-650 words. While some sources indicate it may not be strictly required for all first-year applicants, submitting one is generally advised."
+      },
+      {
+        "target_program": "Music (Undergraduate & Graduate)",
+        "requirement_type": "Audition",
+        "deadline": "February 2, 2026 (for February 7, 2026 audition)",
+        "details": "Auditions are required for admission to various music degree programs. Specific audition dates are scheduled, for example, Saturday, February 7, 2026, with registration closing on February 2, 2026. Students interested in specific Master of Music specializations (e.g., Conducting) or Bachelor of Music in Composition will also have interview or additional submission requirements."
+      },
+      {
+        "target_program": "Art Studio and Design (B.F.A.)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio review is required for admission into the major in Art Studio and Design (B.F.A.) after the completion of designated foundational courses (typically during freshman/sophomore year) rather than for initial university admission. Requirements vary by specialization (e.g., Visual Communication, Photography, Studio Art emphases) and involve presenting studio work."
+      },
+      {
+        "target_program": "Master of Fine Arts in Art and Design",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants seeking admission to the M.F.A. program in the School of Art and Design must send a portfolio of their work (15-20 examples, or approximately 5 pieces for media arts) to the graduate coordinator in the School of Art and Design. Other application materials are submitted to the Graduate School."
+      }
+    ],
+    "holistic_review_details": {
+      "primary_factors": [
+        "GPA",
+        "Course Rigor",
+        "Academic Performance",
+        "High School Transcript",
+        "College Prep Courses"
+      ],
+      "secondary_factors": [
+        "Essays",
+        "Recommendations",
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Standardized Test Scores"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Northern Illinois University offers guaranteed general admission for applicants with a cumulative high school GPA of 3.0 or higher. For applicants with a GPA between 2.50-2.99, a holistic application review process is used by the Office of Undergraduate Admission. For applicants with a GPA between 2.00-2.49, the application goes before the University Review Committee for a holistic decision. This holistic review evaluates academic factors like course rigor, academic performance and trends in core courses, and 7th semester academic performance. While ACT and SAT scores are not required for general admission, they may be taken into consideration."
+    },
+    "essay_prompts": []
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider Starting as Undeclared for Flexibility and Exploration: Northern Illinois University actively supports students who are undecided about their major. It's noted as \"one of our most popular majors as freshmen\". The Academic Advising Center is specifically designed to assist undeclared students in exploring their strengths, interests, and potential career paths, helping them choose a major by taking general education courses in their first year. This approach allows students to gain college experience before committing to a specific program, potentially avoiding the need to change majors multiple times.",
+      "Research Major-Specific Admission and Retention Requirements: While NIU has a general acceptance rate of around 70%, admission to the university does not guarantee entry into all specific majors. Some programs have \"Limited Admissions and Limited Retention Requirements,\" meaning they may have additional criteria beyond general university admission, such as higher GPA prerequisites or specific course completions. For example, Nursing and certain Computer Science emphases have specific GPA requirements for admission into the major and may be competitive. Therefore, it's crucial to investigate the specific admission and retention criteria for any major of interest before applying.",
+      "Explore Majors Beyond Highly Competitive Fields if Not Set on a Specific Path: Popular and well-regarded programs at NIU include Business (especially Accountancy and Marketing), Health Professions (like Nursing and Physical Therapy), and Engineering (Mechanical, Electrical, Industrial and Systems). If a student's academic profile is not as strong for these competitive fields, or if they are exploring options, researching other majors without limited admissions could be a strategic approach to ensure acceptance into a desired program. While not explicitly listed as \"easier,\" majors without specific higher GPA prerequisites or competitive entry processes would logically have a less stringent major-specific admission.",
+      "Leverage Academic Advising to Understand Program Suitability: NIU emphasizes academic advising, with specific offices within each college and the central Academic Advising Center available to guide students. Utilizing these resources early can help students understand the curriculum, prerequisites, and career outcomes for various majors. This proactive engagement can help in making an informed and strategic decision, especially for those considering fields with specific requirements or those who are undecided."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate specific academic programs and their accreditation: Research the quality and national accreditation of particular majors or programs offered within NIU's colleges, as many of NIU's programs are nationally accredited for academic quality.",
+      "Assess faculty engagement and student-to-faculty ratio: Consider the commitment of faculty to work closely with students and the student-to-faculty ratio, which at NIU is 17 to 1 with an average class size of 28 students.",
+      "Consider student outcomes, including graduation rates and career opportunities: Investigate statistics like student retention and graduation rates, which are factors in national rankings, and explore the employability and opportunities for graduates from specific programs.",
+      "Examine the campus living and social environment: Evaluate the quality of residence halls and the overall campus community, as these can significantly impact a student's comfort and sense of belonging.",
+      "Investigate general education (GE) requirements: Understand the general education courses offered, particularly through the College of Liberal Arts and Sciences, as these affect nearly all students regardless of their major."
+    ],
+    "alternate_major_strategy": "### Alternate Major Strategy\n\nFor prospective students, especially those eyeing highly competitive programs, an alternate major strategy at NIU can involve several approaches:\n\n*   **Declare an \"Undecided\" Major:** NIU embraces undecided students and provides a dedicated Academic Advising Center to help them explore various programs and align their interests with a suitable major. Many students change their majors during their undergraduate studies, with 75-80% of undergraduates making such a change. Students are generally required to declare a major by the completion of 60 credit hours, though exceptions can be made. This approach allows students to start at NIU, complete general education requirements, and then decide on a major with the support of advisors.\n*   **Choose a Related, Less Competitive Major:** If a student's first-choice major is known to be highly selective, they might consider applying to a related but less competitive major within a different college. This allows them to gain admission to the university and potentially take foundational courses that could apply to their preferred major later. For example, if Computer Science in the College of Engineering is highly competitive, a student might consider a major in a related field that is not limited. While no specific example like \"CS to Cognitive Science\" was found for NIU in the search results, the general principle applies due to limited admissions in some programs.\n*   **Utilize Transfer Guides:** For students considering transferring, NIU provides \"major guides\" which outline recommended courses to take prior to transfer for specific majors, along with their admission requirements. This resource can be valuable for planning an alternate major pathway if their initial choice proves too difficult to enter directly.\n\n### Internal Transfer Difficulty\n\nThe difficulty of internally transferring to a different major at Northern Illinois University varies, particularly for impacted or limited-admission programs:\n\n*   **Competitive for Impacted Majors:** Admission to NIU does not guarantee acceptance into a specific major, as some programs have limited admissions and additional requirements. For instance:\n    *   **Computer Science:** Students enrolled at NIU are eligible to apply for admission to the major after completing specific requirements, including maintaining at least a 2.00 GPA in computer science courses.\n    *   **Medical Laboratory Sciences (MLS):** Admission is competitive, based primarily on GPA in prerequisite courses, overall GPA, letters of recommendation, and a personal goal statement.\n    *   **Nursing:** Current NIU students must meet specific prerequisite course completions (e.g., BIOS 103/105, BIOS 357, CHEM 110/1110, ENG 203, STAT 100) and submit a separate nursing application by the deadline to be considered for admission to the program.\n*   **Graduate Level Major Changes:** Admitted graduate students can use a \"Change of Degree Level/Specialization\" form. However, if a graduate student wishes to add a program offered in a department other than the one they are currently admitted to, they might be required to submit a new application. Not all departments allow changes or additions of majors/specializations without a new application.\n\nIn summary, while NIU offers support for students exploring majors and changing their academic paths, prospective and current students should be aware of specific admission requirements and the competitive nature of certain programs when planning their major strategies.",
+    "red_flags": [
+      "Incomplete Paperwork: Submitting an application with missing information or documents is a direct cause for rejection. Ensure all required forms, transcripts, and supplementary materials are thoroughly completed and submitted.",
+      "Failure to Meet Entrance Requirements: Due to limited enrollment and increased entrance requirements, not meeting the academic standards set by the university can lead to your application being declined.",
+      "Low GPA: While the average GPA for admitted students at Northern Illinois University is around 3.4, a significantly lower GPA, especially below the typical range for admitted students, could be a red flag.",
+      "Not Taking the Application Seriously: With a competitive acceptance rate, even minor details being overlooked or an application not being presented thoroughly can result in rejection."
+    ],
+    "essay_tips": [
+      "Be authentic and let your genuine voice shine through. The admissions committee aims to understand the real you, not a meticulously crafted persona you believe they desire. Share genuine experiences and insights that have shaped your academic journey and future aspirations.",
+      "Be specific about your interest in NIU. Conduct thorough research into Northern Illinois University's programs, faculty, and specific opportunities that genuinely attract you. Mention these details in your statement to demonstrate a well-considered interest.",
+      "Align your experiences and goals with NIU's values. NIU emphasizes academic excellence, student success, diversity and inclusion, and community engagement. Reflect on how your personal experiences and future aspirations resonate with these core principles of the university.",
+      "Showcase your unique personality and voice. Your personal statement is a crucial opportunity to highlight aspects of your personality, experiences, and goals that might not be evident from your transcripts or test scores alone, providing a window into your character and motivations.",
+      "Use concrete examples to demonstrate your passion and alignment. Instead of general statements, illustrate your points with specific instances. For example, an aspiring student demonstrated passion for veterinary science and alignment with NIU's community engagement by describing volunteer work at an animal shelter."
+    ],
+    "what_it_takes": [
+      "Strong Academic Record: A high school GPA around 3.3 to 3.4 is generally expected, with successful applicants often having B+ averages and graduating in the top half of their high school class. Taking challenging college preparatory courses is also considered important.",
+      "Competitive Standardized Test Scores: Although NIU is test-optional, competitive ACT scores typically range from 19-25, and SAT scores between 940-1170 can strengthen an applicant's profile.",
+      "Engagement in Extracurricular Activities and Leadership: NIU employs a holistic admissions process, which means they look beyond just grades and test scores. Demonstrated involvement in extracurricular activities, leadership roles, and personal accomplishments are considered valuable.",
+      "Meeting Specific Program Requirements: For certain majors or programs, such as nursing or computer science, there may be additional prerequisite courses and a higher GPA requirement, particularly in relevant subject areas, which are crucial for admission to those competitive fields."
+    ],
+    "common_activities": [
+      "Participation in Recreational Sports Clubs: NIU offers a variety of recreational sports clubs, including lacrosse, volleyball, rugby, swimming, and ice hockey, which provide avenues for athletic involvement outside of varsity sports.",
+      "Leadership in Student Government and Academic Clubs: Involvement in student government (like the Student Association) and academic clubs is encouraged, demonstrating initiative and specialized interests.",
+      "Community Service and Volunteering: Northern Illinois University emphasizes community involvement, with many opportunities for students to participate in volunteer efforts and community service organizations.",
+      "Engagement in Greek Life: Fraternities and sororities are active on campus and offer another avenue for social engagement and leadership development.",
+      "Involvement in Arts and Cultural Activities: The university has a vibrant arts scene, with students engaging in art exhibitions, music concerts, and theatrical and dance productions.",
+      "Research Experience: Opportunities for undergraduate research are available and are a significant way for students to engage academically beyond coursework, particularly within programs like the Honors Program."
+    ]
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 13639.0,
+        "total_coa": 30842.0,
+        "housing": 16582.0
+      },
+      "out_of_state": {
+        "tuition": 13639.0,
+        "total_coa": 30842.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 10721.0,
+    "average_merit_aid": 6000.0,
+    "percent_receiving_aid": 88.0,
+    "meets_full_need": false,
+    "financial_aid_notes": "Average need-based aid is based on the sum of average Federal and State Grant Aid. Average merit aid is based on a specific freshman merit scholarship example.",
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, fees, on-campus room and board, plus book stipend",
+        "deadline": "Automatic consideration for fall semester (spring applicants not considered)",
+        "benefits": "Priority course registration, Honors House residential option, specialized curriculum, faculty connections, participation in University Honors Program",
+        "application_method": "Automatic Consideration upon admission application; competitive",
+        "eligibility": "Domestic first-time, incoming freshman students for the fall semester who demonstrate outstanding academic accomplishments. Very competitive. Presidential Scholars actively participate in the University Honors Program."
+      },
+      {
+        "name": "NIU Scholars Award",
+        "type": "Merit",
+        "amount": "$7,000/year (plus potential additional AIM HIGH scholarship funds up to $2,466 for FAFSA filers meeting income cap)",
+        "deadline": "December 1 (freshmen), March 1 (transfer)",
+        "benefits": "Renewable with 2.75 GPA",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Huskie Excellence Scholarship",
+        "type": "Merit",
+        "amount": "$5,000/year (plus potential additional AIM HIGH scholarship funds up to $1,000 for FAFSA filers meeting income cap)",
+        "deadline": "December 1 (freshmen), March 1 (transfer)",
+        "benefits": "Renewable with 2.75 GPA",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "International Student Merit Scholarship (Freshmen)",
+        "type": "Merit",
+        "amount": "Up to $9,000 in tuition fees per academic year",
+        "deadline": "April 1, 2026",
+        "benefits": "Partial funding for tuition",
+        "application_method": "Automatic consideration based on completed General Application"
+      },
+      {
+        "name": "Graduate Assistantships (for International Students)",
+        "type": "Merit/Need (Varies)",
+        "amount": "Full tuition waiver, stipends for living expenses, health insurance",
+        "deadline": "Varies by department",
+        "benefits": "Fully funded opportunity, professional experience, academic growth, research opportunities",
+        "application_method": "Apply for admission to graduate program, then apply for assistantships directly with departments"
+      },
+      {
+        "name": "Honors Excellence Awards",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Automatic consideration",
+        "benefits": "For University Honors students of high academic merit, expected participation as an ambassador for University Honors activities",
+        "application_method": "Automatic consideration based on completed General Application and good standing within University Honors Program"
+      },
+      {
+        "name": "AIM High Huskie Pledge Program",
+        "type": "Need-Based",
+        "amount": "Covers tuition and fees not met by other financial aid for the first year, and potentially beyond.",
+        "eligibility": "Families earning a gross adjusted income of $100,000 or less. High school seniors must also have at least a 3.0 GPA.",
+        "application_method": "Requires filing the Free Application for Federal Student Aid (FAFSA)."
+      },
+      {
+        "name": "Huskie Legacy Award",
+        "type": "Merit",
+        "amount": "$1,000 for the first year at NIU.",
+        "eligibility": "Children of NIU alumni who meet NIU's published admission criteria for incoming freshman and transfer students and the priority scholarship deadline.",
+        "application_method": "Awarded at the time of admission."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "",
+    "ap_policy": {
+      "general_rule": "A score of 3 or higher typically grants credit for most AP exams.",
+      "exceptions": [
+        "While many exams grant credit for a score of 3, some may require a score of 4 or 5 for higher-level courses or a greater number of credits. For instance, AP Chemistry awards 3 credits for a score of 3, 4 credits for a score of 4, and 8 credits for a score of 5. Similarly, AP Biology grants 4 credits for a score of 3 and 8 credits for a score of 4. AP Computer Science A grants credit for scores of 3 and 4 for different courses (CS 107 and CS 207, respectively). AP Research is not listed in the provided AP credit equivalency, implying no credit is awarded."
+      ],
+      "usage": "AP credits can be used to satisfy college course requirements and provide advanced placement. They can also fulfill General Education (Foundational Studies) requirements, including specific courses like ENGL 103 (100-level Rhetoric and Composition) and certain mathematics courses."
+    },
+    "ib_policy": {
+      "general_rule": "Northern Illinois University states that students with sufficiently high scores on certain IB examinations may be eligible for course credit; however, a specific credit equivalency table with minimum score requirements (e.g., HL 5+) was not found directly on their website.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "Illinois Articulation Initiative (IAI)",
+        "Course Equivalencies and Major Guides (CEMG)"
+      ],
+      "restrictions": "Transfer credit from two-year colleges is limited to 66 semester hours, plus a maximum of four semester hours of physical education activity credit. A grade of C or better is required for a course to be accepted for transfer credit. A minimum GPA of 2.0 (on a 4.0 scale) from all colleges attended is required. The NIU catalog used for transfer should not be more than three years old when the student transfers or returns to NIU. A minimum of 24 transferable semester hours is required to apply as a transfer student."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong Academic Record: A high school GPA around 3.3 to 3.4 is generally expected, with successful applicants often having B+ averages and graduating in the top half of their high school class. Taking challenging college preparatory courses is also considered important.",
+      "Competitive Standardized Test Scores: Although NIU is test-optional, competitive ACT scores typically range from 19-25, and SAT scores between 940-1170 can strengthen an applicant's profile.",
+      "Engagement in Extracurricular Activities and Leadership: NIU employs a holistic admissions process, which means they look beyond just grades and test scores. Demonstrated involvement in extracurricular activities, leadership roles, and personal accomplishments are considered valuable.",
+      "Meeting Specific Program Requirements: For certain majors or programs, such as nursing or computer science, there may be additional prerequisite courses and a higher GPA requirement, particularly in relevant subject areas, which are crucial for admission to those competitive fields."
+    ],
+    "common_activities": [
+      "Participation in Recreational Sports Clubs: NIU offers a variety of recreational sports clubs, including lacrosse, volleyball, rugby, swimming, and ice hockey, which provide avenues for athletic involvement outside of varsity sports.",
+      "Leadership in Student Government and Academic Clubs: Involvement in student government (like the Student Association) and academic clubs is encouraged, demonstrating initiative and specialized interests.",
+      "Community Service and Volunteering: Northern Illinois University emphasizes community involvement, with many opportunities for students to participate in volunteer efforts and community service organizations.",
+      "Engagement in Greek Life: Fraternities and sororities are active on campus and offer another avenue for social engagement and leadership development.",
+      "Involvement in Arts and Cultural Activities: The university has a vibrant arts scene, with students engaging in art exhibitions, music concerts, and theatrical and dance productions.",
+      "Research Experience: Opportunities for undergraduate research are available and are a significant way for students to engage academically beyond coursework, particularly within programs like the Honors Program."
+    ],
+    "essay_tips": [
+      "Be authentic and let your genuine voice shine through. The admissions committee aims to understand the real you, not a meticulously crafted persona you believe they desire. Share genuine experiences and insights that have shaped your academic journey and future aspirations.",
+      "Be specific about your interest in NIU. Conduct thorough research into Northern Illinois University's programs, faculty, and specific opportunities that genuinely attract you. Mention these details in your statement to demonstrate a well-considered interest.",
+      "Align your experiences and goals with NIU's values. NIU emphasizes academic excellence, student success, diversity and inclusion, and community engagement. Reflect on how your personal experiences and future aspirations resonate with these core principles of the university.",
+      "Showcase your unique personality and voice. Your personal statement is a crucial opportunity to highlight aspects of your personality, experiences, and goals that might not be evident from your transcripts or test scores alone, providing a window into your character and motivations.",
+      "Use concrete examples to demonstrate your passion and alignment. Instead of general statements, illustrate your points with specific instances. For example, an aspiring student demonstrated passion for veterinary science and alignment with NIU's community engagement by describing volunteer work at an animal shelter."
+    ],
+    "red_flags": [
+      "Incomplete Paperwork: Submitting an application with missing information or documents is a direct cause for rejection. Ensure all required forms, transcripts, and supplementary materials are thoroughly completed and submitted.",
+      "Failure to Meet Entrance Requirements: Due to limited enrollment and increased entrance requirements, not meeting the academic standards set by the university can lead to your application being declined.",
+      "Low GPA: While the average GPA for admitted students at Northern Illinois University is around 3.4, a significantly lower GPA, especially below the typical range for admitted students, could be a red flag.",
+      "Not Taking the Application Seriously: With a competitive acceptance rate, even minor details being overlooked or an application not being presented thoroughly can result in rejection."
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Northern Illinois University has a moderately selective admissions process with an acceptance rate around 70-71% and a rolling admission deadline. While test-optional, a strong GPA and competitive test scores can enhance an application.",
+        "implication": "Applicants should focus on maintaining a strong academic record, ideally with a GPA around 3.4 or higher. Although not mandatory, submitting SAT/ACT scores within the typical accepted range (SAT 940-1170 or ACT 19-25) can strengthen an application. Applying early in the rolling admissions cycle is also advisable to maximize chances and allow for ample time for financial aid and housing arrangements."
+      },
+      {
+        "category": "Academic",
+        "insight": "NIU offers a comprehensive range of academic programs with noted strengths in fields such as business, engineering, education, and nursing. The university emphasizes supportive faculty, hands-on learning, and a connection between undergraduate and graduate programs.",
+        "implication": "Prospective students, particularly those interested in business, engineering, education, or nursing, should highlight any relevant academic achievements, projects, or experiences in these areas. Emphasizing a desire for engaged learning, research opportunities, and interaction with faculty will demonstrate alignment with NIU's academic environment."
+      },
+      {
+        "category": "Culture",
+        "insight": "Northern Illinois University cultivates a diverse, inclusive, and welcoming campus culture, characterized by a vibrant student life with over 200 student organizations and a strong sense of community. The university is situated in a mid-sized town with access to Chicago.",
+        "implication": "Applicants should demonstrate their potential to contribute to a diverse and active campus community by showcasing involvement in extracurricular activities, leadership roles, and experiences that reflect teamwork, collaboration, and an appreciation for different cultures and backgrounds. Highlighting how they would engage with campus life and benefit from the university's location can be beneficial."
+      },
+      {
+        "category": "Value",
+        "insight": "NIU is recognized for its relatively affordable tuition, particularly for in-state students, offering a strong return on investment for its educational quality.",
+        "implication": "Applicants seeking a high-quality education at a more accessible cost should consider NIU. Highlighting an understanding of the value of their education and how they plan to leverage NIU's resources for career success can be a compelling aspect of their application."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Northern Illinois University offers a positive and welcoming social atmosphere with a vibrant campus culture, fostering a sense of community and inclusion through numerous extracurricular activities, athletic events, and student organizations. Students find it easy to get involved and meet new people.",
+      "transportation_impact": "The campus benefits from a comprehensive Huskie bus system that provides transportation across campus and to some off-campus locations. DeKalb Public Transit also offers several bus routes serving the campus and the broader DeKalb area. Additionally, an Elburn Shuttle service provides an affordable transportation option for students to access Chicago via the Metra train from the Elburn station.",
+      "research_impact": "Northern Illinois University is a public research institution with strong undergraduate research opportunities. The Office of Student Engagement and Experiential Learning (OSEEL) offers various programs, including the Student Engagement Fund (SEF) and Research, Engagement and Academic Diversity (READ) Grant, which provide funding (up to $2,500 for expenses and $1,200 in compensation) for faculty-mentored research, community-based projects, and social justice and diversity initiatives. Students can engage in research on campus, in the community, or internationally, working individually, in groups, or assisting faculty. The university is also a member of the Universities Research Association (URA), managing federal physics laboratories such as Fermi National Accelerator Laboratory. NIU is recognized for providing engaged learning opportunities that connect students with faculty and help them explore their majors."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 57808,
+    "employment_rate_2yr": 95.0,
+    "median_earnings_6yr": 46113,
+    "earnings_notes": "Employment rate is 5 years after graduation, as 2-year specific data was not available. Median earnings at 10 years are in the 96th percentile nationally for return on investment.",
+    "top_employers": [
+      "Amazon",
+      "Microsoft",
+      "PwC",
+      "Salesforce",
+      "United Airlines",
+      "CDW",
+      "AbbVie",
+      "Discover Financial Services"
+    ],
+    "grad_school_rate": null,
+    "loan_default_rate": 0.0258
+  },
+  "student_retention": {
+    "freshman_retention_rate": 78.0,
+    "graduation_rate_4_year": 41.0,
+    "graduation_rate_6_year": 56.0,
+    "retention_notes": "Freshman retention rate is based on the 2023 Graduation & Retention Report. The 4-year and 6-year graduation rates are also from College Factual's 2023 Graduation & Retention Report. The federal loan default rate of 0.0258% is for the year 2022. Information regarding the percentage of graduates pursuing graduate school (grad_school_rate) was not readily available in the search results."
+  }
+}

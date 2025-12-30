@@ -18729,3 +18729,2786 @@ Processing: Western Michigan University
 ====================
 Processing: Rowan University
 ====================
+[2025-12-30 12:04:56] Found 162 universities already researched in /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research
+[2025-12-30 12:04:56] Full list: 239. Remaining to collect: 89
+[2025-12-30 12:04:56] Limiting to next 50 universities by US News rank
+[2025-12-30 12:04:56] Starting parallel execution with 5 workers...
+[2025-12-30 12:04:56] 
+====================
+Processing: University of Tennessee
+====================
+[2025-12-30 12:04:56] 
+====================
+Processing: St. Louis University
+====================
+[2025-12-30 12:04:56] 
+====================
+Processing: SUNY Binghamton University
+====================
+[2025-12-30 12:04:56] 
+====================
+Processing: Illinois State University
+====================
+[2025-12-30 12:04:56] 
+====================
+Processing: University of Texas at Dallas
+====================
+[2025-12-30 12:06:37] Error researching University of Texas at Dallas: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-30 12:06:37]   + Exception Group Traceback (most recent call last):
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 403, in process_single_university
+  |     response = await run_agent_for_university(runner, university)
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 386, in run_agent_for_university
+  |     async for event in runner.run_async(
+  |     ...<7 lines>...
+  |                     final_response = part.text
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |         return
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+  |     async for event in agen:
+  |       last_event = event
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+  |     if function_response_event := await functions.handle_function_calls_async(
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |         invocation_context, function_call_event, llm_request.tools_dict
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ):
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+  |     return await handle_function_call_list_async(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ...<5 lines>...
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+  |     function_response_events = await asyncio.gather(*tasks)
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+  |     raise tool_error
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+  |     function_response = await __call_tool_async(
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  |         tool, args=function_args, tool_context=tool_context
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+  |     return await tool.run_async(args=args, tool_context=tool_context)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+  |     async for event in agen:
+  |     ...<4 lines>...
+  |         last_content = event.content
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 206, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 145, in _merge_agent_run
+  |     async with asyncio.TaskGroup() as tg:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 71, in __aexit__
+  |     return await self._aexit(et, exc)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 173, in _aexit
+  |     raise BaseExceptionGroup(
+  |     ...<2 lines>...
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 136, in process_an_agent
+    |     async for event in events_for_one_agent:
+    |     ...<3 lines>...
+    |       await resume_signal.wait()
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    |     async for event in agen:
+    |     ...<3 lines>...
+    |         return
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    |     async for event in agen:
+    |       last_event = event
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    |     async for llm_response in agen:
+    |     ...<13 lines>...
+    |           yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    |     async for llm_response in agen:
+    |     ...<12 lines>...
+    |       yield llm_response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    |     raise model_error
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    |     async for response in agen:
+    |       yield response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    |     response = await self.api_client.aio.models.generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    |     response = await self._generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         model=model, contents=contents, config=parsed_config
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    |     response = await self._api_client.async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         'post', path, request_dict, http_options
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    |     result = await self._async_request(
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         http_request=http_request, http_options=http_options, stream=False
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    |     return await self._async_retry(  # type: ignore[no-any-return]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self._async_request_once, http_request, stream
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    |     do = await self.iter(retry_state=retry_state)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    |     result = await action(retry_state)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    |     return call(*args, **kwargs)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    |     raise retry_exc.reraise()
+    |           ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    |     raise self.last_attempt.result()
+    |           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    |     result = await fn(*args, **kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1273, in _async_request_once
+    |     await errors.APIError.raise_for_async_response(client_response)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/errors.py", line 168, in raise_for_async_response
+    |     raise ServerError(status_code, response_json, response)
+    | google.genai.errors.ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+    +------------------------------------
+
+[2025-12-30 12:06:37] 
+====================
+Processing: University of Wyoming
+====================
+[2025-12-30 12:08:34] Research completed for Illinois State University
+[2025-12-30 12:08:35] ✓ Profile saved: illinois_state_university.json
+[2025-12-30 12:08:35]   ⚠️ Validation failed: academic_structure.minors_certificates.0: Input should be a valid string; academic_structure.minors_certificates.1: Input should be a valid string; academic_structure.minors_certificates.2: Input should be a valid string
+[2025-12-30 12:08:35] 
+====================
+Processing: Quinnipiac University
+====================
+[2025-12-30 12:09:36] Research completed for University of Tennessee
+[2025-12-30 12:09:37] ✓ Profile saved: illinois_state_university.json
+[2025-12-30 12:09:37]   ⚠️ Validation failed: academic_structure.minors_certificates.0: Input should be a valid string; academic_structure.minors_certificates.1: Input should be a valid string; academic_structure.minors_certificates.2: Input should be a valid string
+[2025-12-30 12:09:37] 
+====================
+Processing: Western Michigan University
+====================
+[2025-12-30 12:09:37] Research completed for SUNY Binghamton University
+[2025-12-30 12:09:38] ✓ Profile saved: suny_binghamton_university.json
+[2025-12-30 12:09:38]   ⚠️ Validation failed: Invalid JSON: Expecting ':' delimiter: line 1320 column 5 (char 60062)
+[2025-12-30 12:09:38] 
+====================
+Processing: Rowan University
+====================
+[2025-12-30 12:10:13] Research completed for St. Louis University
+[2025-12-30 12:10:14] ⚠ Output file not found for St. Louis University
+[2025-12-30 12:10:14] 
+====================
+Processing: University of New Mexico
+====================
+[2025-12-30 12:11:47] Research completed for Western Michigan University
+[2025-12-30 12:11:48] ✓ Profile saved: western_michigan_university.json
+[2025-12-30 12:11:48]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:11:48] 
+====================
+Processing: Washington State University
+====================
+[2025-12-30 12:13:31] Research completed for Quinnipiac University
+[2025-12-30 12:13:32] ✓ Profile saved: quinnipiac_university.json
+[2025-12-30 12:13:32]   ⚠️ Validation failed: academic_structure.colleges.7.admissions_model: Input should be a valid string; academic_structure.colleges.7.is_restricted_or_capped: Input should be a valid boolean; academic_structure.colleges.8.admissions_model: Input should be a valid string
+[2025-12-30 12:13:32] 
+====================
+Processing: University of Montana
+====================
+[2025-12-30 12:14:50] Research completed for University of Wyoming
+[2025-12-30 12:14:51] ✓ Profile saved: western_michigan_university.json
+[2025-12-30 12:14:51]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:14:51] 
+====================
+Processing: University of North Texas
+====================
+[2025-12-30 12:15:08] Research completed for Washington State University
+[2025-12-30 12:15:09] ✓ Profile saved: washington_state_university.json
+[2025-12-30 12:15:09]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:15:09] 
+====================
+Processing: James Madison University
+====================
+[2025-12-30 12:15:41] Research completed for Rowan University
+[2025-12-30 12:15:42] ✓ Profile saved: rowan_university.json
+[2025-12-30 12:15:42]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:15:42] 
+====================
+Processing: Belmont University
+====================
+[2025-12-30 12:16:40] Research completed for University of New Mexico
+[2025-12-30 12:16:41] ✓ Profile saved: western_michigan_university.json
+[2025-12-30 12:16:41]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:16:41] 
+====================
+Processing: Ball State University
+====================
+[2025-12-30 12:20:07] Research completed for University of North Texas
+[2025-12-30 12:20:08] ✓ Profile saved: university_of_new_mexico.json
+[2025-12-30 12:20:08]   ⚠️ Validation failed: credit_policies.ap_policy.exceptions: Input should be a valid list; student_insights.insights.0.StudentInsight.source: Field required; student_insights.insights.0.str: Input should be a valid string
+[2025-12-30 12:20:08] 
+====================
+Processing: Mercer University
+====================
+[2025-12-30 12:20:19] Research completed for Ball State University
+[2025-12-30 12:20:20] ✓ Profile saved: ball_state_university.json
+[2025-12-30 12:20:20]   ⚠️ Validation failed: academic_structure.colleges.8.admissions_model: Input should be a valid string; academic_structure.colleges.8.is_restricted_or_capped: Input should be a valid boolean; credit_policies.ap_policy.exceptions: Input should be a valid list
+[2025-12-30 12:20:20] 
+====================
+Processing: University of Idaho
+====================
+[2025-12-30 12:20:38] Research completed for University of Montana
+[2025-12-30 12:20:39] ✓ Profile saved: university_of_new_mexico.json
+[2025-12-30 12:20:39]   ⚠️ Validation failed: credit_policies.ap_policy.exceptions: Input should be a valid list; student_insights.insights.0.StudentInsight.source: Field required; student_insights.insights.0.str: Input should be a valid string
+[2025-12-30 12:20:39] 
+====================
+Processing: University of Mississippi
+====================
+[2025-12-30 12:23:04] Research completed for Belmont University
+[2025-12-30 12:23:05] ✓ Profile saved: belmont_university.json
+[2025-12-30 12:23:05]   ⚠️ Validation failed: Invalid JSON: Invalid \escape: line 2003 column 470 (char 91086)
+[2025-12-30 12:23:05] 
+====================
+Processing: Louisiana State University
+====================
+[2025-12-30 12:24:07] Research completed for James Madison University
+[2025-12-30 12:24:08] ✓ Profile saved: james_madison_university.json
+[2025-12-30 12:24:08]   ⚠️ Validation failed: academic_structure.colleges.0.majors.0.weeder_courses: Input should be a valid list; academic_structure.colleges.0.majors.1.weeder_courses: Input should be a valid list; academic_structure.colleges.1.majors.0.weeder_courses: Input should be a valid list
+[2025-12-30 12:24:08] 
+====================
+Processing: University of North Carolina at Charlotte
+====================
+[2025-12-30 12:26:03] Research completed for University of Mississippi
+[2025-12-30 12:26:04] ✓ Profile saved: university_of_mississippi.json
+[2025-12-30 12:26:04]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1000 column 49 (char 51894)
+[2025-12-30 12:26:04] 
+====================
+Processing: California State University, Fullerton
+====================
+[2025-12-30 12:26:45] Research completed for Mercer University
+[2025-12-30 12:26:46] ✓ Profile saved: mercer_university.json
+[2025-12-30 12:26:46]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 866 column 254 (char 49414)
+[2025-12-30 12:26:46] 
+====================
+Processing: University of Alabama at Birmingham
+====================
+[2025-12-30 12:28:01] Research completed for University of Idaho
+[2025-12-30 12:28:02] ✓ Profile saved: university_of_mississippi.json
+[2025-12-30 12:28:02]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1000 column 49 (char 51894)
+[2025-12-30 12:28:02] 
+====================
+Processing: Pace University
+====================
+[2025-12-30 12:28:20] Research completed for University of North Carolina at Charlotte
+[2025-12-30 12:28:21] ✓ Profile saved: university_of_north_carolina_at_charlotte.json
+[2025-12-30 12:28:21]   ⚠️ Validation failed: application_process.supplemental_requirements.0.deadline: Input should be a valid string; application_process.supplemental_requirements.2.deadline: Input should be a valid string; application_process.supplemental_requirements.3.deadline: Input should be a valid string
+[2025-12-30 12:28:21] 
+====================
+Processing: Portland State University
+====================
+[2025-12-30 12:30:30] Error researching Portland State University: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-30 12:30:30]   + Exception Group Traceback (most recent call last):
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 403, in process_single_university
+  |     response = await run_agent_for_university(runner, university)
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 386, in run_agent_for_university
+  |     async for event in runner.run_async(
+  |     ...<7 lines>...
+  |                     final_response = part.text
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |         return
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+  |     async for event in agen:
+  |       last_event = event
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+  |     if function_response_event := await functions.handle_function_calls_async(
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |         invocation_context, function_call_event, llm_request.tools_dict
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ):
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+  |     return await handle_function_call_list_async(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ...<5 lines>...
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+  |     function_response_events = await asyncio.gather(*tasks)
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+  |     raise tool_error
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+  |     function_response = await __call_tool_async(
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  |         tool, args=function_args, tool_context=tool_context
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+  |     return await tool.run_async(args=args, tool_context=tool_context)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+  |     async for event in agen:
+  |     ...<4 lines>...
+  |         last_content = event.content
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 206, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 145, in _merge_agent_run
+  |     async with asyncio.TaskGroup() as tg:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 71, in __aexit__
+  |     return await self._aexit(et, exc)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 173, in _aexit
+  |     raise BaseExceptionGroup(
+  |     ...<2 lines>...
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 136, in process_an_agent
+    |     async for event in events_for_one_agent:
+    |     ...<3 lines>...
+    |       await resume_signal.wait()
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    |     async for event in agen:
+    |     ...<3 lines>...
+    |         return
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    |     async for event in agen:
+    |       last_event = event
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    |     async for llm_response in agen:
+    |     ...<13 lines>...
+    |           yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    |     async for llm_response in agen:
+    |     ...<12 lines>...
+    |       yield llm_response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    |     raise model_error
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    |     async for response in agen:
+    |       yield response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    |     response = await self.api_client.aio.models.generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    |     response = await self._generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         model=model, contents=contents, config=parsed_config
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    |     response = await self._api_client.async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         'post', path, request_dict, http_options
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    |     result = await self._async_request(
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         http_request=http_request, http_options=http_options, stream=False
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    |     return await self._async_retry(  # type: ignore[no-any-return]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self._async_request_once, http_request, stream
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    |     do = await self.iter(retry_state=retry_state)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    |     result = await action(retry_state)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    |     return call(*args, **kwargs)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    |     raise retry_exc.reraise()
+    |           ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    |     raise self.last_attempt.result()
+    |           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    |     result = await fn(*args, **kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1273, in _async_request_once
+    |     await errors.APIError.raise_for_async_response(client_response)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/errors.py", line 168, in raise_for_async_response
+    |     raise ServerError(status_code, response_json, response)
+    | google.genai.errors.ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+    +------------------------------------
+
+[2025-12-30 12:30:30] 
+====================
+Processing: University of Nevada, Reno
+====================
+[2025-12-30 12:30:37] Research completed for Louisiana State University
+[2025-12-30 12:30:38] ✓ Profile saved: louisiana_state_university.json
+[2025-12-30 12:30:38]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:30:38] 
+====================
+Processing: Samford University
+====================
+[2025-12-30 12:31:50] Research completed for University of Alabama at Birmingham
+[2025-12-30 12:31:51] ✓ Profile saved: university_of_north_carolina_at_charlotte.json
+[2025-12-30 12:31:51]   ⚠️ Validation failed: application_process.supplemental_requirements.0.deadline: Input should be a valid string; application_process.supplemental_requirements.2.deadline: Input should be a valid string; application_process.supplemental_requirements.3.deadline: Input should be a valid string
+[2025-12-30 12:31:51] 
+====================
+Processing: Florida International University
+====================
+[2025-12-30 12:33:22] Research completed for California State University, Fullerton
+[2025-12-30 12:33:23] ✓ Profile saved: california_state_university_fullerton.json
+[2025-12-30 12:33:23]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:33:23] 
+====================
+Processing: George Mason University
+====================
+[2025-12-30 12:33:52] Research completed for Pace University
+[2025-12-30 12:33:53] ✓ Profile saved: pace_university.json
+[2025-12-30 12:33:53]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 345 column 175 (char 17579)
+[2025-12-30 12:33:53] 
+====================
+Processing: Wayne State University
+====================
+[2025-12-30 12:34:42] Research completed for Samford University
+[2025-12-30 12:34:43] ✓ Profile saved: samford_university.json
+[2025-12-30 12:34:43]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 454 column 29 (char 31146)
+[2025-12-30 12:34:43] 
+====================
+Processing: Kent State University
+====================
+[2025-12-30 12:38:00] Research completed for Wayne State University
+[2025-12-30 12:38:01] ✓ Profile saved: wayne_state_university.json
+[2025-12-30 12:38:01]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 917 column 40 (char 55536)
+[2025-12-30 12:38:01] 
+====================
+Processing: University of Maine
+====================
+[2025-12-30 12:38:53] Research completed for George Mason University
+[2025-12-30 12:38:54] ✓ Profile saved: george_mason_university.json
+[2025-12-30 12:38:54]   ⚠️ Validation failed: application_process.supplemental_requirements: Input should be a valid list; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 12:38:54] 
+====================
+Processing: Tennessee Tech University
+====================
+[2025-12-30 12:40:45] Research completed for Florida International University
+[2025-12-30 12:40:46] ✓ Profile saved: florida_international_university.json
+[2025-12-30 12:40:46]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:40:46] 
+====================
+Processing: University of North Dakota
+====================
+[2025-12-30 12:41:19] Research completed for University of Nevada, Reno
+[2025-12-30 12:41:20] ✓ Profile saved: florida_international_university.json
+[2025-12-30 12:41:20]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:41:20] 
+====================
+Processing: Appalachian State University
+====================
+[2025-12-30 12:42:15] Research completed for Kent State University
+[2025-12-30 12:42:16] ✓ Profile saved: kent_state_university.json
+[2025-12-30 12:42:16]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:42:16] 
+====================
+Processing: Old Dominion University
+====================
+[2025-12-30 12:44:08] Research completed for University of Maine
+[2025-12-30 12:44:09] ✓ Profile saved: florida_international_university.json
+[2025-12-30 12:44:09]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:44:09] 
+====================
+Processing: Georgia State University
+====================
+[2025-12-30 12:45:55] Research completed for Appalachian State University
+[2025-12-30 12:45:56] ✓ Profile saved: appalachian_state_university.json
+[2025-12-30 12:45:56]   ⚠️ Validation failed: credit_policies.transfer_articulation: Input should be a valid dictionary or instance of TransferArticulation
+[2025-12-30 12:45:56] 
+====================
+Processing: California State University, Long Beach
+====================
+[2025-12-30 12:46:20] Research completed for Tennessee Tech University
+[2025-12-30 12:46:21] ✓ Profile saved: tennessee_tech_university.json
+[2025-12-30 12:46:21]   ⚠️ Validation failed: Invalid JSON: Invalid control character at: line 1449 column 151 (char 78174)
+[2025-12-30 12:46:21] 
+====================
+Processing: Bowling Green State University
+====================
+[2025-12-30 12:46:47] Research completed for University of North Dakota
+[2025-12-30 12:46:48] ✓ Profile saved: university_of_north_dakota.json
+[2025-12-30 12:46:48]   ⚠️ Validation failed: Invalid JSON: Invalid control character at: line 1807 column 261 (char 81126)
+[2025-12-30 12:46:48] 
+====================
+Processing: East Carolina University
+====================
+[2025-12-30 12:48:03] Research completed for Old Dominion University
+[2025-12-30 12:48:04] ✓ Profile saved: old_dominion_university.json
+[2025-12-30 12:48:04]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 12:48:04] 
+====================
+Processing: San Jose State University
+====================
+[2025-12-30 12:49:14] Research completed for Georgia State University
+[2025-12-30 12:49:15] ✓ Profile saved: georgia_state_university.json
+[2025-12-30 12:49:15]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 937 column 9 (char 61076)
+[2025-12-30 12:49:15] 
+====================
+Processing: Morgan State University
+====================
+[2025-12-30 12:51:11] Research completed for Bowling Green State University
+[2025-12-30 12:51:12] ✓ Profile saved: bowling_green_state_university.json
+[2025-12-30 12:51:12]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 281 column 31 (char 15285)
+[2025-12-30 12:51:12] 
+====================
+Processing: Texas Tech University
+====================
+[2025-12-30 12:52:49] Research completed for California State University, Long Beach
+[2025-12-30 12:52:50] ✓ Profile saved: california_state_university_long_beach.json
+[2025-12-30 12:52:50]   ⚠️ Validation failed: strategic_profile.executive_summary: Field required; strategic_profile.market_position: Field required; strategic_profile.admissions_philosophy: Field required
+[2025-12-30 12:52:50] 
+====================
+Processing: University of Maryland, Baltimore County
+====================
+[2025-12-30 12:53:39] Research completed for Morgan State University
+[2025-12-30 12:53:40] ✓ Profile saved: morgan_state_university.json
+[2025-12-30 12:53:40]   ⚠️ Validation failed: Invalid JSON: Invalid control character at: line 892 column 65 (char 55297)
+[2025-12-30 12:53:40] 
+====================
+Processing: University of Akron
+====================
+[2025-12-30 12:54:27] Research completed for San Jose State University
+[2025-12-30 12:54:28] ✓ Profile saved: san_jose_state_university.json
+[2025-12-30 12:54:28]   ⚠️ Validation failed: strategic_profile.admissions_philosophy: Field required; application_process.application_deadlines.0: Input should be a valid dictionary or instance of ApplicationDeadline; application_process.application_deadlines.1: Input should be a valid dictionary or instance of ApplicationDeadline
+[2025-12-30 12:54:28] 
+====================
+Processing: Northern Illinois University
+====================
+[2025-12-30 12:55:26] Research completed for East Carolina University
+[2025-12-30 12:55:27] ✓ Profile saved: east_carolina_university.json
+[2025-12-30 12:55:27]   ⚠️ Validation failed: credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy; credit_policies.transfer_articulation: Input should be a valid dictionary or instance of TransferArticulation
+[2025-12-30 12:55:27] 
+====================
+Processing: University of Memphis
+====================
+[2025-12-30 12:57:21] Research completed for University of Maryland, Baltimore County
+[2025-12-30 12:57:22] ✓ Profile saved: california_state_university_long_beach.json
+[2025-12-30 12:57:22]   ⚠️ Validation failed: strategic_profile.executive_summary: Field required; strategic_profile.market_position: Field required; strategic_profile.admissions_philosophy: Field required
+[2025-12-30 12:57:22] 
+====================
+Processing: Utah State University
+====================
+[2025-12-30 12:58:02] Error researching University of Memphis: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-30 12:58:02]   + Exception Group Traceback (most recent call last):
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 403, in process_single_university
+  |     response = await run_agent_for_university(runner, university)
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 386, in run_agent_for_university
+  |     async for event in runner.run_async(
+  |     ...<7 lines>...
+  |                     final_response = part.text
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |         return
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+  |     async for event in agen:
+  |       last_event = event
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+  |     if function_response_event := await functions.handle_function_calls_async(
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |         invocation_context, function_call_event, llm_request.tools_dict
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ):
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+  |     return await handle_function_call_list_async(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ...<5 lines>...
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+  |     function_response_events = await asyncio.gather(*tasks)
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+  |     raise tool_error
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+  |     function_response = await __call_tool_async(
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  |         tool, args=function_args, tool_context=tool_context
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+  |     return await tool.run_async(args=args, tool_context=tool_context)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+  |     async for event in agen:
+  |     ...<4 lines>...
+  |         last_content = event.content
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 206, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 145, in _merge_agent_run
+  |     async with asyncio.TaskGroup() as tg:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 71, in __aexit__
+  |     return await self._aexit(et, exc)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 173, in _aexit
+  |     raise BaseExceptionGroup(
+  |     ...<2 lines>...
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 136, in process_an_agent
+    |     async for event in events_for_one_agent:
+    |     ...<3 lines>...
+    |       await resume_signal.wait()
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    |     async for event in agen:
+    |     ...<3 lines>...
+    |         return
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    |     async for event in agen:
+    |       last_event = event
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    |     async for llm_response in agen:
+    |     ...<13 lines>...
+    |           yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    |     async for llm_response in agen:
+    |     ...<12 lines>...
+    |       yield llm_response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    |     raise model_error
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    |     async for response in agen:
+    |       yield response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    |     response = await self.api_client.aio.models.generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    |     response = await self._generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         model=model, contents=contents, config=parsed_config
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    |     response = await self._api_client.async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         'post', path, request_dict, http_options
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    |     result = await self._async_request(
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         http_request=http_request, http_options=http_options, stream=False
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    |     return await self._async_retry(  # type: ignore[no-any-return]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self._async_request_once, http_request, stream
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    |     do = await self.iter(retry_state=retry_state)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    |     result = await action(retry_state)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    |     return call(*args, **kwargs)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    |     raise retry_exc.reraise()
+    |           ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    |     raise self.last_attempt.result()
+    |           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    |     result = await fn(*args, **kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1273, in _async_request_once
+    |     await errors.APIError.raise_for_async_response(client_response)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/errors.py", line 168, in raise_for_async_response
+    |     raise ServerError(status_code, response_json, response)
+    | google.genai.errors.ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+    +------------------------------------
+
+[2025-12-30 12:58:02] 
+====================
+Processing: West Virginia University
+====================
+[2025-12-30 12:58:39] Research completed for Texas Tech University
+[2025-12-30 12:58:40] ✓ Profile saved: texas_tech_university.json
+[2025-12-30 12:58:40]   ⚠️ Validation failed: application_strategy.alternate_major_strategy: Input should be a valid string; credit_policies.ib_policy.diploma_bonus: Input should be a valid boolean, unable to interpret input
+[2025-12-30 12:58:40] 
+====================
+Processing: Wichita State University
+====================
+[2025-12-30 13:00:18] Research completed for University of Akron
+[2025-12-30 13:00:19] ✓ Profile saved: university_of_akron.json
+[2025-12-30 13:00:19]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 212 column 5 (char 13176)
+[2025-12-30 13:01:19] Research completed for Northern Illinois University
+[2025-12-30 13:01:20] ✓ Profile saved: northern_illinois_university.json
+[2025-12-30 13:01:20]   ⚠️ Validation failed: strategic_profile.admissions_philosophy: Field required; admissions_data.admitted_student_profile.demographics.gender_breakdown.men: Input should be a valid dictionary or instance of GenderStats; admissions_data.admitted_student_profile.demographics.gender_breakdown.women: Input should be a valid dictionary or instance of GenderStats
+[2025-12-30 13:02:41] Research completed for Utah State University
+[2025-12-30 13:02:42] ✓ Profile saved: utah_state_university.json
+[2025-12-30 13:02:42]   ⚠️ Validation failed: academic_structure.colleges.1.majors.0.is_impacted: Input should be a valid boolean; academic_structure.colleges.1.majors.1.is_impacted: Input should be a valid boolean; academic_structure.colleges.1.majors.1.admissions_pathway: Input should be a valid string
+[2025-12-30 13:03:13] Research completed for West Virginia University
+[2025-12-30 13:03:14] ✓ Profile saved: west_virginia_university.json
+[2025-12-30 13:03:14]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 911 column 36 (char 56225)
+[2025-12-30 13:04:14] Research completed for Wichita State University
+[2025-12-30 13:04:15] ✓ Profile saved: wichita_state_university.json
+[2025-12-30 13:04:15]   ⚠️ Validation failed: strategic_profile.admissions_philosophy: Input should be a valid string; application_strategy.alternate_major_strategy: Input should be a valid string; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy
+[2025-12-30 13:44:11] Found 139 universities already researched in /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research
+[2025-12-30 13:44:11] Full list: 239. Remaining to collect: 108
+[2025-12-30 13:44:11] Limiting to next 66 universities by US News rank
+[2025-12-30 13:44:11] Starting parallel execution with 5 workers...
+[2025-12-30 13:44:11] 
+====================
+Processing: Washington University in St. Louis
+====================
+[2025-12-30 13:44:11] 
+====================
+Processing: Texas A&M University
+====================
+[2025-12-30 13:44:11] 
+====================
+Processing: University of California, Merced
+====================
+[2025-12-30 13:44:11] 
+====================
+Processing: University of Dayton
+====================
+[2025-12-30 13:44:11] 
+====================
+Processing: University of Kansas
+====================
+[2025-12-30 13:47:22] Research completed for University of California, Merced
+[2025-12-30 13:47:23] ✓ Profile saved: university_of_california_merced.json
+[2025-12-30 13:47:23]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 13:47:23] 
+====================
+Processing: University of the Pacific
+====================
+[2025-12-30 13:49:17] Research completed for University of Kansas
+[2025-12-30 13:49:18] ✓ Profile saved: university_of_kansas.json
+[2025-12-30 13:49:18]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 595 column 24 (char 36415)
+[2025-12-30 13:49:18] 
+====================
+Processing: University of Alabama
+====================
+[2025-12-30 13:50:15] Research completed for Texas A&M University
+[2025-12-30 13:50:16] ⚠ Output file not found for Texas A&M University
+[2025-12-30 13:50:16] 
+====================
+Processing: Yeshiva University
+====================
+[2025-12-30 13:50:31] Research completed for University of Dayton
+[2025-12-30 13:50:32] ✓ Profile saved: university_of_kansas.json
+[2025-12-30 13:50:32]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 595 column 24 (char 36415)
+[2025-12-30 13:50:32] 
+====================
+Processing: University of Missouri
+====================
+[2025-12-30 13:51:34] Research completed for Washington University in St. Louis
+[2025-12-30 13:51:35] ✓ Profile saved: washington_university_in_st_louis.json
+[2025-12-30 13:51:35]   ⚠️ Validation failed: student_insights.insights.0.StudentInsight.source: Field required; student_insights.insights.0.str: Input should be a valid string; student_insights.insights.1.StudentInsight.source: Field required
+[2025-12-30 13:51:35] 
+====================
+Processing: Colorado School of Mines
+====================
+[2025-12-30 13:53:49] Research completed for University of the Pacific
+[2025-12-30 13:53:50] ✓ Profile saved: university_of_kansas.json
+[2025-12-30 13:53:50]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 595 column 24 (char 36415)
+[2025-12-30 13:53:50] 
+====================
+Processing: Clark University
+====================
+[2025-12-30 13:54:35] Research completed for Yeshiva University
+[2025-12-30 13:54:37] ✓ Profile saved: yeshiva_university.json
+[2025-12-30 13:54:37]   ⚠️ Validation failed: Invalid JSON: Invalid control character at: line 1305 column 158 (char 66054)
+[2025-12-30 13:54:37] 
+====================
+Processing: University of Kentucky
+====================
+[2025-12-30 13:54:40] Research completed for University of Alabama
+[2025-12-30 13:54:41] ✓ Profile saved: yeshiva_university.json
+[2025-12-30 13:54:41]   ⚠️ Validation failed: Invalid JSON: Invalid control character at: line 1305 column 158 (char 66054)
+[2025-12-30 13:54:41] 
+====================
+Processing: Elon University
+====================
+[2025-12-30 13:55:20] Research completed for University of Missouri
+[2025-12-30 13:55:21] ✓ Profile saved: university_of_missouri.json
+[2025-12-30 13:55:21]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 13:55:21] 
+====================
+Processing: New Jersey Institute of Technology
+====================
+[2025-12-30 13:56:30] Research completed for Colorado School of Mines
+[2025-12-30 13:56:31] ✓ Profile saved: colorado_school_of_mines.json
+[2025-12-30 13:56:31]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1107 column 50 (char 54150)
+[2025-12-30 13:56:31] 
+====================
+Processing: University of Oklahoma
+====================
+[2025-12-30 13:57:36] Research completed for Clark University
+[2025-12-30 13:57:37] ✓ Profile saved: clark_university.json
+[2025-12-30 13:57:37]   ⚠️ Validation failed: strategic_profile.executive_summary: Field required; strategic_profile.market_position: Field required; strategic_profile.admissions_philosophy: Field required
+[2025-12-30 13:57:37] 
+====================
+Processing: Clarkson University
+====================
+[2025-12-30 13:58:48] Research completed for Elon University
+[2025-12-30 13:58:49] ✓ Profile saved: elon_university.json
+[2025-12-30 13:58:49]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 13:58:49] 
+====================
+Processing: Worcester Polytechnic Institute
+====================
+[2025-12-30 14:00:09] Research completed for University of Kentucky
+[2025-12-30 14:00:10] ✓ Profile saved: university_of_missouri.json
+[2025-12-30 14:00:10]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:00:10] 
+====================
+Processing: Arizona State University
+====================
+[2025-12-30 14:01:15] Research completed for Clarkson University
+[2025-12-30 14:01:16] ✓ Profile saved: clarkson_university.json
+[2025-12-30 14:01:16]   ⚠️ Validation failed: application_strategy.alternate_major_strategy: Input should be a valid string
+[2025-12-30 14:01:16] 
+====================
+Processing: University of Cincinnati
+====================
+[2025-12-30 14:01:56] Research completed for University of Oklahoma
+[2025-12-30 14:01:57] ✓ Profile saved: clarkson_university.json
+[2025-12-30 14:01:57]   ⚠️ Validation failed: application_strategy.alternate_major_strategy: Input should be a valid string
+[2025-12-30 14:01:57] 
+====================
+Processing: University of St. Thomas (Minnesota)
+====================
+[2025-12-30 14:01:57] Research completed for New Jersey Institute of Technology
+[2025-12-30 14:01:58] ✓ Profile saved: new_jersey_institute_of_technology.json
+[2025-12-30 14:01:58]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 37 column 350 (char 2784)
+[2025-12-30 14:01:58] 
+====================
+Processing: University of Tulsa
+====================
+[2025-12-30 14:02:18] Research completed for Worcester Polytechnic Institute
+[2025-12-30 14:02:19] ✓ Profile saved: worcester_polytechnic_institute.json
+[2025-12-30 14:02:19]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:02:19] 
+====================
+Processing: St. Louis University
+====================
+[2025-12-30 14:05:02] Research completed for University of Tulsa
+[2025-12-30 14:05:03] ✓ Profile saved: clarkson_university.json
+[2025-12-30 14:05:03]   ⚠️ Validation failed: application_strategy.alternate_major_strategy: Input should be a valid string
+[2025-12-30 14:05:03] 
+====================
+Processing: University of Nebraska-Lincoln
+====================
+[2025-12-30 14:05:29] Research completed for Arizona State University
+[2025-12-30 14:05:30] ✓ Profile saved: arizona_state_university.json
+[2025-12-30 14:05:30]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1544 column 200 (char 79288)
+[2025-12-30 14:05:30] 
+====================
+Processing: The Catholic University of America
+====================
+[2025-12-30 14:06:09] Research completed for St. Louis University
+[2025-12-30 14:06:10] ✓ Profile saved: st_louis_university.json
+[2025-12-30 14:06:10]   ⚠️ Validation failed: application_strategy.major_selection_tactics: Input should be a valid list; credit_policies.transfer_articulation.restrictions: Input should be a valid string; student_insights.insights.0.StudentInsight.source: Field required
+[2025-12-30 14:06:10] 
+====================
+Processing: University of San Francisco
+====================
+[2025-12-30 14:06:48] Research completed for University of St. Thomas (Minnesota)
+[2025-12-30 14:06:49] ✓ Profile saved: arizona_state_university.json
+[2025-12-30 14:06:49]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1544 column 200 (char 79288)
+[2025-12-30 14:06:49] 
+====================
+Processing: University of New Hampshire
+====================
+[2025-12-30 14:09:45] Research completed for University of Cincinnati
+[2025-12-30 14:09:46] ✓ Profile saved: university_of_cincinnati.json
+[2025-12-30 14:09:46]   ⚠️ Validation failed: credit_policies.transfer_articulation: Input should be a valid dictionary or instance of TransferArticulation; student_insights.insights.0.StudentInsight.source: Field required; student_insights.insights.0.str: Input should be a valid string
+[2025-12-30 14:09:46] 
+====================
+Processing: Seton Hall University
+====================
+[2025-12-30 14:10:42] Research completed for The Catholic University of America
+[2025-12-30 14:10:43] ✓ Profile saved: the_catholic_university_of_america.json
+[2025-12-30 14:10:43]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1401 column 126 (char 72009)
+[2025-12-30 14:10:43] 
+====================
+Processing: SUNY Binghamton University
+====================
+[2025-12-30 14:12:05] Research completed for University of Nebraska-Lincoln
+[2025-12-30 14:12:06] ✓ Profile saved: university_of_nebraska_lincoln.json
+[2025-12-30 14:12:06]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 213 column 5 (char 10261)
+[2025-12-30 14:12:06] 
+====================
+Processing: DePaul University
+====================
+[2025-12-30 14:12:51] Research completed for University of San Francisco
+[2025-12-30 14:12:52] ✓ Profile saved: university_of_nebraska_lincoln.json
+[2025-12-30 14:12:52]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 213 column 5 (char 10261)
+[2025-12-30 14:12:52] 
+====================
+Processing: University of Hawaii at Manoa
+====================
+[2025-12-30 14:13:42] Research completed for University of New Hampshire
+[2025-12-30 14:13:43] ✓ Profile saved: university_of_nebraska_lincoln.json
+[2025-12-30 14:13:43]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 213 column 5 (char 10261)
+[2025-12-30 14:13:43] 
+====================
+Processing: University of Rhode Island
+====================
+[2025-12-30 14:13:51] Research completed for Seton Hall University
+[2025-12-30 14:13:52] ✓ Profile saved: seton_hall_university.json
+[2025-12-30 14:13:52]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:13:52] 
+====================
+Processing: Rochester Institute of Technology
+====================
+[2025-12-30 14:15:39] Research completed for SUNY Binghamton University
+[2025-12-30 14:15:40] ✓ Profile saved: suny_binghamton_university.json
+[2025-12-30 14:15:40]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:15:40] 
+====================
+Processing: Iowa State University
+====================
+[2025-12-30 14:16:05] Research completed for DePaul University
+[2025-12-30 14:16:06] ✓ Profile saved: depaul_university.json
+[2025-12-30 14:16:06]   ⚠️ Validation failed: academic_structure.colleges.9.admissions_model: Field required; student_insights.what_it_takes: Input should be a valid list; student_insights.insights.0.StudentInsight.source: Field required
+[2025-12-30 14:16:06] 
+====================
+Processing: Missouri University of Science and Technology
+====================
+[2025-12-30 14:18:42] Research completed for Rochester Institute of Technology
+[2025-12-30 14:18:43] ✓ Profile saved: rochester_institute_of_technology.json
+[2025-12-30 14:18:43]   ⚠️ Validation failed: admissions_data.admitted_student_profile.gpa.average_weighted: Input should be a valid number, unable to parse string as a number; application_process.supplemental_requirements.0.target_program: Field required; application_process.supplemental_requirements.0.requirement_type: Field required
+[2025-12-30 14:18:43] 
+====================
+Processing: University of Arkansas
+====================
+[2025-12-30 14:20:12] Research completed for Missouri University of Science and Technology
+[2025-12-30 14:20:13] ⚠ Output file not found for Missouri University of Science and Technology
+[2025-12-30 14:20:13] 
+====================
+Processing: Oklahoma State University
+====================
+[2025-12-30 14:21:14] Research completed for University of Hawaii at Manoa
+[2025-12-30 14:21:15] ✓ Profile saved: university_of_hawaii_at_manoa.json
+[2025-12-30 14:21:15]   ⚠️ Validation failed: academic_structure.colleges.11.admissions_model: Field required; academic_structure.colleges.12.admissions_model: Field required; academic_structure.colleges.13.admissions_model: Field required
+[2025-12-30 14:21:15] 
+====================
+Processing: University of Louisville
+====================
+[2025-12-30 14:21:20] Research completed for Iowa State University
+[2025-12-30 14:21:21] ✓ Profile saved: iowa_state_university.json
+[2025-12-30 14:21:21]   ⚠️ Validation failed: academic_structure.colleges.6.admissions_model: Input should be a valid string; academic_structure.colleges.6.is_restricted_or_capped: Input should be a valid boolean; academic_structure.colleges.7.admissions_model: Input should be a valid string
+[2025-12-30 14:21:21] 
+====================
+Processing: University of La Verne
+====================
+[2025-12-30 14:22:32] Research completed for University of Rhode Island
+[2025-12-30 14:22:33] ✓ Profile saved: university_of_hawaii_at_manoa.json
+[2025-12-30 14:22:33]   ⚠️ Validation failed: academic_structure.colleges.11.admissions_model: Field required; academic_structure.colleges.12.admissions_model: Field required; academic_structure.colleges.13.admissions_model: Field required
+[2025-12-30 14:22:33] 
+====================
+Processing: Ohio University
+====================
+[2025-12-30 14:25:59] Research completed for Oklahoma State University
+[2025-12-30 14:26:00] ✓ Profile saved: oklahoma_state_university.json
+[2025-12-30 14:26:00]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:26:00] 
+====================
+Processing: Kansas State University
+====================
+[2025-12-30 14:26:03] Research completed for University of La Verne
+[2025-12-30 14:26:04] ✓ Profile saved: university_of_hawaii_at_manoa.json
+[2025-12-30 14:26:04]   ⚠️ Validation failed: academic_structure.colleges.11.admissions_model: Field required; academic_structure.colleges.12.admissions_model: Field required; academic_structure.colleges.13.admissions_model: Field required
+[2025-12-30 14:26:04] 
+====================
+Processing: Adelphi University
+====================
+[2025-12-30 14:26:07] Research completed for University of Louisville
+[2025-12-30 14:26:08] ✓ Profile saved: university_of_hawaii_at_manoa.json
+[2025-12-30 14:26:08]   ⚠️ Validation failed: academic_structure.colleges.11.admissions_model: Field required; academic_structure.colleges.12.admissions_model: Field required; academic_structure.colleges.13.admissions_model: Field required
+[2025-12-30 14:26:08] 
+====================
+Processing: University of Central Florida
+====================
+[2025-12-30 14:26:18] Research completed for University of Arkansas
+[2025-12-30 14:26:19] ✓ Profile saved: university_of_arkansas.json
+[2025-12-30 14:26:19]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 2189 column 37 (char 102835)
+[2025-12-30 14:26:19] 
+====================
+Processing: Simmons University
+====================
+[2025-12-30 14:29:49] Research completed for Adelphi University
+[2025-12-30 14:29:50] ✓ Profile saved: adelphi_university.json
+[2025-12-30 14:29:50]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:29:50] 
+====================
+Processing: Loyola University Chicago
+====================
+[2025-12-30 14:30:36] Research completed for Simmons University
+[2025-12-30 14:30:37] ✓ Profile saved: simmons_university.json
+[2025-12-30 14:30:37]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:30:37] 
+====================
+Processing: Hofstra University
+====================
+[2025-12-30 14:31:26] Research completed for Ohio University
+[2025-12-30 14:31:27] ✓ Profile saved: ohio_university.json
+[2025-12-30 14:31:27]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:31:27] 
+====================
+Processing: University of Massachusetts Lowell
+====================
+[2025-12-30 14:31:35] Research completed for University of Central Florida
+[2025-12-30 14:31:36] ✓ Profile saved: ohio_university.json
+[2025-12-30 14:31:36]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:31:36] 
+====================
+Processing: Seattle University
+====================
+[2025-12-30 14:32:39] Research completed for Kansas State University
+[2025-12-30 14:32:40] ✓ Profile saved: kansas_state_university.json
+[2025-12-30 14:32:40]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 14:32:40] 
+====================
+Processing: Colorado State University
+====================
+[2025-12-30 14:33:29] Research completed for Hofstra University
+[2025-12-30 14:33:30] ✓ Profile saved: hofstra_university.json
+[2025-12-30 14:33:30]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:33:30] 
+====================
+Processing: Duquesne University
+====================
+[2025-12-30 14:35:01] Research completed for University of Massachusetts Lowell
+[2025-12-30 14:35:02] ✓ Profile saved: kansas_state_university.json
+[2025-12-30 14:35:02]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 14:35:02] 
+====================
+Processing: University of Texas at Dallas
+====================
+[2025-12-30 14:35:51] Research completed for Loyola University Chicago
+[2025-12-30 14:35:52] ⚠ Output file not found for Loyola University Chicago
+[2025-12-30 14:35:52] 
+====================
+Processing: University of Wyoming
+====================
+[2025-12-30 14:36:05] Error researching Colorado State University: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-30 14:36:05]   + Exception Group Traceback (most recent call last):
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 406, in process_single_university
+  |     response = await run_agent_for_university(runner, university)
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 389, in run_agent_for_university
+  |     async for event in runner.run_async(
+  |     ...<7 lines>...
+  |                     final_response = part.text
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |         return
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+  |     async for event in agen:
+  |       last_event = event
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+  |     if function_response_event := await functions.handle_function_calls_async(
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |         invocation_context, function_call_event, llm_request.tools_dict
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ):
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+  |     return await handle_function_call_list_async(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ...<5 lines>...
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+  |     function_response_events = await asyncio.gather(*tasks)
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+  |     raise tool_error
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+  |     function_response = await __call_tool_async(
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  |         tool, args=function_args, tool_context=tool_context
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+  |     return await tool.run_async(args=args, tool_context=tool_context)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+  |     async for event in agen:
+  |     ...<4 lines>...
+  |         last_content = event.content
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 206, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 145, in _merge_agent_run
+  |     async with asyncio.TaskGroup() as tg:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 71, in __aexit__
+  |     return await self._aexit(et, exc)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 173, in _aexit
+  |     raise BaseExceptionGroup(
+  |     ...<2 lines>...
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 136, in process_an_agent
+    |     async for event in events_for_one_agent:
+    |     ...<3 lines>...
+    |       await resume_signal.wait()
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    |     async for event in agen:
+    |     ...<3 lines>...
+    |         return
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    |     async for event in agen:
+    |       last_event = event
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    |     async for llm_response in agen:
+    |     ...<13 lines>...
+    |           yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    |     async for llm_response in agen:
+    |     ...<12 lines>...
+    |       yield llm_response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    |     raise model_error
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    |     async for response in agen:
+    |       yield response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    |     response = await self.api_client.aio.models.generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    |     response = await self._generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         model=model, contents=contents, config=parsed_config
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    |     response = await self._api_client.async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         'post', path, request_dict, http_options
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    |     result = await self._async_request(
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         http_request=http_request, http_options=http_options, stream=False
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    |     return await self._async_retry(  # type: ignore[no-any-return]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self._async_request_once, http_request, stream
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    |     do = await self.iter(retry_state=retry_state)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    |     result = await action(retry_state)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    |     return call(*args, **kwargs)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    |     raise retry_exc.reraise()
+    |           ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    |     raise self.last_attempt.result()
+    |           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    |     result = await fn(*args, **kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1273, in _async_request_once
+    |     await errors.APIError.raise_for_async_response(client_response)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/errors.py", line 168, in raise_for_async_response
+    |     raise ServerError(status_code, response_json, response)
+    | google.genai.errors.ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+    +------------------------------------
+
+[2025-12-30 14:36:05] 
+====================
+Processing: Mercer University
+====================
+[2025-12-30 14:38:26] Research completed for Seattle University
+[2025-12-30 14:38:27] ✓ Profile saved: seattle_university.json
+[2025-12-30 14:38:27]   ✅ Validation passed
+[2025-12-30 14:38:27] 
+====================
+Processing: University of Mississippi
+====================
+[2025-12-30 14:40:11] Research completed for Duquesne University
+[2025-12-30 14:40:12] ✓ Profile saved: duquesne_university.json
+[2025-12-30 14:40:12]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 1657 column 29 (char 93863)
+[2025-12-30 14:40:12] 
+====================
+Processing: Pace University
+====================
+[2025-12-30 14:41:53] Research completed for University of Texas at Dallas
+[2025-12-30 14:41:54] ✓ Profile saved: university_of_texas_at_dallas.json
+[2025-12-30 14:41:54]   ⚠️ Validation failed: admissions_data.admitted_student_profile.demographics.racial_breakdown: Input should be a valid dictionary or instance of RaceEthnicityStats; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 14:41:55] 
+====================
+Processing: Portland State University
+====================
+[2025-12-30 14:42:00] Research completed for University of Mississippi
+[2025-12-30 14:42:01] ✓ Profile saved: university_of_texas_at_dallas.json
+[2025-12-30 14:42:01]   ⚠️ Validation failed: admissions_data.admitted_student_profile.demographics.racial_breakdown: Input should be a valid dictionary or instance of RaceEthnicityStats; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 14:42:01] 
+====================
+Processing: University of Nevada, Reno
+====================
+[2025-12-30 14:42:34] Research completed for University of Wyoming
+[2025-12-30 14:42:35] ✓ Profile saved: university_of_texas_at_dallas.json
+[2025-12-30 14:42:35]   ⚠️ Validation failed: admissions_data.admitted_student_profile.demographics.racial_breakdown: Input should be a valid dictionary or instance of RaceEthnicityStats; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 14:42:35] 
+====================
+Processing: Samford University
+====================
+[2025-12-30 14:43:08] Research completed for Mercer University
+[2025-12-30 14:43:09] ✓ Profile saved: mercer_university.json
+[2025-12-30 14:43:09]   ⚠️ Validation failed: academic_structure.colleges.0.majors.2.prerequisite_courses: Input should be a valid list; academic_structure.colleges.0.majors.3.prerequisite_courses: Input should be a valid list; academic_structure.colleges.0.majors.4.prerequisite_courses: Input should be a valid list
+[2025-12-30 14:43:09] 
+====================
+Processing: Wayne State University
+====================
+[2025-12-30 14:43:35] Error researching University of Nevada, Reno: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-30 14:43:35]   + Exception Group Traceback (most recent call last):
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 406, in process_single_university
+  |     response = await run_agent_for_university(runner, university)
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 389, in run_agent_for_university
+  |     async for event in runner.run_async(
+  |     ...<7 lines>...
+  |                     final_response = part.text
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |         return
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+  |     async for event in agen:
+  |       last_event = event
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+  |     if function_response_event := await functions.handle_function_calls_async(
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |         invocation_context, function_call_event, llm_request.tools_dict
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ):
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+  |     return await handle_function_call_list_async(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ...<5 lines>...
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+  |     function_response_events = await asyncio.gather(*tasks)
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+  |     raise tool_error
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+  |     function_response = await __call_tool_async(
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  |         tool, args=function_args, tool_context=tool_context
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+  |     return await tool.run_async(args=args, tool_context=tool_context)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+  |     async for event in agen:
+  |     ...<4 lines>...
+  |         last_content = event.content
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 206, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 145, in _merge_agent_run
+  |     async with asyncio.TaskGroup() as tg:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 71, in __aexit__
+  |     return await self._aexit(et, exc)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 173, in _aexit
+  |     raise BaseExceptionGroup(
+  |     ...<2 lines>...
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 136, in process_an_agent
+    |     async for event in events_for_one_agent:
+    |     ...<3 lines>...
+    |       await resume_signal.wait()
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    |     async for event in agen:
+    |     ...<3 lines>...
+    |         return
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    |     async for event in agen:
+    |       last_event = event
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    |     async for llm_response in agen:
+    |     ...<13 lines>...
+    |           yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    |     async for llm_response in agen:
+    |     ...<12 lines>...
+    |       yield llm_response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    |     raise model_error
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    |     async for response in agen:
+    |       yield response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    |     response = await self.api_client.aio.models.generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    |     response = await self._generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         model=model, contents=contents, config=parsed_config
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    |     response = await self._api_client.async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         'post', path, request_dict, http_options
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    |     result = await self._async_request(
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         http_request=http_request, http_options=http_options, stream=False
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    |     return await self._async_retry(  # type: ignore[no-any-return]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self._async_request_once, http_request, stream
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    |     do = await self.iter(retry_state=retry_state)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    |     result = await action(retry_state)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    |     return call(*args, **kwargs)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    |     raise retry_exc.reraise()
+    |           ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    |     raise self.last_attempt.result()
+    |           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    |     result = await fn(*args, **kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1273, in _async_request_once
+    |     await errors.APIError.raise_for_async_response(client_response)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/errors.py", line 168, in raise_for_async_response
+    |     raise ServerError(status_code, response_json, response)
+    | google.genai.errors.ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+    +------------------------------------
+
+[2025-12-30 14:43:35] 
+====================
+Processing: University of Maine
+====================
+[2025-12-30 14:44:19] Research completed for Pace University
+[2025-12-30 14:44:20] ✓ Profile saved: pace_university.json
+[2025-12-30 14:44:20]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:44:20] 
+====================
+Processing: Tennessee Tech University
+====================
+[2025-12-30 14:46:16] Research completed for Wayne State University
+[2025-12-30 14:46:17] ✓ Profile saved: wayne_state_university.json
+[2025-12-30 14:46:17]   ⚠️ Validation failed: metadata.location: Input should be a valid dictionary or instance of Location; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy; credit_policies.ib_policy: Input should be a valid dictionary or instance of IBPolicy
+[2025-12-30 14:46:17] 
+====================
+Processing: University of North Dakota
+====================
+[2025-12-30 14:47:05] Research completed for Portland State University
+[2025-12-30 14:47:07] ✓ Profile saved: portland_state_university.json
+[2025-12-30 14:47:07]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:47:07] 
+====================
+Processing: Georgia State University
+====================
+[2025-12-30 14:48:28] Error researching Georgia State University: 
+[2025-12-30 14:48:28] Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 406, in process_single_university
+    response = await run_agent_for_university(runner, university)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 389, in run_agent_for_university
+    async for event in runner.run_async(
+    ...<7 lines>...
+                    final_response = part.text
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+    async for event in agen:
+    ...<9 lines>...
+      yield (modified_event if modified_event else event)
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    async for event in agen:
+    ...<3 lines>...
+        return
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<12 lines>...
+      yield llm_response
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    raise model_error
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1266, in _async_request_once
+    client_response = await self._async_httpx_client.request(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError
+
+[2025-12-30 14:48:28] 
+====================
+Processing: California State University, Long Beach
+====================
+[2025-12-30 14:48:31] Research completed for Samford University
+[2025-12-30 14:48:32] ✓ Profile saved: samford_university.json
+[2025-12-30 14:48:32]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:48:32] 
+====================
+Processing: Bowling Green State University
+====================
+[2025-12-30 14:48:55] Error researching University of Maine: 
+[2025-12-30 14:48:55] Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 406, in process_single_university
+    response = await run_agent_for_university(runner, university)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 389, in run_agent_for_university
+    async for event in runner.run_async(
+    ...<7 lines>...
+                    final_response = part.text
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+    async for event in agen:
+    ...<9 lines>...
+      yield (modified_event if modified_event else event)
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    async for event in agen:
+    ...<3 lines>...
+        return
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+    async for event in agen:
+    ...<3 lines>...
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+    if function_response_event := await functions.handle_function_calls_async(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        invocation_context, function_call_event, llm_request.tools_dict
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+    return await handle_function_call_list_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+    function_response_events = await asyncio.gather(*tasks)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+    raise tool_error
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+    function_response = await __call_tool_async(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+        tool, args=function_args, tool_context=tool_context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+    return await tool.run_async(args=args, tool_context=tool_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+    async for event in agen:
+    ...<4 lines>...
+        last_content = event.content
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+    async for event in agen:
+    ...<9 lines>...
+      yield (modified_event if modified_event else event)
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+    async for event in agen:
+    ...<2 lines>...
+        pause_invocation = True
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+    async for event in agen:
+    ...<2 lines>...
+        pause_invocation = True
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    async for event in agen:
+    ...<3 lines>...
+        return
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<12 lines>...
+      yield llm_response
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    raise model_error
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1266, in _async_request_once
+    client_response = await self._async_httpx_client.request(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError
+
+[2025-12-30 14:48:55] 
+====================
+Processing: East Carolina University
+====================
+[2025-12-30 14:49:06] Error researching Tennessee Tech University: 
+[2025-12-30 14:49:06] Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 406, in process_single_university
+    response = await run_agent_for_university(runner, university)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 389, in run_agent_for_university
+    async for event in runner.run_async(
+    ...<7 lines>...
+                    final_response = part.text
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+    async for event in agen:
+    ...<9 lines>...
+      yield (modified_event if modified_event else event)
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    async for event in agen:
+    ...<3 lines>...
+        return
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+    async for event in agen:
+    ...<3 lines>...
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+    if function_response_event := await functions.handle_function_calls_async(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        invocation_context, function_call_event, llm_request.tools_dict
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+    return await handle_function_call_list_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+    function_response_events = await asyncio.gather(*tasks)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+    raise tool_error
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+    function_response = await __call_tool_async(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+        tool, args=function_args, tool_context=tool_context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+    return await tool.run_async(args=args, tool_context=tool_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+    async for event in agen:
+    ...<4 lines>...
+        last_content = event.content
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+    async for event in agen:
+    ...<9 lines>...
+      yield (modified_event if modified_event else event)
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+    async for event in agen:
+    ...<2 lines>...
+        pause_invocation = True
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+    async for event in agen:
+    ...<2 lines>...
+        pause_invocation = True
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    async for event in agen:
+    ...<3 lines>...
+        return
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<12 lines>...
+      yield llm_response
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    raise model_error
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1266, in _async_request_once
+    client_response = await self._async_httpx_client.request(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError
+
+[2025-12-30 14:49:06] 
+====================
+Processing: Morgan State University
+====================
+[2025-12-30 14:49:14] Error researching University of North Dakota: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-30 14:49:14]   + Exception Group Traceback (most recent call last):
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 406, in process_single_university
+  |     response = await run_agent_for_university(runner, university)
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/run_all_250_universities.py", line 389, in run_agent_for_university
+  |     async for event in runner.run_async(
+  |     ...<7 lines>...
+  |                     final_response = part.text
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |         return
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+  |     async for event in agen:
+  |       last_event = event
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 429, in _run_one_step_async
+  |     async for event in agen:
+  |     ...<3 lines>...
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 531, in _postprocess_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 654, in _postprocess_handle_function_calls_async
+  |     if function_response_event := await functions.handle_function_calls_async(
+  |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |         invocation_context, function_call_event, llm_request.tools_dict
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ):
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 198, in handle_function_calls_async
+  |     return await handle_function_call_list_async(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     ...<5 lines>...
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 244, in handle_function_call_list_async
+  |     function_response_events = await asyncio.gather(*tasks)
+  |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 347, in _execute_single_function_call_async
+  |     raise tool_error
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 332, in _execute_single_function_call_async
+  |     function_response = await __call_tool_async(
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  |         tool, args=function_args, tool_context=tool_context
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |     )
+  |     ^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/functions.py", line 725, in __call_tool_async
+  |     return await tool.run_async(args=args, tool_context=tool_context)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/tools/agent_tool.py", line 160, in run_async
+  |     async for event in agen:
+  |     ...<4 lines>...
+  |         last_content = event.content
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 442, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 426, in _run_with_trace
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 652, in _exec_with_plugin
+  |     async for event in agen:
+  |     ...<9 lines>...
+  |       yield (modified_event if modified_event else event)
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/runners.py", line 415, in execute
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+  |     async for event in agen:
+  |       yield event
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 206, in _run_async_impl
+  |     async for event in agen:
+  |     ...<2 lines>...
+  |         pause_invocation = True
+  |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 145, in _merge_agent_run
+  |     async with asyncio.TaskGroup() as tg:
+  |                ~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 71, in __aexit__
+  |     return await self._aexit(et, exc)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py", line 173, in _aexit
+  |     raise BaseExceptionGroup(
+  |     ...<2 lines>...
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    |     yield
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    |     resp = await self._pool.handle_async_request(req)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    |     raise exc from None
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    |     response = await connection.handle_async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         pool_request.request
+    |         ^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    |     raise exc
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    |     stream = await self._connect(request)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_async/connection.py", line 156, in _connect
+    |     stream = await stream.start_tls(**kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 67, in start_tls
+    |     with map_exceptions(exc_map):
+    |          ~~~~~~~~~~~~~~^^^^^^^^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    |     raise to_exc(exc) from exc
+    | httpcore.ConnectError
+    | 
+    | The above exception was the direct cause of the following exception:
+    | 
+    | Traceback (most recent call last):
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/parallel_agent.py", line 136, in process_an_agent
+    |     async for event in events_for_one_agent:
+    |     ...<3 lines>...
+    |       await resume_signal.wait()
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/sequential_agent.py", line 77, in _run_async_impl
+    |     async for event in agen:
+    |     ...<2 lines>...
+    |         pause_invocation = True
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 294, in run_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 408, in _run_async_impl
+    |     async for event in agen:
+    |     ...<3 lines>...
+    |         return
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 356, in run_async
+    |     async for event in agen:
+    |       last_event = event
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 419, in _run_one_step_async
+    |     async for llm_response in agen:
+    |     ...<13 lines>...
+    |           yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 789, in _call_llm_async
+    |     async for event in agen:
+    |       yield event
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 773, in _call_llm_with_tracing
+    |     async for llm_response in agen:
+    |     ...<12 lines>...
+    |       yield llm_response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 983, in _run_and_handle_error
+    |     raise model_error
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 967, in _run_and_handle_error
+    |     async for response in agen:
+    |       yield response
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 181, in generate_content_async
+    |     response = await self.api_client.aio.models.generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 6762, in generate_content
+    |     response = await self._generate_content(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         model=model, contents=contents, config=parsed_config
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/models.py", line 5597, in _generate_content
+    |     response = await self._api_client.async_request(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         'post', path, request_dict, http_options
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1348, in async_request
+    |     result = await self._async_request(
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         http_request=http_request, http_options=http_options, stream=False
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1293, in _async_request
+    |     return await self._async_retry(  # type: ignore[no-any-return]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self._async_request_once, http_request, stream
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    |     do = await self.iter(retry_state=retry_state)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    |     result = await action(retry_state)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    |     return call(*args, **kwargs)
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 418, in exc_check
+    |     raise retry_exc.reraise()
+    |           ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/__init__.py", line 185, in reraise
+    |     raise self.last_attempt.result()
+    |           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    |     return self.__get_result()
+    |            ~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/opt/homebrew/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    |     result = await fn(*args, **kwargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/google/genai/_api_client.py", line 1266, in _async_request_once
+    |     client_response = await self._async_httpx_client.request(
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<5 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    |     return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    |     response = await self._send_handling_auth(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<4 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    |     response = await self._send_handling_redirects(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    |     response = await self._send_single_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    |     response = await transport.handle_async_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    |     with map_httpcore_exceptions():
+    |          ~~~~~~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "/opt/homebrew/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    |     raise mapped_exc(message) from exc
+    | httpx.ConnectError
+    +------------------------------------
+
+[2025-12-30 14:53:16] Research completed for East Carolina University
+[2025-12-30 14:53:17] ✓ Profile saved: east_carolina_university.json
+[2025-12-30 14:53:17]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:53:46] Research completed for California State University, Long Beach
+[2025-12-30 14:53:47] ✓ Profile saved: california_state_university_long_beach.json
+[2025-12-30 14:53:47]   ⚠️ Validation failed: strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.2: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-30 14:54:11] Research completed for Bowling Green State University
+[2025-12-30 14:54:12] ✓ Profile saved: bowling_green_state_university.json
+[2025-12-30 14:54:12]   ⚠️ Validation failed: admissions_data.current_status.early_admission_stats: Input should be a valid list; application_strategy.major_selection_tactics: Input should be a valid list; credit_policies.ap_policy: Input should be a valid dictionary or instance of APPolicy
+[2025-12-30 14:54:23] Research completed for Morgan State University
+[2025-12-30 14:54:24] ✓ Profile saved: morgan_state_university.json
+[2025-12-30 14:54:24]   ⚠️ Validation failed: academic_structure.colleges.0.majors.1.admissions_pathway: Input should be a valid string; academic_structure.colleges.0.majors.2.admissions_pathway: Input should be a valid string; academic_structure.colleges.0.majors.3.admissions_pathway: Input should be a valid string

@@ -977,25 +977,25 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Three supplemental essays required: one 'Why Major' (150 words), one 'Why Us' (150 words), and one 'Community' essay (500 words, choice of two prompts). An image submission ('The Rice Box') is also required."
       },
       {
         "target_program": "Music",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Pre-screening recording required for Shepherd School of Music applicants."
       },
       {
         "target_program": "Architecture",
         "requirement_type": "Portfolio & Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Applicants to the School of Architecture must submit a portfolio of creative work and two additional supplemental essays."
       },
       {
         "target_program": "Art",
         "requirement_type": "Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Applicants interested in the Department of Art may submit a portfolio of creative work."
       }
     ],
@@ -1197,11 +1197,31 @@
       "A decline in grades during the senior year or taking less challenging coursework [cite: 2, 23]."
     ],
     "insights": [
-      "Rice employs a holistic admissions process, valuing extracurriculars, talents, and character alongside academic excellence [cite: 2, 23].",
-      "Demonstrating 'fit' with Rice's collaborative and community-oriented environment, fostered by the residential college system, is crucial [cite: 3, 7].",
-      "Interviews are an important opportunity to showcase personality and interest beyond the written application [cite: 7, 23].",
-      "Applying Early Decision (ED) can improve chances of acceptance [cite: 17, 19].",
-      "Students appreciate the supportive community and engaging professors, often describing Rice as a place that balances academic rigor with a strong sense of belonging [cite: 3, 6]."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Rice employs a holistic admissions process, valuing extracurriculars, talents, and character alongside academic excellence [cite: 2, 23]."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrating 'fit' with Rice's collaborative and community-oriented environment, fostered by the residential college system, is crucial [cite: 3, 7]."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Interviews are an important opportunity to showcase personality and interest beyond the written application [cite: 7, 23]."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED) can improve chances of acceptance [cite: 17, 19]."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Students appreciate the supportive community and engaging professors, often describing Rice as a place that balances academic rigor with a strong sense of belonging [cite: 3, 6]."
+      }
     ]
   },
   "outcomes": {

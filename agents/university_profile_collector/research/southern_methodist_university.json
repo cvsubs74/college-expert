@@ -1067,7 +1067,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required (250-word limit each): 1. Why are you interested in attending SMU and what specific factors have led you to apply? 2. How will your unique experiences enhance the University, and how will you benefit from this community? (Optional but highly recommended)"
       },
       {
@@ -1257,11 +1257,31 @@
       "Not conducting thorough research on SMU's offerings and community, leading to vague statements."
     ],
     "insights": [
-      "SMU utilizes a holistic review process, considering grades, test scores (if submitted), coursework rigor, leadership, extracurriculars, and essays.",
-      "Students often praise SMU for its small class sizes, accessible and supportive professors, and the strong academic programs, especially in business and liberal arts.",
-      "Demonstrated interest in the university can be a factor in admissions.",
-      "The location in Dallas offers abundant opportunities for networking and internships.",
-      "While the interview is a key stage for some applicants (e.g., for specific programs or scholarships), it focuses on thought process, personality, and genuine interest, not just memorized answers."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "SMU utilizes a holistic review process, considering grades, test scores (if submitted), coursework rigor, leadership, extracurriculars, and essays."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Students often praise SMU for its small class sizes, accessible and supportive professors, and the strong academic programs, especially in business and liberal arts."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest in the university can be a factor in admissions."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The location in Dallas offers abundant opportunities for networking and internships."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While the interview is a key stage for some applicants (e.g., for specific programs or scholarships), it focuses on thought process, personality, and genuine interest, not just memorized answers."
+      }
     ]
   },
   "outcomes": {

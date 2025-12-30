@@ -1,0 +1,585 @@
+{
+  "_id": "western_michigan_university",
+  "metadata": {
+    "official_name": "Western Michigan University",
+    "location": {
+      "city": "Kalamazoo",
+      "state": "Michigan",
+      "region": "",
+      "type": "main_campus"
+    },
+    "last_updated": "2023-10-27"
+  },
+  "strategic_profile": {
+    "executive_summary": "Western Michigan University (WMU) is a public research university in Kalamazoo, Michigan. Founded in 1903, it offers over 200 undergraduate and 70 graduate programs across a wide range of disciplines, with notable strengths in aviation, engineering, business, and fine arts. WMU is recognized for its commitment to research, student success, and community engagement.",
+    "market_position": "A regional public research university known for strong engineering and aviation programs, with a growing emphasis on health sciences. Competes with other Michigan publics like Central Michigan and Eastern Michigan, but holds a distinct position with its research profile and specific program strengths.",
+    "admissions_philosophy": "WMU seeks a diverse student body that demonstrates academic potential, leadership qualities, and a commitment to community involvement. While standardized test scores are considered, a holistic review process emphasizes high school GPA, course rigor, essays, and extracurricular activities. The university aims to provide accessible, high-quality education to students prepared for a rigorous academic environment.",
+    "us_news_rank": 269,
+    "analyst_takeaways": [
+      {
+        "takeaway": "WMU's strong professional programs (engineering, aviation) provide a distinct competitive advantage in the Michigan market.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The recent emphasis on health sciences, including new facilities and programs, positions WMU well for future growth and addresses regional workforce needs.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Improving on-campus parking and better integrating the university with downtown Kalamazoo could enhance the overall student experience and city-university relationship.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Continued investment in research infrastructure and faculty recruitment is key to maintaining and elevating its Carnegie R2 status.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The holistic admissions approach is good for diversity but requires clear communication to prospective students on what WMU values beyond grades.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant campus life with numerous student organizations, strong Greek presence, and active intramural sports. There's a balance of on-campus activities and off-campus engagement in Kalamazoo. Known for a welcoming and inclusive atmosphere, with events frequently hosted by various student groups and the student government.",
+      "transportation_impact": "Located in Kalamazoo, WMU's campus is spread out, requiring a robust campus bus system. Many students, especially upperclassmen, have cars. Kalamazoo's city bus system also serves the campus and surrounding areas, connecting students to downtown amenities. Parking on campus can be challenging during peak hours.",
+      "research_impact": "High research activity, particularly in engineering, aviation, health sciences, and education. WMU is classified as a 'high research activity' institution by the Carnegie Foundation. Significant opportunities for undergraduate and graduate students to participate in faculty-led research projects, contributing to regional economic development and innovation."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 84.6,
+      "is_test_optional": true,
+      "test_policy_details": "Western Michigan University has a test-optional policy, meaning students are not required to submit ACT or SAT scores for admission or scholarship consideration. Applicants may submit scores if they believe it will strengthen their application, and doing so will not disadvantage them. WMU superscores both ACT and SAT, using the highest subscores from any test date. Enrolling students who had test scores used in their admission decision will need to provide official scores for course placement prior to New Student Orientation.",
+      "admits_class_size": 2472,
+      "transfer_acceptance_rate": 77.56,
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 18502,
+          "admits": 16370,
+          "acceptance_rate": 88.48,
+          "class_fill_percentage": null
+        }
+      ],
+      "international_acceptance_rate": 32.17,
+      "international_applications": 830,
+      "international_admits": 267,
+      "notes": "The international acceptance rate for Western Michigan University was 32.17% for the 2024 application year, which is lower than the general acceptance rate for the university (around 83-85%).",
+      "in_state_acceptance_rate": 18.5,
+      "out_of_state_acceptance_rate": 8.2
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 21700,
+        "admits_total": 18358,
+        "enrolled_total": 2437,
+        "acceptance_rate_overall": 84.6,
+        "yield_rate": 13.27,
+        "notes": "Data for the 2025 admissions cycle (Fall 2025 enrollment).",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 21701,
+        "admits_total": 18359,
+        "enrolled_total": 2437,
+        "acceptance_rate_overall": 84.6,
+        "yield_rate": 13.27,
+        "notes": "Data for the 2024 admissions cycle (Fall 2024 enrollment). Total enrolled refers to first-time, first-year students.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 20100,
+        "admits_total": 17020,
+        "enrolled_total": 2472,
+        "acceptance_rate_overall": 84.68,
+        "yield_rate": 14.52,
+        "notes": "Data for the 2023 admissions cycle (Fall 2023 enrollment).",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 19773,
+        "admits_total": 16739,
+        "enrolled_total": 2578,
+        "acceptance_rate_overall": 84.66,
+        "yield_rate": 15.4,
+        "notes": "Data for the 2022 admissions cycle (Fall 2022 enrollment).",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 20412,
+        "admits_total": 17212,
+        "enrolled_total": 2746,
+        "acceptance_rate_overall": 84.32,
+        "yield_rate": 15.95,
+        "notes": "Data for the 2021 admissions cycle (Fall 2021 enrollment).",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.00-3.85",
+        "unweighted_middle_50": "3.00-3.70",
+        "average_weighted": 3.53,
+        "percentile_25": "3.00",
+        "percentile_75": "3.85",
+        "notes": "Western Michigan University reports an average weighted GPA of 3.53 and an average unweighted GPA of 3.3 for admitted students. The university practices holistic admission, considering academic achievement in rigorous coursework, strength of high school program, and trends in grades. In 2018, the average high school GPA of incoming freshmen was 3.4, with over 44% having GPAs of 3.5 and above."
+      },
+      "testing": {
+        "sat_composite_middle_50": "990-1220",
+        "sat_reading_middle_50": "510-620",
+        "sat_math_middle_50": "490-600",
+        "act_composite_middle_50": "20-27",
+        "submission_rate": 58.0,
+        "policy_note": "Western Michigan University is test-optional for admission and scholarship consideration, meaning submitting SAT or ACT scores is not required. The university superscores both SAT and ACT, using the highest subscores from all test dates. Applicants can self-report their scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 12.0,
+        "legacy_percentage": null,
+        "notes": "First-generation defined as students whose parents or guardians have not completed a four-year bachelor's degree. More than 12% of undergraduate students identify as first-generation as of Fall 2022. No percentage for legacy students was found, though Western Michigan University does offer a Legacy Scholarship for students whose parent, stepparent, or legal guardian is a WMU graduate.",
+        "geographic_breakdown": [
+          {
+            "region": "Michigan Residents (In-State)",
+            "percentage": 71.8
+          },
+          {
+            "region": "International Students",
+            "percentage": 12.2
+          },
+          {
+            "region": "Out-of-State (Domestic) Students",
+            "percentage": 16.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8926,
+            "admits": 7391,
+            "acceptance_rate": 82.8,
+            "note": "Data for first-time, first-year students for Fall 2023, from Common Data Set 2023-2024."
+          },
+          "women": {
+            "applicants": 11174,
+            "admits": 9629,
+            "acceptance_rate": 86.17,
+            "note": "Data for first-time, first-year students for Fall 2023, from Common Data Set 2023-2024."
+          },
+          "non_binary": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": null,
+            "note": "Data for first-time, first-year students for Fall 2023, from Common Data Set 2023-2024."
+          }
+        },
+        "racial_breakdown": {
+          "white": 66.8,
+          "black_african_american": 7.73,
+          "hispanic_latino": 8.35,
+          "asian": 3.13,
+          "native_american_alaskan": 0.44,
+          "pacific_islander": 0.05,
+          "two_or_more_races": 3.75,
+          "unknown": 2.24,
+          "non_resident_alien": 7.5
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Primarily general university housing. Students may reside in various residence halls across main campus, offering community development and social engagement, with easy access to academic buildings and the library. Some might opt for the Honors Community if they are high-achieving.",
+        "student_archetype": "Intellectually curious and broad-minded students interested in foundational knowledge across humanities, social sciences, and STEM fields. They value a comprehensive education and often explore multiple disciplines.",
+        "strategic_fit_advice": "Ideal for students seeking a robust liberal arts education with opportunities to explore diverse academic interests before specializing."
+      },
+      {
+        "name": "College of Aviation",
+        "admissions_model": "Direct Admit / Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "While no specific dorm was detailed in the search results, WMU offers an \"Aviation House\" Living Learning Community. This suggests a dedicated housing option for aviation students, likely fostering a strong sense of camaraderie among future pilots and aviation professionals.",
+        "student_archetype": "Highly disciplined, detail-oriented, and ambitious individuals passionate about aerospace, piloting, or other aviation-related careers. They are likely driven by hands-on learning and professional readiness.",
+        "strategic_fit_advice": "Best for students with a clear career path in aviation who desire an immersive learning environment both academically and residentially."
+      },
+      {
+        "name": "College of Education and Human Development",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university housing. Students in this college would reside in various residence halls across main campus, offering a supportive environment focused on community and academic integration.",
+        "student_archetype": "Compassionate, community-minded individuals dedicated to becoming educators, human service professionals, or leaders in related fields. They are often driven by a desire to make a positive impact and are interested in flexible educational options and hands-on learning.",
+        "strategic_fit_advice": "Recommended for students passionate about serving others and shaping the future, who seek a supportive academic environment with opportunities for practical experience in education, dietetics, fashion, or exercise science."
+      },
+      {
+        "name": "College of Engineering and Applied Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Features the \"Engineering House\" Living Learning Community located in Ackley Hall (Valley 1). This community provides a supportive environment with neighbors in the same courses, access to housing staff who understand engineering demands, and activities focused on collaboration and student success.",
+        "student_archetype": "Ambitious, collaborative problem-solvers with a strong interest in STEM fields. They thrive on shared academic challenges and value a strong support network to navigate rigorous coursework.",
+        "strategic_fit_advice": "Highly recommended for students pursuing engineering or applied sciences majors who benefit from living with peers in similar academic programs and desire built-in academic support and collaborative learning opportunities."
+      },
+      {
+        "name": "College of Fine Arts",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Offers the \"Fine Arts House\" Living Learning Community, located in Harvey Hall (Valley 2). This community provides a creative environment with practice rooms, a visual arts room, and a large studio with a dance floor and mirrors. Residents are a mixture of art, dance, music, and theatre majors.",
+        "student_archetype": "Creative, passionate, and dedicated individuals pursuing visual or performing arts. They value an environment that fosters artistic expression, collaboration, and a strong sense of community with like-minded peers.",
+        "strategic_fit_advice": "Excellent for students committed to the arts who seek an immersive living experience that supports their creative practice and provides a built-in network of fellow artists."
+      },
+      {
+        "name": "Haworth College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students have access to general campus housing, with some likely gravitating towards \"The Valley\" area due to its proximity to the Haworth College of Business. There is also a \"Business Community\" Living Learning Community available. These options emphasize community development and convenient access to academic resources.",
+        "student_archetype": "Career-focused, ambitious, and professionally driven students seeking a strong business foundation and practical experience. They are often interested in networking and building skills for various business fields.",
+        "strategic_fit_advice": "Suited for students eager to engage with industry partners and develop a professional network early in their academic journey, particularly those who thrive in a collaborative and experience-driven learning environment."
+      },
+      {
+        "name": "College of Health and Human Services",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university housing. Students would typically reside in various residence halls, with some potentially opting for the \"Health Professionals Community\" LLC. Spindler Hall, located on East Campus, is open to graduate students, senior status students, or those at least 21, and is close to the College of Health and Human Services.",
+        "student_archetype": "Empathetic, service-oriented individuals driven by a desire to help others and make a difference in their communities. They are interested in careers in health, human services, or related fields that are often in high demand.",
+        "strategic_fit_advice": "Well-suited for students with a strong calling to care for and support others, who are looking for a student-centered education that prepares them for impactful careers in health and human services."
+      },
+      {
+        "name": "Irving S. Gilmore School of Music",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null
+      },
+      {
+        "name": "Merze Tate College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university housing. As the academic home for exploratory majors, students would be distributed across various residence halls, fostering broad connections.",
+        "student_archetype": "Undecided or exploratory students who are open to discovering their academic passions and career paths. They are typically inquisitive and seek a supportive environment to explore different fields before committing to a major.",
+        "strategic_fit_advice": "Ideal for students who are not yet set on a major and wish to take advantage of WMU's diverse academic offerings while receiving guidance to find their best fit."
+      },
+      {
+        "name": "Lee Honors College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Offers optional \"Honors Housing\" located in Garneau Hall (Valley 2), referred to as the \"Honors Community\". This community aims to ease the transition into university life, support the Honors College experience, and provide networking opportunities. The Lee Honors College building itself, centrally located on main campus, provides a student lounge, kitchen, and study areas.",
+        "student_archetype": "High-achieving, academically motivated, and intellectually curious students from all disciplines. They are driven by a thirst for creative inquiry, discovery, and a desire to address critical challenges with a global perspective.",
+        "strategic_fit_advice": "Perfect for academically talented students seeking an enriched undergraduate experience with smaller classes, unique programs, and a strong community of like-minded, driven peers from various majors."
+      }
+    ],
+    "minors_certificates": [
+      "Communication Minor",
+      "Criminal Justice Studies Minor",
+      "Creative Writing Minor",
+      "Dance Studio Management Certificate",
+      "Economics Minor",
+      "Paper Engineering Certificate",
+      "Sociology Minor",
+      "UX-HCI – User Experience/Human-Computer Interaction Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-15",
+        "is_binding": false,
+        "notes": "Non-binding; considered for admission to all academic programs, admissions merit scholarships, Medallion scholarship consideration, and priority invitation to the Lee Honors College."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-06-01",
+        "is_binding": false,
+        "notes": "Rolling Admission for Fall 2026 entry."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Personal essays are generally optional for general admission to Western Michigan University. However, for competitive admission programs like direct entry into the Bronson School of Nursing, an additional essay prompt will be provided."
+      },
+      {
+        "target_program": "Music (Vocal Studies)",
+        "requirement_type": "Audition",
+        "deadline": "November (for Spring enrollment), January/February (for Fall enrollment)",
+        "details": "Entrance into the Irving S. Gilmore School of Music for vocal studies requires an audition. Auditions typically occur during New Student Admission Days. Vocalists are expected to perform two memorized classical art songs or arias (one in English and one in a foreign language) and sight-sing. An accompanist will be provided. Video auditions may be accepted for long-distance applicants, but live auditions are strongly encouraged. Audition results are usually announced after the final audition in March."
+      },
+      {
+        "target_program": "Theatre (Undergraduate)",
+        "requirement_type": "Audition/Interview",
+        "deadline": "Rolling admission encouraged, specific dates in November 2025, January 2026, February 2026.",
+        "details": "Admission to the Theatre program requires both a WMU application and a separate WMU Theatre Application submitted through Acceptd, followed by an audition or interview. Virtual audition/interview dates are November 15, 2025, and January 17, 2026. On-campus auditions/interviews are scheduled for January 31 and February 20, 2026. Chicago Unified Auditions for Acting and Music Theatre Performance are February 2-3, 2026. Early application is encouraged for scholarship consideration."
+      },
+      {
+        "target_program": "Musical Theatre (BFA)",
+        "requirement_type": "Audition",
+        "deadline": "See Theatre program audition dates.",
+        "details": "Live audition requirements include two 16-bar song selections (one ballad, one up-tempo, no Sondheim), a 1-minute contemporary monologue (avoiding Tennessee Williams, Arthur Miller, and Neil Simon), and participation in a dance combination taught at the audition. Dance attire is required. Candidates will also take a music theory exam for placement."
+      },
+      {
+        "target_program": "Dance (BA/BFA)",
+        "requirement_type": "Audition",
+        "deadline": "Dance application available September 1. On-site auditions: November 21, 2025, and February 27, 2026.",
+        "details": "Students can participate in on-site auditions or submit virtual audition materials through Acceptd. On-site auditions typically include jazz, ballet, and modern dance technique classes, improvisation, and meetings with faculty and university representatives. All students audition into the BA program, with BFA entrance petitioned later."
+      },
+      {
+        "target_program": "Interior Architecture and Design (Upper Division)",
+        "requirement_type": "Portfolio, Essay, Interview",
+        "deadline": "Portfolio Submission: March 14 – May 9, 2025 (by 5:00 p.m.). Interview: May 30, 2025.",
+        "details": "After completing the Pre-Interior Design curriculum (typically in their fourth semester), students must undergo a portfolio review for selective admission to the upper division of the program. The application is submitted through the online IAD Portfolio Review Submission Portal. The review consists of a 20-minute interview where the student presents a minimum of three printed and bound portfolios, a professionally composed design statement, and an essay on a faculty-selected topic. The portfolio should showcase abilities in 2D and 3D design, drafting, and freehand drawing."
+      },
+      {
+        "target_program": "Product Design (BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "Null (submitted for initial acceptance through SlideRoom)",
+        "details": "Product Design majors are required to submit a portfolio for initial acceptance into the program through SlideRoom."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "GPA",
+        "Course Rigor"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores",
+        "Recommendations",
+        "Class Rank",
+        "Essays",
+        "Extracurriculars",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "Unknown",
+      "first_gen_boost": "Unknown",
+      "specific_differentiators": "Western Michigan University emphasizes a commitment to increasing access to higher education and supporting student success, including programs like the Assured Admission Program and Alpha Program for students who demonstrate potential for college-level work."
+    },
+    "essay_prompts": [
+      "If applying via Common Application, applicants select one of the seven Common App essay prompts (e.g., Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.)",
+      "For direct applications, a personal statement or essay might be optional or specific to particular programs or scholarship applications, rather than a universal requirement for general admission.",
+      "For competitive admission programs like direct entry into the Bronson School of Nursing, an additional essay prompt will be provided."
+    ]
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Identify and Prepare for Competitive Programs: Be aware that certain majors at Western Michigan University, such as Aviation Flight Science and direct admission to the Bronson School of Nursing, are highly competitive and have specific, earlier application deadlines and requirements for first-year and transfer students. If you are interested in these fields, ensure your application meets all criteria, including any optional supplemental materials like recommendation letters or essays, and is submitted by the Early Action deadline (December 15 for first-year students for both programs, and February 15 for transfer students for Aviation Flight Science).",
+      "Utilize Exploratory Advising if Undecided: Western Michigan University embraces students who are exploring their academic interests. If you are unsure about your major, you can apply as undeclared and take advantage of their \"Exploratory Advising\" services. This approach allows you to explore various options with dedicated support to help you find a path that aligns with your passions and career goals. The College of Arts and Sciences, for instance, actively supports students uncertain about their major through resources like career self-assessments and career advisors.",
+      "Understand Pre-Major Requirements for Certain Fields: For some programs, you may initially be placed into a \"pre-major\" status before gaining full admission to the major. For example, students interested in Communication or Psychology within the College of Arts and Sciences, Graphic Design or Theatre in the College of Fine Arts, or teacher certification programs in the College of Education, will initially be in a \"pre-program\" until specific departmental requirements are met. It's important to understand these internal admission requirements for your intended field of study.",
+      "Be Prepared for Potential Major Changes: Nearly 45% of WMU students change their major during their academic careers, and the university's Academic Advising ensures this process is manageable and consistent. If you find your interests shifting, the university provides resources and a clear process for changing your major, and an academic advisor can help you review requirements and plan your academic progression efficiently.",
+      "Research Major-Specific Demand: While Western Michigan University has a generally high acceptance rate (around 85%), the existence of \"competitive admission programs\" indicates that demand and ease of entry can vary significantly by major. Researching the specific demand and capacity limits for your desired major, beyond the explicitly competitive ones, can offer a more strategic approach to your application."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate specific academic program strength and specialized accreditations within each college.",
+      "Examine faculty resources, including faculty compensation and the percentage of full-time teachers.",
+      "Analyze student outcomes such as 4-year graduation rates and freshmen retention rates.",
+      "Assess the level of research activity within the specific college.",
+      "Consider student selectivity for admission to the college's programs."
+    ],
+    "alternate_major_strategy": "Western Michigan University encourages an 'Exploratory Path' and provides a 'Parallel Major List' for career alignment, suggesting flexibility in selecting alternate majors. Students can also work with advisors to customize majors. If not admitted to a competitive major, students are likely considered for general university admission or other declared majors.",
+    "internal_transfer_difficulty": "Internal transfer into highly competitive and impacted majors suchs as Aviation Flight Science and direct admission to the Bronson School of Nursing is difficult due to high demand and capacity limits; Aviation Flight Science is currently not accepting major changes. For most other majors, changing a major after admission is a common and relatively straightforward process, though some may require advisor consultations or specific academic prerequisites."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 16707.0,
+        "total_coa": 32947.0,
+        "housing": 15416.7
+      },
+      "out_of_state": {
+        "tuition": 20844.0,
+        "total_coa": 36260.7
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 9687.5,
+    "average_merit_aid": 6952.0,
+    "percent_receiving_aid": 90.0,
+    "meets_full_need": false,
+    "scholarships": [
+      {
+        "name": "Medallion Scholarship",
+        "type": "Merit",
+        "amount": "$92,110 over 4 years",
+        "deadline": "December 15 (Early Action)",
+        "benefits": "Up to $16,000 per year for tuition and fees, housing costs up to $6,249 per year, one-time engagement scholarship of up to $3,000 for study abroad or research.",
+        "application_method": "Automatic Consideration (based on admissions application file)"
+      },
+      {
+        "name": "Global Education Merit Scholarship",
+        "type": "Merit",
+        "amount": "Up to $10,000 per academic year (or $5,000 annually over 4 years)",
+        "deadline": "March 1",
+        "benefits": "Applied to WMU academic tuition.",
+        "application_method": "Automatic Consideration (upon complete admission, minimum 3.50 GPA for undergraduates)"
+      },
+      {
+        "name": "WMU Achievement Grant",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "FAFSA completion",
+        "benefits": "Financial aid for undergraduate students.",
+        "application_method": "FAFSA"
+      },
+      {
+        "name": "Mary Upjohn Meader Incoming Freshman Award",
+        "type": "Merit",
+        "amount": "$20,000 over 4 years",
+        "deadline": "Null",
+        "benefits": "Disbursed equally across eight semesters.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Bronco Merit Award",
+        "type": "Merit",
+        "amount": "$4,000 per year",
+        "deadline": "December 15 (Early Action for consideration)",
+        "benefits": "Scholarship for first-year students.",
+        "application_method": "Automatic Consideration (based on admissions application file)"
+      },
+      {
+        "name": "Endowed Scholarships (General)",
+        "type": "Merit/Need (Varies)",
+        "amount": "Varies",
+        "deadline": "February 15 (for 2026-27 academic year, opens November 17)",
+        "benefits": "Donor-funded scholarships for degree-seeking students.",
+        "application_method": "Separate Application (via Scholarship Universe system)"
+      },
+      {
+        "name": "Community College Honors Scholarship",
+        "type": "Merit",
+        "amount": "Null",
+        "deadline": "Null",
+        "benefits": "For entering transfer students.",
+        "application_method": "Null (requires 24 completed hours and minimum 3.5 GPA)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Western Michigan University (WMU) requires a minimum score of 3 for most AP exams to grant credit; however, some exams require a minimum score of 4 or 5.",
+      "exceptions": [
+        "A score of 5 is required for 8 credit hours in Chemistry (scores of 3 or 4 grant 4 credit hours).",
+        "A score of 4 or 5 is required for Physics.",
+        "For English Literature and Composition, a score of 4 or 5 allows students to choose between ENGL 1050 or ENGL 1100.",
+        "For Computer Science A and Chinese Language and Culture (for scores of 4-5), credit is determined by departmental recommendation."
+      ],
+      "usage": "AP credits can earn students college credit and may allow placement into advanced courses. Credits are applied to a student's record after the start of their first semester at WMU. Students are advised to consult with their academic advisor to determine how AP credits best fit their academic program."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit; SL not accepted",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "description": "WMU accepts transfer credit from regionally accredited institutions, generally for courses with a grade of C (2.0) or higher. They offer an online Transfer Equivalency System to help students determine how courses will transfer and participate in the Michigan Transfer Network (MTN), providing numerous transfer guides and articulation agreements with community colleges. Restrictions include maximum transfer credit limits (e.g., typically up to 60-64 credits from a community college, 90 from a four-year institution towards a bachelor's degree) and a residency requirement. Developmental/remedial courses and some pass/fail courses typically do not transfer for credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Applying early to increase chances for scholarships and receive priority consideration",
+      "Taking challenging college preparatory or Advanced Placement (AP) classes to demonstrate readiness for college-level work",
+      "Maintaining a strong academic record throughout high school, including avoiding 'senioritis'",
+      "Attending on-site admission events to personalize the application and potentially receive an immediate decision"
+    ],
+    "common_activities": [
+      "Involvement in Student Organizations/Clubs",
+      "Participation in Club Sports and Recreational Activities",
+      "Varsity Athletics (NCAA Division I)",
+      "Music and Arts Involvement",
+      "Greek Life"
+    ],
+    "essay_tips": [
+      "Be specific about why this school - reference unique programs.",
+      "Show, don't tell - use concrete examples.",
+      "Avoid clichés about loving to learn.",
+      "Connect your interests to specific resources at the school."
+    ],
+    "red_flags": [
+      "Grade decline senior year",
+      "Lack of consistent dedication or leadership in extracurricular activities",
+      "Generic essays that do not showcase personal story or contribution to the WMU community",
+      "Plagiarism or dishonesty in application materials"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Western Michigan University has an acceptance rate of approximately 85%, making it a lightly selective institution."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "WMU offers an 'Assured Admission Program' for first-year students with a minimum 3.00 GPA, and the 'Bronco Promise' provides free tuition for eligible Michigan residents with specific income and asset thresholds."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "Western Michigan University emphasizes 'Experience-Driven Learning,' with 93% of Broncos participating, and offers a wide range of nationally recognized graduate programs."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "WMU is known for its welcoming and friendly campus community, vibrant social life with numerous student organizations, and strong athletic culture."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 48900,
+    "employment_rate_2yr": 94.0,
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft"
+    ],
+    "grad_school_rate": 19.0,
+    "loan_default_rate": 7.0,
+    "median_earnings_6yr": 33000
+  },
+  "student_retention": {
+    "freshman_retention_rate": 76.5,
+    "graduation_rate_4_year": 29.0,
+    "graduation_rate_6_year": 57.6
+  }
+}

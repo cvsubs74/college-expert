@@ -744,7 +744,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required 'Why Duke' essay (250 words) and one optional essay (250 words) from four prompts."
       },
       {
@@ -799,7 +799,7 @@
         "type": "Why Duke",
         "required": true,
         "brainstorming_questions": [
-          "When you first encountered Duke, what specific element \u2013 whether it was a program, a student story, a research opportunity, or even an aesthetic aspect of campus \u2013 sparked your curiosity and made you think, 'This is different'?",
+          "When you first encountered Duke, what specific element – whether it was a program, a student story, a research opportunity, or even an aesthetic aspect of campus – sparked your curiosity and made you think, 'This is different'?",
           "Beyond academics, in what kind of campus conversations, student-led initiatives, or community traditions at Duke do you see yourself actively participating and contributing your unique perspective?",
           "Reflecting on a time you felt truly intellectually challenged or deeply engaged in a learning environment, how does Duke's approach to interdisciplinary studies, specific research centers, or particular faculty members resonate with that experience?",
           "Imagine yourself a year from now at Duke. What kind of personal growth, intellectual discovery, or community impact are you envisioning, and what specific Duke resources or opportunities do you see fueling that journey?",
@@ -812,11 +812,11 @@
         "type": "Background",
         "required": false,
         "brainstorming_questions": [
-          "Duke specifically mentions 'culture, identity, or a particular personal experience' \u2013 thinking about your background, what's a moment or aspect that feels uniquely 'you' and might surprise the admissions committee, something that reveals a core value or understanding you hold?",
+          "Duke specifically mentions 'culture, identity, or a particular personal experience' – thinking about your background, what's a moment or aspect that feels uniquely 'you' and might surprise the admissions committee, something that reveals a core value or understanding you hold?",
           "When you consider your identity or cultural background, what's a common misconception about it that you've often had to navigate, and how did navigating that misconception shape your perspective or approach to something significant?",
           "Duke wants to understand the 'context of your application.' Beyond your grades and activities, what's a personal experience that, while perhaps not conventionally academic, fundamentally altered how you see the world and, in turn, influenced what you now want to pursue at Duke?",
           "The prompt offers a space for anything you 'want us to know.' If you could distill one crucial element about your personal journey or a defining moment that illuminates your character or potential, what would that element be, and what specific situation brought it into sharp relief?",
-          "Duke is interested in how you've been shaped. Think about a time when your perspective was significantly challenged or expanded \u2013 perhaps by a new environment, a difficult situation, or an encounter with someone different from you. How did that experience leave its mark and prepare you for the Duke community?"
+          "Duke is interested in how you've been shaped. Think about a time when your perspective was significantly challenged or expanded – perhaps by a new environment, a difficult situation, or an encounter with someone different from you. How did that experience leave its mark and prepare you for the Duke community?"
         ]
       }
     ]
@@ -960,11 +960,31 @@
       "Attempting to be overly 'quirky' or inauthentic for the sake of standing out."
     ],
     "insights": [
-      "Duke's admission rate is highly selective, around 7%.",
-      "Admitted students typically have average SAT scores between 1510-1570 or ACT scores of 34-35.",
-      "Applying Early Decision (ED) can offer a statistical advantage in admissions.",
-      "The admissions process scores applicants on multiple categories including curriculum, academics, recommendations, essays, extracurriculars, and test scores.",
-      "While an alumni interview is offered, its impact on the final decision might be marginal."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Duke's admission rate is highly selective, around 7%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admitted students typically have average SAT scores between 1510-1570 or ACT scores of 34-35."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED) can offer a statistical advantage in admissions."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The admissions process scores applicants on multiple categories including curriculum, academics, recommendations, essays, extracurriculars, and test scores."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While an alumni interview is offered, its impact on the final decision might be marginal."
+      }
     ]
   },
   "outcomes": {

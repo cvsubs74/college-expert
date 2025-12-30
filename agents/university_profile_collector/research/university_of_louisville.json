@@ -1,60 +1,78 @@
+
 {
-  "university_profile": {
-    "_id": "university_of_louisville",
-    "university_name": "University of Louisville",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://louisville.edu/news/uofl-earns-highest-ever-u-s-news-world-report-ranking",
-      "https://louisville.edu/admissions/apply/admissions-standards"
+  "_id": "university_of_louisville",
+  "metadata": {
+    "official_name": "University of Louisville",
+    "location": {
+      "city": "Louisville",
+      "state": "Kentucky",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Louisville is a public research institution dedicated to delivering high-quality education, pioneering research, and engaged service to its community and beyond. It is particularly noted for its medical advancements and robust athletic programs.",
+    "market_position": "Public Research University",
+    "admissions_philosophy": "UofL seeks a diverse and talented student body, emphasizing academic achievement, leadership potential, community involvement, and a passion for learning. Holistic review ensures a broad perspective on each applicant's capabilities and aspirations.",
+    "us_news_rank": 158,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Louisville maintains a somewhat selective admissions policy with an acceptance rate around 80%, and a test-optional approach.",
+        "implication": "Applicants should focus on a strong high school GPA (average admitted is 3.6), rigorous coursework, and a well-rounded application demonstrating engagement beyond academics to stand out, especially if not submitting test scores."
+      },
+      {
+        "category": "Academic",
+        "insight": "UofL offers unique and highly specialized academic programs, including an integrated 5-year Bachelor's and Master's Engineering program with co-ops, and the world's only Equine Studies department attached to a business school.",
+        "implication": "Prospective students interested in these niche fields should highlight their specific passion and any relevant experiences in their application essays and supplementary materials to demonstrate alignment with these distinctive offerings."
+      },
+      {
+        "category": "Value",
+        "insight": "As a Carnegie Research 1 and Opportunity College, UofL provides a high-quality education with significant research opportunities and strong connections to Louisville's major industries, while offering relatively low student debt for graduates among Kentucky public universities.",
+        "implication": "Applicants should emphasize their interest in research, experiential learning (internships/co-ops), and community engagement, and highlight how UofL's urban location and affordability align with their educational and career goals."
+      }
     ],
-    "metadata": {
-      "official_name": "University of Louisville",
-      "location": {
-        "city": "Louisville",
-        "state": "KY",
-        "type": "Public"
-      }
-    },
-    "strategic_profile": {
-      "executive_summary": "The University of Louisville is a premier metropolitan research university with a Carnegie R1 designation, known for its strong health sciences center and engineering programs. It serves as a vital economic and tech talent hub for the city of Louisville, blending high-level research with community engagement.",
-      "market_position": "Metropolitan Research Powerhouse",
-      "admissions_philosophy": "Selective and Holistic (Test-Optional)",
-      "us_news_rank": 158,
-      "analyst_takeaways": [
-        {
-          "category": "Ranking Momentum",
-          "insight": "UofL climbed 21 spots to No. 158 in the 2026 US News National Universities list, its highest rank on record.",
-          "implication": "The university's focus on student success metrics and graduation rates is successfully enhancing its national prestige."
-        },
-        {
-          "category": "Research & Industry Synergy",
-          "insight": "Maintains a Carnegie R1 status and high-profile partnerships with IBM and GE Appliances.",
-          "implication": "Students have significant access to advanced research and local tech-sector employment pipelines."
-        },
-        {
-          "category": "Accessibility",
-          "insight": "Maintains an acceptance rate near 80% while utilizing test-optional policies to attract diverse talent.",
-          "implication": "Offers a high-quality research environment that remains accessible to a broad range of qualified applicants."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A vibrant metropolitan atmosphere defined by 400+ student organizations and a strong 'town-and-gown' relationship with the city of Louisville; athletics, particularly ACC competition, serve as a major social anchor.",
-        "transportation_impact": "Highly integrated with the city's transit system (TARC), providing students free access to city-wide buses and frequent shuttles between the Belknap and Health Sciences campuses, reducing the need for on-campus vehicles.",
-        "research_impact": "As an R1 institution, research is deeply embedded in the curriculum, particularly in medical breakthroughs, engineering, and sustainable energy, supported by strong urban industrial ties."
-      }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 79.4,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 40.3,
-      "transfer_acceptance_rate": 68.7,
-      "admits_class_size": 12442,
+    "campus_dynamics": {
+      "social_environment": "Dynamic and engaged, with a strong focus on student success, numerous extracurricular activities, and a close-knit campus culture bolstered by spirited athletics and a diverse student body.",
+      "transportation_impact": "Located in an urban setting, the campus is accessible via public transit, and offers shuttle services. Parking can be challenging but is managed through various permit options. Bicycle infrastructure is expanding.",
+      "research_impact": "A Carnegie R1 research university, UofL demonstrates significant impact in health sciences, engineering, and arts & sciences. It fosters strong partnerships with local industry and government, driving economic development."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 79.41,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": "Not specified"
+      "test_policy_details": "The University of Louisville is test-optional for admission for all majors, including for the 2025 application cycle. Applicants are not required to submit SAT or ACT scores, and there are pathways for admission to all academic programs without them. If students choose to submit scores, they will be considered. The university accepts self-reported scores initially and will use the highest composite ACT score. The SAT is converted to an ACT composite score, and the university does not superscore. Submitting scores is highly encouraged and will not negatively impact the admission process. The SAT Essay/ACT Writing section is optional and may not be included in admissions consideration. For specific Score Choice policies, applicants are advised to contact the school directly.",
+      "admits_class_size": 12442,
+      "transfer_acceptance_rate": 68.69,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 40.27,
+      "early_admission_stats": [
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Decisions are typically made by January 15. Recommended for maximizing scholarship chances.",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null
+        }
+      ]
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": 3373,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Preliminary first-time student enrollment for Fall 2025. Comprehensive application and admit data are not yet publicly available.",
+        "waitlist_stats": null
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
@@ -62,18 +80,15 @@
         "admits_total": 12442,
         "enrolled_total": 3120,
         "acceptance_rate_overall": 79.4,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 25.1,
+        "yield_rate": 25.08,
+        "notes": "",
         "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
           "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist typically not utilized for general undergraduate admissions."
+        }
       },
       {
         "year": 2023,
@@ -82,356 +97,1455 @@
         "admits_total": 11937,
         "enrolled_total": 3117,
         "acceptance_rate_overall": 80.5,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 26.1,
+        "yield_rate": 26.11,
+        "notes": "",
         "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
+          "offered_spots": 4540,
+          "accepted_spots": 2840,
+          "admitted_from_waitlist": 73,
+          "waitlist_admit_rate": 2.57,
           "is_waitlist_ranked": false
-        },
-        "notes": "Undergraduate admissions closed early in June 2023 due to reaching capacity."
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 15819,
+        "admits_total": 12691,
+        "enrolled_total": 2944,
+        "acceptance_rate_overall": 80.2,
+        "yield_rate": 23.19,
+        "notes": "Record first-year enrollment for Fall 2022.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 15517,
+        "admits_total": 11541,
+        "enrolled_total": 2447,
+        "acceptance_rate_overall": 74.4,
+        "yield_rate": 21.19,
+        "notes": "Acceptance rate is calculated from provided applicant and admit numbers; a source also states 71.6%.",
+        "waitlist_stats": null
       }
     ],
-    "admitted_profile": {
+    "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "Not specified",
-        "unweighted_middle_50": "Not specified",
-        "average_weighted": 3.63,
-        "percentile_25": 0.0,
-        "percentile_75": 0.0,
-        "notes": "Average high school GPA ranges 3.62-3.64; 36% enter with a 4.0."
+        "weighted_middle_50": "3.00-3.50",
+        "unweighted_middle_50": "2.50-3.00",
+        "average_weighted": 3.25,
+        "percentile_25": "3.00",
+        "percentile_75": "3.50",
+        "notes": "The University of Louisville's average unweighted high school GPA for admitted students is reported as 3.62 in 2019 and 3.64 more recently. Over 50% of admitted students in 2019 had average GPAs of 3.75 and above. A breakdown of admitted student GPAs shows that 55% had a GPA of 3.75 or higher, 14% had a GPA between 3.50-3.74, and 12% had a GPA between 3.25-3.49. It is important to note that GPA requirements can vary by program, and the university considers strong high school grades in a rigorous curriculum for admission. Some sources report weighted and unweighted GPAs that are notably lower, suggesting different methodologies or scales of calculation."
       },
       "testing": {
-        "sat_composite_middle_50": "1020-1250",
+        "sat_composite_middle_50": "1010-1220",
         "sat_reading_middle_50": "510-630",
         "sat_math_middle_50": "510-620",
-        "act_composite_middle_50": "22-28",
-        "submission_rate": 15.0,
-        "policy_note": "Test-optional for general admission."
+        "act_composite_middle_50": "19-27",
+        "submission_rate": 88.0,
+        "policy_note": "The University of Louisville is test-optional for admission to all majors. The university does not superscore the ACT or SAT; applicants must submit their highest overall score from a single test date for admission consideration. For admitted students, approximately 15% submitted SAT scores and 88% submitted ACT scores. Some programs may consider the highest math score from any test."
       },
       "demographics": {
         "first_gen_percentage": 38.6,
-        "legacy_percentage": 0.0,
-        "international_percentage": 2.8,
+        "legacy_percentage": null,
         "geographic_breakdown": [
           {
-            "region": "Kentucky",
+            "region": "Kentucky (In-State)",
             "percentage": 74.0
           },
           {
-            "region": "Other US States",
-            "percentage": 25.0
+            "region": "Other U.S. States (Out-of-State)",
+            "percentage": 24.0
           },
           {
             "region": "International",
-            "percentage": 1.0
+            "percentage": 2.0
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 6718,
             "admits": 5361,
-            "acceptance_rate": 79.8,
-            "note": "43% of total student body"
+            "acceptance_rate": 79.80,
+            "note": "Data for the 2024-2025 academic year."
           },
           "women": {
             "applicants": 8950,
             "admits": 7081,
-            "acceptance_rate": 79.1,
-            "note": "57% of total student body"
+            "acceptance_rate": 79.12,
+            "note": "Data for the 2024-2025 academic year."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 61.0,
-          "black_african_american": 16.2,
-          "hispanic_latino": 9.0,
-          "asian": 5.7,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 6.3,
-          "unknown": 0.6,
-          "non_resident_alien": 1.0
-        },
-        "religious_affiliation": "Not specified"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools and Colleges",
-      "colleges": [
-        {
-          "name": "College of Arts & Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Most flexibility for exploring diverse interests.",
-          "housing_profile": "Themed communities like Social Justice and Psychology.",
-          "student_archetype": "Intellectually curious explorers",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "PSYC 201"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PSYC 301",
-                "PSYC 302"
-              ],
-              "special_requirements": "C or higher in core PSYC courses",
-              "admissions_pathway": "Open",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 201",
-                  "PSYC 301",
-                  "PSYC 302",
-                  "PSYC 305",
-                  "PSYC 307",
-                  "PSYC 308",
-                  "PSYC 400"
-                ],
-                "electives": [
-                  "PSYC 366",
-                  "PSYC 412"
-                ],
-                "total_units": 121,
-                "major_units": 42
-              },
-              "notable_professors": [
-                "Dr. Lora Haynes"
-              ],
-              "notes": "Most popular major"
-            }
-          ]
-        },
-        {
-          "name": "J.B. Speed School of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires high math proficiency (ACT 25/SAT 590).",
-          "housing_profile": "Engineering LLC in Community Park.",
-          "student_archetype": "Ambitious problem-solvers",
-          "majors": [
-            {
-              "name": "Computer Science and Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "Calculus",
-                "Chemistry"
-              ],
-              "minimum_gpa_to_declare": 2.8,
-              "weeder_courses": [
-                "ENGR 101",
-                "ENGR 102"
-              ],
-              "special_requirements": "Math ACT 25 requirement",
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.8,
-              "curriculum": {
-                "core_courses": [
-                  "ENGR 101",
-                  "CSE 120",
-                  "CSE 302"
-                ],
-                "electives": [
-                  "CSE 532",
-                  "CSE 545"
-                ],
-                "total_units": 125,
-                "major_units": 59
-              },
-              "notable_professors": [
-                "Dr. Mehmed Kantardzic"
-              ],
-              "notes": "Includes three required co-op semesters"
-            }
-          ]
+          "white": 61.30,
+          "black_african_american": 14.60,
+          "hispanic_latino": 7.93,
+          "asian": 5.99,
+          "native_american_alaskan": 0.18,
+          "pacific_islander": 0.07,
+          "two_or_more_races": 5.59,
+          "unknown": 0.79,
+          "non_resident_alien": 3.55
         }
-      ],
-      "minors_certificates": [
-        "AI in Business Minor",
-        "Sustainability Minor",
-        "Equine Business Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Take Flight Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Honors Early Action",
-          "date": "2024-10-01",
-          "is_binding": false,
-          "notes": "Decisions by Nov 15"
-        },
-        {
-          "plan_type": "Scholarship Priority",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Deadline for MLK, Grawemeyer, Porter"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "Honors Program",
-          "requirement_type": "Essays & Resume",
-          "deadline": "2024-12-01",
-          "details": "Honors-only prompts required."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Test Scores"
-        ],
-        "essay_importance": "Low",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Minimal",
-        "specific_differentiators": "General admission is primarily data-driven."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Select BA in CS to bypass Speed School's math-heavy weeder courses.",
-        "Use 'General Studies' to protect GPA if targeting restricted majors later."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize Arts & Sciences for elective flexibility.",
-        "Only rank Speed School if intending to use unit-specific housing."
-      ],
-      "alternate_major_strategy": "List an Arts & Sciences major (e.g. Physics) as an alternate for Engineering to ensure A&S admission if Speed School benchmarks are missed."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 13136,
-          "total_coa": 35114,
-          "housing": 12576
-        },
-        "out_of_state": {
-          "tuition": 29482,
-          "total_coa": 51460,
-          "supplemental_tuition": 16346
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 13487,
-      "average_merit_aid": 10432,
-      "percent_receiving_aid": 86.0
-    },
-    "scholarships": [
-      {
-        "name": "Brown Fellows Program",
-        "type": "Merit",
-        "amount": "Full Ride",
-        "deadline": "2025-12-01",
-        "benefits": "International travel, summer funding",
-        "application_method": "Separate Application"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit.",
-        "exceptions": [
-          "Score of 3 often grants elective credit rather than direct equivalency."
-        ],
-        "usage": "Applied to Cardinal Core."
-      },
-      "ib_policy": {
-        "general_rule": "Score of 5+ on HL/SL exams.",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "TES",
-          "Transferology"
-        ],
-        "restrictions": "60-unit CC cap; 90-unit total cap."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "GPA 2.5+ for general; 3.0+ for Nursing/Engineering."
-      ],
-      "common_activities": [
-        "Undergraduate research",
-        "Community service"
-      ],
-      "essay_tips": [
-        "Use 'Prove It' evidence",
-        "Connect to Louisville community"
-      ],
-      "red_flags": [
-        "Missing advanced math for Speed School"
-      ],
-      "insights": [
-        "JCTC transfer path is a top recommended money-saving 'hack'."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 53899,
-      "employment_rate_2yr": 93.0,
-      "grad_school_rate": 28.2,
-      "top_employers": [
-        "Humana",
-        "UPS",
-        "Ford",
-        "Norton Healthcare",
-        "GE Appliances"
-      ],
-      "loan_default_rate": 6.4,
-      "student_retention": {
-        "freshman_retention_rate": 81.0,
-        "graduation_rate_4_year": 43.0,
-        "graduation_rate_6_year": 61.0
       }
     }
   },
-  "_id": "university_of_louisville",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 201 General Psychology",
+              "PSYC 301 Quantitative Methods in Psychology",
+              "PSYC 302 Research Methods in Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 201 General Psychology",
+                "PSYC 301 Quantitative Methods in Psychology",
+                "PSYC 302 Research Methods in Psychology",
+                "PSYC 304 Cognitive Psychology",
+                "PSYC 306 Developmental Psychology",
+                "PSYC 307 Social Psychology",
+                "PSYC 401 History and Systems of Psychology",
+                "PSYC 402 Senior Seminar"
+              ],
+              "electives": [
+                "PSYC 310 Abnormal Psychology",
+                "PSYC 311 Health Psychology",
+                "PSYC 420 Biological Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Benjamin Mast (Dementia, Geriatric Assessment)",
+              "Dr. Patrick Pössel (Educational and Counseling Psychology, Depression Prevention)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Minimum 2.0 GPA in Psychology courses for graduation."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COMM 201 Introduction to Communication",
+              "COMM 205 Public Speaking"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COMM 201 Introduction to Communication",
+                "COMM 205 Public Speaking",
+                "COMM 301 Communication Theory",
+                "COMM 305 Research Methods in Communication",
+                "COMM 401 Senior Seminar in Communication"
+              ],
+              "electives": [
+                "COMM 310 Interpersonal Communication",
+                "COMM 315 Media and Society",
+                "COMM 320 Organizational Communication"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Karen Freberg (Strategic Communications, Social Media)",
+              "Dr. Yi (Jasmine) Wang (Big Data Analytics, AI and Humans)",
+              "Dr. Edwin Lee (Sports Communication, Rhetoric and Memory)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 250 General Biology I",
+              "BIOL 251 General Biology II",
+              "CHEM 201 General Chemistry I",
+              "CHEM 202 General Chemistry II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 201 General Chemistry I",
+              "CHEM 202 General Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 250 General Biology I",
+                "BIOL 251 General Biology II",
+                "BIOL 300 Cell Biology",
+                "BIOL 301 Genetics",
+                "BIOL 303 Ecology and Evolution",
+                "BIOL 400 Senior Seminar"
+              ],
+              "electives": [
+                "BIOL 310 Microbiology",
+                "BIOL 320 Zoology",
+                "BIOL 330 Botany",
+                "BIOL 450 Molecular Biology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Debbie Yoder-Himes (Microbiology and Molecular Genetics)",
+              "Dr. Samiyyah Sledge (Physiology, Cellular and Molecular Biology)",
+              "Dr. Zeinab Torky (Natural Antiviral Therapeutics, Microbe-Host Interaction)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Strong emphasis on preparing students for medical, dental, and veterinary fields."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 201 General Chemistry I",
+              "CHEM 202 General Chemistry II",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 201 General Chemistry I",
+              "CHEM 202 General Chemistry II",
+              "MATH 205 Calculus I",
+              "PHYS 221 General Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 201 General Chemistry I",
+                "CHEM 202 General Chemistry II",
+                "CHEM 341 Organic Chemistry I",
+                "CHEM 342 Organic Chemistry II",
+                "CHEM 350 Analytical Chemistry",
+                "CHEM 410 Physical Chemistry I",
+                "CHEM 411 Physical Chemistry II",
+                "CHEM 490 Senior Research"
+              ],
+              "electives": [
+                "CHEM 430 Biochemistry",
+                "CHEM 440 Inorganic Chemistry",
+                "CHEM 460 Polymer Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 101 Writing I",
+              "ENGL 102 Writing II",
+              "ENGL 221 Literary Analysis"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 221 Literary Analysis",
+                "ENGL 301 British Literature I",
+                "ENGL 302 British Literature II",
+                "ENGL 310 American Literature I",
+                "ENGL 311 American Literature II",
+                "ENGL 401 Senior Seminar"
+              ],
+              "electives": [
+                "ENGL 330 Creative Writing",
+                "ENGL 340 Film Studies",
+                "ENGL 350 Technical Writing"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HIST 201 World Civilizations I",
+              "HIST 202 World Civilizations II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIST 201 World Civilizations I",
+                "HIST 202 World Civilizations II",
+                "HIST 300 Historical Methods",
+                "HIST 490 Senior Seminar"
+              ],
+              "electives": [
+                "HIST 310 American History to 1877",
+                "HIST 311 American History Since 1877",
+                "HIST 320 European History to 1648",
+                "HIST 321 European History Since 1648"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POLS 201 Introduction to Political Science",
+              "POLS 202 Introduction to American Politics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "POLS 201 Introduction to Political Science",
+                "POLS 202 Introduction to American Politics",
+                "POLS 301 Political Theory",
+                "POLS 305 Research Methods in Political Science",
+                "POLS 490 Senior Seminar in Political Science"
+              ],
+              "electives": [
+                "POLS 310 International Relations",
+                "POLS 315 Comparative Politics",
+                "POLS 320 Public Administration"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOC 201 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SOC 201 Introduction to Sociology",
+                "SOC 301 Social Theory",
+                "SOC 302 Research Methods in Sociology",
+                "SOC 303 Statistics for Sociology",
+                "SOC 490 Senior Seminar in Sociology"
+              ],
+              "electives": [
+                "SOC 310 Criminology",
+                "SOC 315 Race and Ethnicity",
+                "SOC 320 Social Class"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANTH 201 Introduction to Cultural Anthropology",
+              "ANTH 202 Introduction to Biological Anthropology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ANTH 201 Introduction to Cultural Anthropology",
+                "ANTH 202 Introduction to Biological Anthropology",
+                "ANTH 300 Anthropological Theory",
+                "ANTH 301 Research Methods in Anthropology",
+                "ANTH 490 Senior Seminar"
+              ],
+              "electives": [
+                "ANTH 310 Archaeology",
+                "ANTH 315 Linguistic Anthropology",
+                "ANTH 320 Human Evolution"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 205 Calculus I",
+                "MATH 206 Calculus II",
+                "MATH 207 Calculus III",
+                "MATH 301 Differential Equations",
+                "MATH 310 Linear Algebra",
+                "MATH 320 Abstract Algebra",
+                "MATH 400 Real Analysis I",
+                "MATH 490 Senior Seminar"
+              ],
+              "electives": [
+                "MATH 330 Probability and Statistics",
+                "MATH 340 Numerical Analysis",
+                "MATH 405 Complex Analysis"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 221 General Physics I",
+              "PHYS 222 General Physics II",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 221 General Physics I",
+              "PHYS 222 General Physics II",
+              "MATH 205 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open to Declare",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHYS 221 General Physics I",
+                "PHYS 222 General Physics II",
+                "PHYS 301 Modern Physics",
+                "PHYS 310 Classical Mechanics",
+                "PHYS 320 Electromagnetism I",
+                "PHYS 401 Quantum Mechanics I",
+                "PHYS 490 Senior Research"
+              ],
+              "electives": [
+                "PHYS 330 Optics",
+                "PHYS 340 Thermodynamics and Statistical Mechanics",
+                "PHYS 402 Solid State Physics"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Accountancy",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ACCT 202 Principles of Managerial Accounting",
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics",
+              "BSTA 201 Business Statistics I"
+            ],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ACCT 202 Principles of Managerial Accounting"
+            ],
+            "special_requirements": "Minimum 2.25 GPA in business foundation courses for admission to the professional program.",
+            "admissions_pathway": "Pre-Business to Professional Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Principles of Financial Accounting",
+                "ACCT 202 Principles of Managerial Accounting",
+                "ACCT 301 Intermediate Accounting I",
+                "ACCT 302 Intermediate Accounting II",
+                "ACCT 310 Cost Accounting",
+                "ACCT 320 Income Tax Accounting",
+                "ACCT 401 Auditing",
+                "ACCT 490 Accounting Capstone"
+              ],
+              "electives": [
+                "ACCT 330 Accounting Information Systems",
+                "ACCT 410 Advanced Accounting",
+                "ACCT 420 Governmental and Nonprofit Accounting"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Dereck Barr-Pulliam (Auditing and Accounting Contexts)",
+              "Hilda Carillo (Oracle NetSuite ERP simulation integration)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. AACSB accredited. Requires admission to the professional program after completing business foundation courses."
+          },
+          {
+            "name": "Business Administration",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics",
+              "BSTA 201 Business Statistics I",
+              "CIS 200 Business Computing"
+            ],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": "Minimum 2.25 GPA in business foundation courses for admission to the professional program.",
+            "admissions_pathway": "Pre-Business to Professional Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Principles of Financial Accounting",
+                "ECON 201 Principles of Microeconomics",
+                "MGT 301 Principles of Management",
+                "MKT 301 Principles of Marketing",
+                "FIN 301 Principles of Financial Management",
+                "BSTA 301 Business Statistics II",
+                "CIS 300 Management Information Systems",
+                "MGT 499 Strategic Management"
+              ],
+              "electives": [
+                "MGT 310 Organizational Behavior",
+                "MKT 310 Consumer Behavior",
+                "FIN 310 Investments"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. James Fiet (Management, Strategy)",
+              "Dr. Daniel Bennett (Entrepreneurship)",
+              "Dr. Minjie Huang (Executive Compensation, Corporate Culture, Behavioral Finance)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. AACSB accredited. Requires admission to the professional program after completing business foundation courses."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics",
+              "BSTA 201 Business Statistics I"
+            ],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": "Minimum 2.25 GPA in business foundation courses for admission to the professional program.",
+            "admissions_pathway": "Pre-Business to Professional Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": {
+              "core_courses": [
+                "FIN 301 Principles of Financial Management",
+                "FIN 310 Investments",
+                "FIN 320 Financial Markets and Institutions",
+                "FIN 330 Corporate Finance",
+                "FIN 401 Portfolio Management",
+                "FIN 490 Advanced Topics in Finance"
+              ],
+              "electives": [
+                "FIN 410 International Finance",
+                "FIN 420 Real Estate Finance",
+                "FIN 430 Risk Management"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. AACSB accredited. Requires admission to the professional program after completing business foundation courses."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics",
+              "BSTA 201 Business Statistics I"
+            ],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": "Minimum 2.25 GPA in business foundation courses for admission to the professional program.",
+            "admissions_pathway": "Pre-Business to Professional Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": {
+              "core_courses": [
+                "MKT 301 Principles of Marketing",
+                "MKT 310 Consumer Behavior",
+                "MKT 320 Marketing Research",
+                "MKT 330 Marketing Management",
+                "MKT 401 Integrated Marketing Communications",
+                "MKT 490 Strategic Marketing"
+              ],
+              "electives": [
+                "MKT 410 International Marketing",
+                "MKT 420 Digital Marketing",
+                "MKT 430 Sales Management"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Mike Barone (Marketing, Consumer Psychology)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. AACSB accredited. Requires admission to the professional program after completing business foundation courses."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics",
+              "BSTA 201 Business Statistics I"
+            ],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "ACCT 201 Principles of Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": "Minimum 2.25 GPA in business foundation courses for admission to the professional program.",
+            "admissions_pathway": "Pre-Business to Professional Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": {
+              "core_courses": [
+                "MGT 301 Principles of Management",
+                "MGT 310 Organizational Behavior",
+                "MGT 320 Human Resource Management",
+                "MGT 330 Operations Management",
+                "MGT 401 Leadership and Ethics",
+                "MGT 490 Strategic Management"
+              ],
+              "electives": [
+                "MGT 410 Entrepreneurship",
+                "MGT 420 International Management",
+                "MGT 430 Supply Chain Management"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. James Fiet (Management, Strategy)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. AACSB accredited. Requires admission to the professional program after completing business foundation courses."
+          }
+        ],
+        "housing_profile": "First-year business students can join the Thriving & Innovation through Leadership and Entrepreneurship (TILE) Living Learning Community (LLC) located in Louisville Hall. This suite-style residence hall offers various suite types with private bathrooms, microfridges, community kitchens, study rooms, and recreational spaces.",
+        "student_archetype": "Future business leaders and entrepreneurs eager to develop their leadership styles, engage with business professionals, and solve problems creatively. They value academic engagement and networking opportunities.",
+        "strategic_fit_advice": "Ideal for incoming first-year students directly admitted to the College of Business who want to immerse themselves in a business-focused community, take shared classes, and gain early exposure to career development and leadership skills."
+      },
+      {
+        "name": "J.B. Speed School of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Computer Science and Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 100 Introduction to Engineering",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II",
+              "PHYS 221 General Physics I",
+              "CSE 100 Introduction to Programming"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 205 Calculus I",
+              "CSE 100 Introduction to Programming",
+              "CSE 220 Data Structures and Algorithms"
+            ],
+            "special_requirements": "Competitive admission to the professional school.",
+            "admissions_pathway": "Pre-Engineering to Professional School",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSE 100 Introduction to Programming",
+                "CSE 101 Discrete Structures",
+                "CSE 220 Data Structures and Algorithms",
+                "CSE 221 Computer Organization",
+                "CSE 320 Operating Systems",
+                "CSE 325 Database Systems",
+                "CSE 400 Software Engineering",
+                "CSE 490 Senior Design I",
+                "CSE 491 Senior Design II"
+              ],
+              "electives": [
+                "CSE 450 Artificial Intelligence",
+                "CSE 455 Machine Learning",
+                "CSE 460 Cybersecurity"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Wei Zhang (Department Chair, AI, Big Data)",
+              "Dr. Mehmed Kantardzic (Data Mining, Web Mining, Knowledge Discovery)",
+              "Dr. Olfa Nasraoui (Machine Learning & Artificial Intelligence, Data Mining)",
+              "Dr. Adel Elmaghraby (Computer Science and Engineering, Director of Industrial Research and Innovation)",
+              "Dr. Antonio Badia (Computer Science and Engineering)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. The program is accredited in both Computer Engineering and Computer Science. Requires competitive admission to the professional school after completing foundational coursework. A minimum GPA of 2.5 in engineering prerequisite courses is generally required for admission to the professional program."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 100 Introduction to Engineering",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II",
+              "CHEM 201 General Chemistry I",
+              "CHEM 202 General Chemistry II",
+              "PHYS 221 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 205 Calculus I",
+              "CHEM 201 General Chemistry I",
+              "CHE 205 Introduction to Chemical Engineering"
+            ],
+            "special_requirements": "Competitive admission to the professional school.",
+            "admissions_pathway": "Pre-Engineering to Professional School",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CHE 205 Introduction to Chemical Engineering",
+                "CHE 230 Computer Applications in Chemical Engineering",
+                "CHE 301 Chemical Engineering Thermodynamics I",
+                "CHE 302 Chemical Engineering Thermodynamics II",
+                "CHE 310 Fluid Mechanics",
+                "CHE 320 Heat Transfer",
+                "CHE 330 Mass Transfer",
+                "CHE 401 Chemical Reaction Engineering",
+                "CHE 490 Senior Design I",
+                "CHE 491 Senior Design II"
+              ],
+              "electives": [
+                "CHE 410 Biochemical Engineering",
+                "CHE 420 Polymer Engineering",
+                "CHE 430 Environmental Chemical Engineering"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Xiao-An Fu (Identification of Cancer Biomarkers, Toxic VOC Detection)",
+              "Dr. Gerold Willing (Colloidal Materials, Nanoscience, Membranes)",
+              "Dr. Robert Berson (Biomedical Applications)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Requires competitive admission to the professional school after completing foundational coursework. A minimum GPA of 2.5 in engineering prerequisite courses is generally required for admission to the professional program."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 100 Introduction to Engineering",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II",
+              "PHYS 221 General Physics I",
+              "PHYS 222 General Physics II",
+              "ECE 201 Circuits I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 205 Calculus I",
+              "PHYS 221 General Physics I",
+              "ECE 201 Circuits I"
+            ],
+            "special_requirements": "Competitive admission to the professional school.",
+            "admissions_pathway": "Pre-Engineering to Professional School",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ECE 201 Circuits I",
+                "ECE 202 Circuits II",
+                "ECE 210 Digital Logic Design",
+                "ECE 301 Electronics I",
+                "ECE 310 Signals and Systems",
+                "ECE 320 Electromagnetics",
+                "ECE 400 Control Systems",
+                "ECE 490 Senior Design I",
+                "ECE 491 Senior Design II"
+              ],
+              "electives": [
+                "ECE 410 Power Systems",
+                "ECE 420 Communication Systems",
+                "ECE 430 Microcontrollers"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Amir Amini (Bio-Imaging, Big Data)",
+              "Dr. Hongxiang Li (Big Data, Sensors)",
+              "Dr. Dan Popa (Advanced Manufacturing, Robotics)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Requires competitive admission to the professional school after completing foundational coursework. A minimum GPA of 2.5 in engineering prerequisite courses is generally required for admission to the professional program."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 100 Introduction to Engineering",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II",
+              "PHYS 221 General Physics I",
+              "CHEM 201 General Chemistry I",
+              "ME 200 Introduction to Mechanical Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 205 Calculus I",
+              "PHYS 221 General Physics I",
+              "ME 200 Introduction to Mechanical Engineering"
+            ],
+            "special_requirements": "Competitive admission to the professional school.",
+            "admissions_pathway": "Pre-Engineering to Professional School",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ME 200 Introduction to Mechanical Engineering",
+                "ME 220 Statics",
+                "ME 221 Dynamics",
+                "ME 230 Mechanics of Materials",
+                "ME 301 Thermodynamics",
+                "ME 302 Fluid Mechanics",
+                "ME 303 Heat Transfer",
+                "ME 490 Senior Design I",
+                "ME 491 Senior Design II"
+              ],
+              "electives": [
+                "ME 410 Vibrations",
+                "ME 420 Mechatronics",
+                "ME 430 Manufacturing Processes"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Sundar Atre (Manufacturing & Materials, 3D Printing)",
+              "Dr. Stuart Williams (Microfluidics, Nanoparticles, Biomedical Devices)",
+              "Dr. Badri Narayanan (Batteries, Computational Material Science)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Requires competitive admission to the professional school after completing foundational coursework. A minimum GPA of 2.5 in engineering prerequisite courses is generally required for admission to the professional program."
+          },
+          {
+            "name": "Bioengineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 100 Introduction to Engineering",
+              "MATH 205 Calculus I",
+              "MATH 206 Calculus II",
+              "CHEM 201 General Chemistry I",
+              "BIOL 250 General Biology I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 205 Calculus I",
+              "CHEM 201 General Chemistry I",
+              "BIOL 250 General Biology I"
+            ],
+            "special_requirements": "Competitive admission to the professional school.",
+            "admissions_pathway": "Pre-Engineering to Professional School",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BE 200 Introduction to Bioengineering",
+                "BE 301 Biomedical Instrumentation",
+                "BE 305 Biomaterials",
+                "BE 310 Biomechanics",
+                "BE 315 Biofluid Mechanics",
+                "BE 490 Senior Design I",
+                "BE 491 Senior Design II"
+              ],
+              "electives": [
+                "BE 420 Tissue Engineering",
+                "BE 430 Medical Imaging",
+                "BE 440 Biosensors"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Guruprasad Giridharan (Biomedical Applications and Devices)",
+              "Dr. Joseph Chen (Cell Biology, Cancer Biology)",
+              "Dr. Hermann Frieboes (Cancer, 3D Printing)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Requires competitive admission to the professional school. A minimum GPA of 2.5 in engineering prerequisite courses is generally required for admission to the professional program."
+          }
+        ],
+        "housing_profile": "First-year engineering students can reside in the Engineering Living Learning Community (ELLC) in Community Park. This suite-style hall offers double-occupancy rooms with microfridges/microwaves, in-room sinks/mirrors, shared bathrooms, study lounges, a common kitchen, a game room, and outdoor spaces with grills. There is also an upper-level Engineering LLC in Bettie Johnson Hall.",
+        "student_archetype": "Ambitious and collaborative problem-solvers who are dedicated to their studies and seek a supportive academic environment. They are proactive in utilizing academic resources like on-site tutoring and peer mentoring.",
+        "strategic_fit_advice": "Strongly recommended for first-year engineering students who desire integrated academic and social support, and opportunities to connect with faculty, advisors, and upperclassmen within their field. Requires admission to the J.B. Speed School of Engineering."
+      },
+      {
+        "name": "College of Education and Human Development",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [],
+        "housing_profile": "First-year students majoring in a CEHD undergraduate program can join the Education and Health & Sports Sciences LLC in Belknap Village North. This is a newly built traditional-style residence hall with modern flooring, double- and single-bedroom units, private-use bathrooms, laundry facilities, collaboration spaces, a recreation/game room, a community kitchen, and student lounges.",
+        "student_archetype": "Dedicated and aspiring educators or those passionate about health and human development. They seek a supportive community to explore their interests, connect with faculty, and gain practical experience.",
+        "strategic_fit_advice": "Highly beneficial for incoming first-year students in Education or Health & Sports Sciences programs who desire a built-in support system and opportunities for hands-on learning and professional connections."
+      },
+      {
+        "name": "School of Music",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": "First-year music majors can participate in the School of Music Living Learning Community (LLC) located in Belknap Village South. This is a newly renovated traditional-style residence hall with double-occupancy rooms, private restrooms on each floor, laundry facilities, a shared kitchenette, and a lounge with arcade games and a pool table. Unitas Tower also offers a private practice room for School of Music students.",
+        "student_archetype": "Passionate and dedicated musicians who want to live and breathe music, connect with fellow musicians, and access resources to support their artistic and entrepreneurial development.",
+        "strategic_fit_advice": "Highly recommended for incoming first-year music majors seeking an immersive environment to enhance their musical skills, build a supportive community, and explore professional opportunities in music."
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Registered Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 250 General Biology I",
+              "BIOL 251 General Biology II",
+              "CHEM 201 General Chemistry I",
+              "PSYC 201 General Psychology",
+              "SOC 201 Introduction to Sociology",
+              "NURS 201 Introduction to Professional Nursing"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "BIOL 250 General Biology I",
+              "BIOL 251 General Biology II",
+              "CHEM 201 General Chemistry I"
+            ],
+            "special_requirements": "Competitive admission to the clinical major. Requires a minimum GPA of 2.75 in prerequisite courses, 'C' or better in all prerequisite courses, and successful completion of a nursing admission exam (e.g., Kaplan, HESI A2 depending on program track). Background check and drug screening are also required.",
+            "admissions_pathway": "Pre-Nursing to Clinical Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "NURS 300 Foundations of Professional Nursing",
+                "NURS 301 Health Assessment",
+                "NURS 302 Pharmacology in Nursing",
+                "NURS 303 Adult Health Nursing I",
+                "NURS 304 Adult Health Nursing II",
+                "NURS 305 Mental Health Nursing",
+                "NURS 306 Maternal-Child Nursing",
+                "NURS 307 Community Health Nursing",
+                "NURS 400 Evidence-Based Practice in Nursing",
+                "NURS 401 Nursing Leadership and Management",
+                "NURS 402 Complex Health Alterations",
+                "NURS 403 Transition to Professional Practice"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. M. Cynthia Logsdon (Women's Mental Health, Academic Clinical Partnerships)",
+              "Dr. Amanda LeBlanc (Cardiovascular Function, Gerontology)",
+              "Dr. Ratchneewan Ross (Mental health of culturally diverse populations)"
+            ],
+            "notes": "Data source: University of Louisville Undergraduate Catalog 2025-2026. Highly competitive program. Specific admission requirements for the BSN program beyond general university admission. GPA in prerequisite courses is critical."
+          }
+        ],
+        "housing_profile": "Nursing students are encouraged to consider the Health Sciences Living Learning Community (LLC) located in Community Park. This suite-style hall offers double-occupancy rooms with microfridges/microwaves, in-room sinks/mirrors, shared bathrooms, study lounges, a common kitchen, a game room, and outdoor spaces with grills. Specific housing for UofL Nursing students is prioritized at Family Scholar House for eligible students.",
+        "student_archetype": "Caring and diligent individuals committed to healthcare, seeking an academic environment that supports their demanding studies and provides connections within the broader health sciences field. Eligible nursing students may also be single parents or young adults who were in foster care.",
+        "strategic_fit_advice": "Recommended for nursing students who benefit from a collaborative health sciences environment, potentially taking shared courses, and for eligible students who can benefit from prioritized housing at Family Scholar House."
+      },
+      {
+        "name": "School of Public Health and Information Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [],
+        "housing_profile": "Public Health students are encouraged to consider the Health Sciences Living Learning Community (LLC) located in Community Park. This suite-style hall offers double-occupancy rooms with microfridges/microwaves, in-room sinks/mirrors, shared bathrooms, study lounges, a common kitchen, a game room, and outdoor spaces with grills. There is also an LLC in Bettie Johnson Hall that includes Public Health.",
+        "student_archetype": "Health-conscious and community-oriented students interested in improving population well-being. They appreciate structured academic support, extracurricular programming, and collaborative opportunities with other health science majors.",
+        "strategic_fit_advice": "Recommended for public health students (and those in nursing and dental hygiene) who thrive in a collaborative environment, benefit from shared courses, and desire hands-on learning and social opportunities within the health sciences field."
+      },
+      {
+        "name": "Raymond A. Kent School of Social Work and Family Science",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": "First-year social work students can live in the Social Work Living Learning Community (LLC) in Belknap Village North. This is a newly built traditional-style residence hall with modern flooring, double- and single-bedroom units, private-use bathrooms, laundry facilities, collaboration spaces, a recreation/game room, a community kitchen, and student lounges.",
+        "student_archetype": "Compassionate and community-minded individuals committed to pursuing a career in social work. They are eager for academic engagement, mentorship, peer connections, and involvement in social justice initiatives and community service.",
+        "strategic_fit_advice": "Excellent for first-year social work majors who seek a supportive community, opportunities to learn from faculty and professionals, network with alumni, and engage in volunteer and leadership experiences related to social work."
+      },
+      {
+        "name": "School of Dentistry (Dental Hygiene Program)",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null
+      }
+    ],
+    "minors_certificates": [
+      "Data Analytics Minor",
+      "Entrepreneurship Minor",
+      "Writing Minor",
+      "Computer Information Systems Minor",
+      "Professional Sales Minor",
+      "Accounting Certificate",
+      "Applied Geospatial Technologies Certificate",
+      "Healthcare Leadership Certificate",
+      "Sales Certificate",
+      "Climate, Equity, and Opportunity in the Workplace Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "University of Louisville Take Flight Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Decisions are typically made by January 15. Recommended for maximizing scholarship chances."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": "This is the priority deadline for Fall Term admission and for scholarship consideration. The University of Louisville operates on a rolling admissions basis. It is advisable to apply by this date for the best chance of acceptance and scholarship consideration."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "A personal essay is generally optional for first-time freshman applicants. However, a UofL admissions counselor may request additional materials, such as a personal essay, to demonstrate a student's ability to succeed at the University of Louisville, particularly if the application does not meet minimum requirements."
+      },
+      {
+        "target_program": "Music (All Majors)",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "All music applicants are required to audition to demonstrate excellence in their field. Specific audition requirements vary by instrument or voice. Generally, prospective instrumental/vocal students should be prepared to play 2 pieces of contrasting styles, scales, and sight-read."
+      },
+      {
+        "target_program": "Music Composition",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "In addition to a performance audition, Music Composition majors must submit a portfolio of original compositions. The portfolio should contain three or four samples of original compositions, along with recordings for the same works if possible. Evidence of experience using various instrumental and/or vocal combinations is helpful."
+      },
+      {
+        "target_program": "Music Theory",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "In addition to a performance audition, Music Theory applicants must submit a portfolio containing three items: (1) an essay of 500 words or more about a piece of music (analysis, program notes, or description), (2) one of the following: a composition (score and recording), a melody harmonization for four voices, a figured bass realization, or a 2-voice mixed species counterpoint example, and (3) a short essay (100-200 words) detailing why they want to study music theory."
+      },
+      {
+        "target_program": "Music Therapy",
+        "requirement_type": "Audition & Interview",
+        "deadline": "February 27",
+        "details": "In addition to the instrumental/vocal audition, all music therapy applicants will conduct an interview with the music therapy faculty. During the interview, applicants will be asked to sing two songs of contrasting styles to demonstrate vocal proficiency, assessed on pitch accuracy, vocal expression, and interpersonal skills. A video recording of two solo songs of contrasting styles must be submitted via YouTube by the deadline."
+      },
+      {
+        "target_program": "Landscape Architecture (Professional BLA Program)",
+        "requirement_type": "Portfolio & Essay",
+        "deadline": "Spring semester (primary), end of Summer (secondary) after completing prerequisites",
+        "details": "For admission into the professional Bachelor of Landscape Architecture (BLA) program (typically after completing prerequisite courses), a portfolio and a letter of intent are required. The portfolio should be a 5-page (8.5x11) PDF document in landscape orientation, with ideally one image per page (no more than three), showcasing five samples of creative work from past landscape architecture, art, planning, engineering, other courses, internships, or personal projects. The letter of intent, no more than 2 pages, single-spaced, should express interest in the BLA program, past experiences, expectations, future goals, and descriptions of the portfolio samples."
+      }
+    ],
+    "holistic_factors": {
+      "holistic_factors": {
+        "primary_factors": [
+          "Rigor of secondary school record",
+          "Academic GPA"
+        ],
+        "secondary_factors": [
+          "Standardized test scores",
+          "Application Essay",
+          "Letters of recommendation",
+          "Extracurricular activities"
+        ],
+        "essay_importance": "Moderate",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Evaluative",
+        "legacy_consideration": "Minimal",
+        "first_gen_boost": "Strong",
+        "specific_differentiators": "Designated FirstGen Forward Network Champion with strong support for first-generation students; Test-optional admissions policy through 2025; Rolling admissions with quick decisions."
+      }
+    },
     "essay_prompts": [
       {
-        "prompt": "What aspects of the University of Louisville appeal to you, and how do you see yourself contributing to our campus community?",
-        "word_limit": "250 words",
-        "type": "Why Louisville",
+        "prompt": "While not required, you may submit a personal essay or statement to demonstrate your ability to succeed at the University of Louisville.",
+        "word_limit": "Not specified (typically 500-750 words for a standard personal statement, but applicants should aim for conciseness if not given a specific limit)",
+        "type": "Personal (Optional/Conditional)",
         "required": false,
         "brainstorming_questions": [
-          "Beyond the general prestige, what specific programs, research opportunities, or unique academic philosophies at UofL truly resonate with your intellectual curiosity and career aspirations, and can you recall a moment when this alignment first clicked for you?",
-          "Think about UofL's distinct cultural landscape and its connection to Louisville itself. How have your own experiences or values prepared you to engage with and enrich this specific community, perhaps in a way that a student from a different background might not?",
-          "UofL emphasizes certain values or missions. Which of these (e.g., innovation, community engagement, diversity) do you find yourself most passionate about, and can you share a personal story that demonstrates your commitment to that value?",
-          "When you imagine yourself as a Cardinal, what kind of tangible impact do you envision making on campus? Consider student organizations, academic initiatives, or even informal interactions \u2013 what problem are you eager to help solve or what perspective are you excited to share?",
-          "Looking at UofL's history or current initiatives, is there a particular story, tradition, or future goal of the university that inspires you? How does this inspiration connect to your own personal journey and what you hope to achieve as a student?"
+          "What significant experiences or qualities have prepared you for success in a university environment, and how do they relate to your goals at UofL?",
+          "Describe a personal challenge or obstacle you've overcome and what you learned from it that will help you thrive academically and personally in college.",
+          "What unique perspectives or experiences would you bring to the University of Louisville community?",
+          "How do your academic interests and career aspirations align with the resources and opportunities available at UofL?",
+          "If you could tell the admissions committee one thing about yourself that isn't evident elsewhere in your application, what would it be and why?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_louisville_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Research and understand major-specific admission requirements, as programs like Speed Engineering, Nursing, and the College of Business often have higher GPA or specific course prerequisites beyond general university admission standards.",
+      "Consider applying to a less competitive major within the College of Arts & Sciences, Education & Human Development, or Public Health, which have a general admission GPA of 2.5 and an ACT score of 20 (or SAT 1030), if direct entry into highly selective programs is uncertain.",
+      "For students not yet decided or concerned about direct entry into a competitive program, consider applying as undeclared within a college that offers general admission, with the intention to meet internal transfer requirements for a desired major later.",
+      "If your high school grades are strong but standardized test scores are not, leverage the university's test-optional policy, focusing on a rigorous high school curriculum to meet general admission criteria.",
+      "Be aware that some majors, like Social Work and Music, involve a two-step admission process or require auditions, meaning initial university admission does not guarantee entry into the upper division or program."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate colleges based on specific curriculum and general education requirements",
+      "Assess 4-year graduation rates and retention specific to each college or program",
+      "Compare career outcomes and post-graduation success rates by college/school"
+    ],
+    "alternate_major_strategy": {
+      "alternate_major_strategy": "The University of Louisville encourages exploring 'Alternative Paths,' especially for competitive programs like Nursing or Dental Hygiene, which have strict admission requirements or limited spots. These paths can involve finding related fields of study or considering different routes to a similar career outcome. For example, a business minor can be paired with a non-business major to create a balanced profile. Pre-engineering alternatives can focus on math and science, or more on technology and hands-on work. The Exploratory & Transition Advising office is available to help students who are questioning their current major, undecided, or considering switching to a major in a different college within UofL.",
+      "backup_major_admission": "For highly competitive programs, applicants who do not meet the minimum criteria for direct admission may initially be admitted as a 'pre-major.' This allows students to complete foundational courses and then apply to their intended major later in their academic journey. Specific GPA requirements are often in place for direct admission to various colleges and programs, such as the College of Business, Dental Hygiene, Nursing, Social Work, and the Speed School of Engineering.",
+      "change_major_after_admission": "Students at the University of Louisville can change their major through the ULink system. It is strongly recommended to consult with an academic advisor before making a change. If a student wishes to change their major before February 20 of their senior year, they can contact the admissions office directly. After this date, major verification occurs during orientation registration. Some majors may have additional prerequisites, such as successfully completing an introductory course, before a student can officially declare them."
+    }
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 13390.0,
+        "total_coa": 35970.0,
+        "housing": 12960.0
+      },
+      "out_of_state": {
+        "tuition": 29736.0,
+        "total_coa": 52316.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 13487,
+    "average_merit_aid": 10432,
+    "percent_receiving_aid": 85.0,
+    "meets_full_need": false,
+    "notes": "The University of Louisville offers the Cardinal Commitment Grant for Kentucky residents, which can provide 100% tuition coverage for Pell-eligible first-time freshmen, and other need-based awards ranging from $2,000-$9,000 to help close the gap between financial aid and the cost of attendance for those with demonstrated financial need.",
+    "scholarships": [
+      {
+        "name": "Grawemeyer Competitive Scholarship",
+        "type": "Merit",
+        "amount": "Varies (competitive)",
+        "deadline": "December 1",
+        "benefits": "Opportunity for undergraduate research, civic and cultural engagement",
+        "application_method": "Additional application required after UofL application"
+      },
+      {
+        "name": "National Merit Finalist/Semifinalist Scholarship (Out-of-State)",
+        "type": "Merit",
+        "amount": "$28,000/year",
+        "deadline": "Automatic consideration based on National Merit status and UofL admission by April 1",
+        "benefits": "",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Trustees' Scholarship",
+        "type": "Merit",
+        "amount": "Up to $8,000/year (Kentucky & Southern Indiana residents); Up to Full In-State Tuition (National Merit Finalist/Semifinalist)",
+        "deadline": "Automatic consideration to students admitted by April 1",
+        "benefits": "",
+        "application_method": "Automatic Consideration upon admission"
+      },
+      {
+        "name": "Henry Vogt Scholarship",
+        "type": "Merit",
+        "amount": "$16,000/year",
+        "deadline": "Varies (Competitive, typically requires early application)",
+        "benefits": "",
+        "application_method": "Competitive application (requires specific GPA/test scores)"
+      },
+      {
+        "name": "University Honors Program Etscorn Scholarship",
+        "type": "Merit",
+        "amount": "$1,000-$2,500 annually",
+        "deadline": "Annual reapplication required (students must have completed 12+ credit hours at UofL)",
+        "benefits": "Supports academic journey and campus involvement for Honors students",
+        "application_method": "Separate Application (for current Honors students)"
+      },
+      {
+        "name": "Global Cardinal Scholarship for First-time Freshmen",
+        "type": "Merit (International)",
+        "amount": "Varies (e.g., $5,000 for 3.25-3.4 GPA)",
+        "deadline": "Automatic upon admission",
+        "benefits": "",
+        "application_method": "Automatic Consideration upon admission for eligible international freshmen"
+      },
+      {
+        "name": "Federal Pell Grant",
+        "type": "Need",
+        "amount": "$740-$7,395 (2025-2026 FAFSA based)",
+        "deadline": "FAFSA deadline (as soon as possible after it opens)",
+        "benefits": "Does not need to be repaid",
+        "application_method": "FAFSA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "The University of Louisville awards college credit for Advanced Placement (AP) exams based on specific scores achieved, typically ranging from 3 to 5, as indicated for each examination.",
+      "exceptions": [
+        "For Computer Science A and Computer Science AB, a score of 4 is required to receive credit.",
+        "Students may not receive credit for both Math 180 and Math 205.",
+        "For information on receiving additional credit for Spanish courses, students should contact the Spanish Section in the Department of Classical & Modern Languages.",
+        "Students with a research topic may need to work with their academic advisor to petition for a direct equivalency for certain credits."
+      ],
+      "usage": "AP credits can be used to satisfy some major prerequisites and general education requirements. Students are advised to work with their academic advisor to ensure they do not take duplicate courses."
+    },
+    "ib_policy": {
+      "general_rule": "Higher Level (HL) exams generally grant credit with a score of 5 or better, though specific score requirements (e.g., 4, 6, or 7) can vary by subject and department (e.g., for premedical courses). Standard Level (SL) exams are not explicitly stated to grant credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "University of Louisville generally accepts transfer credits from regionally accredited institutions recognized by the U.S. Department of Education. A minimum grade of D- is required on all transferred courses, though some departments may require a higher grade. Grade point averages (GPAs) from other institutions do not transfer. Remedial, developmental, and technical/vocational courses are not accepted. Transfer applicants must complete 30 of the last 36 hours of their bachelor's degree at UofL. For most online master's programs, students may transfer up to six credit hours of graduate coursework, with department approval. Up to six additional graduate credit hours may be petitioned, provided they are not extension, thesis, or practicum credits, and the 24 semester hour residency requirement is maintained. Graduate coursework taken more than three years prior to the application will not normally be considered for transfer. UofL may grant credit for military course completion based on American Council on Education (ACE) guidelines."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic performance, particularly in areas relevant to your chosen major at UofL.",
+      "Demonstrated leadership and teamwork skills through extracurriculars or community service.",
+      "A clear understanding of why you want to attend the University of Louisville, connecting to its specific programs, research, or community.",
+      "Resilience and adaptability to new challenges and environments.",
+      "A passion for continuous learning and personal growth."
+    ],
+    "common_activities": [
+      "Volunteering at local hospitals or healthcare facilities, given UofL's strong medical programs.",
+      "Participating in intramural sports or supporting the Louisville Cardinals athletic teams.",
+      "Joining one of UofL's many student organizations, from academic clubs to cultural groups.",
+      "Engaging in undergraduate research opportunities with faculty.",
+      "Exploring the vibrant arts and culture scene in Louisville, including museums, music, and food."
+    ],
+    "essay_tips": [
+      "Tailor your essay specifically to the University of Louisville, mentioning programs, faculty, or opportunities that genuinely excite you.",
+      "Show, don't just tell. Use specific anecdotes and examples to illustrate your points and qualities.",
+      "Highlight what unique perspective or experiences you would bring to the UofL campus community.",
+      "Proofread meticulously for grammar, spelling, and clarity. A strong essay reflects attention to detail.",
+      "Be authentic and let your personality shine through, allowing admissions to get a true sense of who you are."
+    ],
+    "red_flags": [
+      "Submitting a generic essay that could be sent to any university without specific UofL references.",
+      "Focusing solely on academic achievements without showcasing personality, interests, or extracurricular involvement.",
+      "Poor grammar, spelling, or a disorganized essay structure.",
+      "Failing to demonstrate an understanding of UofL's values, mission, or what makes it a good fit for you.",
+      "Exaggerating or fabricating experiences, as authenticity is highly valued."
+    ],
+    "insights": [
+      "Prospective students for the University of Louisville should emphasize both their academic readiness and their potential to contribute actively to the campus and wider Louisville community.",
+      "Demonstrating a genuine interest in UofL's specific strengths, such as its health sciences programs, research opportunities, or commitment to urban engagement, will significantly strengthen an "application.",
+      "Beyond grades, UofL values students who show initiative, leadership, and a willingness to engage in diverse activities, reflecting a well-rounded and committed individual.",
+      "Authenticity in expressing one's aspirations and how UofL can help achieve them is crucial; generic applications often fail to stand out.",
+      "Actively exploring and referencing specific UofL programs, faculty research, or student organizations in your application materials can showcase thorough preparation and true interest."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 45200,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 37300,
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "Apple",
+      "Amazon",
+      "Microsoft",
+      "Deloitte",
+      "Morgan Stanley"
+    ],
+    "grad_school_rate": null,
+    "loan_default_rate": 6.4,
+    "notes": "Median earnings 10 years after enrollment are 32% higher than the national median. The employment rate 2 years after graduation was not explicitly found in College Scorecard data within the search results."
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.1,
+    "graduation_rate_4_year": 43.0,
+    "graduation_rate_6_year": 62.0
+  }
 }

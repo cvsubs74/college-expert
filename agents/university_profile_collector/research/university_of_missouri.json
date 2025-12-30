@@ -1,267 +1,1684 @@
 {
-  "university_profile": {
-    "_id": "university_of_missouri",
-    "metadata": {
-      "official_name": "University of Missouri",
-      "location": {
-        "city": "Columbia",
-        "state": "MO",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "https://missouri.edu/news",
-        "https://admissions.missouri.edu/",
-        "https://trustees.missouri.edu/common-data-set"
-      ]
+  "_id": "university_of_missouri",
+  "metadata": {
+    "official_name": "University of Missouri",
+    "location": {
+      "city": "Columbia",
+      "state": "MO",
+      "type": "main_campus"
     },
-    "strategic_profile": {
-      "executive_summary": "Founded in 1839, the University of Missouri (Mizzou) is the flagship campus of the University of Missouri System and a member of the Association of American Universities (AAU). It is one of only six public universities in the U.S. to host medical, veterinary, and law schools on one campus, driven by the hands-on 'Missouri Method.'",
-      "market_position": "Public Ivy",
-      "admissions_philosophy": "Holistic review for test-optional applicants; numbers-focused sliding scale for traditional applicants.",
-      "us_news_rank": 102,
-      "analyst_takeaways": [
-        {
-          "category": "Admissions Strategy",
-          "insight": "Applications surged by over 40% recently, though the acceptance rate remains stable near 78%.",
-          "implication": "Early application is critical for high-demand programs like Journalism and for priority housing."
-        },
-        {
-          "category": "Institutional Growth",
-          "insight": "Significant jump in national rankings driven by improved retention (91%) and graduation outcomes.",
-          "implication": "Increased national brand value makes Mizzou a more competitive choice for out-of-state students."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Quintessential SEC culture with high 'Tiger' spirit; nearly 30% Greek Life involvement.",
-        "transportation_impact": "Directly adjacent to downtown Columbia (CoMo); the 'Tiger Line' shuttle is vital for non-central commuters.",
-        "research_impact": "Carnegie R1 institution with the most powerful university research reactor (MURR) in the U.S."
+    "last_updated": "2023-10-27"
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Missouri (Mizzou) is a flagship public research university, a member of the prestigious Association of American Universities (AAU) and the SEC. It is particularly renowned for its journalism, agriculture, veterinary medicine, and nuclear engineering programs. Mizzou emphasizes its land-grant mission, providing education, research, and outreach across the state and beyond, fostering a vibrant campus community with strong traditions and a passionate alumni base.",
+    "market_position": "Strong regional leader with national recognition in select disciplines (e.g., Journalism, Veterinary Medicine). Positioned as a comprehensive research institution within the competitive SEC conference, attracting a mix of in-state and out-of-state students.",
+    "admissions_philosophy": "Mizzou seeks academically prepared students who demonstrate leadership potential and a commitment to community engagement. The admissions process considers a holistic review including academic performance (GPA, rigor of coursework), standardized test scores, essays, extracurricular activities, and recommendations. Emphasis is placed on recruiting a diverse student body that will contribute to the rich intellectual and social environment of the university.",
+    "us_news_rank": 124,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Mizzou's brand equity is strongly tied to its pioneering role in journalism education.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The university's research capabilities, particularly at MURR, present unique opportunities for federal funding and partnerships.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Competition for top-tier students in the Midwest and from other SEC institutions remains a key strategic challenge.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Alumni engagement and fundraising efforts are critical for enhancing endowments and campus infrastructure.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The social environment and athletic programs significantly contribute to student life and recruitment appeal.",
+        "category": "general"
       }
-    },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 78.5,
-        "in_state_acceptance_rate": 80.7,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": 39.8,
-        "transfer_acceptance_rate": 72.4,
-        "admits_class_size": 5953,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional; scores used for specific scholarships and borderline holistic review.",
-        "early_admission_stats": null
-      },
-      "longitudinal_trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 24490,
-          "admits_total": 19218,
-          "enrolled_total": 5917,
-          "acceptance_rate_overall": 78.5,
-          "yield_rate": 30.8,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 21669,
-          "admits_total": 16690,
-          "enrolled_total": 5139,
-          "acceptance_rate_overall": 77.0,
-          "yield_rate": 30.8
-        }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "unweighted_middle_50": "3.20-3.70",
-          "percentile_25": "3.20",
-          "percentile_75": "3.70",
-          "notes": "Calculates a 'Core GPA' from English, Math, Science, Social Studies, and Foreign Language."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1150-1330",
-          "act_composite_middle_50": "23-30",
-          "submission_rate": 70.0
-        },
-        "demographics": {
-          "first_gen_percentage": 25.0,
-          "international_percentage": 4.6,
-          "geographic_breakdown": [
-            {
-              "region": "Missouri",
-              "percentage": 67.0
-            },
-            {
-              "region": "Other US States",
-              "percentage": 32.0
-            },
-            {
-              "region": "International",
-              "percentage": 1.0
-            }
-          ],
-          "racial_breakdown": {
-            "white": 76.3,
-            "black_african_american": 5.26,
-            "hispanic_latino": 5.41,
-            "asian": 2.93,
-            "two_or_more_races": 3.97
-          }
-        }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges and Schools",
-      "colleges": [
-        {
-          "name": "Missouri School of Journalism",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 77.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Renowned for the 'Missouri Method'. Direct admission for Walter Williams Scholars; others enter as Pre-Journalism.",
-          "majors": [
-            {
-              "name": "Journalism",
-              "degree_type": "B.J.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 3.0,
-              "internal_transfer_gpa": 2.75,
-              "weeder_courses": [
-                "ENGLSH 1000",
-                "JOURN 2100 News Writing"
-              ],
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 51
-              }
-            }
-          ]
-        },
-        {
-          "name": "Trulaske College of Business",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 56.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Uses 'Trulaske Edge' professional development points for Upper Level advancement.",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.6,
-              "special_requirements": "Requires 70 Professional Development Program points."
-            }
-          ]
-        }
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Mizzou Online Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Rolling Admissions",
-          "date": "2025-06-01",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Scholarship Priority",
-          "date": "2024-11-15",
-          "is_binding": false
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Core GPA",
-          "Course Rigor"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Personal Essays"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Not Considered"
-      },
-      "supplemental_requirements": {
-        "essay_prompts": [
-          {
-            "prompt": "Tell us about your background, interests, and what influenced your decision to apply to Mizzou. We'd like to learn more about you!",
-            "word_limit": 500,
-            "required": false,
-            "note": "Optional essay",
-            "application_cycle": "2025-2026"
-          }
-        ]
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 14837,
-          "total_coa": 33045
-        },
-        "out_of_state": {
-          "tuition": 36056,
-          "total_coa": 54264
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "scholarships": [
-        {
-          "name": "Stamps Scholars Program",
-          "type": "Full Ride",
-          "amount": "Full COA + $16k fund",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Mark Twain Scholarship",
-          "type": "Merit",
-          "amount": "Up to $21,500/year",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 54200,
-      "employment_rate_2yr": 93.0,
-      "freshman_retention_rate": 91.0,
-      "graduation_rate_6_year": 76.0,
-      "top_employers": [
-        "Boeing",
-        "Oracle",
-        "Edward Jones",
-        "Deloitte"
-      ]
+    ],
+    "campus_dynamics": {
+      "social_environment": "A highly engaged and spirited campus culture, characterized by strong Greek life participation, numerous student organizations, and passionate support for SEC athletics. The town-gown relationship in Columbia is generally robust, contributing to a vibrant college town atmosphere.",
+      "transportation_impact": "Columbia is a moderately car-dependent city, though the campus itself is walkable and offers a robust shuttle system (Tiger Line). Parking on campus can be challenging and costly. Efforts are ongoing to improve bike infrastructure and promote sustainable transportation.",
+      "research_impact": "Significant contributions across various fields, including agricultural innovation, advanced veterinary medicine, groundbreaking journalism studies, and nuclear science via the University of Missouri Research Reactor (MURR). Mizzou emphasizes interdisciplinary research, with a growing focus on health sciences, data science, and environmental sustainability."
     }
   },
-  "_id": "university_of_missouri",
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 78.5,
+      "is_test_optional": false,
+      "test_policy_details": "University of Missouri-Columbia requires standardized test scores for admission. The average SAT score is 1230, and the average ACT score is 25. For ACT, the middle 50% range is 23-30. For SAT, the middle 50% range is 1150-1330. While there is no absolute minimum requirement, scores below these ranges may make admission more challenging.",
+      "admits_class_size": 19218,
+      "transfer_acceptance_rate": 72.4,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": 18.5,
+      "out_of_state_acceptance_rate": 8.2,
+      "international_acceptance_rate": 39.82
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": 6000,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Preliminary enrollment data for first-time college students reported as more than 6,000. Full admissions data not yet available."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 24490,
+        "admits_total": 19218,
+        "enrolled_total": 5953,
+        "acceptance_rate_overall": 78.47,
+        "yield_rate": 30.98,
+        "notes": "Acceptance rate increased from 77.05% in 2023.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 21669,
+        "admits_total": 16690,
+        "enrolled_total": 5139,
+        "acceptance_rate_overall": 77.02,
+        "yield_rate": 30.79,
+        "notes": "Undergraduate acceptance rate for 2023.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 79.13,
+        "yield_rate": 31.02,
+        "notes": "Acceptance and yield rates are provided from historical trends. Specific application, admit, and enrolled totals for first-time students are not explicitly available from the search results."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 19966,
+        "admits_total": 15283,
+        "enrolled_total": 4843,
+        "acceptance_rate_overall": 76.54,
+        "yield_rate": 31.69,
+        "notes": "Admissions statistics for Fall 2021 enrollment season."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.2-3.7",
+        "unweighted_middle_50": "3.0-3.6",
+        "average_weighted": 3.6,
+        "percentile_25": "3.2",
+        "percentile_75": "3.7",
+        "notes": "The University of Missouri - Columbia considers a weighted GPA, with the average weighted GPA for admitted students being 3.6. The 25th percentile for weighted GPA is 3.2, and the 75th percentile is 3.7. The unweighted GPA for admitted students has a middle 50% range of 3.0 to 3.6, with the 25th percentile at 3.0 and the 75th percentile at 3.6. Mizzou utilizes a holistic admissions process. Minimum GPA requirements are 2.5 for Missouri and Illinois residents and 2.75 for non-residents. The university calculates a 'Core GPA' for admission purposes, which includes grades from English, science, social studies, and foreign language courses; math courses Algebra I and higher; and the highest fine art grade. This Core GPA is used for students graduating from non-ranking high schools. Approximately 33% of freshmen were in the top ten percent of their high school graduating class. The school considers rigorous high school curricula, such as honors, AP, or IB classes. Standardized test scores (SAT/ACT) are optional for admission but are considered if submitted."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1150-1330",
+        "sat_reading_middle_50": "580-670",
+        "sat_math_middle_50": "570-660",
+        "act_composite_middle_50": "23-30",
+        "submission_rate": 66.0,
+        "policy_note": "Superscore accepted; Test-optional for most applicants."
+      },
+      "demographics": {
+        "first_gen_percentage": 21.0,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children. First-generation percentage is for new students (first-time college and transfer) as defined by the University of Missouri's Office of First-Generation Initiatives: parents do not have a bachelor's degree.",
+        "geographic_breakdown": [
+          {
+            "region": "Missouri (In-State)",
+            "percentage": 67.0
+          },
+          {
+            "region": "Out-of-State (excluding top listed)",
+            "percentage": null
+          },
+          {
+            "region": "International",
+            "percentage": 4.62
+          },
+          {
+            "region": "Illinois",
+            "percentage": null
+          },
+          {
+            "region": "Texas",
+            "percentage": null
+          },
+          {
+            "region": "Kansas",
+            "percentage": null
+          },
+          {
+            "region": "California",
+            "percentage": null
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10422,
+            "admits": 7933,
+            "acceptance_rate": 76.12,
+            "note": "Data is for a recent admissions cycle, possibly 2025 or Fall admission. The acceptance rates are calculated from the provided applicant and admit numbers."
+          },
+          "women": {
+            "applicants": 14037,
+            "admits": 11271,
+            "acceptance_rate": 80.29,
+            "note": "Data is for a recent admissions cycle, possibly 2025 or Fall admission. The acceptance rates are calculated from the provided applicant and admit numbers."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 79.6,
+          "black_african_american": 5.7,
+          "hispanic_latino": 5.5,
+          "asian": 2.9,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 4.6,
+          "unknown": 1.4,
+          "non_resident_alien": 1.0
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agriculture, Food and Natural Resources",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university residence halls. Mizzou offers various residence hall options across four neighborhoods: College Crossing, Truman Central, Southwest Village, and Park View.",
+        "student_archetype": "Students passionate about environmental stewardship, food systems, animal sciences, and natural resources, often seeking experiential learning and community engagement opportunities.",
+        "strategic_fit_advice": "Students should consider joining a CAFNR-related Freshman Interest Group (e.g., Animal Science, Natural Resources) to build a strong academic and social network. Engaging with CAFNR student organizations and programs like MANRRS and COMPASS is also highly beneficial for professional development and community building.",
+        "majors": [
+          {
+            "name": "Agriculture",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1100 College Algebra (or MATH 1050 Quantitative Reasoning)",
+              "BIOCHM 2112 Biotechnology in Society (or BIOCHM 2110, CHEM 1100, CHEM 1400 & CHEM 1401, or any physical science elective)",
+              "BIO_SC 1010 General Principles and Concepts of Biology & BIO_SC 1020 General Biology Laboratory (or BIO_SC 1030, BIO_SC 1200, or BIO_SC 1500)",
+              "ABM 1041 Applied Microeconomics (or ABM 1042, ECONOM 1014, or ECONOM 1015)",
+              "AGSC_COM 2220 Verbal Communication in Agriculture, Food and Natural Resources (or COMMUN 1200)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students must choose three concentration areas from the College’s degree programs, minors, and/or certificates.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AFNR 1115 Foundations for College Success",
+                "AFNR 2190 International Agriculture, Food and Natural Resources",
+                "AFNR 2191 International Agriculture, Food and Natural Resources - Humanities",
+                "AFNR 2192 International Agriculture, Food and Natural Resources - Social Science",
+                "AFNR 4001 Topics in Agriculture-General",
+                "AFNR 4945 Experiential Learning in Industry Internship in Agriculture, Food and Natural Resources",
+                "AFNR 4993 Internship in Agriculture, Food and Natural Resources"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Mengshi Lin (Curators' Distinguished Professor, Food Science)",
+              "Dr. Bing Yang (Curators' Distinguished Professor, Plant Science)"
+            ],
+            "notes": "Multidisciplinary program allowing for tailored interests. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Animal Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Bryon Wiegand (Division Director)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Michael Chapman (Division Director)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Dietetics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Environmental Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Food Science and Nutrition",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dojin Ryu (Division Director)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Hospitality Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Nutrition and Exercise Physiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Parks, Recreation, Sport and Tourism",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Personal Financial Planning",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Science",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university residence halls. Housing options vary in style (community-style, suite-style) and are located across different campus neighborhoods.",
+        "student_archetype": "Broadly curious individuals with diverse interests in humanities, social sciences, and natural sciences, focused on critical thinking, creative expression, and interdisciplinary exploration.",
+        "strategic_fit_advice": "With a wide array of disciplines, students should explore Freshman Interest Groups (FIGs) that align with specific interests (e.g., Art and Art History, Psychology) to foster early connections and academic support. Participation in various student organizations within the college can also enhance their experience.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Ramji Kumar Bhandari (Biological Science)",
+              "Mary Jane Guthrie (Zoologist, Cancer Researcher, and former faculty)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Leonard Blumenthal (Mathematician)",
+              "Steve Hofmann (Mathematician)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Linda M. Godwin (Former NASA astronaut, Astronomy and Physics Professor)",
+              "Sergei Kopeikin (Relativistic Astrophysicist and Astronomer)",
+              "Bahram Mashhoon (General Relativity Physicist)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Thomas Swain Barclay (Former Professor of Political Science)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "David C. Geary (Developmental Psychologist)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "College of Education & Human Development",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university residence halls. The WeMake — Design & Learn Lab, a makerspace with 3D printing and CNC routing, is located within Townsend Hall, a facility of this college, and is open to all MU students.",
+        "student_archetype": "Students dedicated to improving quality of life through education, information sciences, human development, and intervention sciences. They are often passionate about teaching, research, and community engagement.",
+        "strategic_fit_advice": "Students interested in education or human development should look for related Freshman Interest Groups to connect with peers and faculty. For those interested in innovative learning tools, utilizing the WeMake — Design & Learn Lab is an excellent opportunity, regardless of their specific major within the college.",
+        "majors": [
+          {
+            "name": "Early Childhood Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Mid-Level and Advanced-Level Experiences requires demonstration of competence and readiness.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Prepares students for teacher certification. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Mid-Level and Advanced-Level Experiences requires demonstration of competence and readiness.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Prepares students for teacher certification. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Human Development and Family Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Secondary Education (Biology)",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Mid-Level and Advanced-Level Experiences requires demonstration of competence and readiness.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Prepares students for teacher certification. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Special Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Mid-Level and Advanced-Level Experiences requires demonstration of competence and readiness.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Prepares students for teacher certification. Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit (with a Pre-Major pathway)",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university residence halls with various amenities like Wi-Fi, lounges, and study spaces. While not dorm-specific, the College of Education & Human Development houses the WeMake — Design & Learn Lab, a makerspace accessible to all MU students with 3D printing, scanning, and CNC routing.",
+        "student_archetype": "Ambitious problem-solvers, innovators, and hands-on learners who are driven by discovery and the application of scientific principles to real-world challenges. They are often collaborative and seek research opportunities.",
+        "strategic_fit_advice": "Prospective engineering students should seek out Freshman Interest Groups (FIGs) in engineering for academic community, even though they don't have a residential component. They should also explore campus-wide resources like the WeMake Lab for practical skill development and connect with the numerous engineering student organizations.",
+        "majors": [
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Baolin Deng (Curators' Distinguished Professor, William A. Davidson Professor)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.CiE",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Prasad Calyam (Curators' Distinguished Professor, Greg L. Gilliom Professor)",
+              "Syed Kamrul Islam (Chair, Professor)",
+              "Yi Shang (Director of Graduate Studies, Professor)",
+              "Derek T. Anderson (Professor)",
+              "Jianlin Cheng (Curators' Distinguished Professor, Paul K. and Dianne Shumaker Professor)",
+              "Curt Davis (Professor)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Syed Kamrul Islam (Chair, Professor)",
+              "Yi Shang (Director of Graduate Studies, Professor)",
+              "Derek T. Anderson (Professor)",
+              "Mahmoud Almasri (Cramer W. LaPierre Professor)",
+              "Jianlin Cheng (Curators' Distinguished Professor, Paul K. and Dianne Shumaker Professor)",
+              "Curt Davis (Professor)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Industrial Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Mechanical and Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "College of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university residence halls. Mizzou emphasizes the importance of on-campus living for freshmen to build friendships and community.",
+        "student_archetype": "Service-oriented individuals passionate about healthcare, public health, and well-being, committed to clinical experience, research, and serving communities.",
+        "strategic_fit_advice": "Prospective students should join a Health Sciences Freshman Interest Group to explore various career paths and meet faculty and resources in the School of Health Sciences. Engaging in the many health sciences-related student organizations can also provide valuable experience and connections.",
+        "majors": [
+          {
+            "name": "Clinical and Diagnostic Sciences (Medical Laboratory Science)",
+            "degree_type": "B.H.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Application required after prerequisite coursework",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Criminal & Justice Studies",
+            "degree_type": "B.H.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Does not require a separate application. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.H.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "On-campus students are required to declare one of four emphasis areas: Health & Wellness Services, Leadership & Policy, Pre-Professional, or Rehabilitation Sciences. The online degree does not require an emphasis.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HLTH_SCI 1000 Introduction to the Health Professions",
+                "HLTH_SCI 2100 Communication in Health Sciences",
+                "HLTH_SCI 2300 Diversity and Health Disparities",
+                "HLTH_SCI 3100 Health Systems and Services",
+                "HLTH_SCI 3200 Health Policy and Economics",
+                "HLTH_SCI 4000 Evidence-Based Practice in Health Sciences",
+                "HLTH_SCI 4960 Professional Development in Health Sciences",
+                "HLTH_SCI 4975 Health Sciences Internship I",
+                "HLTH_SCI 4985 Health Sciences Internship II"
+              ],
+              "electives": [
+                "HLTH_SCI 3000 Global Health",
+                "HLTH_SCI 3400 Introduction to Artificial Intelligence in Healthcare",
+                "HLTH_SCI 3500 Healthcare Leadership and Management"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Does not require a separate application. Prepares students for various health careers or graduate/professional programs. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Does not require a separate application. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Speech, Language and Hearing Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Does not require a separate application. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Application and competitive admission.",
+            "admissions_pathway": "Pre-Social Work",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "College of Veterinary Medicine - Bachelor of Science in Veterinary Technology",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily off-campus apartments or university-managed graduate and family housing. These options cater to the needs of graduate and professional students.",
+        "student_archetype": "Passionate and dedicated individuals committed to animal health, veterinary medicine, scientific research, and compassionate care for a wide range of species.",
+        "strategic_fit_advice": "Veterinary students should seek housing that provides easy access to the College of Veterinary Medicine facilities. Networking within the college's programs and participating in veterinary student associations will be important for academic success and professional integration.",
+        "majors": []
+      },
+      {
+        "name": "Missouri School of Journalism",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university residence halls. The university aims to provide a supportive living and learning environment for all on-campus residents.",
+        "student_archetype": "Aspiring journalists, communicators, and media professionals driven by storytelling, critical inquiry, and a commitment to informing the public. They value hands-on learning.",
+        "strategic_fit_advice": "Students should strongly consider joining the Journalism Scholars Freshman Interest Group to learn fundamentals, explore career paths, and connect with faculty and peers from day one.",
+        "majors": [
+          {
+            "name": "Journalism",
+            "degree_type": "B.J.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGLSH 1000 Writing and Rhetoric (minimum grade of B- required)",
+              "12 credits in a foreign language (from the same language)",
+              "General Education: Behavioral Science (3 credits)",
+              "General Education: Humanities (3 credits)",
+              "General Education: Math and Quantitative Reasoning (3 credits)",
+              "General Education: Math/Science (9 credits, including at least one biological or physical science and its related lab)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students are admitted as undeclared journalism majors and must maintain a cumulative 3.0 GPA and complete all prerequisite coursework with a minimum grade of C- to matriculate into one of six career paths.",
+            "admissions_pathway": "Pre-Journalism",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "JOURN 1010 Career Explorations in Journalism",
+                "JOURN 1100 Introduction to Journalism",
+                "JOURN 2100 Visual Fundamentals",
+                "JOURN 2104 News Reporting and Writing",
+                "JOURN 2106 Strategic Communication I",
+                "JOURN 2200 Cross-Cultural Journalism",
+                "JOURN 3000 Journalism Ethics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [
+              "David D. Kurpius (Dean)",
+              "Earnest Perry (Associate Dean for Graduate Studies)",
+              "Lynda Kraxberger (Associate Dean for Undergraduate Studies and Administration)",
+              "Fritz Cropp (Associate Dean for Global Programs)",
+              "Judy Bolch (Houston Harte Chair in Journalism)",
+              "Shelly Rodgers (Curators' Distinguished Professor, Maxine Wilson Gregory Chair in Journalism Research)"
+            ],
+            "notes": "Emphasizes hands-on learning through the 'Missouri Method' with public-facing professional newsrooms and agencies. Students choose a career path (e.g., Cross-Platform Editing and Producing, Photojournalism, Strategic Communication). Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Journalism with Emphasis in Strategic Communication",
+            "degree_type": "B.J.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGLSH 1000 Writing and Rhetoric (minimum grade of B- required)",
+              "12 credits in a foreign language (from the same language)",
+              "General Education: Behavioral Science (3 credits)",
+              "General Education: Humanities (3 credits)",
+              "General Education: Math and Quantitative Reasoning (3 credits)",
+              "General Education: Math/Science (9 credits, including at least one biological or physical science and its related lab)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students are admitted as undeclared journalism majors and must maintain a cumulative 3.0 GPA and complete all prerequisite coursework with a minimum grade of C- to matriculate into one of six career paths, including Strategic Communication.",
+            "admissions_pathway": "Pre-Journalism",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "JOURN 1010 Career Explorations in Journalism",
+                "JOURN 1100 Introduction to Journalism",
+                "JOURN 2100 Visual Fundamentals",
+                "JOURN 2104 News Reporting and Writing",
+                "JOURN 2106 Strategic Communication I",
+                "JOURN 2200 Cross-Cultural Journalism",
+                "JOURN 3000 Journalism Ethics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [
+              "David D. Kurpius (Dean)",
+              "Shelly Rodgers (Curators' Distinguished Professor, Maxine Wilson Gregory Chair in Journalism Research)"
+            ],
+            "notes": "Strategic Communication is the study of principles and practices of all communication designed to create a desired response from a given audience. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Photojournalism and Documentary",
+            "degree_type": "B.J.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGLSH 1000 Writing and Rhetoric (minimum grade of B- required)",
+              "12 credits in a foreign language (from the same language)",
+              "General Education: Behavioral Science (3 credits)",
+              "General Education: Humanities (3 credits)",
+              "General Education: Math and Quantitative Reasoning (3 credits)",
+              "General Education: Math/Science (9 credits, including at least one biological or physical science and its related lab)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Students are admitted as undeclared journalism majors and must maintain a cumulative 3.0 GPA and complete all prerequisite coursework with a minimum grade of C- to matriculate into one of six career paths.",
+            "admissions_pathway": "Pre-Journalism",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Clifton C. Edom (Mizzou photojournalism professor and co-founder of Pictures of the Year)"
+            ],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "School of Music",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "Sinclair School of Nursing",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university residence halls for undergraduates. For graduate nursing students, university-managed apartments or off-campus housing are common.",
+        "student_archetype": "Compassionate, dedicated, and academically strong students committed to healthcare, patient care, and contributing to the nursing profession through immersive learning and research.",
+        "strategic_fit_advice": "Undergraduate nursing students should seek out Freshman Interest Groups related to Health, Medicine & Sciences to foster early connections. Engaging with nursing-related student clubs and utilizing the advanced simulation and clinical facilities of the new nursing school building are highly recommended.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1100 Atoms and Molecules with Lab (minimum grade of C)",
+              "ENGLSH 1000 Writing and Rhetoric (minimum grade of C)",
+              "H_D_FS 2400 Principles of Human Development (minimum grade of C)",
+              "MICROB 2800 Microbiology for Nursing and Health Professions (minimum grade of C)",
+              "MPP 3202 Elements of Physiology (minimum grade of C)",
+              "MATH 1050 Quantitative Reasoning or MATH 1100 College Algebra (minimum grade of C-)",
+              "STAT 1200 Introductory Statistical Reasoning (minimum grade of C-)",
+              "PTH_AS 2201 Human Anatomy Lecture",
+              "PTH_AS 2203 Human Anatomy Laboratory"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 1100 Atoms and Molecules with Lab",
+              "MICROB 2800 Microbiology for Nursing and Health Professions",
+              "MPP 3202 Elements of Physiology",
+              "PTH_AS 2201 Human Anatomy Lecture",
+              "PTH_AS 2203 Human Anatomy Laboratory"
+            ],
+            "special_requirements": "Admission to the clinical major is competitive and space-available. Separate application required after prerequisite coursework.",
+            "admissions_pathway": "Pre-Nursing",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "NURSE 2200 Foundations of Communication and Professionalism in Nursing",
+                "NURSE 3200 Pathophysiology",
+                "NURSE 3300 Health Assessment and Promotion",
+                "NURSE 3400 Adult Health Nursing I",
+                "NURSE 3500 Psychiatric Mental Health Nursing",
+                "NURSE 3600 Child and Family Health Nursing",
+                "NURSE 4100 Nursing Research and Evidence-Based Practice",
+                "NURSE 4200 Adult Health Nursing II",
+                "NURSE 4300 Community Health Nursing",
+                "NURSE 4400 Leadership and Management in Nursing",
+                "NURSE 4500 Transition to Professional Practice"
+              ],
+              "electives": [
+                "NEP 2380 Diet Therapy for Health Professionals"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Linda Bullock (Nursing)"
+            ],
+            "notes": "The BSN program is offered in Traditional, Accelerated, and RN-BSN pathways. Enrollment for traditional/accelerated pathways is planned to increase to 240 students per year. Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      },
+      {
+        "name": "Trulaske College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university residence halls. First-year students are required to live in university housing. Options for apartment-style living are also available for undergraduates.",
+        "student_archetype": "Future business leaders, entrepreneurs, and global citizens focused on professional development, experiential learning, and building strong professional networks.",
+        "strategic_fit_advice": "Students aiming for a career in business should prioritize joining a Business & Management Freshman Interest Group (e.g., Accounting, Wealth Management) to gain a head start on their academic and professional journey. Active participation in Trulaske's numerous student organizations and career services is key.",
+        "majors": [
+          {
+            "name": "Accountancy",
+            "degree_type": "B.S.Acc.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1400 Calculus for Social and Life Sciences I (or MATH 1500 Analytic Geometry and Calculus I)",
+              "STAT 2500 Introduction to Probability and Statistics I (or STAT 1200 & STAT 2200)",
+              "ECONOM 1014 Principles of Microeconomics",
+              "ECONOM 1015 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": "C- or better in MATH 1300 or MATH 1400. C- or higher in STAT 2500, ECONOM 1014, and ECONOM 1015.",
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BUS_AD 1500 Foundations of Business and Professional Development Principles",
+                "BUS_AD 2500 Intermediate Professional Development Principles",
+                "BUS_AD 3500 Advanced Professional Development Principles",
+                "BUS_AD 4500 Professional Development Program - Internship"
+              ],
+              "electives": [
+                "BUS_AD 4201 Topics in Business Administration",
+                "BUS_AD 7050 MBA Communications Practice",
+                "BUS_AD 7340 Business Ethics and Leadership"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students can select emphases in Management, Marketing, or Finance and Banking. A maximum of 54 credits in the emphasis area can count toward the 120-credit degree requirement. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Business Administration with Emphasis in Finance and Banking",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1400 Calculus for Social and Life Sciences I (or MATH 1500 Analytic Geometry and Calculus I)",
+              "STAT 2500 Introduction to Probability and Statistics I (or STAT 1200 & STAT 2200)",
+              "ECONOM 1014 Principles of Microeconomics",
+              "ECONOM 1015 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": "C- or better in MATH 1300 or MATH 1400. C- or higher in STAT 2500, ECONOM 1014, and ECONOM 1015.",
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FINANC 1000 Principles of Finance",
+                "FINANC 3000 Corporate Finance",
+                "FINANC 4010 Financial Management",
+                "FINANC 4020 Investments",
+                "FINANC 4030 Financial Intermediaries and Markets"
+              ],
+              "electives": [
+                "FINANC 4110 Financial Management Policy",
+                "FINANC 4120 Security Analysis",
+                "FINANC 4130 Management of Financial Institutions",
+                "FINANC 4220 Portfolio Management",
+                "FINANC 4230 Alternative Investments",
+                "FINANC 4310 Financial Modeling and Databases",
+                "FINANC 4320 Financial Futures and Options",
+                "FINANC 4450 Financial Ethics and Professional Standards"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Coursework focuses on corporate financial management, investments/asset pricing, securities analysis, fixed income securities, corporate valuation, mergers and acquisitions, portfolio management, real estate appraisal, financial institutions, and venture capital. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Business Administration with Emphasis in Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1400 Calculus for Social and Life Sciences I (or MATH 1500 Analytic Geometry and Calculus I)",
+              "STAT 2500 Introduction to Probability and Statistics I (or STAT 1200 & STAT 2200)",
+              "ECONOM 1014 Principles of Microeconomics",
+              "ECONOM 1015 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": "C- or better in MATH 1300 or MATH 1400. C- or higher in STAT 2500, ECONOM 1014, and ECONOM 1015.",
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MANGMT 3000 Principles of Management",
+                "MANGMT 3300 Operations Management"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students will take courses focusing on supply chain management, human resource management, and entrepreneurship. Data source: University of Missouri Academic Catalog 2025-26"
+          },
+          {
+            "name": "Business Administration with Emphasis in Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1400 Calculus for Social and Life Sciences I (or MATH 1500 Analytic Geometry and Calculus I)",
+              "STAT 2500 Introduction to Probability and Statistics I (or STAT 1200 & STAT 2200)",
+              "ECONOM 1014 Principles of Microeconomics",
+              "ECONOM 1015 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": "C- or better in MATH 1300 or MATH 1400. C- or higher in STAT 2500, ECONOM 1014, and ECONOM 1015.",
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MRKTNG 3000 Principles of Marketing",
+                "MRKTNG 4000 Marketing Management",
+                "MRKTNG 4050 Marketing Research",
+                "MRKTNG 4220 Consumer Behavior"
+              ],
+              "electives": [
+                "MRKTNG 3410 Personal Selling",
+                "MRKTNG 3510 Procurement Processes and Analytics",
+                "MRKTNG 3900 International Business",
+                "MRKTNG 3975 Current Issues in International Marketing",
+                "MRKTNG 4250 Retail Marketing"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The Marketing discipline focuses on acquiring, developing, and managing customers. Data source: University of Missouri Academic Catalog 2025-26"
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Computer Science Minor",
+      "Entrepreneurship and Innovation Management Minor",
+      "Creative Writing Minor",
+      "Business Minor",
+      "Digital Marketing Certificate",
+      "Cyber Security Certificate",
+      "Web and Mobile Applications Development Certificate",
+      "Psychological Sciences Minor",
+      "Economics Minor"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Mizzou Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-06-01",
+        "is_binding": false,
+        "notes": "The University of Missouri operates on a rolling admissions basis. This date is a tentative recommended deadline for Fall 2026 entry. There are no Early Decision (binding) or Early Action plans explicitly offered. It is recommended to apply by November 15 of your senior year for maximum scholarship consideration (this date for Fall 2026 has passed). The priority deadline for general and departmental scholarships for Fall 2026 is March 1, 2026."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Applicants opting for a test-optional review are required to submit three short essays as part of their application for admission. While not explicitly required for applicants who submit test scores, essays and/or letters of recommendation are accepted as supplemental materials and can enhance an application, especially for competitive scholarships."
+      },
+      {
+        "target_program": "Music (Music and Music Education Majors, or for Music Scholarship Consideration)",
+        "requirement_type": "Audition",
+        "deadline": "January 9, 2026 (Priority deadline to schedule an audition)",
+        "details": "Auditions are required for students seeking admission as a music or music education major and/or those seeking music scholarship assistance. Auditions are primarily held in-person on campus during 'Undergraduate Mizzou Music Days' on specific dates (e.g., Friday, Dec. 5, 2025; Monday, Feb. 16, 2026; Thursday, Feb. 26, 2026). The priority deadline to schedule an audition is January 9, 2026. Repertoire requirements vary by instrument/area (e.g., piano performance requires at least three memorized pieces from Baroque, Classical, Romantic, or 20th/21st century categories; instrumentalists may need a jazz standard and a blues; vocalists typically prepare an operatic aria and art songs in multiple languages for graduate prescreening). All in-person auditions typically include sight-reading."
+      },
+      {
+        "target_program": "Architectural Studies (for progression to Professional Program)",
+        "requirement_type": "Portfolio",
+        "deadline": "May (after first year coursework)",
+        "details": "A portfolio of work is required for admission to the Professional Program in Architectural Studies, which students apply for at the end of their first year. This is not a direct freshman admission requirement. The portfolio review is a selective process based on coursework from specific first-year classes (e.g., ARCHST 1100 Visual Design and ARCHST 1200 Drafting) and academic achievement. The portfolio should include creative projects and technical drawing work, with attention to craftsmanship and detail. Evaluation criteria include skills in design principles and elements, design creativity, drafting and lettering, technical accuracy, and craftsmanship. Portfolio and application materials are typically submitted in May."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Record (GPA, Course Rigor, Transcript)",
+        "Essays"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores",
+        "Extracurricular Activities",
+        "Recommendations",
+        "Class Rank"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Offers a holistic review for test-optional applicants and for those not meeting automatic admission requirements, emphasizing academic rigor, GPA, and essays. Strong focus on 'hands-on learning' and leadership development through the 'Missouri Method'."
+    },
     "essay_prompts": [
       {
-        "prompt": "Mizzou is committed to developing students who will lead and make a difference. How do you plan to contribute to our community?",
-        "word_limit": "250 words",
-        "type": "Community",
+        "prompt": "Applicants opting for a test-optional review are required to submit three short essays as part of their application for admission.",
+        "word_limit": null,
+        "topic": "Test-optional review essays",
+        "required": true,
+        "notes": "Specific prompts and word limits are not detailed in the provided data. These essays are required for applicants choosing a test-optional review pathway."
+      },
+      {
+        "prompt": "For applicants who do not meet the published admission requirements, the university conducts a comprehensive review that may consider any extenuating circumstances mentioned in an accompanying essay or letter of recommendation. This suggests an optional opportunity for an essay in specific cases, though a formal prompt is not provided for this.",
+        "word_limit": null,
+        "topic": "Extenuating Circumstances (optional)",
         "required": false,
-        "brainstorming_questions": [
-          "When you think about 'leading' and 'making a difference,' what specific Mizzou values or initiatives immediately resonate with you, and can you recall a time you've actively embodied one of those principles, even on a small scale?",
-          "Beyond your intended major, what are one or two specific Mizzou clubs, organizations, or research opportunities that genuinely excite you, and how do you envision yourself not just joining, but actively shaping their impact?",
-          "Think about a time you've had to overcome a challenge or bring people together to achieve a common goal. How did you lead in that situation, and what lessons learned do you think would be particularly valuable to bring to the Mizzou community?",
-          "Mizzou prides itself on its diverse student body and its role in Columbia. Can you describe a personal experience where you've learned from or contributed to a community different from your own, and how do you see that experience translating to your time at Mizzou?",
-          "Looking ahead, what is one specific, tangible problem or area of improvement you've observed (either in your current community or in general) that you feel uniquely equipped to address at Mizzou, and what's your initial thought process for tackling it?"
-        ]
+        "notes": "Submitted without a prescriptive prompt, generally for comprehensive review to address extenuating circumstances."
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_missouri_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider applying to a less competitive major initially, especially if aiming for selective programs later.",
+      "Explore \"undeclared\" options within a specific college.",
+      "Research program-specific admission requirements beyond general university admission.",
+      "Utilize Mizzou's advising resources for major and career exploration.",
+      "Don't solely prioritize \"easy\" majors, but consider those with strong job prospects and a tangential relation to interests."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate general education (GE) requirements",
+      "Consider housing quality and living-learning communities",
+      "Look at overall and program-specific graduation rates"
+    ],
+    "alternate_major_strategy": "The University of Missouri provides 'Exploring' or 'Undeclared' status for new students to discover major pathways, supported by advisors. Students can also change majors via online forms. Internal transfers to competitive majors (e.g., Computer Science) can be difficult, as many programs have selective admission after the freshman year, and general university admission does not guarantee entry into all specific degree programs. It's crucial to understand program-specific prerequisites and competitive entry requirements."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 15548.0,
+        "total_coa": 34940.0,
+        "housing": 15008.0
+      },
+      "out_of_state": {
+        "tuition": 37820.0,
+        "total_coa": 54212.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 12559.0,
+    "average_merit_aid": 8123.0,
+    "percent_receiving_aid": 79.0,
+    "meets_full_need": false,
+    "notes": "The Missouri Land Grant program provides free tuition for Pell-eligible Missourians, covering 100% of unmet need for tuition and fees. 53% of students graduate with no student loan debt. As of the freshman class of 2024, race or ethnicity is no longer a factor in scholarships.",
+    "scholarships": [
+      {
+        "name": "National Merit & Perfect Score Scholarship (Missouri Resident)",
+        "type": "Merit",
+        "amount": "Full Tuition and Fees + $3,500 annual stipend + $13,700 one-year on-campus housing and dining + $2,000 research/study abroad support + $1,000 tech enrichment",
+        "deadline": "Automatic consideration if declared National Merit Finalist/Semifinalist, or achieved 36 ACT/1600 SAT and enrolled first semester after high school",
+        "benefits": "Covers tuition, fees, housing, dining, annual stipend, and one-time funds for research/study abroad and technology enrichment. Renewable for up to eight regular semesters.",
+        "application_method": "Automatic Consideration upon meeting criteria and enrolling."
+      },
+      {
+        "name": "Chancellor's Award",
+        "type": "Merit",
+        "amount": "$7,200/year",
+        "deadline": "Automatic consideration based on admission application (recommended by Nov. 15 for Dec. 1 scholarship deadline).",
+        "benefits": "Renewable for eligible Missouri resident first-time college freshmen.",
+        "application_method": "Automatic Consideration upon application and admission to Mizzou."
+      },
+      {
+        "name": "International Merit Scholarship",
+        "type": "Merit",
+        "amount": "$5,000/year",
+        "deadline": "Automatic consideration for fall applicants admitted by March 1.",
+        "benefits": "Applicable to non-resident portion of tuition fees. Renewable.",
+        "application_method": "Automatic Consideration upon application and admission to Mizzou."
+      },
+      {
+        "name": "Global Black & Gold Scholarship",
+        "type": "Merit",
+        "amount": "Full reduction of nonresident fees (Level 1: $21,500/year, Level 2: $11,000/year)",
+        "deadline": "Automatic consideration for fall applicants admitted by March 1.",
+        "benefits": "Awarded to international students with a Mizzou parent who graduated.",
+        "application_method": "Automatic Consideration upon application and admission to Mizzou."
+      },
+      {
+        "name": "Honors College Competitive Scholarships (ASH Scholars, Discovery Fellows, Cherng Scholars)",
+        "type": "Merit",
+        "amount": "Varies (full scholarship available for some, e.g., Stamps Scholarship).",
+        "deadline": "December 1 (Honors College Application and all required materials).",
+        "benefits": "Varies by program; may include academic and leadership development funds.",
+        "application_method": "Separate Application through the Honors College Application, accessible after applying to MU."
+      },
+      {
+        "name": "Mizzou Alumni Association Scholarships",
+        "type": "Merit",
+        "amount": "Varies ($500 - $2,500, some range higher).",
+        "deadline": "January 7, 2026 for incoming students.",
+        "benefits": "Recognizes academic achievement and leadership. Some are renewable, others are one-time awards.",
+        "application_method": "Separate Application via ScholarshipUniverse."
+      },
+      {
+        "name": "George C. Scott Memorial Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Varies (not explicitly stated, typically departmental deadlines).",
+        "benefits": "Supports students majoring in theater performance with an interest in acting or directing. Selection based on talent and commitment.",
+        "application_method": "Separate Application (likely through the Theatre Department or ScholarshipUniverse)."
+      },
+      {
+        "name": "Stamps Scholarship",
+        "type": "Full-Ride",
+        "amount": "Full Scholarship (up to estimated cost of attendance) + one-time award $16,000 for academic development and leadership",
+        "eligibility": "32–36 ACT or 1420–1600 SAT and 3.5 core GPA; high-achieving students with leadership potential. Must be admitted to Mizzou and the Honors College by Dec. 1 and submit required documents by Dec. 1. Most distinguished applicants will become semifinalists and participate in an interview process.",
+        "application_method": "Separate Application (requires admission to Mizzou and Honors College by Dec. 1, and submission of required documents by Dec. 1 for consideration; application through ScholarshipUniverse after admission)"
+      },
+      {
+        "name": "National Merit Scholarship – Missouri Resident",
+        "type": "Full-Ride",
+        "amount": "Full Tuition and Fees, $3,500 additional annual stipend, $13,700 one-year on-campus housing and dining, $2,000 research/study abroad support (one-time award), $1,000 tech enrichment (one-time award)",
+        "eligibility": "Missouri Resident, National Merit Finalist and declare the University of Missouri as your first choice with the National Merit Scholarship Corporation, enroll at MU the first semester after high school, U.S. citizen or permanent resident.",
+        "application_method": "Automatic Consideration (by declaring MU as first choice with National Merit Scholarship Corporation)"
+      },
+      {
+        "name": "National Merit Finalist Scholarship – Out-of-State Resident",
+        "type": "Merit",
+        "amount": "$22,500/year",
+        "eligibility": "Out-of-State Resident, National Merit Finalist and declare the University of Missouri as your first choice with the National Merit Scholarship Corporation, enroll at MU the first semester after high school, U.S. citizen or permanent resident.",
+        "application_method": "Automatic Consideration (by declaring MU as first choice with National Merit Scholarship Corporation)"
+      },
+      {
+        "name": "Mizzou Alumni Association Scholarships",
+        "type": "Merit",
+        "amount": "Varies (e.g., $500-$1,000 for returning students, total awarded exceeds $750,000 annually across various scholarships)",
+        "eligibility": "Incoming freshmen: minimum ACT score of 26 (SAT 1240) OR core GPA of 3.44, admitted to the University of Missouri, remain enrolled for a minimum of 12 credit hours each semester. Returning students: academic excellence and leadership, True Tiger Network members.",
+        "application_method": "Separate Application (via ScholarshipUniverse by January 7 for incoming students, December 1 for MIZ Legacy Scholarship, January 7 for returning students; requires submitting Mizzou Alumni Application within ScholarshipUniverse)"
+      },
+      {
+        "name": "International Honors Scholarship",
+        "type": "Merit",
+        "amount": "$20,000/year",
+        "eligibility": "International student, application materials, English proficiency. SAT/ACT preferred (e.g., 1330 SAT or 29 ACT mentioned for Fall 2023, though test-optional consideration is available). Must be admitted for on-campus study by March 1 for Fall applicants.",
+        "application_method": "Automatic Consideration (upon application and admission to Mizzou by March 1 for Fall entry, with holistic review of application materials)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for many exams, with some requiring a 4 or 5",
+      "exceptions": [
+        "Computer Science A requires a score of 5 for credit",
+        "Several exams, including Biology, Chemistry, and English Language and Composition, require a score of 4 for credit",
+        "AP Research and AP Seminar grant 3 credits each with a score of 3"
+      ],
+      "usage": "AP scores can earn college credit or advanced placement, potentially satisfying some major prerequisites and general education requirements. However, the applicability of credit to a specific degree program is not guaranteed, and students are advised to consult their academic units. AP credit cannot be earned more than once for the same University of Missouri course."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with sufficient scores grant credit; no credit for subsidiary-level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "Mizzou's Transfer Course Equivalency site"
+      ],
+      "restrictions": "Accepts more than 64 lower-division credits from Missouri institutions if applicable to a baccalaureate degree; generally requires a grade of C or better for transfer; technical, vocational, and remedial courses typically do not transfer."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Competitive standardized test scores (ACT/SAT)",
+      "Leadership in meaningful extracurriculars",
+      "Demonstrated interest or clear intended major for specific programs"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics/Sports involvement",
+      "Research experience",
+      "Fraternity & Sorority Life",
+      "Music/arts involvement"
+    ],
+    "essay_tips": [
+      "Leverage essays to demonstrate personal reflection and specific ties to Mizzou, especially if applying test-optional (required for test-optional applicants).",
+      "Show depth, commitment, and leadership in extracurricular activities, rather than just listing many.",
+      "Ensure strong academic performance and a challenging curriculum.",
+      "Proofread your application thoroughly for errors and ensure it is complete."
+    ],
+    "red_flags": [
+      "Submitting generic essays that lack personal reflection or specific ties to Mizzou",
+      "Listing numerous extracurricular activities without demonstrating depth, commitment, or leadership",
+      "Exhibiting poor academic performance, particularly a low GPA or a significant decline in grades",
+      "Submitting an application with careless errors, such as typos, grammatical mistakes, or incorrect information",
+      "Failing to meet core course requirements or submitting an incomplete application"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Mizzou has a 'somewhat selective' admissions process with an acceptance rate around 77-82% and a test-optional policy, evaluating applications holistically for those who do not submit scores."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "The University of Missouri emphasizes hands-on learning through its 'Missouri Method' and boasts strong programs, particularly in Journalism (the world's first such school), Nursing, and Animal Sciences. It also offers over 300 degree programs with a focus on interdisciplinary collaboration."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "Mizzou fosters a vibrant and inclusive campus community with over 600 student organizations, significant Greek life involvement (nearly 30% of undergraduates), and a strong emphasis on school traditions and community engagement, including a highly-rated recreation center."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 54200,
+    "employment_rate_2yr": 95.0,
+    "median_earnings_6yr": 52756,
+    "notes": "More than 95% of graduates found employment or continued education within six months. Ranked #111 nationally by EDsmart (Top 1.8%).",
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft",
+      "JPMorgan Chase & Co.",
+      "Meta"
+    ],
+    "grad_school_rate": 23.6,
+    "loan_default_rate": 4.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 56.0,
+    "graduation_rate_6_year": 76.0
+  },
+  "last_updated": "2024-07-30"
 }

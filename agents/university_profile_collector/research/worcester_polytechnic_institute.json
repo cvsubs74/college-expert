@@ -1,681 +1,1065 @@
 {
-  "university_profile": {
-    "_id": "worcester_polytechnic_institute",
-    "university_name": "Worcester Polytechnic Institute",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.wpi.edu/news/wpi-ranks-84-us-news-world-report-2026-rankings",
-      "https://www.wpi.edu/admissions/undergraduate/apply/test-optional-policy",
-      "https://www.niche.com/colleges/worcester-polytechnic-institute/rankings/"
+  "_id": "worcester_polytechnic_institute",
+  "metadata": {
+    "official_name": "Worcester Polytechnic Institute",
+    "location": {
+      "city": "Worcester",
+      "state": "Massachusetts",
+      "type": "main_campus"
+    },
+    "last_updated": "2024-07-29"
+  },
+  "strategic_profile": {
+    "executive_summary": "Worcester Polytechnic Institute (WPI) is a private research university renowned for its distinctive project-based curriculum, which integrates science, engineering, and the humanities. Located in Worcester, MA, WPI emphasizes practical application, collaborative problem-solving, and global engagement, preparing graduates for impactful careers in technology and innovation.",
+    "market_position": "A leading STEM-focused university known for its project-based learning and interdisciplinary approach, attracting students interested in hands-on innovation and applied research. Strong in engineering, computer science, and business.",
+    "admissions_philosophy": "WPI seeks intellectually curious and motivated students with a strong aptitude for STEM fields and a desire for experiential learning. Admissions prioritizes academic rigor, demonstrated interest in WPI's unique educational approach (e.g., project experience, extracurriculars related to innovation), and leadership potential. A holistic review considers grades, test scores, essays, and recommendations to identify students who will thrive in a challenging, collaborative, and project-intensive environment.",
+    "us_news_rank": 83,
+    "analyst_takeaways": [
+      {
+        "takeaway": "WPI's project-based learning model remains a key differentiator, highly appealing to employers.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The recent investment in interdisciplinary research centers will likely boost its profile in emerging tech fields.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Maintaining diversity in student body while preserving the strong STEM focus is a continuous strategic challenge.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunities exist to further leverage its Worcester location for industry collaborations and student experiential learning beyond campus.",
+        "category": "general"
+      }
     ],
-    "metadata": {
-      "official_name": "Worcester Polytechnic Institute",
-      "location": {
-        "city": "Worcester",
-        "state": "MA",
-        "type": "Private"
-      }
-    },
-    "strategic_profile": {
-      "executive_summary": "Worcester Polytechnic Institute (WPI) is a premier private research university globally recognized for its project-based learning model, known as the WPI Plan. The curriculum integrates theoretical study with practical application through high-stakes projects, fostering a collaborative and career-ready student body.",
-      "market_position": "Elite Private Technical University",
-      "admissions_philosophy": "Holistic review / Test-optional",
-      "us_news_rank": 84,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "While the overall acceptance rate sits at approximately 60%, the university is significantly more selective for international applicants (41%) and highly sought-after engineering majors.",
-          "implication": "Applicants should emphasize project-based experiences or 'maker' credentials to align with WPI's hands-on culture."
-        },
-        {
-          "category": "Value Proposition",
-          "insight": "WPI consistently ranks in the top 20 nationally for Return on Investment (ROI), with graduates reporting starting salaries nearly 25% higher than the national average.",
-          "implication": "The high tuition cost is offset by exceptionally strong placement rates and alumni earnings in STEM fields."
-        },
-        {
-          "category": "Admissions Policy",
-          "insight": "WPI has reverted to a test-optional policy after a four-year 'test-blind' pilot, indicating a preference for allowing students to decide how best to showcase their academic aptitude.",
-          "implication": "Standardized tests can now be a 'no-harm' supplement for students with high scores who wish to bolster their profile."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "The social scene is defined by a high participation in Greek life (ranked #2 in Massachusetts by Niche) and a unique 'IQ' (Interactive Qualifying Project) and 'MQ' (Major Qualifying Project) culture that makes teamwork the social norm.",
-        "transportation_impact": "The university provides comprehensive transit including the SNAP (Student Night Assistance Patrol) van service, 'Gompei's Gears' bike share, and free shuttles, minimizing the need for first-year vehicles and fostering a self-contained campus feel.",
-        "research_impact": "Research is deeply embedded into the undergraduate experience; every student must complete a Major Qualifying Project (MQP), often in partnership with industry leaders like Raytheon, NASA, or MIT Lincoln Laboratory."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to any major with confidence as WPI admits to the university, not specific departments",
-        "Declare a 'less competitive' interest like Management Information Systems (MIS) if your profile is less technical",
-        "Leverage the 'Test-Optional' return by submitting scores only if they are above the middle 50% (1340+ SAT)",
-        "Emphasize project-based experience in your essay to align with the 'WPI Plan' and 'fit' over GPA",
-        "Use the 'Maker Portfolio' option to showcase hands-on STEM skills, which carries significant weight"
-      ],
-      "college_ranking_tactics": [
-        "Rank Messenger Hall as top choice for freshman housing to secure air conditioning and modern facilities",
-        "Rank Morgan or Daniels Hall if priority is proximity to the DAKA dining hall and Pulse gym",
-        "Consider ranking Founders Hall for a suite-style layout with semi-private bathrooms for freshmen",
-        "Avoid ranking Stoddard Complex if you have mobility concerns, as it is the only dorm without elevators",
-        "Select 'Gender-Inclusive Housing' to increase odds of being placed in the newest dorms like Messenger"
-      ],
-      "alternate_major_strategy": "Because WPI uses a 'click of a button' major declaration system, use your alternate major slot to show academic breadth. If your primary interest is CS, list Data Science or Interactive Media & Game Development (IMGD) as an alternate to demonstrate a specific niche interest, knowing you can easily switch to CS once enrolled."
-    },
-    "admissions_current": {
+    "campus_dynamics": {
+      "social_environment": "A close-knit, academically focused social environment with a strong sense of community, driven by student organizations, Greek life (active but not dominant), and campus traditions. Students often bond over shared academic challenges and project work. Less emphasis on large party culture, more on collaborative social activities.",
+      "transportation_impact": "Located in a compact urban setting, WPI's campus is highly walkable. Public transportation is available in Worcester, but many students rely on campus shuttle services for local amenities or personal vehicles for broader regional access. The campus is well-integrated but slightly elevated from the city center.",
+      "research_impact": "Significant research impact, particularly in robotics, biomedical engineering, materials science, and AI. WPI is known for its faculty-mentored undergraduate research opportunities (e.g., IQP, MQP projects) that contribute to real-world solutions. Strong industry partnerships facilitate technology transfer and collaborative innovation."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
       "overall_acceptance_rate": 60.16,
-      "in_state_acceptance_rate": 60.2,
-      "out_of_state_acceptance_rate": 64.6,
-      "international_acceptance_rate": 41.3,
-      "transfer_acceptance_rate": 64.7,
-      "admits_class_size": 7555,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "test_policy_details": "WPI is a test-optional university. SAT and ACT scores may be submitted but are not required and will never negatively impact an applicant's competitiveness. From 2021-2024, WPI was test-blind but has since reverted to its test-optional policy. Applicants can self-report scores via the Common or Coalition Application, email, or applicant portal; official scores are only required upon enrollment. International students whose first language is not English are required to submit TOEFL, IELTS, or Duolingo scores.",
+      "admits_class_size": 7555,
+      "transfer_acceptance_rate": 64.7,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 41.3,
       "early_admission_stats": [
         {
           "plan_type": "ED",
-          "applications": 279,
-          "admits": 211,
-          "acceptance_rate": 75.63,
-          "class_fill_percentage": 15.45
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 68.9,
+          "class_fill_percentage": null
         },
         {
           "plan_type": "EA",
-          "applications": 9020,
-          "admits": 6214,
-          "acceptance_rate": 68.89,
-          "class_fill_percentage": 74.6
+          "applications": 6859,
+          "admits": 4416,
+          "acceptance_rate": 64.38,
+          "class_fill_percentage": null
         }
       ]
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "WPI reverted to a 'test optional' admissions policy for the Class of 2029 (entering Fall 2025), after being test-blind from Fall 2021 to Fall 2024. Specific admissions statistics for the Class of 2029 are not yet publicly available in official Common Data Sets."
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 12559,
         "admits_total": 7555,
         "enrolled_total": 1366,
-        "acceptance_rate_overall": 60.2,
-        "acceptance_rate_in_state": 60.2,
-        "acceptance_rate_out_of_state": 64.6,
-        "yield_rate": 18.1,
+        "acceptance_rate_overall": 60.15,
+        "yield_rate": 18.08,
+        "notes": "WPI operated under a 'test-blind' admissions policy, meaning standardized test scores (SAT/ACT) were not considered.",
         "waitlist_stats": {
           "year": 2024,
           "offered_spots": 2475,
           "accepted_spots": 1111,
           "admitted_from_waitlist": 392,
-          "waitlist_admit_rate": 35.3,
+          "waitlist_admit_rate": 35.28,
           "is_waitlist_ranked": false
-        },
-        "notes": "In-state and out-of-state breakdown derived from CDS Section C1."
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 11809,
         "admits_total": 6908,
-        "enrolled_total": 1357,
+        "enrolled_total": 1360,
         "acceptance_rate_overall": 58.5,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 19.6,
+        "yield_rate": 19.69,
+        "notes": "WPI operated under a 'test-blind' admissions policy, meaning standardized test scores (SAT/ACT) were not considered.",
         "waitlist_stats": {
           "year": 2023,
           "offered_spots": 2580,
           "accepted_spots": 1130,
           "admitted_from_waitlist": 285,
-          "waitlist_admit_rate": 25.2,
+          "waitlist_admit_rate": 25.22,
           "is_waitlist_ranked": false
-        },
-        "notes": "Residency breakdown not publicly disclosed."
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 11599,
+        "admits_total": 6667,
+        "enrolled_total": 1293,
+        "acceptance_rate_overall": 57.48,
+        "yield_rate": 19.39,
+        "notes": "WPI operated under a 'test-blind' admissions policy, meaning standardized test scores (SAT/ACT) were not considered.",
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3109,
+          "accepted_spots": 1347,
+          "admitted_from_waitlist": 574,
+          "waitlist_admit_rate": 42.61,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 11092,
+        "admits_total": 6679,
+        "enrolled_total": 1294,
+        "acceptance_rate_overall": 60.21,
+        "yield_rate": 19.37,
+        "notes": "WPI became 'test-blind' for this application cycle (Fall 2021 entry), meaning standardized test scores (SAT/ACT) were not considered. This was an eight-year pilot program."
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "Not specified",
-        "unweighted_middle_50": "3.85-4.00",
-        "average_weighted": 0.0,
-        "percentile_25": "3.85",
+        "weighted_middle_50": "Not explicitly reported in this format. Average weighted GPA reported as 3.9 in some sources, but 25th and 75th percentiles are also listed as 3.9, which is inconsistent with a range.",
+        "unweighted_middle_50": "3.75-4.00",
+        "average_weighted": "Not explicitly reported in this format. Average GPA reported as 3.9 or 3.92, often implying unweighted or without clear distinction.",
+        "percentile_25": "3.75",
         "percentile_75": "4.00",
-        "notes": "The average unweighted GPA is approximately 3.9; 65% of the enrolled first-year class entered with a perfect 4.0 GPA."
+        "notes": "The average unweighted GPA for admitted students is around 3.9 to 3.92. For unweighted GPAs, 63% of admitted students had a 4.0 GPA. Fifty-six percent of enrolled students were in the top 10% of their high school class, and 87% were in the top 25%. The average class rank is reported as the Top 9%."
       },
       "testing": {
         "sat_composite_middle_50": "1340-1480",
         "sat_reading_middle_50": "630-710",
-        "sat_math_middle_50": "680-760",
+        "sat_math_middle_50": "670-750",
         "act_composite_middle_50": "30-34",
-        "submission_rate": 0.0,
-        "policy_note": "WPI was test-blind for 2021-2024; returning to test-optional for Class of 2030."
+        "submission_rate": 71.0,
+        "policy_note": "WPI is a test-optional institution. For SAT, WPI considers the best superscored SAT. For ACT, WPI does not superscore but will consider the best ACT composite score."
       },
       "demographics": {
-        "first_gen_percentage": 0.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 5.05,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
         "geographic_breakdown": [
           {
-            "region": "In-State (Massachusetts)",
-            "percentage": 44.0
+            "region": "Massachusetts",
+            "percentage": 38.67
           },
           {
-            "region": "Out-of-State",
-            "percentage": 51.0
+            "region": "Other Out-of-State (U.S.)",
+            "percentage": 37.59
           },
           {
             "region": "International",
-            "percentage": 5.0
+            "percentage": 14.5
+          },
+          {
+            "region": "Connecticut",
+            "percentage": 9.24
           }
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 8795,
-            "admits": 5105,
-            "acceptance_rate": 58.0,
-            "note": "72.9% of enrolled first-years."
+            "applicants": 7875,
+            "admits": 4208,
+            "acceptance_rate": 53.44,
+            "note": "Data for Fall 2021 freshman admissions."
           },
           "women": {
-            "applicants": 3752,
-            "admits": 2439,
-            "acceptance_rate": 65.0,
-            "note": "27.1% of enrolled first-years."
+            "applicants": 3217,
+            "admits": 2471,
+            "acceptance_rate": 76.81,
+            "note": "Data for Fall 2021 freshman admissions."
           },
-          "non_binary": {
-            "applicants": 12,
-            "admits": 11,
-            "acceptance_rate": 91.7,
-            "note": "Reported as Another Gender."
-          }
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 64.06,
-          "black_african_american": 2.05,
-          "hispanic_latino": 8.57,
-          "asian": 11.5,
-          "native_american_alaskan": 0.07,
-          "pacific_islander": 0.07,
-          "two_or_more_races": 4.39,
-          "unknown": 4.25,
-          "non_resident_alien": 5.05
-        },
-        "religious_affiliation": "Not specified"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "School of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on the 'WPI Plan' and project-based learning.",
-          "housing_profile": "Freshmen live in Quad dorms like Morgan or Daniels.",
-          "student_archetype": "The Ambitious Problem Solver",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 60.0,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [
-                "Calculus",
-                "Physics",
-                "Chemistry"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ES 2501 Statics",
-                "ES 3001 Thermodynamics"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "MA 1021",
-                  "MA 2051",
-                  "ES 2501",
-                  "ES 2502",
-                  "ES 2503",
-                  "ES 3001",
-                  "ES 3004",
-                  "ME 2300"
-                ],
-                "electives": [
-                  "ME 4320",
-                  "ME 4422",
-                  "ME 3310"
-                ],
-                "total_units": 15.0,
-                "major_units": 6.33
-              },
-              "notable_professors": [
-                "Dr. Robert Hyers",
-                "Dr. Christopher Brown"
-              ],
-              "notes": "Degree requires 15 units."
-            },
-            {
-              "name": "Robotics Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 57.0,
-              "average_gpa_admitted": 4.0,
-              "prerequisite_courses": [
-                "Pre-Calculus",
-                "Physics",
-                "Computer Science"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "RBE 1001",
-                "RBE 2001"
-              ],
-              "special_requirements": "Interdisciplinary (CS, ECE, ME)",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "RBE 1001",
-                  "RBE 2001",
-                  "RBE 2002",
-                  "RBE 3001",
-                  "CS 2102"
-                ],
-                "electives": [
-                  "RBE 4322",
-                  "RBE 4815"
-                ],
-                "total_units": 15.0,
-                "major_units": 10.0
-              },
-              "notable_professors": [
-                "Dr. Jing Xiao",
-                "Dr. Gregory Fischer"
-              ],
-              "notes": "First undergraduate robotics degree in US."
-            },
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 60.0,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 15.0,
-                "major_units": 0.0
-              },
-              "notable_professors": [],
-              "notes": null
-            },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 60.0,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 15.0,
-                "major_units": 0.0
-              },
-              "notable_professors": [],
-              "notes": null
-            }
-          ]
-        },
-        {
-          "name": "School of Arts & Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Highlight interdisciplinary interests.",
-          "housing_profile": "Traditional freshmen housing in Riley or Stoddard.",
-          "student_archetype": "The Creative Intellectual",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 50.0,
-              "average_gpa_admitted": 3.92,
-              "prerequisite_courses": [
-                "Pre-Calculus",
-                "Programming"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CS 1101",
-                "CS 2102"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "CS 1101",
-                  "CS 2102",
-                  "CS 2011",
-                  "CS 2223",
-                  "CS 3013",
-                  "MA 2201"
-                ],
-                "electives": [
-                  "CS 4341",
-                  "CS 4518"
-                ],
-                "total_units": 15.0,
-                "major_units": 6.0
-              },
-              "notable_professors": [
-                "Dr. Craig Shue",
-                "Dr. Elke Rundensteiner"
-              ],
-              "notes": "Intro courses use Racket (Scheme)."
-            }
-          ]
-        },
-        {
-          "name": "The Business School",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Emphasize an interest in 'FinTech' or technology management.",
-          "housing_profile": "Standard campus housing.",
-          "student_archetype": "The Tech-Entrepreneur",
-          "majors": [
-            {
-              "name": "Business",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 60.0,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 15.0,
-                "major_units": 0.0
-              },
-              "notable_professors": [
-                "Dr. Diane Strong"
-              ],
-              "notes": "Not specified"
-            }
-          ]
+          "white": 63.08,
+          "black_african_american": 2.68,
+          "hispanic_latino": 8.4,
+          "asian": 12.49,
+          "native_american_alaskan": 0.09,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 3.54,
+          "unknown": 3.33,
+          "non_resident_alien": 6.35
         }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Robotics Engineering Minor",
-        "Cybersecurity Minor",
-        "Sustainability Engineering Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision I",
-          "date": "2024-11-01",
-          "is_binding": true,
-          "notes": "Notification mid-Dec"
-        },
-        {
-          "plan_type": "Early Action I",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Notification late Jan"
-        },
-        {
-          "plan_type": "Early Decision II",
-          "date": "2025-01-05",
-          "is_binding": true,
-          "notes": "Notification mid-Feb"
-        },
-        {
-          "plan_type": "Early Action II",
-          "date": "2025-01-05",
-          "is_binding": false,
-          "notes": "Notification late Feb"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Notification late March"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essay",
-          "deadline": "2025-02-01",
-          "details": "500-word essay on WPI fit."
-        },
-        {
-          "target_program": "All",
-          "requirement_type": "Optional Portfolio",
-          "deadline": "2025-02-01",
-          "details": "Submit maker creations or research."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Personal Essay",
-          "Recommendations"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Character",
-          "Talent/Ability"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Recommended",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Heavy focus on 'fit' for the WPI Plan and 7-week terms."
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 60765,
-          "total_coa": 81551,
-          "housing": 18386
-        },
-        "out_of_state": {
-          "tuition": 60765,
-          "total_coa": 81551,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 30905,
-      "average_merit_aid": 22149,
-      "percent_receiving_aid": 96.0,
-      "scholarships": [
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "$12,000 - $30,000+",
-          "deadline": "2025-02-01",
-          "benefits": "Renewable; $25k min for IB grads",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "Global Scholarship",
-          "type": "Merit",
-          "amount": "$5,000 credit",
-          "deadline": "Automatic",
-          "benefits": "Funds off-campus project",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "FIRST Robotics Scholarship",
-          "type": "Merit",
-          "amount": "$20,000/year",
-          "deadline": "2025-02-01",
-          "benefits": "For active FIRST members",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Phi Theta Kappa Scholarship",
-          "type": "Merit",
-          "amount": "$10,000/year",
-          "deadline": "Transfer deadline",
-          "benefits": "Additional to other merit awards",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "Project Lead The Way (PLTW) Scholarship",
-          "type": "Merit",
-          "amount": "$20,000/year",
-          "deadline": "2025-02-01",
-          "benefits": "For MA students with 3 PLTW courses",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "Great Minds Scholars Program",
-          "type": "Need",
-          "amount": "Full tuition and fees",
-          "deadline": "2025-02-01",
-          "benefits": "100% need met for Pell-eligible WPS students",
-          "application_method": "FAFSA/CSS Profile"
-        },
-        {
-          "name": "NCSSS Scholarship",
-          "type": "Merit",
-          "amount": "$15,000/year",
-          "deadline": "Rolling",
-          "benefits": "For NCSSS member school applicants",
-          "application_method": "Automatic"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Strict",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 grant credit.",
-        "exceptions": [
-          "Max 1/3 unit for HUA",
-          "Retroactive Calc credit available"
-        ],
-        "usage": "Satisfies requirements and prerequisites."
-      },
-      "ib_policy": {
-        "general_rule": "HL exams 6-7 grant credit",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "TES"
-        ],
-        "restrictions": "8 units residency requirement; no online labs."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Project-oriented mindset",
-        "STEM consistency",
-        "7-week term fit"
-      ],
-      "common_activities": [
-        "FIRST Robotics",
-        "STEM internships",
-        "Arts/Music"
-      ],
-      "essay_tips": [
-        "Mention the WPI Plan",
-        "Focus on teamwork",
-        "Theory and Practice"
-      ],
-      "red_flags": [
-        "Senior year grade drop",
-        "Recycled essays",
-        "Lack of model understanding"
-      ],
-      "insights": [
-        "NR system reduces stress",
-        "7-week terms are intense",
-        "Collaborative culture"
-      ]
-    },
-    "outcomes_analytics": {
-      "outcomes": {
-        "median_earnings_10yr": 85022,
-        "employment_rate_2yr": 94.0,
-        "grad_school_rate": 15.0,
-        "top_employers": [
-          "Raytheon Technologies",
-          "MITRE",
-          "Amazon",
-          "Google"
-        ],
-        "loan_default_rate": 1.1
-      },
-      "student_retention": {
-        "freshman_retention_rate": 96.0,
-        "graduation_rate_4_year": 84.4,
-        "graduation_rate_6_year": 88.0
       }
     }
   },
-  "_id": "worcester_polytechnic_institute",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Worcester Polytechnic Institute",
+        "admissions_model": "Integrated",
+        "is_restricted_or_capped": false,
+        "housing_profile": "WPI offers a range of housing options including traditional double and triple occupancy rooms for first-year students, as well as suite-style arrangements and apartments for upper-level students. Residence halls are fully furnished with a bed, desk, chair, closet, and dresser, and include high-speed data network services and complimentary movie streaming. Many dorms, especially for first-year students, may not have air conditioning in individual rooms, though common rooms typically do. Some dorms like Riley Hall offer spacious rooms, while others like Stoddard Complex feature recently renovated bathrooms. Upper-level students can find apartment-style living (e.g., Ellsworth, Fuller Apartments) and residential houses (e.g., Elbridge, Hackfeld). These often include kitchens and individual climate control in apartments. WPI also provides interest-based housing communities for first-year students, such as the Lavender Community (LGBTQIAP+ interests) and Umoja Community (Black and African American cultures), which foster close-knit environments and specific programming.",
+        "student_archetype": "Highly motivated, hands-on learners, collaborative problem-solvers, innovative, and driven by practical application of knowledge.",
+        "strategic_fit_advice": "Emphasize experiential learning, project-based curriculum (WPI Plan), and strong career outcomes in STEM fields. Highlight research opportunities and entrepreneurship support.",
+        "majors": [
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MA 1021 Calculus I",
+                "MA 1022 Calculus II",
+                "MA 2051 Differential Equations",
+                "MA 2071 Linear Algebra",
+                "MA 2611 Applied Statistics I",
+                "PH 1110 General Physics - Mechanics",
+                "PH 1120 General Physics - Electricity and Magnetism",
+                "CH 1010 Chemical Properties, Bonding, and Forces",
+                "ES 2501 Introduction to Static Systems",
+                "ES 2502 Introduction to Biomechanics: Stress Analysis",
+                "ES 2503 Dynamics",
+                "ES 2800 Strength of Materials",
+                "AE 2310 Introduction to Controls",
+                "AE 2320 Orbital Mechanics",
+                "AE 3120 Fluid Dynamics",
+                "AE 3420 Aerospace Structures",
+                "AE 4210 Air Breathing Propulsion",
+                "AE 4310 Aircraft Dynamics and Control",
+                "AE 4510 Aircraft Design"
+              ],
+              "electives": [
+                "AE 4770 Astronautical Design",
+                "AE 4999 Advanced Topics in Aerospace Engineering"
+              ],
+              "total_units": "at least 30 1/3 units for WPI degree requirements, plus specific AE major units",
+              "major_units": "Minimum 20/3 units in Engineering Topics (includes 11/3 units in Core AE and 9/3 units in Aeronautics OR Astronautics Track) plus 10/3 units in Math and Basic Sciences. Total units for major are approximately 10 units based on WPI's 1/3 unit system."
+            },
+            "notable_professors": [],
+            "notes": "Students choose either an Aeronautics or Astronautics track for specific electives. Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MA 1021 Calculus I",
+                "MA 1022 Calculus II",
+                "MA 2051 Differential Equations",
+                "MA 2611 Applied Statistics I",
+                "PH 1110 General Physics - Mechanics",
+                "PH 1120 General Physics - Electricity and Magnetism",
+                "CH 1010 Chemical Properties, Bonding, and Forces",
+                "CH 1020 Chemical Principles",
+                "BB 1001 Introduction to Biology",
+                "BB 2550 Cell Biology",
+                "BME 1001 Introduction to Biomedical Engineering",
+                "BME 2210 Biomedical Signals, Instruments and Measurements",
+                "BME 2502 Introduction to Biomechanics: Stress Analysis",
+                "BME 2001 Introduction to Biomaterials (or ES 2001)",
+                "BME 3112 Human Physiology for Biomedical Engineers",
+                "BME 3300 Biomedical Engineering Design",
+                "BME 4300 Biomedical Engineering Design"
+              ],
+              "electives": [
+                "BME 3012 Biomedical Sensors Laboratory: Techniques",
+                "BME 3013 Biomedical Instrumentation Laboratory: Techniques",
+                "BME 3014 Physiological Signals Laboratory: Techniques",
+                "BME 4607 Cardiovascular Biomechanics"
+              ],
+              "total_units": "at least 30 1/3 units for WPI degree requirements, plus specific BME major units",
+              "major_units": "Minimum 6/3 units in Math, 6/3 units in Basic Science, plus BME specific courses and electives. Total units for major are approximately 10 units based on WPI's 1/3 unit system."
+            },
+            "notable_professors": [
+              "Dr. Karen Troy (Orthopedic biomechanics, Department Head)",
+              "Dr. Jeannine Coburn (Biomaterials, tissue engineering)",
+              "Dr. George Pins (Cell and tissue engineering, biomaterials)"
+            ],
+            "notes": "Students need a solid background in mathematics, physical and life sciences. Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Electrical and Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. D. R. Brown (Signal processing, Department Head)",
+              "Dr. M. M. Asheghan (Robust control, machine learning)",
+              "Dr. Edward (Ted) A. Clancy (Medical instrumentation, EMG, EEG)"
+            ],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Fire Protection Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. A. Simeoni (Modeling, Department Head)"
+            ],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Robotics Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MA 1021 Calculus I",
+                "MA 1022 Calculus II",
+                "MA 2051 Differential Equations",
+                "MA 2071 Linear Algebra",
+                "MA 2611 Applied Statistics I",
+                "PH 1110 General Physics - Mechanics",
+                "PH 1120 General Physics - Electricity and Magnetism",
+                "CS 1101 Introduction to Program Design (or equivalent)",
+                "RBE 1001 Introduction to Robotics",
+                "RBE 2001 Unified Robotics I: Actuation",
+                "RBE 2002 Unified Robotics II: Sensing",
+                "RBE 3001 Unified Robotics III: Manipulation",
+                "RBE 3002 Unified Robotics IV: Navigation",
+                "ES 2501 Introduction to Static Systems",
+                "ECE 2049 Embedded Computing in Engineering Design (or equivalent)",
+                "CS 2102 Object-Oriented Design Concepts (or equivalent)"
+              ],
+              "electives": [
+                "RBE 3100 Robot Dynamics",
+                "RBE 4000 Advanced Robotics",
+                "RBE 502 Robot Control"
+              ],
+              "total_units": "at least 30 1/3 units for WPI degree requirements, plus specific RBE major units",
+              "major_units": "Minimum 7/3 units in Math, 4/3 units in Basic Science, and 18/3 units in Engineering Science and Design. Total units for major are approximately 10 units based on WPI's 1/3 unit system."
+            },
+            "notable_professors": [
+              "Dr. J. Xiao (Department Head)",
+              "Dr. G. C. Lewin (Associate Head)",
+              "Dr. Gregory S. Fischer (Surgical robotics, MRI-compatible robotics)"
+            ],
+            "notes": "Students need a strong foundation in math, physics, and computer science. Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Biology and Biotechnology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry and Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 1101 Introduction to Program Design",
+                "CS 1102 Accelerated Introduction to Program Design",
+                "CS 2102 Object-Oriented Design Concepts",
+                "CS 2223 Algorithms",
+                "CS 2303 Systems Programming Concepts",
+                "CS 2011 Introduction to Machine Organization and Assembly Language",
+                "CS 3013 Operating Systems",
+                "CS 3043 Social Implications of Computing",
+                "CS 3432 Principles of Programming Languages",
+                "CS 3733 Software Engineering",
+                "MA 1021 Calculus I",
+                "MA 1022 Calculus II",
+                "MA 2201 Introduction to Discrete Mathematics"
+              ],
+              "electives": [
+                "CS 4401 Artificial Intelligence",
+                "CS 4445 Database Systems",
+                "CS 4513 Computer Networks",
+                "CS 4536 Computer Graphics",
+                "CS 4731 Computer Game Development"
+              ],
+              "total_units": "at least 30 1/3 units for WPI degree requirements, plus specific CS major units",
+              "major_units": "Minimum 12/3 units of CS core, plus electives and general WPI requirements. Total units for major are approximately 10 units based on WPI's 1/3 unit system."
+            },
+            "notable_professors": [
+              "Dr. C. A. Shue (Computer networking, security, Department Head)",
+              "Dr. Emmanuel Agu (Computer graphics, mobile computing)",
+              "Dr. Carolina Ruiz (AI, Machine Learning, Data Mining)"
+            ],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "DS 1010 Data Science I: Introduction to Data Science",
+                "DS 2010 Data Science II: Statistical Modeling and Analysis",
+                "DS 3010 Data Science III: Computational Methods",
+                "BUS 2080 Data Analysis for Decision Making (or OIE 2081)",
+                "ETR 1100 Entrepreneurship and Innovation",
+                "MA 1021 Calculus I",
+                "MA 1022 Calculus II",
+                "MA 2611 Applied Statistics I",
+                "MA 2612 Applied Statistics II",
+                "MA 2071 Linear Algebra",
+                "CS 1101 Introduction to Program Design (or equivalent)",
+                "CS 2102 Object-Oriented Design Concepts (or equivalent)"
+              ],
+              "electives": [
+                "CS 4433 Big Data Management and Analytics",
+                "CS 4804 Data Visualization",
+                "DS 4635 Data Analytics and Statistical Learning",
+                "MIS 3787 Business Applications of Machine Learning"
+              ],
+              "total_units": "at least 30 1/3 units for WPI degree requirements, plus specific DS major units",
+              "major_units": "Minimum 3/3 units in Data Science core, 2/3 units in Business Foundation, 3/3 units in Computer Science Foundation, 5/3 units in Math Foundation, and 2/3 units in Natural or Engineering Sciences. Total units for major are approximately 10 units based on WPI's 1/3 unit system."
+            },
+            "notable_professors": [
+              "Dr. E. A. Rundensteiner (Big data systems, Program Head)",
+              "Dr. C. Ruiz (Machine Learning, Data Mining)",
+              "Dr. Yanhua Li (AI, spatial-temporal data analytics)"
+            ],
+            "notes": "Interdisciplinary major drawing from Computer Science, Mathematical Sciences, and Business. Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Humanities & Arts",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Joseph Aguilar (Assistant Professor of Teaching)"
+            ],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematical Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Richard Gorvett (Professor, Mathematics and Economics)"
+            ],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Business",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1110 Introductory Microeconomics",
+                "ECON 1120 Introductory Macroeconomics",
+                "ETR 2910/ECON 2910 Economics and Entrepreneurship",
+                "OBC 1010 Introduction to Organizational Behavior",
+                "OIE 2081 Introduction to Prescriptive Analytics",
+                "ACC 2070 Financial Accounting",
+                "FIN 2070 Corporate Finance",
+                "MKT 2070 Marketing",
+                "MIS 2070 Management Information Systems",
+                "BUS 4000 Strategic Management"
+              ],
+              "electives": [
+                "BUS 3000-4000 level courses in chosen concentration (Business Analytics, Financial Technology, Innovation for Social Change, General Business)",
+                "MIS 3787 Business Applications of Machine Learning",
+                "ETR 3633 Entrepreneurial Selling"
+              ],
+              "total_units": "at least 30 1/3 units for WPI degree requirements, plus specific Business major units",
+              "major_units": "Minimum 6/3 units in Business Core Curriculum, 6/3 units in a chosen concentration, and 3/3 units for MQP. Total units for major are approximately 10 units based on WPI's 1/3 unit system."
+            },
+            "notable_professors": [
+              "Kevin Gainor (Lecturer, Marketing/Management)",
+              "Richard Gorvett (Professor, Mathematics and Economics)",
+              "Michael J. Gravier (Professor, Marketing)"
+            ],
+            "notes": "Offers concentrations in Business Analytics, Financial Technology, Innovation for Social Change, and General Business. Data source: WPI Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Interactive Media & Game Development",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: WPI Undergraduate Catalog 2025-2026."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Mechanical Engineering Minor",
+      "Aerospace Engineering Minor"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Binding agreement; upon acceptance, withdraw all other applications and enroll at WPI. A minimum merit-based scholarship of $25,000 per academic year (for up to four years) will be offered for Fall 2026 students admitted under Early Decision. Requires Early Decision Agreement submission."
+      },
+      {
+        "plan_type": "Early Action I",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2026-01-05",
+        "is_binding": true,
+        "notes": "Binding agreement; upon acceptance, withdraw all other applications and enroll at WPI. A minimum merit-based scholarship of $25,000 per academic year (for up to four years) will be offered for Fall 2026 students admitted under Early Decision. Requires Early Decision Agreement submission."
+      },
+      {
+        "plan_type": "Early Action II",
+        "date": "2026-01-05",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Applicants must respond to one supplemental essay prompt: \"Worcester Polytechnic Institute seeks students who are the right fit for its academic and campus community. In what ways are you the right fit for the distinctive educational and campus experience that Worcester Polytechnic Institute offers?\" The essay has a 500-word limit. This essay is designed for applicants to highlight how their interests, values, personality, and goals align with WPI's offerings, both academically and socially. It's an opportunity to demonstrate genuine interest in WPI by researching specific programs, courses, clubs, traditions, and the project-based learning approach."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Standardized test scores",
+        "Talent/ability",
+        "First generation",
+        "Alumni/ae relation (legacy)",
+        "Geographical residence",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "WPI employs a holistic application process that focuses on the individual applicant, their experiences, and potential contributions to the WPI community. A key differentiator is their project-based curriculum, known as the 'WPI Plan,' which has been in place for over 50 years. They seek creative, curious, and driven problem-solvers who enjoy teamwork and are passionate about math and science, but also other areas like arts and global studies. The university aims to prepare students to solve real-world problems and make a global impact."
+    },
     "essay_prompts": [
       {
-        "prompt": "WPI's project-based education prepares students to solve real-world problems. Describe a problem you're passionate about solving.",
-        "word_limit": "250 words",
-        "type": "Problem Solving",
+        "prompt": "Worcester Polytechnic Institute seeks students who are the right fit for its academic and campus community. In what ways are you the right fit for the distinctive educational and campus experience that Worcester Polytechnic Institute offers?",
+        "word_limit": "500 words",
+        "type": "Why This School, Community",
         "required": true,
         "brainstorming_questions": [
-          "Thinking about WPI's emphasis on project-based learning and tackling real-world issues, what's a specific moment or observation where you felt a strong urge to *fix* something in the world around you, big or small, and why did that particular problem resonate so deeply?",
-          "Beyond just an interest, what's a problem you've encountered or learned about where you've found yourself actively seeking out information, trying out solutions (even if they didn't work!), or discussing it with others, demonstrating a genuine passion for its resolution?",
-          "Considering the hands-on, iterative nature of WPI's projects, can you recall a time when you faced a persistent challenge or a complex issue where your initial attempts to solve it didn't quite hit the mark, and what did you learn from that struggle that fuels your desire to tackle it further?",
-          "If you could design a WPI-style project to address a problem you're passionate about, what kind of hands-on experience or tangible outcome would be at the heart of that project, and what makes that approach feel particularly effective to you?",
-          "Looking at the diverse range of real-world problems people face, what is one specific problem that, if you could contribute to its solution, would not only make a positive impact but also deeply fulfill a personal goal or aspiration you hold?"
+          "What specific aspects of WPI's project-based learning model excite you, and how do they align with your past learning experiences or future goals?",
+          "Beyond academics, what unique clubs, traditions, or community initiatives at WPI resonate with your interests or values, and how do you envision contributing to them?",
+          "Can you recall a specific challenge or problem you've encountered that highlights your problem-solving skills or collaborative spirit, and how would that translate to WPI's environment?",
+          "What distinct qualities or experiences do you possess that would enrich the diversity of perspectives and ideas within WPI's campus community?",
+          "How do your long-term academic and career aspirations specifically connect with the resources, faculty research, or programs available at WPI, making it the ideal place for you to thrive?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/worcester_polytechnic_institute_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Understand that WPI admits to the university, not to a specific major.",
+      "Leverage the flexibility to declare your major later.",
+      "Utilize introductory courses and resources for exploration.",
+      "Changing majors is straightforward.",
+      "Focus on demonstrating a strong academic profile and fit for WPI's overall STEM focus."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "alternate_major_strategy: Based on available information, WPI admits students to the university rather than a specific major, making it easy to change majors after admission. Therefore, explicit 'backup major' strategies during the application process for competitive majors are not clearly outlined as a significant concern in the search results. The focus is more on selecting initial courses to explore interests if undecided.; internal_transfer_difficulty: The internal transfer process for changing majors after admission at WPI appears to be straightforward and easy, with students being able to change majors through an online portal. There is no information indicating a 'competitive internal transfer process for impacted majors' that would make changing difficult once admitted to WPI.",
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, particularly in math and science.",
+      "Demonstrated passion for STEM and problem-solving through meaningful extracurricular activities, projects, and internships.",
+      "Authentic and reflective essays that showcase personality, accomplishments, and alignment with WPI's mission.",
+      "Leadership or significant engagement in meaningful extracurriculars."
+    ],
+    "red_flags": [
+      "Grade decline senior year:",
+      "Misrepresenting information on your application:",
+      "Generic essays:",
+      "Poor or uninformative letters of recommendation:",
+      "Listing activities without demonstrating depth or impact:"
+    ],
+    "essay_tips": [
+      "Be highly specific about why WPI and its unique programs appeal to you. Admissions officers want to see that you've done your research and understand what makes WPI distinctive. Mention specific courses, professors, research opportunities, clubs, or the project-based learning model (like the IQP) and explain *how* these align with your academic interests and goals. Generic statements about loving to learn or WPI being a good STEM school will not suffice.",
+      "Demonstrate how you are a \"right fit\" for WPI's academic and campus community. The essay prompt often asks how you fit into WPI's distinctive educational and campus experience. This means highlighting your interests, values, personality, and goals, and explicitly connecting them to WPI's offerings and community. Consider how your past experiences (e.g., in collaborative environments or tackling complex projects) prepare you for WPI's approach.",
+      "Show, don't tell, using concrete examples and anecdotes. Instead of simply stating you are collaborative or innovative, provide specific instances where you have demonstrated these qualities. Tell a story that illustrates your path to WPI and how you envision yourself thriving and contributing there.",
+      "Connect your interests and aspirations to specific WPI resources and opportunities. Go beyond just listing programs. Explain *how* you would utilize WPI's resources to achieve your goals and how you would contribute to the campus environment. For example, if you're interested in robotics, mention the Robotics Resource Center or the FIRST Robotics Initiative at WPI. If you've been involved in specific extracurriculars, discuss how you'd participate in related WPI student groups."
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Worcester Polytechnic Institute (WPI) has an overall acceptance rate of approximately 58-60% (as of 2024), indicating it is a selective institution.",
+        "implication": "Applicants should present a strong academic profile, including a high GPA (most admitted students have a GPA between 3.5 and 4.0, with an average of 3.85) and challenging coursework, to be competitive."
+      },
+      {
+        "category": "Academic",
+        "insight": "WPI's distinctive 'WPI Plan' emphasizes project-based learning, interdisciplinary collaboration, and a flexible, non-punitive grading system (A, B, C, or No Record).",
+        "implication": "Applicants should highlight their experience with and enthusiasm for hands-on projects, teamwork, and solving real-world problems. Emphasize intellectual curiosity and adaptability in essays and extracurriculars, as the curriculum encourages students to explore beyond traditional boundaries without fear of failure."
+      },
+      {
+        "category": "Culture",
+        "insight": "WPI fosters a deeply collaborative and inclusive environment, driven by its project-based curriculum where group work and interdisciplinary teams are the norm.",
+        "implication": "Applicants should showcase instances of successful teamwork, leadership in group settings, and a genuine interest in contributing to a supportive community. Highlighting experiences that demonstrate strong communication and problem-solving within a collaborative context will be beneficial."
+      }
+    ]
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 63046.0,
+        "total_coa": 84546.0,
+        "housing": 18900.0
+      },
+      "out_of_state": {
+        "tuition": 63046.0,
+        "total_coa": 84546.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 36040.0,
+    "average_merit_aid": 22887.0,
+    "percent_receiving_aid": 99.0,
+    "meets_full_need": false,
+    "notes": "WPI has a need-aware admissions process for international students and does not guarantee to meet their full financial need. For all students, WPI meets 73% of demonstrated financial need. The Great Minds Scholars program is a specific initiative designed to meet the full demonstrated financial need (up to the cost of tuition and fees) for selected Pell-eligible students from Worcester Public Schools.",
+    "scholarships": [
+      {
+        "name": "WPI Presidential Scholarship (First-Year)",
+        "type": "Merit",
+        "amount": "Varies; minimum $25,000 for IB diploma graduates with a score of 40 or greater",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for four years",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Specialty Merit-Based Scholarship Programs",
+        "type": "Merit",
+        "amount": "$10,000 to $25,000",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Partial funding for undergraduate students, automatically considered for specific programs like Biology & Biotechnology, Chemical Engineering, Chemistry & Biochemistry, BizTech Emerging Leaders, and Robotics Scholars programs",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Great Minds Scholars Program",
+        "type": "Need-based (meets full demonstrated financial need) and Merit",
+        "amount": "Full demonstrated financial need up to cost of tuition and fees, plus an additional $12,000 Great Minds Housing Allowance",
+        "deadline": "May 1 (enrollment decision)",
+        "benefits": "Meets full demonstrated financial need up to tuition and fees, additional housing allowance, close-knit learning community, ongoing professional and academic support, renewable for four years",
+        "application_method": "Automatic consideration for Pell-eligible seniors from Worcester Public High Schools who apply as first-year candidates"
+      },
+      {
+        "name": "WPI Transfer Partner Student Scholarship",
+        "type": "Merit",
+        "amount": "Minimum $20,000 each year, for up to four years",
+        "deadline": "Transfer application deadline",
+        "benefits": "Guaranteed for transfer students admitted from WPI partner institutions",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "WPI Transfer Academic Merit Scholarship (Presidential Scholarship for transfers)",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Spring Entry: November 15; Fall Entry: May 15",
+        "benefits": "Renewable for up to four years, can be combined with other specialty merit scholarships",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "International Grant",
+        "type": "Need",
+        "amount": "$5,000 to $25,000",
+        "deadline": "Admission application deadline (with CSS Profile)",
+        "benefits": "Renewable each year provided student remains in good academic standing. Based on financial need, academic profile, and special talents/experiences.",
+        "application_method": "CSS Profile submission with admission application"
+      },
+      {
+        "name": "Phi Theta Kappa Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 per year",
+        "deadline": "Application deadline for transfer students",
+        "benefits": "Awarded on top of any other academic merit scholarships",
+        "application_method": "Automatic consideration for accepted PTK scholars (note PTK status in application)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Worcester Polytechnic Institute (WPI) awards advanced placement credit for scores of 4 or 5 on most Advanced Placement (AP) exams. Credit is typically awarded as 1/3 WPI unit (equivalent to 3-4 semester credits) and often corresponds to specific WPI courses (e.g., Calculus AB 4 or 5 equals MA 1021). Some exams may yield general elective credit or no credit. WPI explicitly states that there is no limit to the number of AP credits a student can apply toward their WPI degree.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "WPI awards credit for Higher Level (HL) International Baccalaureate (IB) exams with scores of 5, 6, or 7. Standard Level (SL) exams generally do not receive credit. Similar to AP, credit is typically 1/3 WPI unit and often aligns with specific WPI courses (e.g., Chemistry HL 5, 6, or 7 equals CH 1010). WPI states there is no limit to the number of IB credits a student can apply toward their WPI degree.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "WPI accepts transfer credit from accredited institutions for college-level courses with a letter grade of C or better. Courses are evaluated by the Registrar and relevant academic departments to determine equivalency to WPI courses. The conversion rate is generally 3 semester credits to 1/3 WPI unit, or 4 semester credits to 1/3 or 2/3 WPI unit, depending on content. While there isn't an explicit maximum number of transfer units, students must complete the equivalent of at least eight WPI units (24 credits) and at least half of the courses required for their major/minor at WPI to fulfill residency requirements. Official transcripts and course descriptions/syllabi are required for evaluation."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, particularly in math and science.",
+      "Demonstrated passion for STEM and problem-solving through meaningful extracurricular activities, projects, and internships.",
+      "Authentic and reflective essays that showcase personality, accomplishments, and alignment with WPI's mission.",
+      "Leadership or significant engagement in meaningful extracurriculars."
+    ],
+    "common_activities": [
+      "Robotics",
+      "CAD Club (Computer-Aided Design)",
+      "Creative Engineering projects",
+      "Community service and volunteering",
+      "Leadership roles in school clubs"
+    ],
+    "essay_tips": [
+      "Be highly specific about why WPI and its unique programs appeal to you. Admissions officers want to see that you've done your research and understand what makes WPI distinctive. Mention specific courses, professors, research opportunities, clubs, or the project-based learning model (like the IQP) and explain *how* these align with your academic interests and goals. Generic statements about loving to learn or WPI being a good STEM school will not suffice.",
+      "Demonstrate how you are a \"right fit\" for WPI's academic and campus community. The essay prompt often asks how you fit into WPI's distinctive educational and campus experience. This means highlighting your interests, values, personality, and goals, and explicitly connecting them to WPI's offerings and community. Consider how your past experiences (e.g., in collaborative environments or tackling complex projects) prepare you for WPI's approach.",
+      "Show, don't tell, using concrete examples and anecdotes. Instead of simply stating you are collaborative or innovative, provide specific instances where you have demonstrated these qualities. Tell a story that illustrates your path to WPI and how you envision yourself thriving and contributing there.",
+      "Connect your interests and aspirations to specific WPI resources and opportunities. Go beyond just listing programs. Explain *how* you would utilize WPI's resources to achieve your goals and how you would contribute to the campus environment. For example, if you're interested in robotics, mention the Robotics Resource Center or the FIRST Robotics Initiative at WPI. If you've been involved in specific extracurriculars, discuss how you'd participate in related WPI student groups."
+    ],
+    "red_flags": [
+      "Grade decline senior year:",
+      "Misrepresenting information on your application:",
+      "Generic essays:",
+      "Poor or uninformative letters of recommendation:",
+      "Listing activities without demonstrating depth or impact:"
+    ],
+    "housing_info": [
+      {
+        "college_name": "Worcester Polytechnic Institute (WPI) - Overall Institution",
+        "housing_profile": "WPI offers a range of housing options including traditional double and triple occupancy rooms for first-year students, as well as suite-style arrangements and apartments for upper-level students. Residence halls are fully furnished with a bed, desk, chair, closet, and dresser, and include high-speed data network services and complimentary movie streaming. Many dorms, especially for first-year students, may not have air conditioning in individual rooms, though common rooms typically do. Some dorms like Riley Hall offer spacious rooms, while others like Stoddard Complex feature recently renovated bathrooms. Upper-level students can find apartment-style living (e.g., Ellsworth, Fuller Apartments) and residential houses (e.g., Elbridge, Hackfeld). These often include kitchens and individual climate control in apartments. WPI also provides interest-based housing communities for first-year students, such as the Lavender Community (LGBTQIAP+ interests) and Umoja Community (Black and African American cultures), which foster close-knit environments and specific programming.",
+        "student_archetype": "WPI attracts ambitious, talented problem-solvers passionate about STEM, particularly engineering and science. Students are generally prepared for a rigorous academic environment characterized by a fast-paced 7-week term system and a project-based curriculum that emphasizes combining theory with practice. They are collaborative, innovative, and focused on making a positive impact on society through their work. The WPI community is described as close-knit, inclusive, and supportive, fostering a vibrant student life with opportunities for involvement in numerous clubs, organizations, and traditions. Students are often creative, with diverse passions beyond STEM, including music, art, and activism.",
+        "strategic_fit_advice": "Prospective students who thrive in a challenging, hands-on, project-based STEM education will find WPI an excellent fit. Applicants should be prepared for a demanding academic workload and a desire to apply their learning to real-world problems. Individuals who value a strong sense of community, enjoy collaborative work, and wish to engage in a diverse range of campus activities and traditions, will be well-suited for WPI."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Worcester Polytechnic Institute fosters a tight-knit and collaborative community, emphasized by its project-based learning approach that promotes cooperation over competition. Campus life is described as academically enriching and fun, with a wide array of clubs, organizations, and opportunities for fraternity and sorority involvement. Students often participate in on-campus events, and there's a general sense of campus pride.",
+      "transportation_impact": "The campus itself is considered walkable, with pleasant routes between classes and various campus activities.",
+      "research_impact": "WPI offers extensive undergraduate research opportunities, with every undergraduate student engaging in significant research as part of their degree. These opportunities begin as early as the first year through the Great Problems Seminar and include funded programs like the National Science Foundation's (NSF) Research Experiences for Undergraduates (REU). Students can participate in research for pay, independent study credit, or through their Major Qualifying Projects (MQP). Research areas are diverse, encompassing fields such as functional materials, artificial intelligence, industrial mathematics, data science, and robotics, often involving collaboration with faculty and industry partners to solve real-world problems."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 103470,
+    "employment_rate_2yr": 97.0,
+    "median_earnings_6yr": 85038,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Raytheon Technologies",
+      "MITRE",
+      "BAE Systems",
+      "General Electric",
+      "IBM"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 1.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.0,
+    "graduation_rate_4_year": 83.0,
+    "graduation_rate_6_year": 89.0
+  }
 }

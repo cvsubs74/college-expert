@@ -1,1018 +1,1642 @@
 {
-  "university_profile": {
-    "_id": "university_of_oklahoma",
-    "metadata": {
-      "official_name": "University of Oklahoma",
-      "location": {
-        "city": "Norman",
-        "state": "OK",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "https://www.ou.edu",
-        "https://www.usnews.com/best-colleges",
-        "https://www.niche.com/colleges/university-of-oklahoma/"
-      ]
+  "_id": "university_of_oklahoma",
+  "metadata": {
+    "official_name": "The University of Oklahoma",
+    "location": {
+      "city": "Norman",
+      "state": "Oklahoma",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "The University of Oklahoma is a flagship public research university known for its strong sense of community, elite athletics, and leadership in fields like meteorology and energy. It has recently achieved significant momentum, marked by record-breaking enrollment and a major jump in national rankings.",
-      "market_position": "Flagship Research Powerhouse",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 110,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Freshman enrollment has surged over 30% in the last three years with five consecutive record-breaking classes.",
-          "implication": "Despite a holistic approach, the increasing volume of applicants suggests rising competition; early application is recommended to secure scholarships."
-        },
-        {
-          "category": "Institutional Momentum",
-          "insight": "OU climbed 22 spots in the 2026 US News rankings, the largest jump in the SEC.",
-          "implication": "The university's brand value is appreciating rapidly, making it an attractive choice for out-of-state students seeking a rising academic profile."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Consistently ranked among the 'happiest student bodies' in the nation, featuring a dominant Greek life (30% participation) and high-energy game days.",
-        "transportation_impact": "The campus is highly walkable and provides the free Campus Area Rapid Transit (CART) system for students, facilitating easy access between the main campus and Norman\u2019s suburban amenities.",
-        "research_impact": "As a Carnegie R1 institution, OU leverages its University Research Campus (URC) to maintain deep industry ties in aerospace, defense, and weather technology."
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Oklahoma is a prominent public research institution, recognized as the flagship university of Oklahoma. For 2026, U.S. News & World Report ranked it No. 110 nationally and No. 54 among public universities. Students often describe the educational experience as providing 'an Ivy League quality education within a public university,' emphasizing its strong academic programs and research opportunities.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic review with a focus on academic achievement, leadership potential, and community engagement.",
+    "us_news_rank": 110,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Oklahoma has a moderately selective admissions process with an acceptance rate generally around 77%.",
+        "implication": "Applicants should focus on demonstrating strong academic achievement, including a competitive GPA and rigorous coursework, alongside well-rounded extracurricular engagement. Applying Early Action by November 1st can also provide a strategic advantage for admission and scholarships."
+      },
+      {
+        "category": "Academic",
+        "insight": "OU is a leading public research university offering over 170 diverse baccalaureate programs and is recognized for 'very high research activity'. It boasts nationally recognized programs, particularly in business fields like energy management, and features an Honors College for enriched academic experiences.",
+        "implication": "Prospective students should articulate specific academic interests, highlight any prior research experience or advanced coursework, and express how they would leverage OU's extensive programs and research opportunities in their application essays. Demonstrating intellectual curiosity and a drive for academic rigor will be beneficial."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of Oklahoma cultivates a strong 'Sooner Family' community, characterized by compassion and civility, with over 500 student organizations contributing to a vibrant campus life.",
+        "implication": "Applicants should highlight their involvement in community service, leadership roles, and collaborative projects. Demonstrating a desire to contribute positively to a close-knit, active, and diverse campus environment will resonate well with the admissions committee."
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Oklahoma offers a vibrant and inclusive social atmosphere with a strong sense of community, fostered by over 400 student organizations and a significant Greek life. Students generally find it easy to make friends and feel connected, with numerous events and activities available.",
+      "transportation_impact": "The University of Oklahoma campus is described as beautiful and safe for walking, with everything in Norman being within reasonable driving distance. Norman itself is considered a college town, and Oklahoma City is approximately thirty minutes away, offering additional social and cultural opportunities.",
+      "research_impact": "The University of Oklahoma provides strong undergraduate research opportunities across various disciplines. Programs such as the Undergraduate Research Opportunities Program (UROP) and the Honors Research Assistant Program (HRAP) offer financial support and mentorship for scholarly and creative projects. The BME Summer Scholars Program also provides intensive hands-on research experience for students in biomedical engineering and related fields. The university has an Undergraduate Research Opportunities Database with over 100 opportunities, and also offers support through Undergraduate Research and Creative Activity (UReCA) initiatives."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 76.6,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Oklahoma is test-optional, meaning submitting standardized test scores (ACT, SAT, or CLT) is optional for admission. Applications are reviewed holistically, considering academic rigor and performance, engagement, essay, and letters of recommendation. If applying test-optional, the high school transcript becomes the primary indicator of academic preparedness. Test scores are still recommended for scholarship consideration and can be used for appeals. Self-reported scores are accepted initially, but official scores are required for enrollment verification. OU superscores both ACT and SAT. For certain concurrent enrollment courses at Norman High and Norman North campuses, test-optional eligibility is not available. If no test scores are submitted, placement exams may be required prior to enrollment.",
+      "admits_class_size": 19069,
+      "transfer_acceptance_rate": 62.6,
+      "early_admission_stats": [
         {
-          "name": "Dodge Family College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 77.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts foundation or those pursuing interdisciplinary research in the humanities and social sciences.",
-          "housing_profile": "Standard residence halls (Couch/Walker); proximity to Bizzell Memorial Library and the South Oval.",
-          "student_archetype": "Intellectually curious and socially engaged citizens",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Microbiology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "History",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "English",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Mathematics",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Social Work",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Communication",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Anthropology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Chemistry",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Physics",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Criminology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Health and Exercise Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.0
-            }
-          ]
-        },
-        {
-          "name": "Michael F. Price College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 82.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong focus on professionalism and networking; applicants should emphasize leadership experience and early interest in corporate tracks.",
-          "housing_profile": "Traditional housing with close access to Price Hall; often found in Headington Hall.",
-          "student_archetype": "Ambitious, career-oriented networkers",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 1743",
-                "ECON 1113",
-                "ECON 1123"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ACCT 2113 Financial Accounting",
-                "ECON 2843 Elements of Statistics"
-              ],
-              "special_requirements": "Must achieve 'Degree Candidacy' status to take upper-division courses",
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "ACCT 2113 Financial Accounting",
-                  "ACCT 2123 Managerial Accounting",
-                  "FIN 3303 Business Finance",
-                  "FIN 3403 Financial Markets",
-                  "FIN 3503 Investments",
-                  "B C 2813 Strategic Business Communication",
-                  "MGT 3013 Management",
-                  "MKT 3013 Marketing",
-                  "B AD 4013 Business Strategy and Policy"
-                ],
-                "electives": [
-                  "FIN 4113 Derivative Securities",
-                  "FIN 4303 Advanced Business Finance",
-                  "FIN 4413 Real Estate Finance",
-                  "FIN 4133 International Financial Management"
-                ],
-                "total_units": 122,
-                "major_units": 24
-              },
-              "notable_professors": [
-                "Dr. Corey Phelps (Dean)",
-                "Dr. Lubo Litov (Corporate Finance)",
-                "Dr. Jared Stanfield (Finance)"
-              ],
-              "notes": "Highly popular; requires 2.5 GPA for all major and business core courses."
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Management Information Systems",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Entrepreneurship",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Energy Management",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "International Business",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Supply Chain Management",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Management",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5
-            }
-          ]
-        },
-        {
-          "name": "Gallogly College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Requires rigorous STEM background; students should demonstrate passion for hands-on 'maker' culture.",
-          "housing_profile": "Near 'maker spaces' in the Residential Colleges.",
-          "student_archetype": "Technical problem-solvers and collaborative makers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 1914 Calculus I",
-                "PHYS 2514 Physics I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "C S 2334 Programming Structures",
-                "MATH 1914 Calculus I"
-              ],
-              "special_requirements": "Grade of C or better required in all curriculum courses",
-              "admissions_pathway": "Direct/Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "C S 1323 Introduction to Computer Programming",
-                  "C S 2334 Programming Structures and Abstractions",
-                  "C S 2413 Data Structures",
-                  "C S 2813 Discrete Structures",
-                  "C S 3113 Operating Systems",
-                  "C S 3323 Principles of Programming Languages",
-                  "C S 3823 Computer Organization",
-                  "C S 4413 Algorithm Analysis"
-                ],
-                "electives": [
-                  "C S 4053 Computer Graphics",
-                  "C S 4013 Artificial Intelligence",
-                  "C S 4513 Database Management",
-                  "C S 4613 Computer Security"
-                ],
-                "total_units": 120,
-                "major_units": 54
-              },
-              "notable_professors": [
-                "Dr. John Klier (Dean)",
-                "Dr. Sridhar Radhakrishnan (Algorithms)",
-                "Dr. Dean Hougen (AI/Robotics)"
-              ],
-              "notes": "Increasingly competitive; students must pass 'Engineering Catalyst' as freshmen."
-            },
-            {
-              "name": "Aerospace Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Biomedical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Electrical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Industrial and Systems Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Computer Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Environmental Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Architectural Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Engineering Physics",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Cybersecurity",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.0
-            }
-          ]
-        },
-        {
-          "name": "Gaylord College of Journalism and Mass Communication",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Must pass the Language Skills Test (LST) and Academic Integrity Test (AIT) for full admission.",
-          "housing_profile": "Traditional dorms; students often cluster in the Couch Center.",
-          "student_archetype": "Persuasive storytellers and strategic communicators",
-          "majors": [
-            {
-              "name": "Journalism",
-              "degree_type": "B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.75
-            },
-            {
-              "name": "Advertising",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.75
-            },
-            {
-              "name": "Public Relations",
-              "degree_type": "B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.75
-            },
-            {
-              "name": "Creative Media Production",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.75
-            },
-            {
-              "name": "Professional Writing",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.75
-            }
-          ]
-        },
-        {
-          "name": "Christopher C. Gibbs College of Architecture",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Portfolio review may be required; demands high resilience for 'studio culture'.",
-          "housing_profile": "Gould Hall proximity.",
-          "student_archetype": "Pragmatic visionaries and design experimentalists",
-          "majors": []
-        },
-        {
-          "name": "College of Atmospheric and Geographic Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "World-leading meteorology program; high competition for aviation spots.",
-          "housing_profile": "Often residential in the National Weather Center vicinity.",
-          "student_archetype": "Severe weather enthusiasts and future aviators",
-          "majors": [
-            {
-              "name": "Meteorology",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 1914",
-                "MATH 2924",
-                "PHYS 2514"
-              ],
-              "minimum_gpa_to_declare": 2.25,
-              "weeder_courses": [
-                "METR 2004 Atmospheric Circulations",
-                "MATH 3413 Physical Mathematics I"
-              ],
-              "special_requirements": "Grade of C or better required in all MATH, PHYS, and METR courses",
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.25,
-              "curriculum": {
-                "core_courses": [
-                  "METR 1111 Orientation to Professional Meteorology",
-                  "METR 2004 Atmospheric Circulations",
-                  "METR 2213 Physical Meteorology I",
-                  "METR 3113 Atmospheric Dynamics I",
-                  "METR 3123 Atmospheric Dynamics II",
-                  "METR 3223 Physical Meteorology II",
-                  "METR 4424 Synoptic Meteorology Lab",
-                  "METR 4913 Senior Seminar (Capstone)"
-                ],
-                "electives": [
-                  "METR 4603 Severe and Unusual Weather",
-                  "METR 4433 Mesoscale Meteorology",
-                  "METR 4313 Statistical Meteorology"
-                ],
-                "total_units": 124,
-                "major_units": 51
-              },
-              "notable_professors": [
-                "Dr. Jens Redemann (Director)",
-                "Dr. Petra Klein (Boundary Layer)",
-                "Dr. Jason Furtado (Climate/Long-range Forecasting)"
-              ],
-              "notes": "Located in the National Weather Center; top-ranked program globally."
-            },
-            {
-              "name": "Aviation: Professional Pilot",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 1743 or higher"
-              ],
-              "minimum_gpa_to_declare": 2.25,
-              "weeder_courses": [
-                "AVIA 1222 Primary Flying",
-                "AVIA 2231 Advanced Flying"
-              ],
-              "special_requirements": "FAA Second Class Medical Certificate required for flight courses",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.25,
-              "curriculum": {
-                "core_courses": [
-                  "AVIA 1113 Introduction to Aviation",
-                  "AVIA 1222 Primary Flying",
-                  "AVIA 2341 Secondary Flying",
-                  "AVIA 3013 Career Development for Aviation",
-                  "AVIA 3113 Commercial Aviation",
-                  "AVIA 3572 Instrument Flying",
-                  "AVIA 4423 Crew Resource Management",
-                  "AVIA 4713 Aviation Field Project (Capstone)"
-                ],
-                "electives": [
-                  "AVIA 3103 Flight Deck Environmental Issues",
-                  "AVIA 4313 Turbine Transition",
-                  "AVIA 4663 Survey of Aerospace Ethical Issues"
-                ],
-                "total_units": 125,
-                "major_units": 48
-              },
-              "notable_professors": [
-                "Ken Carson (Program Director)",
-                "Shelly Ainsworth (Academic Counselor)"
-              ],
-              "notes": "Capped enrollment due to flight slot availability; extremely competitive internally."
-            },
-            {
-              "name": "Geography",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Geographic Information Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Environmental Sustainability",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            }
-          ]
-        },
-        {
-          "name": "Weitzenhoffer Family College of Fine Arts",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly selective; performance-based majors require rigorous auditions.",
-          "housing_profile": "Fine Arts students often seek residence in Boren Hall.",
-          "student_archetype": "Disciplined performers and creative explorers",
-          "majors": []
-        },
-        {
-          "name": "Mewbourne College of Earth and Energy",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 0.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on the petroleum industry and geosciences.",
-          "housing_profile": "Proximity to Sarkeys Energy Center.",
-          "student_archetype": "Resource-focused engineers and geoscientists",
-          "majors": [
-            {
-              "name": "Petroleum Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "CHEM 1315",
-                "MATH 1914",
-                "GEOL 1114"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "P E 2113 Statics and Dynamics",
-                "MATH 2924 Calculus II"
-              ],
-              "special_requirements": "Minimum grade of C required in all major-specific courses",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "P E 2113 Statics and Dynamics",
-                  "P E 2213 Thermodynamics",
-                  "P E 3213 Reservoir Rock Properties",
-                  "P E 3223 Fluid Mechanics",
-                  "P E 3313 Drilling I",
-                  "P E 3413 Production Engineering I",
-                  "P E 4423 Production Engineering II",
-                  "P E 4533 Reservoir Engineering II",
-                  "P E 4393 Integrated Reservoir Management (Capstone)"
-                ],
-                "electives": [
-                  "P E 4463 Data Analytics",
-                  "P E 5613 Natural Gas Engineering",
-                  "P E G4033 Oil and Gas Law"
-                ],
-                "total_units": 126,
-                "major_units": 58
-              },
-              "notable_professors": [
-                "Dr. Runar Nygaard (Director)",
-                "Dr. Ramadan Ahmed (Drilling/Well Services)",
-                "Dr. Catalin Teodoriu (Drilling)"
-              ],
-              "notes": "One of the top programs in the nation."
-            },
-            {
-              "name": "Geological Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Geology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Geophysics",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            },
-            {
-              "name": "Environmental Geology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0
-            }
-          ]
-        },
-        {
-          "name": "Honors College",
-          "admissions_model": "Lottery",
-          "acceptance_rate_estimate": 25.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires 30+ ACT/1330+ SAT and 3.75 GPA.",
-          "housing_profile": "Priority housing in the Residential Colleges.",
-          "student_archetype": "High-achieving, interdisciplinary scholars",
-          "majors": []
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
       ],
-      "minors_certificates": [
-        "Data Science and Analytics Certificate",
-        "Engineering Leadership Undergraduate Certificate",
-        "Esports Business Undergraduate Certificate",
-        "Commercial Banking Undergraduate Certificate",
-        "Arts Management and Entrepreneurship Minor",
-        "Bioprocessing Undergraduate Certificate",
-        "Climate Adaptation Minor",
-        "Medical Humanities Minor"
-      ]
+      "international_acceptance_rate": 36.0,
+      "international_applications": 1393,
+      "international_admits": 502,
+      "international_notes": "This rate is for the 2024 application year and is lower than the overall acceptance rate of 76.6% for the same year.",
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": true,
+      "state_notes": "The University of Oklahoma is a public university. However, it does not publish separate acceptance rates for in-state and out-of-state students. Public universities generally prioritize in-state students due to their mission to serve the local community."
     },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 76.6,
-        "in_state_acceptance_rate": 0.0,
-        "out_of_state_acceptance_rate": 0.0,
-        "international_acceptance_rate": 36.0,
-        "transfer_acceptance_rate": 62.6,
-        "admits_class_size": 5593,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": []
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 29195,
+        "admits_total": 22660,
+        "enrolled_total": 6191,
+        "acceptance_rate_overall": 77.61,
+        "yield_rate": 27.32,
+        "notes": "The Class of 2029 welcomed the largest freshman class in the state's history."
       },
-      "longitudinal_trends": [
-        {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": 0,
-          "admits_total": 0,
-          "enrolled_total": 6229,
-          "acceptance_rate_overall": 73.0,
-          "yield_rate": 0.0,
-          "waitlist_stats": null,
-          "notes": "Class of 2029 is the largest freshman class in the university's 135-year history."
-        },
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 24893,
-          "admits_total": 19069,
-          "enrolled_total": 5615,
-          "acceptance_rate_overall": 76.6,
-          "yield_rate": 30.4,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 2342,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 81,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 22157,
-          "admits_total": 17097,
-          "enrolled_total": 5198,
-          "acceptance_rate_overall": 77.2,
-          "yield_rate": 30.4,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 2074,
-            "accepted_spots": 1436,
-            "admitted_from_waitlist": 94,
-            "waitlist_admit_rate": 6.55,
-            "is_waitlist_ranked": false
-          }
-        }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "unweighted_middle_50": "3.48-3.90",
-          "percentile_25": "3.48",
-          "percentile_75": "3.90",
-          "notes": "The average unweighted high school GPA for the most recent incoming class (Fall 2025) is 3.64."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1150-1310",
-          "sat_reading_middle_50": "580-670",
-          "sat_math_middle_50": "560-660",
-          "act_composite_middle_50": "23-29",
-          "submission_rate": 63.0,
-          "policy_note": "Test optional; however, 63% of enrolled students submitted scores (23% SAT, 40% ACT) for the Fall 2025 class."
-        },
-        "demographics": {
-          "first_gen_percentage": 26.8,
-          "international_percentage": 2.6,
-          "geographic_breakdown": [
-            {
-              "region": "Oklahoma",
-              "percentage": 47.6
-            },
-            {
-              "region": "Other US States",
-              "percentage": 49.8
-            },
-            {
-              "region": "International",
-              "percentage": 2.6
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 10811,
-              "admits": 8017,
-              "acceptance_rate": 74.1
-            },
-            "women": {
-              "applicants": 14082,
-              "admits": 11052,
-              "acceptance_rate": 78.5
-            }
-          },
-          "racial_breakdown": {
-            "white": 58.5,
-            "black_african_american": 5.1,
-            "hispanic_latino": 13.9,
-            "asian": 7.4,
-            "native_american_alaskan": 3.4,
-            "pacific_islander": 0.1,
-            "two_or_more_races": 10.2,
-            "unknown": 1.4,
-            "non_resident_alien": 2.6
-          }
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 30873,
+        "admits_total": 20376,
+        "enrolled_total": 4730,
+        "acceptance_rate_overall": 65.99,
+        "yield_rate": 23.21,
+        "notes": "",
+        "waitlist_stats": {
+          "offered_spots": 2342,
+          "accepted_spots": 1560,
+          "admitted_from_waitlist": 81,
+          "waitlist_admit_rate": 5.19,
+          "is_waitlist_ranked": false
         }
       },
-      "application_process": {
-        "platforms": [
-          "Common App",
-          "Coalition App",
-          "OU Application"
-        ],
-        "application_deadlines": [
-          {
-            "plan_type": "Early Action",
-            "date": "2024-11-01",
-            "is_binding": false,
-            "notes": "Priority for admission and housing."
-          },
-          {
-            "plan_type": "Scholarship Priority",
-            "date": "2024-12-15",
-            "is_binding": false,
-            "notes": "Final deadline for merit scholarship consideration."
-          },
-          {
-            "plan_type": "Regular Decision",
-            "date": "2025-02-01",
-            "is_binding": false,
-            "notes": "Final admission deadline."
-          }
-        ],
-        "supplemental_requirements": [
-          {
-            "target_program": "All",
-            "requirement_type": "Essays",
-            "details": "Common App personal statement required plus three optional scholarship essays (Leadership, Community, Career)."
-          },
-          {
-            "target_program": "Music",
-            "requirement_type": "Audition",
-            "details": "Requires registration 2 weeks prior to audition dates (typically Jan/Feb)."
-          },
-          {
-            "target_program": "Honors College",
-            "requirement_type": "Additional Application",
-            "details": "Priority deadline Feb 1; requires separate essay."
-          }
-        ],
-        "holistic_factors": {
-          "primary_factors": [
-            "Course Rigor",
-            "Academic GPA",
-            "Writing Ability"
-          ],
-          "secondary_factors": [
-            "Extracurriculars",
-            "Leadership",
-            "Community Engagement",
-            "Talents"
-          ],
-          "essay_importance": "High",
-          "demonstrated_interest": "Considered",
-          "specific_differentiators": "Emphasis on 'OU Family' values and intellectual curiosity."
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 22157,
+        "admits_total": 17097,
+        "enrolled_total": 4878,
+        "acceptance_rate_overall": 77.16,
+        "yield_rate": 28.53,
+        "notes": "",
+        "waitlist_stats": {
+          "offered_spots": 2074,
+          "accepted_spots": 1436,
+          "admitted_from_waitlist": 94,
+          "waitlist_admit_rate": 6.54,
+          "is_waitlist_ranked": false
         }
       },
-      "application_strategy": {
-        "major_selection_tactics": [
-          "Apply to the Dodge Family College of Arts and Sciences for less competitive general admission.",
-          "Utilize 'University College' for undecided entry if stats are borderline.",
-          "Submit ACT/SAT scores if aiming for Honors or top-tier merit (30+ ACT recommended).",
-          "Avoid applying directly to impacted programs like Petroleum Engineering if stats are below 75th percentile."
-        ],
-        "college_ranking_tactics": [
-          "Prioritize the Honors College for superior housing amenities.",
-          "Rank Residential Colleges (Dunham/Headington) first for a 'small college feel'.",
-          "Select major-specific LLCs for renovated suite-style living."
-        ],
-        "alternate_major_strategy": "List a competitive major first, but always provide a backup in Arts & Sciences. For pre-med, consider Microbiology over Biochemistry to protect GPA."
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 18453,
+        "admits_total": 13527,
+        "enrolled_total": 4092,
+        "acceptance_rate_overall": 73.31,
+        "yield_rate": 30.25,
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 17318,
+        "admits_total": 14760,
+        "enrolled_total": 3868,
+        "acceptance_rate_overall": 85.23,
+        "yield_rate": 26.21,
+        "notes": ""
       }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 14155,
-          "total_coa": 31216,
-          "housing": 13630
-        },
-        "out_of_state": {
-          "tuition": 31225,
-          "total_coa": 48796,
-          "supplemental_tuition": 17070
-        }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.80-4.20",
+        "unweighted_middle_50": "3.37-3.96",
+        "average_weighted": 4.00,
+        "percentile_25": "3.80",
+        "percentile_75": "4.20",
+        "notes": "The University of Oklahoma utilizes a holistic admissions process, emphasizing overall academic performance including high school GPA, academic rigor, and class rank. For Fall 2024 first-time freshmen, 28.6% were in the top 10% of their high school class."
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 10560,
-      "average_merit_aid": 3273,
-      "percent_receiving_aid": 69.6,
-      "scholarship_opportunities": [
-        {
-          "name": "National Merit Finalist Scholarship",
-          "type": "Merit",
-          "amount": "Up to $153,450 over 5 years",
-          "deadline": "2025-12-15",
-          "benefits": "100% tuition waiver, tech stipend, housing scholarship, research/study abroad stipends"
-        },
-        {
-          "name": "Oklahoma State Regents' Academic Scholars Program",
-          "type": "Merit",
-          "amount": "$6,500 annual stipend + tuition waiver",
-          "deadline": "2025-12-15",
-          "benefits": "100% resident tuition waiver, cash stipend for 8 semesters"
-        },
-        {
-          "name": "OU Award of Excellence",
-          "type": "Merit",
-          "amount": "$36,000 - $68,000 over 4 years",
-          "deadline": "2025-12-15",
-          "benefits": "Renewable partial tuition waiver for resident and non-resident students"
-        },
-        {
-          "name": "Crimson Commitment",
-          "type": "Need",
-          "amount": "Full tuition and average mandatory fees",
-          "deadline": "2025-12-15",
-          "benefits": "Guaranteed 4-year coverage for OK Promise students"
-        },
-        {
-          "name": "Distinguished Scholar",
-          "type": "Merit",
-          "amount": "$32,000 - $60,000 over 4 years",
-          "deadline": "2025-12-15",
-          "benefits": "Renewable partial tuition waiver based on performance"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "A score of 3 or higher is required for credit on most exams.",
-        "exceptions": [
-          "AP Computer Science Principles grants no credit"
-        ],
-        "usage": "Credits satisfy Gen Ed and major prerequisites like Calculus, Biology, and Chemistry."
+      "testing": {
+        "sat_range": "1140-1330",
+        "sat_reading_middle_50": "580-670",
+        "sat_math_middle_50": "560-660",
+        "act_range": "23-29",
+        "submission_rate": 40.0,
+        "policy_note": "The University of Oklahoma is a test-optional institution and superscores both SAT and ACT exams for admission and scholarship decisions. For the academic year 2025, 40% of enrolled students submitted ACT scores and 23% submitted SAT scores."
       },
-      "ib_policy": {
-        "general_rule": "HL exams with a score of 4 or higher grant course-specific credit.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "Transfer Equivalencies Database (TED)"
-        ],
-        "restrictions": "Must complete at least 60 hours at a 4-year institution and 30 hours in residence at OU."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Competitive GPA (average 3.63) with honors/AP rigor",
-        "Demonstrated leadership in community roles",
-        "Alignment with 'OU Family' values",
-        "Submission by December 15th scholarship deadline"
-      ],
-      "common_activities": [
-        "Greek life involvement (30% participation)",
-        "Community service and charity work",
-        "Student government",
-        "Performing arts or band",
-        "Spirit organizations and athletics"
-      ],
-      "essay_tips": [
-        "Explicitly mention your contribution to the 'OU Family'",
-        "Focus on meaningful leadership anecdotes",
-        "Name specific OU resources or majors",
-        "Reflect on a personal challenge to show growth"
-      ],
-      "red_flags": [
-        "Senior year grade drops",
-        "Generic essays that lack OU-specific detail",
-        "Grammar or spelling errors",
-        "Resume-style essays that repeat the activity list"
-      ],
-      "insights": [
-        "Greek life is a massive social driver",
-        "Faculty are noted for being supportive and approachable",
-        "The campus is beautiful but requires planning for the large scale",
-        "School spirit and sports create a high-energy atmosphere"
-      ]
-    },
-    "outcomes": {
-      "career_outcomes": {
-        "median_earnings_10yr": 63126,
-        "employment_rate_2yr": 92.0,
-        "grad_school_rate": 28.8,
-        "top_employers": [
-          "Boeing",
-          "Paycom",
-          "AT&T",
-          "U.S. Air Force",
-          "Amazon",
-          "Deloitte",
-          "ConocoPhillips",
-          "ExxonMobil"
-        ],
-        "loan_default_rate": 0.0
-      },
-      "student_retention": {
-        "freshman_retention_rate": 90.0,
-        "graduation_rate_4_year": 60.3,
-        "graduation_rate_6_year": 75.3
-      }
-    },
-    "application_process": {
-      "supplemental_requirements": {
-        "essay_prompts": [
+      "demographics": {
+        "first_gen_percentage": 26.8,
+        "legacy_percentage": null,
+        "notes": "First-generation defined as students whose parents have not completed a bachelor's degree. Legacy percentage not found in search results.",
+        "geographic_breakdown": [
           {
-            "prompt": "The University of Oklahoma values a diverse community of students with different backgrounds, perspectives, and experiences. What unique contributions might you make to OU?",
-            "word_limit": 500,
-            "required": false,
-            "note": "Optional supplemental essay",
-            "application_cycle": "2025-2026"
+            "region": "Oklahoma",
+            "percentage": 56.3
+          },
+          {
+            "region": "Texas",
+            "percentage": 23.0
+          },
+          {
+            "region": "California",
+            "percentage": 1.9
+          },
+          {
+            "region": "Colorado",
+            "percentage": 1.3
+          },
+          {
+            "region": "Kansas",
+            "percentage": 0.8
+          },
+          {
+            "region": "Missouri",
+            "percentage": 0.8
+          },
+          {
+            "region": "Florida",
+            "percentage": 0.8
+          },
+          {
+            "region": "Illinois",
+            "percentage": 0.6
+          },
+          {
+            "region": "Virginia",
+            "percentage": 0.6
+          },
+          {
+            "region": "Arkansas",
+            "percentage": 0.5
+          },
+          {
+            "region": "International",
+            "percentage": 5.7
           }
-        ]
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10811,
+            "admits": 8017,
+            "acceptance_rate": 74.16,
+            "note": "Data for the 2024-2025 academic year for first-time, first-year students."
+          },
+          "women": {
+            "applicants": 14082,
+            "admits": 11052,
+            "acceptance_rate": 78.48,
+            "note": "Data for the 2024-2025 academic year for first-time, first-year students."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 55.35,
+          "black_african_american": 5.28,
+          "hispanic_latino": 12.96,
+          "asian": 6.00,
+          "native_american_alaskan": 3.80,
+          "pacific_islander": 0.10,
+          "two_or_more_races": 9.05,
+          "unknown": 1.59,
+          "non_resident_alien": 5.84
+        }
       }
     }
   },
-  "_id": "university_of_oklahoma",
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "Christopher C. Gibbs College of Architecture",
+        "admissions_model": "Pre-Major (for professional programs), Direct Admit (for some BA/BS programs)",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "Dodge Family College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": []
+      },
+      {
+        "name": "College of Atmospheric and Geographic Sciences",
+        "admissions_model": "Direct Admit (for first-year students), Pre-Major (for current OU/transfer students)",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "Michael F. Price College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "Jeannine Rainbolt College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "Mewbourne College of Earth and Energy",
+        "admissions_model": "Direct Admit (for first-year students), Pre-Major (for current OU/transfer students)",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "Gallogly College of Engineering",
+        "admissions_model": "Direct Admit (to College), Pre-Major (for specific engineering disciplines)",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "CS 1323 Introduction to Computer Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "CS 2414 Data Structures",
+              "CS 2813 Discrete Structures"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "CS 1323 Introduction to Computer Programming",
+                "CS 2334 Programming Structures and Abstractions",
+                "CS 2414 Data Structures",
+                "CS 2813 Discrete Structures",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "MATH 3333 Linear Algebra",
+                "CS 2614 Computer Organization",
+                "CS 3203 Software Engineering",
+                "CS 3113 Introduction to Operating Systems",
+                "CS 3823 Theory of Computation",
+                "CS 3323 Principles of Programming Languages",
+                "CS 4273 Capstone Design Project",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry"
+              ],
+              "electives": [
+                "Natural Science Elective (3 hours)",
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Technical Electives (9 hours)",
+                "Open Electives (3-6 hours)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Dimitrios Diochnos (Assistant Professor)",
+              "Dr. Andrew H. Fagg (Presidential Associates Presidential Professor)",
+              "Dr. Dean Hougen (Professor, Associate Director)",
+              "Dr. Marmar Moussa (Assistant Professor, Computational Genomics)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Average salary for Computer Science graduates: $63,548 (average earnings) or $81,816 (highest average salary in 2021)."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "AME 2113 Statics"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CS 1313 Programming for Non-Majors with C",
+                "AME 2113 Statics",
+                "AME 2213 Thermodynamics",
+                "AME 2303 Materials, Design & Manufacturing",
+                "AME 2533 Dynamics",
+                "AME 3112 Solid Mechanics Lab",
+                "AME 3143 Solid Mechanics",
+                "AME 3223 Fluid Mechanics",
+                "AME 3253 Heat Transfer",
+                "AME 3272 Instrumentation & Measurement",
+                "AME 3353 Machine Elements",
+                "AME 3401 Numerical Methods w/ MATLAB",
+                "AME 4203 System Dynamics & Control",
+                "AME 4353 Mechanical Engineering Design I",
+                "AME 4363 Mechanical Engineering Design II"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Technical Electives (6 hours)"
+              ],
+              "total_units": 121,
+              "major_units": 54
+            },
+            "notable_professors": [
+              "Dr. Ramkumar Parthasarathy (Director)",
+              "Dr. David Baldwin (Associate Professor)",
+              "Dr. Chenkai Dai (Associate Professor)",
+              "Dr. Wilson Merchán-Merchán (Professor)",
+              "Dr. Li Song (Lesch Centennial Chair & Lloyd G. and Joyce Austin Presidential Professor)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Average earnings for Mechanical Engineering graduates: $65,386."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "CS 1313 Programming for Non-Majors with C"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ECE 2723 Electric Circuits I"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CS 1313 Programming for Non-Majors with C",
+                "ECE 2523 Digital Logic Design",
+                "ECE 2713 Digital Signals & Systems",
+                "ECE 2723 Electric Circuits I",
+                "ECE 2753 Electric Circuits II",
+                "ECE 2763 Engineering Electromagnetics",
+                "ECE 3223 Signals & Systems",
+                "ECE 3323 Intro to Solid State Electronic Devices",
+                "ECE 3413 Microprocessor System Design",
+                "ECE 3723 Introduction to Communication Systems",
+                "ECE 3783 Control Systems",
+                "ECE 4273 Digital Design Laboratory",
+                "ECE 4773 Special Projects Laboratory"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "ECE Electives (9 hours, 4000-5000 level)"
+              ],
+              "total_units": 126,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Boonleng Cheong (Advanced Radar Research Center)",
+              "Dr. Chad Davis (School of Electrical and Computer Engineering)",
+              "Dr. Lei Ding (Stephenson School of Biomedical Engineering - also ECE faculty)",
+              "Dr. Yaser Mike Banad (Associate Professor)",
+              "Dr. Nathan Goodman (Associate Professor, Director of Advanced Radar Research Center)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Average earnings for Electrical, Electronics, and Communications Engineering graduates: > $69,000."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 1435 General Chemistry II: Signature Course",
+              "CHEM 3053 Organic Chemistry I: Biological Emphasis",
+              "CHEM 3153 Organic Chemistry II: Biological Emphasis",
+              "CHEM 3423 Physical Chemistry I",
+              "CH E 3113 Momentum, Heat, & Mass Transfer I"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. Chemical engineering courses are sequential and usually offered only in the semester shown. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1435 General Chemistry II: Signature Course",
+                "CHEM 1315 General Chemistry",
+                "CHEM 3053 Organic Chemistry I: Biological Emphasis",
+                "CHEM 3152 Organic Chemistry Laboratory: Biological Emphasis",
+                "CHEM 3153 Organic Chemistry II: Biological Emphasis",
+                "CHEM 3423 Physical Chemistry I",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CH E 2003 Introduction to Chemical Engineering Computing",
+                "CH E 2033 Chemical Engineering Fundamentals",
+                "CH E 3113 Momentum, Heat, & Mass Transfer I",
+                "CH E 3123 Momentum, Heat, & Mass Transfer II",
+                "CH E 3313 Structure and Properties of Materials",
+                "CH E 3333 Separation Processes",
+                "CH E 3473 Chemical Engineering Thermodynamics",
+                "CH E 3432 Unit Operations Lab",
+                "CH E 3723 Numerical Methods for Engineering Computation",
+                "CH E 4153 Process Dynamics & Control",
+                "CH E 4253 Process Design & Safety",
+                "CH E 4262 Chemical Engineering Design Lab I",
+                "CH E 4273 Advanced Process Design",
+                "CH E 4473 Kinetics"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Technical Electives (9 hours, one must be CH E course)"
+              ],
+              "total_units": 125,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Average earnings for Chemical Engineering graduates: $64,837."
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "AME 2223 Introduction to Aerospace Engineering"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CS 1313 Programming for Non-Majors with C",
+                "AME 2113 Statics",
+                "AME 2213 Thermodynamics",
+                "AME 2223 Introduction to Aerospace Engineering",
+                "AME 2303 Materials, Design & Manufacturing",
+                "AME 2533 Dynamics",
+                "AME 3112 Solid Mechanics Lab",
+                "AME 3143 Solid Mechanics",
+                "AME 3223 Fluid Mechanics",
+                "AME 3253 Heat Transfer",
+                "AME 3272 Wind Tunnel Lab",
+                "AME 3333 Flight Mechanics",
+                "AME 3401 Numerical Methods w/ MATLAB",
+                "AME 3523 Aerospace Structural Analysis",
+                "AME 4243G Aerospace Propulsion Systems",
+                "AME 4373 Aerospace Systems Design II"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Technical Electives (6 hours)"
+              ],
+              "total_units": 126,
+              "major_units": 58
+            },
+            "notable_professors": [
+              "Dr. Ramkumar Parthasarathy (Director)",
+              "Dr. David Baldwin (Associate Professor)",
+              "Dr. Chenkai Dai (Associate Professor)",
+              "Dr. Wilson Merchán-Merchán (Professor)",
+              "Dr. Li Song (Lesch Centennial Chair & Lloyd G. and Joyce Austin Presidential Professor)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Average earnings for Aerospace, Aeronautical, and Astronautical Engineering graduates: ~$65,700."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "BIOL 1124 Introduction to Biology: Molecules, Cells, Physiology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "BIOL 1124 Introduction to Biology: Molecules, Cells, Physiology",
+              "BME 2433 Signals and Systems for Biomedical Engineering"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "CHEM 1415 General Chemistry",
+                "BIOL 1124 Introduction to Biology: Molecules, Cells, Physiology",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CS 1213 Python Programming",
+                "ISE 3293 Applied Statistical Methods",
+                "BME 2433 Signals and Systems for Biomedical Engineering",
+                "BME 2503 Introduction to Biomedical Engineering",
+                "BME 2603 Biomedical Engineering Design",
+                "BME 3233 Biomaterials",
+                "BME 3723 Numerical Methods in Biomedical Engineering",
+                "BME 4713 Capstone Design Project I",
+                "BME 4813 Quantitative Physiology",
+                "BME 4723 Capstone Design Project II"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "BME and SME Electives (15 hours)",
+                "Science, Math, and Engineering Electives (3 hours)"
+              ],
+              "total_units": 127,
+              "major_units": 54
+            },
+            "notable_professors": [],
+            "notes": "Data source: OU Academic Catalog 2025-2026. No specific average earnings found for Biomedical Engineering, but allied health fields provide solid incomes."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "CEES 2113 Statics"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school. Students must complete a minimum of four semesters of CEES 1000.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "CHEM 1415 General Chemistry",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CEES 1000 Civil Engineering Seminar (4 semesters)",
+                "CEES 1111 Exploring Civil Engineering and Environmental Science",
+                "GEOL 1114 Physical Geology",
+                "CEES 2113 Statics",
+                "CEES 2153 Mechanics of Materials",
+                "CEES 2223 Fluid Mechanics",
+                "CEES 2213 Computer Aided Design and Drafting Fundamentals",
+                "ENGR 3401 Engineering Economy",
+                "CEES 3213 Water Resources Engineering",
+                "CEES 3361 Soil Mechanics Lab",
+                "CEES 3363 Soil Mechanics",
+                "CEES 3403 Materials",
+                "CEES 3663 Structural Analysis",
+                "CEES 3883 Transportation Engineering",
+                "CEES 4253 Statistics & Probability",
+                "CEES 4903 Civil Engineering Capstone"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Professional Electives (9 hours)"
+              ],
+              "total_units": 125,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Jin-Song Pei (School of Civil Engineering and Environmental Science)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Civil engineers work to enhance the quality of life for all people through designing and constructing society's infrastructure, such as buildings, highways, pipelines, water systems and mass transit systems."
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "CHEM 1315 General Chemistry",
+              "CEES 2313 Water Quality"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "PHYS 2524 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "CHEM 1415 General Chemistry",
+                "CHEM 3053 Organic Chemistry I",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CEES 1111 Exploring Civil Engineering and Environmental Science",
+                "CEES 2113 Statics",
+                "CEES 2153 Mechanics of Materials",
+                "CEES 2223 Fluid Mechanics",
+                "CEES 2213 Computer Aided Design and Drafting Fundamentals",
+                "ENGR 2461 Thermodynamics",
+                "ENGR 3401 Engineering Economy",
+                "CEES 2313 Water Quality",
+                "CEES 2323 Environmental Transport & Fate Processes",
+                "CEES 3361 Soil Mechanics Lab",
+                "CEES 3363 Soil Mechanics",
+                "CEES 3213 Water Resources Engineering",
+                "CEES 4324 Environmental Biology & Ecology",
+                "CEES 4253 Statistics & Probability",
+                "CEES 4263 Hazardous & Solid Waste Management",
+                "CEES 4923 Environmental Engineering Capstone",
+                "CEES 4943 Air Quality Management"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Professional Electives (6 hours)"
+              ],
+              "total_units": 126,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Jin-Song Pei (School of Civil Engineering and Environmental Science)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Industrial and Systems Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "CS 1313 Programming for Non-Majors with C or CS 1321/1323/1324 Computer Science Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ISE 2823 Enterprise Engineering"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3113 Introduction to Ordinary Differential Equations",
+                "PHYS 2514 General Physics for Engineering and Science Majors",
+                "CHEM 1315 General Chemistry",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CS 1313 Programming for Non-Majors with C or CS 1321/1323/1324 Computer Science Programming",
+                "CEES 2113 Statics",
+                "CEES 2153 Mechanics of Materials",
+                "ISE 2303 Design and Manufacturing I",
+                "ISE 2311 Computer-Aided Design and Graphics",
+                "ISE 2823 Enterprise Engineering",
+                "ISE 3293 Applied Statistical Methods",
+                "ISE 3304 Design and Manufacturing II",
+                "ISE 3511 Production Systems Laboratory",
+                "ISE 3623 Introduction to Operations Research",
+                "ISE 4223 Fundamentals of Engineering Economy",
+                "ISE 4302 Systems Thinking",
+                "ISE 4333 Production Planning and Control",
+                "ISE 4383 Systems Evaluation",
+                "ISE 4393 Capstone Design Project",
+                "ISE 4623 Deterministic Systems Models",
+                "ISE 4663 Systems Analysis and Design"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Natural Science Elective with Lab (4 hours)",
+                "Language (0-10 hours)",
+                "Technical Electives (6 hours)"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [
+              "Dr. Janet Allen (Adjunct Professor, John and Mary Moore Chair)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Median starting salary for Industrial Engineering graduates: $66,400."
+          },
+          {
+            "name": "Engineering Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 1205 Introductory Physics I for Physics Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "CS 1321/1323/1324 Computer Science Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 1205 Introductory Physics I for Physics Majors",
+              "PHYS 1215 Introductory Physics II for Physics Majors"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Principles of English Composition",
+                "ENGL 1213 Principles of English Composition or EXPO 1213 Expository Writing",
+                "P SC 1113 American Federal Government",
+                "HIST 1483 United States to 1865 or HIST 1493 United States, 1865 to the Present",
+                "MATH 1914 Differential and Integral Calculus I",
+                "MATH 2924 Differential and Integral Calculus II",
+                "MATH 2934 Differential and Integral Calculus III",
+                "MATH 3413 Physical Mathematics I",
+                "MATH 3423 Physical Mathematics II",
+                "CHEM 1315 General Chemistry",
+                "ENGR 1413 Pathways to Engineering Thinking",
+                "ENGR 2002 Professional Responsibilities and Skills of Engineers and Scientists",
+                "CS 1321/1323/1324 Computer Science Programming",
+                "PHYS 1205 Introductory Physics I for Physics Majors",
+                "PHYS 1215 Introductory Physics II for Physics Majors",
+                "PHYS 2203 Introductory Physics III: Modern Physics",
+                "PHYS 2303 Electronics",
+                "PHYS 3043 Physical Mechanics I",
+                "PHYS 3053 Physical Mechanics II",
+                "PHYS 3183 Electricity and Magnetism I",
+                "PHYS 3302 Advanced Laboratory I or PHYS 3312 Advanced Laboratory II",
+                "PHYS 3803 Introduction to Quantum Mechanics I",
+                "PHYS 4153 Statistical Physics and Thermodynamics",
+                "PHYS 4310 Senior Research Project I",
+                "PHYS 4320 Senior Research Project II"
+              ],
+              "electives": [
+                "Approved Artistic Forms Elective (3 hours)",
+                "Approved World Culture Elective (3 hours)",
+                "Approved Western Culture Elective (3 hours, excluding HIST 1483/1493)",
+                "Approved Social Science Elective (3 hours)",
+                "Language (0-10 hours)",
+                "Engineering Electives (9 hours, 2000-4000 level)",
+                "Engineering Electives - Design Sequence (15 hours)",
+                "Technical Elective (3 hours)",
+                "Engineering Physics Elective (3 hours)"
+              ],
+              "total_units": 125,
+              "major_units": 69
+            },
+            "notable_professors": [
+              "Dr. Michael Santos (Director, Program in Engineering Physics)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "BIOL 1124 Introduction to Biology: Molecules, Cells, Physiology",
+              "GEOL 1114 Physical Geology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "BIOL 1124 Introduction to Biology: Molecules, Cells, Physiology"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Detailed curriculum was not extracted for this major, but general requirements are based on the college policy. Please refer to the official checksheet for a full course list."
+          },
+          {
+            "name": "Architectural Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 126,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Detailed curriculum was not extracted for this major, but general requirements are based on the college policy. Please refer to the official checksheet for a full course list."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "CS 1323 Introduction to Computer Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ECE 2523 Digital Logic Design"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 126,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Boonleng Cheong (Advanced Radar Research Center)",
+              "Dr. Chad Davis (School of Electrical and Computer Engineering)",
+              "Dr. Lei Ding (Stephenson School of Biomedical Engineering - also ECE faculty)",
+              "Dr. Yaser Mike Banad (Associate Professor)",
+              "Dr. Nathan Goodman (Associate Professor, Director of Advanced Radar Research Center)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Computer Engineering is offered within the School of Electrical and Computer Engineering. Average earnings for Computer Engineering graduates: > $69,000."
+          },
+          {
+            "name": "Cybersecurity",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "CHEM 1315 General Chemistry",
+              "PHYS 2514 General Physics for Engineering and Science Majors",
+              "ENGR 1413 Pathways to Engineering Thinking",
+              "CS 1323 Introduction to Computer Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1914 Differential and Integral Calculus I",
+              "MATH 2924 Differential and Integral Calculus II",
+              "CS 2414 Data Structures",
+              "CS 2813 Discrete Structures"
+            ],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses. A total of 40 upper-division hours is required. Students must complete a minimum of 40 hours of General Education courses, including at least one upper-division General Education course outside of the student's major. Courses graded P/NP will not apply. Two college-level courses in a single world language are required; this may be satisfied by successful completion of 2 years in a single world language in high school.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Dimitrios Diochnos (Assistant Professor)",
+              "Dr. Andrew H. Fagg (Presidential Associates Presidential Professor)",
+              "Dr. Dean Hougen (Professor, Associate Director)",
+              "Dr. Marmar Moussa (Assistant Professor, Computational Genomics)"
+            ],
+            "notes": "Data source: OU Academic Catalog 2025-2026. Detailed curriculum was not extracted for this major, but general requirements are based on the college policy. Please refer to the official checksheet for a full course list."
+          }
+        ]
+      },
+      {
+        "name": "Weitzenhoffer Family College of Fine Arts",
+        "admissions_model": "Direct Admit (to OU, then separate application/audition/portfolio for college/program)",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "David L. Boren College of International Studies",
+        "admissions_model": "Direct Admit (to College), Pre-Major (for declaring specific majors)",
+        "is_restricted_or_capped": false,
+        "majors": []
+      },
+      {
+        "name": "Gaylord College of Journalism and Mass Communication",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "College of Allied Health",
+        "admissions_model": "Pre-Major (starts at Norman campus, then competitive direct admit to specific programs)",
+        "is_restricted_or_capped": true,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Writing Minor",
+      "Computer Science Minor",
+      "History of Science Minor",
+      "Data Science and Analytics Undergraduate Certificate",
+      "Engineering Leadership Undergraduate Certificate",
+      "Bioprocessing Undergraduate Certificate"
+    ],
+    "housing_info": [
+      {
+        "college_name": "Residential Colleges (Dunham & Headington)",
+        "housing_profile": "Modern, innovative living-learning communities with private and suite-style rooms (single to three-bed with living/bath). Feature dedicated dining halls, creative common spaces, game rooms, libraries, courtyards, and classrooms. Faculty Fellows live on-site, offering seminars and fostering academic and social interaction. Designed for community and scholarship, aiming for LEED Silver certification. Honors College students receive priority consideration.",
+        "student_archetype": "Academically focused, globally aware, community-oriented students who value intellectual development, faculty mentorship, and interdisciplinary engagement. Often high-achievers seeking an immersive academic and social experience.",
+        "strategic_fit_advice": "Ideal for students seeking a close-knit, academically enriched community with strong faculty interaction, a variety of room styles, and modern facilities. Particularly beneficial for Honors College students or those who thrive in a living-learning environment."
+      },
+      {
+        "college_name": "David L. Boren Hall (Honors College Housing)",
+        "housing_profile": "Integrated living-learning environment housing Honors College academic offices, faculty offices, seminar rooms, study areas, and a library within the residence hall. Offers various room types. While preferential for Honors students, non-Honors students can also reside here.",
+        "student_archetype": "Intellectually curious, high-achieving, self-motivated students who are actively pursuing enriched academic experiences and research opportunities.",
+        "strategic_fit_advice": "Excellent for Honors College students desiring direct access to Honors resources and a strong academic peer group. Also suitable for non-Honors students who prefer a quieter, academically focused living environment."
+      },
+      {
+        "college_name": "McCasland Hall",
+        "housing_profile": "Newly constructed (opened Fall 2025/2026) residence hall offering premium accommodations for first-year students. Designed with a small community atmosphere, featuring a convenience store, coffee shop, lounges, outdoor spaces, storm shelters, study rooms, laundry rooms, and 'cookie kitchens.' Offers 1-bedroom (2-person) and 2-bedroom (4-person) suites, mostly with Twin XL beds and private bedrooms. Aims for LEED Silver certification.",
+        "student_archetype": "First-year students prioritizing modern, comfortable, and well-equipped living spaces with an emphasis on fostering community and convenient access to campus resources. Value a supportive and engaging start to their college experience.",
+        "strategic_fit_advice": "Recommended for incoming first-year students who desire a brand-new, amenity-rich living space designed for social interaction, academic support, and a 'home-like' atmosphere."
+      },
+      {
+        "college_name": "Cross Village",
+        "housing_profile": "A premier 1,200-bed complex (formerly 1,450-bed) for first-year students, consisting of four 4-story buildings with a mix of residential units, community spaces, and commercial areas. Features a fitness facility, blackbox theater, creator space, gym, active learning classrooms, and kitchenettes (sink, full-sized refrigerator, microwave) in suite-style units (1, 2, or 4 bedrooms). Integrates faculty-in-residence.",
+        "student_archetype": "First-year students seeking modern, apartment-style living with extensive on-site amenities. Typically prefer more independence while still being part of a vibrant community, valuing convenience and integrated living-learning opportunities.",
+        "strategic_fit_advice": "Good for first-year students desiring suite-style living with kitchenettes and diverse on-site amenities like a gym and theater. Ideal for those who appreciate a blend of independence and structured community, including faculty interaction."
+      },
+      {
+        "college_name": "The Towers (Walker, Couch, Adams Centers)",
+        "housing_profile": "Traditional 12-story suite-style residence halls for first-year students, where two bedrooms (each with two roommates) share a connected bathroom. Furniture is movable. These are older buildings, with some reviews mentioning maintenance issues like mold, cleanliness concerns, and noise. They are centrally located and close to dining options.",
+        "student_archetype": "Social, budget-conscious first-year students looking for a classic, bustling freshman dorm experience. They are eager to meet many new people and embrace the vibrant, sometimes less polished, community aspect of traditional college living.",
+        "strategic_fit_advice": "Best for first-year students prioritizing a highly social and traditional freshman dorm experience and a more budget-friendly option. Ideal for those who want to be in the heart of campus and easily connect with a large peer group."
+      },
+      {
+        "college_name": "Christopher C. Gibbs College of Architecture",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified. Students often seek collaborative spaces for projects.",
+        "student_archetype": "Creative, detail-oriented, collaborative problem-solvers with a passion for design, aesthetics, and spatial concepts. Often highly dedicated to their studio work.",
+        "strategic_fit_advice": "Apply if you have a strong portfolio, an interest in innovative design, and a desire to contribute to shaping built environments. Seek out university housing with good study spaces and proximity to design studios."
+      },
+      {
+        "college_name": "College of Allied Health",
+        "housing_profile": "Students generally reside in university-wide housing options in Norman during their initial undergraduate years. Many programs are at the Health Campus in Oklahoma City for later stages.",
+        "student_archetype": "Compassionate, scientifically-minded, service-oriented individuals committed to improving health outcomes and patient care. Possess strong academic foundations in science and a desire to help others.",
+        "strategic_fit_advice": "Suitable for students with a strong interest in healthcare professions beyond medicine, who are dedicated to rigorous science coursework and patient-centered care. Consider housing that offers quiet study environments."
+      },
+      {
+        "college_name": "College of Atmospheric and Geographic Sciences",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Inquisitive, analytical, and environmentally conscious students interested in Earth's systems, climate, weather phenomena, and spatial analysis. Often enjoy fieldwork and data interpretation.",
+        "strategic_fit_advice": "Apply if you are fascinated by the natural world, enjoy scientific inquiry, and are adept at data analysis. Look for housing options that support focused study and offer easy access to campus resources."
+      },
+      {
+        "college_name": "David L. Boren College of International Studies",
+        "housing_profile": "Students generally reside in university-wide housing options, though the college emphasizes global education and study abroad. Offers a unique 'small-liberal arts-like college experience' within the larger university.",
+        "student_archetype": "Globally minded, culturally curious, articulate individuals interested in international affairs, diplomacy, languages, and cross-cultural communication. Often politically engaged and eager for international experiences.",
+        "strategic_fit_advice": "Perfect for students passionate about global issues, diverse cultures, and impactful international careers. Explore study abroad programs and consider residential colleges for a tight-knit community."
+      },
+      {
+        "college_name": "Dodge Family College of Arts & Sciences",
+        "housing_profile": "As the largest college, its students reside across all university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Broadly curious, versatile, and intellectually open-minded individuals exploring a wide array of disciplines from humanities and social sciences to natural sciences. Often engaged in diverse extracurriculars.",
+        "strategic_fit_advice": "Ideal for students who are exploring various academic interests or pursuing a well-rounded liberal arts education. Any university housing option can be a good fit, depending on personal preference for social vs. quiet environments."
+      },
+      {
+        "college_name": "Gallogly College of Engineering",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified, though the college has numerous research facilities across campus.",
+        "student_archetype": "Analytical, logical, innovative problem-solvers with a strong aptitude for mathematics and science. Often collaborative and driven to design and build practical solutions.",
+        "strategic_fit_advice": "Strong STEM background required. Consider housing options with good study spaces and convenient access to engineering buildings and campus labs. The Residential Colleges could offer a supportive academic community."
+      },
+      {
+        "college_name": "Gaylord College of Journalism & Mass Communications",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Communicative, creative, curious storytellers with a strong interest in media, reporting, digital content, and public relations. Often socially engaged and active in campus media.",
+        "strategic_fit_advice": "Apply if you have a passion for communication, media, and engaging with diverse audiences. Any university housing can work, but consider proximity to Gaylord Hall if preferred."
+      },
+      {
+        "college_name": "Jeannine Rainbolt College of Education",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Passionate, empathetic, and dedicated individuals committed to teaching, learning, and fostering development in others. Often possess strong leadership and interpersonal skills.",
+        "strategic_fit_advice": "Ideal for students with a desire to shape future generations and a commitment to educational excellence. Seek housing that offers a supportive community environment."
+      },
+      {
+        "college_name": "Michael F. Price College of Business",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Ambitious, strategic, and analytical thinkers interested in economics, finance, marketing, and management. Often entrepreneurial and career-focused, seeking networking opportunities.",
+        "strategic_fit_advice": "Strong academic record is beneficial. Any university housing is suitable, but consider options that facilitate networking or group study for collaborative projects typical in business programs."
+      },
+      {
+        "college_name": "Weitzenhoffer Family College of Fine Arts",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Creative, expressive, and dedicated artists, musicians, dancers, and actors. Possess strong discipline, a passion for their craft, and often seek opportunities for performance and exhibition.",
+        "strategic_fit_advice": "Apply if you have demonstrable talent and passion in a fine arts discipline. Seek housing that provides a balance between collaborative creative spaces and quiet areas for practice or focused work."
+      },
+      {
+        "college_name": "School of Aviation",
+        "housing_profile": "Students generally reside in university-wide housing options. No specific college-dedicated dorms were identified.",
+        "student_archetype": "Disciplined, detail-oriented, and technically inclined individuals with a strong interest in flight, aviation operations, and aerospace. Often highly motivated and focused on career preparation.",
+        "strategic_fit_advice": "Ideal for those committed to a career in aviation. Focus on academic rigor and look for housing that supports a disciplined study schedule."
+      }
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "OU Application",
+      "Common Application",
+      "Apply Coalition with Scoir"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Gives priority consideration for admission, housing, financial aid, scholarships, and enrollment."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "Final Admission Deadline for Fall 2026."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All (Undergraduate Freshman)",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One essay (250-650 words) as part of the Common Application, responding to one of seven prompts. Additionally, for scholarship consideration, two supplemental scholarship questions are required, and a third major-specific question may be optional, all to be answered in 650 words or less."
+      },
+      {
+        "target_program": "Music (Undergraduate)",
+        "requirement_type": "Audition",
+        "deadline": "Applications to the School of Music are due 2 weeks prior to chosen audition date. University application deadline for priority scholarship consideration: December 15. Final university application deadline: February 1.",
+        "details": "A live audition is preferred, but a video/audio recording is acceptable if long-distance travel is impossible (accepted until May 1). Audition programs vary by instrument/major (e.g., Piano Major requires two, preferably three, contrasting pieces performed from memory, including specific Baroque, Classical, and Romantic era composers). Students must first apply to the University of Oklahoma and be accepted before applying and auditioning for the School of Music."
+      },
+      {
+        "target_program": "Music (Graduate)",
+        "requirement_type": "Audition",
+        "deadline": "Fall admission: February 1. Spring admission: October 1. Summer admission: February 1.",
+        "details": "Prospective students must apply to the OU Graduate College online. Audition dates, deadlines, and required materials vary depending on the specific degree program and area (e.g., Brass, Composition, Musicology, Percussion, Strings, Woodwinds). Graduate admissions typically require a bachelor's degree in music or equivalent, transcripts, resume, personal statement, and three letters of recommendation. Auditions and/or other practical application materials are required as appropriate to the intended degree."
+      },
+      {
+        "target_program": "Architecture (Graduate - Master of Architecture)",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "Required for graduate programs. The portfolio demonstrates the quality of work in design projects, complexity in architectural projects regarding systems integration and structures. It is part of the overall application which includes a minimum 3.25 GPA, three letters of recommendation, a writing sample, and a letter of intent."
+      },
+      {
+        "target_program": "Architecture (Undergraduate Transfer)",
+        "requirement_type": "Portfolio",
+        "deadline": "Recommended by July 31 for domestic applicants to ensure registration for Fall classes.",
+        "details": "Required if significant coursework in architecture or other visual courses has been completed, to determine appropriate studio placement. Portfolios must include work from all relevant art and architecture courses, including recently completed ones. Submissions are electronic only (PDF format, maximum 20 MB). The portfolio should demonstrate creativity, ingenuity, and problem-solving skills, arranged by course with labels including course number and title. Each course should have a syllabus (description, weekly outline, assignments, textbooks). Process work (sketches, study models) is encouraged in addition to final work."
+      },
+      {
+        "target_program": "Musical Theatre (Undergraduate)",
+        "requirement_type": "Audition (Prescreen & Callback)",
+        "deadline": "Early deadline for prescreen applications (November/December callbacks): October 24. Final day to submit prescreen applications for other callback dates: December 1. Final day to submit university application for academic scholarship: December 15. Final university application deadline: February 1.",
+        "details": "A three-step process: University application, prescreen application, and callback audition. Prospective students upload applications, materials, and media submissions via GetAcceptd. All students must audition or interview on campus to be officially accepted."
+      },
+      {
+        "target_program": "Dance (Ballet Performance B.F.A.)",
+        "requirement_type": "Audition (Video Submission & In-Person)",
+        "deadline": "Video submission deadline: September 8, 2025. Notification of video screening results: September 19, 2025. Live/In-person Campus Audition: October 18, 2025.",
+        "details": "Audition includes an initial video submission for screening, followed by an invitation to a live/in-person campus audition for those selected. Dress code applies for the in-person audition (black leotard, pink/skin tone tights, ballet technique shoes for women; white t-shirt, black tights, ballet technique shoes for men). Auditions are held at the OU School of Dance."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Geographical residence",
+        "State residency"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Emphasis on intellectual curiosity, integrity, maturity, and commitment to serving communities beyond academic achievement."
+    },
     "essay_prompts": [
       {
-        "prompt": "OU encourages students to be leaders and change-makers. How will you leverage your OU experience to make an impact?",
-        "word_limit": "250 words",
-        "type": "Leadership",
+        "prompt": "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+        "word_limit": "250-650 words",
+        "type": "Personal (Common App)",
+        "required": true,
+        "brainstorming_questions": [
+          "What aspect of your identity or background has most profoundly shaped who you are today?",
+          "Is there a unique talent or interest you possess that isn't evident elsewhere in your application?",
+          "What is a story from your life that absolutely needs to be told for the admissions committee to understand you better?",
+          "How has this background, identity, interest, or talent influenced your perspective or decision-making?",
+          "What specific experience or moment best illustrates the significance of this aspect of yourself?"
+        ]
+      },
+      {
+        "prompt": "The University of Oklahoma believes strongly in educating leaders of communities in Oklahoma, as well as across the country and the world. Please share your leadership experiences and why they are important to you.",
+        "word_limit": "650 words or less",
+        "type": "Leadership, Why This School (Scholarship)",
         "required": false,
         "brainstorming_questions": [
-          "Thinking about the specific mission and values of OU, which of its leadership or change-making initiatives or opportunities resonates most deeply with you, and why?",
-          "Beyond your academic pursuits, what specific skills or passions do you possess that you see aligning with OU's commitment to 'impact,' and how might you nurture those at OU?",
-          "Imagine yourself as a change-maker at OU a few years from now. What tangible problem within the OU community or the wider Oklahoma context are you most driven to solve, and what initial steps might you take to address it?",
-          "Reflect on a time you've felt inspired by a leader or a change-maker in your own life. What qualities did they possess, and how do you envision cultivating those same qualities through your OU experience?",
-          "OU's motto is 'Progress, in pursuit of excellence.' What does 'progress' mean to you in the context of making an impact, and what specific OU resources or connections will be essential for you to drive that progress?"
+          "Beyond a formal title, when have you taken initiative to guide or inspire others?",
+          "What specific challenge did you face as a leader, and what was the outcome?",
+          "How did your leadership impact a group, team, or community?",
+          "What personal growth did you experience through a particular leadership role?",
+          "How do your leadership experiences align with the University of Oklahoma's emphasis on community leadership?"
+        ]
+      },
+      {
+        "prompt": "The University of Oklahoma is home to a vibrant, diverse and compassionate University community that is often referred to as “the OU family.” Please describe your cultural and community service activities and why you chose to participate in them.",
+        "word_limit": "650 words or fewer",
+        "type": "Community, Personal, Why This School (Scholarship)",
+        "required": false,
+        "brainstorming_questions": [
+          "What community or cultural activity has been most personally meaningful to you and why?",
+          "Describe a specific instance where your involvement in a community or cultural activity made a tangible difference.",
+          "How have your cultural or community service activities broadened your understanding of others or the world?",
+          "What values or lessons have you gained from these experiences?",
+          "How do you envision contributing to the 'OU family' based on your past community involvement?"
+        ]
+      },
+      {
+        "prompt": "What is your career area of interest, and why do you have a desire to work in this particular field?",
+        "word_limit": "650 words or less",
+        "type": "Major, Career Goals (Scholarship)",
+        "required": false,
+        "brainstorming_questions": [
+          "When did your interest in this career area first spark, and what initially drew you to it?",
+          "Have you had any personal experiences, mentors, or academic exposures that solidified this interest?",
+          "What specific problems or questions within this field do you find most compelling and wish to address?",
+          "What impact do you hope to make or what contributions do you envision yourself making in this career?",
+          "How do you plan to explore and deepen your understanding of this field at the University of Oklahoma?"
+        ]
+      },
+      {
+        "prompt": "Please briefly explain your meaningful international experience.",
+        "word_limit": "100 words",
+        "type": "Activity, Personal",
+        "required": "conditionally required (if applicant indicates international experience)",
+        "brainstorming_questions": [
+          "What was the most significant cultural insight you gained during your international experience?",
+          "How did this experience challenge your prior assumptions or broaden your perspective?",
+          "Describe one specific moment or interaction that made this international experience 'meaningful' to you.",
+          "What skills or qualities did you develop or enhance as a result of this experience?",
+          "How might this international experience influence your contributions to the University of Oklahoma's diverse community?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_oklahoma_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if not set on highly competitive fields like Computer Science or Engineering.",
+      "Consider starting as undeclared, particularly through University College, to explore options.",
+      "Research major-specific admission requirements and competitiveness before applying.",
+      "Utilize OU's "My Majors Assessment" and academic advising services for guidance."
+    ],
+    "college_ranking_tactics": [
+      "Compare specific program reputation and resources, not just overall university prestige.",
+      "Evaluate college-specific career services and post-graduation outcomes.",
+      "Examine undergraduate research and experiential learning opportunities within the department.",
+      "Consider the academic curriculum and general education requirements of the chosen college."
+    ],
+    "alternate_major_strategy": {
+      "alternate_major_strategy": "The University of Oklahoma is a direct admission institution, meaning students are admitted for the specific major they apply for initially. Therefore, an 'alternate major strategy' primarily involves changing your major after admission. This process requires reviewing the admission requirements of the desired new college and major. For freshmen, major change requests can be submitted through the OU Bound portal, with decisions typically provided within 1-2 business days, and a deadline of May 1 for Fall 2025 entry. Students currently in University College must consult an academic counselor before changing majors, while those in a degree-granting college should go to the advising office of the new college.",
+      "internal_transfer_difficulty": "Internal transfer, or changing majors, at the University of Oklahoma involves meeting the specific admission requirements of the college and major to which a student wishes to transfer. The process necessitates review and acceptance by the new college, and for some programs, like those at OU Health Sciences Center, requires a formal change request form with signatures from both accepting and releasing colleges. This structured process and the need to meet specific admission criteria imply that transferring into competitive or impacted majors can be difficult and is not guaranteed."
+    },
+    "essay_tips": [
+      "Show, Don't Just Tell with Detailed Examples: Instead of broadly stating your qualities or experiences, use specific anecdotes and concrete examples to illustrate your leadership, cultural, or community service activities. This allows admissions to truly understand your impact and what kind of leader or community member you are.",
+      "Highlight Personal Growth and Impact: When discussing your experiences, elaborate on how they have shaped you as a person and what challenges you faced and overcame. Also, emphasize the positive influence your actions had on your community or group.",
+      "Connect Your Experiences to Future Goals and OU's Community: Link your past involvement to your aspirations and explicitly articulate how you plan to contribute to the "OU family" or align with the university's mission to educate leaders. For career-focused essays, explain when your interest began, relevant experiences, and the impact you hope to achieve.",
+      "Go Beyond Your Resume: Use the essay as an opportunity to reveal new facets of your personality, motivations, and insights that might not be apparent from your resume or activity list. Avoid simply listing accomplishments."
+    ],
+    "red_flags": [
+      "Significant Grade Decline in Senior Year: While academic struggles in earlier high school years can potentially be overcome with strong improvement, a noticeable drop in grades during your junior or senior year can be a red flag, as the University of Oklahoma conducts a holistic review of academic coursework and grades.",
+      "Generic or Uninspired Essays: The University of Oklahoma reviews personal essays, and some programs may even require them. A generic essay that lacks personal insight or doesn't clearly demonstrate your interest in OU can be a missed opportunity to stand out.",
+      "Listing Activities Without Depth or Impact: While extracurricular activities are important for showcasing your interests and commitments, simply listing them without elaborating on your meaningful involvement, leadership, or the impact you've made can be a red flag.",
+      "Submitting Poor or Uninformative Letters of Recommendation (if applicable): Although letters of recommendation may be optional, if you choose to submit them, ensure they are from teachers or counselors who know you well and can speak genuinely about your strengths and character. Vague or unenthusiastic letters can fail to enhance your application.",
+      "Incomplete or Inaccurate Application Information: Failing to provide all required official documents, such as transcripts, or inaccurately reporting academic history (e.g., not listing all colleges attended) can lead to delays in admission processing, denial, or even rescission of admission."
+    ],
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Leadership in meaningful extracurriculars and community involvement",
+      "Authentic and reflective essays",
+      "Demonstrated engagement and passion"
+    ]
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 15135.0,
+        "total_coa": 38999.0,
+        "housing": 15798.0
+      },
+      "out_of_state": {
+        "tuition": 33255.0,
+        "total_coa": 63099.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 7955.0,
+    "average_merit_aid": 3273.0,
+    "percent_receiving_aid": 69.6,
+    "meets_full_need": false,
+    "scholarships": [
+      {
+        "name": "Oklahoma State Regents' Academic Scholars Program Award",
+        "type": "Merit",
+        "amount": "$6,500/year for 4 years (cash stipend) + 100% Resident Tuition Waiver for 5 years",
+        "deadline": "May 15 (for Academic Scholars Application, if offered prior to May 1)",
+        "benefits": "Covers resident tuition, cash stipend, can be used for graduate/professional programs if funds remain after undergraduate degree, includes a $1,000 First-Year Associates Scholarship and a $1,000 Research & Study Abroad Stipend.",
+        "application_method": "Automatic consideration with admission application for top ACT/SAT scores; separate application required if offered prior to May 1."
+      },
+      {
+        "name": "National Merit Finalist Scholarship (Non-Resident)",
+        "type": "Merit",
+        "amount": "$153,450 (total over 4 years)",
+        "deadline": "Automatic consideration with admission application (must name OU as college choice by April 30 to upgrade from Semifinalist package)",
+        "benefits": "Significant comprehensive scholarship for National Merit Finalists.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "University Scholarship (Non-Resident)",
+        "type": "Merit",
+        "amount": "$52,000 ($13,000 x 4 years)",
+        "deadline": "December 15 (for admission application)",
+        "benefits": "Awarded based on academic qualifications (e.g., 28 ACT or 1300-1320 SAT and 3.5 GPA for Fall 2026 entry).",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Academic Achievement Award (Non-Resident)",
+        "type": "Merit",
+        "amount": "$48,000 ($12,000 x 4 years)",
+        "deadline": "December 15 (for admission application)",
+        "benefits": "Awarded based on academic qualifications (e.g., 26-27 ACT or 1230-1290 SAT and 3.5 GPA for Fall 2026 entry).",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Honors College Scholarship Application (Current Students)",
+        "type": "Merit/Need-Based",
+        "amount": "Varies (e.g., up to $1,200 for Juanita M. Allison scholarship, up to $500 for Katharine J. Gross Memorial Scholarship)",
+        "deadline": "February 1",
+        "benefits": "Supports Honors students with financial need, travel for conferences, or specific academic pursuits; opportunities for research and enrichment.",
+        "application_method": "Separate Application through the Centralized Academic Scholarship Hub (CASH)"
+      },
+      {
+        "name": "International Student Emergency Relief Scholarship",
+        "type": "Need",
+        "amount": "Up to 3/4 of the amount needed, up to $800",
+        "deadline": "Rolling basis",
+        "benefits": "Emergency assistance for international students facing unforeseen financial obligations due to sudden illness, hospitalization, or other emergencies.",
+        "application_method": "Separate Application through the Office of Global Engagement (awarded once per academic career)"
+      },
+      {
+        "name": "Crimson Commitment",
+        "type": "Need",
+        "amount": "Covers tuition and average fees for four years",
+        "deadline": "February 1 (for OU admission application), March 1 (FAFSA)",
+        "benefits": "Guarantees scholarships and grants to cover tuition and average fees for Oklahoma residents who qualify for Oklahoma's Promise.",
+        "application_method": "FAFSA and application for admission by deadlines, qualify for Oklahoma's Promise"
+      },
+      {
+        "name": "Award of Excellence",
+        "type": "Merit",
+        "amount": "$16,000 ($4,000 x 4 years) for residents or $68,000 ($17,000 x 4 years) for non-residents.",
+        "eligibility": "31 ACT or 1390 SAT (or greater) and 3.5 GPA.",
+        "application_method": "Automatic Consideration (by applying for admission by December 15). No additional application is required for OU's merit-based awards."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "The University of Oklahoma awards credit for Advanced Placement (AP) exam scores of 3 or higher, in accordance with Oklahoma House Bill 2750 which states that institutions shall not require a score higher than 3 to award credit. While a score of 3 grants specific course credit for many exams, scores of 4 or 5 may grant more advanced placement or additional credit hours for some subjects.",
+      "exceptions": [
+        "Scores of 1 and 2 are not acceptable for credit.",
+        "There are no specific AP exams listed for which the University of Oklahoma explicitly requires a score higher than 3 to receive *any* credit."
+      ],
+      "usage": "AP credits can be used to satisfy equivalent University of Oklahoma courses. The amount of prior learning assessment credit that can be applied toward a degree is subject to OU graduation requirements and the policies of the degree-recommending college, with the dean determining how this credit applies toward a degree."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with a score of 4+ grant credit",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": "Credits from regionally accredited institutions are generally accepted if a grade of C or better is earned in the course. Course equivalencies are determined by departmental review. A maximum of 60 credits from two-year colleges and a total of 90 transfer credits may be applied toward a bachelor's degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Leadership in meaningful extracurriculars and community involvement",
+      "Authentic and reflective essays",
+      "Demonstrated engagement and passion"
+    ],
+    "essay_tips": [
+      "Show, Don't Just Tell with Detailed Examples: Instead of broadly stating your qualities or experiences, use specific anecdotes and concrete examples to illustrate your leadership, cultural, or community service activities. This allows admissions to truly understand your impact and what kind of leader or community member you are.",
+      "Highlight Personal Growth and Impact: When discussing your experiences, elaborate on how they have shaped you as a person and what challenges you faced and overcame. Also, emphasize the positive influence your actions had on your community or group.",
+      "Connect Your Experiences to Future Goals and OU's Community: Link your past involvement to your aspirations and explicitly articulate how you plan to contribute to the "OU family" or align with the university's mission to educate leaders. For career-focused essays, explain when your interest began, relevant experiences, and the impact you hope to achieve.",
+      "Go Beyond Your Resume: Use the essay as an opportunity to reveal new facets of your personality, motivations, and insights that might not be apparent from your resume or activity list. Avoid simply listing accomplishments."
+    ],
+    "red_flags": [
+      "Significant Grade Decline in Senior Year: While academic struggles in earlier high school years can potentially be overcome with strong improvement, a noticeable drop in grades during your junior or senior year can be a red flag, as the University of Oklahoma conducts a holistic review of academic coursework and grades.",
+      "Generic or Uninspired Essays: The University of Oklahoma reviews personal essays, and some programs may even require them. A generic essay that lacks personal insight or doesn't clearly demonstrate your interest in OU can be a missed opportunity to stand out.",
+      "Listing Activities Without Depth or Impact: While extracurricular activities are important for showcasing your interests and commitments, simply listing them without elaborating on your meaningful involvement, leadership, or the impact you've made can be a red flag.",
+      "Submitting Poor or Uninformative Letters of Recommendation (if applicable): Although letters of recommendation may be optional, if you choose to submit them, ensure they are from teachers or counselors who know you well and can speak genuinely about your strengths and character. Vague or unenthusiastic letters can fail to enhance your application.",
+      "Incomplete or Inaccurate Application Information: Failing to provide all required official documents, such as transcripts, or inaccurately reporting academic history (e.g., not listing all colleges attended) can lead to delays in admission processing, denial, or even rescission of admission."
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Oklahoma has a moderately selective admissions process with an acceptance rate generally around 77%.",
+        "implication": "Applicants should focus on demonstrating strong academic achievement, including a competitive GPA and rigorous coursework, alongside well-rounded extracurricular engagement. Applying Early Action by November 1st can also provide a strategic advantage for admission and scholarships."
+      },
+      {
+        "category": "Academic",
+        "insight": "OU is a leading public research university offering over 170 diverse baccalaureate programs and is recognized for 'very high research activity'. It boasts nationally recognized programs, particularly in business fields like energy management, and features an Honors College for enriched academic experiences.",
+        "implication": "Prospective students should articulate specific academic interests, highlight any prior research experience or advanced coursework, and express how they would leverage OU's extensive programs and research opportunities in their application essays. Demonstrating intellectual curiosity and a drive for academic rigor will be beneficial."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of Oklahoma cultivates a strong 'Sooner Family' community, characterized by compassion and civility, with over 500 student organizations contributing to a vibrant campus life.",
+        "implication": "Applicants should highlight their involvement in community service, leadership roles, and collaborative projects. Demonstrating a desire to contribute positively to a close-knit, active, and diverse campus environment will resonate well with the admissions committee."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Oklahoma offers a vibrant and inclusive social atmosphere with a strong sense of community, fostered by over 400 student organizations and a significant Greek life. Students generally find it easy to make friends and feel connected, with numerous events and activities available.",
+      "transportation_impact": "The University of Oklahoma campus is described as beautiful and safe for walking, with everything in Norman being within reasonable driving distance. Norman itself is considered a college town, and Oklahoma City is approximately thirty minutes away, offering additional social and cultural opportunities.",
+      "research_impact": "The University of Oklahoma provides strong undergraduate research opportunities across various disciplines. Programs such as the Undergraduate Research Opportunities Program (UROP) and the Honors Research Assistant Program (HRAP) offer financial support and mentorship for scholarly and creative projects. The BME Summer Scholars Program also provides intensive hands-on research experience for students in biomedical engineering and related fields. The university has an Undergraduate Research Opportunities Database with over 100 opportunities, and also offers support through Undergraduate Research and Creative Activity (UReCA) initiatives."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 59300,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 46800,
+    "notes": "Median earnings 10 years after enrollment and 6 years after enrollment are sourced from the U.S. Department of Education College Scorecard and Department of Treasury for the University of Oklahoma Norman Campus. A specific employment rate 2 years after graduation for the University of Oklahoma was not found in the available search results. Information from the University of Oklahoma Career Center typically covers outcomes up to six months post-graduation. General employment outcomes for Oklahoma public institutions show a 1-year total employment rate of 87.2% and a 5-year total employment rate of 75.1% for all fields of study. [cite: 10 of previous turn]",
+    "top_employers": [
+      "Goldman Sachs",
+      "Amazon",
+      "Deloitte",
+      "Microsoft",
+      "KPMG",
+      "EY (Ernst & Young)",
+      "Capital One",
+      "Boeing"
+    ],
+    "grad_school_rate": 21.6,
+    "federal_loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.0,
+    "graduation_rate_4_year": 58.0,
+    "graduation_rate_6_year": 75.0
+  }
 }

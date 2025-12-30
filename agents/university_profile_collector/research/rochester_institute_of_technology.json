@@ -1,62 +1,81 @@
 {
-  "university_profile": {
-    "_id": "rochester_institute_of_technology",
-    "metadata": {
-      "official_name": "Rochester Institute of Technology",
-      "location": {
-        "city": "Rochester",
-        "state": "NY",
-        "type": "Private"
+  "_id": "rochester_institute_of_technology",
+  "metadata": {
+    "official_name": "Rochester Institute of Technology",
+    "location": {
+      "city": "Henrietta",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Rochester Institute of Technology (RIT) is a private research university recognized for its distinguished programs in technology, arts, and design. It is highly regarded for its robust cooperative education program, providing extensive experiential learning opportunities, and is also home to the National Technical Institute for the Deaf, emphasizing its commitment to accessibility and diverse learning environments.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "RIT seeks intellectually curious, innovative, and driven students who demonstrate a passion for hands-on learning, problem-solving, and making an impact. Admissions values academic rigor, extracurricular engagement, and a genuine interest in RIT's unique blend of technology, arts, and design.",
+    "us_news_rank": 88,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While RIT is a somewhat selective institution, applying Early Decision (ED) offers a significant advantage, particularly for competitive majors, due to a smaller applicant pool and higher acceptance rates for ED applicants.",
+        "implication": "Applicants for whom RIT is a top-choice university should strongly consider applying through the Early Decision I or II plans to maximize their chances of admission and receive an earlier decision."
       },
-      "last_updated": "2025-12-20",
-      "report_source_files": [
-        "https://www.rit.edu/admissions/freshman/application-process",
-        "https://www.usnews.com/best-colleges/rit-2928"
-      ]
-    },
-    "strategic_profile": {
-      "executive_summary": "Rochester Institute of Technology (RIT) is a premier private research university globally recognized for its leadership in experiential learning through one of the world's oldest and largest co-op programs. The university operates at the unique intersection of technology, the arts, and design, hosting the National Technical Institute for the Deaf (NTID).",
-      "market_position": "Career-Focused Private Powerhouse",
-      "admissions_philosophy": "Holistic review (Test-Optional for 2026)",
-      "us_news_rank": 88,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Acceptance rates have shifted from 71.4% to 66.9% in the last two cycles as application volume increased by 15%.",
-          "implication": "High-demand programs like Game Design and Computer Science require Early Decision applications to remain competitive."
-        },
-        {
-          "category": "Market Value",
-          "insight": "RIT is ranked #5 nationally for Co-ops/Internships and #42 for Innovation.",
-          "implication": "The university is a high-ROI choice for students prioritizing immediate industry placement over traditional liberal arts prestige."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Project-focused and inclusive; social life revolves around 300+ student clubs, gaming (ranked #3 for Game Design), and unique traditions like 'FreezeFest'. The culture is notably inclusive of the deaf and hard-of-hearing community.",
-        "transportation_impact": "The campus is a suburban enclave; a new 2025 partnership with WeDriveU and the TripShot app has improved shuttle reliability to off-campus housing like Park Point and retail hubs, though a car remains preferred for accessing downtown Rochester.",
-        "research_impact": "Aggressive expansion into AI and Cybersecurity, with $105M in sponsored research awards in FY2025. Industry ties are deeply integrated into the curriculum, often through corporate-sponsored capstone projects."
+      {
+        "category": "Academic",
+        "insight": "RIT distinguishes itself with a robust, career-focused curriculum, particularly in STEM and arts programs, underpinned by a highly-ranked cooperative education (co-op) program that provides extensive hands-on, paid work experience.",
+        "implication": "Prospective students should emphasize their practical experiences, relevant projects, and career aspirations in their applications. Highlighting how RIT's co-op program and interdisciplinary approach align with their educational and professional goals will be crucial."
+      },
+      {
+        "category": "Culture",
+        "insight": "RIT cultivates a unique and inclusive community, notably through the presence of the National Technical Institute for the Deaf (NTID), fostering a diverse, supportive, and collaborative campus environment.",
+        "implication": "Applicants should showcase their experiences with diversity, teamwork, and collaborative projects. Demonstrating how they would contribute to and thrive within RIT's inclusive and \"nerdy\" (in a positive, passionate sense) culture will be beneficial in essays and recommendations."
       }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 67.0,
-      "in_state_acceptance_rate": 68.8,
-      "out_of_state_acceptance_rate": 78.2,
-      "international_acceptance_rate": 37.5,
-      "transfer_acceptance_rate": 41.0,
-      "admits_class_size": 18682,
+    ],
+    "campus_dynamics": {
+      "social_environment": "Rochester Institute of Technology (RIT) fosters a campus culture that is described as \"nerdy\" and supportive, with a diverse and welcoming community where students feel accepted regardless of their background. Campus life is generally considered fun, offering a wide array of clubs, leadership opportunities, and events that promote connection. The overall atmosphere is seen as supportive, diverse, and innovative, attracting students who are keen to explore and advance in technology and design fields. While it may not be known for a traditional party scene, a supportive and friendly environment exists for those who take the initiative to engage.",
+      "transportation_impact": "RIT provides extensive shuttle bus services for transportation across campus and to local shopping areas. These shuttles also connect the campus to various off-campus housing complexes like Park Point and The Province. For wider travel, students can utilize RIT shuttles to access Rochester's public bus system, the Regional Transit Service (RTS). However, some students note that the campus's suburban location can feel somewhat limiting for off-campus entertainment without personal transportation, and having a car is often recommended for exploring areas beyond campus due to the unreliability of public buses for broader use.",
+      "research_impact": "RIT offers robust undergraduate research opportunities across all of its colleges, allowing students to engage in hands-on projects with faculty mentors. Students can gain valuable research skills typically found in graduate-level studies at other universities. The university actively supports these endeavors through initiatives like the annual Undergraduate Research Symposium and participation in the National Science Foundation's Research Experience for Undergraduates (REU) programs. Furthermore, RIT is recognized for its strong experiential learning model, including cooperative education programs and internships, which are highly valued by students and contribute to high job placement rates post-graduation."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 66.93,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "test_policy_details": "Rochester Institute of Technology (RIT) is test-optional for all undergraduate programs for the 2024-2025 application cycle and beyond, meaning submitting SAT or ACT scores is not required. Applicants can choose whether or not to include their test scores. RIT permits self-reporting of scores and will superscore the SAT and/or ACT if multiple test results are provided. For applicants to STEM (Science, Technology, Engineering, or Math) programs, including the optional ACT Science section is recommended if ACT scores are submitted.",
+      "admits_class_size": 18682,
+      "transfer_acceptance_rate": 41.0,
       "early_admission_stats": [
         {
           "plan_type": "ED",
           "applications": 1822,
           "admits": 1326,
-          "acceptance_rate": 72.8,
-          "class_fill_percentage": 25.0
+          "acceptance_rate": 73.0,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
-      ]
+      ],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 37.4
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 31534,
+        "admits_total": 21106,
+        "enrolled_total": 3435,
+        "acceptance_rate_overall": 66.93,
+        "yield_rate": 16.28,
+        "notes": "The number of RIT applicants increased by 15.01% (3,642 applicants) compared to the previous year. Compared to the previous year, it became slightly more competitive to gain admission to RIT in 2025."
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
@@ -65,682 +84,1318 @@
         "enrolled_total": 3040,
         "acceptance_rate_overall": 66.98,
         "yield_rate": 16.27,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 2556,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 100,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist admissions saw a sharp decline in Fall 2024 compared to previous cycles; yield reached a historical low of 16.3%."
+        "notes": "The overall acceptance rate for the application year 2024 stands at 66.98%, with 27,892 applicants and 18,682 admissions. This figure shows a decline from 71.1% in 2023 and 66.95% in 2022, indicating a competitive trend as the number of applicants has increased significantly over the years.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
-        "applications_total": 24071,
-        "admits_total": 17123,
-        "enrolled_total": 2932,
-        "acceptance_rate_overall": 71.13,
-        "acceptance_rate_in_state": 68.75,
-        "acceptance_rate_out_of_state": 78.15,
-        "yield_rate": 17.12,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 1583,
-          "accepted_spots": 453,
-          "admitted_from_waitlist": 363,
-          "waitlist_admit_rate": 80.13,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Extremely high waitlist admission rate (80.1%) of students who accepted a place on the list."
+        "applications_total": 24269,
+        "admits_total": 17328,
+        "enrolled_total": 3050,
+        "acceptance_rate_overall": 71.4,
+        "yield_rate": 17.59,
+        "notes": "In 2023, the undergraduate acceptance rate of Rochester Institute of Technology was 71.4% (17,328 admissions from 24,269 applications). This is higher than the acceptance rate of 2022, which was 67.2%. Rochester Institute of Technology has an overall enrollment yield of 17.6% for 2023.",
+        "offered_spots": 1583,
+        "accepted_spots": 453,
+        "admitted_from_waitlist": 363,
+        "waitlist_admit_rate": 80.13,
+        "is_waitlist_ranked": false
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 23763,
-        "admits_total": 15909,
-        "enrolled_total": 3089,
-        "acceptance_rate_overall": 66.95,
-        "yield_rate": 19.42,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": 2115,
-          "accepted_spots": 786,
-          "admitted_from_waitlist": 210,
-          "waitlist_admit_rate": 26.71,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist activity returned to moderate levels compared to the following year's spike."
+        "applications_total": 23967,
+        "admits_total": 16106,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 67.2,
+        "yield_rate": null,
+        "notes": "The acceptance rate in 2022 was 67.2%. The number of applicants grew by 1.22% between 2022 and 2023, while admissions grew by 7.59%."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 21923,
+        "admits_total": 15645,
+        "enrolled_total": 3355,
+        "acceptance_rate_overall": 71.36,
+        "yield_rate": 21.45,
+        "notes": "For the Fall 2021 enrollment season, RIT received a total of 21,923 applications and admitted 15,645 students, with 3,355 students choosing to enroll. The overall acceptance rate was 71% and the yield rate was 21%."
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "4.10-4.40",
-        "unweighted_middle_50": "3.80-4.00",
-        "average_weighted": 4.15,
-        "percentile_25": "3.60",
-        "percentile_75": "4.00",
-        "notes": "RIT frequently reports academic performance on a 100-point scale; average for incoming class is approx 93.8-94.0. 68% have 3.75+."
+        "weighted_middle_50": "Data not consistently available in X.XX-X.XX format exceeding 4.0. RIT reports middle 50% on a 100-point scale, varying by college (e.g., 91-98).",
+        "unweighted_middle_50": "Data not consistently available in X.XX-X.XX format. Average unweighted GPA is around 3.7.",
+        "average_weighted": "Approximately 4.18 (inferred, as average GPA on a 100-point scale is 93.8% or 93.4, and weighted GPAs can exceed 4.0).",
+        "percentile_25": "Data not consistently available in X.XX format. On a 100-point scale, the 25th percentile for accepted applicants varies by college, with lows around 91.",
+        "percentile_75": "Data not consistently available in X.XX format. On a 100-point scale, the 75th percentile for accepted applicants varies by college, with highs around 98.",
+        "notes": "RIT evaluates applicants through a holistic admission process, considering academic preparation, counselor recommendations, and personal career interests. A strong performance in a college preparatory program is expected, typically including 4 years of English, 3-4 years of mathematics, 2-3 years of science, and 3 years of social studies and/or history. RIT is test-optional. Weighted GPAs are considered, and an A in an AP class, for example, could count as a 5.0. [cite: 8 in previous turn] Most incoming freshmen graduate in the top quarter of their high school class."
       },
       "testing": {
-        "sat_composite_middle_50": "1300-1440",
-        "sat_reading_middle_50": "640-720",
-        "sat_math_middle_50": "640-740",
-        "act_composite_middle_50": "27-33",
-        "submission_rate": 43.0,
-        "policy_note": "Test-optional for most programs; some highly competitive programs strongly encourage submission."
+        "sat_composite_middle_50": "1280-1430",
+        "sat_reading_middle_50": "650-720",
+        "sat_math_middle_50": "650-740",
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 49.0,
+        "policy_note": "RIT is Test Optional for all undergraduate programs. RIT will superscore both the SAT and ACT if multiple test score results are provided."
       },
       "demographics": {
-        "first_gen_percentage": 19.0,
-        "legacy_percentage": 4.3,
-        "international_percentage": 4.0,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children. Percentages for RIT's first-generation and legacy students are not available in the provided search results.",
         "geographic_breakdown": [
           {
             "region": "New York",
-            "percentage": 44.0
+            "percentage": 45.0
           },
           {
-            "region": "Other US States",
+            "region": "Out-of-State (Domestic)",
             "percentage": 52.0
           },
           {
             "region": "International",
-            "percentage": 4.0
+            "percentage": 3.0
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 16374,
             "admits": 10916,
-            "acceptance_rate": 66.7,
-            "note": "64% of enrolled class."
+            "acceptance_rate": 66.67,
+            "note": "Data for the 2024-2025 academic year. These figures represent general admissions and are significantly different from the lower acceptance rates provided in the example output."
           },
           "women": {
             "applicants": 11507,
             "admits": 7742,
-            "acceptance_rate": 67.3,
-            "note": "36% of enrolled class."
+            "acceptance_rate": 67.28,
+            "note": "Data for the 2024-2025 academic year. These figures represent general admissions and are significantly different from the lower acceptance rates provided in the example output."
           },
-          "non_binary": {
-            "applicants": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "note": "92 enrolled students identified as 'Another Gender'."
-          }
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 64.1,
-          "black_african_american": 5.2,
-          "hispanic_latino": 11.5,
-          "asian": 7.8,
-          "native_american_alaskan": 0.17,
-          "pacific_islander": 0.07,
-          "two_or_more_races": 4.1,
-          "unknown": 3.3,
-          "non_resident_alien": 3.8
-        },
-        "religious_affiliation": "Not specified"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Golisano College of Computing and Information Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 35.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Demonstrate coding proficiency and advanced math (Calculus) early; Computer Science and Game Design are the most competitive programs.",
-          "housing_profile": "Home to Computer Science House (CSH), a nationally known interest house with its own server rooms and maker labs.",
-          "student_archetype": "High-tech 'nerds' and collaborative software architects",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 45.0,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [
-                "Pre-Calculus",
-                "Computer Science Principles"
-              ],
-              "weeder_courses": [
-                "CSCI 141 Computer Science I",
-                "CSCI 142 Computer Science II",
-                "CSCI 243 Mechanics of Programming"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "CSCI 141",
-                  "CSCI 142",
-                  "CSCI 243",
-                  "CSCI 250",
-                  "CSCI 251",
-                  "CSCI 261",
-                  "MATH 190"
-                ],
-                "total_units": 123
-              }
-            },
-            {
-              "name": "Game Design and Development",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 35.0,
-              "average_gpa_admitted": 3.85,
-              "notes": "Consistently ranked Top 5 nationally by Princeton Review."
-            },
-            {
-              "name": "Computing and Information Technologies",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 60.0,
-              "average_gpa_admitted": 3.5
-            },
-            {
-              "name": "Software Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 50.0,
-              "average_gpa_admitted": 3.8
-            },
-            {
-              "name": "Cybersecurity",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 55.0,
-              "average_gpa_admitted": 3.75
-            },
-            {
-              "name": "Human-Centered Computing",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "New Media Interactive Development",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Web and Mobile Computing",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Computing Exploration",
-              "degree_type": "Undeclared",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "Kate Gleason College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 40.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong grades in Physics and Calculus are non-negotiable; highlight hands-on project experience.",
-          "housing_profile": "Engineering House (SIH) provides 24/7 access to specialized tools and workshops.",
-          "student_archetype": "Practical builders and industrious problem-solvers",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 40.0,
-              "average_gpa_admitted": 4.0,
-              "prerequisite_courses": [
-                "Calculus",
-                "Physics"
-              ]
-            },
-            {
-              "name": "Computer Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 50.0,
-              "average_gpa_admitted": 3.85
-            },
-            {
-              "name": "Electrical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.7
-            },
-            {
-              "name": "Industrial Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true
-            },
-            {
-              "name": "Biomedical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true
-            },
-            {
-              "name": "Microelectronic Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "College of Art and Design",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 50.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Portfolio quality is paramount; focus on storytelling and technical versatility.",
-          "housing_profile": "House of the Arts (SIH) provides studio space on the floor.",
-          "student_archetype": "Artsy 'techies' and creative visionaries",
-          "majors": [
-            {
-              "name": "Film and Animation",
-              "degree_type": "B.F.A.",
-              "is_impacted": true,
-              "acceptance_rate": 30.0
-            },
-            {
-              "name": "Graphic Design",
-              "degree_type": "B.F.A.",
-              "is_impacted": true
-            },
-            {
-              "name": "Industrial Design",
-              "degree_type": "B.F.A.",
-              "is_impacted": true
-            },
-            {
-              "name": "Photography",
-              "degree_type": "B.F.A.",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "Saunders College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Highlight entrepreneurial ventures; the school leans heavily into technology-driven management.",
-          "housing_profile": "Business-focused students often utilize the Business District in the student union.",
-          "student_archetype": "Tech-savvy entrepreneurs and strategic thinkers",
-          "majors": [
-            {
-              "name": "Accounting",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Finance",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Supply Chain Management",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Management Information Systems",
-              "degree_type": "B.S."
-            }
-          ]
-        },
-        {
-          "name": "College of Health Sciences and Technology",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 55.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "The Physician Assistant BS/MS is extremely selective; significant clinical shadowing is expected.",
-          "housing_profile": "Wellness and health-focused floors are common.",
-          "student_archetype": "Career-focused clinicians and medical researchers",
-          "majors": [
-            {
-              "name": "Physician Assistant",
-              "degree_type": "B.S./M.S.",
-              "is_impacted": true,
-              "acceptance_rate": 15.0,
-              "average_gpa_admitted": 3.95,
-              "special_requirements": "Personal interview by invitation only."
-            },
-            {
-              "name": "Biomedical Sciences",
-              "degree_type": "B.S.",
-              "average_gpa_admitted": 3.7
-            },
-            {
-              "name": "Exercise Science",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Nutritional Sciences",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Diagnostic Medical Sonography",
-              "degree_type": "B.S.",
-              "is_impacted": true
-            }
-          ]
-        },
-        {
-          "name": "College of Science",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Showcase passion for undergraduate research; Imaging Science is a unique, world-renowned program.",
-          "housing_profile": "Traditional housing with close proximity to the Gosnell Hall laboratories.",
-          "student_archetype": "Inquisitive researchers and lab-focused specialists",
-          "majors": []
-        },
-        {
-          "name": "College of Engineering Technology",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students who prefer 'hands-on' application over theoretical engineering.",
-          "housing_profile": "Shares technical-interest housing with the College of Engineering.",
-          "student_archetype": "Application-driven makers and systems operators",
-          "majors": []
-        },
-        {
-          "name": "College of Liberal Arts",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Lean into the 'Liberal Arts at a Tech School' angle.",
-          "housing_profile": "International House (SIH) is popular for Liberal Arts students.",
-          "student_archetype": "Interdisciplinary thinkers and socially-conscious communicators",
-          "majors": []
-        },
-        {
-          "name": "National Technical Institute for the Deaf",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Unique to RIT; emphasize connection to the Deaf/HH community.",
-          "housing_profile": "Integrated housing with hearing students using advanced visual technologies.",
-          "student_archetype": "Resilient, community-oriented professionals",
-          "majors": []
-        },
-        {
-          "name": "School of Individualized Study",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 0.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Requires a clear rationale for why existing majors don't fit.",
-          "housing_profile": "Diverse housing options; students spread across interest-based floors.",
-          "student_archetype": "Academic 'explorers' and customized-path builders",
-          "majors": []
+          "white": 53.5,
+          "black_african_american": 4.59,
+          "hispanic_latino": 8.02,
+          "asian": 10.6,
+          "native_american_alaskan": 0.14,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 4.78,
+          "unknown": 6.64,
+          "non_resident_alien": 11.69
         }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Certificate",
-        "Innovation Minor",
-        "Cybersecurity Certificate",
-        "Imaging Science Immersion"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "RIT Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision I",
-          "date": "2024-11-01",
-          "is_binding": true,
-          "notes": "Decision by mid-December; enrollment deposit due Jan 15."
-        },
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Non-binding; decision by late January."
-        },
-        {
-          "plan_type": "Early Decision II",
-          "date": "2025-01-01",
-          "is_binding": true,
-          "notes": "Decision by mid-January; enrollment deposit due Feb 15."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-01-15",
-          "is_binding": false,
-          "notes": "Decision by mid-March."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "deadline": "Aligned with admission plan",
-          "details": "No supplemental essays required for general admission."
-        },
-        {
-          "target_program": "Honors Program",
-          "requirement_type": "Essay",
-          "deadline": "Aligned with admission plan",
-          "details": "Short statement (150 words) on interest in the RIT Honors Program."
-        },
-        {
-          "target_program": "Art, Design, Film, and Animation",
-          "requirement_type": "Portfolio",
-          "deadline": "Aligned with admission plan",
-          "details": "Portfolio of original artwork required for admission to BFA programs."
-        },
-        {
-          "target_program": "Performing Arts (Scholarship)",
-          "requirement_type": "Audition",
-          "deadline": "2025-01-10",
-          "details": "Audition video required for scholarship consideration (music, dance, theatre, tech production)."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Personal Statement",
-          "Recommendations"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Talents",
-          "Character",
-          "Work Experience"
-        ],
-        "essay_importance": "Important",
-        "demonstrated_interest": "Important",
-        "interview_policy": "Recommended",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Minimal",
-        "specific_differentiators": "Emphasis on career-readiness and resilience; heavy weight on demonstrated interest."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to 'Exploration' programs for a higher admit rate and guaranteed pathway later.",
-        "Target less competitive technical majors like Industrial Engineering if GPA is below 75th percentile for CS.",
-        "Submit a portfolio even if not strictly required to demonstrate 'tinker' experience.",
-        "Apply Early Decision if RIT is the top choice; Mechanical Engineering fills 40% of slots via ED.",
-        "Research major-specific ranges as the overall rate is skewed by less competitive departments."
-      ],
-      "college_ranking_tactics": [
-        "Rank alternate majors in different RIT colleges to increase likelihood of qualification.",
-        "Prioritize 'Special Interest Houses' (CSH, Photo House) on housing for alumni networks.",
-        "Rank residence halls with air conditioning (Ellingson, Peterson, Gleason) higher.",
-        "Select a 'Learning Community' preference aligning with your intended major."
-      ],
-      "alternate_major_strategy": "If applying to CS, list Software Engineering or Cybersecurity as backups to maintain eligibility for the GCCIS sequence. For Engineering, list Engineering Technology as an alternate."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 59210,
-          "housing": 16142,
-          "total_coa": 78152
-        },
-        "out_of_state": {
-          "tuition": 59210,
-          "housing": 16142,
-          "total_coa": 78152
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 39904,
-      "average_merit_aid": 18804,
-      "percent_receiving_aid": 90.0,
-      "scholarships": [
-        {
-          "name": "RIT Presidential Scholarship",
-          "type": "Merit",
-          "amount": "$20,000 - $25,000",
-          "benefits": "Renewable for 4 years; recognition of exceptional academic performance",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "RIT Founders Scholarship",
-          "type": "Merit",
-          "amount": "$14,000 - $19,000",
-          "benefits": "Renewable for 4 years; based on academic and extracurricular leadership",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "RIT IB Diploma Scholarship",
-          "type": "Merit",
-          "amount": "$25,000",
-          "benefits": "Specific to students who earn the International Baccalaureate diploma",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "RIT Project Lead The Way (PLTW) Scholarship",
-          "type": "Merit/Departmental",
-          "amount": "$14,000",
-          "benefits": "Awarded to students who complete two or more PLTW courses in high school",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "RIT/FIRST Robotics Scholarship",
-          "type": "Merit/Talent",
-          "amount": "$14,000",
-          "benefits": "For students who participated on a high school FIRST Robotics team",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Say Yes to Education Scholarship",
-          "type": "Need/Merit",
-          "amount": "Full Tuition",
-          "benefits": "Covers remaining tuition after state and federal grants",
-          "application_method": "Separate Application"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Score of 3+ for Liberal Arts; 4+ for STEM",
-        "exceptions": [
-          "No credit for AP Bio in Biology, Biotech, or Biomed BS majors",
-          "No credit for AP Chem in Chemistry or Biochem BS majors",
-          "No credit for AP Physics 1/2/B in Engineering or Physics majors",
-          "AP Physics C: E&M grants no credit for Physics BS majors"
-        ],
-        "usage": "Satisfies gen ed, electives, and specific major prerequisites."
-      },
-      "ib_policy": {
-        "general_rule": "Higher Level (HL) exams with scores of 5+ generally grant credit.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "RIT Transfer Credit Equivalency Tool",
-          "Transferology"
-        ],
-        "restrictions": "75 percent transfer cap."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Strong performance in math and science",
-        "Application of Early Decision (ED) for oversubscribed programs",
-        "Evidence of an upward grade trend if early high school performance was inconsistent",
-        "A career-focused mindset aligned with co-op emphasis"
-      ],
-      "common_activities": [
-        "Robotics, Coding, or School Newspaper",
-        "Participation in the deaf or hard-of-hearing community initiatives",
-        "Club or varsity athletics (Crew, Soccer)",
-        "Community service or part-time work"
-      ],
-      "essay_tips": [
-        "Explicitly discuss the co-op program",
-        "Lean into 'nerdy' or niche passions",
-        "Focus on practical 'know-how' rather than just theory",
-        "Explain any gaps or dips by showing resilience"
-      ],
-      "red_flags": [
-        "Applying to Computing with weak Calculus grades",
-        "Generic 'Why RIT' essays that miss the co-op unique requirement",
-        "Senior year grade drops in STEM",
-        "Writing an essay that is too technical or academic"
-      ],
-      "insights": [
-        "Considered 'easy to get into but hard to stay in'",
-        "Campus culture is proudly 'nerdy' and hobby-focused",
-        "Co-op is the primary selling point",
-        "Brutalist architecture and severe winters"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 64900,
-      "employment_rate_2yr": 93.0,
-      "grad_school_rate": 14.5,
-      "top_employers": [
-        "Microsoft",
-        "Amazon",
-        "Google",
-        "Apple",
-        "Deloitte",
-        "Lockheed Martin",
-        "JPMorgan Chase",
-        "Texas Instruments"
-      ],
-      "loan_default_rate": 1.0,
-      "student_retention": {
-        "freshman_retention_rate": 88.2,
-        "graduation_rate_4_year": 29.1,
-        "graduation_rate_6_year": 73.9
       }
     }
   },
-  "_id": "rochester_institute_of_technology",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Art and Design",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to creative communal spaces within Art House (now House of the Arts) in Fredericka Douglass Sprague Perry (DSP) Hall, offering studios with drawing tables, easels, drafting tables, a sewing machine, printers, and a lounge. General residence hall amenities include furnished rooms (bed, desk, chair, dresser, microfridge), shared or private bathrooms, common lounges, and free laundry facilities. Some dorms have air conditioning.",
+        "student_archetype": "Creative and innovative individuals with a passion for various art forms, design, visual arts, photography, film, animation, or studio arts, who are eager to collaborate and explore interdisciplinary approaches.",
+        "strategic_fit_advice": "Ideal for students seeking an immersive artistic community with dedicated creative facilities and opportunities for interdisciplinary projects within a technologically focused university. Applicants should highlight their portfolio and collaborative spirit.",
+        "majors": [
+          {
+            "name": "Film and Animation",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FDTN-111 Drawing I",
+              "SOFA-101 Introduction to Film and Animation"
+            ],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FDTN-111 Drawing I",
+                "FDTN-121 2D Design I",
+                "FDTN-131 3D Design I",
+                "SOFA-101 Introduction to Film and Animation",
+                "SOFA-102 Film and Animation Production I",
+                "SOFA-201 History of Film and Animation I",
+                "SOFA-202 Film and Animation Production II",
+                "SOFA-301 Sound Design for Film and Animation",
+                "SOFA-302 Film and Animation Production III"
+              ],
+              "electives": [
+                "Experimental Animation",
+                "Advanced Sound Design",
+                "3D Modeling Mastery",
+                "Virtual Production",
+                "Particles and Dynamics",
+                "Alternative Frame by Frame",
+                "Screenwriting",
+                "Art History"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Amy Adrion (Assistant Professor)",
+              "Vashti Anderson (Assistant Professor)",
+              "Meghdad Asadilari (Assistant Professor)",
+              "Kevin Bauer (Senior Lecturer, Graduate Program Director)",
+              "Jack Beck (Professor, Undergraduate Program Director, Production)",
+              "Brian Larson (Associate Professor, Undergraduate Program Director, Animation)",
+              "Peter Murphey (Principal Lecturer)"
+            ],
+            "notes": "Has Animation and Production options. Portfolio required for BFA applicants. Cooperative education is optional but encouraged. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Industrial Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Portfolio required for BFA applicants. Cooperative education is optional but encouraged. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Graphic Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Portfolio required for BFA applicants. Cooperative education is optional but encouraged. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Photography",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio required for admission. For transfer students only.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Portfolio required for BFA applicants (for transfer students only, implying direct admit for freshmen might not require a portfolio, or it's implicitly part of the general Art & Design admissions). Cooperative education is optional but encouraged. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Studio Arts",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FDTN-111 Drawing I",
+              "FDTN-121 2D Design I",
+              "FDTN-131 3D Design I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FDTN-111 Drawing I",
+                "FDTN-121 2D Design I",
+                "FDTN-131 3D Design I",
+                "SOFA-101 Introduction to Film and Animation (example, need to check for Studio Arts specific foundational courses)"
+              ],
+              "electives": [
+                "Ceramics",
+                "Glass",
+                "Metals and Jewelry Design",
+                "Painting",
+                "Printmaking",
+                "Sculpture"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Portfolio required for BFA applicants. Cooperative education is optional but encouraged. Data source: RIT Curriculum for 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Saunders College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General RIT housing options including residence halls, Global Village, University Commons, Riverknoll, Perkins Green, and the RIT Inn & Conference Center. Graduate students may gravitate towards the RIT Inn (hotel-style with amenities) or furnished 2-bedroom apartments in Perkins Green. Proximity to the Saunders College of Business is a consideration for some students. All housing includes utilities and laundry.",
+        "student_archetype": "Ambitious, entrepreneurial-minded students who value the intersection of business and technology, with a strong focus on experiential learning, real-world application, and career outcomes. They are curious and seek innovative solutions.",
+        "strategic_fit_advice": "Well-suited for students who are driven to excel in the business world, desire strong industry connections, and want to leverage a tech-focused curriculum and co-op experiences to jumpstart their careers. Emphasize analytical skills and leadership potential.",
+        "majors": [
+          {
+            "name": "Global Business Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACCT-110 Financial Accounting",
+              "ECON-101 Principles of Microeconomics"
+            ],
+            "special_requirements": "Two blocks of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT-110 Financial Accounting",
+                "ECON-101 Principles of Microeconomics",
+                "MGMT-101 Introduction to Management",
+                "MKTG-101 Principles of Marketing",
+                "ACCT-111 Managerial Accounting",
+                "ECON-102 Principles of Macroeconomics",
+                "FINC-200 Introduction to Finance",
+                "MGMT-230 Operations Management",
+                "STAT-205 Statistical Methods I",
+                "IBUS-301 Global Business Environment"
+              ],
+              "electives": [
+                "Global Rotation Option (study at RIT Croatia and RIT Dubai)"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Molly McGowan (Faculty)"
+            ],
+            "notes": "Offers a Global Rotation Option. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCT-110 Financial Accounting"
+            ],
+            "special_requirements": "Cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Sudarshan Jayaraman (Wesray Professor of Business Administration; Professor of Accounting)"
+            ],
+            "notes": "Saunders College programs are AACSB accredited. Transfer from an AS in Business to a BS in Accounting requires a 2.5 GPA. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "FINC-200 Introduction to Finance"
+            ],
+            "special_requirements": "Cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Christian Opp (Professor of Finance; Director of PhD Program)"
+            ],
+            "notes": "Saunders College programs are AACSB accredited. Transfer from an AS in Business to a BS in Finance requires a 2.5 GPA. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MKTG-101 Principles of Marketing"
+            ],
+            "special_requirements": "Cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Paul Nelson (Clinical Professor of Marketing; Faculty Director of the MS Marketing Analytics Program)"
+            ],
+            "notes": "Saunders College programs are AACSB accredited. Transfer from an AS in Business to a BS in Marketing requires a 2.5 GPA. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Saunders College programs are AACSB accredited. Transfer from an AS in Business to a BS in Management Information Systems requires a 2.5 GPA. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Golisano College of Computing and Information Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Computer Science House (CSH) in Fredericka Douglass Sprague Perry (DSP) Hall offers a state-of-the-art technology environment, including a functional data center, woodshop, R&D room, various lounges, and collaborative spaces. General residence hall amenities are available, with some dorms having air conditioning.",
+        "student_archetype": "Technologically enthusiastic, problem-solving individuals passionate about computing, cybersecurity, game design, software engineering, and AI. They thrive in collaborative environments and are driven to innovate and make an impact with technology.",
+        "strategic_fit_advice": "Excellent for students with a strong aptitude for computing and a desire for hands-on technical experience. Involvement in CSH is highly recommended for those seeking a close-knit, tech-focused community and networking opportunities with alumni in the industry.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 years of English",
+              "3 years of social studies and/or history",
+              "4 years of mathematics (including precalculus and trigonometry)",
+              "1 year of physics (recommended)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "CSCI-141 Computer Science I",
+              "CSCI-142 Computer Science II",
+              "MATH-181 Calculus I",
+              "MATH-182 Calculus II"
+            ],
+            "special_requirements": "Three blocks of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CSCI-141 Computer Science I",
+                "MATH-181 Calculus I",
+                "CSCI-142 Computer Science II",
+                "MATH-182 Calculus II",
+                "CSCI-241 Data Structures and Algorithms",
+                "CSCI-242 Data Structures and Algorithms II",
+                "CSCI-261 Computer Organization and Assembly Language",
+                "CSCI-341 Analysis of Algorithms",
+                "CSCI-342 Principles of Programming Languages",
+                "CSCI-351 Operating Systems"
+              ],
+              "electives": [
+                "Architecture and Operating Systems",
+                "Computer Graphics and Visualization",
+                "Data Management",
+                "Distributed Systems",
+                "Artificial Intelligence",
+                "Languages and Tools",
+                "Security",
+                "Theory"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Reynold Bailey (Professor)",
+              "Ivona Bezakova (Professor)",
+              "Zachary Butler (Professor)",
+              "Warren Carithers (Associate Professor)",
+              "Minseok Kwon (Associate Professor)"
+            ],
+            "notes": "Internal transfer requires a 3.0 cumulative GPA and 3.0 GPA in technical courses. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Cybersecurity",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Programming sequence",
+              "Calculus",
+              "Discrete Math"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSEC-140 Introduction to Cybersecurity",
+              "GCIS-123 Software Development and Problem Solving I"
+            ],
+            "special_requirements": "Two blocks of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSEC-140 Introduction to Cybersecurity",
+                "GCIS-123 Software Development and Problem Solving I",
+                "MATH-181 Calculus I",
+                "GCIS-124 Software Development and Problem Solving II",
+                "CSEC-200 Cybersecurity Fundamentals",
+                "CSEC-201 Networking and System Administration I",
+                "CSEC-202 Networking and System Administration II",
+                "CSEC-300 Applied Cryptography",
+                "CSEC-310 Ethics and Professionalism in Cybersecurity",
+                "CSEC-320 Digital Forensics"
+              ],
+              "electives": [
+                "Network and System Security",
+                "Digital Forensics and Malware",
+                "Software Security",
+                "Data Security and Privacy",
+                "Cyber Analytics and Intelligence"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Billy Brumley (Kevin O'Sullivan Professor, Cybersecurity)",
+              "Naresh Kshetri (Faculty, Cybersecurity)"
+            ],
+            "notes": "Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Software Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Three blocks of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Often paired with Computer Science for accelerated BS/MS programs. Details on core courses and total units for the standalone BS would require deeper catalog navigation. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Game Design and Development",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Co-op program participation is required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Jessica Bayliss (Professor, Interactive Games and Media)",
+              "Carlos Castellanos (Assistant Professor, Interactive Games and Media)"
+            ],
+            "notes": "Offers a technically oriented game design track. Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Information Technology and Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Kate Gleason College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Engineering House in Fredericka Douglass Sprague Perry (DSP) Hall provides a supportive environment with facilities like a study lounge with whiteboard walls and a VAX workshop. Kate Gleason Hall offers air-conditioned rooms and shared lounges. General residence hall amenities include furnished rooms, shared or private bathrooms, common lounges, and free laundry facilities.",
+        "student_archetype": "Creative problem-solvers, tech enthusiasts, researchers, humanitarians, and entrepreneurs who are motivated to design, build, and innovate. They thrive on hands-on projects, multidisciplinary teamwork, and seek to make a profound impact through engineering.",
+        "strategic_fit_advice": "Ideal for students passionate about applying engineering principles to real-world challenges. Participation in Engineering House or other project-based clubs can enhance the learning experience and career preparation through extensive co-op opportunities.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH-181 Calculus I",
+              "MECE-102 Engineering Mechanics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Four blocks (48 weeks) of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH-181 Calculus I",
+                "MECE-102 Engineering Mechanics",
+                "CHMG-131 General Chemistry for Engineers",
+                "MECE-205 Statics",
+                "MECE-207 Dynamics",
+                "MECE-215 Materials Science and Engineering",
+                "MECE-301 Thermodynamics I",
+                "MECE-305 Fluid Mechanics",
+                "MECE-310 Machine Design I",
+                "MECE-320 Heat Transfer"
+              ],
+              "electives": [
+                "Aerospace Engineering",
+                "Automotive Engineering",
+                "Energy and the Environment",
+                "Bioengineering",
+                "Manufacturing and Design"
+              ],
+              "total_units": 134,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Ali Baheri (Assistant Professor)",
+              "Stephen Boedo (Professor)",
+              "Bob Carter (Associate Department Head)",
+              "Byron Erath (Department Head)",
+              "Edward Hensel (Professor)",
+              "Satish Kandlikar (Professor)",
+              "Risa Robinson (Professor)"
+            ],
+            "notes": "Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH-181 Calculus I",
+              "CHMG-131 General Chemistry for Engineers",
+              "EEEE-105 Freshman Practicum"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Four blocks of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EEEE-105 Freshman Practicum",
+                "CHMG-131 General Chemistry for Engineers",
+                "MATH-181 Calculus I",
+                "EEEE-201 Electrical Engineering Fundamentals I",
+                "EEEE-202 Electrical Engineering Fundamentals II",
+                "EEEE-203 Digital Systems",
+                "PHYS-211 University Physics I",
+                "MATH-182 Calculus II",
+                "MATH-231 Differential Equations"
+              ],
+              "electives": [
+                "Artificial Intelligence",
+                "Clean and Renewable Energy",
+                "Computer Engineering",
+                "Robotics",
+                "Microelectronics"
+              ],
+              "total_units": 134,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Industrial Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHMG-131 General Chemistry for Engineers",
+              "ISEE-120 Fundamentals of Industrial Engineering"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Four blocks of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHMG-131 General Chemistry for Engineers",
+                "ISEE-120 Fundamentals of Industrial Engineering",
+                "MATH-181 Calculus I",
+                "MATH-182 Calculus II",
+                "STAT-205 Statistical Methods I",
+                "ISEE-230 Engineering Statistics I",
+                "ISEE-240 Engineering Economy",
+                "ISEE-330 Operations Research I",
+                "ISEE-360 Human Factors and Work Design",
+                "ISEE-370 Production Planning and Control"
+              ],
+              "electives": [
+                "Advanced Manufacturing",
+                "Distribution/Logistics",
+                "Ergonomics/Human Factors",
+                "Modeling/Simulation",
+                "Sustainable Design and Development"
+              ],
+              "total_units": 126,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Nasibeh Azadeh Fard (Assistant Professor)",
+              "Denis Cormier (Brinkman Professor)",
+              "Ruben Proano (Professor)"
+            ],
+            "notes": "Cooperative education is a required component. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIME-181 Intro to Biomedical Engineering",
+              "CHMG-141 General & Analytical Chemistry I",
+              "MATH-181 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Four blocks (roughly 48 weeks) of cooperative education required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIME-181 Intro to Biomedical Engineering",
+                "CHMG-141 General & Analytical Chemistry I",
+                "MATH-181 Calculus I",
+                "BIOL-123 Intro to Biology: Organisms and Ecosystems",
+                "BIME-220 Biomedical Electrical Systems",
+                "BIME-230 Biomedical Solid Mechanics",
+                "BIME-240 Biomedical Thermodynamics and Fluid Mechanics",
+                "BIME-310 Biomaterials",
+                "BIME-350 Medical Imaging Systems"
+              ],
+              "electives": [
+                "Cell and Tissue Engineering",
+                "Biomechanics",
+                "Medical Instrumentation",
+                "Rehabilitation Engineering"
+              ],
+              "total_units": 134,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Steven Day (Professor)"
+            ],
+            "notes": "Five-year program with required co-op. Pre-med/pre-health advising available. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CMPE-110 Introduction to Computer Engineering",
+              "CSCI-141 Computer Science I",
+              "MATH-181 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Cooperative education required (likely 3 blocks, similar to CS).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CMPE-110 Introduction to Computer Engineering",
+                "CSCI-141 Computer Science I",
+                "MATH-181 Calculus I",
+                "CSCI-142 Computer Science II",
+                "CMPE-230 Digital Systems Design",
+                "EEEE-201 Electrical Engineering Fundamentals I",
+                "CMPE-250 Embedded Systems Design",
+                "CMPE-340 Computer Organization and Architecture",
+                "CMPE-360 Signals and Systems"
+              ],
+              "electives": [
+                "Software",
+                "High-performance computing",
+                "Computer architecture",
+                "Integrated circuits and systems",
+                "Networks and security",
+                "Computer vision and machine intelligence",
+                "Signal processing, control, and embedded systems"
+              ],
+              "total_units": 134,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Cooperative education is an integral part of the program. Data source: RIT Curriculum for 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering Technology",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General RIT housing options are available, which typically include furnished residence hall rooms with private or shared bathrooms, lounges, and laundry facilities. Some dorms offer air conditioning. The emphasis is on practical, application-based learning environments.",
+        "student_archetype": "Hands-on learners who excel at applying theoretical knowledge to practical situations, enjoy problem-based learning, and are focused on developing skills for immediate industry impact. They are dedicated and collaborative, aiming for successful professional careers.",
+        "strategic_fit_advice": "Best for students who prefer a skill-based, applied engineering education with extensive lab-infused courses and strong connections to industry, leading to high career outcomes. Focus on demonstrating practical problem-solving abilities.",
+        "majors": []
+      },
+      {
+        "name": "College of Health Sciences and Technology",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General RIT housing options are provided, including residence halls with various room types (singles, doubles, suites), shared or private bathrooms, and common amenities such as lounges and free laundry. Some residence halls are air-conditioned. The college fosters a supportive and intimate environment.",
+        "student_archetype": "Compassionate, tech-savvy individuals driven to transform healthcare through innovative solutions and patient-focused care. They value hands-on learning, clinical experience, and collaboration, aiming to address 21-st century health challenges.",
+        "strategic_fit_advice": "A good fit for students passionate about health sciences who want to integrate technology into medical practice. Applicants should emphasize their commitment to helping others, their interest in technological advancements in healthcare, and their desire for experiential learning.",
+        "majors": [
+          {
+            "name": "Biomedical Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL-123 Introduction to Biology: Organisms and Ecosystems",
+              "CHMG-141 General & Analytical Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL-123 Introduction to Biology: Organisms and Ecosystems",
+                "BIOL-125 Introduction to Biology Laboratory: Organisms and Ecosystems",
+                "CHMG-141 General & Analytical Chemistry I",
+                "CHMG-145 General & Analytical Chemistry I Lab",
+                "MATH-181 Calculus I",
+                "BIOL-101 General Biology I",
+                "CHMG-142 General & Analytical Chemistry II",
+                "CHMG-146 General & Analytical Chemistry II Lab",
+                "PHYS-111 General Physics I",
+                "BIOL-201 General Biology II"
+              ],
+              "electives": [
+                "Medical Foundations",
+                "Medicine and Disease",
+                "Medicine and Health"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Todd Camenisch (Professor and Interim Department Head)",
+              "Michele Lennox (Lecturer)",
+              "Janet Lighthouse (Assistant Professor)",
+              "Robert Osgood (Associate Professor, Program Director)",
+              "Elizabeth Perry (Senior Lecturer and Associate Program Director)",
+              "Bolaji Thomas (Professor)"
+            ],
+            "notes": "Offers pre-health professions advising. Data source: RIT Curriculum for 2025-2026."
+          },
+          {
+            "name": "Biotechnology and Molecular Bioscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL-123 Introduction to Biology: Organisms and Ecosystems"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL-123 Introduction to Biology: Organisms and Ecosystems",
+                "BIOL-125 Introduction to Biology Laboratory: Organisms and Ecosystems",
+                "CHMG-141 General & Analytical Chemistry I",
+                "CHMG-145 General & Analytical Chemistry I Lab",
+                "MATH-181 Calculus I"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Cooperative education and internships are strongly encouraged. Offers pre-health professions advising. Data source: RIT Curriculum for 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Standard RIT residence hall offerings, including furnished rooms, various room configurations, shared or private bathrooms, and access to communal lounges and free laundry. Some dorms are air-conditioned. The college encourages an interdisciplinary approach to learning.",
+        "student_archetype": "Human-centered, critical thinkers with a passion for humanities and social sciences, who appreciate a 'tech-infused' learning environment. They are committed change-makers, effective communicators, and value interdisciplinary perspectives and global experiences.",
+        "strategic_fit_advice": "Ideal for students who seek to combine a strong foundation in liberal arts with technological understanding, aiming to address societal issues and develop robust communication and analytical skills. Opportunities for study abroad and double majors are plentiful.",
+        "majors": []
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General RIT housing options including residence halls, apartments, and suites. All rooms are furnished, and facilities include lounges, free laundry, and microfridges. Some dorms have air conditioning. The College of Science also offers various student-led clubs.",
+        "student_archetype": "Intellectually curious and collaborative individuals passionate about physical, life, and mathematical sciences. They are driven by research, hands-on experimentation, and expanding scientific knowledge to address global challenges. Many seek accelerated degree programs.",
+        "strategic_fit_advice": "An excellent choice for students with a strong interest and aptitude in scientific inquiry and research. Applicants should highlight their scientific curiosity, any prior research experience, and their desire to engage in experiential learning opportunities like co-ops or REUs.",
+        "majors": []
+      },
+      {
+        "name": "National Technical Institute for the Deaf (NTID)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Ellingson Hall and the 'EPB Quad' (Ellingson, Peterson, and Residence Hall D) are specifically equipped for deaf and hard-of-hearing students, featuring amenities like fire strobes and doorbells for accessibility. These buildings offer suite-style or traditional rooms, often air-conditioned, with shared lounges and access to dining facilities. All residence halls at RIT can accommodate deaf/hard-of-hearing students with appropriate room adaptations.",
+        "student_archetype": "Diverse deaf and hard-of-hearing students from various backgrounds and communication modes (ASL, spoken language, cued speech) who seek a highly accessible and inclusive educational environment. They are career-focused, value a strong support network, and are interested in living, studying, and working alongside hearing peers.",
+        "strategic_fit_advice": "Highly recommended for deaf and hard-of-hearing students seeking a world-leading accessible education within a technological university, with unparalleled support services and a vibrant, integrated community. Prospective students should inquire about specific accessibility features and community engagement opportunities.",
+        "majors": []
+      },
+      {
+        "name": "School of Individualized Study",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Business Analytics Minor",
+      "Entrepreneurship Minor",
+      "Creative Writing Minor",
+      "Computer Science Minor",
+      "Applied Statistics Minor",
+      "Cybersecurity Minor",
+      "Robotics and Automation Minor",
+      "American Sign Language and Deaf Cultural Studies Minor",
+      "Deaf Cultural Studies-American Sign Language Certificate",
+      "Diagnostic Medical Sonography (Ultrasound) Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "RIT Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "This refers to Early Decision I. Students are expected to withdraw applications from other institutions if accepted."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "This is a non-binding early application."
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": "This is a binding commitment plan."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Decisions are typically released by mid-March. Some specific programs, such as the Physician Assistant (PA) program, may have different deadlines and requirements."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "Target Program": "Honors Program",
+        "Requirement Type": "Essays",
+        "Deadline": null,
+        "Details": "One supplemental essay is required as part of the admission application for applicants interested in the Honors Program.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Individualized Program BS",
+        "Requirement Type": "Essays",
+        "Deadline": null,
+        "Details": "Supplemental essays are required for applicants to the Individualized Program BS.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "BFA Programs (Schools of Art, Design, and Film and Animation)",
+        "Requirement Type": "Portfolio",
+        "Deadline": null,
+        "Details": "A portfolio of 7-10 examples of your best artwork is required as part of the RIT application process. The portfolio is reviewed for pictorial composition, storytelling, creativity, drawing and design ability, use of materials, and attention to detail. Specific programs like Illustration and Medical Illustration strongly recommend including drawings from direct observation. The portfolio can be uploaded electronically via the RIT Admissions Portal.\nNote: A portfolio is not required for freshman applicants to the School of Photographic Arts and Sciences or the New Media Design BFA program.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Master of Architecture (M.Arch)",
+        "Requirement Type": "Portfolio",
+        "Deadline": "February 15th (Fall deadline for domestic and international applicants)",
+        "Details": "All applicants must submit a portfolio demonstrating creativity and ability in 2D and/or 3D representation, including at a minimum, examples of hand drawings. The portfolio should contain 5-10 projects and approximately 20 pages in a single PDF format (not exceeding 6.0MB). Each creative example should have a brief written summary.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Select Graduate Programs (e.g., MST in Art Education, MFA programs in Ceramics, Film and Animation, Fine Arts Studio, Furniture Design, Glass, Industrial Design, Medical Illustration, Metals and Jewelry Design, Photography and Related Media, Visual Communication Design)",
+        "Requirement Type": "Portfolio",
+        "Deadline": null,
+        "Details": "These programs require a portfolio showcasing an understanding of design principles, visual computer skills (where applicable), and aptitude for advanced study. The number of examples varies by program (e.g., 15-20 for some design-related programs). Portfolios are submitted electronically.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Performing Arts Scholarship (Open to all majors)",
+        "Requirement Type": "Audition (Video Submission)",
+        "Deadline": "January 15th (Fall Entry - extended to April 15th for best consideration); November 1st (Spring Entry)",
+        "Details": "This scholarship recognizes individual achievement and talent in the performing arts (music, theatre, dance). Applicants must complete a scholarship application including questions about their performing arts experiences and goals, and submit performance examples via YouTube or Vimeo. This is open to all full-time admitted first-year and transfer undergraduate students.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Bachelor of Music (BMus) in Composition",
+        "Requirement Type": "Audition & Portfolio",
+        "Deadline": null,
+        "Details": "A principal performance audition is required, with specific selections (e.g., three contrasting songs for voice principal). A composition portfolio of written compositions in contrasting style, mood, and instrumentation must also be submitted for review.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "RIT employs a holistic review process, seeking diverse applicants who demonstrate character, resilience, and problem-solving skills. Competitiveness and specific considerations may vary by specialized major. Interviews are not required for admission but are encouraged as an opportunity for students to distinguish themselves and to learn more about the university to assess fit. The underlying principle for acceptance is a demonstration of ability to successfully complete the desired program."
+    },
     "essay_prompts": [
       {
-        "prompt": "RIT seeks students who are fascinated by possibilities and passionate about innovation. How do you envision yourself contributing to RIT's culture of creativity and discovery?",
-        "word_limit": "250 words",
-        "type": "Why RIT",
+        "prompt": "Please provide a brief statement about why you are interested in being considered for the RIT Honors Program.",
+        "word_limit": "150 words",
+        "type": "Why This Program",
         "required": true,
         "brainstorming_questions": [
-          "When have you encountered a problem or a challenge where the existing solution felt uninspired or inefficient, and what was your initial spark of an idea to approach it differently, even if it was just a fleeting thought?",
-          "Think about a time you were deeply engrossed in exploring a new technology, concept, or artistic medium. What specific aspect of it captured your imagination and made you feel like you were on the cusp of uncovering something new?",
-          "RIT is known for its hands-on, project-based learning. Can you recall a specific project or experience where you took an idea from a rough concept to a tangible outcome, and what was the most exciting part of that innovation process for you?",
-          "Beyond the classroom, what are some of your personal 'hobbies' or 'side projects' where you've experimented with new approaches or pushed the boundaries of what you thought was possible, and how did that experimentation feel?",
-          "Imagine you're a member of an RIT club or team. How would you specifically inject your unique brand of fascination with possibilities and passion for innovation into a group project, helping others see new directions or approaches?"
+          "What specific aspects of the RIT Honors Program (e.g., curriculum, community, research opportunities, faculty interaction) resonate with your academic and personal goals?",
+          "How do your academic achievements and intellectual curiosities align with the mission and values of an honors program?",
+          "What unique contributions or perspectives do you believe you would bring to the RIT Honors Program community?",
+          "Have there been any specific academic projects, challenges, or experiences that have prepared you for the rigor and collaborative nature of an honors program?",
+          "Beyond academics, what non-curricular benefits do you hope to gain from being part of a close-knit, intellectually-driven honors community?"
+        ]
+      },
+      {
+        "prompt": "RIT is pleased to be able to offer a limited number of students the opportunity to customize a degree pathway. What personal or professional outcome are you hoping to achieve? In what ways have you prepared yourself for this distinctive educational experience?",
+        "word_limit": "200-300 words (estimated)",
+        "type": "Major / Why This Program",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific academic disciplines or areas of study are you hoping to combine in an individualized degree, and why can't a traditional major fulfill these interests?",
+          "What unique problem or real-world challenge are you passionate about addressing, and how would a customized RIT degree equip you to tackle it?",
+          "Beyond coursework, what skills, experiences, or independent learning have you pursued that demonstrate your capacity for self-directed and interdisciplinary study?",
+          "How have you taken initiative to explore diverse subjects or connect seemingly disparate fields, reflecting your readiness for a customized pathway?",
+          "What specific resources, faculty expertise, or experiential learning opportunities at RIT (e.g., co-op, research labs) are essential to the customized degree pathway you envision, and how will they help you achieve your desired outcome?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/rochester_institute_of_technology_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not firmly set on highly competitive programs like Computer Science or Engineering, as these often have lower acceptance rates.",
+      "Consider RIT's 'College Exploration' or 'University Exploration Option' if you are undecided on a major, as these pathways allow you to gain admission to the university and explore different fields before committing to a specific program.",
+      "Research major-specific acceptance rates and competitiveness, as RIT practices differential admissions, meaning acceptance rates can vary significantly between colleges and programs despite the overall university acceptance rate.",
+      "If RIT is your top choice and you are applying to a competitive major, consider applying through Early Decision to potentially benefit from higher acceptance rates in a smaller applicant pool."
+    ],
+    "college_ranking_tactics": "Rochester Institute of Technology (RIT) is organized into nine academic colleges and two degree-granting units, such as the Kate Gleason College of Engineering, Saunders College of Business, and Golisano College of Computing and Information Sciences. However, the application process for prospective students is typically to RIT as a whole, where applicants select their intended major or program of study, which then falls under one of these colleges.\n\nUnlike a system where applicants might rank multiple distinct institutions (like various campuses within the UC system), students apply to RIT and indicate their program of interest. Therefore, the concept of \"ranking colleges\" in the sense of prioritizing separate entities within RIT for admission is not applicable.\n\nGiven this structure, there are no specific ranking tactics for individual colleges *within* Rochester Institute of Technology as part of the application process.",
+    "alternate_major_strategy": "When applying to competitive majors at RIT, it's advised to consider listing a backup major, potentially in a different college, as admission is often major-specific. RIT also offers 'exploration programs' within colleges (e.g., Computing Exploration) or an 'Individualized Study' program, allowing students to explore interests before committing to a specific major, which can serve as an alternate entry point. For transfer applicants, there is an option to select a first, second, and third-choice major."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 60774.0,
+        "total_coa": 81444.0,
+        "housing": 9700.0
+      },
+      "out_of_state": {
+        "tuition": 60774.0,
+        "total_coa": 81444.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 39904.0,
+    "average_merit_aid": 21912.0,
+    "percent_receiving_aid": 99.0,
+    "meets_full_need": false,
+    "notes": "Rochester Institute of Technology meets 89% of demonstrated financial need on average for domestic students. For families with a total income under $75,000, specific programs offer full tuition. RIT is Need-Aware for international students, meaning financial need may be a factor in admission decisions and aid is limited.",
+    "scholarships": [
+      {
+        "name": "RIT Merit-Based Scholarship",
+        "type": "Merit",
+        "amount": "$14,000 - $27,000 annually",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Tuition specific, offered in recognition of strong academic achievement, leadership, service, entrepreneurship, citizenship, or creativity. Renewable. For international students, amounts typically range from $10,000 - $20,000 annually.",
+        "application_method": "Automatic Consideration with Admission Application"
+      },
+      {
+        "name": "RIT Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 - $16,000 per year (amounts vary)",
+        "deadline": "February 1 for freshman applications",
+        "benefits": "Renewable if recipient maintains a minimum 2.8 GPA. Awarded to a select number of entering freshmen demonstrating exceptional academic performance, exemplary letters of recommendation, and strong entrance exam scores.",
+        "application_method": "Automatic Consideration with Admission Application"
+      },
+      {
+        "name": "RIT Project Lead the Way Scholarship",
+        "type": "Merit",
+        "amount": "$14,000 per year ($7,000 per semester)",
+        "deadline": "January 15",
+        "benefits": "Renewable. Offered to outstanding, admitted first-year students who have completed two or more PLTW courses. Not stackable with other RIT merit-based scholarships.",
+        "application_method": "Automatic Consideration (must apply for admission by deadline)"
+      },
+      {
+        "name": "RIT/FIRST Scholarship",
+        "type": "Merit",
+        "amount": "$14,000 per year ($7,000 per semester)",
+        "deadline": "January 15",
+        "benefits": "Renewable. Offered to outstanding, admitted first-year students who have participated on a high school FIRST team. Not stackable with other RIT merit-based scholarships.",
+        "application_method": "Separate Scholarship Application (and apply for admission by deadline)"
+      },
+      {
+        "name": "RIT National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$2,000 per year ($1,000 per semester)",
+        "deadline": "RIT receives finalist confirmation from NMSC",
+        "benefits": "Renewable as long as student meets NMSC guidelines. Offered to admitted first-year students who are National Merit Scholarship finalists and name RIT as their first-choice school for NMSC. This scholarship is stackable with other RIT merit-based scholarships.",
+        "application_method": "Automatic Consideration (based on NMSC designation)"
+      },
+      {
+        "name": "RIT Honors Program Scholarship",
+        "type": "Merit",
+        "amount": "Not explicitly stated for general program (mentioning grant opportunities, and 50% grad scholarship for Saunders)",
+        "deadline": "February 1 (for freshman admission to Honors Program)",
+        "benefits": "Enriched academic experiences, personal growth through leadership and service, early registration, research and professional development grants (up to $500 one-time), honors advising, honors housing, alumni connections, free course overloads. RIT Honors students applying to Saunders College of Business graduate programs can qualify for a 50% scholarship.",
+        "application_method": "Automatic Consideration for freshmen admitted to the Honors Program; internal admission process for current RIT students in January."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for College of Liberal Arts courses; score of 4+ grants credit for most other exams, including science and math",
+      "exceptions": [
+        "No credit for AP Research",
+        "Score of 4 for Computer Science A grants credit",
+        "Specific majors (e.g., certain engineering and science programs) will not receive AP credit for Physics B, Physics 1, Physics 2, Chemistry, Biology, or Physics C: Electricity & Magnetism exams. Students should consult the RIT AP articulation rules for details.",
+        "Pre-Med students should consult with an advisor regarding advanced placement credits and Medical school admission prerequisites"
+      ],
+      "usage": "AP credits can satisfy some major prerequisites, general education requirements (perspectives), and can lead to advanced placement. Official scores must be sent directly from the College Board to the Office of Undergraduate Admissions."
+    },
+    "ib_policy": {
+      "general_rule": "Rochester Institute of Technology (RIT) offers credit for International Baccalaureate (IB) Higher Level (HL) exams with a score of 5 or better. Credit is generally awarded for scores of 5, 6, or 7 on HL exams. While credit for Standard Level (SL) courses is less common, exceptions may be possible depending on the specific program or department standards. The credit awarded is on a course-by-course basis and is determined in the context of the student's intended program at RIT.\n\nRIT highly values the full IB Diploma program, recognizing it as one of the most rigorous curricula globally. The university encourages students attending an IB school to pursue the diploma to be competitive for admission. RIT \"proudly enrolls numerous accomplished students annually who have completed the demanding IB Diploma program\", indicating that holding the full IB Diploma is seen as a significant advantage in the admissions process, functioning as a diploma bonus for prospective students.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "RIT Transfer Credit Equivalencies System"
+      ],
+      "restrictions": "Undergraduate transfer credits require a grade of 'C' or higher. A minimum of 25% of the total semester credit hours required for an undergraduate degree must be completed at RIT, meaning a maximum of 75% can be transferred. Graduate transfer credits require a grade of 'B' or higher, with a maximum of 30% of the program degree credits transferable from other institutions. Credits are generally accepted from regionally accredited institutions."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong Academic Record with Challenging Coursework: Admitted students often have competitive GPAs and SAT/ACT scores, indicating a solid academic foundation. Students frequently have high school GPAs in the 3.75+ range, with many taking challenging college prep courses. One student noted their 3.6 high school GPA was bolstered by a 4.0 in dual-enrolled university courses.",
+      "Demonstrated Passion and Focus in a Specific Field: RIT is known for its strong, career-centric programs, particularly in STEM and arts programs, and its highly-ranked co-op program. Students who gain admission and succeed often show a clear, focused interest in their intended major and its practical applications. One student was able to secure a paid research project as a freshman by \"simply expressed a passion to learn\".",
+      "Proactive Engagement and Initiative (Beyond Academics): While not always directly stated as an admission requirement, students highlight the abundance of clubs and activities at RIT and the importance of active participation. The ability to seek out and engage in opportunities, such as research as a freshman or finding a social circle through various campus groups, suggests that demonstrating initiative and a desire to contribute beyond the classroom is valued.",
+      "Alignment with RIT's Collaborative and Career-Oriented Culture: Students often choose RIT because it feels \"friendly, nice, and welcoming to all types of people\" and appreciate its \"career-centric nature\" over a purely research-focused environment. Conveying an understanding of and alignment with RIT's hands-on, collaborative, and practical approach to education can be a significant advantage in the application process."
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Music/arts involvement",
+      "Participation in special interest clubs (e.g., gaming, science, technology)",
+      "Fraternity and sorority life",
+      "Research"
+    ],
+    "essay_tips": [
+      "Be specific about why this school - reference unique programs. When describing your interest in RIT, go beyond generic statements. Connect your aspirations and academic interests to specific programs, research opportunities, or unique aspects of RIT. For instance, if applying to a specialized program, articulate precisely why that program at RIT aligns with your goals.",
+      "Show, don't tell - use concrete examples. Instead of simply stating you are curious or passionate, illustrate these qualities with specific experiences, projects, or challenges you've overcome. This allows the admissions committee to see your traits in action.",
+      "Avoid clichés and offer an authentic, compelling personal story. For your Common App personal statement, steer clear of overused topics like sports victories or moving to a new school. Focus on an aspect of your life or personality that isn't evident elsewhere in your application, providing a genuine and unique insight into who you are.",
+      "Connect your interests to specific resources at the school. If given the opportunity, as in a past supplemental prompt asking to design a course, demonstrate how your unique interests could thrive within RIT's academic environment. This shows you've researched the institution and can envision yourself contributing to and benefiting from its specific offerings.",
+      "Demonstrate how you've pursued interests outside the classroom. RIT considers extracurricular activities, so highlight leadership roles, commitment, and notable achievements in a few key activities. Show how these experiences reflect your passions and potential contributions to the RIT community."
+    ],
+    "red_flags": [
+      "Generic Essays and Lack of Demonstrated Interest\nRIT seeks applicants who can articulate a genuine and specific interest in their programs and demonstrate problem-solving abilities, creativity, and personal growth. Submitting a generic essay that could apply to any university, or failing to show \"demonstrated interest\" in RIT, can be a significant red flag. Tailor your personal statement to RIT and highlight experiences relevant to your chosen major.",
+      "Weak Letters of Recommendation\nLetters of recommendation from teachers or mentors who do not know you well or cannot provide specific examples of your academic abilities, problem-solving skills, or teamwork can hinder your application. Choose recommenders who can speak genuinely and effectively about your strengths and character.",
+      "Insufficient Academic Preparation for Your Desired Major\nRIT's admissions process considers applicants by their chosen major, and some programs, such as Computer Science and Mechanical Engineering, are highly competitive. A lack of sufficient academic rigor in relevant coursework (e.g., not taking physics for an engineering major) or a GPA/test scores (if submitted) significantly below the average for your intended program can be a disadvantage. While RIT is test-optional, if scores are not submitted, greater weight is placed on your overall academic performance.",
+      "Listing Activities Without Demonstrating Depth or Impact\nSimply listing extracurricular activities without conveying genuine engagement, leadership roles, or the impact you made can be a red flag. RIT values students who are innovative and can think critically, so showcasing how your experiences have developed these skills or deepened your passion for a subject is crucial."
+    ],
+    "insights": [
+      "While RIT is a somewhat selective institution, applying Early Decision (ED) offers a significant advantage, particularly for competitive majors, due to a smaller applicant pool and higher acceptance rates for ED applicants.",
+      "RIT distinguishes itself with a robust, career-focused curriculum, particularly in STEM and arts programs, underpinned by a highly-ranked cooperative education (co-op) program that provides extensive hands-on, paid work experience.",
+      "RIT cultivates a unique and inclusive community, notably through the presence of the National Technical Institute for the Deaf (NTID), fostering a diverse, supportive, and collaborative campus environment."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 76571,
+    "employment_rate_2yr": 0.0,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Apple",
+      "Microsoft",
+      "JPMorgan Chase",
+      "Deloitte",
+      "Goldman Sachs",
+      "McKinsey & Company"
+    ],
+    "grad_school_rate": null,
+    "loan_default_rate": 3.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.0,
+    "graduation_rate_4_year": 28.0,
+    "graduation_rate_6_year": 72.0
+  }
 }

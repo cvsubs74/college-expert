@@ -769,13 +769,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay required: 'Tell us about an important first in your life—big or small—that has shaped you' (350-word limit)."
       },
       {
         "target_program": "Music (Peabody Institute)",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Pre-screening recording required; specific requirements and deadlines are available on the Peabody Institute website."
       }
     ],
@@ -961,11 +961,31 @@
       "A disingenuous list of extracurriculars that don't reflect genuine passions or dedication."
     ],
     "insights": [
-      "Johns Hopkins is highly selective with an acceptance rate around 8%.",
-      "Applying Early Decision (ED1 or ED2) can slightly increase acceptance odds for students who are certain Hopkins is their top choice.",
-      "The university values intellectual passion and a drive to succeed, often attracting students interested in the medical field or engineering, though a diversity of majors is supported.",
-      "While academics are rigorous, students appreciate the abundance of research opportunities, expert faculty, and supportive advising systems.",
-      "The social scene can sometimes feel competitive and less vibrant compared to other universities, with a primary focus on academics, but opportunities for social events exist."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Johns Hopkins is highly selective with an acceptance rate around 8%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED1 or ED2) can slightly increase acceptance odds for students who are certain Hopkins is their top choice."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university values intellectual passion and a drive to succeed, often attracting students interested in the medical field or engineering, though a diversity of majors is supported."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While academics are rigorous, students appreciate the abundance of research opportunities, expert faculty, and supportive advising systems."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The social scene can sometimes feel competitive and less vibrant compared to other universities, with a primary focus on academics, but opportunities for social events exist."
+      }
     ]
   },
   "outcomes": {

@@ -836,7 +836,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required (150-300 words each): one on what has shaped you and your contribution to the community, and another on an ethical dilemma and how an SCU education can help address it. An optional 'Why Major' short essay (50 words) is also highly encouraged."
       }
     ],
@@ -871,7 +871,7 @@
           "When you consider Santa Clara's call to 'be creative,' what's an instance where you approached a task or a challenge with an imaginative mindset, perhaps by blending different ideas, experimenting with a new approach, or even finding beauty or inspiration in an unexpected place?",
           "SCU wants students who 'be challenged.' What's a significant intellectual or personal hurdle you've faced that truly pushed your boundaries and how did you respond to that challenge, not just by enduring it, but by learning and growing from it in a way that changed your perspective?",
           "How have you, in your own experiences, demonstrated the ability to 'be the solution' in a collaborative setting at Santa Clara? Think about a time you contributed to a group effort not just by doing your part, but by proactively identifying needs and stepping up to help the whole team succeed.",
-          "Considering all three of SCU's values \u2013 creative, challenged, and solution-oriented \u2013 can you identify a specific moment or experience where these qualities converged in you? Perhaps a situation where you had to be creative to overcome a challenge, or where your creative solution was born from facing a difficult problem."
+          "Considering all three of SCU's values – creative, challenged, and solution-oriented – can you identify a specific moment or experience where these qualities converged in you? Perhaps a situation where you had to be creative to overcome a challenge, or where your creative solution was born from facing a difficult problem."
         ]
       }
     ]
@@ -1023,11 +1023,31 @@
       "Generic essays that could apply to any university, failing to demonstrate specific interest in Santa Clara."
     ],
     "insights": [
-      "Santa Clara University takes a holistic approach to admissions, considering GPA, extracurriculars, and essays as 'very important'.",
-      "While test-optional, submitting strong SAT/ACT scores (average 1340-1500 SAT, 30-33 ACT) can be beneficial, as applicants who submit scores are accepted at a higher rate.",
-      "For competitive majors like Business or Computer Science, strong academic performance in relevant subjects is particularly crucial, and internal transfer to the business school can be very difficult.",
-      "Connecting with admissions representatives and demonstrating interest can positively impact your application.",
-      "Santa Clara University values diversity and inclusivity, and essays provide an opportunity to highlight unique lived experiences and how they will enrich the campus community."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Santa Clara University takes a holistic approach to admissions, considering GPA, extracurriculars, and essays as 'very important'."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, submitting strong SAT/ACT scores (average 1340-1500 SAT, 30-33 ACT) can be beneficial, as applicants who submit scores are accepted at a higher rate."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For competitive majors like Business or Computer Science, strong academic performance in relevant subjects is particularly crucial, and internal transfer to the business school can be very difficult."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Connecting with admissions representatives and demonstrating interest can positively impact your application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Santa Clara University values diversity and inclusivity, and essays provide an opportunity to highlight unique lived experiences and how they will enrich the campus community."
+      }
     ]
   },
   "outcomes": {

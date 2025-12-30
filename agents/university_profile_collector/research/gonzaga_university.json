@@ -911,7 +911,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One short answer supplemental question (5-10 sentences, limit 300 words) from two prompts. This is in addition to the Common App essay."
       },
       {
@@ -1108,11 +1108,31 @@
       "Not thoroughly reviewing the application for errors"
     ],
     "insights": [
-      "Gonzaga's admissions office is noted for its efficiency and supportive communication throughout the application process",
-      "The university encourages applicants to communicate with teachers and counselors for recommendations",
-      "Applying Early Action by November 15th can lead to an admission decision by New Year's",
-      "All applicants are automatically considered for academic merit scholarships, with additional scholarships requiring separate applications",
-      "Gonzaga is test-optional, but submitting strong SAT/ACT scores can still be beneficial for demonstrating academic capability and potentially for scholarships"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Gonzaga's admissions office is noted for its efficiency and supportive communication throughout the application process"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university encourages applicants to communicate with teachers and counselors for recommendations"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action by November 15th can lead to an admission decision by New Year's"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "All applicants are automatically considered for academic merit scholarships, with additional scholarships requiring separate applications"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Gonzaga is test-optional, but submitting strong SAT/ACT scores can still be beneficial for demonstrating academic capability and potentially for scholarships"
+      }
     ]
   },
   "outcomes": {

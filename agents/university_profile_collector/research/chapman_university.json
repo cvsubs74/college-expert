@@ -873,7 +873,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: 'Why are you interested in attending Chapman University specifically?' (200 words or fewer) and 'Please tell us about your interest in the major you selected' (200 words or fewer). There are also several 'Fast Facts' short response questions."
       },
       {
@@ -1060,11 +1060,31 @@
       "Approaching Chapman with the expectation of a large-school atmosphere or a primary 'party school' reputation, as it may not align with the campus culture"
     ],
     "insights": [
-      "Chapman University employs a holistic review process, meaning GPA and test scores are only one part of a comprehensive evaluation",
-      "The Dodge College of Film and Media Arts is highly selective, with anients in Film Production",
-      "Some specific majors, suchs as Psychology (6.5% acceptance rate), have a separate, more competitive acceptance process within the university",
-      "Chapman prides itself on a close-knit community, small class sizes, and opportunities for personal relationships with professors",
-      "The university is test-optional, allowing applicants to decide whether to submit SAT/ACT scores"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Chapman University employs a holistic review process, meaning GPA and test scores are only one part of a comprehensive evaluation"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The Dodge College of Film and Media Arts is highly selective, with anients in Film Production"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Some specific majors, suchs as Psychology (6.5% acceptance rate), have a separate, more competitive acceptance process within the university"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Chapman prides itself on a close-knit community, small class sizes, and opportunities for personal relationships with professors"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university is test-optional, allowing applicants to decide whether to submit SAT/ACT scores"
+      }
     ]
   },
   "outcomes": {

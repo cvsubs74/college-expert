@@ -1122,10 +1122,26 @@
       "Lack of demonstrated interest, as TCU tracks engagement in their review process"
     ],
     "insights": [
-      "Greek life significantly influences the social scene, though non-Greek events exist",
-      "School spirit is exceptionally high, centered around football and the 'Horned Frog' identity",
-      "Career services and alumni networks are frequently cited as top-tier for job placement",
-      "Campus culture is described as welcoming and 'tight-knit' with small class sizes"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Greek life significantly influences the social scene, though non-Greek events exist"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "School spirit is exceptionally high, centered around football and the 'Horned Frog' identity"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Career services and alumni networks are frequently cited as top-tier for job placement"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Campus culture is described as welcoming and 'tight-knit' with small class sizes"
+      }
     ]
   },
   "outcomes": {

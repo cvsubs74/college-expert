@@ -1,519 +1,651 @@
 {
-  "university_profile": {
-    "_id": "university_of_massachusetts_lowell",
-    "metadata": {
-      "official_name": "University of Massachusetts Lowell",
-      "location": {
-        "city": "Lowell",
-        "state": "MA",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "https://www.uml.edu",
-        "https://en.wikipedia.org/wiki/University_of_Massachusetts_Lowell",
-        "https://www.niche.com/colleges/university-of-massachusetts---lowell/",
-        "https://research.com/university/university-of-massachusetts-lowell"
-      ]
+  "_id": "university_of_massachusetts_lowell",
+  "metadata": {
+    "official_name": "University of Massachusetts Lowell",
+    "location": {
+      "city": "Lowell",
+      "state": "Massachusetts",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "The University of Massachusetts Lowell is a nationally recognized public research university known for its high return on investment and its recent elevation to Carnegie R1 status. It offers over 120 undergraduate programs with a strong emphasis on career-connected learning and deep industry ties in the New England technology corridor.",
-      "market_position": "Hidden Gem",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 151,
-      "analyst_takeaways": [
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Massachusetts Lowell is a public research university recognized for its strong return on investment and exceptional value, ranking #92 nationally among universities by U.S. News & World Report for 2026. It holds the prestigious Carnegie Research 1 (R1) designation, signifying its status as a top research institution. The university offers a diverse array of undergraduate and graduate programs, particularly excelling in engineering, business, and health sciences.",
+    "market_position": "Public Research University with High ROI",
+    "admissions_philosophy": "UMass Lowell employs a holistic review process, valuing strong academic records, demonstrated interest in hands-on learning, and a desire to contribute to a diverse and innovative community. It offers a 'No Test Option' but considers scores if submitted, particularly emphasizing fit for its nationally recognized programs in engineering, business, and health sciences.",
+    "us_news_rank": 92,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "University of Massachusetts Lowell is a 'somewhat selective' institution with an acceptance rate typically in the 83-86% range and average admitted student GPAs around 3.72.",
+        "implication": "Applicants should aim for a strong academic record (GPA of 3.72 or higher) and consider applying Early Action (deadlines Nov 5 or Jan 15) to demonstrate strong interest, though test scores are optional, strong scores can enhance an application."
+      },
+      {
+        "category": "Value",
+        "insight": "UMass Lowell is recognized as a top-value institution, ranking #1 in Massachusetts and #92 nationally for 'best value schools' by U.S. News & World Report in 2026. Graduates report high starting salaries and a strong long-term return on investment.",
+        "implication": "Prospective students focused on career readiness and financial viability should highlight their career aspirations and demonstrate how UMass Lowell's strong employer connections, co-op programs, and practical education align with their goals."
+      },
+      {
+        "category": "Academic",
+        "insight": "As an R1 'very high research activity' university, UMass Lowell offers a broad array of specialized undergraduate and graduate programs, with a strong emphasis on hands-on, experience-based learning in fields like engineering, health sciences, and unique areas such as plastics engineering and sound recording technology.",
+        "implication": "Applicants with a passion for research, specific technical fields, or a desire for practical, real-world application of their studies should emphasize these interests in their essays and recommenders, showcasing any relevant projects or experiences."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "University of Massachusetts Lowell (UMass Lowell) offers a welcoming and diverse campus environment with a strong sense of community. The atmosphere is generally described as supportive and intellectually vibrant, particularly within its strong academic programs in engineering, business, and health sciences. There are over 250 clubs and organizations, providing numerous opportunities for student engagement, though some reviews note that campus activities can diminish on weekends as many students leave. The university is praised for its supportive faculty and a laid-back atmosphere.",
+      "transportation_impact": "UMass Lowell's campus is generally described as walkable, and convenient for students living on campus. However, it is also noted as a commuter campus, which can lead to traffic congestion, particularly during peak hours (4-6 PM). While specific details about public transportation like RIPTA bus access were not found in the provided snippets for UMass Lowell, the general impression is that getting around campus is manageable for those living nearby, but off-campus commuting can be affected by traffic. There is also an underground tunnel on north campus connecting buildings, which is a unique and convenient feature.",
+      "research_impact": "The University of Massachusetts Lowell is an R1 Research University with annual research expenditures exceeding $120 million, providing exceptional research opportunities for students. It emphasizes hands-on learning through internships, co-op programs, and research opportunities, and has strong connections with industry leaders, facilitating insights into various fields and career exploration. Undergraduate students have numerous chances to get involved in research across various disciplines, including genomics, bioinformatics, space research, energy and combustion, biobased polyesters, machine learning, and community needs assessment projects. Faculty members are actively engaged in groundbreaking projects that address real-world challenges, and the university promotes collaborative research through centers like the Center for Terrorism and Security Studies and the Center for Community Research and Engagement."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 83.04,
+      "is_test_optional": true,
+      "test_policy_details": "UMass Lowell offers a 'No Test Option' for most applicants. Standardized test scores (SAT/ACT) are optional for the majority of first-year applicants for Spring and Fall 2026. However, test scores may be required for some home-schooled and international applicants. International first-year applicants can waive SAT/ACT and English proficiency exams if their secondary institution provides written verification that the means of instruction is in English, they are enrolled in an IB curriculum, attend an American School, or are enrolled in a curriculum that leads to Cambridge International Examinations. Applicants with a strong GPA (3.000 or higher) and evidence of outstanding academic success throughout high school are encouraged to use the No Test Option, especially if their test scores are below the suggested minimums (SAT 1120, ACT 23). Applicants who scored 1120 or higher on the SAT or 23 or higher on the ACT are considered good candidates to submit test scores.",
+      "admits_class_size": 11444,
+      "transfer_acceptance_rate": 84.02,
+      "early_admission_stats": [
         {
-          "category": "Prestige & Research",
-          "insight": "UMass Lowell recently achieved Carnegie R1 'Very High Research Activity' status.",
-          "implication": "The university's profile is rising, likely leading to more competitive grant funding and faculty recruitment."
-        },
-        {
-          "category": "Value",
-          "insight": "Ranked as the #1 Best Value school in Massachusetts by U.S. News for 2026.",
-          "implication": "It represents an elite ROI choice for students, particularly in high-demand STEM and business fields."
-        },
-        {
-          "category": "Admissions Strategy",
-          "insight": "The university was the first public institution in New England to go test-optional (2015) and maintains an 85% acceptance rate.",
-          "implication": "Applicants should focus on academic rigor and GPA rather than SAT/ACT scores to align with the holistic evaluation."
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
       ],
-      "campus_dynamics": {
-        "social_environment": "A diverse urban campus with 200+ clubs and a strong Division I athletic culture, centered around the 'River Hawks' and a revitalized downtown Lowell.",
-        "transportation_impact": "An extensive campus shuttle system and bike-share programs are critical to connecting the North, South, and East campus zones across the city.",
-        "research_impact": "Strong industry integration through the Lowell Innovation Network Corridor (LINC) provides robust co-op and undergraduate research opportunities."
-      }
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 87.78,
+      "international_applications": 622,
+      "international_admits": 546,
+      "international_notes": "Slightly higher than the overall acceptance rate of the university"
     },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 83.04,
-        "in_state_acceptance_rate": 84.93,
-        "out_of_state_acceptance_rate": 85.89,
-        "international_acceptance_rate": 87.78,
-        "transfer_acceptance_rate": 84.02,
-        "admits_class_size": 11444,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Data for the Class of 2029 (entering Fall 2025) is not yet officially released in Common Data Set or other public reports as of December 2025.",
+        "waitlist_stats": {
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 13781,
+        "admits_total": 11444,
+        "enrolled_total": 2066,
+        "acceptance_rate_overall": 83.04,
+        "yield_rate": 18.07,
+        "notes": "Data reflects the 2024-2025 admission cycle for students entering Fall 2024.",
+        "waitlist_stats": {
+          "offered_spots": 4540,
+          "accepted_spots": 2840,
+          "admitted_from_waitlist": 73,
+          "waitlist_admit_rate": 2.57,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 12628,
+        "admits_total": 10764,
+        "enrolled_total": 2088,
+        "acceptance_rate_overall": 85.24,
+        "yield_rate": 19.4,
+        "notes": "Data reflects the 2022-2023 admission cycle for students entering Fall 2023.",
+        "waitlist_stats": {
+          "offered_spots": 6692,
+          "accepted_spots": 3799,
+          "admitted_from_waitlist": 105,
+          "waitlist_admit_rate": 2.76,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 12519,
+        "admits_total": 10766,
+        "enrolled_total": 1939,
+        "acceptance_rate_overall": 86.00,
+        "yield_rate": 18.01,
+        "notes": "Data reflects the 2021-2022 admission cycle for students entering Fall 2022, sourced from Common Data Set 2022-2023."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 12858,
+        "admits_total": 10950,
+        "enrolled_total": 1957,
+        "acceptance_rate_overall": 85.16,
+        "yield_rate": 17.87,
+        "notes": "Data reflects the 2020-2021 admission cycle for students entering Fall 2021, sourced from Common Data Set 2021-2022."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.60-3.85",
+        "unweighted_middle_50": "3.40-3.60",
+        "average_weighted": 3.72,
+        "percentile_25": "3.60",
+        "percentile_75": "3.85",
+        "notes": "The reported weighted and unweighted GPA data are on a 4.0 scale. University of Massachusetts Lowell practices a holistic review process for its applicants."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1350",
+        "sat_reading_middle_50": "590-680",
+        "sat_math_middle_50": "590-690",
+        "act_composite_middle_50": "25-32",
+        "submission_rate": 29.0,
+        "policy_note": "University of Massachusetts Lowell is test-optional. They accept self-reported SAT/ACT scores, but official scores are required prior to enrollment. Test scores are required for some home-schooled and international applicants."
+      },
+      "demographics": {
+        "first_gen_percentage": 41.0,
+        "legacy_percentage": null,
+        "first_gen_notes": "41% of UMass Lowell students identify as first-generation college students. Other data indicates 45% of incoming first-time, first-year undergraduate students were first-generation in Fall 2022, and 17% for the overall student body in Fall 2022. First-generation college students are defined as students where neither parent has earned a four-year degree. No information on legacy student percentage was found.",
+        "geographic_breakdown": [
           {
-            "plan_type": "EA",
-            "applications": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "class_fill_percentage": 0.0
-          }
-        ]
-      },
-      "historical_trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 13676,
-          "admits_total": 11345,
-          "enrolled_total": 2011,
-          "acceptance_rate_overall": 82.9,
-          "yield_rate": 17.7,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 572,
-            "accepted_spots": 45,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
+            "region": "Massachusetts",
+            "percentage": 83.0
           },
-          "notes": "Waitlist opt-in rate was significantly lower than previous cycles."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 12628,
-          "admits_total": 10764,
-          "enrolled_total": 2020,
-          "acceptance_rate_overall": 85.2,
-          "yield_rate": 18.8,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 0,
-            "accepted_spots": 418,
-            "admitted_from_waitlist": 121,
-            "waitlist_admit_rate": 28.9,
-            "is_waitlist_ranked": false
+          {
+            "region": "Out-of-State",
+            "percentage": 14.0
           },
-          "notes": "Waitlist admission remained robust compared to the 2024 cycle."
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 12253,
-          "admits_total": 10538,
-          "enrolled_total": 1928,
-          "acceptance_rate_overall": 86.0,
-          "yield_rate": 18.3,
-          "waitlist_stats": {
-            "year": 2022,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
+          {
+            "region": "International",
+            "percentage": 3.0
           }
-        },
-        {
-          "year": 2021,
-          "cycle_name": "Class of 2025",
-          "applications_total": 12136,
-          "admits_total": 10255,
-          "enrolled_total": 2753,
-          "acceptance_rate_overall": 84.5,
-          "yield_rate": 26.8,
-          "waitlist_stats": {
-            "year": 2021,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 32.4,
-            "is_waitlist_ranked": false
-          }
-        }
-      ],
-      "admitted_profile": {
-        "gpa": {
-          "weighted_middle_50": "Not specified",
-          "unweighted_middle_50": "3.40-3.90",
-          "average_weighted": 3.7,
-          "percentile_25": "3.40",
-          "percentile_75": "3.95",
-          "notes": "The average unweighted high school GPA for admitted students is approximately 3.67-3.72."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1180-1370",
-          "sat_reading_middle_50": "590-680",
-          "sat_math_middle_50": "590-690",
-          "act_composite_middle_50": "25-32",
-          "submission_rate": 30.0,
-          "policy_note": "Test-optional for most programs."
-        },
-        "demographics": {
-          "first_gen_percentage": 46.0,
-          "legacy_percentage": 0.0,
-          "international_percentage": 2.6,
-          "geographic_breakdown": [
-            {
-              "region": "Massachusetts",
-              "percentage": 83.3
-            },
-            {
-              "region": "Other US States",
-              "percentage": 14.1
-            },
-            {
-              "region": "International",
-              "percentage": 2.6
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 7027,
-              "admits": 5913,
-              "acceptance_rate": 84.1,
-              "note": "Represents 51% of pool"
-            },
-            "women": {
-              "applicants": 6740,
-              "admits": 5525,
-              "acceptance_rate": 82.0,
-              "note": "Represents 49% of pool"
-            }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7027,
+            "admits": 5913,
+            "acceptance_rate": 84.15,
+            "note": "Data for the academic year 2024-2025."
           },
-          "racial_breakdown": {
-            "white": 50.2,
-            "black_african_american": 8.2,
-            "hispanic_latino": 13.2,
-            "asian": 12.6,
-            "native_american_alaskan": 0.1,
-            "pacific_islander": 0.1,
-            "two_or_more_races": 2.9,
-            "unknown": 4.9,
-            "non_resident_alien": 7.8
-          }
+          "women": {
+            "applicants": 6740,
+            "admits": 5525,
+            "acceptance_rate": 81.97,
+            "note": "Data for the academic year 2024-2025."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 50.20,
+          "black_african_american": 8.24,
+          "hispanic_latino": 13.20,
+          "asian": 12.60,
+          "native_american_alaskan": 0.07,
+          "pacific_islander": 0.03,
+          "two_or_more_races": 2.86,
+          "unknown": 6.09,
+          "non_resident_alien": 6.71
         }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Francis College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong math preparation through calculus is essential.",
-          "housing_profile": "STEM LLC in Leitch Hall.",
-          "student_archetype": "The Practical Innovator",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.E.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.7,
-              "prerequisite_courses": [
-                "Calculus I",
-                "Physics I",
-                "Chemistry I"
-              ],
-              "minimum_gpa_to_declare": 2.75,
-              "weeder_courses": [
-                "MECH.2010 Statics"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.75
-            }
-          ]
-        },
-        {
-          "name": "Zuckerberg College of Health Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Nursing and Exercise Science are highly competitive.",
-          "housing_profile": "Health Sciences LLC in Riverview Suites.",
-          "student_archetype": "The Clinical Compassionist",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 4.1,
-              "minimum_gpa_to_declare": 3.25,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.25
-            }
-          ]
-        },
-        {
-          "name": "Kennedy College of Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on research-ready students.",
-          "housing_profile": "STEM LLC in Bourgeois Hall.",
-          "student_archetype": "The Analytical Researcher",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.85,
-              "minimum_gpa_to_declare": 2.3,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.3
-            }
-          ]
-        },
-        {
-          "name": "Manning School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 85.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on leadership and entrepreneurship.",
-          "housing_profile": "Business LLC in Donahue Hall.",
-          "student_archetype": "The Emerging Entrepreneur",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.6,
-              "minimum_gpa_to_declare": 2.0,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0
-            }
-          ]
-        },
-        {
-          "name": "College of Fine Arts, Humanities and Social Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 88.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Music requires audition; Art requires portfolio.",
-          "housing_profile": "FAHSS LLC in Concordia Hall.",
-          "student_archetype": "The Creative Advocate",
-          "majors": [
-            {
-              "name": "Criminal Justice",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.5,
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5
-            }
-          ]
-        },
-        {
-          "name": "School of Education",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 85.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focuses on licensure and disability studies.",
-          "housing_profile": "Integrated into South Campus residence life.",
-          "student_archetype": "The Dedicated Educator",
-          "majors": []
-        }
-      ],
-      "minors_certificates": [
-        "Aerospace Studies Minor",
-        "Robotics Minor",
-        "Sound Recording Technology Minor",
-        "Cybersecurity Certificate",
-        "Entrepreneurship Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Coalition App by Scoir",
-        "UMass Lowell Web Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action I",
-          "date": "2024-11-05",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Early Action II",
-          "date": "2025-01-15",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-15",
-          "is_binding": false
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Essay",
-          "details": "250-650 words required"
-        },
-        {
-          "target_program": "Music",
-          "requirement_type": "Audition",
-          "details": "Entrance audition required"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Personal Narrative"
-        ],
-        "secondary_factors": [
-          "Recommendations",
-          "Extracurriculars"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Strong"
-      },
-      "strategy_tactics": {
-        "major_selection_tactics": [
-          "List up to three major preferences.",
-          "Apply Undeclared in FAHSS to bypass STEM filters."
-        ],
-        "college_ranking_tactics": [
-          "Prioritize East Campus for STEM.",
-          "Rank LLCs high to bypass general lottery."
-        ],
-        "alternate_major_strategy": "Select competitive major first, Undeclared/Business second to secure admission."
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 16246,
-          "total_coa": 35680,
-          "housing": 16148
-        },
-        "out_of_state": {
-          "tuition": 35544,
-          "total_coa": 54978
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "stats": {
-        "average_need_based_aid": 15794,
-        "average_merit_aid": 8469,
-        "percent_receiving_aid": 91.0
-      },
-      "scholarships": [
-        {
-          "name": "Chancellor's Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition and fees",
-          "deadline": "Nov 15"
-        },
-        {
-          "name": "Commonwealth Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition and fees",
-          "deadline": "Nov 15"
-        },
-        {
-          "name": "Tsongas Scholarship",
-          "type": "Merit",
-          "amount": "Full ride",
-          "benefits": "For Lowell High School graduates"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 3, 4, or 5 grant university credit",
-        "exceptions": [
-          "Maximum 30 credits total from all exams"
-        ]
-      },
-      "ib_policy": {
-        "general_rule": "Credit for HL exams (4-7)",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "UMass Lowell Transfer Dictionary",
-          "MassTransfer"
-        ],
-        "restrictions": "75 unit cap for community college; 90 for 4-year."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "GPA 3.6+",
-        "Applied learning interest"
-      ],
-      "common_activities": [
-        "Technical clubs",
-        "Community service"
-      ],
-      "essay_tips": [
-        "Connect identity to UML resources",
-        "Showcase initiative"
-      ],
-      "red_flags": [
-        "Generic clich\u00e9s",
-        "Senior year grade drops"
-      ],
-      "cultural_insights": [
-        "The 'tech' UMass",
-        "North vs. South campus divide"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 64874,
-      "employment_rate_2yr": 93.0,
-      "grad_school_rate": 34.3,
-      "top_employers": [
-        "Raytheon",
-        "Pfizer",
-        "IBM",
-        "BAE Systems"
-      ],
-      "loan_default_rate": 0.0,
-      "student_retention": {
-        "freshman_retention_rate": 84.0,
-        "graduation_rate_4_year": 49.0,
-        "graduation_rate_6_year": 64.0
       }
     }
   },
-  "_id": "university_of_massachusetts_lowell",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "academic_year": "2025-2026",
+    "colleges": [
       {
-        "prompt": "UMass Lowell is focused on experiential learning and real-world impact. How will you take advantage of these opportunities?",
-        "word_limit": "250 words",
-        "type": "Experience",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about UMass Lowell's emphasis on 'real-world impact,' can you recall a time when you actively sought out a hands-on experience that taught you something truly valuable, and what was the most unexpected lesson you learned from it?",
-          "Beyond just 'taking advantage,' how do you envision yourself actively CONTRIBUTING to the experiential learning environment at UMass Lowell, perhaps by sharing a skill or perspective you've gained from a unique experience?",
-          "The prompt mentions 'experiential learning.' What specific types of hands-on projects, internships, or research opportunities at UMass Lowell genuinely excite you, and what are you hoping to achieve or discover through them?",
-          "When you imagine yourself a few years from now, having fully embraced UMass Lowell's experiential learning focus, what tangible 'real-world impact' do you hope to have made, either within the university community or beyond?",
-          "Consider a time you learned best by doing, not just by reading or listening. What was that experience, and how does that learning style inform what you're looking for in your UMass Lowell education and the opportunities you'll pursue there?"
-        ]
+        "name": "College of Fine Arts, Humanities and Social Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "notes": "Admission to programs within the Art & Design Department (e.g., Graphic Design, Fine Arts, Photography) requires a portfolio submission in addition to the general university application. Similarly, Music applicants must complete an entrance audition. For other majors within this college, admission generally follows the university's direct admit process.",
+        "majors": [
+          {
+            "name": "Art & Design",
+            "degree_types": [
+              "BA",
+              "BFA"
+            ],
+            "admission_notes": "Requires portfolio submission."
+          },
+          {
+            "name": "Music",
+            "degree_types": [
+              "BA",
+              "BM"
+            ],
+            "admission_notes": "Requires entrance audition."
+          },
+          {
+            "name": "English",
+            "degree_types": [
+              "BA"
+            ]
+          },
+          {
+            "name": "Psychology",
+            "degree_types": [
+              "BA"
+            ]
+          },
+          {
+            "name": "Criminal Justice",
+            "degree_types": [
+              "BS"
+            ]
+          }
+        ],
+        "housing_profile": "Students in this college have the option to join the Fine Arts, Humanities, and Social Sciences (FAHSS) Living Learning Community located in Sheehy Hall on South Campus. Sheehy Hall provides four-, six-, and eight-person suites with Wi-Fi, cable TV, and laundry facilities. General housing options range from traditional dorms to suites and apartments, offering a variety of living arrangements.",
+        "student_archetype": "Creative, analytical, and socially conscious individuals interested in diverse fields from art and music to criminology and political science. They seek opportunities for discussion, cultural engagement, and community involvement.",
+        "strategic_fit_advice": "Recommended for students who thrive in a diverse academic environment, appreciate interdisciplinary discussions, and want to engage in cultural activities and community-focused programs. The FAHSS LLC is beneficial for networking and career development within these fields."
+      },
+      {
+        "name": "Francis College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "notes": "Applicants are expected to have a strong background in mathematics and sciences. Internal transfers into engineering programs have specific GPA and course grade requirements (e.g., Biomedical Engineering requires a minimum 3.000 GPA with demonstrated strength in Calculus, Chemistry, and Physics, and Chemical Engineering requires a minimum 2.750 GPA with specific course passes).",
+        "majors": [
+          {
+            "name": "Biomedical Engineering",
+            "degree_types": [
+              "BS"
+            ],
+            "admission_notes": "Internal transfer requires a minimum 3.000 GPA with demonstrated strength in Calculus, Chemistry, and Physics."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_types": [
+              "BS"
+            ],
+            "admission_notes": "Internal transfer requires a minimum 2.750 GPA with specific course passes."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_types": [
+              "BS"
+            ]
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_types": [
+              "BS"
+            ]
+          }
+        ],
+        "housing_profile": "Students have access to traditional dorms, suite-style, and apartment-style housing across East and South Campuses. Many engineering students reside in Leitch Hall as part of the Engineers of the Future House Living-Learning Community, which focuses on providing a hands-on, real-world educational experience. General dorm amenities include Wi-Fi, laundry facilities, cable TV, and access to dining halls. Some suites and apartments feature kitchenettes or full kitchens.",
+        "student_archetype": "Driven and practical problem-solvers with a strong interest in STEM fields, seeking hands-on learning, career exploration, and networking opportunities. They are often dedicated to academic success and appreciate supportive faculty.",
+        "strategic_fit_advice": "Ideal for students with a solid STEM background seeking a collaborative environment and direct connections to alumni and businesses in engineering fields. Participation in the Engineers of the Future House LLC is highly recommended for enhanced academic and career support."
+      },
+      {
+        "name": "Kennedy College of Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "notes": "Students applying to majors within the Kennedy College of Sciences must possess appropriate math and science backgrounds. Bachelor of Science programs within this college have specific requirements, including a minimum of 60 credits from college department offerings and at least two courses in mathematics at the level of calculus I or above.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_types": [
+              "BS"
+            ],
+            "admission_notes": "Internal transfer into the Computer Science major requires a B- or better in 'Computing I and lab' and a cumulative GPA of at least 2.300."
+          },
+          {
+            "name": "Biology",
+            "degree_types": [
+              "BS"
+            ]
+          },
+          {
+            "name": "Chemistry",
+            "degree_types": [
+              "BS"
+            ]
+          }
+        ],
+        "housing_profile": "Students in the Kennedy College of Sciences, like other STEM fields, may find themselves in residences like Leitch Hall, which houses the 'Engineers of the Future House' Living-Learning Community, also encompassing Science, Technology, and Mathematics-related fields. General university housing includes traditional, suite, and apartment-style options with amenities such as Wi-Fi, common areas, and laundry facilities.",
+        "student_archetype": "Inquisitive and analytical thinkers drawn to scientific discovery and technological innovation. They are likely to be engaged in research and value hands-on learning experiences.",
+        "strategic_fit_advice": "Suits students with a strong foundation and passion for science and mathematics, who are eager to participate in research opportunities and benefit from a supportive academic environment focused on scientific and technological advancements. Students interested in a STEM-focused living experience should consider the related LLCs."
+      },
+      {
+        "name": "Manning School of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "notes": "First-year students entering the Manning School of Business are initially registered as Business Administration (BA). They must complete their first semester of the sophomore year before they can apply for admission to the upper division program and declare a concentration.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_types": [
+              "BS"
+            ],
+            "admission_notes": "First-year students are initially registered as Business Administration (BA). Must complete first semester of sophomore year before applying for upper division and declaring a concentration."
+          }
+        ],
+        "housing_profile": "Business students can reside in Donahue Hall on East Campus, which is home to the Business Living-Learning Community. Donahue Hall offers four-, six-, or eight-person suites, each with its own bathroom and common area, and is in close proximity to a parking garage and dining hall. University housing generally provides fully furnished rooms and meal plans.",
+        "student_archetype": "Ambitious and career-focused individuals aiming to excel in the business world, seeking networking opportunities with local business leaders and specialized programs for career growth.",
+        "strategic_fit_advice": "Ideal for students with entrepreneurial spirit and a strong interest in various business disciplines. Joining the Business LLC offers unique opportunities for professional development and building connections within the business community."
+      },
+      {
+        "name": "Zuckerberg College of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "notes": "Nursing programs are noted as having a more restricted admission process and are excluded from certain direct admission pathways for transfer students. Some programs within this college may require specific prerequisite coursework. While a 'guaranteed freshman admission pathway' is mentioned for the Doctor of Physical Therapy (DPT) program, it also involves an.interview process, indicating a restricted direct admit.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_types": [
+              "BSN"
+            ],
+            "admission_notes": "Enrollment is extremely limited, especially for transfers. All applicants to the nursing program must apply Early Action I or II."
+          },
+          {
+            "name": "Public Health",
+            "degree_types": [
+              "BS"
+            ]
+          },
+          {
+            "name": "Doctor of Physical Therapy (DPT)",
+            "degree_types": [
+              "DPT"
+            ],
+            "admission_notes": "Guaranteed freshman admission pathway involves an interview process, indicating a restricted direct admit."
+          }
+        ],
+        "housing_profile": "Students can live in suite-style housing within Riverview West and Riverview East on South Campus, which host the Health Sciences Living Learning Community. These residences offer opportunities for students to meet other health science majors, form study groups, and benefit from dedicated faculty mentorship. General university housing includes furnished rooms, food plans, and access to campus amenities like fitness centers.",
+        "student_archetype": "Passionate and community-oriented individuals focused on health and education surrounding health, keen on collaborative learning and career development in health-related fields.",
+        "strategic_fit_advice": "Well-suited for students committed to health sciences, eager for a supportive community, and looking for programs that offer career development and mentorship beyond the classroom, such as exam reviews and guest speakers."
+      }
+    ],
+    "minors_certificates": [
+      "Computer Science Minor",
+      "Entrepreneurship Minor",
+      "English Minor (can be considered a Writing Minor)",
+      "Psychology Minor",
+      "Criminal Justice Minor",
+      "Graphic Design Minor",
+      "Information Technology Certificate",
+      "Digital Marketing Certificate",
+      "Digital Media Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "UMass Lowell Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action I",
+        "date": "2024-11-05",
+        "is_binding": false,
+        "notes": "All applicants to the nursing program must apply Early Action I or II."
+      },
+      {
+        "plan_type": "Early Action II",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "All applicants to the nursing program must apply Early Action I or II."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      "Official Transcripts",
+      "Recommendation(s)",
+      "Application Essay",
+      "Portfolio (for Art & Design majors)",
+      "Audition (for Music majors)"
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience",
+        "Standardized test scores"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UMass Lowell employs a holistic review process. They offer a 'No Test option' for standardized tests but consider scores if submitted. The university has nationally recognized programs, such as the River Hawk Scholars Academy, providing strong support for first-generation students, who comprise 41% of their undergraduates. Specific programs like Music and Art & Design require auditions and portfolios, respectively."
+    },
+    "essay_details": {
+      "notes": "UMass Lowell requires a personal essay. While specific prompts are not provided, applicants should aim to be specific about their interest in UMass Lowell, connect their past experiences to future goals, tell stories with concrete examples, reflect on communities and identity, and avoid clichés. Submitting optional essays is generally recommended."
+    },
+    "testing_policy_details": "UMass Lowell offers a 'No Test Option' for most applicants. Standardized test scores (SAT/ACT) are optional for the majority of first-year applicants for Spring and Fall 2026. However, test scores may be required for some home-schooled and international applicants. International first-year applicants can waive SAT/ACT and English proficiency exams if their secondary institution provides written verification that the means of instruction is in English, they are enrolled in an IB curriculum, attend an American School, or are enrolled in a curriculum that leads to Cambridge International Examinations. Applicants with a strong GPA (3.000 or higher) and evidence of outstanding academic success throughout high school are encouraged to use the No Test Option, especially if their test scores are below the suggested minimums (SAT 1120, ACT 23). Applicants who scored 1120 or higher on the SAT or 23 or higher on the ACT are considered good candidates to submit test scores."
+  },
+  "application_strategy": {
+    "what_it_takes": [
+      "Strong academic record, including a competitive GPA and challenging high school coursework, is crucial for admission. Many admitted students have a high school GPA of 3.6 or above, with a significant portion achieving 3.75 and higher. One student directly attributed their diligently achieved 3.657 GPA to qualifying for expedited admissions.",
+      "Solid standardized test scores (SAT/ACT) can be beneficial, although UMass Lowell has a test-optional policy. Successful applicants often have SAT scores between 1180-1350 or ACT scores between 26-30.",
+      "Demonstrated interest and a strong fit with UMass Lowell's recognized academic programs, particularly in areas like engineering, business, and health sciences, are highly valued. Students often choose UMass Lowell because they perceive it as a 'perfect fit' for their intended field of study.",
+      "A commitment to engagement and leveraging available resources is an underlying success factor. While not explicitly stated as an admission criterion, students consistently praise the supportive faculty, diverse student body, and numerous clubs and organizations, suggesting that applicants who express a desire to actively participate and contribute to the campus community would be strong candidates."
+    ],
+    "common_activities_for_accepted_students": [
+      "Research Experience",
+      "Leadership in school clubs and organizations",
+      "Community service/volunteering",
+      "Varsity athletics or club/intramural sports",
+      "Music/Arts Involvement"
+    ],
+    "essay_tips": [
+      "Be specific about why UMass Lowell and connect your past to your future at the university. Admissions committees want to understand how your past experiences and communities have shaped you and how you envision engaging with UMass Lowell's specific programs, classes, research opportunities, and clubs. Show that you have done your research and are ready to dive into the UMass community.",
+      "Tell a story and use concrete examples rather than general statements. Instead of merely listing accomplishments or traits, illustrate them with specific stories, anecdotes, and vivid examples. This allows the admissions committee to hear your unique voice and gain insight into your character and potential contributions.",
+      "Reflect on your communities and identity. Many UMass Lowell essay prompts invite applicants to discuss the influence of one or more communities (which can be broadly defined, from family to academic groups to cultural affiliations) on their life and future aspirations. Connect how these experiences will shape your engagement with the UMass Lowell community and beyond.",
+      "Avoid clichés and unoriginal statements. Steer clear of overused phrases like \"I want to help people\" or \"I've always wanted to be a teacher.\" Instead, strive for fresh and unique ways to describe yourself and your motivations.",
+      "Consider submitting optional essays. While some essays may be optional, submitting them is generally recommended as it can bolster your application and provide the admissions committee with more information about you, potentially boosting your chances of admission, especially for competitive majors like engineering."
+    ],
+    "red_flags": [
+      "Submitting a generic essay that could apply to any university.",
+      "Not providing strong letters of recommendation from individuals who know you well.",
+      "Having a significantly lower GPA or test scores than the average admitted student.",
+      "Lacking depth or alignment in your extracurricular activities."
+    ],
+    "major_selection_tactics": [
+      "Apply to less competitive major or undeclared if not set on highly competitive programs like Nursing or specific Engineering fields.",
+      "Consider applying as 'undeclared' to a specific college (e.g., Liberal Arts, Sciences) to explore options before committing to a major by the end of sophomore year.",
+      "Research major-specific admission requirements and competitiveness, as some programs (e.g., Nursing) require declaration upon application and others (e.g., Doctorate of Physical Therapy) are highly competitive.",
+      "Be aware of and prepare for additional application components required for certain majors, such as auditions for Music or portfolios for Art and Design.",
+      "For majors in math, science, or engineering, completing four years of science in high school is strongly recommended to strengthen your application."
+    ],
+    "college_ranking_tactics": [
+      "Focus on student outcomes like salary impact and graduation rates to assess return on investment (ROI)",
+      "Evaluate specific academic program strengths and resources, including faculty compensation and specialized accreditations",
+      "Consider the overall campus environment, student support, and freshmen retention rates as indicators of student satisfaction",
+      "Investigate the actual net price after financial aid and 'best value' rankings, rather than just the sticker price",
+      "Prioritize colleges offering robust experiential learning opportunities such as co-ops, internships, and hands-on research"
+    ],
+    "alternate_major_strategy": "For prospective students applying to highly competitive majors at the University of Massachusetts Lowell, strategically selecting an alternate major or understanding the internal transfer process is crucial. If a student is applying to a highly competitive major, such as Computer Science, Nursing, or Engineering, and is concerned about direct admission to that program, they might consider applying to a less competitive major within a related college as an initial entry point to the university. This approach aims to secure admission to UMass Lowell first, with the understanding that a major change would be pursued later. Examples: for Computer Science, consider a less competitive major in a related field within a different college or an undeclared option. Changing majors after admission is possible but depends on available space and meeting all admission requirements for the desired program. Competitive majors like Computer Science, Engineering, and Nursing have specific GPA and course requirements for internal transfer, with Nursing being extremely limited. For other majors, changes can be initiated through the Solution Center, typically requiring a minimum GPA. Intercollegiate transfers require dean and department chairperson signatures. Changing majors, especially later in studies, may extend graduation time."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 17664.0,
+        "total_coa": 34586.0,
+        "housing": 16922.0
+      },
+      "out_of_state": {
+        "tuition": 37460.0,
+        "total_coa": 54382.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 15794.0,
+    "average_merit_aid": 9000.0,
+    "percent_receiving_aid": 94.0,
+    "meets_full_need": false,
+    "notes": "For eligible in-state students with family incomes under $75,000, tuition and mandatory fees are covered through a combination of federal, state and institutional aid via the MASSGrant Plus program.",
+    "scholarships": [
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition and mandatory fees annually",
+        "deadline": "Early Action Deadline (Admissions application)",
+        "benefits": "Renewable for up to eight semesters with a minimum 3.000 GPA",
+        "application_method": "Automatic Consideration with admissions application"
+      },
+      {
+        "name": "Tsongas Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, fees, and standard housing/food annually",
+        "deadline": "Application solicited by Lowell High School Headmaster",
+        "benefits": "Renewable for up to eight semesters with a minimum 3.000 GPA",
+        "application_method": "Nomination by Lowell High School and UMass Lowell committee"
+      },
+      {
+        "name": "Dean's Scholarship Program",
+        "type": "Merit",
+        "amount": "Up to half of tuition and mandatory fees annually",
+        "deadline": "Early Action Deadline (Admissions application)",
+        "benefits": "Renewable for up to eight semesters with a minimum 3.000 GPA",
+        "application_method": "Automatic Consideration with admissions application"
+      },
+      {
+        "name": "International Students Scholarship (Undergraduate)",
+        "type": "Merit",
+        "amount": "$5,000 to $20,000 annually",
+        "deadline": "Automatic consideration at time of admission",
+        "benefits": "Partial funding based on academic achievements",
+        "application_method": "Automatic Consideration with admissions application"
+      },
+      {
+        "name": "Graduate International Excellence Scholarships",
+        "type": "Merit",
+        "amount": "$1,000 to $5,000 per semester (maximum $20,000 over four semesters, $25,000 for MPH over five semesters)",
+        "deadline": "Fall Semester: January 15; Spring Semester: November 15",
+        "benefits": "Support for full-time, on-campus Master's degree study",
+        "application_method": "Automatic consideration with Master's program application by priority deadline"
+      },
+      {
+        "name": "Honors College Student Fellowship",
+        "type": "Merit/Departmental",
+        "amount": "$1,500 - $3,000 per fellowship",
+        "deadline": "September 8, 2025 (for Fall 25 semester)",
+        "benefits": "Grant for pre-approved scholarly engagement, satisfies an Honors requirement",
+        "application_method": "Separate application through Honors Fellowship portal; requires faculty mentor"
+      },
+      {
+        "name": "Academic Engineer Endowed Scholarship",
+        "type": "Merit/Need-based",
+        "amount": "$100-$2,500",
+        "deadline": "River Hawk Scholarship Portal application period (typically Spring)",
+        "benefits": "Supports full-time Engineering undergraduate or graduate students pursuing a minor/second major in humanities, social science, or fine arts; demonstrates financial need",
+        "application_method": "River Hawk Scholarship Portal (keyword search 'study abroad')"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_massachusetts_lowell_logo.png"
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "exceptions": [
+        "No credit for scores of 2 or 1",
+        "Biology exam taken in Spring 2020 receives four credits for BIOL.1990 and BIOL.1990L, and majors may contact the department for credit by exam",
+        "University departments reserve the right to refuse granting exam credit for requirements in the major, including laboratory components",
+        "Examination credit may not be used to reduce the university residency requirements of 15 credits in the major field and 30 credits in university courses"
+      ],
+      "usage": "Can be granted as university credit, contributing to advanced standing, and may satisfy some major prerequisites and general education requirements, up to a maximum of 30 semester credits."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Dictionary",
+        "Articulation Agreements"
+      ],
+      "restrictions": "Undergraduate: Up to 90 credits from a four-year institution, up to 75 credits from a community college, and up to 36 credits towards an associate's degree. A grade of C- (1.7 on a 4.0 scale) or better is generally required for transfer. Courses taken more than ten years prior may not be recognized. A minimum of 30 credits must be completed at UMass Lowell for a bachelor's degree. Graduate: A maximum of 12 graduate credits with a grade of B or better can be transferred to a master's program, and a maximum of 24 credits with a grade of B or better to a doctoral program. Courses must have been completed within five years prior to admission for graduate transfer credit. Transfer credit may not be granted for research seminars, clinical courses, practica, internships, or special projects."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including a competitive GPA and challenging high school coursework, is crucial for admission. Many admitted students have a high school GPA of 3.6 or above, with a significant portion achieving 3.75 and higher. One student directly attributed their diligently achieved 3.657 GPA to qualifying for expedited admissions.",
+      "Solid standardized test scores (SAT/ACT) can be beneficial, although UMass Lowell has a test-optional policy. Successful applicants often have SAT scores between 1180-1350 or ACT scores between 26-30.",
+      "Demonstrated interest and a strong fit with UMass Lowell's recognized academic programs, particularly in areas like engineering, business, and health sciences, are highly valued. Students often choose UMass Lowell because they perceive it as a 'perfect fit' for their intended field of study.",
+      "A commitment to engagement and leveraging available resources is an underlying success factor. While not explicitly stated as an admission criterion, students consistently praise the supportive faculty, diverse student body, and numerous clubs and organizations, suggesting that applicants who express a desire to actively participate and contribute to the campus community would be strong candidates."
+    ],
+    "common_activities": [
+      "Research Experience",
+      "Leadership in school clubs and organizations",
+      "Community service/volunteering",
+      "Varsity athletics or club/intramural sports",
+      "Music/Arts Involvement"
+    ],
+    "essay_tips": [
+      "Be specific about why UMass Lowell and connect your past to your future at the university. Admissions committees want to understand how your past experiences and communities have shaped you and how you envision engaging with UMass Lowell's specific programs, classes, research opportunities, and clubs. Show that you have done your research and are ready to dive into the UMass community.",
+      "Tell a story and use concrete examples rather than general statements. Instead of merely listing accomplishments or traits, illustrate them with specific stories, anecdotes, and vivid examples. This allows the admissions committee to hear your unique voice and gain insight into your character and potential contributions.",
+      "Reflect on your communities and identity. Many UMass Lowell essay prompts invite applicants to discuss the influence of one or more communities (which can be broadly defined, from family to academic groups to cultural affiliations) on their life and future aspirations. Connect how these experiences will shape your engagement with the UMass Lowell community and beyond.",
+      "Avoid clichés and unoriginal statements. Steer clear of overused phrases like \"I want to help people\" or \"I've always wanted to be a teacher.\" Instead, strive for fresh and unique ways to describe yourself and your motivations.",
+      "Consider submitting optional essays. While some essays may be optional, submitting them is generally recommended as it can bolster your application and provide the admissions committee with more information about you, potentially boosting your chances of admission, especially for competitive majors like engineering."
+    ],
+    "red_flags": [
+      "Submitting a generic essay that could apply to any university.",
+      "Not providing strong letters of recommendation from individuals who know you well.",
+      "Having a significantly lower GPA or test scores than the average admitted student.",
+      "Lacking depth or alignment in your extracurricular activities."
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "University of Massachusetts Lowell is a 'somewhat selective' institution with an acceptance rate typically in the 83-86% range and average admitted student GPAs around 3.72.",
+        "implication": "Applicants should aim for a strong academic record (GPA of 3.72 or higher) and consider applying Early Action (deadlines Nov 5 or Jan 15) to demonstrate strong interest, though test scores are optional, strong scores can enhance an application."
+      },
+      {
+        "category": "Value",
+        "insight": "UMass Lowell is recognized as a top-value institution, ranking #1 in Massachusetts and #92 nationally for 'best value schools' by U.S. News & World Report in 2026. Graduates report high starting salaries and a strong long-term return on investment.",
+        "implication": "Prospective students focused on career readiness and financial viability should highlight their career aspirations and demonstrate how UMass Lowell's strong employer connections, co-op programs, and practical education align with their goals."
+      },
+      {
+        "category": "Academic",
+        "insight": "As an R1 'very high research activity' university, UMass Lowell offers a broad array of specialized undergraduate and graduate programs, with a strong emphasis on hands-on, experience-based learning in fields like engineering, health sciences, and unique areas such as plastics engineering and sound recording technology.",
+        "implication": "Applicants with a passion for research, specific technical fields, or a desire for practical, real-world application of their studies should emphasize these interests in their essays and recommenders, showcasing any relevant projects or experiences."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 64874,
+    "employment_rate_2yr": 94.0,
+    "median_earnings_6yr": 43400,
+    "top_employers": [
+      "McKinsey & Company",
+      "Deloitte",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "Apple",
+      "Amazon",
+      "IBM",
+      "Raytheon"
+    ],
+    "grad_school_rate": 25.5,
+    "loan_default_rate": 5.2,
+    "notes": "UMass Lowell is ranked in the top 10 percent nationally for lifetime return on investment for graduates. The 70% 6-year graduation rate places the university in the top quarter of comparable institutions."
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 48.0,
+    "graduation_rate_6_year": 70.0
+  }
 }

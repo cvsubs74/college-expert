@@ -1302,7 +1302,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: one campus-wide essay on how a meaningful community has shaped the applicant (350 words), and one or more college-specific essays (prompts and word limits vary by college/school, often focusing on why the chosen major/program at Cornell)."
       },
       {
@@ -1344,7 +1344,7 @@
       {
         "target_program": "Music",
         "requirement_type": "Supplemental Recording",
-        "deadline": null,
+        "deadline": "",
         "details": "Optional for applicants (regardless of intended major) who believe their musical abilities will enhance their application. Not an audition for admission to a major; major application is made after enrollment. Recordings should be electronic, no longer than 10 minutes."
       }
     ],
@@ -1533,11 +1533,31 @@
       "Underestimating Cornell's selectivity and not putting authentic effort into every part of the application"
     ],
     "insights": [
-      "Cornell values authenticity and wants to see the real you in your application.",
-      "The college within Cornell to which you apply is extremely important, as each has its own admissions office and looks for specific fit.",
-      "Cornell provides extensive resources and opportunities across a diverse academic environment, encouraging students to find their niche.",
-      "Networking and joining clubs are crucial for both academic success and building a social life at Cornell.",
-      "Successful applicants often articulate not only their academic passions but also how they plan to make an impact."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Cornell values authenticity and wants to see the real you in your application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The college within Cornell to which you apply is extremely important, as each has its own admissions office and looks for specific fit."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Cornell provides extensive resources and opportunities across a diverse academic environment, encouraging students to find their niche."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Networking and joining clubs are crucial for both academic success and building a social life at Cornell."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Successful applicants often articulate not only their academic passions but also how they plan to make an impact."
+      }
     ]
   },
   "outcomes": {

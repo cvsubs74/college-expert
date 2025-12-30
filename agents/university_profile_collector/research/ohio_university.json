@@ -1,564 +1,2224 @@
 {
-  "university_profile": {
-    "_id": "ohio_university",
-    "metadata": {
-      "official_name": "Ohio University",
-      "location": {
-        "city": "Athens",
-        "state": "OH",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "ohio.edu",
-        "usnews.com",
-        "niche.com",
-        "wikipedia.org"
-      ]
+  "_id": "ohio_university",
+  "metadata": {
+    "official_name": "Ohio University",
+    "location": {
+      "city": "Athens",
+      "state": "Ohio",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "Established in 1804 as the first university in the Northwest Territory, Ohio University is a premier public research institution (R1 status) famous for its scenic Appalachian campus. It balances a high-activity research environment with a quintessential residential college town atmosphere in Athens.",
-      "market_position": "Public Ivy",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 198,
-      "analyst_takeaways": [
-        {
-          "category": "Admissions Selectivity",
-          "insight": "While the overall acceptance rate remains accessible at approximately 85%, the university has seen record-breaking freshman class sizes in recent years.",
-          "implication": "Applicants should apply early to secure preferred housing and competitive merit-based aid, as residential capacity is a limiting factor."
-        },
-        {
-          "category": "Research Infrastructure",
-          "insight": "The university holds a Carnegie R1 classification, attracting over $60 million in annual research awards with specialized strengths in avionics and biotechnology.",
-          "implication": "Undergraduates benefit from high-tier research facilities typically reserved for graduate students, particularly in the Russ College of Engineering."
-        },
-        {
-          "category": "Financial Value",
-          "insight": "Ohio University utilizes a 'Tuition Guarantee' model that freezes tuition, room, and board rates for four years.",
-          "implication": "This provides high cost predictability, making it an attractive option for middle-income families seeking long-term financial stability."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Consistently ranked as one of America's best college towns, the social scene is defined by its historic 'greens' and a high-energy Greek life presence.",
-        "transportation_impact": "The pedestrian-centric Athens campus is served by the free 'CATS' shuttle system and 'Bobcat Pass' transit, making a personal vehicle largely unnecessary for residential students.",
-        "research_impact": "Research is deeply integrated into the local economy through the Corporate Engagement Office, fostering a culture of entrepreneurship and regional industry partnerships."
+    "last_updated": "2024-05-22",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Ohio University, established in 1804, is a comprehensive public research university in Athens, Ohio. It is recognized for its beautiful campus, strong sense of community, and diverse academic offerings across arts, sciences, business, and health professions. The university emphasizes experiential learning and student success.",
+    "market_position": "Regional public university with strong programs in journalism, business, and healthcare, known for vibrant campus life and historical significance.",
+    "admissions_philosophy": "Seeks well-rounded students demonstrating academic readiness, intellectual curiosity, and a desire to contribute positively to a residential campus environment. A holistic review considers academic record, extracurricular involvement, and personal essays.",
+    "us_news_rank": 185,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Ohio University benefits from a strong brand identity within Ohio and surrounding states.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The university's picturesque campus and strong residential life are key differentiators.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunities exist to further leverage alumni networks for career services and fundraising.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Maintaining competitive program offerings, particularly in high-demand fields, is crucial for market share.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Addressing affordability and student debt remains a strategic imperative for continued accessibility.",
+        "category": "general"
       }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Known for a lively and engaging residential experience, a strong sense of community, numerous student organizations, and a significant presence of Greek life. Campus events, athletic support, and a picturesque setting foster strong student connections.",
+      "transportation_impact": "Athens is a classic college town, highly walkable and bike-friendly. Most essential services and campus facilities are within easy reach. University transit system and limited public city transit support off-campus living, but personal vehicles are often secondary for daily use.",
+      "research_impact": "Active research enterprise across various disciplines, with notable strengths in biomedical sciences, environmental studies, and engineering. Facilitates interdisciplinary collaborations and provides extensive undergraduate research opportunities, contributing to regional innovation and knowledge creation."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 84.96,
+      "is_test_optional": true,
+      "test_policy_details": "Ohio University has a test-optional pathway for freshman applicants to its Athens campus, meaning standardized test scores (ACT or SAT) are not required for admission. Applicants can choose to submit scores if they wish to have them considered. If multiple scores are submitted, Ohio University will use the highest composite ACT or the highest combined math and critical reading SAT scores, as the university superscores. Applying test-optional will not negatively impact consideration for admission, merit-based scholarships, or honors and scholars programs. Undergraduate Admissions considers class rank, strength of curriculum, optional ACT and/or SAT scores, and GPA. Self-reporting of scores is permitted initially.",
+      "admits_class_size": 21567,
+      "transfer_acceptance_rate": 65.5,
+      "early_admission_stats": [],
+      "international_acceptance_rate": 55.6,
+      "international_applications": 1403,
+      "international_admits": 780,
+      "international_notes": "The international acceptance rate is for the application year 2023. Data for 2021 and 2022 is unavailable. The university is generally more competitive for international applicants due to additional requirements like English proficiency, contrasting with an overall acceptance rate of around 85-87%.",
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": true,
+      "state_rates_notes": "Ohio University is a public institution. The university's overall acceptance rate is approximately 85%. However, Ohio University reports its admission statistics without distinguishing between in-state and out-of-state applicants, making separate acceptance rates for residents and non-residents unavailable."
     },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 84.99,
-        "in_state_acceptance_rate": null,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": 55.6,
-        "transfer_acceptance_rate": 65.5,
-        "admits_class_size": 23360,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
-          {
-            "plan_type": "EA",
-            "applications": null,
-            "admits": null,
-            "acceptance_rate": null,
-            "class_fill_percentage": null
-          }
-        ]
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 27486,
+        "admits_total": 23360,
+        "enrolled_total": 4550,
+        "acceptance_rate_overall": 84.99,
+        "yield_rate": 19.48,
+        "notes": "Record first-year student enrollment of 4,550 for the Athens campus. The incoming class had a record high incoming average GPA of 3.67, with more than a quarter in the top ten percent of their high school graduating classes. Includes 142 students ranked No. 1 in their high school graduating classes and over 300 winners of the Governor's Merit Scholarship.",
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
       },
-      "longitudinal_trends": [
-        {
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 27105,
+        "admits_total": 23085,
+        "enrolled_total": 4345,
+        "acceptance_rate_overall": 85.0,
+        "yield_rate": 18.82,
+        "notes": "Ohio University welcomed 4,345 new students for fall 2024, following record-setting incoming classes in the previous two years. The university saw more than 27,000 applications for Fall 2024. Growth was noted in out-of-state students, with 628 non-Ohio students enrolling. The entering class had an average high school GPA of 3.64, with over 12% ranked in the top 5% of their high school graduating class.",
+        "waitlist_stats": {
           "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 27105,
-          "admits_total": 23085,
-          "enrolled_total": 4500,
-          "acceptance_rate_overall": 85.2,
-          "yield_rate": 19.5,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Enrollment remained at record levels; waitlist data not publicly disclosed."
-        },
-        {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 25648,
+        "admits_total": 21739,
+        "enrolled_total": 4587,
+        "acceptance_rate_overall": 84.8,
+        "yield_rate": 21.1,
+        "notes": "The undergraduate acceptance rate was 84.8%. The number of applicants grew by 2.68% between 2022 and 2023. Ohio University-Main Campus had an overall enrollment yield of 21.1%.",
+        "waitlist_stats": {
           "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 25385,
-          "admits_total": 21567,
-          "enrolled_total": 4517,
-          "acceptance_rate_overall": 84.96,
-          "yield_rate": 20.9,
-          "waitlist_stats": {
-            "year": 2023
-          },
-          "notes": "Record first-year enrollment; Ohio University typically does not utilize a waitlist."
-        },
-        {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 24980,
+        "admits_total": 21607,
+        "enrolled_total": 4441,
+        "acceptance_rate_overall": 86.5,
+        "yield_rate": 20.55,
+        "notes": "Ohio University welcomed its largest first-year class in the institution's history, with 4,441 incoming first-year students to the Athens Campus, a 21% increase from 2021. The class had a record-high incoming average high school GPA and a record number of Ohio residents (3,908).",
+        "waitlist_stats": {
           "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 22291,
-          "admits_total": 19285,
-          "enrolled_total": 4441,
-          "acceptance_rate_overall": 86.5,
-          "yield_rate": 23.0,
-          "notes": "Estimated based on yield trends and historical reports."
-        },
-        {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 21733,
+        "admits_total": 19245,
+        "enrolled_total": 3648,
+        "acceptance_rate_overall": 88.56,
+        "yield_rate": 18.95,
+        "notes": "The acceptance rate for Fall 2021 was 88.56%.",
+        "waitlist_stats": {
           "year": 2021,
-          "cycle_name": "Class of 2025",
-          "applications_total": 21733,
-          "admits_total": 19245,
-          "enrolled_total": 3648,
-          "acceptance_rate_overall": 88.56,
-          "yield_rate": 18.96,
-          "notes": "Post-COVID rebound year."
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
         }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": null,
-          "unweighted_middle_50": "3.50-4.00",
-          "average_weighted": 3.64,
-          "percentile_25": "3.48",
-          "percentile_75": "3.90",
-          "notes": "Average high school GPA was 3.64. Roughly 50% of admitted students had a 3.75 or higher."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1100-1280",
-          "sat_reading_middle_50": "550-650",
-          "sat_math_middle_50": "540-640",
-          "act_composite_middle_50": "22-28",
-          "submission_rate": 48.0,
-          "policy_note": "Test-optional for the Athens campus."
-        },
-        "demographics": {
-          "first_gen_percentage": 25.0,
-          "legacy_percentage": null,
-          "international_percentage": 1.0,
-          "geographic_breakdown": [
-            {
-              "region": "Ohio (In-State)",
-              "percentage": 86.0
-            },
-            {
-              "region": "Other US States",
-              "percentage": 13.0
-            },
-            {
-              "region": "International",
-              "percentage": 1.0
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 11326,
-              "admits": 9308,
-              "acceptance_rate": 82.2
-            },
-            "women": {
-              "applicants": 15779,
-              "admits": 13777,
-              "acceptance_rate": 87.3
-            }
-          },
-          "racial_breakdown": {
-            "white": 78.3,
-            "black_african_american": 5.2,
-            "hispanic_latino": 4.3,
-            "asian": 2.2,
-            "native_american_alaskan": 0.1,
-            "pacific_islander": 0.1,
-            "two_or_more_races": 3.8,
-            "unknown": 5.0,
-            "non_resident_alien": 1.0
-          }
-        }
-      },
-      "application_process": {
-        "platforms": [
-          "Common App",
-          "Ohio University Alternative Online Application"
-        ],
-        "application_deadlines": [
-          {
-            "plan_type": "Early Action",
-            "date": "2024-11-15",
-            "is_binding": false,
-            "notes": "Priority consideration for merit scholarships and Honors Tutorial College"
-          },
-          {
-            "plan_type": "Rolling Admission",
-            "date": "2025-02-01",
-            "is_binding": false,
-            "notes": "Priority deadline for fall semester general admission"
-          },
-          {
-            "plan_type": "Spring Admission",
-            "date": "2024-11-01",
-            "is_binding": false
-          }
-        ],
-        "supplemental_requirements": [
-          {
-            "target_program": "All",
-            "requirement_type": "Essay",
-            "details": "Optional personal statement (250-500 words)."
-          },
-          {
-            "target_program": "Honors Tutorial College (HTC)",
-            "requirement_type": "Essays",
-            "deadline": "2024-11-15",
-            "details": "Two required 600-word essays: Why Major and Why Tutorial Education."
-          },
-          {
-            "target_program": "Fine Arts",
-            "requirement_type": "Audition/Portfolio",
-            "details": "Required for Music, Dance, Theater, and Art majors."
-          },
-          {
-            "target_program": "Business & Journalism",
-            "requirement_type": "Essay",
-            "details": "Highly encouraged supplemental essay regarding field preparation."
-          }
-        ],
-        "holistic_factors": {
-          "primary_factors": [
-            "Course Rigor",
-            "GPA",
-            "Class Rank"
-          ],
-          "secondary_factors": [
-            "Extracurriculars",
-            "Test Scores",
-            "Recommendations",
-            "Character"
-          ],
-          "essay_importance": "Moderate",
-          "demonstrated_interest": "Considered",
-          "interview_policy": "Not Offered",
-          "legacy_consideration": "Minimal",
-          "first_gen_boost": "Moderate",
-          "specific_differentiators": "OHIO Admission Promise provides automatic admission for students with a 3.0+ GPA."
-        }
-      },
-      "application_strategy": {
-        "major_selection_tactics": [
-          "Target 'non-selective' majors in Arts and Sciences for easier entry.",
-          "Utilize 'University-wide Major Exploration' to bypass selective college prerequisites initially.",
-          "Apply to the 'Bachelor of General Studies' for maximum multidisciplinary flexibility.",
-          "Submit optional essays for Business or Journalism to offset borderline stats.",
-          "Review 'selective' major codes (SA) vs. standard codes to identify programs with supplemental audits."
-        ],
-        "college_ranking_tactics": [
-          "Rank regional campuses (Lancaster, Zanesville) as backups; they offer guaranteed relocation to Athens after 30 credits.",
-          "Prioritize 'Undecided' Learning Communities (LCs) for major-specific advising.",
-          "Opt into 'Regional Campus' consideration box to ensure admission if the main campus is full.",
-          "Select career-path specific LCs (e.g., 'Pre-Law') to gain early faculty access."
-        ],
-        "alternate_major_strategy": "Use 'Undecided - University College' as a tactical alternate for high-impact majors. Pre-Major status (e.g., Pre-Nursing) is often offered for rejected selective applicants."
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Russ College of Engineering and Technology",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong preparation in math, chemistry, and physics essential. Lower stats may lead to 'Pre-Engineering' placement.",
-          "housing_profile": "Located on West Green near STEM facilities; James Hall is a common choice.",
-          "student_archetype": "Pragmatic 'doers' and technical problem-solvers",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.M.E.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "MATH 2302 Calculus II",
-                "ET 2200 Statics"
-              ],
-              "admissions_pathway": "Direct Admit/Internal Transfer"
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.C.S.",
-              "is_impacted": true,
-              "admissions_pathway": "Direct/Internal Transfer"
-            },
-            {
-              "name": "Aviation Flight",
-              "degree_type": "B.S.A.",
-              "is_impacted": true,
-              "special_requirements": "Medical clearance and supplemental app required.",
-              "admissions_pathway": "Direct Admit"
-            }
-          ]
-        },
-        {
-          "name": "Scripps College of Communication",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly selective for Journalism/VisCom; portfolio or strong writing samples required.",
-          "housing_profile": "East and South Green; proximity to Schoonover Center.",
-          "student_archetype": "Career-driven storytellers",
-          "majors": [
-            {
-              "name": "Journalism",
-              "degree_type": "B.S.J.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 3.0,
-              "admissions_pathway": "Direct/Internal Transfer"
-            },
-            {
-              "name": "Visual Communication",
-              "degree_type": "B.S.V.C.",
-              "is_impacted": true,
-              "special_requirements": "Portfolio review and interview.",
-              "admissions_pathway": "Direct Admit"
-            }
-          ]
-        },
-        {
-          "name": "College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Holistic review with 3.0+ GPA focus; leadership evidence is highly valued.",
-          "housing_profile": "East Green or renovated South Green suites.",
-          "student_archetype": "Professional networking-focused leaders",
-          "majors": [
-            {
-              "name": "Marketing",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "admissions_pathway": "Direct/Internal Transfer"
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "admissions_pathway": "Direct/Internal Transfer"
-            }
-          ]
-        },
-        {
-          "name": "Honors Tutorial College (HTC)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires 30+ ACT/1300+ SAT, two additional essays, and a faculty interview.",
-          "housing_profile": "Priority for Hoover House (South Green) or Jefferson Hall.",
-          "student_archetype": "Intellectually elite and self-motivated scholars"
-        },
-        {
-          "name": "College of Health Sciences and Professions",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 50.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Nursing is highly competitive; enter as 'Pre-BSN' and apply to clinicals after year one.",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "admissions_pathway": "Pre-Major"
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Environmental Studies Sustainability and Resilience Certificate",
-        "Social Media Certificate",
-        "Global Health Certificate",
-        "Communication Studies Minor",
-        "Health Services Administration Minor",
-        "Marketing Minor",
-        "Entrepreneurship Certificate",
-        "Semiconductor Manufacturing Technician Fundamentals Certificate"
-      ]
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 14158,
-          "total_coa": 32204,
-          "housing": 14162
-        },
-        "out_of_state": {
-          "tuition": 24838,
-          "total_coa": 42884,
-          "supplemental_tuition": 10680
-        }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.59-4.20",
+        "unweighted_middle_50": "3.20-3.50",
+        "average_weighted": 3.65,
+        "percentile_25": "3.59",
+        "percentile_75": "4.20",
+        "notes": "Ohio University considers a holistic review process. The middle 50 percent of the Fall 2024 freshman class were in the top 12-42% of their graduating high school classes. Other factors considered for admission include the rigor of high school curriculum, test scores (if submitted), essays, letters of recommendation, and extracurricular activities."
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 12693,
-      "average_merit_aid": 6639,
-      "percent_receiving_aid": 99.0,
-      "scholarships": [
-        {
-          "name": "Manasseh Cutler Scholars Program",
-          "type": "Merit",
-          "amount": "$25,000 annual renewable",
-          "deadline": "2025-11-15",
-          "benefits": "Outdoor leadership, service projects, study abroad stipend",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "OHIO Premier Scholarship",
-          "type": "Merit",
-          "amount": "Full in-state tuition (~$14,582/year)",
-          "deadline": "2025-11-15",
-          "benefits": "Direct HTC entry, mentoring, research opportunities",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "OHIO Excellence Scholarship",
-          "type": "Merit",
-          "amount": "Up to $6,500 annually",
-          "deadline": "2025-11-15",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "President's Opportunity Promise Award",
-          "type": "Need/Merit",
-          "amount": "Full tuition and mandatory fees",
-          "deadline": "2026-01-15",
-          "benefits": "Covers remaining tuition for Pell-eligible regional students",
-          "application_method": "FAFSA and Admission Application"
-        },
-        {
-          "name": "OHIO Admission Promise Award",
-          "type": "Merit",
-          "amount": "$2,000 renewable",
-          "deadline": "2026-01-15",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "OHIO Trustee Award",
-          "type": "Merit (Out-of-State)",
-          "amount": "$7,000+ of non-resident surcharge",
-          "deadline": "2025-11-15",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Next Generation Award",
-          "type": "Alumni",
-          "amount": "Value of non-resident surcharge",
-          "deadline": "2025-11-15",
-          "benefits": "Allows alumni descendants to pay in-state rates",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams",
-        "exceptions": [
-          "Art Studio requires a portfolio review of 6-10 digital images",
-          "AP Research and Seminar accepted for UNIV 1XXL credit"
-        ],
-        "usage": "Satisfies BRICKS general education requirements and major prerequisites."
+      "testing": {
+        "sat_composite_middle_50": "1100-1280",
+        "sat_reading_middle_50": "560-650",
+        "sat_math_middle_50": "540-640",
+        "act_composite_middle_50": "22-28",
+        "submission_rate": 37.0,
+        "policy_note": "Test-optional. Ohio University superscores SAT by considering the highest section scores across all test dates and uses the highest composite ACT score from all test dates."
       },
-      "ib_policy": {
-        "general_rule": "HL exams with score of 5+ grant up to 9 semester hours",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "Ohio Transfer 36"
-        ],
-        "restrictions": "Min 30 hours in residence; 50% of major/minor coursework must be in residence."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A GPA of 3.4+ and ACT scores between 21-28 for the most competitive scholarship tiers",
-        "Applying by the Early Action deadline (Nov 15) to secure merit aid",
-        "Strong performance in core subjects for majors like Nursing or Business",
-        "Demonstrated interest in the 'Athens experience'"
-      ],
-      "common_activities": [
-        "Schey Sales Centre professional development",
-        "Greek Life (involved in roughly 10% of the student body)",
-        "Outdoor recreation (Hocking Hills proximity)",
-        "Uptown cultural events and student-led media"
-      ],
-      "essay_tips": [
-        "Highlight a connection to the unique Athens community or 'Bobcat' spirit",
-        "Be specific about departmental resources",
-        "Voice your fit for an 'inclusive, progressive island' atmosphere"
-      ],
-      "red_flags": [
-        "Missing the EA deadline, which significantly reduces merit aid chances",
-        "Generic 'Why OU' essays that fit any state school",
-        "Senior year grade drops in STEM subjects"
-      ],
-      "insights": [
-        "Athens is an 'island of blue in a sea of red' hub for progressive students",
-        "Joining at least one of the 500+ clubs early is essential for social retention",
-        "Uptown Athens culture is a central part of student identity"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 52581,
-      "employment_rate_2yr": 93.0,
-      "grad_school_rate": 25.0,
-      "top_employers": [
-        "Cleveland Clinic",
-        "OhioHealth",
-        "JPMorgan Chase & Co.",
-        "Amazon",
-        "Nike",
-        "Google"
-      ],
-      "loan_default_rate": 7.5,
-      "retention_graduation": {
-        "freshman_retention_rate": 82.7,
-        "graduation_rate_4_year": 53.0,
-        "graduation_rate_6_year": 69.0
-      }
-    },
-    "application_process": {
-      "supplemental_requirements": {
-        "essay_prompts": [
+      "demographics": {
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": null,
+        "first_gen_legacy_notes": "A full quarter of the Athens freshman class are first-generation students (Fall 2025).",
+        "geographic_breakdown": [
           {
-            "prompt": "At Ohio University, we value the unique experiences and perspectives that each student brings to our community. Please share something about yourself that you believe would contribute to or benefit from the OHIO community.",
-            "word_limit": 500,
-            "required": false,
-            "note": "Optional essay",
-            "application_cycle": "2025-2026"
+            "region": "Ohio",
+            "percentage": 84.4
+          },
+          {
+            "region": "International",
+            "percentage": 4.2
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 3.1
+          },
+          {
+            "region": "Illinois",
+            "percentage": 1.2
+          },
+          {
+            "region": "New York",
+            "percentage": 0.9
+          },
+          {
+            "region": "Maryland",
+            "percentage": 0.9
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 0.7
+          },
+          {
+            "region": "West Virginia",
+            "percentage": 0.5
+          },
+          {
+            "region": "Indiana",
+            "percentage": 0.5
+          },
+          {
+            "region": "Michigan",
+            "percentage": 0.4
+          },
+          {
+            "region": "Florida",
+            "percentage": 0.4
           }
-        ]
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10588,
+            "admits": 8701,
+            "acceptance_rate": 82.17,
+            "note": "Data likely pertains to the 2023 admission cycle, reported as of March 2, 2025."
+          },
+          "women": {
+            "applicants": 15060,
+            "admits": 13038,
+            "acceptance_rate": 86.57,
+            "note": "Data likely pertains to the 2023 admission cycle, reported as of March 2, 2025."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 77.7,
+          "black_african_american": 5.72,
+          "hispanic_latino": 4.46,
+          "asian": 2.2,
+          "native_american_alaskan": 0.08,
+          "pacific_islander": 0.07,
+          "two_or_more_races": 3.79,
+          "unknown": 2.05,
+          "non_resident_alien": 3.92
+        }
       }
     }
   },
-  "_id": "ohio_university",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
       {
-        "prompt": "Tell us why you are interested in attending Ohio University and what aspects of our community appeal to you.",
-        "word_limit": "250 words",
-        "type": "Why Ohio",
-        "required": false,
-        "brainstorming_questions": [
-          "Beyond the official rankings and statistics, what specific feeling or vibe did you get when you first explored Ohio University \u2013 maybe through its website, social media, or even a virtual tour \u2013 that made you think, 'This could be a place for me'?",
-          "Think about the unique traditions, values, or even the geographical setting of Athens. Is there a particular aspect of OU's 'personality' or its connection to the Appalachian region that resonates deeply with your own identity or aspirations?",
-          "When you imagine yourself as a student at Ohio University, what kind of interactions are you picturing? Are there specific student organizations, research opportunities, or even everyday campus encounters that excite you most about becoming part of the OU community?",
-          "Looking at OU's academic offerings, beyond your intended major, are there any interdisciplinary programs, unique courses, or even particular professors whose work or teaching philosophy sparks your curiosity and makes you eager to learn and contribute within their community?",
-          "What does 'community' mean to you personally, and how do you see yourself actively contributing to or enriching the Ohio University community, rather than just being a passive member?"
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university housing options available. South Green dorms (e.g., Pickering, Brown, Mackinnon, Crawford, Adams, Carr, Sowle, Luchs, Tanaka) are conveniently located for students across all majors. The 'Front Four' are traditional with communal bathrooms, while the 'Side Five' (Adams, Carr, Sowle, Luchs, Tanaka) are more renovated, suite-style with shared bathrooms, student kitchens, on-site laundry, and central A/C (except Adams).",
+        "student_archetype": "Diverse students interested in liberal arts, natural sciences, social sciences, humanities, pre-professional tracks, and secondary education. They seek a broad academic foundation and opportunities to explore various fields.",
+        "strategic_fit_advice": "Ideal for students seeking a comprehensive education across a wide range of disciplines, those pursuing pre-professional studies, or aspiring secondary educators. Strong fit for individuals who value intellectual breadth and diverse academic inquiry.",
+        "majors": [
+          {
+            "name": "Biological Sciences—Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOS 1700 Biological Sciences I: Molecules and Cells (3)",
+                "BIOS 1705 Biological Sciences I: Molecules and Cells Lab (1)",
+                "BIOS 1710 Biological Sciences II: Diversity, Ecology, and the Environment (3)",
+                "BIOS 1715 Biological Sciences II: Diversity, Ecology, and the Environment Lab (1)",
+                "CHEM 1510 Fundamentals of Chemistry I (4)",
+                "CHEM 1520 Fundamentals of Chemistry II (4)",
+                "CHEM 2410 Organic Chemistry I (3)",
+                "CHEM 2420 Organic Chemistry II (3)",
+                "CHEM 2410L Organic Chemistry I Lab (1.5)",
+                "CHEM 2420L Organic Chemistry II Lab (1.5)",
+                "PHYS 2051 General Physics (5)",
+                "PHYS 2052 General Physics (5)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "BIOS 3010 Cell Biology (3)",
+                "BIOS 3015 Cell Biology Laboratory (2)",
+                "BIOS 3100 General Ecology (3)",
+                "BIOS 3105 General Ecology Laboratory (2)",
+                "BIOS 3200 Genetics (3)",
+                "BIOS 3205 Genetics Laboratory (2)"
+              ],
+              "electives": [
+                "BIOS 4000-level courses in specialized areas (e.g., microbiology, physiology, neurobiology)"
+              ],
+              "total_units": 120,
+              "major_units": 65.5
+            },
+            "notable_professors": [
+              "Dr. Sarah Wyatt (Plant molecular biologist)",
+              "Dr. Shawn Ostermann (Associate Professor)",
+              "Dr. John J. Kopchick (Molecular Biology)"
+            ],
+            "notes": "Students are encouraged to work with an advisor to select additional BIOS courses. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 1510 Fundamentals of Chemistry I (4)",
+                "CHEM 1520 Fundamentals of Chemistry II (4)",
+                "CHEM 2410 Organic Chemistry I (3)",
+                "CHEM 2420 Organic Chemistry II (3)",
+                "CHEM 2410L Organic Chemistry I Lab (1.5)",
+                "CHEM 2420L Organic Chemistry II Lab (1.5)",
+                "CHEM 3050 Analytical Chemistry (4)",
+                "CHEM 3060 Physical Chemistry I (3)",
+                "CHEM 3070 Physical Chemistry II (3)",
+                "CHEM 3080 Physical Chemistry Lab (2)",
+                "CHEM 4900 Advanced Chemistry Topics (3)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "PHYS 2051 General Physics (5)",
+                "PHYS 2052 General Physics (5)"
+              ],
+              "electives": [
+                "CHEM 4310 Biochemistry I (3)",
+                "CHEM 4320 Biochemistry II (3)",
+                "CHEM 4510 Inorganic Chemistry (3)"
+              ],
+              "total_units": 120,
+              "major_units": 50.5
+            },
+            "notable_professors": [
+              "Dr. Klaus Himmeldirk (Professor of Instruction)",
+              "Dr. Frazier Nyasulu (Professor of Instruction)",
+              "Dr. Rebecca Barlag (Professor of Instruction)"
+            ],
+            "notes": "Students should consult with an advisor for specific elective choices. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSY 1010 General Psychology (3)",
+                "PSY 2110 Statistics for the Behavioral Sciences (4)",
+                "PSY 2120 Research Methods in Psychology (4)",
+                "PSY 3210 Social Psychology (3)",
+                "PSY 3310 Developmental Psychology (3)",
+                "PSY 3410 Cognitive Psychology (3)",
+                "PSY 3510 Biological Psychology (3)",
+                "PSY 4700 Capstone in Psychology (3)"
+              ],
+              "electives": [
+                "PSY 3220 Psychology of Personality (3)",
+                "PSY 3710 Abnormal Psychology (3)",
+                "PSY 3810 Health Psychology (3)"
+              ],
+              "total_units": 120,
+              "major_units": 29
+            },
+            "notable_professors": [
+              "Dr. Steven W. Evans (Co-Director of the Center for Intervention Research in Schools)",
+              "Dr. Christopher France (Psychology)",
+              "Dr. Kenneth A. Holroyd (Psychology)"
+            ],
+            "notes": "Students are encouraged to select electives based on their interests and career goals. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENG 1510 Writing and Rhetoric I: Foundations (3)",
+                "ENG 2010 Introduction to Literature (3)",
+                "ENG 2020 Introduction to Critical Methods (3)",
+                "ENG 3050 History of the English Language (3)",
+                "ENG 3100 Introduction to Creative Writing (3)",
+                "ENG 3200 Studies in Literary History (3)",
+                "ENG 3300 Literary Theory and Criticism (3)",
+                "ENG 4900 Senior Seminar in English (3)"
+              ],
+              "electives": [
+                "ENG 3070 Technical Writing (3)",
+                "ENG 3150 Fiction Writing (3)",
+                "ENG 3160 Poetry Writing (3)",
+                "ENG 3400 American Literature (3)"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Mark Halliday (Poetry)",
+              "Dr. Linda Zionkowski (Samuel and Susan Crowl Professor of Literature)",
+              "Dr. Eric LeMay (Stocker Professor of Creative Writing)"
+            ],
+            "notes": "Specific English electives allow for specialization in areas like creative writing, literature, or rhetoric. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1030 Principles of Microeconomics (3)",
+                "ECON 1040 Principles of Macroeconomics (3)",
+                "ECON 3010 Intermediate Microeconomics (3)",
+                "ECON 3020 Intermediate Macroeconomics (3)",
+                "ECON 3810 Economic Statistics (3)",
+                "ECON 4000 Senior Seminar in Economics (3)"
+              ],
+              "electives": [
+                "ECON 3100 Money and Banking (3)",
+                "ECON 3150 International Economics (3)",
+                "ECON 3400 Environmental Economics (3)"
+              ],
+              "total_units": 120,
+              "major_units": 18
+            },
+            "notable_professors": [
+              "Dr. Rajindar Koshal (Professor)",
+              "Dr. Yining Chen (Associate Professor)",
+              "Dr. Ashok Gupta (Professor of Marketing, co-author of economics research)"
+            ],
+            "notes": "Students pursuing a B.A. in Economics are encouraged to pair it with a minor or second major. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HIST 1030 World History I: Ancient to Early Modern (3)",
+                "HIST 1040 World History II: Early Modern to Present (3)",
+                "HIST 2000 Introduction to Historical Methods (3)",
+                "HIST 3000-level courses in various historical periods/regions (at least 9 hours)",
+                "HIST 4000 Senior Seminar in History (3)"
+              ],
+              "electives": [
+                "HIST 3100 History of American Foreign Relations (3)",
+                "HIST 3400 History of Modern Europe (3)",
+                "HIST 3500 East Asian History (3)"
+              ],
+              "total_units": 120,
+              "major_units": 21
+            },
+            "notable_professors": [
+              "Dr. Alonzo L. Hamby (History)",
+              "Dr. Patrick Barr-Melej (Interim Executive Director of the Center for International Studies and Prof. of History)",
+              "Dr. Jaclyn Maxwell (Professor)"
+            ],
+            "notes": "History majors are encouraged to develop strong research and writing skills. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SOC 1000 Introduction to Sociology (3)",
+                "SOC 2000 Social Problems (3)",
+                "SOC 3500 Social Research Methods (3)",
+                "SOC 3510 Social Statistics (3)",
+                "SOC 4600 Sociological Theory (3)",
+                "SOC 4700 Senior Seminar in Sociology (3)"
+              ],
+              "electives": [
+                "SOC 3200 Criminology (3)",
+                "SOC 3400 Race and Ethnic Relations (3)",
+                "SOC 3600 Sociology of Gender (3)"
+              ],
+              "total_units": 120,
+              "major_units": 18
+            },
+            "notable_professors": [],
+            "notes": "Sociology provides a broad understanding of social structures and human behavior. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POLS 1000 Introduction to Political Science (3)",
+                "POLS 2000 American Government (3)",
+                "POLS 2500 International Relations (3)",
+                "POLS 3000 Political Theory (3)",
+                "POLS 3500 Research Methods in Political Science (3)",
+                "POLS 4000 Senior Seminar in Political Science (3)"
+              ],
+              "electives": [
+                "POLS 3100 Public Policy (3)",
+                "POLS 3300 Comparative Politics (3)",
+                "POLS 3600 Constitutional Law (3)"
+              ],
+              "total_units": 120,
+              "major_units": 18
+            },
+            "notable_professors": [
+              "Dr. Susan Burgess (Associate Professor and Director of Women's, Gender, and Sexuality Studies)",
+              "Dr. Takaaki Suzuki (Director of Asian Studies Program and Professor of Political Science)",
+              "Dr. Brandon Kendhammer (Director of International Development Studies Program and Assoc. Prof. of Political Science)"
+            ],
+            "notes": "Students can focus on American politics, international relations, comparative politics, or political theory. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "MATH 3200 Applied Linear Algebra (3)",
+                "MATH 3300 Calculus III (3)",
+                "MATH 3400 Elementary Differential Equations (3)",
+                "MATH 3500 Introduction to Discrete Mathematics (3)",
+                "MATH 4301 Abstract Algebra I (3)",
+                "MATH 4401 Real Analysis I (3)"
+              ],
+              "electives": [
+                "MATH 4302 Abstract Algebra II (3)",
+                "MATH 4402 Real Analysis II (3)",
+                "MATH 4500 Numerical Analysis (3)"
+              ],
+              "total_units": 120,
+              "major_units": 26
+            },
+            "notable_professors": [
+              "Dr. Alexander Arhangelskii (Mathematics)",
+              "Dr. Surender K. Jain (Mathematics)",
+              "Dr. Donald Foster (Mathematics, Associate Professor)"
+            ],
+            "notes": "A B.S. in Mathematics provides a strong foundation for graduate studies or careers in quantitative fields. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMS 1020 Introduction to Undergraduate Communication Studies (1)",
+                "COMS 1030 Fundamentals of Public Speaking (3)",
+                "COMS 1100 Communication Among Cultures (3)",
+                "COMS 2050 Techniques of Group Discussion (3)",
+                "COMS 2060 Communication in Interpersonal Relationships (3)",
+                "COMS 2150 Argumentative Analysis and Advocacy (3)",
+                "COMS 4000 Communication Capstone (3)"
+              ],
+              "electives": [
+                "COMS 3060 Interpersonal Conflict Management (3)",
+                "COMS 3200 Communication and New Technology (3)",
+                "COMS 4100 Cross-Cultural Communication (3)"
+              ],
+              "total_units": 120,
+              "major_units": 20
+            },
+            "notable_professors": [
+              "Dr. Judith Yaross Lee (Director of Honors Tutorials in the School of Communication Studies)",
+              "Dr. Candice Rios Wenmoth (Associate School Director for Undergraduate Studies)",
+              "Dr. Christine Suniti Bhat (Professor, Counseling and Higher Education)"
+            ],
+            "notes": "The program emphasizes theoretical understanding and practical application of communication. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
         ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university housing options. The 'Side Five' dorms on South Green (Adams, Carr, Sowle, Luchs, Tanaka) are noted as renovated, suite-style, and well-located for students of all majors, including those in business.",
+        "student_archetype": "Career-oriented students focused on practical business applications, management, marketing, sales, and analytics. They are motivated to gain professional skills and engage in a variety of business fields.",
+        "strategic_fit_advice": "Suited for students pursuing degrees in business administration, marketing, finance, accounting, or other business-related fields. Good for those who are driven by career development and seek a curriculum with strong management education.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 87.1,
+            "average_gpa_admitted": 3.65,
+            "prerequisite_courses": [
+              "ENG 1510 Writing and Rhetoric I",
+              "ECON 1030 Principles of Microeconomics OR ECON 1040 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Competitive admission to the College of Business for internal transfers.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2550 The Legal Environment of Business (3)",
+                "FIN 3000 Introduction to Corporate Finance (3)",
+                "MGT 2100 Introduction to Management and Organization (3)",
+                "MIS 2020 Business Information Systems (3)",
+                "MKT 2400 Introduction to Marketing Management (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "QBA 2720 Business Analytics II (3)",
+                "MKT 3400 Consumer Behavior (3)",
+                "MKT 3450 Marketing Research (3)",
+                "MKT 4400 Marketing Management (3)"
+              ],
+              "electives": [
+                "MKT 3580 Foundations of Professional Sales (3)",
+                "MKT 4600 Integrated Marketing Communications (3)",
+                "MKT 4700 Global Marketing (3)",
+                "MKT 4919 Marketing Internship (1-3)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Rebecca Dingus (O'Bleness Associate Professor of Marketing)",
+              "Dr. Ashok Gupta (Professor of Marketing)",
+              "Dr. Adam Rapp (Professor of Marketing)"
+            ],
+            "notes": "Internal transfer to the College of Business requires a minimum 3.0 GPA with specific coursework. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 87.1,
+            "average_gpa_admitted": 3.65,
+            "prerequisite_courses": [
+              "ENG 1510 Writing and Rhetoric I",
+              "ECON 1030 Principles of Microeconomics OR ECON 1040 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Competitive admission to the College of Business for internal transfers.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2550 The Legal Environment of Business (3)",
+                "FIN 3000 Introduction to Corporate Finance (3)",
+                "MGT 2100 Introduction to Management and Organization (3)",
+                "MIS 2020 Business Information Systems (3)",
+                "MKT 2400 Introduction to Marketing Management (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "QBA 2720 Business Analytics II (3)",
+                "ACCT 3400 Intermediate Accounting I (3)",
+                "ACCT 3410 Intermediate Accounting II (3)",
+                "ACCT 3500 Cost Accounting (3)",
+                "ACCT 3600 Income Tax Accounting I (3)",
+                "ACCT 4300 Auditing (3)"
+              ],
+              "electives": [
+                "ACCT 3610 Income Tax Accounting II (3)",
+                "ACCT 4700 Accounting Information Systems (3)",
+                "ACCT 4910 Internship (1-3)"
+              ],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [
+              "Dr. Ting-Ting Lin (Professor of Instruction in the School of Accountancy)",
+              "Dr. Devon Z. Hanahan (Professor of Instruction)",
+              "Dr. Norman P. Meonske (Professor of Accounting)"
+            ],
+            "notes": "Internal transfer to the College of Business requires a minimum 3.0 GPA with specific coursework. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 87.1,
+            "average_gpa_admitted": 3.65,
+            "prerequisite_courses": [
+              "ENG 1510 Writing and Rhetoric I",
+              "ECON 1030 Principles of Microeconomics OR ECON 1040 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Competitive admission to the College of Business for internal transfers.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2550 The Legal Environment of Business (3)",
+                "FIN 3000 Introduction to Corporate Finance (3)",
+                "MGT 2100 Introduction to Management and Organization (3)",
+                "MIS 2020 Business Information Systems (3)",
+                "MKT 2400 Introduction to Marketing Management (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "QBA 2720 Business Analytics II (3)",
+                "FIN 3100 Financial Markets and Institutions (3)",
+                "FIN 3400 Investments (3)",
+                "FIN 3500 Corporate Financial Management (3)",
+                "FIN 4200 Advanced Financial Management (3)"
+              ],
+              "electives": [
+                "FIN 3300 Personal Financial Planning (3)",
+                "FIN 4100 International Finance (3)",
+                "FIN 4910 Internship in Finance (1-3)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Margie L. Butler (Professor of Instruction)",
+              "Dr. Paul R. Masson (Professor of Finance)",
+              "Dr. Robert D. Jewell (Professor)"
+            ],
+            "notes": "Internal transfer to the College of Business requires a minimum 3.0 GPA with specific coursework. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 87.1,
+            "average_gpa_admitted": 3.65,
+            "prerequisite_courses": [
+              "ENG 1510 Writing and Rhetoric I",
+              "ECON 1030 Principles of Microeconomics OR ECON 1040 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Competitive admission to the College of Business for internal transfers.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2550 The Legal Environment of Business (3)",
+                "FIN 3000 Introduction to Corporate Finance (3)",
+                "MGT 2100 Introduction to Management and Organization (3)",
+                "MIS 2020 Business Information Systems (3)",
+                "MKT 2400 Introduction to Marketing Management (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "QBA 2720 Business Analytics II (3)",
+                "MIS 3200 Systems Analysis and Design (3)",
+                "MIS 3400 Database Management Systems (3)",
+                "MIS 3600 Business Programming (3)",
+                "MIS 4500 Project Management in MIS (3)"
+              ],
+              "electives": [
+                "MIS 4100 Cybersecurity for Business (3)",
+                "MIS 4300 Web Analytics (3)",
+                "MIS 4910 Internship in MIS (1-3)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Andrew Goodnite (Associate Professor of Instruction in Analytics & Information Systems)",
+              "Dr. Chris M. Groening (Professor)",
+              "Dr. Meng-Hua Hsieh (Associate Professor)"
+            ],
+            "notes": "Internal transfer to the College of Business requires a minimum 3.0 GPA with specific coursework. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Strategic Leadership and Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 87.1,
+            "average_gpa_admitted": 3.65,
+            "prerequisite_courses": [
+              "ENG 1510 Writing and Rhetoric I",
+              "ECON 1030 Principles of Microeconomics OR ECON 1040 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Competitive admission to the College of Business for internal transfers.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2550 The Legal Environment of Business (3)",
+                "FIN 3000 Introduction to Corporate Finance (3)",
+                "MGT 2100 Introduction to Management and Organization (3)",
+                "MIS 2020 Business Information Systems (3)",
+                "MKT 2400 Introduction to Marketing Management (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "QBA 2720 Business Analytics II (3)",
+                "MGT 3300 Human Resources Management (3)",
+                "MGT 3400 Organizational Behavior (3)",
+                "MGT 3500 Leadership and Change (3)",
+                "MGT 4800J Business Strategy (3)"
+              ],
+              "electives": [
+                "MGT 3730 Entrepreneurial Business Consulting (3)",
+                "MGT 4600 International Management (3)",
+                "MGT 4910 Internship in Management (1-3)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Jim Strode (Associate Dean of Undergraduate Programs & Assessment, contact person for Undecided - College of Business)",
+              "Dr. Jackie Rees Ulmer (Dean of the College of Business)",
+              "Dr. Christopher Mahar (Associate Professor)"
+            ],
+            "notes": "Internal transfer to the College of Business requires a minimum 3.0 GPA with specific coursework. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 87.1,
+            "average_gpa_admitted": 3.65,
+            "prerequisite_courses": [
+              "ENG 1510 Writing and Rhetoric I",
+              "ECON 1030 Principles of Microeconomics OR ECON 1040 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires double major. Competitive admission to the College of Business for internal transfers.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2550 The Legal Environment of Business (3)",
+                "FIN 3000 Introduction to Corporate Finance (3)",
+                "MGT 2100 Introduction to Management and Organization (3)",
+                "MIS 2020 Business Information Systems (3)",
+                "MKT 2400 Introduction to Marketing Management (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "QBA 2720 Business Analytics II (3)",
+                "QBA 3100 Data Management for Analytics (3)",
+                "QBA 3500 Predictive Analytics (3)",
+                "QBA 4100 Prescriptive Analytics (3)",
+                "QBA 4500 Business Analytics Capstone (3)"
+              ],
+              "electives": [
+                "QBA 3300 Data Visualization (3)",
+                "QBA 4300 Big Data Analytics (3)",
+                "MIS 4100 Cybersecurity for Business (3)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Andrew Goodnite (Associate Professor of Instruction in Analytics & Information Systems)",
+              "Dr. Lei Jia (Assistant Professor)",
+              "Dr. Christopher Groening (Professor)"
+            ],
+            "notes": "This major requires students to pursue a double major. Internal transfer to the College of Business requires a minimum 3.0 GPA with specific coursework. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "College of Fine Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "**Lincoln Hall (East Green)**: A dedicated Fine Arts Residential Learning Community (RLC) featuring dance and art studios, a music and computer lounge, and flexible multipurpose spaces. Rooms offer individual seasonal temperature controls and a sink. It is conveniently located across from other Fine Arts academic buildings.",
+        "student_archetype": "Creative, collaborative individuals with interests in dance, music, theater, and visual arts. They are eager to produce artistic work with community impact and thrive in an immersive and inclusive arts environment.",
+        "strategic_fit_advice": "Highly recommended for students with strong artistic talents who desire a collaborative, immersive arts living and learning experience. Ideal for those interested in the Fine Arts RLC in Lincoln Hall, benefiting from integrated studio and rehearsal spaces.",
+        "majors": [
+          {
+            "name": "Studio Art (Painting, Sculpture, Printmaking, Ceramics, Photography, Graphic Design)",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio review for admission to the B.F.A. program.",
+            "admissions_pathway": "Pre-Major then portfolio review",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ART 1000 Introduction to Studio Art (3)",
+                "ART 1010 Drawing I (3)",
+                "ART 1020 Two-Dimensional Design (3)",
+                "ART 1030 Three-Dimensional Design (3)",
+                "ART 2000 Art History: Ancient to Renaissance (3)",
+                "ART 2010 Art History: Renaissance to Present (3)",
+                "ART 2100 Painting I (3)",
+                "ART 2200 Sculpture I (3)",
+                "ART 2300 Printmaking I (3)",
+                "ART 2400 Ceramics I (3)",
+                "ART 2500 Photography I (3)",
+                "ART 2600 Graphic Design I (3)",
+                "ART 3000-level Studio courses (at least 9 hours in chosen concentration)",
+                "ART 4900 Senior Capstone Exhibition (3)"
+              ],
+              "electives": [
+                "ART 3100 Advanced Drawing (3)",
+                "ART 3700 Digital Art (3)",
+                "ART 4800 Special Topics in Art (3)"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Zelma Badu-Younge (Emerita, Professor, Dance, cross-disciplinary influence)",
+              "Dr. Aethelred Eldridge (Painter, former faculty)"
+            ],
+            "notes": "The B.F.A. program is a professional degree requiring a portfolio review for admission to the upper-division. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Music Performance (Instrumental, Vocal)",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for admission.",
+            "admissions_pathway": "Audition-based Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MUS 1000 Music Theory I (3)",
+                "MUS 1010 Aural Skills I (1)",
+                "MUS 1020 Music Theory II (3)",
+                "MUS 1030 Aural Skills II (1)",
+                "MUS 1500 Class Piano I (1)",
+                "MUS 1510 Class Piano II (1)",
+                "MUS 2000 Music History: Ancient to Baroque (3)",
+                "MUS 2010 Music History: Classical to Romantic (3)",
+                "MUS 2500 Applied Music (Instrument/Voice) (2 per semester, multiple semesters)",
+                "MUS 3000 Ensemble (1 per semester, multiple semesters)",
+                "MUS 4900 Senior Recital (1)"
+              ],
+              "electives": [
+                "MUS 3100 Conducting (2)",
+                "MUS 3200 Music Technology (3)",
+                "MUS 3300 World Music (3)"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Mark Phillips (Music)",
+              "Dr. Mathew James (Director, School of Music)",
+              "Dr. Michele Kay (Professor of Music)"
+            ],
+            "notes": "Admission to the Music Performance program requires a successful audition. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Theater (Performance, Playwriting, Production Design & Technology)",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition, interview, and/or portfolio review required for admission.",
+            "admissions_pathway": "Audition/Interview/Portfolio-based Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "THAR 1000 Introduction to Theater (3)",
+                "THAR 1010 Acting I (3)",
+                "THAR 1020 Stagecraft (3)",
+                "THAR 2000 Theater History I (3)",
+                "THAR 2010 Theater History II (3)",
+                "THAR 2100 Movement for the Actor (2)",
+                "THAR 2200 Voice for the Actor (2)",
+                "THAR 3000-level courses in chosen concentration (e.g., acting, directing, design) (at least 12 hours)",
+                "THAR 4900 Senior Capstone Project (3)"
+              ],
+              "electives": [
+                "THAR 3100 Playwriting (3)",
+                "THAR 3200 Scenic Design (3)",
+                "THAR 3300 Costume Design (3)",
+                "THAR 3400 Lighting Design (3)"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Charles Smith (Head of the university's Professional Playwriting Program)",
+              "Dr. Ursula Belden (Theater, former faculty)"
+            ],
+            "notes": "Admission to B.F.A. Theater programs is by audition, interview, or portfolio review. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "College of Health Sciences and Professions",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university housing options. South Green dorms are mentioned as being conveniently located for students across all majors.",
+        "student_archetype": "Students driven to improve health outcomes and provide care, with interests in health-related fields like exercise physiology and human services. They are motivated to positively impact community and individual well-being.",
+        "strategic_fit_advice": "Best suited for students pursuing careers in health care, exercise physiology, nutrition, social work, or other health and human services professions. Ideal for those committed to public health and patient-centered care.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": 74.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1205 Survey of Chemistry for Health Sciences AND CHEM 1205L Survey of Chemistry for Health Sciences Laboratory (5)",
+              "BIOS 1300 Principles of Human Anatomy and Physiology I (4)",
+              "BIOS 1310 Principles of Human Anatomy and Physiology II (4)",
+              "ENG 1510 Writing and Rhetoric I (3)",
+              "PSY 1010 General Psychology (3)",
+              "NUTR 1000 Introduction to Nutrition (3)",
+              "PSY 2410 Child and Adolescent Psychology OR EDEC 1600 Introduction to Child Development (3)",
+              "STAT 1030 Introduction to Statistical Methods OR MATH 2500 Introduction to Statistics (3)",
+              "Cultural Competence in Interprofessional Healthcare (3)",
+              "ATI TEAS Exam (Basic Level or greater)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "CHEM 1205 Survey of Chemistry for Health Sciences",
+              "BIOS 1300 Principles of Human Anatomy and Physiology I",
+              "BIOS 1310 Principles of Human Anatomy and Physiology II"
+            ],
+            "special_requirements": "Successful completion of ATI TEAS exam. Grades of 'C' or better in non-nursing support courses and 'B-' or better in all NRSE courses. Background checks and immunizations.",
+            "admissions_pathway": "Pre-BSN (ND1220) then competitive admission to BSN (BS1221)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "NRSE 1102 Professional Essentials (2)",
+                "NRSE 2200 Foundations of Professional Nursing (3)",
+                "NRSE 2210 Health Assessment (3)",
+                "NRSE 2210L Health Assessment Lab (1)",
+                "NRSE 2300 Pharmacology in Nursing (3)",
+                "NRSE 2400 Adult Health I (4)",
+                "NRSE 2400L Adult Health I Clinical (2)",
+                "NRSE 3200 Research and Evidence-Based Practice (3)",
+                "NRSE 3300 Mental Health Nursing (3)",
+                "NRSE 3300L Mental Health Nursing Clinical (2)",
+                "NRSE 3400 Adult Health II (4)",
+                "NRSE 3400L Adult Health II Clinical (2)",
+                "NRSE 3500 Maternal-Newborn Nursing (3)",
+                "NRSE 3500L Maternal-Newborn Nursing Clinical (2)",
+                "NRSE 3600 Pediatric Nursing (3)",
+                "NRSE 3600L Pediatric Nursing Clinical (2)",
+                "NRSE 4100 Community Health Nursing (3)",
+                "NRSE 4100L Community Health Nursing Clinical (2)",
+                "NRSE 4200 Leadership and Management in Nursing (3)",
+                "NRSE 4300 Complex Health Alterations (4)",
+                "NRSE 4300L Complex Health Alterations Clinical (2)",
+                "NRSE 4400 Transition to Professional Practice (3)",
+                "NRSE 4400L Transition to Professional Practice Clinical (2)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Charman Miller (Executive Director and Associate Professor, School of Nursing)",
+              "Dr. Rebecca Bryant (Associate Professor, FNP Program Track Director)",
+              "Dr. Ilana Chertok (Professor, Associate Director of Nursing Research and Scholarship)"
+            ],
+            "notes": "Admission to the BSN program is highly competitive and requires successful completion of prerequisite courses and a minimum GPA. Meeting minimum requirements does not guarantee admission. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SW 1000 Introduction to Social Work (3)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Application to the professional social work program. Interview may be required.",
+            "admissions_pathway": "Pre-Major then application to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "SW 1000 Introduction to Social Work (3)",
+                "SW 2000 Social Welfare Institutions (3)",
+                "SW 2100 Human Behavior and the Social Environment I (3)",
+                "SW 2200 Human Behavior and the Social Environment II (3)",
+                "SW 3100 Social Work Practice I (3)",
+                "SW 3200 Social Work Practice II (3)",
+                "SW 3300 Social Work Research (3)",
+                "SW 3400 Diversity and Social Justice (3)",
+                "SW 4100 Field Instruction I (6)",
+                "SW 4200 Field Instruction II (6)",
+                "SW 4300 Seminar in Social Work (3)",
+                "SOC 1000 Introduction to Sociology (3)",
+                "PSY 1010 General Psychology (3)",
+                "POLS 1000 Introduction to Political Science (3)"
+              ],
+              "electives": [
+                "SW 3500 Child Abuse and Neglect (3)",
+                "SW 3600 Substance Abuse (3)",
+                "SW 3700 Crisis Intervention (3)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Students must apply and be admitted to the professional social work program. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Exercise Physiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOS 1700 Biological Sciences I: Molecules and Cells (3)",
+              "BIOS 1705 Biological Sciences I: Molecules and Cells Lab (1)",
+              "CHEM 1510 Fundamentals of Chemistry I (4)",
+              "PSY 1010 General Psychology (3)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EXPH 1100 Introduction to Exercise Physiology (3)",
+                "EXPH 2100 Exercise Testing and Prescription (3)",
+                "EXPH 2200 Motor Learning and Control (3)",
+                "EXPH 3100 Biomechanics (3)",
+                "EXPH 3200 Exercise Physiology I (3)",
+                "EXPH 3300 Exercise Physiology II (3)",
+                "EXPH 4100 Exercise and Chronic Disease (3)",
+                "EXPH 4200 Advanced Exercise Testing (3)",
+                "EXPH 4900 Capstone in Exercise Physiology (3)",
+                "BIOS 1300 Principles of Human Anatomy and Physiology I (4)",
+                "BIOS 1310 Principles of Human Anatomy and Physiology II (4)",
+                "CHEM 1520 Fundamentals of Chemistry II (4)",
+                "PHYS 2001 Introduction to Physics (4)"
+              ],
+              "electives": [
+                "EXPH 3500 Sports Nutrition (3)",
+                "EXPH 4300 Strength and Conditioning (3)",
+                "EXPH 4910 Internship in Exercise Physiology (3-6)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Students gain hands-on experience in exercise testing and prescription. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.P.H.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PUBH 1000 Introduction to Public Health (3)",
+                "PUBH 2000 Global Health (3)",
+                "PUBH 2100 Epidemiology (3)",
+                "PUBH 2200 Health Promotion and Education (3)",
+                "PUBH 3100 Environmental Health (3)",
+                "PUBH 3200 Public Health Policy and Administration (3)",
+                "PUBH 3300 Biostatistics for Public Health (3)",
+                "PUBH 4100 Community Health Assessment (3)",
+                "PUBH 4200 Public Health Program Planning (3)",
+                "PUBH 4900 Public Health Capstone (3)"
+              ],
+              "electives": [
+                "PUBH 3400 Infectious Diseases (3)",
+                "PUBH 3500 Maternal and Child Health (3)",
+                "PUBH 4910 Internship in Public Health (3-6)"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "The Public Health program prepares students for various roles in health promotion and disease prevention. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Honors Tutorial College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "**Honors and Scholars Housing** in **Jefferson Hall and Read Hall** on East Green, featuring study and community spaces. HTC students receive first preference for these scholars' dorms. **Gamertsfelder and Washington Halls** on East Green are also designated honors dorms, generally renovated, with a traditional price point, and restricted to honors students. Jefferson Hall offers renovated rooms, a ground-floor grocery market, cafes, a deli, study rooms, a mailroom, and laundry facilities on each floor.",
+        "student_archetype": "Exceptional, driven, and intellectually curious students who thrive on personalized, rigorous academic study, including one-on-one tutorials. They are often high-achieving leaders, broadly involved on campus, and committed to making original contributions to their field through a thesis.",
+        "strategic_fit_advice": "Highly recommended for self-directed, motivated students seeking a personalized, Oxford/Cambridge-style tutorial education with close faculty mentorship. Ideal candidates typically have strong academic records (e.g., 30 on ACT, 1300 on SAT, top 10% class placement) and a desire for curriculum flexibility and independent research.",
+        "majors": [
+          {
+            "name": "Advanced Computing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "Superior academic ability, potential for self-motivated study and research, additional essays, interview.",
+            "admissions_pathway": "Direct Admit to HTC (highly selective)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "Customized tutorial program with a faculty member (8 tutorials, typically 3-15 hours each)",
+                "Honors Thesis (2 tutorials, 6 hours each)",
+                "ENG 1510 Writing and Rhetoric I (3)",
+                "One Advanced Writing course (3)",
+                "Core Mathematics, Science, Computer Science, and Electrical Engineering courses as determined by tutorial plan."
+              ],
+              "electives": [
+                "Internships and/or study abroad with special permission."
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Wojciech Jadwisienczak (Professor; Graduate Chair, Electrical Engineering and Computer Science)",
+              "Dr. Savas Kaya (Professor, Electrical Engineering and Computer Science)",
+              "Dr. J. Jim Zhu (Professor, Electrical Engineering and Computer Science)"
+            ],
+            "notes": "This program offers a flexible curriculum and one-on-one tutorials. Admission is highly competitive and primarily for freshmen. Internal transfers are limited. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "Superior academic ability, potential for self-motivated study and research, additional essays, interview, two academic letters of reference, writing sample.",
+            "admissions_pathway": "Direct Admit to HTC (highly selective)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "Customized tutorial program in Journalism (8 tutorials, typically 3-15 hours each)",
+                "Honors Thesis (2 tutorials, 5 hours each)",
+                "Regular journalism courses as required by the E.W. Scripps School of Journalism",
+                "Liberal arts requirements",
+                "Specialization"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Victoria LaPoe (Director of Studies/Contact person)",
+              "Dr. Hans Meyer (Associate Director for Undergraduate Studies, E.W. Scripps School of Journalism)",
+              "Dr. Aimee Edmondson (Professor, E.W. Scripps School of Journalism)"
+            ],
+            "notes": "The HTC Journalism program offers exceptional students one-on-one relationships with faculty and culminates in an honors thesis. Admission is highly competitive and primarily for freshmen. Internal transfers are limited. Data source: Ohio University 2025-2026 Undergraduate Catalog. [cite: 4, 7, 11, 12, 20, 22, 24]"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "Superior academic ability, potential for self-motivated study and research, additional essays, interview, two academic letters of reference, writing sample.",
+            "admissions_pathway": "Direct Admit to HTC (highly selective)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "Customized tutorial program in English (8 tutorials, typically 3-15 hours each)",
+                "Honors Thesis (2 tutorials)",
+                "ENG 1510 Writing and Rhetoric I (3)",
+                "Three tutorials in British and American literature",
+                "Two specialized tutorials in an area of interest"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Mary Kate Hurley (Director of Studies/Contact person)",
+              "Dr. Mark Halliday (Poetry)",
+              "Dr. Linda Zionkowski (Samuel and Susan Crowl Professor of Literature)"
+            ],
+            "notes": "The HTC English major offers a more independent approach to study, centered on weekly one-on-one meetings with faculty. Admission is highly competitive and primarily for freshmen. Internal transfers are limited. Data source: Ohio University 2025-2026 Undergraduate Catalog. [cite: 4, 7, 11, 12, 20, 24]"
+          }
+        ]
+      },
+      {
+        "name": "The Gladys W. and David H. Patton College of Education",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university housing options. Patton Hall is the academic building for the college, with classrooms and labs. Jefferson Hall on East Green is located near the College of Education complex.",
+        "student_archetype": "'Leaders-in-the-making' in education, recreation, and human and consumer science fields. They are dedicated to serving and representing the college, often demonstrating outstanding academic achievement and exemplary student leadership, and are involved in student organizations and advisory councils.",
+        "strategic_fit_advice": "Suited for students pursuing careers in education, counseling, sports pedagogy, recreation, or consumer sciences. A good fit for those committed to leadership, community engagement, and experiential learning in human service professions.",
+        "majors": [
+          {
+            "name": "Early Childhood Education (Pre-K to Grade 5)",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDEC 1600 Introduction to Child Development (3)",
+              "EDTE 1000 Introduction to Education (3)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Background checks, successful completion of Praxis Core Academic Skills for Educators.",
+            "admissions_pathway": "Pre-Education then competitive admission to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDTE 1000 Introduction to Education (3)",
+                "EDEC 1600 Introduction to Child Development (3)",
+                "EDEC 2100 Early Childhood Curriculum and Instruction (3)",
+                "EDEC 2200 Integrated Arts in Early Childhood (3)",
+                "EDEC 3100 Literacy Development in Early Childhood (3)",
+                "EDEC 3200 Mathematics and Science in Early Childhood (3)",
+                "EDEC 3300 Social Studies and Health in Early Childhood (3)",
+                "EDEC 4100 Early Childhood Field Experience I (6)",
+                "EDEC 4200 Early Childhood Field Experience II (6)",
+                "EDEC 4300 Professional Seminar in Early Childhood Education (3)"
+              ],
+              "electives": [
+                "EDEC 3400 Technology in Early Childhood (3)",
+                "EDEC 3500 Inclusive Practices in Early Childhood (3)"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Admission to the professional education program is selective and requires specific GPA and assessments. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Middle Childhood Education (Grades 4-9)",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDTE 1000 Introduction to Education (3)",
+              "PSY 1010 General Psychology (3)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Background checks, successful completion of Praxis Core Academic Skills for Educators.",
+            "admissions_pathway": "Pre-Education then competitive admission to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDTE 1000 Introduction to Education (3)",
+                "PSY 1010 General Psychology (3)",
+                "MCE 2100 Middle Childhood Curriculum and Instruction (3)",
+                "MCE 2200 Integrated Language Arts in Middle Childhood (3)",
+                "MCE 2300 Integrated Social Studies in Middle Childhood (3)",
+                "MCE 3100 Integrated Mathematics in Middle Childhood (3)",
+                "MCE 3200 Integrated Science in Middle Childhood (3)",
+                "MCE 4100 Middle Childhood Field Experience I (6)",
+                "MCE 4200 Middle Childhood Field Experience II (6)",
+                "MCE 4300 Professional Seminar in Middle Childhood Education (3)"
+              ],
+              "electives": [
+                "MCE 3400 Technology in Middle Childhood (3)",
+                "MCE 3500 Differentiated Instruction in Middle Childhood (3)"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Students specialize in two content areas (e.g., mathematics and science, language arts and social studies). Admission to the professional education program is selective. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Adolescent to Young Adult Education (Grades 7-12)",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDTE 1000 Introduction to Education (3)",
+              "PSY 1010 General Psychology (3)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Background checks, successful completion of Praxis Core Academic Skills for Educators.",
+            "admissions_pathway": "Pre-Education then competitive admission to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDTE 1000 Introduction to Education (3)",
+                "PSY 1010 General Psychology (3)",
+                "AYA 2100 Adolescent Development and Learning (3)",
+                "AYA 2200 Curriculum and Instruction in Adolescent to Young Adult Education (3)",
+                "AYA 3100 Content Area Literacy (3)",
+                "AYA 3200 Assessment in Adolescent to Young Adult Education (3)",
+                "AYA 4100 Adolescent to Young Adult Field Experience I (6)",
+                "AYA 4200 Adolescent to Young Adult Field Experience II (6)",
+                "AYA 4300 Professional Seminar in Adolescent to Young Adult Education (3)"
+              ],
+              "electives": [
+                "AYA 3300 Technology in Adolescent to Young Adult Education (3)",
+                "AYA 3400 Classroom Management (3)"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Students choose a teaching field (e.g., Integrated Language Arts, Integrated Mathematics, Integrated Science, Integrated Social Studies). Admission to the professional education program is selective. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Special Education (Intervention Specialist)",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDTE 1000 Introduction to Education (3)",
+              "PSY 1010 General Psychology (3)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Background checks, successful completion of Praxis Core Academic Skills for Educators.",
+            "admissions_pathway": "Pre-Education then competitive admission to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDTE 1000 Introduction to Education (3)",
+                "PSY 1010 General Psychology (3)",
+                "SPED 2100 Introduction to Special Education (3)",
+                "SPED 2200 Assessment in Special Education (3)",
+                "SPED 3100 Instructional Strategies for Students with Mild to Moderate Disabilities (3)",
+                "SPED 3200 Instructional Strategies for Students with Moderate to Intensive Disabilities (3)",
+                "SPED 3300 Behavior Management (3)",
+                "SPED 4100 Special Education Field Experience I (6)",
+                "SPED 4200 Special Education Field Experience II (6)",
+                "SPED 4300 Professional Seminar in Special Education (3)"
+              ],
+              "electives": [
+                "SPED 3400 Transition Planning (3)",
+                "SPED 3500 Assistive Technology (3)"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Prepares students to work with students with various disabilities across different age ranges. Admission to the professional education program is selective. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Russ College of Engineering and Technology",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General university housing options. No specific dorms are exclusively designated for this college. All rooms are air-conditioned and furnished with an XL-twin bed, desk, chair, dresser, and closet space.",
+        "student_archetype": "Ambitious problem-solvers with a strong background and interest in STEM fields. They are driven by innovation and technical challenges.",
+        "strategic_fit_advice": "Strong STEM background is highly recommended. Ideal for students dedicated to engineering and technology disciplines who seek rigorous academic challenges and practical problem-solving opportunities.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Four years of college-prep math",
+              "One year of chemistry or physics",
+              "One additional year of chemistry, physics, or an engineering science (e.g., engineering principles, robotics, computer science, or digital electronics)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CS 2400 Introduction to Computer Science I (4)",
+                "CS 2401 Introduction to Computer Science II (4)",
+                "CS 2653 Professional and Ethical Aspects of Computing (3)",
+                "CS 3200 Organization of Programming Languages (3)",
+                "CS 3560 Software Engineering Tools and Practices (3)",
+                "CS 3610 Data Structures (4)",
+                "CS 4000 Introduction to Distributed, Parallel, and Web-Centric Computing (3)",
+                "CS 4040 Design and Analysis of Algorithms (3)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "PHYS 2051 General Physics (5)",
+                "CHEM 1510 Fundamentals of Chemistry I (4)"
+              ],
+              "electives": [
+                "CS 4100 Operating Systems (3)",
+                "CS 4200 Database Systems (3)",
+                "CS 4300 Computer Networks (3)",
+                "CS 4500 Artificial Intelligence (3)"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. David Juedes (Associate Dean for Academics, Professor Electrical Engineering and Computer Science)",
+              "Dr. Nasseef Abukamail (Professor of Instruction)",
+              "Dr. Shawn Ostermann (Associate Professor)"
+            ],
+            "notes": "Transfer students need a C or better in a math course (MATH 1200 or higher) and a science course (CHEM 1210 or higher, or PHYS 2051/2054 & PHYS 2055 or higher) for internal transfer. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Four years of college-prep math",
+              "One year of chemistry or physics",
+              "One additional year of chemistry, physics, or an engineering science"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ET 1100 Engineering Graphics Fundamentals (2)",
+                "ME 1010 Mechanical and Energy Engineering - Gateway Course (3)",
+                "ET 1500 Engineering and Technology: Career Orientation (0.5)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "MATH 3200 Applied Linear Algebra (3)",
+                "MATH 3400 Elementary Differential Equations (3)",
+                "CHEM 1510 Fundamentals of Chemistry I (4)",
+                "PHYS 2054 General Physics 1 classical mechanics and thermodynamics (3)",
+                "PHYS 2055 General Physics 1 laboratory course (1)",
+                "ET 2200 Statics (3)",
+                "ET 2220 Strength of Materials (3)",
+                "ET 2300 Principles of Engineering Materials (3)",
+                "ETM 3070 Manufacturing Design & Laboratory (3)",
+                "ME 3011 Kinematics and Dynamics of Machines (3)",
+                "ME 3022 Heat and Fluid Transport I (3)",
+                "ME 3122 Heat and Fluid Transport II (3)",
+                "ME 3140 Introduction to Manufacturing Processes (3)",
+                "ME 3510 Computer Aided Design (3)",
+                "ME 3700 Machine Design (3)",
+                "ME 4210 Applied Thermal Systems Design and Analysis (3)",
+                "ME 4701 Mechanical Engineering Capstone Design I (4)",
+                "ME 4702 Mechanical Engineering Capstone Design II (4)",
+                "ME 4880 Experimental Design Lab (3)"
+              ],
+              "electives": [
+                "ME 4550 Mechatronics I (3)",
+                "ME 4600 Vibrations (3)",
+                "ME 4800 Mechanical Engineering Colloquium IV (1)"
+              ],
+              "total_units": 123.5,
+              "major_units": 65.5
+            },
+            "notable_professors": [
+              "Dr. Jason Trembly (Department Chair, Mechanical Engineering)",
+              "Dr. Gregory Kremer (Loehr Professor of Mechanical Engineering)",
+              "Dr. Brian Wisner (Assistant Professor)"
+            ],
+            "notes": "Students must have a GPA of 2.0 or higher in all courses, in the Russ College, and in the intended major to avoid probation. Transfer students need a C or better in a math course (MATH 1200 or higher) and a science course (CHEM 1210 or higher, or PHYS 2051/2054 & PHYS 2055 or higher) for internal transfer. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Four years of college-prep math",
+              "One year of chemistry or physics",
+              "One additional year of chemistry, physics, or an engineering science"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EE 2000 Introduction to Electrical Engineering (3)",
+                "EE 2100 Circuit Analysis I (3)",
+                "EE 2110 Circuit Analysis II (3)",
+                "EE 2200 Digital Logic (3)",
+                "EE 3100 Electronics I (4)",
+                "EE 3110 Electronics II (4)",
+                "EE 3300 Electromagnetics (3)",
+                "EE 3400 Signals and Systems (3)",
+                "EE 3500 Control Systems (3)",
+                "EE 4700 Capstone Design I (3)",
+                "EE 4710 Capstone Design II (3)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "MATH 3200 Applied Linear Algebra (3)",
+                "MATH 3400 Elementary Differential Equations (3)",
+                "PHYS 2051 General Physics (5)",
+                "CHEM 1510 Fundamentals of Chemistry I (4)"
+              ],
+              "electives": [
+                "EE 4200 Digital Signal Processing (3)",
+                "EE 4300 Communication Systems (3)",
+                "EE 4600 Power Systems (3)"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. Avinash Karanth (Director, Electrical Engineering and Computer Science)",
+              "Dr. Chris Bartone (Edmund K. Cheng Professor)",
+              "Dr. Jim Zhu (Professor)"
+            ],
+            "notes": "Transfer students need a C or better in a math course (MATH 1200 or higher) and a science course (CHEM 1210 or higher, or PHYS 2051/2054 & PHYS 2055 or higher) for internal transfer. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.Ch.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Four years of college-prep math",
+              "One year of chemistry or physics",
+              "One additional year of chemistry, physics, or an engineering science"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CHE 1000 Introduction to Chemical Engineering (1)",
+                "CHE 2100 Chemical Process Principles (3)",
+                "CHE 2200 Thermodynamics I (3)",
+                "CHE 3100 Fluid Mechanics (3)",
+                "CHE 3200 Heat Transfer (3)",
+                "CHE 3300 Mass Transfer (3)",
+                "CHE 3400 Chemical Engineering Laboratory I (2)",
+                "CHE 4100 Chemical Reaction Engineering (3)",
+                "CHE 4200 Chemical Engineering Design I (3)",
+                "CHE 4300 Chemical Engineering Design II (3)",
+                "CHEM 1510 Fundamentals of Chemistry I (4)",
+                "CHEM 1520 Fundamentals of Chemistry II (4)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "PHYS 2051 General Physics (5)"
+              ],
+              "electives": [
+                "CHE 4400 Process Control (3)",
+                "CHE 4500 Biochemical Engineering (3)",
+                "CHE 4900 Special Topics in Chemical Engineering (3)"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. Gerardine Botte (Russ Professor in the Department of Chemical and Biomolecular Engineering)",
+              "Dr. Srdjan Nesic (Russ Professor of Chemical Engineering)",
+              "Dr. Darin Ridgway (Chair of Chemical and Biomolecular Engineering)"
+            ],
+            "notes": "Transfer students need a C or better in a math course (MATH 1200 or higher) and a science course (CHEM 1210 or higher, or PHYS 2051/2054 & PHYS 2055 or higher) for internal transfer. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Four years of college-prep math",
+              "One year of chemistry or physics",
+              "One additional year of chemistry, physics, or an engineering science"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CE 1000 Introduction to Civil Engineering (1)",
+                "CE 2100 Statics and Strength of Materials (4)",
+                "CE 2200 Surveying (3)",
+                "CE 3100 Structural Analysis (3)",
+                "CE 3200 Geotechnical Engineering (3)",
+                "CE 3300 Fluid Mechanics (3)",
+                "CE 3400 Environmental Engineering (3)",
+                "CE 4100 Transportation Engineering (3)",
+                "CE 4200 Civil Engineering Design I (3)",
+                "CE 4300 Civil Engineering Design II (3)",
+                "MATH 2301 Calculus I (4)",
+                "MATH 2302 Calculus II (4)",
+                "MATH 3200 Applied Linear Algebra (3)",
+                "MATH 3400 Elementary Differential Equations (3)",
+                "PHYS 2051 General Physics (5)",
+                "CHEM 1510 Fundamentals of Chemistry I (4)"
+              ],
+              "electives": [
+                "CE 4400 Water Resources Engineering (3)",
+                "CE 4500 Pavement Design (3)",
+                "CE 4900 Special Topics in Civil Engineering (3)"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. R. Guy Riefler (Chair, Professor)",
+              "Dr. Lei Wu (Assistant Professor)",
+              "Dr. R. Damian Nance (Geology, former faculty, contributions to related fields)"
+            ],
+            "notes": "Transfer students need a C or better in a math course (MATH 1200 or higher) and a science course (CHEM 1210 or higher, or PHYS 2051/2054 & PHYS 2055 or higher) for internal transfer. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Scripps College of Communication",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General university housing options. No specific dorms are exclusively designated for this college.",
+        "student_archetype": "Leaders on campus, engaged in shaping and delivering messages and news. They are hands-on, interested in emerging technologies, interdisciplinary collaboration, and storytelling. Students are described as 'bold, curious problem-solvers who are passionate about making positive change'.",
+        "strategic_fit_advice": "Recommended for individuals passionate about communication (journalism, visual communication, media arts, public relations), eager for experiential learning, and aspiring to leadership roles in media and communication industries. Ideal for those who want to innovate and contribute ethically and creatively to a rapidly evolving field.",
+        "majors": [
+          {
+            "name": "Journalism News and Information",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Application for transfer, resume, two letters of recommendation, 500-word essay, work samples.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "JOUR 1010 The Future of Media OR JOUR 1050 Introduction to Mass Communication (3)",
+                "JOUR 2311 Introduction to Multiplatform Reporting and Writing (3)",
+                "JOUR 3100 Communication Law (3)",
+                "JOUR 3200 Visual Communication (3)",
+                "JOUR 3300 Multimedia Journalism (3)",
+                "JOUR 4100 Advanced Reporting and Writing (3)",
+                "JOUR 4500 Media Ethics (3)",
+                "JOUR 4900 Senior Capstone in Journalism (3)",
+                "JOUR 1330 Precision Language for Journalists (3)"
+              ],
+              "electives": [
+                "JOUR 4200 Podcasting and Audio Journalism (3)",
+                "JOUR 4660 International Mass Media (3)",
+                "JOUR 4700 Data Journalism (3)"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Hans Meyer (Associate Director for Undergraduate Studies, E.W. Scripps School of Journalism)",
+              "Dr. Aimee Edmondson (Professor)",
+              "Dr. Elizabeth Meyers Hendrickson (Professor)"
+            ],
+            "notes": "Admission to the E.W. Scripps School of Journalism is competitive for both freshman and transfer students. Transfer applications are accepted twice per academic year. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Strategic Communication",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Application for transfer, resume, two letters of recommendation, 500-word essay, work samples.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "JOUR 1010 The Future of Media OR JOUR 1050 Introduction to Mass Communication (3)",
+                "JOUR 2500 Introduction to Advertising and Public Relations (3)",
+                "JOUR 3100 Communication Law (3)",
+                "JOUR 3200 Visual Communication (3)",
+                "JOUR 3500 Strategic Communication Principles (3)",
+                "JOUR 4500 Media Ethics (3)",
+                "JOUR 4600 Strategic Communication Campaigns (3)",
+                "JOUR 4900 Senior Capstone in Strategic Communication (3)",
+                "JOUR 1330 Precision Language for Journalists (3)"
+              ],
+              "electives": [
+                "JOUR 3550 Digital and Social Media Strategy (3)",
+                "JOUR 4230 International and Cross-Cultural Advertising (3)",
+                "JOUR 4300 Public Relations Writing (3)"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Dan Farkas (Professor of Strategic Communication)",
+              "Dr. Parul Jain (Professor of Strategic Communication)",
+              "Dr. Victoria LaPoe (Director of Studies/Contact person for Honors Journalism)"
+            ],
+            "notes": "Admission to the E.W. Scripps School of Journalism is competitive for both freshman and transfer students. Transfer applications are accepted twice per academic year. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Media Arts and Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers are on a space-available basis only and application does not guarantee acceptance.",
+            "admissions_pathway": "Open to University, competitive for transfer.",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "MDIA 1020 Media Storytelling and the Creative Process (3)",
+                "MDIA 2113 Social Media Introduction (3)",
+                "MDIA 2200 Introduction to Media Arts and Studies (3)",
+                "MDIA 3100 Media Production I (3)",
+                "MDIA 3105 Audience Research (3)",
+                "MDIA 3200 Media Law and Ethics (3)",
+                "MDIA 4000 Advanced Media Theory (3)",
+                "MDIA 4900 Capstone in Media Arts and Studies (3)"
+              ],
+              "electives": [
+                "MDIA 3500 Audio Production (3)",
+                "MDIA 3600 Video Production (3)",
+                "MDIA 4120 Advanced Social Media (3)"
+              ],
+              "total_units": 120,
+              "major_units": 27
+            },
+            "notable_professors": [
+              "Dr. Josh Antonuccio (Director, School of Media Arts & Studies)",
+              "Dr. Eddie Ashworth (Associate Professor)",
+              "Dr. Tyler Ayres (Associate Professor + Transfer & Advising Coordinator)"
+            ],
+            "notes": "Transfer students to Media Arts & Studies should have a minimum cumulative GPA of 3.0. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Visual Communication (Photojournalism, Informational Graphics & Publication Design, Interactive Media, Commercial Photography)",
+            "degree_type": "B.S.V.C.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio review required for admission to a B.F.A. Visual Communication major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "VICO 1000 Introduction to Studies in Visual Communication (3)",
+                "VICO 1010 Visual Communication Fundamentals (3)",
+                "VICO 2000 History of Visual Communication (3)",
+                "VICO 2514 Introduction to Basic Publication Design (3)",
+                "VICO 2561 Introduction to Basic Web Design (3)",
+                "VICO 3100 Photojournalism (3)",
+                "VICO 3300 Informational Graphics (3)",
+                "VICO 3400 Interactive Media Design (3)",
+                "VICO 4900 Senior Capstone in Visual Communication (3)"
+              ],
+              "electives": [
+                "VICO 3150 Commercial Photography (3)",
+                "VICO 4100 Advanced Photojournalism (3)",
+                "VICO 4400 Motion Graphics (3)"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Terry Douds (Professor of Instruction)",
+              "Dr. Stan Alost (Professor of Instruction)",
+              "Dr. Robert Stewart (Professor Emeritus)"
+            ],
+            "notes": "Applicants are initially admitted to University College as Undecided-Intending Visual Communication major and must submit a separate application and portfolio for consideration to the School of Visual Communication. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMS 1020 Introduction to Undergraduate Communication Studies (1)",
+                "COMS 1030 Fundamentals of Public Speaking (3)",
+                "COMS 1100 Communication Among Cultures (3)",
+                "COMS 2050 Techniques of Group Discussion (3)",
+                "COMS 2060 Communication in Interpersonal Relationships (3)",
+                "COMS 2150 Argumentative Analysis and Advocacy (3)",
+                "COMS 4000 Communication Capstone (3)"
+              ],
+              "electives": [
+                "COMS 3060 Interpersonal Conflict Management (3)",
+                "COMS 3200 Communication and New Technology (3)",
+                "COMS 4100 Cross-Cultural Communication (3)"
+              ],
+              "total_units": 120,
+              "major_units": 20
+            },
+            "notable_professors": [
+              "Dr. Judith Yaross Lee (Charles E. Zumkehr Professor and the Director of Honors Tutorials in the School of Communication Studies)",
+              "Dr. Candice Rios Wenmoth (Associate School Director for Undergraduate Studies)",
+              "Dr. Christine Suniti Bhat (Professor, Counseling and Higher Education)"
+            ],
+            "notes": "The program emphasizes theoretical understanding and practical application of communication. Data source: Ohio University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "University College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Collaborates with Housing and Residence Life for Residential Learning Communities (RLCs). Supports the **First Gen Experiential Living Opportunity (ELO)**, a residential community for first-generation students. Also offers the **Transfer Student Community** in Adams Hall (South Green) or Bromley Hall (West Green).",
+        "student_archetype": "Students who are exploring academic interests before declaring a major, first-generation students, and transfer students. They seek support during their transition to college, guidance in academic pathfinding, and opportunities to build strong peer networks.",
+        "strategic_fit_advice": "An excellent choice for undeclared students, first-generation students seeking comprehensive support, or transfer students looking for a smooth transition and community integration. Provides a structured environment for academic exploration, personal development, and network building.",
+        "majors": [
+          {
+            "name": "Applied Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMS 1030 Fundamentals of Public Speaking (3)",
+                "ECON 1030 Principles of Microeconomics (3)",
+                "MATH 1200 College Algebra (4)",
+                "PSY 1010 General Psychology (3)",
+                "BA 1500 Introduction to Business Communication and Professional Skills (3)",
+                "ACCT 1010 Foundations of Accounting (3)",
+                "ACCT 1020 Decision Making with Accounting (3)",
+                "BUSL 2000 Law and Society (3)",
+                "MGT 2000 Introduction to Management (3)",
+                "MKT 2020 Principles of Marketing (3)",
+                "QBA 1720 Business Analytics I (3)",
+                "AM 3000 Applied Management Principles (3)",
+                "AM 3100 Applied Human Resources (3)",
+                "AM 3200 Applied Operations Management (3)",
+                "AM 4100 Applied Strategic Management (3)",
+                "AM 4900 Applied Management Capstone (3)"
+              ],
+              "electives": [
+                "AM 3300 Applied Project Management (3)",
+                "AM 3400 Small Business Management (3)",
+                "AM 4910 Internship in Applied Management (3-6)"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Ana Rosado Feger (Contact person, Business Studies Major)",
+              "Dr. Sara Hartman (Contact person, General Science Emphasis Major)"
+            ],
+            "notes": "The Applied Management program is fully online and designed for students seeking advancement in business, often with previous associate degrees. Data source: Ohio University 2025-2026 Undergraduate Catalog. [cite: 4, 7, 11, 12, 16, 18, 19, 21, 23, 25, 27, 30, 32, 33, 34, 35, 37, 41, 42, 47]"
+          }
+        ]
+      },
+      {
+        "name": "Voinovich School of Leadership and Public Service",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
       }
+    ],
+    "minors_certificates": [
+      "Entrepreneurship Certificate",
+      "Marketing Minor",
+      "Psychology Minor",
+      "Business Analytics Minor",
+      "English Minor",
+      "Sport Management Minor",
+      "Human Resource Management Certificate",
+      "Environmental Studies Sustainability and Resilience Undergraduate Certificate"
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/ohio_university_logo.png"
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Ohio University Alternative Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "For Fall 2026 incoming freshmen; offers priority consideration for direct entry to academic programs, merit scholarship programs, and University honors and scholars experiences."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Extended deadline for the OHIO Admission Promise (for automatic general University admission with a minimum 3.0 GPA) and priority FAFSA consideration date. Applications are considered on a rolling basis after the Early Action deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Applicants (General Admission)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One optional essay is available for all applicants. This space can be used to describe any academic challenges, preparation for academic and career objectives, or any additional information to be associated with the application. It can also be used to explain discrepancies in academic history. The recommended length is 250-500 words."
+      },
+      {
+        "target_program": "College of Business Applicants",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One optional essay is encouraged. The prompt asks how academic, extracurricular, community service, or work experience has shaped and prepared the applicant to succeed in OHIO's College of Business, focusing on leadership potential and engagement. The recommended length is 600 words."
+      },
+      {
+        "target_program": "School of Journalism Applicants",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One optional essay is encouraged. The prompt asks applicants to explain why they have chosen their particular program of study. The recommended length is 600 words."
+      },
+      {
+        "target_program": "Honors Tutorial College Applicants",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Applicants are required to submit two essay responses. Prompt 1: \"This essay is optional. You may use this space to describe any academic challenges you have faced, your preparation for success in your academic and career objectives, or any additional information that you would like to have associated with your application.\" This is the same as the general optional essay. Prompt 2: \"Please explain why you have chosen your particular program of study.\" Additionally, how have your experiences prepared you for a tutorial education?"
+      },
+      {
+        "target_program": "School of Music (Undergraduate Admission & Talent-Based Scholarships)",
+        "requirement_type": "Audition",
+        "deadline": "Specific on-campus audition dates for January 24, 2026, February 7, 2026, February 14, 2026, and February 16, 2026. Remote or video auditions can be arranged if an in-person audition is not possible.",
+        "details": "Students must audition for consideration to the program, and this audition also serves for talent-based scholarships. Applicants should be prepared to perform specific audition requirements and may be asked to demonstrate sight-reading or simple aural skills."
+      },
+      {
+        "target_program": "Music Ensembles (Fall 2025 - Symphonic Band, Wind Symphony, Symphony Orchestra)",
+        "requirement_type": "Audition",
+        "deadline": "During the first week of classes in August 2025, with some auditions occurring the weekend before classes begins.",
+        "details": "Placement auditions are required. Winds and percussion students should prepare specific excerpts. String music majors auditioning for Symphony Orchestra should prepare excerpts, while non-majors can perform a short selection of their choice and/or scales. No audition is required for University Band."
+      },
+      {
+        "target_program": "Dance Team (Performance and Competition Teams)",
+        "requirement_type": "Audition",
+        "deadline": "Audition details for the 2025/2026 Performance Team will be available in Spring 2025.",
+        "details": ". "
+      }
+    ]
+  }
 }

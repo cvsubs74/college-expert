@@ -634,7 +634,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required supplemental essay (300-500 words) addressing interest in Pepperdine as a Christian university and how the applicant would contribute to conversations of faith on campus (combines 'Why Us' and 'Community')."
       },
       {
@@ -824,11 +824,31 @@
       "Scattered extracurriculars without depth or demonstrated passion in a few key areas."
     ],
     "insights": [
-      "Pepperdine's admissions are selective, with an average SAT score between 1250-1450 and ACT between 26-32.",
-      "Despite a reported 50% acceptance rate, the actual yield rate (students who enroll) is low (around 15-20%), meaning they accept more students than they have openings.",
-      "Professors are generally highly regarded and foster meaningful interactions due to small class sizes.",
-      "Be prepared for mandatory convocations (14 per semester) as they can impact GPA if not met.",
-      "The social scene may be quieter than larger universities, with a strong Greek life presence and strict alcohol policies for freshmen potentially leading to social isolation for some."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Pepperdine's admissions are selective, with an average SAT score between 1250-1450 and ACT between 26-32."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Despite a reported 50% acceptance rate, the actual yield rate (students who enroll) is low (around 15-20%), meaning they accept more students than they have openings."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Professors are generally highly regarded and foster meaningful interactions due to small class sizes."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Be prepared for mandatory convocations (14 per semester) as they can impact GPA if not met."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The social scene may be quieter than larger universities, with a strong Greek life presence and strict alcohol policies for freshmen potentially leading to social isolation for some."
+      }
     ]
   },
   "outcomes": {

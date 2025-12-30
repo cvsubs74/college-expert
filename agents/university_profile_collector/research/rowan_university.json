@@ -1,0 +1,1990 @@
+{
+  "_id": "rowan_university",
+  "metadata": {
+    "official_name": "Rowan University",
+    "location": {
+      "city": "Glassboro",
+      "state": "New Jersey",
+      "type": "Public"
+    },
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Rowan University is a comprehensive public research university in Glassboro, New Jersey, offering bachelor's through doctoral programs. Known for its innovative approach to education, it has expanded significantly in recent years, particularly in STEM and health sciences, including two medical schools.",
+    "market_position": "A rapidly growing public research university with strong engineering, medical, and performing arts programs, increasingly recognized for innovation and affordability in the New Jersey higher education landscape.",
+    "admissions_philosophy": "Seeks diverse, motivated students eager for hands-on learning and career-focused outcomes. Emphasizes academic achievement, extracurricular involvement, and a demonstrated interest in Rowan's unique blend of rigorous academics and practical application. Holistic review process valuing student potential and fit within a dynamic, growing institution.",
+    "us_news_rank": 170,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Rowan's aggressive expansion in medical and engineering fields positions it as a key player in regional research.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The balance between a growing residential campus and a significant commuter population presents ongoing challenges and opportunities for student engagement.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Affordability and practical career outcomes are major selling points, appealing to a broad demographic.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Continued investment in infrastructure and faculty will be crucial to sustain its upward trajectory in rankings and reputation.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The dual medical school model is a unique strategic advantage, fostering deep clinical and research partnerships.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Active and engaged, with a strong Greek life presence, numerous student organizations, and a growing residential campus feel. Sports events and arts performances are popular, fostering a strong sense of community despite its commuter population.",
+      "transportation_impact": "Located in a suburban setting, the campus is largely car-dependent for off-campus excursions, though a campus shuttle system operates. Commuter student population is significant, impacting parking demand and campus vibrancy during non-peak hours. Proximity to Philadelphia is a draw but requires personal transportation or public transit connections.",
+      "research_impact": "High and rapidly increasing, driven by significant investments in STEM and health sciences. The establishment of two medical schools (Cooper Medical School of Rowan University and Rowan University School of Osteopathic Medicine) has profoundly elevated its research profile, attracting significant grants and fostering interdisciplinary collaboration. Strong emphasis on applied research with regional economic impact."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 77.66,
+      "is_test_optional": true,
+      "test_policy_details": "Rowan University offers a test-optional admissions policy, allowing prospective students to apply without submitting SAT or ACT scores. This approach is designed to provide a more holistic review of applicants, focusing on their high school performance, extracurricular activities, leadership experiences, and personal essays. Students applying for the 3+4 BS/MD or BS/DO program or the 3+2 Physicians Assistant Program are required to submit test scores. If choosing to submit scores, official SAT scores can be sent using CEEB code 2515 and official ACT scores using college code 2560. Rowan uses superscoring for the SAT, taking the best section scores across all test dates. While test-optional for admission, accepted students may be required to take placement tests.",
+      "admits_class_size": 14696,
+      "transfer_acceptance_rate": 81.5,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 65.9,
+      "gender_breakdown": {
+        "Men": {
+          "Applicants": 8961,
+          "Admits": 6826,
+          "Acceptance Rate": 76.17
+        },
+        "Women": {
+          "Applicants": 9807,
+          "Admits": 7870,
+          "Acceptance Rate": 80.25
+        }
+      }
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 26000,
+        "admits_total": null,
+        "enrolled_total": 3400,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Estimated enrolled number for the largest first-year class in university history. Number of traditional undergraduate applications also a record high. Admissions data for Class of 2029 is still being compiled, with enrolled numbers being an estimate from September 2025.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 19768,
+        "admits_total": 14696,
+        "enrolled_total": 3489,
+        "acceptance_rate_overall": 74.34,
+        "yield_rate": 23.74,
+        "notes": "The overall acceptance rate for the application year 2024 was 74.3%.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 17923,
+        "admits_total": 13948,
+        "enrolled_total": 2605,
+        "acceptance_rate_overall": 77.82,
+        "yield_rate": 18.68,
+        "notes": "Data for the 2023-2024 academic year.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 16907,
+        "admits_total": 13092,
+        "enrolled_total": 2585,
+        "acceptance_rate_overall": 77.44,
+        "yield_rate": 19.74,
+        "notes": "The acceptance rate saw a drop compared to Fall 2021.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 11659,
+        "admits_total": 9767,
+        "enrolled_total": 2191,
+        "acceptance_rate_overall": 83.77,
+        "yield_rate": 22.43,
+        "notes": "Data for Fall 2021 enrollment.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2020,
+        "cycle_name": null,
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "",
+        "offered_spots": 563,
+        "accepted_spots": 260,
+        "admitted_from_waitlist": 111,
+        "waitlist_admit_rate": 42.69,
+        "is_waitlist_ranked": false
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.30-3.50",
+        "unweighted_middle_50": "3.00-3.40",
+        "average_weighted": 3.4,
+        "percentile_25": "3.30",
+        "percentile_75": "3.50",
+        "notes": "Rowan University reports an average weighted GPA of 3.4 for incoming students, with a 25th percentile of 3.3 and a 75th percentile of 3.5. This weighted GPA is typically reported on a 4.0 scale, where 'weighted' refers to course rigor within that scale, rather than a scale that exceeds 4.0. For unweighted GPAs, the average is 3.2, with a 25th percentile of 3.0 and a 75th percentile of 3.4. Approximately 20% of freshmen who attended Rowan were in the top 10% of their graduating high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1110-1300",
+        "sat_reading_middle_50": "560-660",
+        "sat_math_middle_50": "550-650",
+        "act_composite_middle_50": "23-29",
+        "submission_rate": 34.0,
+        "policy_note": "Rowan University has a test-optional admissions policy, allowing applicants to choose whether or not to submit SAT or ACT scores. Applicants will not be penalized for not submitting scores, though some specific programs (e.g., 3+4 BS/MD, 3+2 Physician Assistant) and students (e.g., home-schooled for some older policies, not explicitly stated as current exception in most recent policies) may still require them. Rowan University superscores the SAT, taking the best section scores across multiple test dates. However, they do not superscore the ACT, considering only the highest composite ACT score submitted."
+      },
+      "demographics": {
+        "first_gen_percentage": 36.0,
+        "legacy_percentage": null,
+        "notes": "First-generation percentage is based on Fall 2022 undergraduate enrollment. Legacy status is not considered in admissions, so a specific percentage of legacy students is not available.",
+        "geographic_breakdown": [
+          {
+            "region": "New Jersey (In-state)",
+            "percentage": 93.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 5.0
+          },
+          {
+            "region": "International",
+            "percentage": 2.0
+          }
+        ],
+        "racial_breakdown": {
+          "White": 58.08,
+          "Black or African American": 10.29,
+          "Hispanic/Latino": 12.6,
+          "Asian": 8.23,
+          "Native American/Alaskan": 0.09,
+          "Pacific Islander": 0.07,
+          "Two or More Races": 3.6,
+          "Non-Resident Alien (International Students)": 5.85,
+          "Unknown": 1.19
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "William G. Rohrer College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year business students can opt for the Rohrer College of Business Living Learning Community (RCB LLC), designed to help them connect with peers, study together, and participate in business-related workshops and events. General university residence halls and upperclassmen apartments are also available.",
+        "student_archetype": "Ambitious and networked individuals eager to develop professional skills, engage with local businesses, and explore various facets of the business world.",
+        "strategic_fit_advice": "Ideal for students seeking early exposure to business concepts, networking opportunities, and a supportive community that fosters academic and professional growth.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCT 03.210 Intermediate Accounting I",
+              "ACCT 03.211 Intermediate Accounting II"
+            ],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses and a minimum grade of 'C' in all 200-level and above accounting courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in accounting courses for progression. Competitive admission to professional phase of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 03.110 Financial Accounting",
+                "ACCT 03.111 Managerial Accounting",
+                "ACCT 03.210 Intermediate Accounting I",
+                "ACCT 03.211 Intermediate Accounting II",
+                "ACCT 03.300 Accounting Information Systems",
+                "ACCT 03.310 Cost Accounting",
+                "ACCT 03.320 Federal Taxation I",
+                "ACCT 03.330 Auditing Concepts",
+                "ACCT 03.400 Advanced Accounting"
+              ],
+              "electives": [
+                "ACCT 03.321 Federal Taxation II",
+                "ACCT 03.410 Governmental and Not-for-Profit Accounting",
+                "ACCT 03.420 Forensic Accounting"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Richard Marmon (Associate Professor and Department Chair)",
+              "Dr. Özge Uygur (Professor)",
+              "Dr. Daniel McFarland (Professor)",
+              "Dr. Ihsan Isik (Professor)"
+            ],
+            "notes": "Admission to the professional phase of the major is competitive. Data source: Rowan University 2025-2026 Catalog, Accounting and Finance Department page."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "FIN 04.300 Business Finance"
+            ],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses and a minimum grade of 'C' in core finance courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in major courses for progression. Competitive admission to professional phase of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 03.110 Financial Accounting",
+                "ACCT 03.111 Managerial Accounting",
+                "ECON 04.101 Principles of Microeconomics",
+                "ECON 04.102 Principles of Macroeconomics",
+                "FIN 04.300 Business Finance",
+                "FIN 04.310 Investments",
+                "FIN 04.320 Financial Markets and Institutions",
+                "FIN 04.330 Corporate Financial Management",
+                "FIN 04.410 International Finance"
+              ],
+              "electives": [
+                "FIN 04.340 Personal Financial Planning",
+                "FIN 04.420 Real Estate Finance",
+                "FIN 04.430 Portfolio Management"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Ihsan Isik (Professor)",
+              "Dr. Daniel Folkinshteyn (Professor)"
+            ],
+            "notes": "Admission to the professional phase of the major is competitive. Data source: Rowan University 2025-2026 Catalog, Accounting and Finance Department page."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in major courses for progression. Competitive admission to professional phase of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MGMT 06.200 Principles of Management",
+                "MGMT 06.310 Organizational Behavior",
+                "MGMT 06.320 Human Resources Management",
+                "MGMT 06.340 Operations Management",
+                "MGMT 06.360 Entrepreneurship and Small Business Management",
+                "MGMT 06.400 Strategic Management"
+              ],
+              "electives": [
+                "MGMT 06.330 International Business Management",
+                "MGMT 06.350 Project Management",
+                "MGMT 06.450 Leadership Development"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Dr. Yang Yang (Associate Professor, focuses on gender and diversity in organizations)",
+              "Dr. Tricia Harris (Professor)"
+            ],
+            "notes": "Admission to the professional phase of the major is competitive. Data source: Rowan University 2025-2026 Catalog, William G. Rohrer College of Business."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in major courses for progression. Competitive admission to professional phase of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MKTG 09.200 Principles of Marketing",
+                "MKTG 09.300 Consumer Behavior",
+                "MKTG 09.310 Marketing Research",
+                "MKTG 09.320 Marketing Management",
+                "MKTG 09.330 Digital Marketing",
+                "MKTG 09.400 Strategic Marketing"
+              ],
+              "electives": [
+                "MKTG 09.340 Sales Management",
+                "MKTG 09.350 International Marketing",
+                "MKTG 09.410 Advertising and Promotion"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Dr. Nina Krey (Associate Professor, Marketing and BIS Department, focuses on consumer behavior)"
+            ],
+            "notes": "Admission to the professional phase of the major is competitive. Data source: Rowan University 2025-2026 Catalog, Marketing Department page."
+          },
+          {
+            "name": "Supply Chain and Logistics",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in major courses for progression. Competitive admission to professional phase of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MIS 02.203 Introduction to Management Information Systems",
+                "MIS 02.300 Business Statistics",
+                "SCML 05.300 Introduction to Supply Chain Management",
+                "SCML 05.310 Logistics and Transportation Management",
+                "SCML 05.320 Procurement and Sourcing",
+                "SCML 05.400 Supply Chain Analytics",
+                "SCML 05.410 Global Supply Chain Management"
+              ],
+              "electives": [
+                "SCML 05.330 Inventory and Warehouse Management",
+                "SCML 05.420 Sustainable Supply Chains",
+                "SCML 05.430 Supply Chain Technology"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [],
+            "notes": "Admission to the professional phase of the major is competitive. Data source: Rowan University 2025-2026 Catalog, William G. Rohrer College of Business."
+          },
+          {
+            "name": "Human Resources Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in major courses for progression. Competitive admission to professional phase of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MGMT 06.200 Principles of Management",
+                "MGMT 06.310 Organizational Behavior",
+                "HRM 08.300 Human Resource Management",
+                "HRM 08.310 Staffing and Talent Acquisition",
+                "HRM 08.320 Compensation and Benefits",
+                "HRM 08.400 Training and Development",
+                "HRM 08.410 HR Law and Ethics"
+              ],
+              "electives": [
+                "HRM 08.330 Labor Relations",
+                "HRM 08.420 Global Human Resources",
+                "HRM 08.430 HR Analytics"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Dr. Tricia Harris (Professor, Management and Entrepreneurship)"
+            ],
+            "notes": "Admission to the professional phase of the major is competitive. Data source: Rowan University 2025-2026 Catalog, Human Resources Management page."
+          },
+          {
+            "name": "Entrepreneurship",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I for Business (or higher)",
+              "ECON 04.101 Principles of Microeconomics",
+              "ECON 04.102 Principles of Macroeconomics",
+              "ACCT 03.110 Financial Accounting",
+              "ACCT 03.111 Managerial Accounting",
+              "MIS 02.203 Introduction to Management Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum grade of 'C-' in all 100-level business courses. Students must maintain a 2.5 cumulative GPA and a 2.5 GPA in major courses for progression.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MGMT 06.200 Principles of Management",
+                "ENT 06.300 Introduction to Entrepreneurship",
+                "ENT 06.310 New Venture Creation",
+                "ENT 06.320 Entrepreneurial Finance",
+                "ENT 06.330 Marketing for Entrepreneurs",
+                "ENT 06.400 Entrepreneurial Strategy"
+              ],
+              "electives": [
+                "ENT 06.340 Social Entrepreneurship",
+                "ENT 06.350 Family Business Management",
+                "ENT 06.410 Innovation Management"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Entrepreneurship page."
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students typically reside in general first-year residence halls such as Holly Pointe Commons, Mimosa Hall, Evergreen, Mullica, Chestnut, Magnolia, or Willow. Upperclassmen have access to university apartments and off-campus options. An 'IMPACT' LLC exists for education majors of marginalized identity.",
+        "student_archetype": "Nurturing, community-minded individuals dedicated to becoming effective educators and advocates, often involved in student organizations like the Early Childhood Club or Educators for Diversity & Social Equity.",
+        "strategic_fit_advice": "Students with a passion for teaching, a desire for hands-on experience with children, and an interest in educational equity should explore the College of Education. Participation in relevant student organizations is highly beneficial.",
+        "majors": [
+          {
+            "name": "Elementary Education (K-6)",
+            "degree_type": "B.A. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Composition I & II (e.g., COMP 01.101, COMP 01.102)",
+              "Mathematics (e.g., MATH 01.103, MATH 01.104)",
+              "Science courses (e.g., BIOL 01.105, PHYS 00.100)",
+              "PSY 09.100 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Professional Education program, including criminal background check and passing PRAXIS Core Academic Skills for Educators exam. Minimum grade of 'C' in all professional education courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDF 07.100 Foundations of Education",
+                "EDC 07.200 Educational Psychology",
+                "EDL 07.300 Inclusive Classroom Practices",
+                "EDM 07.310 Elementary Mathematics Methods I",
+                "EDM 07.311 Elementary Mathematics Methods II",
+                "EDS 07.320 Elementary Science Methods",
+                "EDSS 07.330 Elementary Social Studies Methods",
+                "EDRL 07.350 Literacy Development and Instruction I",
+                "EDRL 07.351 Literacy Development and Instruction II",
+                "EDL 07.400 Classroom Management",
+                "EDT 07.410 Educational Technology",
+                "EDF 07.450 Clinical Practice I",
+                "EDF 07.451 Clinical Practice II"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Monica Cassidy (Department of Interdisciplinary and Inclusive Education, Chair)",
+              "Dr. Susan Robb (Professor, Elementary Education)"
+            ],
+            "notes": "Admission to the Professional Education program is required and includes specific GPA and test requirements. Data source: Rowan University 2025-2026 Catalog, College of Education."
+          },
+          {
+            "name": "Subject Matter Education (various fields)",
+            "degree_type": "B.A. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Completion of general education requirements",
+              "Specific content area courses relevant to chosen subject (e.g., English, Math, Science, History)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Professional Education program, including criminal background check and passing PRAXIS II Subject Assessments. Minimum grade of 'C' in all professional education courses and relevant content courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDF 07.100 Foundations of Education",
+                "EDC 07.200 Educational Psychology",
+                "EDL 07.300 Inclusive Classroom Practices",
+                "EDM 07.310 Subject Methods I (e.g., Secondary Mathematics Methods)",
+                "EDM 07.311 Subject Methods II (e.g., Secondary Mathematics Methods)",
+                "EDRL 07.350 Content Area Literacy",
+                "EDL 07.400 Classroom Management",
+                "EDT 07.410 Educational Technology",
+                "EDF 07.450 Clinical Practice I (Subject Specific)",
+                "EDF 07.451 Clinical Practice II (Subject Specific)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Specific curriculum varies by subject matter specialization (e.g., English Education, Mathematics Education, Science Education, Social Studies Education). Admission to the Professional Education program is required. Data source: Rowan University 2025-2026 Catalog, College of Education."
+          }
+        ]
+      },
+      {
+        "name": "Henry M. Rowan College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year students have the option to live in the Engineering Learning Community (ELC), typically located in Holly Pointe Commons, which offers modern amenities, study rooms, and a dining hall. This community facilitates living and learning together, taking common courses, and participating in group activities with peer mentors. Upperclassmen utilize general university apartments like Rowan Boulevard Apartments or Townhouses.",
+        "student_archetype": "Driven, collaborative problem-solvers who thrive in hands-on, project-based learning environments and seek strong peer and faculty mentorship from day one.",
+        "strategic_fit_advice": "Students with a strong aptitude for STEM, an interest in interdisciplinary projects, and a desire for an immersive, supportive academic community should consider applying to the ELC.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II",
+              "CS 07.111 Introduction to Object-Oriented Programming",
+              "CS 07.112 Data Structures and Algorithms",
+              "PHYS 00.220 Introductory Physics I",
+              "PHYS 00.221 Introductory Physics II"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [
+              "CS 07.112 Data Structures and Algorithms",
+              "CS 07.210 Discrete Structures in Computer Science"
+            ],
+            "special_requirements": "Competitive admission. Strong academic performance in prerequisite math and science courses is crucial. For internal transfers, a cumulative GPA of 3.5 is required for non-engineering majors, and 3.3 for other engineering majors, for automatic acceptance consideration.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "CS 07.111 Introduction to Object-Oriented Programming",
+                "CS 07.112 Data Structures and Algorithms",
+                "CS 07.210 Discrete Structures in Computer Science",
+                "CS 07.211 Computer Architecture",
+                "CS 07.212 Algorithms and Data Structures",
+                "CS 07.300 Operating Systems",
+                "CS 07.301 Programming Languages",
+                "CS 07.310 Database Systems",
+                "CS 07.400 Senior Project I",
+                "CS 07.401 Senior Project II"
+              ],
+              "electives": [
+                "CS 07.402 Artificial Intelligence",
+                "CS 07.403 Machine Learning",
+                "CS 07.404 Cybersecurity",
+                "CS 07.405 Computer Graphics"
+              ],
+              "total_units": 128,
+              "major_units": 72
+            },
+            "notable_professors": [
+              "Dr. Vasil Hnatyshin (Department Head)",
+              "Dr. Silvija Kokalj-Filipovic (Associate Professor, AI and deep learning)",
+              "Dr. Ganesh Baliga (Professor)"
+            ],
+            "notes": "The Computer Science program is competitive. Internal transfers are considered, with varying GPA requirements depending on previous major. Data source: Rowan University 2025-2026 Catalog, Computer Science Department page."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II",
+              "PHYS 00.220 Introductory Physics I",
+              "PHYS 00.221 Introductory Physics II",
+              "CHEM 00.121 General Chemistry I",
+              "ENGR 01.101 Introduction to Engineering"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "EM 09.201 Statics",
+              "EM 09.202 Dynamics",
+              "ME 09.203 Thermodynamics"
+            ],
+            "special_requirements": "Competitive admission. For internal transfers, a cumulative GPA of 3.3 is required for automatic acceptance from other engineering majors, and 3.5 for non-engineering majors.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 01.101 Introduction to Engineering",
+                "EM 09.201 Statics",
+                "EM 09.202 Dynamics",
+                "ME 09.203 Thermodynamics",
+                "ME 09.204 Fluid Mechanics",
+                "ME 09.205 Materials Science for Engineers",
+                "ME 09.301 Heat Transfer",
+                "ME 09.302 Machine Design",
+                "ME 09.303 System Dynamics and Control",
+                "ME 09.400 Mechanical Engineering Design I",
+                "ME 09.401 Mechanical Engineering Design II"
+              ],
+              "electives": [
+                "ME 09.410 Robotics",
+                "ME 09.420 Advanced Thermodynamics",
+                "ME 09.430 Sustainable Energy Systems"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Wei Xue (Department Head)",
+              "Dr. Smitesh Bakrania (Full Professor)",
+              "Dr. Antonios Kontsos (Henry M. Rowan Foundation Professor, Director of Digital Engineering Hub)"
+            ],
+            "notes": "Mechanical Engineering is a competitive major. Internal transfers have specific GPA requirements. Data source: Rowan University 2025-2026 Catalog, Mechanical Engineering Department page."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II",
+              "PHYS 00.220 Introductory Physics I",
+              "PHYS 00.221 Introductory Physics II",
+              "CHEM 00.121 General Chemistry I",
+              "BIOL 01.105 Biology I"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BMED 08.200 Introduction to Biomedical Engineering",
+              "BMED 08.201 Bioengineering Mechanics"
+            ],
+            "special_requirements": "Competitive admission. For internal transfers, a cumulative GPA of 3.3 is required for automatic acceptance from other engineering majors, and 3.5 for non-engineering majors.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 01.101 Introduction to Engineering",
+                "BMED 08.200 Introduction to Biomedical Engineering",
+                "BMED 08.201 Bioengineering Mechanics",
+                "BMED 08.202 Biomaterials Science",
+                "BMED 08.300 Biotransport Phenomena",
+                "BMED 08.301 Bioinstrumentation",
+                "BMED 08.302 Biomedical Imaging",
+                "BMED 08.400 Medical Device Design I",
+                "BMED 08.401 Medical Device Design II"
+              ],
+              "electives": [
+                "BMED 08.410 Tissue Engineering",
+                "BMED 08.420 Biomechanics",
+                "BMED 08.430 Biosensors"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Mary Staehle (Biomedical Engineering Professor and Department Head)",
+              "Dr. Vince Beachley (Associate Dean of Research and Innovation)",
+              "Dr. Peter Galie (Associate Dean for Research and Graduate Studies)"
+            ],
+            "notes": "Competitive major. Internal transfers have specific GPA requirements. Data source: Rowan University 2025-2026 Catalog, Biomedical Engineering Department page."
+          },
+          {
+            "name": "Civil and Environmental Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II",
+              "PHYS 00.220 Introductory Physics I",
+              "PHYS 00.221 Introductory Physics II",
+              "CHEM 00.121 General Chemistry I",
+              "ENGR 01.101 Introduction to Engineering"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "EM 09.201 Statics",
+              "EM 09.202 Dynamics",
+              "CE 09.203 Civil Engineering Materials"
+            ],
+            "special_requirements": "Competitive admission. For internal transfers, a cumulative GPA of 3.3 is required for automatic acceptance from other engineering majors, and 3.5 for non-engineering majors.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 01.101 Introduction to Engineering",
+                "EM 09.201 Statics",
+                "EM 09.202 Dynamics",
+                "CE 09.203 Civil Engineering Materials",
+                "CE 09.204 Surveying",
+                "CE 09.300 Structural Analysis",
+                "CE 09.301 Environmental Engineering Fundamentals",
+                "CE 09.302 Geotechnical Engineering",
+                "CE 09.400 Civil Engineering Design I",
+                "CE 09.401 Civil Engineering Design II"
+              ],
+              "electives": [
+                "CE 09.410 Transportation Engineering",
+                "CE 09.420 Water Resources Engineering",
+                "CE 09.430 Green Infrastructure Design"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Kauser Jahan (Professor of Civil and Environmental Engineering)"
+            ],
+            "notes": "Competitive major. Internal transfers have specific GPA requirements. Data source: Rowan University 2025-2026 Catalog, Civil and Environmental Engineering Department page."
+          },
+          {
+            "name": "Electrical and Computer Engineering",
+            "degree_type": "B.S.E.C.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II",
+              "PHYS 00.220 Introductory Physics I",
+              "PHYS 00.221 Introductory Physics II",
+              "CS 07.111 Introduction to Object-Oriented Programming",
+              "ENGR 01.101 Introduction to Engineering"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ECE 09.201 Circuit Analysis I",
+              "ECE 09.202 Digital Logic Design"
+            ],
+            "special_requirements": "Competitive admission. For internal transfers, a cumulative GPA of 3.3 is required for automatic acceptance from other engineering majors, and 3.5 for non-engineering majors.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 01.101 Introduction to Engineering",
+                "ECE 09.201 Circuit Analysis I",
+                "ECE 09.202 Digital Logic Design",
+                "ECE 09.203 Signals and Systems",
+                "ECE 09.300 Electronics I",
+                "ECE 09.301 Microprocessors",
+                "ECE 09.302 Electromagnetics",
+                "ECE 09.400 ECE Design I",
+                "ECE 09.401 ECE Design II"
+              ],
+              "electives": [
+                "ECE 09.410 Control Systems",
+                "ECE 09.420 Communication Systems",
+                "ECE 09.430 Embedded Systems Design"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Steven Chin (Vice Dean and Professor)",
+              "Dr. Robi Polikar (Professor)"
+            ],
+            "notes": "Competitive major. Internal transfers have specific GPA requirements. Data source: Rowan University 2025-2026 Catalog, Electrical and Computer Engineering Department page."
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students typically reside in general first-year residence halls such as Holly Pointe Commons, Mimosa Hall, Evergreen, Mullica, Chestnut, Magnolia, or Willow. Upperclassmen have access to university apartments and off-campus options. An 'IMPACT' LLC exists for education majors of marginalized identity.",
+        "student_archetype": "Nurturing, community-minded individuals dedicated to becoming effective educators and advocates, often involved in student organizations like the Early Childhood Club or Educators for Diversity & Social Equity.",
+        "strategic_fit_advice": "Students with a passion for teaching, a desire for hands-on experience with children, and an interest in educational equity should explore the College of Education. Participation in relevant student organizations is highly beneficial.",
+        "majors": [
+          {
+            "name": "Elementary Education (K-6)",
+            "degree_type": "B.A. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Composition I & II (e.g., COMP 01.101, COMP 01.102)",
+              "Mathematics (e.g., MATH 01.103, MATH 01.104)",
+              "Science courses (e.g., BIOL 01.105, PHYS 00.100)",
+              "PSY 09.100 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Professional Education program, including criminal background check and passing PRAXIS Core Academic Skills for Educators exam. Minimum grade of 'C' in all professional education courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDF 07.100 Foundations of Education",
+                "EDC 07.200 Educational Psychology",
+                "EDL 07.300 Inclusive Classroom Practices",
+                "EDM 07.310 Elementary Mathematics Methods I",
+                "EDM 07.311 Elementary Mathematics Methods II",
+                "EDS 07.320 Elementary Science Methods",
+                "EDSS 07.330 Elementary Social Studies Methods",
+                "EDRL 07.350 Literacy Development and Instruction I",
+                "EDRL 07.351 Literacy Development and Instruction II",
+                "EDL 07.400 Classroom Management",
+                "EDT 07.410 Educational Technology",
+                "EDF 07.450 Clinical Practice I",
+                "EDF 07.451 Clinical Practice II"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Monica Cassidy (Department of Interdisciplinary and Inclusive Education, Chair)",
+              "Dr. Susan Robb (Professor, Elementary Education)"
+            ],
+            "notes": "Admission to the Professional Education program is required and includes specific GPA and test requirements. Data source: Rowan University 2025-2026 Catalog, College of Education."
+          },
+          {
+            "name": "Subject Matter Education (various fields)",
+            "degree_type": "B.A. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Completion of general education requirements",
+              "Specific content area courses relevant to chosen subject (e.g., English, Math, Science, History)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Professional Education program, including criminal background check and passing PRAXIS II Subject Assessments. Minimum grade of 'C' in all professional education courses and relevant content courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDF 07.100 Foundations of Education",
+                "EDC 07.200 Educational Psychology",
+                "EDL 07.300 Inclusive Classroom Practices",
+                "EDM 07.310 Subject Methods I (e.g., Secondary Mathematics Methods)",
+                "EDM 07.311 Subject Methods II (e.g., Secondary Mathematics Methods)",
+                "EDRL 07.350 Content Area Literacy",
+                "EDL 07.400 Classroom Management",
+                "EDT 07.410 Educational Technology",
+                "EDF 07.450 Clinical Practice I (Subject Specific)",
+                "EDF 07.451 Clinical Practice II (Subject Specific)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Specific curriculum varies by subject matter specialization (e.g., English Education, Mathematics Education, Science Education, Social Studies Education). Admission to the Professional Education program is required. Data source: Rowan University 2025-2026 Catalog, College of Education."
+          }
+        ]
+      },
+      {
+        "name": "College of Communication & Creative Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "College of Humanities & Social Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Students in the College of Humanities & Social Sciences reside in general university housing, including first-year residence halls and upperclassmen apartments. Living Learning Communities based on shared interests (e.g., Social Justice, Global, Leadership, LGBTQIA+) are available to all first-year students and could be relevant.",
+        "student_archetype": "Inquisitive, socially aware individuals interested in understanding human behavior, culture, and societal structures. They often engage in discussions, community involvement, and student publications.",
+        "strategic_fit_advice": "Ideal for students who enjoy critical thinking, diverse perspectives, and engaging in topics related to social justice, history, literature, or languages. Exploring non-major-specific LLCs that align with their interests can enhance their experience.",
+        "majors": [
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CCOM 04.100 Public Speaking",
+              "CCOM 04.101 Interpersonal Communication"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CCOM 04.100 Public Speaking",
+                "CCOM 04.101 Interpersonal Communication",
+                "CCOM 04.200 Introduction to Communication Studies",
+                "CCOM 04.210 Research Methods in Communication",
+                "CCOM 04.300 Theories of Communication",
+                "CCOM 04.400 Capstone in Communication Studies"
+              ],
+              "electives": [
+                "CCOM 04.310 Intercultural Communication",
+                "CCOM 04.320 Organizational Communication",
+                "CCOM 04.330 Health Communication"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Joy L. Cypher (Department Chair)",
+              "Dr. Melissa Gregg (Professor)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Communication Studies Department page."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 09.100 Introduction to Psychology",
+              "STAT 02.260 Statistics I (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 09.200 Research Methods in Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 09.100 Introduction to Psychology",
+                "STAT 02.260 Statistics I",
+                "PSY 09.200 Research Methods in Psychology",
+                "PSY 09.201 Professional Development in Psychology",
+                "PSY 09.300 Social Psychology",
+                "PSY 09.310 Cognitive Psychology",
+                "PSY 09.320 Developmental Psychology",
+                "PSY 09.330 Biopsychology",
+                "PSY 09.400 Capstone in Psychology"
+              ],
+              "electives": [
+                "PSY 09.340 Abnormal Psychology",
+                "PSY 09.350 Health Psychology",
+                "PSY 09.360 Forensic Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Dr. Amy Janke (Psychology Department Head)",
+              "Dr. Steven M. Brunwasser (Assistant Professor, Prevention Science Lab)",
+              "Dr. Jeffrey Greeson (Associate Professor, Mindfulness, Stress & Health Lab)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Psychology Department page."
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "JRN 02.100 Introduction to Journalism"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "JRN 02.100 Introduction to Journalism",
+                "JRN 02.200 News Reporting and Writing",
+                "JRN 02.210 Multimedia Journalism",
+                "JRN 02.300 Ethics in Journalism",
+                "JRN 02.310 Feature Writing",
+                "JRN 02.320 Copy Editing and Headline Writing",
+                "JRN 02.400 Advanced Reporting and Editing",
+                "JRN 02.410 Journalism Capstone"
+              ],
+              "electives": [
+                "JRN 02.330 Photojournalism",
+                "JRN 02.340 Broadcast Journalism",
+                "JRN 02.350 Sports Journalism"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Journalism Department page."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HIST 05.100 Global History I",
+              "HIST 05.101 Global History II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIST 05.100 Global History I",
+                "HIST 05.101 Global History II",
+                "HIST 05.200 Historical Methods",
+                "HIST 05.300 Historiography",
+                "HIST 05.400 Senior Seminar in History"
+              ],
+              "electives": [
+                "HIST 05.210 American History I",
+                "HIST 05.211 American History II",
+                "HIST 05.220 European History I",
+                "HIST 05.221 European History II",
+                "HIST 05.310 History of Latin America",
+                "HIST 05.320 History of Asia"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. William Carrigan (Professor, US History)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, History Department page."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COMP 01.101 College Composition I",
+              "COMP 01.102 College Composition II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "LIT 03.200 Introduction to Literary Study",
+                "LIT 03.210 British Literature I",
+                "LIT 03.211 British Literature II",
+                "LIT 03.220 American Literature I",
+                "LIT 03.221 American Literature II",
+                "LIT 03.300 Literary Theory",
+                "LIT 03.400 Senior Seminar in English"
+              ],
+              "electives": [
+                "LIT 03.310 Shakespeare",
+                "LIT 03.320 World Literature",
+                "CRW 02.200 Introduction to Creative Writing",
+                "WRT 02.201 Technical Writing"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Judy Clark (Department Chair, Writing Arts)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, English Department page."
+          }
+        ]
+      },
+      {
+        "name": "College of Performing Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students typically reside in general first-year residence halls and upperclassmen apartments. While there isn't a specific performing arts LLC mentioned, students can participate in general interest LLCs.",
+        "student_archetype": "Creative, expressive, and dedicated artists who are passionate about their craft (music, dance, theatre) and seek opportunities for performance, collaboration, and cultural engagement.",
+        "strategic_fit_advice": "Students with a strong commitment to their artistic discipline should focus on the college's programs and performance opportunities. Engaging in university-wide clubs like the Ballroom Club or Music Therapy Club can also enrich their experience.",
+        "majors": [
+          {
+            "name": "Theatre Arts",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "THR 05.101 Introduction to Theatre"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Some concentrations (e.g., Musical Theatre, Acting) may require auditions or portfolio reviews for admission to the specific track or upper-level coursework.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "THR 05.101 Introduction to Theatre",
+                "THR 05.110 Acting I",
+                "THR 05.120 Stagecraft I",
+                "THR 05.200 Theatre History I",
+                "THR 05.201 Theatre History II",
+                "THR 05.210 Directing I",
+                "THR 05.300 Playwriting",
+                "THR 05.400 Senior Capstone in Theatre"
+              ],
+              "electives": [
+                "THR 05.220 Scenic Design",
+                "THR 05.230 Costume Design",
+                "THR 05.240 Lighting Design",
+                "THR 05.310 Advanced Acting",
+                "THR 05.320 Musical Theatre Performance"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Lane Savadove (Department Chair, Theatre and Dance)"
+            ],
+            "notes": "Performance concentrations may have additional requirements. Data source: Rowan University 2025-2026 Catalog, Department of Theatre and Dance."
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MUS 04.100 Introduction to Music",
+              "MUS 04.110 Music Theory I",
+              "MUS 04.111 Aural Skills I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for entry into performance concentrations (B.M. programs) or for certain ensembles.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MUS 04.110 Music Theory I",
+                "MUS 04.111 Aural Skills I",
+                "MUS 04.112 Music Theory II",
+                "MUS 04.113 Aural Skills II",
+                "MUS 04.200 Music History I",
+                "MUS 04.201 Music History II",
+                "MUS 04.300 Introduction to Music Technology",
+                "MUS 04.400 Senior Project in Music"
+              ],
+              "electives": [
+                "MUS 04.220 Class Piano",
+                "MUS 04.230 Voice Class",
+                "MUS 04.310 Jazz History",
+                "MUS 04.320 World Music"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. Robert Rawlins (Department Chair, Music)"
+            ],
+            "notes": "B.M. (Bachelor of Music) programs have higher admission and performance standards. Data source: Rowan University 2025-2026 Catalog, Department of Music."
+          },
+          {
+            "name": "Art",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ART 09.100 Foundation Drawing I",
+              "ART 09.101 Foundation 2D Design",
+              "ART 09.102 Foundation 3D Design"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio review may be required for admission to specific B.F.A. concentrations or upper-level studio courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ART 09.100 Foundation Drawing I",
+                "ART 09.101 Foundation 2D Design",
+                "ART 09.102 Foundation 3D Design",
+                "ART 09.200 Art History I",
+                "ART 09.201 Art History II",
+                "ART 09.210 Introduction to Digital Art",
+                "ART 09.300 Junior Seminar",
+                "ART 09.400 Senior Project"
+              ],
+              "electives": [
+                "ART 09.220 Painting I",
+                "ART 09.230 Sculpture I",
+                "ART 09.240 Photography I",
+                "ART 09.250 Printmaking I",
+                "ART 09.310 Graphic Design I"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Professor Jill Lewis (Department Chair, Art)"
+            ],
+            "notes": "B.F.A. (Bachelor of Fine Arts) programs have higher credit requirements and may involve specific portfolio reviews. Data source: Rowan University 2025-2026 Catalog, Department of Art."
+          }
+        ]
+      },
+      {
+        "name": "College of Science & Mathematics",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First-year Computer Science majors can join the 'Learning in Bits and Bytes' (LiBBy) Living Learning Community, which provides an immersive residential experience integrated with their CS coursework. Pre-Med students also have a dedicated LLC for those on the pre-med track, fostering a strong support network. Other students typically reside in general first-year residence halls such as Holly Pointe Commons (modern, with a dining hall), Mimosa Hall (central location), or traditional halls like Evergreen and Mullica (known for community feel). Upperclassmen have options in apartments like Rowan Boulevard Apartments, Townhouses, or Whitney Center.",
+        "student_archetype": "Analytical thinkers, aspiring scientists, and healthcare professionals who value academic support, peer collaboration, and opportunities to engage in career-specific organizations like the Pre-Health Club or Bioinformatics Club.",
+        "strategic_fit_advice": "Computer Science students should apply for the LiBBy LLC for integrated academic and social support. Pre-Med students should consider the Pre-Med LLC. All students in this college benefit from strong academic advising and participation in relevant student organizations.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 01.105 Biology I",
+              "BIOL 01.106 Biology II",
+              "CHEM 00.121 General Chemistry I",
+              "CHEM 00.122 General Chemistry II",
+              "MATH 01.130 Calculus I (or higher)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 01.200 Cell Biology",
+              "BIOL 01.201 Genetics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 01.105 Biology I",
+                "BIOL 01.106 Biology II",
+                "BIOL 01.200 Cell Biology",
+                "BIOL 01.201 Genetics",
+                "BIOL 01.300 Ecology",
+                "BIOL 01.301 Evolution",
+                "BIOL 01.400 Senior Seminar in Biology"
+              ],
+              "electives": [
+                "BIOL 01.310 Microbiology",
+                "BIOL 01.320 Animal Physiology",
+                "BIOL 01.330 Plant Biology",
+                "BIOL 01.340 Zoology",
+                "BIOL 01.350 Botany"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Stephen Bentivenga (Department Head, Biological & Biomedical Sciences)",
+              "Dr. Luke Holbrook (Professor, Vertebrate Paleontology)",
+              "Dr. Michael Grove (Associate Professor, Ecology)"
+            ],
+            "notes": "Minimum grade of 'C-' required for all biology major courses. Data source: Rowan University 2025-2026 Catalog, Department of Biological & Biomedical Sciences."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 00.121 General Chemistry I",
+              "CHEM 00.122 General Chemistry II",
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II",
+              "PHYS 00.220 Introductory Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 00.201 Organic Chemistry I",
+              "CHEM 00.202 Organic Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 00.121 General Chemistry I",
+                "CHEM 00.122 General Chemistry II",
+                "CHEM 00.201 Organic Chemistry I",
+                "CHEM 00.202 Organic Chemistry II",
+                "CHEM 00.300 Physical Chemistry I",
+                "CHEM 00.301 Physical Chemistry II",
+                "CHEM 00.310 Analytical Chemistry",
+                "CHEM 00.320 Inorganic Chemistry",
+                "CHEM 00.400 Senior Research in Chemistry"
+              ],
+              "electives": [
+                "CHEM 00.410 Biochemistry",
+                "CHEM 00.420 Environmental Chemistry",
+                "CHEM 00.430 Polymer Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [
+              "Dr. Subash Jonnalagadda (Department Head, Chemistry & Biochemistry)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Department of Chemistry & Biochemistry."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 01.230 Calculus III",
+              "MATH 01.250 Linear Algebra"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 01.130 Calculus I",
+                "MATH 01.131 Calculus II",
+                "MATH 01.230 Calculus III",
+                "MATH 01.250 Linear Algebra",
+                "MATH 01.280 Discrete Mathematics",
+                "MATH 01.300 Abstract Algebra",
+                "MATH 01.301 Real Analysis I",
+                "MATH 01.400 Senior Seminar in Mathematics"
+              ],
+              "electives": [
+                "MATH 01.310 Complex Analysis",
+                "MATH 01.320 Differential Equations",
+                "MATH 01.330 Probability and Statistics"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. Umashanger (Uma) Thayasivam (Department Head, Mathematics)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Department of Mathematics."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 00.220 Introductory Physics I",
+              "PHYS 00.221 Introductory Physics II",
+              "MATH 01.130 Calculus I",
+              "MATH 01.131 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 00.300 Classical Mechanics",
+              "PHYS 00.301 Electromagnetism I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHYS 00.220 Introductory Physics I",
+                "PHYS 00.221 Introductory Physics II",
+                "MATH 01.130 Calculus I",
+                "MATH 01.131 Calculus II",
+                "MATH 01.230 Calculus III",
+                "PHYS 00.300 Classical Mechanics",
+                "PHYS 00.301 Electromagnetism I",
+                "PHYS 00.302 Quantum Mechanics I",
+                "PHYS 00.400 Senior Research in Physics"
+              ],
+              "electives": [
+                "PHYS 00.310 Optics",
+                "PHYS 00.320 Thermal Physics",
+                "PHYS 00.410 Astrophysics"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. Samuel Lofland (Department Head, Physics & Astronomy)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Department of Physics & Astronomy."
+          }
+        ]
+      },
+      {
+        "name": "School of Earth & Environment",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Students typically reside in general first-year residence halls and upperclassmen apartments. There is no specific LLC tied to this school.",
+        "student_archetype": "Environmentally conscious and scientifically curious individuals interested in sustainability, geology, geography, and environmental policy, often keen on fieldwork and research.",
+        "strategic_fit_advice": "Applicants should demonstrate a strong interest in environmental issues and scientific inquiry. While no specific housing is offered, students can find community within relevant student organizations or university-wide LLCs.",
+        "majors": [
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 01.105 Biology I",
+              "CHEM 00.121 General Chemistry I",
+              "GEOL 07.100 Physical Geology",
+              "MATH 01.130 Calculus I",
+              "STAT 02.260 Statistics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENVS 12.100 Introduction to Environmental Science",
+                "BIOL 01.105 Biology I",
+                "CHEM 00.121 General Chemistry I",
+                "GEOL 07.100 Physical Geology",
+                "GEOL 07.200 Environmental Geology",
+                "ENVS 12.210 Environmental Chemistry",
+                "ENVS 12.220 Ecology for Environmental Science",
+                "ENVS 12.300 Environmental Policy and Law",
+                "ENVS 12.310 Geographic Information Systems (GIS)",
+                "ENVS 12.400 Senior Seminar in Environmental Science"
+              ],
+              "electives": [
+                "ENVS 12.320 Water Resources Management",
+                "ENVS 12.330 Air Pollution Control",
+                "ENVS 12.340 Solid and Hazardous Waste Management"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Beth Christensen (Professor and Founding Chair)",
+              "Dr. Thivanka Ariyarathna (Assistant Professor, environmental pollutants)",
+              "Dr. Andra Garner (Assistant Professor, climate change impacts)"
+            ],
+            "notes": "Data source: Rowan University 2025-2026 Catalog, Department of Environmental Science."
+          }
+        ]
+      },
+      {
+        "name": "School of Innovation & Entrepreneurship",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "Rowan-Virtua Rita & Larry Salva School of Nursing & Health Professions",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 01.105 Biology I",
+              "BIOL 01.106 Biology II",
+              "CHEM 00.121 General Chemistry I (or equivalent)",
+              "PSY 09.100 Introduction to Psychology",
+              "SOC 08.100 Introduction to Sociology",
+              "MATH 01.130 Calculus I (or STAT 02.260 Statistics I)",
+              "NUR 00.100 Introduction to Professional Nursing"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BIOL 01.200 Anatomy & Physiology I",
+              "BIOL 01.201 Anatomy & Physiology II",
+              "NUR 00.200 Fundamentals of Nursing"
+            ],
+            "special_requirements": "Highly competitive admission to clinical sequence, including specific GPA in prerequisite science courses (e.g., 'C' or higher), HESI A2 Entrance Exam, and potential interview. Criminal background check and drug screening are mandatory. Science courses must be completed within the last 5-10 years depending on the course.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "NUR 00.100 Introduction to Professional Nursing",
+                "NUR 00.200 Fundamentals of Nursing",
+                "NUR 00.201 Health Assessment",
+                "NUR 00.202 Pharmacology in Nursing",
+                "NUR 00.300 Adult Health Nursing I",
+                "NUR 00.301 Adult Health Nursing II",
+                "NUR 00.302 Psychiatric Mental Health Nursing",
+                "NUR 00.303 Pediatric Nursing",
+                "NUR 00.304 Maternal-Newborn Nursing",
+                "NUR 00.400 Community Health Nursing",
+                "NUR 00.401 Leadership and Management in Nursing",
+                "NUR 00.402 Capstone/Transition to Professional Practice"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Mary Ellen Bezner (Dean)",
+              "Dr. Mary Beth De Blasi (Associate Dean, Undergraduate Programs)"
+            ],
+            "notes": "Highly competitive program with strict progression criteria for clinicals. Data source: Rowan University 2025-2026 Catalog, Salva School of Nursing & Health Professions."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Business Analytics Minor",
+      "Entrepreneurship, Innovation, and Technology Certificate",
+      "Creative Writing Minor",
+      "Computer Science Minor",
+      "Cybersecurity Certificate",
+      "Esports Minor",
+      "Project Management Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "Rowan App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Scholarship consideration deadline for Fall 2026 is January 31, 2026."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal statement or essay is a required component of the general application process."
+      },
+      {
+        "target_program": "Art (all majors in the Department of Art)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio review is required for all prospective students (freshman, transfer, and internal transfer). It must contain 12 examples of recent work, including a minimum of 6 original representational drawings from direct observation. The portfolio can be submitted in-person or uploaded to Slideroom."
+      },
+      {
+        "target_program": "Art (all majors in the Department of Art)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A typed essay of about 250 words discussing educational goals and career plans in art/design is required as part of the portfolio submission."
+      },
+      {
+        "target_program": "Biomedical Visualization (BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio of 10-15 pieces of original artwork demonstrating skill, creativity, and observational ability is required. It should highlight drawing from observation, scientific/anatomical sketches (if possible), and may include digital illustration, design, or 3D work. Submitted via SlideRoom."
+      },
+      {
+        "target_program": "Biomedical Visualization (BFA)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A short essay (1 page) describing your interest in biomedical visualization and how the intersection of art, science, and medicine shapes your career path is required. Submitted via SlideRoom."
+      },
+      {
+        "target_program": "Music Performance, Music Education, Music Therapy, Composition, Jazz Studies",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "An audition is required to demonstrate an outstanding level of performance on the applicant's instrument or voice. Specific guidelines vary by instrument/voice area. Music Therapy and Music Education applicants have additional requirements."
+      },
+      {
+        "target_program": "Music (BA in Music)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "An audition is not required for admission to the BA in Music program, but an interview with a faculty member is necessary. An audition is required for scholarship consideration."
+      },
+      {
+        "target_program": "Music Industry (BS)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "An essay addressing the reason for pursuing a career in the music industry and detailing any related activities (business or technology) is required. An audition is not required."
+      },
+      {
+        "target_program": "Music Industry (BS)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio demonstrating work and collaborations (e.g., links to SoundCloud, YouTube, personal website) is required. An audition is not required."
+      },
+      {
+        "target_program": "Theatre & Dance (Acting, Musical Theatre)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "On-campus auditions require preparing 16 bars max of singing from a pre-1960 classic musical and 16 bars max from a post-1960 musical or popular song. A one-minute dramatic monologue is also required. Applicants must upload a current resume and recent photo/headshot."
+      },
+      {
+        "target_program": "Theatre & Dance (Dance)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Applicants participate in a dance workshop including improvisation, spontaneous composition, codified dance technique sequences, and creating short dance compositions. Appropriate dance attire is required. Applicants will also speak with Dance faculty. A resume and headshot are to be uploaded."
+      },
+      {
+        "target_program": "Theatre & Dance (Directing and Design/Tech)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants should be prepared to present a portfolio of their work. A resume and headshot are also to be uploaded."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Rowan University offers a test-optional admissions policy, emphasizing a holistic review that focuses on high school performance, extracurricular activities, leadership experiences, and personal essays to reduce barriers for students who may not perform well on standardized tests but demonstrate strong academic potential."
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Why are you interested in attending Rowan University? We encourage you to learn as much as you can about Rowan University when formulating your response and request that you pay particular attention to Rowan's mission statement, presented below, and how it aligns with your personal values and future plans.",
+        "word_limit": "500 words",
+        "type": "Why This School",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific academic programs, research opportunities, or faculty at Rowan align with your intellectual curiosities and future career goals?",
+          "Beyond academics, what unique aspects of Rowan's campus culture, student organizations, or community engagement opportunities resonate with you?",
+          "How do Rowan's stated mission and values (e.g., innovation, community engagement, student success) reflect your own personal principles and aspirations?",
+          "Imagine yourself at Rowan: what specific contributions do you envision making to the university community, and what experiences do you hope to gain?",
+          "Have you visited Rowan, attended a virtual event, or spoken with current students/alumni? What did you learn that solidified your interest in the university?"
+        ]
+      }
+    ]
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on highly selective fields like Computer Science or Engineering, which have higher admissions hurdles and may require stronger academic profiles.",
+      "Consider applying as undeclared through the Exploratory Studies Program, which provides dedicated academic advising and resources for students unsure of their major.",
+      "Research specific admission requirements and competitiveness for desired majors, as programs like Engineering and accelerated health programs have more stringent criteria than the overall university acceptance rate suggests.",
+      "Be aware that certain majors have significantly lower acceptance rates and higher academic expectations, such as strong math and science performance for engineering programs."
+    ],
+    "college_ranking_tactics": [
+      "Analyze Program-Specific Career Outcomes and Alumni Earnings: A key factor in overall university rankings is the average salary and earnings of alumni one year after graduation. This metric can be applied to individual colleges or specific degree programs within Rowan to compare the career success and return on investment for different fields of study.",
+      "Evaluate Faculty Resources and Student-to-Faculty Ratios within Colleges: The quality of faculty and the student-to-faculty ratio are significant academic ranking factors. Students can assess the level of instructional attention and the expertise of faculty within specific colleges or departments at Rowan.",
+      "Assess Research Opportunities and Impact by College or Program: Rowan University's designation as an R2 research university and its overall research output are important. For students interested in research, comparing the research focus, facilities, and publication impact within specific colleges (e.g., Engineering, Science & Mathematics, or Medical Schools) can be a crucial ranking strategy.",
+      "Examine College-Specific Graduation and Retention Rates: While often used for university-wide assessment, applying graduation rates and first-year retention rates to individual colleges or programs can provide insights into student support and success within those specific academic units.",
+      "Review General Education (Rowan Core) Requirements and Interdisciplinary Offerings: Some colleges, like the Ric Edelman College, are noted for encompassing many Rowan Core courses and interdisciplinary programs. Students might rank colleges based on the flexibility and relevance of their general education requirements or the availability of unique interdisciplinary study opportunities."
+    ],
+    "alternate_major_strategy": "When applying to competitive majors at Rowan University, consider listing an alternate major that aligns with your interests but may be in a different college or department. For example, if applying to Computer Science in the Henry M. Rowan College of Engineering, an alternate major like Cognitive Science (depending on availability and your interests) could be considered, as some schools might admit by college or by major, and a less competitive alternate could potentially increase admission chances into the university. However, ensure you are willing to study the alternate major for at least one semester."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 17428.0,
+        "total_coa": 41164.0,
+        "housing": 11550.0
+      },
+      "out_of_state": {
+        "tuition": 28252.0,
+        "total_coa": 53192.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 13103.0,
+    "average_merit_aid": 7319.0,
+    "percent_receiving_aid": 73.0,
+    "meets_full_need": false,
+    "notes": "Rowan University utilizes the FAFSA to determine financial need and offers need-based institutional grants to help cover the gap between the cost of attendance and a family's ability to pay. They meet 51% of demonstrated financial need on average. Specific programs like the Rowan Opportunity Program and Garden State Guarantee offer tuition-free or reduced cost opportunities for qualifying students. Additionally, the Edelman Scholars Program provides 100% coverage of college expenses for a select group of high-achieving, low-income students.",
+    "scholarships": [
+      {
+        "name": "Rowan University Scholars Program",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "January 31",
+        "benefits": "Renewable for four years (eight semesters) if 2.5 GPA maintained, applied to direct costs (tuition, fees, housing, meal plans)",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Brown & Gold Out-Of-State Scholarship",
+        "type": "Merit",
+        "amount": "Up to $8,500/year",
+        "deadline": "January 31",
+        "benefits": "Renewable, helps bridge out-of-state tuition gap",
+        "application_method": "Automatic Consideration upon admission application (for out-of-state residents)"
+      },
+      {
+        "name": "International Student Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 - $19,000 per year",
+        "deadline": "March 1 (priority)",
+        "benefits": "Applied toward direct costs including tuition, fees, on-campus housing, and board for fall and spring semesters; renewable if 2.5 GPA maintained",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Transfer Trustee Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "March 1 (priority)",
+        "benefits": "Renewable, supports educational expenses excluding tuition cost, special consideration for NJ community college students",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Phi Theta Kappa (PTK) Transfer Honor Society Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 (renewable)",
+        "deadline": "March 1",
+        "benefits": "Awarded to PTK members graduating from a community college with an associate's degree and meeting GPA criteria",
+        "application_method": "Automatic Consideration upon admission application (if criteria met)"
+      },
+      {
+        "name": "International Baccalaureate (IB) Scholarship",
+        "type": "Merit",
+        "amount": "Up to $32,000",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded to students who complete the IB Diploma Program",
+        "application_method": "Automatic Consideration upon admission and IB Diploma completion"
+      },
+      {
+        "name": "Marius Livingston Scholarship (History Department)",
+        "type": "Departmental Merit",
+        "amount": "Varies",
+        "deadline": "Varies",
+        "benefits": "Scholarship for a returning history major who has demonstrated academic excellence",
+        "application_method": "Separate Application (through History Department, criteria likely involve academic excellence in History)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for many exams, with higher scores (4 or 5) often required for specific courses or more credit.",
+      "exceptions": [
+        "Biology requires a score of 4+",
+        "Chemistry requires a score of 5 for 8 credits (CHEM 06100 & CHEM 06101)"
+      ],
+      "usage": "Can provide course credit and advanced placement, count towards total credits for graduation, and satisfy some major prerequisites and general education requirements."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "Rowan Transfer Equivalency Digital Portal (TREQ)",
+        "NJ Transfer website"
+      ],
+      "restrictions": "Rowan University requires a minimum of 30 credits to be completed through Rowan University coursework (residency requirement). While there is no limit to traditional course credits transferred for students admitted Fall 2014 or later, generally up to 90 credits can be transferred. Grades earned in transfer courses are recorded but do not count towards the Rowan University GPA. Most programs require a minimum 2.0 GPA for admission. Specific programs may have higher grade requirements; for instance, the Rowan-Virtua School of Translational Biomedical Engineering and Science (TBES) requires a minimum grade of B (3.0) for transfer credits and has a 6-year time limit for course transfers (exceptions by petition), while the BA in Leadership & Social Innovation requires C- or better in general education, core, or concentration courses. Basic skills courses (e.g., Intermediate Algebra, Computer Literacy from certain dates) are not accepted for earned hours. Transfer credit is not granted for duplicated content. General education and free elective credits do not expire, but academic departments may set age limits for major-specific credits. Students must be matriculated to have credits entered."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including a competitive GPA (average around 3.48) and challenging coursework such as AP or honors classes.",
+      "Meaningful extracurricular involvement and demonstrated leadership roles.",
+      "A compelling and authentic personal essay that showcases unique qualities.",
+      "Strong letters of recommendation from teachers or counselors."
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Varsity or club athletics",
+      "Community service/volunteering",
+      "Music/performing arts involvement",
+      "Participation in academic or special interest clubs"
+    ],
+    "essay_tips": [
+      "Be authentic and share a story that truly made an impact on your life. Rowan admissions emphasizes being true to yourself and sharing a story that is compelling to you, rather than trying to invent a dramatic situation.",
+      "Write about something not already visible on your transcript or other parts of your application. Use the essay as an opportunity to reveal something new about yourself that the admissions committee cannot learn from your grades, activities, or recommendations.",
+      "Avoid feeling the need to present a \"compelling life situation\"; focus on what is authentic to you. Admissions counselors look for your authentic voice and a story that genuinely impacted you, not necessarily a life-altering event.",
+      "Thoroughly revise and proofread your essay for all grammatical and punctuation errors. Ensure your essay is free from any mistakes before submission.",
+      "Reflect your personality, goals, and reasons for choosing Rowan. Your personal statement should communicate who you are, what your aspirations are, and why Rowan University is a good fit for you."
+    ],
+    "red_flags": [
+      "Generic essays that could apply anywhere",
+      "Submitting an essay with spelling and grammatical errors",
+      "Not tailoring your application to Rowan University specifically",
+      "Submitting incomplete documents or missing application requirements",
+      "Waiting too long to request letters of recommendation from teachers who know you well"
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 53300,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 38900,
+    "notes": "Median earnings 10 years after enrollment are $53,300, which is 55% higher than the national median. Median earnings 6 years after enrollment are $38,900. A specific employment rate 2 years after graduation was not found in authoritative sources. However, Niche reports an employment rate of 97% 1 year after graduation and 95% 5 years after graduation.",
+    "top_employers": [
+      "Amazon",
+      "Deloitte",
+      "Goldman Sachs",
+      "JPMorgan",
+      "Lockheed Martin",
+      "Microsoft",
+      "Morgan Stanley",
+      "TD"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 1.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 98.0,
+    "graduation_rate_4_year": 87.0,
+    "graduation_rate_6_year": 96.0
+  }
+}

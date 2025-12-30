@@ -196,8 +196,12 @@
           }
         ],
         "gender_breakdown": {
-          "men": null,
-          "women": null,
+          "men": {
+            "percentage": 0
+          },
+          "women": {
+            "percentage": 0
+          },
           "non_binary": null
         },
         "racial_breakdown": {
@@ -1262,7 +1266,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "No supplemental essays are required for all applicants; the Common Application personal statement is required."
       },
       {
@@ -1280,7 +1284,7 @@
       {
         "target_program": "Music/Dance/Art Programs",
         "requirement_type": "Audition/Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Audition or portfolio may be required for specific programs like Music, Dance, or Art."
       }
     ],
@@ -1457,11 +1461,31 @@
       "Significant decline in grades during senior year (implied by emphasis on strong academic record)"
     ],
     "insights": [
-      "Ohio State employs a holistic review process, considering academic achievements alongside personal interests, talents, accomplishments, and challenges",
-      "Applying Early Action (by November 1st) can increase chances for admission, consideration for merit-based scholarships, and special programs",
-      "While test-optional, competitive SAT/ACT scores can strengthen an application",
-      "Letters of recommendation are considered but not required; choose recommenders who can speak to your abilities and potential",
-      "Visiting the campus can significantly influence a student's decision and provide a stronger connection to the university"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Ohio State employs a holistic review process, considering academic achievements alongside personal interests, talents, accomplishments, and challenges"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action (by November 1st) can increase chances for admission, consideration for merit-based scholarships, and special programs"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, competitive SAT/ACT scores can strengthen an application"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Letters of recommendation are considered but not required; choose recommenders who can speak to your abilities and potential"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Visiting the campus can significantly influence a student's decision and provide a stronger connection to the university"
+      }
     ]
   },
   "outcomes": {

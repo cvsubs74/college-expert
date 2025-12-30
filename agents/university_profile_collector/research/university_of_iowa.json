@@ -1143,7 +1143,7 @@
       {
         "target_program": "All (Optional)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Applicants have the option to submit an essay (e.g., from Common Application prompts). May be required if not submitting test scores for admission review."
       },
       {
@@ -1155,7 +1155,7 @@
       {
         "target_program": "Honors Program",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Requires an essay specific to the Honors Program prompt, focusing on personal story and motivation."
       }
     ],
@@ -1337,11 +1337,31 @@
       "Significant decline in grades during senior year, as a strong academic record is a key factor."
     ],
     "insights": [
-      "The University of Iowa operates on a rolling admission basis, with decisions often made within 2-3 weeks of application submission.",
-      "While test-optional, submitting strong ACT/SAT scores (above institutional averages like 26 ACT/1230 SAT) can lead to more merit scholarship opportunities.",
-      "Applying by the Early Action deadline (November 3rd) is highly recommended for maximizing scholarship and Honors program opportunities.",
-      "Contacting an admissions counselor for guidance and to make yourself known can be beneficial, especially for unique situations like homeschooling or specific questions.",
-      "The Regent Admission Index (RAI) is a significant factor in admissions, and applicants can use an online calculator to estimate their score."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The University of Iowa operates on a rolling admission basis, with decisions often made within 2-3 weeks of application submission."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, submitting strong ACT/SAT scores (above institutional averages like 26 ACT/1230 SAT) can lead to more merit scholarship opportunities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying by the Early Action deadline (November 3rd) is highly recommended for maximizing scholarship and Honors program opportunities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Contacting an admissions counselor for guidance and to make yourself known can be beneficial, especially for unique situations like homeschooling or specific questions."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The Regent Admission Index (RAI) is a significant factor in admissions, and applicants can use an online calculator to estimate their score."
+      }
     ]
   },
   "outcomes": {

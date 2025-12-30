@@ -27,7 +27,7 @@
       },
       {
         "category": "Research Prowess",
-        "insight": "USF holds the 'R1: Doctoral Universities \u2013 Very high research activity' classification and is a 'Preeminent State Research University,' with significant research expenditures and high patent generation.",
+        "insight": "USF holds the 'R1: Doctoral Universities – Very high research activity' classification and is a 'Preeminent State Research University,' with significant research expenditures and high patent generation.",
         "implication": "Students interested in engaging in cutting-edge research, especially at the undergraduate level, will find abundant opportunities, mentorship, and resources across various disciplines."
       }
     ],
@@ -1564,13 +1564,13 @@
       {
         "target_program": "All Freshman Applicants (General Admission)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "No personal essay or personal statement is required or considered for general admission. Any submitted essay will not be opened or reviewed."
       },
       {
         "target_program": "Judy Genshaft Honors College",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Requires supplemental essays, typically asking why interested in the Honors College and ideas for fulfilling Experiential Learning requirements. A previous academic writing sample may also be requested."
       }
     ],
@@ -1749,11 +1749,31 @@
       "Excessive parental involvement in the application process, suggesting a lack of maturity or initiative from the applicant"
     ],
     "insights": [
-      "While USF generally does not require a personal essay for general undergraduate admission, it is often required for specific programs like the Judy Genshaft Honors College or for scholarships.",
-      "USF prioritizes GPA and standardized test scores (SAT/ACT), and challenging coursework is highly valued.",
-      "Starting the application early is crucial to gather all necessary documents and avoid last-minute mistakes.",
-      "Many students highlight the supportive faculty, diverse academic offerings, and opportunities for research and extracurricular activities as positive aspects of USF.",
-      "Common concerns among students include challenges with parking, administrative processes (like advising), and communication between departments."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While USF generally does not require a personal essay for general undergraduate admission, it is often required for specific programs like the Judy Genshaft Honors College or for scholarships."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "USF prioritizes GPA and standardized test scores (SAT/ACT), and challenging coursework is highly valued."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Starting the application early is crucial to gather all necessary documents and avoid last-minute mistakes."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Many students highlight the supportive faculty, diverse academic offerings, and opportunities for research and extracurricular activities as positive aspects of USF."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Common concerns among students include challenges with parking, administrative processes (like advising), and communication between departments."
+      }
     ]
   },
   "outcomes": {

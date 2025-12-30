@@ -775,19 +775,19 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required essay: How has your educational experience shaped your perspective on Brandeis' founding values of inclusivity and justice? (250 words max.)"
       },
       {
         "target_program": "International Students",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Additional required essay: What excites you about being an international student at Brandeis University? (250 words max.)"
       },
       {
         "target_program": "Myra Kraft Achievers Program",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Additional required essay: What strengths will you bring to the group, and in what areas will you benefit from the strengths of others? (250 words)"
       }
     ],
@@ -971,11 +971,31 @@
       "A significant decline in grades during senior year (implied by the emphasis on a strong and consistent GPA)."
     ],
     "insights": [
-      "Brandeis has a holistic application review process, considering academic qualifications alongside qualitative aspects like essays and extracurriculars.",
-      "Applying Early Decision can increase acceptance chances due to improved yield rates, but it's a binding commitment.",
-      "While standardized test scores are considered but not required, submitting strong scores can compensate for a lower GPA.",
-      "Brandeis seeks students who align with its mission of preparing active citizens who care about improving the world.",
-      "Interviews can be beneficial, particularly for international applicants, to showcase personality and receive strong scores."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Brandeis has a holistic application review process, considering academic qualifications alongside qualitative aspects like essays and extracurriculars."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision can increase acceptance chances due to improved yield rates, but it's a binding commitment."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While standardized test scores are considered but not required, submitting strong scores can compensate for a lower GPA."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Brandeis seeks students who align with its mission of preparing active citizens who care about improving the world."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Interviews can be beneficial, particularly for international applicants, to showcase personality and receive strong scores."
+      }
     ]
   },
   "outcomes": {

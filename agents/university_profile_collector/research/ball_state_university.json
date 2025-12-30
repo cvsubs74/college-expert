@@ -1,0 +1,938 @@
+{
+  "_id": "ball_state_university",
+  "metadata": {
+    "official_name": "Ball State University",
+    "location": {
+      "city": "Muncie",
+      "state": "Indiana",
+      "type": "Public"
+    },
+    "last_updated": "2024-07-28",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Ball State University is a public research university known for its strong programs in education, architecture, and communication. It emphasizes immersive learning experiences and community engagement, preparing students for professional success and civic responsibility.",
+    "market_position": "Regional leader in Indiana for teacher education and architectural studies, with a growing national reputation for immersive learning and digital media programs. Competes strongly within the Midwest for public university applicants seeking a mid-sized, hands-on educational experience.",
+    "admissions_philosophy": "Ball State seeks academically prepared students who demonstrate potential for success in an immersive learning environment. Emphasis is placed on a holistic review, considering academic achievement, extracurricular involvement, leadership potential, and commitment to community engagement. The university aims to build a diverse student body that will contribute to a vibrant campus culture.",
+    "us_news_rank": 201,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Ball State University has a moderately selective admissions process with an acceptance rate typically ranging from 68% to 86%, and operates on a test-optional basis. Selectivity can be higher for specific, competitive programs like architecture, animation, and nursing.",
+        "implication": "Applicants should prioritize a strong high school academic record and a challenging curriculum, particularly if applying to highly competitive majors. While standardized test scores are not required, submitting competitive scores can bolster an application. Utilizing the rolling admissions process by applying early is also advisable."
+      },
+      {
+        "category": "Academic",
+        "insight": "Ball State is distinguished by its 'immersive learning' philosophy, which integrates hands-on, real-world projects and community engagement across a broad spectrum of highly regarded programs, including architecture, education, business, and communications.",
+        "implication": "Prospective students should highlight any experiences with project-based learning, community service, or demonstrated passion for practical application of knowledge in their essays and application materials. Emphasizing a desire to engage in experiential learning opportunities will be beneficial."
+      },
+      {
+        "category": "Value",
+        "insight": "Ball State University stands out as an affordable higher education option, particularly for in-state students. The university offers a variety of scholarships, with applicants often automatically considered for financial aid upon admission.",
+        "implication": "Applicants seeking a cost-effective education should explore Ball State's financial aid resources and inquire about scholarship opportunities. Indiana residents, in particular, may find the university to be a highly attractive and financially accessible choice."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university cultivates a welcoming and supportive campus culture, characterized by a strong sense of community, accessible faculty, and a vibrant student life supported by over 400 student organizations.",
+        "implication": "Candidates who thrive in collaborative and community-focused environments should emphasize their participation in extracurricular activities, leadership roles, and any experiences that demonstrate their ability to contribute positively to a dynamic campus community."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Ball State University offers a vibrant campus life with a strong sense of community, making it easy for students to meet new people and get involved in activities. There's a lively social scene with numerous clubs, organizations, and campus activities, including a notable party scene and diverse events like sports games and Late Nite events. Students often highlight the supportive and approachable faculty who genuinely care about student success and well-being. The university fosters an inclusive atmosphere, and many students feel welcome and comfortable on campus.",
+      "transportation_impact": "The campus at Ball State University is described as very walkable, with many facilities and attractions within easy reach. Bus services are also generally good, providing additional transportation options for students.",
+      "research_impact": "Ball State University provides strong undergraduate research opportunities and creative endeavors, fostering deep interactions between students and faculty. Students can engage in research through various programs like the Honors Undergraduate Fellows Program, the Teacher-Scholar Program, and the Chemistry Research Immersion Summer Program (CRISP). These opportunities allow students to work in research labs, perform fieldwork, conduct surveys, explore archives, and participate in creative projects under the guidance of faculty mentors. Students may also have opportunities for data collection and analysis, literature searches, preparation of research reports, co-authorship on publications, and presenting at conferences. Some programs offer internships, including possibilities at the NASA Space Center. Ball State also qualifies for the National Science Foundation's (NSF) Research in Undergraduate Institutions (RUI) designation, which supports faculty research at predominantly undergraduate institutions."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 85.5,
+      "is_test_optional": true,
+      "test_policy_details": "Ball State University is a test-optional institution. Applicants can choose whether to provide SAT and/or ACT scores as part of their application. Not providing scores will not count against an applicant. Test scores are generally only required for students who attended a high school that does not provide grades. The university superscores, considering the highest section scores across all submitted test dates.",
+      "admits_class_size": 18034,
+      "transfer_acceptance_rate": 88.5,
+      "early_admission_stats": [],
+      "international_acceptance_rate": 100.0,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 21093,
+        "admits_total": 18034,
+        "enrolled_total": 3686,
+        "acceptance_rate_overall": 85.5,
+        "yield_rate": 20.44,
+        "notes": "Ball State University's acceptance rate increased, becoming easier to gain admission. The number of applicants decreased by 26.42% compared to the previous year.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 28668,
+        "admits_total": 20525,
+        "enrolled_total": 3826,
+        "acceptance_rate_overall": 71.52,
+        "yield_rate": 18.64,
+        "notes": "The number of applicants reached a peak in the application cycle for this class.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 28668,
+        "admits_total": 20525,
+        "enrolled_total": 3818,
+        "acceptance_rate_overall": 71.6,
+        "yield_rate": 18.6,
+        "notes": "The number of applicants grew by 25.4% and admissions grew by 30.2% compared to the previous year.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 22147,
+        "admits_total": 15263,
+        "enrolled_total": 3184,
+        "acceptance_rate_overall": 68.91,
+        "yield_rate": 20.86,
+        "notes": "",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 22947,
+        "admits_total": 15642,
+        "enrolled_total": 3248,
+        "acceptance_rate_overall": 68.17,
+        "yield_rate": 20.76,
+        "notes": "",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.65-3.95",
+        "unweighted_middle_50": "3.3-3.6",
+        "average_weighted": 3.78,
+        "percentile_25": "3.65",
+        "percentile_75": "3.95",
+        "notes": "Ball State University's official admission criteria state that the average weighted GPA for enrolled freshmen is 3.56. This differs from the 3.78 average weighted GPA reported for admitted undergraduates by other sources which also provide percentile data."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1080-1250",
+        "sat_reading_middle_50": "550-640",
+        "sat_math_middle_50": "530-620",
+        "act_composite_middle_50": "21-23",
+        "submission_rate": 37.0,
+        "policy_note": "Ball State is a test-optional institution. Applicants may choose whether to submit SAT/ACT scores; not submitting scores will not count against them. Scores are only required for students from high schools that do not provide grades. Ball State superscores, considering the best test scores. Approximately 1% of enrolled students submitted ACT scores for the academic year 2025."
+      },
+      "demographics": {
+        "first_gen_percentage": 30.0,
+        "legacy_percentage": null,
+        "geographic_breakdown": [
+          {
+            "region": "Indiana (In-State)",
+            "percentage": 91.1
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 7.9
+          },
+          {
+            "region": "International",
+            "percentage": 1.51
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7961,
+            "admits": 6705,
+            "acceptance_rate": 84.22,
+            "note": "Data for 2025 admissions."
+          },
+          "women": {
+            "applicants": 13132,
+            "admits": 11329,
+            "acceptance_rate": 86.27,
+            "note": "Data for 2025 admissions."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 71.2,
+          "black_african_american": 9.86,
+          "hispanic_latino": 8.35,
+          "asian": 2.63,
+          "native_american_alaskan": 0.14,
+          "pacific_islander": 0.05,
+          "two_or_more_races": 4.26,
+          "unknown": 1.7,
+          "non_resident_alien": 1.0
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Estopinal College of Architecture and Planning",
+        "admissions_model": "Restricted Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Located in North West Residence Hall (opened 2021). Features centralized air conditioning, free Wi-Fi, large fitness room, lounges, study spaces, game room, music room, and a resource room with MakerBot 3D printers, Glowforge, Promethean boards, sewing machines, large hard surface craft tables, and a computer lab. Rooms are coed with semi-private bathrooms and loftable furniture.",
+        "student_archetype": "Creative problem-solvers, interested in architecture, construction management, interior design, and urban planning, seeking hands-on experience with design technology and collaborative projects.",
+        "strategic_fit_advice": "Ideal for students passionate about design and architecture who thrive in a modern, collaborative environment with dedicated tools for creative and technical projects.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.Arch.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENG 103 Rhetoric and Writing",
+              "ENG 104 Composing Research"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires students to purchase a computer. ARCH 229 History of Architecture 1 counts for University Core Curriculum Tier 2 Fine Arts, Design, and Humanities. ARCH 401 Architectural Design counts as a Tier 3 Core Capstone Course. Travel study options and required internship available.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ARCH 100 Introduction to Architecture",
+                "ARCH 103 Architectural Design Studio",
+                "ARCH 163 Architectural Communications Media",
+                "ARCH 201 Architectural Design",
+                "ARCH 202 Architectural Design",
+                "ARCH 203 Architectural Design Studio",
+                "ARCH 214 Architectural Building Technology 1",
+                "ARCH 218 Structural Systems 1",
+                "ARCH 229 History of Architecture 1",
+                "ARCH 241 Introduction to Social Justice in Design",
+                "ARCH 242 Introduction to Environmental Justice in Design",
+                "ARCH 243 Introduction to Disability Justice in Design",
+                "ARCH 251 Introduction to Social and Environmental Justice in Design",
+                "ARCH 261 Design Communications Media",
+                "ARCH 263 Digital Design"
+              ],
+              "electives": [],
+              "total_units": 154,
+              "major_units": 109
+            },
+            "notable_professors": [
+              "Andrea Swartz (Associate Dean and Professor of Architecture)",
+              "Jonathan Spodek (Professor of Architecture)",
+              "Daniel Overbey (Associate Professor of Architecture)",
+              "Walter Grondzik (Professor Emeritus)"
+            ],
+            "notes": "Five-year professional degree leading to licensure."
+          }
+        ]
+      },
+      {
+        "name": "Miller College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Located in Kinghorn Residence Hall (built 2010). Offers state-of-the-art technology, centralized air conditioning, semi-private bathrooms, stackable furniture, an enclosed courtyard, multipurpose room, seminar room, fitness room, kitchen and lounge spaces, a music practice room with recording capabilities, and an on-site food shop (Tom John Food Shop).",
+        "student_archetype": "Ambitious and career-focused individuals pursuing business majors (e.g., accounting, finance, marketing, management), seeking professional development and networking opportunities.",
+        "strategic_fit_advice": "Recommended for students aiming for a career in business who desire a modern living space with amenities supporting academic and professional growth, including opportunities to connect with local businesses.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Jamye Foster (Chairperson, Department of Marketing)",
+              "Dr. Shaheen Borna (Professor of Marketing, The Outstanding Faculty Member)",
+              "Dr. Rebecca VanMeter-Brown (Associate Professor of Marketing)",
+              "Dr. Deva Rangarajan (Associate Professor of Marketing, Director of BSU Center for Professional Selling)"
+            ],
+            "notes": "Marketing graduates tend to earn about $38,503. Data source: Ball State University 2025-2026. Faculty information from department website."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Bradley Benson (Department Chair, Robert M. Hoffer Distinguished Professor of Finance)",
+              "Dr. Joseph Goebel (Associate Professor of Finance)",
+              "Dr. Peter Theodossiou (Robert M. Hoffer Distinguished Professor of Finance)",
+              "Dr. Yun Meng (Associate Professor of Finance)"
+            ],
+            "notes": "Finance and Financial Management Services graduates earn around $46,474. Data source: Ball State University 2025-2026. Faculty information from department website."
+          }
+        ]
+      },
+      {
+        "name": "College of Communication, Information, and Media",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Located in Botsford/Swinford Hall (renovated 2017). Includes centralized air conditioning, free Wi-Fi, a fitness room, spacious lounges and study spaces, a game room, a green screen room, and an equipment room with technology such as cameras, lighting and sound kits, and photo/video editing software. Rooms are coed with semi-private bathrooms and loftable furniture.",
+        "student_archetype": "Aspiring media professionals, communicators, journalists, and those interested in public relations, digital storytelling, or the gaming industry, seeking hands-on experience with media production and advanced facilities.",
+        "strategic_fit_advice": "Excellent for students passionate about communication and media who want an immersive experience with industry-standard equipment and resources readily available in their residence hall.",
+        "majors": [
+          {
+            "name": "Journalism",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All students are required to complete a minimum of three credits in JOUR 369 (internship). Prior to graduation, students must complete an exit exam.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 45,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Johnny Sparks (Director and Professor of Journalism)",
+              "Adam Kuban (Professor in School of Journalism and Strategic Communication)",
+              "Jennifer Palilonis (George and Frances Ball Distinguished Professor of Multimedia Journalism)",
+              "Mary Spillman (Assistant Professor of Journalism and Program Director of Emerging Media Journalism Certificate)"
+            ],
+            "notes": "Journalism graduates earn around $31,718. Data source: Ball State University 2025-2026. Faculty information from department website."
+          }
+        ]
+      },
+      {
+        "name": "College of Fine Arts",
+        "admissions_model": "Restricted Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Located in Schmidt/Wilson Residence Hall (renovated 2017). Features centralized air conditioning, free Wi-Fi, a fitness room, lounges, study spaces, a game room, a music room, a design studio, a dance studio, a black box theatre, and a resource room with adjustable desks, light tables, digital drawing tables, and secure lockers. Rooms are coed with semi-private bathrooms and loftable furniture.",
+        "student_archetype": "Creative, collaborative individuals passionate about theatre, music, dance, and visual arts, seeking an immersive artistic environment with dedicated practice, performance, and studio spaces.",
+        "strategic_fit_advice": "Highly suitable for art and performing arts students who will benefit from specialized facilities and a community that fosters creativity, collaboration, and academic-artistic growth.",
+        "majors": []
+      },
+      {
+        "name": "College of Health",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Health Professions and Nursing LLCs are in Woodworth Residence Hall. This hall has an on-site food court (Woodworth Commons), a fitness room, lounges, study spaces, a game room, a music room, and a resource room with anatomical models and academic materials. It is coed with community-style bathrooms and stackable beds, but is not air-conditioned (accommodations for disabilities available). The Kinesiology LLC is in Studebaker East Residence Hall, which has centralized air conditioning, semi-private bathrooms, stackable beds, a fitness room, lounges, study spaces, a game room, and a music room.",
+        "student_archetype": "Dedicated to healthcare and wellness careers (e.g., nursing, social work, nutrition, speech pathology, kinesiology), interested in interprofessional education and practice, and seeking a supportive, career-focused living environment.",
+        "strategic_fit_advice": "Recommended for students committed to health and wellness fields, especially those who value a living community that provides academic resources and opportunities for professional development within their discipline.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANAT 201 (Anatomy)",
+              "CHEM 101 (Chemistry)",
+              "BIO 113 (Biology)",
+              "PSYS 100 (Psychological Science)",
+              "SOC 100 (Sociology)",
+              "NUR 228 (Nursing Concepts)",
+              "PHYS 215 (Physiology)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ANAT 201",
+              "CHEM 101",
+              "BIO 113",
+              "PSYS 100",
+              "SOC 100",
+              "NUR 228",
+              "PHYS 215"
+            ],
+            "special_requirements": "Admission is competitive. A grade of C (2.0) or higher is required in all nursing prerequisites and courses, with no more than one repeat allowed per prerequisite. Criminal background checks and verification of absence from federal/state programs are required.",
+            "admissions_pathway": "Application to Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Karrie Osborne (Director, School of Nursing and Assistant Professor of Nursing)",
+              "Susan Benner (Associate Clinical Lecturer and Senior Baccalaureate Programs Director)",
+              "DeLisa Flynn (Assistant Professor of Nursing)",
+              "Cynthia Thomas (Associate Professor)"
+            ],
+            "notes": "Registered Nursing graduates can expect an average earning of $57,387. Admission to Ball State University does not guarantee admission to the baccalaureate nursing program. Students with a prior baccalaureate degree must have a cumulative GPA of 2.75 or higher. Data source: Ball State University 2025-2026. Faculty information from department website."
+          }
+        ]
+      },
+      {
+        "name": "College of Sciences and Humanities (STEM)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "The STEM LLC is located in Beyerl Residence Hall (opened 2020). This state-of-the-art hall features centralized air conditioning, semi-private bathrooms, loftable furniture, a fitness room, laundry, kitchenettes, study lounges, and a large resource room and makerspace with 3D printers, Glowforges, VR headsets, Mac computers, and gaming PCs. It is coed.",
+        "student_archetype": "Analytical problem-solvers, interested in science, technology, engineering, and mathematics (including computer science and physics), seeking hands-on experience with advanced technology and collaborative workspaces.",
+        "strategic_fit_advice": "Ideal for students pursuing STEM fields who desire a modern residential experience equipped with specialized technology and resources to support their academic and research endeavors.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 120 Computer Science 1: Programming Fundamentals",
+              "CS 121 Computer Science 2: Data Structures"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Computer Science majors are required to own a laptop computer. Students specialize in junior and senior years and participate in a 2-semester immersive learning capstone experience (CS 495 in Fall, CS 498 in Spring).",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 120 Computer Science 1: Programming Fundamentals",
+                "CS 121 Computer Science 2: Data Structures",
+                "CS 220 Data Structures and Algorithms",
+                "CS 230 Computer Organization and Assembly Language",
+                "CS 240 Discrete Structures for Computer Science",
+                "CS 310 Operating Systems",
+                "CS 320 Principles of Programming Languages",
+                "CS 330 Database Systems",
+                "CS 340 Software Engineering I",
+                "CS 495 Senior Project I",
+                "CS 498 Senior Project II"
+              ],
+              "electives": [],
+              "total_units": 60,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Jay Bagga (Professor of Computer Science)",
+              "Dr. Jennifer Coy (Associate Professor of Computer Science)",
+              "Dr. Huseyin Ergin (Associate Professor of Computer Science)",
+              "Dr. Vinayak Tanksale (Program Director for the Master's in Computer Science and Associate Professor of Computer Science and Data Science)"
+            ],
+            "notes": "Computer and Information Sciences, General, and Management Information Systems and Services report substantial median incomes of $58,195 and $58,157 respectively. Data source: Ball State University 2025-2026. Faculty information from department website."
+          },
+          {
+            "name": "Psychological Science",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYS 100 Introduction to Psychological Science",
+              "PSYS 241 Statistical Methods in Psychological Science (or approved substitute)",
+              "MATH 100 or higher level Math course"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYS 241 Statistical Methods in Psychological Science"
+            ],
+            "special_requirements": "Students must earn a grade of C or better in PSYS 241 and a foundational Math course.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYS 100 Introduction to Psychological Science",
+                "PSYS 241 Statistical Methods in Psychological Science",
+                "PSYS 284 Research Methods in Psychological Science",
+                "PSYS 316 Social Psychology",
+                "PSYS 324 Psychology of Women",
+                "PSYS 362 Motivation and Emotion",
+                "PSYS 363 Cognitive Psychology",
+                "PSYS 492 Research Seminar"
+              ],
+              "electives": [],
+              "total_units": 42,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Dr. Guy Mittleman (Department Chair)",
+              "Dr. Thomas Holtgraves (Professor of Psychological Science)",
+              "Dr. Michael Tagler (Associate Professor of Psychological Science)",
+              "Dr. Stephanie Simon-Dack (Vice Provost for Research and Professor of Psychological Science)"
+            ],
+            "notes": "Psychology, General - Bachelor's Degree has 185 graduates (one of the 5 largest fields). Psychology graduates earn $446,000 in research spending. Data source: Ball State University 2025-2026. Faculty information from department website."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Strongly recommended that students seek departmental advising early.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Tim Carter (Department Chair and Director of Field Stations and Environmental Education Center)",
+              "Dr. Douglas Bernstein (Professor of Biology)",
+              "Dr. John McKillip (Professor of Biology)",
+              "Dr. Jennifer Metzler (Teaching Professor of Biology)"
+            ],
+            "notes": "Biology major offers a core program and specialized concentrations (aquatic biology and fisheries, field botany, cellular and molecular biology, environmental biology, genetics, microbiology, wildlife biology and conservation, and zoology). Pre-professional tracks available. Life Sciences research spending: $5,898,000. Data source: Ball State University 2025-2026. Faculty information from department website."
+          },
+          {
+            "name": "Criminal Justice and Criminology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Benjamin Gibbs (Department Chair and Director of Forensic Science)",
+              "Dr. Bryan D. Byers (Professor of Criminal Justice and Criminology)",
+              "Dr. Jonathan Intravia (Associate Professor of Criminal Justice and Criminology)",
+              "Dr. Indigo Koslicki (Associate Professor of Criminal Justice and Criminology)"
+            ],
+            "notes": "Criminal Justice and Corrections graduates earn around $34,512. Department committed to providing students with an education grounded in critical inquiry and evidence-based practice. Data source: Ball State University 2025-2026. Faculty information from department website."
+          }
+        ]
+      },
+      {
+        "name": "College of Sciences and Humanities (Humanities & Social Sciences)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "The Humanities and Social Sciences LLCs are both located in Studebaker West Residence Hall (a nine-story building including Painter/Whitcraft and Palmer/Davidson halls). It offers free Wi-Fi, a fitness room, spacious lounges and study spaces, a game room, a music room, and a Micro Café on the first floor. It is coed, has centralized air conditioning, community-style bathrooms, and stackable furniture.",
+        "student_archetype": "Inquisitive, analytical, and community-oriented students interested in fields like literature, history, philosophy, languages, criminal justice, psychology, political science, sociology, and social work. They seek intellectual discussions and opportunities to understand human behavior and societal structures.",
+        "strategic_fit_advice": "Suitable for students in humanities and social sciences who value a vibrant living environment that fosters academic engagement, community building, and exploration of diverse perspectives within their fields.",
+        "majors": []
+      },
+      {
+        "name": "Teachers College",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "The Education LLC is located in North West Residence Hall (opened 2021). This state-of-the-art hall features centralized air conditioning, free Wi-Fi, a large fitness room, lounges, study spaces, a game room, a music room, and a resource room with MakerBot 3D printers, Glowforge, Promethean boards, sewing machines, large hard surface craft tables, and a computer lab. Rooms are coed with semi-private bathrooms and loftable furniture.",
+        "student_archetype": "Aspiring educators, dedicated to early childhood, elementary, and special education, or family and child studies, seeking practical experience, pedagogical resources, and a supportive community for future teachers.",
+        "strategic_fit_advice": "Recommended for students passionate about education who will benefit from modern living spaces that offer tailored academic resources and opportunities for collaborative learning relevant to the teaching profession.",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDEL 100 Education in a Democratic Society",
+              "EDEL 200 Planning for the Elementary and Early Childhood Classroom",
+              "EDPS 260 Human Growth and Development for Elementary Education",
+              "COMM 210 Fundamentals of Public Communication"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion of one semester of student teaching and all licensing requirements by the Indiana Department of Education. Guided by professional education assessment/decision point requirements.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EDEL 100 Education in a Democratic Society",
+                "EDEL 200 Planning for the Elementary and Early Childhood Classroom",
+                "EDPS 260 Human Growth and Development for Elementary Education",
+                "COMM 210 Fundamentals of Public Communication",
+                "EDEL 300 Management, Organization, and Instruction in the Elementary Education Classroom",
+                "EDEL 463 Student Teaching: Elementary",
+                "EDRD 300 The Teaching of Reading in the Elementary School",
+                "EDRD 300 The Teaching of Reading in the Elementary School"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 105
+            },
+            "notable_professors": [],
+            "notes": "Teaching Major in Elementary Education (Grades K-6) prepares students to teach kindergarten through sixth grade. Graduates in Teacher Education and Professional Development, Specific Levels and Methods, have 187 graduates (one of the 5 largest fields) and earn around $38,492. Data source: Ball State University 2025-2026. Faculty information from relevant department pages (not explicitly found for Elementary Education faculty list, general college faculty noted)."
+          }
+        ]
+      },
+      {
+        "name": "Honors College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First-year Honors students will be housed in DeHority Complex (remodeled 2009, designated exclusively for first-year Honors students from Fall 2026). It is coed, air-conditioned, with semi-private bathrooms and loftable furniture. Amenities include a fitness room, kitchenettes, study rooms, a computer lab with printing, a music practice room, and a makerspace with dedicated working areas and academic resources. The Honors Second-Year Experience (HSYE) will be located in Klipple Hall (Noyer Complex).",
+        "student_archetype": "High-achieving, intellectually curious, and engaged students interested in interdisciplinary studies, critical thinking, collaboration, and leadership, seeking a supportive academic community.",
+        "strategic_fit_advice": "Highly suitable for academically motivated students who desire a close-knit, intellectually stimulating community and access to resources that support advanced learning and personal development.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Business Minor",
+      "Computer and Information Technology Minor",
+      "Business Analytics Minor",
+      "Entrepreneurship and Innovation Minor",
+      "Strategic Communication Minor",
+      "Behavioral Studies Undergraduate Certificate",
+      "Teaching English to Speakers of Other Languages (TESOL) Certificate",
+      "Geographic Information Science (GIScience) Certificate",
+      "XR Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Ball State Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Priority deadline for Fall enrollment with fullest consideration for scholarships and Spring enrollment."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Priority application deadline for Fall enrollment."
+      },
+      {
+        "plan_type": "Early Action (Honors College)",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "Priority Honors College application deadline."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-08-15",
+        "is_binding": false,
+        "notes": "As Ball State has rolling admissions, this date is an estimation of two weeks before the start of the Fall 2026 semester, which begins in August 2026. This is the latest recommended deadline for consideration for Fall enrollment."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal essay is generally not required for general undergraduate admission."
+      },
+      {
+        "target_program": "Honors College",
+        "requirement_type": "Essays",
+        "deadline": "November 15 (priority)",
+        "details": "Interest in the Honors College is indicated on the main university application. Academic performance is evaluated, and the curriculum involves essays, suggesting strong writing skills are expected."
+      },
+      {
+        "target_program": "Architecture, Landscape Architecture, Urban Planning (College of Architecture and Planning - CAP)",
+        "requirement_type": "Essays",
+        "deadline": "February 1, 2025 (first-priority consideration)",
+        "details": "A supplemental CAP application is required, which includes a brief, typed essay (500 words maximum) addressing two specific prompts. The prompts are: 1. Describe a place in your community of which you are fond and would take a visitor to experience. In the same community, discuss another place that you find unacceptable and would like to change. (Optional: support with one or two original drawings.) 2. Describe a time when you experienced a setback and explain how you were able to overcome that setback."
+      },
+      {
+        "target_program": "Architecture, Landscape Architecture, Urban Planning (College of Architecture and Planning - CAP)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio is not required but is highly recommended to demonstrate creativity and potential achievement. It should include diverse content, focusing more on creative talents than technical abilities. Digital portfolios can be emailed."
+      },
+      {
+        "target_program": "Music (Undergraduate)",
+        "requirement_type": "Audition",
+        "deadline": "January 1 (on-campus audition request)",
+        "details": "Auditions are required for admission to the School of Music and for scholarship consideration. Applicants can choose between on-campus auditions or submitting a video upload. Specific repertoire guidelines apply and vary by instrument/voice. A memorized performance is required for voice, piano, and harp. Placement tests in music theory and piano are also required, but outcomes do not affect admission."
+      },
+      {
+        "target_program": "Music (Graduate Performance)",
+        "requirement_type": "Audition",
+        "deadline": "March 1 (for full assistantship consideration)",
+        "details": "Auditions are required. Live auditions are encouraged, with specific length and repertoire requirements (20-30 minutes for master's, 30-45 minutes for doctoral, with contrasting works). Auditions may be scheduled individually with a professor. Placement exams should be taken on the same day as live auditions. Doctoral applicants may also have an impromptu teaching demonstration."
+      },
+      {
+        "target_program": "Music (Graduate Composition, Theory, Music Education, Musicology)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio review is required."
+      },
+      {
+        "target_program": "Acting (BFA)",
+        "requirement_type": "Audition",
+        "deadline": "February 1, 2026 (digital video submissions close at 11:59 PM EST)",
+        "details": "An audition is required for admission to the Bachelor of Fine Arts (BFA) program. Audition requests are made through a supplemental theatre application in the online university application portal. Applicants will be notified of materials and guidelines via email two weeks prior to their audition date. Digital video submissions open December 1, 2025."
+      },
+      {
+        "target_program": "Dance (BFA)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "An audition is required for admission to the Bachelor of Fine Arts (BFA) program. Audition requests are made through a supplemental dance application in the online university application portal. Policies and procedures for audition days and locations will be provided directly to applicants."
+      },
+      {
+        "target_program": "Theatre/Dance (BA/BS)",
+        "requirement_type": "Interview",
+        "deadline": "",
+        "details": "An interview is not required for admission but is strongly encouraged for scholarship consideration."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)",
+        "Class rank",
+        "Extracurricular activities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Important",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Seeks students with ability, motivation, and intellectual curiosity to thrive in an innovative learning environment, with a strong focus on student-centered programs and support for first-generation students."
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please submit a brief, typed essay (500 words maximum) addressing both of the following topics below. Include your Full Name, City, Birth Date and Email Address at the top of your submittal.\n1. Describe a place in your community of which you are fond and would take a visitor to experience. In the same community, discuss another place that you find unacceptable and would like to change. Explain how you would preserve the character of the place you are fond of, and what you would change to help the place you find unacceptable.\n2. Describe a time when you experienced a setback and explain how you were able to overcome that setback.",
+        "word_limit": "500 words",
+        "type": "Community, Personal, Major",
+        "required": true,
+        "brainstorming_questions": [
+          "For the 'fond place,' what specific sensory details (sights, sounds, smells, feelings) make it special to you and would convey its essence to a visitor?",
+          "When considering the 'unacceptable place,' what specific problems or issues does it present, and what personal connection do you have to these issues?",
+          "How do your proposed changes for the 'unacceptable place' reflect your values, skills, or future aspirations in architecture or planning?",
+          "For the 'setback' question, what was the specific situation, and what emotions or initial reactions did you experience?",
+          "What concrete actions did you take to overcome the setback, and what unexpected strengths or lessons did you gain from that experience?"
+        ]
+      },
+      {
+        "prompt": "In an essay of at least 300 words, answer the following questions: \n• Describe an experience you have had as a student in the School of Art that has helped you develop a new skill or interest, allowed you to take on a leadership role, or inspired you to contribute to the School of Art or local arts community in some significant way. \n• What do you hope to achieve as a School of Art student during the remainder of your time at Ball State?",
+        "word_limit": "300 words minimum",
+        "type": "Major, Community, Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Recall a specific project, class, or extracurricular art activity that challenged you and led to a new skill or deepened interest. What was the 'before' and 'after'?",
+          "Have you taken on a role organizing an art event, mentoring a peer, or initiating a creative project within or beyond the School of Art? What impact did you have?",
+          "What specific aspects of Ball State's School of Art (facilities, faculty, programs, community) are you most excited to engage with to achieve your goals?",
+          "Beyond technical skills, what kind of artist or creative professional do you aspire to become, and how will Ball State help you get there?",
+          "Think about a local arts organization or community initiative you admire. How do you envision yourself contributing to such efforts, perhaps building on current experiences?"
+        ]
+      }
+    ]
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Research major-specific admission requirements and competitiveness. While Ball State University has an overall acceptance rate of approximately 68-72%, some programs, such as animation, architecture, and nursing, are considered more competitive and may have lower acceptance rates. It is crucial to review the admission criteria for any specific program of interest, as some may require supplemental applications, portfolios, or auditions.",
+      "Consider starting as \"undeclared\" if unsure, utilizing academic advising and core curriculum. Ball State University supports students who are not yet sure what they want to study. The university's faculty advisors and University Core Curriculum courses are designed to help students explore interests and find a suitable program without delaying graduation. This approach allows for exploration through a variety of classes and involvement in student activities to identify interests and skills.",
+      "Maintain a strong academic record, particularly GPA, and pursue a rigorous high school curriculum. A strong academic background is a primary factor in admission decisions. Ball State typically accepts students with a \"B+\" average, and the average unweighted high school GPA for admitted students is around 3.52. While SAT/ACT scores are not always required for admission, a strong college preparatory curriculum, including subjects like English, mathematics (Algebra I, Geometry, Algebra II minimum), laboratory sciences, social sciences, and foreign languages, is expected.",
+      "Align your major choice with your interests, personality, and career values. Ball State encourages students to consider their personality, interests, and values when selecting a major. The university provides tools and resources to help match personality types with programs and emphasizes the importance of choosing a field that will be enjoyable and rewarding over a long career. This can be explored by taking various classes and engaging in immersive learning opportunities to \"test-drive\" career paths."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate universities based on the availability and quality of immersive learning or experiential education opportunities relevant to your field of study.",
+      "Consider the strength, faculty engagement, and hands-on learning within specific academic programs of interest, beyond the overall university ranking.",
+      "Research program-specific career outcomes, including job placement rates and median alumni salaries for your intended major.",
+      "Investigate the overall campus environment, including student life, community atmosphere, and the quality of residence halls and dining options.",
+      "Examine the university's general education curriculum (University Core Curriculum) for its alignment with developing critical 21st-century skills and opportunities for interdisciplinary engagement."
+    ],
+    "alternate_major_strategy": "Ball State University encourages students to identify a 'parallel plan' (backup plan) for competitive majors or those requiring higher than average GPAs or specific skill levels. This plan is vital in case a student's interests or career plans change, or if they are unable to gain admission to a particular major/program.",
+    "internal_transfer_difficulty": "Internal transfer to certain majors can be competitive due to highly competitive admission processes for those specific programs.",
+    "change_major_after_admission": "To change a major after admission, students must contact their academic advisor to discuss the new major's requirements and impact on their academic plan. Changes are then approved via a link sent to their Ball State email address. Incoming freshmen without an assigned advisor can contact admissions or freshman advising, or address it during orientation."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 10758.0,
+        "total_coa": 27442.0,
+        "housing": 12772.0
+      },
+      "out_of_state": {
+        "tuition": 28766.0,
+        "total_coa": 45990.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 10063.0,
+    "average_merit_aid": 7206.0,
+    "percent_receiving_aid": 97.0,
+    "meets_full_need": false,
+    "notes": "Ball State University meets approximately 79% of demonstrated financial need.",
+    "scholarships": [
+      {
+        "name": "Whitinger Scholarship",
+        "type": "Full-Ride",
+        "amount": "Full tuition (in-state or out-of-state), mandatory fees, and on-campus room and board for eight semesters.",
+        "eligibility": "Exceptional potential; supplements the Presidential Scholarship for new Honors College students. Requires application to the Honors College by the priority deadline (November 16) and acceptance to Ball State and the Honors College, along with a high school GPA of 3.85 or higher (on a 4.0 scale).",
+        "application_method": "Separate Application (Honors College Scholarship Application due January 9)"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "In-state students: $5,500/year (up to $22,000 over four years); Out-of-state students: $16,000/year (up to $64,000 over four years). May cover institutional charges for tuition, fees, and room and board.",
+        "eligibility": "Awarded to outstanding high school seniors. Open to in-state and out-of-state students (excluding Ohio and Kentucky due to Reciprocity program).",
+        "application_method": "Automatic Consideration (based on admission application; eligibility can be checked via scholarship calculator)"
+      },
+      {
+        "name": "Ball State Scholars Award",
+        "type": "Merit",
+        "amount": "In-state students: $4,000/year (up to $16,000 over four years); Out-of-state students: $14,000/year (up to $56,000 over four years). Covers institutional charges for tuition, fees, and room and board.",
+        "eligibility": "Awarded to outstanding high school seniors enrolling as full-time, first-year undergraduate students. Typically requires a high school GPA of 3.0 or higher. Must maintain a cumulative GPA of 3.0 or higher at Ball State for renewal.",
+        "application_method": "Automatic Consideration (based on admission application; eligibility can be checked via scholarship calculator; priority application deadline for scholarship consideration is December 1)"
+      },
+      {
+        "name": "Fields Scholarship",
+        "type": "Need-Based",
+        "amount": "Ranges from $1,500 to $4,000 annually.",
+        "eligibility": "Honors College students (new and continuing) who demonstrate financial need.",
+        "application_method": "Separate Application (Honors College Scholarship Applications are due January 9)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "A score of 3 or higher on many AP exams can grant college credit at Ball State University. For numerous exams, a score of 3 awards introductory course credit. Higher scores of 4 or 5 generally lead to more advanced course equivalencies or a greater number of credit hours.",
+      "exceptions": [
+        "Specific requirements for certain subjects may vary."
+      ],
+      "usage": "AP credits can be used to satisfy various degree requirements, including courses within Ball State's University Core Curriculum (general education requirements) and some major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit; some subjects may accept 4+ for credit. Credit may also be granted for specific subjects without a full IB Diploma.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Self-Service (TESS)",
+        "transferin.net",
+        "DegreeWorks"
+      ],
+      "restrictions": "['Generally, Ball State accepts non-remedial, non-vocational courses with a grade of 2.0 (C) or better; starting Summer 2026, C- grades will also be accepted.', 'For graduate courses, a grade of B or better is required for transfer credit.', 'Credits must be from colleges and universities with USDE institutional accreditation (regionally accredited).', 'Remedial and vocational courses are generally not transferable, though students may petition for vocational courses.', \"Only course credit transfers; grades do not transfer and are not used in computing the student's GPA at Ball State.\", 'A minimum cumulative GPA of 2.0 on a 4.0 scale for all transferable coursework attempted is required for admission.', \"For master's degree programs, a maximum of 9 transfer credits is allowed for programs with 44 or fewer total credits, and a maximum of 15 credits for programs with 45 or more total credits. Departments may set more restrictive limits.\", \"All transfer work for a master's degree must have been completed within the six-year time limit allowed for the degree at Ball State University.\", \"Online bachelor's degree students need to earn 30 of their last 40 credits from Ball State to earn their degree.\"]"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including a competitive high school GPA and college preparatory coursework.",
+      "Submission of competitive standardized test scores (SAT/ACT), though optional, as these are considered in the admissions process.",
+      "Demonstrated interest and engagement through extracurricular activities, as these are generally considered among factors affecting admission chances.",
+      "An authentic and self-reflective approach to the application process, including essays."
+    ],
+    "common_activities": [
+      "Leadership in school clubs/Student Government Association",
+      "Community service/volunteering",
+      "Varsity or intramural athletics",
+      "Music/arts involvement (e.g., band, art club)",
+      "Participation in academic-focused clubs (e.g., DECA, Future Healthcare Professionals)",
+      "Research or immersive learning experiences",
+      "Fraternities and Sororities (Greek Life)"
+    ],
+    "essay_tips": [
+      "Provide Context and Highlight Unique Experiences: Utilize the essay to elaborate on special circumstances, challenges you've overcome, or unique experiences not fully captured elsewhere in your application. This is particularly recommended if you have concerns about your academic record, such as poor grade trends or missing coursework.",
+      "Demonstrate Specific Interest and Alignment (Especially for Competitive Programs): If you are applying to a program with a required essay (e.g., some within the College of Architecture and Planning), focus on showcasing your scholarship, initiative, leadership experience, and genuine interest in that specific discipline. The quality of this essay is a significant factor in such competitive admissions processes. For any essay, connect your academic interests and goals to specific programs, faculty, or courses at Ball State, showing you've researched the university thoroughly.",
+      "Let the Admissions Committee \"Get to Know You\": The optional essay is an opportunity for the admissions staff to understand you better beyond your grades and extracurriculars. Use concrete examples and personal narratives to \"show, don't tell,\" giving insight into your personality, motivations, and what makes you a unique candidate.",
+      "Avoid Generic Statements and Clichés: While not explicitly stated for undergraduate applications, the emphasis on quality and specific connection for graduate applications suggests that generic essays about a \"love of learning\" should be avoided. Instead, focus on specific experiences and how they have shaped your academic and personal journey, making your essay distinct."
+    ],
+    "red_flags": [
+      "Grade decline senior year Ball State University emphasizes positive and consistent grade trends. A significant drop in academic performance during the senior year could lead to a change in admission classification or even a rescinded offer of admission.",
+      "Generic essays that could apply anywhere While an application essay is optional for Ball State, if you choose to submit one, it's an opportunity to share unique experiences, challenges, or goals. A generic essay that lacks personal insight or could be submitted to any university will likely not enhance your application.",
+      "Listing activities without depth or impact Ball State's admissions committee looks for meaningful involvement and leadership roles in extracurricular activities. Simply listing activities without demonstrating the depth of your engagement, the impact you made, or the skills you developed may not strengthen your application.",
+      "Failing to submit required supplemental materials for specific programs Certain academic programs at Ball State, such as those in dance, interior design, music, theatre, and the Estopinal College of Architecture and Planning, require additional information like portfolios or auditions. Failing to provide these specific program requirements will hinder your admission to those selective majors."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 51830,
+    "employment_rate_2yr": 69.0,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Deloitte",
+      "JPMorgan Chase & Co.",
+      "Lincoln Financial Group",
+      "State Farm",
+      "Travelers"
+    ],
+    "grad_school_rate": 17.0,
+    "loan_default_rate": 3.01
+  },
+  "student_retention": {
+    "freshman_retention_rate": 77.7,
+    "graduation_rate_4_year": 50.2,
+    "graduation_rate_6_year": 62.5
+  }
+}

@@ -45,7 +45,7 @@
     ]
   },
   "strategic_profile": {
-    "executive_summary": "Howard University is a private, federally chartered historically Black research university in Washington, D.C.. It is classified as an R1: Doctoral University \u2013 Very High Research Activity institution, being the only HBCU with this designation, and offers a wide range of undergraduate, graduate, and professional degrees. The university is renowned for its strong sense of community, vibrant campus life, and significant contributions to research and social justice.",
+    "executive_summary": "Howard University is a private, federally chartered historically Black research university in Washington, D.C.. It is classified as an R1: Doctoral University – Very High Research Activity institution, being the only HBCU with this designation, and offers a wide range of undergraduate, graduate, and professional degrees. The university is renowned for its strong sense of community, vibrant campus life, and significant contributions to research and social justice.",
     "market_position": "Elite Private",
     "admissions_philosophy": "Howard University is a selective institution. While not explicitly stated as 'holistic review' or 'numbers-focused', the university emphasizes academic innovation, inclusive excellence, and aims to cultivate an environment that supports lifelong learning and advances knowledge while promoting equity and opportunity. The incoming freshman class of Fall 2021 had a 35% acceptance rate, indicating a competitive admissions process.",
     "analyst_takeaways": [
@@ -775,7 +775,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required (500 words max each): 1) Diversity: Share anything in your background or lived experience that has shaped your perspectives and how that would contribute to the classroom and community at Howard. 2) Why Major: Describe the major you intend to study, how you hope to use your Howard education to support your passions and goals, and address your first-choice and second-choice major selections."
       },
       {
@@ -931,7 +931,7 @@
     "what_it_takes": [
       "Strong academic record, with an average GPA of 3.66 and competitive coursework including honors, AP, or IB classes",
       "Demonstrated leadership and community involvement through extracurriculars, showcasing unique talents, skills, and passions",
-      "Compelling and genuine essays that highlight personal experiences, values, and lessons learned, avoiding clich\u00e9s",
+      "Compelling and genuine essays that highlight personal experiences, values, and lessons learned, avoiding clichés",
       "Strong letters of recommendation from teachers or counselors who know the applicant well",
       "For early decision/action, a very high unweighted GPA and exceptional extracurriculars are often needed, as this cycle can be harder"
     ],
@@ -957,11 +957,31 @@
       "Having a high SAT score but a very low GPA, as this can be a red flag for admissions"
     ],
     "insights": [
-      "Howard University has a competitive admission process with an acceptance rate around 35-36%.",
-      "While test-optional, strong SAT scores (average 1100-1300) or ACT scores (average 22-28) can bolster an application.",
-      "Admissions is holistic, considering all aspects of the application beyond just grades and test scores.",
-      "Visiting campus or taking a virtual tour can provide insights to fuel authentic essay writing and interview responses.",
-      "Financial aid and scholarships are available, and submitting the FAFSA early is recommended to maximize opportunities."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Howard University has a competitive admission process with an acceptance rate around 35-36%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, strong SAT scores (average 1100-1300) or ACT scores (average 22-28) can bolster an application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admissions is holistic, considering all aspects of the application beyond just grades and test scores."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Visiting campus or taking a virtual tour can provide insights to fuel authentic essay writing and interview responses."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Financial aid and scholarships are available, and submitting the FAFSA early is recommended to maximize opportunities."
+      }
     ]
   },
   "outcomes": {

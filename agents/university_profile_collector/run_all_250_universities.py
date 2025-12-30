@@ -5,13 +5,15 @@ Runs the agent directly in console (no server needed).
 Skips universities that already have data in the research folder.
 
 Features:
-- Consolidated List: Combines Top 100 and Next ~150 universities.
-- Parallel processing: Run multiple collection tasks in parallel (default 25).
+- Consolidated List: Combines Top 100 and Next ~150 universities (ordered by US News rank).
+- Parallel processing: Run multiple collection tasks in parallel (default 5).
 - Self-Correction: Uses the LoopAgent in agent.py to fix validation errors.
 - ES Ingestion: Automatically ingests valid profiles.
+- Next N: Research only the next N unresearched universities by rank.
 
 Usage:
-  python run_all_250_universities.py --parallel 25
+  python run_all_250_universities.py --next 50              # Research next 50 by rank
+  python run_all_250_universities.py --next 50 --parallel 5 # With 5 parallel workers
   python run_all_250_universities.py -u "Specific University"
 """
 
@@ -38,7 +40,10 @@ load_dotenv()
 
 from google.adk.runners import InMemoryRunner
 from google.genai import types
-from agent import root_agent
+try:
+    from .agent import root_agent
+except ImportError:
+    from agent import root_agent
 
 # Import ES ingestion functions
 try:
@@ -329,12 +334,24 @@ def get_existing_universities() -> set:
 
 def is_university_already_researched(university_name: str, existing_ids: set) -> bool:
     name_lower = university_name.lower()
+    
+    # Normalize: remove special chars, replace spaces with underscores, collapse multiple underscores
+    def normalize(s):
+        s = re.sub(r'[^a-z0-9]+', '_', s.lower())
+        s = re.sub(r'_+', '_', s)  # Collapse multiple underscores
+        return s.strip('_')
+    
     variations = [
+        normalize(university_name),
         get_university_id(university_name),
-        name_lower.replace(' ', '_').replace(',', '').replace('-', '_'),
-        name_lower.replace('university of ', '').replace(' ', '_').replace(',', ''),
-        name_lower.replace(', ', '_').replace(' ', '_'),
+        # Also check without "university of" prefix
+        normalize(name_lower.replace('university of ', '')),
+        # Check for "uc_" prefix for UC schools
+        'uc_' + normalize(name_lower.replace('university of california', '').replace(',', '')),
+        # Check without SUNY suffix for SUNY schools
+        normalize(name_lower.replace('-suny', '').replace(' suny', '')),
     ]
+    
     for var in variations:
         if var in existing_ids:
             return True
@@ -426,18 +443,25 @@ async def process_single_university(runner, university: str, existing: set, es_c
             return False
 
 
-async def run_batch(parallel_count: int = 25, specific_university: str = None):
+async def run_batch(parallel_count: int = 5, specific_university: str = None, next_count: int = None):
     existing = get_existing_universities()
+    log_message(f"Found {len(existing)} universities already researched in {RESEARCH_DIR}")
     
     if specific_university:
         to_collect = [specific_university]
         log_message(f"Running single university: {specific_university}")
     else:
+        # Get universities not yet researched, maintaining rank order
         to_collect = [u for u in ALL_UNIVERSITIES if not is_university_already_researched(u, existing)]
-        log_message(f"Full list: {len(ALL_UNIVERSITIES)}. To Collect: {len(to_collect)}")
+        log_message(f"Full list: {len(ALL_UNIVERSITIES)}. Remaining to collect: {len(to_collect)}")
+        
+        # If --next is specified, limit to next N universities
+        if next_count and next_count > 0:
+            to_collect = to_collect[:next_count]
+            log_message(f"Limiting to next {next_count} universities by US News rank")
     
     if not to_collect:
-        log_message("🎉 All done!")
+        log_message("🎉 All done! No universities left to research.")
         return
 
     # ES Init
@@ -470,10 +494,11 @@ async def run_batch(parallel_count: int = 25, specific_university: str = None):
 def main():
     parser = argparse.ArgumentParser(description="Collect Top 250 University Profiles")
     parser.add_argument('--parallel', '-p', type=int, default=5, help='Parallel workers (default 5, max recommended 10)')
+    parser.add_argument('--next', '-n', type=int, default=None, help='Research only the next N unresearched universities by US News rank')
     parser.add_argument('--university', '-u', type=str, help='Run specific university')
     args = parser.parse_args()
     
-    asyncio.run(run_batch(parallel_count=args.parallel, specific_university=args.university))
+    asyncio.run(run_batch(parallel_count=args.parallel, specific_university=args.university, next_count=args.next))
 
 if __name__ == "__main__":
     main()

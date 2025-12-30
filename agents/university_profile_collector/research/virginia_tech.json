@@ -1817,13 +1817,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Four supplemental essays are required (120 words each). Prompts include: 'Ut Prosim' (That I May Serve) community contribution, experience with inclusion/exclusion, a time of pride as a role model or leader, and a personal goal and steps to achieve it."
       },
       {
         "target_program": "Music",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Prospective music students must schedule an audition with the music department. Applicants should contact the department head by January 1 of their senior year in high school to request an audition."
       }
     ],
@@ -2016,11 +2016,31 @@
       "Lack of meaningful engagement or leadership in extracurricular activities."
     ],
     "insights": [
-      "Virginia Tech's supplemental essays are considered very important in the admissions process.",
-      "The acceptance rate for Virginia Tech is moderately selective, ranging from approximately 54.8% to 57%.",
-      "The rigor of your high school curriculum, academic GPA, and application essay are consistently rated as 'very important' factors.",
-      "Admission can be more competitive for certain majors, such as engineering and interior design.",
-      "Virginia Tech is test-optional, encouraging applicants to submit scores only if they feel they strengthen their application and reflect their academic achievement."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Virginia Tech's supplemental essays are considered very important in the admissions process."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The acceptance rate for Virginia Tech is moderately selective, ranging from approximately 54.8% to 57%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The rigor of your high school curriculum, academic GPA, and application essay are consistently rated as 'very important' factors."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admission can be more competitive for certain majors, such as engineering and interior design."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Virginia Tech is test-optional, encouraging applicants to submit scores only if they feel they strengthen their application and reflect their academic achievement."
+      }
     ]
   },
   "outcomes": {

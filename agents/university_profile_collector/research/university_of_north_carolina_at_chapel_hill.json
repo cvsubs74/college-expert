@@ -34,7 +34,7 @@
     "campus_dynamics": {
       "social_environment": "UNC Chapel Hill offers a vibrant and diverse campus life with over 800 clubs and organizations catering to various interests, from academic and career-oriented to cultural, sports, and arts groups. There is a significant Greek life presence (around 10-18% student involvement), but it does not dominate the social scene, leaving ample opportunities for those not involved. Passionate support for the Tar Heels sports teams, especially basketball, creates a strong sense of community. The surrounding town of Chapel Hill, a classic college town, provides additional restaurants, shops, music venues, and festivals. The university also emphasizes public service and volunteering.",
       "transportation_impact": "Campus transportation is facilitated by Chapel Hill Transit, which offers fare-free bus service throughout the Chapel Hill, Carrboro, and UNC community, including routes that circulate the university campus. This makes navigating campus and the surrounding areas convenient and accessible for students without personal vehicles. On-campus parking is restricted, and permits are required, encouraging the use of public transit, cycling (Tar Heel Bikes program), and ride-sharing networks like Zimride. Regional bus services (Go Triangle) connect Chapel Hill to other areas, and Amtrak has a nearby station in Durham, NC.",
-      "research_impact": "UNC Chapel Hill is classified as 'R1: Doctoral Universities \u2013 very high research activity' and is a major recipient of National Institute of Health grants and funds. The National Science Foundation ranked UNC\u2013Chapel Hill ninth among American universities for research and development expenditures in 2023 with $1.5 billion. The Office of Undergraduate Research (OUR) provides numerous opportunities for students to engage in faculty-mentored research across natural sciences, social sciences, and humanities, offering workshops, funding, and connections to labs. There are also specific summer research programs in various fields like pharmacology and nuclear/particle physics. The 'JOURney' journal publishes outstanding undergraduate research. This strong research focus enriches academic programs and provides invaluable experiential learning, contributing to the university's reputation for academic excellence and innovation."
+      "research_impact": "UNC Chapel Hill is classified as 'R1: Doctoral Universities – very high research activity' and is a major recipient of National Institute of Health grants and funds. The National Science Foundation ranked UNC–Chapel Hill ninth among American universities for research and development expenditures in 2023 with $1.5 billion. The Office of Undergraduate Research (OUR) provides numerous opportunities for students to engage in faculty-mentored research across natural sciences, social sciences, and humanities, offering workshops, funding, and connections to labs. There are also specific summer research programs in various fields like pharmacology and nuclear/particle physics. The 'JOURney' journal publishes outstanding undergraduate research. This strong research focus enriches academic programs and provides invaluable experiential learning, contributing to the university's reputation for academic excellence and innovation."
     },
     "us_news_rank": 26
   },
@@ -681,13 +681,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required (200-250 words each): one on a personal quality and its positive community impact, and one on an academic topic of interest."
       },
       {
         "target_program": "Music/Dramatic Arts",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Students applying as Music or Dramatic Arts majors are required to audition. Specific audition deadlines and details for UNC Chapel Hill's undergraduate music program for the 2025-2026 cycle were not explicitly found in the search results; prospective applicants should consult the UNC Chapel Hill Department of Music directly for detailed requirements and dates."
       }
     ],
@@ -875,7 +875,7 @@
     "essay_tips": [
       "Be specific about why UNC Chapel Hill, demonstrating a deep understanding of the university and its offerings",
       "Show, don't tell, using vivid imagery and anecdotes to convey experiences and personal qualities",
-      "Avoid clich\u00e9s and generic statements; tell your unique story",
+      "Avoid clichés and generic statements; tell your unique story",
       "Clearly answer the entire prompt, focusing on personal growth and impact",
       "Emphasize your core personality traits and how they align with UNC's values"
     ],
@@ -887,11 +887,31 @@
       "Essays that regurgitate information already present elsewhere in the application"
     ],
     "insights": [
-      "UNC Chapel Hill employs a holistic review process, considering academics, essays, extracurriculars, character, and personal qualities.",
-      "Demonstrated interest is not formally tracked, but engaging with the school can help craft more compelling and tailored essays.",
-      "For out-of-state applicants, admission is significantly more competitive due to a state law limiting their enrollment to a certain percentage.",
-      "While test-optional, submitting strong SAT/ACT scores within the middle 50% range (1370-1530 SAT, 30-34 ACT) is generally considered a smart strategy if they benefit your application.",
-      "Strong letters of recommendation from counselors and teachers are very important."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UNC Chapel Hill employs a holistic review process, considering academics, essays, extracurriculars, character, and personal qualities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest is not formally tracked, but engaging with the school can help craft more compelling and tailored essays."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For out-of-state applicants, admission is significantly more competitive due to a state law limiting their enrollment to a certain percentage."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, submitting strong SAT/ACT scores within the middle 50% range (1370-1530 SAT, 30-34 ACT) is generally considered a smart strategy if they benefit your application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Strong letters of recommendation from counselors and teachers are very important."
+      }
     ]
   },
   "outcomes": {

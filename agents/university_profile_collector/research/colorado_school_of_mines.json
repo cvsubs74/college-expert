@@ -1,396 +1,1368 @@
+
 {
-  "university_profile": {
-    "_id": "colorado_school_of_mines",
-    "university_name": "Colorado School of Mines",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.mines.edu/rankings/",
-      "https://www.usnews.com/best-colleges/colorado-school-of-mines-1348"
-    ],
-    "metadata": {
-      "official_name": "Colorado School of Mines",
-      "location": {
-        "city": "Golden",
-        "state": "CO",
-        "type": "Public"
-      }
+  "_id": "colorado_school_of_mines",
+  "metadata": {
+    "official_name": "Colorado School of Mines",
+    "location": {
+      "city": "Golden",
+      "state": "Colorado",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "A premier public research university focused on engineering and applied sciences, Colorado School of Mines is a globally recognized leader in energy, mineral resources, and environmental stewardship. It is known for its rigorous STEM-only curriculum and exceptional graduate outcomes.",
-      "market_position": "Elite Public STEM",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 80,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Maintains a competitive 60% acceptance rate with an average unweighted GPA of 3.85-4.00.",
-          "implication": "Applicants must demonstrate high-level STEM readiness, particularly in calculus and lab sciences, to remain competitive."
-        },
-        {
-          "category": "Value & ROI",
-          "insight": "Ranked #1 in Colorado for median starting salaries, with graduates averaging over $82,950.",
-          "implication": "The high cost of in-state tuition is offset by industry-leading return on investment and job placement rates."
-        },
-        {
-          "category": "Ranking Trend",
-          "insight": "Rank shifted from #76 (2025) to #80 (2026) in National Universities.",
-          "implication": "Despite a minor numerical dip, it remains the top-ranked national university in Colorado and a top-40 public institution."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A close-knit, 'nerdy but proud' community centered on STEM passion and outdoor recreation, with a culture that values 'introverted extroverts' and active participation in traditions like the 'M Climb'.",
-        "transportation_impact": "Located at the base of the Rockies in Golden, the campus requires significant uphill walking; proximity to Denver via light rail and U.S. Route 6 facilitates strong industry internships and weekend urban access.",
-        "research_impact": "As an R1 institution, it offers unique undergraduate fellowships (MURF, SURF) and hosts the U.S. Geological Survey on campus, providing students with direct access to federal and industrial research projects."
-      }
-    },
-    "admissions_trends": [
+    "last_updated": "2024-06-11",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Colorado School of Mines is a highly-ranked public research institution specializing in engineering, applied science, and technology. It is recognized for its strong academic programs, particularly in fields like petroleum and mining engineering, and for delivering a high return on investment for its graduates.",
+    "market_position": "Elite Public STEM University",
+    "admissions_philosophy": "Holistic review emphasizing intellectual curiosity",
+    "us_news_rank": 76,
+    "analyst_takeaways": [
       {
-        "year": 2025,
-        "cycle_name": "Class of 2029",
-        "applications_total": 15197,
-        "admits_total": 9223,
-        "enrolled_total": 2128,
-        "acceptance_rate_overall": 60.7,
-        "yield_rate": 23.1,
-        "waitlist_stats": {
-          "year": 2025,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Preliminary data; application volume increased by 16.4% over previous cycle."
+        "category": "Selectivity",
+        "insight": "Admission is highly competitive, emphasizing a strong STEM academic record, particularly in advanced math and science, with an average admitted GPA of 3.83 and ACT score of 31.",
+        "implication": "Applicants should focus on excelling in the most rigorous STEM courses available, including calculus and physics/chemistry, and consider submitting strong standardized test scores even though it is test-optional."
       },
       {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
-        "applications_total": 11436,
-        "admits_total": 6828,
-        "enrolled_total": 1602,
-        "acceptance_rate_overall": 59.7,
-        "acceptance_rate_in_state": 68.7,
-        "acceptance_rate_out_of_state": 57.1,
-        "yield_rate": 23.5,
+        "category": "Academic",
+        "insight": "Colorado School of Mines is a premier, highly specialized research university focused on engineering and applied sciences, particularly in earth, energy, and environmental fields, with exceptional industry connections and high graduate employment rates.",
+        "implication": "Applicants should clearly articulate their passion for STEM fields, especially those related to Mines' specializations, and demonstrate how their interests align with solving real-world challenges in energy, environment, or resource industries in their optional short responses."
+      },
+      {
+        "category": "Culture",
+        "insight": "Mines fosters a unique academic culture that is both competitive and collaborative, attracting 'Orediggers' who are innovative leaders and resilient problem-solvers united by a strong sense of community and a shared mission to benefit society.",
+        "implication": "Prospective students should highlight experiences demonstrating teamwork, problem-solving skills, leadership, and a collaborative spirit in their application, and ideally engage with the admissions team or campus community to show demonstrated interest."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Colorado School of Mines fosters a rigorous and demanding academic environment, characteristic of a STEM-focused institution, with professors dedicated to supporting students. There is a strong emphasis on hands-on learning and real-world applications, preparing students for future careers. The campus is noted for its close-knit and supportive community, where students often collaborate. While the academic intensity can lead to a limited social scene compared to larger universities, students actively engage in numerous clubs and organizations. Dorm life is described as tight-knit and friendly. The location in Golden, nestled near the mountains and close to Denver, provides ample outdoor recreational opportunities. School spirit is present, with enjoyment in sports and events like E-Days.",
+      "transportation_impact": "The Colorado School of Mines campus is highly walkable, with everything being a short distance for those living on campus. The town of Golden is a small, walkable community, with downtown restaurants easily accessible from campus. Additionally, Denver is only about 20 minutes away, offering students access to a wider range of activities and amenities.",
+      "research_impact": "Colorado School of Mines is classified as an R1 research university, signifying very high research activity, and places a strong emphasis on undergraduate research. The Office of Undergraduate Research provides numerous opportunities, including fellowships, research assistantships, and academic credit for research. Key programs such as the First-Year Innovation & Research Scholar Training (FIRST), Mines Undergraduate Research Fellowship (MURF), and Summer Undergraduate Research Fellowship (SURF@Mines) enable students to engage in cutting-edge research with faculty mentors, often in collaboration with industry and national lab partners. The FIRST program notably allows first-year students to begin research from their initial semester. These experiences help students apply classroom knowledge to real-world challenges, develop critical thinking skills, and clarify their career interests. Students can also present their findings at events like the annual Undergraduate Research Symposium and through the Mines undergraduate research journal, Reuleaux."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 59.7,
+      "is_test_optional": true,
+      "test_policy_details": "Colorado School of Mines is a test-optional university. Applications receive equal consideration in their holistic admissions and merit scholarship review process, with or without test scores. If applicants believe test scores will further highlight their academic ability, they are welcome to include them. The university superscores both the ACT and SAT. Self-reporting of scores is allowed, and scores can be submitted even after the application if desired.",
+      "admits_class_size": 5864,
+      "transfer_acceptance_rate": 47.3,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 12022,
+        "admits_total": 6838,
+        "enrolled_total": 1449,
+        "acceptance_rate_overall": 56.88,
+        "yield_rate": 21.19,
+        "notes": "Test-optional university.",
         "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 953,
-          "accepted_spots": 422,
-          "admitted_from_waitlist": 364,
-          "waitlist_admit_rate": 86.3,
+          "year": 2021,
+          "offered_spots": 1538,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 20,
+          "waitlist_admit_rate": 1.3,
           "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist admission saw a significant spike in 2024 compared to historical averages."
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 10886,
+        "admits_total": 6314,
+        "enrolled_total": 1515,
+        "acceptance_rate_overall": 58.00,
+        "yield_rate": 23.99,
+        "notes": "Guaranteed admissions pathway with Jeffco Public Schools announced, starting with Class of 2026. Test-optional university.",
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 765,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 6,
+          "waitlist_admit_rate": 0.78,
+          "is_waitlist_ranked": false
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 9821,
         "admits_total": 5864,
+        "enrolled_total": 1445,
+        "acceptance_rate_overall": 59.71,
+        "yield_rate": 24.64,
+        "notes": "Test-optional university.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 11436,
+        "admits_total": 6940,
+        "enrolled_total": 1602,
+        "acceptance_rate_overall": 60.69,
+        "yield_rate": 23.08,
+        "notes": "Test-optional university.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 9794,
+        "admits_total": 5837,
         "enrolled_total": 1450,
-        "acceptance_rate_overall": 59.7,
-        "acceptance_rate_in_state": 66.4,
-        "acceptance_rate_out_of_state": 56.4,
-        "yield_rate": 24.7,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 765,
-          "admitted_from_waitlist": 6,
-          "waitlist_admit_rate": 0.8,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Acceptance rate for women was significantly higher (66%) than for men (56%)."
+        "acceptance_rate_overall": 59.59,
+        "yield_rate": 24.84,
+        "notes": "Test-optional university.",
+        "waitlist_stats": null
       }
     ],
-    "current_admissions_status": {
-      "overall_acceptance_rate": 60.7,
-      "international_acceptance_rate": 40.0,
-      "transfer_acceptance_rate": 56.0,
-      "admits_class_size": 6940,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": []
-    },
     "admitted_student_profile": {
       "gpa": {
+        "weighted_middle_50": "3.70-3.95",
         "unweighted_middle_50": "3.75-4.00",
-        "percentile_25": "3.75",
-        "percentile_75": "4.00",
-        "notes": "The average unweighted GPA for admitted students is approximately 3.85."
+        "average_weighted": 3.83,
+        "percentile_25": 3.70,
+        "percentile_75": 3.95,
+        "notes": "The average unweighted GPA for admitted students typically falls around 3.85 or higher. The admissions committee emphasizes strong performance in a challenging curriculum, especially in core math and science (STEM) courses. While GPA is an important factor, admissions officers consider all aspects of an application, including standardized test scores, extracurricular activities, and essays, to evaluate candidacy holistically."
       },
       "testing": {
-        "sat_composite_middle_50": "1320-1480",
+        "sat_composite_middle_50": "1320-1470",
         "sat_reading_middle_50": "650-730",
         "sat_math_middle_50": "670-750",
         "act_composite_middle_50": "29-33",
         "submission_rate": 60.0,
-        "policy_note": "Test-optional; 42% of first-time enrollees submit SAT scores."
+        "policy_note": "Test-optional; superscore accepted for both SAT and ACT; self-reporting allowed initially."
       },
       "demographics": {
         "first_gen_percentage": 18.4,
-        "international_percentage": 2.5,
+        "legacy_percentage": null,
+        "notes": "As of August 1, 2021, Colorado School of Mines ended the practice of giving partial preference to applicants whose parents are alumni. Historically, up until that point, 14% of enrolled students were children, siblings, nieces, or nephews of alumni.",
         "geographic_breakdown": [
           {
             "region": "Colorado",
-            "percentage": 49.0
+            "percentage": 49.00
           },
           {
-            "region": "Other US States",
-            "percentage": 48.5
+            "region": "Texas",
+            "percentage": 11.36
+          },
+          {
+            "region": "California",
+            "percentage": 6.99
+          },
+          {
+            "region": "Illinois",
+            "percentage": 2.98
+          },
+          {
+            "region": "Washington",
+            "percentage": 2.87
+          },
+          {
+            "region": "Arizona",
+            "percentage": 2.42
+          },
+          {
+            "region": "Alaska",
+            "percentage": 1.37
+          },
+          {
+            "region": "Oklahoma",
+            "percentage": 1.27
+          },
+          {
+            "region": "Nebraska",
+            "percentage": 1.27
+          },
+          {
+            "region": "New Mexico",
+            "percentage": 1.27
+          },
+          {
+            "region": "Kansas",
+            "percentage": 1.15
+          },
+          {
+            "region": "Other U.S. States",
+            "percentage": 18.05
           },
           {
             "region": "International",
-            "percentage": 2.5
+            "percentage": 2.00
           }
         ],
         "gender_breakdown": {
           "men": {
-            "acceptance_rate": 57.1,
-            "note": "Approximate 68:32 male-to-female ratio."
+            "applicants": 7915,
+            "admits": 4517,
+            "acceptance_rate": 57.07,
+            "note": "Data for academic year 2024-25 from a third-party admissions statistics website."
           },
           "women": {
-            "acceptance_rate": 68.7,
-            "note": "Women are admitted at a higher rate for STEM diversity."
-          }
+            "applicants": 3510,
+            "admits": 2412,
+            "acceptance_rate": 68.72,
+            "note": "Data for academic year 2024-25 from a third-party admissions statistics website."
+          },
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 68.15,
-          "black_african_american": 1.37,
-          "hispanic_latino": 12.93,
-          "asian": 6.52,
-          "native_american_alaskan": 0.5,
-          "two_or_more_races": 6.41,
-          "non_resident_alien": 2.5
+          "white": 65.30,
+          "black_african_american": 1.36,
+          "hispanic_latino": 11.60,
+          "asian": 5.76,
+          "native_american_alaskan": 0.45,
+          "pacific_islander": 0.08,
+          "two_or_more_races": 5.88,
+          "unknown": 2.30,
+          "non_resident_alien": 7.27
         }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Engineering and Computational Sciences (CECS)",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 58.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students with high proficiency in Calculus and a 'maker' mindset.",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "prerequisite_courses": [
-                "Calculus I",
-                "Calculus II",
-                "Principles of Chemistry I",
-                "Physics I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PHGN 100",
-                "PHGN 200",
-                "MATH 112"
-              ],
-              "admissions_pathway": "Pre-Major",
-              "curriculum": {
-                "core_courses": [
-                  "MEGN 200",
-                  "MEGN 312",
-                  "MEGN 315",
-                  "MEGN 351",
-                  "MEGN 361",
-                  "MEGN 481",
-                  "EDNS 151",
-                  "EDNS 491",
-                  "EDNS 492"
-                ],
-                "electives": [
-                  "Aerospace",
-                  "Automation",
-                  "Biomechanics",
-                  "Manufacturing"
-                ],
-                "total_units": 133
-              },
-              "notes": "Mines' largest major; features a unique 'design spine' sequence."
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "prerequisite_courses": [
-                "MATH 111",
-                "CSCI 128"
-              ],
-              "weeder_courses": [
-                "CSCI 200",
-                "MATH 112"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "CSCI 200",
-                  "CSCI 220",
-                  "CSCI 306",
-                  "CSCI 341",
-                  "CSCI 358",
-                  "CSCI 400",
-                  "CSCI 403",
-                  "CSCI 406",
-                  "CSCI 442"
-                ],
-                "total_units": 128
-              }
-            }
-          ]
-        }
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Golden Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Priority Application."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-01-15",
-          "is_binding": false,
-          "notes": "Rolling basis after this date."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Academic Rigor",
-          "GPA",
-          "STEM Preparedness"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Important",
-        "specific_differentiators": "Emphasis on Calculus and Lab Sciences."
-      },
-      "supplemental_requirements": {
-        "essay_prompts": [
-          {
-            "prompt": "What element on the periodic table best represents you and why?",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional but strongly recommended",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Why do you want to be an Oredigger? You can share what you want to study, your future involvement and activities, or anything else about the Mines experience that excites you.",
-            "word_limit": 250,
-            "required": false,
-            "note": "Optional but strongly recommended",
-            "application_cycle": "2025-2026"
-          }
-        ]
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Select 'Undeclared' or 'Design Engineering' if unsure; enrollment is not capped.",
-        "Focus on STEM rigor over a perfect GPA in easier subjects.",
-        "Use the 'Golden Application' to bypass fall backlogs."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize 'Traditional' halls for social cohesion ('suffering together').",
-        "Avoid Maple Hall if social life is a priority."
-      ],
-      "alternate_major_strategy": "List 'Geophysics' or 'Applied Math' as intended majors to avoid early overcrowding, as all freshmen take the same STEM core."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 21914,
-          "total_coa": 43745,
-          "housing": 17531
-        },
-        "out_of_state": {
-          "tuition": 45824,
-          "total_coa": 67655,
-          "supplemental_tuition": 23910
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "percent_receiving_aid": 63.0,
-      "scholarships": [
-        {
-          "name": "President's Merit Scholarship",
-          "type": "Merit",
-          "amount": "Up to $16,000 annually",
-          "deadline": "May 1",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "Harvey Scholarship Program",
-          "type": "Merit / Full Ride",
-          "amount": "Full tuition and fees",
-          "deadline": "2025-03-01",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Mines Promise Program",
-          "type": "Need",
-          "amount": "Full tuition and fees",
-          "deadline": "2025-04-01",
-          "application_method": "FAFSA / CASFA"
-        }
-      ]
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Calculus readiness",
-        "Resilience for STEM workload",
-        "Demonstrated interest"
-      ],
-      "essay_tips": [
-        "Treat 'optional' essays as mandatory",
-        "Connect hobbies to major",
-        "Focus on collaboration over competition"
-      ],
-      "insights": [
-        "Mines culture centers on the 'struggle'",
-        "The Golden Application signals strong admission chances",
-        "Priority/EA significantly improves odds"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 97335,
-      "employment_rate_2yr": 92.0,
-      "top_employers": [
-        "Lockheed Martin",
-        "Kiewit",
-        "ExxonMobil",
-        "Chevron",
-        "BP",
-        "Northrop Grumman",
-        "NASA"
-      ],
-      "student_retention": {
-        "freshman_retention_rate": 93.0,
-        "graduation_rate_6_year": 82.0
       }
     }
   },
-  "_id": "colorado_school_of_mines",
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "Colorado School of Mines (encompassing all undergraduate engineering and applied science programs)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI128 Computer Science for STEM",
+                "CSCI261 Programming Concepts",
+                "CSCI262 Data Structures",
+                "CSCI300 Discrete Structures",
+                "CSCI303 Introduction to Data Science",
+                "CSCI306 Principles of Programming Languages",
+                "CSCI341 Computer Architecture",
+                "CSCI400 Design and Analysis of Algorithms",
+                "CSCI406 Operating Systems",
+                "CSCI442 Software Engineering",
+                "CSCI440 Database Management"
+              ],
+              "electives": [
+                "CSCI420 Introduction to Artificial Intelligence",
+                "CSCI452 Computer Graphics",
+                "CSCI465 Introduction to Machine Learning",
+                "CSCI470 Computer Security"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Dinesh Mehta (Algorithms)",
+              "Dr. Dejun Yang (Algorithms)",
+              "Dr. Hua Wang (Machine Learning and Data Mining)",
+              "Dr. C. Estelle Smith (Human-Computer Interaction and Social Computing)",
+              "Dr. Mehmet Belviranli (Heterogeneous Architectures, Runtime Systems)"
+            ],
+            "notes": "Offers six focus areas: Computer Science General Track, CS + Business, CS + Computer Engineering, CS + Data Science, CS + Robotics & Intelligent Systems, and CS + Space. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "EDNS151 Cornerstone - Design I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EDNS151 Cornerstone - Design I",
+                "MEGN200 Introduction to Mechanical Engineering: Programming and Hardware Interface",
+                "MEGN201 Introduction to Mechanical Engineering: Design and Fabrication",
+                "MEGN210 Statics",
+                "MEGN212 Dynamics",
+                "MEGN250 Materials Science for Engineers",
+                "MEGN312 Mechanics of Materials",
+                "MEGN351 Thermodynamics",
+                "MEGN361 Fluid Mechanics",
+                "MEGN400 Heat Transfer",
+                "MEGN401 Mechanical Design",
+                "MEGN412 Control Systems",
+                "EDNS491 Capstone Design I",
+                "EDNS492 Capstone Design II"
+              ],
+              "electives": [
+                "MEGN414 Mechanics of Composite Materials",
+                "MEGN451 Aerodynamics",
+                "MEGN452 Intro to Space Exploration and Resources",
+                "MEGN453 Aerospace Structures"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Andrew Osborne (Associate Professor)",
+              "Dr. Anne Silverman (Professor)",
+              "Dr. Kelly Rickey (Teaching Professor)",
+              "Dr. Jim Wong (Teaching Professor)",
+              "Dr. Kristine R. Csavina (Teaching Professor)"
+            ],
+            "notes": "The program emphasizes fundamental engineering principles with project-based learning. Offers eight tracks for electives: Aerospace, Automotive, Automation and Controls, Biomechanics, Energy, Manufacturing, Materials, and Nuclear Energy. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Chemical and Biological Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CBEN110 Fundamentals of Biology I",
+                "CBEN200 Introduction to Chemical Engineering",
+                "CBEN201 Material and Energy Balances",
+                "CBEN210 Chemical Engineering Computing",
+                "CBEN250 Introduction to Chemical Engineering Analysis and Design",
+                "CBEN307 Fluid Mechanics",
+                "CBEN314 Chemical Engineering Heat and Mass Transfer",
+                "CBEN357 Chemical Engineering Thermodynamics",
+                "CBEN358 Chemical Engineering Thermodynamics Laboratory",
+                "CBEN405 Chemical Engineering Reactor Design",
+                "CBEN407 Separations",
+                "CBEN409 Process Dynamics and Control"
+              ],
+              "electives": [
+                "CBEN411 Neuroscience, Memory, and Learning",
+                "CBEN418 Biochemical Engineering",
+                "CBEN420 Biomaterials Engineering",
+                "CBEN422 Introduction to Polymer Science"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Sumit Agarwal (Solar Cells, Electronic Materials, Atomic Layer Processing)",
+              "Dr. Nanette Boyle (Metabolic Engineering, Biofuels, Algae)",
+              "Dr. Kevin J. Cash (Diagnostics, Sensing, Biomedical Engineering)",
+              "Dr. Carolyn A. Koh (Gas Hydrates, Energy Storage, CO2 Sequestration)",
+              "Dr. Colin A. Wolden (Nanostructured Materials, Renewable Energy, Sustainability)"
+            ],
+            "notes": "Offers tracks in Biological Engineering, Process Engineering, or Honors Research. Strong ties with the National Renewable Energy Laboratory (NREL). Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CEEN201 Engineering Mechanics: Statics",
+                "CEEN203 Engineering Mechanics: Dynamics",
+                "CEEN241 Civil Engineering Materials",
+                "CEEN242 Civil Engineering Measurements",
+                "CEEN301 Structural Analysis",
+                "CEEN310 Fluid Mechanics for Civil and Environmental Engineering",
+                "CEEN311 Hydrology and Water Resources Engineering",
+                "CEEN312 Geotechnical Engineering",
+                "CEEN341 Steel Design",
+                "CEEN342 Concrete Design",
+                "CEEN381 Hydrology and Water Resources Engineering (Note: Duplicated entry, likely an error in source or different context in catalog)",
+                "CEEN401 Civil Engineering Design I",
+                "CEEN402 Civil Engineering Design II"
+              ],
+              "electives": [
+                "CEEN407 Water Quality Engineering",
+                "CEEN412 Advanced Geotechnical Engineering",
+                "CEEN414 Pavement Design",
+                "CEEN419 Construction Management"
+              ],
+              "total_units": 126,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Junko Munakata Marr (Water Reclamation and Resource Recovery, Department Head)",
+              "Dr. Ning Lu (Soil physical phenomena, Geotechnical Engineering)",
+              "Dr. John Spear (Microbial Ecology, Environmental Microbiology)",
+              "Dr. Kathleen Smits (Hazardous Waste Site Remediation, Fluid Mechanics and Environmental Pollution)",
+              "Dr. Linda Figueroa (Microbially mediated radionuclide and metals removal, Water and waste treatment)"
+            ],
+            "notes": "Offers specializations in Structural Engineering, Geotechnical Engineering, Construction Engineering, Engineering Surveying, Environmental Engineering and Water Resources. Curriculum includes a 3-week Field Session after sophomore year. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Petroleum Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PEGN201 Petroleum Engineering Fundamentals",
+                "PEGN282 Professional Skills 1",
+                "PEGN300 Introduction to Drilling Engineering",
+                "PEGN302 Petroleum Production Systems",
+                "PEGN308 Reservoir Engineering I",
+                "PEGN310 Well Logging",
+                "PEGN315 Petroleum Engineering Field Session",
+                "PEGN316 Formation Evaluation",
+                "PEGN320 Fluid Mechanics for Petroleum Engineers",
+                "PEGN400 Petroleum Engineering Design I",
+                "PEGN401 Petroleum Engineering Design II",
+                "PEGN404 Production Engineering",
+                "PEGN406 Well Completions and Stimulation",
+                "PEGN419 Advanced Reservoir Engineering",
+                "PEGN423 Petroleum Reservoir Engineering I (Note: Appears twice, check catalog for distinction or error)"
+              ],
+              "electives": [
+                "PEGN438 Petroleum Data Analysis",
+                "PEGN460 Geothermal Engineering",
+                "PEGN470 Unconventional Reservoir Engineering"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Jennifer L. Miskimins (Department Head, Completions, Hydraulic Fracturing)",
+              "Dr. Yilin Fan (Associate Professor)",
+              "Dr. Linda A. Battalora (Teaching Professor, Ethics, Environmental Regulations)",
+              "Dr. Erdal Ozkan (Reservoir Engineering)",
+              "Dr. K.Z. (Kris) George (Drilling Engineering)"
+            ],
+            "notes": "Covers all disciplines within petroleum engineering. Students study fundamental fluid and rock behavior, drilling, formation evaluation, well completions and stimulation, well testing, production operations and artificial lift, reservoir engineering, and economic evaluation of petroleum projects. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Applied Mathematics and Statistics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH111 Calculus for Scientists and Engineers I",
+                "MATH112 Calculus for Scientists and Engineers II",
+                "MATH213 Calculus for Scientists and Engineers III",
+                "MATH225 Differential Equations",
+                "MATH300 Introduction to Proofs",
+                "MATH332 Linear Algebra",
+                "MATH335 Probability and Statistics for Engineers",
+                "MATH360 Numerical Analysis",
+                "MATH400 Senior Design Project"
+              ],
+              "electives": [
+                "MATH420 Partial Differential Equations",
+                "MATH425 Complex Variables",
+                "MATH450 Mathematical Modeling",
+                "MATH465 Introduction to Machine Learning"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Soutir Bandyopadhyay (Applied Mathematics and Statistics)",
+              "Dr. Cecilia Diniz Behn (Applied Mathematics and Statistics)",
+              "Dr. John Griesmer (Teaching Associate Professor)",
+              "Dr. Daisy Philtron (Teaching Associate Professor)",
+              "Dr. Paul Martin (Professor)"
+            ],
+            "notes": "This program provides a strong foundation in mathematical and statistical theory and their applications in engineering and science. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Chemical Engineering (Biochemical Option)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires additional biology and biochemistry courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CBEN110 Fundamentals of Biology I",
+                "BIOL200 Introduction to Cell and Molecular Biology",
+                "CHGN209 Organic Chemistry I",
+                "CHGN210 Organic Chemistry II",
+                "CHGN315 Biochemistry I",
+                "CHGN316 Biochemistry II",
+                "CBEN307 Fluid Mechanics",
+                "CBEN314 Chemical Engineering Heat and Mass Transfer",
+                "CBEN357 Chemical Engineering Thermodynamics"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Nanette Boyle (Metabolic Engineering, Biofuels, Algae)",
+              "Dr. Melissa D. Krebs (Biomaterials, Tissue Engineering, Drug Delivery)"
+            ],
+            "notes": "This option within Chemical and Biological Engineering focuses on the application of chemical engineering principles to biological systems. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM",
+              "PHGN100 Physics I - Mechanics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EENG281 Circuits I",
+                "EENG282 Circuits II",
+                "EENG307 Signals and Systems",
+                "EENG310 Electronics I",
+                "EENG314 Electromagnetics",
+                "EENG320 Microprocessors",
+                "EENG382 Electric Machinery",
+                "EENG401 Electrical Engineering Design I",
+                "EENG402 Electrical Engineering Design II"
+              ],
+              "electives": [
+                "EENG420 Digital Signal Processing",
+                "EENG430 Power Systems Analysis",
+                "EENG440 Control Systems",
+                "EENG450 Communications Systems"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Abdul-Rahman A. Arkadan (Interim Department Head)",
+              "Dr. Christopher S. Coulston (Teaching Professor)",
+              "Dr. Omid Beik (Assistant Professor, NASA Early Career Faculty Award)"
+            ],
+            "notes": "Focuses on the principles of electrical engineering including circuits, electronics, electromagnetics, and signal processing. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CEEN201 Engineering Mechanics: Statics",
+                "CEEN203 Engineering Mechanics: Dynamics",
+                "CEEN241 Civil Engineering Materials",
+                "CEEN310 Fluid Mechanics for Civil and Environmental Engineering",
+                "CEEN311 Hydrology and Water Resources Engineering",
+                "CEEN312 Geotechnical Engineering",
+                "EVGN201 Environmental Engineering Fundamentals",
+                "EVGN301 Environmental Engineering Laboratory",
+                "EVGN302 Environmental Field Session",
+                "EVGN401 Water Treatment",
+                "EVGN402 Fate and Transport of Contaminants"
+              ],
+              "electives": [
+                "EVGN407 Life Cycle Assessment",
+                "EVGN410 Air Pollution Control",
+                "EVGN412 Site Remediation",
+                "EVGN415 Environmental Microbiology"
+              ],
+              "total_units": 126,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Junko Munakata Marr (Department Head)",
+              "Dr. Tzahi Cath (Water and wastewater treatment, resource recovery)",
+              "Dr. John Spear (Microbial Ecology, Environmental Microbiology)",
+              "Dr. Kathleen Smits (Hazardous Waste Site Remediation, Fluid Mechanics and Environmental Pollution)",
+              "Dr. Linda Figueroa (Water and waste treatment)"
+            ],
+            "notes": "A design-oriented program focusing on environmental issues and solutions. Students take core environmental engineering courses and choose electives from various options. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Geological Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM",
+              "GEOL101 Physical Geology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "GEOL101 Physical Geology",
+                "GEOL103 Historical Geology",
+                "GEOL204 Mineralogy",
+                "GEOL205 Petrology",
+                "GEOL220 Structural Geology",
+                "GEGN250 Geologic Mapping",
+                "GEGN301 Engineering Geology",
+                "GEGN305 Rock Mechanics",
+                "GEGN310 Hydrogeology",
+                "GEGN401 Geological Engineering Design I",
+                "GEGN402 Geological Engineering Design II"
+              ],
+              "electives": [
+                "GEGN420 Engineering Seismology",
+                "GEGN430 Site Characterization",
+                "GEGN440 Geologic Hazards"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Gabriel Walton (Associate Professor, Rock Mechanics, Underground Construction)",
+              "Dr. Thomas Monecke (Professor, Ore Deposit Research)",
+              "Dr. Mathias Burisch Hassel (Associate Professor, Geology and Geological Engineering)"
+            ],
+            "notes": "Combines principles of geology with engineering applications for solving problems related to earth materials and processes. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM",
+              "PHGN100 Physics I - Mechanics",
+              "PHGN200 Physics II - Electromagnetism"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PHGN100 Physics I - Mechanics",
+                "PHGN200 Physics II - Electromagnetism",
+                "PHGN215 Experimental Physics I",
+                "PHGN300 Modern Physics",
+                "PHGN310 Classical Mechanics I",
+                "PHGN320 Thermodynamics and Statistical Mechanics",
+                "PHGN330 Quantum Mechanics I",
+                "PHGN340 Electricity and Magnetism I",
+                "PHGN410 Optics",
+                "PHGN415 Experimental Physics II"
+              ],
+              "electives": [
+                "PHGN420 Solid State Physics",
+                "PHGN430 Nuclear Physics",
+                "PHGN440 General Relativity"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Kyle Leach (Professor, Nuclear Physics, Neutrino Research)",
+              "Dr. Jeramy D. Zimmerman (Associate Professor, Physics)",
+              "Dr. Kristine E. Callan (Teaching Professor)"
+            ],
+            "notes": "Provides a comprehensive understanding of fundamental physics principles, with applications in various scientific and engineering fields. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHGN121 Principles of Chemistry I",
+                "CHGN122 Principles of Chemistry II",
+                "CHGN209 Organic Chemistry I",
+                "CHGN210 Organic Chemistry II",
+                "CHGN211 Organic Chemistry Lab",
+                "CHGN301 Quantitative Analysis",
+                "CHGN303 Physical Chemistry I",
+                "CHGN304 Physical Chemistry II",
+                "CHGN305 Inorganic Chemistry",
+                "CHGN306 Advanced Inorganic Chemistry",
+                "CHGN401 Instrumental Analysis"
+              ],
+              "electives": [
+                "CHGN415 Biochemistry I",
+                "CHGN416 Biochemistry II",
+                "CHGN420 Environmental Chemistry",
+                "CHGN430 Polymer Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Mike McGuirk (Associate Professor)",
+              "Dr. Svitlana Pylypenko (Professor)",
+              "Dr. Brian Trewyn (Professor)",
+              "Dr. Ryan M. Richards (Professor, Director, Joint Mines/NREL NEXUS Center)",
+              "Dr. Shubham Vyas (Professor)"
+            ],
+            "notes": "The degree program is approved by the American Chemical Society. Focuses on theoretical and experimental aspects of chemistry. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mining Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MNGN100 Introduction to Mining Engineering",
+                "MNGN210 Mining Geology",
+                "MNGN215 Mine Surveying",
+                "MNGN220 Mine Design and Development",
+                "MNGN300 Rock Fragmentation",
+                "MNGN310 Mine Ventilation",
+                "MNGN320 Mine Systems Engineering",
+                "MNGN400 Mine Operations",
+                "MNGN410 Mine Management and Economics",
+                "MNGN420 Mine Planning and Design"
+              ],
+              "electives": [
+                "MNGN430 Mineral Processing",
+                "MNGN440 Mine Health and Safety",
+                "MNGN450 Environmental Aspects of Mining"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Jamal Rostami (Professor, Timothy J. Haddon / Alacer Gold Chair in Mining Engineering)",
+              "Dr. Nicole M. Smith (Assistant Professor, Artisanal and Small-Scale Mining, Mining Sustainability)"
+            ],
+            "notes": "Prepares students for careers in the mining industry, covering aspects from exploration and extraction to mine planning and environmental considerations. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "HASS100 Nature and Human Values"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EBGN201 Principles of Economics",
+                "EBGN202 Microeconomic Principles",
+                "EBGN203 Macroeconomic Principles",
+                "EBGN300 Intermediate Microeconomics",
+                "EBGN301 Intermediate Macroeconomics",
+                "EBGN305 Econometrics",
+                "EBGN400 Senior Design Project"
+              ],
+              "electives": [
+                "EBGN420 Environmental Economics",
+                "EBGN430 Natural Resource Economics",
+                "EBGN440 International Economics",
+                "EBGN450 Public Economics"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Ian Lange (Professor, Economics & Business)"
+            ],
+            "notes": "The only non-STEM degree program offered at Colorado School of Mines, focusing on economic principles within the context of natural resources, energy, and the environment. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Metallurgical and Materials Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM",
+              "PHGN100 Physics I - Mechanics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MTGN210 Introduction to Materials Science and Engineering",
+                "MTGN220 Thermodynamics of Materials",
+                "MTGN230 Physical Metallurgy",
+                "MTGN240 Materials Characterization",
+                "MTGN310 Mechanical Behavior of Materials",
+                "MTGN320 Phase Transformations",
+                "MTGN330 Extractive Metallurgy",
+                "MTGN340 Materials Processing",
+                "MTGN401 Metallurgical and Materials Engineering Design I",
+                "MTGN402 Metallurgical and Materials Engineering Design II"
+              ],
+              "electives": [
+                "MTGN435 Biomaterials",
+                "MTGN445 Corrosion Engineering",
+                "MTGN455 Additive Manufacturing"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Vladan Stevanovic (Professor, Metallurgical and Materials Engineering)",
+              "Dr. Gerald R. Bourne (Associate Department Head and Teaching Professor)"
+            ],
+            "notes": "Focuses on the science and engineering of metals and other materials. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Geophysical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM",
+              "PHGN100 Physics I - Mechanics",
+              "GEOL101 Physical Geology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "GPGN201 Introduction to Geophysics",
+                "GPGN202 Geologic Field Methods",
+                "GPGN301 Seismic Exploration",
+                "GPGN302 Gravity and Magnetics",
+                "GPGN305 Electrical and Electromagnetic Methods",
+                "GPGN310 Potential Field Theory",
+                "GPGN401 Geophysical Engineering Design I",
+                "GPGN402 Geophysical Engineering Design II",
+                "GPGN405 Borehole Geophysics"
+              ],
+              "electives": [
+                "GPGN410 Remote Sensing in Geophysics",
+                "GPGN420 Marine Geophysics",
+                "GPGN430 Near-Surface Geophysics"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Ebru Bozdag (Associate Professor, Computational and Global Seismology)"
+            ],
+            "notes": "Applies principles of physics and mathematics to understand the Earth's physical processes and subsurface structures. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Quantitative Biosciences and Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH111 Calculus for Scientists and Engineers I",
+              "CHGN121 Principles of Chemistry I",
+              "CSCI128 Computer Science for STEM",
+              "BIOL110 Fundamentals of Biology I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL110 Fundamentals of Biology I",
+                "BIOL200 Introduction to Cell and Molecular Biology",
+                "QBEN200 Quantitative Biosciences and Engineering Fundamentals",
+                "QBEN300 Biostatistics",
+                "QBEN310 Biomolecular Engineering",
+                "QBEN320 Bioinstrumentation",
+                "QBEN400 Quantitative Biosciences and Engineering Design I",
+                "QBEN401 Quantitative Biosciences and Engineering Design II"
+              ],
+              "electives": [
+                "QBEN410 Bioinformatics",
+                "QBEN420 Synthetic Biology",
+                "QBEN430 Systems Biology"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "An interdisciplinary program that applies quantitative and engineering principles to biological systems. Data source: Colorado School of Mines 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurial Studies - Certificate",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Aerospace Engineering Minor",
+      "Business and Entrepreneurship Minor",
+      "Additive Manufacturing Minor",
+      "Biology Minor"
+    ],
+    "housing_details": {
+      "housing_profile": "Colorado School of Mines requires first-year students to live on campus, and starting Fall 2026, a two-year residency is mandatory for sophomores as well. The seven residence halls offer a variety of living styles, including singles, doubles, triples, and suites, with options for communal or en-suite bathrooms. All halls require keycard access for safety and provide community kitchens (though meal plans are mandatory for first-year students). Newer facilities like Spruce Hall feature modern amenities such as in-room thermostats, ample study and social spaces, private showers in gender-inclusive bathrooms, and sometimes an attached gym or restaurant. Traditional halls (e.g., Bradford, Morgan, Randall, Thomas) are known for fostering a strong, tight-knit community, partly due to their communal living setup. Elm Hall offers a community-style environment with shared kitchens, bathrooms, and laundry facilities. Maple Hall provides suite-style living with two rooms sharing a single bathroom. Theme Learning Communities are also available for first-year residents to connect students with similar interests. An 800-bed residence hall for sophomores, Residence Hall VII, is set to open in Fall 2026, offering dining, recreation, wellness, and study areas.",
+      "student_archetype": "Colorado School of Mines attracts ambitious and dedicated students, often described as 'problem-solvers' and 'nerds,' who thrive in a highly rigorous academic environment focused on engineering, applied science, and mathematics. These students are serious about their education, committed to hard work, and often engaged in internships and job placements before graduation. There's a strong sense of community and solidarity among students, viewing the challenging curriculum as a 'team sport'. Many Orediggers also embrace the outdoors, taking advantage of Golden's opportunities for climbing, hiking, and skiing. They are typically academically focused, critical thinkers, and aspire to be civically-engaged leaders."
+    }
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Golden Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Also referred to as Priority Application Deadline."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Applications may be accepted after this date as space allows."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "Academic GPA",
+        "Essays"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Character/Personal Qualities",
+        "Talent/Ability"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Strong emphasis on STEM education, holistic review with a test-optional policy, and dedicated support for first-generation students, valuing problem-solving, innovation, and intellectual curiosity."
+    },
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": {
+          "Early Action": "November 1",
+          "Regular Decision": "January 15"
+        },
+        "details": "Two supplemental essays are "strongly encouraged" (though technically optional) for the 2024-2025 and 2025-2026 application cycles, each with a 250-word limit.\nPrompt 1 (2025-2026): \"What element on the periodic table best represents you and why?\" (250 words)\nPrompt 2 (2025-2026): \"Why do you want to be an Oredigger? You can share what you want to study, your future involvement and activities, or anything else about the Mines experience that excites you.\" (250 words)\nPrompt 1 (2024-2025): \"Reflect on a time when you had to collaborate with individuals whose backgrounds, culture, experiences, or viewpoints are different from your own. How did this experience impact your understanding of your own identity and how do you think this experience will influence your approach in building inclusive teams?\" (250 words)\nPrompt 2 (2024-2025): \"Please share a bit more about your academic interests. Why did you choose Mines and what do you hope to study? If you are undecided, what area(s) of study are you considering? What has inspired your interests in these areas? Think about your prior/current coursework, extracurricular activities, work/volunteer experiences, future goals, or anything else that has shaped your interests.\" (250 words)"
+      },
+      {
+        "target_program": "Music Ensembles",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "While the Colorado School of Mines states that \"there are no auditions for ensembles\" for general participation in music programs, specific groups like the Concert Choir's Barbershop groups (\"Harmonic and Melodic Miners\") and a cappella choir (\"Gold Standards\") do require auditions. These auditions are for participation in the specific groups, not for admission to the university or a music major."
+      }
+    ],
     "essay_prompts": [
       {
-        "prompt": "Why do you want to study your intended major at Mines? What about Mines appeals to you?",
-        "word_limit": "500 words",
-        "type": "Why Mines",
-        "required": true,
+        "prompt": "Please share a bit more about your academic interests. Why did you choose Mines and what do you hope to study? If you are undecided, what area(s) of study are you considering? What has inspired your interests in these areas? Think about your prior/current coursework, extracurricular activities, work/volunteer experiences, future goals, or anything else that has shaped your interests.",
+        "word_limit": "250 words",
+        "type": "Major / Why This School",
+        "required": false,
         "brainstorming_questions": [
-          "Beyond the impressive academic rankings, can you recall a specific moment or discovery (perhaps a personal project, a documentary, or even a conversation) that made you think, 'Wow, *this* is what I want to dive deep into, and Mines seems like the place to do it'?",
-          "Thinking about the problem-solving aspects of your intended major, what's a time you encountered a real-world challenge or observed a complex system that sparked your curiosity to understand the 'how' and 'why' at a deeper, engineering or science-driven level?",
-          "Mines is known for its hands-on approach. Can you describe a specific type of project, research opportunity, or even a club/activity at Mines that excites you because it directly aligns with how you learn best and want to apply your knowledge?",
-          "When you imagine yourself as a Mines student, what kind of collaborative environment do you envision, and what specific challenges or innovations within your intended field do you hope to tackle alongside your peers and faculty?",
-          "Looking at Mines' unique location and its connection to the natural resources and engineering industries, can you pinpoint a particular aspect of this connection that resonates with your personal goals or your desire to make a tangible impact in your chosen field?"
+          "What specific courses or projects at Mines, related to your intended major, excite you most and why?",
+          "Can you pinpoint a 'spark' moment or experience (e.g., a book, documentary, field trip, personal project) that ignited your passion for this particular field of study?",
+          "How do your current or past extracurricular activities, work, or volunteer experiences directly connect to the academic path you envision at Mines?",
+          "Beyond academic knowledge, what practical skills or real-world problems do you hope to address or solve by studying this particular major at Mines?",
+          "If you've considered multiple areas of study, what underlying curiosity or grand challenge connects them, and how does Mines' approach caters to that broader interest?"
+        ]
+      },
+      {
+        "prompt": "Reflect on a time when you had to collaborate with individuals whose backgrounds, culture, experiences, or viewpoints are different from your own. How did this experience impact your understanding of your own identity and how do you think this experience will influence your approach in building inclusive teams?",
+        "word_limit": "250 words",
+        "type": "Community / Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "Describe a specific situation where you worked with people distinctly different from you. What were these differences (e.g., cultural, socioeconomic, disciplinary, generational)?",
+          "What initial assumptions or perspectives did you hold before this collaboration, and how were they challenged or expanded during the experience?",
+          "Beyond just completing the task, how did this interaction deepen your self-awareness or make you reflect on your own cultural lens or identity?",
+          "What concrete actions did you take (or would you take in hindsight) to ensure everyone felt heard and valued in that diverse group?",
+          "How will this specific experience inform how you contribute to and foster an inclusive, collaborative environment within student groups, project teams, or the broader community at Mines?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/colorado_school_of_mines_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Understand that admissions are generally not major-specific.",
+      "Apply for what genuinely interests you or consider undeclared.",
+      "Research major popularity, but don't assume it impacts acceptance.",
+      "Be aware of the flexibility to change majors.",
+      "Focus on overall academic strength rather than \"easier\" majors for admission."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize program-specific accreditation and hands-on learning opportunities (labs, research, projects)",
+      "Evaluate career outcomes, internships, industry connections, and alumni network strength",
+      "Assess faculty quality, student-to-faculty ratio, and academic support systems (e.g., tutoring, professor accessibility)",
+      "Consider the long-term Return on Investment (ROI) and post-graduation earning potential"
+    ],
+    "alternate_major_strategy": {
+      "description": "Colorado School of Mines employs a unique admissions approach where applicants are admitted to the university as a whole, rather than to a specific major. This significantly impacts alternate major strategies and the ease of changing majors after admission.",
+      "during_application": {
+        "strategy": "Apply for the major you are genuinely interested in pursuing, as listing an 'alternate' or 'backup' major is not a critical strategic move to improve admission chances, given acceptance is to the entire university.",
+        "notes": "Majors are not capped, and there are no competitive majors during the admission process."
+      },
+      "internal_transfer_difficulty": "Not considered competitive or difficult.",
+      "internal_transfer_details": [
+        "Admission to the University, Not the Major: Students are accepted into the university and have flexibility to study any major.",
+        "Common First-Year Curriculum: First year (and often first couple of semesters) largely consists of core classes common across all majors, providing time for exploration.",
+        "Late Major Declaration: Students typically do not officially declare until end of first year or later, sometimes end of sophomore year.",
+        "Easy Change Process: Changing intended major before or during first year is straightforward, often a simple form. Advisors (CASA advisors) assist.",
+        "No Caps or Secondary Admissions: No internal caps or secondary admission processes for specific majors once enrolled."
+      ]
+    }
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 22667.0,
+        "total_coa": 43745.0,
+        "housing": 18202.0
+      },
+      "out_of_state": {
+        "tuition": 47319.0,
+        "total_coa": 67655.0
+      }
+    },
+    "aid_philosophy": "Need-Aware and Merit-Based",
+    "average_need_based_aid": 17656,
+    "average_merit_aid": 10425,
+    "percent_receiving_aid": 88,
+    "meets_full_need": false,
+    "scholarships": [
+      {
+        "name": "Grewcock Presidential Scholars Program",
+        "type": "Merit",
+        "amount": "Full tuition and mandatory fees (after COF for Colorado residents)",
+        "deadline": "Requires application and interview",
+        "benefits": "Covers tuition and mandatory fees, funds extracurricular learning experiences and leadership-focused programming, renewable for eight semesters.",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Harvey Scholarship Program",
+        "type": "Merit",
+        "amount": "Full tuition and mandatory fees (after COF for Colorado residents), plus one summer Field Session",
+        "deadline": "Requires application and interview",
+        "benefits": "Covers tuition and mandatory fees, includes one summer Field Session, eligible for additional enrichment grants up to $7,000.",
+        "application_method": "Separate Application (via General Scholarship Application portal)"
+      },
+      {
+        "name": "President's Scholarship",
+        "type": "Merit",
+        "amount": "Colorado residents: $3,500 - $7,000 annually; Non-residents: $12,000 - $16,000 annually",
+        "deadline": "Automatic consideration by May 1 (with admission application)",
+        "benefits": "Renewable for 8 consecutive semesters (4 years) towards tuition and fees, no FAFSA required for renewal.",
+        "application_method": "Automatic Consideration (based on admission application)"
+      },
+      {
+        "name": "Provost Award",
+        "type": "Merit",
+        "amount": "Colorado residents: $1,000 - $2,000 annually; Non-residents: $8,000 - $10,000 annually",
+        "deadline": "Automatic consideration by May 1 (with admission application)",
+        "benefits": "Renewable for 8 consecutive semesters (4 years) towards tuition and fees, no FAFSA required for renewal.",
+        "application_method": "Automatic Consideration (based on admission application)"
+      },
+      {
+        "name": "International Merit Aid Scholarship",
+        "type": "Merit",
+        "amount": "Up to $8,000 annually",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for 8 consecutive semesters (4 years) towards tuition and fees.",
+        "application_method": "Automatic Consideration (based on admission application)"
+      },
+      {
+        "name": "Mines Promise Program",
+        "type": "Need",
+        "amount": "Covers full-time tuition and mandatory fees (after COF stipend, Mines Admission award, Pell Grant, and/or Colorado Grant)",
+        "deadline": "March 1st (FAFSA or CASFA)",
+        "benefits": "Covers tuition and mandatory fees for eligible Colorado residents seeking their first bachelor's degree who are Pell Grant eligible.",
+        "application_method": "FAFSA or CASFA, and apply for COF stipend"
+      },
+      {
+        "name": "McBride Honors Program Honors Enrichment Awards",
+        "type": "Merit",
+        "amount": "$1,000 - $4,000",
+        "deadline": "Check scholarship portal for updated deadlines",
+        "benefits": "Defrays costs associated with experiential learning opportunities such as study abroad, service learning, unpaid internships, research, or academic travel.",
+        "application_method": "Separate Application (application and budget forms)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Scores of 3, 4, or 5 can grant credit, with higher scores often required for specific course equivalents.",
+      "exceptions": [
+        "No credit is granted for AP Research and AP Seminar.",
+        "AP Computer Science A requires a score of 5 for CSCI 101 credit.",
+        "Specific score requirements and corresponding course equivalents vary significantly by exam, as detailed on the Registrar's AP credit page."
+      ],
+      "usage": "AP credits can satisfy some major prerequisites and general education requirements (GE), and can lead to advanced placement into higher-level courses. Credit appears as transfer credit on the Mines transcript without an associated grade. Students have the option to decline AP credit."
+    },
+    "ib_policy": {
+      "general_rule": "Colorado School of Mines awards credit for both Higher Level (HL) and Standard Level (SL) International Baccalaureate exams with eligible scores, typically a 4, 5, 6, or 7, depending on the specific subject. For many HL subjects, scores of 4 and above can grant credit. The most competitive applicants often present three IB exams with grades of 5, 6, or 7.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Evaluation System (TES)",
+        "Articulation Agreements and Transfer Guides",
+        "Pre-Approved Colorado Community College System (CCCS) Courses"
+      ],
+      "restrictions": {
+        "credit_limits": {
+          "undergraduate": "Maximum of 56 credits of prior learning (including AP, IB) may be applied to an undergraduate degree. Up to 14 semester credits for military training.",
+          "graduate": {
+            "certificates": "0 transfer credits allowed.",
+            "master_degrees": {
+              "30_credit_programs": "Maximum 9 transfer credits.",
+              "36_credit_programs": "Maximum 15 transfer credits."
+            },
+            "phd_degrees": {
+              "thesis_based_masters_transfer": "Up to 36 credits (from another university).",
+              "individual_coursework_or_non_thesis_masters_transfer": "Up to 24 credits (from another university)."
+            }
+          }
+        },
+        "grade_requirements": "Courses must have a grade of 'C' or higher. Grades of 'Pass' or 'Satisfactory' are accepted only if equivalent to a 'C' or better. Courses with a 'C-' will not transfer. Some departments or degree programs may stipulate a higher minimum grade.",
+        "other_restrictions": [
+          "Credits must be earned at a regionally-accredited institution.",
+          "Courses must be applicable to a degree at Mines.",
+          "Science and math courses must be at a level high enough to be applicable to a Mines degree (e.g., Calculus I or Physics I - Calculus-Based); general core science courses must include a lab component.",
+          "Vocational, CLEP, DSST, theological, remedial-level, internships, co-ops, practicums, life experience courses, Independent Study, precalculus courses below Calculus I (e.g., trigonometry and geometry), and non-calculus based general/introductory Physics courses are not accepted.",
+          "Courses cannot be more than 10 years old prior to the start of your program at Mines, unless reviewed and approved by the appropriate academic department.",
+          "Courses cannot be a duplicate of credit already earned at Mines, nor can they be for a course that the student has failed twice or more at Mines.",
+          "The same transfer credits cannot be used towards both a major and a minor.",
+          "For minors, the total number of transfer credits must be less than half of the required credits for the minor.",
+          "Official transcripts must be sent directly from the issuing institution to Mines."
+        ]
+      }
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      {
+        "factor": "Strong academic record with challenging coursework",
+        "details": "A high school GPA is required, and college preparatory courses are essential. Successful applicants often undertake a rigorous curriculum, including numerous AP and college-level classes, even if their GPA falls slightly below the average range. The average GPA for enrolled freshmen is 3.83."
+      },
+      {
+        "factor": "Meaningful extracurricular involvement and leadership",
+        "details": "Beyond just participating, students note that their extracurriculars and supplemental questions played a significant role in their acceptance. Balancing academic rigor with participation in extracurricular activities is also a recurring theme in student experiences, with advice to join both professional and social groups. Leadership roles within these activities demonstrate initiative and commitment."
+      },
+      {
+        "factor": "Demonstrated passion for STEM and the \"Mines\" community",
+        "details": "Students express that a genuine excitement to learn and become engineers is a special aspect of the Mines community. While not explicitly an admissions requirement, this passion likely comes through in essays and interviews, aligning with the school's focus on engineering and science."
+      },
+      {
+        "factor": "Authentic and reflective essays",
+        "details": "While not directly stated as a \"student success factor\" in the provided snippets, the mention of \"supplemental questions\" being a reason for acceptance implies that well-crafted and authentic essays that showcase self-reflection and alignment with Mines' values are crucial."
+      }
+    ],
+    "common_activities": [
+      "Leadership in student organizations and government",
+      "Participation in a wide array of student clubs (over 250 available)",
+      "Varsity athletics (NCAA Division II)",
+      "Fraternity and Sorority Life",
+      "Music and performing arts (e.g., band, choral groups, drama, musical theater)",
+      "Community service/volunteering (often through student organizations)"
+    ],
+    "essay_tips": [
+      "Be highly specific about why Mines interests you, referencing unique programs and opportunities.",
+      "Use concrete examples and storytelling to \"show, don't tell\" your qualities.",
+      "Actively address both academic and community fit.",
+      "Treat \"optional\" essays as strongly recommended."
+    ],
+    "red_flags": [
+      "Lack of rigorous math and science coursework",
+      "Generic or uninspired essays/short responses",
+      "Listing activities without depth or demonstrated skills",
+      "Failure to demonstrate interest in Colorado School of Mines",
+      "Presenting misleading or fraudulent information"
+    ],
+    "housing_strategic_fit_advice": "Prospective students should have a strong STEM background and be prepared for a demanding curriculum in engineering and applied sciences. This institution is ideal for individuals who are highly motivated, dedicated to their studies, and eager to engage in hands-on research and innovative programs. Applicants seeking a close-knit, supportive community that bonds over academic challenges, along with opportunities for outdoor activities, will find a good fit. A particular interest in fields related to Earth, Energy, Environment, and Materials is also highly beneficial."
+  },
+  "outcomes": {
+    "median_earnings_10yr": 93871,
+    "employment_rate_2yr": 95.0,
+    "top_employers": [
+      "Amazon",
+      "Microsoft",
+      "Lockheed Martin",
+      "Boeing Company",
+      "Accenture",
+      "Deloitte",
+      "Chevron",
+      "ExxonMobil",
+      "BMO Capital Markets",
+      "Burns & McDonnell"
+    ],
+    "grad_school_rate": 18.0,
+    "loan_default_rate": 1.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 93.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 79.0
+  }
 }

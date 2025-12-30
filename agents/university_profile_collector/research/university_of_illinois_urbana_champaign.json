@@ -34,7 +34,7 @@
     "campus_dynamics": {
       "social_environment": "UIUC boasts a large and vibrant social environment with a huge Greek life system, one of the largest in the country. There are over 1,000 registered student organizations catering to diverse interests, and a lively bar scene in Champaign for those 19 and older. While known for its 'party school' reputation by some, academics remain the primary reason for enrollment for most students, with social life often viewed as an 'added bonus'. The campus itself is described as large and full of energy, with diverse dining options and two extensive recreation centers.",
       "transportation_impact": "The campus and surrounding cities of Champaign-Urbana have an excellent public transit network provided by the Champaign-Urbana Mass Transit District (MTD). University i-cards serve as a full-access bus pass for students, faculty, and staff, making bus travel convenient and free. Frequent bus service connects campus with downtown areas, and dedicated routes serve the campus every 10 minutes during the academic year. Additionally, UI Ride is an intercampus shuttle service connecting Urbana-Champaign and Chicago, facilitating travel between the two university system locations. The availability of bikes racks on buses and the designation as a 'Bicycle Friendly University' also promote active transportation.",
-      "research_impact": "UIUC is classified among 'R1: Doctoral Universities \u2013 Very high research activity' and had $652 million in research expenditures in fiscal year 2019. The university offers numerous undergraduate research opportunities, including summer programs like the Summer Research Opportunities Program (SROP) for underrepresented students. There are various research programs and centers, such as the National Center for Supercomputing Applications (NCSA) and the Rail Transportation and Engineering Center (RailTEC). Undergraduate students can engage in research with faculty mentors through programs like Illinois Scholars Undergraduate Research (ISUR) and CS Student Ambassador/Research Scholars (CS STARS), with opportunities to present their findings at events like the Undergraduate Research Symposium. The university's strong research output and highly-ranked programs, particularly in engineering and computer science, contribute to its reputation and employer preference."
+      "research_impact": "UIUC is classified among 'R1: Doctoral Universities – Very high research activity' and had $652 million in research expenditures in fiscal year 2019. The university offers numerous undergraduate research opportunities, including summer programs like the Summer Research Opportunities Program (SROP) for underrepresented students. There are various research programs and centers, such as the National Center for Supercomputing Applications (NCSA) and the Rail Transportation and Engineering Center (RailTEC). Undergraduate students can engage in research with faculty mentors through programs like Illinois Scholars Undergraduate Research (ISUR) and CS Student Ambassador/Research Scholars (CS STARS), with opportunities to present their findings at events like the Undergraduate Research Symposium. The university's strong research output and highly-ranked programs, particularly in engineering and computer science, contribute to its reputation and employer preference."
     },
     "us_news_rank": 41
   },
@@ -1161,13 +1161,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One personal statement essay (250-650 words) mirroring Common Application prompts, plus 2-3 additional supplemental essays (approx. 150 words each) depending on major choice."
       },
       {
         "target_program": "Specific Majors (e.g., Theatre)",
         "requirement_type": "Interview/Audition/Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Applicants to specific programs like Theatre may need to interview, audition, or complete a portfolio review."
       }
     ],
@@ -1348,11 +1348,31 @@
       "Not selecting a second-choice major if competitive for the first, as it limits admission avenues."
     ],
     "insights": [
-      "UIUC is test-optional, but strong SAT/ACT scores can still be submitted if they reflect academic abilities.",
-      "Letters of recommendation are not required but can be submitted if they speak positively about character and abilities.",
-      "The university encourages applicants to challenge themselves with the toughest classes available at their high school.",
-      "Some programs, like Computer Science, are highly competitive with low acceptance rates.",
-      "Applying Early Action (EA) can demonstrate strong interest in attending."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UIUC is test-optional, but strong SAT/ACT scores can still be submitted if they reflect academic abilities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Letters of recommendation are not required but can be submitted if they speak positively about character and abilities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university encourages applicants to challenge themselves with the toughest classes available at their high school."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Some programs, like Computer Science, are highly competitive with low acceptance rates."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action (EA) can demonstrate strong interest in attending."
+      }
     ]
   },
   "outcomes": {

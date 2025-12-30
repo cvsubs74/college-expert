@@ -956,7 +956,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Three required supplemental essays (250 words or fewer each): 1. How will opportunities at Purdue support your interests, both in and out of the classroom? 2. Briefly discuss your reasons for choosing your major and your interest in studying at this campus location (Indianapolis or West Lafayette). 3. Briefly discuss your reasons for pursuing the alternate major and campus location (Indianapolis or West Lafayette) you have selected."
       },
       {
@@ -1145,11 +1145,31 @@
       "Not thoroughly researching the specific program applying for."
     ],
     "insights": [
-      "Purdue is a direct admit university, meaning you apply directly to a major, though an 'Exploratory Studies' program exists for undecided students.",
-      "Applicants can choose two majors (a primary and secondary choice); it's advisable to rank more competitive majors first.",
-      "The university places more emphasis on grades in individual courses relevant to the intended major rather than just overall GPA.",
-      "The admissions process for competitive programs like engineering, computer science, and nursing is highly selective.",
-      "For Honors College applicants, essays should align with the four pillars: leadership development, undergraduate research, community and global experiences, and interdisciplinary academics."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Purdue is a direct admit university, meaning you apply directly to a major, though an 'Exploratory Studies' program exists for undecided students."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applicants can choose two majors (a primary and secondary choice); it's advisable to rank more competitive majors first."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university places more emphasis on grades in individual courses relevant to the intended major rather than just overall GPA."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The admissions process for competitive programs like engineering, computer science, and nursing is highly selective."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For Honors College applicants, essays should align with the four pillars: leadership development, undergraduate research, community and global experiences, and interdisciplinary academics."
+      }
     ]
   },
   "outcomes": {

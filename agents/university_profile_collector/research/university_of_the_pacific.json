@@ -1,607 +1,1862 @@
 {
-  "university_profile": {
-    "_id": "university_of_the_pacific",
-    "metadata": {
-      "official_name": "University of the Pacific",
-      "location": {
-        "city": "Stockton",
-        "state": "CA",
-        "type": "Private"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
+  "_id": "university_of_the_pacific",
+  "metadata": {
+    "official_name": "University of the Pacific",
+    "location": {
+      "city": "Stockton",
+      "state": "California",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "Established in 1851 as California\u2019s first chartered university, the University of the Pacific is a private institution known for its student-centered focus and specialized professional programs in dentistry, law, and pharmacy.",
-      "market_position": "Hidden Gem",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 139,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Maintains a high overall acceptance rate (approx. 95%) despite rising national rankings.",
-          "implication": "Provides a high-value 'Dream School' option for students seeking quality education without the barriers of ultra-low selectivity."
-        },
-        {
-          "category": "Value Proposition",
-          "insight": "Ranked #3 in California for Best Value by US News, trailing only Stanford and Caltech.",
-          "implication": "Ideal for families prioritizing return on investment (ROI) through accelerated professional tracks."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Atmosphere is characterized by a small-school feel with high engagement in Greek life (10% participation) and over 150 student-led clubs.",
-        "transportation_impact": "The 'Tiger Transportation' initiative reduces the need for cars via campus-wide e-bike rentals, electric vehicle Zipcars, and shuttles to Stockton\u2019s shopping districts.",
-        "research_impact": "Strong undergraduate research culture supported by an annual conference and industry partnerships with organizations like NASA and local biotech firms."
-      }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 71.3,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 90.6,
-      "transfer_acceptance_rate": 77.1,
-      "admits_class_size": 5549,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": [
-        {
-          "plan_type": "EA",
-          "applications": 0,
-          "admits": 0,
-          "acceptance_rate": 0.0,
-          "class_fill_percentage": 0.0
-        }
-      ]
-    },
-    "admissions_trends": [
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "University of the Pacific is a private university offering a diverse range of undergraduate and graduate programs with a strong emphasis on experiential learning and student success. It fosters a close-knit community across its three campuses.",
+    "market_position": "Known for strong pre-professional programs and a personalized learning environment in a mid-sized university setting.",
+    "admissions_philosophy": "Seeks intellectually curious students who are motivated to engage deeply in their chosen fields and contribute positively to a vibrant campus community. Holistic review considering academic achievement, extracurricular involvement, and personal essays.",
+    "us_news_rank": 136,
+    "analyst_takeaways": [
       {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
-        "applications_total": 7780,
-        "admits_total": 5549,
-        "enrolled_total": 759,
-        "acceptance_rate_overall": 71.3,
-        "yield_rate": 13.7,
+        "takeaway": "Strong value proposition for students seeking personalized attention.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Needs to enhance its brand recognition nationally despite solid academic offerings.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Strategic focus on health professions is a key differentiator.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Potential for growth in graduate programs, especially with current research initiatives.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Active campus life with numerous student organizations, Greek life, and intramural sports. Strong sense of community, particularly in residential colleges.",
+      "transportation_impact": "Main Stockton campus is walkable, with shuttles connecting various parts. Proximity to major California cities (San Francisco, Sacramento) requires car access or public transit for off-campus exploration.",
+      "research_impact": "Growing research profile, particularly in health sciences, engineering, and environmental studies. Opportunities for undergraduate research are significant."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 71.3,
+      "is_test_optional": true,
+      "test_policy_details": "University of the Pacific is test-optional, meaning students are not required to submit SAT or ACT scores for admission. Applicants who do not submit test scores will not be disadvantaged in any way during the application review. If scores are submitted, they will be considered along with other application components such as GPA, transcripts, extracurricular activities, personal essay, and references.",
+      "admits_class_size": 5549,
+      "transfer_acceptance_rate": 77.1,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": false,
+      "notes_state_rates": "University of the Pacific is a private institution, so in-state and out-of-state acceptance rates are not differentiated.",
+      "international_acceptance_rate": 4.3,
+      "international_applications": 8500,
+      "international_admits": 365,
+      "notes_international_rates": "Lower rate than domestic applicants"
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 10901,
+        "admits_total": 8645,
+        "enrolled_total": 779,
+        "acceptance_rate_overall": 79.3,
+        "yield_rate": 9.01,
+        "notes": "",
         "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 104,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 47,
-          "waitlist_admit_rate": 45.2,
+          "year": 2021,
+          "offered_spots": 4161,
+          "accepted_spots": 3176,
+          "admitted_from_waitlist": 320,
+          "waitlist_admit_rate": 10.08,
           "is_waitlist_ranked": false
-        },
-        "notes": "Selectivity increased significantly in the 2024 cycle."
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 5891,
+        "admits_total": 5942,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 93.2,
+        "yield_rate": null,
+        "notes": "Reported admits (5,942) exceed applications (5,891) in one source, indicating a possible data discrepancy or specific interpretation of 'admits' not explicitly defined in the source for first-time, first-year students. Enrolled data not found in snippets.",
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 5115,
+          "accepted_spots": 2991,
+          "admitted_from_waitlist": 81,
+          "waitlist_admit_rate": 2.71,
+          "is_waitlist_ranked": false
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 5763,
         "admits_total": 5467,
-        "enrolled_total": 771,
-        "acceptance_rate_overall": 94.9,
+        "enrolled_total": 773,
+        "acceptance_rate_overall": 94.8,
         "yield_rate": 14.1,
+        "notes": "",
         "waitlist_stats": {
           "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data for the 2023 cycle was not publicly disclosed."
-      },
-      {
-        "year": 2022,
-        "cycle_name": "Class of 2026",
-        "applications_total": 5891,
-        "admits_total": 5492,
-        "enrolled_total": 0,
-        "acceptance_rate_overall": 93.2,
-        "yield_rate": 0.0,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": 220,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 93,
-          "waitlist_admit_rate": 42.3,
+          "offered_spots": 4540,
+          "accepted_spots": 2840,
+          "admitted_from_waitlist": 73,
+          "waitlist_admit_rate": 2.57,
           "is_waitlist_ranked": false
         }
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 7780,
+        "admits_total": 5549,
+        "enrolled_total": 760,
+        "acceptance_rate_overall": 71.3,
+        "yield_rate": 14.0,
+        "notes": "Data consistently attributed to 'application year 2024' or '2024-2025 admission cycle' leading to Fall 2024 enrollment.",
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 71.0,
+        "yield_rate": null,
+        "notes": "Comprehensive admissions data (applications, admits, enrolled) for Fall 2025 enrollment (Class of 2029) is not yet consistently or fully available in the provided sources. An acceptance rate of 71% is mentioned for 2025 in one source, but without supporting application/admit numbers to calculate it definitively or provide a complete picture.",
+        "waitlist_stats": null
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "Not specified",
-        "unweighted_middle_50": "3.50-3.80",
+        "weighted_middle_50": "3.4-3.8",
+        "unweighted_middle_50": "3.2-3.6",
         "average_weighted": 3.63,
-        "percentile_25": "3.35",
-        "percentile_75": "3.85",
-        "notes": "Approximately 47% of admitted students have an unweighted GPA of 3.75 or higher."
+        "percentile_25": "3.4",
+        "percentile_75": "3.8",
+        "notes": "University of the Pacific reports an average unweighted GPA of 3.4 for its undergraduate admissions. The university employs a holistic admissions process, considering factors beyond just GPAs and test scores. Most incoming freshmen graduate in the top quarter of their high school class."
       },
       "testing": {
-        "sat_composite_middle_50": "1170-1410",
-        "sat_reading_middle_50": "580-690",
-        "sat_math_middle_50": "580-730",
-        "act_composite_middle_50": "23-31",
-        "submission_rate": 27.3,
-        "policy_note": "SAT/ACT scores are required for certain accelerated programs (e.g., Pre-Dentistry, Pre-Pharmacy)."
+        "sat_composite_middle_50": "1190-1468",
+        "sat_reading_middle_50": "590-710",
+        "sat_math_middle_50": "593-770",
+        "act_composite_middle_50": "23-32",
+        "submission_rate": 21.0,
+        "policy_note": "Test-optional; Superscore accepted for SAT"
       },
       "demographics": {
-        "first_gen_percentage": 35.0,
-        "international_percentage": 6.9,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes_first_gen_legacy": "The percentage of first-generation college students for the entire University of the Pacific is not explicitly stated in the provided search results. Information regarding 'first-generation' is primarily in the context of the Community Involvement Program (CIP), which is exclusively designed for first-generation college students from the Stockton community. The percentage of legacy students (alumni children) is also not available in the provided information. Search results regarding 'legacy' pertain to planned giving by alumni, not student admissions.",
         "geographic_breakdown": [
           {
             "region": "California",
-            "percentage": 83.0
+            "percentage": 79.7
           },
           {
-            "region": "Other US States",
-            "percentage": 10.0
+            "region": "Out of State",
+            "percentage": 7.63
           },
           {
             "region": "International",
-            "percentage": 7.0
+            "percentage": 10.12
           }
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 2184,
-            "admits": 2054,
-            "acceptance_rate": 94.1
+            "applicants": 2613,
+            "admits": 2007,
+            "acceptance_rate": 76.82,
+            "note": "Data for the 2024-2025 academic year, based on First-Year Admission Statistics."
           },
           "women": {
-            "applicants": 3498,
-            "admits": 3339,
-            "acceptance_rate": 95.5
-          }
+            "applicants": 4936,
+            "admits": 3442,
+            "acceptance_rate": 69.73,
+            "note": "Data for the 2024-2025 academic year, based on First-Year Admission Statistics."
+          },
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 15.3,
-          "black_african_american": 3.2,
-          "hispanic_latino": 30.7,
-          "asian": 36.2,
-          "native_american_alaskan": 0.2,
-          "pacific_islander": 0.3,
-          "two_or_more_races": 6.1,
-          "unknown": 7.9,
+          "white": 20.1,
+          "black_african_american": 3.35,
+          "hispanic_latino": 21.6,
+          "asian": 31.6,
+          "native_american_alaskan": 0.13,
+          "pacific_islander": 0.43,
+          "two_or_more_races": 5.26,
+          "unknown": 10.63,
           "non_resident_alien": 6.9
-        },
-        "religious_affiliation": "United Methodist Church (Historically affiliated)"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools and Colleges",
-      "colleges": [
-        {
-          "name": "College of the Pacific (Arts and Sciences)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 85.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a liberal arts foundation; emphasizes small class sizes.",
-          "housing_profile": "Commonly housed in 'The Quads,' featuring LLCs for Humanities and Honors students.",
-          "student_archetype": "The Broad Thinker: Versatile and Preparation-focused.",
-          "majors": [
-            {
-              "name": "Biological Sciences",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.7
-            },
-            {
-              "name": "Psychology",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.4
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Communication",
-              "degree_type": "B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "English",
-              "degree_type": "B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "History",
-              "degree_type": "B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Chemistry",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Mathematics",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Sociology",
-              "degree_type": "B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Art / Graphic Design",
-              "degree_type": "B.A. / B.F.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Environmental Science",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "School of Engineering and Computer Science",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strong focus on the 'CO-OP' program. Applicants should highlight technical projects.",
-          "housing_profile": "Southwest Hall is the primary residential hub for STEM students.",
-          "student_archetype": "The Practical Innovator: Hands-on and career-oriented.",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.8
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.6
-            },
-            {
-              "name": "Bioengineering",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Computer Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Electrical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Engineering Management",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Data Science",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "Eberhardt School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focuses on 'experience-based learning.' Applicants benefit from demonstrating leadership.",
-          "housing_profile": "Centralized housing in Grace Covell or the Quads.",
-          "student_archetype": "The Aspiring Executive: Professional and networking-focused.",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.5
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            },
-            {
-              "name": "Business Analytics",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Marketing Management",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false
-            },
-            {
-              "name": "Sport Management",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "Conservatory of Music",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 45.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Admission is heavily dependent on the audition.",
-          "housing_profile": "Students cluster in the Quads near practice rooms.",
-          "student_archetype": "The Disciplined Artist",
-          "majors": []
-        },
-        {
-          "name": "Thomas J. Long School of Pharmacy",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extremely competitive accelerated programs (2+3 or 3+3). Requires high GPA.",
-          "housing_profile": "Professional and pre-professional students live in apartment-style housing.",
-          "student_archetype": "The High-Stakes Professional: Goal-oriented and academically rigorous.",
-          "majors": [
-            {
-              "name": "Pre-Pharmacy Advantage",
-              "degree_type": "B.A. (Applied Science)",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.8
-            },
-            {
-              "name": "Pharmaceutical Science",
-              "degree_type": "B.S.",
-              "is_impacted": false
-            }
-          ]
-        },
-        {
-          "name": "Arthur A. Dugoni School of Dentistry",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 10.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Offers the only accelerated 3-year DDS program in the US.",
-          "housing_profile": "Undergraduates live in Stockton; clinical years are in San Francisco.",
-          "student_archetype": "The Future Clinician",
-          "majors": []
         }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Minor",
-        "Pre-Law Minor",
-        "Sustainability Minor",
-        "Music Industry Minor",
-        "Technological Innovation and Entrepreneurship Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Pacific Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-15",
-          "is_binding": false,
-          "notes": "Required for Pre-Pharmacy and Pre-Dental"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-01-15",
-          "is_binding": false,
-          "notes": "Final deadline for Honors and Powell Scholars"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "details": "Only standard personal essay required for general admission."
-        },
-        {
-          "target_program": "Pre-Dental / Pre-Pharmacy / Honors",
-          "requirement_type": "Supplemental Essays",
-          "deadline": "2024-11-15"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "Academic GPA",
-          "Personal Statement",
-          "Recommendations"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Talent/Ability",
-          "Character/Personal Qualities"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "Considered",
-        "first_gen_boost": "Strong"
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Select the 'Exploratory' major to access specialized advising if undecided",
-        "Apply via Common App Direct Admission for eligible majors to skip personal essays",
-        "Avoid applying directly to 'contract' programs like Pre-Dental unless meeting high thresholds",
-        "Consider Multi/Interdisciplinary Studies for high ROI with lower entry barriers"
-      ],
-      "college_ranking_tactics": [
-        "Prioritize the College of the Pacific for the most flexible GE requirements",
-        "Select the School of Engineering if seeking the mandatory CO-OP program",
-        "Choose the Eberhardt School of Business for accelerated 4-year paths to Bachelor's and Master's"
-      ],
-      "alternate_major_strategy": "If applying to impacted Pre-Dental or Pre-Pharmacy, list 'Biological Sciences' or 'Chemistry' as an alternate."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 57824,
-          "total_coa": 81799,
-          "housing": 17546
-        },
-        "out_of_state": {
-          "tuition": 57824,
-          "total_coa": 81799,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 43607,
-      "average_merit_aid": 27838,
-      "percent_receiving_aid": 89.0,
-      "scholarships": [
-        {
-          "name": "Powell Scholars Program",
-          "type": "Merit",
-          "amount": "$49,000 per year",
-          "deadline": "2024-12-01",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Regents Scholarship",
-          "type": "Merit",
-          "amount": "Up to $30,000 per year",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "President's Scholarship",
-          "type": "Merit",
-          "amount": "$18,000 per year",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Community Involvement Program (CIP)",
-          "type": "Need/Merit",
-          "amount": "Up to full tuition",
-          "application_method": "Separate Application and FAFSA"
-        },
-        {
-          "name": "Transfer Academic Excellence Scholarship",
-          "type": "Merit",
-          "amount": "$16,000 to $30,000 per year",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Pacific Scholarship",
-          "type": "Merit",
-          "amount": "$10,000 per year",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Provost's Scholarship",
-          "type": "Merit",
-          "amount": "$14,000 per year",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Strict",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 required for most exams",
-        "usage": "Satisfies GE Breadth requirements and certain major prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "Credit granted for HL exams with scores of 5, 6, or 7"
-      },
-      "transfer_articulation": {
-        "tools": [
-          "ROAR",
-          "ASSIST.org"
-        ],
-        "restrictions": "Maximum of 70 units; grade of 'C' or higher required."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A GPA of 3.5 or higher is typically needed for merit scholarships.",
-        "Evidence of 'intellectual curiosity' and passion for a specific field.",
-        "Strong performance in a rigorous course load through senior year."
-      ],
-      "common_activities": [
-        "Clinical volunteering or shadowing for health majors.",
-        "Leadership in school clubs or student government.",
-        "Involvement in arts (theatre, orchestra).",
-        "Personal responsibilities like jobs or caregiving."
-      ],
-      "essay_tips": [
-        "Be specific about why you want to attend Pacific; mention pre-professional programs.",
-        "Show, don't tell: share unique personal stories that reveal maturity.",
-        "Connect past experiences directly to future career aspirations."
-      ],
-      "red_flags": [
-        "Applying to specialized programs with missing prerequisites.",
-        "Generic essays failing to showcase a unique voice.",
-        "Significant decline in grades during senior year."
-      ],
-      "insights": [
-        "Small 6:1 student-faculty ratio allows for personalized interaction.",
-        "Accelerated programs in Pharmacy and Dentistry are the most competitive.",
-        "The Stockton campus is noted for historic architecture and physical beauty."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 78445,
-      "employment_rate_2yr": 91.5,
-      "grad_school_rate": 36.7,
-      "top_employers": [
-        "Amazon",
-        "Deloitte",
-        "Goldman Sachs",
-        "Google",
-        "Apple",
-        "Bank of America"
-      ],
-      "loan_default_rate": 0.0,
-      "student_retention": {
-        "freshman_retention_rate": 89.0,
-        "graduation_rate_4_year": 53.0,
-        "graduation_rate_6_year": 71.9
       }
     }
   },
-  "_id": "university_of_the_pacific",
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "College of the Pacific",
+        "admissions_model": "holistic",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Variety of furnished residence halls and apartment-style living on the Stockton campus. Dorms are generally clean and comfortable, though some are older. Grace Covell is a recently renovated, large central residence hall, while The Quads offer smaller communities with Living Learning Communities and gender-inclusive options. All residence halls are furnished, include laundry facilities, and require meal plans.",
+        "student_archetype": "Intellectually curious students interested in a broad range of liberal arts subjects (natural sciences, social sciences, humanities, fine and performing arts). They thrive in small class settings and value close relationships with faculty and a strong campus community.",
+        "strategic_fit_advice": "Well-suited for students who appreciate an intimate academic environment with diverse intellectual pursuits and a vibrant, engaging campus life. Engaging in Living Learning Communities is recommended for an integrated academic and residential experience.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Introductory Biology Sequence",
+                "General Chemistry",
+                "Organic Chemistry",
+                "Physics",
+                "Calculus"
+              ],
+              "electives": [
+                "Molecular Biology",
+                "Ecology",
+                "Pre-Dentistry",
+                "Pre-Pharmacy",
+                "Pre-Medicine"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Eric Thomas (Associate Professor, Biological Sciences)",
+              "Dr. Mark Brunell (Professor, Biological Sciences)",
+              "Dr. Tara Thiemann (Co-Chair, Biological Sciences)"
+            ],
+            "notes": "Prepares students for entry into Arthur A. Dugoni School of Dentistry and Thomas J. Long School of Pharmacy. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "General Chemistry",
+                "Organic Chemistry",
+                "Physical Chemistry",
+                "Analytical Chemistry",
+                "Biochemistry",
+                "Calculus",
+                "Physics"
+              ],
+              "electives": [
+                "Undergraduate Research with faculty"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Balint Sztaray (Professor, Physical Chemistry)",
+              "Dr. Liang Xue (Associate Professor, Medicinal Chemistry and Drug Design)",
+              "Dr. Vyacheslav Samoshin (Professor, Chemistry)"
+            ],
+            "notes": "ACS accredited department. Encourages undergraduate research with faculty. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Introduction to Psychology",
+                "Statistics",
+                "Research Methods",
+                "Developmental Psychology",
+                "Social Psychology",
+                "Cognitive Psychology",
+                "Abnormal Psychology"
+              ],
+              "electives": [
+                "Behavior Analysis",
+                "Research Experience",
+                "Applied Experiences"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Carolynn Kohn (Professor and Department Chair, Behavior Analysis)",
+              "Dr. Matthew Normand (Professor, Behavior Analysis, Health Coaching)",
+              "Dr. Mahshid Ghaemmaghami (Assistant Professor, Behavior Analysis)"
+            ],
+            "notes": "One of the largest majors. Offers an M.A. degree with a specialization in Behavior Analysis. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Literary Analysis",
+                "Academic Writing",
+                "Surveys of English Literature",
+                "American Literature",
+                "Critical Theory"
+              ],
+              "electives": [
+                "Creative Writing",
+                "Film Studies",
+                "Technical Writing"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Andreea Boboc (Associate Professor and Department Chair, English)",
+              "Professor Camille Norton (English, Poetry)"
+            ],
+            "notes": "Graduates are prepared for careers in various fields including business. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH-1614 Calculus I with Analytical Geometry"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH-1614 Calculus I with Analytical Geometry"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH-1614 Calculus I with Analytical Geometry",
+                "Calculus II",
+                "Calculus III",
+                "Differential Equations",
+                "Linear Algebra",
+                "Discrete Mathematics"
+              ],
+              "electives": [
+                "Actuarial Science",
+                "Statistics"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Chris Goff (Chair, Department of Mathematics)",
+              "Dr. Mouchumi Bhattacharyya (Professor, Actuarial Science, Statistics)"
+            ],
+            "notes": "Strong curriculum in statistics and actuarial science. A B.S. in Applied Mathematics with a concentration in Actuarial Science is also offered. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Art, Media, Performance and Design",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Marie Lee (Associate Professor and Department Chair)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Teresa Bergman (Professor and Department Chair)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Manizha Sharifova (Chair, Department of Economics)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Geological and Environmental Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Lydia Fox (Chair, Department of Geological and Environmental Sciences)"
+            ],
+            "notes": "Offers Environmental Science and Geology concentrations. A B.A. in Geological and Environmental Sciences - Environmental Law Advantage program is available as a 3+3 pathway to law school. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Health and Exercise Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Mark Van Ness (Chair, Department of Health and Exercise Sciences)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Laura Gutierrez (Chair, Department of History)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Modern Languages and Literature",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Cosana Eram (Chair, Department of Modern Languages and Literature)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Michael Madary (Chair, Department of Philosophy)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Physics and Astronomy",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Elisa Toloba (Chair, Department of Physics and Astronomy)",
+              "Kieran Holland (Professor, Physics and Astronomy)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Political Science, Law, and International Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dari Tran (Professor and Department Chair, Political Science)",
+              "Jeffrey Becker (Associate Professor, Political Science)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Eberhardt School of Business",
+        "admissions_model": "selective",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General Stockton campus housing options, including furnished residence halls for freshmen and apartment complexes for upperclassmen. The living environment supports a community-oriented campus experience.",
+        "student_archetype": "Ambitious and innovative future business leaders interested in fields like accounting, business analytics, finance, management, marketing, and sport management. They value experiential learning, personalized advising, and networking opportunities, often seeking internships.",
+        "strategic_fit_advice": "Ideal for students seeking a hands-on business education with strong career preparation. Students should actively pursue experiential learning opportunities and engage with the career management center. On-campus apartment living is a good option for upperclassmen.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Accounting Principles",
+                "Microeconomics",
+                "Macroeconomics",
+                "Business Law",
+                "Statistics for Business",
+                "Finance",
+                "Marketing",
+                "Management"
+              ],
+              "electives": [
+                "International Business",
+                "Entrepreneurship",
+                "Supply Chain Management"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Cynthia Eakin (Associate Dean & Associate Professor of Accounting)",
+              "Dr. Wenjing Ouyang (Finance, Carbon Risk)"
+            ],
+            "notes": "AACSB-accredited. Ranked #70 for undergraduate business schools (Poets & Quants, 2021). Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Financial Accounting",
+                "Managerial Accounting",
+                "Intermediate Accounting I & II",
+                "Auditing",
+                "Taxation",
+                "Accounting Information Systems"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Cynthia Eakin (Associate Dean & Associate Professor of Accounting)"
+            ],
+            "notes": "AACSB-accredited. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Wenjing Ouyang (Finance, Carbon Risk)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Management and Human Resources",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Marketing Management",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Sport Management & Analytics",
+            "degree_type": "BSBA",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering and Computer Science",
+        "admissions_model": "selective",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General Stockton campus housing. Southwest Hall is noted to house a significant number of STEM students, fostering a community with similar academic interests. Students also have access to newer apartment-style dorms like Calaveras Hall which offers suites and amenities. All residence halls are furnished.",
+        "student_archetype": "Ambitious problem-solvers who are hands-on and value experiential learning, including co-op programs and internships. They are focused on developing technical skills and leadership abilities.",
+        "strategic_fit_advice": "Strong candidates will have a solid STEM background and an interest in practical applications of engineering and computer science. Living in dorms like Southwest Hall can provide a supportive community for academic pursuits. Participation in co-op programs is highly encouraged.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Analysis of Algorithms",
+                "Data Structures",
+                "Modern Programming Methodologies",
+                "Operating Systems",
+                "Foundational Science and Mathematics"
+              ],
+              "electives": [
+                "Artificial Intelligence",
+                "Computer Graphics",
+                "Compiler Design"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Chadi El Kari (Chair, Computer Science)",
+              "Dr. Sepehr Amir-Mohammadian (Associate Professor, Computer Science)",
+              "Dr. Tapadhir Das (Assistant Professor, Cyber-Physical Systems, AI)"
+            ],
+            "notes": "Computing Accreditation Commission (CAC) of ABET accredited. Offers a 'fast track' BS/MS option. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Analysis and Design of Mechanical Systems",
+                "Thermal Systems",
+                "Energy Conversion",
+                "Robotics",
+                "Foundational Science and Mathematics"
+              ],
+              "electives": [
+                "Aerospace Concentration",
+                "Biomechanical Concentration"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Kyle Watson (Chair, Mechanical Engineering)",
+              "Dr. Chi-Wook Lee (Professor, Mechanical Engineering)",
+              "Dr. Jiancheng Liu (Professor, Mechanical Engineering)"
+            ],
+            "notes": "Engineering Accreditation Commission (EAC) of ABET accredited. Offers a Cooperative Education (CO-OP) program. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Structural Design",
+                "Engineering Mechanics",
+                "Structural Analysis",
+                "Engineering Risk Analysis"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 75
+            },
+            "notable_professors": [
+              "Dr. Mary Kay Camarillo (Chair, Civil Engineering, Environmental Engineering)",
+              "Dr. Luke Lee (Professor, Structural Design, Infrastructure Renewal)"
+            ],
+            "notes": "Engineering Accreditation Commission (EAC) of ABET accredited. Ranked #7 for Civil Engineering degree program (Grad Reports, 2020). Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Digital Systems",
+                "Telecommunications",
+                "Microelectronics",
+                "Foundational Science and Mathematics"
+              ],
+              "electives": [
+                "Software emphasis"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Vivek Pallipuram (Chair, Electrical Engineering)",
+              "Dr. Jeffrey Shafer (Assistant Professor, Computer Architecture, Networking)",
+              "Dr. Elizabeth Basha (Assistant Professor, Electrical & Computer Engineering)"
+            ],
+            "notes": "Engineering Accreditation Commission (EAC) of ABET accredited. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Bioengineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Expected to pursue ABET accreditation. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.Cp.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Rahim Khoie (Professor, Electrical and Computer Engineering, Engineering Physics)"
+            ],
+            "notes": "Engineering Accreditation Commission (EAC) of ABET accredited. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Cyber Operations",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Computing Accreditation Commission (CAC) of ABET accredited. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. James Hetrick (Professor/Director of Data Science)",
+              "Dr. Anshul Jha (Assistant Professor, Data Science)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Engineering Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Abel Fernandez (Chair, Engineering Management)"
+            ],
+            "notes": "Engineering Accreditation Commission (EAC) of ABET accredited. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Engineering Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Vivek Pallipuram (Chair, Electrical Engineering/Engineering Physics)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Arthur A. Dugoni School of Dentistry",
+        "admissions_model": "program_specific",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Primarily off-campus housing in the competitive San Francisco Bay Area. The Office of Student Services provides resources and lists of popular apartment buildings to assist with the search. Limited on-campus housing options may be available through the university's San Francisco campus services.",
+        "student_archetype": "Highly driven, focused professional students committed to advanced dental studies. They are independent and adept at navigating urban living and a competitive housing market.",
+        "strategic_fit_advice": "Prospective students should be prepared for the high cost and competitive nature of San Francisco housing, and start their housing search early. Strong organizational and time management skills are essential.",
+        "majors": []
+      },
+      {
+        "name": "McGeorge School of Law",
+        "admissions_model": "program_specific",
+        "is_restricted_or_capped": true,
+        "housing_profile": "On-campus student housing is available at the Sacramento campus, offering both single and double units. This allows for convenient access to classes and campus facilities. The campus also provides resources for finding off-campus housing in various Sacramento neighborhoods. The on-campus units can accommodate up to 160 tenants, and both furnished and unfurnished options are offered.",
+        "student_archetype": "Dedicated and community-minded law students focused on legal education and career development in California's capital city. They are often involved in public service and value practical legal experience.",
+        "strategic_fit_advice": "Students should consider on-campus housing for its convenience and immersive academic environment. Engagement in internships and public service opportunities is highly recommended given the school's focus and location.",
+        "majors": []
+      },
+      {
+        "name": "Conservatory of Music",
+        "admissions_model": "audition_based",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General Stockton campus housing. Conservatory students would reside in furnished residence halls or apartment complexes, benefiting from proximity to campus facilities, performance venues, and practice spaces.",
+        "student_archetype": "Passionate and dedicated musicians, performers, composers, and scholars. They are committed to extensive practice, performance opportunities, and value one-on-one instruction and a collaborative musical environment.",
+        "strategic_fit_advice": "Applicants should demonstrate strong musical talent and a dedication to their craft. Proximity to practice facilities is key, so on-campus housing is beneficial for immersion in the Conservatory's demanding schedule.",
+        "majors": [
+          {
+            "name": "Music Performance",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required on primary instrument (voice, woodwind, brass, keyboard, percussion, or string).",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Extensive training in major instrument",
+                "Music Theory",
+                "Music History",
+                "Six semesters of Performance Level Primary Lesson"
+              ],
+              "electives": [
+                "Participation in University Symphony Orchestra",
+                "Jazz Ensembles",
+                "University Bands",
+                "Choirs"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Brittney Trotter (Assistant Professor of Practice in Flute, Woodwind Program Director)",
+              "Ann Miller (Professor, Program Director for Strings)",
+              "Dr. Brett Epperson (Director of Choirs)",
+              "Patrick Langham (Director of Jazz Ensembles)",
+              "Dr. Nicolas Waldvogel (Director of University Symphony Orchestra)"
+            ],
+            "notes": "First accredited professional music school on the West Coast. Charter member of the National Association of Schools of Music. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Music Industry Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard admission to university, then program-specific requirements",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Music courses",
+                "Business principles",
+                "Industry-specific topics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "No audition explicitly mentioned for this major. Accredited Bachelor's degree in Music Management was added in 1983. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Composition",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required.",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Music Theory",
+                "Music History",
+                "Composition Lessons (five semesters of Performance Level)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Jazz Studies",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required.",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Jazz Performance",
+                "Jazz Composition",
+                "Music Theory",
+                "Music History",
+                "Six semesters of Performance Level Primary Lesson"
+              ],
+              "electives": [
+                "Pacific Big Band",
+                "Various Student-led Combos",
+                "Pacific Vocal Jazz Ensemble"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Patrick Langham (Director, Jazz Ensembles)",
+              "Randy Sandoli (Director, Pacific Vocal Jazz Ensemble)"
+            ],
+            "notes": "Affiliated with the Brubeck Institute. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Music Education",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required.",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Music Theory",
+                "Music History",
+                "Pedagogy",
+                "Instrumental/Choral Techniques"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Sarah Almetus (Lecturer in Music Education)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required.",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Music History",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required.",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Music Management",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Music Therapy",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required.",
+            "admissions_pathway": "Audition-based admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "School of Health Sciences",
+        "admissions_model": "holistic",
+        "is_restricted_or_capped": false,
+        "housing_profile": "On-campus housing is available at the Sacramento campus, providing studio, one, and two-bedroom units for up to 160 tenants, with both furnished and unfurnished options. Resources for off-campus housing are also provided by the university's housing office.",
+        "student_archetype": "Future healthcare leaders dedicated to promoting lifelong wellness through discovery, innovation, and compassionate care. They are serious and committed to their professional studies.",
+        "strategic_fit_advice": "Ideal for students pursuing careers in healthcare professions. On-campus housing offers a convenient and immersive environment for demanding academic programs. Exploring partnerships and community health initiatives is valuable.",
+        "majors": [
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Introduction to Health Sciences Professions",
+                "Principles of Public Health Science",
+                "Healthcare Leadership and Safety",
+                "Mathematics",
+                "Physics",
+                "Biology",
+                "Chemistry"
+              ],
+              "electives": [
+                "Preparation for graduate programs in medicine",
+                "dentistry",
+                "physical therapy",
+                "occupational therapy",
+                "optometry",
+                "public health",
+                "physician assistant"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Lindsay Gietzen (Chair, Department of Health Sciences)",
+              "Michael Hill (Assistant Clinical Professor)"
+            ],
+            "notes": "Prepares students for various health-related careers and graduate studies. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Athletic Training",
+            "degree_type": "B.S. (or pre-professional advising leading to MS)",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission / Pre-professional advising",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Thomas \"TK\" Koesterer (Chair, Athletic Training)"
+            ],
+            "notes": "The Athletic Training program is a Master of Science (MS) program, but undergraduate pre-professional advising exists. Data source: University of the Pacific Catalog 2024-2025."
+          },
+          {
+            "name": "Nutrition",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Long Wang (Chair, Department of Nutrition)"
+            ],
+            "notes": "Data source: University of the Pacific Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Thomas J. Long School of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Chan Family Hall on the Stockton North Campus offers fully-furnished, four-person, four-bedroom apartment-style housing specifically for School of Pharmacy and other graduate-level students. Each apartment includes a shared kitchen, living room, dining room, two bathrooms, and on-site laundry. The hall is a five-minute walk from classes and has secure card swipe access.",
+        "student_archetype": "Dedicated and adaptable future pharmacists and pharmaceutical scientists. They value state-of-the-art laboratories, hands-on learning, and programs that adapt to the evolving healthcare industry. Students in accelerated programs are common.",
+        "strategic_fit_advice": "This school is well-suited for students committed to a rigorous professional program in pharmacy. Living in Chan Family Hall offers convenience and a supportive community tailored to their academic demands. Students should actively engage with the school's state-of-the-art facilities and hands-on learning opportunities.",
+        "majors": [
+          {
+            "name": "Pharmaceutical Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "General Biology (1 year)",
+              "General Chemistry (1 year)",
+              "Organic Chemistry (1 year)"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "General Biology",
+                "General Chemistry",
+                "Organic Chemistry",
+                "Foundational science courses related to drug discovery and development"
+              ],
+              "electives": [
+                "Undergraduate research in drug delivery",
+                "drug design",
+                "mental health",
+                "patient care"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Roshanak Rahimian (Professor, Pharmaceutical Sciences)",
+              "Dr. Bhaskara Jasti (Professor, Pharmaceutical Sciences)",
+              "Dr. Xiaoling Li (Professor, Pharmaceutical Sciences)"
+            ],
+            "notes": "A newly launched undergraduate program. Prerequisites for pre-pharmacy pathways to the PharmD include a minimum GPA of 3.5 in science courses. Data source: University of the Pacific Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Benerd College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "For undergraduate students, housing is typically within the general Stockton campus residence halls and apartment complexes. Graduate students, especially working adults, may opt for off-campus living or utilize specialized graduate housing options available across the Stockton, Sacramento, and San Francisco campuses. Sacramento campus offers studio, one, and two-bedroom on-campus apartments.",
+        "student_archetype": "Diverse learners including working adults, those with prior college credits, and future educators, professionals, and leaders. They seek flexible, high-quality education and value programs that empower them to make a positive impact in their communities.",
+        "strategic_fit_advice": "Ideal for individuals seeking flexible learning formats and career advancement in education or leadership. Students should be proactive in exploring both on-campus (if applicable) and off-campus housing resources depending on their program and campus location.",
+        "majors": []
+      },
+      {
+        "name": "School of International Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Environmental Studies Minor",
+      "Gender Studies Minor",
+      "Film Studies Minor",
+      "Cybersecurity Certificate",
+      "Public Policy Minor",
+      "Sports Management Minor"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Pacific App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-15",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Applications received after this deadline will be considered on a space-available basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A Personal Statement (Personal Essay) is required as part of the Common App or Pacific Application. Applicants can choose from a list of possible topics provided within the application. This essay is an opportunity for the university to get to know the applicant better and understand their experiences."
+      },
+      {
+        "target_program": "Music (Undergraduate, except Music Industry Studies)",
+        "requirement_type": "Audition",
+        "deadline": "December 7, 2025 (Early Decision or Spring admission); January 24, 2026 (Powell Scholars applicants); February 22, 2026 (On-campus, Stockton); February 1, 2026 (Regional, near Fresno)",
+        "details": "All Conservatory majors, except Music Industry Studies, require an audition. After submitting the application to the University of the Pacific, applicants will receive an email with instructions on how to schedule their audition. In-person auditions are strongly encouraged, but video-recordings may be accepted in some cases."
+      },
+      {
+        "target_program": "Music (Undergraduate)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A Conservatory questionnaire is required after application submission, which includes responding to a writing prompt and indicating audition date preference and additional degrees/tracks of interest."
+      },
+      {
+        "target_program": "Music Composition (Undergraduate)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "In addition to the audition, applicants must submit at least two original compositions in any musical style. Both audio files and notated scores (if available) should be sent directly to Program Director Andrew Conklin."
+      },
+      {
+        "target_program": "Music Therapy (Undergraduate)",
+        "requirement_type": "Audition / Interview",
+        "deadline": "",
+        "details": "As part of the application process, an interview with music therapy faculty and a musical skill assessment are required. Applicants should be prepared to sing 1-3 songs from genres such as children's, folk, rock, popular, jazz, or musical theater. Interviews are conducted on the same day as live auditions or by telephone for video-recorded auditions."
+      },
+      {
+        "target_program": "Architecture (Undergraduate)",
+        "requirement_type": "No supplemental requirements (program not admitting new students)",
+        "deadline": "",
+        "details": "The University of the Pacific's 'Pre-Architecture' program is currently not admitting new students. Therefore, there are no specific supplemental requirements, such as a portfolio, for an architecture program at this time."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Standardized test scores",
+        "Interview",
+        "Extracurricular activities",
+        "Talent/Ability"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "Unknown",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Uses a holistic review process that values intellectual curiosity and genuine passion; offers specific programs and scholarships for first-generation students; test-optional admissions; interviews are considered for general admission and required for some specific programs/scholarships (e.g., Music, Powell Scholars, PA program)."
+    },
     "essay_prompts": [
       {
-        "prompt": "Pacific's motto is 'Potential Realized.' What potential do you hope to realize during your time at Pacific?",
-        "word_limit": "250 words",
-        "type": "Goals",
+        "prompt": "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+        "word_limit": "650 words",
+        "type": "Personal/Identity",
         "required": true,
         "brainstorming_questions": [
-          "Beyond a general desire to learn, what specific *skills* or *knowledge* do you feel are underdeveloped in you right now that you believe Pacific's unique environment or specific programs are perfectly poised to help you cultivate?",
-          "Think about a time you've felt genuinely stuck or limited in achieving something important. What was that situation, and how does the idea of 'Potential Realized' at Pacific offer a different path or set of resources to overcome similar challenges in the future?",
-          "If you were to define 'potential' for yourself at Pacific, what would it look like in action? Imagine yourself a year or two into your studies \u2013 what are you *doing* that shows this potential is being realized in a way that wouldn't be possible elsewhere?",
-          "Pacific's motto is 'Potential Realized.' What does the word 'realized' mean to you personally? Is it about reaching a pinnacle, or is it more about a continuous process of growth and discovery? How does that personal definition inform what you hope to achieve there?",
-          "Consider the specific communities or opportunities at Pacific (clubs, research, service-learning, unique traditions). How do you envision these elements directly contributing to the realization of a particular aspect of your potential that you're eager to explore?"
+          "What unique aspect of your background or identity has most profoundly shaped who you are today?",
+          "Is there an interest or talent that you've dedicated significant time to, and what has that dedication taught you?",
+          "How does this particular element of your life influence your perspective or interactions with others?",
+          "What would an admissions officer *not* know about you if you didn't share this story?",
+          "Has this background, identity, interest, or talent led to any specific experiences or achievements you're proud of?"
+        ]
+      },
+      {
+        "prompt": "The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?",
+        "word_limit": "650 words",
+        "type": "Personal/Challenge",
+        "required": true,
+        "brainstorming_questions": [
+          "What was a significant challenge or setback you faced, and what immediate emotions or reactions did it provoke?",
+          "How did you initially attempt to overcome or cope with this obstacle?",
+          "What specific actions did you take, or what new approaches did you consider, as a result of this experience?",
+          "In what tangible ways did you grow or change your perspective after this event?",
+          "How has the lesson learned from this challenge been applied in subsequent situations or influenced your future goals?"
+        ]
+      },
+      {
+        "prompt": "Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?",
+        "word_limit": "650 words",
+        "type": "Personal/Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "What was a belief or idea (personal, societal, academic) that you once held strongly or observed around you?",
+          "What specific experience, piece of information, or conversation led you to question this belief?",
+          "How did you go about exploring or challenging this belief (e.g., research, discussion, personal experimentation)?",
+          "What was the ultimate outcome of your questioning? Did your belief change, strengthen, or did you gain new understanding?",
+          "How has this experience of questioning and challenging influenced your approach to new ideas or information?"
+        ]
+      },
+      {
+        "prompt": "Reflect on something that someone has done for you that has made you happy or thankful in a surprising way. How has this gratitude affected or motivated you?",
+        "word_limit": "650 words",
+        "type": "Personal/Influence",
+        "required": true,
+        "brainstorming_questions": [
+          "Who was the person, and what was the unexpected act of kindness or support they provided?",
+          "Why was this act surprising, and how did it make you feel in that moment?",
+          "What was the specific impact of this gesture on your immediate circumstances or long-term outlook?",
+          "How did this experience of gratitude change your own behavior, priorities, or way of interacting with others?",
+          "Has this motivation led you to initiate similar acts of kindness or pursue a new passion?"
+        ]
+      },
+      {
+        "prompt": "Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+        "word_limit": "650 words",
+        "type": "Personal/Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific accomplishment, event, or 'aha!' moment stands out as a turning point for you?",
+          "Before this experience, what was your understanding of yourself or others in that particular context?",
+          "What specific details about the accomplishment, event, or realization vividly demonstrate its impact?",
+          "How did this experience challenge your previous assumptions or reveal a new aspect of your character or the world?",
+          "What tangible changes in your actions, decisions, or worldview resulted from this period of growth?"
+        ]
+      },
+      {
+        "prompt": "Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?",
+        "word_limit": "650 words",
+        "type": "Personal/Interest",
+        "required": true,
+        "brainstorming_questions": [
+          "What is a specific topic, idea, or concept that genuinely fascinates you, even if it's not academic?",
+          "When did you first encounter this topic, and what was your initial reaction?",
+          "What specific questions or aspects of this topic compel you to keep exploring it?",
+          "How do you typically pursue your curiosity about this subject (e.g., books, online, mentors, projects)?",
+          "How does your engagement with this topic reflect your intellectual curiosity or personal qualities?"
+        ]
+      },
+      {
+        "prompt": "Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.",
+        "word_limit": "650 words",
+        "type": "Personal/Open Choice",
+        "required": true,
+        "brainstorming_questions": [
+          "Is there a story or reflection that you feel is essential for the admissions committee to know about you, but doesn't fit neatly into other prompts?",
+          "What unique personal quality, experience, or perspective do you want to highlight that hasn't been covered elsewhere in your application?",
+          "If you could write about absolutely anything, what topic would allow you to showcase your authentic voice and personality most effectively?",
+          "Do you have a pre-existing essay that you are particularly proud of and believe represents you well?",
+          "What kind of narrative structure or creative approach would best serve the story you wish to tell?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_the_pacific_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Be aware that some majors may have lower acceptance rates.",
+      "Research major-specific admission requirements and competitiveness.",
+      "Consider applying to a less competitive major if not set on typically high-demand fields like Computer Science or Engineering.",
+      "Focus on submitting a strong overall application."
+    ],
+    "college_ranking_tactics": [
+      "Assess specific program accreditation and specialization",
+      "Evaluate campus location and access to specialized facilities",
+      "Investigate faculty expertise and student-to-faculty ratio within the specific college",
+      "Examine post-graduation outcomes for specific programs",
+      "Consider the General Education curriculum and its alignment with your chosen field"
+    ],
+    "alternate_major_strategy": "If applying to a competitive major, consider entering as an 'exploratory' student to have time to learn about different degree programs before declaring. If applying directly to a major, and considering a backup, choosing a major in a different academic college may be a strategic approach, similar to the concept of listing a Cognitive Science alternate if applying for Computer Science in Engineering."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 58844.0,
+        "total_coa": 72305.0,
+        "housing": 14420.0
+      },
+      "out_of_state": {
+        "tuition": 58844.0,
+        "total_coa": 72305.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 53853.0,
+    "average_merit_aid": 27201.0,
+    "percent_receiving_aid": 96.0,
+    "meets_full_need": false,
+    "notes": "",
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "$22,000 per academic year",
+        "deadline": "Automatic consideration by January 15",
+        "benefits": "Renewable for up to four years (eight semesters) for bachelor's degree programs, or five years (ten semesters) for Engineering students, requires 3.0 GPA for renewal.",
+        "application_method": "Automatic Consideration upon admission application completion"
+      },
+      {
+        "name": "Powell Scholarship",
+        "type": "Merit",
+        "amount": "$49,000 per year (plus allowances)",
+        "deadline": "Separate application required, usually around December 1",
+        "benefits": "Premier academic merit award, includes up to $5,000 for research/creative projects and up to $2,500 for study abroad, extensive mentoring, leadership development.",
+        "application_method": "Separate Application after submitting undergraduate admission application, followed by an on-campus interview for finalists."
+      },
+      {
+        "name": "International Student Merit Scholarships",
+        "type": "Merit",
+        "amount": "$15,000 annually",
+        "deadline": "Automatic consideration with application for admission",
+        "benefits": "Partial funding for undergraduate degree coursework, renewable.",
+        "application_method": "Automatic Consideration upon application for admission as a first-year or transfer international student."
+      },
+      {
+        "name": "President's Scholarship",
+        "type": "Merit",
+        "amount": "$18,000 per academic year",
+        "deadline": "Automatic consideration by January 15",
+        "benefits": "Renewable for up to four years (eight semesters) for bachelor's degree programs, or five years (ten semesters) for Engineering students, requires 2.8 GPA for renewal.",
+        "application_method": "Automatic Consideration upon admission application completion"
+      },
+      {
+        "name": "Provost's Scholarship",
+        "type": "Merit",
+        "amount": "$14,000 per academic year",
+        "deadline": "Automatic consideration by January 15",
+        "benefits": "Renewable for up to four years (eight semesters) for bachelor's degree programs, or five years (ten semesters) for Engineering students, requires 2.6 GPA for renewal.",
+        "application_method": "Automatic Consideration upon admission application completion"
+      },
+      {
+        "name": "Pacific Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 per academic year",
+        "deadline": "Automatic consideration by January 15",
+        "benefits": "Renewable for up to four years (eight semesters) for bachelor's degree programs, or five years (ten semesters) for Engineering students, requires 2.5 GPA for renewal.",
+        "application_method": "Automatic Consideration upon admission application completion"
+      },
+      {
+        "name": "Engineering Innovation Scholars Program",
+        "type": "Merit",
+        "amount": "$15,000 annual scholarship",
+        "deadline": "Application required (specific deadline not found, but related to admission to civil engineering/engineering management)",
+        "benefits": "Renewable for up to four years, two paid summer internships with industry partners, one-on-one mentorship from a professional engineer.",
+        "application_method": "Application required for incoming first-year students in civil engineering and engineering management programs."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "AP Credit Rules": [
+        "Scores of 3 accepted for elective credit in some subjects.",
+        "Scores of 4 or 5 generally accepted for specific course credit, fulfilling general education or major requirements.",
+        "Maximum of 30 AP credits can be applied.",
+        "Credits count towards graduation but not towards GPA."
+      ]
+    },
+    "ib_policy": {
+      "IB Credit Rules": [
+        "Higher Level (HL) scores of 5, 6, or 7 typically receive specific course credit.",
+        "Standard Level (SL) scores generally not accepted for credit, unless combined with other factors or for elective credit in specific cases (e.g., score of 7).",
+        "Maximum of 30 IB credits can be applied."
+      ]
+    },
+    "transfer_articulation": {
+      "Transfer Tools and Restrictions": [
+        "Accepts credits from regionally accredited institutions.",
+        "Minimum grade of C- required for transfer courses.",
+        "Online courses from accredited institutions accepted.",
+        "Specific articulation agreements with California Community Colleges (CCC).",
+        "Maximum of 64 semester units (or 96 quarter units) from community colleges can be transferred.",
+        "Maximum of 90 semester units from four-year institutions can be transferred.",
+        "Residency requirement: minimum of 30 units must be completed at University of the Pacific."
+      ]
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Meaningful extracurricular activities",
+      "Authentic and reflective application essays",
+      "Positive letters of recommendation"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Intramural and club sports",
+      "Music/arts involvement",
+      "Engagement in specific academic/professional fields (e.g., pre-health, pharmacy)"
+    ],
+    "essay_tips": [
+      "Be Authentic and Share Your Unique Story",
+      "Connect Your Interests to Specific Aspects of UOP",
+      "Focus on Growth and Overcoming Challenges",
+      "Avoid Redundant Information",
+      "Be Specific for Program-Specific Essays"
+    ],
+    "red_flags": [
+      "Significant decline in grades (especially senior year)",
+      "Generic essays that could apply anywhere, or contain spelling/grammar errors",
+      "Listing activities without demonstrating depth, impact, or personal involvement",
+      "Poor quality letters of recommendation from teachers who do not know you well",
+      "Submitting an incomplete or inaccurate application (e.g., missing transcripts, incorrect contact info)"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "University of the Pacific practices holistic admissions with a 95% acceptance rate, considering academic achievement, personal qualities, and contributions beyond standardized test scores."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "Pacific emphasizes experiential learning, personalized education through a 14:1 student-to-faculty ratio, and nationally recognized programs in fields like Health Sciences, Business, Engineering, and Law."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "The university boasts strong student outcomes, ranking in the top 2% for alum earnings and achieving a 90-91% employment or further education rate within six months of graduation."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "University of the Pacific cultivates a close-knit, supportive, and diverse campus community with a strong focus on student engagement and mentorship."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78445,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 61600,
+    "notes": "Median earnings 10 years after entry is $78,445, according to the U.S. Department of Education College Scorecard. Median earnings 6 years after enrolling is $61,600 per year. A specific employment rate 2 years after graduation was not directly available from the College Scorecard or other authoritative sources. The University of the Pacific's website states that 91% of graduates who responded to their survey are working in their field or pursuing further education within six months of graduation, but this is not the requested metric.",
+    "top_employers": [
+      "Accenture",
+      "Amazon",
+      "Bank of America",
+      "Bloomberg",
+      "Charles Schwab",
+      "Deloitte",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "UBS"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 2.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.0,
+    "graduation_rate_4_year": 44.0,
+    "graduation_rate_6_year": 66.0
+  }
 }

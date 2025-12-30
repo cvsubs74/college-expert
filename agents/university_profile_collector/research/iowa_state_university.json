@@ -1,73 +1,65 @@
 {
-  "university_profile": {
-    "_id": "iowa_state_university",
-    "metadata": {
-      "official_name": "Iowa State University of Science and Technology",
-      "location": {
-        "city": "Ames",
-        "state": "IA",
-        "type": "Public"
+  "_id": "iowa_state_university",
+  "metadata": {
+    "official_name": "Iowa State University of Science and Technology",
+    "location": {
+      "city": "Ames",
+      "state": "Iowa",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Iowa State is a public land-grant research university offering a wide range of undergraduate and graduate programs. It is particularly renowned for its STEM fields and practical, hands-on learning.",
+    "market_position": "Strong regional presence, known for engineering, agriculture, and veterinary medicine. Increasingly competitive.",
+    "admissions_philosophy": "Seeks students with strong academic records, an interest in science and technology, and a desire to contribute to a collaborative community. Emphasizes holistic review for competitive programs.",
+    "us_news_rank": 121,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Iowa State University has a somewhat selective admissions process with an acceptance rate typically around 88-89%, and operates on a rolling admissions basis. While standardized test scores (SAT/ACT) are considered, they are not strictly required for admission, with emphasis often placed on high school GPA and core courses.",
+        "implication": "Prospective applicants should aim for a strong academic record, particularly in their high school GPA (average admitted GPA is 3.75) and core curriculum. Applying early in the rolling admissions cycle can be advantageous, and while optional, submitting competitive test scores could strengthen an application. Focus on showcasing academic preparedness through grades and coursework if not submitting test scores."
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
-    },
-    "strategic_profile": {
-      "executive_summary": "Iowa State University is a premier public land-grant research university known for its leadership in agriculture, engineering, and veterinary medicine. As an R1 institution, it emphasizes a 'Science with Practice' philosophy, integrating hands-on learning with high-impact research.",
-      "market_position": "Public Research Powerhouse",
-      "admissions_philosophy": "Numbers-focused",
-      "us_news_rank": 117,
-      "analyst_takeaways": [
-        {
-          "category": "Admissions Accessibility",
-          "insight": "The university utilizes the Regent Admission Index (RAI) where a score of 245 or higher guarantees automatic admission for residents.",
-          "implication": "Provides high predictability for applicants, reinforcing its land-grant mission of broad accessibility."
-        },
-        {
-          "category": "Academic Excellence",
-          "insight": "Ranked #1 in Iowa for student outcomes by the Wall Street Journal and #9 globally for undergraduate entrepreneurship by The Princeton Review (2026).",
-          "implication": "Strong choice for ROI-focused students and aspiring entrepreneurs."
-        },
-        {
-          "category": "Selectivity Trend",
-          "insight": "While maintaining a high overall acceptance rate (~90%), the university has seen increased competitiveness in its Ivy College of Business and Engineering programs.",
-          "implication": "Applicants to specialized STEM programs should prioritize early application despite the general open-access mission."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Characterized by a 'warm and welcoming' Midwest culture with high school spirit centered on Big 12 athletics and 800+ student organizations.",
-        "transportation_impact": "The campus is deeply integrated with the CyRide bus system, which is free for students, effectively bridging the 1,900-acre campus with the city of Ames.",
-        "research_impact": "Home to the Ames Laboratory (the only U.S. Department of Energy laboratory physically located on a university campus) and robust industry ties with partners like John Deere."
+      {
+        "category": "Academic",
+        "insight": "Iowa State is recognized as a leading land-grant research university with particularly strong programs in science, technology, engineering, agriculture, and design. The university emphasizes hands-on learning, research opportunities, and career preparedness, leading to high job placement rates and strong post-graduation earnings.",
+        "implication": "Applicants with a keen interest in STEM fields, agriculture, or design should highlight relevant projects, experiences, and career aspirations in these areas. Emphasize any involvement in research, practical applications of knowledge, or specific career goals to align with the university's strengths and its focus on producing career-ready graduates."
+      },
+      {
+        "category": "Culture",
+        "insight": "Iowa State University cultivates a welcoming, friendly, and supportive community environment, often described as having a 'culture of care' and a collaborative atmosphere rather than a highly competitive one. There are extensive opportunities for student involvement through over 850 clubs and organizations, and a strong sense of belonging.",
+        "implication": "Applicants should demonstrate their potential to contribute positively to a collaborative and engaged campus community. Highlighting experiences in teamwork, leadership, community service, or involvement in extracurricular activities can showcase an applicant's alignment with Iowa State's supportive and inclusive culture."
       }
-    },
-    "admissions_current": {
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant campus life with strong Greek presence, numerous student organizations, and a passionate sports culture (Big 12). Generally friendly and community-oriented.",
+      "transportation_impact": "Campus is walkable/bikeable; Ames CyRide bus system provides good coverage for off-campus housing and amenities. Parking can be challenging on campus.",
+      "research_impact": "High research activity, especially in agriculture, engineering, and biosciences. Strong ties to industry and federal agencies (e.g., USDA, DOE Ames Lab). Significant opportunities for undergraduate research."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
       "overall_acceptance_rate": 88.7,
-      "in_state_acceptance_rate": 93.4,
-      "out_of_state_acceptance_rate": 91.5,
-      "international_acceptance_rate": 68.4,
-      "transfer_acceptance_rate": 79.9,
-      "admits_class_size": 5906,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": null
+      "test_policy_details": "Iowa State University is test-optional for first-year applicants. Students may choose whether they wish to self-report their ACT/SAT scores when they apply for admission. For those who choose not to submit an ACT or SAT score, admission will be based on high school GPA and completion of core course requirements. Submitted scores may be used for admissions purposes, course placement, and scholarship decisions. CLT scores can also be submitted for consideration.",
+      "admits_class_size": 20475,
+      "transfer_acceptance_rate": 80.0,
+      "in_state_acceptance_rate": 18.5,
+      "out_of_state_acceptance_rate": 8.2,
+      "international_acceptance_rate": 68.4,
+      "early_admission_stats": []
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
-        "applications_total": null,
-        "admits_total": null,
+        "applications_total": 24091,
+        "admits_total": 21359,
         "enrolled_total": 6160,
-        "acceptance_rate_overall": null,
-        "yield_rate": null,
-        "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Enrollment grew for the fifth consecutive year. Iowa State University does not maintain an undergraduate waitlist."
+        "acceptance_rate_overall": 88.66,
+        "yield_rate": 28.84,
+        "notes": "Estimated applications and admits based on reported enrolled, acceptance rate, and yield rate. New first-year enrollment increased for 5 consecutive years."
       },
       {
         "year": 2024,
@@ -75,19 +67,16 @@
         "applications_total": 23095,
         "admits_total": 20475,
         "enrolled_total": 5906,
-        "acceptance_rate_overall": 88.7,
-        "acceptance_rate_in_state": 93.4,
-        "acceptance_rate_out_of_state": 91.5,
-        "yield_rate": 28.8,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
+        "acceptance_rate_overall": 88.66,
+        "yield_rate": 28.84,
+        "notes": "Acceptance rate slightly decreased from the previous year.",
+        "waitlist_data": {
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
           "is_waitlist_ranked": false
-        },
-        "notes": "In-state and out-of-state acceptance rates calculated from Common Data Set residency breakdown."
+        }
       },
       {
         "year": 2023,
@@ -95,83 +84,66 @@
         "applications_total": 22995,
         "admits_total": 20496,
         "enrolled_total": 5859,
-        "acceptance_rate_overall": 89.1,
-        "yield_rate": 28.6,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
+        "acceptance_rate_overall": 89.13,
+        "yield_rate": 28.58,
+        "notes": "Enrollment was up for the third consecutive year.",
+        "waitlist_data": {
+          "offered_spots": 4540,
+          "accepted_spots": 2840,
+          "admitted_from_waitlist": 73,
+          "waitlist_admit_rate": 2.57,
           "is_waitlist_ranked": false
-        },
-        "notes": "Common Data Set Section C2 explicitly confirms no waitlist policy."
+        }
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 21919,
-        "admits_total": 19776,
-        "enrolled_total": 5729,
+        "applications_total": 22727,
+        "admits_total": 20500,
+        "enrolled_total": 5859,
         "acceptance_rate_overall": 90.2,
-        "yield_rate": 29.0,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "ISU does not use a waitlist."
+        "yield_rate": 28.58,
+        "notes": "Applications and admits are estimated based on reported acceptance rate and enrolled numbers due to identical CDS data for 2022 and 2023 from the university's institutional research."
       },
       {
         "year": 2021,
         "cycle_name": "Class of 2025",
         "applications_total": 20357,
         "admits_total": 18550,
-        "enrolled_total": 5388,
-        "acceptance_rate_overall": 91.1,
-        "yield_rate": 29.0,
-        "waitlist_stats": {
-          "year": 2021,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "ISU does not use a waitlist."
+        "enrolled_total": 5439,
+        "acceptance_rate_overall": 91.12,
+        "yield_rate": 29.32,
+        "notes": ""
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": null,
-        "unweighted_middle_50": null,
-        "average_weighted": 3.76,
-        "percentile_25": null,
-        "percentile_75": null,
-        "notes": "The average high school GPA for the Fall 2025 incoming class was 3.76. Most successful applicants have primarily A and B grades."
+        "weighted_middle_50": "3.50-3.90",
+        "unweighted_middle_50": "3.30-3.70",
+        "average_weighted": 3.73,
+        "percentile_25": "3.50",
+        "percentile_75": "3.90",
+        "notes": "Iowa State University uses the Regent Admission Index (RAI) for admission decisions, which calculates a score based on ACT/SAT composite scores, high school cumulative GPA (on a 4.0 scale), and the number of core high school courses completed. Applicants from Iowa high schools with an RAI score of at least 245 and who meet minimum high school course requirements are automatically offered admission. Iowa State is test-optional for first-year applicants. The average high school GPA for Fall 2025 admitted students was 3.76. Most incoming freshmen graduate in the top half of their high school class. The provided weighted GPA range reflects the 25th to 75th percentile of admitted students based on recent data from a reputable source, which may differ from other historical or program-specific data."
       },
       "testing": {
-        "sat_composite_middle_50": "1130-1350",
-        "sat_reading_middle_50": "560-670",
+        "sat_composite_middle_50": "1120-1330",
+        "sat_reading_middle_50": "550-660",
         "sat_math_middle_50": "560-690",
         "act_composite_middle_50": "21-28",
-        "submission_rate": 13.0,
-        "policy_note": "Test optional; scores are considered if submitted but not required for most programs."
+        "submission_rate": null,
+        "policy_note": "Test-optional; superscoring not allowed"
       },
       "demographics": {
         "first_gen_percentage": 20.0,
         "legacy_percentage": null,
-        "international_percentage": 9.0,
+        "notes": "Legacy defined as children or grandchildren of Iowa State graduates. Legacy percentage unavailable.",
         "geographic_breakdown": [
           {
             "region": "Iowa",
             "percentage": 52.5
           },
           {
-            "region": "Other US States",
+            "region": "Out-of-State (excluding Iowa)",
             "percentage": 38.5
           },
           {
@@ -181,376 +153,1371 @@
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 11855,
-            "admits": 10534,
-            "acceptance_rate": 88.86,
-            "note": "Based on 2024-2025 admission cycle data."
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Data not found in provided search results."
           },
           "women": {
-            "applicants": 11240,
-            "admits": 9941,
-            "acceptance_rate": 88.44,
-            "note": "Based on 2024-2025 admission cycle data."
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Data not found in provided search results."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 71.32,
+          "white": 71.3,
           "black_african_american": 2.56,
           "hispanic_latino": 6.68,
           "asian": 4.12,
           "native_american_alaskan": 0.14,
           "pacific_islander": 0.06,
           "two_or_more_races": 2.82,
-          "unknown": 3.3,
+          "unknown": 3.32,
           "non_resident_alien": 9.0
-        },
-        "religious_affiliation": null
+        }
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 89.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "High schoolers must meet specific RAI scores and 2 years of a single foreign language for direct entry. Focus on a rigorous math/science curriculum.",
-          "housing_profile": "Friley Residence Hall is a favorite due to its proximity to engineering buildings and its 'Dungeons' for quiet study.",
-          "student_archetype": "Practical problem-solvers and collaborative builders.",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 1650 Calculus I",
-                "CHEM 1670 General Chemistry for Engineering",
-                "PHYS 2310 Introduction to Classical Physics I"
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agriculture and Life Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Traditional residence halls hosting various learning communities like ACES (Agricultural Community Encourages Success) in Maple Hall and AGEDS (Agricultural Education and Studies) in Larch Hall, fostering a close-knit environment.",
+        "student_archetype": "Community-oriented individuals passionate about hands-on learning, leadership, and addressing global challenges related to food, environment, and energy. Many are women, making up 59% of undergraduates in Fall 2024.",
+        "strategic_fit_advice": "Ideal for students seeking an immersive and supportive first-year experience focused on practical application and leadership in agricultural and life sciences fields.",
+        "majors": [
+          {
+            "name": "Agricultural Business",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 120-semester credits, cumulative GPA of at least 2.00 in all coursework taken at ISU. High school preparation includes 4 years English, 3 years math (alg, geom, adv alg), 3 years science (bio and chem, or bio and phys, or chem and phys), 2 years social studies. No foreign language required for admission. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Agricultural and Life Sciences Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "AGRON 1810 Introduction to Crop Science",
+              "AGRON 1820 Introduction to Soil Science",
+              "AN S 1010 Working with Animals",
+              "AN S 1140 Survey of the Animal Industry",
+              "HORT 2210 Principles of Horticulture",
+              "ECON 2300 Farm Business Management",
+              "NREM 1200 Introduction to Renewable Resources"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or higher required for major-specific professional credits.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1500 Critical Thinking and Communications",
+                "ENGL 2500 Written, Oral, Visual, and Electronic Composition",
+                "LIB 1600 Introduction to College Level Research",
+                "BIOL 1010 or 2110 Introduction to Biology or General Biology I",
+                "MATH 1400 College Algebra",
+                "STAT 1040 Introduction to Statistics",
+                "AGEDS 1100 Professional Development in AGEDS: New Student Seminar",
+                "AGEDS 2110A Early Field Based Experience: High School Agriculture Programs",
+                "AGEDS 3100 Foundations of Agricultural Education Programs",
+                "AGEDS 3110 Presentation & Sales Strategies for Agricultural Audiences",
+                "AGEDS 4010 Planning Agricultural Education Programs",
+                "AGEDS 4020 Methods of Teaching in Agricultural Sciences/Agribusiness",
+                "AGEDS 4160 Pre-Student Teaching in Agricultural Education Programs",
+                "AGEDS 4170 Supervised Teaching in Agricultural Education Programs",
+                "EDU 3330 Educational Psychology",
+                "PSYCH 2300 Developmental Psychology",
+                "SPED 4010 Teaching Secondary Students with Exceptionalities in General Ed"
               ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "M E 2310 Engineering Thermodynamics I",
-                "E M 3240 Mechanics of Materials"
+              "electives": [
+                "Ethics Elective",
+                "Humanities Elective",
+                "Life Science Elective",
+                "Physical Science Elective",
+                "Speech Elective",
+                "Social Science Elective",
+                "American History Elective (HIST 2210, 2220, etc.)",
+                "AG Elective (FSHN 1010, HORT 3320, etc.)"
               ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.25,
-              "curriculum": {
-                "core_courses": [
-                  "M E 1600",
-                  "M E 1700",
-                  "M E 2310",
-                  "M E 3240",
-                  "M E 3320",
-                  "M E 3350",
-                  "M E 3700",
-                  "M E 4210",
-                  "M E 4360"
-                ],
-                "electives": [
-                  "M E 4110",
-                  "M E 4160",
-                  "M E 4490",
-                  "M E 4840"
-                ],
-                "total_units": 129,
-                "major_units": 65
-              },
-              "notable_professors": [
-                "Dr. Caroline Hayes",
-                "Dr. Theodore Heindel",
-                "Dr. James Heise"
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.0 GPA in ISU coursework. C or better in ENGL 1500, 2500, and Speech Elective. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Agronomy",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 120-semester credits, cumulative GPA of at least 2.00 in all coursework taken at ISU. High school preparation includes 4 years English, 3 years math (alg, geom, adv alg), 3 years science (bio and chem, or bio and phys, or chem and phys), 2 years social studies. No foreign language required for admission. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 120-semester credits, cumulative GPA of at least 2.00 in all coursework taken at ISU. High school preparation includes 4 years English, 3 years math (alg, geom, adv alg), 3 years science (bio and chem, or bio and phys, or chem and phys), 2 years social studies. No foreign language required for admission. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Food Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 120-semester credits, cumulative GPA of at least 2.00 in all coursework taken at ISU. High school preparation includes 4 years English, 3 years math (alg, geom, adv alg), 3 years science (bio and chem, or bio and phys, or chem and phys), 2 years social studies. No foreign language required for admission. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Horticulture",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 120-semester credits, cumulative GPA of at least 2.00 in all coursework taken at ISU. High school preparation includes 4 years English, 3 years math (alg, geom, adv alg), 3 years science (bio and chem, or bio and phys, or chem and phys), 2 years social studies. No foreign language required for admission. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Global Resource Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 120-semester credits, cumulative GPA of at least 2.00 in all coursework taken at ISU. High school preparation includes 4 years English, 3 years math (alg, geom, adv alg), 3 years science (bio and chem, or bio and phys, or chem and phys), 2 years social studies. No foreign language required for admission. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Agricultural Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1500 Critical Thinking and Communications",
+                "ENGL 2500 Written, Oral, Visual, and Electronic Composition",
+                "LIB 1600 Introduction to College Level Research",
+                "BIOL 1010 or 2110 Introduction to Biology or General Biology I",
+                "MATH 1400 College Algebra",
+                "STAT 1040 Introduction to Statistics",
+                "AGEDS 1100 Professional Development in AGEDS: New Student Seminar",
+                "AGEDS 2150 Professional Development in AGEDS: Career Seminar",
+                "AGEDS 4120 Internship in AGEDS",
+                "AGEDS 4600X Capstone in Agricultural Studies - Multidisciplinary Option"
               ],
-              "notes": "Admitted as 'Pre-Mechanical Engineering' until Basic Program completion."
-            }
-          ]
-        },
-        {
-          "name": "Ivy College of Business",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 88.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Incoming freshmen start as Pre-Business and must complete foundation courses with a 2.5+ GPA to enter the 'Professional Program.'",
-          "housing_profile": "Geoffroy and Buchanan Halls are popular for business students due to their modern suite-style layouts.",
-          "student_archetype": "Ambitious, networking-focused professionals.",
-          "majors": [
-            {
-              "name": "Marketing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "ECON 1010",
-                "STAT 2260"
+              "electives": [
+                "International Perspectives (3 credits)",
+                "U.S. Cultures and Communities (3 credits)",
+                "Ethics Elective (3 credits)",
+                "Humanities Elective (3 credits)",
+                "Life Science Elective (3 credits)",
+                "Physical Science Elective (5 credits)",
+                "Speech Elective (3 credits)",
+                "Social Science Elective (3 credits)",
+                "15 credits from one CALS area (6 at 3000-4000 level)",
+                "15 credits from another CALS area (6 at 3000-4000 level)",
+                "15 credits from one other area (6 at 3000-4000 level)",
+                "Free Electives (25 credits)"
               ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ACCT 2840"
-              ],
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "BUSAD 1020",
-                  "ACCT 2840",
-                  "ACCT 2850",
-                  "FIN 3010",
-                  "MGMT 3710",
-                  "MIS 3010",
-                  "MKT 3400",
-                  "SCM 3010",
-                  "MGMT 4780"
-                ],
-                "electives": [
-                  "MKT 3420",
-                  "MKT 4440",
-                  "MKT 4470",
-                  "MKT 4530"
-                ],
-                "total_units": 122,
-                "major_units": 45
-              },
-              "notable_professors": [
-                "Dr. Sekar Raju",
-                "Dr. Raj Agnihotri",
-                "Dr. Huifang Mao"
-              ],
-              "notes": "Admission into the professional program is required for 3000+ level courses."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Applied Artificial Intelligence Minor",
-        "Data Science Minor",
-        "Entrepreneurship Minor",
-        "Leadership Studies Certificate",
-        "Professional Sales Certificate",
-        "Healthcare Management Certificate",
-        "Real Estate Certificate",
-        "Cybersecurity Certificate",
-        "International Business Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Iowa State Institutional Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Rolling Admission",
-          "date": "2025-03-01",
-          "is_binding": false,
-          "notes": "Priority deadline for financial aid and scholarship consideration."
-        },
-        {
-          "plan_type": "Final Fall Deadline",
-          "date": "2025-05-01",
-          "is_binding": false,
-          "notes": "Final date for fall semester acceptance."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "General Admission",
-          "requirement_type": "None",
-          "deadline": null,
-          "details": "No supplemental essays or letters of recommendation required."
-        },
-        {
-          "target_program": "First-Year Honors Program",
-          "requirement_type": "Essays",
-          "deadline": "2025-04-01",
-          "details": "Two 500-word essays required."
-        },
-        {
-          "target_program": "Music",
-          "requirement_type": "Audition",
-          "deadline": "2025-02-15",
-          "details": "Audition and departmental application required."
-        },
-        {
-          "target_program": "College of Design (Architecture)",
-          "requirement_type": "Portfolio/Essay",
-          "deadline": null,
-          "details": "Admission to professional B.Arch degree occurs after the first year."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Course Rigor",
-          "Test Scores (if submitted)"
-        ],
-        "secondary_factors": [
-          "Class Rank",
-          "Core Course Completion"
-        ],
-        "essay_importance": "Low",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Minimal",
-        "specific_differentiators": "Uses the Regent Admission Index (RAI) for automatic admission."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Start in 'Undeclared Engineering' to explore all 14+ engineering branches while completing the common 'Basic Program' core",
-        "Choose the BA in Computer Science over the BS if looking for a more flexible liberal arts integration",
-        "Consult the 'ISU Placement Rates' data by department before applying to ensure the major's ROI aligns with career goals"
-      ],
-      "college_ranking_tactics": [
-        "Rank the university based on industry partnerships (e.g., John Deere, Boeing) rather than traditional prestige",
-        "Evaluate the 'Honors Program' as a primary ranking factor to gain priority registration",
-        "Factor in housing location; engineers often prefer the 'West Side' (Friley/Helser)"
-      ],
-      "alternate_major_strategy": "If applying to a highly rigorous major like Aerospace Engineering or Architecture, list 'Undeclared Engineering' or 'Design-Undeclared' as your alternate choice."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 10787,
-          "total_coa": 24695,
-          "housing": 10808
-        },
-        "out_of_state": {
-          "tuition": 28881,
-          "total_coa": 42789,
-          "supplemental_tuition": 18094
-        }
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.0 grade point average in ISU coursework. C or better in ENGL 1500, 2500, Speech Elective. Data source: Iowa State University Catalog 2025-2026"
+          }
+        ]
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 11488,
-      "average_merit_aid": 5660,
-      "percent_receiving_aid": 85.0
+      {
+        "name": "Ivy College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General on-campus housing options (traditional halls, suite-style rooms) with access to the Business Learning Team (BLT) program for first-year and transfer students to aid in college transition.",
+        "student_archetype": "Career-focused, entrepreneurial, and driven individuals who value hands-on learning, internships, and networking from day one to develop both technical and professional skills for the business world.",
+        "strategic_fit_advice": "Best for proactive students eager to jumpstart their business careers, who thrive in a supportive, career-oriented environment with numerous opportunities for real-world experience and professional development.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": 89.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1010 Principles of Microeconomics",
+              "ACCT 2840 Financial Accounting",
+              "STAT 2260 Introduction to Business Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "FIN 3010 Principles of Finance"
+            ],
+            "special_requirements": "Grade of C or higher in at least 30 credits of Business Core and Major courses. Minimum 42 credits of 3000-level or higher coursework from a four-year institution. All 3000-level and higher business credits must be earned at a four-year college. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BUSAD 1020 or 1030 Orientation",
+                "BUSAD 2030 Professional Development in Business",
+                "COMS 1130 Introduction to Spreadsheets and Databases",
+                "MATH 1500 Discrete Math for Business and Social Sciences",
+                "ECON 1010 Principles of Microeconomics",
+                "ECON 1020 Principles of Macroeconomics",
+                "STAT 2260 Introduction to Business Statistics",
+                "ACCT 2840 Financial Accounting",
+                "ACCT 2850 Managerial Accounting",
+                "ENTSP 3100 Entrepreneurship and Innovation",
+                "FIN 3010 Principles of Finance",
+                "MGMT 3710 Organizational Behavior",
+                "MGMT 3720 Responsible Management and Leadership in Business",
+                "MIS 3010 Management Information Systems",
+                "MKT 3400 Principles of Marketing",
+                "SCM 3010 Supply Chain Management",
+                "MGMT 4780 Strategic Management (senior year)",
+                "FIN 3100 Corporate Finance",
+                "FIN 3200 Investments"
+              ],
+              "electives": [
+                "FIN 3300 Financial Markets and Institutions",
+                "FIN 3340 Introduction to Financial Technologies and Cryptocurrencies",
+                "FIN 3610 Personal Risk Management and Insurance",
+                "FIN 3710 Real Estate Principles",
+                "FIN 4100 Corporate Financial Planning and Analysis",
+                "FIN 4150 Business Financing Decisions",
+                "FIN 4240 Financial Futures and Options",
+                "FIN 4250 Security Analysis and Portfolio Management",
+                "FIN 4260 Quantitative Investment Analysis",
+                "FIN 4270 Fixed Income Securities",
+                "FIN 4280 Advanced Fixed Income Analysis and Portfolio Management",
+                "FIN 4310 New Venture Financing",
+                "FIN 4350 Venture Capital, Private Equity, and Mergers and Acquisitions"
+              ],
+              "total_units": 122,
+              "major_units": 21
+            },
+            "notable_professors": [
+              "Truong Duong (Interim Chair, Associate Professor)",
+              "Alberto Martin-Utrera (Research in Asset Pricing, Investment Management)",
+              "Tyler Jensen (Research in Corporate Finance, Behavioral Finance)",
+              "Paul Koch (Research in Insider Trading, Market Efficiency)"
+            ],
+            "notes": "Admission to the major requires successful completion of foundational business courses and a cumulative ISU GPA of at least 2.0. No more than two transfer classes can be applied to the major. Ranked a “great school for finance majors” by Princeton Review. Data source: Iowa State University Catalog 2025-2026, Ivy College of Business website"
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or higher in at least 30 credits of Business Core and Major courses. Minimum 42 credits of 3000-level or higher coursework from a four-year institution. All 3000-level and higher business credits must be earned at a four-year college. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 122 semester credits required for B.S. degrees. Cumulative ISU GPA of at least 2.0. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or higher in at least 30 credits of Business Core and Major courses. Minimum 42 credits of 3000-level or higher coursework from a four-year institution. All 3000-level and higher business credits must be earned at a four-year college. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 122 semester credits required for B.S. degrees. Cumulative ISU GPA of at least 2.0. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or higher in at least 30 credits of Business Core and Major courses. Minimum 42 credits of 3000-level or higher coursework from a four-year institution. All 3000-level and higher business credits must be earned at a four-year college. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 122 semester credits required for B.S. degrees. Cumulative ISU GPA of at least 2.0. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Supply Chain Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or higher in at least 30 credits of Business Core and Major courses. Minimum 42 credits of 3000-level or higher coursework from a four-year institution. All 3000-level and higher business credits must be earned at a four-year college. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 122 semester credits required for B.S. degrees. Cumulative ISU GPA of at least 2.0. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or higher in at least 30 credits of Business Core and Major courses. Minimum 42 credits of 3000-level or higher coursework from a four-year institution. All 3000-level and higher business credits must be earned at a four-year college. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum 122 semester credits required for B.S. degrees. Cumulative ISU GPA of at least 2.0. Data source: Iowa State University Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Design",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Residential learning communities like the Design Exchange, housed in Friley and Helser halls, offering a living and learning experience tailored for design majors. These are traditional hall settings. The college itself provides extensive studio, maker, and specialized lab facilities.",
+        "student_archetype": "Creative, innovative, and collaborative students dedicated to design, planning, art, and enhancing human experience and environmental sustainability. They benefit from studio-based learning and interdisciplinary teamwork, with many seeking global perspectives.",
+        "strategic_fit_advice": "Suited for creative and globally-minded students who want to immerse themselves in a supportive design community, engage in hands-on projects, and are passionate about solving real-world challenges through design.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.Arch.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1450 Calculus for Business and Social Sciences",
+              "PHYS 1310 General Physics I",
+              "PHYS 1310L General Physics I Laboratory"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional degree program is based on performance in the pre-professional curriculum (Core Design Program), previous high school/transfer record, and portfolio and essay evaluations. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Core Design Program (31 credits)",
+                "ARCH 2010 Architectural Design I"
+              ],
+              "electives": [],
+              "total_units": 165,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Five-year professional program. Students complete a one-year Core Design Program before applying to the professional Architecture program. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Landscape Architecture",
+            "degree_type": "B.L.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1400 College Algebra (advised during Core year)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional program is competitive and based on performance in the Core Design Program. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students complete a one-year Core Design Program before applying to the professional Landscape Architecture program. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Graphic Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COMS 1060 Introduction to Communication (advised during Core year)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional program depends upon available resources and is subject to the approval of a faculty committee at the completion of the Core Design Program. Transfer students with studio credits must present a portfolio for departmental review. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Total Degree Requirement: 124 credits. Only 65 credits from a two-year institution may apply. Students complete a one-year Core Design Program before applying to the professional Graphic Design program. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Industrial Design",
+            "degree_type": "B.I.D.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 1010 Physics I (advised during Core year)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional program is competitive and based on performance in the Core Design Program. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students complete a one-year Core Design Program before applying to the professional Industrial Design program. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Interior Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional program is competitive and based on performance in the Core Design Program. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students complete a one-year Core Design Program before applying to the professional Interior Design program. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Community and Regional Planning",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Art",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Residence halls such as Friley, Helser, Martin, and Eaton, many of which host engineering-specific residential learning communities like 'Launch Pad' (Aerospace Engineering) and 'Chemical Engineering (ChE)'. Some dorms offer suite-style rooms.",
+        "student_archetype": "Ambitious, problem-solving, and collaborative students with strong STEM backgrounds who thrive in a rigorous academic environment. They seek peer mentorship and a close-knit community to support their studies in various engineering disciplines.",
+        "strategic_fit_advice": "Highly recommended for driven engineering students who desire a strong academic support network, prefer living with peers in their field, and want easy access to engineering facilities and collaborative study opportunities.",
+        "majors": [
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 1010 Engineering Orientation",
+              "MATH 1650 Calculus I",
+              "MATH 1660 Calculus II",
+              "CHEM 1670 General Chemistry I",
+              "PHYS 2310 General Physics I",
+              "PHYS 2310L General Physics I Lab",
+              "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+              "ENGL 1500 Critical Thinking and Communication",
+              "LIB 1600 Introduction to College Level Research"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of the Basic Program with a GPA of at least 2.00, and an ISU cumulative GPA of at least 2.00 required before enrolling in 2000-level and above engineering courses. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Median first-year starting salary for graduates is $71,400. Transfer credit courses must have a grade of C or better. Data source: Iowa State University Catalog 2025-2026, CollegeSimply, GyanDhan"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 1010 Engineering Orientation",
+              "MATH 1650 Calculus I",
+              "MATH 1660 Calculus II",
+              "CHEM 1670 General Chemistry I",
+              "PHYS 2310 General Physics I",
+              "PHYS 2310L General Physics I Lab",
+              "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+              "ENGL 1500 Critical Thinking and Communication",
+              "LIB 1600 Introduction to College Level Research"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 2650 Calculus III",
+              "MATH 2670 Differential Equations",
+              "PHYS 2320 General Physics II",
+              "PHYS 2320L General Physics II Lab",
+              "MAT E 2730 Engineering Materials",
+              "C E 2740 Introduction to Engineering Mechanics: Statics",
+              "ME 2310 Introduction to Mechanical Engineering",
+              "EM 3240 Mechanics of Materials"
+            ],
+            "special_requirements": "Minimum GPA of 2.00 for Basic Program courses and Foundations courses. Grade of C or better for any transfer credit. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 1010 Engineering Orientation",
+                "MATH 1650 Calculus I",
+                "MATH 1660 Calculus II",
+                "CHEM 1670 General Chemistry I (for Engineers)",
+                "PHYS 2310 General Physics I",
+                "PHYS 2310L General Physics I Lab",
+                "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+                "ENGL 1500 Critical Thinking and Communication",
+                "LIB 1600 Introduction to College Level Research",
+                "MATH 2650 Calculus III",
+                "MATH 2670 Differential Equations",
+                "PHYS 2320 General Physics II",
+                "PHYS 2320L General Physics II Lab",
+                "MAT E 2730 Engineering Materials",
+                "C E 2740 Introduction to Engineering Mechanics: Statics",
+                "ME 2310 Introduction to Mechanical Engineering",
+                "EM 3240 Mechanics of Materials",
+                "ME 2700 Introduction to Mechanical Engineering Design",
+                "EE 4420 Introduction to Circuits and Instruments",
+                "EE 4480 Introduction to AC Circuits and Motors",
+                "ME 3320 Engineering Thermodynamics II",
+                "ME 3450 Engineering Dynamics",
+                "ME 3240L Manufacturing Engineering Laboratory",
+                "ME 3700 Instrumentation",
+                "ME 3350 Fluid Mechanics",
+                "ME 3250 Mechanical Component Design",
+                "ME 3240 Manufacturing Engineering",
+                "ME 4210 Dynamic Systems and Control",
+                "ME 4360 Heat Transfer",
+                "ME 4150 or ME 4420 (Prereq ME 4410) Capstone Design"
+              ],
+              "electives": [
+                "Technical Electives (15 credits)",
+                "Social Sciences/Humanities (15 credits, including U.S. Diversity and International Perspectives)"
+              ],
+              "total_units": 129,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Caroline Hayes (Department Chair, Professor)",
+              "Cody Fleming (Associate Professor, Research in Autonomy, Control Systems)",
+              "Theodore Heindel (Bergles Professor of Thermal Science, University Professor)"
+            ],
+            "notes": "Accredited by ABET. Minimum 15 credits from ME courses must be taken at ISU, with 3 credits from capstone design. Graduates earn average salary of $67,221 two years after graduation. Data source: Iowa State University Catalog 2025-2026, Research.com, CollegeSimply"
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 1010 Engineering Orientation",
+              "MATH 1650 Calculus I",
+              "MATH 1660 Calculus II",
+              "CHEM 1670 General Chemistry I",
+              "PHYS 2310 General Physics I",
+              "PHYS 2310L General Physics I Lab",
+              "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+              "ENGL 1500 Critical Thinking and Communication",
+              "LIB 1600 Introduction to College Level Research"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of the Basic Program with a GPA of at least 2.00, and an ISU cumulative GPA of at least 2.00 required before enrolling in 2000-level and above engineering courses. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 1010 Engineering Orientation",
+              "MATH 1650 Calculus I",
+              "MATH 1660 Calculus II",
+              "CHEM 1670 General Chemistry I",
+              "PHYS 2310 General Physics I",
+              "PHYS 2310L General Physics I Lab",
+              "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+              "ENGL 1500 Critical Thinking and Communication",
+              "LIB 1600 Introduction to College Level Research"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of the Basic Program with a GPA of at least 2.00, and an ISU cumulative GPA of at least 2.00 required before enrolling in 2000-level and above engineering courses. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 1010 Engineering Orientation",
+              "MATH 1650 Calculus I",
+              "MATH 1660 Calculus II",
+              "CHEM 1670 General Chemistry I",
+              "PHYS 2310 General Physics I",
+              "PHYS 2310L General Physics I Lab",
+              "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+              "ENGL 1500 Critical Thinking and Communication",
+              "LIB 1600 Introduction to College Level Research"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of the Basic Program with a GPA of at least 2.00, and an ISU cumulative GPA of at least 2.00 required before enrolling in 2000-level and above engineering courses. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 1010 Engineering Orientation",
+              "MATH 1650 Calculus I",
+              "MATH 1660 Calculus II",
+              "CHEM 1670 General Chemistry I",
+              "PHYS 2310 General Physics I",
+              "PHYS 2310L General Physics I Lab",
+              "ME 1600 Mechanical Engineering Problem Solving with Computer Applications",
+              "ENGL 1500 Critical Thinking and Communication",
+              "LIB 1600 Introduction to College Level Research"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of the Basic Program with a GPA of at least 2.00, and an ISU cumulative GPA of at least 2.00 required before enrolling in 2000-level and above engineering courses. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of the Basic Program with a GPA of at least 2.00, and an ISU cumulative GPA of at least 2.00 required before enrolling in 2000-level and above engineering courses. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Iowa State University Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Health and Human Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Residence halls housing learning communities such as Common Threads (Apparel, Merchandising, Design) in Maple Hall and Connect Four (various majors) in Larch Hall, fostering social and academic integration.",
+        "student_archetype": "Future-oriented problem-solvers dedicated to improving people's quality of life. They pursue careers in education, fashion, wellness, nutrition, financial planning, and family counseling, valuing innovative labs and hands-on experiences. A high percentage of first-year students participate in learning communities.",
+        "strategic_fit_advice": "Ideal for empathetic and innovative students passionate about human well-being and community impact, who will benefit from early connections with faculty and peers through residential learning communities.",
+        "majors": [
+          {
+            "name": "Kinesiology and Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Tim Derrick (Professor, Biomechanics, Exercise Physiology)",
+              "Jason Gillette (Research in Biomechanics, Exoskeletons)",
+              "Marian Kohut (Research in Exercise Immunology)"
+            ],
+            "notes": "High school preparation includes 4 years English, 3 years math, 3 years science, 2 years social sciences/humanities. Data source: Iowa State University Catalog 2025-2026, Department of Kinesiology and Health website"
+          },
+          {
+            "name": "Dietetics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Hospitality Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Human Development and Family Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Financial Counseling and Planning",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Diverse on-campus housing options, with many students participating in residential learning communities such as Biology Education Success Teams (BEST), Computer Science, and HOME (for Open Option students), which provide academic and social support.",
+        "student_archetype": "Intellectually curious and diverse students who explore a wide range of academic disciplines, from humanities to sciences. They value critical thinking, strong communication skills, and connecting with like-minded peers, faculty, and staff.",
+        "strategic_fit_advice": "Suitable for inquisitive students, including those exploring majors, who value a broad education and seek a supportive and intellectually engaging community to facilitate their academic and personal growth.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1650 Calculus I",
+              "COMS 1270 Introduction to Computer Programming - Python"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "COMS 2270 Object-Oriented Programming (Java)",
+              "COMS 2300 Discrete Computational Structures"
+            ],
+            "special_requirements": "Minimum grade of C- or better in COMS 1270 or equivalent, MATH 1650, COMS 2270, and COMS 2300. 8 credits from Computer Science must be at the 3000+ level courses with a grade of C or better from ISU. Data source: Iowa State University Catalog 2025-2026",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMS 1010 Orientation",
+                "COMS 1270 Introduction to Computer Programming - Python",
+                "COMS 2270 Object-Oriented Programming (Java)",
+                "COMS 2280 Introduction to Data Structures",
+                "COMS 2300 Discrete Computational Structures",
+                "COMS 3090 Social and Ethical Issues in Computer Science",
+                "COMS 3110 Algorithms",
+                "COMS 3210 Principles of Programming Languages",
+                "COMS 3270 Advanced Programming Techniques, C/C++",
+                "COMS 3360 Computer Architecture and Organization",
+                "COMS 3420 Principles of Operating Systems",
+                "COMS 3620 Introduction to Databases",
+                "COMS 4910 Senior Design Project I",
+                "COMS 4920 Senior Design Project II",
+                "MATH 1650 Calculus I",
+                "MATH Options (e.g., MATH 2070, 2650, 2660, 2670, 3040, 3140, 3170)",
+                "STAT 2010 or 2270 or 3050 or 3260"
+              ],
+              "electives": [
+                "COMS 4070 Introduction to Machine Learning",
+                "COMS 4100 Software Engineering",
+                "COMS 4130 Computational Geometry",
+                "COMS 4170 Introduction to Cryptography",
+                "COMS 4530 Principles of Artificial Intelligence",
+                "COMS 4720 Introduction to Computer Networks",
+                "COMS 4760 Mobile Computing",
+                "MATH 4210 Cryptography",
+                "CPRE 4190 Computer Vision",
+                "SE 4220 Software Requirements Engineering"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Myra Cohen (Associate Chair for Research, Lanh & Oanh Nguyen Endowed Chair of Software Engineering)",
+              "Wallapak Tavanapong (Kingland Systems Professor in Data Analytics or Cognitive Machine Learning)",
+              "Regis Kopper (Assistant Professor, Research in Extended Reality for training)",
+              "Lin Yan (Assistant Professor, Research in Data Visualization, Tropical Cyclone Tracking)"
+            ],
+            "notes": "ABET accredited. Offered as B.S. or B.A. The B.S. degree is for students seeking a strong foundation in CS, while the B.A. accommodates broader liberal arts interests. Undergraduate research opportunities are available. Transfer students must have at least 15 credits at 3000+ level or above in COMS courses while in residence at ISU. Data source: Iowa State University Catalog 2025-2026, Department of Computer Science website"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Also offered as B.A. Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Journalism and Mass Communication",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Iowa State University Catalog 2025-2026"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Also offered as B.S. Data source: Iowa State University Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Veterinary Medicine",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Primarily off-campus housing options, though graduate student housing is available in Wallace Hall, Frederiksen Court, and University Village (SUV) Apartments. A notable number of vet students opt for nearby off-campus apartments or a convenient trailer park.",
+        "student_archetype": "Dedicated, focused, and often mature students pursuing a demanding professional degree in veterinary medicine. Many are seeking independent living arrangements that might accommodate pets, with a strong emphasis on proximity to the college.",
+        "strategic_fit_advice": "Best for mature, highly motivated students committed to veterinary medicine, who may prefer independent living in apartments or shared off-campus housing, valuing proximity to the college and opportunities to connect with fellow professional students.",
+        "majors": []
+      },
+      {
+        "name": "Graduate College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Dedicated on-campus graduate housing including Wallace Hall (furnished rooms, kitchenettes), Frederiksen Court Apartments (furnished apartments), and University Village (SUV) Apartments (various furnished/unfurnished options, including family housing). Utilities are often included.",
+        "student_archetype": "Focused, independent, and often research-oriented individuals pursuing master's or doctoral degrees. They seek convenient and affordable living arrangements that support their academic commitments, and some may have families or prefer a quieter, more mature living environment.",
+        "strategic_fit_advice": "Ideal for self-sufficient and academically driven individuals pursuing advanced degrees, who value flexible and affordable on-campus housing options tailored to graduate student needs, including those with families or pets (in specific units).",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Certificate",
+      "English Minor",
+      "Computer Science Minor",
+      "Cyber Security Minor",
+      "Business Analytics Minor",
+      "Healthcare Management Certificate",
+      "Professional Sales Certificate",
+      "Cybersecurity Undergraduate Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Iowa State University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2026-01-05",
+        "is_binding": false,
+        "notes": "While Iowa State University has rolling admissions, this date reflects the earliest scholarship deadline for incoming first-year students for the 2026-2027 academic year (specifically for the Ivy College of Business; other college-specific scholarship deadlines are Jan 6, 2026). Early applicants are more likely to receive full scholarship consideration."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Iowa State University operates on a rolling admissions basis, meaning applications are evaluated as they are received. This date is cited as a 'Regular admission deadline' for undergraduates, suggesting it's a recommended date for timely consideration for the Fall semester. The Fall semester acceptance deadline is May 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Essays are generally not required for first-year admission."
+      },
+      {
+        "target_program": "Music (Major/Scholarship)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Required to become a music major and to be considered for music scholarships. Students must demonstrate an appropriate level of performance on an instrument or voice. Placement examinations in music theory and piano are also required but do not affect acceptance as a music major. Specific audition requirements vary by instrument/voice."
+      },
+      {
+        "target_program": "Architecture (Professional Degree Program)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Admission to the professional Bachelor of Architecture (B.Arch) degree program, which follows the first-year Core Design Program, is based on portfolio and essay evaluations, performance in the pre-professional curriculum, and previous academic record. Recent discussions suggest that progression to the second year of architecture may be GPA-based after completing core design classes, implying a portfolio is likely required after the first year of studies rather than for initial university admission."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Class rank"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Iowa State University utilizes a dual admission path: automatic admission for applicants meeting the Regent Admission Index (RAI) score (at least 245) or specific HiSET scores and high school course requirements, and an individual academic review (holistic evaluation) for those who meet minimum course requirements but not the automatic criteria. The university is test-optional for first-year applicants. They also have a strong emphasis on STEM fields."
     },
+    "essay_prompts": {
+      "prompts": [],
+      "notes": "Iowa State University does not require supplemental essays for first-year undergraduate admissions for the 2024-2025 application cycle. If a student applies through the Common App, they would have the option to submit the general Common App essay, but this is not a supplemental essay required by Iowa State itself."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if not yet set on highly competitive fields, such as certain engineering or design programs, which might have additional admission hurdles after initial university acceptance.",
+      "Consider applying as 'undecided' or 'open option' within the College of Liberal Arts and Sciences or another college if you are exploring interests, as Iowa State provides strong support and advising for these students.",
+      "Research specific admission requirements and internal transfer processes for any 'enrollment-managed professional programs' to understand potential later application stages and review criteria.",
+      "Be aware that some majors have lower acceptance rates or more stringent requirements for entry after initial university admission, especially for professional programs which require a separate application and faculty review."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize academic program strength and specific major offerings",
+      "Evaluate student outcomes, such as graduation rates and career placement",
+      "Analyze the cost, available financial aid, and potential return on investment (ROI)",
+      "Assess campus life, support systems, and the overall student experience"
+    ],
+    "alternate_major_strategy": "open_option_program: For incoming students who are undecided, Iowa State provides an 'Open Option' program. This program allows students to explore various classes and potential paths based on their interests, goals, and strengths, with the guidance of an Open Option advisor. The classes taken within this program count towards graduation requirements, and students are part of a supportive learning community. This program aims to help students confidently declare a major from Iowa State's numerous options when they are ready.; considerations_for_selecting_a_major: When considering a major, it's advisable to look at factors beyond just initial interest, such as placement rates and average starting salaries for graduates in specific departments. Iowa State often provides this data by department. Students are encouraged to find an overlap between their interests, skills, and areas with good job prospects.; changing_majors_after_admission_or_enrollment: {'for_new_students_before_starting_classes': \"If you've been admitted to Iowa State but decide to change your major before starting classes, you should complete the change application form available on the Office of Admissions website. If the new major is in a different college, the admissions office will inform both colleges. Depending on whether you've attended orientation, you may receive a new invitation from the new college or need to contact their advising office to adjust your schedule.\", 'for_current_students': ['Contact Your Current Advisor: The first step is to inform your current academic advisor of your intent to change majors and your desired new major.', 'Follow Email Instructions: You will receive further instructions via your Iowa State email from either your current advisor or an advisor in your prospective new major.', 'Utilize AccessPlus: You can use AccessPlus to run an alternate degree audit, which helps you understand how your completed courses would apply to the new curriculum.', \"Meet with New Major's Advisor: Schedule a meeting with an academic advisor in the prospective new major to discuss the program of study and career opportunities. Bring a printed copy of your alternate degree audit to this meeting.\", \"Formal Process (Forms): The specific forms and steps depend on whether the change is within the same college or between different colleges. Generally, this involves forms like the 'LAS Change of Major' (for within the College of Liberal Arts and Sciences) or a 'File Transmittal Form' (for changes within the College of Agriculture and Life Sciences or between different colleges). These forms typically require signatures and coordination with student services offices in both the current and new departments/colleges.\"], 'international_students': \"International students changing their major or adding a second major/minor do not need to complete a 'Change to Academic Program' form. Instead, they should email the International Students and Scholars Office (ISSO) to request an updated I-20.\"}; admission_process_note: Iowa State University operates on a rolling admissions basis, meaning applications are evaluated as they are received. Applying sooner often leads to an earlier admission decision."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 11092.0,
+        "total_coa": 25720.0,
+        "housing_on_campus": 10928.0
+      },
+      "out_of_state": {
+        "tuition": 30140.0,
+        "total_coa": 45218.0,
+        "housing_on_campus": 10928.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 15700.0,
+    "average_merit_aid": 5660.0,
+    "percent_receiving_aid": 87.0,
+    "meets_full_need": false,
+    "notes": null,
     "scholarships": [
       {
         "name": "Iowa Resident National Merit Full Tuition Scholarship",
         "type": "Merit",
-        "amount": "100% of tuition",
-        "deadline": "2026-03-01",
-        "benefits": "Covers four years of undergraduate tuition",
-        "application_method": "Automatic Consideration"
+        "amount": "Full tuition for four years (eight semesters)",
+        "deadline": "Notify National Merit Scholarship Corporation Iowa State is first choice college",
+        "benefits": "Covers full undergraduate tuition, renewable with 3.0 GPA",
+        "application_method": "Automatic Consideration (for National Merit Scholars who designate Iowa State as first choice and submit FAFSA)",
+        "eligibility": "Iowa residents named National Merit Scholars by the National Merit Scholarship Corporation, continuously enrolled full-time, maintain a minimum 3.00 cumulative GPA, apply and be offered admission to Iowa State University as an incoming first-year student, notify the National Merit Scholarship Corporation that Iowa State University is your 'first choice college', and be named a National Merit Finalist and Scholar."
+      },
+      {
+        "name": "International Student Excellence Award",
+        "type": "Merit",
+        "amount": "Varies (automatically awarded based on academic excellence)",
+        "deadline": "Accept admission offer by May 1 (fall) or December 15 (spring)",
+        "benefits": "Financial support towards educational goals; renewable if continuously enrolled full-time with 12+ credits and assessed international tuition",
+        "application_method": "Automatic Consideration (upon admission offer based on high school GPA and/or SAT/ACT scores for first-year, or transfer GPA for transfer students)",
+        "eligibility": null
       },
       {
         "name": "Loyal Scholar Award",
         "type": "Merit",
-        "amount": "$12,000",
-        "deadline": "2025-03-01",
-        "benefits": "Renewable for 4 years with minimum GPA",
-        "application_method": "Automatic Consideration"
+        "amount": "$3,000/year for 4 years ($12,000 total)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable, financial support for Iowa residents",
+        "application_method": "Automatic Consideration (for Iowa residents meeting 3.80+ cumulative GPA and 32 ACT/1450 SAT)",
+        "eligibility": null
       },
       {
-        "name": "International Merit Scholarship",
+        "name": "University Honors Program Scholarships/Grants",
+        "type": "Merit/Program Specific",
+        "amount": "Varies",
+        "deadline": "Varies (some applications via OneApp, others program-specific)",
+        "benefits": "Priority registration, optional honors housing, undergraduate research opportunities, access to faculty mentors, funding for research",
+        "application_method": "Automatic consideration for some; separate application through OneApp or Honors Program office for others",
+        "eligibility": null
+      },
+      {
+        "name": "Multicultural Vision Program (MVP) Award",
+        "type": "Merit/Diversity",
+        "amount": "Full tuition for eight semesters",
+        "deadline": "Varies (applications available online)",
+        "benefits": "Full tuition coverage for eight semesters of full-time study",
+        "application_method": "Separate Application (reviewed by MVP Advisory Council, for high school seniors of color who are Iowa residents and demonstrate academic potential)",
+        "eligibility": null
+      },
+      {
+        "name": "The Ellis Foundation Scholarship",
+        "type": "Need-Based",
+        "amount": "Up to $1,000 per semester (up to eight semesters)",
+        "deadline": "May 1 (for notification)",
+        "benefits": "Financial support for college-billed expenses, mentoring, peer-to-peer program",
+        "application_method": "Separate Application (request access to online application; interviews on rolling basis)",
+        "eligibility": "Female high school seniors attending a rural school district in Iowa, from a single-parent household, and attending Iowa State University. Priority consideration is given to students with a GPA of 3.0 or higher and an ACT score of 21 or higher who display financial need, and those pursuing careers in agriculture, business, economics, marketing, or communications."
+      },
+      {
+        "name": "OneApp General Scholarships (Departmental/College)",
+        "type": "Merit/Need/Program Specific",
+        "amount": "Varies",
+        "deadline": "Varies (check specific scholarship deadlines within OneApp)",
+        "benefits": "Financial support for various academic and personal achievements, often tailored to specific majors or colleges",
+        "application_method": "Separate Application (via Iowa State's OneApp scholarship portal, completing General Application and reviewing recommended opportunities)",
+        "eligibility": null
+      },
+      {
+        "name": "Nonresident National Merit Scholars (Iowa State College-Sponsored Scholarship)",
         "type": "Merit",
-        "amount": "$8,000 - $40,000",
-        "deadline": "2025-02-15",
-        "benefits": "Awarded based on high school GPA and scores",
-        "application_method": "OneApp Application"
-      },
-      {
-        "name": "Generations Award",
-        "type": "Legacy/Merit",
-        "amount": "$6,000",
-        "deadline": "2026-03-01",
-        "benefits": "For nonresident children/grandchildren of ISU graduates",
-        "application_method": "OneApp Application"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 3 or higher generally grant credit, though many core subjects require a 4 or 5",
-        "exceptions": [
-          "No credit for AP 2-D Art and Design",
-          "AP Biology, Chemistry, and Calculus AB require a score of 4 or higher"
-        ],
-        "usage": "Can satisfy general education requirements and specific major prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "Credit awarded for HL exams with score of 4 or higher",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "TRANSIT",
-          "Course Equivalency Guides"
-        ],
-        "restrictions": "65 semester unit cap for community college credits"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A Regents Admission Index (RAI) score of 245 or higher for automatic admission",
-        "A solid academic foundation with a mix of A's and B's (average GPA 3.75)",
-        "Demonstrated ability to handle challenging coursework such as AP or IB classes"
-      ],
-      "common_activities": [
-        "Leadership in some of the 800+ student-led clubs and organizations",
-        "Undergraduate research or hands-on projects",
-        "Community service and volunteering within Ames"
-      ],
-      "essay_tips": [
-        "Be specific about the academic department or program",
-        "Use a 'passionate hook' to explain your interest",
-        "Focus on how you will contribute to the ISU community"
-      ],
-      "red_flags": [
-        "Generic 'Why ISU' essays",
-        "Submitting incomplete academic records",
-        "A lack of academic rigor in senior year"
-      ],
-      "insights": [
-        "Students remark 'getting in is easy; staying in is the challenge' due to early rigor",
-        "RAI is the dominant metric, making the process more transparent",
-        "Heavy emphasis on job placement and practical learning"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 61000,
-      "employment_rate_2yr": null,
-      "grad_school_rate": 26.0,
-      "top_employers": [
-        "John Deere",
-        "Collins Aerospace",
-        "Boeing",
-        "Principal Financial Group",
-        "Wells Fargo"
-      ],
-      "loan_default_rate": 3.2,
-      "student_retention": {
-        "freshman_retention_rate": 87.6,
-        "graduation_rate_4_year": 63.6,
-        "graduation_rate_6_year": 75.2
-      }
-    }
-  },
-  "_id": "iowa_state_university",
-  "application_process": {
-    "essay_prompts": [
-      {
-        "prompt": "Describe the academic, extracurricular, and/or personal experiences that have influenced your choice of major or area of study.",
-        "word_limit": "250 words",
-        "type": "Major",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about your coursework at Iowa State, were there any specific professors, lectures, or even a single challenging problem that made you lean towards this major, and if so, what was it about that moment that resonated so deeply?",
-          "Beyond the classroom, what's a project, club, or activity where you encountered a real-world problem or had to find a creative solution that unexpectedly sparked your interest in this field of study?",
-          "When you imagine yourself working in your chosen major, what's a specific kind of impact you hope to make, and can you recall a personal experience, however small, that planted the seed for that aspiration?",
-          "Were there any pivotal conversations, either with mentors, friends, or family, or even something you read or saw, that challenged your initial thoughts about your academic path and ultimately solidified your choice of major?",
-          "Looking back, what's a moment where you felt genuinely curious and eager to learn more about a topic related to your major, even when it wasn't assigned or required, and what was the driving force behind that eagerness?"
-        ]
+        "amount": "$500/year",
+        "eligibility": "Nonresident students who are selected to receive an Iowa State college-sponsored scholarship through the National Merit Scholarship Corporation (NMSC).",
+        "application_method": "Automatic Consideration (through National Merit Scholarship Corporation selection)",
+        "deadline": null,
+        "benefits": null
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/iowa_state_university_logo.png"
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Scores of 3 or better are generally considered for course credit, with some departments requiring scores of 4 or better.",
+      "exceptions": [
+        "Specific exceptions regarding individual exams like 'No credit for AP Research' or 'CS requires 5' are not detailed in the provided search results for Iowa State University. Credit is awarded based on departmental review and specific equivalencies found in Iowa State's internal chart."
+      ],
+      "usage": "AP credits become part of the official academic record and can be applied toward graduation requirements, including general education, major/minor requirements, or elective credit. These credits do not factor into the student's grade point average (GPA). Iowa State University allows a maximum of 32 credits from examinations (including AP) to satisfy a student's undergraduate degree requirements, within an overall maximum of 60 prior learning credits."
+    },
+    "ib_policy": {
+      "general_rule": "Iowa State University awards credit for most Higher Level (HL) examinations and some Standard Level (SL) examinations with a minimum score of 4. Some departments may require higher scores.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TRANSIT",
+        "Course Equivalency Guides"
+      ],
+      "restrictions": "A maximum of 65 semester or 97 quarter credits from two-year colleges can be applied to a baccalaureate degree. Up to 16 semester (24 quarter) hours of career-technical courses may be accepted. While college-level courses with passing grades are generally acceptable, some departments may require a minimum grade of 'C' or 'C-' for specific courses to apply to a degree program. A minimum transfer GPA of 2.25 is required for admission (2.00 for associate's degree holders), with some programs potentially requiring a higher GPA. Grades from transfer courses do not impact the Iowa State GPA. The last 32 semester credits must be completed at Iowa State. If more than nine Pass-Not Pass credits are transferred, additional P-NP credits cannot be taken at Iowa State and applied toward a degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong Academic Record with Challenging Coursework: A solid high school GPA and taking college preparatory courses are required. The average GPA for admitted students is around 3.7. Students who challenge themselves with advanced placement (AP) or college-level classes are often well-prepared for university academics. Many students also receive significant scholarships, often tied to academic merit, which can make Iowa State an attractive and affordable option.",
+      "Demonstrated Passion and Fit: While not explicitly detailed by students as 'what got me in,' the holistic review process evaluates applicants as individuals, not just numbers. Students often choose Iowa State for its strong programs, such as engineering. This suggests that showcasing a genuine interest in a chosen field and demonstrating how Iowa State's offerings align with their aspirations can be beneficial.",
+      "Meaningful Extracurricular Activities and Leadership: Extracurricular activities are considered as part of the holistic admissions process. While not explicitly stated as a direct admission factor by students in the search results, active involvement in clubs, organizations, and leadership roles is generally valued in a comprehensive review and allows applicants to showcase their interests, skills, and potential contributions to the university community.",
+      "Authentic Essays and Personal Statements: Personal statements are an explicit component of the holistic review. Students have expressed feeling that the admissions process evaluated them as 'a real person,' suggesting that a well-crafted essay that reflects self-reflection and personal qualities can significantly contribute to an application."
+    ],
+    "common_activities": [
+      "Involvement in Student Clubs and Organizations",
+      "Research Opportunities",
+      "Athletics and Recreation",
+      "Music and Arts Involvement",
+      "Entrepreneurial Activities"
+    ],
+    "essay_tips": [
+      "Be specific about why Iowa State and your chosen program.",
+      "Connect your personal experiences and interests to specific resources at the university.",
+      "Show, don't tell, using concrete examples.",
+      "Thoroughly research the university and your intended major."
+    ],
+    "red_flags": [
+      "Failure to submit all official transcripts from every college or university attended, which can result in denial or dismissal.",
+      "Not meeting the minimum GPA requirements for your intended program, with some programs requiring higher than the general minimum, and academic suspension from a previous institution leading to likely denial.",
+      "Submitting an application with significantly low standardized test scores (if applicable) and a low high school GPA for first-year applicants, as this impacts the Regent Admission Index (RAI) and can lead to rejection.",
+      "Failing to meet specific program admission requirements, such as English proficiency or required GRE/GMAT scores for graduate programs."
+    ],
+    "campus_dynamics": {
+      "social_environment": "Iowa State University offers a warm, welcoming, friendly, and vibrant social atmosphere with a strong sense of community and camaraderie among students. Students often describe a high level of school spirit, particularly during game days. There are numerous opportunities to get involved in campus life through various social groups, clubs, and learning communities. Professors are generally supportive and care about student success.",
+      "transportation_impact": "Ames, Iowa, where the university is located, is described as a typical college town. Downtown Ames, with its array of restaurants, shops, and cultural attractions, is easily accessible from campus via a short bike ride or CyRide bus trip. This indicates a campus environment where amenities are within reasonable proximity, suggesting a walkable and bikeable campus with public transportation options.",
+      "research_impact": "Iowa State University provides strong undergraduate research opportunities across all its colleges and in a wide range of disciplines. These opportunities allow students to collaborate with faculty and peers on real-world problems and scholarly or creative projects. Programs such as the Undergraduate Research Assistantship Program, ISU IINSPIRE Program, ISU McNair Program, and University Honors Program support student research. Engaging in research enhances critical thinking, problem-solving, and communication skills, and provides valuable career preparation. Students can earn academic credit for their research experiences and are encouraged to present their findings at conferences. The university also highlights industry partners in relation to research."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 63386,
+    "employment_rate_2yr": 97.0,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Meta",
+      "Deloitte",
+      "Collins Aerospace",
+      "John Deere",
+      "IBM"
+    ],
+    "grad_school_rate": 0.0,
+    "loan_default_rate": 3.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 88.0,
+    "graduation_rate_4_year": 60.0,
+    "graduation_rate_6_year": 74.0
+  }
 }

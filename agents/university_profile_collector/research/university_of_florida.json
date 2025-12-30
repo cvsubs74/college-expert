@@ -1162,19 +1162,19 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required essay: 'Please provide more details on your most meaningful commitment outside of the classroom while in high school and explain why it was meaningful.' (250 words). An optional essay is available for additional information or extenuating circumstances (250 words)."
       },
       {
         "target_program": "Honors Program",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Prompt about navigating AI's evolving landscape during college, focusing on critical thinking, creativity, and human connection, and how the Honors Program will impact learning and interactions (400 words maximum)."
       },
       {
         "target_program": "Innovation Academy",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Prompt to discuss interest in becoming a UF Innovation Academy student and how it will influence professional career path."
       },
       {
@@ -1358,11 +1358,31 @@
       "Applying to the PaCE program with the intention of immediately transferring out, as it is difficult and uncommon to change the program for which you were admitted."
     ],
     "insights": [
-      "The University of Florida's admissions process is very selective, with an acceptance rate of 24%.",
-      "UF places heavy emphasis on recalculated GPA, which is based solely on academic courses, with admitted applicants typically having a GPA of 3.7 and above.",
-      "Standardized test scores (SAT 1300-1480 or ACT 28-33 for admitted students) are critical, but UF uses a holistic review process that evaluates much more than just scores.",
-      "UF does not accept letters of recommendation and does not consider demonstrated interest.",
-      "Applying Early Action (by November 1) can maximize your chance of acceptance, with Regular Decision deadline on January 15."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The University of Florida's admissions process is very selective, with an acceptance rate of 24%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UF places heavy emphasis on recalculated GPA, which is based solely on academic courses, with admitted applicants typically having a GPA of 3.7 and above."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Standardized test scores (SAT 1300-1480 or ACT 28-33 for admitted students) are critical, but UF uses a holistic review process that evaluates much more than just scores."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UF does not accept letters of recommendation and does not consider demonstrated interest."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action (by November 1) can maximize your chance of acceptance, with Regular Decision deadline on January 15."
+      }
     ]
   },
   "outcomes": {

@@ -1121,7 +1121,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required short essay (300 words or fewer) reflecting on how aspects of your background (identity, school, community, household, etc.) have shaped your engagement in Northwestern's community ( academically, extracurricularly, culturally, politically, socially, or otherwise). Applicants are also encouraged to submit 1-2 optional short essays from additional prompts."
       },
       {
@@ -1165,7 +1165,7 @@
         "type": "Why Northwestern",
         "required": true,
         "brainstorming_questions": [
-          "Think about a specific moment when you felt a spark of intellectual curiosity \u2013 something that made you stop, ponder, and want to learn more. What was that moment, and what questions did it ignite within you?",
+          "Think about a specific moment when you felt a spark of intellectual curiosity – something that made you stop, ponder, and want to learn more. What was that moment, and what questions did it ignite within you?",
           "Northwestern has specific programs and departments that might align with your interests. Looking at their offerings (research labs, specific courses, interdisciplinary centers), which ones truly resonate with you and why do they feel like the perfect fit for your intellectual journey?",
           "Beyond the obvious academic connections, what's a less conventional or unique intellectual pursuit you've engaged in, and how do you see Northwestern's unique environment fostering that particular passion?",
           "If you could have a spontaneous, in-depth conversation with a professor or student at Northwestern about a topic that fascinates you, what would that conversation be about, and what kind of insights would you hope to gain?",
@@ -1320,11 +1320,31 @@
       "Underestimating the competitive \"performance culture\" or \"sink-or-swim mentality\" for unprepared students"
     ],
     "insights": [
-      "Northwestern has an extremely selective acceptance rate, typically around 7%",
-      "The admissions process considers an applicant's background, identity, and experiences",
-      "Demonstrated interest through visits, alumni meetings, or communicating with admissions officers can make a difference",
-      "Northwestern seeks a diverse class with students of varied backgrounds, interests, religions, and experiences",
-      "The \"Why Northwestern\" essay is a critical component of the application"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Northwestern has an extremely selective acceptance rate, typically around 7%"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The admissions process considers an applicant's background, identity, and experiences"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest through visits, alumni meetings, or communicating with admissions officers can make a difference"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Northwestern seeks a diverse class with students of varied backgrounds, interests, religions, and experiences"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The \"Why Northwestern\" essay is a critical component of the application"
+      }
     ]
   },
   "outcomes": {

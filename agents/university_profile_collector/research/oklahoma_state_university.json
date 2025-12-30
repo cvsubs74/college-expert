@@ -1,563 +1,2098 @@
 {
-  "university_profile": {
-    "_id": "oklahoma_state_university",
-    "metadata": {
-      "official_name": "Oklahoma State University",
-      "location": {
-        "city": "Stillwater",
-        "state": "Oklahoma",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
+  "_id": "oklahoma_state_university",
+  "metadata": {
+    "official_name": "Oklahoma State University",
+    "location": {
+      "city": "Stillwater",
+      "state": "Oklahoma",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "Oklahoma State University is a premier public land-grant research institution (R1) recognized for its leadership in engineering, agricultural sciences, and aerospace research. It is distinguished by its 'Cowboy Code' culture and a commitment to balancing high-tier academic quality with broad accessibility.",
-      "market_position": "Public Land-Grant Powerhouse",
-      "admissions_philosophy": "Assured & Holistic",
-      "us_news_rank": 198,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The acceptance rate for the 2024-2025 cycle increased to 75.04%, continuing a four-year upward trend.",
-          "implication": "Admission is increasingly accessible for students meeting the university's assured academic benchmarks (GPA 3.0+)."
-        },
-        {
-          "category": "Value and ROI",
-          "insight": "Ranked as the #1 best value public university in Oklahoma for 2026 by U.S. News & Report.",
-          "implication": "Exceptional ROI potential, particularly for veterans and out-of-state students receiving need-based aid."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Defined by 'America's Greatest Homecoming' celebration and a tight-knit 'Cowboy family' atmosphere centered on school spirit and athletic tradition.",
-        "transportation_impact": "Campus life is enhanced by 'The Bus' fixed-route system and the 'BOB' shuttle, which provides critical connectivity between the Stillwater and Tulsa campuses.",
-        "research_impact": "Maintains R1 status with over $226 million in R&D expenditures, leading innovations in aerospace through the OAIRE institute and sustainable agricultural technologies."
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Oklahoma State University (OSU) is a comprehensive land-grant institution offering a wide array of undergraduate and graduate programs. It is characterized by its student-centric approach, robust research endeavors, and a strong commitment to community engagement and practical application of knowledge.",
+    "market_position": "A strong regional public university with a national reputation in agricultural sciences, engineering, and veterinary medicine. Known for its vibrant campus life and strong alumni network, particularly within Oklahoma and surrounding states.",
+    "admissions_philosophy": "OSU seeks well-rounded students who demonstrate academic promise, leadership potential, and a commitment to civic engagement. Emphasizes holistic review, considering GPA, test scores, extracurriculars, essays, and recommendations to identify students who will thrive in a dynamic learning environment and contribute positively to the campus community.",
+    "us_news_rank": 187,
+    "analyst_takeaways": [
+      {
+        "takeaway": "OSU's strong regional brand and alumni network provide a competitive edge in state-level recruitment.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The focus on practical, land-grant research is a key differentiator and attracts specific student demographics.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Campus social cohesion is a major selling point, fostering high retention rates.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Continued investment in STEM and agricultural research will further solidify its national standing.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Managing campus growth while maintaining its 'family' feel will be crucial for long-term strategic planning.",
+        "category": "general"
       }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Very strong sense of community and tradition, often described as a 'Cowboy family.' Greek life is popular, and there's a vibrant sports culture (especially football and basketball). Numerous student organizations cater to diverse interests, fostering a lively and inclusive social scene in a mid-sized college town.",
+      "transportation_impact": "Located in Stillwater, a smaller city where campus is largely walkable/bikeable. Free bus system (The BUS) serves campus and surrounding areas, reducing reliance on personal vehicles for students living off-campus. Parking can be challenging during peak hours, but overall infrastructure supports easy movement.",
+      "research_impact": "Significant research activity, particularly in agricultural sciences, engineering, aerospace, veterinary medicine, and energy. OSU is a Carnegie R1 institution, contributing substantially to regional economic development and national advancements through grants, partnerships with industry, and innovative discoveries."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 75.04,
+      "is_test_optional": true,
+      "test_policy_details": "Test scores are optional for admission to Oklahoma State University. Applicants may indicate on their application if they do not wish to submit a test score. However, official ACT or SAT scores are generally required for most university scholarships, and applicants are encouraged to provide them for maximum scholarship consideration. All official ACT and SAT scores received will be added to the student's application, but only the highest score will be used for admission and scholarship purposes. Test scores received for students who choose test-optional admission will still be added to their file for scholarship purposes. Test-optional admission also applies to graduates of home school, private, parochial, or other non-public high schools not accredited by a recognized accrediting agency.",
+      "admits_class_size": 18693,
+      "transfer_acceptance_rate": 52.96,
+      "international_acceptance_rate": 12.7,
+      "international_applications": 1425,
+      "international_admits": 181,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "early_admission_stats": [],
+      "notes": "Oklahoma State University does not offer distinct Early Decision or Early Action plans for general undergraduate admission. An 'Early Opportunity Scholarship Deadline' of November 1st exists for scholarship consideration but is not a binding admission deadline."
     },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 75.0,
-        "in_state_acceptance_rate": null,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": 12.7,
-        "transfer_acceptance_rate": 53.0,
-        "admits_class_size": 5184,
-        "is_test_optional": true,
-        "is_test_blind": false,
-        "test_policy_details": "Test Optional; scores recommended for scholarships.",
-        "early_admission_stats": null
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 24910,
+        "admits_total": 18693,
+        "enrolled_total": 4945,
+        "acceptance_rate_overall": 75.04,
+        "yield_rate": 26.91,
+        "notes": "Data for the 2024-2025 admission cycle for Fall 2025 enrollment.",
+        "waitlist": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
       },
-      "longitudinal_trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 24910,
-          "admits_total": 18693,
-          "enrolled_total": 4945,
-          "acceptance_rate_overall": 75.0,
-          "acceptance_rate_in_state": null,
-          "acceptance_rate_out_of_state": null,
-          "yield_rate": 26.5,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Admission waitlist not utilized for undergraduate applicants. Domestic applicant acceptance rate was 78.8%."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 19612,
-          "admits_total": 13911,
-          "enrolled_total": 5061,
-          "acceptance_rate_overall": 70.9,
-          "acceptance_rate_in_state": null,
-          "acceptance_rate_out_of_state": null,
-          "yield_rate": 36.4,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Significant growth in applicant pool compared to previous cycles."
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 16336,
-          "admits_total": 11538,
-          "enrolled_total": 4327,
-          "acceptance_rate_overall": 70.6,
-          "acceptance_rate_in_state": null,
-          "acceptance_rate_out_of_state": null,
-          "yield_rate": 37.5,
-          "waitlist_stats": {
-            "year": 2022,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Yield rates remained stable during this cycle."
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 19612,
+        "admits_total": 13912,
+        "enrolled_total": 4771,
+        "acceptance_rate_overall": 70.93,
+        "yield_rate": 34.29,
+        "notes": "Data for the 2023-2024 admission cycle for Fall 2024 enrollment.",
+        "waitlist": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
         }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": null,
-          "unweighted_middle_50": "3.25-3.90",
-          "average_weighted": null,
-          "percentile_25": "3.25",
-          "percentile_75": "3.85",
-          "notes": "OSU uses the highest cumulative GPA (weighted or unweighted) for admission; approx 45% of students have 3.75+."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1040-1240",
-          "sat_reading_middle_50": "530-630",
-          "sat_math_middle_50": "510-620",
-          "act_composite_middle_50": "20-27",
-          "submission_rate": 88.0,
-          "policy_note": "Test-optional for admission; however, scores are recommended for merit-based scholarships."
-        },
-        "demographics": {
-          "first_gen_percentage": 22.5,
-          "legacy_percentage": null,
-          "international_percentage": 5.9,
-          "geographic_breakdown": [
-            {
-              "region": "Oklahoma",
-              "percentage": 65.2
-            },
-            {
-              "region": "Other US States",
-              "percentage": 33.3
-            },
-            {
-              "region": "International",
-              "percentage": 1.5
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 10828,
-              "admits": 8177,
-              "acceptance_rate": 75.5
-            },
-            "women": {
-              "applicants": 14082,
-              "admits": 10516,
-              "acceptance_rate": 74.7
-            },
-            "non_binary": 0.0
-          },
-          "racial_breakdown": {
-            "white": 63.7,
-            "black_african_american": 4.1,
-            "hispanic_latino": 9.0,
-            "asian": 2.2,
-            "native_american_alaskan": 4.5,
-            "pacific_islander": 0.1,
-            "two_or_more_races": 10.4,
-            "unknown": 0.1,
-            "non_resident_alien": 5.9
-          },
-          "religious_affiliation": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 18171,
+        "admits_total": 12829,
+        "enrolled_total": 4500,
+        "acceptance_rate_overall": 70.63,
+        "yield_rate": 35.08,
+        "notes": "Data for the 2022-2023 admission cycle for Fall 2023 enrollment.",
+        "waitlist": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
         }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 18056,
+        "admits_total": 12746,
+        "enrolled_total": 4327,
+        "acceptance_rate_overall": 70.59,
+        "yield_rate": 33.95,
+        "notes": "Data from the official Common Data Set 2022-2023 for Fall 2022 enrollment.",
+        "waitlist": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 18085,
+        "admits_total": 12316,
+        "enrolled_total": 4188,
+        "acceptance_rate_overall": 68.1,
+        "yield_rate": 34.0,
+        "notes": "Data from the official Common Data Set 2021-2022 for Fall 2021 enrollment.",
+        "waitlist": null
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Ferguson College of Agriculture",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 71.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Values hands-on experience and a community-oriented mindset; strong fit for students with a background in 4-H or FFA.",
-          "housing_profile": "Village CASNR; houses the 'Freshmen in Transition' (FIT) Living Learning Program.",
-          "student_archetype": "The Community-Minded Aggie.",
-          "majors": [
-            {
-              "name": "Animal Science",
-              "degree_type": "B.S.A.G.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "CHEM 1314",
-                "BIOL 1114"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ANSI 1124"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true
-            },
-            {
-              "name": "Agricultural Economics",
-              "degree_type": "B.S.A.G.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "MATH 1513"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "AGEC 1113"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true
-            }
-          ]
-        },
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 71.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Generally open, but creative majors like acting and music require a separate audition.",
-          "housing_profile": "Specialized LLPs in various halls: Psychology House and Media House.",
-          "student_archetype": "The Intellectually Curious Scholar.",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "MATH 1513",
-                "MATH 1813"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "MATH 2144",
-                "CS 1113",
-                "CS 2133"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "CHEM 1314",
-                "MATH 1513"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "BIOL 1114",
-                "CHEM 3053"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering, Architecture and Technology (CEAT)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Rigorous STEM requirements; Architecture uses a 'Professional School' model.",
-          "housing_profile": "Parker Hall; features a dedicated makerspace.",
-          "student_archetype": "The Technical Problem-Solver.",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.M.E.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 2144",
-                "MATH 2153",
-                "PHYS 2014",
-                "CHEM 1414"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ENSC 2113",
-                "ENSC 2123"
-              ],
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true
-            },
-            {
-              "name": "Architecture",
-              "degree_type": "B.Arch.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 2114",
-                "PHYS 1114",
-                "ENSC 2113"
-              ],
-              "minimum_gpa_to_declare": 2.8,
-              "weeder_courses": [
-                "ARCH 1216",
-                "ARCH 2116"
-              ],
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Equine Enterprise Management Certificate",
-        "Entrepreneurship Minor",
-        "eSports Undergraduate Certificate",
-        "Geographic Information Systems Certificate",
-        "Ethical Leadership Certificate",
-        "Food Safety Certificate",
-        "Aerospace Security Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "OSU Application Portal"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Rolling Admission",
-          "date": "2025-07-01",
-          "is_binding": false,
-          "notes": "Final date for Fall term, though early application is encouraged for priority."
-        },
-        {
-          "plan_type": "Early Opportunity Scholarship Deadline",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Priority deadline for early scholarship consideration."
-        },
-        {
-          "plan_type": "Priority Scholarship Deadline",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Submit all application materials by this date for full scholarship consideration."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "Holistic Review Applicants",
-          "requirement_type": "Essays",
-          "details": "Required for students who do not meet 'Assured Admission' criteria."
-        },
-        {
-          "target_program": "Honors College",
-          "requirement_type": "Supplemental Essays",
-          "deadline": "2025-02-01",
-          "details": "Three specific prompts required regarding extracurriculars and personal growth."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Class Rank",
-          "Test Scores"
-        ],
-        "secondary_factors": [
-          "Essays",
-          "Recommendations",
-          "Extracurriculars",
-          "Character"
-        ],
-        "essay_importance": "Important",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "Considered",
-        "first_gen_boost": "Considered",
-        "specific_differentiators": "OSU uses a split evaluation: 'Assured Admission' (stats) and 'Comprehensive Review' (60% cognitive/40% non-cognitive)."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to the Ferguson College of Agriculture or College of Arts and Sciences if borderline for Engineering (CEAT)",
-        "Utilize the University Exploratory Studies program to secure admission before declaring a competitive major",
-        "Meet 'Assured Admission' benchmarks (3.0+ GPA and 24 ACT/1160 SAT) to bypass holistic review entirely",
-        "Apply early to the Architecture program due to limited studio space."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize 'Living Learning Communities' (LLCs) in housing applications",
-        "Rank the Exploration LLC highly if undecided",
-        "Select colleges based on scholarship availability (e.g., Spears or Ferguson)",
-        "Consider the Honors College for priority enrollment."
-      ],
-      "alternate_major_strategy": "If applying to CEAT, the alternate path is the 'Science and Technology Exploration' (STEP) program."
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 13920,
-          "total_coa": 33700,
-          "housing": 11230
-        },
-        "out_of_state": {
-          "tuition": 29440,
-          "total_coa": 49220,
-          "supplemental_tuition": 15520
-        }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "N/A",
+        "unweighted_middle_50": "3.3-4.0",
+        "average_weighted": null,
+        "percentile_25": "3.30",
+        "percentile_75": "4.00",
+        "notes": "Oklahoma State University uses the highest cumulative GPA (weighted or unweighted based on a 4.0 scale) indicated on a student's official high school transcript for admission and scholarship purposes. GPAs not using a 4.0 scale will be converted to a 4.0 scale. The average unweighted GPA for admitted students is around 3.59-3.63 on a 4.0 scale. The middle 50% of admitted students have an unweighted GPA between 3.3 and 4.0. A specific 'weighted middle 50%' GPA range (e.g., above 4.0) and a general 'average weighted GPA' for all admitted students are not explicitly provided in publicly available data for the main campus in the format requested, likely due to the conversion policy. OSU employs a holistic review process for admissions. Assured admission criteria can include a 3.0 GPA or better AND top 33.3% rank in high school graduating class."
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 10257,
-      "average_merit_aid": 6377,
-      "percent_receiving_aid": 81.0,
-      "scholarships": [
-        {
-          "name": "Oklahoma State Regents Academic Scholars Program",
-          "type": "Merit",
-          "amount": "Up to $55,900",
-          "deadline": "2025-02-01",
-          "benefits": "Full tuition waiver, cash stipend",
-          "application_method": "Automatic"
+      "testing": {
+        "sat_composite_middle_50": "1040-1240",
+        "sat_reading_middle_50": "530-630",
+        "sat_math_middle_50": "510-630",
+        "act_composite_middle_50": "20-27",
+        "submission_rate": 76.0,
+        "policy_note": "Oklahoma State University accepts superscores for both ACT and SAT for admission and scholarship consideration. Test scores are optional for admission but are required for most scholarships."
+      },
+      "demographics": {
+        "first_gen_percentage": 22.5,
+        "legacy_percentage": null,
+        "geographic_breakdown": [
+          {
+            "region": "Oklahoma",
+            "percentage": 66.0
+          },
+          {
+            "region": "Out-of-State (excluding International)",
+            "percentage": 28.0
+          },
+          {
+            "region": "International",
+            "percentage": 6.0
+          }
+        ],
+        "gender_breakdown": {
+          "notes": "Specific breakdown of applicants, admitted students, and acceptance rates by gender (men, women, non-binary) for Oklahoma State University for a recent academic year is not available in the provided search results in the requested format."
         },
-        {
-          "name": "National Merit Scholarship",
-          "type": "Merit",
-          "amount": "Up to $152,500",
-          "deadline": "2025-02-01",
-          "benefits": "Full tuition waiver",
-          "application_method": "Finalist status"
-        },
-        {
-          "name": "President's Distinguished Scholarship",
-          "type": "Merit",
-          "amount": "$10,000",
-          "deadline": "2025-02-01",
-          "benefits": "Competitive cash award",
-          "application_method": "Automatic"
-        },
-        {
-          "name": "CEAT Scholars Program",
-          "type": "Departmental",
-          "amount": "$20,000",
-          "deadline": "2024-11-01",
-          "benefits": "Enrichment activities",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "President's Leadership Council Scholarship",
-          "type": "Merit/Leadership",
-          "amount": "$1,500",
-          "deadline": "2025-02-01",
-          "benefits": "Leadership development",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Cowboy Covenant",
-          "type": "Need",
-          "amount": "$4,000",
-          "deadline": "Varies",
-          "benefits": "Pairs with Oklahoma's Promise",
-          "application_method": "FAFSA"
-        },
-        {
-          "name": "International Achievement Freshman Scholarship",
-          "type": "Merit",
-          "amount": "Up to $56,000",
-          "deadline": "2025-01-10",
-          "benefits": "Cash scholarship",
-          "application_method": "Separate Application"
+        "racial_breakdown": {
+          "white": 63.66,
+          "black_african_american": 4.05,
+          "hispanic_latino": 8.97,
+          "asian": 2.2,
+          "native_american_alaskan": 4.5,
+          "pacific_islander": 0.13,
+          "two_or_more_races": 10.4,
+          "unknown": 0.16,
+          "non_resident_alien": 5.93
         }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams",
-        "exceptions": [
-          "Native speakers lower-division limit",
-          "AP Research/Seminar elective credit"
-        ],
-        "usage": "Satisfies GE and prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "HL exams with 5+ grant credit",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transfer Equivalency Self-Service"
-        ],
-        "restrictions": "60 unit cap for CC; 30-hour residence requirement"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Meeting 'Assured Admission' criteria",
-        "Applying by Nov 1 for priority aid",
-        "A balanced profile showing potential",
-        "Demonstrated 'Cowboy grit' for a large school environment"
-      ],
-      "common_activities": [
-        "Greek life",
-        "Ag/Technical clubs",
-        "Intramural sports",
-        "Homecoming traditions"
-      ],
-      "essay_tips": [
-        "Focus on sincerity",
-        "Write for scholarship readers",
-        "Highlight personal growth",
-        "Show fit with the Cowboy Family"
-      ],
-      "red_flags": [
-        "Missing priority deadlines",
-        "Generic essays",
-        "Lack of high school involvement"
-      ],
-      "insights": [
-        "Admissions are accessible, but top merit aid is competitive.",
-        "Stillwater is a true college town environment.",
-        "School pride is exceptionally high."
-      ]
-    },
-    "outcomes": {
-      "career_outcomes": {
-        "median_earnings_10yr": 53300,
-        "employment_rate_2yr": 86.0,
-        "grad_school_rate": 19.0,
-        "top_employers": [
-          "Paycom",
-          "Boeing",
-          "Walmart",
-          "Halliburton",
-          "Northrop Grumman"
-        ],
-        "loan_default_rate": 7.0
-      },
-      "retention_rates": {
-        "freshman_retention_rate": 84.8,
-        "graduation_rate_4_year": 49.0,
-        "graduation_rate_6_year": 66.2
       }
     }
   },
-  "_id": "oklahoma_state_university",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Diverse on-campus housing options, including traditional halls, suites, and deluxe apartments. Students can opt for Living Learning Programs like the Psychology House (for Psychology majors) or the SMSC Media House (for Multimedia Journalism, Sports Media, and Strategic Communications majors in Village D), fostering a tight-knit community with shared academic interests and resources.",
+        "student_archetype": "Curious and adaptable students with broad interests in humanities, social sciences, natural sciences, and arts. They are critical thinkers, creative problem-solvers, and engaged in research and extracurricular activities, seeking to explore a wide range of academic disciplines.",
+        "strategic_fit_advice": "Students who thrive in interdisciplinary environments and value a comprehensive liberal arts education should apply. Engaging with LLPs related to their major can significantly enhance their academic and social integration. Strong communication and analytical skills are beneficial.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 1113 Computer Science I",
+              "MATH 2144 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CS 1113 Computer Science I (Q)",
+                "CS 2133 Computer Science II",
+                "CS 2433 Computer Systems I",
+                "CS 3443 Computer Systems II",
+                "CS 3353 Data Structures and Algorithms",
+                "CS 3653 Discrete Mathematics in Computer Science",
+                "CS 4323 Programming Languages",
+                "CS 4343 Operating Systems",
+                "CS 4513 Software Engineering",
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "STAT 2013 Elementary Statistics (Q)"
+              ],
+              "electives": [
+                "CS 4273 Computer Networks",
+                "CS 4433 Artificial Intelligence",
+                "CS 4473 Cybersecurity",
+                "CS 4883 Social Issues in Computing"
+              ],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [
+              "Dr. Christopher Crick (Robotic Cognition)",
+              "Dr. Sharmin Jahan (IoT Security, Data Privacy)",
+              "Dr. Atriya Sen (AI, Machine Learning, Data Science)"
+            ],
+            "notes": "Minimum overall GPA of 2.00 is required for the degree. No more than 54 hours in one department may be required. Data source: Oklahoma State University Academic Catalog 2025-2026. Transfer students with 24-59 hours need a 2.25 GPA; >60 hours or Associate degree need a 2.0 GPA. Median earnings for Computer and Information Sciences graduates: $54,500 (Bachelor's Degree) [cite: 3 (previous search)]"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 1113 Introductory Psychology (S)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 1113 Introductory Psychology (S)",
+                "PSYC 3214 Statistical Methods in Psychology",
+                "PSYC 3914 Experimental Psychology: Introduction to Research Methods in Psychology",
+                "PSYC 4003 History and Systems of Psychology",
+                "PSYC 4113 Cognitive Psychology",
+                "PSYC 4213 Social Psychology",
+                "PSYC 4313 Developmental Psychology",
+                "PSYC 4413 Abnormal Psychology",
+                "PSYC 4513 Biological Psychology"
+              ],
+              "electives": [
+                "PSYC 3523 Psychology of Personality",
+                "PSYC 3773 Industrial/Organizational Psychology",
+                "PSYC 4613 Health Psychology",
+                "PSYC 4953 Practicum in Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 38
+            },
+            "notable_professors": [
+              "Dr. Charles Abramson (Experimental Psychology, Animal Learning)",
+              "Dr. Amanda Morris (Developmental Psychology, Emotion Regulation)",
+              "Dr. Thad Leffingwell (Clinical Psychology, Addiction Research)"
+            ],
+            "notes": "Minimum overall GPA of 2.00 for the degree and 2.0 GPA in all major requirements and major-prefix courses. Students need 28 hours earned and completion of PSYC 1113 with a 'C' or better to transfer into the major. Data source: Oklahoma State University Academic Catalog 2025-2026, College of Arts and Sciences transfer requirements. Median salary for Psychology graduates: $32,302 (Bachelor's Degree) [cite: 17 (previous search)]"
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1113 Introductory Biology (N)",
+              "BIOL 1111 Introductory Biology Laboratory (LN)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 1113 Introductory Biology (N)",
+                "BIOL 1111 Introductory Biology Laboratory (LN)",
+                "BIOL 1203 Biology of Modern Society (N)",
+                "BIOL 1604 Principles of Biology (LN)",
+                "BIOL 3023 General Genetics",
+                "BIOL 3033 General Ecology",
+                "BIOL 3204 General Microbiology",
+                "CHEM 1314 Chemistry I (LN)",
+                "CHEM 1515 Chemistry II (LN)",
+                "MATH 1513 College Algebra (Q)",
+                "STAT 2013 Elementary Statistics (Q)"
+              ],
+              "electives": [
+                "BIOL 3103 Cell Biology",
+                "BIOL 3303 Plant Biology",
+                "BIOL 3403 Animal Physiology",
+                "BIOL 4000 Biology Research (variable credit)"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Allied Health, Environmental Biology, Pre-Medical Sciences, and Secondary Teacher Certification. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1314 Chemistry I (LN)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 1314 Chemistry I (LN)",
+                "CHEM 1515 Chemistry II (LN)",
+                "CHEM 3013 Organic Chemistry I",
+                "CHEM 3032 Organic Chemistry Lab I",
+                "CHEM 3113 Organic Chemistry II",
+                "CHEM 3152 Organic Chemistry Lab II",
+                "CHEM 3423 Physical Chemistry I",
+                "CHEM 3442 Physical Chemistry Lab I",
+                "CHEM 3523 Physical Chemistry II",
+                "CHEM 3542 Physical Chemistry Lab II",
+                "CHEM 4113 Inorganic Chemistry",
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "PHYS 2014 University Physics I (LN)",
+                "PHYS 2114 University Physics II (LN)"
+              ],
+              "electives": [
+                "CHEM 4000 Chemical Research (variable credit)",
+                "CHEM 4223 Analytical Chemistry",
+                "CHEM 4443 Biochemistry"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include ACS Approved, Pre-Health, and Secondary Teacher Certification. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 2013 Introduction to Microeconomics (S)",
+              "ECON 2023 Introduction to Macroeconomics (S)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ECON 2013 Introduction to Microeconomics (S)",
+                "ECON 2023 Introduction to Macroeconomics (S)",
+                "ECON 3113 Intermediate Microeconomics",
+                "ECON 3123 Intermediate Macroeconomics",
+                "ECON 3613 International Economic Relations (GS)",
+                "ECON 4933 Applied Economics",
+                "MATH 2103 Business Calculus (Q)",
+                "STAT 2013 Elementary Statistics (Q)"
+              ],
+              "electives": [
+                "ECON 3213 Money and Banking",
+                "ECON 3313 Public Finance",
+                "ECON 3713 Environmental Economics",
+                "ECON 4113 Energy Economics: Traditional and Renewable Energy Markets"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [
+              "Dr. J.B. Kim (Department Head, Industrial Organization)",
+              "Dr. Dan Rickman (Regional Economics, Environmental Economics)",
+              "Dr. Mehtabul Azam (Development Economics, Labor Economics)"
+            ],
+            "notes": "Minimum overall GPA of 2.00 for the degree and 2.00 GPA in major courses. This B.S. in Economics is offered through the College of Arts and Sciences. There is also an Economics major in the Spears School of Business. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1113 Composition I",
+              "ENGL 1213 Composition II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1113 Composition I",
+                "ENGL 1213 Composition II",
+                "ENGL 2413 Analysis of Literary Forms",
+                "ENGL 2513 Introduction to Creative Writing",
+                "ENGL 3000-level Literature course (3 hours)",
+                "ENGL 4000-level Literature course (3 hours)",
+                "ENGL 4883 Senior Seminar in English"
+              ],
+              "electives": [
+                "ENGL 3233 Technical Writing",
+                "ENGL 3413 Film as Literature",
+                "ENGL 3513 Advanced Creative Writing: Fiction",
+                "ENGL 3523 Advanced Creative Writing: Poetry"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Creative Writing, Pre-Law, Professional Writing, and Screen Studies. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "MATH 2153 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "MATH 3013 Linear Algebra",
+                "MATH 3613 Introduction to Abstract Algebra I",
+                "MATH 4013 Advanced Calculus I",
+                "CS 1113 Computer Science I (Q)"
+              ],
+              "electives": [
+                "MATH 3303 Introduction to Analysis",
+                "MATH 3403 Introduction to Topology",
+                "MATH 4513 Introduction to Numerical Analysis",
+                "STAT 4013 Mathematical Statistics I"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOC 1113 Introductory Sociology (S)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SOC 1113 Introductory Sociology (S)",
+                "SOC 3003 Research Methods in Sociology",
+                "SOC 3113 Social Statistics (Q)",
+                "SOC 3203 Social Theory",
+                "SOC 4983 Senior Capstone in Sociology"
+              ],
+              "electives": [
+                "SOC 3333 Criminology",
+                "SOC 3433 Race, Class, and Gender",
+                "SOC 3553 Marriage and Family",
+                "SOC 4113 Sociology of Health and Illness"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Journalism and Media",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MC 1003 Mass Communication in Society (S)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MC 1003 Mass Communication in Society (S)",
+                "MC 2013 Media Writing",
+                "MC 3013 Visual Media",
+                "MC 3023 Media Ethics and Law",
+                "MC 4003 Research in Mass Communication"
+              ],
+              "electives": [
+                "MC 3303 Photojournalism",
+                "MC 3503 Public Relations Principles",
+                "MC 3603 Advertising Principles",
+                "MC 4113 Broadcast News"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Media and Strategic Communications programs are accredited by the Accrediting Council on Education in Journalism and Mass Communication. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POLS 1113 American Government (S)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "POLS 1113 American Government (S)",
+                "POLS 2013 Introduction to Political Science",
+                "POLS 3013 Research Methods in Political Science",
+                "POLS 3213 American Public Policy",
+                "POLS 3413 International Relations",
+                "POLS 4883 Senior Seminar in Political Science"
+              ],
+              "electives": [
+                "POLS 3113 State and Local Government",
+                "POLS 3313 Constitutional Law",
+                "POLS 3513 Comparative Politics",
+                "POLS 4613 Political Philosophy"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Pre-Law. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HIST 1103 Survey of American History (H)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIST 1103 Survey of American History (H)",
+                "HIST 1483 American History to 1865 (H)",
+                "HIST 1493 American History Since 1865 (DH)",
+                "HIST 2003 World History I",
+                "HIST 2013 World History II",
+                "HIST 4883 Senior Seminar in History"
+              ],
+              "electives": [
+                "HIST 3703 Oklahoma History (DH)",
+                "HIST 3813 History of American Women",
+                "HIST 4203 Civil War and Reconstruction",
+                "HIST 4503 History of Science and Technology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Geology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "GEOL 1114 Physical Geology (LN)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "GEOL 1114 Physical Geology (LN)",
+                "GEOL 1224 Historical Geology (LN)",
+                "GEOL 2113 Mineralogy",
+                "GEOL 3014 Petrology",
+                "GEOL 3034 Structural Geology",
+                "GEOL 3143 Sedimentology and Stratigraphy",
+                "GEOL 4203 Field Geology",
+                "CHEM 1314 Chemistry I (LN)",
+                "MATH 2144 Calculus I (Q)",
+                "PHYS 2014 University Physics I (LN)"
+              ],
+              "electives": [
+                "GEOL 3223 Paleontology",
+                "GEOL 3333 Geochemistry",
+                "GEOL 4103 Hydrogeology",
+                "GEOL 4403 Environmental Geology"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 GPA required for Geology majors, and completion of GEOL 1114 with a 'C' or better to transfer into the major. Data source: Oklahoma State University Academic Catalog 2025-2026, College of Arts and Sciences transfer requirements."
+          }
+        ]
+      },
+      {
+        "name": "College of Education and Human Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "While no specific Living Learning Program or dedicated dorm was explicitly found for this college, students can choose from the general undergraduate housing options, including traditional halls, suites, and deluxe apartments across campus. Some general student organizations (e.g., Student Nurses Association, HHP Club) are relevant to programs within this college.",
+        "student_archetype": "Students passionate about improving individual and community well-being, education, health, and human development. They are often service-oriented, collaborative, and interested in practical application of knowledge to real-world human needs. (Inferred based on college's scope).",
+        "strategic_fit_advice": "Prospective students should explore the various majors within the college and consider joining related student organizations to build community. Standard on-campus housing provides a foundation for involvement in wider campus life.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1215 Chemical Principles I (LN) (or CHEM 1314 Chemistry I)",
+              "BIOL 1113 Introductory Biology (N)",
+              "BIOL 1111 Introductory Biology Laboratory (LN) (or BIOL 1114 Introductory Biology)",
+              "NSCI 2013 Principles of Human Nutrition (N)",
+              "PSYC 1113 Introductory Psychology (S)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "BIOL 1113",
+              "CHEM 1215"
+            ],
+            "special_requirements": "Competitive secondary application for admission into the professional nursing program after completing 58 hours of prerequisite coursework. Minimum score of 75 on the HESI A2 exam. Verified healthcare experience or volunteer hours are considered.",
+            "admissions_pathway": "Pre-Nursing to Professional Program (Competitive Admission)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "NURS 3013 Foundations of Professional Nursing",
+                "NURS 3025 Health Assessment and Promotion Across the Lifespan",
+                "NURS 3033 Cultural Considerations in Health Care",
+                "NURS 3043 Pharmacology in Nursing",
+                "NURS 3113 Adult Health Nursing I",
+                "NURS 3125 Mental Health Nursing",
+                "NURS 4013 Adult Health Nursing II",
+                "NURS 4023 Child and Family Health Nursing",
+                "NURS 4034 Community Health Nursing",
+                "NURS 4043 Evidence-Based Practice in Nursing",
+                "NURS 4116 Leadership and Management in Nursing"
+              ],
+              "electives": [
+                "HLTH 4783 Global Health Issues (G)",
+                "NURS 4150 Epidemiology Concepts in Nursing and Global Healthcare",
+                "NURS 4880 Nursing Research"
+              ],
+              "total_units": 122,
+              "major_units": 64
+            },
+            "notable_professors": [
+              "Dr. Alana Cluck (Director of Nursing)",
+              "Dr. Tracy Edwards (Associate Professor/Department Head, Nurse Science)",
+              "Dr. Diane Cannon (Assistant Professor, Nursing)"
+            ],
+            "notes": "Minimum overall GPA of 2.50 for the degree and 2.50 GPA in College/Departmental and Major Requirements. Minimum grades of 'C' or 'P' in College/Departmental and Major Requirements. Admission to the professional nursing program is competitive. Data source: Oklahoma State University Academic Catalog 2025-2026, Nursing BSN Degree Requirements. Median annual earnings for Registered Nurses (OKC graduates): $76,000 [cite: 20 (previous search)], average annual pay for Telemetry Registered Nurse in US: $102,638 [cite: 12 (previous search)]."
+          },
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1113 Composition I",
+              "MATH 1513 College Algebra (Q)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires admission to the professional education program, including a minimum GPA of 2.5 and successful completion of prerequisite coursework and assessments.",
+            "admissions_pathway": "Standard University Admission (with professional program admission)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EDTC 2113 Foundations of Education",
+                "EDTC 3113 Child and Adolescent Development for Educators",
+                "EDTC 3123 Educational Psychology for Teachers",
+                "EDTC 3133 Classroom Management",
+                "CIED 3113 Elementary Reading Methods",
+                "CIED 3213 Elementary Math Methods",
+                "CIED 3313 Elementary Science Methods",
+                "CIED 3413 Elementary Social Studies Methods",
+                "CIED 4880 Student Teaching (12 hours)",
+                "ENGL 1113 Composition I",
+                "MATH 1513 College Algebra (Q)"
+              ],
+              "electives": [
+                "CIED 3513 Technology in the Classroom",
+                "SPED 3203 Introduction to Special Education",
+                "HDFS 3413 Family Dynamics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.50 for the degree. Admission to the professional education program is a separate process. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Applied Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1113 Introductory Biology (N)",
+              "HLTH 1113 Introduction to Health and Wellness"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HLTH 1113 Introduction to Health and Wellness",
+                "EXSC 2113 Foundations of Exercise Science",
+                "EXSC 2213 Exercise Physiology",
+                "EXSC 3113 Kinesiology",
+                "EXSC 3213 Exercise Testing and Prescription",
+                "EXSC 4113 Biomechanics",
+                "EXSC 4213 Exercise and Sport Nutrition",
+                "EXSC 4883 Internship in Exercise Science",
+                "BIOL 1113 Introductory Biology (N)",
+                "CHEM 1314 Chemistry I (LN)"
+              ],
+              "electives": [
+                "EXSC 3313 Sport Psychology",
+                "EXSC 3413 Adapted Physical Activity",
+                "EXSC 4313 Strength and Conditioning",
+                "HLTH 3113 Stress Management"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Pre-Professional, Strength & Conditioning, and Sport & Coaching Science. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Human Development and Family Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HDFS 1113 Introduction to Human Development and Family Science"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HDFS 1113 Introduction to Human Development and Family Science",
+                "HDFS 2113 Lifespan Human Development (S)",
+                "HDFS 3113 Research Methods in Human Development and Family Science",
+                "HDFS 3213 Family Relations",
+                "HDFS 3313 Child Development",
+                "HDFS 4113 Adolescent Development",
+                "HDFS 4213 Adult Development and Aging",
+                "PSYC 1113 Introductory Psychology (S)",
+                "SOC 1113 Introductory Sociology (S)"
+              ],
+              "electives": [
+                "HDFS 3413 Parenting",
+                "HDFS 4313 Child and Family Advocacy",
+                "HDFS 4883 Internship in HDFS"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Child and Family Services, Early Childhood Education, and Family and Consumer Sciences Education. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Nutritional Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "NSCI 1113 Introduction to Nutritional Sciences",
+              "CHEM 1314 Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "NSCI 1113 Introduction to Nutritional Sciences",
+                "NSCI 2113 Human Nutrition",
+                "NSCI 3113 Macronutrients Metabolism",
+                "NSCI 3213 Micronutrients Metabolism",
+                "NSCI 3313 Medical Terminology for Health Professions",
+                "NSCI 4113 Lifecycle Nutrition",
+                "NSCI 4213 Community Nutrition",
+                "BIOL 1113 Introductory Biology (N)",
+                "CHEM 1314 Chemistry I (LN)",
+                "CHEM 1515 Chemistry II (LN)",
+                "PSIO 2013 Human Physiology"
+              ],
+              "electives": [
+                "NSCI 3413 Sports Nutrition",
+                "NSCI 4313 Food Service Management",
+                "NSCI 4883 Internship in Nutritional Sciences"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.50 for the degree. Options include Allied Health, Dietetics, Human Nutrition/Pre-Medical Sciences, and Public Health Nutrition. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering, Architecture and Technology",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students have access to various housing options, with a dedicated Living Learning Program (LLP) in Parker Hall specifically for first-year CEAT majors. This LLP provides a traditional-style living environment with specialized services, including mentoring by upperclassmen (PEATEs), free on-site tutoring, faculty interaction, and industry tours. The hall also features quiet study areas with resources like 3D printers.",
+        "student_archetype": "Motivated, self-disciplined, and inspired problem-solvers with a strong aptitude for STEM fields. They are hands-on learners, leaders, and interested in interdisciplinary engagement and innovation to address real-world challenges.",
+        "strategic_fit_advice": "Ideal for students with a strong background and passion for science, technology, engineering, and mathematics. Participation in the CEAT LLP in Parker Hall is highly recommended to build a supportive community, access academic resources, and gain early professional development.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "PHYS 2014 University Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grades of 'C' or better are required for any prerequisite or co-requisite to a required course on the degree plan, and in all Upper Division Major Requirements courses and Capstone Design Category courses.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "PHYS 2014 University Physics I (LN)",
+                "PHYS 2114 University Physics II (LN)",
+                "CHEM 1414 General Chemistry for Engineers (LN)",
+                "ENGR 1113 Introduction to Engineering",
+                "ENGR 2013 Statics",
+                "ENGR 2023 Dynamics",
+                "ENGR 2143 Engineering Materials",
+                "ENGR 2613 Thermodynamics I",
+                "ENGR 3203 Fluid Mechanics",
+                "MAE 3013 Engineering Analysis",
+                "MAE 3323 Heat Transfer",
+                "MAE 3333 Mechanical Design I",
+                "MAE 3403 Instrumentation and Measurements",
+                "MAE 4344 Design Projects"
+              ],
+              "electives": [
+                "MAE 4243 Aerodynamics",
+                "MAE 4513 Finite Element Analysis",
+                "MAE 4733 Mechatronics Design",
+                "MAE 4583 Corrosion"
+              ],
+              "total_units": 121,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. MAE requires grades of 'C' or better for any course that is a pre-requisite or co-requisite to a required course on the degree plan. Accredited by the Engineering Accreditation Commission of ABET. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Mechanical Engineering graduates: $62,100 (Bachelor's Degree) [cite: 5 (previous search)]"
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.A.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "PHYS 2014 University Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grades of 'C' or better are required for any prerequisite or co-requisite to a required course on the degree plan, and in all Upper Division Major Requirements courses and Capstone Design Category courses.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "PHYS 2014 University Physics I (LN)",
+                "PHYS 2114 University Physics II (LN)",
+                "CHEM 1414 General Chemistry for Engineers (LN)",
+                "ENGR 1113 Introduction to Engineering",
+                "ENGR 2013 Statics",
+                "ENGR 2023 Dynamics",
+                "ENGR 2143 Engineering Materials",
+                "ENGR 2613 Thermodynamics I",
+                "ENGR 3203 Fluid Mechanics",
+                "MAE 3013 Engineering Analysis",
+                "MAE 3223 Aerodynamics I",
+                "MAE 3253 Aerospace Structures",
+                "MAE 3293 Aerospace Propulsion",
+                "MAE 4354 Aerospace Systems Design"
+              ],
+              "electives": [
+                "MAE 4243 Aerodynamics II",
+                "MAE 4313 Orbital Mechanics",
+                "MAE 4623 Flight Dynamics and Control"
+              ],
+              "total_units": 121,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Engineering Accreditation Commission of ABET. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Aerospace Engineering graduates: $63,660 (Bachelor's Degree) (Source: College Scorecard data from prior research, specific search for OSU Aerospace Engineering not performed in this step)."
+          },
+          {
+            "name": "Architectural Engineering",
+            "degree_type": "B.E.N.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "PHYS 2014 University Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "A minimum 2.00 Technical GPA and a final grade of 'C' or better in all ARCH prefix courses and non-ARCH prerequisite courses. The capstone course for Architectural Engineering majors is ARCH 5226 Architectural Engineering Comprehensive Design Studio.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "PHYS 2014 University Physics I (LN)",
+                "PHYS 2114 University Physics II (LN)",
+                "CHEM 1314 Chemistry I (LN)",
+                "ARCH 1116 Introduction to Architecture and Architectural Engineering",
+                "ARCH 2213 Statics for Architects and Architectural Engineers",
+                "ARCH 2223 Strength of Materials for Architects and Architectural Engineers",
+                "ARCH 3213 Steel Design",
+                "ARCH 3223 Reinforced Concrete Design",
+                "ARCH 4213 Building Environmental Systems I",
+                "ARCH 4223 Building Environmental Systems II",
+                "ARCH 5226 Architectural Engineering Comprehensive Design Studio"
+              ],
+              "electives": [
+                "CE 3113 Transportation Engineering",
+                "CE 3223 Geotechnical Engineering",
+                "ENGR 3030 Co-op Industrial Practice"
+              ],
+              "total_units": 140,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Oklahoma State Department of Vocational Technical Education. Options in Structures. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.Ch.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "CHEM 1314 Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grades of 'C' or better are required in all Chemical Engineering major courses and their prerequisites.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "CHEM 1314 Chemistry I (LN)",
+                "CHEM 1515 Chemistry II (LN)",
+                "CHEM 3013 Organic Chemistry I",
+                "PHYS 2014 University Physics I (LN)",
+                "PHYS 2114 University Physics II (LN)",
+                "CHE 2013 Chemical Engineering Principles I",
+                "CHE 2023 Chemical Engineering Principles II",
+                "CHE 3113 Thermodynamics",
+                "CHE 3213 Fluid Mechanics",
+                "CHE 3313 Heat Transfer",
+                "CHE 3413 Mass Transfer",
+                "CHE 4513 Chemical Reactor Design",
+                "CHE 4613 Process Design"
+              ],
+              "electives": [
+                "CHE 4103 Biochemical Engineering",
+                "CHE 4203 Polymer Engineering",
+                "CHE 4713 Process Control"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Engineering Accreditation Commission of ABET. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Chemical Engineering graduates: $72,362 (Bachelor's Degree) [cite: 11 (previous search)]"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "PHYS 2014 University Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grades of 'C' or better are required in all Civil Engineering major courses and their prerequisites.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "PHYS 2014 University Physics I (LN)",
+                "CHEM 1314 Chemistry I (LN)",
+                "ENGR 1113 Introduction to Engineering",
+                "ENGR 2013 Statics",
+                "ENGR 2023 Dynamics",
+                "ENGR 2143 Engineering Materials",
+                "CE 2113 Engineering Mechanics: Statics and Dynamics",
+                "CE 2133 Civil Engineering Materials",
+                "CE 3113 Transportation Engineering",
+                "CE 3223 Geotechnical Engineering",
+                "CE 3333 Structural Analysis",
+                "CE 3443 Environmental Engineering",
+                "CE 4513 Civil Engineering Design"
+              ],
+              "electives": [
+                "CE 4113 Advanced Steel Design",
+                "CE 4223 Foundation Engineering",
+                "CE 4333 Water Resources Engineering"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Engineering Accreditation Commission of ABET. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "PHYS 2014 University Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grades of 'C' or better are required in all Electrical Engineering major courses and their prerequisites.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "PHYS 2014 University Physics I (LN)",
+                "PHYS 2114 University Physics II (LN)",
+                "CHEM 1314 Chemistry I (LN)",
+                "ENGR 1113 Introduction to Engineering",
+                "ECEN 2103 Electric Circuits I",
+                "ECEN 2203 Digital Logic Design",
+                "ECEN 2613 Electric Circuits II",
+                "ECEN 3213 Signals and Systems",
+                "ECEN 3413 Electronics I",
+                "ECEN 3513 Electromagnetics",
+                "ECEN 4013 Control Systems",
+                "ECEN 4413 Electrical Engineering Design"
+              ],
+              "electives": [
+                "ECEN 4213 Power Systems",
+                "ECEN 4313 Communication Systems",
+                "ECEN 4513 Microelectronics"
+              ],
+              "total_units": 128,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Engineering Accreditation Commission of ABET. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Electrical, Electronics and Communications Engineering graduates: $71,716 (Bachelor's Degree) [cite: 11 (previous search)]"
+          },
+          {
+            "name": "Industrial Engineering and Management",
+            "degree_type": "B.S.I.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2144 Calculus I",
+              "STAT 2013 Elementary Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Grades of 'C' or better are required in all Industrial Engineering and Management major courses and their prerequisites.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2144 Calculus I (Q)",
+                "MATH 2153 Calculus II (Q)",
+                "MATH 2163 Calculus III (Q)",
+                "MATH 2233 Differential Equations",
+                "STAT 2013 Elementary Statistics (Q)",
+                "ENGR 1113 Introduction to Engineering",
+                "ENGR 2013 Statics",
+                "IEM 2503 Engineering Economic Analysis",
+                "IEM 3103 Work Design and Measurement",
+                "IEM 3303 Operations Research I",
+                "IEM 3503 Production Planning and Control",
+                "IEM 4013 Quality Control",
+                "IEM 4113 Facilities Design",
+                "IEM 4213 Simulation",
+                "IEM 4613 Senior Design"
+              ],
+              "electives": [
+                "IEM 4303 Supply Chain Management",
+                "IEM 4403 Project Management",
+                "IEM 4503 Human Factors Engineering"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Engineering Accreditation Commission of ABET. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Ferguson College of Agriculture",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Students have access to general university housing options, including traditional halls, suites, and apartments. Living Learning Programs may exist that cater to broader interests that agriculture students could join, but none are exclusively for Ferguson College of Agriculture students based on current search. 'Village A' was noted as an LLP for Agriculture in a previous search, which aligns with general LLP descriptions. [cite: 4 (from previous search, though not in current output)]",
+        "student_archetype": "Students from diverse backgrounds, including both traditional agricultural roots and urban settings, who are committed to making a difference in their communities and contributing to a thriving future for the world. They are encouraged to develop intercultural competence, leadership, communication, and critical thinking through hands-on learning.",
+        "strategic_fit_advice": "Ideal for students seeking a hands-on education in agriculture and natural resources, with opportunities for significant student involvement in over 60 organizations and competitive teams. Students should leverage general housing options to engage with campus life and their college's many resources.",
+        "majors": [
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.A.G.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANSI 1023 Introduction to the Animal Sciences",
+              "ANSI 1021 Introduction to the Animal Sciences Lab"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "A 2.00 GPA or higher in upper-division hours.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ANSI 1023 Introduction to the Animal Sciences",
+                "ANSI 1021 Introduction to the Animal Sciences Lab",
+                "ANSI 3123 Livestock Health and Diseases",
+                "ANSI 3423 Animal Nutrition",
+                "ANSI 3523 Animal Breeding and Genetics",
+                "ANSI 3623 Reproductive Physiology",
+                "BIOL 1113 Introductory Biology (N)",
+                "BIOL 1111 Introductory Biology Laboratory (LN)",
+                "CHEM 1314 Chemistry I (LN)",
+                "MATH 1513 College Algebra (Q)",
+                "STAT 2013 Elementary Statistics (Q)",
+                "AGEC 1113 Introduction to Agricultural Economics (S)"
+              ],
+              "electives": [
+                "ANSI 2112 Live Animal Evaluation",
+                "ANSI 2233 The Meat We Eat",
+                "ANSI 3723 Equine Science",
+                "ANSI 4883 Internship in Animal Science"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Richard Coffey (Department Head, Swine Nutrition)",
+              "Dr. David Lalman (Beef Cattle Nutrition and Management)",
+              "Dr. Gretchen Mafi (Meat Science, Quality)"
+            ],
+            "notes": "Minimum overall GPA of 2.00 for the degree and 2.00 GPA in upper-division hours. Options include General, Pre-Veterinary/Pre-Medical, Business/Pre-Law, and Production and Operations. The Pre-Veterinary Animal Science option allows students to complete a 3+1 program. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Animal Sciences graduates: $41,977 (Bachelor's Degree) [cite: 15 (previous search)]"
+          },
+          {
+            "name": "Agribusiness",
+            "degree_type": "B.S.A.G.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "AGEC 1113 Introduction to Agricultural Economics (S)",
+              "MATH 1513 College Algebra (Q)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AGEC 1113 Introduction to Agricultural Economics (S)",
+                "AGEC 3213 Quantitative Methods in Agricultural Economics",
+                "AGEC 3423 Agricultural Marketing",
+                "AGEC 3523 Agricultural Finance",
+                "AGEC 4503 Agricultural Policy",
+                "ACCT 2003 Survey of Accounting",
+                "ECON 2013 Introduction to Microeconomics (S)",
+                "ECON 2023 Introduction to Macroeconomics (S)",
+                "MATH 1513 College Algebra (Q)",
+                "STAT 2013 Elementary Statistics (Q)"
+              ],
+              "electives": [
+                "AGEC 4113 International Agricultural Trade (G)",
+                "AGEC 4313 Rural Development",
+                "AGEC 4613 Agricultural Price Analysis"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Dr. Rodney Jones (Agricultural Marketing, Risk Management)",
+              "Dr. Philip Kenkel (Agricultural Cooperatives, Rural Development)",
+              "Dr. Deepthi Kolady (Food Economics, Development Economics)"
+            ],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Accounting, Agricultural Communications, Community and Regional Analysis, Crop and Soil Sciences, Farm and Ranch Management, International, Natural Resources, and Pre-Law. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Agricultural Business and Management graduates: $43,523 (Bachelor's Degree) [cite: 15 (previous search)]"
+          },
+          {
+            "name": "Horticulture",
+            "degree_type": "B.S.A.G.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HORT 1013 Introduction to Horticulture"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HORT 1013 Introduction to Horticulture",
+                "HORT 2013 Woody Plant Materials",
+                "HORT 2023 Herbaceous Plant Materials",
+                "HORT 3013 Plant Propagation",
+                "HORT 3113 Landscape Design I",
+                "HORT 3213 Turfgrass Management",
+                "HORT 4013 Fruit and Vegetable Production",
+                "BIOL 1113 Introductory Biology (N)",
+                "CHEM 1314 Chemistry I (LN)"
+              ],
+              "electives": [
+                "HORT 3313 Greenhouse Management",
+                "HORT 4213 Nursery Production",
+                "HORT 4883 Horticulture Internship"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Options include Horticultural Business, Landscape Management, Public Horticulture, Turf Management, and Urban Horticulture. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Food Science",
+            "degree_type": "B.S.A.G.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FDSC 1113 Introduction to Food Science",
+              "CHEM 1314 Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "FDSC 1113 Introduction to Food Science",
+                "FDSC 2113 Food Processing",
+                "FDSC 3013 Food Chemistry",
+                "FDSC 3113 Food Microbiology",
+                "FDSC 3213 Food Analysis",
+                "FDSC 4013 Food Quality Assurance",
+                "FDSC 4113 Food Product Development",
+                "CHEM 1314 Chemistry I (LN)",
+                "CHEM 1515 Chemistry II (LN)",
+                "BIOL 1113 Introductory Biology (N)",
+                "MICR 2123 Introduction to Microbiology",
+                "MATH 1513 College Algebra (Q)"
+              ],
+              "electives": [
+                "FDSC 4213 Sensory Evaluation of Food",
+                "FDSC 4313 Meat Processing",
+                "FDSC 4883 Food Science Internship"
+              ],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Agricultural Communications",
+            "degree_type": "B.S.A.G.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "AGCM 1113 Introduction to Agricultural Communications"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AGCM 1113 Introduction to Agricultural Communications",
+                "AGCM 2113 Agricultural Media Writing",
+                "AGCM 2213 Visual Communications in Agriculture",
+                "AGCM 3113 Agricultural Publications Management",
+                "AGCM 3213 Agricultural Electronic Media",
+                "AGCM 4113 Agricultural Communications Campaigns",
+                "SPCH 2713 Introduction to Speech Communication (S)",
+                "ENGL 1113 Composition I",
+                "ENGL 1213 Composition II"
+              ],
+              "electives": [
+                "AGCM 3313 Agricultural Photography",
+                "AGCM 4413 Crisis Communication in Agriculture",
+                "AGCM 4883 Agricultural Communications Internship"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. Accredited by the Accrediting Council on Education in Journalism and Mass Communication. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Spears School of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year business students have a dedicated Living Learning Program (LLP) located on the 4th floor of Village E and the 3rd and 4th floors of Village C. This LLP offers private bedrooms, furnished lounge areas, kitchens, private study rooms with printer access, monthly professional development/networking events, and reserved First-Year Seminar classes.",
+        "student_archetype": "Ambitious, career-focused individuals eager to build professional networks and develop leadership skills. They value personal connections, academic excellence in business, and hands-on experiences to prepare for the business world.",
+        "strategic_fit_advice": "Students interested in a business career should consider the Spears LLP to immediately connect with peers, faculty, and professional development opportunities. A strong background in English and mathematics is beneficial for prospective students.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2003 Survey of Accounting (or ACCT 2103 Financial Accounting and ACCT 2203 Managerial Accounting)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "A grade of 'C' or better in ACCT 2003 (or ACCT 2103 and ACCT 2203) and a 2.50 GPA in the School of Accounting Major Requirements.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2003 Survey of Accounting",
+                "ACCT 3013 Federal Income Taxation",
+                "ACCT 3104 Intermediate Accounting I and Data Analysis",
+                "ACCT 3113 Intermediate Accounting II",
+                "ACCT 3203 Cost Accounting",
+                "ACCT 3603 Accounting Information Systems and Data Analytic Tools",
+                "ACCT 4133 Advanced Accounting",
+                "ACCT 4503 External Auditing",
+                "ACCT 4553 Ethics for Public Accountants",
+                "MSIS 2233 Business Analytics Fundamentals (Q)",
+                "MGMT 3013 Fundamentals of Management (S)",
+                "FIN 3113 Principles of Finance"
+              ],
+              "electives": [
+                "ACCT 4033 Advanced Federal Income Taxation",
+                "ACCT 4073 Tax Planning for Financial Professionals",
+                "ACCT 4901 Advanced Accounting Tools and Technologies"
+              ],
+              "total_units": 120,
+              "major_units": 44
+            },
+            "notable_professors": [
+              "Dr. Angela Wheeler Spencer (Financial Reporting, Auditing, Tax)",
+              "Dr. William C. Schwartz, Jr. (Pension Accounting, Financial Analysts)",
+              "Dr. Sandeep Nabar (Earnings Management, Corporate Governance)"
+            ],
+            "notes": "Minimum overall GPA of 2.50 for the degree. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Options include External Reporting, Control, and Auditing; Internal Reporting, Control and Auditing; and Accounting Systems options (Cyber Audit, Data Analytics). Median salary for Accounting graduates: $50,943 (Bachelor's Degree) [cite: 14 (previous search)]. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2003 Survey of Accounting",
+              "ECON 2013 Microeconomics",
+              "ECON 2023 Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2003 Survey of Accounting",
+                "ECON 2013 Introduction to Microeconomics (S)",
+                "ECON 2023 Introduction to Macroeconomics (S)",
+                "FIN 3113 Principles of Finance",
+                "FIN 4113 Financial Markets and Institutions",
+                "FIN 4333 Investment Analysis",
+                "FIN 4443 Advanced Corporate Finance",
+                "MSIS 2233 Business Analytics Fundamentals (Q)",
+                "MGMT 3013 Fundamentals of Management (S)"
+              ],
+              "electives": [
+                "FIN 3613 General Insurance",
+                "FIN 3713 Real Estate Investment and Finance",
+                "FIN 4023 Retirement and Employee Benefit Planning",
+                "FIN 4063 Applied Financial Studies"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Betty Simkins (Risk Management, Energy Finance)",
+              "Dr. Brian Roseman (Market Microstructure, Algorithmic Trading)",
+              "Dr. Jun Zhang (Corporate Finance, Financial Markets)"
+            ],
+            "notes": "Minimum overall GPA of 2.50 for the degree. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Options include General Option and Financial Planning. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Finance graduates: $50,295 (Bachelor's Degree) (Source: College Scorecard data from prior research, specific search for OSU Finance not performed in this step)."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2003 Survey of Accounting",
+              "ECON 2013 Microeconomics",
+              "ECON 2023 Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2003 Survey of Accounting",
+                "ECON 2013 Introduction to Microeconomics (S)",
+                "ECON 2023 Introduction to Macroeconomics (S)",
+                "MKTG 3323 Consumer and Market Behavior",
+                "MKTG 3653 Marketing Analytics",
+                "MKTG 4333 Marketing Research",
+                "MKTG 4683 Managerial Strategies in Marketing (or MKTG 4693 Marketing Strategy and Customer-Employee Interactions)",
+                "MSIS 2233 Business Analytics Fundamentals (Q)",
+                "MGMT 3013 Fundamentals of Management (S)"
+              ],
+              "electives": [
+                "MKTG 3413 Personal Selling",
+                "MKTG 3523 Digital Marketing",
+                "MKTG 4223 International Marketing (G)",
+                "MKTG 4883 Marketing Internship"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [
+              "Dr. Justin Lawrence (Marketing Strategy, B2B Marketing)",
+              "Dr. Goutam Chakraborty (Marketing Analytics, Data Science)",
+              "Dr. Steven Shepherd (Consumer Behavior, Public Policy)"
+            ],
+            "notes": "Minimum overall GPA of 2.50 for the degree. A 2.00 GPA is required in the Marketing Major Requirements. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Data source: Oklahoma State University Academic Catalog 2025-2026. Median salary for Marketing graduates: $43,981 (Bachelor's Degree) [cite: 11 (previous search)]"
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2003 Survey of Accounting",
+              "ECON 2013 Microeconomics",
+              "ECON 2023 Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2003 Survey of Accounting",
+                "ECON 2013 Introduction to Microeconomics (S)",
+                "ECON 2023 Introduction to Macroeconomics (S)",
+                "MGMT 3013 Fundamentals of Management (S)",
+                "MGMT 3313 Human Resource Management",
+                "MGMT 3433 Operations Management",
+                "MGMT 4133 Organizational Behavior",
+                "MGMT 4313 Strategic Management",
+                "MSIS 2233 Business Analytics Fundamentals (Q)"
+              ],
+              "electives": [
+                "MGMT 3123 Business Communication",
+                "MGMT 3223 Entrepreneurship",
+                "MGMT 4213 Leadership Development",
+                "MGMT 4513 International Management (G)"
+              ],
+              "total_units": 120,
+              "major_units": 27
+            },
+            "notable_professors": [
+              "Dr. Bryan Edwards (Department Head, Leadership, Teams)",
+              "Dr. Nikos Dimotakis (Organizational Justice, Motivation)",
+              "Dr. Jeanine Porck (Strategic Human Resource Management)"
+            ],
+            "notes": "Minimum overall GPA of 2.50 for the degree. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Options include Business Sustainability and Nonprofit Management, Human Resource Management, Management Consulting, Pre-Law, and Sports Management. Data source: Oklahoma State University Academic Catalog 2025-2026. Median earnings for Management graduates: $41,568 (Bachelor's Degree) (Source: College Scorecard data from prior research, specific search for OSU Management not performed in this step)."
+          },
+          {
+            "name": "General Business",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 2003 Survey of Accounting",
+              "ECON 2013 Microeconomics",
+              "ECON 2023 Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Students may not earn a General Business major in addition to another business major.",
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2003 Survey of Accounting",
+                "ECON 2013 Introduction to Microeconomics (S)",
+                "ECON 2023 Introduction to Macroeconomics (S)",
+                "FIN 3113 Principles of Finance",
+                "MGMT 3013 Fundamentals of Management (S)",
+                "MKTG 3213 Marketing",
+                "MSIS 2233 Business Analytics Fundamentals (Q)",
+                "MSIS 3223 Operations Management"
+              ],
+              "electives": [
+                "BADM 3111 Professional Development for Business Success",
+                "LSB 3213 Legal and Regulatory Environment of Business",
+                "Choose 11 hours of upper-division business electives"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.00 for the degree. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Offers a Pre-Law option. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Hospitality and Tourism Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HTM 1113 Introduction to Hospitality and Tourism Management"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "HTM 1113 Introduction to Hospitality and Tourism Management",
+                "HTM 2013 Lodging Operations",
+                "HTM 2313 Food and Beverage Operations",
+                "HTM 3013 Human Resources in Hospitality",
+                "HTM 3313 Marketing in Hospitality",
+                "HTM 4413 Hospitality Financial Management",
+                "HTM 4513 Hospitality Strategic Management",
+                "ACCT 2003 Survey of Accounting",
+                "MGMT 3013 Fundamentals of Management (S)"
+              ],
+              "electives": [
+                "HTM 3213 Event Management",
+                "HTM 3513 Tourism Planning and Development",
+                "HTM 4013 Restaurant Management",
+                "HTM 4213 International Hospitality Management (G)"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.50 for the degree. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Options include Beverage Management and Event Management. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 1113 Computer Science I (Q)",
+              "MSIS 2233 Business Analytics Fundamentals (Q)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard University Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CS 1113 Computer Science I (Q)",
+                "MSIS 2233 Business Analytics Fundamentals (Q)",
+                "MSIS 3103 Principles of Information Systems",
+                "MSIS 3223 Data and Information Management",
+                "MSIS 3333 Systems Analysis and Design",
+                "MSIS 4123 Cybersecurity Systems Management",
+                "MSIS 4333 Business Intelligence and Data Warehousing",
+                "ACCT 2003 Survey of Accounting",
+                "MGMT 3013 Fundamentals of Management (S)"
+              ],
+              "electives": [
+                "MSIS 4213 Project Management",
+                "MSIS 4413 Web and Mobile Application Development",
+                "MSIS 4513 Cloud Computing",
+                "MSIS 4613 AI for Business"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Minimum overall GPA of 2.50 for the degree. A minimum of 50% of business hours must be OSU delivered. 45 hours of upper-division courses are required. Options include Data Science and Information Assurance. Data source: Oklahoma State University Academic Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "School of Global Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "This school primarily offers a Master of Science degree in Global Studies and an undergraduate minor in International Studies. As such, there are no specific undergraduate residential halls directly tied to this school. Graduate students have apartment-style housing options like Williams, Prosser, West, Stevens, Demaree, and Brumley Neighborhoods.",
+        "student_archetype": "Students interested in addressing critical global challenges, understanding economic, political, environmental, social, and cultural contexts, and pursuing internationally-oriented careers in various sectors. Graduate students in this program are globally-minded and academically focused.",
+        "strategic_fit_advice": "Undergraduate students pursuing the International Studies minor should integrate with global-focused student organizations. Graduate students should explore the dedicated graduate and family housing options for a supportive and independent living environment.",
+        "majors": []
+      },
+      {
+        "name": "College of Professional Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "The College of Professional Studies primarily operates out of OSU-Tulsa, focusing on working adults, transfer students, and flexible online/hybrid programs. Therefore, there are no dedicated residential housing options for this college on the Stillwater campus. Students would typically utilize general undergraduate housing options if attending programs in Stillwater that fall under this umbrella or live off-campus.",
+        "student_archetype": "Career-focused individuals, often returning adults or transfer students, seeking to advance their careers or change fields through flexible bachelor's and master's degree programs. They value practical, industry-relevant coursework and support for balancing academics with work and other commitments.",
+        "strategic_fit_advice": "Prospective students, especially working adults or those with prior college credit, should investigate the online and hybrid program formats offered by OSU-Tulsa's College of Professional Studies for maximum flexibility. If attending programs in Stillwater, general housing options are available, but off-campus living might be more common for this demographic.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Computer Science Minor",
+      "Data Science Minor",
+      "Creative Writing Minor",
+      "Psychology Minor",
+      "Professional Writing Minor",
+      "Business Analytics Certificate",
+      "Cyber Systems Certificate",
+      "Pre-Medical Sciences Certificate",
+      "eSports, Undergraduate Certificate",
+      "Special Education, Undergraduate Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "OSU Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "This is the Early Opportunity Scholarship Deadline for freshmen. Oklahoma State University has rolling admissions, so this date is not a binding admission deadline but is important for maximum scholarship consideration for Fall 2026 entry. This deadline has passed for the current application cycle for Fall 2026."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "This is the Priority Scholarship Deadline for freshmen for Fall 2026 entry. Oklahoma State University has rolling admissions, meaning there is no strict application deadline for admission, but applying by this date is recommended for full scholarship consideration."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors College",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One required short answer essay for all Honors College applicants: 'Aliens land and ask for one thing to represent Earth. What do you give them and why?' (50 words). Two additional essays are required only for students who do not meet the assured criteria for the Honors College: 1. Discuss how your previous or current extracurricular involvements and challenges have equipped you to be a successful college student (250-300 words). 2. Think of a topic you find interesting but is unrelated to your studies. Recount a specific occasion when you wholeheartedly pursued knowledge for its own sake and reflect on its impact on your personal growth (250-300 words)."
+      },
+      {
+        "target_program": "All (General Admission & Scholarships)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "An essay response is not required if assured admission criteria are met, but it is recommended for maximum scholarship consideration and used for holistic and alternative admission decisions. Applicants can respond to one of several prompts using between 250-650 words, or submit an essay on any topic of their choice. Prompts include reflecting on challenging a belief, an unexpected act of gratitude, an accomplishment sparking personal growth, or a captivating topic."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Standardized Test Scores",
+        "Rigor of Secondary School Record",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Talent/Ability",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Oklahoma State University utilizes holistic and alternative admission programs, individually reviewing each application and considering applicants who may not meet standard academic requirements through a comprehensive review of various materials."
+    },
     "essay_prompts": [
       {
-        "prompt": "Oklahoma State's brand promise is 'You Can Always Find a Cowboy Who Will.' Describe a time when you went above and beyond to help someone.",
-        "word_limit": "250 words",
-        "type": "Service",
-        "required": false,
+        "exact_prompt_text": "If you were to teach a class on one topic, what would it be and why?",
+        "word_character_limit": "50 Words",
+        "type": "Personal / Intellectual Curiosity",
+        "required_optional": "Required for Honors College applicants",
         "brainstorming_questions": [
-          "Thinking about 'You Can Always Find a Cowboy Who Will,' can you recall a moment where you felt a strong sense of responsibility to step up for someone else, even when it wasn't your direct duty?",
-          "Beyond simply completing a task, describe a situation where your willingness to go the extra mile for someone revealed something important about your character or your understanding of community, much like the OSU spirit?",
-          "What was a time you witnessed or experienced the 'Cowboy spirit' firsthand, where someone's unexpected help made a significant difference, and how did that experience shape your own approach to helping others?",
-          "Consider a challenge you faced where helping someone else required you to tap into a resilience or determination you didn't know you had \u2013 what was that situation and how did you push through?",
-          "When you think about 'above and beyond,' what specific action or effort are you most proud of in helping someone, and what motivated you to take that extra step when others might have stopped?"
+          "What is a subject you know so well you could confidently explain it to others?",
+          "Beyond academic subjects, what unique skill, hobby, or niche interest do you possess deep knowledge about?",
+          "What topic sparks genuine enthusiasm in you when you discuss it?",
+          "How would teaching this topic reveal something important about your intellectual approach or personality?",
+          "What larger lesson or perspective could your chosen topic convey to a diverse group of students?"
+        ]
+      },
+      {
+        "exact_prompt_text": "Discuss how your previous or current extracurricular involvements (such as jobs, community service, leadership roles, or other after-school responsibilities) and the challenges you have faced in your life have equipped you to be a successful college student.",
+        "word_character_limit": "300 Words",
+        "type": "Community / Personal / Resilience / Experience",
+        "required_optional": "Required only if not meeting assured criteria for the Honors College",
+        "brainstorming_questions": [
+          "What was a significant challenge you overcame, and what specific steps did you take?",
+          "How did a particular extracurricular or responsibility force you to develop new skills or perspectives relevant to college success (e.g., time management, problem-solving, collaboration)?",
+          "Can you recall a specific instance where your involvement in an activity directly prepared you for a challenge you anticipate in college?",
+          "What personal qualities did you strengthen through these experiences, and how will those qualities manifest in a college setting?",
+          "How have your experiences with challenges or responsibilities shaped your understanding of commitment, perseverance, or adaptability?"
+        ]
+      },
+      {
+        "exact_prompt_text": "Recount a specific occasion when you wholeheartedly pursued knowledge for its own sake, without being motivated solely by grades or diplomas. Reflect on the importance and impact of this specific learning experience on your personal growth.",
+        "word_character_limit": "300 Words",
+        "type": "Personal / Intellectual Curiosity / Growth",
+        "required_optional": "Required only if not meeting assured criteria for the Honors College",
+        "brainstorming_questions": [
+          "When was a time you dove deep into learning something purely because you were fascinated by it, not for a class or external reward?",
+          "What unexpected insights or connections did you make during this self-driven exploration?",
+          "How did this experience change your perspective on learning itself or broaden your understanding of the world?",
+          "What impact did this particular pursuit of knowledge have on your personal development or your future interests?",
+          "How did you overcome any obstacles or frustrations encountered while pursuing this knowledge independently?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/oklahoma_state_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider starting Undeclared and utilize advising resources.",
+      "Research major-specific admission criteria and program competitiveness.",
+      "Align your choice with personal interests and long-term career goals.",
+      "Engage with academic advisors early and often."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize specific college/program reputation and specialized resources/facilities.",
+      "Evaluate career readiness and experiential learning opportunities within specific colleges.",
+      "Compare campus-specific offerings and locations for specialized fields."
+    ],
+    "alternate_major_strategy": "Oklahoma State University employs 'holistic and alternative admission programs' for general university admission, which considers factors beyond assured admission standards. While there isn't explicit advice on listing a 'backup major' on the initial application for competitive programs, some majors have specific admission criteria or secondary application processes that must be met even after initial university admission (e.g., Professional Pilot, Nursing, Acting, Music). Students can also initially enroll as 'undeclared' to explore options and potentially strengthen their academic record before applying to a selective major. Changing majors after admission is facilitated by academic and exploratory advisors."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 5416.5,
+        "total_coa": 28300.0,
+        "housing": 11780.0
+      },
+      "out_of_state": {
+        "tuition": 20937.0,
+        "total_coa": 43820.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 9379.0,
+    "average_merit_aid": 6239.0,
+    "percent_receiving_aid": 52.0,
+    "meets_full_need": false,
+    "scholarships": [
+      {
+        "name": "Oklahoma State Regents Academic Scholars Program (OAS)",
+        "type": "Merit",
+        "amount": "Up to $123,100 (Automatic Qualifier, in-state); Up to $93,600 (Institutional Nominee, out-of-state)",
+        "deadline": "Automatic qualifiers apply online; Institutional nomination varies, contact financial aid office. May 15 for OSRHE application if offered prior to May 1.",
+        "benefits": "Five-year full tuition waiver and four-year cash award funded by the state.",
+        "application_method": "Automatic consideration for qualifying students (National Merit, 99.5 percentile ACT/SAT); institutional nomination also available."
+      },
+      {
+        "name": "International Achievement Freshman Scholarship",
+        "type": "Merit",
+        "amount": "Varies from $5,000 to $15,000 per academic year.",
+        "deadline": "Early Opportunity: Nov 1; Main Scholarship Consideration: Feb 1.",
+        "benefits": "Partial tuition waiver.",
+        "application_method": "Automatic consideration upon submission of a completed application for admission."
+      },
+      {
+        "name": "University Assured Merit Scholarship (In-State/Out-of-State)",
+        "type": "Merit",
+        "amount": "Varies based on academic accomplishments (GPA, test scores).",
+        "deadline": "Automatic consideration with admission application (priority deadline Feb 1).",
+        "benefits": "Cash award or partial tuition waiver.",
+        "application_method": "Automatic consideration upon application for admission."
+      },
+      {
+        "name": "Departmental Scholarships (e.g., College of Arts and Sciences)",
+        "type": "Merit",
+        "amount": "Varies by academic college and department.",
+        "deadline": "Feb 1 (for College of Arts and Sciences continuing students, application opens Nov 1).",
+        "benefits": "Varies; often recognizes academic achievements, leadership, and involvement.",
+        "application_method": "Based on major indicated on admission application (for incoming students); separate application required for continuing students (e.g., College of Arts and Sciences)."
+      },
+      {
+        "name": "President's Distinguished Scholarship / President's Leadership Council Scholarship",
+        "type": "Merit",
+        "amount": "Four-year cash award (value not specified, highly competitive).",
+        "deadline": "Automatic consideration (requires strong record on admission application).",
+        "benefits": "Prestigious cash award. President's Leadership Council Scholarship recipients serve on the President's Leadership Council.",
+        "application_method": "Automatic consideration; highly competitive selection based on leadership and community service demonstrated in the application for admission."
+      },
+      {
+        "name": "Honors College Scholarship (Need-Based for Members)",
+        "type": "Need",
+        "amount": "Varies based on financial need.",
+        "deadline": "Automatic consideration for active Honors students.",
+        "benefits": "Financial aid to support academic endeavors.",
+        "application_method": "Automatic consideration for active Honors College students based on FAFSA."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Oklahoma State University (OSU) awards credit for Advanced Placement (AP) exams with scores of 3, 4, or 5. Specific course equivalencies are assigned based on the subject and score, covering a wide range of general education and elective requirements. Official score reports are required directly from the College Board.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "Oklahoma State University (OSU) awards credit for International Baccalaureate (IB) Higher Level (HL) exams with scores of 4, 5, 6, or 7. Some Standard Level (SL) exams may also receive credit with scores typically ranging from 4 to 7, often with specific minimum score requirements (e.g., 5 or above) and fewer equivalencies than HL. Specific course equivalencies are detailed on the university's admissions website. Official score reports are required.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Oklahoma State University (OSU) accepts transfer credit from regionally accredited institutions. They provide an extensive online 'Course Equivalency Guide' (CEG) tool to assist prospective students in determining how specific courses from other institutions will transfer. While credit generally transfers, its applicability towards specific degree requirements or major courses is subject to departmental review and alignment with OSU's curriculum. Official transcripts from all previous institutions are required."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong Academic Record with Challenging Coursework:",
+      "Meaningful Extracurricular Involvement and Leadership:",
+      "Compelling Personal Statements/Essays:"
+    ],
+    "common_activities": [
+      "Leadership in school clubs or organizations",
+      "Community service/volunteering",
+      "Varsity athletics or intramural sports",
+      "Academic clubs or competitions",
+      "Music, arts, or performing arts involvement",
+      "Part-time jobs or internships"
+    ],
+    "essay_tips": [
+      "Show, Don't Tell with Concrete Examples",
+      "Be Authentic and Reflect on Personal Growth",
+      "Demonstrate Originality and Creativity (Especially for shorter prompts)",
+      "Connect Your Experiences to Your Preparedness for College"
+    ],
+    "red_flags": [
+      "Significantly lower GPA or test scores than typical admitted students",
+      "Generic, inauthentic, or poorly written essays",
+      "Incomplete application or missing required documents",
+      "Lack of demonstrated depth or impact in extracurriculars/leadership, or not submitting optional components"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Oklahoma State University is a moderately selective institution with an acceptance rate around 71-75%, offering both assured admission criteria and a holistic review process."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "OSU prioritizes affordability, awarding over $320 million in scholarships, grants, and financial aid annually, resulting in more than 50% of students graduating without student loan debt."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "As a Carnegie top-tier research and comprehensive land-grant university, OSU offers extensive research opportunities, including a Freshman Research Scholars program, and a wide array of degree programs across various colleges."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "OSU fosters a friendly, inclusive, and supportive 'Cowboy family' environment, emphasized by personal attention to students and a strong college town atmosphere."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 57410,
+    "employment_rate_2yr": 95.0,
+    "top_employers": [
+      "Amazon",
+      "Williams",
+      "Phillips 66",
+      "ONEOK",
+      "MidFirst Bank",
+      "ConocoPhillips",
+      "PricewaterhouseCoopers, LLP",
+      "Dell, Inc.",
+      "Intel",
+      "Paycom"
+    ],
+    "grad_school_rate": 22.9,
+    "loan_default_rate": 7.0,
+    "median_earnings_6yr": 42100
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.8,
+    "graduation_rate_4_year": 52.8,
+    "graduation_rate_6_year": 66.0
+  }
 }

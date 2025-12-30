@@ -993,13 +993,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One optional personal essay as part of the Common Application; recommended for all students to complete to share more about themselves beyond grades and test scores"
       },
       {
         "target_program": "Music, Dance, Art and Architecture, Film and Media Arts",
         "requirement_type": "Audition/Portfolio/Interview",
-        "deadline": null,
+        "deadline": "",
         "details": "Some majors in the Boyer College of Music and Dance, the Tyler School of Art and Architecture, and the School of Theater, Film and Media Arts may require additional supporting information such as an audition, interview or portfolio. Applicants should check specific program requirements."
       }
     ],
@@ -1180,11 +1180,31 @@
       "Not including all relevant extracurriculars or personal details that shape who you are."
     ],
     "insights": [
-      "Temple University has a relatively high acceptance rate, around 83%.",
-      "Applying Early Action (EA) can lead to quicker decisions and potentially higher chances of acceptance or scholarship consideration.",
-      "Merit scholarship notifications and financial aid breakdowns may come at a different time than the initial acceptance letter.",
-      "The university accepts the Common Application.",
-      "The admissions process can sometimes take several weeks for essays and full applications to be reviewed."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Temple University has a relatively high acceptance rate, around 83%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action (EA) can lead to quicker decisions and potentially higher chances of acceptance or scholarship consideration."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Merit scholarship notifications and financial aid breakdowns may come at a different time than the initial acceptance letter."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university accepts the Common Application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The admissions process can sometimes take several weeks for essays and full applications to be reviewed."
+      }
     ]
   },
   "outcomes": {

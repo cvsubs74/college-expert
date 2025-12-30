@@ -1,138 +1,146 @@
 {
-  "university_profile": {
-    "_id": "university_of_cincinnati",
-    "metadata": {
-      "official_name": "University of Cincinnati",
-      "location": {
-        "city": "Cincinnati",
-        "state": "OH",
-        "type": "Public"
+  "_id": "university_of_cincinnati",
+  "metadata": {
+    "official_name": "University of Cincinnati",
+    "location": {
+      "city": "Cincinnati",
+      "state": "Ohio",
+      "type": "Public"
+    },
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Cincinnati is a prominent public research university in Ohio, established in 1819, and is recognized as the state's second-largest university by enrollment. It is particularly known for its extensive cooperative education program, the world's third-largest, which provides students with substantial real-world experience through internships with major corporations.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "UC seeks diverse, high-achieving students who demonstrate academic promise, leadership potential, and a commitment to civic engagement. Emphasizes holistic review and a strong interest in experiential learning.",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Cincinnati has a 'somewhat selective' admissions process with an acceptance rate typically between 85% and 88%. While test scores are optional, a holistic review considers academic performance (GPA, course rigor), a personal statement, and extracurricular involvement.",
+        "implication": "Applicants should prioritize a strong academic record, including challenging coursework, and craft a compelling personal statement that reflects their unique experiences and aligns with UC's values. Even with optional test scores, demonstrating meaningful extracurricular engagement is crucial for standing out in this moderately competitive environment."
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
-    },
-    "strategic_profile": {
-      "executive_summary": "The University of Cincinnati is a premier public research university recognized for pioneering the cooperative education model and maintaining R1-level research activity. With over 53,000 students, it serves as a major economic and innovation engine for the Midwest.",
-      "market_position": "Public Research Powerhouse",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 152,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "While the overall acceptance rate remains relatively high at approximately 85-88%, total applicant volume has surged over 45% since 2018.",
-          "implication": "Admission to flagship specialized colleges like DAAP and Engineering is significantly more competitive than the university-wide average."
-        },
-        {
-          "category": "Career Outcomes",
-          "insight": "As the global founder of co-op, UC students collectively earned over $94 million in paid professional roles during the 2024-25 academic year.",
-          "implication": "Students prioritizing immediate workforce integration and debt reduction through earnings should view UC as a top-tier ROI choice."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "UC offers a high-energy urban experience with a vibrant Greek life, 'Top Party School' recognition from Niche (#27), and high-stakes athletic spirit following its entry into the Big 12 Conference.",
-        "transportation_impact": "The university operates a robust multi-modal system, including free Bearcat Shuttles, 'NightRide' safe-travel vans, and universal free Metro bus passes.",
-        "research_impact": "As an R1 institution, UC integrates research with industry via the 1819 Innovation Hub and over 1,700 corporate partners, recently achieving a No. 4 national ranking for cooperative education in 2026."
+      {
+        "category": "Value",
+        "insight": "UC boasts a nationally top-ranked (often #4 or #3) cooperative education (co-op) program, providing students with extensive paid, real-world work experience, significant career connections, and substantial earnings that help offset tuition costs. Students on average earn over $11,000 per semester, contributing to lower debt and high post-graduation employment rates (98%).",
+        "implication": "Prospective students interested in career readiness and minimizing educational debt should emphasize any prior work, internship, or project-based experiences in their application. Clearly articulating an interest in and how they plan to leverage UC's co-op program for their professional development will be a strong advantage."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of Cincinnati offers a vibrant urban campus experience, featuring a beautiful, modern, and walkable campus design recognized for fostering intellectual curiosity and student collaboration. Its deep integration with the city provides abundant professional, artistic, and social opportunities.",
+        "implication": "Applicants should highlight experiences that demonstrate their ability to thrive in a dynamic urban setting and their capacity for community engagement or collaborative projects. Expressing enthusiasm for leveraging the rich resources of Cincinnati and contributing to a bustling campus environment would be beneficial."
+      },
+      {
+        "category": "Academic",
+        "insight": "Beyond its renowned co-op, UC is identified as a research powerhouse offering a broad range of majors and courses, allowing for significant academic flexibility.",
+        "implication": "Applicants with diverse academic interests or a strong inclination towards research should highlight these aspirations. Demonstrating intellectual curiosity and an ability to explore various fields could resonate with the admissions committee."
       }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Cincinnati offers a vibrant campus life with a diverse student body, numerous social activities, clubs, and sporting events. Students describe the environment as supportive, with professors dedicated to student growth. The campus itself is noted for its beauty, combining modern and historic architecture to create a pleasant atmosphere for both academic and social pursuits.",
+      "transportation_impact": "The University of Cincinnati's campus is considered walkable and accessible, integrated into an urban environment. The city location provides access to various attractions like museums, the zoo, and shopping areas, many of which are a short bus ride away from campus. While feeling like an urban city, the campus also maintains green spaces.",
+      "research_impact": "The University of Cincinnati provides strong undergraduate research opportunities across all majors and experience levels. These opportunities include faculty-led research, co-op research with industry partners, independent projects with mentor guidance, and intensive summer programs like the Summer Undergraduate Research Fellowships (SURF) in Biomedical Science and Neuroscience. The College of Engineering and Applied Science (CEAS) highlights innovation and offers research co-op opportunities and fellowships. Additionally, the REALIZE-2050 program offers an interdisciplinary research experience for undergraduates focused on decarbonization technologies, allowing students to work with faculty mentors and gain exposure to industrial decarbonization efforts."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 87.7,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Cincinnati is test-optional for undergraduate applicants. Students can choose whether or not to submit their SAT or ACT scores, and choosing not to submit scores will not disadvantage an applicant. All academic programs consider students for admission with or without a standardized test score. Applicants who apply test-optional by the Early Action Admission Deadline (November 1) will still receive full consideration for scholarships. International students are required to provide proof of English ability. If students choose to submit test scores, they must be sent on an official score report from the ACT or College Board; self-reported scores are not considered for admission if the student indicates they do not want their scores considered.",
+      "admits_class_size": 29077,
+      "transfer_acceptance_rate": 47.9,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 68.9,
+      "international_applications": null,
+      "international_admits": null
     },
-    "admissions_current": {
-      "current_status": {
-        "overall_acceptance_rate": 85.3,
-        "in_state_acceptance_rate": null,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": 68.9,
-        "transfer_acceptance_rate": 47.9,
-        "admits_class_size": 6584,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
-          {
-            "plan_type": "EA",
-            "applications": null,
-            "admits": null,
-            "acceptance_rate": null,
-            "class_fill_percentage": null
-          }
-        ]
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 85.29,
+        "yield_rate": null,
+        "notes": "Data for Class of 2029 (Fall 2025 enrollment) is still being finalized. The acceptance rate of 85.29% for 2025 has been reported.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 34285,
+        "admits_total": 29242,
+        "enrolled_total": 6584,
+        "acceptance_rate_overall": 85.29,
+        "yield_rate": 22.5,
+        "notes": "Data for 2024-2025 admission cycle (Fall 2024 enrollment).",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 33165,
+        "admits_total": 29077,
+        "enrolled_total": 6922,
+        "acceptance_rate_overall": 87.67,
+        "yield_rate": 23.8,
+        "notes": "Data for 2023-2024 admission cycle (Fall 2023 enrollment).",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 29024,
+        "admits_total": 25023,
+        "enrolled_total": 6369,
+        "acceptance_rate_overall": 86.21,
+        "yield_rate": 25.45,
+        "notes": "Data for 2022-2023 admission cycle (Fall 2022 enrollment).",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 25775,
+        "admits_total": 21865,
+        "enrolled_total": 5347,
+        "acceptance_rate_overall": 84.89,
+        "yield_rate": 24.45,
+        "notes": "Data for Fall 2021 enrollment.",
+        "waitlist_stats": null
       }
-    },
-    "admissions_trends": {
-      "longitudinal_trends": [
-        {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": null,
-          "admits_total": null,
-          "enrolled_total": 53682,
-          "acceptance_rate_overall": null,
-          "yield_rate": null,
-          "notes": "Fall 2025 official headcount reached record 53,682 students; freshman class cited as second-largest in history."
-        },
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 34285,
-          "admits_total": 29242,
-          "enrolled_total": 6583,
-          "acceptance_rate_overall": 85.3,
-          "yield_rate": 22.5,
-          "notes": "Waitlist data not publicly disclosed; University typically reports no waitlist policy."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 33165,
-          "admits_total": 29077,
-          "enrolled_total": 6922,
-          "acceptance_rate_overall": 87.7,
-          "yield_rate": 23.8
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 29024,
-          "admits_total": 25023,
-          "enrolled_total": 6369,
-          "acceptance_rate_overall": 86.2,
-          "yield_rate": 25.5
-        },
-        {
-          "year": 2021,
-          "cycle_name": "Class of 2025",
-          "applications_total": 25949,
-          "admits_total": 22039,
-          "enrolled_total": 5400,
-          "acceptance_rate_overall": 84.9,
-          "yield_rate": 24.5
-        }
-      ]
-    },
-    "admitted_profile": {
+    ],
+    "admitted_student_profile": {
       "gpa": {
         "weighted_middle_50": null,
-        "unweighted_middle_50": "3.30-3.70",
-        "average_weighted": 3.74,
-        "percentile_25": "3.30",
-        "percentile_75": "3.70",
-        "notes": "Average high school GPA of enrolled first-year students is 3.74; Honors program admits typically have a 3.8+ weighted GPA."
+        "unweighted_middle_50": "3.3-3.7",
+        "average_weighted": 3.7,
+        "percentile_25": "3.3",
+        "percentile_75": "3.7",
+        "notes": "The University of Cincinnati reports an average weighted GPA of 3.7 for undergraduate admissions, but percentile data for the 25th and 75th percentiles of weighted GPA is not disclosed. The average unweighted GPA for admitted students is typically around 3.5. The institution utilizes a holistic admissions approach, considering factors beyond just GPA, such as course rigor (e.g., honors, AP, IB courses), extracurricular activities, letters of recommendation, and application essays."
       },
       "testing": {
-        "sat_composite_middle_50": "1120-1350",
-        "sat_reading_middle_50": "580-670",
-        "sat_math_middle_50": "570-690",
+        "sat_composite_middle_50": "1160-1350",
+        "sat_reading_middle_50": "570-670",
+        "sat_math_middle_50": "590-700",
         "act_composite_middle_50": "24-29",
-        "submission_rate": 36.0,
-        "policy_note": "Test-optional for most programs. Approximately 11% submit SAT scores while 36% submit ACT scores."
+        "submission_rate": 48.0,
+        "policy_note": "University of Cincinnati is test-optional for Fall 2026 and beyond. Choosing not to send scores will not disadvantage applicants. The university does not superscore SAT or ACT results. Official scores are required if submitted; self-reported scores are not considered for admission."
       },
       "demographics": {
         "first_gen_percentage": 22.3,
-        "international_percentage": 8.9,
+        "legacy_percentage": null,
         "geographic_breakdown": [
           {
             "region": "Ohio",
             "percentage": 70.5
           },
           {
-            "region": "Other US States",
+            "region": "Out-of-State (Domestic)",
             "percentage": 20.6
           },
           {
@@ -142,402 +150,1885 @@
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 15566,
-            "admits": 13189,
-            "acceptance_rate": 84.7,
-            "note": "Based on 2024 IPEDS/CDS reporting."
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Specific breakdown of applicants and admits by gender for the University of Cincinnati's most recent Common Data Set (Section C1) was not publicly available through direct web searches on the university's official website or related institutional research pages. The university's 'Facts & Dashboards' page indicates that older Common Data Sets are available upon request."
           },
           "women": {
-            "applicants": 18713,
-            "admits": 16049,
-            "acceptance_rate": 85.8,
-            "note": "Based on 2024 IPEDS/CDS reporting."
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Specific breakdown of applicants and admits by gender for the University of Cincinnati's most recent Common Data Set (Section C1) was not publicly available through direct web searches on the university's official website or related institutional research pages. The university's 'Facts & Dashboards' page indicates that older Common Data Sets are available upon request."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 66.3,
-          "black_african_american": 8.7,
-          "hispanic_latino": 4.6,
-          "asian": 5.1,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 4.0,
-          "unknown": 2.1,
-          "non_resident_alien": 8.9
+          "white": 64.76,
+          "black_african_american": 8.3,
+          "hispanic_latino": 4.72,
+          "asian": 5.53,
+          "native_american_alaskan": 0.11,
+          "pacific_islander": 0.08,
+          "two_or_more_races": 4.07,
+          "unknown": 1.29,
+          "non_resident_alien": 11.14
         }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Engineering and Applied Science (CEAS)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 40.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong emphasis on math and science readiness; applicants should highlight interest in mandatory co-op.",
-          "student_archetype": "Industrious innovators and problem-solvers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 4.1,
-              "curriculum": {
-                "core_courses": [
-                  "CS 1021C Computer Science I",
-                  "CS 2021C Computer Science II",
-                  "CS 2011 Discrete Structures",
-                  "MATH 1061 Calculus I",
-                  "MATH 1062 Calculus II"
-                ],
-                "electives": [
-                  "CS 5152 Artificial Intelligence",
-                  "CS 5137 Machine Learning"
-                ],
-                "total_units": 128
-              },
-              "notable_professors": [
-                "Dr. Raj Bhatnagar",
-                "Dr. Anca Ralescu",
-                "Dr. Gowtham Atluri"
-              ]
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.M.E.",
-              "is_impacted": true,
-              "average_gpa_admitted": 4.0,
-              "curriculum": {
-                "core_courses": [
-                  "MECH 1072 Engineering Foundations",
-                  "MECH 2020 Statics",
-                  "MECH 2021 Strength of Materials",
-                  "MECH 3010 Thermodynamics I"
-                ],
-                "electives": [
-                  "MECH 5131 Automotive Engineering",
-                  "MECH 5135 Robotics"
-                ],
-                "total_units": 126
-              },
-              "notable_professors": [
-                "Dr. Marc Cahay",
-                "Dr. Tamara Lorenz"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "College of Design, Architecture, Art, and Planning (DAAP)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 25.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive; requires strong academic standing (3.5+ GPA). Portfolio optional for freshman.",
-          "student_archetype": "Visionary creators and design thinkers",
-          "majors": [
-            {
-              "name": "Architecture",
-              "degree_type": "B.S. Arch",
-              "is_impacted": true,
-              "acceptance_rate": 15.0,
-              "average_gpa_admitted": 3.8,
-              "curriculum": {
-                "core_courses": [
-                  "ARCH 1001 Design Studio I",
-                  "ARCH 2001 Design Studio III",
-                  "ARCH 3004 History of Architecture",
-                  "ARCH 4001 Design Studio VII"
-                ],
-                "electives": [
-                  "ARCH 5161 Sustainable Design",
-                  "ARCH 5114 Digital Fabrication"
-                ],
-                "total_units": 120
-              },
-              "notable_professors": [
-                "Pravin Bhiwapurkar",
-                "Mara Marcu",
-                "Timothy Jachna"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Carl H. Lindner College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Focus on leadership and professional development (PACE curriculum).",
-          "student_archetype": "Ambitious future executives and entrepreneurs",
-          "majors": [
-            {
-              "name": "Marketing",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "MKTG 3000 Principles",
-                  "MKTG 3080 Consumer Behavior",
-                  "ACCT 2081 Financial Accounting"
-                ],
-                "electives": [
-                  "MKTG 3090 Professional Selling",
-                  "MKTG 4015 Digital Marketing"
-                ],
-                "total_units": 120
-              },
-              "notable_professors": [
-                "Dr. Raj Mehta",
-                "Dr. Frank Kardes",
-                "Professor Drew Boyd"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 85.0,
-          "is_restricted_or_capped": false,
-          "student_archetype": "Intellectually curious and multi-disciplinary",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 1001 Intro",
-                  "PSYC 2001 Research Methods",
-                  "PSYC 2002 Statistics"
-                ],
-                "total_units": 120
-              },
-              "notable_professors": [
-                "Dr. Paula Shear",
-                "Dr. Meera Rastogi",
-                "Dr. Cathy Stough"
-              ]
-            },
-            {
-              "name": "Biological Sciences",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 1081 Biology I",
-                  "BIOL 1082 Biology II",
-                  "CHEM 1040 Gen Chem"
-                ],
-                "total_units": 120
-              },
-              "notable_professors": [
-                "Dr. Laura Zanotti",
-                "Dr. Kenneth Petren",
-                "Dr. Stephen Matter"
-              ]
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Certificate",
-        "Cyber Operations Certificate",
-        "Blockchain Technology Certificate",
-        "Business Analytics Minor",
-        "International Human Rights Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action (Priority)",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Required for merit scholarship and honors program consideration."
-        },
-        {
-          "plan_type": "Regular Decision (Rolling)",
-          "date": "2025-03-01",
-          "is_binding": false,
-          "notes": "Applications reviewed on a space-available basis after this date."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essay",
-          "details": "One required personal statement answering: 'What motivated you to choose your first-choice academic program?'"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Personal Statement"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Recommendations (Optional)",
-          "Class Rank"
-        ],
-        "essay_importance": "Moderate",
-        "demonstrated_interest": "Not Considered",
-        "specific_differentiators": "Focuses on 'fit' for the specific major."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Choose Information Technology (CECH) as an entry point if CS is too competitive.",
-        "Apply to Urban Planning within DAAP as a 'safer' entry point.",
-        "Target the 'Center for Exploratory Studies' if GPA is below direct-admit thresholds.",
-        "Check the 'Closed Programs' list early; high-demand majors stop accepting apps early.",
-        "Consider the 'Early IT' program from partner high schools for guaranteed pathways."
-      ],
-      "college_ranking_tactics": [
-        "Rank regional campuses (Blue Ash/Clermont) if GPA is lower; they offer a 100% funnel to Clifton.",
-        "Prioritize colleges with mandatory co-op programs (CEAS and DAAP) for immediate ROI.",
-        "Select regional campuses for first 60 credits for lower tuition and smaller classes.",
-        "Regional campus students can often live in Clifton dorms and use the shuttle to save money."
-      ],
-      "alternate_major_strategy": "List 'Exploratory' or 'Liberal Arts' as alternate to ensure system admission, then transfer internally after one year."
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 13976,
-          "housing": 13564,
-          "total_coa": 35764
-        },
-        "out_of_state": {
-          "tuition": 29310,
-          "supplemental_tuition": 15334,
-          "total_coa": 51098
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 6570,
-      "average_merit_aid": 5752,
-      "percent_receiving_aid": 63.0,
-      "scholarships": [
-        {
-          "name": "Cincinnatus Presidential Scholarship",
-          "type": "Merit",
-          "amount": "$120,000 over 4 years",
-          "deadline": "2025-11-01",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Darwin T. Turner Scholarship",
-          "type": "Merit/Diversity",
-          "amount": "In-state tuition plus stipend",
-          "application_method": "Invitation Only"
-        },
-        {
-          "name": "NEXT Innovation Scholars Program",
-          "type": "Merit/Innovation",
-          "amount": "Full tuition and supplemental expenses",
-          "application_method": "Separate Application (by invitation)"
-        },
-        {
-          "name": "CEAS - FIRST Robotics Scholarship",
-          "type": "Departmental",
-          "amount": "$2,000 - $5,000",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Cincinnatus Century and University Scholarships",
-          "type": "Merit",
-          "amount": "$6,000 to $24,000 over 4 years",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams",
-        "usage": "Can satisfy Gen Ed and major prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "Scores of 5+ on HL and SL grant credit",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "Transfer Equivalency Database"
-        ],
-        "restrictions": "30 semester hour residency requirement at UC"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Competitive GPA (3.7+) and rigorous transcript",
-        "Early application by Dec 1st",
-        "Clear interest in experiential learning/co-op"
-      ],
-      "essay_tips": [
-        "Address the 'Why this Major' prompt with specific UC resources like co-op",
-        "For Honors, focus on being an 'innovator' or 'explorer'"
-      ],
-      "red_flags": [
-        "Missing Dec 1st deadline",
-        "Generic 'Why UC' responses lacking co-op mentions"
-      ],
-      "insights": [
-        "Founder of cooperative education; co-ops are often mandatory",
-        "Nursing, DAAP, and Engineering are significantly more selective",
-        "Campus is distinctly urban; students mention the mix of modern architecture and safety awareness."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 54810,
-      "employment_rate_2yr": 91.0,
-      "grad_school_rate": 18.0,
-      "top_employers": [
-        "Procter & Gamble",
-        "Kroger",
-        "GE Aerospace",
-        "Cincinnati Children's",
-        "Deloitte"
-      ],
-      "loan_default_rate": 6.9,
-      "student_retention": {
-        "freshman_retention_rate": 86.0,
-        "graduation_rate_4_year": 39.0,
-        "graduation_rate_6_year": 72.0
       }
     }
   },
-  "_id": "university_of_cincinnati",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Allied Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "While no specific dedicated dorm is mentioned, students in the College of Allied Health Sciences are encouraged to join Learning Communities (LCs), which are often co-enrolled in first-year experience classes and foster academic and social connections. General university housing (traditional, suite, apartment) is available to all first-year students. [8, 14]",
+        "student_archetype": "Students dedicated to healthcare professions, focused on academic success, and eager to build a supportive network within their field. They are likely diligent, empathetic, and team-oriented. [8]",
+        "strategic_fit_advice": "Students interested in health-related fields who thrive in a supportive academic environment and seek to form study groups with peers in similar coursework should engage with available Learning Communities and general university housing. [8]",
+        "majors": [
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Associate to Bachelor's (Online)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Primarily an online degree completion program for students with an associate degree in an allied health or healthcare field. Minimum cumulative GPA of 2.5 across all college coursework for admission. Offers tracks like pre-athletic training, pre-occupational therapy, pre-physical therapy, pre-med, pre-physician assistant, pre-pharmacy, and undecided. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Advanced Medical Imaging Technology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Closed to first-year students for Fall 2026, indicating impacted status. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Medical Laboratory Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers standard, pre-med, and co-op options. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Nutrition & Dietetics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers on-campus and online program options. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Speech Language Hearing Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Most A&S students enroll in a Learning Community during their first year. These communities facilitate peer-to-peer learning and interaction within general university housing options (traditional, suite, apartment). [8, 14]",
+        "student_archetype": "Intellectually curious and adaptable students with diverse academic interests, open to interdisciplinary exploration. They appreciate a broad liberal arts education and seek opportunities for critical thinking and engagement with various subjects. [11]",
+        "strategic_fit_advice": "Students seeking a foundational liberal arts education, who are open to exploring various disciplines and benefiting from peer-to-peer learning within a Learning Community, would fit well. [8, 11]",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC1001 Introduction to Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC1001 Introduction to Psychology",
+                "PSYC2001C Methods and Statistics I",
+                "PSYC2002C/OLHR2004C Research Methods and Statistics II",
+                "PSYC2040 Interpersonal Relations",
+                "PSYC3029 Social Skills in Groups/Teams OR PSYC3065 Psychology of Workplace OR PSYC3095 Advanced Social Skills Electives",
+                "PSYC4050 Psychology Proficiency (Capstone)"
+              ],
+              "electives": [
+                "PSYC2020",
+                "PSYC2030",
+                "PSYC2070",
+                "PSYC3000-level electives"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Stacie Furst-Holloway (Organizational Psychology, Virtual Work)",
+              "Dr. Chung-Yiu Peter Chiu (Cognitive Neuroscience, Behavioral Economics)",
+              "Dr. Erinn Leary Green (Social Psychology, Program Evaluation)"
+            ],
+            "notes": "Admission to A&S is generally available for any off-campus student who was admissible directly from high school and has a cumulative 2.0 GPA and a 2.0 in the most recent institution. Students who were not admissible directly from high school must have at least a 2.0 GPA in all college-level courses, successfully completed one semester of English composition, and one semester of math with a C- or higher. Total credits for graduation is 120. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC1001 Introduction to Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC1001 Introduction to Psychology",
+                "PSYC2001C Methods and Statistics I",
+                "PSYC2002C/OLHR2004C Research Methods and Statistics II",
+                "Additional advanced science courses",
+                "Professional writing course",
+                "PSYC4050 Psychology Proficiency (Capstone)"
+              ],
+              "electives": [
+                "PSYC2000-level and above psychology coursework"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Tony Chemero (Philosophy and Cognitive Science, Ecological Psychology)",
+              "Dr. Tamara Lorenz (Psychology, Mechanical Engineering, Electrical Engineering - joint appointment, Embodied Interactive Systems Lab)",
+              "Dr. Megan Church-Nally (Industrial-Organizational Psychology, Service Learning)"
+            ],
+            "notes": "The BS degree requires more advanced science courses and a professional writing course compared to the BA. Total credits for graduation is 120. Admission to A&S is generally available for any off-campus student who was admissible directly from high school and has a cumulative 2.0 GPA and a 2.0 in the most recent institution. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Liberal Arts",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "General Education courses (Humanities, Social Sciences, Sciences)",
+                "Interdisciplinary coursework based on individualized degree plan"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Designed for students with multiple interests or pursuing interdisciplinary graduate study. Total credits for graduation is 120. Admission to A&S is generally available for any off-campus student who was admissible directly from high school and has a cumulative 2.0 GPA and a 2.0 in the most recent institution. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Biological Sciences. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BS in Biological Sciences. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Chemistry. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BS in Chemistry. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Communication. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "English BA offers tracks in Creative Writing, English Education, Literary & Cultural Studies, or Rhetoric & Professional Writing. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in History. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Mathematics with options for Statistics/Actuarial Sciences. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Political Science. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Sociology. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Environmental Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "General BA in Environmental Studies. Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Carl H. Lindner College of Business",
+        "admissions_model": "Direct Admit / Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year business students can opt for the Lindner College of Business Living-Learning Community (LLC) located in Morgens Hall. Morgens Hall typically offers apartment-style living options. This community aims to help students acclimate to college life within a business-focused environment. [2, 3, 6, 14]",
+        "student_archetype": "Driven, community-oriented students with a keen interest in business, leadership, and professional networking. They are eager to make connections, engage with professional speakers, and form friendships with peers sharing similar career aspirations. [2, 3, 14]",
+        "strategic_fit_advice": "Ideal for first-year students accepted into a Lindner College of Business major (including Honors) who want to build a strong foundation for their academic and professional journey alongside their peers. Emphasis on networking and engagement with business-specific programming. [2, 3, 14]",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "College-level math (starting towards Calculus or Business Calculus)",
+              "Precalculus (prior to enrolling)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "Calculus"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-BBA",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2081 Introduction to Financial Accounting",
+                "ACCT 2082 Introduction to Managerial Accounting",
+                "MGMT 3080 Management and Organizational Behavior",
+                "Business Foundations",
+                "Liberal Arts"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Charles H. Lindner (Dean of the College)",
+              "Dr. Suzanne Masterson (Management)",
+              "Dr. Thomas Dalziel (Entrepreneurship & Strategic Management)"
+            ],
+            "notes": "Offers specializations in Accounting, Business Economics, Entrepreneurship, Finance, Information Systems, Insurance and Risk Management, International Business, Marketing, Operations Management, Real Estate. Transfer applicants to Lindner College of Business should have at least a 2.5 GPA in all college-level coursework and have at least started their math classes moving towards college calculus or business calculus. Transition students (internal transfers) must have at least a 2.0 UC GPA and a 2.5 or higher cumulative GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students in Business Analytics possess strong quantitative, analytical thinking, and communication skills. The first two years build an academic base in business foundations, mathematics, analytics, and liberal arts. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Industrial Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Focuses on production management, supply chain and logistics, process engineering, six-sigma quality management, and project management. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Requires a rigorous curriculum in accounting and business functions. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "Calculus"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / Pre-BBA",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Calculus is a required prerequisite for the Finance BBA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students study with world-renowned marketing professors, researchers and industry professionals. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Information Systems",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Focuses on the intersection of information technology and business. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "International Business",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Broadens students' awareness and understanding of challenges faced by businesses in today's global economy. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Real Estate",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Operations Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Focuses on project and quality management, supply chain management, operations planning, and scheduling. Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College-Conservatory of Music",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Media Production students within CCM are required to enroll in Learning Communities. General university housing is available, with options ranging from traditional dorms to apartment-style residences. Siddall Hall is noted as being close to CCM. [7, 14]",
+        "student_archetype": "Talented and dedicated individuals passionate about music, theatre, and media production, committed to rigorous training and performance. They are often highly disciplined and collaborative in their artistic pursuits. [7]",
+        "strategic_fit_advice": "Students with a strong commitment to artistic excellence, a desire for an immersive conservatory experience, and who benefit from living in proximity to their academic and practice spaces. [7]",
+        "majors": [
+          {
+            "name": "Music Performance",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Audition required for admission. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Musical Theatre",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Audition required for admission. Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Design, Architecture, Art, and Planning",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year DAAP students have a Living-Learning Community (LLC) in Daniels Hall, which offers traditional-style residence hall living. This community is tailored to students with creative interests, providing a supportive environment for their studio-based learning. [2, 13, 14]",
+        "student_archetype": "Creative, passionate, and problem-solving individuals who thrive in a project-driven learning environment. They are collaborative and seek to connect with peers and faculty across different design, art, architecture, and planning disciplines. [2, 13, 33, 34]",
+        "strategic_fit_advice": "Students pursuing design, architecture, art, or planning majors who value hands-on learning, desire to build a strong network of creative peers, and wish to engage in workshops supporting their artistic and academic growth should consider this LLC. [2, 13]",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 years of high school math (including pre-calculus or calculus)",
+              "1 year of physics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Optional portfolio for transfer/transition applicants.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Closed to first-year students for Fall 2026, indicating impacted status. Four-year pre-professional degree with seven academic semesters and three co-op semesters. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Industrial Design",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Communication Design",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers print, motion, and interaction tracks. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Fashion Design",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Interior Design",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 years of high school math (including pre-calculus or calculus)",
+              "1 year of physics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Optional portfolio for transfer/transition applicants.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Closed to first-year students for Fall 2026, indicating impacted status. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Fine Arts",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students choose a three-course track in Art & Technology, Ceramics, Drawing & Painting, Photography, Printmaking, or Sculpture. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Games and Animation",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Urban Planning",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Education, Criminal Justice, and Human Services",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Nearly all students in CECH enroll in a Learning Community, which often includes co-enrollment in a first-year experience course (PRFS 1001). Housing will be within general university residence halls (traditional, suite, apartment). [8, 14]",
+        "student_archetype": "Socially conscious and service-oriented individuals committed to making a positive impact in education, criminal justice, or human services. They are often empathetic, community-minded, and eager to engage in real-world applications of their studies. [8]",
+        "strategic_fit_advice": "Students passionate about societal well-being and justice, who thrive in a structured learning environment that connects their coursework to practical applications and peer support, should strongly consider CECH. [8]",
+        "majors": [
+          {
+            "name": "Criminal Justice",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Early Childhood Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Selective admissions process for the cohort.",
+            "admissions_pathway": "Direct Admit / Selective Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Helene A. Harte (Education, Early Childhood Education, Family Engagement)"
+            ],
+            "notes": "Students must be admitted into the CECH cohort through a selective admissions process. Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Applied Science",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year students have the option to join the Engineering Living-Learning Community (ELLC) in Calhoun Hall or Turner Hall. These are traditional or suite-style dorms designed to foster collaborative learning and community engagement amongst engineering students. Calhoun Hall offers traditional dormitory settings, while Turner Hall provides suite-style rooms. [2, 5, 14]",
+        "student_archetype": "Ambitious and collaborative problem-solvers who are keen on hands-on learning, engineering design, and leadership development. They are proactive in forming study groups and engaging in co-curricular activities related to their field. [2, 5, 22]",
+        "strategic_fit_advice": "Students with a strong interest in engineering, a desire to live and learn with like-minded peers, and who are eager to participate in design challenges and leadership opportunities should apply. Commitment to first-year ENED courses and mandatory events is expected. [2, 5]",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 units of English",
+              "4 units of Mathematics (Algebra, Geometry, Pre-calculus or Calculus)",
+              "3 units of Science (Chemistry and Physics)",
+              "3 units of Social Sciences",
+              "5 units of Electives"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 124,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "First-year students must begin the program during fall semester. Transfer students are considered for admission at the first, second, and third-year levels. A current UC student can transition into a CEAS major by meeting program-specific criteria and being in Good Academic Standing. The degree requirement of professional practice experience normally precludes acceptance beyond the third-year level for transfers. Total credits for graduation is 124. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 units of English",
+              "4 units of Mathematics (Algebra, Geometry, Pre-calculus or Calculus)",
+              "3 units of Science (Chemistry and Physics)",
+              "3 units of Social Sciences",
+              "5 units of Electives"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH1061 Calculus I",
+              "PHYS2001 College Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1001 English Composition",
+                "CHEM 1040 General Chemistry I",
+                "CHEM 1040L General Chemistry I Lab",
+                "MATH 1061 Calculus I",
+                "ENED 1100 Foundations of Engineering Design Thinking I OR ENED 1001C Engineering Design Thinking I + ENED 1021 Engineering Applications I",
+                "MATH 1062 Calculus II",
+                "PHYS 2001 College Physics I",
+                "PHYS 2001L College Physics I Lab",
+                "ENED 1120 Foundations of Engineering Design Thinking II OR ENED 1002C Engineering Design Thinking II + ENED 1022 Engineering Applications II"
+              ],
+              "electives": [
+                "Arts and Humanities General Education",
+                "Social and Behavioral Sciences General Education"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Paul D. Orkwis (Aerospace Engineering & Engineering Mechanics)",
+              "Dr. Gui-Rong Liu (Aerospace Engineering & Engineering Mechanics)",
+              "Dr. Francesco Simonetti (Aerospace Engineering & Engineering Mechanics)"
+            ],
+            "notes": "First-year students applying should have completed specific college preparatory subjects. Transfer students can be considered, and internal transfers from the First-Year Engineering Program (FEP) are guaranteed admission if criteria are met. The curriculum includes core coursework in English, Chemistry, Math, and Physics. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Kelly Cohen (Aerospace Engineering, Brian H. Rowe Endowed Chair)",
+              "Dr. Ou Ma (Aerospace Engineering, Alan B Shepard Chair Professor)"
+            ],
+            "notes": "Internal transfer from FEP requires a 2.7 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Melinda Simon (Biomedical Engineering, Polymeric biomaterials)"
+            ],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Daewoo Han (Electrical and Computer Engineering, Nanomaterials, Biosensors)",
+              "Dr. Ankit Mittal (Electrical and Computer Engineering, Microelectronics, IoT)"
+            ],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Construction Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Cybersecurity Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Industrial & Systems Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH1061",
+              "CHEM1040 or PHYS2001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit / FEP",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer from FEP requires a 2.5 Math/Science GPA. Data source: University of Cincinnati Catalog 2025-2026."
+          },
+          {
+            "name": "Mechanical Engineering Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 units of English",
+              "4 units of Mathematics (Algebra, Geometry, Statistics or Trigonometry, Pre-calculus recommended)",
+              "3 units of Science (Chemistry or Physics)",
+              "3 units of Social Sciences",
+              "5 units of Electives"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Muthar al-Ubaidi (Mechanical Engineering Technology)",
+              "Dr. Janet Jiaxiang Dong (Mechanical Engineering Technology)"
+            ],
+            "notes": "Pre-calculus is highly recommended for math prerequisites. Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "No specific dedicated housing or LLC is explicitly mentioned for the College of Nursing. Students would likely reside in general university housing, which includes traditional, junior suite, suite, and apartment-style options. [14]",
+        "student_archetype": "Compassionate, diligent, and resilient individuals dedicated to patient care and healthcare. They are typically academically focused, organized, and possess strong communication and problem-solving skills, preparing for demanding clinical environments. [5, 6]",
+        "strategic_fit_advice": "Students committed to a career in nursing who are prepared for a rigorous academic and clinical curriculum. They should seek out opportunities to connect with peers and resources within the larger university housing system. [5, 6]",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.0,
+            "prerequisite_courses": [
+              "1 completed biology class with at least a B grade",
+              "1 completed chemistry class with at least a B grade"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL1051C Biology for the Health Professions and Technical Programs I",
+              "BIOL1052C Biology for the Health Professions and Technical Programs II",
+              "CHEM1030 General, Organic, and Biochemistry",
+              "CHEM1030L General, Organic, and Biochemistry Lab"
+            ],
+            "special_requirements": "Reflective Essay",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL2001C Anatomy & Physiology I",
+                "BIOL2002C Anatomy & Physiology II",
+                "CHEM1020 Chemistry + CHEM1020L Lab",
+                "BIOL2031C Microbiology",
+                "ENGL1001 English Composition",
+                "PSYC1001 Intro to Psychology",
+                "SOC1001 Intro to Sociology"
+              ],
+              "electives": [
+                "5 hours of elective credits"
+              ],
+              "total_units": 121,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Jeanine Goodin (BSN Program Director, Advanced Practice Provider, Educator)",
+              "Dr. Carolyn Smith (Associate Dean for Research & PhD Education, Occupational Health Nursing, Workplace Violence)",
+              "Melissa Setser (Department Chair, Associate Professor of Nursing, UC Blue Ash College)"
+            ],
+            "notes": "Direct-admit BSN program guarantees placement if academic and other program requirements are met. Recommended minimum GPA of 3.0 for direct admission. For transfer/transition students, UC College of Nursing accepts them to begin as sophomores, with a minimum 2.0 cumulative GPA. High school students with college-level credit for core courses can start in sophomore year but should apply for direct admission. Nursing is listed as a 'Closed Program' for Fall 2026 for first-year students, indicating its impacted status. Total credits for graduation is 121. Data source: University of Cincinnati Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "James L. Winkle College of Pharmacy",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "No specific dedicated housing or LLC is explicitly mentioned. Students would generally reside in available university housing, offering a range of styles from traditional dorms to apartment living. [14]",
+        "student_archetype": "Detail-oriented, scientifically inclined, and responsible individuals aspiring to a career in pharmacy. They are often strong in STEM subjects, analytical, and dedicated to understanding medications and patient health. [5, 6]",
+        "strategic_fit_advice": "Prospective pharmacy students who are academically strong in sciences and committed to a demanding professional program. They should utilize general university housing and seek out study partners and academic support services. [5, 6]",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Computer Science Minor",
+      "Business Administration Minor",
+      "Creative Writing Minor",
+      "Environmental Studies Minor",
+      "Film and Media Studies Minor",
+      "Bioethics Certificate",
+      "Geographic Information Science Certificate",
+      "Digital Engagement Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Non-binding; provides priority consideration for competitive programs, the University Honors Program, and merit-based scholarships."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Rolling admission deadline for Fall Semester. Applications submitted after November 1 are reviewed on a rolling basis. Some competitive academic programs may close on or shortly after the Early Action deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One supplemental essay (personal statement) is required. The prompt asks what motivated the applicant to choose their first-choice academic program, encouraging sharing personal insights, interests, goals, or experiences not already included in the application. The suggested length is approximately 500 words."
+      },
+      {
+        "target_program": "Music (College-Conservatory of Music - CCM)",
+        "requirement_type": "Audition & Pre-screening",
+        "deadline": "December 10",
+        "details": "All CCM programs require pre-screening materials to be submitted via getacceptd.com/ccm by December 10 for consideration for admission and an audition invitation. Specific pre-screening and audition requirements vary by program and instrument (e.g., two solos of contrasting stylistic periods for general music, specific musical theatre requirements including two song selections and a monologue). Applicants invited to audition will be notified in January and will select a date in January or February."
+      },
+      {
+        "target_program": "Architecture (Undergraduate, First-Year - Fall 2025 entry)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Effective for Fall 2025, first-year students applying from high school are no longer able to submit an optional portfolio as part of the undergraduate admissions process for Architecture."
+      },
+      {
+        "target_program": "Architecture (Undergraduate, Transfer and Transition Applicants)",
+        "requirement_type": "Portfolio",
+        "deadline": "March 1 (priority)",
+        "details": "Transfer and transition applicants who include Architecture or Interior Design among their program options will be invited to submit an optional portfolio for admission consideration. It is encouraged if it strengthens the application. Portfolios for these applicants are due by March 3 at 11:59PM ET."
+      },
+      {
+        "target_program": "Architecture (Graduate - Master of Architecture, PhD in Architecture)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio of creative work is required for the Master of Architecture program and is optional for the PhD in Architecture program. The portfolio should demonstrate imaginative and critical thinking talents, and the content does not have to be architectural if the background is in another discipline. Written project statements are helpful. Portfolios are submitted through the online graduate admissions application."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Recommendations",
+        "Standardized test scores"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Admits students directly into their major; offers application fee waivers and dedicated programs/scholarships for first-generation students."
+    },
     "essay_prompts": [
       {
-        "prompt": "Why are you interested in attending the University of Cincinnati? What excites you about your intended major or program?",
-        "word_limit": "250 words",
-        "type": "Why Major",
-        "required": false,
+        "prompt": "What motivated you to choose your first-choice academic program? In your response, please share personal insights, interests, goals, or experiences—especially those not already included in your application.",
+        "word_limit": "Approximately 500 words",
+        "type": "Major",
+        "required": true,
         "brainstorming_questions": [
-          "Beyond its ranking or reputation, what specific aspect of the University of Cincinnati's campus culture or community \u2013 perhaps a student organization, a particular tradition, or even the architectural style \u2013 resonates deeply with your personal values and aspirations?",
-          "When you envision yourself thriving in your intended major at UC, what tangible experiences or learning opportunities come to mind that you can't get anywhere else? Think about specific labs, research projects, internships, or faculty connections.",
-          "Imagine you're explaining your excitement about your intended major at UC to a friend who knows nothing about it. What's the most captivating, 'aha!' moment you can describe that led you to this field, and how does UC's program specifically foster that kind of discovery?",
-          "Looking at UC's commitment to co-op education, how does this unique learning model specifically align with your own learning style and your long-term career goals, and what kind of co-op experience are you most eager to pursue?",
-          "What are some of the specific challenges or questions within your intended field that you're most eager to tackle, and how have you seen or heard about UC's faculty or resources uniquely equipping students to address these very issues?"
+          "Was there a specific 'aha!' moment, a book, a person, or an experience that ignited your interest in this particular field of study?",
+          "Beyond general interest, what specific problems or questions within this academic program genuinely excite your curiosity and make you want to delve deeper?",
+          "How have you already explored this interest, either formally (e.g., specific courses, projects, clubs) or informally (e.g., independent reading, personal experiments, discussions), and what did you learn?",
+          "What specific courses, faculty research, unique programs, or resources at the University of Cincinnati's program align perfectly with your academic goals and future aspirations?",
+          "Imagine yourself contributing to this field in five or ten years; what kind of impact you hope to make, and how will this specific program help you achieve that vision?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_cincinnati_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider less competitive majors, especially if not set on highly competitive fields.",
+      "Utilize the Exploratory Studies program for competitive majors or if undecided.",
+      "Research major-specific admission requirements and application intensity.",
+      "Apply by the Early Action deadline for competitive programs."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate General Education (GE) Requirements by College",
+      "Investigate Program-Specific Rankings and Experiential Learning Opportunities",
+      "Assess Campus Life, Location, and Housing Options Related to Specific Colleges",
+      "Examine Graduation Rates, Ideally Broken Down by College",
+      "Compare Student-to-Faculty Ratios and Class Sizes within Different Colleges"
+    ],
+    "alternate_major_strategy": "For students applying to competitive majors, a strategy is to list a backup major in a different college. For example, if applying to Computer Science in Engineering, Cognitive Science could be listed as an alternate. The internal transfer process for impacted majors can be competitive."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 14394.0,
+        "total_coa": 43276.0,
+        "housing": 8716.0
+      },
+      "out_of_state": {
+        "tuition": 29728.0,
+        "total_coa": 50485.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 8877.0,
+    "average_merit_aid": 6120.0,
+    "percent_receiving_aid": 45.0,
+    "meets_full_need": false,
+    "notes": "University of Cincinnati states that financial aid will likely not meet all educational costs, with 43% of demonstrated need met. For international students, full-tuition or need-based scholarships are not offered.",
+    "scholarships": [
+      {
+        "name": "Cincinnatus Scholarship Program",
+        "type": "Merit",
+        "amount": "Ranges from $1,000 annually up to full tuition, room and board, and a book allowance; renewable for length of undergraduate program.",
+        "deadline": "November 1 (for incoming first-year students)",
+        "benefits": "Financial assistance for academic excellence, various levels of awards, renewable for up to 8 full-time semesters.",
+        "application_method": "Automatic Consideration (based on admission application)"
+      },
+      {
+        "name": "International Outreach Award",
+        "type": "Merit",
+        "amount": "$5,000 to $15,000 annually (Uptown Campus) or $2,000 to $4,000 annually for 4 semesters (Regional Campus); renewable.",
+        "deadline": "Priority deadlines for admission application",
+        "benefits": "Reduces non-resident (out-of-state) tuition surcharge; for international undergraduate students.",
+        "application_method": "Automatic Consideration (based on admission application)"
+      },
+      {
+        "name": "UC National Outreach Award",
+        "type": "Merit",
+        "amount": "Renewable annual award (reduces out-of-state tuition costs).",
+        "deadline": "November 1 (for incoming first-year students)",
+        "benefits": "Reduces out-of-state tuition for students from designated states; renewable for up to 8 full-time semesters, requires 30-hour community service and 3.0 GPA.",
+        "application_method": "Automatic Consideration (based on admission application)"
+      },
+      {
+        "name": "Marian Spencer Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room and board, and a book allowance plus exclusive programming; renewable for length of undergraduate program.",
+        "deadline": "November 1 (complete admission application)",
+        "benefits": "Comprehensive funding, exclusive programming, strong sense of community.",
+        "application_method": "Invitation sent to incoming Cincinnati Public School (CPS) students who meet criteria."
+      },
+      {
+        "name": "Darwin T. Turner Scholarship Program",
+        "type": "Merit",
+        "amount": "In-state tuition and book allowance stipend.",
+        "deadline": "November 1 (complete admission application)",
+        "benefits": "In-state tuition and book allowance; strong sense of community through academic and service activities.",
+        "application_method": "Automatic Consideration for admitted first-time students with a 3.0 GPA in a baccalaureate program."
+      },
+      {
+        "name": "NEXT Innovation Scholars Program",
+        "type": "Merit",
+        "amount": "Not explicitly stated, but implies significant support through a signature program.",
+        "deadline": "Invitation-based (based on admission application submission)",
+        "benefits": "Cohort-based program centered on transdisciplinary collaboration, applied design thinking, future-focused thinking and innovation.",
+        "application_method": "By invitation (based on credentials and materials submitted with online application)"
+      },
+      {
+        "name": "UC Clermont Merit Scholarship",
+        "type": "Merit",
+        "amount": "$2,500.",
+        "deadline": "May 1, 2026 (for 2026 high school graduates)",
+        "benefits": "Financial support for high school achievements, divided between fall and spring semesters.",
+        "application_method": "Complete UC Clermont admission application and confirm admission by the deadline."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "The University of Cincinnati offers comprehensive transfer credit policies for various external academic achievements, including AP, IB, and coursework from other accredited institutions, aiming to facilitate student progression.",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams, though higher scores may grant different or additional course equivalencies",
+      "exceptions": [
+        "No credit for AP Research (not listed in current awards table)",
+        "Specific exams may grant different course equivalencies or additional credits for scores of 4 or 5 (e.g., 2-D Art and Design, Art History, Biology, Computer Science A)"
+      ],
+      "usage": "Can satisfy some major prerequisites and general education requirements, applied towards graduation, and for placement into advanced courses"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "The University of Cincinnati provides several resources for prospective transfer students to understand its transfer credit policies.\n\n**Transfer Articulation Tools:**\n*   **Transfer Equivalency Database:** The University of Cincinnati offers a Transfer Equivalency Database to help students preview how courses from other institutions may transfer.\n*   **Articulation Agreements:** The university maintains articulation agreements with various colleges, which are detailed on the Office of Advising and Academic Services website. For instance, specific pathways have been developed for students transferring from the Kentucky Community & Technical College System (KCTCS).\n\n**Restrictions:**\n*   **Grade Requirements:** For credits to transfer, students generally must have earned a \"D\" or better, unless the course was part of a transfer module or a completed degree.\n*   **Residency Requirements:** To be awarded a University of Cincinnati degree, students are required to complete a minimum of 30 semester hours at the institution.\n*   **Accreditation:** Transfer credits are accepted from institutions that were regionally accredited at the time of enrollment. Official transcripts are necessary for review.\n*   **Online Course Providers:** The University of Cincinnati currently does not accept transfer credits for courses taken through online providers such as Sophia Learning, Portage Learning, Straighterline, or Study.com.\n*   **Graduate Credit Limit:** For graduate degrees, students may transfer up to one-third of the total credits required for their UC graduate degree, subject to program approval. Doctoral students may also include up to 30 credits from a prior master's degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated passion in 1-2 areas rather than scattered activities",
+      "Authentic essays that show self-reflection",
+      "Leadership in meaningful extracurriculars"
+    ],
+    "common_activities": [
+      "Leadership in school clubs and organizations",
+      "Community service/volunteering",
+      "Varsity or club athletics",
+      "Academic clubs and professional societies",
+      "Creative arts/Music involvement",
+      "Cultural and ethnic organizations"
+    ],
+    "essay_tips": [
+      "Be specific about why this school and program",
+      "Show, don't tell – use concrete examples and storytelling",
+      "Avoid repeating information already in your application",
+      "Connect your interests to specific resources at the school"
+    ],
+    "red_flags": [
+      "Generic Essays or Not Answering the Prompt Directly",
+      "Treating Essays as a Résumé or Lacking Depth",
+      "Typos and Grammatical Errors",
+      "Repeating Information Already Present in Other Application Sections",
+      "Lack of Demonstrated Motivation for Your Chosen Program"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "The University of Cincinnati has a 'somewhat selective' admissions process with an acceptance rate typically between 85% and 88%. While test scores are optional, a holistic review considers academic performance (GPA, course rigor), a personal statement, and extracurricular involvement."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "UC boasts a nationally top-ranked (often #4 or #3) cooperative education (co-op) program, providing students with extensive paid, real-world work experience, significant career connections, and substantial earnings that help offset tuition costs. Students on average earn over $11,000 per semester, contributing to lower debt and high post-graduation employment rates (98%)."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "The University of Cincinnati offers a vibrant urban campus experience, featuring a beautiful, modern, and walkable campus design recognized for fostering intellectual curiosity and student collaboration. Its deep integration with the city provides abundant professional, artistic, and social opportunities."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "Beyond its renowned co-op, UC is identified as a research powerhouse offering a broad range of majors and courses, allowing for significant academic flexibility."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 54810,
+    "employment_rate_2yr": 95.0,
+    "median_earnings_6yr": 63845,
+    "notes": "Median earnings for 10 years are after enrollment. Median earnings for 6 years are based on 5 years after graduation. Employment rate at 2 years is an estimation based on 1-year (97%) and 5-year (95%) post-graduation employment rates. The university is ranked in the top 10% nationally for overall quality.",
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Apple",
+      "Meta",
+      "Deloitte",
+      "JPMorgan Chase",
+      "EY (Ernst & Young)"
+    ],
+    "grad_school_rate": 48.0,
+    "loan_default_rate": 6.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86.0,
+    "graduation_rate_4_year": 39.0,
+    "graduation_rate_6_year": 75.0,
+    "notes": "University of Cincinnati demonstrates a strong overall graduation performance, placing it within the top quarter of institutions nationally. Its retention rate also ranks among the highest 25% in comparison to peer schools."
+  }
 }

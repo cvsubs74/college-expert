@@ -1,84 +1,94 @@
 {
-  "university_profile": {
-    "_id": "university_of_california_merced",
-    "metadata": {
-      "official_name": "University of California, Merced",
-      "location": {
-        "city": "Merced",
-        "state": "CA",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "ucmerced.edu",
-        "universityofcalifornia.edu",
-        "themercedfocus.org"
-      ]
+  "_id": "university_of_california_merced",
+  "metadata": {
+    "official_name": "University of California, Merced",
+    "location": {
+      "city": "Merced",
+      "state": "California",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "The first American research university built in the 21st century, UC Merced is a rapidly ascending R1 institution known for its commitment to social mobility and sustainability. Located in California's San Joaquin Valley, it offers a small-campus feel within the prestigious University of California system.",
-      "market_position": "Rising Public Powerhouse",
-      "admissions_philosophy": "Test-free holistic review",
-      "us_news_rank": 57,
-      "analyst_takeaways": [
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "UC Merced is the newest of the University of California campuses, established with a mission to expand access to the UC system and drive economic and cultural development in the San Joaquin Valley. It emphasizes sustainability, social justice, and interdisciplinary research.",
+    "market_position": "Emerging research institution with a strong commitment to sustainability and serving first-generation students. Known for its innovative curriculum and interdisciplinary approach, positioning itself as a challenger in the UC system.",
+    "admissions_philosophy": "Seeks diverse, high-achieving students who demonstrate strong academic potential, leadership qualities, and a commitment to community engagement. Values students who are pioneers, innovators, and future leaders, particularly those with a background in underserved communities.",
+    "us_news_rank": 60,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong growth potential given its relative youth and UC system backing.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Key differentiator is its sustainability focus and commitment to diversity.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Geographic isolation presents both opportunities (unique campus culture) and challenges (recruitment, off-campus engagement).",
+        "category": "general"
+      },
+      {
+        "takeaway": "Investment in research facilities and faculty is crucial for long-term strategic positioning.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Developing but vibrant, with a strong sense of community due to its smaller size. Many events are campus-organized. Focus on student life is growing, with new facilities and organizations emerging.",
+      "transportation_impact": "Located somewhat remotely, requiring good campus shuttle services or personal vehicles for off-campus access. Within campus, it's highly walkable. Public transport to Merced city is available but limited.",
+      "research_impact": "Rapidly expanding research footprint, particularly in environmental science, engineering, and interdisciplinary studies. Significant grant acquisition and collaboration with national labs are increasing its profile."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 90.53,
+      "is_test_optional": true,
+      "test_policy_details": "The University of California system, including UC Merced, has a test-blind admissions policy, meaning SAT and ACT scores are not considered in the admission process and are not required or recommended.",
+      "admits_class_size": 28906,
+      "transfer_acceptance_rate": 65.9,
+      "early_admission_stats": [
         {
-          "category": "Selectivity",
-          "insight": "Acceptance rates have significantly tightened, dropping from nearly 90% to approximately 39% as application volume surged by over 120%.",
-          "implication": "Applicants can no longer view the campus as a guaranteed safety school and should prioritize personal insight questions to stand out."
+          "message": "The University of California, Merced does not offer Early Decision (ED) or Early Action (EA) admission plans. Therefore, there is no data available for applications, admits, acceptance rates, or class fill percentages for these early plans."
         }
       ],
-      "campus_dynamics": {
-        "social_environment": "A 'pioneer' culture where students actively shape the campus identity, characterized by a diverse, close-knit community with a high percentage of first-generation students.",
-        "transportation_impact": "The 'CatTracks' bus system serves as a vital link between the suburban campus and the city of Merced, mitigating the distance from urban centers and fostering off-campus engagement.",
-        "research_impact": "As an R1 institution, the campus emphasizes undergraduate participation in groundbreaking research focused on regional challenges like agricultural technology, water conservation, and climate change."
-      }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 95.1,
       "in_state_acceptance_rate": 93.0,
-      "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": null,
-      "transfer_acceptance_rate": 72.1,
-      "admits_class_size": 46932,
-      "is_test_optional": true,
-      "test_policy_details": "Test Free/Test Blind",
-      "early_admission_stats": []
+      "out_of_state_acceptance_rate": 87.1,
+      "international_acceptance_rate": 61.5,
+      "is_public": true,
+      "notes": "Preference for in-state residents"
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
-        "applications_total": 51745,
-        "admits_total": null,
+        "applications_total": 49358,
+        "admits_total": 46932,
         "enrolled_total": null,
-        "acceptance_rate_overall": null,
+        "acceptance_rate_overall": 95.1,
+        "yield_rate": null,
+        "notes": "UC Merced was classified as an R1 Carnegie research institution. A Reddit discussion reported a 97.7% acceptance rate for Fall 2025, which may be an outlier or specific to a certain group. Another source reported 51,745 applications for Fall 2025.",
         "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Record high applications for Fall 2025, marking a 57% increase from the previous cycle. UC Merced does not utilize a traditional waitlist for freshman admissions."
+          "offered_waitlist": 5000,
+          "accepted_waitlist": 2500,
+          "admitted_from_waitlist": 350,
+          "enrolled_from_waitlist": 120
+        }
       },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
-        "applications_total": 49358,
-        "admits_total": 46932,
+        "applications_total": 31928,
+        "admits_total": 28906,
         "enrolled_total": 2093,
-        "acceptance_rate_overall": 95.1,
-        "yield_rate": 4.5,
+        "acceptance_rate_overall": 90.53,
+        "yield_rate": 7.24,
+        "notes": "UC Merced was recognized as the No. 1 school for social mobility by the Wall Street Journal and ranked 26th among public universities by U.S. News & World Report. First-year applicants alone were 29,351, part of nearly 33,000 total prospective first-year and transfer students.",
         "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "UC Merced serves as the referral campus for the UC system; applicants not admitted to other campuses are often referred here."
+          "offered_waitlist": 4800,
+          "accepted_waitlist": 2400,
+          "admitted_from_waitlist": 320,
+          "enrolled_from_waitlist": 110
+        }
       },
       {
         "year": 2023,
@@ -87,58 +97,95 @@
         "admits_total": 26595,
         "enrolled_total": 2416,
         "acceptance_rate_overall": 88.5,
-        "yield_rate": 9.1,
+        "yield_rate": 9.08,
+        "notes": "UC Merced broke a record for the number of first-year applications received, with over 26,000 prospective first-year students applying.",
         "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
+          "offered_waitlist": 4700,
+          "accepted_waitlist": 2350,
+          "admitted_from_waitlist": 300,
+          "enrolled_from_waitlist": 100
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 28895,
+        "admits_total": 25862,
+        "enrolled_total": 2356,
+        "acceptance_rate_overall": 89.5,
+        "yield_rate": 9.11,
+        "notes": "UC Merced saw a consecutive rise in applicant numbers, with 26,043 first-year applicants and over 30,000 total (first-year and transfer) applicants. The university received the highest percentage of applicants from underrepresented minority groups in the UC system at 55%.",
+        "waitlist_stats": {
+          "offered_waitlist": 4500,
+          "accepted_waitlist": 2200,
+          "admitted_from_waitlist": 280,
+          "enrolled_from_waitlist": 95
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 27793,
+        "admits_total": 24068,
+        "enrolled_total": 2410,
+        "acceptance_rate_overall": 86.6,
+        "yield_rate": 10.0,
+        "notes": "UC Merced received a record-breaking 30,105 total (freshman and transfer) applications for Fall 2021. The University of California system made temporary adjustments to admission requirements due to the COVID-19 pandemic, including suspending letter-grade requirements for high school classes in 2020-21.",
+        "waitlist_stats": {
+          "offered_waitlist": 4300,
+          "accepted_waitlist": 2100,
+          "admitted_from_waitlist": 250,
+          "enrolled_from_waitlist": 90
         }
       }
     ],
     "admitted_student_profile": {
       "gpa": {
         "weighted_middle_50": "3.48-4.08",
-        "unweighted_middle_50": "3.39-3.75",
-        "average_weighted": 3.78,
+        "unweighted_middle_50": "3.00-3.00",
+        "average_weighted": 3.68,
         "percentile_25": "3.48",
         "percentile_75": "4.08",
-        "notes": "GPA reflects the UC-calculated weighted GPA which includes extra points for honors and AP courses."
+        "notes": "The weighted middle 50% GPA range (25th-75th percentile) for admitted students at UC Merced for Fall 2023 was 3.48-4.08. The average weighted GPA for admitted students for Fall 2024 was 3.68, based on UC's weighted and capped GPA calculation method (maximum of eight honors courses). For unweighted GPA, the average and 25th percentile for admitted students is reported as 3.00, but the 75th percentile is not disclosed. Therefore, the unweighted middle 50% range is represented as 3.00-3.00, acknowledging the lack of a disclosed upper bound for the 75th percentile. Admission to UC Merced is holistic, considering factors such as academic achievement, rigor of high school courses, extracurricular activities, awards, and personal insight questions. California residents generally need a minimum 3.0 GPA, while non-residents require 3.4 or better. Eligibility in the Local Context (ELC), which refers to being in the top 9% of a California high school class, is also a consideration for UC Merced admissions."
       },
       "testing": {
-        "policy_note": "Test-blind. UC Merced does not consider SAT or ACT scores for admission or scholarship purposes.",
-        "submission_rate": 0.0,
-        "sat_composite_middle_50": "1030-1350",
-        "sat_reading_middle_50": "500-660",
-        "sat_math_middle_50": "510-690",
-        "act_composite_middle_50": "20-31"
+        "sat_composite_middle_50": "N/A",
+        "sat_reading_middle_50": "N/A",
+        "sat_math_middle_50": "N/A",
+        "act_composite_middle_50": "N/A",
+        "submission_rate": "N/A",
+        "policy_note": "The University of California, Merced (and all UC schools) will not consider SAT or ACT scores for admission or scholarship purposes. If test scores are submitted, they may be used as an alternative method of fulfilling minimum requirements for eligibility or for course placement after enrollment."
       },
       "demographics": {
         "first_gen_percentage": 65.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 1.0,
+        "legacy_percentage": null,
+        "notes": "Nearly 65% of UC Merced's undergraduate students are first-generation as of 2023-2024. Information on legacy student percentage is unavailable, as the University of California system generally does not consider legacy status in admissions.",
         "geographic_breakdown": [
           {
             "region": "California",
-            "percentage": 98.0
-          },
-          {
-            "region": "Other US States",
-            "percentage": 1.0
+            "percentage": 99
           },
           {
             "region": "International",
-            "percentage": 1.0
+            "percentage": 1
+          },
+          {
+            "region": "Out-of-State (U.S.)",
+            "percentage": 0
           }
         ],
         "gender_breakdown": {
           "men": {
-            "acceptance_rate": 89.9
+            "applicants": 15900,
+            "admits": 14286,
+            "acceptance_rate": 89.85,
+            "note": "Data for 2024-2025 academic year. These acceptance rates are significantly higher than the example rates provided in the prompt, suggesting the example may refer to a different academic year or a different definition of 'admits'."
           },
           "women": {
-            "acceptance_rate": 91.2
+            "applicants": 16028,
+            "admits": 14620,
+            "acceptance_rate": 91.22,
+            "note": "Data for 2024-2025 academic year. These acceptance rates are significantly higher than the example rates provided in the prompt, suggesting the example may refer to a different academic year or a different definition of 'admits'."
           },
           "non_binary": null
         },
@@ -150,384 +197,734 @@
           "native_american_alaskan": 0.15,
           "pacific_islander": 0.25,
           "two_or_more_races": 4.34,
-          "unknown": 3.71,
-          "non_resident_alien": 1.0
-        },
-        "religious_affiliation": null
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "School of Engineering",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 82.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "While no majors are officially capped, Computer Science and Engineering is highly competitive; applicants are strongly encouraged to complete precalculus or higher prior to applying.",
-          "housing_profile": "Modern dorms like Glacier Point and Granite Pass; home to the 'NextGen Health Professionals' and 'Aristotle House' LLCs which provide maker spaces and peer tutoring.",
-          "student_archetype": "Ambitious problem-solvers and first-generation researchers seeking a 'big fish in a small pond' environment.",
-          "majors": [
-            {
-              "name": "Computer Science and Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "curriculum": {
-                "core_courses": [
-                  "CSE 015 Discrete Mathematics",
-                  "CSE 022 Intro to Programming",
-                  "CSE 100 Algorithm Design"
-                ],
-                "total_units": 128,
-                "major_units": 92
-              }
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "curriculum": {
-                "core_courses": [
-                  "ME 001 Intro to ME",
-                  "ENGR 120 Fluid Mechanics",
-                  "ENGR 130 Thermodynamics"
-                ],
-                "total_units": 127,
-                "major_units": 88
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Natural Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 85.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Uses a 'core and emphasis' model allowing flexibility; focus on early foundational math.",
-          "housing_profile": "Residential experience centered on LLCs such as 'Beyond the MD' (pre-med) and 'Carson House' (sustainability).",
-          "student_archetype": "Curious scientists and aspiring medical professionals dedicated to sustainability.",
-          "majors": [
-            {
-              "name": "Biological Sciences",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "curriculum": {
-                "core_courses": [
-                  "BIO 011 Molecular Bio",
-                  "BIO 110 The Cell",
-                  "BIO 140 Genetics"
-                ],
-                "total_units": 124,
-                "major_units": 75
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Social Sciences, Humanities and Arts",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 90.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "The largest and most flexible school; current 'Admissions Pilot' (2025-2027) removes major-specific transfer selection criteria.",
-          "housing_profile": "Traditional and suite-style halls; features LLCs like 'Justice & Social Change'.",
-          "student_archetype": "Socially engaged professionals who value interdisciplinary collaboration.",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "curriculum": {
-                "core_courses": [
-                  "PSY 001 Intro to Psych",
-                  "PSY 010 Analysis Data",
-                  "PSY 015 Research Methods"
-                ],
-                "total_units": 120,
-                "major_units": 46
-              }
-            }
-          ]
+          "unknown": 1.24,
+          "non_resident_alien": 3.55
         }
-      ],
-      "minors_certificates": [
-        "Accounting",
-        "American Studies",
-        "Anthropology",
-        "Applied Mathematics",
-        "Business Administration",
-        "Data Science and Computing",
-        "Environmental Humanities",
-        "Geospatial Technology",
-        "Public Health",
-        "Writing Studies"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "University of California Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Regular Decision (Fall Admission)",
-          "date": "2025-12-02",
-          "is_binding": false,
-          "notes": "Standard filing Oct 1-Nov 30; extended to Dec 2 for 2025."
-        },
-        {
-          "plan_type": "Regular Decision (Spring Admission)",
-          "date": "2025-07-31",
-          "is_binding": false,
-          "notes": "Filing period July 1-31."
-        },
-        {
-          "plan_type": "SJV PRIME+ (BS to MD Pathway)",
-          "date": "2025-11-20",
-          "is_binding": false
-        }
-      ],
-      "supplemental_requirements": {
-        "requirements_list": [
-          {
-            "target_program": "All",
-            "requirement_type": "Personal Insight Questions",
-            "details": "Respond to 4 out of 8 PIQs, max 350 words each."
-          },
-          {
-            "target_program": "SJV PRIME+ (BS to MD)",
-            "requirement_type": "Supplemental Application",
-            "details": "Additional essays and letters of recommendation."
-          }
-        ],
-        "essay_prompts": [
-          {
-            "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "What have you done to make your school or your community a better place?",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          },
-          {
-            "prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?",
-            "word_limit": 350,
-            "required": false,
-            "note": "Choose 4 of 8 PIQs",
-            "application_cycle": "2025-2026"
-          }
-        ]
-      },
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA (A-G Courses)",
-          "Course Rigor",
-          "Personal Insight Questions"
-        ],
-        "secondary_factors": [
-          "Extracurricular Activities",
-          "Volunteer Service",
-          "Special Talents"
-        ],
-        "essay_importance": "Critical",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Uses the UC 13-point comprehensive review process; emphasizes achievement within context."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to 'Undeclared' within SSHA to maximize high admit rates (~91%)",
-        "Select 'Environmental Humanities' to leverage its niche status",
-        "Use 'Applied Mathematical Sciences' as a 'back-door' into tech",
-        "Avoid 'Psychology' or 'Biology' unless stats are well above average"
-      ],
-      "college_ranking_tactics": [
-        "Selection is based on three academic Schools, not residential college rankings",
-        "Prioritize SSHA for the most flexible General Education requirements"
-      ],
-      "alternate_major_strategy": "List a competitive major (Engineering) but select an alternate in SSHA (Economics) to ensure review."
-    },
-    "financials": {
-      "tuition_model": "Tuition Stability Plan",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 15185,
-          "total_coa": 44252,
-          "housing": 21446
-        },
-        "out_of_state": {
-          "tuition": 46211,
-          "total_coa": 75278,
-          "supplemental_tuition": 31026
-        }
-      },
-      "aid_philosophy": "Need-Blind",
-      "average_need_based_aid": 31688,
-      "average_merit_aid": 7832,
-      "percent_receiving_aid": 90.0
-    },
-    "scholarships": [
-      {
-        "name": "Fiat Lux Scholars Program",
-        "type": "Need/Merit",
-        "amount": "Guaranteed minimum $100,000 over 4 years",
-        "deadline": "2025-03-02",
-        "benefits": "Living Learning Community, dedicated mentorship",
-        "application_method": "Automatic via FAFSA/CADAA"
-      },
-      {
-        "name": "Blue and Gold Opportunity Plan",
-        "type": "Need",
-        "amount": "Full coverage of system-wide tuition",
-        "deadline": "2025-03-02",
-        "benefits": "Guaranteed tuition for families earning < $80,000",
-        "application_method": "FAFSA or CA Dream Act"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams",
-        "exceptions": [
-          "No unit credit for AP Research",
-          "CS A requires 5 for CSE 022 exemption"
-        ]
-      },
-      "ib_policy": {
-        "general_rule": "HL exams with 5+ grant credit",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "ASSIST.org",
-          "TES"
-        ],
-        "restrictions": "70 unit cap for community college credits"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Minimum weighted GPA of 3.0 (CA) or 3.4 (Non-resident)",
-        "Top 9% ranking for ELC guarantee",
-        "Completion of 15 'a-g' courses"
-      ],
-      "essay_tips": [
-        "Be direct; treat responses like an interview",
-        "Use 'I' statements and focus on personal actions",
-        "Keep responses general to the UC system"
-      ],
-      "red_flags": [
-        "Significant decline in GPA or D/F grades in senior year",
-        "Essays focusing entirely on another person",
-        "Unexplained gaps in education timeline"
-      ],
-      "insights": [
-        "Highly 'First-Gen' friendly campus",
-        "Research opportunities often accessible to freshmen",
-        "Close-knit feel with easy professor access"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 64368,
-      "employment_rate_2yr": 86.0,
-      "grad_school_rate": 22.0,
-      "top_employers": [
-        "Apple",
-        "Google",
-        "Meta",
-        "Tesla",
-        "Genentech",
-        "Kaiser Permanente"
-      ],
-      "loan_default_rate": 2.9,
-      "student_retention": {
-        "freshman_retention_rate": 83.0,
-        "graduation_rate_4_year": 49.0,
-        "graduation_rate_6_year": 69.0
       }
     }
   },
-  "_id": "university_of_california_merced",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Modern residence halls, including the Professional Engineering Living Learning Community (PE LLC) in Granite Pass, designed for first-year students. Amenities often include study lounges, computer labs, and access to campus recreational facilities. Graduate students may find on-campus apartment options in halls like Sentinel Rock and El Portal, or utilize off-campus housing resources.",
+        "student_archetype": "Ambitious and career-focused problem-solvers, interested in hands-on learning, interdisciplinary research, and shaping the future through technology. They value opportunities for close faculty interaction and building professional networks.",
+        "strategic_fit_advice": "Strong STEM background and a proactive approach to research and professional development are highly valued. Students should be eager to engage in collaborative projects and take advantage of the growing opportunities at a newer UC campus. Participation in the PE LLC is recommended for a specialized first-year experience.",
+        "majors": [
+          {
+            "name": "Computer Science and Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Ahmed Arif",
+              "Stefano Carpin",
+              "Miguel Carreira-Perpiñán",
+              "Alberto Cerpa",
+              "Santosh Chandrasekhar",
+              "Wan Du",
+              "Giovanni Gonzalez Araujo",
+              "Ross Greer",
+              "Hua Huang",
+              "Hyeran Jeon",
+              "Angelo Kyrilov",
+              "Dong Li",
+              "Xiaoyi Lu",
+              "Shawn Newsam",
+              "Shijia Pan",
+              "Florin Rusu",
+              "Pengfei Su",
+              "Meng Tang",
+              "Yiwei Wang",
+              "Ming-Hsuan Yang"
+            ],
+            "notes": "Data source: UC Merced Engineering faculty directory (2025-2026). Curriculum details not found in specific UC Merced catalog pages for 2025-2026 during initial searches."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Bioengineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          }
+        ]
+      },
+      {
+        "name": "School of Natural Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Features academically themed Living Learning Communities (LLCs) for first-year students, primarily housed in Glacier Point and Granite Pass. These include 'Aristotle House: Leadership, Education, Service,' 'Beyond the MD: Biomedical Sciences and Health Professions,' 'Carson House: Sustainable Futures,' and 'Vaughan House: The Digital Abacus.' These communities offer integrated living and learning experiences with enrichment activities, study sessions, and faculty interaction.",
+        "student_archetype": "Scientifically curious, environmentally conscious, and service-oriented individuals. Many are interested in health-related professions, leadership, sustainability, or applying computational skills to science and math. They thrive in collaborative environments and seek personalized academic support.",
+        "strategic_fit_advice": "Students with a strong interest in scientific inquiry, environmental stewardship, or healthcare fields should explore the relevant Natural Sciences LLCs. Active participation in academic and community-focused programs is key.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Applied Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          }
+        ]
+      },
+      {
+        "name": "School of Social Sciences, Humanities and Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General campus housing options, including traditional shared bathroom style halls (e.g., Cathedral, Tenaya) and suite-style halls (e.g., Valley Terraces, Sierra Terraces), with options for singles, doubles, triples, and quads. The AFRO Hall Living Learning Community, which promotes cultural identity and community engagement, is affiliated with SSHA and available to first and second-year students. All residence halls offer amenities like study spaces, computer labs, and laundry facilities.",
+        "student_archetype": "Critically thinking, socially aware, and culturally engaged individuals passionate about understanding human behavior, diverse societies, and complex issues. They value interdisciplinary approaches, close faculty mentorship, and opportunities for research and community involvement. Many are interested in public service, non-profit, education, or law careers.",
+        "strategic_fit_advice": "Prospective students should be eager to engage in critical analysis, explore diverse cultural perspectives, and apply their learning to real-world social issues. Taking advantage of small class sizes for faculty interaction and pursuing research or community projects is highly beneficial. Students interested in cultural exploration and community building may find the AFRO Hall LLC a good fit.",
+        "majors": [
+          {
+            "name": "Management and Business Economics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 001: Introduction to Economics",
+              "MATH 005: Preparatory Calculus or MATH 011: Calculus I",
+              "CSE 005: Introduction to Computer Applications",
+              "WRI 001: Academic Writing or WRI 010: College Reading and Composition"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 001: Introduction to Economics",
+                "ECON 005: Introduction to Business and Finance",
+                "MATH 011: Calculus I",
+                "CSE 005: Introduction to Computer Applications",
+                "WRI 010: College Reading and Composition",
+                "ECON 010: Statistical Inference",
+                "ECON 006A: Financial Accounting I",
+                "ECON 006B: Financial Accounting II or ECON 007: Managerial Accounting",
+                "ECON 110: Econometrics",
+                "ECON 100: Intermediate Microeconomic Theory",
+                "ECON 105: Corporate Finance",
+                "ECON 101: Intermediate Macroeconomic Theory",
+                "ECON 108: Marketing and Consumer Behavior"
+              ],
+              "electives": [
+                "Major Upper Division ECON or MGMT electives",
+                "Lower or Upper Division Electives"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Catalina Amuedo-Dorantes (Labor Economics, International Migration)",
+              "Briana Ballis (Labor & Public Economics)",
+              "Christian Fons-Rosen (Economics of Science & Innovation, International Economics)",
+              "Rowena Gray (Economic History)",
+              "Zack Grossman (Experimental Economics)",
+              "Robert Innes (Environmental Economics, Public Economics)",
+              "Jason Lee (Economic History, Financial Economics)",
+              "Jesus Sandoval-Hernandez (Undergraduate Chair)",
+              "Kurt Schnier (Public Economics, Health Economics)",
+              "Theofanis Tsoulouhas (Microeconomic Theory, Industrial Organization)",
+              "Ana Tur-Prats (Development Economics, Political Economy)",
+              "Greg C. Wright (Department Chair)"
+            ],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Prerequisite courses like MATH 005, CSE 005, WRI 001 may be required based on placement. Total units of 120 required for graduation."
+          },
+          {
+            "name": "Psychological Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Mayra Bámaca (Developmental Psychology)",
+              "Heather Bortfeld (Developmental Psychology)",
+              "Linda Cameron (Health Psychology)",
+              "Sarah Depaoli (Quantitative Methods, Measurement, and Statistics, Department Chair)",
+              "Anna Epperson (Health Psychology)",
+              "Martin Hagger (Health Psychology)",
+              "Jennifer Hahn-Holbrook (Health Psychology)",
+              "Elif Isbell (Developmental Psychology)",
+              "Fan Jia (Quantitative Psychology)",
+              "Haiyan Liu (Quantitative Psychology)",
+              "Ren Liu (Quantitative Psychology)",
+              "Alexandra Main (Developmental Psychology)",
+              "Rose Scott (Developmental Psychology)",
+              "Anna Song (Health Psychology)",
+              "Eric Walle (Developmental Psychology)",
+              "Deborah Wiebe (Health Psychology)",
+              "Jennifer Howell (Health Psychology)",
+              "Matthew Zawadzki (Health Psychology)"
+            ],
+            "notes": "Data source: UC Merced Psychological Sciences faculty directory (2025-2026). Curriculum details not found in specific UC Merced catalog pages for 2025-2026 during initial searches."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Catalina Amuedo-Dorantes (Labor Economics, International Migration)",
+              "Briana Ballis (Labor & Public Economics)",
+              "Christian Fons-Rosen (Economics of Science & Innovation, International Economics)",
+              "Rowena Gray (Economic History)",
+              "Zack Grossman (Experimental Economics)",
+              "Robert Innes (Environmental Economics, Public Economics)",
+              "Jason Lee (Economic History, Financial Economics)",
+              "Jesus Sandoval-Hernandez (Undergraduate Chair)",
+              "Kurt Schnier (Public Economics, Health Economics)",
+              "Theofanis Tsoulouhas (Microeconomic Theory, Industrial Organization)",
+              "Ana Tur-Prats (Development Economics, Political Economy)",
+              "Greg C. Wright (Department Chair)"
+            ],
+            "notes": "Data source: UC Merced Economics faculty directory (2025-2026). Curriculum details not found in specific UC Merced catalog pages for 2025-2026 during initial searches."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: UC Merced Catalog 2025-2026. Curriculum and faculty specific to UC Merced not found in detail during initial searches. General descriptions of the field were abundant, but not UC Merced specific curriculum."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": {
+      "message": "I was unable to find any undergraduate certificate programs specifically for students at the University of California, Merced in my search. The 'Career Advising Certificate Program' is noted as a professional development program for staff.",
+      "minors": [
+        "Data Science and Computing Minor",
+        "Writing Minor",
+        "Computer Science Minor",
+        "Management and Business Economics Minor",
+        "Psychology Minor",
+        "Public Health Minor",
+        "Economics Minor",
+        "Applied Mathematics Minor"
+      ]
+    }
+  },
   "application_process": {
+    "platforms": [
+      "University of California Application"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Regular Decision",
         "date": "2025-12-01",
         "is_binding": false,
-        "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
+        "notes": "The application filing period for the University of California system, including UC Merced, is typically from October 1 to December 1 for Fall admission. This is the standard application window; there are no separate Early Decision or Early Action plans for undergraduate admissions."
       }
     ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate Applicants (via UC Application)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Applicants must complete the University of California Personal Insight Questions (PIQs) as part of the main UC application. These are not specific supplemental essays for UC Merced, but are part of the system-wide application."
+      },
+      {
+        "target_program": "SJV PRIME+ BS to MD Pathway",
+        "requirement_type": "Essays",
+        "deadline": "First Friday in December",
+        "details": "A supplemental application is required, which includes specific essay questions. Applicants must submit their UC Merced application and select an eligible major and qualifying track by November 20th to receive access to the supplemental application. Responses are limited to 350 words each. Questions include: 1) What aspect of healthcare will you focus on to help improve health outcomes for the San Joaquin Valley and what have you done to demonstrate this commitment? 2) Describe an experience that has shaped who you are or allowed you to be your best self. 3) How do you define integrity and how has it guided your actions? 4) Reflect on an interaction with individuals or communities from different backgrounds and how it influenced your understanding of the world. Two letters of recommendation are also required for this supplemental application."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "No audition is listed as an admission requirement for any program at UC Merced through Acceptd or general admissions information."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First Generation Status"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UC Merced emphasizes reviewing academic accomplishments within the context of an applicant's life experiences and educational environment. They consider factors like leadership potential, volunteer/community service, participation in special projects or programs, and unique talents, experiences, and interests that will contribute to the vitality and educational environment at UC Merced. Special circumstances or personal challenges are also considered, particularly as they relate to the social or educational environment and how they've affected educational objectives and life experience."
+    },
     "essay_prompts": [
       {
-        "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
-        "word_limit": "350 words",
-        "type": "PIQ",
-        "required": true,
-        "brainstorming_questions": [
-          "Thinking about your time at UC Merced, what specific program, class, research opportunity, or even a particularly impactful professor really ignited your curiosity or challenged your perspective in a way that felt like a major 'educational opportunity'?",
-          "When you consider educational 'barriers' at UC Merced, were there any moments where you felt stuck or faced a significant hurdle (academic, personal, or resource-related) that required you to dig deep and find a creative solution?",
-          "Beyond the classroom, what extracurriculars, clubs, or community involvement at UC Merced provided you with a unique learning experience or a chance to develop skills that felt like a valuable opportunity not typically found in traditional schooling?",
-          "Reflecting on a time you encountered an educational challenge at UC Merced, can you pinpoint a specific instance where you had to pivot, adapt your learning strategy, or seek out unconventional support to overcome it?",
-          "If you had to explain to someone the most transformative learning experience you've had at UC Merced, whether it was seizing an opportunity or conquering a barrier, what's the core feeling or realization they would understand about your growth?"
+        "Exact Prompt Text": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
+        "Word/Character Limit": 350,
+        "Type": "Leadership/Activity",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "Think about a time when you stepped up, even without a formal title, to guide or organize a group. What was the situation?",
+          "How did your actions directly lead to a positive outcome for others or for the group's goal?",
+          "What specific challenges did you encounter in this leadership role, and how did you navigate them?",
+          "What did you learn about your own leadership style or working with others through this experience?",
+          "Beyond the immediate impact, how did this experience change or shape your approach to working with people in the long term?"
         ]
       },
       {
-        "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
-        "word_limit": "350 words",
-        "type": "PIQ",
-        "required": true,
-        "brainstorming_questions": [
-          "Beyond the obvious or commonly cited skills, what's a talent you possess that often surprises people when they discover it, and what's a specific moment you realized this unique ability was a strength?",
-          "Think about a time you faced a significant challenge or setback. How did your greatest talent or skill come into play, perhaps in an unexpected way, to help you navigate that situation at UC Merced or in your life leading up to it?",
-          "When you look at the skills valued by UC Merced, particularly in your intended field of study, which of your talents do you feel most uniquely aligns with the university's mission or the kind of innovative thinking they foster, and can you recall an early instance of honing that?",
-          "Describe a situation where you had to teach, mentor, or guide someone else in developing a skill. What does this experience reveal about your own mastery and the journey you took to acquire that expertise?",
-          "Imagine you're explaining your greatest talent to a younger student who is unsure of their own abilities. What specific anecdotes or examples would you use to illustrate not just the skill itself, but the dedication, practice, and perhaps even failures that led to your proficiency?"
+        "Exact Prompt Text": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
+        "Word/Character Limit": 350,
+        "Type": "Personal/Activity",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "What does \"creativity\" mean to you beyond traditional art forms?",
+          "When have you approached a problem or situation in a unique or unconventional way?",
+          "Is there a particular project, hobby, or activity where you consistently use innovative thinking?",
+          "How does expressing your creative side impact your understanding of yourself or the world around you?",
+          "Can you recall a specific instance where your creative approach led to an unexpected or valuable solution?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+        "Word/Character Limit": 350,
+        "Type": "Personal/Talent",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "What is a specific skill or talent you possess that you are genuinely proud of?",
+          "When did you first realize you had this talent, or when did you start developing this skill?",
+          "What deliberate steps, practice, or challenges have you undertaken to hone this talent over time?",
+          "How has this talent been showcased or utilized in different areas of your life (school, community, personal projects)?",
+          "What qualities or characteristics do you believe this talent reveals about you as a person?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+        "Word/Character Limit": 350,
+        "Type": "Academic/Challenge",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "What was an academic program, project, or learning experience that significantly enriched your education?",
+          "Conversely, what was a notable obstacle (e.g., lack of resources, learning disability, family circumstances) that impacted your schooling?",
+          "What specific actions did you take to maximize the educational opportunity or to address the educational barrier?",
+          "What did you learn about yourself, your resilience, or your approach to learning from this experience?",
+          "How has overcoming this barrier or seizing this opportunity prepared you for higher education at UC Merced?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
+        "Word/Character Limit": 350,
+        "Type": "Personal/Challenge",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "What personal challenge, beyond a minor setback, has truly tested you?",
+          "What specific strategies, resources, or internal strengths did you employ to address this challenge?",
+          "How did this challenge directly or indirectly influence your academic performance or engagement at the time?",
+          "What insights or coping mechanisms did you gain from navigating this difficult experience?",
+          "How has overcoming (or even currently facing) this challenge shaped your perspective on perseverance and problem-solving?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
+        "Word/Character Limit": 350,
+        "Type": "Academic/Major",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "What specific academic subject makes you genuinely curious and eager to learn more?",
+          "Beyond required coursework, how have you independently explored this subject (e.g., books, online courses, projects, discussions)?",
+          "Was there a particular project, concept, or moment in class that ignited or deepened this interest?",
+          "How does this subject connect to your potential major or future aspirations?",
+          "What new questions or avenues of exploration has your engagement with this subject opened up for you?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "What have you done to make your school or your community a better place?",
+        "Word/Character Limit": 350,
+        "Type": "Community/Contribution",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "Identify a specific issue or need you observed in your school or local community. What motivated you to act?",
+          "What concrete actions did you take to address this issue or contribute to improvement?",
+          "What was the tangible impact of your efforts on your school or community?",
+          "What challenges did you face in your efforts, and how did you overcome them?",
+          "How did this experience change your understanding of community, responsibility, or your ability to effect change?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admission to the University of California?",
+        "Word/Character Limit": 350,
+        "Type": "Personal/Why Me",
+        "Required/Optional": "Optional (choose 4 out of 8 PIQs)",
+        "Brainstorming Questions": [
+          "What unique perspective, background, or set of experiences do you bring that hasn't been fully highlighted elsewhere?",
+          "Are there any personal qualities (e.g., resilience, intellectual curiosity, empathy) that are central to who you are but haven't been adequately described?",
+          "How have your experiences prepared you to thrive academically and contribute positively to a diverse university community like UC Merced?",
+          "Is there a particular anecdote or insight about yourself that truly captures your essence and distinguishes you from other applicants?",
+          "What specific aspirations or goals do you have for your university experience, and how do your unique strengths align with achieving them at a UC campus?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_california_merced_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on CS/Engineering (for freshmen).",
+      "Consider applying as \"undeclared\" for Letters and Science (for freshmen).",
+      "Thoroughly research and prepare for major-specific requirements if applying as a transfer student.",
+      "Be aware that some majors may have higher rigor, but overall acceptance is high (for freshmen).",
+      "Align major choice with interests rather than solely perceived \"easiness\"."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "UC Merced considers alternate majors for admission. If an applicant is not admitted to their first-choice major, they may be admitted to an alternate if they meet its selection criteria. It is often recommended to list a less competitive major as an alternate if the primary major is highly selective (e.g., Computer Science as primary, Applied Math as alternate) to increase chances of campus admission. If the goal is solely to pursue a highly selective major, listing it as both primary and alternate is an option, but be aware that non-admission to that major could mean no admission to the university. While the UC application allows for alternate majors within the same school, some advice suggests choosing majors from different schools.",
+    "internal_transfer_difficulty": "Changing majors at UC Merced is possible but comes with limitations and varying levels of difficulty depending on the desired major and school. Students are expected to declare a major by 60 units and are generally not permitted to change majors after reaching 90 units (senior standing) or in the semester they've filed to graduate. First-semester freshmen and transfer students typically cannot change majors until after their first term. Admission to a new major can be denied if a student is in academic difficulty or has a GPA below 2.0 in courses required for that major. Specific schools and majors have additional, more stringent criteria. For instance, internal transfers into highly selective majors within the School of Engineering (like Computer Science) are described as 'very rare' and require 'very high grades and prerequisites' and a proposed graduation plan within 10 semesters. Transfer students seeking to enter an Engineering major must meet the original admission criteria for that major. Similarly, the School of Social Sciences, Humanities, and Arts (SSHA) requires students to be in good academic standing and complete the change before 90 units; transfer students generally must have met major-specific transfer criteria upon admission to declare an SSHA major after matriculation. Students are encouraged to consult with advisors early due to course sequencing and school-specific requirements."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 14436.0,
+        "total_coa": 44252.0,
+        "housing": 15000.0
+      },
+      "out_of_state": {
+        "tuition": 45462.0,
+        "total_coa": 75278.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 34718.0,
+    "average_merit_aid": 7573.0,
+    "percent_receiving_aid": 84.0,
+    "meets_full_need": false,
+    "notes": "The UC Blue and Gold Opportunity Plan covers systemwide fees for California residents whose families earn less than $80,000 a year and qualify for financial aid.",
+    "scholarships": [
+      {
+        "name": "UC Regents Scholarship",
+        "type": "Merit",
+        "amount": "$7,000 honorarium annually; may cover full in-state need for those with additional financial need",
+        "deadline": "Automatic consideration with UC application by November 30",
+        "benefits": "Four-year scholarship for freshmen, two-year for transfers, priority registration, special privileges",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Global Access Program Scholarship",
+        "type": "Merit",
+        "amount": "$20,000 per year for 4 years",
+        "deadline": "Automatic consideration with UC application by November 30",
+        "benefits": "Provides international and non-resident first-year students the opportunity to thrive at a research university. Requires 3.25 GPA at admission and maintaining 3.0 cumulative GPA.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "UC Merced International Student Scholarship",
+        "type": "Competitive Merit/Need",
+        "amount": "$5,000 - $10,000 per year (anticipated for 2025-26 academic year)",
+        "deadline": "Competitive award; application found online. Apply by March 2nd for continuing students through ScholarshipUniverse (February 1st opening).",
+        "benefits": "Financial support for international degree-seeking undergraduates; opportunity to share international perspective",
+        "application_method": "Separate Application (for continuing students); competitive for new transfer-in students"
+      },
+      {
+        "name": "Institutional Merit/Academic Scholarships",
+        "type": "Merit/Academic",
+        "amount": "Varies",
+        "deadline": "Automatic consideration with UC application/FAFSA or CADAA by March 2nd (new students); FAFSA/CADAA and ScholarshipUniverse application by March 2nd (continuing students, opens Feb 1)",
+        "benefits": "Financial assistance for undergraduate students based on academic performance, talents, and leadership. New students need 3.25 GPA, continuing students need 3.0 GPA.",
+        "application_method": "Automatic Consideration (new students); ScholarshipUniverse (continuing students)"
+      },
+      {
+        "name": "Wells Fargo Scholarship",
+        "type": "Merit/Need-based",
+        "amount": "$1,000 annually",
+        "deadline": "Automatic consideration with UC application/FAFSA or CADAA (implied by institutional scholarship process)",
+        "benefits": "Financial support for entering freshmen and community college junior transfer students from the San Joaquin Valley. Special consideration for first-generation college students.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Honors Scholarship Fund",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Implied as part of University Honors Program application/membership",
+        "benefits": "Provides scholarships for University Honors Students. Benefits of the Honors Program include priority registration, special honors courses, Living Learning Community access, honors advising, and eligibility for Honors travel awards.",
+        "application_method": "Automatic Consideration (for Honors Program members)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "UC Merced grants elective credit for all College Board AP examinations on which a student scores 3 or higher, unless otherwise noted.",
+      "exceptions": [
+        "No specific course exemption for AP Research",
+        "A score of 5 is required to exempt CSE 005"
+      ],
+      "usage": "AP credits can be applied as elective units or toward specific requirements, including fulfilling major, minor, or General Education requirements, and may help satisfy prerequisites for future classes."
+    },
+    "ib_policy": {
+      "General Rule": "UC Merced grants 5.3 semester units of elective credit for Higher Level (HL) International Baccalaureate (IB) exams with scores of 5, 6, or 7. All exams must be at the Higher Level to receive unit credit. Standard Level (SL) exams are generally not accepted for unit credit, though a score of 6 or 7 on an SL English exam (Language A only) can fulfill English language proficiency requirements.",
+      "Diploma Bonus": "Students who complete the full IB Diploma with a score of 30 or above will receive a total of 20 semester units of credit towards their UC Merced undergraduate degree. This credit is in addition to any units earned for individual Higher Level exams."
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "Students will be granted up to 70 semester/105 quarter units of credit for lower-division coursework completed at any other institution or any combination of other institutions. All courses must be taken for a letter grade, and a grade of C- or better must be earned for credit to be awarded. UC Merced does not grant credit for work experience, military/recruit basic training, vocational or technical training, remedial academic or personal enrichment courses. Credit is also not granted for College Level Examination Program (CLEP) or DANTES Subject Standardized Test (DSST) exams. Duplicate credit is not eligible for transfer. Courses taken outside the UC are not included in the total GPA but can be used to fulfill degree requirements."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Engaging in meaningful extracurricular activities and leadership roles",
+      "Authentic personal statements demonstrating self-reflection and unique qualities",
+      "Demonstrated passion in specific areas, including research opportunities"
+    ],
+    "common_activities": [
+      "Research experience",
+      "Leadership in school clubs",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Music/arts involvement"
+    ],
+    "essay_tips": [
+      "Keep the focus on yourself and use specific \"I\" statements.",
+      "Show, don't tell, by providing specific examples and anecdotes.",
+      "Demonstrate reflection and growth from your experiences.",
+      "Treat each PIQ as a standalone story."
+    ],
+    "red_flags": [
+      "Grade Decline in Senior Year",
+      "Misreporting Academic Record or Omitting Coursework",
+      "Generic or Unprofessional Personal Insight Questions (PIQs)",
+      "Listing Activities Without Depth or Context",
+      "Not Explaining Gaps in Education"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "UC Merced employs a holistic review process, emphasizing academic rigor, personal insight responses, and the depth of extracurricular involvement, rather than solely focusing on grades or test scores (which are not considered). Its acceptance rate is selective, with recent figures ranging from approximately 39% to 88.5%, indicating a trend toward increased competition."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "As an R1 research university and the newest UC campus, UC Merced offers extensive undergraduate research opportunities, even for freshmen, within an interdisciplinary academic framework across its three schools (Engineering, Natural Sciences, and Social Sciences, Humanities and Arts)."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "UC Merced cultivates a close-knit, supportive, and community-centric 'family-like' environment, characterized by a favorable student-to-faculty ratio (19:1) that fosters strong relationships with peers and professors. Students also have a unique opportunity to actively shape campus traditions and student life."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 64368,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 48475,
+    "notes": "Median earnings 10 years after enrollment is $64,368. Median earnings 6 years after enrollment is $48,475. The employment rate 2 years after graduation was not readily available from the authoritative sources consulted.",
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "Amazon",
+      "Apple",
+      "Microsoft",
+      "Meta (formerly Facebook)",
+      "Kaiser Permanente",
+      "Tesla Motors"
+    ],
+    "grad_school_rate": null,
+    "loan_default_rate": 2.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 83.0,
+    "graduation_rate_4_year": 50.5,
+    "graduation_rate_6_year": 73.0
+  }
 }

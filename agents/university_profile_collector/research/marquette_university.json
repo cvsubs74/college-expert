@@ -1186,25 +1186,25 @@
       {
         "target_program": "All First-Year Applicants",
         "requirement_type": "Essay/Personal Statement",
-        "deadline": null,
+        "deadline": "",
         "details": "An essay or personal statement is required for all first-year applicants."
       },
       {
         "target_program": "Accelerated Doctor of Physical Therapy Program",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Required essay on interest in physical therapy and relevant experiences."
       },
       {
         "target_program": "Accelerated Doctor of Occupational Therapy Program",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Required essay on interest in occupational therapy and relevant experiences."
       },
       {
         "target_program": "5-year Master of Athletic Training Program",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Required essay on interest in athletic training and relevant experiences."
       }
     ],
@@ -1284,7 +1284,7 @@
     "percent_receiving_aid": 99.0,
     "scholarships": [
       {
-        "name": "Marquette University Merit Scholarships (P\u00e8re Marquette Award)",
+        "name": "Marquette University Merit Scholarships (Père Marquette Award)",
         "type": "Merit",
         "amount": "$1,000 to $27,000/year",
         "deadline": "Automatic consideration with admission application",
@@ -1392,11 +1392,31 @@
       "Failing to proofread for spelling and grammar mistakes."
     ],
     "insights": [
-      "Marquette has a holistic admission review process, considering academic achievement alongside unique talents, leadership, service, and the application essay.",
-      "Applying Early Action is highly recommended as it shows strong interest and results in an earlier decision.",
-      "The university values students who can contribute positively to its private, Catholic institution community, emphasizing Jesuit values.",
-      "Many students appreciate the supportive faculty and resources available to help them succeed.",
-      "Marquette's direct admission programs for certain fields (e.g., Physical Therapy) are highly competitive and should be applied for as a freshman."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Marquette has a holistic admission review process, considering academic achievement alongside unique talents, leadership, service, and the application essay."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action is highly recommended as it shows strong interest and results in an earlier decision."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university values students who can contribute positively to its private, Catholic institution community, emphasizing Jesuit values."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Many students appreciate the supportive faculty and resources available to help them succeed."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Marquette's direct admission programs for certain fields (e.g., Physical Therapy) are highly competitive and should be applied for as a freshman."
+      }
     ]
   },
   "outcomes": {

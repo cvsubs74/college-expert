@@ -22,7 +22,7 @@
       },
       {
         "category": "Research",
-        "insight": "Baylor is classified as an R1: Doctoral University \u2013 Very High Research Activity institution, with a strong emphasis on undergraduate research.",
+        "insight": "Baylor is classified as an R1: Doctoral University – Very High Research Activity institution, with a strong emphasis on undergraduate research.",
         "implication": "Students seeking significant research opportunities, even at the undergraduate level, will find ample support and resources, making it attractive for academically ambitious students."
       },
       {
@@ -757,7 +757,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay required (450-word limit): 'What are you looking for in a university, why do you want to attend Baylor, and how do you see yourself contributing to the Baylor community?'"
       },
       {
@@ -950,11 +950,31 @@
       "Not submitting SAT/ACT scores if they would significantly boost the application (even though test-optional, strong scores can help)."
     ],
     "insights": [
-      "Baylor aims for students who are a good fit spiritually, academically, and financially.",
-      "While a Christian university, many non-religious students report finding their place and describe the required religious courses as more like history classes.",
-      "Professors are often praised for being approachable, knowledgeable, and genuinely invested in student success.",
-      "The community is often described as welcoming and close-knit, fostering a strong sense of belonging.",
-      "Baylor has adopted a test-optional policy, but submitting strong SAT/ACT scores can still enhance an application."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Baylor aims for students who are a good fit spiritually, academically, and financially."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While a Christian university, many non-religious students report finding their place and describe the required religious courses as more like history classes."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Professors are often praised for being approachable, knowledgeable, and genuinely invested in student success."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The community is often described as welcoming and close-knit, fostering a strong sense of belonging."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Baylor has adopted a test-optional policy, but submitting strong SAT/ACT scores can still enhance an application."
+      }
     ]
   },
   "outcomes": {

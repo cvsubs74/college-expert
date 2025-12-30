@@ -833,13 +833,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay required: 'Stevens Institute of Technology's motto is “Inspired by humanity, powered by technology.” What does this motto mean to you, and why does it inspire you to pursue your education at Stevens?' (250-500 words)."
       },
       {
         "target_program": "Visual Arts & Technology",
         "requirement_type": "Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Portfolio strongly encouraged"
       }
     ],
@@ -1021,11 +1021,31 @@
       "A significant decline in grades during senior year, as admissions committees generally look for consistent academic performance."
     ],
     "insights": [
-      "Stevens emphasizes career outcomes, with many students graduating with job offers due to its strong reputation among tech companies and robust postgraduate connections.",
-      "The university offers a rigorous curriculum that effectively prepares students for careers in engineering, business, and computer science.",
-      "The smaller class sizes and close-knit community allow for strong relationships with professors and peers, fostering a supportive environment.",
-      "Proximity to New York City provides significant advantages for internships and networking opportunities.",
-      "Applying Early Decision can increase acceptance chances due to a smaller, highly qualified applicant pool and allows for an expedited decision with a competitive financial aid package."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Stevens emphasizes career outcomes, with many students graduating with job offers due to its strong reputation among tech companies and robust postgraduate connections."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university offers a rigorous curriculum that effectively prepares students for careers in engineering, business, and computer science."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The smaller class sizes and close-knit community allow for strong relationships with professors and peers, fostering a supportive environment."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Proximity to New York City provides significant advantages for internships and networking opportunities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision can increase acceptance chances due to a smaller, highly qualified applicant pool and allows for an expedited decision with a competitive financial aid package."
+      }
     ]
   },
   "outcomes": {

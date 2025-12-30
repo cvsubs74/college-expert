@@ -1,314 +1,124 @@
 {
-  "university_profile": {
-    "_id": "clarkson_university",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.clarkson.edu",
-      "https://en.wikipedia.org/wiki/Clarkson_University",
-      "https://www.usnews.com/best-colleges/clarkson-university-2699"
+  "_id": "clarkson_university",
+  "metadata": {
+    "official_name": "Clarkson University",
+    "location": {
+      "city": "Potsdam",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Clarkson University is a private, national research institution recognized for its strong STEM programs and high return on investment. It consistently ranks as a \"Best Value\" school, with graduates achieving high early career salaries and excellent job placement rates.",
+    "market_position": "Hidden Gem (STEM-focused with high ROI)",
+    "admissions_philosophy": "Seeks students with a strong academic background, particularly in math and science, who demonstrate leadership potential, curiosity, and a desire for practical, problem-solving education.",
+    "us_news_rank": 143,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Clarkson University is moderately selective, with an acceptance rate typically around 77-78%, and places a strong emphasis on high school GPA, with most admitted students having a GPA of at least 3.5. Early Decision is an available application option.",
+        "implication": "Prospective students with competitive academic records (high GPA, strong SAT/ACT scores) should consider applying Early Decision to potentially enhance their admission chances."
+      },
+      {
+        "category": "Academic",
+        "insight": "Clarkson University is recognized for its hands-on, career-focused education, particularly in engineering, technology, and health professions, requiring every undergraduate to have at least one internship or co-op experience.",
+        "implication": "Applicants should highlight practical experiences, projects, and clear career aspirations in their personal statements and application materials, demonstrating how they align with Clarkson's emphasis on real-world application and professional development."
+      },
+      {
+        "category": "Culture",
+        "insight": "Clarkson fosters a collaborative and supportive campus environment, with a strong sense of community and numerous opportunities for student involvement through over 200 clubs and organizations.",
+        "implication": "Applicants should emphasize their teamwork skills, leadership experiences, and engagement in extracurricular activities to demonstrate a fit with Clarkson's collaborative and active campus culture."
+      }
     ],
-    "metadata": {
-      "official_name": "Clarkson University",
-      "location": {
-        "city": "Potsdam",
-        "state": "NY",
-        "type": "Private"
-      }
-    },
-    "strategic_profile": {
-      "executive_summary": "Clarkson University is a private research university focused on STEM, engineering, and business, located in a rural setting near the Adirondack Park. It is highly regarded for its high return on investment, boasting a 97-98% job placement rate within six months of graduation.",
-      "market_position": "High-ROI Private Research",
-      "admissions_philosophy": "Holistic review (Test-optional)",
-      "us_news_rank": 143,
-      "analyst_takeaways": [
-        {
-          "category": "Career Outcomes",
-          "insight": "Graduates earn salaries in the top 3% nationally, with an average early career salary of over $82,000.",
-          "implication": "The school is a prime choice for students prioritizing immediate workforce readiness and high starting pay."
-        },
-        {
-          "category": "Selectivity",
-          "insight": "Maintains a moderately selective acceptance rate between 70-79%.",
-          "implication": "Competitive for STEM but accessible for strong students who demonstrate interest through essays and recommendations."
-        },
-        {
-          "category": "Industry Alignment",
-          "insight": "Self-branded as 'America\u2019s Corporate Partner University' with over 200 employers attending career fairs.",
-          "implication": "Industry ties are deeply integrated into the curriculum and research funding."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A tight-knit, STEM-centric community with a dominant 'Division I' hockey culture (ECAC) and strong ties to outdoor recreation in the nearby Adirondack Mountains.",
-        "transportation_impact": "The rural Potsdam location makes the 'Hill' campus highly residential; the university is actively researching sustainable electric vehicle grid transport to address its unique geographical challenges.",
-        "research_impact": "Classified as an R2 High Research Activity institution, Clarkson provides hands-on undergraduate research opportunities starting as early as freshman year, particularly through its CAMP (Center for Advanced Materials Processing) and SPEED teams."
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "Wallace H. Coulter School of Engineering and Applied Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong performance in calculus and physics is essential. Highlight hands-on experience in STEM clubs like FIRST Robotics or maker-space projects, as the school values 'motivated doers.'",
-          "housing_profile": "Traditional first-year halls in 'The Quad' with access to the Solinsky Engineers LLC and the FIRST Robotics floor in Graham Hall.",
-          "student_archetype": "Hands-on problem-solvers and makers",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 77.0,
-              "average_gpa_admitted": 3.82,
-              "prerequisite_courses": [
-                "Calculus I",
-                "Calculus II",
-                "Physics I",
-                "Physics II",
-                "General Chemistry I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ES 220 Statics",
-                "ES 340 Thermodynamics",
-                "ES 223 Rigid Body Dynamics"
-              ],
-              "special_requirements": "Professional Experience (internship or co-op) required for graduation",
-              "admissions_pathway": "Direct Admit / Engineering Studies",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "MA 231 Calculus III",
-                  "MA 232 Elementary Differential Equations",
-                  "ES 220 Statics",
-                  "ES 222 Strength of Materials",
-                  "ES 330 Fluid Mechanics",
-                  "ME 310 Thermodynamic System Engineering",
-                  "ME 445 Integrated Design I",
-                  "ME 446 Integrated Design II"
-                ],
-                "electives": [
-                  "ME 444 Computer-Aided Engineering",
-                  "ME 390 Additive Manufacturing",
-                  "ES 380 Biomechanics",
-                  "ME 429 Welding and Metallurgy"
-                ],
-                "total_units": 120,
-                "major_units": 73
-              },
-              "notable_professors": [
-                "Dr. Goodarz Ahmadi",
-                "Dr. Cetin Cetinkaya",
-                "Dr. Ken Visser"
-              ],
-              "notes": "Engineering Studies program allows students to switch between engineering disciplines freely during the first year."
-            },
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 77.0,
-              "average_gpa_admitted": 3.75,
-              "prerequisite_courses": [
-                "Calculus I",
-                "Calculus II",
-                "Physics I",
-                "Chemistry I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ES 220 Statics",
-                "ES 222 Strength of Materials"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit / Engineering Studies",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "CE 212 Intro to Engineering Design",
-                  "CE 320 Structural Analysis",
-                  "CE 330 Water Resources Engineering",
-                  "CE 441 Reinforced Concrete Design",
-                  "CE 490 Senior Design"
-                ],
-                "electives": [
-                  "CE 410 Sustainable Infrastructure",
-                  "CE 501 Fracture Mechanics of Concrete"
-                ],
-                "total_units": 120,
-                "major_units": 90
-              },
-              "notable_professors": [
-                "Dr. John Dempsey",
-                "Dr. Robert Thomas",
-                "Dr. Steve Wojtkiewicz"
-              ],
-              "notes": "Highly ranked program with strong emphasis on infrastructure and materials."
-            },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 77.0,
-              "average_gpa_admitted": 3.8,
-              "prerequisite_courses": [
-                "General Chemistry I & II",
-                "Calculus I & II",
-                "Physics I & II"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CH 210 Chemical Process Analysis",
-                "CM 241 Organic Chemistry I"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Direct Admit / Engineering Studies",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "CH 220 Chemical Engineering Thermodynamics",
-                  "CH 330 Transfer Process Fundamentals",
-                  "CH 350 Chemical Reactor Principles"
-                ],
-                "electives": [
-                  "CH 465 Biochemical Engineering",
-                  "ES 464 Corrosion Engineering"
-                ],
-                "total_units": 120,
-                "major_units": 33
-              },
-              "notable_professors": [
-                "Dr. Elizabeth Podlaha-Murphy",
-                "Dr. Sitaraman Krishnan",
-                "Dr. Simona Liguori"
-              ],
-              "notes": "Curriculum focuses on molecular-level process design and sustainable chemistry."
-            }
-          ]
-        },
-        {
-          "name": "David D. Reh School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 78.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on leadership roles and entrepreneurial initiative. The school values students who seek to bridge the gap between technology and market strategy.",
-          "housing_profile": "Traditional dorms and suites with Living-Learning Communities (LLCs) focused on innovation and professional development.",
-          "student_archetype": "Entrepreneurial leaders and analytical thinkers",
-          "majors": [
-            {
-              "name": "Engineering & Management",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 77.0,
-              "average_gpa_admitted": 3.8,
-              "prerequisite_courses": [
-                "Calculus I",
-                "General Chemistry"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "SB 113 Small Business",
-                "ES 220 Statics"
-              ],
-              "special_requirements": "Dually accredited by AACSB and ABET",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "ES 220 Statics",
-                  "OM 331 Operations & Supply Chain Management",
-                  "EC 350 Engineering Economics",
-                  "EM 480 Project Management"
-                ],
-                "electives": [
-                  "EM 390 Additive Manufacturing",
-                  "MK 320 Principles of Marketing"
-                ],
-                "total_units": 120,
-                "major_units": 32
-              },
-              "notable_professors": [
-                "Dr. Alan Bowman",
-                "Dr. John Milne",
-                "Dr. Amir Mousavian"
-              ],
-              "notes": "One of only two programs in the world dually accredited as both business and engineering."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Aerospace Engineering Minor",
-        "Business Minor",
-        "Biology Minor",
-        "Computer Science Minor",
-        "Data Science Minor",
-        "Materials Engineering Minor",
-        "Project Management Certificate"
-      ]
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 77.36,
-      "international_acceptance_rate": 68.15,
-      "transfer_acceptance_rate": 85.5,
-      "admits_class_size": 5153,
+    "campus_dynamics": {
+      "social_environment": "Clarkson University fosters a collaborative, close-knit, and community-oriented social environment, largely due to small class sizes and a high percentage of students living on campus. Students often experience a strong sense of camaraderie. While the rural town of Potsdam offers limited social entertainment options, outdoor activities are plentiful, and the presence of nearby universities contributes to a 'college town' atmosphere.",
+      "transportation_impact": "Clarkson University features a walkable campus, allowing most residential students short commutes to classes. Residential students, including first-year students, are permitted to have cars with access to free parking. Within Potsdam, public transportation is limited, but a free Clarkson University Bus service is available for those with a valid ID, stopping at the Student Center and the Downtown Campus. For regional and longer-distance travel, bus services like Trailways and Greyhound are accessible. Additionally, Massena International Airport and Ogdensburg International Airport are both approximately 30 minutes from campus, with taxi services and Uber also available.",
+      "research_impact": "Clarkson University is recognized as a top-tier national research university, providing robust undergraduate research opportunities that can be accessed as early as freshman year. Students can engage in various programs, including National Science Foundation-funded Research Experiences for Undergraduates (REU), CSTEP, McNair, and Honors Program summer research opportunities. These experiences allow students to participate in faculty-led projects, present at conferences, publish research, and contribute to transdisciplinary research in fields such as advanced materials development, data and complex systems analytics, healthy world solutions, and next-generation healthcare technologies."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 77.38,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "test_policy_details": "Clarkson University is test-optional. For U.S. high school students, unofficial SAT and ACT scores are accepted for application, but official scores are required upon enrollment. International students attending high school outside the U.S. are required to submit official standardized testing, and TOEFL or IELTS scores must be official. The admissions team evaluates applications holistically, considering factors such as course load, course type, letters of recommendation, and all four years of high school.",
+      "admits_class_size": 5153,
+      "transfer_acceptance_rate": 85.5,
       "early_admission_stats": [
         {
           "plan_type": "ED",
-          "applications": 151,
-          "admits": 119,
-          "acceptance_rate": 79.0,
-          "class_fill_percentage": 24.0
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
-      ]
+      ],
+      "international_acceptance_rate": 68.15,
+      "international_applications": 914,
+      "international_admits": 623,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": false,
+      "notes": "Clarkson University is a private institution, so in-state and out-of-state acceptance rates are not applicable."
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
+        "year": 2025,
+        "cycle_name": "Class of 2029",
         "applications_total": 6661,
         "admits_total": 5153,
         "enrolled_total": 489,
-        "acceptance_rate_overall": 77.38,
+        "acceptance_rate_overall": 77.36,
         "yield_rate": 9.49,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 59,
-          "accepted_spots": 37,
-          "admitted_from_waitlist": 7,
-          "waitlist_admit_rate": 18.92,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Significant increase in waitlist admission rate."
+        "notes": "Reports of Clarkson phasing out humanities/communications majors around this time, focusing on STEM."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 7347,
+        "admits_total": 5669,
+        "enrolled_total": 608,
+        "acceptance_rate_overall": 77.16,
+        "yield_rate": 10.72,
+        "notes": ""
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
-        "applications_total": 7347,
-        "admits_total": 5668,
-        "enrolled_total": 606,
-        "acceptance_rate_overall": 77.15,
-        "yield_rate": 10.69,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 37,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 1,
-          "waitlist_admit_rate": 2.7,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Record high number of applications."
+        "applications_total": 6594,
+        "admits_total": 5171,
+        "enrolled_total": 596,
+        "acceptance_rate_overall": 78.42,
+        "yield_rate": 11.53,
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 7010,
+        "admits_total": 5258,
+        "enrolled_total": 736,
+        "acceptance_rate_overall": 75.0,
+        "yield_rate": 14.0,
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 7457,
+        "admits_total": 5817,
+        "enrolled_total": 812,
+        "acceptance_rate_overall": 77.99,
+        "yield_rate": 13.96,
+        "notes": ""
       }
     ],
     "admitted_student_profile": {
@@ -318,7 +128,7 @@
         "average_weighted": 3.7,
         "percentile_25": "3.50",
         "percentile_75": "4.00",
-        "notes": "Strong emphasis on STEM-heavy coursework."
+        "notes": "Clarkson University reports a weighted average GPA of 3.7 for incoming undergraduates. The unweighted average GPA is 3.39. Approximately 35% of undergraduates were in the top 10% of their high school graduating class."
       },
       "testing": {
         "sat_composite_middle_50": "1215-1380",
@@ -326,20 +136,52 @@
         "sat_math_middle_50": "605-700",
         "act_composite_middle_50": "26-31",
         "submission_rate": 51.0,
-        "policy_note": "Test-optional for most programs."
+        "policy_note": "Superscore accepted; Test-optional"
       },
       "demographics": {
-        "first_gen_percentage": 25.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 6.0,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children",
         "geographic_breakdown": [
           {
             "region": "New York",
-            "percentage": 68.8
+            "percentage": 68.77
           },
           {
             "region": "Massachusetts",
-            "percentage": 5.9
+            "percentage": 5.91
+          },
+          {
+            "region": "Vermont",
+            "percentage": 5.14
+          },
+          {
+            "region": "New Hampshire",
+            "percentage": 5.01
+          },
+          {
+            "region": "Connecticut",
+            "percentage": 2.7
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 2.44
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 1.8
+          },
+          {
+            "region": "Maine",
+            "percentage": 1.67
+          },
+          {
+            "region": "Maryland",
+            "percentage": 1.16
+          },
+          {
+            "region": "California",
+            "percentage": 1.03
           },
           {
             "region": "International",
@@ -350,218 +192,840 @@
           "men": {
             "applicants": 3572,
             "admits": 2837,
-            "acceptance_rate": 79.4,
-            "note": "69.8% of undergraduates"
+            "acceptance_rate": 79.42,
+            "note": "2025-2026 admission cycle data"
           },
           "women": {
             "applicants": 3063,
             "admits": 2300,
-            "acceptance_rate": 75.1,
-            "note": "30.2% of undergraduates"
+            "acceptance_rate": 75.09,
+            "note": "2025-2026 admission cycle data"
           },
-          "non_binary": {
-            "applicants": 26,
-            "admits": 16,
-            "acceptance_rate": 61.5,
-            "note": "0.5% of applicants"
-          }
+          "non_binary": null
         },
-        "racial_breakdown": {
-          "white": 67.0,
-          "black_african_american": 3.05,
-          "hispanic_latino": 6.3,
-          "asian": 4.36,
-          "native_american_alaskan": 0.33,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 2.91,
-          "unknown": 2.0,
-          "non_resident_alien": 13.95
-        },
-        "religious_affiliation": "Not specified"
+        "racial_breakdown": null
       }
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Clarkson University Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision",
-          "date": "2024-12-01",
-          "is_binding": true,
-          "notes": "Priority for merit aid"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-01-15",
-          "is_binding": false,
-          "notes": "Priority for financial aid"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "deadline": "2025-01-15",
-          "details": "One personal statement (250-650 words) required."
-        },
-        {
-          "target_program": "Honors Program",
-          "requirement_type": "Supplemental Essays",
-          "deadline": "2025-02-01",
-          "details": "Two short essay questions required."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "High School GPA",
-          "Course Rigor",
-          "Letters of Recommendation",
-          "Personal Statement"
-        ],
-        "secondary_factors": [
-          "Extracurricular Activities",
-          "Talents",
-          "Character/Personal Qualities"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Important",
-        "interview_policy": "Recommended",
-        "specific_differentiators": "Emphasis on STEM engagement and hands-on experience."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to 'Engineering Studies' if stats are borderline for easier initial entry.",
-        "Consider 'Engineering and Management' for high placement rates and ROI."
-      ],
-      "college_ranking_tactics": [
-        "Rank highly for salary impact and ROI.",
-        "Factor in the 4-year on-campus residency requirement."
-      ],
-      "alternate_major_strategy": "List 'Engineering Studies' as an alternate for high-demand engineering majors."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 59398,
-          "total_coa": 81706,
-          "housing": 18252
-        },
-        "out_of_state": {
-          "tuition": 59398,
-          "total_coa": 81706
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 40642,
-      "average_merit_aid": 37930,
-      "percent_receiving_aid": 100.0
-    },
-    "scholarships": [
-      {
-        "name": "Ignite Presidential Fellowship",
-        "type": "Merit",
-        "amount": "Full Tuition",
-        "deadline": "2025-02-15",
-        "benefits": "Covers all tuition for 10 students",
-        "application_method": "Separate Application"
-      },
-      {
-        "name": "Clarkson Leadership Award",
-        "type": "Merit",
-        "amount": "$30,000 per year",
-        "application_method": "Counselor Nomination"
-      },
-      {
-        "name": "Dean's Scholarship",
-        "type": "Merit",
-        "amount": "Varies",
-        "application_method": "Automatic Consideration"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 4 or 5 generally required for credit",
-        "exceptions": [
-          "30-hour limit for all test-based credit"
-        ],
-        "usage": "Satisfies Knowledge Area and major requirements"
-      },
-      "ib_policy": {
-        "general_rule": "HL exams with scores of 5, 6, or 7 grant credit",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Internal Mapping Your Credits tool"
-        ],
-        "restrictions": "30-hour cap on exam credits; grade of C or better"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Strong STEM performance",
-        "Hands-on tinkering mindset",
-        "GPA near 3.8"
-      ],
-      "common_activities": [
-        "SPEED teams",
-        "Undergraduate research",
-        "D-I Hockey"
-      ],
-      "essay_tips": [
-        "Reference specific SPEED teams",
-        "Focus on fit with Potsdam's geography"
-      ],
-      "red_flags": [
-        "Lack of genuine interest in collaborative 'maker' culture"
-      ],
-      "insights": [
-        "Highly ranked for ROI",
-        "Close-knit, unpretentious culture",
-        "Winter resilience is essential"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 89696,
-      "employment_rate_2yr": 98.0,
-      "grad_school_rate": 23.0,
-      "top_employers": [
-        "General Dynamics",
-        "Lockheed Martin",
-        "IBM",
-        "Amazon"
-      ],
-      "loan_default_rate": 1.6
-    },
-    "student_retention": {
-      "freshman_retention_rate": 85.0,
-      "graduation_rate_4_year": 64.6,
-      "graduation_rate_6_year": 78.0
     }
   },
-  "_id": "clarkson_university",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Wallace H. Coulter School of Engineering and Applied Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year students often reside in traditional dorms (Cubley, Reynolds, Ross, Brooks) within 'The Quad', participating in Living-Learning Communities (LLCs) such as Women in Science and Engineering (WiSE) or Men in Science & Engineering (MiSE). Upperclassmen progress to suite-style dorms (e.g., Moore House, Graham Hall) or apartment-style housing (e.g., Riverside, Woodstock Village) which may offer private bathrooms and kitchens. The FIRST Robotics LLC, which includes first-year students and sophomores, is located in Graham Hall.",
+        "student_archetype": "Ambitious problem-solvers who enjoy hands-on learning, collaborative projects, and competition. They are driven by a desire to innovate and make an impact in technological fields, often engaging in student teams like SPEED (Student Projects for Engineering Experience and Design).",
+        "strategic_fit_advice": "Students with a strong background and passion for STEM, particularly those eager to apply theoretical knowledge through practical, industry-sponsored projects and research. Ideal for those seeking a rigorous curriculum and a supportive, collaborative community focused on engineering and applied sciences.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Software Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by ABET. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Engineering & Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "David D. Reh School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First-year students typically live in 'The Quad' dorms and can join Living-Learning Communities such as 'Living Business' which focuses on professional development, leadership, teamwork, and entrepreneurship. As students advance, housing options transition to suite-style and apartment-style living, similar to other schools.",
+        "student_archetype": "Entrepreneurial and innovative individuals with strong analytical and technical skills, who are keen on applying business concepts in real-world scenarios. They value collaboration and seek opportunities for professional development and mentorship.",
+        "strategic_fit_advice": "Suited for students interested in a STEM-integrated business education, aiming to become leaders in a rapidly changing economy. Ideal for those who want hands-on experience through student-run businesses, business plan development, and an emphasis on data-driven decision-making.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Financial Information & Analysis",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Global Supply Chain Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Popular major at Clarkson University. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Innovation & Entrepreneurship",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Popular major at Clarkson University. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Earl R. and Barbara D. Lewis School of Health and Life Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year students reside in traditional dorms within 'The Quad' and can opt for Living-Learning Communities such as 'Pre-Health Professionals'. Graduate students in health sciences programs may utilize specialized facilities like simulation, pediatrics, cadaver, and media labs in Clarkson Hall, though on-campus graduate housing is not generally offered. Undergraduate housing follows the general progression from traditional halls to suites and apartments by class year.",
+        "student_archetype": "Dedicated and compassionate individuals aspiring to careers in healthcare, medical research, or related life sciences. They are often interested in serving rural communities and value hands-on clinical practice and research opportunities.",
+        "strategic_fit_advice": "Recommended for students committed to rigorous study in health and life sciences, including pre-health tracks, direct entry programs (e.g., Physical Therapy, Occupational Therapy, Physician Assistant Studies), and those passionate about advancing healthcare in underserved areas.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors at Clarkson University. Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Biomolecular Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Clinical Laboratory Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "School of Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Communication & Media",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Applied Mathematics & Statistics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Institute for a Sustainable Environment",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First-year students can join the 'Outdoor Enthusiast' or 'Sustainability' Living-Learning Communities within 'The Quad' dorms, fostering connections with peers interested in environmental issues and outdoor activities. General housing progression applies, moving from traditional halls to suites and apartments in later years.",
+        "student_archetype": "Environmentally conscious and interdisciplinary thinkers passionate about sustainability, natural resources, and finding innovative solutions to global environmental challenges. They often enjoy outdoor activities and hands-on fieldwork.",
+        "strategic_fit_advice": "Suitable for students committed to addressing environmental and sustainability issues, whether through engineering, science, policy, or interdisciplinary approaches. Ideal for those seeking unique course options, flexible curricula, and critical hands-on experiences in environmental education and research.",
+        "majors": [
+          {
+            "name": "Environmental Science & Policy",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Sustainable Energy Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Clarkson University Undergraduate Catalog 2025-2026."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Business Minor",
+      "Manufacturing Engineering Minor",
+      "Materials Engineering Minor",
+      "Humanities and Social Sciences Minors (e.g., Anthropology, Philosophy, Political Science)",
+      "Business Fundamentals Certificate",
+      "Global Supply Chain Management Certificate",
+      "Healthcare Management Certificate",
+      "Microcredential in Data Science",
+      "Microcredential in Entrepreneurship"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Clarkson University First-Year Student Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-12-01",
+        "is_binding": true,
+        "notes": "To be eligible for merit scholarships and grants, the admission application and any additional scholarship submissions should be received by this date. No application fee for first-year students applying via Clarkson or Common App."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "To be eligible for merit scholarships and grants, the admission application and any additional scholarship submissions should be received by this date. No application fee for first-year students applying via Clarkson or Common App."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal statement or essay of approximately 250-650 words is required. This should provide the Admission Committee with a sense of you as an individual and describe a special interest, experience, or achievement that is important and meaningful to you."
+      },
+      {
+        "target_program": "All Undergraduate Programs",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Submitting a résumé, portfolio, links to projects, or your YouTube channel is optional and recommended to make your application stand out."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "No audition requirements were found for any programs at Clarkson University."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Standardized Test Scores",
+        "Talents/Ability",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Unknown",
+      "specific_differentiators": "Clarkson emphasizes a holistic review, valuing strong academic records, compelling essays, and recommendations. They look for in-depth engagement and a 'spike' or expertise in extracurricular activities, and a focus on team and multidisciplinary projects."
+    },
     "essay_prompts": [
       {
-        "prompt": "Clarkson is committed to developing students who will be leaders and team players. Describe your approach to teamwork and collaboration.",
-        "word_limit": "250 words",
-        "type": "Teamwork",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about your most memorable team project, what was a specific moment where you had to step up as a leader, even if it wasn't your designated role, and how did that shape your approach to guiding others?",
-          "When you've been part of a team that faced a significant challenge or disagreement, what was your personal strategy for navigating that conflict and ensuring everyone felt heard and valued, ultimately contributing to a more cohesive unit?",
-          "Clarkson emphasizes developing leaders and team players; can you recall a time when you deliberately ceded control or prioritized another teammate's idea over your own, and what did you learn about the power of selfless collaboration from that experience?",
-          "Beyond just accomplishing a task, what do you believe are the key ingredients for truly *great* teamwork, and can you share an example of a time you actively fostered one of those ingredients within a group?",
-          "Describe a situation where you had to adapt your own strengths and contributions to complement the unique skills of your teammates, demonstrating how you balance individual talent with the collective success of the group in a Clarkson-like environment."
+        "Exact Prompt Text": "Is there something about your interests, talents or identity that you want to know? Please share your story so we can learn more about how it has shaped you as a person.",
+        "Word/Character Limit": "At least 250 words",
+        "Type": "Personal / Identity / Interests / Talents",
+        "Required/Optional": "Optional, but providing an essay is highly recommended",
+        "Brainstorming Questions": [
+          "What unique interest or talent do you possess that has significantly influenced your perspective or skills?",
+          "How has a particular aspect of your identity (cultural, personal, community-based) shaped your values or understanding of the world?",
+          "Can you recall a specific moment or series of events where this interest, talent, or identity played a crucial role in your development?",
+          "What impact has this part of you had on your interactions with others or your approach to learning?",
+          "If you had to pick one story that best illustrates this facet of yourself, what would it be and why?"
+        ]
+      },
+      {
+        "Exact Prompt Text": "Encountering obstacles can help us to grow in ways we never expected. Have you experienced a setback, challenge or failure? How did it affect you, and what did you learn from the experience?",
+        "Word/Character Limit": "At least 250 words",
+        "Type": "Personal / Overcoming Challenges / Growth",
+        "Required/Optional": "Optional, but providing an essay is highly recommended",
+        "Brainstorming Questions": [
+          "Describe a specific challenge or setback you faced. What were the initial feelings or consequences?",
+          "What actions did you take (or not take) in response to this difficulty?",
+          "How did this experience alter your perspective, priorities, or future goals?",
+          "What specific skills, insights, or strengths did you gain as a direct result of overcoming or navigating this obstacle?",
+          "In what unexpected ways did this particular challenge contribute to your personal growth or understanding of yourself?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/clarkson_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "When applying to Clarkson University, a moderately selective institution with an acceptance rate of approximately 77-78%, strategic major selection involves demonstrating a strong fit and readiness for your chosen field within their holistic review process. While specific \"easier majors to get into\" are not detailed in available admissions information, applicants can enhance their chances by focusing on these strategies:\n\n*   **Align your high school curriculum and performance with your intended major.** Clarkson places significant emphasis on a high GPA (the average for admitted students is 3.82) and completion of challenging coursework, such as honors or Advanced Placement (AP) classes. For majors in prominent fields like engineering or other STEM areas at Clarkson, excelling in advanced math and science courses is particularly crucial to demonstrate preparedness and commitment to your chosen discipline.\n*   **Articulate a clear and compelling reason for your chosen major in your application essays and secure strong letters of recommendation.** Clarkson employs a holistic admissions approach, considering factors beyond just grades and test scores, including extracurricular activities, leadership, and personal achievements. A well-crafted personal statement that conveys genuine interest and how your experiences have shaped your desire to pursue a specific major at Clarkson, coupled with recommendations that speak to your aptitude in that field, can significantly strengthen your application.\n*   **If your intended major is in a popular or potentially competitive field (e.g., certain engineering disciplines), aim for academic metrics at the higher end of Clarkson's admitted student profile.** While major-specific acceptance rates are not publicly disclosed, engineering programs are a significant part of Clarkson's offerings, with Mechanical Engineering, Civil Engineering, and Electrical Engineering granting a substantial number of bachelor's degrees. To stand out for such programs, it is strategic to present an overall application that is at the stronger end of Clarkson's admitted student statistics, including SAT scores between 1200-1390 or ACT scores between 26-31 (if submitting)."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "alternate_major_strategy: While specific 'alternate major' application guidance for Clarkson University is not explicitly detailed in the search results, general advice for competitive majors (like Computer Science in Engineering) at other universities suggests listing a backup major in a different college if the primary choice is highly competitive. This approach aims to increase the chances of university admission, with the understanding that internal transfers may be possible later. Clarkson does offer an Individually Designed Program (Bachelor of Professional Studies) which provides flexibility and interdisciplinary study, allowing students to design a curriculum tailored to their objectives.; internal_transfer_difficulty: Changing majors at Clarkson University, particularly before starting or as an underclassman, appears to be a relatively painless process, as many foundational courses are shared across majors. The university's administration is generally supportive of students transferring to a major where they are more likely to succeed academically and professionally. For graduate students, there is a formal 'Program Change Request Form' for changing majors, which suggests a structured, though not necessarily difficult, process for undergraduates as well. The Class Scheduling and Advanced Standing Questionnaire for accepted undergraduates also considers the intended major for initial schedule creation."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 59800.0,
+        "total_coa": 83589.0,
+        "housing": 9528.0
+      },
+      "out_of_state": {
+        "tuition": 59800.0,
+        "total_coa": 83589.0
+      }
+    },
+    "aid_philosophy": "Need-Blind / Meets 100% of Need",
+    "average_need_based_aid": 55072.0,
+    "average_merit_aid": 35794.0,
+    "percent_receiving_aid": 100.0,
+    "meets_full_need": true,
+    "notes": "No explicit statement found for no loans for families under $75K, although one source broadly links Clarkson with meeting 100% need and no loans policy. Conflicting data exists regarding the percentage of need met (100% vs 77%).",
+    "scholarships": [
+      {
+        "name": "Ignite Presidential Fellowship",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "February 15 (for Clarkson application); April 15 (for The Clarkson School)",
+        "benefits": "Covers all tuition costs for four years of undergraduate study.",
+        "application_method": "Separate Application (after applying to Clarkson University via Early Decision or Regular Decision, or The Clarkson School)"
+      },
+      {
+        "name": "Clarkson Leadership Awards and Clarkson Achievement Awards",
+        "type": "Merit",
+        "amount": "$30,000 annually, renewable for up to four years",
+        "deadline": "Automatic consideration based on admission application; counselor nomination for Leadership/Achievement awards during junior year of high school",
+        "benefits": "Recognition for leadership and outstanding academic achievement.",
+        "application_method": "Automatic Consideration (based on admission application); counselor nomination for Leadership & Achievement nominations"
+      },
+      {
+        "name": "International Scholarship",
+        "type": "Merit",
+        "amount": "Ranges from $2,000 to $45,000 annually",
+        "deadline": "Automatic consideration",
+        "benefits": "Partial funding for international undergraduate students, renewable if Satisfactory Academic Progress is maintained.",
+        "application_method": "Automatic Consideration (all accepted international students are considered)"
+      },
+      {
+        "name": "Honors Program Scholarship",
+        "type": "Merit",
+        "amount": "$2,000 per year, plus Honors Educational Enhancement Scholarship (HEES) up to $2,000 total",
+        "deadline": "Priority deadline for Honors is January 18 (for Clarkson University); February 1 (for The Clarkson School)",
+        "benefits": "Unique academic challenges, experiential learning, residential learning community, dedicated advising, professional development, funding for study abroad, conference travel, research, unpaid internships, and other scholarly/professional development activities through HEES.",
+        "application_method": "Separate Application (in addition to regular admissions application, requires an interview)"
+      },
+      {
+        "name": "Early Decision Incentive Scholarship",
+        "type": "Merit",
+        "amount": "$8,000 over four years ($2,000 per year)",
+        "deadline": "Apply for Early Decision admission no later than December 1",
+        "benefits": "Additional scholarship exclusively for Early Decision applicants.",
+        "application_method": "Automatic Consideration (by applying Early Decision and submitting deposit within two weeks of financial aid notice)"
+      },
+      {
+        "name": "Clarkson Visit Scholarship",
+        "type": "Merit",
+        "amount": "$4,000 over four years ($1,000 per year)",
+        "deadline": "December 1 for Early Decision; February 15 for Regular Decision of senior year",
+        "benefits": "Awarded to students who complete an official undergraduate admissions visit to Clarkson's Potsdam campus.",
+        "application_method": "Automatic Consideration (after completing an official admissions visit)"
+      },
+      {
+        "name": "Need-Based Grants (Federal Pell Grant, FSEOG, Clarkson Grants)",
+        "type": "Need",
+        "amount": "Varies based on FAFSA and individual eligibility (e.g., Pell Grants range from $657-$6,195; FSEOG from $600-$800 annually)",
+        "deadline": "FAFSA submission deadline (Federal and State aid is awarded annually)",
+        "benefits": "Financial assistance that does not require repayment.",
+        "application_method": "FAFSA (Free Application for Federal Student Aid)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Comprehensive and detailed policies for various credit types.",
+    "ap_policy": {
+      "general_rule": "Score of 4 or better grants credit for courses applicable to the University curriculum.",
+      "exceptions": [
+        "For MA 131 or MA 132, first-year students must also perform at a satisfactory level on the Math Readiness Survey or successfully complete the on-campus advanced-standing exam.",
+        "The computer science department schedules an exam in C++ or Java for new students; earning a satisfactory grade receives credit for CS 141 Introduction to Computer Science I.",
+        "Credit for certain Physics exams will not replace PH 131 or PH 132, which are required by many Clarkson programs.",
+        "Advanced placement credit based on tests or examinations (including AP, CLEP, IB) will be limited to a combined total of 30 hours."
+      ],
+      "usage": "Advanced placement credit is assigned by Student Achievement Services according to policy set by the University's academic units and should be determined before the student's first registration on campus, but finalized before the second registration."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit; no credit for SL exams. Credit is granted on a course-by-course basis and is limited to a combined total of 30 credit hours from all advanced placement tests.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Only approved courses with grades equivalent to a 'C' or higher are transferable. Advanced placement credit (AP, CLEP, IB, etc.) is limited to a combined total of 30 credit hours. A general credit cap for community college or other institutional transfer credits was not explicitly found in the provided information."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong aptitude and passion for STEM fields (engineering, science, business with a technical focus)",
+      "Proactive, hands-on learner eager for practical application and projects",
+      "Resilience and adaptability to a rigorous academic environment and North Country climate",
+      "Interest in research, innovation, and entrepreneurial thinking",
+      "Ability to collaborate effectively in team-based projects and activities"
+    ],
+    "common_activities": [
+      "Participating in student project teams (e.g., Baja SAE, Formula SAE, Concrete Canoe, robotics)",
+      "Engaging in co-ops, internships, and undergraduate research opportunities",
+      "Joining professional societies (e.g., IEEE, ASME, ASCE) and academic clubs",
+      "Utilizing outdoor recreational opportunities (skiing, hiking, kayaking) given the rural location",
+      "Attending campus events, club meetings, and social gatherings, including Greek life"
+    ],
+    "essay_tips": [
+      "Highlight specific STEM projects, challenges, or problem-solving experiences you've undertaken",
+      "Articulate how Clarkson's hands-on approach, co-op programs, or specific research areas align with your goals",
+      "Demonstrate an understanding of Clarkson's emphasis on innovation and entrepreneurship",
+      "Show genuine enthusiasm for your chosen major and how Clarkson will help you achieve your aspirations",
+      "If applicable, discuss how you've overcome challenges or demonstrated resilience"
+    ],
+    "red_flags": [
+      "Lack of genuine interest in STEM or a hands-on, project-based learning style",
+      "Expecting a large, urban campus environment (Clarkson is in a rural setting)",
+      "Unwillingness to engage in rigorous academics or adapt to cold weather conditions",
+      "Focusing solely on theoretical knowledge without a desire for practical application or internships",
+      "Ignoring the importance of networking and professional development opportunities"
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 70800,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 53700,
+    "notes": "Median earnings are from College Scorecard data. The employment rate provided refers to a placement rate within six months of graduation (98% for Class of 2023, including full-time employment, graduate school, or military). Alumni salaries are among the top 2% nationally, and 10-year earnings are 106% higher than the national median.",
+    "top_employers": [
+      "Amazon",
+      "Microsoft",
+      "Lockheed Martin",
+      "General Dynamics Electric Boat",
+      "General Dynamics Mission Systems",
+      "National Grid",
+      "Kiewit",
+      "GlobalFoundries",
+      "IBM",
+      "Intel"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 85.0,
+    "graduation_rate_4_year": 64.0,
+    "graduation_rate_6_year": 74.0
+  }
 }

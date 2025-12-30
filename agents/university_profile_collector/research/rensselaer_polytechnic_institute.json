@@ -833,31 +833,31 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required: 'Why are you interested in Rensselaer Polytechnic Institute?' (250 words or fewer) and 'Please briefly elaborate on one of your extracurricular activities or work experiences.' (300 words or fewer)."
       },
       {
         "target_program": "Architecture",
         "requirement_type": "Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Creative portfolio required. Portfolios should be submitted within 10 days of the application deadline."
       },
       {
         "target_program": "Electronic Arts",
         "requirement_type": "Portfolio & Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Creative portfolio strongly encouraged, along with an essay: 'Discuss your interests in the field of electronic arts, and state how this is reflected in your portfolio, if one has been submitted.' (1-2 pages). Portfolios should be submitted within 10 days of the application deadline."
       },
       {
         "target_program": "Games and Simulation Arts and Sciences",
         "requirement_type": "Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Creative portfolio strongly encouraged. Portfolios should be submitted within 10 days of the application deadline."
       },
       {
         "target_program": "Music",
         "requirement_type": "Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Creative portfolio strongly encouraged. Portfolios should be submitted within 10 days of the application deadline."
       }
     ],
@@ -1042,11 +1042,31 @@
       "Not clearly articulating how RPI's unique environment and resources will help achieve personal and academic goals."
     ],
     "insights": [
-      "RPI is highly regarded for its rigorous academic programs, particularly in engineering and computer science.",
-      "The campus environment is often described as collaborative, with students supporting each other through demanding coursework.",
-      "Social life at RPI is largely 'what you make of it,' with numerous clubs, Greek organizations, and on-campus events for engagement.",
-      "Professors are generally accessible, passionate about their fields, and keen on involving undergraduates in research.",
-      "The workload is substantial, often compared to a full-time job, requiring excellent time management skills."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "RPI is highly regarded for its rigorous academic programs, particularly in engineering and computer science."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The campus environment is often described as collaborative, with students supporting each other through demanding coursework."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Social life at RPI is largely 'what you make of it,' with numerous clubs, Greek organizations, and on-campus events for engagement."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Professors are generally accessible, passionate about their fields, and keen on involving undergraduates in research."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The workload is substantial, often compared to a full-time job, requiring excellent time management skills."
+      }
     ]
   },
   "outcomes": {

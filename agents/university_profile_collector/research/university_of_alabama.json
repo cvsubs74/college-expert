@@ -1,95 +1,77 @@
 {
-  "university_profile": {
-    "_id": "university_of_alabama",
-    "university_name": "University of Alabama",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "UA Undergrad Admissions Requirements",
-      "US News and World Report Best Colleges 2026",
-      "Alabama Transportation Institute Research Portfolios"
-    ],
-    "metadata": {
-      "official_name": "The University of Alabama",
-      "location": {
-        "city": "Tuscaloosa",
-        "state": "AL",
-        "type": "Public"
+  "_id": "university_of_alabama",
+  "metadata": {
+    "official_name": "The University of Alabama",
+    "location": {
+      "city": "Tuscaloosa",
+      "state": "Alabama",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "A large public university known for its vibrant campus life, strong athletic programs, and increasing academic rigor. Strong regional player with growing national recognition, particularly in business and engineering.",
+    "market_position": "Strong regional player with growing national recognition, particularly in business and engineering.",
+    "admissions_philosophy": "Holistic review with an emphasis on academic achievement, extracurricular involvement, and leadership potential. Seeks to build a diverse and engaged student body.",
+    "us_news_rank": 44,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Potential for further climb in national rankings.",
+        "category": "general"
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "UA Undergrad Admissions Requirements",
-        "US News and World Report Best Colleges 2026",
-        "Alabama Transportation Institute Research Portfolios"
-      ]
-    },
-    "strategic_profile": {
-      "executive_summary": "The University of Alabama is a premier public flagship research university (R1) renowned for its massive undergraduate enrollment, highly ranked Greek life, and world-class athletic programs. It balances a high-volume admissions model with an aggressive recruitment strategy for National Merit Scholars and top-tier research talent.",
-      "market_position": "Public Flagship",
-      "admissions_philosophy": "Holistic review (Test-Optional through Fall 2026)",
-      "us_news_rank": 169,
-      "analyst_takeaways": [
-        {
-          "category": "Enrollment Scaling",
-          "insight": "UA reached a record enrollment of over 42,300 students in late 2025, driven by a 37% surge in National Merit Scholars.",
-          "implication": "The university is leveraging its massive scale to fund elite academic tracks while maintaining broad access for in-state students."
-        },
-        {
-          "category": "Selectivity Paradox",
-          "insight": "While the overall acceptance rate remains near 76%, selectivity is tightening for high-value merit scholarships and honors programs.",
-          "implication": "Applicants seeking financial aid should focus heavily on GPA and leadership to compete for automatic-merit tiers."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "One of the most active social campuses in the U.S., dominated by the nation's largest Greek life system and a 'Top Party School' reputation. Social life is heavily anchored by SEC football culture and a mid-sized college town atmosphere.",
-        "transportation_impact": "The 'Crimson Ride' shuttle system supports a pedestrian-friendly core, but rapid growth has led to oversold commuter parking lots and reliance on personal vehicles for off-campus transit due to limited regional public infrastructure.",
-        "research_impact": "Holds R1: Very High Research Activity status with over $600 million in active awards. Key research hubs include the Alabama Transportation Institute and the Center for Advanced Public Safety, offering significant undergraduate research apprenticeships."
+      {
+        "takeaway": "Needs to balance rapid growth with maintaining student experience.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Strong alumni network is a major asset.",
+        "category": "general"
       }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 76.6,
-      "in_state_acceptance_rate": null,
-      "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": null,
-      "transfer_acceptance_rate": 52.1,
-      "admits_class_size": 8032,
+    ],
+    "campus_dynamics": {
+      "social_environment": "Very active, Greek-life dominant, strong sense of community and tradition.",
+      "transportation_impact": "Campus is walkable, but a car is useful for off-campus amenities. Bus system available.",
+      "research_impact": "Significant growth in research funding and output, particularly in interdisciplinary fields like cybersecurity and advanced materials."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 76.65,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": null
+      "test_policy_details": "The University of Alabama is test-optional for admissions through the Fall 2026 semester. Standardized ACT or SAT scores are not required for the admission review, but can be submitted for merit scholarship consideration. The University of Alabama System announced on December 18, 2025, that it will reinstate the requirement for standardized test scores for applicants beginning in August 2026 (for Fall 2027 entry and beyond).",
+      "admits_class_size": 43531,
+      "transfer_acceptance_rate": 51.14,
+      "early_admission_stats": []
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
-        "applications_total": 61994,
-        "admits_total": 44124,
-        "enrolled_total": 8127,
-        "acceptance_rate_overall": 71.2,
-        "yield_rate": 18.4,
-        "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Residency-specific acceptance rates not publicly disclosed. University of Alabama typically does not utilize a waitlist for general freshman admission."
+        "applications_total": 55172,
+        "admits_total": 42308,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.65,
+        "yield_rate": null,
+        "notes": "Data for Fall 2025 (Class of 2029) is estimated based on a reported decrease in applicants and an acceptance rate for the 'most recent admission cycle (2025)'. Final enrollment figures are not yet available.",
+        "waitlist_stats": null
       },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 56795,
         "admits_total": 43531,
-        "enrolled_total": 8032,
-        "acceptance_rate_overall": 76.6,
-        "yield_rate": 18.5,
+        "enrolled_total": 7973,
+        "acceptance_rate_overall": 76.64,
+        "yield_rate": 18.32,
+        "notes": "The University started test-optional admissions with the Fall 2021 incoming class and has extended this through Fall 2024.",
         "waitlist_stats": {
           "year": 2024,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
+          "is_waitlist_ranked": false
         }
       },
       {
@@ -97,558 +79,1276 @@
         "cycle_name": "Class of 2027",
         "applications_total": 58418,
         "admits_total": 44295,
-        "enrolled_total": 8279,
-        "acceptance_rate_overall": 75.8,
-        "yield_rate": 18.7,
+        "enrolled_total": 8073,
+        "acceptance_rate_overall": 75.82,
+        "yield_rate": 18.23,
+        "notes": "Data sourced from the University of Alabama's Common Data Set 2023-2024.",
         "waitlist_stats": {
           "year": 2023,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
+          "offered_spots": 4540,
+          "accepted_spots": 2840,
+          "admitted_from_waitlist": 73,
+          "waitlist_admit_rate": 2.57,
+          "is_waitlist_ranked": false
         }
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 54072,
-        "admits_total": 43290,
-        "enrolled_total": 8037,
-        "acceptance_rate_overall": 80.1,
-        "yield_rate": 18.6,
+        "applications_total": 55720,
+        "admits_total": 44636,
+        "enrolled_total": 8455,
+        "acceptance_rate_overall": 80.11,
+        "yield_rate": 18.94,
+        "notes": "Data sourced from the University of Alabama's Common Data Set 2022-2023.",
         "waitlist_stats": {
           "year": 2022,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
+          "offered_spots": 4761,
+          "accepted_spots": 2898,
+          "admitted_from_waitlist": 32,
+          "waitlist_admit_rate": 1.1,
+          "is_waitlist_ranked": false
         }
       },
       {
         "year": 2021,
         "cycle_name": "Class of 2025",
-        "applications_total": 42421,
-        "admits_total": 33472,
-        "enrolled_total": 7593,
-        "acceptance_rate_overall": 78.9,
-        "yield_rate": 22.7,
+        "applications_total": 49700,
+        "admits_total": 39100,
+        "enrolled_total": 8150,
+        "acceptance_rate_overall": 78.67,
+        "yield_rate": 20.84,
+        "notes": "The University started test-optional admissions with the Fall 2021 incoming class. Data sourced from the University of Alabama's Common Data Set 2021-2022.",
         "waitlist_stats": {
           "year": 2021,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
+          "offered_spots": 4070,
+          "accepted_spots": 2457,
+          "admitted_from_waitlist": 39,
+          "waitlist_admit_rate": 1.59,
+          "is_waitlist_ranked": false
         }
       }
     ],
-    "admitted_profile": {
+    "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "3.54-4.21",
+        "weighted_middle_50": "3.48-4.21",
         "unweighted_middle_50": "3.68-4.00",
-        "average_weighted": 4.12,
-        "percentile_25": "3.54",
+        "average_weighted": null,
+        "percentile_25": "3.48",
         "percentile_75": "4.21",
-        "notes": "Middle 50% for non-residents (3.54-4.21) is slightly higher than residents (3.48-4.16)."
+        "notes": "For Fall 2025, the middle 50% GPA for admitted students (combining AL Resident and Non-Resident data where applicable) falls within these ranges. The University of Alabama utilizes a holistic admissions process, considering various factors beyond GPA, including high school course rigor (e.g., AP/IB classes), extracurricular activities, leadership experience, essays, and standardized test scores (if submitted). While an unweighted average GPA of admitted students is frequently cited around 3.86-3.87, an explicit average weighted GPA is not consistently provided in available public data. Approximately 91% of admitted students for 2022 had high school GPAs of 3.0 or above."
       },
       "testing": {
-        "sat_composite_middle_50": "1180-1410",
+        "sat_composite_middle_50": "1170-1400",
         "sat_reading_middle_50": "590-690",
         "sat_math_middle_50": "580-710",
-        "act_composite_middle_50": "24-31",
+        "act_composite_middle_50": "22-30",
         "submission_rate": 43.0,
-        "policy_note": "Test optional through 2026. Required for automatic merit and Honors College consideration."
+        "policy_note": "UA will superscore for admission purposes. Standardized test scores are not required for students applying through the Fall 2026 Semester but will be required for students applying for the Fall 2027 and 2028 academic years. For the academic year 2025, 43% of enrolled students submitted ACT scores and 15% submitted SAT scores."
       },
       "demographics": {
         "first_gen_percentage": 25.0,
         "legacy_percentage": null,
-        "international_percentage": 3.0,
         "geographic_breakdown": [
           {
             "region": "Alabama",
             "percentage": 42.4
           },
           {
-            "region": "Other US States",
-            "percentage": 54.6
+            "region": "Georgia",
+            "percentage": 6.11
+          },
+          {
+            "region": "Illinois",
+            "percentage": 5.06
+          },
+          {
+            "region": "Florida",
+            "percentage": 4.75
+          },
+          {
+            "region": "Texas",
+            "percentage": 2.39
+          },
+          {
+            "region": "North Carolina",
+            "percentage": 1.95
+          },
+          {
+            "region": "Tennessee",
+            "percentage": 1.81
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 1.5
+          },
+          {
+            "region": "Ohio",
+            "percentage": 1.44
+          },
+          {
+            "region": "California",
+            "percentage": 1.27
           },
           {
             "region": "International",
-            "percentage": 3.0
+            "percentage": 2.1
+          },
+          {
+            "region": "Other Out-of-State (US)",
+            "percentage": 29.22
           }
         ],
         "gender_breakdown": {
           "men": {
-            "applicants": 23104,
-            "admits": 17506,
-            "acceptance_rate": 75.8,
-            "note": "Based on 2024-2025 IPEDS data."
+            "applicants": 8762,
+            "admits": 4668,
+            "acceptance_rate": 53.27,
+            "note": "Data for Fall 2010 admissions (Common Data Set 2010-2011)."
           },
           "women": {
-            "applicants": 33691,
-            "admits": 26025,
-            "acceptance_rate": 77.3,
-            "note": "Women represent the majority of both applicants and the enrolled freshman class."
+            "applicants": 11350,
+            "admits": 6122,
+            "acceptance_rate": 53.94,
+            "note": "Data for Fall 2010 admissions (Common Data Set 2010-2011)."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 67.5,
-          "black_african_american": 12.9,
+          "white": 67.49,
+          "black_african_american": 12.87,
           "hispanic_latino": 7.5,
-          "asian": 1.7,
-          "native_american_alaskan": 0.3,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 3.7,
-          "unknown": 3.3,
-          "non_resident_alien": 3.0
-        },
-        "religious_affiliation": null
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Barefield College of Arts & Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 77.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Perfect for students who want a liberal arts foundation within a major research university. Applicants should emphasize interest in the Blount Scholars Program.",
-          "housing_profile": "Blount Hall (living-learning community) and Parker-Adams LLC.",
-          "student_archetype": "Intellectually curious polymaths",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "PY 101 Intro to Psychology"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PY 211 Statistical Methods",
-                "PY 355 Experimental Psychology"
-              ],
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 31
-              },
-              "notable_professors": [
-                "Dr. Susan White",
-                "Dr. Theodore Tomeny",
-                "Dr. Jeffrey Parker"
-              ],
-              "notes": "Flexible major; BS path available."
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "notable_professors": [
-                "Dr. Guy Caldwell"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Culverhouse College of Business",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Students admitted to 'Lower Division' and must apply to 'Upper Division' after 60 credits. Maintaining a 2.5+ GPA is critical.",
-          "housing_profile": "Presidential Village or Riverside, or Business LLC.",
-          "student_archetype": "Career-driven corporate strategists",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "EC 110 Microeconomics",
-                "AC 210 Financial Accounting"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "EC 110 Principles of Microeconomics",
-                "FI 302 Business Finance"
-              ],
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 36
-              },
-              "notable_professors": [
-                "Anup Agrawal"
-              ]
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "MKT 300 Marketing"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "AC 210 Financial Accounting",
-                "ST 260 Statistical Data Analysis"
-              ],
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 18
-              },
-              "notable_professors": [
-                "Dr. Arthur Allaway",
-                "Dr. Thomas Baker",
-                "Dr. Kristy Reynolds"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Styslinger College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Direct entry standard, but the 'Freshman Engineering Program' is a hurdle. Students must be math-ready.",
-          "housing_profile": "Bryant Hall and Riverside East.",
-          "student_archetype": "Ambitious technical problem-solvers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.86,
-              "prerequisite_courses": [
-                "MATH 125 Calculus I",
-                "CS 100 CS I for Majors"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CS 100 Computer Science I",
-                "CS 201 Data Structures and Algorithms"
-              ],
-              "admissions_pathway": "Direct or Internal Transfer",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 58
-              },
-              "notable_professors": [
-                "Dr. Jeff Gray",
-                "Dr. Travis Atkison"
-              ]
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.M.E.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 125 Calculus I",
-                "PH 105 General Physics"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ME 215 Thermodynamics",
-                "AEM 201 Statics"
-              ],
-              "admissions_pathway": "Direct or Internal Transfer",
-              "internal_transfer_allowed": true,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 64
-              },
-              "notable_professors": [
-                "Dr. Ajay Agrawal"
-              ],
-              "notes": "laptop_required: true (Windows-based recommended)"
-            }
-          ]
-        },
-        {
-          "name": "Capstone College of Nursing",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 35.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extremely competitive. Admission only grants entry to Lower Division. Upper Division requires science GPA (3.8+).",
-          "housing_profile": "Emphasis on quiet study hours.",
-          "student_archetype": "Resilient and academically elite caregivers",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.6,
-              "prerequisite_courses": [
-                "BSC 215 Anatomy & Physiology I",
-                "CH 104 Intro to Chemistry"
-              ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "BSC 215 Anatomy & Physiology I",
-                "CH 105 Intro to Organic Chemistry"
-              ],
-              "admissions_pathway": "Pre-Nursing to Promotion",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 65
-              },
-              "notes": "Requires separate promotion application."
-            }
-          ]
-        },
-        {
-          "name": "Honors College",
-          "admissions_model": "Direct Admit",
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires a separate application (typically 30+ ACT/1360+ SAT). Provides early registration.",
-          "housing_profile": "Ridgecrest West, Ridgecrest South, and Blount Hall.",
-          "student_archetype": "The 'Overachieving Capstone Scholars'",
-          "majors": []
+          "asian": 1.68,
+          "native_american_alaskan": 0.34,
+          "pacific_islander": 0.09,
+          "two_or_more_races": 3.68,
+          "unknown": 3.31,
+          "non_resident_alien": 3.04
         }
-      ],
-      "minors_certificates": [
-        "Blount Scholars Minor",
-        "Shakespeare Studies Minor",
-        "Catherine J. Randall Research Scholars Program (Minor)",
-        "Entrepreneurship Certificate",
-        "Cyber Security Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "UA Undergraduate App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Scholarship",
-          "date": "2024-12-15",
-          "is_binding": false,
-          "notes": "Priority deadline for automatic merit and competitive scholarship consideration."
-        },
-        {
-          "plan_type": "Priority Admissions",
-          "date": "2025-01-15",
-          "is_binding": false,
-          "notes": "Priority deadline for admission consideration."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-05-01",
-          "is_binding": false,
-          "notes": "Final application deadline for the Fall 2025 term."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Optional Short Answers",
-          "details": "General admission does not require a formal essay, but short responses are encouraged for scholarships."
-        },
-        {
-          "target_program": "Honors College",
-          "requirement_type": "Essays",
-          "deadline": "2025-01-15",
-          "details": "Required for test-optional applicants."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Course Rigor",
-          "Test Scores (if submitted)"
-        ],
-        "secondary_factors": [
-          "Leadership",
-          "Extracurricular Activities",
-          "Volunteer Work"
-        ],
-        "essay_importance": "Low",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Emphasis on high school core curriculum performance and potential for campus leadership."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply directly to Culverhouse for 'Lower Division' status for immediate business advisor access",
-        "Choose Management Information Systems (MIS) over Computer Science if seeking better faculty-to-student ratios",
-        "Submit separate Honors College application immediately after admission to secure priority registration"
-      ],
-      "college_ranking_tactics": [
-        "Prioritize the Honors College for access to Ridgecrest South housing",
-        "Rank the Blount Scholars Program for a small, residential liberal arts experience",
-        "Evaluate 'Upper Division' GPA requirements (e.g., 2.5 for Business, 3.0 for Nursing) before selection"
-      ],
-      "alternate_major_strategy": "If applying to Computer Science, list MIS in Culverhouse as your alternate for better industry recruiting and a less rigorous weed-out curriculum."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 12180,
-          "total_coa": 33924,
-          "housing": 9800
-        },
-        "out_of_state": {
-          "tuition": 34172,
-          "total_coa": 55916,
-          "supplemental_tuition": 21992
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 15823,
-      "average_merit_aid": 17380,
-      "percent_receiving_aid": 66.0
-    },
-    "scholarships": [
-      {
-        "name": "National Merit Finalist Package",
-        "type": "Merit",
-        "amount": "Full tuition for up to 5 years",
-        "deadline": "2026-05-01",
-        "benefits": "4 years housing, $4,000/year stipend, $2,000 research allowance",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Presidential Elite Scholarship",
-        "type": "Merit",
-        "amount": "Full tuition for up to 4 years",
-        "deadline": "2025-12-15",
-        "benefits": "1st year housing, $1,500/year supplemental, $2,000 research allowance",
-        "application_method": "Automatic (Requires 4.0+ GPA and 36 ACT/1600 SAT)"
-      },
-      {
-        "name": "Presidential Scholarship (Out-of-State)",
-        "type": "Merit",
-        "amount": "$28,000 per year",
-        "deadline": "2026-05-01",
-        "benefits": "Renewable for 4 years",
-        "application_method": "Automatic Consideration (Requires 32-36 ACT/1420-1600 SAT and 3.50+ GPA)"
-      },
-      {
-        "name": "Alabama Advantage Scholarship",
-        "type": "Need",
-        "amount": "Up to $5,000 per year",
-        "deadline": "2026-05-01",
-        "benefits": "Covers remaining in-state tuition costs",
-        "application_method": "FAFSA"
-      },
-      {
-        "name": "UA Scholar Program",
-        "type": "Merit",
-        "amount": "$24,000 per year",
-        "deadline": "2026-05-01",
-        "benefits": "Renewable for 4 years",
-        "application_method": "Automatic (Requires 30-31 ACT/1360-1410 SAT and 3.50+ GPA)"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for many common exams",
-        "exceptions": [
-          "AP Computer Science A requires a 4 for CS 100 credit",
-          "AP Art History requires a 4"
-        ],
-        "usage": "Satisfies core General Education requirements"
-      },
-      "ib_policy": {
-        "general_rule": "Higher Level (HL) exams with scores of 5, 6, or 7 grant credit",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Alabama Transfers (STARS)",
-          "UA Transfer Credit Equivalency Tables"
-        ],
-        "restrictions": "60 unit cap for community college credits; 50% of degree must be from a 4-year institution"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A minimum 3.0 GPA for out-of-state applicants to be competitive",
-        "Qualifying test scores (30+ ACT) for automatic merit and Honors College",
-        "Application submission by the December 1st priority scholarship deadline"
-      ],
-      "common_activities": [
-        "Greek Life (fraternities and sororities)",
-        "SEC football culture and gameday events",
-        "National Merit Scholar groups"
-      ],
-      "essay_tips": [
-        "Treat the 150-word activity description boxes like mini-essays",
-        "Write a focused 'Why Honors' essay highlighting intellectual curiosity",
-        "Use the 'Additional Info' section to explain grading discrepancies"
-      ],
-      "red_flags": [
-        "Missing the hard December deadline for scholarship consideration",
-        "Applying test-optional without a strong 3.5+ GPA",
-        "Poor time management in a high-social environment"
-      ],
-      "insights": [
-        "Famous for 'automatic merit' scholarships based on GPA and test score charts",
-        "Honors College offers a 'small school feel' with early registration perks",
-        "National Merit Finalists often receive full-ride packages"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 59221,
-      "employment_rate_2yr": 90.0,
-      "grad_school_rate": 20.0,
-      "top_employers": [
-        "Lockheed Martin",
-        "ExxonMobil",
-        "Ernst & Young (EY)",
-        "PricewaterhouseCoopers (PwC)",
-        "Goldman Sachs",
-        "Boeing",
-        "Dell Technologies",
-        "AT&T",
-        "Regions Bank"
-      ],
-      "loan_default_rate": 5.1,
-      "student_retention": {
-        "freshman_retention_rate": 86.0,
-        "graduation_rate_4_year": 56.5,
-        "graduation_rate_6_year": 73.4
       }
     }
   },
-  "_id": "university_of_alabama",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "J. Frank Barefield Jr. College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 125 Calculus I",
+              "CS 101 Introduction to Programming",
+              "STAT 200 Introduction to Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 125 Calculus I",
+              "CS 101 Introduction to Programming",
+              "STAT 200 Introduction to Statistics"
+            ],
+            "special_requirements": "This forward-looking program combines machine learning, AI and ethical data analysis.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 101 Introduction to Programming",
+                "CS 201 Data Structures and Algorithms",
+                "MATH 125 Calculus I",
+                "MATH 227 Introduction to Linear Algebra",
+                "STAT 200 Introduction to Statistics",
+                "STAT 340 Statistical Methods I",
+                "DSC 300 Introduction to Data Science",
+                "DSC 400 Machine Learning",
+                "DSC 490 Data Science Capstone"
+              ],
+              "electives": [
+                "CS 410 Artificial Intelligence",
+                "CS 420 Database Management Systems",
+                "STAT 460 Regression Analysis"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "New major for 2025. Prepares students for roles such as data analyst, data architect/engineer, data scientist, machine learning engineer, and operations research analyst. Data source: University of Alabama Catalog 2025-2026, New University of Alabama Majors and Minors for 2025"
+          }
+        ],
+        "housing_profile": "General freshman housing (suite or traditional style with standard amenities). Specific LLCs include Blount Hall for Blount Scholars (double occupancy, shared bath, seminar rooms, community kitchen) and John England Jr. Hall for Parker-Adams LLC (double occupancy, private bath). McCollough Institute for Pre-Medical Scholars are in Ridgecrest South (2- or 4-bedroom suites, private baths, living room, kitchenette).",
+        "student_archetype": "Intellectually curious, diverse interests, liberal arts focused. Blount Scholars are seeking interdisciplinary learning; Parker-Adams students desire a supportive community; Pre-Medical Scholars are academically strong and service-oriented.",
+        "strategic_fit_advice": "Strong academic curiosity and interest in a broad range of subjects. Consider LLCs for specialized academic support, community, and pre-professional preparation."
+      },
+      {
+        "name": "Capstone College of Nursing",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Written Composition",
+              "First Year Compass Courses",
+              "Human Anatomy & Physiology I with Lab",
+              "Human Anatomy & Physiology II with Lab",
+              "Intro to Chemistry with Lab",
+              "Intro to Organic Chemistry with Lab",
+              "Microbiology with Lab",
+              "Intro to Psychology",
+              "History",
+              "Fine Arts/Humanities/Literature"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "Human Anatomy & Physiology I with Lab",
+              "Human Anatomy & Physiology II with Lab",
+              "Intro to Chemistry with Lab",
+              "Intro to Organic Chemistry with Lab",
+              "Microbiology with Lab"
+            ],
+            "special_requirements": "Students are admitted to the lower division of the Capstone College of Nursing by meeting University of Alabama admission requirements and declaring nursing as their major. Promotion to the upper division (professional component of the program) is competitive and occurs after the sophomore year. For promotion to the upper division, a minimum 3.0 cumulative GPA on all required lower division courses and science courses is required. A departmental interview is required for transfer and second-degree students. All lower division courses must be completed with a grade of C- or higher.",
+            "admissions_pathway": "Direct Admit to Lower Division, Competitive Admission to Upper Division",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "NUR 200 Health Promotion and Assessment",
+                "NUR 201 Fundamentals of Nursing Practice",
+                "NUR 300 Adult Health Nursing I",
+                "NUR 301 Psychiatric-Mental Health Nursing",
+                "NUR 302 Child and Family Health Nursing",
+                "NUR 303 Adult Health Nursing II",
+                "NUR 400 Community Health Nursing",
+                "NUR 401 Critical Care Nursing",
+                "NUR 402 Leadership and Management in Nursing",
+                "NUR 403 Professional Nursing Role Transition"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "The BSN program consists of lower division core curriculum courses and upper division nursing courses. The upper division consists of five semesters of nursing courses, including theory and clinical lab components. Graduates have an NCLEX-RN pass rate of around 92%. Data source: University of Alabama Catalog 2025-2026, AllNurses"
+          }
+        ],
+        "housing_profile": "Students generally reside in standard freshman housing options, which include modern suite-style dorms (e.g., Presidential Village) or traditional halls. Off-campus options are also popular among nursing students seeking quiet study environments.",
+        "student_archetype": "Compassionate, dedicated, resilient, and driven to provide high-quality healthcare and make a difference in patient's lives, possessing strong critical thinking and communication skills.",
+        "strategic_fit_advice": "Recommended for students committed to a challenging healthcare career, who are empathetic and possess strong academic discipline."
+      },
+      {
+        "name": "College of Communication and Information Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Advertising",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Minimum of 120 credit hours for graduation. Overall and UA GPA of 2.0 or higher, and a 2.0 or higher GPA in the major and minor. At least 12 hours at 300–400 level and at least 3 hours of Writing credit.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AD 200 Introduction to Advertising",
+                "AD 308 Advertising Strategy",
+                "AD 310 Media Planning",
+                "AD 312 Creative Strategy",
+                "AD 330 Advertising Research",
+                "AD 416 Advertising Campaigns"
+              ],
+              "electives": [
+                "AD 320 Digital Advertising",
+                "AD 405 International Advertising",
+                "AD 420 Public Relations Campaigns"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "One of six undergraduate majors offered by the College of Communication and Information Sciences. Data source: University of Alabama Catalog 2025-2026."
+          },
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Minimum of 120 credit hours for graduation. Overall and UA GPA of 2.0 or higher, and a 2.0 or higher GPA in the major and minor. At least 12 hours at 300–400 level and at least 3 hours of Writing credit.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COM 100 Introduction to Communication Studies",
+                "COM 210 Public Speaking",
+                "COM 300 Communication Theory",
+                "COM 310 Research Methods in Communication",
+                "COM 400 Communication Capstone"
+              ],
+              "electives": [
+                "COM 320 Interpersonal Communication",
+                "COM 330 Organizational Communication",
+                "COM 340 Rhetoric and Public Address",
+                "COM 420 Communication and Culture"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "An Accelerated Master's Program (AMP) in Communication Studies allows eligible students to earn both BA and MA in five years. Data source: University of Alabama Catalog 2025-2026, UA Online"
+          }
+        ],
+        "housing_profile": "John England Jr. Hall houses the Capstone Communication Living-Learning Community, offering double-occupancy rooms with private bathrooms and community spaces.",
+        "student_archetype": "Aspiring professionals in media, communication, and information fields, who enjoy collaborative learning and networking.",
+        "strategic_fit_advice": "Recommended for students passionate about communication and media, seeking an immersive, career-focused living and learning experience."
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Kinesiology (Exercise Science Concentration)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "The concentration in Exercise Science does not lead to teacher certification.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students in this program plan to enter into fields of exercise physiology, personal training, coaching, athletic coordination, sports nutrition, occupational therapy, or physical therapy. Data source: University of Alabama Catalog 2025-2026."
+          },
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Leads to Early Childhood (P-3) and Elementary Education (K-6th grade) certification. Teacher education programs lead to licensure in the state of Alabama.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CI 300 Introduction to Education",
+                "CI 301 Child Development and Learning",
+                "CI 302 Differentiated Instruction",
+                "CI 303 Classroom Management",
+                "CI 400 Elementary Methods I",
+                "CI 401 Elementary Methods II",
+                "CI 402 Reading Methods",
+                "CI 403 Social Studies Methods",
+                "CI 404 Science Methods",
+                "CI 405 Mathematics Methods",
+                "CI 490 Internship in Elementary Education"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Alabama Catalog 2025-2026, College of Education"
+          }
+        ],
+        "housing_profile": "Students typically reside in general freshman housing options, including traditional dorms like Burke or Paty, and suite-style dorms like Presidential Village, offering standard amenities.",
+        "student_archetype": "Dedicated to teaching and educational leadership, patient, empathetic, and committed to making a positive impact on students and communities.",
+        "strategic_fit_advice": "Suited for individuals passionate about shaping future generations and contributing to educational development. Open to all general freshman housing options."
+      },
+      {
+        "name": "College of Human Environmental Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Human Environmental Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "An approved program of study prior to the completion of 100 hours. Minimum of 120 earned semester credit hours, including all University Core Curriculum requirements and a minimum of 30 hours of coursework in disciplines offered by the College of Human Environmental Sciences, including HES 310 Improving Lives: Professionalism and Multidisciplinary Collaboration and HES 100 Freshman Compass Human Environmental Sciences (for on-campus freshmen) or HES 103 Distance Compass HES (for online students). 12 hours of 300-400 level courses, including HES 485 and HES 490. A 2.0 or higher GPA for all college-level courses, UA courses, and major courses.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HES 100 Freshman Compass Human Environmental Sciences (for on-campus freshmen) OR HES 103 Distance Compass HES (for online students)",
+                "HES 310 Improving Lives: Professionalism and Multidisciplinary Collaboration",
+                "HES 485 Human Environmental Sciences Senior Seminar",
+                "HES 490 Human Environmental Sciences Internship"
+              ],
+              "electives": [
+                "ADD 200 Introduction to Addiction and Recovery",
+                "ATH 200 Introduction to Athletic Training",
+                "CTD 200 Introduction to Clothing, Textiles and Design",
+                "CS 200 Consumer Issues",
+                "ECY 200 Introduction to Early Childhood Education",
+                "HDFS 200 Introduction to Human Development and Family Studies",
+                "HNHM 200 Introduction to Human Nutrition and Hospitality Management",
+                "ID 200 Introduction to Interior Design",
+                "PH 200 Introduction to Public Health",
+                "SM 200 Introduction to Sport Management"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "This major allows students to develop an innovative program of study focusing on disciplines like addiction and recovery, athletic training, clothing and textiles, consumer sciences, early childhood education, human development and family studies, human nutrition, hospitality management, interior design, public health, and sport management. The program is available online. Data source: University of Alabama Catalog 2025-2026, College of Human Environmental Sciences"
+          }
+        ],
+        "housing_profile": "Students typically reside in general freshman housing options, which include suite-style dorms (e.g., Lakeside) and traditional dorms (e.g., Burke), offering furnished rooms, internet, and laundry facilities.",
+        "student_archetype": "Individuals focused on improving quality of life, with interests in areas such as fashion, nutrition, hospitality, human development, and consumer sciences.",
+        "strategic_fit_advice": "Best for those who want to blend scientific understanding with practical application to enhance human well-being and societal health."
+      },
+      {
+        "name": "Culverhouse College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All Management Information Systems major program courses must be completed in residence.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Management Information Systems and Services graduates have a median starting salary of $67,700. Data source: University of Alabama Catalog 2025-2026, CollegeSimply."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "AC 210 Principles of Accounting I (Financial)",
+              "AC 211 Principles of Accounting II (Managerial)",
+              "MATH 121 Calculus and Applications (or higher)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "AC 210 Principles of Accounting I (Financial)",
+              "AC 211 Principles of Accounting II (Managerial)"
+            ],
+            "special_requirements": "All major program courses required by the Culverhouse School of Accountancy must be completed in residence.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AC 310 Intermediate Accounting I",
+                "AC 311 Intermediate Accounting II",
+                "AC 341 Federal Tax Accounting",
+                "AC 351 Managerial Accounting Decisions",
+                "AC 471 Auditing",
+                "AC 490 Accounting Capstone"
+              ],
+              "electives": [
+                "AC 420 Advanced Accounting",
+                "AC 442 Advanced Federal Tax Accounting",
+                "AC 472 Internal Audit"
+              ],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [],
+            "notes": "The Culverhouse School of Accountancy offers a broad range of course specializations focusing on public accounting, management accounting, auditing, taxation, and nonprofit accounting. Data source: University of Alabama Catalog 2025-2026, Culverhouse College of Business"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FIN 301 Business Finance",
+              "MATH 121 Calculus and Applications (or higher)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FIN 301 Business Finance"
+            ],
+            "special_requirements": "Undergraduate students seeking a degree in finance must select an additional major or specialization.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FIN 301 Business Finance",
+                "FIN 310 Financial Markets and Institutions",
+                "FIN 320 Investments",
+                "FIN 410 Advanced Corporate Finance",
+                "FIN 490 Capstone in Finance"
+              ],
+              "electives": [
+                "FIN 415 Real Estate Finance",
+                "FIN 425 Portfolio Management",
+                "FIN 430 International Finance"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Alabama Catalog 2025-2026, Culverhouse College of Business"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MKT 300 Marketing Principles"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MKT 300 Marketing Principles"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MKT 300 Marketing Principles",
+                "MKT 330 Consumer Behavior",
+                "MKT 340 Marketing Research",
+                "MKT 400 Marketing Management",
+                "MKT 490 Marketing Strategy"
+              ],
+              "electives": [
+                "MKT 410 Digital Marketing",
+                "MKT 420 Sales Management",
+                "MKT 430 International Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: University of Alabama Catalog 2025-2026, Culverhouse College of Business"
+          },
+          {
+            "name": "General Business",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "A minimum grade of C- is required in each course.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AC 351 Managerial Accounting Decisions OR AC 352 Corporate Financial Reporting OR AC 361 Cost Analysis for Planning and Control"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "This degree program is offered 100% online. Students will major in General Business and can begin coursework any semester. Data source: University of Alabama Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "Primarily general freshman housing (e.g., Presidential Village, Lakeside - modern suite-style dorms with shared living areas and kitchenettes). The Crimson Innovator Hub LLC in Blount Hall (double occupancy, shared bath, seminar rooms, community kitchen) caters to entrepreneurial students.",
+        "student_archetype": "Ambitious, career-focused, often entrepreneurial, with strong academic records and a drive for success in business.",
+        "strategic_fit_advice": "Ideal for students focused on a business career, valuing networking and practical experience. Consider the Crimson Innovator Hub if interested in entrepreneurship."
+      },
+      {
+        "name": "Lee J. Styslinger Jr. College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 125 Calculus I",
+              "CS 100 Introduction to Computer Science",
+              "CS 101 Introduction to Programming",
+              "CS 200 Computer Organization"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A maximum of 12 hours can be transferred at the 200/300/400 level for Computer Science degree programs. Senior design course(s) must be taken at UA.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 100 Introduction to Computer Science",
+                "CS 101 Introduction to Programming",
+                "CS 200 Computer Organization",
+                "CS 201 Data Structures and Algorithms",
+                "CS 300 Discrete Structures",
+                "CS 301 Operating Systems",
+                "CS 302 Programming Languages",
+                "CS 400 Senior Design I",
+                "CS 401 Senior Design II"
+              ],
+              "electives": [
+                "CS 410 Artificial Intelligence",
+                "CS 420 Database Management Systems",
+                "CS 430 Computer Networks",
+                "CS 450 Cybersecurity"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "The B.S. in Cyber Security is offered through the Computer Science department. Engineering students are limited to three attempts of any math, science, or engineering course required for the degree. Data source: University of Alabama Catalog 2025-2026, Lee J. Styslinger Jr. College of Engineering"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 125 Calculus I",
+              "MATH 126 Calculus II",
+              "PH 105 General Physics I (Calculus-based)",
+              "PH 106 General Physics II (Calculus-based)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 125 Calculus I",
+              "MATH 126 Calculus II",
+              "PH 105 General Physics I (Calculus-based)",
+              "PH 106 General Physics II (Calculus-based)"
+            ],
+            "special_requirements": "Engineering students are limited to three attempts of any math, science, or engineering course that is required for the degree.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EE 215 Electric Circuits I",
+                "EE 220 Digital Logic Design",
+                "EE 310 Electronics I",
+                "EE 311 Signals and Systems",
+                "EE 312 Electromagnetics",
+                "EE 491 Electrical Engineering Design I",
+                "EE 492 Electrical Engineering Design II"
+              ],
+              "electives": [
+                "EE 430 Control Systems",
+                "EE 440 Communications Systems",
+                "EE 450 Power Systems",
+                "EE 460 Digital Signal Processing"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Electrical, Electronics and Communications Engineering graduates have a median starting salary of $71,600. Data source: University of Alabama Catalog 2025-2026, CollegeSimply, Research.com"
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Chemical Engineering graduates have a median starting salary of $64,700. Data source: University of Alabama Catalog 2025-2026, CollegeSimply."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Alabama Catalog 2025-2026."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: University of Alabama Catalog 2025-2026."
+          }
+        ],
+        "housing_profile": "Bryant Hall is designated for male freshman engineering students (2 or 4-bedroom suites with living rooms, kitchenettes, and private bathrooms). Other engineering students may reside in general freshman housing (e.g., Presidential Village, Lakeside - modern suite-style).",
+        "student_archetype": "Ambitious problem-solvers, logical thinkers, detail-oriented, with a strong aptitude for STEM subjects and an interest in practical application.",
+        "strategic_fit_advice": "Ideal for students with strong STEM backgrounds. Male engineering students should consider Bryant Hall for a specialized community."
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "SW 101 Orientation to Social Work",
+              "PY 101 Introductory Psychology"
+            ],
+            "special_requirements": "Students must formally apply to the BSSW Professional program. Minimum grades of C in all required social work courses and two social work electives. Minimum grades of C in all other courses required in the major. Students under any catalog before the 2023-2024 Undergraduate Catalog are eligible to take an optional writing assessment to test out of SW 310, Professional Writing Seminar.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "SW 101 Orientation to Social Work",
+                "SW 200 Introduction to Social Work Practice",
+                "SW 300 Social Work with Individuals and Families",
+                "SW 310 Professional Writing Seminar",
+                "SW 350 Human Behavior and the Social Environment",
+                "SW 400 Social Welfare Policy and Services",
+                "SW 450 Social Work with Groups, Communities, and Organizations",
+                "SW 490 Social Work Field Practicum I",
+                "SW 491 Social Work Field Practicum II"
+              ],
+              "electives": [
+                "SW 320 Social Work in Health Care",
+                "SW 330 Child Welfare Services",
+                "SW 340 Social Work with Older Adults"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Prepares graduates for beginning-level professional social work practice. Requires a 2.25 cumulative GPA and 2.5 GPA in social work courses for admission to the major. Data source: University of Alabama Catalog 2025-2026, School of Social Work"
+          }
+        ],
+        "housing_profile": "Undergraduate social work students can participate in the Parker-Adams LLC in John England Jr. Hall. Otherwise, they reside in general freshman housing options. Graduate students typically seek off-campus housing.",
+        "student_archetype": "Empathetic, service-oriented, advocates for social justice, and committed to improving societal well-being through community engagement and direct practice.",
+        "strategic_fit_advice": "Best for individuals passionate about helping vulnerable populations and working towards positive community change. Consider the Parker-Adams LLC for a supportive community."
+      }
+    ],
+    "minors_certificates": [
+      "Accounting Minor",
+      "Advertising and Public Relations Minor",
+      "Computer Technology and Applications Minor",
+      "Cyber Criminology Minor",
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Political Science Minor",
+      "Psychology Minor",
+      "Public Policy Minor",
+      "Real Estate Minor",
+      "Business Cyber Security Certificate",
+      "Data Analytics Certificate",
+      "Supply Chain Analytics Certificate"
+    ],
+    "honors_college_program_info": {
+      "college_name": "Honors College",
+      "housing_profile": "Dedicated housing in Ridgecrest West and Ridgecrest South (home to Honors Connections LLC), and Blount Hall (shared with Blount Scholars). These are modern suite-style dorms with study rooms, community kitchens, and social spaces.",
+      "student_archetype": "High-achieving, intellectually curious, motivated, valuing academic rigor, research, leadership, and a close-knit community of like-minded peers.",
+      "strategic_fit_advice": "Highly recommended for top academic students seeking an enriched collegiate experience, advanced learning opportunities, and strong peer and faculty connections through specialized programs and housing."
+    }
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "UA Undergraduate App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action (Priority Admission & Automatic Merit Scholarship)",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Priority deadline for admission and automatic merit scholarship consideration for Summer or Fall 2026 terms."
+      },
+      {
+        "plan_type": "Early Action (Priority Admissions & Competitive Scholarships)",
+        "date": "2026-01-10",
+        "is_binding": false,
+        "notes": "Priority deadline for general admissions and final deadline for competitive scholarships. Applications submitted after this date will be considered on a space-available basis. Also a priority deadline for automatic merit scholarships."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "The University of Alabama has a rolling admissions policy; applications are considered on a space-available basis after priority deadlines."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Two short response essays (up to 150 words each) are required for general admission and scholarship consideration. Applicants select from prompts related to elected/appointed leadership positions, significant academic achievements/honors/awards, volunteer experience, extracurricular activities, and paid positions. These are considered holistically."
+      },
+      {
+        "target_program": "UA Early College",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A 400-word essay is required, based on two of the following topics: how UA Early College will help achieve college goals, skills and abilities for college study, or academic achievements and preparation for college study."
+      },
+      {
+        "target_program": "New College Interdisciplinary Studies (Major)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A 'Self-Statement' comprising two essay prompts (400-600 words total). Prompt 1 requires demonstrating readiness for a self-designed and self-directed course of study by responding to one of several options (e.g., advocating for self, exhibiting resilience, adapting to fluid situations). Prompt 2 requires describing a proposed plan of study, combining subject areas and mentioning specific departments, courses, or independent study ideas."
+      },
+      {
+        "target_program": "New College Interdisciplinary Studies (Major)",
+        "requirement_type": "Letter of Recommendation",
+        "deadline": "",
+        "details": "One letter of recommendation from someone who can describe the applicant's likelihood of success in a program emphasizing academic independence, creativity, and responsibility (teachers and educational counselors are recommended)."
+      },
+      {
+        "target_program": "Music (Undergraduate Voice)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Prepare three memorized solo selections; one must be in a foreign language for all degree programs (Vocal Performance, Music Education, Music Minors, BA programs). Music Therapy students do not audition for voice faculty. BA students and minors may substitute two musical theatre selections if the third is a classical solo in a foreign language. Secondary students/non-majors interested in MUA 134 or MUA 234 contact Dr. Susan Williams for an interview and 'Happy Birthday' audition."
+      },
+      {
+        "target_program": "Music (Undergraduate Piano)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Prepare at least three memorized works of contrasting style exhibiting musical and technical proficiency (e.g., Bach Inventions, Kuhlau Sonatinas level). Sight-reading is also required."
+      },
+      {
+        "target_program": "Music (Undergraduate Trombone)",
+        "requirement_type": "Audition",
+        "deadline": "January 31, 2026; February 4, 2026 (Honor Band); February 21, 2026; March 7, 2026",
+        "details": "The audition must include works of contrasting style that exhibit lyrical and technical difficulty appropriate to college music study. Repertoire may include solos, études, and/or orchestral excerpts. Audition dates are for Fall 2026 admission."
+      },
+      {
+        "target_program": "Music (Undergraduate Jazz Studies)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Requirements include two classical pieces of varying styles (études are acceptable with faculty consultation), two jazz tunes (e.g., a blues and a jazz standard, performed with melody, improvisation, and comping if applicable), basic jazz improvisation, sight-reading, and major/minor scales (minimum 2 octaves, ascending/descending to the 9th, with arpeggiation)."
+      },
+      {
+        "target_program": "Music (General Undergraduate Music Major - BA)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "All students must pass an audition to declare a general music major. Auditions typically occur between January and March prior to fall enrollment."
+      },
+      {
+        "target_program": "Music (Graduate Voice Programs - MM/DMA)",
+        "requirement_type": "Audition",
+        "deadline": "Pre-screening recordings required to obtain an audition. Auditions live on campus or Zoom: January 31, 2026; February 14, 2026 (Zoom); February 15, 2026; March 7, 2026",
+        "details": "Pre-screening recordings (3 video selections, including at least one opera aria for opera assistantships) are required. The full audition program (combining pre-screening and live/Zoom) should include five or six varied selections for MM and a 20-25 minute recital program for DMA. Auditions demonstrate understanding of various vocal styles, diction, and foreign languages. No GRE scores are required."
+      },
+      {
+        "target_program": "Music (Graduate Choral Conducting - MM/DMA)",
+        "requirement_type": "Audition",
+        "deadline": "December 1 (pre-screening application)",
+        "details": "A pre-screening application with three varied selections (at least one in English) must be submitted by December 1st. Audition with a University ensemble, conducting two major works in contrasting styles. Ear training and sight-singing proficiency are also assessed."
+      },
+      {
+        "target_program": "Music (Graduate Piano - MM/DMA)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Prospective master's students prepare a program of no less than 30 minutes of memorized music representing at least three contrasting styles. Prospective doctoral students prepare a program of no less than 60 minutes of memorized music representing at least three contrasting styles. A complete sonata is strongly encouraged for both."
+      },
+      {
+        "target_program": "Music (Graduate Music Theory)",
+        "requirement_type": "Portfolio & Interview",
+        "deadline": "",
+        "details": "In lieu of an instrumental audition, students meet with theory faculty for an interview and submit a portfolio for review."
+      },
+      {
+        "target_program": "Music (Graduate Other Programs - MM/DMA)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Generally, three works of contrasting style that exhibit musical and technical difficulty appropriate to college music study. Repertoire may include solos, études, and/or orchestral excerpts."
+      },
+      {
+        "target_program": "Music (Ensembles: Jazz Ensemble/Lab Band/Combos)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Auditions for Fall 2025/Spring 2026 placement take place on August 18-19, 2025. Specific times are given for trombones, trumpets, saxophones, and rhythm section instruments. Information and excerpts are available on the Jazz Studies website."
+      },
+      {
+        "target_program": "Music (Ensembles: Wind Ensemble, Symphonic Band, Concert Band)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Auditions for Fall 2025 placement take place on August 18-19, 2025. Specific times are given for trumpet, horn, trombone, euphonium, tuba, percussion, flute, bassoon, oboe, clarinet, and saxophone. Audition materials are provided in a shared online folder."
+      },
+      {
+        "target_program": "Music (Ensembles: Huxford Symphony Orchestra)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Audition information is available for Spring 2026."
+      },
+      {
+        "target_program": "Music (Ensembles: Choral Auditions/Hearing)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Information for Spring 2026 choral auditions/hearings is available."
+      }
+    ],
+    "holistic_review_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First generation",
+        "Alumni/ae relation",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The University of Alabama uses a holistic review process for freshman admission, which includes both academic and non-academic criteria. The university is test-optional through the Fall 2026 Semester, meaning standardized test scores are not required for admission consideration and students will not be penalized for not submitting them. While general admission interviews are not considered, interviews are part of the selection process for certain competitive first-generation scholarships and the Honors College (especially for test-optional applicants). The university offers robust support and scholarship programs specifically for first-generation students, and alumni/ae relation is a considered factor for admission and specific scholarships."
+    },
     "essay_prompts": [
       {
-        "prompt": "Why are you interested in attending the University of Alabama? How will you contribute to our community?",
-        "word_limit": "300 words",
-        "type": "Why Alabama",
+        "prompt": "Include any elected or appointed leadership position you held in the last three years. List the name of the organization or group for which you held the leadership role and include your elected or appointed title/position. Include the duration of your position/title and a list of your accomplishments and responsibilities in the position.",
+        "word_limit": "150 words",
+        "type": "Activity (Leadership)",
         "required": false,
+        "note": "This is one of five options in the 'Select-A-Prompt Short Response' section, where students choose which information to provide. The section itself is required, but students select the content. It is considered for both admission and scholarship consideration. Each essay box holds up to 150 words.",
         "brainstorming_questions": [
-          "Thinking about the University of Alabama's specific strengths \u2013 perhaps its acclaimed programs in your intended major, its vibrant campus traditions, or its commitment to a particular value \u2013 what aspect resonates most deeply with your aspirations, and how have past experiences prepared you to engage with that specific strength?",
-          "Beyond academics, what unique traditions, organizations, or social aspects of the University of Alabama stand out to you as particularly exciting, and can you recall a time when you successfully navigated or enriched a similar community, even in a small way?",
-          "The prompt asks about contributing to the community. Can you think of a specific challenge or opportunity you've encountered where you brought people together, or a unique skill or perspective you possess that could address a need or add a distinct flavor to the UA campus life?",
-          "When you picture yourself as a student at the University of Alabama, what does a typical 'day in the life' look like beyond attending classes, and what specific activities or interactions would you be involved in that showcase your genuine enthusiasm for being part of the Crimson Tide family?",
-          "Considering the University of Alabama's strong emphasis on [insert a specific UA value/tradition if known, e.g., community service, school spirit, research innovation], can you share a personal anecdote that demonstrates your commitment to that particular value, and how would that experience inform your role as a contributing member of their community?"
+          "What specific challenge did you face in this leadership role, and how did you overcome it?",
+          "How did your actions or decisions impact the group or organization you led?",
+          "What new skill or perspective did you gain from this leadership experience?",
+          "Can you describe a moment when you had to motivate others, and what was the outcome?",
+          "How did this leadership position align with or challenge your personal values?"
+        ]
+      },
+      {
+        "prompt": "List your significant academic achievements/honors/awards over the last three years. Indicate the appropriate year beside each honor.",
+        "word_limit": "150 words",
+        "type": "Academic",
+        "required": false,
+        "note": "This is one of five options in the 'Select-A-Prompt Short Response' section, where students choose which information to provide. The section itself is required, but students select the content. It is considered for both admission and scholarship consideration. Each essay box holds up to 150 words.",
+        "brainstorming_questions": [
+          "Beyond the award itself, what specific effort or dedication led to this achievement?",
+          "How has this academic honor influenced your approach to learning or your future academic goals?",
+          "Was there a particular class, project, or mentor that inspired this achievement?",
+          "What was the most challenging aspect of earning this recognition?",
+          "How do these achievements reflect your intellectual curiosity or passion for a specific subject?"
+        ]
+      },
+      {
+        "prompt": "For each event or organization you volunteered with in the last three years, list the name of the event/organization, the duration and total hours you volunteered, and what your responsibilities or accomplishments were.",
+        "word_limit": "150 words",
+        "type": "Activity (Volunteer)",
+        "required": false,
+        "note": "This is one of five options in the 'Select-A-Prompt Short Response' section, where students choose which information to provide. The section itself is required, but students select the content. It is considered for both admission and scholarship consideration. Each essay box holds up to 150 words.",
+        "brainstorming_questions": [
+          "What specific need or issue did your volunteer work address in the community?",
+          "Describe a memorable interaction or experience you had while volunteering and what you learned from it.",
+          "How did your contributions, no matter how small, make a difference?",
+          "Did this volunteer experience change your perspective on a particular social issue or group of people?",
+          "What skills did you develop or apply during your volunteer work?"
+        ]
+      },
+      {
+        "prompt": "For each extracurricular activity you participated in over the last three years, list the name of the organization/team/group, the duration of your participation and your responsibilities or accomplishments as a member.",
+        "word_limit": "150 words",
+        "type": "Activity (Extracurricular)",
+        "required": false,
+        "note": "This is one of five options in the 'Select-A-Prompt Short Response' section, where students choose which information to provide. The section itself is required, but students select the content. It is considered for both admission and scholarship consideration. Each essay box holds up to 150 words.",
+        "brainstorming_questions": [
+          "What sparked your initial interest in this activity?",
+          "How did your involvement in this activity challenge you to grow or adapt?",
+          "Describe a specific project, performance, or event within this activity that you are particularly proud of.",
+          "How did you collaborate with others in this activity, and what was the outcome?",
+          "Beyond the listed accomplishments, what personal satisfaction or enjoyment did you derive from this activity?"
+        ]
+      },
+      {
+        "prompt": "For each paid position you've held in the last three years, list the name of the employer, the title of your position, the duration and total hours you worked and a list of your responsibilities or accomplishments.",
+        "word_limit": "150 words",
+        "type": "Activity (Work Experience)",
+        "required": false,
+        "note": "This is one of five options in the 'Select-A-Prompt Short Response' section, where students choose which information to provide. The section itself is required, but students select the content. It is considered for both admission and scholarship consideration. Each essay box holds up to 150 words.",
+        "brainstorming_questions": [
+          "What was the most challenging aspect of this job, and how did you handle it?",
+          "How did this work experience develop your sense of responsibility or independence?",
+          "Describe a specific situation where you had to solve a problem or make a decision on the job.",
+          "What skills did you learn or improve that you believe will be valuable in college?",
+          "How did this job contribute to your understanding of a particular industry or customer service?"
+        ]
+      },
+      {
+        "prompt": "Explain any extraordinary circumstances or special needs.",
+        "word_limit": "150 words",
+        "type": "Personal (Circumstances/Needs)",
+        "required": false,
+        "note": "This is a separate 'Additional Info Short Response' section. It is considered for both admission and scholarship consideration. The essay box holds up to 150 words.",
+        "brainstorming_questions": [
+          "How have these circumstances directly impacted your academic performance or extracurricular involvement?",
+          "What specific strategies or resources have you utilized to navigate these circumstances?",
+          "In what ways have these experiences shaped your resilience or perspective?",
+          "Is there anything specific you want the admissions committee to understand about your journey in light of these circumstances?",
+          "How have you advocated for yourself or others regarding these special needs or circumstances?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_alabama_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider \"Less Rigorous\" Majors for General Admission (if undecided or profile is borderline for highly competitive programs).",
+      "Understand Direct vs. General Admit Programs (if applicable to undergraduate).",
+      "Utilize \"Undeclared\" or \"Exploratory\" Options within Colleges.",
+      "Research Major-Specific Requirements beyond General University Admission.",
+      "Engage with Academic Advisors and Recruiters Early."
+    ],
+    "college_ranking_tactics": [
+      "Match academic interests and career aspirations with the specific colleges and their program offerings.",
+      "Evaluate the academic rigor and specific curriculum requirements of different colleges and their programs.",
+      "Seek guidance from academic advisors and career services to understand program fit and potential career pathways.",
+      "Investigate the specific majors, minors, and distinct degree options offered by each college within the university."
+    ],
+    "alternate_major_strategy": "The search results do not explicitly indicate that the University of Alabama's undergraduate application allows for the selection of a primary and a secondary/alternate major during the initial application process. Once an application is submitted, changes generally cannot be made to the declared major. Therefore, if a student is applying to a highly competitive major, the strategy would likely involve applying directly to their desired major and, if admission to that specific program is a concern, understanding the process for changing majors *after* admission. The University of Alabama demonstrates a flexible environment for students wishing to change their major once enrolled. Roughly half of undergraduate students change their majors at least once, with the first two years being the most common time for such changes to avoid delaying graduation. To declare or change a major within the College of Arts and Sciences, students can log into myBama and follow the 'change of curriculum' link. For changes to a major in a different college, such as the Culverhouse College of Business, students must contact the advising office of the intended college. Consulting with an academic advisor is strongly recommended before making a formal change, as they can help ensure the new major aligns with academic and career goals and assess its impact on the graduation timeline. Resources like the Career Center and a majors fair hosted each fall are available to help students explore different fields of study. While the university generally facilitates major changes, the ease of internal transfer can vary, particularly for competitive or 'impacted' majors. Discussions suggest that majors such as Business, Computer Science, Engineering, and Nursing can be among the hardest to switch into at many schools, and this often holds true at Alabama. The difficulty often stems from such majors being housed in separate, often more competitive, colleges with their own specific admission requirements for internal transfers. For instance, transferring into a major within the Culverhouse College of Business or the College of Engineering may involve specific GPA requirements or course prerequisites that need to be met. It is advisable for students interested in these fields to speak with advisors in the respective colleges to understand any specific internal transfer requirements or limitations."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 11684.0,
+        "total_coa": 34608.0,
+        "housing": 9800.0
+      },
+      "out_of_state": {
+        "tuition": 34542.0,
+        "total_coa": 58530.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 19892.0,
+    "average_merit_aid": 15400.0,
+    "percent_receiving_aid": 66.0,
+    "meets_full_need": false,
+    "notes": "The University of Alabama meets 57% of demonstrated financial need.",
+    "scholarships": [
+      {
+        "name": "Presidential Elite Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition for up to four years, first year of on-campus housing, $1,500 per year supplemental scholarship, and a $2,000 one-time allowance for research or international study.",
+        "deadline": "Automatic Consideration (Submit admission application and supporting documents by December 5 priority deadline for Summer/Fall entry)",
+        "benefits": "Covers tuition, housing for the first year, supplemental funds, and a research/international study allowance.",
+        "application_method": "Automatic Consideration (Requires 4.0+ GPA and 36 ACT or 1600 SAT)"
+      },
+      {
+        "name": "National Merit Finalist Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition for up to five years, four years of on-campus housing, $4,000 per year supplemental scholarship, $2,000 one-time allowance for research or international study, and $500 per year book scholarship.",
+        "deadline": "December 5 priority deadline (list UA as college choice with National Merit Scholarship Corporation by May 1)",
+        "benefits": "Extensive coverage including tuition, housing, supplemental funds, research/study allowance, and book stipend.",
+        "application_method": "Automatic Consideration for National Merit Finalists who list UA as their college choice and submit application materials by deadline."
+      },
+      {
+        "name": "UA Scholar (Out-of-State Automatic Merit Scholarship)",
+        "type": "Merit",
+        "amount": "$24,000 per year",
+        "deadline": "Automatic Consideration (Submit admission application and all supporting documents by December 5 priority deadline for Summer/Fall entry)",
+        "benefits": "Significant yearly scholarship towards educational expenses for high-achieving out-of-state students.",
+        "application_method": "Automatic Consideration (Requires 30-31 ACT or 1360-1410 SAT and 3.50+ GPA)"
+      },
+      {
+        "name": "Academic Elite Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition for four years, one year of on-campus housing, $9,000 per year supplemental scholarship (top scholar receives $9,000 first year, $19,000 years 2-4) and a $5,000 one-time allowance for research or international study (for top scholar).",
+        "deadline": "Requires acceptance into the Dr. Robert E. Witt University Fellows Program; refer to Witt University Fellows website for application details.",
+        "benefits": "Comprehensive scholarship for highly competitive students within the Witt University Fellows Program.",
+        "application_method": "Requires separate application and acceptance into the Dr. Robert E. Witt University Fellows Program."
+      },
+      {
+        "name": "International Collegiate Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 per year",
+        "deadline": "Automatic Consideration (Submit admission application and supporting documents by December 5 for Summer/Fall 2026, November 3 for Spring 2026)",
+        "benefits": "Annual scholarship for international freshmen with strong academic records.",
+        "application_method": "Automatic Consideration (Requires 28 ACT or 1300-1320 SAT and 3.50+ GPA for international freshmen)"
+      },
+      {
+        "name": "UA Competitive Admissions Scholarship (International/Out-of-State)",
+        "type": "Merit",
+        "amount": "$6,000 up to full tuition",
+        "deadline": "Spring 2026: November 3; Summer/Fall 2026: December 5",
+        "benefits": "Awarded based on a holistic review of academic and non-academic factors.",
+        "application_method": "Automatic Consideration after submitting admission application and supporting documents by the deadline; additional application in Alabama Scholarship Award Manager (ASAM) may be required for other opportunities."
+      },
+      {
+        "name": "Need-Based Grant",
+        "type": "Need",
+        "amount": "Varies based on financial need",
+        "deadline": "FAFSA deadline (recommended to complete FAFSA by priority scholarship deadlines if applicable)",
+        "benefits": "Financial assistance for students demonstrating financial need.",
+        "application_method": "FAFSA (Free Application for Federal Student Aid)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Score of 3 or higher can grant credit for many exams at the University of Alabama, with the amount of credit and specific course equivalency often determined by the score (ranging from 3 to 5).",
+      "exceptions": [
+        "Credit for U.S. Government & Politics may be based on a portfolio review by the Department of Art and Art History, which appears to be an unusual stipulation.",
+        "Students may not receive credit for AP courses and placement credit for language study if they have already received credit for language study in high school."
+      ],
+      "usage": "AP credits can satisfy some general education (core) requirements, and the student's college of enrollment has the authority to determine their applicability toward major and/or minor requirements. However, these credits are not considered University of Alabama institutional coursework and cannot fulfill the minimum of 50% of coursework required for a bachelor's degree at a four-year institution or the minimum of 25% of coursework required for the degree at the University of Alabama."
+    },
+    "ib_policy": {
+      "general_rule": "Both HL and SL exams with a minimum score (typically 4 or 5, depending on the subject) grant credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Alabama Transfers"
+      ],
+      "restrictions": "Up to 60 semester hours may be transferred from a two-year college. A minimum cumulative GPA of 2.0 or higher on a 4.0 scale is required for admission for all college-level work attempted. Additionally, a minimum of 50% of the coursework required to earn a bachelor's degree at UA must be earned at a bachelor's degree granting institution, and a minimum of 25% of the coursework required must be earned in residence at UA. Transferable courses with a grade of 'D-' or above may apply to degree requirements unless a grade of 'C-' is specifically required."
+    },
+    "credit_philosophy": "The University of Alabama offers academic credit for AP and IB examinations based on qualifying scores, with course equivalencies determined by subject and score. Transfer articulation agreements are available, allowing up to 60 semester hours from two-year colleges, provided a minimum 2.0 GPA is maintained. A significant portion of coursework must be completed at UA and a bachelor's degree-granting institution. AP and IB credits can satisfy general education requirements but are not considered institutional coursework towards residency requirements."
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academics",
+      "Leadership experience",
+      "Community involvement",
+      "Good standardized test scores",
+      "Demonstrated interest in chosen major"
+    ],
+    "common_activities": [
+      "Volunteering in local community",
+      "Participating in school clubs (e.g., debate, robotics)",
+      "Playing varsity sports",
+      "Part-time jobs or internships",
+      "Engaging in artistic pursuits (music, art, drama)"
+    ],
+    "essay_tips": [
+      "Be authentic and personal",
+      "Show, don't just tell",
+      "Proofread carefully for errors",
+      "Answer the prompt directly",
+      "Share unique experiences or perspectives"
+    ],
+    "red_flags": [
+      "Generic essays without specific details",
+      "Submitting applications late",
+      "Lack of extracurricular involvement",
+      "Poor academic performance in key subjects",
+      "Not following application instructions"
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 49900,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 39000,
+    "notes": "Median earnings 10 years after enrollment and 6 years after enrollment are based on data from the U.S. Department of Education College Scorecard. A specific employment rate 2 years after graduation was not directly found from College Scorecard. The closest available data is 'Employed 1 Year After Graduation' at 96%.",
+    "top_employers": [
+      "Goldman Sachs",
+      "JPMorgan Chase & Co.",
+      "Morgan Stanley",
+      "PricewaterhouseCoopers",
+      "Ernst & Young",
+      "KPMG",
+      "Deloitte",
+      "McKinsey & Company",
+      "Google",
+      "Amazon"
+    ],
+    "grad_school_rate": 44.2,
+    "loan_default_rate": 0.017
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.5,
+    "graduation_rate_4_year": 62.6,
+    "graduation_rate_6_year": 77.0
+  }
 }

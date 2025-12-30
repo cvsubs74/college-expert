@@ -1149,7 +1149,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required supplemental essay (300 words or less), choosing between two prompts: 1. Reflect on a social or community issue that deeply resonates with you. 2. What about being a student at BU most excites you? How do you hope to contribute to our campus community?"
       },
       {
@@ -1326,11 +1326,31 @@
       "Lack of demonstrated interest or engagement with the university prior to applying."
     ],
     "insights": [
-      "Boston University highly values demonstrated interest; engaging with the school through virtual sessions, college fairs, or interviews can be beneficial.",
-      "Applying Early Decision (ED1 or ED2) can significantly increase the chances of acceptance, as it clearly signals BU as a top choice.",
-      "While academics are rigorous, admitted students are deemed capable of succeeding, and the classes are generally considered fair and doable.",
-      "The large, urban campus environment requires students to be proactive in finding their social niche and engaging with the numerous clubs and events.",
-      "Financial aid can be a concern for some, despite BU being noted for offering need-based aid; it's essential to assess affordability."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Boston University highly values demonstrated interest; engaging with the school through virtual sessions, college fairs, or interviews can be beneficial."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED1 or ED2) can significantly increase the chances of acceptance, as it clearly signals BU as a top choice."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While academics are rigorous, admitted students are deemed capable of succeeding, and the classes are generally considered fair and doable."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The large, urban campus environment requires students to be proactive in finding their social niche and engaging with the numerous clubs and events."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Financial aid can be a concern for some, despite BU being noted for offering need-based aid; it's essential to assess affordability."
+      }
     ]
   },
   "outcomes": {

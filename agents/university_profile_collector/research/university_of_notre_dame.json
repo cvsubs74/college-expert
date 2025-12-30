@@ -883,7 +883,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required essay (150 words) on 'non-negotiable factors when searching for your future college home' and three short-answer responses (50-100 words each) chosen from five options, including 'How do you foster service to others in your community?'."
       }
     ],
@@ -1102,11 +1102,31 @@
       "Assuming legacy status guarantees admission; a non-competitive student will still be non-competitive."
     ],
     "insights": [
-      "Notre Dame employs a holistic admissions approach, considering the entire applicant.",
-      "Applying Restrictive Early Action (REA) can boost admissions odds, as Notre Dame takes a significant portion of its class from this pool (around 60%).",
-      "While a Catholic university with a large Catholic student body (around 80%), Notre Dame welcomes students from all religious backgrounds.",
-      "The strong sense of community and school spirit, particularly around athletics, are defining aspects of the student experience.",
-      "There is no Greek life; the single-sex dorms foster a strong sense of community that replaces fraternities and sororities."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Notre Dame employs a holistic admissions approach, considering the entire applicant."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Restrictive Early Action (REA) can boost admissions odds, as Notre Dame takes a significant portion of its class from this pool (around 60%)."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While a Catholic university with a large Catholic student body (around 80%), Notre Dame welcomes students from all religious backgrounds."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The strong sense of community and school spirit, particularly around athletics, are defining aspects of the student experience."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "There is no Greek life; the single-sex dorms foster a strong sense of community that replaces fraternities and sororities."
+      }
     ]
   },
   "outcomes": {

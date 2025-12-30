@@ -747,13 +747,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay required (250 words) focusing on being a 'bridge builder' and connecting diverse perspectives, backgrounds, or ideas. While sometimes labeled 'optional,' it is strongly encouraged and considered very important."
       },
       {
         "target_program": "Artistic Programs (e.g., Tisch School of the Arts, some Steinhardt programs)",
         "requirement_type": "Audition/Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Required for specific artistic programs. Applicants are encouraged to submit artistic materials approximately one month before the application deadline."
       }
     ],
@@ -946,11 +946,31 @@
       "Using a current school email address that may become inaccessible after leaving"
     ],
     "insights": [
-      "NYU is highly selective, with acceptance rates around 9-12%",
-      "While some sources indicate demonstrated interest is not a significant factor, others state it is \"considered\" and can be valuable through engagement with the university",
-      "Applying Early Decision is one of the strongest ways to demonstrate interest",
-      "The university values diversity in its student body, with students from all 50 states and over 130 countries",
-      "Many students value the independence and extensive opportunities for internships, research, and cultural activities that come with NYU's urban and global presence"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "NYU is highly selective, with acceptance rates around 9-12%"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While some sources indicate demonstrated interest is not a significant factor, others state it is \"considered\" and can be valuable through engagement with the university"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision is one of the strongest ways to demonstrate interest"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university values diversity in its student body, with students from all 50 states and over 130 countries"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Many students value the independence and extensive opportunities for internships, research, and cultural activities that come with NYU's urban and global presence"
+      }
     ]
   },
   "outcomes": {

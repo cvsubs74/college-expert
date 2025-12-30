@@ -1,782 +1,2179 @@
+
 {
-  "university_profile": {
-    "_id": "university_of_nebraska_lincoln",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.unl.edu",
-      "https://www.usnews.com/best-colleges/university-of-nebraska-lincoln-2565",
-      "https://innovate.unl.edu"
+  "_id": "university_of_nebraska_lincoln",
+  "metadata": {
+    "official_name": "University of Nebraska-Lincoln",
+    "location": "Lincoln, Nebraska",
+    "last_updated": "2024-07-29"
+  },
+  "strategic_profile": {
+    "executive_summary": "A flagship public research university offering a broad range of undergraduate and graduate programs, emphasizing hands-on learning and community engagement. Known for its extensive research in agriculture, engineering, and arts & sciences, it plays a vital role in the region's economy and innovation.",
+    "market_position": "Public land-grant university within the Big Ten Conference, recognized for strong agricultural, engineering, and business programs. It holds a competitive position within the Midwest, appealing to students seeking a blend of academic rigor, research opportunities, and a traditional campus experience.",
+    "admissions_philosophy": "Employs a holistic review process, evaluating applicants on academic performance (GPA, course rigor), standardized test scores (optional), extracurricular involvement, leadership experience, essays, and letters of recommendation. Seeks to build a diverse class of students eager to contribute to the university's vibrant community and research endeavors.",
+    "us_news_rank": 139,
+    "analyst_takeaways": [
+      "UNL leverages its land-grant mission to offer unique research and educational opportunities in agriculture and natural resources, providing a distinct market advantage.",
+      "Strategic investments in facilities and faculty for STEM fields (particularly engineering and computer science) are enhancing its competitiveness and attracting high-caliber students.",
+      "The university faces the challenge of increasing student diversity and retention rates to align with national trends and compete with other top public institutions.",
+      "A strong emphasis on student success initiatives, career services, and a robust alumni network provides significant post-graduation support and opportunities.",
+      "Its Big Ten affiliation boosts its research profile and athletic prominence, contributing to a strong national brand recognition and appeal."
     ],
-    "metadata": {
-      "official_name": "University of Nebraska-Lincoln",
-      "location": {
-        "city": "Lincoln",
-        "state": "NE",
-        "type": "Public"
-      }
-    },
-    "strategic_profile": {
-      "executive_summary": "The University of Nebraska-Lincoln (UNL) is the flagship land-grant institution of the Nebraska system and a prominent member of the Big Ten Conference. It is characterized by a strong emphasis on agricultural innovation, high research activity (R1), and a social culture deeply integrated with the city of Lincoln.",
-      "market_position": "Public Flagship",
-      "admissions_philosophy": "Numbers-focused",
-      "us_news_rank": 159,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The university maintains an accessible admission profile with an acceptance rate typically between 77% and 87%, prioritizing broad access to the state's flagship education.",
-          "implication": "High-achieving students should leverage the university's Honors Program and specialized 'Grand Challenges' research tracks to differentiate their experience from the general population."
-        },
-        {
-          "category": "Academic Strategy",
-          "insight": "UNL has shifted away from requiring personal essays or test scores, focusing instead on core academic course requirements and GPA.",
-          "implication": "Prospective students should ensure their high school curriculum aligns strictly with UNL's required core credits to avoid administrative delays."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A quintessential 'college town' atmosphere driven by Big Ten athletics (Huskers) and a vibrant downtown Railyard district adjacent to the City Campus. The social scene is dominated by Greek life, over 500 student organizations, and large-scale sporting events.",
-        "transportation_impact": "UNL operates an integrated, multi-campus transportation system featuring complimentary bus passes for all students (StarTran) and a high degree of bike-friendliness. The school is actively working to reduce single-occupancy vehicle travel by 75% through increased e-scooter and bike-share (BikeLNK) programs.",
-        "research_impact": "Research is heavily concentrated at the Nebraska Innovation Campus (NIC), a public-private hub focusing on agriculture, water security, and food science. UNL is a global leader in patent acquisition, consistently ranking among the top 100 academic institutions worldwide for U.S. patents."
-      }
-    },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 87.5,
-        "in_state_acceptance_rate": null,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": 7.4,
-        "transfer_acceptance_rate": 55.8,
-        "admits_class_size": 4650,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional. While scores are not required, they are highly encouraged for full scholarship consideration and certain competitive programs.",
-        "early_admission_stats": []
-      },
-      "longitudinal_trends": [
-        {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": null,
-          "admits_total": null,
-          "enrolled_total": 4734,
-          "acceptance_rate_overall": null,
-          "acceptance_rate_in_state": null,
-          "acceptance_rate_out_of_state": null,
-          "yield_rate": null,
-          "waitlist_stats": {
-            "year": 2025,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Enrollment data based on preliminary university census."
-        },
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 17841,
-          "admits_total": 15609,
-          "enrolled_total": 4650,
-          "acceptance_rate_overall": 87.5,
-          "acceptance_rate_in_state": 89.4,
-          "acceptance_rate_out_of_state": 91.1,
-          "yield_rate": 29.8,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Institution does not use an admissions waitlist for standard first-time applicants."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 18335,
-          "admits_total": 15135,
-          "enrolled_total": 4767,
-          "acceptance_rate_overall": 82.5,
-          "acceptance_rate_in_state": 80.2,
-          "acceptance_rate_out_of_state": 78.6,
-          "yield_rate": 31.5,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Institution does not use an admissions waitlist."
-        }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": null,
-          "unweighted_middle_50": "3.50-4.00",
-          "average_weighted": null,
-          "percentile_25": "3.50",
-          "percentile_75": "4.00",
-          "notes": "Most successful applicants maintain a GPA of 3.5 or higher. Minimum 3.0 GPA or top 50% class rank typically required for assured admission."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1100-1310",
-          "sat_reading_middle_50": "560-670",
-          "sat_math_middle_50": "540-660",
-          "act_composite_middle_50": "22-28",
-          "submission_rate": 83.0,
-          "policy_note": "Test-optional but scores are considered if submitted and recommended for scholarship maximums."
-        },
-        "demographics": {
-          "first_gen_percentage": 23.1,
-          "legacy_percentage": null,
-          "international_percentage": 6.89,
-          "geographic_breakdown": [
-            {
-              "region": "Nebraska",
-              "percentage": 75.0
-            },
-            {
-              "region": "Other US States",
-              "percentage": 18.11
-            },
-            {
-              "region": "International",
-              "percentage": 6.89
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 7954,
-              "admits": 6849,
-              "acceptance_rate": 86.11
-            },
-            "women": {
-              "applicants": 9869,
-              "admits": 8745,
-              "acceptance_rate": 88.61
-            },
-            "non_binary": null
-          },
-          "racial_breakdown": {
-            "white": 72.79,
-            "black_african_american": 2.87,
-            "hispanic_latino": 8.55,
-            "asian": 3.77,
-            "native_american_alaskan": 0.25,
-            "pacific_islander": 0.06,
-            "two_or_more_races": 3.48,
-            "unknown": 1.34,
-            "non_resident_alien": 6.89
-          },
-          "religious_affiliation": null
-        }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Agricultural Sciences and Natural Resources (CASNR)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on community service and agricultural background; located on the distinct East Campus.",
-          "housing_profile": "Massengale Residential Center (modern apartments) on East Campus.",
-          "student_archetype": "Community-minded, outdoorsy types",
-          "majors": [
-            {
-              "name": "Animal Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Agribusiness",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Agricultural Economics",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Agronomy",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Food Science and Technology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Forensic Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Fisheries and Wildlife",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Environmental Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Veterinary Technology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "PGA Golf Management",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false,
-              "special_requirements": "Certified golf handicap of 12 or better required."
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Higher thresholds; students enter as 'Pre-Engineering' if initial benchmarks aren't met.",
-          "housing_profile": "Kauffman Academic Residential Center and Schramm/Smith.",
-          "student_archetype": "Technical, analytical problem-solvers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 79.0,
-              "average_gpa_admitted": 3.6,
-              "prerequisite_courses": [
-                "MATH 106",
-                "PHYS 211"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "CSCE 310",
-                "CSCE 235"
-              ],
-              "special_requirements": "Professional admission required after sophomore year.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "CSCE 155E",
-                  "CSCE 156",
-                  "CSCE 230",
-                  "CSCE 235",
-                  "CSCE 310",
-                  "CSCE 361",
-                  "CSCE 322",
-                  "CSCE 351",
-                  "CSCE 486",
-                  "CSCE 487"
-                ],
-                "electives": [
-                  "CSCE 470",
-                  "CSCE 472",
-                  "CSCE 456",
-                  "CSCE 464"
-                ],
-                "total_units": 120,
-                "major_units": 72
-              },
-              "notable_professors": [
-                "Dr. Witty Srisa-an",
-                "Dr. Brittany Duncan",
-                "Dr. Marilyn Wolf"
-              ],
-              "notes": "Internal transfers must be calculus-ready."
-            },
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.5,
-              "prerequisite_courses": [
-                "MATH 106",
-                "PHYS 211",
-                "CHEM 109"
-              ],
-              "minimum_gpa_to_declare": 2.7,
-              "weeder_courses": [
-                "MECH 223",
-                "MECH 200"
-              ],
-              "special_requirements": "Major GPA of 2.7 required for professional admission.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "curriculum": {
-                "core_courses": [
-                  "MECH 223",
-                  "MECH 200",
-                  "MECH 325",
-                  "MECH 310",
-                  "MATL 360",
-                  "MECH 342",
-                  "MECH 350",
-                  "MECH 380",
-                  "MECH 446",
-                  "MECH 447"
-                ],
-                "electives": [
-                  "MECH 407",
-                  "MECH 416",
-                  "MECH 437",
-                  "MECH 457"
-                ],
-                "total_units": 120,
-                "major_units": 84
-              },
-              "notable_professors": [
-                "Dr. Lance C. P\u00e8rez",
-                "Dr. Mark R. Riley",
-                "Dr. Fadi Alsaleem"
-              ],
-              "notes": "Calculus-ready status required for admission."
-            },
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Chemical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Electrical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Software Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Computer Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Construction Management",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Biological Systems Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Agricultural Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            }
-          ]
-        },
-        {
-          "name": "College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Requires 2.5 GPA for maintenance; look into the Nebraska Business Honors Academy.",
-          "housing_profile": "University Suites or Knoll (for Honors students).",
-          "student_archetype": "Ambitious future leaders",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.54,
-              "prerequisite_courses": [
-                "MATH 104"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ACCT 201",
-                "ECON 215"
-              ],
-              "special_requirements": "Maintenance of 2.5 cumulative GPA required for upper-level courses.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "MNGT 101",
-                  "BSAD 111",
-                  "BSAD 222",
-                  "ACCT 201",
-                  "ACCT 202",
-                  "ECON 211",
-                  "ECON 212",
-                  "BLAW 371",
-                  "FINA 361",
-                  "MNGT 301",
-                  "MRKT 341",
-                  "SCMA 331",
-                  "MNGT 475"
-                ],
-                "electives": [
-                  "BSAD 261",
-                  "BSAD 340",
-                  "MNGT 321",
-                  "SCMA 350"
-                ],
-                "total_units": 120,
-                "major_units": 53
-              },
-              "notable_professors": [
-                "Dr. Kathy Farrell",
-                "Dr. Laurie Miller",
-                "Dr. \u00d6zg\u00fcr M. Araz"
-              ],
-              "notes": "New core curriculum launching Fall 2025."
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Actuarial Science",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Management",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Supply Chain Management",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "Business Analytics",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            },
-            {
-              "name": "International Business",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "direct_admit_only": false
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Certificate",
-        "Clifton Builders Management Minor",
-        "Global Leadership Minor",
-        "Humanities in Medicine Minor",
-        "National Security Studies Minor",
-        "PGA Golf Management Program"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Nebraska's Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Scholarship Deadline",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Full scholarship consideration; rolling admission."
-        },
-        {
-          "plan_type": "Honors / Raikes School Deadline",
-          "date": "2024-11-15",
-          "is_binding": false,
-          "notes": "Priority deadline for honors programs."
-        },
-        {
-          "plan_type": "Regular Decision (Fall)",
-          "date": "2025-05-01",
-          "is_binding": false,
-          "notes": "Final fall application deadline."
-        },
-        {
-          "plan_type": "Regular Decision (Spring)",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Deadline for January start."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All (General Admission)",
-          "requirement_type": "Essays",
-          "details": "No personal essay for standard admission."
-        },
-        {
-          "target_program": "Honors Programs",
-          "requirement_type": "Supplemental Application",
-          "deadline": "2025-02-15",
-          "details": "300-500 word essay and leadership resume."
-        },
-        {
-          "target_program": "Music / Dance",
-          "requirement_type": "Audition",
-          "deadline": "2025-02-27",
-          "details": "Performance audition required."
-        },
-        {
-          "target_program": "Scholarships",
-          "requirement_type": "Supplemental Essay",
-          "deadline": "2025-02-01",
-          "details": "500-word essay on leadership/service for specific awards."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "Academic GPA",
-          "Class Rank"
-        ],
-        "secondary_factors": [
-          "Test Scores",
-          "Talent",
-          "First-Generation Status"
-        ],
-        "essay_importance": "Low",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "UNL offers 'Assured Admission' for students meeting core course benchmarks and specific rank/score criteria."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply for Computer Science in Arts and Sciences for a B.A. path if you prefer flexibility.",
-        "Use the Explore Center to bypass initial major-specific requirements for competitive programs.",
-        "Select ADPR to fulfill media interests with lower math requirements.",
-        "Leverage Integrated Science in CASNR as a less-congested STEM route."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize Arts and Sciences for double-major flexibility.",
-        "Rank Honors/Raikes highly to secure priority enrollment and suite housing.",
-        "Choose CASNR for a 'smaller school feel' and localized scholarships.",
-        "Evaluate colleges by ACE requirement overlap to potentially graduate in 3 years."
-      ],
-      "alternate_major_strategy": "List Actuarial Science or Economics in Arts and Sciences as an alternate if your primary choice is in the College of Business."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 10434,
-          "total_coa": 28710,
-          "housing": 14120
-        },
-        "out_of_state": {
-          "tuition": 28584,
-          "total_coa": 46860,
-          "supplemental_tuition": 18150
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 8222,
-      "average_merit_aid": 8046,
-      "percent_receiving_aid": 87.0
-    },
-    "scholarships": [
-      {
-        "name": "Presidential Scholars Program",
-        "type": "Merit",
-        "amount": "Full cost of attendance + $5,000 annual stipend",
-        "application_method": "Automatic (requires 36 ACT or 1570-1600 SAT)"
-      },
-      {
-        "name": "Regents Scholar Tuition Commitment",
-        "type": "Merit",
-        "amount": "Full tuition",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Chancellor's Tuition Scholarship",
-        "type": "Merit",
-        "amount": "Up to $8,000 per year",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Nebraska Legends Scholarship",
-        "type": "Merit",
-        "amount": "$1,000 (renewable)",
-        "application_method": "Supplemental Scholarship Application"
-      },
-      {
-        "name": "Nebraska Achievement Scholarship",
-        "type": "Merit/Need",
-        "amount": "$1,000 per year",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Nebraska Legacy Scholarship",
-        "type": "Merit (Non-Resident)",
-        "amount": "$14,000 per year",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "New Nebraskan Tuition Scholarship",
-        "type": "Merit (Non-Resident)",
-        "amount": "$15,000 to $20,000 per year",
-        "application_method": "Automatic Consideration"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Scores of 3+ generally grant credit, core subjects may require 4 or 5",
-        "exceptions": [
-          "No credit for AP Capstone",
-          "Music Theory requires score of 4+ and diagnostic"
-        ],
-        "usage": "Satisfies ACE requirements and major prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "Scores of 5+ on HL and SL grant credit",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology"
-        ],
-        "restrictions": "60 unit CC cap; 90 unit total cap"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "3.0+ GPA, top 50% rank, or ACT 20+ (SAT 1040+).",
-        "Competitive programs like Raikes/Business Honors require ACT 32-34+.",
-        "Evidence of leadership (DECA, FBLA, Boys/Girls State, Eagle Scouts).",
-        "Honors Core: 4 years math (Calculus recommended) and 2 years foreign language."
-      ],
-      "common_activities": [
-        "Robotics (VEX), Debate, or Speech",
-        "LPS one-on-one mentoring",
-        "Varsity athletics",
-        "Fine arts ensembles"
-      ],
-      "essay_tips": [
-        "Focus Honors essays on: Intellectual Curiosity, Varied Perspectives, or Meaningful Service.",
-        "Specialized program prompts must be under 25 words.",
-        "Avoid fancy formatting like bolding in the Honors app; it processes as plain text."
-      ],
-      "red_flags": [
-        "Inaccurate self-reporting of high school courses.",
-        "Missing foreign language or 4th-year math requirement.",
-        "Generic essays without personal significance or growth."
-      ],
-      "insights": [
-        "Priority registration is the top-cited Honors benefit.",
-        "Raikes School has 100% placement rates in top tech firms.",
-        "Explore Center offers specialized advising for undecided students."
-      ]
-    },
-    "outcomes_and_retention": {
-      "outcomes": {
-        "median_earnings_10yr": 56887,
-        "employment_rate_2yr": 74.0,
-        "grad_school_rate": 17.0,
-        "top_employers": [
-          "Lincoln Public Schools",
-          "Kiewit",
-          "HDR",
-          "Amazon",
-          "Charles Schwab",
-          "Hudl",
-          "Sandhills Global",
-          "Omaha Public Schools"
-        ],
-        "loan_default_rate": 3.5
-      },
-      "student_retention": {
-        "freshman_retention_rate": 86.3,
-        "graduation_rate_4_year": 49.0,
-        "graduation_rate_6_year": 66.0
-      }
+    "campus_dynamics": {
+      "social_environment": "A large, spirited campus deeply rooted in traditions, particularly surrounding Big Ten athletics. Features active Greek life, a wide array of student organizations, and numerous campus events. The social scene is generally perceived as welcoming and vibrant, fostering a strong sense of community and pride among students.",
+      "transportation_impact": "The main campus is highly walkable, with most academic buildings, dorms, and student facilities within close proximity. A comprehensive campus bus system connects various parts of campus and off-campus housing. While a car isn't strictly necessary for campus life, it can be beneficial for exploring Lincoln and the surrounding areas. Parking can be challenging and costly on campus.",
+      "research_impact": "As a Carnegie R1 'very high research activity' institution, UNL boasts significant research output across multiple disciplines, with particular strengths in agricultural sciences, engineering, materials science, and biochemistry. It plays a crucial role in addressing state, national, and global challenges through innovation, economic development, and collaborative projects with industry and government agencies."
     }
   },
-  "_id": "university_of_nebraska_lincoln",
-  "application_process": {
-    "essay_prompts": [
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 87.49,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Nebraska-Lincoln has a test-optional policy for admission, meaning students can choose whether or not to submit ACT or SAT scores. However, submitting scores is encouraged and preferred for full scholarship consideration, as it may enhance the application. Test scores are considered if submitted, but not strictly required for general admission.",
+      "admits_class_size": 15609,
+      "transfer_acceptance_rate": 51.5,
+      "early_admission_stats": [],
+      "international_acceptance_rate": 7.4,
+      "international_applications": 672,
+      "international_admits": 50,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": true
+    },
+    "longitudinal_trends": [
       {
-        "prompt": "What experiences have prepared you for the academic challenges and opportunities at the University of Nebraska-Lincoln?",
-        "word_limit": "250 words",
-        "type": "Academic",
-        "required": false,
-        "brainstorming_questions": [
-          "Beyond a specific class, can you recall a time you encountered a truly difficult academic concept or project that required you to dig deep and adapt your learning style to overcome it, and how did that process mirror what you anticipate needing to do at UNL?",
-          "Think about a moment where you felt particularly inspired or intellectually curious about a subject, perhaps leading you to pursue it beyond the curriculum. What was that spark, and how does that align with the specific academic programs or research opportunities at UNL that excite you?",
-          "UNL has a strong emphasis on collaborative learning and community. Can you describe a time you worked with others on a challenging academic task, maybe even when there were disagreements or obstacles, and what did you learn about contributing to a shared academic goal?",
-          "Looking at UNL's specific strengths \u2013 perhaps in agriculture, engineering, journalism, or another area \u2013 can you identify an experience where you actively sought out knowledge or a skill related to one of these fields, demonstrating a proactive approach to academic exploration?",
-          "Consider a time when you had to manage multiple academic responsibilities with competing deadlines or demands. How did you prioritize, strategize, and ultimately succeed, and what does that tell you about your readiness for the rigor of a university environment like UNL?"
-        ]
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 17841,
+        "admits_total": 15609,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 87.49,
+        "yield_rate": null,
+        "notes": "Admission cycle for Fall 2025 enrollment is ongoing, enrolled numbers and yield rate are not yet finalized.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 18354,
+        "admits_total": 14146,
+        "enrolled_total": 4650,
+        "acceptance_rate_overall": 77.1,
+        "yield_rate": 32.87,
+        "notes": "",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 18354,
+        "admits_total": 14146,
+        "enrolled_total": 4699,
+        "acceptance_rate_overall": 77.1,
+        "yield_rate": 33.22,
+        "notes": "",
+        "offered_spots": 4540,
+        "accepted_spots": 2840,
+        "admitted_from_waitlist": 73,
+        "waitlist_admit_rate": 2.57,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 19085,
+        "admits_total": 15016,
+        "enrolled_total": 4620,
+        "acceptance_rate_overall": 78.7,
+        "yield_rate": 30.77,
+        "notes": "",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 17775,
+        "admits_total": 14411,
+        "enrolled_total": 4709,
+        "acceptance_rate_overall": 81.1,
+        "yield_rate": 32.68,
+        "notes": "",
+        "offered_spots": 6539,
+        "accepted_spots": 3883,
+        "admitted_from_waitlist": 21,
+        "waitlist_admit_rate": 0.54,
+        "is_waitlist_ranked": false
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-3.70",
+        "unweighted_middle_50": "2.80-3.20",
+        "average_weighted": 3.62,
+        "percentile_25": "3.50",
+        "percentile_75": "3.70",
+        "notes": "Average weighted GPA is 3.62. Average unweighted GPA is 3.0. Most incoming freshmen have a GPA of 3.50 and above, and many graduate in the top quarter of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1098-1330",
+        "sat_reading_middle_50": "560-670",
+        "sat_math_middle_50": "538-660",
+        "act_composite_middle_50": "22-28",
+        "submission_rate": 83.0,
+        "policy_note": "The University of Nebraska-Lincoln is test-optional for the Fall 2024 and Fall 2025 admissions cycles. While not required for admission, submitting official ACT/SAT scores is encouraged for full scholarship consideration. The university considers the highest composite ACT/SAT score submitted for scholarship evaluation. A superscore policy for ACT is not explicitly stated, so it is generally recommended to submit your single best composite ACT score."
+      },
+      "demographics": {
+        "first_gen_percentage": 23.1,
+        "legacy_percentage": null,
+        "notes": "First-generation percentage is for 2023 and defined as students from families where neither parent/guardian has earned a bachelor's degree. Information on the overall percentage of legacy students in the student body or through admissions is not available, though the 'Nebraska Legacy Scholarship' is for out-of-state students who are children of University of Nebraska graduates.",
+        "geographic_breakdown": [
+          {
+            "region": "Nebraska (In-State)",
+            "percentage": 75.0
+          },
+          {
+            "region": "International",
+            "percentage": 2.0
+          },
+          {
+            "region": "Illinois",
+            "percentage": 3.0
+          },
+          {
+            "region": "Colorado",
+            "percentage": 2.3
+          },
+          {
+            "region": "South Dakota",
+            "percentage": 2.1
+          },
+          {
+            "region": "Kansas",
+            "percentage": 1.6
+          },
+          {
+            "region": "Iowa",
+            "percentage": 1.6
+          },
+          {
+            "region": "Texas",
+            "percentage": 1.3
+          },
+          {
+            "region": "California",
+            "percentage": 1.3
+          },
+          {
+            "region": "Wisconsin",
+            "percentage": 0.7
+          },
+          {
+            "region": "Other US States",
+            "percentage": 9.1
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7954,
+            "admits": 6849,
+            "acceptance_rate": 86.11,
+            "note": "Data for the 2025-2026 admissions cycle, sourced from the latest IPEDS 2024 release."
+          },
+          "women": {
+            "applicants": 9869,
+            "admits": 8745,
+            "acceptance_rate": 88.61,
+            "note": "Data for the 2025-2026 admissions cycle, sourced from the latest IPEDS 2024 release."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 72.8,
+          "black_african_american": 2.87,
+          "hispanic_latino": 8.55,
+          "asian": 3.77,
+          "native_american_alaskan": 0.25,
+          "pacific_islander": 0.06,
+          "two_or_more_races": 3.48,
+          "non_resident_alien": 6.89,
+          "unknown": 1.33
+        }
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_nebraska_lincoln_logo.png"
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agricultural Sciences & Natural Resources",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Students interested in pre-veterinary studies may join the 'Pre-Vet: The Path to Veterinary Success' Learning Community, which is housed in Massengale Residential Center. Other students may reside in traditional or suite-style halls.",
+        "student_archetype": "Students passionate about addressing global challenges related to food, water, energy, health, and natural resource management. This includes those interested in animal science, agribusiness, environmental science, and veterinary medicine. They are often hands-on learners who value research, community engagement, and global experiences.",
+        "strategic_fit_advice": "Beneficial for students committed to agricultural and natural resource fields, especially those seeking a supportive community and experiential learning opportunities on East Campus or those with pre-vet aspirations.",
+        "majors": [
+          {
+            "name": "Agribusiness",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AECN 141 Introduction to Agricultural Economics",
+                "ACCT 201 Introductory Financial Accounting",
+                "ACCT 202 Introductory Managerial Accounting",
+                "ECON 211 Principles of Macroeconomics",
+                "ECON 212 Principles of Microeconomics",
+                "BSAD 220 Business Writing",
+                "MNGT 301 Introduction to Management",
+                "MRKT 341 Marketing",
+                "SCMA 331 Operations and Supply Chain Management"
+              ],
+              "electives": [
+                "AECN 346 Agricultural Marketing",
+                "AECN 465 Agribusiness Management"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. Eric Thompson (Economics, Bureau of Business Research)",
+              "Dr. Kate Brooks (Agricultural Economics)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This major is also offered through the College of Business."
+          },
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ASCI 100 Introduction to Animal Science",
+                "BIOS 101 General Biology",
+                "CHEM 109 General Chemistry I",
+                "MATH 106 Algebra",
+                "ASCI 200 Animal Nutrition",
+                "ASCI 207 Animal Breeding and Genetics",
+                "ASCI 310 Physiology of Reproduction"
+              ],
+              "electives": [
+                "ASCI 300 Swine Science",
+                "ASCI 304 Beef Cattle Science",
+                "ASCI 320 Equine Science"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. Chris Calkins (Meat Science)",
+              "Dr. Richard Rasby (Beef Cattle Production)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 109 General Chemistry I",
+              "BIOS 101 General Biology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "NRES 101 Introduction to Natural Resources",
+                "BIOS 101 General Biology",
+                "CHEM 109 General Chemistry I",
+                "GEOL 101 Physical Geology",
+                "MATH 106 Algebra",
+                "STAT 218 Introduction to Statistics",
+                "NRES 212 Introduction to Environmental Science"
+              ],
+              "electives": [
+                "NRES 312 Environmental Law and Policy",
+                "NRES 422 Ecosystem Management"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. John P. Carroll (Natural Resources, Wildlife)",
+              "Dr. Jessica Corman (Natural Resources)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Food Science & Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 109 General Chemistry I",
+              "BIOS 101 General Biology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "FDSC 100 Introduction to Food Science and Technology",
+                "CHEM 109 General Chemistry I",
+                "CHEM 110 General Chemistry II",
+                "BIOS 101 General Biology",
+                "MBIO 201 General Microbiology",
+                "FDSC 205 Food Chemistry",
+                "FDSC 301 Food Processing"
+              ],
+              "electives": [
+                "FDSC 405 Food Product Development",
+                "FDSC 407 Food Safety and Quality Assurance"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Harshavardhan Thippareddi (Food Safety)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Fisheries & Wildlife",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOS 101 General Biology",
+              "NRES 101 Introduction to Natural Resources"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "NRES 101 Introduction to Natural Resources",
+                "BIOS 101 General Biology",
+                "BIOS 102 General Biology",
+                "CHEM 109 General Chemistry I",
+                "MATH 106 Algebra",
+                "NRES 212 Introduction to Environmental Science",
+                "NRES 311 Fisheries and Wildlife Ecology"
+              ],
+              "electives": [
+                "NRES 451 Human Dimensions of Wildlife Management",
+                "NRES 412 Wildlife Damage Management"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. John P. Carroll (Director, School of Natural Resources)",
+              "Dr. Jessica Corman (Natural Resources)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Architecture",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year students can join the 'Responsible Design' Learning Community, where they live together in a residence hall, often on the same floor.",
+        "student_archetype": "Creative and community-oriented first-year students interested in architecture, interior design, landscape architecture, or community and regional planning. They are problem-solvers, engaged in design, finance, and policy, and keen on addressing real-world challenges like affordable housing.",
+        "strategic_fit_advice": "Ideal for students passionate about design and community impact, looking for a collaborative environment to develop their skills and contribute to creative solutions for societal needs. Early application for the Learning Community is advised.",
+        "majors": [
+          {
+            "name": "Architectural Studies",
+            "degree_type": "B.S.D.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "DSGN 110 Design Thinking",
+              "DSGN 111 Design Making",
+              "DSGN 120 Design Drawing",
+              "DSGN 123 Computer Applications in Design"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Application for admission to the professional architecture program after completing d.ONE curriculum. Enrollment is limited.",
+            "admissions_pathway": "Pre-Major to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "DSGN 110 Design Thinking",
+                "DSGN 111 Design Making",
+                "DSGN 120 Design Drawing",
+                "DSGN 123 Computer Applications in Design",
+                "ARCH 210 History of Architecture I",
+                "ARCH 240 Structures I",
+                "ARCH 250 Environmental Systems I",
+                "ARCH 270 Architectural Design I",
+                "ARCH 271 Architectural Design II"
+              ],
+              "electives": [
+                "ARCH 310 Architectural Theory I",
+                "ARCH 470 Advanced Architectural Design"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "David Karle (Associate Professor & Director of the Architecture Program)",
+              "Jeffrey L Day (Professor)",
+              "Sharon Kuska (Associate Dean for Faculty & Academic Programs)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. The B.S.D. is a pre-professional degree, with the professional Master of Architecture (M.Arch) typically requiring an additional two years of study."
+          },
+          {
+            "name": "Interior Design",
+            "degree_type": "B.S.D.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "DSGN 110 Design Thinking",
+              "DSGN 111 Design Making",
+              "DSGN 120 Design Drawing",
+              "DSGN 123 Computer Applications in Design"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Application for admission to the professional interior design program after completing d.ONE curriculum.",
+            "admissions_pathway": "Pre-Major to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "DSGN 110 Design Thinking",
+                "DSGN 111 Design Making",
+                "DSGN 120 Design Drawing",
+                "DSGN 123 Computer Applications in Design",
+                "INTE 210 History of Interior Design I",
+                "INTE 221 Interior Design Studio I",
+                "INTE 222 Interior Design Studio II",
+                "INTE 250 Environmental Systems for Interiors"
+              ],
+              "electives": [
+                "INTE 315 Lighting Design",
+                "INTE 440 Advanced Interior Design Studio"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "David Karle (Associate Professor & Director of Architecture Program - as Architecture and Interior Design share foundational courses and faculty)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This program is fully accredited by the Council for Interior Design Education."
+          },
+          {
+            "name": "Landscape Architecture",
+            "degree_type": "B.L.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "DSGN 110 Design Thinking",
+              "DSGN 111 Design Making",
+              "DSGN 120 Design Drawing",
+              "DSGN 123 Computer Applications in Design"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Application for admission to the professional landscape architecture program after completing d.ONE curriculum.",
+            "admissions_pathway": "Pre-Major to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "DSGN 110 Design Thinking",
+                "DSGN 111 Design Making",
+                "DSGN 120 Design Drawing",
+                "DSGN 123 Computer Applications in Design",
+                "LARC 210 History of Landscape Architecture",
+                "LARC 220 Landscape Design Studio I",
+                "LARC 221 Landscape Design Studio II",
+                "LARC 230 Site Engineering I"
+              ],
+              "electives": [
+                "LARC 330 Planting Design",
+                "LARC 480 Advanced Landscape Architecture Studio"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "David Karle (Associate Professor & Director of Architecture Program - as Landscape Architecture shares foundational courses and faculty)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This program is fully accredited by the Landscape Architecture Accreditation Board."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Students with interests in life sciences or health and medicine can join the 'Experience Life Sciences' or 'Exploring Health and Medicine' Learning Communities, respectively, which are typically housed in Eastside/University Suites. General Arts & Sciences students reside in traditional or suite-style halls.",
+        "student_archetype": "Inquisitive and broadly-minded students exploring diverse fields in humanities, natural sciences, social sciences, and interdisciplinary studies. They value a liberal arts education for building versatile skills, intellectual curiosity, and engagement in research.",
+        "strategic_fit_advice": "Recommended for students who appreciate a broad academic foundation and enjoy exploring a wide range of subjects. Those with specific interests in life sciences or health professions can benefit from dedicated learning communities.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC 181 Introduction to Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 181 Introduction to Psychology (ACE 5)",
+                "PSYC 250 Statistics in Psychology (ACE 3)",
+                "PSYC 350 Research Methods in Psychology (ACE 9)",
+                "PSYC 370 Developmental Psychology",
+                "PSYC 371 Social Psychology",
+                "PSYC 372 Cognitive Psychology",
+                "PSYC 373 Biological Psychology"
+              ],
+              "electives": [
+                "PSYC 400 Abnormal Psychology",
+                "PSYC 461 Health Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. David DiLillo (Clinical Psychology)",
+              "Dr. Scott Stoltenberg (Behavioral Neuroscience)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. A popular major with both B.A. and B.S. options."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 211 Principles of Macroeconomics",
+              "ECON 212 Principles of Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ECON 211 Principles of Macroeconomics (ACE 6)",
+                "ECON 212 Principles of Microeconomics (ACE 6)",
+                "ECON 215 Statistics (ACE 3)",
+                "ECON 311 Intermediate Microeconomics",
+                "ECON 312 Intermediate Macroeconomics",
+                "ECON 313 Introduction to Econometrics"
+              ],
+              "electives": [
+                "ECON 420 Money and Banking",
+                "ECON 430 Public Finance"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Sam Allgood (Faculty Director of the Teaching & Learning Center)",
+              "Dr. John E. Anderson (Baird Family Professor)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This major is also offered through the College of Business."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOS 101 General Biology",
+              "CHEM 109 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOS 101 General Biology (ACE 4)",
+                "BIOS 102 General Biology (ACE 4)",
+                "CHEM 109 General Chemistry I",
+                "CHEM 110 General Chemistry II",
+                "MATH 106 Algebra",
+                "BIOS 206 General Genetics",
+                "BIOS 207 General Ecology"
+              ],
+              "electives": [
+                "BIOS 312 Cell Biology",
+                "BIOS 405 Evolutionary Biology"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 109 General Chemistry I",
+              "CHEM 110 General Chemistry II",
+              "CHEM 251 Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 109 General Chemistry I (ACE 4)",
+                "CHEM 110 General Chemistry II (ACE 4)",
+                "CHEM 251 Organic Chemistry I",
+                "CHEM 252 Organic Chemistry II",
+                "CHEM 253 Organic Chemistry Lab",
+                "MATH 106 Algebra",
+                "MATH 107 Calculus I",
+                "PHYS 211 General Physics I",
+                "PHYS 212 General Physics II"
+              ],
+              "electives": [
+                "CHEM 421 Inorganic Chemistry",
+                "CHEM 433 Analytical Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Patrick Dussault (Acting Dean, Bessey Professor of Chemistry)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 107 Calculus I",
+              "MATH 108 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 107 Calculus I (ACE 3)",
+                "MATH 108 Calculus II",
+                "MATH 208 Calculus III",
+                "MATH 221 Differential Equations",
+                "MATH 309 Introduction to Linear Algebra",
+                "MATH 310 Introduction to Analysis"
+              ],
+              "electives": [
+                "MATH 422 Complex Analysis",
+                "MATH 450 Numerical Analysis"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students interested in business can join the 'Business Leaders' Learning Community, typically housed in Eastside/University Suites. This suite-style living provides a common living and learning environment for first-year students.",
+        "student_archetype": "First-year students with a strong interest in business careers (e.g., Accounting, Finance, Management, Marketing) who are eager to connect with faculty, staff, alumni, and business professionals. They are collaborative and career-focused, seeking to develop leadership skills.",
+        "strategic_fit_advice": "Recommended for incoming first-year students who have decided on or are exploring a business major and desire a supportive community that offers early exposure to business concepts, professional development, and networking opportunities.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACCT 201 Introductory Financial Accounting",
+              "ACCT 202 Introductory Managerial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MNGT 101 Introduction to Business",
+                "ACCT 201 Introductory Financial Accounting",
+                "ACCT 202 Introductory Managerial Accounting",
+                "ECON 211 Principles of Macroeconomics (ACE 6)",
+                "ECON 212 Principles of Microeconomics (ACE 6)",
+                "BLAW 371 Legal Environment (ACE 8)",
+                "FINA 361 Finance",
+                "MNGT 301 Introduction to Management",
+                "MRKT 341 Marketing",
+                "SCMA 331 Operations and Supply Chain Management",
+                "MNGT 475 Business Strategies (ACE 10)",
+                "ACCT 308 Managerial Accounting",
+                "ACCT 309 Accounting Systems",
+                "ACCT 313 Intermediate Accounting I"
+              ],
+              "electives": [
+                "ACCT 314 Intermediate Accounting II",
+                "ACCT 410 Auditing"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Jimmy Downes (Director of the School of Accountancy)",
+              "Dr. Herita Akamah (Associate Professor Accountancy)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Students interested in accounting can begin coursework immediately."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FINA 361 Finance"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MNGT 101 Introduction to Business",
+                "ACCT 201 Introductory Financial Accounting",
+                "ACCT 202 Introductory Managerial Accounting",
+                "ECON 211 Principles of Macroeconomics (ACE 6)",
+                "ECON 212 Principles of Microeconomics (ACE 6)",
+                "BLAW 371 Legal Environment (ACE 8)",
+                "FINA 361 Finance",
+                "MNGT 301 Introduction to Management",
+                "MRKT 341 Marketing",
+                "SCMA 331 Operations and Supply Chain Management",
+                "MNGT 475 Business Strategies (ACE 10)",
+                "FINA 303 Financial Markets and Institutions",
+                "FINA 463 Investment Management"
+              ],
+              "electives": [
+                "FINA 464 Commercial Banking",
+                "FINA 466 Risk Management"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Yijia Lin (V.J. Skutt Distinguished Professor Finance)",
+              "Dr. Geoffrey C. Friesen (Associate Professor Finance)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Finance majors can choose from options like Banking and Risk Management or Investments."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MRKT 341 Marketing"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MNGT 101 Introduction to Business",
+                "ACCT 201 Introductory Financial Accounting",
+                "ACCT 202 Introductory Managerial Accounting",
+                "ECON 211 Principles of Macroeconomics (ACE 6)",
+                "ECON 212 Principles of Microeconomics (ACE 6)",
+                "BLAW 371 Legal Environment (ACE 8)",
+                "FINA 361 Finance",
+                "MNGT 301 Introduction to Management",
+                "MRKT 341 Marketing",
+                "SCMA 331 Operations and Supply Chain Management",
+                "MNGT 475 Business Strategies (ACE 10)",
+                "MRKT 342 Consumer Behavior",
+                "MRKT 445 Marketing Research"
+              ],
+              "electives": [
+                "MRKT 441 Integrated Marketing Communications",
+                "MRKT 442 Sales Management"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Robin Garewal (Assistant Professor of Practice Marketing)",
+              "Dr. Natalie Chisam (Assistant Professor Marketing)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MNGT 301 Introduction to Management"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MNGT 101 Introduction to Business",
+                "ACCT 201 Introductory Financial Accounting",
+                "ACCT 202 Introductory Managerial Accounting",
+                "ECON 211 Principles of Macroeconomics (ACE 6)",
+                "ECON 212 Principles of Microeconomics (ACE 6)",
+                "BLAW 371 Legal Environment (ACE 8)",
+                "FINA 361 Finance",
+                "MNGT 301 Introduction to Management",
+                "MRKT 341 Marketing",
+                "SCMA 331 Operations and Supply Chain Management",
+                "MNGT 475 Business Strategies (ACE 10)",
+                "MNGT 360 Human Resource Management",
+                "MNGT 401 Organizational Behavior"
+              ],
+              "electives": [
+                "MNGT 420 Entrepreneurship",
+                "MNGT 430 Leadership Development"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Laura Poppo (Professor Management)",
+              "Dr. Jake Messersmith (Associate Professor Management)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Includes options such as Entrepreneurship & Innovation, Human Resource Management, General Management, and Leadership in Organizations."
+          },
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MNGT 101 Introduction to Business",
+                "ACCT 201 Introductory Financial Accounting",
+                "ACCT 202 Introductory Managerial Accounting",
+                "ECON 211 Principles of Macroeconomics (ACE 6)",
+                "ECON 212 Principles of Microeconomics (ACE 6)",
+                "BLAW 371 Legal Environment (ACE 8)",
+                "FINA 361 Finance",
+                "MNGT 301 Introduction to Management",
+                "MRKT 341 Marketing",
+                "SCMA 331 Operations and Supply Chain Management",
+                "MNGT 475 Business Strategies (ACE 10)"
+              ],
+              "electives": [
+                "BSAD 220 Business Writing",
+                "SCMA 350 Business Analytics/Information Analysis",
+                "Any 300/400-level business coursework from Accounting, Economics, Finance, Management/Entrepreneurship, Marketing, Supply Chain Management and Analytics"
+              ],
+              "total_units": 120,
+              "major_units": 24
+            },
+            "notable_professors": [
+              "Dr. Rik Barrera (Associate Dean of Operations & Chief of Staff)",
+              "Dr. Laura Poppo (Professor Management - as Business Administration is broad)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This major is designed for students seeking a broad business education rather than a specialized area."
+          }
+        ]
+      },
+      {
+        "name": "College of Education and Human Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Students interested in education may join the 'Discover the Classroom: A Passion for Teaching' Learning Community, typically housed in Eastside/University Suites. Other students reside in traditional or suite-style halls.",
+        "student_archetype": "Future educators, health and well-being providers, early childhood leaders, and professionals focused on positively impacting lives. They are often community-minded, eager to develop essential career skills through hands-on learning, and passionate about service.",
+        "strategic_fit_advice": "Suitable for students dedicated to careers in education, human development, nutrition, health, or fashion, who thrive in a supportive environment and seek opportunities for practical experience and community engagement.",
+        "majors": [
+          {
+            "name": "Elementary Education (K-6)",
+            "degree_type": "B.S. in Education and Human Sciences",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Professional program admission requirements, including passing Praxis Core Academic Skills for Educators tests or meeting score requirements on ACT/SAT.",
+            "admissions_pathway": "Pre-Major to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "TEAC 100 Teaching, Learning, and Human Development (ACE 8)",
+                "TEAC 259 Educational Psychology for Teachers (ACE 6)",
+                "TEAC 300 Curriculum and Instruction in Elementary Education",
+                "TEAC 301 Reading and Writing Methods in Elementary Education",
+                "TEAC 303 Math Methods in Elementary Education",
+                "TEAC 400 Student Teaching: Elementary"
+              ],
+              "electives": [
+                "EDPS 459 Statistical Methods",
+                "CYAF 150 Human Development and the Family"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Lydiah Kiramba (Teaching, Learning and Teacher Education)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. UNL offers on-campus Bachelor's degrees in Elementary Education (K-6) and a combined Elementary and Special Education (K-6)."
+          },
+          {
+            "name": "Special Education (K-6 or 7-12)",
+            "degree_type": "B.S. in Education and Human Sciences",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Professional program admission requirements, including passing Praxis Core Academic Skills for Educators tests or meeting score requirements on ACT/SAT.",
+            "admissions_pathway": "Pre-Major to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SPED 100 Introduction to Special Education (ACE 8)",
+                "TEAC 100 Teaching, Learning, and Human Development (ACE 8)",
+                "TEAC 259 Educational Psychology for Teachers (ACE 6)",
+                "SPED 301 Methods for Teaching Students with Disabilities",
+                "SPED 302 Assessment in Special Education",
+                "SPED 400 Student Teaching: Special Education"
+              ],
+              "electives": [
+                "SPED 405 Behavior Management in Special Education",
+                "CYAF 150 Human Development and the Family"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Options available for K-6 and 7-12 licensure."
+          },
+          {
+            "name": "Human Development and Family Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CYAF 150 Human Development and the Family"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CYAF 150 Human Development and the Family (ACE 6)",
+                "CYAF 220 Professional Development in Human Sciences",
+                "CYAF 260 Parent-Child Relations",
+                "CYAF 340 Family Systems and Dynamics",
+                "CYAF 370 Child Development",
+                "CYAF 400 Family Resource Management"
+              ],
+              "electives": [
+                "CYAF 450 Child Life in Health Care Settings",
+                "CYAF 460 Family Law and Public Policy"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. Cody Hollist (Associate Professor Child, Youth & Family Studies)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Nutrition, Exercise and Health Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "NUTR 100 Basic Food and Nutrition",
+              "EXSC 100 Introduction to Exercise Science"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "NUTR 100 Basic Food and Nutrition (ACE 4)",
+                "EXSC 100 Introduction to Exercise Science",
+                "BIOS 101 General Biology",
+                "CHEM 109 General Chemistry I",
+                "NUTR 245 Medical Terminology",
+                "NUTR 250 Human Nutrition and Metabolism",
+                "EXSC 210 Anatomy and Physiology I"
+              ],
+              "electives": [
+                "NUTR 455 Sports Nutrition",
+                "EXSC 430 Exercise Physiology"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Communication Sciences and Disorders",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "SLPA 201 Introduction to Communication Disorders"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SLPA 201 Introduction to Communication Disorders",
+                "SLPA 202 Phonetics",
+                "SLPA 203 Anatomy and Physiology of Speech and Hearing",
+                "SLPA 204 Speech Science",
+                "SLPA 301 Language Development",
+                "SLPA 302 Audiology"
+              ],
+              "electives": [
+                "SLPA 401 Augmentative and Alternative Communication",
+                "SLPA 402 Childhood Language Disorders"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year students can opt for the 'Engineering and Computing to Change the World' Learning Community, typically housed in Eastside/University Suites.",
+        "student_archetype": "Ambitious and innovative first-year students with an interest in various engineering fields (Civil, Mechanical, Electrical, Computer Science, Robotics, Construction Management). They are problem-solvers who enjoy hands-on activities, industry tours, and collaborative projects aimed at shaping the future of technology and sustainable development.",
+        "strategic_fit_advice": "Strongly recommended for incoming engineering and computer science students who want an immediate support network, opportunities for academic collaboration, and early exposure to engineering applications and career paths.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 107 Calculus I",
+              "MATH 108 Calculus II",
+              "CSCE 155E Introduction to Computer Science I: Engineering",
+              "CSCE 156 Introduction to Computer Science II: Engineering"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 107 Calculus I",
+              "CSCE 155E Introduction to Computer Science I: Engineering"
+            ],
+            "special_requirements": "Meeting higher admission standards for the College of Engineering.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCE 155E Introduction to Computer Science I: Engineering",
+                "CSCE 156 Introduction to Computer Science II: Engineering",
+                "CSCE 235 Introduction to Discrete Structures",
+                "CSCE 310 Data Structures and Algorithms",
+                "CSCE 322 Programming Language Concepts",
+                "CSCE 351 Operating Systems",
+                "CSCE 421 Introduction to Algorithms",
+                "MATH 107 Calculus I",
+                "MATH 108 Calculus II",
+                "PHYS 211 General Physics I"
+              ],
+              "electives": [
+                "CSCE 423 Compiler Construction",
+                "CSCE 478 Machine Learning"
+              ],
+              "total_units": 125,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Hau Chan (Assistant Professor, School of Computing)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This major is offered by the School of Computing within the College of Engineering."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 107 Calculus I",
+              "MATH 108 Calculus II",
+              "PHYS 211 General Physics I",
+              "CHEM 109 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MECH 200 Mechanical Engineering Graphics and Design",
+              "MECH 223 Engineering Statics",
+              "MECH 250 Thermodynamics"
+            ],
+            "special_requirements": "Meeting higher admission standards for the College of Engineering.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MECH 100 Introduction to Mechanical Engineering",
+                "MECH 200 Mechanical Engineering Graphics and Design",
+                "MECH 223 Engineering Statics",
+                "MECH 250 Thermodynamics",
+                "MECH 300 Fluid Mechanics",
+                "MECH 325 Mechanics of Elastic Bodies",
+                "MECH 342 Dynamic Systems and Control",
+                "MECH 475 Mechanical Engineering Design I",
+                "MECH 476 Mechanical Engineering Design II (ACE 10)",
+                "MATH 107 Calculus I",
+                "MATH 108 Calculus II",
+                "MATH 208 Calculus III",
+                "MATH 221 Differential Equations",
+                "PHYS 211 General Physics I",
+                "PHYS 212 General Physics II"
+              ],
+              "electives": [
+                "MECH 450 Heat Transfer",
+                "MECH 480 Robotics and Automation"
+              ],
+              "total_units": 129,
+              "major_units": 75
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. The curriculum prepares students in solid mechanics, thermal-fluid sciences, systems and design engineering, and materials engineering."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 107 Calculus I",
+              "MATH 108 Calculus II",
+              "PHYS 211 General Physics I",
+              "CHEM 109 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CIVE 210 Introduction to Civil Engineering",
+              "MECH 223 Engineering Statics"
+            ],
+            "special_requirements": "Meeting higher admission standards for the College of Engineering.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CIVE 100 Civil Engineering Graphics",
+                "CIVE 210 Introduction to Civil Engineering",
+                "MECH 223 Engineering Statics",
+                "MECH 325 Mechanics of Elastic Bodies",
+                "CIVE 310 Fluid Mechanics",
+                "CIVE 327 Structural Analysis",
+                "CIVE 341 Environmental Engineering",
+                "CIVE 378 Geotechnical Engineering",
+                "CIVE 475 Civil Engineering Design (ACE 10)",
+                "MATH 107 Calculus I",
+                "MATH 108 Calculus II",
+                "MATH 208 Calculus III",
+                "MATH 221 Differential Equations",
+                "PHYS 211 General Physics I",
+                "PHYS 212 General Physics II"
+              ],
+              "electives": [
+                "CIVE 427 Reinforced Concrete Design",
+                "CIVE 450 Transportation Engineering"
+              ],
+              "total_units": 129,
+              "major_units": 75
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. The Civil Engineering program is offered on both the Lincoln and Omaha campuses."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 107 Calculus I",
+              "MATH 108 Calculus II",
+              "PHYS 211 General Physics I",
+              "CHEM 109 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECEN 215 Electric Circuits",
+              "MATH 107 Calculus I"
+            ],
+            "special_requirements": "Meeting higher admission standards for the College of Engineering.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECEN 100 Introduction to Electrical Engineering",
+                "ECEN 215 Electric Circuits",
+                "ECEN 216 Circuits and Systems",
+                "ECEN 250 Digital Systems Design",
+                "ECEN 304 Electromagnetic Fields",
+                "ECEN 310 Electronics I",
+                "ECEN 312 Signals and Systems",
+                "ECEN 475 Electrical Engineering Design I",
+                "ECEN 476 Electrical Engineering Design II (ACE 10)",
+                "MATH 107 Calculus I",
+                "MATH 108 Calculus II",
+                "MATH 208 Calculus III",
+                "MATH 221 Differential Equations",
+                "PHYS 211 General Physics I",
+                "PHYS 212 General Physics II"
+              ],
+              "electives": [
+                "ECEN 420 Power Systems",
+                "ECEN 440 Control Systems"
+              ],
+              "total_units": 129,
+              "major_units": 75
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.Cp.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 107 Calculus I",
+              "MATH 108 Calculus II",
+              "CSCE 155E Introduction to Computer Science I: Engineering",
+              "ECEN 215 Electric Circuits"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSCE 155E Introduction to Computer Science I: Engineering",
+              "ECEN 215 Electric Circuits"
+            ],
+            "special_requirements": "Meeting higher admission standards for the College of Engineering.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCE 155E Introduction to Computer Science I: Engineering",
+                "CSCE 156 Introduction to Computer Science II: Engineering",
+                "CSCE 235 Introduction to Discrete Structures",
+                "ECEN 215 Electric Circuits",
+                "ECEN 250 Digital Systems Design",
+                "ECEN 310 Electronics I",
+                "CSCE 351 Operating Systems",
+                "CSCE 430 Computer Architecture",
+                "CSCE 475 Computer Engineering Design I",
+                "CSCE 476 Computer Engineering Design II (ACE 10)",
+                "MATH 107 Calculus I",
+                "MATH 108 Calculus II",
+                "MATH 208 Calculus III",
+                "MATH 221 Differential Equations",
+                "PHYS 211 General Physics I",
+                "PHYS 212 General Physics II"
+              ],
+              "electives": [
+                "ECEN 436 Embedded Systems Design",
+                "CSCE 478 Machine Learning"
+              ],
+              "total_units": 129,
+              "major_units": 75
+            },
+            "notable_professors": [
+              "Hau Chan (Assistant Professor, School of Computing)",
+              "Fadi Alsaleem (Associate Professor, Architectural Engineering Department)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This program is accredited by the Engineering Accreditation Commission of ABET."
+          }
+        ]
+      },
+      {
+        "name": "Hixson-Lied College of Fine and Performing Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Students interested in music professions can join the 'Beyond the Practice Room: Developing Music Professionals' Learning Community, typically housed in Eastside/University Suites. Other students reside in traditional or suite-style halls.",
+        "student_archetype": "Creative and collaborative individuals passionate about art, music, theatre, film, or emerging media arts. They seek personal attention within a Big Ten university setting, aiming for interdisciplinary study and professional experience in their artistic fields.",
+        "strategic_fit_advice": "Ideal for artistically inclined students who desire an immersive creative environment, opportunities for interdisciplinary collaboration, and access to a wide range of resources and performance venues.",
+        "majors": [
+          {
+            "name": "Art",
+            "degree_type": "B.A. or B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "B.F.A. programs typically require a portfolio review for admission into the advanced studio sequence.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ARTP 101 Foundations of Art",
+                "ARTP 110 Drawing I",
+                "ARTP 120 2D Design",
+                "ARTP 130 3D Design",
+                "AHIS 101 Art History I (ACE 5)",
+                "AHIS 102 Art History II (ACE 5)"
+              ],
+              "electives": [
+                "ARTP 210 Painting I",
+                "ARTP 220 Ceramics I",
+                "ARTP 230 Sculpture I",
+                "ARTP 240 Photography I",
+                "ARTP 250 Printmaking I"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Students may not elect Pass/No Pass for courses fulfilling major requirements."
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A. or B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for admission to all Bachelor of Music (B.M.) degree programs and for some B.A. in Music options.",
+            "admissions_pathway": "Direct Admit (with audition)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MUAP 100 Applied Music (primary instrument)",
+                "MUTH 101 Music Theory I",
+                "MUTH 102 Music Theory II",
+                "MUHL 160 Music History I (ACE 5)",
+                "MUHL 161 Music History II (ACE 5)",
+                "MUCO 100 Music Convocation"
+              ],
+              "electives": [
+                "MUAP 200 Applied Music (secondary instrument)",
+                "MUEN 100 Ensemble"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. B.M. degrees may not have more than one major."
+          },
+          {
+            "name": "Theatre",
+            "degree_type": "B.A. or B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "B.F.A. in Acting requires an audition. B.F.A. in Theatre Design and Technical Production requires a portfolio.",
+            "admissions_pathway": "Direct Admit (with audition/portfolio for B.F.A.)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "THEA 100 Introduction to Theatre (ACE 5)",
+                "THEA 110 Acting I",
+                "THEA 114 Stagecraft",
+                "THEA 115 Theatrical Makeup",
+                "THEA 120 Fundamentals of Design for Theatre",
+                "THEA 200 Theatre History I (ACE 5)"
+              ],
+              "electives": [
+                "THEA 210 Play Analysis",
+                "THEA 310 Directing I"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. B.F.A. Acting and B.F.A. Theatre Design & Technical Production are distinct professional programs."
+          },
+          {
+            "name": "Dance",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for admission to the Dance program.",
+            "admissions_pathway": "Direct Admit (with audition)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "DANC 100 Introduction to Dance (ACE 5)",
+                "DANC 120 Ballet I",
+                "DANC 130 Modern Dance I",
+                "DANC 150 Jazz Dance I",
+                "DANC 200 Dance History (ACE 5)"
+              ],
+              "electives": [
+                "DANC 220 Ballet II",
+                "DANC 230 Modern Dance II",
+                "DANC 300 Choreography I"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Emerging Media Arts",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "A portfolio is required after being admitted to the university.",
+            "admissions_pathway": "Direct Admit (with portfolio)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "EMAR 100 Introduction to Emerging Media Arts",
+                "EMAR 110 Creative Coding",
+                "EMAR 120 Digital Storytelling",
+                "EMAR 200 History and Theory of Emerging Media Arts (ACE 5)",
+                "EMAR 210 Interactivity and Experience Design"
+              ],
+              "electives": [
+                "EMAR 300 Virtual Reality and Augmented Reality",
+                "EMAR 400 AI and Creative Practice"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. This major focuses on filmmaking, interactive media, VR, AI, and more."
+          }
+        ]
+      },
+      {
+        "name": "College of Journalism and Mass Communications",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Offers 'Media Smarts' and 'Press Box' Learning Communities where students live together in residence halls.",
+        "student_archetype": "Aspiring communicators, storytellers, and media professionals. 'Media Smarts' students are interested in broadcasting, advertising, journalism, and public relations, while 'Press Box' students focus on sports media. They are eager for hands-on experience, media field trips, and networking with professionals.",
+        "strategic_fit_advice": "Great for first-year students committed to a career in media and communications who seek practical experience, professional mentorship, and a tight-knit community with shared interests.",
+        "majors": [
+          {
+            "name": "Advertising & Public Relations",
+            "degree_type": "B.J.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "JOMC 101 Media and Society (ACE 9)",
+                "JOMC 130 Visual Communication I",
+                "JOMC 131 Visual Communication II",
+                "JOMC 200 Principles of Mass Communication",
+                "ADPR 333 Introduction to Advertising",
+                "ADPR 339 Introduction to Public Relations",
+                "ADPR 350 Advertising Strategy",
+                "ADPR 355 Public Relations Writing"
+              ],
+              "electives": [
+                "ADPR 429 Strategic Campaigns",
+                "ADPR 439 Crisis Communication"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Valerie Jones (Fred A. & Gladys Seaton Professor)",
+              "Dr. Adam Wagler (Associate Dean for Academic Programs)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Majors can choose from emphasis areas like brand management, creative, media/data/analytics, public relations, or global/multicultural communication."
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.J.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "JOMC 101 Media and Society (ACE 9)",
+                "JOMC 130 Visual Communication I",
+                "JOMC 131 Visual Communication II",
+                "JOMC 200 Principles of Mass Communication",
+                "JOUR 200 News Reporting and Writing",
+                "JOUR 300 Advanced News Reporting",
+                "JOUR 301 Editing and Design"
+              ],
+              "electives": [
+                "JOUR 400 Depth Reporting",
+                "JOUR 401 Data Journalism"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Michael K. Park (Jerry & Karla Huse Professor)",
+              "Matt Waite (Professor of Practice Journalism)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Curriculum includes a strong emphasis on reporting, writing, visual communication, and multimedia journalism. Students must complete a minor outside the college."
+          },
+          {
+            "name": "Broadcasting",
+            "degree_type": "B.J.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "JOMC 101 Media and Society (ACE 9)",
+                "JOMC 130 Visual Communication I",
+                "JOMC 131 Visual Communication II",
+                "JOMC 200 Principles of Mass Communication",
+                "BRDC 225 Broadcast News Writing",
+                "BRDC 227 Audio Production",
+                "BRDC 327 Video Production"
+              ],
+              "electives": [
+                "BRDC 359 TV News Production",
+                "BRDC 427 Advanced Video Production"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Rick Alloway (Professor Broadcasting)",
+              "Laurie Thomas Lee (Professor Broadcasting)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Broadcasting majors can select a news option or a media production option."
+          },
+          {
+            "name": "Sports Media & Communication",
+            "degree_type": "B.J.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "JOMC 101 Media and Society (ACE 9)",
+                "JOMC 130 Visual Communication I",
+                "JOMC 131 Visual Communication II",
+                "JOMC 200 Principles of Mass Communication",
+                "SPMC 201 Introduction to Sports Media & Communication",
+                "SPMC 301 Sports Reporting and Writing",
+                "SPMC 305 Sports Broadcasting"
+              ],
+              "electives": [
+                "SPMC 401 Sports Public Relations",
+                "SPMC 405 Sports Digital Content Creation"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "John Shrader (Associate Professor Sports Media and Communications)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Combines a passion for sports with journalism, broadcasting, digital content, and public relations skills."
+          }
+        ]
+      },
+      {
+        "name": "College of Public Affairs and Community Service",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": [
+          {
+            "name": "Criminology and Criminal Justice",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CRIM 101 Introduction to Criminal Justice"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CRIM 101 Introduction to Criminal Justice (ACE 6)",
+                "CRIM 201 Criminology",
+                "CRIM 202 Criminal Law",
+                "CRIM 203 Criminal Procedure",
+                "CRIM 300 Applied Statistics and Data Processing in the Public Sector (ACE 3)",
+                "CRIM 301 Research Methods in Criminal Justice (ACE 9)"
+              ],
+              "electives": [
+                "CRIM 401 Juvenile Justice",
+                "CRIM 405 Victimology"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. Gaylene Armstrong (Dean, CPACS)",
+              "Dr. Samantha Clinkinbeard (Associate Professor, Criminology and Criminal Justice)"
+            ],
+            "notes": "Data source: UNL Undergraduate Catalog 2025-2026. Although administered by UNO, all undergraduate coursework can be completed on the UNL campus."
+          }
+        ]
+      },
+      {
+        "name": "Jeffrey S. Raikes School of Computer Science and Management",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Suite-style rooms within the Esther L. Kauffman Academic Residential Center, which also integrates technology-enabled classrooms and faculty/staff offices. It's a living and learning environment designed for frequent interaction and collaboration.",
+        "student_archetype": "High-achieving, intellectually curious innovators and leaders with strong academic backgrounds (typically ACT 31+/SAT 1400+, top 10% high school class) who are interested in an interdisciplinary computer science and business management education. They are collaborative problem-solvers seeking to build businesses and lead teams.",
+        "strategic_fit_advice": "Ideal for top high school graduates with a passion for computer science and business, who thrive in a highly integrated living-learning community focused on innovation and leadership. Requires a separate application to the Raikes School in addition to the University and Honors Program applications.",
+        "majors": []
+      },
+      {
+        "name": "UNMC College of Nursing - Lincoln Division",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Certificate",
+      "Writing Minor",
+      "Computer Science Minor (available as Software Development Minor)",
+      "Robotics Engineering Minor",
+      "Sales Excellence Certificate",
+      "Digital Marketing Certificate (available as an industry certification)"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Nebraska's Application",
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "Plan Type": "Regular Decision",
+        "Date": "2026-05-01",
+        "Is Binding": false,
+        "Notes": "This is the final application deadline for Fall 2026 admission. The application period for Fall 2026 opened on August 1, 2025."
+      },
+      {
+        "Plan Type": "Regular Decision",
+        "Date": "2025-11-01",
+        "Is Binding": false,
+        "Notes": "This is the priority deadline to apply for admission to be considered for scholarship awards for the Fall 2026 term. Scholarship award offers for admitted students who applied by this date are typically made available on February 11."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors Program",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One essay (400-650 words) addressing intellectual curiosity, varied perspectives, or meaningful community service. One short answer (250 words or less) describing an activity with the strongest influence. Optional short answer to share anything unique."
+      },
+      {
+        "target_program": "Scholarship Application (General University)",
+        "requirement_type": "Essays",
+        "deadline": "February 1, 2026",
+        "details": "Open-ended responses are required as part of the supplemental Scholarship Application to maximize consideration for departmental, leadership, and service scholarships."
+      },
+      {
+        "target_program": "BFA Acting",
+        "requirement_type": "Audition",
+        "deadline": "January 2, 2026 (Final Prescreen)",
+        "details": "Prescreen audition videos and application uploaded to GetAcceptd. Priority callback deadline is December 1, 2025. Callback options include an on-campus Callback Weekend (February 28, 2026), Chicago visit (February 2-4, 2026), or Zoom Callbacks (March 1, 2026)."
+      },
+      {
+        "target_program": "Dance (Major/Minor)",
+        "requirement_type": "Audition",
+        "deadline": "February 26, 2026 (Video Audition for Scholarship Consideration); February 28, 2026 (Final Live Audition for Scholarship Consideration)",
+        "details": "In-person audition days are Friday, January 23, 2026, and Saturday, February 28, 2026. A video audition deadline for scholarship consideration is Thursday, February 26, 2026, at 5 p.m. Participation in auditions (in person or virtually) is required for placement and scholarship consideration. Auditions are a two-hour modern dance class."
+      },
+      {
+        "target_program": "Emerging Media Arts",
+        "requirement_type": "Portfolio",
+        "deadline": "January 16, 2026",
+        "details": "Portfolio required."
+      },
+      {
+        "target_program": "Music (Major/Minor with Lessons) and Music Education",
+        "requirement_type": "Audition",
+        "deadline": "February 27, 2025 (Video Audition for Scholarship Consideration); February 28, 2026 (Final Live Audition for Scholarship Consideration)",
+        "details": "Auditions are required and serve as the application to the Glenn Korff School of Music and the music/dance scholarship application, submitted via Acceptd. Audition dates vary by instrument: Brass, Composition, Percussion, Woodwinds (January 24, 2026; February 27, 2026); Piano and Organ (January 23, 2026; February 28, 2026); Strings and Classical Guitar (January 23, 2026; February 27, 2026); Voice (January 23, 2026; January 24, 2026). In-person auditions are recommended for scholarships, but video auditions are accepted for Fall 2026 entry."
+      },
+      {
+        "target_program": "Musical Theatre Minor",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "Students are required to complete a Voice Placement audition with the Glenn Korff School of Music Voice Faculty. Auditions are submitted online and must include video recordings of two contrasting, full-length musical theatre songs."
+      },
+      {
+        "target_program": "BA Theatre",
+        "requirement_type": "Portfolio",
+        "deadline": "March 15, 2026",
+        "details": "Portfolio required."
+      },
+      {
+        "target_program": "BFA Theatre Design/Technical Production",
+        "requirement_type": "Portfolio",
+        "deadline": "March 15, 2026",
+        "details": "Portfolio required."
+      },
+      {
+        "target_program": "Composition Major",
+        "requirement_type": "Portfolio and Audition and Interview",
+        "deadline": null,
+        "details": "Applicants must submit a portfolio, have an interview with faculty, and perform an audition in one of the vocal or instrumental performance areas, passing at the minor level."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The University of Nebraska-Lincoln conducts a holistic review process that considers academic, extracurricular, and personal factors. While the Common Data Set indicates essays, recommendations, and standardized test scores as 'Very Important', more recent admissions information states these are optional for applicants (test scores through Fall 2023, essays and recommendations generally optional). The university offers specific Legacy Tuition Scholarships for out-of-state students with alumni parents and provides strong support and resources for first-generation students through various programs."
+    },
+    "essay_prompts": [
+      {
+        "target_program": "Honors Program",
+        "requirement_type": "Essays",
+        "details": "One essay (400-650 words) addressing intellectual curiosity, varied perspectives, or meaningful community service. One short answer (250 words or less) describing an activity with the strongest influence. Optional short answer to share anything unique."
+      },
+      {
+        "target_program": "Scholarship Application (General University)",
+        "requirement_type": "Essays",
+        "details": "Open-ended responses are required as part of the supplemental Scholarship Application to maximize consideration for departmental, leadership, and service scholarships."
+      }
+    ]
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider applying to a broader or less competitive major initially, particularly within the College of Arts and Sciences, if highly desired specialized programs like Engineering or certain Arts programs are perceived as more competitive, with the intent to transfer later.",
+      "Align your major choice with your demonstrated academic strengths and genuine interests, as UNL considers academic preparation and ability in the desired program for admission.",
+      "Meet or exceed the general admission requirements (e.g., average ACT 22-28, SAT 1090-1330, GPA around 3.62) to be a strong candidate for a wide range of majors at UNL.",
+      "Explore majors within colleges with high enrollment and diverse offerings, such as Business Administration, Psychology, or Finance, as these popular programs may offer more entry points.",
+      "If uncertain about a specific major, consider applying as undeclared, utilizing the Exploratory & Pre-Professional Advising Center to explore options after admission."
+    ],
+    "college_ranking_tactics": [
+      "Strategic Investments in Facilities and Resources: UNL has made significant facility investments, such as Kiewit Hall and the remodeled Scott Engineering Center for the College of Engineering, and Hawks Hall for the College of Business. These modern facilities are designed to attract students and provide cutting-edge learning environments, directly contributing to improved program rankings.",
+      "Enhancing Academic Excellence and Student Outcomes: A renewed focus on academic excellence and student success is central to UNL's strategy. This involves improving graduate and retention rates, offering expanded scholarship opportunities (like the Peter Kiewit Foundation Engineering Academy), increasing faculty hires, and providing robust student support services such as academic advising, career coaching, and free tutoring. The university's N2025 Strategic Plan and Quality Initiative also aim to improve persistence, degree completion, and career development for all students, including those historically underserved.",
+      "Boosting Research Funding and Faculty Quality: Efforts are underway to increase research funding, with a target of $450 million in annual research expenditures. Additionally, the university focuses on increasing the number of faculty involved in extramurally-funded research and securing national/international awards for faculty and students. Investing in competitive faculty compensation also helps attract top talent.",
+      "Optimizing Enrollment and Program Offerings: UNL prioritizes increasing student enrollment and improving student retention rates. This also includes strategically adjusting academic programs by focusing on areas of demonstrated strength and potentially consolidating or reducing underperforming programs to enhance overall academic quality and resource allocation.",
+      "Leveraging Joint Accreditation for Unified Reporting: The University of Nebraska–Lincoln and the University of Nebraska Medical Center are moving towards joint accreditation. This unified reporting of institutional metrics, such as enrollment, degrees awarded, faculty honors, and research spending, is expected to immediately strengthen the university's national rankings and reputation by presenting a more comprehensive and robust profile."
+    ],
+    "alternate_major_strategy": {
+      "alternate_major_strategy": "At the University of Nebraska-Lincoln, students who are undecided or exploring majors can utilize the Explore Center, which serves as an an advising track. For instance, students interested in the College of Engineering can be designated as 'Pre-Engineering' (PENG) within the Explore Center for up to a year while they decide on a specific major and work towards meeting its declaration criteria, which includes a 2.5 cumulative GPA and being 'calc ready' (Math 106). It is recommended to research different majors using the undergraduate catalog, review 4-year plans, and engage in self-reflection regarding personal skills, interests, and values. Meeting with academic or career advisors in either the specific college or the Explore Center is also encouraged. Some 'pre-professional' tracks, like pre-law, are advising categories and not majors themselves, offering flexibility to combine with any undergraduate major.",
+      "internal_transfer_difficulty": "Changing majors or transferring between colleges at the University of Nebraska-Lincoln involves a formal process. Students must consult their current advisor and the change is processed through the Office of the University Registrar. This typically requires obtaining a College-Major-Degree-Advisor Change Form, securing signed approval from the current college, and then obtaining signed approval from the new college (if changing colleges) along with the new advisor's name. For internal transfers into specific colleges, academic requirements apply. For example, to declare a major in the College of Business from another UNL college, students need a 2.5 GPA and must complete a 'Transfer In Session.' Similarly, to declare a major within the College of Engineering, current students must have a 2.5 cumulative GPA and be 'calc ready' (Math 106). These specific GPA and course readiness requirements for entering certain colleges suggest a competitive or structured internal transfer process for impacted or in-demand majors."
+    }
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 11100,
+        "total_coa": 28738,
+        "housing": 14210
+      },
+      "out_of_state": {
+        "tuition": 30330,
+        "total_coa": 47968
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 10170,
+    "average_merit_aid": 8024,
+    "percent_receiving_aid": 85,
+    "meets_full_need": false,
+    "notes": "The Nebraska Promise program covers in-state undergraduate tuition for eligible students whose families have an adjusted gross income of $65,000 or less or who qualify for the federal Pell Grant. This program provides tuition-free attendance through federal, state, and campus scholarships and grants for up to 30 credit hours per academic year. However, it does not guarantee that additional costs including fees, books, housing and food, or transportation will be covered, meaning the university does not meet 100% of the total demonstrated financial need for all students.",
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "Full undergraduate tuition for up to 120 credit hours",
+        "deadline": "Priority: November 1, 2025; Final: February 1, 2026",
+        "benefits": "Covers tuition for fall, spring, and summers (up to 120 credit hours) including differential tuition for certain colleges. Renewable with a 3.500 cumulative GPA or ranking in the upper 25% of class.",
+        "application_method": "Automatic Consideration (Nebraska residents with strong academic distinction; 32 ACT/SAT equivalent and high GPA/class rank considered)."
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full cost of attendance + $5,000 annual stipend",
+        "deadline": "Automatic qualification based on test scores",
+        "benefits": "Covers undergraduate tuition, fees, books, supplies, housing, food, personal expenses, transportation, and all other costs of attendance, plus a $5,000 annual stipend. Renewable for up to four years (eight semesters) with a 3.500 cumulative GPA and completion of 24 credit hours per year.",
+        "application_method": "Automatic Qualification (Nebraska residents with a 36 ACT composite score or SAT equivalent of 1570-1600 for Fall 2026 matriculation)."
+      },
+      {
+        "name": "New Nebraskan Tuition Scholarship",
+        "type": "Merit",
+        "amount": "Up to $15,000 or $20,000 per year (towards undergraduate tuition)",
+        "deadline": "Priority: November 1, 2025; Final: May 1, 2026",
+        "benefits": "Offsets out-of-state tuition costs. Award amounts vary based on academic achievement (GPA, class rank, and/or test scores like 24 ACT for $15,000, 34 ACT for $20,000). Renewable with a 3.000 cumulative GPA and completion of 24 credit hours per year.",
+        "application_method": "Automatic Consideration upon admission application for out-of-state students."
+      },
+      {
+        "name": "Global Laureate Scholarship / Global Excellence Scholarship",
+        "type": "Merit",
+        "amount": "Up to $15,000 per year (Global Laureate); Up to $60,000 over four years ($15,000/year) (Global Excellence)",
+        "deadline": "Fall admits: Enrollment deposit by May 1; Spring admits: Enrollment deposit by December 1",
+        "benefits": "Reduces international tuition costs. Global Laureate for first-year international students based on GPA, SAT, ACT, or English proficiency. Global Excellence for international transfer students affiliated with a partner university. Renewable with a 3.000 cumulative GPA and 24 credit hours completed each academic year.",
+        "application_method": "Apply for admission and submit enrollment deposit."
+      },
+      {
+        "name": "University Honors Program Scholarship",
+        "type": "Merit",
+        "amount": "Approximately $500 annually ($250 per semester)",
+        "deadline": "Automatic consideration with Honors Program acceptance",
+        "benefits": "Covers the cost of required textbooks. Renewable for up to four years or 120 credit hours, provided the student remains in good standing with the Honors Program.",
+        "application_method": "Automatic consideration upon acceptance into the University Honors Program for first-year, first-time students."
+      },
+      {
+        "name": "Nebraska Career Scholarship",
+        "type": "Merit",
+        "amount": "Minimum $8,000 per year ($4,000 per semester)",
+        "deadline": "General scholarship application deadlines (e.g., February 1, 2026 for supplemental application)",
+        "benefits": "Aimed at Nebraska residents pursuing majors in high-demand fields such as engineering, mathematics, healthcare, and information technology. Renewable for up to four years with a 2.500 cumulative GPA and completion of 24 UNL credit hours per academic year.",
+        "application_method": "Supplemental Scholarship Application by February 1, 2026, and majoring in eligible programs."
+      },
+      {
+        "name": "Departmental, Leadership, and Service Scholarships",
+        "type": "Merit",
+        "amount": "Varies by department/program",
+        "deadline": "Supplemental Scholarship Application by February 1, 2026",
+        "benefits": "Awarded based on a holistic review, considering academic performance, resume of activities, and open-ended responses. Specific benefits depend on the individual scholarship.",
+        "application_method": "Submit the supplemental Scholarship Application in MyRED."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "A score of 3 or higher generally grants credit for many AP exams.",
+      "exceptions": [
+        "No credit is awarded for AP Capstone courses (AP Research and AP Seminar).",
+        "For AP Music Theory, a score of 4 grants 4 credits (MUSC 165, 165A), and a score of 5 grants 8 credits (MUSC 165, 165A, 166, 166A), with additional units potentially available by diagnostic test."
+      ],
+      "usage": [
+        "AP credits can be used to earn college credit hours",
+        "gain placement into advanced courses",
+        "satisfy major requirements (such as calculus and physics for engineering majors)",
+        "fulfill general education requirements (like ACE requirements)",
+        "reduce time to degree",
+        "free up schedules for internships, undergraduate research, or electives"
+      ]
+    },
+    "ib_policy": {
+      "general_rule": "IB exams with 5+ grant credit",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "No more than 60 semester or 90 quarter credits earned at two-year colleges can be applied to an undergraduate degree. A maximum of 90 total hours may transfer from all institutions. Transfer credit is accepted from regionally accredited institutions. Grades from institutions outside the University of Nebraska System are used for evaluation and admission, but do not contribute to the UNL GPA; individual degree colleges determine policies for accepting grades below a C. Up to 15 credit hours may be awarded for military training and coursework."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Well-rounded application including personal essays and extracurricular activities",
+      "Meeting or exceeding average standardized test scores (ACT 22-28, SAT 1090-1310)",
+      "Demonstrating genuine interest and alignment with UNL's community and opportunities"
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs and organizations",
+      "Community service/volunteering",
+      "Varsity athletics and sport clubs",
+      "Participation in various extracurricular activities"
+    ],
+    "essay_tips": [
+      "Be specific about why *this* school.",
+      "Connect your interests to specific resources.",
+      "Show, don't just tell.",
+      "Focus on what *only you* could write about *only this school*."
+    ],
+    "red_flags": [
+      "Submitting an incomplete or inaccurate application, including transcripts.",
+      "Providing a generic personal essay.",
+      "Listing extracurricular activities without demonstrating depth or impact.",
+      "Having a record of academic dishonesty or serious conduct violations."
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Nebraska-Lincoln (UNL) is a moderately selective institution with an acceptance rate typically ranging from 77% to 87.5%. [2, 3, 4, 5, 7, 9]",
+        "implication": "While not highly competitive, strong academic performance (average admitted GPA around 3.54, SAT 1100-1310, ACT 22-28) and a well-rounded application can enhance admission chances. [4, 9] Submitting standardized test scores is optional but can be beneficial if strong. [13, 18] Applying early may also maximize opportunities. [9]"
+      },
+      {
+        "category": "Academic",
+        "insight": "UNL is a 'tier-one research university' and a 'land-grant research institution' offering a wide breadth of programs across nine colleges, emphasizing both undergraduate education and significant research opportunities. [14, 17, 21, 24]",
+        "implication": "Applicants interested in research, interdisciplinary studies, or specific fields like agricultural sciences, architecture, and engineering should highlight relevant experiences and interests. [12, 17] Emphasizing intellectual curiosity and any prior research or project-based learning in essays can demonstrate alignment with UNL's academic mission. [17]"
+      },
+      {
+        "category": "Culture",
+        "insight": "UNL fosters a strong sense of community, known for its Midwestern hospitality, inclusivity, and vibrant student life with over 500 student organizations and spirited support for its Cornhuskers sports teams. [6, 16]",
+        "implication": "Applicants should emphasize experiences demonstrating teamwork, community involvement, leadership roles, and an ability to contribute positively to a friendly and engaged campus environment. [9] Highlighting participation in clubs, volunteer work, or school spirit activities can resonate strongly."
+      },
+      {
+        "category": "Value",
+        "insight": "Lincoln, Nebraska, offers an affordable cost of living compared to many other college towns, contributing to the overall value proposition of attending UNL. [10]",
+        "implication": "For applicants prioritizing affordability in their college decision, UNL presents a strong option. Beyond academics, the lower cost of living can enhance the student experience by reducing financial strain on housing, food, and transportation. [10]"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Nebraska-Lincoln fosters a friendly, welcoming, and spirited social environment, often described as a 'home away from home' with a strong sense of community and pride in being a 'Husker'. Students, a mix of those from small-town Nebraska, Lincoln, Omaha, and out-of-state and international backgrounds, are generally described as kind and friendly, reflecting Midwestern manners. There are numerous opportunities for involvement with over 500 registered student organizations. While students appreciate the vibrant campus life and diverse opportunities, some note that making connections can be challenging without engaging in Greek life. The Lincoln community is also seen as positive and outgoing, especially around sporting events like Division I football.",
+      "transportation_impact": "The University of Nebraska-Lincoln's three distinct campuses (City, East, and Innovation) are close in proximity, allowing students to travel between them via bus, bike, or on foot. All UNL students receive a complementary bus pass for unlimited rides on StarTran Lincoln Bus Service, which covers both campus and city routes. Lincoln is also described as a very bike-friendly city and campus, featuring over 183 miles of trails and a bike-share program, BikeLNK. For students with classes across different campuses, it is recommended to plan schedules with distances in mind due to only 10 minutes between class periods. Parking issues are a common complaint among students.",
+      "research_impact": "The University of Nebraska-Lincoln offers strong undergraduate research opportunities through programs like the Nebraska Summer Research Program (SRP), Undergraduate Creative Activities and Research Experiences (UCARE), and First Year Research Experience (FYRE). These programs provide paid opportunities for students to work with faculty mentors on cutting-edge research across various fields, including agriculture, engineering, humanities, and sciences. Many of these research experiences are nationally funded by organizations such as the NSF, USDA, or NIFA, and offer a preview of graduate school life along with professional development workshops. The university also has robust industry ties facilitated by the Office of Research and Innovation, NUtech Ventures, Nebraska Innovation Campus, and Industry Relations. These entities work to advance public-private partnerships, commercialize technologies, and foster research collaborations with the private sector, contributing to economic development."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 49600,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 37800,
+    "notes": "Median earnings 10 years after enrollment is $49,600 and 6 years after enrollment is $37,800, according to data sourced from the U.S. Department of Education College Scorecard. A specific employment rate 2 years after graduation from an authoritative source like the College Scorecard could not be found.",
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft"
+    ],
+    "grad_school_rate": 14,
+    "loan_default_rate": 0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86,
+    "graduation_rate_4_year": 49,
+    "graduation_rate_6_year": 67
+  }
 }

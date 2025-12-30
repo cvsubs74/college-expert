@@ -921,13 +921,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required application essay (650 words or less) sharing information not found elsewhere on the application. One optional supplemental essay (250-500 words) with two options: either describe an experience with discrimination and lessons learned, or explain how you will share your experiences, values, and interests with the UO community and support others."
       },
       {
         "target_program": "Robert D. Clark Honors College",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "An additional honors essay is recommended to showcase curiosity and intellectual engagement."
       },
       {
@@ -1081,7 +1081,7 @@
     },
     "transfer_articulation": {
       "tools": [
-        "Transfer Equivalency Database (TES\u00ae)",
+        "Transfer Equivalency Database (TES®)",
         "Transferology"
       ],
       "restrictions": "Only 124 credits from junior or community colleges will be counted toward the total number of credits required for the degree (of this only 90 credits may be transferred from an international junior college)"
@@ -1117,11 +1117,31 @@
       "Not engaging with the optional essays, potentially missing an opportunity to demonstrate individuality and commitment."
     ],
     "insights": [
-      "The University of Oregon emphasizes a vibrant campus life and a welcoming, diverse community, making it important for applicants to demonstrate how they will contribute positively to this environment.",
-      "The school is generally seen as having a liberal student body, which might influence the cultural fit for some applicants.",
-      "While the acceptance rate can appear high, the university attracts a large number of applicants, and a strong application is still crucial, particularly for scholarships.",
-      "The University offers many resources and opportunities, but students often mention the need to actively seek them out.",
-      "Visiting campus or engaging with admissions counselors (virtually or in person) is encouraged to determine if UO is the right fit, though not a requirement for admission."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The University of Oregon emphasizes a vibrant campus life and a welcoming, diverse community, making it important for applicants to demonstrate how they will contribute positively to this environment."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The school is generally seen as having a liberal student body, which might influence the cultural fit for some applicants."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While the acceptance rate can appear high, the university attracts a large number of applicants, and a strong application is still crucial, particularly for scholarships."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The University offers many resources and opportunities, but students often mention the need to actively seek them out."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Visiting campus or engaging with admissions counselors (virtually or in person) is encouraged to determine if UO is the right fit, though not a requirement for admission."
+      }
     ]
   },
   "outcomes": {

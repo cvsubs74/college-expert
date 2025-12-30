@@ -1,98 +1,132 @@
+
 {
-  "university_profile": {
-    "_id": "yeshiva_university",
-    "metadata": {
-      "official_name": "Yeshiva University",
-      "location": {
-        "city": "New York",
-        "state": "NY",
-        "type": "Private"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
+  "_id": "yeshiva_university",
+  "metadata": {
+    "official_name": "Yeshiva University",
+    "location": {
+      "city": "New York City",
+      "state": "New York",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "Yeshiva University is the world's premier Jewish institution of higher learning, uniquely integrating rigorous secular academic study with traditional Torah scholarship (Torah Umaddah). It operates multiple campuses across New York City, offering a close-knit environment for undergraduate and graduate students.",
-      "market_position": "Elite Private",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 84,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "YU has seen a dramatic rise in honors applications and record-breaking enrollment in recent years.",
-          "implication": "Applicants should consider Early Decision to maximize chances for competitive honors programs."
-        },
-        {
-          "category": "Ranking Momentum",
-          "insight": "The university jumped 14 spots to #84 in the 2026 National Universities list.",
-          "implication": "Improving peer assessments and outcome metrics suggest a strengthening national brand beyond its niche market."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Social life is deeply rooted in Jewish values, featuring gender-separated undergraduate campuses and vibrant religious programming, including extensive Shabbat events and student-led Hanukkah concerts.",
-        "transportation_impact": "An inter-campus shuttle system connects the Wilf (Washington Heights) and Beren (Midtown) campuses, allowing students to access specialized libraries and facilities across the city.",
-        "research_impact": "Despite its small undergraduate size, YU maintains significant research output with over 18,000 publications and strong ties to industries through its Katz School of Science and Health and Sy Syms School of Business."
-      }
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "us_news_rank": 98,
+    "market_position": "Elite Private",
+    "executive_summary": "Yeshiva University is a prestigious private institution in New York City, known for its unique blend of Jewish scholarship and secular education. It is consistently recognized for academic excellence, with a U.S. News & World Report ranking of 98th among National Universities in 2025. The university offers a diverse range of programs, excelling in areas like psychology, law, social work, and business, and maintains a strong reputation for student success and value.",
+    "admissions_philosophy": "Holistic review emphasizing intellectual curiosity",
+    "campus_dynamics": {
+      "social_environment": "Yeshiva University fosters a positive, supportive, and academically serious environment. It offers a vibrant student life with over 150 clubs and organizations, promoting a strong sense of community and personal growth. The university is particularly accommodating and supportive for Jewish students seeking to integrate religious and secular studies.",
+      "transportation_impact": "Located in New York City, Yeshiva University provides students with easy access to a wide range of cultural and professional opportunities through the city's extensive public transportation system. While on-campus housing is available, many students choose to live off-campus in surrounding neighborhoods with convenient access to public transportation.",
+      "research_impact": "Yeshiva University offers strong undergraduate research opportunities, particularly in STEM and health fields. Students can participate in advanced biomedical research programs, such as the Summer Undergraduate Research Program (SURP) at YU's Albert Einstein College of Medicine. The university also provides research support for faculty and collaborative projects with industry and academic partners, creating opportunities for both graduate and undergraduate students. Undergraduate research allows students to apply scientific concepts, explore specific topics in depth, and is beneficial for those pursuing advanced degrees."
     },
-    "admissions_current": {
-      "overall_acceptance_rate": 55.62,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 0.0,
-      "transfer_acceptance_rate": 100.0,
-      "admits_class_size": 926,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": [
-        {
-          "plan_type": "ED",
-          "applications": 98,
-          "admits": 98,
-          "acceptance_rate": 100.0,
-          "class_fill_percentage": 21.0
-        }
-      ]
-    },
-    "admissions_trends": [
+    "analyst_takeaways": [
       {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
+        "category": "Selectivity",
+        "insight": "Yeshiva University employs a selective, holistic admissions process, valuing strong academic performance (e.g., GPA of 3.5, SAT 1160-1410/ACT 24-31) alongside extracurricular involvement, essays, and interviews. While test-optional, competitive scores can enhance an application.",
+        "implication": "Applicants should prioritize a robust academic record and, if possible, submit competitive standardized test scores. Additionally, craft compelling essays and highlight significant extracurriculars, leadership, and community involvement to demonstrate a well-rounded profile."
+      },
+      {
+        "category": "Culture",
+        "insight": "Yeshiva University provides a unique educational environment that deeply integrates rigorous secular studies with Jewish values and Torah learning, fostering a strong, supportive Jewish community.",
+        "implication": "Applicants should articulate a genuine interest in combining their academic pursuits with Jewish education and values. Highlight experiences or aspirations that demonstrate how you would thrive within and contribute to a faith-based, close-knit community."
+      },
+      {
+        "category": "Academic",
+        "insight": "YU offers strong pre-professional advising and pathways to top graduate schools, boasting high acceptance rates for medical, dental, and law programs, and emphasizes research and internship opportunities in various fields.",
+        "implication": "Showcase any pre-professional aspirations (e.g., pre-med, pre-law, business), relevant research experience, or interest in internship opportunities. Connect your academic goals with YU's proven success in preparing students for graduate studies and diverse careers."
+      }
+    ]
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 55.62,
+      "is_test_optional": false,
+      "test_policy_details": "Yeshiva University requires standardized test scores (SAT/ACT) only for applicants to its Honors programs. For all other general admissions applicants, submitting test scores is optional but they are considered. If submitted, scores must be sent directly from the testing service. Most successful general admissions applicants have a combined SAT score of at least 1170 (Critical Reading and Math) or an ACT score of 24. For Honors applicants, typical scores are around 1460 on the SAT or 32 on the ACT.",
+      "admits_class_size": 926,
+      "transfer_acceptance_rate": 100.0,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
         "applications_total": 1665,
         "admits_total": 926,
         "enrolled_total": 566,
-        "acceptance_rate_overall": 55.6,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 61.1,
+        "acceptance_rate_overall": 55.62,
+        "yield_rate": 61.12,
+        "notes": "Data for the 2024-2025 admission cycle (Fall 2025 enrollment).",
         "waitlist_stats": {
           "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Acceptance rate hit a multi-year low as selectivity increased; Waitlist not traditionally used for general admission."
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 1713,
+        "admits_total": 1092,
+        "enrolled_total": 646,
+        "acceptance_rate_overall": 63.70,
+        "yield_rate": 59.16,
+        "notes": "Data for the 'application year 2024' corresponding to Fall 2024 enrollment.",
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 1713,
         "admits_total": 1092,
-        "enrolled_total": 646,
-        "acceptance_rate_overall": 63.7,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 59.2,
+        "enrolled_total": 647,
+        "acceptance_rate_overall": 63.70,
+        "yield_rate": 59.20,
+        "notes": "Data for the 2023 admission cycle (Fall 2023 enrollment). The enrolled total is calculated from the reported yield rate. Yeshiva University reported a 'record enrollment' in June 2023 for Fall 2023.",
         "waitlist_stats": {
           "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist not traditionally used; late applications are considered on a space-available basis."
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 1615,
+        "admits_total": 1021,
+        "enrolled_total": 636,
+        "acceptance_rate_overall": 63.00,
+        "yield_rate": 62.29,
+        "notes": "Data for Fall 2022 enrollment. Yeshiva University saw 'a great rise in undergraduate enrollment by over 20 percent from fall 2021 to fall 2022'.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 1410,
+        "admits_total": 884,
+        "enrolled_total": 490,
+        "acceptance_rate_overall": 62.70,
+        "yield_rate": 55.43,
+        "notes": "Data for Fall 2021 enrollment.",
+        "waitlist_stats": null
       }
     ],
     "admitted_student_profile": {
@@ -100,615 +134,1583 @@
         "weighted_middle_50": "3.65-3.85",
         "unweighted_middle_50": "3.40-3.60",
         "average_weighted": 3.75,
-        "percentile_25": "3.40",
-        "percentile_75": "3.60",
-        "notes": "Honors program admits typically maintain a GPA of 3.80 (94/100) or higher. Admission is holistic with an interview requirement."
+        "percentile_25": "3.65",
+        "percentile_75": "3.85",
+        "notes": "Yeshiva University's weighted GPA average for undergraduate admissions is 3.75, with the 25th percentile at 3.65 and the 75th percentile at 3.85. The unweighted GPA average is 3.49, with a 25th percentile of 3.4 and a 75th percentile of 3.6. Over one in five (21.68%) of the Class of 2025 graduated high school with a 4.0 GPA."
       },
       "testing": {
-        "sat_composite_middle_50": "1340-1500",
-        "sat_reading_middle_50": "670-740",
-        "sat_math_middle_50": "670-770",
-        "act_composite_middle_50": "29-32",
-        "submission_rate": 22.0,
-        "policy_note": "Test-optional for general admission but recommended for honors and scholarship consideration."
+        "SAT Composite Middle 50": "1340-1500",
+        "SAT Reading Middle 50": "670-740",
+        "SAT Math Middle 50": "670-770",
+        "ACT Composite Middle 50": "29-33",
+        "Submission Rate": 19.0,
+        "Policy Note": "Yeshiva University is test-optional for general admissions, though submitting strong scores can be beneficial, especially for competitive programs. Test scores are required for some honors programs. Self-reporting of scores is permitted. Yeshiva University does not superscore for undergraduate admissions. The submission rate of 19.0% refers to the percentage of enrolled students who submitted SAT scores for the academic year 2025."
       },
       "demographics": {
-        "first_gen_percentage": 0.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 8.0,
-        "geographic_breakdown": [
-          {
-            "region": "New York",
-            "percentage": 34.0
-          },
-          {
-            "region": "Out of State",
-            "percentage": 58.0
-          },
-          {
-            "region": "International",
-            "percentage": 8.0
-          }
-        ],
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Information on first-generation college students and legacy student percentages for Yeshiva University is not available in the provided search results. Legacy is defined as alumni children.",
+        "geographic_breakdown": {
+          "New York (In-State)": "34%",
+          "Out-of-State (U.S.)": "58%",
+          "International": "8%"
+        },
         "gender_breakdown": {
           "men": {
-            "applicants": 858,
-            "admits": 478,
-            "acceptance_rate": 55.7,
-            "note": "Undergraduate men primarily attend the Wilf Campus."
+            "applicants": 2931,
+            "admits": 271,
+            "acceptance_rate": 9.25,
+            "note": "Data for Fall 2022 admissions."
           },
           "women": {
-            "applicants": 807,
-            "admits": 448,
-            "acceptance_rate": 55.5,
-            "note": "Undergraduate women primarily attend the Beren Campus."
+            "applicants": 1509,
+            "admits": 322,
+            "acceptance_rate": 21.34,
+            "note": "Data for Fall 2022 admissions."
           },
-          "non_binary": 0.0
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 53.6,
-          "black_african_american": 0.2,
-          "hispanic_latino": 2.0,
-          "asian": 0.1,
-          "native_american_alaskan": 0.04,
-          "pacific_islander": 0.0,
-          "two_or_more_races": 0.6,
-          "unknown": 35.7,
-          "non_resident_alien": 7.7
-        },
-        "religious_affiliation": "Jewish (Modern Orthodox)"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "Yeshiva College",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 63.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for men seeking a rigorous dual curriculum of liberal arts and intensive Torah study; values the 'Torah Umadda' philosophy of synthesizing secular and religious knowledge.",
-          "housing_profile": "Located on the Wilf Campus in Washington Heights; primarily traditional dorms (Rubin, Morgenstern, Muss Halls) within walking distance of academic buildings and the main Beit Midrash.",
-          "student_archetype": "Intellectually curious scholars balancing traditional Jewish learning with secular academic pursuits.",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "High School Algebra",
-                "Trigonometry"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "BIO 1011 Principles of Biology I",
-                "CHE 1213 Organic Chemistry"
-              ],
-              "special_requirements": "Pre-health students must maintain contact with the YU pre-health advisor.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "BIO 1011R/L Principles of Biology 1 (Lecture & Lab)",
-                  "BIO 1012R/L Principles of Biology 2 (Lecture & Lab)",
-                  "CHE 1045R General Chemistry 1",
-                  "CHE 1046R General Chemistry 2",
-                  "CHE 1047L General Chemistry Lab",
-                  "MAT 1412 Calculus I"
-                ],
-                "electives": [
-                  "BIO 3207 Cell Biology",
-                  "BIO 3513 Genetics",
-                  "BIO 3521 Molecular Biology",
-                  "BIO 3230 Immunology"
-                ],
-                "total_units": 128,
-                "major_units": 44
-              },
-              "notable_professors": [
-                "Dr. Josefa Steinhauer (Genetics/Development)",
-                "Dr. James Camara (Pre-Health Advisor)"
-              ],
-              "notes": "Extremely popular for Pre-Med students; high placement rate into medical schools."
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "MAT 1412 Calculus I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "COM 1320 Data Structures",
-                "COM 2545 Algorithms"
-              ],
-              "special_requirements": "B.S. track requires a strict 8-semester residency on campus.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "COM 1300 Intro to Computer Science",
-                  "COM 1310 Math for Computer Science",
-                  "COM 1320 Data Structures",
-                  "COM 2113 Computer Organization",
-                  "COM 2545 Intro to Algorithms",
-                  "COM 3610 Operating Systems",
-                  "MAT 2105 Linear Algebra"
-                ],
-                "electives": [
-                  "COM 3800 Distributed Systems",
-                  "COM 3580 Machine Learning",
-                  "COM 3760 Artificial Intelligence",
-                  "COM 3920 Applied Data Science"
-                ],
-                "total_units": 128,
-                "major_units": 74
-              },
-              "notable_professors": [
-                "Professor Judah Diament (Director, CS Program)",
-                "Dr. Avraham Leff (Application Performance)"
-              ],
-              "notes": "Offers tracks in Distributed Systems and Artificial Intelligence; industry advisory board from Google/Amazon."
-            },
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "PSY 1010 Introductory Psychology"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PSY 2100C Experimental Psychology"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "PSY 1010 Intro to Psychology",
-                  "PSY 1021 Statistics for Psychology",
-                  "PSY 1110 Developmental Psychology",
-                  "PSY 2100C Experimental Psychology",
-                  "PSY 2150 Cognitive Psychology",
-                  "PSY 3105 Social Psychology",
-                  "PSY 3804 Psychobiology"
-                ],
-                "electives": [
-                  "PSY 2414 Abnormal Psychology",
-                  "PSY 3800 Personality",
-                  "PSY 2430 Clinical Psychology",
-                  "PSY 4931 Death and Dying"
-                ],
-                "total_units": 128,
-                "major_units": 38
-              },
-              "notable_professors": [
-                "Dr. Jenny Isaacs (Department Chair)",
-                "Dr. William Arsenio"
-              ],
-              "notes": "Integrates with Ferkauf Graduate School for research opportunities."
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "MAT 1412 Calculus I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ECO 1101 Intermediate Microeconomics"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "ECO 1010 Principles of Economics",
-                  "STA 1021 Intro to Statistics",
-                  "ECO 1101 Intermediate Microeconomics",
-                  "ECO 1201 Intermediate Macroeconomics",
-                  "ECO 1421 Econometrics"
-                ],
-                "electives": [
-                  "ECO 1177 Game Theory",
-                  "ECO 1221 Money and Banking",
-                  "ECO 1701 International Economics",
-                  "ECO 2601 Financial Economics"
-                ],
-                "total_units": 128,
-                "major_units": 34
-              },
-              "notable_professors": [
-                "Professor James Kahn (Department Chair)",
-                "Dr. Ran Shao (Resource Allocation)"
-              ],
-              "notes": "Offers a Mathematical Economics track for students targeting PhD programs or quantitative finance."
-            }
-          ]
-        },
-        {
-          "name": "Stern College for Women",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 63.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "A strong fit for women looking for a nurturing, Modern Orthodox environment with high success rates in placing students into top-tier medical and graduate programs.",
-          "housing_profile": "Located on the Beren Campus in Midtown Manhattan; includes a mix of traditional residence halls and apartment-style units (Brookdale, Schottenstein, and 36th Street) spread across several city blocks.",
-          "student_archetype": "Ambitious, community-oriented women committed to excellence in the sciences, arts, and Jewish studies.",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "CHEM 1045 General Chemistry"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "BIOL 1011 Principles of Biology I"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 1011C Principles I (Lecture & Lab)",
-                  "BIOL 1012C Principles II (Lecture & Lab)",
-                  "CHEM 1045R Gen Chem I",
-                  "CHEM 1046R Gen Chem II",
-                  "CHEM 1047L Gen Chem Lab"
-                ],
-                "electives": [
-                  "BIOL 3207C Cell Biology",
-                  "BIOL 3513C Genetics",
-                  "BIOL 3750 Medical Biochemistry",
-                  "BIOL 4023 Microbiology"
-                ],
-                "total_units": 128,
-                "major_units": 43
-              },
-              "notable_professors": [
-                "Dr. Alyssa Schuck (Chair)",
-                "Dr. Harvey Babich"
-              ],
-              "notes": "Offers a Neuroscience track in collaboration with the Psychology department."
-            }
-          ]
-        },
-        {
-          "name": "Sy Syms School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 63.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Best for students prioritizing professional preparation and business ethics; emphasizes leadership and entrepreneurial spirit within a Jewish values framework.",
-          "housing_profile": "Operates on both Wilf (men) and Beren (women) campuses; students utilize the respective residential systems of their primary campus.",
-          "student_archetype": "Values-grounded future business leaders and innovative entrepreneurs.",
-          "majors": [
-            {
-              "name": "Accounting",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 0.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "IDS 1010 Mathematics for Business"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ACC 1001 Accounting Principles I",
-                "IDS 1131 Business Statistics"
-              ],
-              "special_requirements": "Requires completion of the 'Three Semester Required Sequence' (TSRS) of core business classes.",
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "ACC 1001 Principles I",
-                  "ACC 1002 Principles II",
-                  "BLW 2021 Ethical & Legal Environment of Business",
-                  "FIN 1001 Principles of Finance",
-                  "IDS 1020 Intro to Information Systems",
-                  "MAN 1020 Principles of Strategy",
-                  "MAR 1001 Principles of Marketing"
-                ],
-                "electives": [
-                  "ACC 2403 Intermediate Accounting",
-                  "ACC 3201 Cost Accounting",
-                  "TAX 6124 Federal Income Tax",
-                  "ACC 3601 Auditing"
-                ],
-                "total_units": 128,
-                "major_units": 33
-              },
-              "notable_professors": [
-                "Dr. Noam Wasserman (Dean)",
-                "Debra Pine (Assistant Dean)"
-              ],
-              "notes": "Highly ranked; students target the 150-credit CPA track via a combined MS program."
-            }
-          ]
+          "White": 51.17,
+          "Black or African American": 3.12,
+          "Hispanic/Latino": 5.05,
+          "Asian": 1.80,
+          "Native American/Alaskan": 0.07,
+          "Pacific Islander": 0.04,
+          "Two or More Races": 0.85,
+          "Unknown": 25.92,
+          "Non-Resident Alien (International Students)": 11.97
         }
-      ],
-      "minors_certificates": [
-        "American Studies Minor",
-        "Architecture Minor",
-        "Business Analytics Minor",
-        "Cybersecurity Certificate",
-        "Data Analytics and Visualization Certificate",
-        "Jewish Education Minor",
-        "Public Health Minor",
-        "Real Estate Minor",
-        "Strategy and Entrepreneurship Minor",
-        "Women’s Studies Minor",
-        "AI for Business Certificate",
-        "Project Management Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Yeshiva University Online Application (apply.yu.edu)"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision (Honors)",
-          "date": "2025-11-02",
-          "is_binding": true,
-          "notes": "Typically binding for students who receive a scholarship of $20,000 or more."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2026-02-02",
-          "is_binding": false,
-          "notes": "Includes General Admission and Regular Honors consideration."
-        },
-        {
-          "plan_type": "Spring Admission",
-          "date": "2025-11-17",
-          "is_binding": false,
-          "notes": "For students starting in the spring semester."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Essay",
-          "deadline": "2026-02-02",
-          "details": "500–750 words. Options: 'Hakarat Hatov' (a thank-you letter) or 'How I intend to change the world.'"
-        },
-        {
-          "target_program": "All",
-          "requirement_type": "Short Answers",
-          "deadline": "2026-02-02",
-          "details": "Pick 3 prompts (25 words each) focusing on character, resilience, and joy."
-        },
-        {
-          "target_program": "Honors Programs",
-          "requirement_type": "Additional Essays",
-          "deadline": "2025-11-02",
-          "details": "Choice of 'Autobiography page 613' or 'Challenge to core belief' (750–1000 words); Sy Syms Honors requires a separate argumentative essay."
-        },
-        {
-          "target_program": "All",
-          "requirement_type": "Resume/Activity List",
-          "deadline": "2026-02-02",
-          "details": "Required document detailing extracurriculars, internships, and community involvement."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Academic GPA",
-          "Course Rigor",
-          "Interview",
-          "Character/Personal Qualities"
-        ],
-        "secondary_factors": [
-          "Standardized Tests (Required for Honors)",
-          "Extracurriculars",
-          "Recommendations"
-        ],
-        "essay_importance": "Critical",
-        "demonstrated_interest": "Important",
-        "interview_policy": "Required",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Focuses on 'dual curriculum' readiness (secular and Jewish studies) and a student's fit for a values-driven community."
       }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to a Liberal Arts major in Yeshiva College or Stern if unsure about business, as internal transfers to Sy Syms are common but require specific GPA thresholds.",
-        "Leverage the 'Shaped Major' option to create a custom interdisciplinary track (e.g., Psychobiology) to stand out from the high volume of standard Biology/Pre-med applicants.",
-        "Mention interest in 'Pathways Programs' (accelerated BA/MA) in your application to demonstrate long-term commitment to YU's graduate schools like Katz or Ferkauf.",
-        "If your stats are slightly below the 3.4 GPA median, avoid highly competitive 'Pre-Health' tracks initially and opt for a Humanities major to emphasize your 'character and leadership' fit."
-      ],
-      "college_ranking_tactics": [
-        "Choose Sy Syms over Yeshiva College/Stern only if you prefer a business-heavy core; Syms has more rigid professional requirements compared to the broader Liberal Arts core.",
-        "Rank the Honors Program as a priority if you have an SAT above 1400, as it offers significant merit aid and specialized mentorship that traditional tracks lack.",
-        "Evaluate the campus location (Wilf for men, Beren for women) based on proximity to your intended industry internships, as Beren (Midtown) is closer to finance/fashion hubs.",
-        "Prioritize the 'Early Decision' track if YU is your top choice; the university relies heavily on yield and often gives a boost to students who commit to the dual-curriculum lifestyle early."
-      ],
-      "alternate_major_strategy": "Since YU allows students to remain undeclared until sophomore year, use the 'Why YU' essay to focus on your fit for the specific college (e.g., Stern) rather than a rigid major. If applying to a competitive field like Finance, list a liberal arts major as an alternate to secure admission to the university first, then utilize the 'Shaped Major' process or a minor to customize your degree after matriculation."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 51800,
-          "total_coa": 74200,
-          "housing": 15750
-        },
-        "out_of_state": {
-          "tuition": 51800,
-          "total_coa": 74200,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Need-Blind",
-      "average_need_based_aid": 46523,
-      "average_merit_aid": 24960,
-      "percent_receiving_aid": 87.0
-    },
-    "scholarships": [
-      {
-        "name": "Distinguished Honors Scholarship",
-        "type": "Merit",
-        "amount": "Up to $25,000 per year",
-        "deadline": "2025-11-01 (Early Decision)",
-        "benefits": "Enriched course of study, faculty mentoring, honors seminars, and special events",
-        "application_method": "Apply to YU Honors Program (Early Decision only for scholarship eligibility)"
-      },
-      {
-        "name": "Straus Scholars Program",
-        "type": "Merit",
-        "amount": "Up to $25,000 per year",
-        "deadline": "2025-01-01",
-        "benefits": "Unique interdisciplinary courses, mentorship, networking, and research internships",
-        "application_method": "Separate Application (requires YU Honors acceptance)"
-      },
-      {
-        "name": "Leadership Scholars",
-        "type": "Merit/Leadership",
-        "amount": "Up to $25,000 per year",
-        "deadline": "2025-11-01 (Early Decision)",
-        "benefits": "Leadership training, career development workshops, and networking opportunities",
-        "application_method": "Additional Application or invitation after Honors acceptance"
-      },
-      {
-        "name": "Lieberman-Mitzner Center Scholarship",
-        "type": "Merit/Service",
-        "amount": "Up to $25,000 per year",
-        "deadline": "2025-11-01 (Early Decision)",
-        "benefits": "Training in public service and advocacy, mentorship, and policy-focused programming",
-        "application_method": "Apply through YU Honors Program"
-      },
-      {
-        "name": "Anne Scheiber Honors Scholarship",
-        "type": "Merit/Need",
-        "amount": "Up to $25,000 per year",
-        "deadline": "2025-02-01 (FAFSA deadline)",
-        "benefits": "Supports women at Stern College intending to study medicine or natural sciences",
-        "application_method": "FAFSA and YU Honors Application"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Score of 4 or 5 earns credit for most exams",
-        "exceptions": [
-          "Score of 5 required for Computer Science A and Physics",
-          "No credit for AP Research or Seminar",
-          "Max 9 credits total for college-level courses taken while in high school",
-          "Max 6 credits of AP work may be applied toward a major"
-        ],
-        "usage": "Can satisfy General Education (Core) requirements and some major prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "Higher Level (HL) exams with a score of 6 or 7 grant credit",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Internal Pre-approved Course Lists"
-        ],
-        "restrictions": "Strict 84-credit residency requirement (limiting transfers to approximately 44 credits); Courses from community colleges and online institutions are frequently restricted or not accepted"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A strong academic record with a typical GPA of 85 (B average) or higher, with 3.5+ being competitive for honors",
-        "Commitment to a demanding dual curriculum balancing secular college studies with intensive Jewish studies",
-        "Evidence of intellectual curiosity and a history of taking honors or AP coursework where available",
-        "A successful mandatory interview where you demonstrate maturity and professional presentation"
-      ],
-      "common_activities": [
-        "Community service or 'Chessed' projects focused on the Jewish community or social justice",
-        "Leadership roles in religious youth groups such as BBYO, NCSY, or CTeen",
-        "Participation in varsity athletics (NCAA Division III) or school-wide student government",
-        "Internships or research experience, particularly for science and business-track students",
-        "Torah study or religious learning programs, often including a gap year in Israel"
-      ],
-      "essay_tips": [
-        "For the 'Hakarat Hatov' prompt, write a sincere thank-you letter that focuses on specific growth rather than just listing achievements",
-        "Be specific about why the dual-curriculum environment is the right fit for your personal and religious goals",
-        "Use 1-3 vivid anecdotes to 'show' your character rather than trying to summarize your entire life story",
-        "Reflect on a moment of failure or a challenged core belief with humility and a clear plan for future growth"
-      ],
-      "red_flags": [
-        "Treating the mandatory interview too casually; admissions officers view it as a critical professional assessment",
-        "Submitting a generic essay that doesn't mention the school's unique religious or cultural mission",
-        "Lack of rigor in senior year coursework, even if previous grades were strong",
-        "Failing to demonstrate a clear interest in both the secular and Judaic components of the education"
-      ],
-      "insights": [
-        "YU has an exceptionally high yield rate because many applicants apply specifically for its unique Modern Orthodox niche",
-        "Male and female undergraduate students attend separate campuses (Washington Heights and Midtown) with limited daily interaction",
-        "The admissions process is holistic, meaning they are often willing to overlook lower test scores if your community impact and character are exceptional",
-        "Students often use YU as a 'religious safety' or top choice when they want an Ivy-level network within a Torah-observant environment"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 71353,
-      "employment_rate_2yr": 97.6,
-      "grad_school_rate": 39.9,
-      "top_employers": [
-        "Goldman Sachs",
-        "Morgan Stanley",
-        "Deloitte",
-        "PwC",
-        "Google",
-        "Amazon",
-        "Bank of America"
-      ],
-      "loan_default_rate": 2.0
-    },
-    "student_retention": {
-      "freshman_retention_rate": 93.0,
-      "graduation_rate_4_year": 79.0,
-      "graduation_rate_6_year": 85.0
     }
   },
-  "_id": "yeshiva_university",
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "Yeshiva College",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "explanation": "Yeshiva College serves as the liberal arts and sciences college for men. Students apply to Yeshiva University generally, and once admitted, are typically matriculated into Yeshiva College. Within this college, students pursue various majors, often declaring their specific major after completing foundational coursework, aligning with a \"Pre-Major\" model for specialization. There are no indications of separate restrictions or caps for admission to the college itself beyond the general university admission criteria.",
+        "housing_profile": "Located on the Wilf Campus, residence halls include Rubin Hall (primarily for new students), Morgenstern Hall (upperclassmen), and Muss Hall (housing new students, upperclassmen, and rabbinical students). These are part of the university's primarily residential campus where approximately 80% of undergraduates live on campus. New students are required to live in university housing for their first two semesters. Amenities generally include kosher dining and fitness centers on campus.",
+        "student_archetype": "Men pursuing a dual educational program that rigorously combines liberal arts and sciences with intensive Torah and Jewish heritage studies. Students are typically Modern Orthodox, community-focused, and engaged in a diverse range of extracurricular activities such as athletics, student newspapers, and radio.",
+        "strategic_fit_advice": "Ideal for male students seeking a challenging academic experience that deeply integrates secular and Jewish studies within a supportive, values-driven Modern Orthodox community. Applicants should be prepared for a strong communal environment and a dual curriculum.",
+        "majors": [
+          {
+            "name": "Computer Science - Artificial Intelligence Track",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COM 1300 Introduction to Computer Science",
+                "COM 1310 Data Structures",
+                "COM 1320 Discrete Structures",
+                "COM 2113 Object-Oriented Programming with C++",
+                "COM 2545 Software Engineering",
+                "COM 2546 Software Development Lab",
+                "COM 3580 Artificial Intelligence",
+                "COM 3610 Algorithms",
+                "COM 3640 Operating Systems",
+                "COM 3760 Computer Networks",
+                "COM 3800 Machine Learning",
+                "COM 3820 Deep Learning",
+                "COM 3920 Computer Vision",
+                "COM 3930 Natural Language Processing",
+                "COM 4010 Advanced Algorithms",
+                "COM 4020 Big Data Analytics",
+                "MAT 1412 Calculus I",
+                "MAT 1413 Calculus II",
+                "MAT 1510 Discrete Mathematics",
+                "MAT 2105 Linear Algebra",
+                "MAT 2461 Probability and Statistics",
+                "MAT 2462 Introduction to Mathematical Statistics"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 74
+            },
+            "notable_professors": [
+              "Dr. Judah Diament (Computer Science, Director)"
+            ],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026. This track has extensive math requirements."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIO 1011R Introduction to Cell and Molecular Biology",
+                "BIO 1012R Introduction to Organismic Biology",
+                "BIO 1013L General Biology Laboratory",
+                "BIO 2001 Advanced Genetics",
+                "BIO 2002 Cell Biology",
+                "BIO 3001 Biochemistry I",
+                "CHM 1045R General Chemistry I",
+                "CHM 1046R General Chemistry II",
+                "CHM 1047L General Chemistry Laboratory",
+                "PHY 1011R General Physics I",
+                "PHY 1012R General Physics II",
+                "PHY 1013L General Physics Laboratory",
+                "MAT 1412 Calculus I"
+              ],
+              "electives": [
+                "BIO 3005 Neurobiology",
+                "BIO 3010 Microbiology",
+                "BIO 3015 Immunology"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Median salary for Biology graduates is $21,104. Data source: Yeshiva College Academic Advising Sheets, College Factual."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 1010 Introductory Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSY 1010 Introductory Psychology",
+                "PSY 1021 Statistics for Psychology",
+                "PSY 2100C Experimental Psychology",
+                "Plus courses from various subfields like Developmental, Cognitive, Social, and Biological Psychology"
+              ],
+              "electives": [
+                "PSY 1110 Developmental I: Child",
+                "PSY 2150 Cognitive Psychology",
+                "PSY 3105 Social Psychology",
+                "PSY 3804 Psychobiology",
+                "PSY 2414 Abnormal Psychology",
+                "PSY 2430 Clinical Psychology"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Median salary for Psychology graduates is $21,384. Data source: Yeshiva College Academic Advising Sheets, Yeshiva University Psychology Department Website, Research.com."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECO 1010 Introduction to Macroeconomics",
+              "ECO 1020 Introduction to Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECO 1010 Introduction to Macroeconomics",
+                "ECO 1020 Introduction to Microeconomics",
+                "ECO 2100 Intermediate Microeconomics",
+                "ECO 2110 Intermediate Macroeconomics",
+                "ECO 2400 Econometrics",
+                "MAT 1412 Calculus I"
+              ],
+              "electives": [
+                "ECO 3000 International Economics",
+                "ECO 3100 Money and Banking",
+                "ECO 3200 Public Finance"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENG 1000 College Writing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENG 1000 College Writing",
+                "ENG 2000 Literary Analysis",
+                "Survey courses in various literary periods (e.g., British Literature, American Literature)",
+                "Courses in literary theory"
+              ],
+              "electives": [
+                "Creative Writing workshops",
+                "Advanced topics in literature",
+                "Journalism"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics - Pure and Applied Mathematics Track",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAT 1412 Calculus I",
+              "MAT 1413 Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MAT 1412 Calculus I",
+                "MAT 1413 Calculus II",
+                "MAT 1510 Discrete Mathematics",
+                "MAT 2105 Linear Algebra",
+                "MAT 2200 Multivariable Calculus",
+                "MAT 3000 Abstract Algebra",
+                "MAT 3100 Real Analysis"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Jewish Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Courses in Bible, Hebrew, Jewish History, Jewish Philosophy, and Judaic Studies, depending on the chosen program (James Striar School of General Jewish Studies/Mechinah Program, Yeshiva Program/Mazer School of Talmudic Studies, Isaac Breuer College of Hebraic Studies, Irving I. Stone Beit Midrash Program)"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College offers various pathways within Jewish Studies, emphasizing intensive analysis of classic texts in Hebrew and Aramaic. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Courses in Ancient, Medieval, Early Modern, and Modern History",
+                "Research Seminar"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Introduction to Philosophy",
+                "History of Philosophy (Ancient, Medieval, Modern)",
+                "Ethics",
+                "Logic"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POL 1000 Introduction to Political Science"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POL 1000 Introduction to Political Science",
+                "Courses in American Politics, Comparative Politics, International Relations, Political Theory"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Yeshiva College students pursue a dual education program combining liberal arts and sciences with Jewish studies. Data source: Yeshiva College Academic Advising Sheets, Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Stern College for Women",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "explanation": "Stern College for Women is the liberal arts and sciences college for women. Similar to Yeshiva College, admission is primarily through a general application to Yeshiva University, with students subsequently enrolling in Stern College. Major declaration typically occurs after initial coursework, fitting the \"Pre-Major\" description for their chosen field of study. No specific restrictions or caps for entry into the college itself are indicated beyond the overall university admission process.",
+        "housing_profile": "Located on the Beren Campus, with five distinct residence halls, each offering unique atmospheres and amenities. Examples include Brookdale Hall (4-5 person apartments with kitchenettes) and Schottenstein Hall (single and some 2-person rooms). New students are required to live in university housing for their first two semesters. All residence halls provide access to kosher dining and fitness centers.",
+        "student_archetype": "Women who are committed to a dual curriculum encompassing both Jewish studies and a wide array of liberal arts and sciences. These students are typically Modern Orthodox, community-oriented, and seek an enriching academic and social environment grounded in Jewish values in an urban setting.",
+        "strategic_fit_advice": "Suited for women who desire a strong academic foundation, including in-depth Jewish studies, within a vibrant and supportive Modern Orthodox community in New York City. Applicants should embrace the dual curriculum model.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 1010 Introductory Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSY 1010 Introductory Psychology",
+                "PSY 1021 Statistics for Psychology",
+                "PSY 2100C Experimental Psychology",
+                "Plus courses from various subfields like Developmental, Cognitive, Social, and Biological Psychology"
+              ],
+              "electives": [
+                "PSY 1110 Developmental I: Child",
+                "PSY 2150 Cognitive Psychology",
+                "PSY 3105 Social Psychology",
+                "PSY 3804 Psychobiology",
+                "PSY 2414 Abnormal Psychology",
+                "PSY 2430 Clinical Psychology"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Median salary for Psychology graduates is $21,384. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, Yeshiva University Psychology Department Website, Research.com, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIO 1011R Introduction to Cell and Molecular Biology",
+                "BIO 1012R Introduction to Organismic Biology",
+                "BIO 1013L General Biology Laboratory",
+                "BIO 2001 Advanced Genetics",
+                "BIO 2002 Cell Biology",
+                "BIO 3001 Biochemistry I",
+                "CHM 1045R General Chemistry I",
+                "CHM 1046R General Chemistry II",
+                "CHM 1047L General Chemistry Laboratory",
+                "PHY 1011R General Physics I",
+                "PHY 1012R General Physics II",
+                "PHY 1013L General Physics Laboratory",
+                "MAT 1412 Calculus I"
+              ],
+              "electives": [
+                "BIO 3005 Neurobiology",
+                "BIO 3010 Microbiology",
+                "BIO 3015 Immunology"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Median salary for Biology graduates is $21,104. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, College Factual, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENG 1000 College Writing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENG 1000 College Writing",
+                "ENG 2000 Literary Analysis",
+                "Survey courses in various literary periods (e.g., British Literature, American Literature)",
+                "Courses in literary theory"
+              ],
+              "electives": [
+                "Creative Writing workshops",
+                "Advanced topics in literature",
+                "Journalism"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Jewish Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion of 18 Jewish Studies courses, with flexibility in choosing electives after one course in each of Jewish History, Jewish Studies, Jewish Philosophy, and Bible.",
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "One course in Jewish History",
+                "One course in Jewish Studies",
+                "One course in Jewish Philosophy",
+                "One course in Bible",
+                "14 additional Jewish Studies elective courses"
+              ],
+              "electives": [
+                "HEBR 1030 Elementary Hebrew I",
+                "HEBR 1211 Intermediate Hebrew I",
+                "Courses in Talmud and Rabbinics"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women offers various levels of Jewish Studies courses. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility, reducing the required number of courses from 22 to 18. Students can also take up to two Jewish Studies courses as Pass/Fail. Data source: 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECO 1010 Introduction to Macroeconomics",
+              "ECO 1020 Introduction to Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECO 1010 Introduction to Macroeconomics",
+                "ECO 1020 Introduction to Microeconomics",
+                "ECO 2100 Intermediate Microeconomics",
+                "ECO 2110 Intermediate Macroeconomics",
+                "ECO 2400 Econometrics",
+                "MAT 1412 Calculus I"
+              ],
+              "electives": [
+                "ECO 3000 International Economics",
+                "ECO 3100 Money and Banking",
+                "ECO 3200 Public Finance"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COM 1300 Introduction to Computer Science",
+                "COM 1310 Data Structures",
+                "COM 1320 Discrete Structures",
+                "COM 2113 Object-Oriented Programming with C++",
+                "COM 2545 Software Engineering",
+                "COM 2546 Software Development Lab",
+                "MAT 1412 Calculus I"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAT 1412 Calculus I",
+              "MAT 1413 Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MAT 1412 Calculus I",
+                "MAT 1413 Calculus II",
+                "MAT 1510 Discrete Mathematics",
+                "MAT 2105 Linear Algebra",
+                "MAT 2200 Multivariable Calculus"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POL 1000 Introduction to Political Science"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POL 1000 Introduction to Political Science",
+                "Courses in American Politics, Comparative Politics, International Relations, Political Theory"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Courses in Ancient, Medieval, Early Modern, and Modern History",
+                "Research Seminar"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Speech Pathology and Audiology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SPA 1000 Introduction to Communication Disorders",
+                "SPA 2000 Phonetics",
+                "SPA 2100 Anatomy and Physiology of Speech and Hearing",
+                "SPA 2200 Speech Science",
+                "SPA 2300 Language Development",
+                "PSY 1010 Introductory Psychology"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOC 1000 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SOC 1000 Introduction to Sociology",
+                "SOC 2100 Social Theory",
+                "SOC 2200 Research Methods",
+                "SOC 2300 Statistics for Social Research"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Stern College for Women students pursue a dual education program combining liberal arts and sciences with Jewish studies. Jewish Studies requirements for 2025-2026 have been updated to offer more flexibility. Data source: Stern College for Women Academic Advising Factsheets, 'Stern College Updates Jewish Studies Requirements Under '25-'26 Catalog'."
+          }
+        ]
+      },
+      {
+        "name": "Sy Syms School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "explanation": "The Sy Syms School of Business offers undergraduate business programs. While part of the broader Yeshiva University application process, professional schools like Sy Syms typically have specific admissions criteria and review processes, suggesting a \"Direct Admit\" model where applicants are considered for direct entry into the business school from the outset. Given its specialized curriculum and resources, admission to the Sy Syms School of Business is often restricted or capped.",
+        "housing_profile": "Undergraduate Sy Syms students reside in the general university housing on either the Wilf Campus (men) or the Beren Campus (women), aligning with the housing profiles of Yeshiva College and Stern College for Women, respectively. These dorms offer kosher dining and various facilities.",
+        "student_archetype": "Ambitious business students who seek a comprehensive curriculum in various business disciplines (e.g., accounting, finance, marketing) while also desiring a deep grounding in Jewish values. Entrepreneurial spirit is encouraged.",
+        "strategic_fit_advice": "Recommended for students aspiring to careers in business who wish to integrate their professional education with strong ethical and Jewish values, thriving in a close-knit, supportive community. Strong academic performance is valued.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students planning to take the CPA exams are strongly advised to take BLW 2112 and TAX 6125 towards their additional electives.",
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACC 1101 Principles of Financial Accounting",
+                "ACC 1102 Principles of Managerial Accounting",
+                "ACC 2403 Intermediate Accounting I",
+                "ACC 3201 Intermediate Accounting II",
+                "ACC 3601 Cost Accounting",
+                "TAX 6124 Federal Income Taxation I"
+              ],
+              "electives": [
+                "BLW 2112 Business Law",
+                "TAX 6125 Federal Income Taxation II",
+                "Other Sy Syms electives"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Median salary for Accounting graduates is $69,252. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026, College Factual."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FIN 1001 Principles of Finance (Prerequisite/Co-requisite: IDS 1131 or STA 1021)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FIN 1408 Financial Markets and Institutions",
+                "FIN 2409 Corporate Finance",
+                "FIN 2505 Investments",
+                "One of FIN 2521 Financial Modeling, FIN 3510 Options and Futures, or FIN 3720 International Finance",
+                "ACC 1001 Principles of Financial Accounting"
+              ],
+              "electives": [
+                "FIN 2521 Financial Modeling",
+                "FIN 3510 Options and Futures",
+                "FIN 3720 International Finance",
+                "Other Finance electives",
+                "Other Business electives"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Gabriela Coiculescu (Clinical Associate Professor of Finance)"
+            ],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Median salary for Finance graduates is $47,400. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAR 1001 Principles of Marketing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MAR 2501 Consumer Behavior",
+                "One of MAR 2621 Marketing Research or MAR 3320 Digital Marketing",
+                "MAR 3318 Brand Management",
+                "MAR 3720 Marketing Strategy"
+              ],
+              "electives": [
+                "MAR 2621 Marketing Research",
+                "MAR 3320 Digital Marketing",
+                "MAR 3410 Social Media Marketing",
+                "Other Marketing electives",
+                "Other Business electives"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "IDS 1020 Introduction to Information Systems",
+              "MAT 1412 Calculus I",
+              "STA 1021 Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "IDS 2030 Business Analytics I",
+                "IDS 2550 Data Visualization",
+                "IDS 2460 Spreadsheet Modeling and Analytics",
+                "IDS 3000 Business Analytics II",
+                "IDS 1020 Introduction to Information Systems"
+              ],
+              "electives": [
+                "Two IDS electives",
+                "Three additional business electives from a single Sy Syms subject area or a combination of Computer Science and IDS courses"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Strategy and Entrepreneurship",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENT 1020 Introduction to Entrepreneurship"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENT 2110 Creativity and Innovation",
+                "ENT 3015 New Venture Creation",
+                "ENT 3720 Strategic Management",
+                "ENT 3780 Entrepreneurial Finance",
+                "ENT 1020 Introduction to Entrepreneurship"
+              ],
+              "electives": [
+                "One entrepreneurship elective from: ENT 3410 Social Entrepreneurship, ENT 3771 Family Business Management, ENT 3784 Real Estate Entrepreneurship",
+                "One additional entrepreneurship elective",
+                "Three additional business electives"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Michael Strauss (Interim Dean, teaches Entrepreneurship)"
+            ],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Business Management (General)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACC 1101 Principles of Financial Accounting",
+                "ACC 1102 Principles of Managerial Accounting",
+                "FIN 1001 Principles of Finance",
+                "MAR 1001 Principles of Marketing",
+                "IDS 1020 Introduction to Information Systems",
+                "MGT 1001 Principles of Management"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Median salary for Business Administration, Management and Operations graduates is $53,200. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026, CollegeSimply."
+          },
+          {
+            "name": "Information Technology Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "IDS 1020 Introduction to Information Systems",
+              "MAT 1412 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "IDS 2010 Database Management Systems",
+                "IDS 2020 Business Programming",
+                "IDS 3010 Systems Analysis and Design",
+                "IDS 3020 Project Management",
+                "IDS 1020 Introduction to Information Systems"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Global Business",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECO 1010 Introduction to Macroeconomics",
+              "ECO 1020 Introduction to Microeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECO 3000 International Economics",
+                "FIN 3720 International Finance",
+                "MGT 3000 Global Business Strategy",
+                "MAR 3000 International Marketing"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Real Estate (Minor for Sy Syms students)",
+            "degree_type": "Minor",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [
+                "Three upper level real estate courses"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Minors may count towards business electives but not towards major electives. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          },
+          {
+            "name": "Quantitative Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECO 1010 Introduction to Macroeconomics",
+              "ECO 1020 Introduction to Microeconomics",
+              "MAT 1412 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECO 2100 Intermediate Microeconomics",
+                "ECO 2110 Intermediate Macroeconomics",
+                "ECO 2400 Econometrics",
+                "MAT 2461 Probability and Statistics",
+                "MAT 2105 Linear Algebra"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "All undergraduate Sy Syms students are required to attend one of the four schools of Jewish studies. Data source: Sy Syms School of Business Undergraduate Catalog 2024-2026."
+          }
+        ]
+      },
+      {
+        "name": "The Katz School of Science and Health",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "explanation": "The Katz School of Science and Health is the university's hub for STEM and health sciences programs, including undergraduate offerings like the Bachelor of Science in Nursing. Programs within Katz, such as Nursing, typically require a direct application and admission to the specific program due to their specialized nature, clinical placements, and laboratory requirements. Consequently, admission to these programs is generally restricted and capped due to resource limitations and program capacity.",
+        "housing_profile": "Graduate students may reside in 'The Benjamin,' a graduate dormitory in Midtown Manhattan (Lexington Ave and 29th St), offering furnished studio, one-, two-, and three-bedroom apartments with air conditioning, WiFi, smart TVs, kitchenettes, laundry, an exercise room, common lounge, study room, and rooftop patio. This is approximately 50-60 minutes by public transportation from the Wilf and Resnick campuses. Married student housing options are also available in Washington Heights near the Wilf Campus.",
+        "student_archetype": "Ambitious problem-solvers and innovators focused on modern disciplines in science and health, including artificial intelligence, biotechnology, computer science, cybersecurity, data analytics, and various health professions. Students are typically career-focused and keen on developing practical skills.",
+        "strategic_fit_advice": "Strong STEM background and analytical skills are required. Ideal for individuals seeking advanced degrees in emerging scientific and health fields, who are driven to contribute to innovation and professional leadership.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Computer Science Minor",
+      "Economics Minor",
+      "English Minor",
+      "Jewish Studies Minor",
+      "Psychology Minor",
+      "Public Health Minor",
+      "Writing Minor",
+      "Cybersecurity Certificate",
+      "Paralegal Professional Training Certificate",
+      "Advanced Certificate in Holocaust Education"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Yeshiva University Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-02",
+        "is_binding": true,
+        "notes": "For Fall 2026 admission."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-02",
+        "is_binding": false,
+        "notes": "For Fall 2026 admission."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-11-21",
+        "is_binding": false,
+        "notes": "For Spring 2026 admission."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "All applicants are required to respond to one longer essay prompt (500-750 words) and three short answer prompts (25 words or less each).
+Longer Essay Prompts (choose one):
+Hakarat hatov: Write a thank you letter to someone in your life. Express your gratitude and detail what you appreciate and why it is important to you. (500-750 words)
+Here's how I intend to change the world… (500-750 words)
+Short Answer Prompts (pick 3, 25 words or less each):
+My approach to managing rejection is…
+I feel most responsible when…
+I discovered my own resilience when…
+The greatest chessed I ever did was…
+People say I am honest because…
+______ brings me joy."
+      },
+      {
+        "target_program": "Honors College Applicants",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "In addition to the essays required for all applicants, Honors College applicants must respond to one additional long essay prompt (750-1000 words) and one additional short answer essay (150 words). Honors applicants choose four of the short answer prompts instead of three.
+Honors Longer Essay Prompts (choose one):
+You just completed your 1000-page autobiography, please submit page 613. (750-1000 words)
+Discuss a challenge to one of your core beliefs and how you responded. (750-1000 words)
+Honors Short Answer Essay (pick one, 150 words): Pick one of three provided words and write a short essay on it that gives insight into your character. (Specific words not provided in the most recent search result, but historical data shows examples like \"Risk,\" \"Safe,\" and \"Change\").
+Honors Short Answer Questions: Honors applicants must answer four of the general short answer questions (25 words or less each) instead of three."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Interview",
+        "deadline": null,
+        "details": "An interview with an Admissions Officer is required for all applicants."
+      },
+      {
+        "target_program": "Music (Jazz Ensemble, Chamber Ensemble, Applied Music)",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "Auditions are required for students wishing to participate in the Jazz Ensemble, Chamber Ensembles, or Applied Music (individual instrumental/vocal lessons). For the Jazz Ensemble, an audition with the director, Dr. Bartholomew, is necessary. For Chamber Music, interested students should audition with Dr. Bartholomew. Applied Music (lessons) also requires an audition with the instructor."
+      },
+      {
+        "target_program": "Architecture",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "There is an Architecture Minor offered at Yeshiva University, focusing on design studios and architectural history. However, there is no mention of a portfolio being a supplemental admission requirement for this program in the provided search results."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Standardized Test Scores",
+        "Essays",
+        "Recommendations",
+        "Interview"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Volunteer Work",
+        "Work Experience",
+        "Leadership",
+        "Creativity",
+        "Potential"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Required",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "Yeshiva University employs a holistic review process, specifically considering academics, character, leadership, creativity, and potential beyond the application. The personal essay and interview are deemed essential components for understanding the applicant's fit. While standardized test scores are optional for general admission, they are required for Honors programs. The university also highlights its commitment to intellectual curiosity and offers a unique S. Daniel Abraham Israel Program. They also promise that no qualified student will be turned away for financial reasons, disbursing significant scholarship aid annually."
+    },
     "essay_prompts": [
       {
-        "prompt": "Yeshiva University combines Jewish values with secular education. How will this unique blend support your growth?",
-        "word_limit": "250 words",
-        "type": "Values",
+        "prompt": "Hakarat Hatov – Write a thank you letter to someone in your life. Express your gratitude and explain why it's meaningful to you.",
+        "word_limit": "500-750 words",
+        "type": "Personal, Community",
         "required": true,
         "brainstorming_questions": [
-          "When you've encountered a moment where a Jewish value directly informed or challenged a secular idea you were grappling with, what was that moment, and how did you navigate it?",
-          "Can you describe a specific instance where the pursuit of knowledge within a secular field felt enriched or given deeper meaning by your understanding of Jewish tradition or philosophy?",
-          "Beyond the classroom, how do you envision Yeshiva University's integration of Jewish and secular learning fostering a particular kind of ethical decision-making or leadership style in you?",
-          "Think about a time you had to reconcile a personal belief with a new idea learned in a secular subject. How might Yeshiva University's emphasis on Jewish values provide a framework for that kind of personal growth?",
-          "Looking ahead, what specific contributions do you hope to make in your chosen field, and how do you see the dual foundation of Jewish values and secular education at Yeshiva University shaping the *way* you contribute?"
+          "Who is someone whose impact on your life goes beyond a simple 'thank you'? What specific actions or words of theirs stand out?",
+          "How did this person's influence shape a particular decision, outlook, or skill you possess today?",
+          "What was your life like before their significant impact, and how has it changed since?",
+          "Beyond the 'what,' delve into the 'why' – why was their specific contribution so meaningful to *you* personally?",
+          "Imagine sharing this letter with them; what emotion or realization do you hope it conveys?"
+        ]
+      },
+      {
+        "prompt": "Here's how I intend to change the world…",
+        "word_limit": "500-750 words",
+        "type": "Personal, Future Goals, Impact",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific problem or injustice in the world deeply bothers you, and why?",
+          "What unique skills, passions, or knowledge do you possess that you believe could contribute to addressing this issue?",
+          "Outline a concrete, actionable step or series of steps you envision taking to make a difference, even if it's on a small scale.",
+          "Consider the potential challenges you might face in pursuing this change. How might you overcome them?",
+          "What would a 'changed world' look like in the context of your vision, and what role do you see yourself playing in that future?"
+        ]
+      },
+      {
+        "prompt": "My approach to managing rejection is...",
+        "word_limit": "25 words or less",
+        "type": "Personal, Challenge, Self-reflection",
+        "required": true,
+        "brainstorming_questions": [
+          "Recall a specific time you faced rejection. What was your immediate reaction?",
+          "What is one concrete strategy or mindset you employ to move past disappointment?",
+          "How do you typically process feedback or learn from a 'no'?",
+          "What positive outcome, if any, has ever emerged from a rejection you've experienced?",
+          "Boil down your entire coping mechanism into a single, impactful sentence or phrase."
+        ]
+      },
+      {
+        "prompt": "I feel most responsible when..",
+        "word_limit": "25 words or less",
+        "type": "Personal, Responsibility, Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Think of a situation where a significant task or outcome depended heavily on you. What was it?",
+          "What emotions or thoughts run through your mind when you are entrusted with a crucial duty?",
+          "How does taking responsibility for something impact your actions or decision-making?",
+          "Who or what benefits when you take on significant responsibility?",
+          "Can you describe the feeling of successfully fulfilling a major responsibility in just a few words?"
+        ]
+      },
+      {
+        "prompt": "I discovered my own resilience when...",
+        "word_limit": "25 words or less",
+        "type": "Personal, Challenge, Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "Pinpoint a difficult situation you overcame. What was the core challenge?",
+          "What internal strength or unexpected resource did you tap into during that time?",
+          "How did you push through when you felt like giving up?",
+          "What lesson about your own strength did you learn from that experience?",
+          "Can you summarize the moment of realization about your resilience in a concise statement?"
+        ]
+      },
+      {
+        "prompt": "The greatest chessed I ever did was...",
+        "word_limit": "25 words or less",
+        "type": "Community, Values, Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "What act of kindness or generosity (chessed) stands out most in your memory?",
+          "Who was the recipient of this act, and what was their situation?",
+          "What motivated you to perform this particular act of kindness?",
+          "What was the impact of your chessed, both on the other person and on yourself?",
+          "How would you succinctly describe the essence of this 'greatest chessed'?"
+        ]
+      },
+      {
+        "prompt": "People say I am honest because...",
+        "word_limit": "25 words or less",
+        "type": "Personal, Character, Values",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific behavior or principle of yours consistently demonstrates honesty?",
+          "Can you recall a situation where your honesty was particularly evident or tested?",
+          "How do you define honesty in your own life?",
+          "What impact does your honesty have on your relationships with others?",
+          "What is the single most compelling reason someone would describe you as honest?"
+        ]
+      },
+      {
+        "prompt": "___________ brings me joy.",
+        "word_limit": "25 words or less",
+        "type": "Personal, Interests, Values",
+        "required": true,
+        "brainstorming_questions": [
+          "What activity, person, or experience consistently brings a genuine smile to your face?",
+          "Describe the feeling of joy this particular thing evokes in you.",
+          "Is there a memory associated with this source of joy that stands out?",
+          "How does engaging with this joyful thing impact your overall well-being or perspective?",
+          "Fill in the blank with something specific, then complete the sentence by explaining *why* it brings you joy."
+        ]
+      },
+      {
+        "prompt": "You just completed your 1000-page autobiography, please submit page 613.",
+        "word_limit": "750-1000 words",
+        "type": "Personal, Creative, Self-reflection",
+        "required": true,
+        "brainstorming_questions": [
+          "What significant turning point, revelation, or challenge in your life would fall around the 600-page mark of an extensive autobiography?",
+          "Consider what themes, relationships, or personal philosophies would be deeply explored by this point in your life story.",
+          "What unique narrative style or voice would you employ to captivate a reader interested in a specific, yet revealing, moment from your life?",
+          "How does this particular page offer insight into the 'you' that developed *after* earlier life events, but *before* potential future ones?",
+          "What moment or reflection would be compelling enough to stand alone, yet hint at the richness of the entire 1000-page narrative?"
+        ]
+      },
+      {
+        "prompt": "Discuss a challenge to one of your core beliefs and how you responded.",
+        "word_limit": "750-1000 words",
+        "type": "Personal, Values, Challenge, Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "What is a core belief that you hold deeply? How did you come to adopt this belief?",
+          "Describe a specific instance where this belief was genuinely challenged. What was the source of the challenge (e.g., an experience, a conversation, new information)?",
+          "What was your initial emotional and intellectual reaction to this challenge? Did you feel doubt, anger, confusion?",
+          "How did you actively grapple with this challenge? Did you research, discuss with others, introspect, or seek new experiences?",
+          "What was the outcome of your response? Did your belief evolve, strengthen, or did you adopt a new perspective? What did you learn about yourself in the process?"
+        ]
+      },
+      {
+        "prompt": "Pick one of the three words below and write a short essay on it that gives us insight into your character.
+
+KINDNESS",
+        "word_limit": "150 words",
+        "type": "Personal, Character, Values",
+        "required": true,
+        "brainstorming_questions": [
+          "When have you experienced or witnessed an act of kindness that profoundly impacted you?",
+          "How do you actively embody kindness in your daily interactions or broader community?",
+          "What is a misconception people might have about kindness, and how do you challenge it?",
+          "How does showing kindness, or receiving it, change a situation or a person?",
+          "What does 'kindness' truly mean to you, beyond its dictionary definition, and how has that understanding shaped you?"
+        ]
+      },
+      {
+        "prompt": "Pick one of the three words below and write a short essay on it that gives us insight into your character.
+
+TRUST",
+        "word_limit": "150 words",
+        "type": "Personal, Character, Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Describe a situation where you placed significant trust in someone (or something), and what was the outcome?",
+          "How do you earn or extend trust to others? What qualities do you value in someone trustworthy?",
+          "When has your trust been tested or broken, and how did you navigate that experience?",
+          "Why is trust important to you, both personally and in a broader sense?",
+          "In what unique ways do you demonstrate trustworthiness to those around you?"
+        ]
+      },
+      {
+        "prompt": "Pick one of the three words below and write a short essay on it that gives us insight into your character.
+
+TIME",
+        "word_limit": "150 words",
+        "type": "Personal, Character, Values",
+        "required": true,
+        "brainstorming_questions": [
+          "How do you perceive or value time – is it a resource, a constraint, a concept for reflection?",
+          "Describe a time when you used your time exceptionally well, or conversely, a time you regret wasting it.",
+          "How do your daily habits or long-term goals reflect your relationship with time?",
+          "What is one thing you would spend more (or less) time on if you could, and why?",
+          "How has a particular experience over a specific period of time shaped who you are today?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/yeshiva_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider less popular majors if not set on highly competitive fields.",
+      "Apply undeclared, particularly within the liberal arts, to leverage flexibility in declaration.",
+      "Align your application profile strongly with your chosen major.",
+      "Prioritize majors where you can demonstrate strong academic potential."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate Academic Programs and Specializations: Beyond general prestige, students should examine the specific majors, minors, and unique programs offered by each college to ensure they align with their academic and career goals. For instance, a student interested in business would focus on the offerings of Sy Syms School of Business, while those pursuing liberal arts or sciences would look closely at Yeshiva College or Stern College for Women.",
+      "Assess Campus Environment and Student Life Fit: Consider the specific social and cultural environment of each college. Yeshiva College and Stern College for Women, being single-gender institutions, offer distinct student life experiences compared to co-ed environments or other universities. Factors such as campus size, religious affiliation, housing options, and extracurricular activities should be weighed. Yeshiva University's unique \"Torah Umadda\" philosophy, which integrates secular and Jewish studies, is a key aspect of its environment.",
+      "Investigate Graduation Rates and Career Outcomes: Look at the four-year graduation rates and post-graduation success metrics (e.g., employment rates, graduate school acceptance) specific to each college or its primary fields of study. This can provide insight into the institution's effectiveness in guiding students to completion and future opportunities. Yeshiva University, as a whole, has a reported graduation rate of 85%.",
+      "Review Financial Aid and Cost of Attendance: While not always a ranking factor in terms of academic quality, the overall cost and available financial aid packages are crucial for many students. Comparing the net cost after scholarships and grants for each college can significantly influence a student's final decision."
+    ],
+    "alternate_major_strategy": "Yeshiva University's application process does not typically involve formally declaring a \"backup\" or \"alternate\" major in the same way some larger universities with highly competitive, direct-admit programs might. The university employs a holistic admissions review, evaluating applicants based on academic performance, character, leadership, extracurricular activities, essays, and interviews. While applicants may indicate an intended field of study, the primary admission decision is for acceptance to the university as a whole. Applying as an undeclared student is also a viable option, allowing students to explore various academic interests before committing to a specific program. Once admitted to Yeshiva University, students have considerable flexibility in choosing and changing their major. Many students may remain undecided during their first year and formally declare their major closer to their junior year. Students can declare, change, or add a second major at any time before graduation by submitting the \"Declaration of Academic Major & Minors\" form through the Office of the Registrar. Yeshiva University provides several resources to support students in their major decisions: Academic Advisors, Career Center, and a \"Shaped Major\" Option for interdisciplinary interests. Changing majors internally is generally flexible. However, for certain programs, such as switching into a Bachelor of Science (B.S.) in Computer Science from another major, students may need to take summer courses to ensure they graduate within the standard eight semesters, depending on their prior coursework. It's also important to note that due to New York State Education Department rules, students cannot double major if one degree is a B.S. and the other is a B.A., though pursuing a minor in another department is permissible."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 49900.0,
+        "total_coa": 71550.0,
+        "housing": 15000.0
+      },
+      "out_of_state": {
+        "tuition": 49900.0,
+        "total_coa": 71550.0,
+        "housing": null
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 46523.0,
+    "average_merit_aid": 24960.0,
+    "percent_receiving_aid": 88.0,
+    "meets_full_need": false,
+    "notes": "Yeshiva University meets 90% of demonstrated financial need.",
+    "scholarships": [
+      {
+        "name": "Yeshiva University Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded at the time of admission based on high school performance, overall GPA, standardized test scores (if available), and other supporting information.",
+        "application_method": "Automatic Consideration (based on admissions application materials)"
+      },
+      {
+        "name": "Distinguished Honors Scholarship",
+        "type": "Merit",
+        "amount": "$25,000 per academic year (Early Decision); $20,000 per academic year (Regular Decision)",
+        "deadline": "Early Decision Honors: November 1; Regular Decision Honors: December 21",
+        "benefits": "Participation in Honors classes and programs, eligibility to graduate with Honors upon completion of an Honors thesis.",
+        "application_method": "Apply and be accepted to Yeshiva University Honors Program"
+      },
+      {
+        "name": "Zahava and Moshael J. Straus Center for Torah and Western Thought Scholars",
+        "type": "Merit",
+        "amount": "Up to $25,000 per year",
+        "deadline": "Early Decision Honors Application: January 1; Regular Decision Honors Application: December 21",
+        "benefits": "Unique interdisciplinary courses bridging Torah and Western thought, mentorship, networking, and internship opportunities.",
+        "application_method": "Separate application, requires acceptance to Yeshiva University Honors"
+      },
+      {
+        "name": "Leadership Scholars",
+        "type": "Merit",
+        "amount": "Up to $25,000 per academic year",
+        "deadline": "Automatic consideration (based on admissions application materials)",
+        "benefits": "Ongoing seminars, extracurricular leadership activities, and cohort-based programming.",
+        "application_method": "Automatic Consideration for incoming undergraduates demonstrating academic excellence and leadership"
+      },
+      {
+        "name": "Professor Thomas Otway Memorial Scholarship",
+        "type": "Merit",
+        "amount": "$5,000 per year for up to three years",
+        "deadline": "Applications should be submitted in the year prior to matriculation at Stern College.",
+        "benefits": "Additional scholarship for students committed to a major in computer science.",
+        "application_method": "Separate application, requires admission to S. Daniel Abraham Honors Program (Early Decision or Regular Decision with a minimum $20,000 academic scholarship)"
+      },
+      {
+        "name": "The Katz Scholarship for Jewish Educators",
+        "type": "Merit",
+        "amount": "$20,000 per year (grants and forgivable loans), renewable for three years",
+        "deadline": "Not specified; likely tied to program admission.",
+        "benefits": "Substantial tuition support for students preparing for careers in Jewish education, coursework in Judaic studies and methodology, student teaching, and potential for accelerated MS degree.",
+        "application_method": "Enrollment in the Legacy Heritage Jewish Educators Project at Stern College for Women, major in Judaic studies with a Concentration in Jewish Education"
+      },
+      {
+        "name": "Jewish Foundation for Education of Women (JFEW) Science Fellowships",
+        "type": "Merit",
+        "amount": "$10,000 scholarship support for each of three years",
+        "deadline": "Not specified; likely competitive application process.",
+        "benefits": "Opportunity to participate in summer research internships with a stipend, attend and present research at national and international science conferences, one-on-one mentoring, and workshops on leadership and career development.",
+        "application_method": "Competitive selection through SCW, requiring application for national and international competitive scholarships and fellowships"
+      },
+      {
+        "name": "Anne Scheiber Honors Scholarship",
+        "type": "Merit, Need-Based",
+        "amount": "Up to $25,000/year",
+        "eligibility": "Students enrolled at Stern College for Women, intending to study medicine or physical and natural sciences, and demonstrating financial need as determined by the Free Application for Federal Student Aid (FAFSA).",
+        "application_method": "Likely requires a separate application or specific program application within Stern College and FAFSA submission."
+      },
+      {
+        "name": "Distinguished Scholars Program",
+        "type": "Merit",
+        "amount": "Ranging from $7,500 through full tuition for up to four years.",
+        "eligibility": "Qualified applicants who automatically enter one of the university's honors programs (S. Daniel Abraham Honors Program, Jay and Jeanie Schottenstein Honors Program, or Sy Syms Business Honors and Entrepreneurial Leadership Program).",
+        "application_method": "Automatic consideration for qualified applicants, likely tied to the honors program application."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": "Yeshiva University generally accepts AP scores of 4 or 5 for college credit, with specific course equivalencies detailed for various subjects. A score of 3 may be accepted in some humanities subjects with departmental review.",
+    "ib_policy": "Yeshiva University grants credit for Higher Level (HL) IB exams with scores of 5, 6, or 7. Standard Level (SL) exams are generally not awarded credit, except in rare cases for a score of 7 with departmental approval.",
+    "transfer_articulation": "Yeshiva University accepts transfer credits from accredited institutions for courses with a grade of C or better, provided the courses are comparable in content and rigor to YU's curriculum. A maximum of 60 credits can be transferred from two-year institutions, and 90 from four-year institutions. Specific articulation agreements exist with some local colleges."
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework.",
+      "Engaging and authentic essays.",
+      "Meaningful extracurricular activities with demonstrated leadership.",
+      "Strong standardized test scores (if submitted)."
+    ],
+    "common_activities": [
+      "Leadership in school clubs and student government",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Academic and pre-professional clubs",
+      "Music and arts involvement"
+    ],
+    "essay_tips": [
+      "Be Specific and Use Concrete Examples: Instead of making broad statements, provide detailed anecdotes and specific instances to illustrate your points. For example, when discussing how someone impacted you, don't just say they helped you \"achieve your goals\"; instead, share concrete examples of their guidance and its effects. This approach demonstrates self-awareness and genuine gratitude, particularly for prompts like the \"Hakarat hatov\" thank-you letter.",
+      "Demonstrate Personal Growth and Reflection: Essays should highlight what you've learned and how you've grown from your experiences. Focus on the impact an event or person had on you and how it shaped your character. For longer essays, consider building a narrative arc that shows your initial state, the challenge or experience, and your subsequent growth.",
+      "Avoid Cliches and Generic Statements: Strive for originality and personalize your writing. Steer clear of common clichés and instead make your reflections unique to your own life and experiences.",
+      "Incorporate Jewish Values Where Applicable: Yeshiva University's application essays often inquire about how applicants incorporate Jewish values into their lives. If you can authentically address this, it is crucial, as the university has a strong Jewish tradition.",
+      "Connect Your Interests to Specific Yeshiva University Resources: While not explicitly stated for YU in every snippet, general supplemental essay advice emphasizes researching the school thoroughly. Show admissions committees that you understand what Yeshiva University offers and how your interests and aspirations align with their specific programs, faculty, clubs, or unique aspects. This demonstrates genuine interest and a thoughtful approach to your college choice."
+    ],
+    "red_flags": [
+      "Generic or Superficial Essays:",
+      "Grade Decline, Especially in Senior Year, or an Unexplained Academic Record:",
+      "Extracurricular List Lacking Depth or Significant Impact:",
+      "Poor or Uninsightful Letters of Recommendation:"
+    ],
+    "insights": "Yeshiva University employs a holistic review process, specifically considering academics, character, leadership, creativity, and potential beyond the application. The personal essay and interview are deemed essential components for understanding the applicant's fit. While standardized test scores are optional for general admission, they are required for Honors programs. The university also highlights its commitment to intellectual curiosity and offers a unique S. Daniel Abraham Israel Program. They also promise that no qualified student will be turned away for financial reasons, disbursing significant scholarship aid annually."
+  },
+  "outcomes": {
+    "median_earnings_10yr": 72200,
+    "employment_rate_2yr": 95.5,
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "JPMorgan Chase",
+      "KPMG"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 93.0,
+    "graduation_rate_4_year": 79.0,
+    "graduation_rate_6_year": 85.0
+  }
 }

@@ -1,111 +1,184 @@
 {
-  "university_profile": {
-    "_id": "missouri_university_of_science_and_technology",
-    "metadata": {
-      "official_name": "Missouri University of Science and Technology",
-      "location": {
-        "city": "Rolla",
-        "state": "MO",
-        "type": "Public"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "mst.edu",
-        "usnews.com",
-        "niche.com",
-        "shiksha.com"
-      ]
+  "_id": "missouri_university_of_science_and_technology",
+  "metadata": {
+    "official_name": "Missouri University of Science and Technology",
+    "location": {
+      "city": "Rolla",
+      "state": "Missouri",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "A premier public research university with an R1 Carnegie Classification, Missouri S&T is a leader in STEM education, renowned for its intensive engineering programs and high return on investment.",
-      "market_position": "Hidden Gem",
-      "admissions_philosophy": "Numbers-focused / Committee-based holistic for test-optional",
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "rankings": {
       "us_news_rank": 192,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The acceptance rate has tightened by nearly 13% over the last three years, falling from 85.4% in 2021 to 72.5% for the 2024-2025 cycle.",
-          "implication": "Prospective students must showcase stronger academic and technical credentials than in previous years to remain competitive."
-        },
-        {
-          "category": "Admissions Strategy",
-          "insight": "The university has extended its test-optional policy through 2026, where non-test applicants undergo a committee review of extracurriculars and community impact.",
-          "implication": "Applicants without competitive SAT/ACT scores should leverage the 'FYRE' and 'OURE' research narratives to demonstrate fit."
-        },
-        {
-          "category": "Career Outcomes",
-          "insight": "Graduates are heavily recruited by top-tier tech firms like SpaceX, Boeing, and Google, reflecting the school's R1 research status and technical rigor.",
-          "implication": "The university serves as a high-ROI pipeline for students targeting immediate entry into specialized engineering and defense sectors."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A close-knit, engineering-centric culture defined by a massive Greek life presence (approx. 25% of students) and high-stakes student design teams like the Mars Rover and Formula SAE projects.",
-        "transportation_impact": "While the campus is highly walkable, transportation is managed through a digital 'License Plate Recognition' (LPR) permit system and dedicated shuttles to St. Louis (2 hours away) for airport access.",
-        "research_impact": "Missouri S&T provides rare undergraduate research access through the FYRE (First Year Research Experience) program, enabling freshmen to enter labs typically reserved for graduate students."
+      "market_position": "Leading Public STEM Research University with High ROI",
+      "executive_summary": "Missouri University of Science and Technology is a STEM-focused public research university consistently recognized for its strong engineering programs and high return on investment for graduates. It is ranked among the top national universities and is noted for career placement and salary impact.",
+      "admissions_philosophy": "Holistic review emphasizing academic preparedness and interest in STEM fields"
+    },
+    "campus_dynamics": {
+      "social_environment": "Missouri University of Science and Technology fosters a close-knit and supportive social environment with a collaborative atmosphere. Students often describe the community as friendly and helpful, with many opportunities for study groups and involvement in over 200 student organizations. While the academic rigor in STEM fields is high, the campus mood can be characterized as \"nerdy\" with a strong emphasis on innovation and problem-solving. Some reviews indicate a desire for more diversity and on-campus activities outside of academics and Greek life.",
+      "transportation_impact": "The campus of Missouri University of Science and Technology is of medium size and located in Rolla, Missouri, which is described as a small college town with a lively atmosphere. This likely contributes to easy navigation around campus and the surrounding community.",
+      "research_impact": "Missouri University of Science and Technology provides strong undergraduate research opportunities, with a significant percentage of students, particularly in biological sciences, participating in research. Students are encouraged to publish and present their work at regional and national conferences. The university offers various programs to facilitate research, including Opportunities for Undergraduate Research Experiences (OURE), which provides stipends, and the First Year Research Experience (FYRE), which pairs students with faculty mentors and industry professionals. Undergraduates can also gain experience through research assistant roles, credit-bearing research courses, employment in labs, and participation in interdisciplinary design teams like iGEM. The university hosts an Undergraduate Research Conference and a Research Day at the Capitol to showcase student work. Missouri S&T has a strong career focus, especially for engineering students, with high job placement rates and one of the largest career fairs in the Midwest. The curriculum emphasizes research-based projects, internships, and experiential learning, preparing students for careers in STEM and other fields."
+    },
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Missouri S&T is a moderately selective institution with acceptance rates generally ranging from 72.5% to 84%, indicating that strong academic performance and a well-rounded application are important for admission.",
+        "implication": "Applicants should aim for a GPA above the average of 3.79 and competitive standardized test scores (SAT 1220-1400 or ACT 25-31) to be strong candidates. Highlighting rigorous coursework, such as AP or IB classes, can further strengthen an application."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university boasts a strong reputation in engineering and STEM fields, with a hands-on approach, numerous design teams, and a high research designation from the Carnegie Foundation.",
+        "implication": "Prospective students, particularly those interested in engineering and STEM, should emphasize any practical experience, participation in science fairs, robotics clubs, or other relevant extracurricular activities in their applications. Expressing a clear interest in research or specific engineering disciplines can also be beneficial."
+      },
+      {
+        "category": "Value",
+        "insight": "Missouri S&T offers excellent career outcomes, with graduates reporting high starting salaries (average $72,600) and a high likelihood of job placement or graduate school admission due to robust career fairs and strong industry connections.",
+        "implication": "Applicants should highlight their career aspirations and any internships, co-ops, or leadership roles that demonstrate their readiness for professional environments. Connecting their academic interests to specific career paths can show alignment with the university's strong focus on post-graduation success."
       }
-    },
-    "admissions_current": {
+    ],
+    "admissions_philosophy": "Holistic Review"
+  },
+  "admissions_data": {
+    "current_status": {
       "overall_acceptance_rate": 72.5,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 51.3,
-      "transfer_acceptance_rate": 73.6,
-      "admits_class_size": 6059,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": []
+      "test_policy_details": "Missouri University of Science and Technology is test-optional, allowing students to choose whether or not to submit standardized test scores (SAT/ACT). The university permits self-reporting of scores and allows superscoring for undergraduate admissions. While not strictly required, submitting strong scores is recommended and can enhance an applicant's chances.",
+      "admits_class_size": 6060,
+      "transfer_acceptance_rate": 73.6,
+      "early_admission_stats": [],
+      "international_acceptance_rate": 51.3,
+      "international_applications": 2670,
+      "international_admits": 1371,
+      "notes": "Data for the 2024 application year. This rate is lower than the general university acceptance rate.",
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": true,
+      "acceptance_rate_notes": "Missouri University of Science and Technology is a public university. While an overall acceptance rate of approximately 72.5% to 73% is widely reported, and a domestic vs. international breakdown (82.7% domestic, 51.3% international) was found, specific in-state and out-of-state (for US residents) acceptance rates are not explicitly available in the search results."
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Data corresponds to the Fall 2021 entering class (CDS 2020-2021 academic year)."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Data corresponds to the Fall 2022 entering class (CDS 2021-2022 academic year)."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "A groundbreaking ceremony for the new Welcome Center occurred on April 20, 2023. Data corresponds to the Fall 2023 entering class (CDS 2022-2023 academic year)."
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
-        "applications_total": 8354,
-        "admits_total": 6060,
-        "enrolled_total": 1269,
-        "acceptance_rate_overall": 72.5,
-        "acceptance_rate_in_state": 0.0,
-        "acceptance_rate_out_of_state": 0.0,
-        "yield_rate": 20.9,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed; institution typically reports no waitlist policy in CDS Section C2."
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "The new Welcome Center's construction was expected to be completed in Fall 2024, with a beam-signing ceremony on October 25, 2024. Data corresponds to the Fall 2024 entering class (CDS 2023-2024 academic year)."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Missouri S&T achieved Carnegie R1 classification (Very High Research Activity) in 2025, with an official announcement on February 13, 2025. An EF-2 tornado struck Rolla on March 14, 2025, impacting the community. The dedication ceremony for the new Welcome Center is scheduled for October 3, 2025. Data corresponds to the Fall 2025 entering class (CDS 2024-2025 academic year)."
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "Not specified",
-        "unweighted_middle_50": "3.60-4.00",
-        "average_weighted": 0.0,
+        "weighted_middle_50": "3.60-4.00",
+        "unweighted_middle_50": "2.50-3.50",
+        "average_weighted": 3.81,
         "percentile_25": "3.60",
         "percentile_75": "4.00",
-        "notes": "The average unweighted GPA for admitted students is approximately 3.81. Approximately 70% of enrolled freshmen entered with a high school GPA of 3.75 or higher."
+        "notes": "The average weighted GPA for admitted students is 3.81. The middle 50% for weighted GPA is 3.60-4.00, and for unweighted GPA is 2.50-3.50. Most incoming freshmen graduate in the top quarter of their high school class."
       },
       "testing": {
         "sat_composite_middle_50": "1220-1400",
         "sat_reading_middle_50": "580-690",
         "sat_math_middle_50": "610-730",
         "act_composite_middle_50": "25-31",
-        "submission_rate": 89.0,
-        "policy_note": "Test-optional but scores are considered if submitted; approximately 78% of students submit ACT scores while 11% submit SAT scores."
+        "submission_rate": 92.0,
+        "policy_note": "Test-optional; superscore accepted"
       },
       "demographics": {
-        "first_gen_percentage": 22.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 13.7,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Information for first-generation and legacy student percentages is typically found in the Common Data Set (CDS) documents. While Missouri University of Science and Technology makes its CDS available, direct access to the content of these documents to extract the specific percentages was not possible through the search function.",
         "geographic_breakdown": [
           {
-            "region": "Missouri",
+            "region": "Missouri (In-State)",
             "percentage": 75.0
           },
           {
-            "region": "Other US States",
-            "percentage": 22.0
+            "region": "Illinois",
+            "percentage": 8.0
+          },
+          {
+            "region": "Texas",
+            "percentage": 1.8
+          },
+          {
+            "region": "Kansas",
+            "percentage": 1.2
+          },
+          {
+            "region": "California",
+            "percentage": 0.7
+          },
+          {
+            "region": "Nebraska",
+            "percentage": 0.6
+          },
+          {
+            "region": "Colorado",
+            "percentage": 0.5
+          },
+          {
+            "region": "Wisconsin",
+            "percentage": 0.5
+          },
+          {
+            "region": "Oklahoma",
+            "percentage": 0.5
+          },
+          {
+            "region": "Florida",
+            "percentage": 0.4
+          },
+          {
+            "region": "Arkansas",
+            "percentage": 0.4
+          },
+          {
+            "region": "Other Out-of-State",
+            "percentage": 7.6
           },
           {
             "region": "International",
@@ -113,284 +186,1201 @@
           }
         ],
         "gender_breakdown": {
-          "men": {
-            "applicants": 5399,
-            "admits": 4029,
-            "acceptance_rate": 74.6,
-            "note": "Men represent approximately 76% of the total undergraduate population."
-          },
-          "women": {
-            "applicants": 2772,
-            "admits": 1940,
-            "acceptance_rate": 70.0,
-            "note": "Women represent approximately 24% of the undergraduate population, a record high for the institution."
-          },
-          "non_binary": {
-            "applicants": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "note": "Not reported"
-          }
+          "men": null,
+          "women": null,
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 64.6,
-          "black_african_american": 2.95,
-          "hispanic_latino": 5.16,
-          "asian": 3.95,
-          "native_american_alaskan": 0.36,
+          "white": 69.4,
+          "black_african_american": 3.2,
+          "hispanic_latino": 5.2,
+          "asian": 4.0,
+          "native_american_alaskan": 0.3,
           "pacific_islander": 0.01,
-          "two_or_more_races": 2.39,
-          "unknown": 6.88,
-          "non_resident_alien": 13.7
-        },
-        "religious_affiliation": "Not specified"
+          "two_or_more_races": 2.8,
+          "unknown": 3.09,
+          "non_resident_alien": 12.0
+        }
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Engineering and Computing (CEC)",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "High schoolers should prioritize advanced math (Calculus) and physics. The admissions committee looks for students who will thrive in the 'Foundational Engineering and Computing' year.",
-          "housing_profile": "Commonly clustered in Residential Commons or Thomas Jefferson (TJ) Hall.",
-          "student_archetype": "Hands-on 'Miners' and practical problem-solvers",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "Calculus I",
-                "Calculus II",
-                "Engineering Physics I",
-                "Chemistry I"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ME 2360 Dynamics",
-                "ME 2519 Thermodynamics",
-                "CIV ENG 2200 Statics"
-              ],
-              "special_requirements": "Completion of the Foundational Engineering and Computing Program (Freshman Engineering) with a minimum 2.5 GPA.",
-              "admissions_pathway": "Internal Transfer / Direct Entry",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "ME 1720 Intro to Engineering Design",
-                  "ME 2519 Thermodynamics",
-                  "ME 2360 Dynamics",
-                  "ME 3313 Machine Dynamics",
-                  "ME 3411 Modeling and Analysis of Dynamic Systems",
-                  "ME 3521 Applied Thermodynamics",
-                  "ME 3525 Heat Transfer",
-                  "ME 4479 Control System Design",
-                  "ME 4761 Engineering Design"
-                ],
-                "electives": [
-                  "ME 5527 Combustion Processes",
-                  "ME 5333 Internal Combustion Engines",
-                  "ME 5212 Finite Element Analysis",
-                  "ME 5667 Heat Pump and Refrigeration Systems"
-                ],
-                "total_units": 128,
-                "major_units": 97
-              },
-              "notable_professors": [
-                "Dr. David Bayless",
-                "Dr. J. Keith Nisbett",
-                "Dr. Frank Liou"
-              ],
-              "notes": "The most popular major at S&T."
-            },
-            {
-              "name": "Aerospace Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "Calculus I",
-                "Calculus II",
-                "Physics I"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "AERO ENG 2360 Dynamics",
-                "AERO ENG 2861 Aerodynamics I"
-              ],
-              "special_requirements": "Not specified",
-              "admissions_pathway": "Internal Transfer / Direct Entry",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 128,
-                "major_units": 0
-              },
-              "notable_professors": [
-                "Dr. Henry Pernicka"
-              ],
-              "notes": "Not specified"
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Adaptive Leadership Minor",
-        "Explosives Engineering Certificate",
-        "Technical Writing Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Missouri S&T Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Scholarship Deadline (Fall)",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Ensures priority consideration for merit-based scholarships."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "Test-Optional Applicants",
-          "requirement_type": "Short Answer Essays",
-          "deadline": "2024-12-01",
-          "details": "Two required responses regarding activities and community contribution."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Course Rigor"
-        ],
-        "secondary_factors": [
-          "Test Scores",
-          "Extracurriculars"
-        ],
-        "essay_importance": "Moderate",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Emphasis on 17-unit core curriculum rigor."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Utilize the Freshman Engineering Program (FEP) to enter as 'undeclared engineering'."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize the College of Engineering and Computing (CEC) for largest career fairs."
-      ],
-      "alternate_major_strategy": "If applying to CS, list IST as an alternate for similar career paths with less rigorous math."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 15930,
-          "total_coa": 32182,
-          "housing": 13422
-        },
-        "out_of_state": {
-          "tuition": 33248,
-          "total_coa": 50617,
-          "supplemental_tuition": 17318
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 13434,
-      "average_merit_aid": 16541,
-      "percent_receiving_aid": 98.0,
-      "scholarships": [
-        {
-          "name": "Chancellor's Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition and fees",
-          "deadline": "2025-12-01",
-          "benefits": "Premier award for Missouri residents.",
-          "application_method": "Separate Application"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams.",
-        "exceptions": [
-          "Students with 90+ semester hours ineligible."
-        ],
-        "usage": "Credits count toward degree requirements."
-      },
-      "ib_policy": {
-        "general_rule": "Credit granted for HL exams with scores of 4+.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology"
-        ],
-        "restrictions": "Last 60 hours must be completed at S&T."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Solid foundation in math."
-      ],
-      "common_activities": [
-        "Student Design Teams"
-      ],
-      "essay_tips": [
-        "Be specific about design teams."
-      ],
-      "red_flags": [
-        "Weak grades in high school math."
-      ],
-      "insights": [
-        "The 5:1 male-to-female ratio is defining."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 82957,
-      "employment_rate_2yr": 96.06,
-      "grad_school_rate": 14.5,
-      "top_employers": [
-        "Boeing",
-        "Microsoft"
-      ],
-      "loan_default_rate": 3.7
-    },
-    "student_retention": {
-      "freshman_retention_rate": 87.8,
-      "graduation_rate_4_year": 27.0,
-      "graduation_rate_6_year": 69.0
     }
   },
-  "_id": "missouri_university_of_science_and_technology",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "colleges": [
       {
-        "prompt": "Missouri S&T is focused on solving global challenges through STEM. What problem interests you most, and how might you address it?",
-        "word_limit": "250 words",
-        "type": "STEM",
-        "required": false,
-        "brainstorming_questions": [
-          "When you think about the 'global challenges' Missouri S&T tackles, which one genuinely sparks a 'what if' or 'why not' in your mind, making you want to learn more about it?",
-          "Can you recall a specific moment, experience, or observation that first ignited your curiosity about a particular global problem and made you think, 'This is something I need to understand better?'",
-          "Beyond the general idea of solving a problem, what specific aspect of a global challenge, perhaps a detail you noticed or a consequence you witnessed, truly captivates your attention and makes you want to delve deeper?",
-          "Thinking about the 'how might you address it' part, have you ever encountered a situation, even a small one, where you creatively used STEM principles (or even just logical thinking) to overcome an obstacle or improve something, and how does that connect to a larger global issue?",
-          "If you could step into a future where a specific global challenge you're interested in has been significantly addressed, what is one tangible, personal impact you'd hope to see that inspires you to want to contribute to that solution?"
+        "name": "College of Engineering and Computing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Standard university housing (traditional, suite, and apartment-style dorms like Thomas Jefferson Hall, Residential Commons, University Commons, Miner Village, Rolla Suites). Students may also participate in Living Learning Communities such as the Honors Community (Residential Commons) or Change Makers Community (Residential Commons) to connect with like-minded, high-achieving peers. These residences offer furnished rooms, study spaces, lounges, and communal facilities like laundry and computer labs.",
+        "student_archetype": "Ambitious problem-solvers with a strong aptitude for mathematics and science, driven to design and build. These students are highly dedicated to rigorous academic programs, particularly in engineering and computing fields, and are eager for hands-on experience through design teams and real-world projects. They are career-focused and value a supportive, collaborative academic environment.",
+        "strategic_fit_advice": "Strongly recommended for students with a solid STEM background who are prepared for a challenging curriculum and aspire to careers in diverse engineering or computing disciplines. Applicants should be eager to engage in extensive hands-on learning, participate in design teams, and leverage the university's strong industry connections and career placement services.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I",
+              "COMP SCI 1500 Computational Problem Solving",
+              "COMP SCI 1570 Introduction To C++ Programming"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "COMP SCI 1200 Discrete Mathematics for Computer Science",
+              "COMP SCI 1575 Data Structures"
+            ],
+            "special_requirements": "A 'C' or better grade required in each computer science course used to fulfill B.S. in computer science degree requirements as well as in COMP ENG 2210, COMP ENG 3150, and the required ethics elective. Experiential Learning graduation requirement.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FR ENG 1100 Study And Careers In Engineering and Computing (1)",
+                "ENGLISH 1120 Exposition and Argumentation (3)",
+                "SP&M S 1185 Principles of Speech (3)",
+                "CHEM 1310 General Chemistry I (3)",
+                "CHEM 1319 General Chemistry I Lab (2)",
+                "MATH 1214 Calculus for Engineers I (4)",
+                "MATH 1215 Calculus for Engineers II (4)",
+                "MATH 2222 Differential Equations (3)",
+                "MATH 3108 Discrete Math for Computer Science (3)",
+                "PHYSICS 1135 Engineering Physics I (4)",
+                "PHYSICS 2135 Engineering Physics II (4)",
+                "COMP SCI 1500 Computational Problem Solving (3)",
+                "COMP SCI 1570 Introduction To C++ Programming (3)",
+                "COMP SCI 1575 Data Structures (3)",
+                "COMP SCI 1580 Introduction To Programming Laboratory (1)",
+                "COMP SCI 1585 Data Structures Laboratory (1)",
+                "COMP SCI 2300 Computer Logic And Digital Design (3)",
+                "COMP SCI 2500 Algorithms (3)",
+                "COMP SCI 2501 Java and Object Oriented Design (3)",
+                "COMP SCI 3100 Introduction to Software Engineering (3)",
+                "COMP SCI 3402 Introduction to Data Science (3)",
+                "COMP SCI 3500 Programming Languages And Translators (3)",
+                "COMP SCI 3803 Computer Organization and Design (3)",
+                "COMP SCI 4010 Seminar (1)",
+                "COMP SCI 4090 Software Engineering Capstone I (3)",
+                "COMP SCI 4091 Software Engineering Capstone II (3)",
+                "COMP SCI 4610 Computer Security (3)",
+                "COMP ENG 2210 Introduction to Electronic Circuits (3)",
+                "COMP ENG 3150 Digital Logic (3)",
+                "PHILOS Ethics Elective (3)"
+              ],
+              "electives": [
+                "COMP SCI 5100 Agile Software Development (3)",
+                "COMP SCI 5402 Introduction to Data Mining (3)",
+                "COMP SCI 5400 Introduction to Machine Learning (3)"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Sajal K. Das (Cyber-Physical Systems, Security and Privacy)",
+              "Dr. Tony Luo (Internet of Things, Machine Learning, Security)",
+              "Dr. Nan Cen (Visible-Light Networking, AI for Wireless Networks)",
+              "Dr. Sid Nadendla (Cyber-Physical-Human Systems, Statistical Inference & Machine Learning)"
+            ],
+            "notes": "Students are admitted into a Foundational Engineering program for their freshman year and formally apply for admission to the Computer Science department after completing freshman engineering requirements. Admission is nearly automatic upon meeting requirements. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CIV ENG 2200 Engineering Mechanics-Statics"
+            ],
+            "special_requirements": "A 'C' or better grade required in CHEM 1305, MATH 1214 (or MATH 1211), MATH 1215, MATH 2222, MATH 3304, PHYSICS 1135, PHYSICS 2135, programming elective, MET ENG 2110, CIV ENG 2200, CIV ENG 2210, MECH ENG 2519, MECH ENG 2360 and MECH ENG 3411. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FR ENG 1100 Study And Careers In Engineering and Computing (1)",
+                "ENGLISH 1120 Exposition and Argumentation (3)",
+                "SP&M S 1185 Principles of Speech (3)",
+                "CHEM 1310 General Chemistry I (3)",
+                "CHEM 1319 General Chemistry I Lab (2)",
+                "MATH 1214 Calculus for Engineers I (4)",
+                "MATH 1215 Calculus for Engineers II (4)",
+                "MATH 2222 Differential Equations (3)",
+                "MATH 3304 Elementary Differential Equations (3)",
+                "PHYSICS 1135 Engineering Physics I (4)",
+                "PHYSICS 2135 Engineering Physics II (4)",
+                "COMP SCI 1570 Introduction To C++ Programming (3) or equivalent programming elective",
+                "CIV ENG 2200 Engineering Mechanics-Statics (3)",
+                "CIV ENG 2210 Mechanics of Materials (3)",
+                "MET ENG 2110 Materials Science and Engineering (3)",
+                "MECH ENG 1720 Introduction to Engineering Design (3)",
+                "MECH ENG 1761 Introduction to Computer Aided Design (1)",
+                "MECH ENG 2360 Dynamics (3)",
+                "MECH ENG 2519 Thermodynamics (3)",
+                "MECH ENG 2653 Introduction To Manufacturing Processes (3)",
+                "MECH ENG 2761 Introduction To Mechanical Design (2)",
+                "MECH ENG 3131 Fluid Mechanics (3)",
+                "MECH ENG 3313 Machine Dynamics (3)",
+                "MECH ENG 3411 Mechanical Systems Design (3)",
+                "MECH ENG 3521 Heat Transfer (3)",
+                "MECH ENG 3525 Energy Conversion (3)",
+                "MECH ENG 4479 Introduction to Control Systems (3)",
+                "MECH ENG 4840 Machine Design I (3)",
+                "MECH ENG 4899 Mechanical Engineering Design (3)"
+              ],
+              "electives": [
+                "MECH ENG 5709 Machine Design II (3)",
+                "MECH ENG 5702 Synthesis Of Mechanisms (3)",
+                "MECH ENG 5307 Vibrations I (3)",
+                "MECH ENG 5212 Introduction to Finite Element Analysis (3)"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "David Bayless, P.E. (Department Chair, Energy Conversion, Air Pollution Control)",
+              "Douglas Bristow (Controls, Additive Manufacturing)",
+              "Serhat Hosder (Computational Aerodynamics, Hypersonic Flows)",
+              "Ryan Hutcheson (Design Theory and Methodology, Vehicle Dynamics)"
+            ],
+            "notes": "Students are admitted into a Foundational Engineering program for their freshman year. Formal application to the Mechanical and Aerospace Engineering department occurs after completing freshman year requirements, with admission being nearly automatic if requirements are met. Total credit hours are 128 (Missouri S&T campus) or 132 (Cooperative Program at Missouri State). Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CIV ENG 2200 Engineering Mechanics-Statics"
+            ],
+            "special_requirements": "A 'C' or better grade required in CHEM 1305, MATH 1214 (or MATH 1211), MATH 1215, MATH 2222, MATH 3304, PHYSICS 1135, PHYSICS 2135, CIV ENG 2200, CIV ENG 2210, computer programming elective, AERO ENG 2360, AERO ENG 2861, and MECH ENG 2519. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FR ENG 1100 Study And Careers In Engineering and Computing (1)",
+                "ENGLISH 1120 Exposition and Argumentation (3)",
+                "SP&M S 1185 Principles of Speech (3)",
+                "CHEM 1310 General Chemistry I (3)",
+                "CHEM 1319 General Chemistry I Lab (2)",
+                "MATH 1214 Calculus for Engineers I (4)",
+                "MATH 1215 Calculus for Engineers II (4)",
+                "MATH 2222 Differential Equations (3)",
+                "MATH 3304 Elementary Differential Equations (3)",
+                "PHYSICS 1135 Engineering Physics I (4)",
+                "PHYSICS 2135 Engineering Physics II (4)",
+                "Programming Elective (e.g., COMP SCI 1570) (3-4)",
+                "CIV ENG 2200 Engineering Mechanics-Statics (3)",
+                "CIV ENG 2210 Mechanics of Materials (3)",
+                "AERO ENG 2360 Dynamics (3)",
+                "AERO ENG 2780 Introduction to Aerospace Design (2)",
+                "AERO ENG 2861 Aerospace Vehicle Performance (3)",
+                "AERO ENG 3131 Aerodynamics I (3)",
+                "AERO ENG 3171 Aerodynamics II (3)",
+                "AERO ENG 3251 Aerospace Structures I (3)",
+                "AERO ENG 3361 Flight Dynamics (3)",
+                "AERO ENG 3613 Spacecraft Dynamics (3)",
+                "AERO ENG 3877 Introduction to Engineering Materials (3)",
+                "MECH ENG 2519 Thermodynamics (3)",
+                "MECH ENG 3521 Heat Transfer (3)",
+                "AERO ENG 4253 Aerospace Structures II (3)",
+                "AERO ENG 4535 Aerospace Propulsion (3)",
+                "AERO ENG 4882 Flight Control Systems (3)",
+                "AERO ENG 4899 Aerospace Engineering Design (3)"
+              ],
+              "electives": [
+                "AERO ENG 5309 Advanced Dynamics (3)",
+                "AERO ENG 5449 Robotic Manipulators and Mechanisms (3)",
+                "AERO ENG 5478 Mechatronics (3)"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Henry Pernicka (Astrodynamics, Spacecraft Design)",
+              "Serhat Hosder (Computational Aerodynamics, Hypersonic Flows)",
+              "Davide Viganò (High-speed experimental aerodynamics)"
+            ],
+            "notes": "Students are admitted into a Foundational Engineering program for their freshman year. Formal application to the Mechanical and Aerospace Engineering department occurs after completing freshman year requirements, with admission being nearly automatic if requirements are met. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1310 General Chemistry I",
+              "CHEM 1319 General Chemistry I Lab",
+              "CHEM 1320 General Chemistry II",
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHEM 1310 General Chemistry I",
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM ENG 2100 Chemical Engineering Material & Energy Balances"
+            ],
+            "special_requirements": "A cumulative GPA of 2.50 or better and a 'C' or better in CHEM 1310, CHEM 1319, CHEM 1320, MATH 1214, MATH 1215 and PHYSICS 1135 are required to be admitted into the chemical engineering major. A grade of 'C' or better is required in CHEM ENG 2100 & CHEM ENG 2110 to enroll in CHEM ENG 3120. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FR ENG 1100 Study And Careers In Engineering and Computing (1)",
+                "ENGLISH 1120 Exposition and Argumentation (3)",
+                "SP&M S 1185 Principles of Speech (3)",
+                "CHEM 1310 General Chemistry I (3)",
+                "CHEM 1319 General Chemistry I Lab (2)",
+                "CHEM 1320 General Chemistry II (3)",
+                "CHEM 1329 General Chemistry II Lab (2)",
+                "MATH 1214 Calculus for Engineers I (4)",
+                "MATH 1215 Calculus for Engineers II (4)",
+                "MATH 2222 Differential Equations (3)",
+                "MATH 3304 Elementary Differential Equations (3)",
+                "PHYSICS 1135 Engineering Physics I (4)",
+                "PHYSICS 2135 Engineering Physics II (4)",
+                "CHEM ENG 2100 Chemical Engineering Material & Energy Balances (4)",
+                "CHEM ENG 2110 Chemical Engineering Thermodynamics I (3)",
+                "CHEM ENG 3101 Fundamentals of Transport in Chemical and Biochemical Engineering (4)",
+                "CHEM ENG 3111 Numerical Computing in Chemical and Biochemical Engineering (3)",
+                "CHEM ENG 3120 Chemical Engineering Thermodynamics II (3)",
+                "CHEM ENG 3131 Chemical Engineering Separation Processes (3)",
+                "CHEM ENG 3141 Chemical Engineering Unit Operations (3)",
+                "CHEM ENG 3150 Chemical Engineering Reactor Design (3)",
+                "CHEM ENG 4091 Chemical Engineering Design I (3)",
+                "CHEM ENG 4092 Chemical Engineering Design II (3)",
+                "CHEM ENG 4101 Chemical Engineering Laboratory I (3)",
+                "CHEM ENG 4102 Chemical Engineering Laboratory II (3)",
+                "STAT 3113 Engineering Statistics (3)"
+              ],
+              "electives": [
+                "CHEM ENG 5200 Biomedical Engineering (3)",
+                "CHEM ENG 5210 Intermediate Biochemical Reactors (3)",
+                "CHEM ENG 5300 Engineering Materials (3)"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Joseph Smith (Professor, teaching excellence)",
+              "Dr. Monday Okoronkwo (Associate Professor, research excellence)"
+            ],
+            "notes": "Students are admitted into a Foundational Engineering program for their freshman year. Formal admission to the Chemical Engineering department requires specific course completion with a 'C' or better and a minimum cumulative GPA of 2.50. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CIV ENG 2200 Engineering Mechanics-Statics"
+            ],
+            "special_requirements": "A 'C' or better grade may be required in Civil Engineering technical and depth elective prerequisite courses. All Civil Engineering students must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FR ENG 1100 Study And Careers In Engineering and Computing (1)",
+                "ENGLISH 1120 Exposition and Argumentation (3)",
+                "SP&M S 1185 Principles of Speech (3)",
+                "CHEM 1310 General Chemistry I (3)",
+                "CHEM 1319 General Chemistry I Lab (2)",
+                "MATH 1214 Calculus for Engineers I (4)",
+                "MATH 1215 Calculus for Engineers II (4)",
+                "MATH 2222 Differential Equations (3)",
+                "MATH 3304 Elementary Differential Equations (3)",
+                "PHYSICS 1135 Engineering Physics I (4)",
+                "PHYSICS 2135 Engineering Physics II (4)",
+                "Programming Elective (e.g., COMP SCI 1570) (3-4)",
+                "CIV ENG 2200 Engineering Mechanics-Statics (3)",
+                "CIV ENG 2210 Mechanics of Materials (3)",
+                "CIV ENG 2211 Materials Testing Lab (1)",
+                "CIV ENG 2401 Introduction to Plane Surveying (3)",
+                "CIV ENG 3201 Structural Analysis I (3)",
+                "CIV ENG 3330 Elementary Fluid Mechanics (3)",
+                "CIV ENG 3715 Elementary Soil Mechanics (3)",
+                "CIV ENG 4099 Undergraduate Research (0-6) or CIV ENG 5000 Special Problems (0-6)",
+                "CIV ENG 4220 Reinforced Concrete Design (3)",
+                "CIV ENG 4401 Transportation Engineering (3)",
+                "CIV ENG 4729 Foundation Engineering (3)",
+                "CIV ENG 4801 Environmental Engineering (3)",
+                "CIV ENG 4851 Water Resources Engineering (3)",
+                "ENG MGT 1210 Economic Analysis of Engineering Projects (2)"
+              ],
+              "electives": [
+                "CIV ENG 5441 Professional Aspects Of Engineering Practice (3)",
+                "CIV ENG 5442 Construction Planning and Scheduling Strategies (3)",
+                "CIV ENG 5112 Bituminous Materials (3)"
+              ],
+              "total_units": 129,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Genda Chen (Robert W. Abbett Distinguished Professor, Director, INSPIRE-University Transportation Center)",
+              "Islam El-adaway (Professor)",
+              "Hongyan Ma (Professor)",
+              "Dr. John J. Myers (Professor, Director of the Missouri Center for Transportation Innovation)"
+            ],
+            "notes": "Students are admitted into a Foundational Engineering program for their freshman year. Formal application to the Civil, Architectural and Environmental Engineering department occurs after completing freshman year requirements, with admission being nearly automatic if requirements are met. Total credit hours are 129. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Architectural Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [
+              "Stuart Baur (Assist. Chair and Assoc. Professor)",
+              "Dr. Nicolas Libre (Associate Teaching Professor, teaching excellence)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [
+              "Mark Fitch (Emeritus Professor, Environmental Engineering)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "MATH 1215 Calculus for Engineers II",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Jie Huang (Roy A. Wilkens Endowed Professor)",
+              "Dr. DongHyun Kim (Associate Professor)",
+              "Dr. Jagannathan Sarangapani (Curators' Distinguished Professor, Rutledge-Emerson Professor)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation. New program as of Fall 2024.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "New bachelor's degree program starting Fall 2024. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Ceramic Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Geological Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Metallurgical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Mining Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Lana Alagha (Professor)",
+              "Dr. Kyle Perry (Associate Professor, teaching excellence)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Nuclear Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Joshua Schlegel (Associate Professor, teaching excellence)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Petroleum Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Engineering Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Casey Canfield (Associate Professor, excellence in teaching, research and service)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Semiconductor Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1214 Calculus for Engineers I",
+              "PHYSICS 1135 Engineering Physics I",
+              "CHEM 1310 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires departmental admission after Foundational Engineering Program. Must take the Fundamentals of Engineering Examination prior to graduation. New program as of Fall 2025 with two emphasis areas: semiconductor device engineering and semiconductor process engineering.",
+            "admissions_pathway": "Foundational Engineering Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "New bachelor's degree program launching Fall 2025. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          }
+        ]
+      },
+      {
+        "name": "College of Arts, Sciences, and Education",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Standard university housing (traditional, suite, and apartment-style dorms like Thomas Jefferson Hall, Residential Commons, University Commons, Miner Village, Rolla Suites). Students may also opt for Living Learning Communities such as the Performing Arts Community (University Commons), Change Makers Community (Residential Commons), or future communities like MiND Collective, Future of Health, Pickaxe Pioneers, and Tabletop Guild, which cater to diverse interests and provide enhanced residential support and programming. All rooms are furnished and offer access to study rooms, lounges, laundry, and sometimes computer learning centers and game rooms.",
+        "student_archetype": "Intellectually curious and interdisciplinary thinkers who want to make a real-world impact. They are interested in a broad education spanning traditional liberal arts, humanities, natural and physical sciences, and education, often within a technological context. They seek experiential learning, research opportunities, and value critical thinking, creative expression, and collaboration.",
+        "strategic_fit_advice": "Ideal for students seeking a well-rounded education with a strong foundation in liberal arts and sciences, but who also appreciate a STEM-focused university environment. It suits those looking for versatile programs that offer hands-on learning, research opportunities, and pathways to diverse careers or advanced studies, including accelerated pharmacy programs or multidisciplinary global engineering.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A minimum grade of 'C' is required for each Biological Science course used to fulfill the B.S. degree requirements.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIO SCI 1201 Biological Sciences Freshman Seminar (1)",
+                "BIO SCI 1113 General Biology (3) or BIO SCI 1213 Principles of Biology (3)",
+                "BIO SCI 1219 General Biology Lab (1)",
+                "BIO SCI 1223 Biodiversity (3)",
+                "BIO SCI 1229 Biodiversity Lab (1)",
+                "BIO SCI 2213 Cell Biology (3)",
+                "BIO SCI 2219 Cell Biology Laboratory (1)",
+                "BIO SCI 2223 General Genetics (3)",
+                "BIO SCI 2263 Ecology (3)",
+                "BIO SCI 3233 Evolution (3)",
+                "BIO SCI 4010 Seminar (1)"
+              ],
+              "electives": [
+                "BIO SCI 2242 Cave Biology (2)",
+                "BIO SCI 2252 Vegetation of the Ozarks (2)",
+                "BIO SCI 2264 Field Ecology (2)",
+                "BIO SCI 3319 Microbiology Lab (2)"
+              ],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [
+              "Dr. Katie Shannon (Teaching Professor)"
+            ],
+            "notes": "Minimum of 120 credit hours for the B.S. degree. A minimum grade of 'C' is required for each Biological Science course. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Psychological Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYCH 2200 Research Methods"
+            ],
+            "special_requirements": "A cumulative grade point average of 2.0 must be earned in all course work taken in the major field. Upper-class (3000-4000-level) courses completed with grades of 'D' may not be included in the course work for the major field without departmental approval.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYCH 1100 Introduction to Psychology (1)",
+                "PSYCH 1101 General Psychology (3)",
+                "PSYCH 2200 Research Methods (4)",
+                "PSYCH 3310 Developmental Psychology (3)",
+                "PSYCH 4400 Cognitive Psychology (3)",
+                "PSYCH 4501 Abnormal Psychology (3)",
+                "PSYCH 4600 Social Psychology (3)",
+                "PSYCH 4410 Neuroscience (3) or PSYCH 4411 Sensation and Perception (3)"
+              ],
+              "electives": [
+                "PSYCH 4995 Rationality (3)",
+                "PSYCH 4720 Psychology of Social Technology (3)",
+                "PSYCH 4590 Health Psychology (3)",
+                "PSYCH 4990 Internship (0-6)",
+                "PSYCH 4099 Undergraduate Research (0-6)"
+              ],
+              "total_units": 120,
+              "major_units": 35
+            },
+            "notable_professors": [],
+            "notes": "Minimum of 120 credit hours for the B.S. degree. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Thomas Schuman (Professor)",
+              "Dr. Risheng Wang (Associate Professor)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Yanzhi Zhang (Professor)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Marco Cavaglia (Professor)",
+              "Dr. Ulrich Jentschura (Professor)",
+              "Dr. Shun Saito (Associate Professor)",
+              "Dr. Alexey Yamilov (Professor)"
+            ],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          }
+        ]
+      },
+      {
+        "name": "Kummer College of Innovation, Entrepreneurship, and Economic Development",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Standard university housing (traditional, suite, and apartment-style dorms like Thomas Jefferson Hall, Residential Commons, University Commons, Miner Village, Rolla Suites). Specific Living Learning Communities might be relevant for students interested in leadership or entrepreneurial pursuits, such as the Change Makers Community (Residential Commons) or potentially the Honors Community. These facilities provide furnished rooms, study areas, and communal amenities.",
+        "student_archetype": "Innovative and entrepreneurial individuals who aim to translate scientific and technological discoveries into real-world solutions. They are driven by a desire to understand business, management, and economic development in a technology-driven world. These students possess leadership, communication, and decision-making skills, with a collaborative mindset and intellectual curiosity.",
+        "strategic_fit_advice": "Ideal for students passionate about the intersection of technology, business, and innovation. This college is a strong fit for those looking to develop entrepreneurial skills, engage in interdisciplinary research with industry connections, and prepare for leadership roles in various sectors, including business, management systems, information science, and economics. Opportunities like the Kummer Innovation and Entrepreneurship Doctoral Fellows program are particularly suited for those pursuing advanced research with a commercialization mindset.",
+        "majors": [
+          {
+            "name": "Business and Management Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A minimum grade of 'C' is required in all core Business and Management Systems courses.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BUS 1110 Introduction to Management and Entrepreneurship (3)",
+                "BUS 1810 Introduction to College Success (1)",
+                "BUS 1210 Financial Accounting (3)",
+                "BUS 2910 Business Law (3)",
+                "BUS 3220 Managerial Accounting (3)",
+                "BUS 5111 Business Negotiations (3)",
+                "BUS 5360 Business Operations (3)",
+                "BUS 5580 Strategic Management (3)",
+                "BUS 5730 Machine Learning and Artificial Intelligence for Business (3)",
+                "ECON 1100 Principles of Microeconomics (3)",
+                "ECON 1200 Principles of Macroeconomics (3)",
+                "ENGLISH 1120 Exposition and Argumentation (3)",
+                "ENGLISH 2560 Technical Marketing Communication (3) or TECHCOM 2560 Technical Marketing Communication (3)",
+                "ERP 2110 Introduction to Enterprise Resource Planning (3)",
+                "FINANCE 2150 Corporate Finance I (3)",
+                "IS&T 1551 Implementing Information Systems: User Perspective (3)",
+                "IS&T 1552 Implementing Information Systems: Data Perspective (3)",
+                "IS&T 1750 Introduction to Management Information Systems (3)",
+                "IS&T 4654 Introduction to Web Design and Digital Media Studies (3)",
+                "MKT 3110 Marketing (3)",
+                "MKT 5310 Digital Marketing and Promotion (3) or BUS 5150 Customer Focus and Satisfaction (3)",
+                "POL SCI 1200 American Government (3)",
+                "PSYCH 1101 General Psychology (3)",
+                "SP&M S 1185 Principles of Speech (3)",
+                "STAT 3111 Statistical tools for Decision Making (3) or STAT 1115 Statistics for Social Sciences (3)"
+              ],
+              "electives": [
+                "BUS 5910 Cybersecurity Management",
+                "FINANCE 5310 Financial Technology and Analytics",
+                "MKT 5310 Digital Marketing and Promotion"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Cecil Chua (Professor, Business and Information Technology)"
+            ],
+            "notes": "Minimum of 120 credit hours for the B.S. degree. Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          },
+          {
+            "name": "Information Science and Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Missouri S&T 2025-2026 Undergraduate Catalog"
+          }
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/missouri_university_of_science_and_technology_logo.png"
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Missouri S&T Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action (Priority Scholarship)",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "For Fall 2026 admission. This is the priority deadline for scholarship consideration."
+      },
+      {
+        "plan_type": "Early Action (Final Scholarship)",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "For Fall 2026 admission. This is the final deadline for scholarship consideration."
+      },
+      {
+        "plan_type": "Regular Decision (Fall Semester)",
+        "date": "2026-07-01",
+        "is_binding": false,
+        "notes": "For Fall 2026 admission. Recommended application deadline for the fall semester."
+      }
+    ],
+    "general_requirements": [
+      "Official high school transcripts",
+      "ACT/SAT scores (test-optional available)",
+      "Letters of recommendation (optional but recommended)",
+      "Personal statement/essay (optional for general admission, required for some scholarships/programs)"
+    ],
+    "program_specific_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Two short answer essays are required, especially for test-optional applicants. These essays address extracurricular activities and how the applicant will contribute to the Missouri S&T community."
+      },
+      {
+        "target_program": "Music (Wind Symphony, Symphony Orchestra - Winds and Percussion)",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "Auditions are required to perform with the Wind Symphony or Symphony Orchestra (winds and percussion) in the spring semester. Audition sign-up sheets are placed outside the band room (137 Castleman Hall). Contact Dr. Samson (samsondw@mst.edu) for questions. Auditions are not required for Wind Symphony in the fall semester or for Symphonic Band."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Recommendations",
+        "Class rank",
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Particular talent/ability",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Low",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Evaluative",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The test-optional review process for freshman applicants includes a committee review that considers extracurricular activities and how the student will contribute to the Missouri S&T community. They offer specific scholarships for first-generation students (Trailblazer Scholarship) and descendants of alumni (Alumni Heritage Scholarship)"
+    },
+    "essay_details": {
+      "required": "Two short answer essays are required, especially for test-optional applicants. These essays address extracurricular activities and how the applicant will contribute to the Missouri S&T community.",
+      "tips": [
+        "Address the prompt immediately and concisely, avoiding unnecessary meandering.",
+        "Show, don't tell: use concrete examples and vivid descriptions to illustrate your experiences and qualities rather than making broad claims.",
+        "Avoid clichés; strive for uniqueness in your writing to help you stand out.",
+        "Connect your experiences and aspirations explicitly to Missouri S&T's values, specific programs, or how you will contribute to their community.",
+        "Seek feedback and revise multiple times to ensure clarity, conciseness, and that all aspects of the prompt are fully answered."
+      ]
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on highly popular engineering or computer science fields. Missouri S&T is primarily known for its engineering and STEM programs. Popular majors include Mechanical Engineering, Information Science, Civil Engineering, Electrical Engineering, Chemical Engineering, Aerospace Engineering, and Computer Science. If a student's academic profile is strong but they are concerned about the intense competition in these highly sought-after disciplines, exploring other strong STEM-related fields, or programs within the College of Arts, Sciences, and Business, might be a strategic approach.",
+      "Consider an undeclared option within a broader college. Missouri S&T offers degrees within the College of Arts, Sciences, and Business, in addition to the College of Engineering and Computing. While not explicitly detailed for admissions, applying undeclared within a broader college could offer more flexibility and potentially a different entry path than direct admission to an impacted engineering program. Once admitted, academic advisors can assist students in exploring and planning their degree paths.",
+      "Research the demand and typical profile for specific majors. Although major-specific acceptance rates are not readily available, understanding which majors are most popular can provide insight into potential competitiveness. Mechanical Engineering, General Computer & Information Sciences, and Civil Engineering consistently show high numbers of graduates, indicating their popularity and likely higher applicant pools. Applicants can gauge the potential demand for their intended major by reviewing such data and aligning their choice with their academic strengths and aspirations."
+    ],
+    "college_ranking_tactics": [
+      "Invest in Robust Career Services and Experiential Learning: A key factor in Missouri S&T's strong rankings is its graduates' high starting salaries, excellent career placement, and extensive internship opportunities. A strategy to bolster rankings would involve continuously enhancing career services, fostering strong employer relationships, facilitating numerous paid co-op and internship experiences, and emphasizing hands-on learning across all colleges and departments.",
+      "Focus on Student Outcomes and Value Proposition: Rankings often consider return on investment (ROI), which includes factors like low student debt and the time it takes for graduates to earn back their education costs. A strategy should prioritize keeping tuition and living expenses manageable, offering competitive financial aid, and demonstrating the clear economic benefit of a degree from Missouri S&T's colleges. This also ties into strong graduation and retention rates.",
+      "Cultivate Academic Rigor and Student Support: Missouri S&T is recognized for its rigorous academic programs, especially in STEM fields. Maintaining high academic standards, coupled with supportive learning environments like small class sizes and accessible professors, helps ensure student success, which in turn positively impacts retention and graduation rates. Expanding resources such as tutoring and academic advising within each college further supports student achievement.",
+      "Showcase Specialized Program Excellence: Missouri S&T's engineering and STEM programs frequently receive high marks, with specific programs like Civil Engineering and Environmental/Environmental Health Engineering ranking in the top 50. A strategy involves actively promoting and investing in areas of distinct academic strength within its colleges, demonstrating leadership in specific fields, and highlighting unique research opportunities and faculty expertise in those areas."
+    ],
+    "alternate_major_strategy": "alternate_major_strategy: Missouri S&T's undergraduate application for first-time freshmen asks applicants to 'Select the major you wish to pursue' under 'Area of Study'. It advises against selecting 'Undecided or Undecided Engineering' for international students, implying a single major selection at the application stage. Therefore, rather than listing a separate alternate major on the initial application, a strategic approach would involve choosing an initial major that aligns with a student's interests and abilities, especially if their primary interest is in a highly competitive field like certain engineering disciplines. If the primary desired major is highly competitive, students might consider applying directly to a less competitive but related major that still genuinely interests them, with the intention of pursuing an internal transfer later if successful in their studies. General advice for selecting a backup major suggests choosing one within a different college or a less impacted STEM field (like math or a related science) if aiming for a competitive engineering program.; internal_transfer_difficulty: Internal transfer for majors, particularly within engineering and science departments at Missouri S&T, can be competitive. While the term 'impacted majors' isn't explicitly used, these departments generally reserve the right to enforce more stringent cumulative GPA requirements for internal transfer applications than the university's general minimum. Undergraduate students wishing to change majors must submit an application with the Office of the Registrar, and the receiving department must approve the change, often placing academic conditions upon the application. Consulting with an academic advisor is essential to understand how a major change might impact academic progress, course requirements, and graduation timeline."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 14984.0,
+        "total_coa": 30676.0,
+        "housing": 15204.0
+      },
+      "out_of_state": {
+        "tuition": 33248.0,
+        "total_coa": 48940.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 13434.0,
+    "average_merit_aid": 10873.0,
+    "percent_receiving_aid": 86.0,
+    "meets_full_need": false,
+    "notes": "Missouri University of Science and Technology attempts to fill financial needs to the extent funds are available. The 'Solving for Tomorrow Scholarship' can cover up to full tuition and fees for eligible Missouri residents with financial need. The average percent of need met for all undergraduates is 75%. Average need-based aid refers to scholarships and grants. Average merit aid refers to non-need-based aid, which typically includes merit scholarships.",
+    "scholarships": [
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition & Fees",
+        "deadline": "2025-12-01",
+        "benefits": "Highly competitive, for Missouri residents with exceptional academic achievements.",
+        "application_method": "Separate Application (includes essay and interview)"
+      },
+      {
+        "name": "Distinguished Scholars Award",
+        "type": "Merit",
+        "amount": "Full Tuition & Fees",
+        "deadline": "2025-12-01",
+        "benefits": "Most prestigious academic scholarship for non-Missouri residents.",
+        "application_method": "Separate Application (includes essay)"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$20,200 first year ($12,000 for three additional years)",
+        "deadline": "2025-12-01",
+        "benefits": "Covers tuition & fees, housing (one-time $7,000), and tech/books (one-time $1,200). For National Merit Semifinalists.",
+        "application_method": "Designate Missouri S&T as first-choice institution"
+      },
+      {
+        "name": "Kummer Vanguard Scholars Program",
+        "type": "Merit",
+        "amount": "$2,000/year",
+        "deadline": "Automatic Consideration (or separate application for some aspects)",
+        "benefits": "For STEM majors; includes leadership, research, and innovation opportunities. Renewable for up to 4 years.",
+        "application_method": "Automatic Consideration/Separate Application"
+      },
+      {
+        "name": "Provost's International Merit Scholarship (Undergraduate)",
+        "type": "Merit",
+        "amount": "$10,000 to $15,000/year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "For high-achieving international first-time freshmen and transfer students.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Missouri Groundbreaker Scholarship Package",
+        "type": "Merit",
+        "amount": "$1,000–$10,000/year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "For Missouri residents based on GPA and test scores. Renewable with 3.0 cumulative GPA.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Out-of-State Groundbreaker Scholarship Package",
+        "type": "Merit",
+        "amount": "$16,000–$26,000/year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "For non-Missouri residents based on GPA and test scores. Renewable with 3.0 cumulative GPA.",
+        "application_method": "Automatic Consideration"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Missouri S&T accepts AP exam scores, typically 3 or higher (some specific courses require a 4 or 5). Credit is awarded for specific equivalent courses listed in their registrar's office documentation. Official score reports must be sent directly to Missouri S&T from College Board. A maximum of 30 hours of credit may be awarded for AP, IB, CLEP, and/or Military credit combined.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "Missouri S&T accepts IB exam scores, typically 4 or higher for Higher Level (HL) exams, with some Standard Level (SL) exams also accepted with high scores. Credit is awarded for specific equivalent courses as outlined by the registrar. Official score reports must be sent directly to Missouri S&T from IBO. A maximum of 30 hours of credit may be awarded for AP, IB, CLEP, and/or Military credit combined.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Missouri S&T accepts academic credit completed at other regionally accredited institutions if the courses are equivalent to coursework offered at Missouri S&T and if a grade of 'C' or better was earned. A maximum of 60 semester hours may be transferred from a two-year institution, and a maximum of 90 semester hours may be transferred toward a baccalaureate degree from four-year institutions. Only credit hours are transferred, not grades. Official transcripts must be sent directly to Missouri S&T from previous institutions. Credits from officially recognized foreign institutions may also be considered."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated interest in STEM through related extracurricular activities",
+      "Competitive standardized test scores (SAT/ACT)",
+      "Well-rounded application including a compelling personal statement and strong letters of recommendation"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/student organizations",
+      "Community service/volunteering",
+      "Fraternity and Sorority Life",
+      "Varsity athletics/Intramural sports",
+      "Participation in design teams",
+      "Music/arts involvement (e.g., band, choir, theatre)"
+    ],
+    "essay_tips": [
+      "Address the prompt immediately and concisely, avoiding unnecessary meandering.",
+      "Show, don't tell: use concrete examples and vivid descriptions to illustrate your experiences and qualities rather than making broad claims.",
+      "Avoid clichés; strive for uniqueness in your writing to help you stand out.",
+      "Connect your experiences and aspirations explicitly to Missouri S&T's values, specific programs, or how you will contribute to their community.",
+      "Seek feedback and revise multiple times to ensure clarity, conciseness, and that all aspects of the prompt are fully answered."
+    ],
+    "red_flags": [],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Missouri S&T is a moderately selective institution with acceptance rates generally ranging from 72.5% to 84%, indicating that strong academic performance and a well-rounded application are important for admission."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "The university boasts a strong reputation in engineering and STEM fields, with a hands-on approach, numerous design teams, and a high research designation from the Carnegie Foundation."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "Missouri S&T offers excellent career outcomes, with graduates reporting high starting salaries (average $72,600) and a high likelihood of job placement or graduate school admission due to robust career fairs and strong industry connections."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 82957,
+    "employment_rate_2yr": 96.06,
+    "median_earnings_6yr": 75542,
+    "notes": "Ranked among the nation's top universities for best salaries and career placement",
+    "top_employers": [
+      "Microsoft",
+      "Amazon",
+      "Apple",
+      "Google",
+      "Boeing Company",
+      "Burns & McDonnell",
+      "Accenture",
+      "Mastercard",
+      "Intel"
+    ],
+    "grad_school_rate": 90.0,
+    "loan_default_rate": 3.4
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86.6,
+    "graduation_rate_4_year": 27.0,
+    "graduation_rate_6_year": 64.0
+  }
 }

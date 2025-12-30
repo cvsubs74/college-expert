@@ -1306,7 +1306,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One long essay (500-650 words, often the Common App personal essay) and two required short answer essays (250-300 words each: 'Why your first-choice major?' and 'Most proud activity?'). An optional essay for special circumstances is also available."
       },
       {
@@ -1318,7 +1318,7 @@
       {
         "target_program": "Some Honors Programs (e.g., Business Honors)",
         "requirement_type": "Letters of Recommendation/Resume",
-        "deadline": null,
+        "deadline": "",
         "details": "Letters of recommendation and resumes are optional for general admission, but some freshman honors programs may require them."
       }
     ],
@@ -1461,7 +1461,7 @@
         "amount": "Varies",
         "deadline": "October 1 - November 1, 2025 (on LASSO)",
         "benefits": "Financial assistance for undergraduate students",
-        "application_method": "Apply via LASSO; for undergraduate students enrolled full-time, graduated from a high school in Mexico (preference for Tejupilco or Quer\u00e9taro), demonstrated financial need, completed two academic semesters at UT Austin, and intend to return to Mexico after graduation."
+        "application_method": "Apply via LASSO; for undergraduate students enrolled full-time, graduated from a high school in Mexico (preference for Tejupilco or Querétaro), demonstrated financial need, completed two academic semesters at UT Austin, and intend to return to Mexico after graduation."
       }
     ]
   },
@@ -1517,11 +1517,31 @@
       "Focusing too much on minor details in the application rather than the overall narrative."
     ],
     "insights": [
-      "UT-Austin does not superscore SAT/ACT; they take the single best testing date.",
-      "Demonstrated interest (e.g., visiting campus) does not influence admission decisions.",
-      "Recommendation letters rarely make a difference for most applicants.",
-      "Being in the top 5% (changing from 6% for Fall 2026) guarantees admission to the university, but not necessarily to a first-choice competitive major like Business or CS.",
-      "Applying early (Early Action) may not provide a significant advantage as many applicants are deferred."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UT-Austin does not superscore SAT/ACT; they take the single best testing date."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest (e.g., visiting campus) does not influence admission decisions."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Recommendation letters rarely make a difference for most applicants."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Being in the top 5% (changing from 6% for Fall 2026) guarantees admission to the university, but not necessarily to a first-choice competitive major like Business or CS."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying early (Early Action) may not provide a significant advantage as many applicants are deferred."
+      }
     ]
   },
   "outcomes": {

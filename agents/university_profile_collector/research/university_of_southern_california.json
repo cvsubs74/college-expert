@@ -3502,7 +3502,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One longer 'Why USC' essay (approx. 250 words) and ten short-answer questions (under 25 words each, e.g., 'Describe yourself in three words', 'What is your favorite snack?')."
       },
       {
@@ -3698,11 +3698,31 @@
       "Choosing a major merely because it appears 'easy' to gain admission to, rather than genuine passion."
     ],
     "insights": [
-      "USC has an extremely selective admissions process, with acceptance rates often around 10-11.2%",
-      "The 'Trojan Family' or alumni network is highly regarded and provides significant career advantages",
-      "The university fosters a vibrant student life with numerous clubs, organizations, and events",
-      "Professors are frequently praised for being knowledgeable, accessible, and making subjects engaging",
-      "In addition to the Common App essay, USC requires a supplemental essay and several short answer questions that delve into personality and specific interests"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "USC has an extremely selective admissions process, with acceptance rates often around 10-11.2%"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The 'Trojan Family' or alumni network is highly regarded and provides significant career advantages"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university fosters a vibrant student life with numerous clubs, organizations, and events"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Professors are frequently praised for being knowledgeable, accessible, and making subjects engaging"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "In addition to the Common App essay, USC requires a supplemental essay and several short answer questions that delve into personality and specific interests"
+      }
     ]
   },
   "outcomes": {

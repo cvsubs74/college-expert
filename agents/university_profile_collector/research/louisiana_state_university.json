@@ -1,0 +1,2760 @@
+{
+  "_id": "louisiana_state_university",
+  "metadata": {
+    "official_name": "Louisiana State University and Agricultural & Mechanical College",
+    "location": {
+      "city": "Baton Rouge",
+      "state": "Louisiana",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Louisiana State University (LSU) is the flagship public university of Louisiana, known for its vibrant campus culture, strong athletic traditions, and a growing research profile. It plays a critical role in the state's economy and education, particularly in engineering, agriculture, and coastal sciences.",
+    "market_position": "Dominant public institution in Louisiana, attracting a significant portion of in-state talent while also drawing students from neighboring states. Strong brand recognition through SEC athletics and specific academic programs such as petroleum engineering, veterinary medicine, and coastal environmental science. Competes with other regional public flagships for top students.",
+    "admissions_philosophy": "LSU's admissions philosophy balances academic achievement with a holistic review process, aiming to build a diverse student body that contributes to the university's mission. Emphasis is placed on high school GPA, ACT/SAT scores, course rigor, and extracurricular involvement. Specific consideration is given to Louisiana residents, but out-of-state applicants are also actively recruited, especially those who demonstrate strong academic potential and align with the university's academic strengths.",
+    "us_news_rank": 170,
+    "analyst_takeaways": [
+      {
+        "takeaway": "LSU benefits significantly from its strong alumni network, particularly within the Gulf South region, which aids career placement and fundraising.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The university is making substantial investments in research related to coastal erosion and environmental sustainability, positioning itself as a national leader in these critical areas.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Ongoing efforts to diversify its research funding and expand graduate programs are crucial for elevating its R1 status and overall academic prestige.",
+        "category": "general"
+      },
+      {
+        "takeaway": "The vibrant campus social scene and strong athletic culture contribute to high student engagement and loyalty but may sometimes overshadow academic perceptions.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Strategic focus on improving retention and graduation rates, particularly for underrepresented minorities, is a key institutional priority.",
+        "category": "general"
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "LSU boasts a highly vibrant and spirited social environment, deeply intertwined with its SEC athletic culture (especially football). Greek life is very prominent, and there are numerous student organizations catering to diverse interests. Social events are frequent, fostering a strong sense of community and school pride, often characterized by Southern hospitality.",
+      "transportation_impact": "The campus is large, and while walkable in many areas, a robust on-campus bus system (LSU Transit) is essential for student mobility. Parking can be challenging, especially during peak hours and major events. Baton Rouge's urban sprawl means many students rely on personal vehicles or ride-sharing for off-campus activities, though efforts are being made to improve pedestrian and cycling infrastructure around campus.",
+      "research_impact": "LSU holds R1 'very high research activity' status, with significant contributions in fields such as coastal and environmental sciences, petroleum engineering, veterinary medicine, and agriculture. The university is a critical hub for research addressing Louisiana's unique challenges, particularly related to wetlands preservation, hurricane preparedness, and energy production. It maintains several major research centers and institutes, collaborating frequently with state and federal agencies."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 73.33,
+      "is_test_optional": true,
+      "test_policy_details": "LSU is a test-optional institution. Applicants can indicate on the Common Application whether or not they would like their ACT or SAT scores included in their evaluation for admission and university-administered scholarships. This policy aligns with LSU's admissions philosophy of full-file comprehensive review, where high school performance (grades and rigor of coursework) is the most important part of the application. If a student's super score (ACT 28 / SAT 1260) falls at or above LSU's historical averages, submitting scores could benefit their application. If a student's GPA is strong but test scores are not, applying test-optional is recommended. Choosing not to submit test scores will not negatively impact the application.",
+      "admits_class_size": 34513,
+      "transfer_acceptance_rate": 63.5,
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 48305,
+        "admits_total": 35422,
+        "enrolled_total": 8153,
+        "acceptance_rate_overall": 73.33,
+        "yield_rate": 22.96,
+        "notes": "LSU's largest incoming freshman class in school history. LSU is test optional for 2025."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 46000,
+        "admits_total": 34000,
+        "enrolled_total": 7912,
+        "acceptance_rate_overall": 73.91,
+        "yield_rate": 23.27,
+        "notes": "Most academically accomplished class yet, with an average ACT Composite of 27.0 and average GPA of 3.83.",
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 42000,
+        "admits_total": 31290,
+        "enrolled_total": 7494,
+        "acceptance_rate_overall": 74.5,
+        "yield_rate": 23.95,
+        "notes": "Full-time first-year cohort was the largest in history at the time. ACT Composite for the 2023 cohort was 26.5 and High School Weighted Transcript GPA was 3.82.",
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 38853,
+        "admits_total": 29419,
+        "enrolled_total": 7367,
+        "acceptance_rate_overall": 75.71,
+        "yield_rate": 25.04,
+        "notes": "Most accomplished freshman class in university history at the time, with an all-time high median GPA at 3.78, and an ACT composite of 25.5. [cite: 10 in previous turn, 14 in previous turn]"
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 36561,
+        "admits_total": 25907,
+        "enrolled_total": 7038,
+        "acceptance_rate_overall": 70.85,
+        "yield_rate": 27.16,
+        "notes": "Freshman enrollment surpassed 7,000 for the first time. GPA for the freshman class was an all-time high at 3.54, and the ACT increased to around 26."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-4.10",
+        "unweighted_middle_50": "3.50-4.10",
+        "average_weighted": 3.83,
+        "percentile_25": "3.50",
+        "percentile_75": "4.10",
+        "notes": "The average weighted high school transcript GPA for the 2024 full-time first-year cohort was 3.83, which is the highest the university has ever seen from an incoming class. The middle 50% of admitted students typically have a high school GPA between 3.5 and 4.1. The average unweighted GPA is 3.77. LSU employs a comprehensive review process, considering academic performance (high school courses, grade trends, grades in specific disciplines, overall GPA), extracurricular activities, and other factors. Over 90% of students are in the top half of their high school class, with 26% in the top 10% and 49% in the top 25%. Please note that while some institutions report weighted GPAs significantly above a 4.0 scale, the provided data for LSU's middle 50% range (3.5-4.1) appears to be on a standard 4.0 scale, consistent with their reported average weighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1320",
+        "sat_reading_middle_50": "600-680",
+        "sat_math_middle_50": "580-660",
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 47.0,
+        "policy_note": "LSU is test-optional and superscores both the SAT and ACT for admission and scholarship consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 32.3,
+        "legacy_percentage": null,
+        "notes": "First-generation percentage is for the Fall 2024 full-time, first-year cohort. LSU's admissions application asks if parents attended and graduated from LSU, and there are fee exemptions for nonresident children of LSU graduates, but no specific percentage of legacy students in the student body is publicly available. Legacy is defined as alumni children.",
+        "geographic_breakdown": [
+          {
+            "region": "Louisiana (In-State)",
+            "percentage": 59.6
+          },
+          {
+            "region": "Other States (Out-of-State)",
+            "percentage": 39.4
+          },
+          {
+            "region": "International",
+            "percentage": 1.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 17199,
+            "admits": 12138,
+            "acceptance_rate": 70.57,
+            "note": ""
+          },
+          "women": {
+            "applicants": 29864,
+            "admits": 22373,
+            "acceptance_rate": 74.92,
+            "note": ""
+          },
+          "non_binary": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": null,
+            "note": "Data for 'Another Gender' category for 2024-2025 academic year."
+          }
+        },
+        "racial_breakdown": {
+          "white": 63.1,
+          "black_african_american": 18.2,
+          "hispanic_latino": 9.3,
+          "asian": 4.8,
+          "native_american_alaskan": 0.5,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.0,
+          "unknown": 1.0,
+          "non_resident_alien": 1.0
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agriculture",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Blake Hall (Agriculture Residential College - ARC). Recently renovated, offering two-student rooms with hall and connecting-suite bathrooms. Features include a sink in the room, proximity to The 459 Commons dining hall and University Lakes. It provides a living-learning environment with in-community tutoring, faculty office hours, meeting spaces, and multimedia classrooms.",
+        "student_archetype": "First-year students passionate about agricultural issues, seeking hands-on learning, and interested in exploring diverse career paths in agriculture. They value a close-knit community and direct interaction with faculty.",
+        "strategic_fit_advice": "First-year students with a declared major in the College of Agriculture who are eager for immersive, hands-on experiences and a strong academic support network within their field. Must enroll in specific ARC experience and introductory agriculture courses.",
+        "majors": [
+          {
+            "name": "Agricultural Business",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021",
+              "MATH 1431 (or MATH 1550)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AGRI 1001 Introduction to Agricultural Business",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "EXST 2201 Introduction to Statistical Analysis",
+                "AGEC 3003 Agricultural Statistics",
+                "AGEC 3004 Farm Management",
+                "AGEC 3013 Agricultural Marketing",
+                "AGEC 3023 Agricultural Finance"
+              ],
+              "electives": [
+                "AGEC 4003 Agricultural Policy",
+                "AGEC 4004 Land Economics",
+                "AGEC 4013 International Agricultural Trade"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, and 24 earned hours with a 2.0 LSU & Overall GPA. MATH 1431 or MATH 1550 must have a C or better. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Animal Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021",
+              "CHEM 1201",
+              "BIOL 1201"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ANSC 1011 Introductory Animal Sciences",
+                "ANSC 2010 Feeds and Feeding",
+                "ANSC 2012 Physiology of Reproduction",
+                "ANSC 3010 Animal Breeding and Genetics",
+                "ANSC 3040 Animal Nutrition",
+                "BIOL 1201 Biology for Science Majors I",
+                "BIOL 1202 Biology for Science Majors II",
+                "CHEM 1201 General Chemistry I",
+                "CHEM 1202 General Chemistry II",
+                "CHEM 2201 Organic Chemistry I",
+                "PHYS 2001 General Physics I"
+              ],
+              "electives": [
+                "ANSC 4040 Equine Science",
+                "ANSC 4050 Beef Production",
+                "ANSC 4060 Dairy Production"
+              ],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [
+              "Dr. Philip H. Elzer (Adjunct Professor, Infectious Diseases)",
+              "Dr. Richard K. Cooper (Professor, Animal Nutrition)",
+              "Dr. Charles F. Hutchison (Associate Professor, Extension Dairy Specialist, Animal Nutrition)",
+              "Dr. Jerome F. La Peyre (Professor, Aquaculture/Fisheries)"
+            ],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, CHEM 1201, BIOL 1201, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Nutrition & Food Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021",
+              "CHEM 1201",
+              "BIOL 1201"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "FSC 1001 Introduction to Food Science",
+                "FSC 2001 Principles of Food Preparation",
+                "NUTR 2100 Introduction to Nutrition",
+                "NUTR 3100 Applied Nutrition",
+                "BIOL 1201 Biology for Science Majors I",
+                "CHEM 1201 General Chemistry I",
+                "CHEM 1202 General Chemistry II",
+                "CHEM 2201 Organic Chemistry I",
+                "MICR 2001 General Microbiology",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "FSC 4001 Food Processing",
+                "FSC 4010 Food Quality Control",
+                "NUTR 4000 Community Nutrition"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, CHEM 1201, BIOL 1201, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Textiles, Apparel & Merchandising",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1029 (or MATH 1100)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "TXAP 1100 Introduction to Textiles",
+                "TXAP 2000 Apparel Production and Quality Analysis",
+                "TXAP 2020 Merchandising Fundamentals",
+                "TXAP 3000 Global Textile and Apparel Industries",
+                "TXAP 3010 Retail Buying",
+                "TXAP 4000 Visual Merchandising",
+                "ACCT 2001 Financial Accounting",
+                "MKT 3401 Principles of Marketing",
+                "ECON 2000 Principles of Microeconomics"
+              ],
+              "electives": [
+                "TXAP 3030 Fashion Promotion",
+                "TXAP 4010 Apparel Design and Development",
+                "TXAP 4020 Textile Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1029 or MATH 1100, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Natural Resource Ecology & Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021",
+              "CHEM 1201",
+              "BIOL 1201"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "NREM 1001 Orientation to Natural Resource Ecology & Management",
+                "NREM 2001 Principles of Wildlife and Fisheries",
+                "NREM 2002 Forest Ecology",
+                "NREM 3001 Natural Resource Policy",
+                "BIOL 1201 Biology for Science Majors I",
+                "BIOL 1202 Biology for Science Majors II",
+                "CHEM 1201 General Chemistry I",
+                "MATH 1021 College Algebra",
+                "GEOL 1001 General Geology",
+                "RNR 3005 GIS for Natural Resources"
+              ],
+              "electives": [
+                "NREM 4001 Wildlife Management Techniques",
+                "NREM 4002 Fisheries Management",
+                "NREM 4003 Wetland Ecology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, CHEM 1201, BIOL 1201, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Agricultural and Extension Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AGED 1001 Introduction to Agricultural and Extension Education",
+                "AGED 2001 Experiential Learning in Agriculture",
+                "AGED 3001 Program Planning in Agricultural Education",
+                "AGED 4001 Methods of Teaching Agriculture",
+                "CMST 2010 Interpersonal Communication",
+                "ENGL 1001 English Composition I",
+                "MATH 1021 College Algebra",
+                "PSYC 2000 Introduction to Psychology",
+                "BIOL 1001 General Biology"
+              ],
+              "electives": [
+                "AGED 4021 Youth Development in Agriculture",
+                "AGED 4031 Leadership Development in Agriculture"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Plant & Soil Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021",
+              "CHEM 1201",
+              "BIOL 1201"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PLSC 1001 Introduction to Plant Science",
+                "PLSC 2001 Soil Science",
+                "PLSC 3001 Plant Physiology",
+                "PLSC 3005 Weed Science",
+                "HORT 2001 Principles of Horticulture",
+                "BIOL 1201 Biology for Science Majors I",
+                "CHEM 1201 General Chemistry I",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "PLSC 4001 Crop Production",
+                "PLSC 4005 Plant Breeding",
+                "HORT 4001 Landscape Design"
+              ],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, CHEM 1201, BIOL 1201, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Environmental Management Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021",
+              "CHEM 1201",
+              "BIOL 1201"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENVS 1000 Environmental Sciences",
+                "ENVS 2000 Environmental Management",
+                "ENVS 3000 Environmental Law and Regulations",
+                "ENVS 4000 Environmental Risk Assessment",
+                "BIOL 1201 Biology for Science Majors I",
+                "CHEM 1201 General Chemistry I",
+                "GEOL 1001 General Geology",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "ENVS 4010 Water Quality Management",
+                "ENVS 4020 Air Quality Management",
+                "ENVS 4030 Waste Management"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Admission to College of Agriculture requires ENGL 1001, MATH 1021, CHEM 1201, BIOL 1201, and 24 earned hours with a 2.0 LSU & Overall GPA. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "College of Art & Design",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General freshman housing (e.g., modern dorms like Spruce, Cedar, Azalea, or traditional dorms like Miller, McVoy, Herget, Pentagon Community halls) for undergraduates, with opportunities for suite-style or hall bathrooms. Upperclassmen may choose apartments like East or West Campus Apartments, or Nicholson Gateway. Graduate students often live off-campus.",
+        "student_archetype": "Creative and expressive individuals with a strong interest in fine arts, art history, architecture, interior design, or landscape architecture. They are often portfolio-driven and seek environments that foster artistic development and critical thinking.",
+        "strategic_fit_advice": "Applicants should demonstrate strong artistic talent or design aptitude through a portfolio (if applicable for specific programs) and articulate their passion for their chosen artistic or design field. While general LSU admissions criteria apply, some programs within Art & Design have a selective admissions process.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "Bachelor of Architecture (B.Arch.)",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021 College Algebra",
+              "ART 1001 Art History Survey I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio review may be required for transfer students. Minimum 2.5 GPA required for retention in professional curricula. A 2.0 LSU and overall GPA is required for admission to the college.",
+            "admissions_pathway": "Direct entry or internal transfer to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ARCH 1001 Introduction to Architecture",
+                "ARCH 1002 Basic Design Studio I",
+                "ARCH 1003 Basic Design Studio II",
+                "ARCH 2001 Architectural Design I",
+                "ARCH 2002 Architectural Design II",
+                "ARCH 2011 History of Architecture I",
+                "ARCH 2012 History of Architecture II",
+                "ARCH 3001 Architectural Structures I",
+                "ARCH 3002 Architectural Structures II",
+                "ARCH 3031 Environmental Systems I",
+                "ARCH 3032 Environmental Systems II",
+                "ARCH 4001 Architectural Design V (Capstone I)",
+                "ARCH 4002 Architectural Design VI (Capstone II)",
+                "ART 1001 Art History Survey I",
+                "MATH 1021 College Algebra",
+                "PHYS 2001 General Physics I"
+              ],
+              "electives": [
+                "ARCH 4010 Urban Design",
+                "ARCH 4020 Historic Preservation",
+                "ARCH 4030 Digital Fabrication"
+              ],
+              "total_units": 150,
+              "major_units": 90
+            },
+            "notable_professors": [],
+            "notes": "The Bachelor of Architecture is a 5-year professional degree program. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Landscape Architecture",
+            "degree_type": "Bachelor of Landscape Architecture (B.L.A.)",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021 College Algebra",
+              "LA 1101 Landscape Design and Planning I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Minimum 2.5 GPA required for retention in professional curricula. A 2.0 LSU and overall GPA is required for admission to the college.",
+            "admissions_pathway": "Direct entry or internal transfer to professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "LA 1101 Landscape Design and Planning I",
+                "LA 1201 Landscape Design and Planning II",
+                "LA 2101 Site Analysis and Planning",
+                "LA 2201 Site Engineering I",
+                "LA 3101 Landscape Architecture History I",
+                "LA 3102 Landscape Architecture History II",
+                "LA 3201 Landscape Construction",
+                "LA 3202 Planting Design",
+                "LA 4101 Urban and Regional Design",
+                "LA 4201 Comprehensive Design Studio",
+                "ART 1001 Art History Survey I",
+                "MATH 1021 College Algebra",
+                "GEOL 1001 General Geology",
+                "BIOL 1001 General Biology"
+              ],
+              "electives": [
+                "LA 4010 Ecological Design",
+                "LA 4020 Community Design",
+                "LA 4030 Digital Landscape Representation"
+              ],
+              "total_units": 128,
+              "major_units": 80
+            },
+            "notable_professors": [],
+            "notes": "The Bachelor of Landscape Architecture is a 5-year professional degree program. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Studio Art",
+            "degree_type": "B.A. or B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ART 1011 Drawing I",
+              "ART 1012 Two-Dimensional Design"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "B.F.A. requires portfolio review for admission to the professional program. A 2.0 LSU and overall GPA is required for admission to the college.",
+            "admissions_pathway": "Direct entry (BA) or portfolio review (BFA)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ART 1011 Drawing I",
+                "ART 1012 Two-Dimensional Design",
+                "ART 1013 Three-Dimensional Design",
+                "ART 1014 Painting I",
+                "ART 1015 Sculpture I",
+                "ART 2001 Art History Survey I",
+                "ART 2002 Art History Survey II",
+                "ART 3000 Contemporary Art",
+                "18-24 hours in chosen studio concentration (e.g., Ceramics, Photography, Printmaking)"
+              ],
+              "electives": [
+                "ART 3010 Digital Art",
+                "ART 4010 Advanced Drawing",
+                "ART 4020 Art and Technology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "The B.F.A. is a more intensive studio-based program compared to the B.A. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Graphic Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ART 1011 Drawing I",
+              "ART 1012 Two-Dimensional Design",
+              "ART 1013 Three-Dimensional Design"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Competitive portfolio review for admission to the professional program. A 2.0 LSU and overall GPA is required for admission to the college.",
+            "admissions_pathway": "Portfolio Review for Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ART 1011 Drawing I",
+                "ART 1012 Two-Dimensional Design",
+                "ART 1013 Three-Dimensional Design",
+                "GD 2001 Introduction to Graphic Design",
+                "GD 2002 Typography I",
+                "GD 3001 Graphic Design I",
+                "GD 3002 Graphic Design II",
+                "GD 3003 Web Design I",
+                "GD 4001 Professional Practices in Graphic Design",
+                "GD 4002 Senior Design Project I",
+                "GD 4003 Senior Design Project II",
+                "ART 2001 Art History Survey I",
+                "ART 2002 Art History Survey II"
+              ],
+              "electives": [
+                "GD 3004 Motion Graphics",
+                "GD 4004 Packaging Design",
+                "GD 4005 Interactive Design"
+              ],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Highly competitive program requiring a successful portfolio review for entry into the upper-division curriculum. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "E. J. Ourso College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "West Hall (Business Residential College - BRC). Offers modern two-student, suite-bathroom style rooms. Facilities include offices for advisors and faculty, two classrooms, multiple study spaces, and outdoor courtyards. Located near The 5 dining hall and athletic venues.",
+        "student_archetype": "Ambitious and career-focused first-year students interested in business, leadership development, and networking with industry professionals. They seek academic support and opportunities to explore various business career paths.",
+        "strategic_fit_advice": "First-year students declared in an E. J. Ourso College of Business major who want to accelerate their professional development, engage with business leaders, and benefit from in-hall academic advising and reserved course sections.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000",
+              "MATH 1021",
+              "MATH 1431"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "ACCT 3001 Intermediate Financial Accounting I",
+                "ACCT 3002 Intermediate Financial Accounting II",
+                "ACCT 3121 Cost Accounting",
+                "ACCT 3221 Accounting Information Systems",
+                "ACCT 4011 Federal Income Tax",
+                "ACCT 4201 Auditing",
+                "ISDS 1102 Introduction to Business Computing",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "FIN 3716 Business Finance",
+                "MGT 3200 Principles of Management",
+                "MKT 3401 Principles of Marketing"
+              ],
+              "electives": [
+                "ACCT 4301 Advanced Accounting",
+                "ACCT 4321 Governmental and Not-for-Profit Accounting",
+                "ISDS 4112 Business Analytics"
+              ],
+              "total_units": 120,
+              "major_units": 61
+            },
+            "notable_professors": [
+              "Laura Wiley (Undergraduate Advisor)",
+              "Charlene Henderson (Instructor, MAcc Program Advisor)",
+              "Sanaz Aghazadeh (Associate Professor)",
+              "William Buslepp (Associate Professor)"
+            ],
+            "notes": "Admission to E. J. Ourso College of Business requires ENGL 1001 and ENGL 2000 (C or better), and MATH 1021 and MATH 1431 (C or better). A 2.0 GPA in all work, all business courses, and all accounting coursework is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000",
+              "MATH 1021",
+              "MATH 1431"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "FIN 3716 Business Finance",
+                "FIN 3720 Financial Markets and Institutions",
+                "FIN 3800 Investments",
+                "ISDS 1102 Introduction to Business Computing",
+                "MGT 3200 Principles of Management",
+                "MKT 3401 Principles of Marketing",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "FIN 4200 Portfolio Management",
+                "FIN 4300 International Finance",
+                "FIN 4351 Real Estate Decisions"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Admission to E. J. Ourso College of Business requires ENGL 1001 and ENGL 2000 (C or better), and MATH 1021 and MATH 1431 (C or better). A 2.0 GPA in all work and all business courses is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000",
+              "MATH 1021",
+              "MATH 1431"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "FIN 3716 Business Finance",
+                "ISDS 1102 Introduction to Business Computing",
+                "MGT 3200 Principles of Management",
+                "MKT 3401 Principles of Marketing",
+                "MKT 3411 Consumer Behavior",
+                "MKT 3421 Marketing Research",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "MKT 4430 Digital Marketing",
+                "MKT 4440 Professional Sales",
+                "MKT 4450 International Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [
+              "Aaron Gleiberman (Undergraduate Advisor)",
+              "Ronald Niedrich (Chair & Professor)",
+              "Donald Lund (Rick & Holly Wolfert Professor, Associate Professor)",
+              "Andrew Long (Assistant Professor)"
+            ],
+            "notes": "Admission to E. J. Ourso College of Business requires ENGL 1001 and ENGL 2000 (C or better), and MATH 1021 and MATH 1431 (C or better). A 2.0 GPA in all work and all business courses is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000",
+              "MATH 1021",
+              "MATH 1431"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "FIN 3716 Business Finance",
+                "ISDS 1102 Introduction to Business Computing",
+                "MGT 3200 Principles of Management",
+                "MGT 3220 Human Resources Management",
+                "MGT 3830 Operations Management",
+                "MKT 3401 Principles of Marketing",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "MGT 4010 Organizational Behavior",
+                "MGT 4020 Entrepreneurship",
+                "MGT 4400 Strategic Management"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Admission to E. J. Ourso College of Business requires ENGL 1001 and ENGL 2000 (C or better), and MATH 1021 and MATH 1431 (C or better). A 2.0 GPA in all work and all business courses is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000",
+              "MATH 1021",
+              "MATH 1431"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "ECON 3001 Intermediate Microeconomic Theory",
+                "ECON 3010 Intermediate Macroeconomic Theory",
+                "ECON 3100 Introduction to Econometrics",
+                "FIN 3716 Business Finance",
+                "ISDS 1102 Introduction to Business Computing",
+                "MGT 3200 Principles of Management",
+                "MKT 3401 Principles of Marketing",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "ECON 4010 Money and Banking",
+                "ECON 4020 International Economics",
+                "ECON 4030 Public Finance"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Admission to E. J. Ourso College of Business requires ENGL 1001 and ENGL 2000 (C or better), and MATH 1021 and MATH 1431 (C or better). A 2.0 GPA in all work and all business courses is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Information Systems & Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000",
+              "MATH 1021",
+              "MATH 1431"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2001 Financial Accounting",
+                "ACCT 2101 Managerial Accounting",
+                "ECON 2000 Principles of Microeconomics",
+                "ECON 2010 Principles of Macroeconomics",
+                "FIN 3716 Business Finance",
+                "ISDS 1102 Introduction to Business Computing",
+                "ISDS 3107 Business Statistics",
+                "ISDS 3110 Information Systems Analysis and Design",
+                "ISDS 3115 Data Management",
+                "MGT 3200 Principles of Management",
+                "MKT 3401 Principles of Marketing"
+              ],
+              "electives": [
+                "ISDS 4112 Business Analytics",
+                "ISDS 4120 Database Management Systems",
+                "ISDS 4130 Cybersecurity Management"
+              ],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": "Admission to E. J. Ourso College of Business requires ENGL 1001 and ENGL 2000 (C or better), and MATH 1021 and MATH 1431 (C or better). A 2.0 GPA in all work and all business courses is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "College of the Coast & Environment",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Evangeline or Highland Hall (Science Residential College) for first-year students. Evangeline Hall is newly renovated. These halls offer a living-learning environment with on-site classes, tutoring, and faculty office hours.",
+        "student_archetype": "Environmentally conscious and scientifically curious first-year students dedicated to understanding and addressing coastal and environmental challenges. They thrive in hands-on learning settings and value interdisciplinary approaches.",
+        "strategic_fit_advice": "First-year students with a declared major in the College of the Coast & Environment (or College of Science) who are eager for a strong scientific foundation, unique hands-on experiences, and a supportive academic community focused on environmental science. Strong performance in mathematics and science coursework is important.",
+        "majors": []
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Camellia Hall (Engineering Residential College - ERC). One of the newest residence halls, offering spacious two-student foyer-suite bathrooms and common areas. Features include on-site classrooms, multiple study spaces, offices for faculty advisors, and proximity to the Student Recreation Center, LSU Lakes, and The 459 Commons dining hall.",
+        "student_archetype": "Driven and problem-solving first-year students aspiring to careers in engineering, construction management, or computer science. They are academically focused, value practical application, and seek opportunities for professional development and interaction with industry.",
+        "strategic_fit_advice": "First-year students with a declared College of Engineering major, a strong STEM background (demonstrated by high math ACT/SAT scores or ALEKS placement), who are committed to a rigorous academic program and early professional engagement. Must enroll in specific ERC courses.",
+        "majors": [
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S. in Chem. E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "CHEM 1201 General Chemistry I",
+              "CHEM 1202 General Chemistry II",
+              "PHYS 2110 General Physics I",
+              "ENGL 1001 English Composition I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHEM 1201 General Chemistry I",
+              "MATH 1550 Calculus I"
+            ],
+            "special_requirements": "Competitive admission to the professional major after freshman year; strong performance in foundational math and science courses is critical. Transfer students are encouraged to complete similar foundational courses with strong grades prior to applying.",
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CHE 2160 Material and Energy Balances",
+                "CHE 2171 Chemical Engineering Thermodynamics",
+                "CHE 3103 Fluid Flow",
+                "CHE 3171 Heat Transfer",
+                "CHE 3172 Mass Transfer Operations",
+                "CHE 4101 Chemical Reaction Engineering",
+                "CHE 4160 Chemical Process Design",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "PHYS 2110 General Physics I",
+                "CHEM 1201 General Chemistry I",
+                "CHEM 2261 Organic Chemistry I"
+              ],
+              "electives": [
+                "CHE 4120 Biochemical Engineering",
+                "CHE 4130 Polymer Engineering",
+                "CHE 4150 Process Dynamics and Control"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Michael G. Benton (Department Chair, Bernard S. Pressburg Professor)",
+              "Dr. Barry Guillory (Professor in Residence/Instructor)",
+              "Dr. Brian Hanley (Professor in Residence, Edward McLaughlin Professor)",
+              "Dr. Amy Morgan Rausa (Instructor)"
+            ],
+            "notes": "LSU's Chemical Engineering program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Competitive admission based on GPA in core science and math courses. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "ENGL 1001 English Composition I",
+              "CSC 1253 Computer Science I",
+              "CSC 1254 Computer Science II"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CSC 1253 Computer Science I",
+              "MATH 1550 Calculus I"
+            ],
+            "special_requirements": "Competitive admission to the major; strong performance in foundational math and computer science courses is critical. Transfer students must demonstrate proficiency in foundational programming and mathematics.",
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSC 1253 Computer Science I",
+                "CSC 1254 Computer Science II",
+                "CSC 2259 Data Structures",
+                "CSC 2262 Advanced Programming",
+                "CSC 3102 Operating Systems",
+                "CSC 3380 Algorithms",
+                "CSC 3501 Computer Organization and Design",
+                "CSC 4101 Programming Languages",
+                "CSC 4501 Software Engineering",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "MATH 2057 Multivariable Calculus",
+                "PHYS 2110 General Physics I"
+              ],
+              "electives": [
+                "CSC 4356 Introduction to Artificial Intelligence",
+                "CSC 4402 Introduction to Computer Graphics",
+                "CSC 4700 Database Management Systems"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Ibrahim Baggili (Department Head, Computer Science & Engineering)",
+              "Dr. S. Sitharama Iyengar (Distinguished Professor, Machine Learning, Data Mining)",
+              "Dr. Doris Carver (Professor, Software Engineering)",
+              "Dr. Jianhua Chen (Associate Professor, Networking, Distributed Systems)"
+            ],
+            "notes": "LSU's Computer Science program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Competitive admission based on GPA in core science and math courses. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "CHEM 1201 General Chemistry I",
+              "PHYS 2110 General Physics I",
+              "CE 2050 Civil Engineering Fundamentals"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1550 Calculus I",
+              "PHYS 2110 General Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CE 2050 Civil Engineering Fundamentals",
+                "CE 2450 Statics",
+                "CE 2460 Mechanics of Materials",
+                "CE 3300 Fluid Mechanics",
+                "CE 3400 Structural Analysis",
+                "CE 3500 Geotechnical Engineering",
+                "CE 3600 Transportation Engineering",
+                "CE 3700 Environmental Engineering",
+                "CE 4100 Civil Engineering Design Project I",
+                "CE 4101 Civil Engineering Design Project II",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "PHYS 2110 General Physics I",
+                "CHEM 1201 General Chemistry I"
+              ],
+              "electives": [
+                "CE 4200 Coastal Engineering",
+                "CE 4300 Water Resources Engineering",
+                "CE 4400 Reinforced Concrete Design"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. George Z. Voyiadjis (Department Chair, Boyd Professor)",
+              "Dr. Aly Mousaad Aly (Associate Professor, Structural Engineering)",
+              "Dr. Mostafa Elseifi (Occidental Chemical Corporation Distinguished Professor, Transportation Engineering)",
+              "Dr. Hany Hassan (Associate Professor, Director of Graduate Programs, Transportation Engineering)"
+            ],
+            "notes": "LSU's Civil Engineering program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "PHYS 2110 General Physics I",
+              "EE 2110 Electric Circuits I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1550 Calculus I",
+              "PHYS 2110 General Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "EE 2110 Electric Circuits I",
+                "EE 2120 Electric Circuits II",
+                "EE 3110 Electronics I",
+                "EE 3150 Electromagnetic Fields",
+                "EE 3301 Signals and Systems",
+                "EE 3610 Microcomputer Systems",
+                "EE 4202 Control Systems",
+                "EE 4860 Electrical Engineering Design Project I",
+                "EE 4861 Electrical Engineering Design Project II",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "PHYS 2110 General Physics I",
+                "CHEM 1201 General Chemistry I"
+              ],
+              "electives": [
+                "EE 4430 Power Systems",
+                "EE 4520 Digital Signal Processing",
+                "EE 4750 Communication Systems"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "LSU's Electrical Engineering program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "PHYS 2110 General Physics I",
+              "ME 2000 Introduction to Mechanical Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1550 Calculus I",
+              "PHYS 2110 General Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ME 2000 Introduction to Mechanical Engineering",
+                "ME 2212 Engineering Graphics",
+                "ME 2301 Statics",
+                "ME 2302 Dynamics",
+                "ME 2303 Mechanics of Materials",
+                "ME 3101 Thermodynamics I",
+                "ME 3201 Fluid Mechanics",
+                "ME 3301 Machine Design I",
+                "ME 3601 Heat Transfer",
+                "ME 4801 Mechanical Engineering Design Project I",
+                "ME 4802 Mechanical Engineering Design Project II",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "PHYS 2110 General Physics I",
+                "CHEM 1201 General Chemistry I"
+              ],
+              "electives": [
+                "ME 4223 Mechatronics",
+                "ME 4431 Internal Combustion Engines",
+                "ME 4503 Renewable Energy Systems"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "LSU's Mechanical Engineering program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.E.V.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "CHEM 1201 General Chemistry I",
+              "BIOL 1201 Biology for Science Majors I",
+              "EVEG 2000 Introduction to Environmental Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1550 Calculus I",
+              "CHEM 1201 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "EVEG 2000 Introduction to Environmental Engineering",
+                "EVEG 3100 Water and Wastewater Engineering",
+                "EVEG 3200 Air Pollution Engineering",
+                "EVEG 3300 Solid and Hazardous Waste Management",
+                "EVEG 4100 Environmental Engineering Design I",
+                "EVEG 4101 Environmental Engineering Design II",
+                "CE 2450 Statics",
+                "CE 3300 Fluid Mechanics",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "CHEM 1201 General Chemistry I",
+                "CHEM 1202 General Chemistry II",
+                "BIOL 1201 Biology for Science Majors I"
+              ],
+              "electives": [
+                "EVEG 4010 Hydrology and Drainage",
+                "EVEG 4020 Environmental Regulations",
+                "EVEG 4030 Industrial Ecology"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. John Pardue (Professor, Environmental Biotechnology, Hazardous Waste Management)",
+              "Dr. Mostafa Elseifi (Occidental Chemical Corporation Distinguished Professor, Sustainable Infrastructure)",
+              "Dr. Aly Mousaad Aly (Associate Professor, Resilience and Sustainability of Infrastructure)"
+            ],
+            "notes": "LSU's Environmental Engineering program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Geological Engineering",
+            "degree_type": "B.S.G.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1550 Calculus I",
+              "CHEM 1201 General Chemistry I",
+              "GEOL 1001 General Geology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1550 Calculus I",
+              "GEOL 1001 General Geology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Common First Year Engineering then application to major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "GEOL 1001 General Geology",
+                "GEOL 1003 Historical Geology",
+                "GEOL 2080 Mineralogy and Petrology",
+                "GEOL 3010 Structural Geology",
+                "GEOL 3020 Geophysics",
+                "CE 2450 Statics",
+                "CE 3500 Geotechnical Engineering",
+                "GE 3100 Engineering Geology",
+                "GE 4100 Geological Engineering Design I",
+                "GE 4101 Geological Engineering Design II",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "PHYS 2110 General Physics I",
+                "CHEM 1201 General Chemistry I"
+              ],
+              "electives": [
+                "GE 4020 Hydrogeology",
+                "GE 4030 Environmental Site Assessment"
+              ],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "LSU's Geological Engineering program is ABET accredited. Students typically enter as General Engineering majors and apply to a specific engineering discipline after completing foundational coursework. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "College of Human Sciences & Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Cypress Hall (Human Sciences & Education Residential College - HSERC). The first LEED-certified residence hall, featuring indoor-outdoor learning spaces, storm water recovery systems, interior bike storage, courtyards, and a Kinesiology Studio. Offers modern two-student rooms with connecting-suite bathrooms.",
+        "student_archetype": "Compassionate and service-oriented first-year students interested in fields that impact human well-being, such as education, kinesiology, social work, and health professions. They are often future changemakers focused on community engagement and career preparation.",
+        "strategic_fit_advice": "First-year students with a declared major in the College of Human Sciences & Education (or eligible Allied Health majors) who seek a supportive living-learning environment with career exploration, unique experiences, and dedicated in-hall academic resources.",
+        "majors": [
+          {
+            "name": "Kinesiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021 College Algebra",
+              "BIOL 1201 Biology for Science Majors I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Concentrations available in Exercise Science and Human Performance, Human Movement Science, Health and Physical Education Teacher Certification, Physical Activity and Health, and Pre-Athletic Training.",
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "KIN 1500 Introduction to Kinesiology",
+                "KIN 2500 Introduction to Exercise Science",
+                "KIN 2503 Human Anatomy",
+                "KIN 2504 Human Physiology",
+                "KIN 3500 Exercise Physiology",
+                "KIN 3513 Biomechanics",
+                "BIOL 1201 Biology for Science Majors I",
+                "CHEM 1201 General Chemistry I",
+                "PSYC 2000 Introduction to Psychology",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "KIN 4500 Sports Nutrition",
+                "KIN 4510 Motor Learning",
+                "KIN 4520 Exercise Testing and Prescription"
+              ],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Human Sciences & Education generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "SW 2000 Introduction to Social Work"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the professional program is required, typically after completing foundational coursework with a minimum GPA.",
+            "admissions_pathway": "Application to Professional Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "SW 2000 Introduction to Social Work",
+                "SW 2005 Human Behavior and the Social Environment I",
+                "SW 3000 Social Work Practice I",
+                "SW 3002 Social Welfare Policy",
+                "SW 3003 Social Work Research Methods",
+                "SW 3010 Human Behavior and the Social Environment II",
+                "SW 4000 Social Work Practice II",
+                "SW 4001 Social Work Practice III",
+                "SW 4002 Field Instruction I",
+                "SW 4003 Field Instruction II",
+                "PSYC 2000 Introduction to Psychology",
+                "SOCL 2001 Introductory Sociology"
+              ],
+              "electives": [
+                "SW 4005 Child Welfare",
+                "SW 4010 Crisis Intervention",
+                "SW 4015 Social Work with Groups"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Human Sciences & Education generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. Formal application and acceptance to the professional program in Social Work is required, typically with a 2.5 GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Sport Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "KIN 1500 Introduction to Kinesiology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Concentrations available in Sport Commerce and Sport Leadership.",
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SM 2000 Introduction to Sport Administration",
+                "SM 2001 Sport in Society",
+                "SM 3001 Sport Marketing",
+                "SM 3002 Sport Law",
+                "SM 3003 Sport Finance",
+                "SM 4001 Sport Event Management",
+                "SM 4002 Facility Management",
+                "KIN 1500 Introduction to Kinesiology",
+                "MGT 3200 Principles of Management",
+                "MKT 3401 Principles of Marketing",
+                "ACCT 2001 Financial Accounting"
+              ],
+              "electives": [
+                "SM 4003 International Sport",
+                "SM 4004 Sport Communication"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Human Sciences & Education generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Early Childhood Education (Grades PK-3)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021 College Algebra",
+              "EDCI 2500 Introduction to Education"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Teacher Education Program required.",
+            "admissions_pathway": "Application to Teacher Education Program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EDCI 2500 Introduction to Education",
+                "EDCI 3000 Educational Psychology",
+                "EDCI 3100 Diversity in Education",
+                "EDCI 3200 Curriculum and Instruction in Early Childhood",
+                "EDCI 3300 Assessment in Early Childhood",
+                "EDCI 4000 Methods of Teaching Reading in Early Childhood",
+                "EDCI 4001 Methods of Teaching Mathematics in Early Childhood",
+                "EDCI 4002 Practicum in Early Childhood Education",
+                "KIN 2500 Introduction to Exercise Science (Health and Wellness)",
+                "MATH 2012 Mathematics for Elementary Teachers I",
+                "PSYC 2000 Introduction to Psychology"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Human Sciences & Education generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. Formal application and acceptance into the Teacher Education Program is required, typically with a 2.5 GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Human Development & Family Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "HDFS 1000 Introduction to Human Development and Family Science"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Optional concentrations in Child and Family Studies or Child Life.",
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HDFS 1000 Introduction to Human Development and Family Science",
+                "HDFS 2000 Child Development",
+                "HDFS 2001 Family Relations",
+                "HDFS 3000 Adolescent Development",
+                "HDFS 3001 Adult Development and Aging",
+                "HDFS 3002 Research Methods in HDFS",
+                "HDFS 4000 Professional Practices in HDFS",
+                "PSYC 2000 Introduction to Psychology",
+                "SOCL 2001 Introductory Sociology"
+              ],
+              "electives": [
+                "HDFS 4010 Child Life Theory and Practice",
+                "HDFS 4020 Parenting Across the Lifespan",
+                "HDFS 4030 Family Stress and Resilience"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Human Sciences & Education generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "College of Humanities & Social Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "North Hall (Humanities & Social Sciences Residential College - HSSRC). Offers modern two-student rooms with connecting-suite bathrooms and a sink in the room. Features include a large courtyard space, soundproof music room, computer lab, and study rooms on each floor. Located on the west side of campus near athletic facilities and The 5 dining hall.",
+        "student_archetype": "Inquisitive and analytical first-year students with a passion for understanding human behavior, societies, cultures, and historical contexts. They are often strong communicators, critical thinkers, and engaged in civic discourse.",
+        "strategic_fit_advice": "First-year students with a declared major in the College of Humanities & Social Sciences (including pre-law) who desire an academically supportive community, in-hall classes, and opportunities to connect with faculty and explore diverse career paths.",
+        "majors": [
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "POLI 1001 Fundamental Issues of Politics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of a foreign language sequence.",
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "POLI 1001 Fundamental Issues of Politics",
+                "POLI 2051 American Government",
+                "POLI 3001 Approaches to the Study of Politics (or POLI 4001 Research Methods in Political Science)",
+                "3 courses in one field of concentration (e.g., American Government & Politics, Comparative Government & Politics, International Politics & Law, Political Theory, Law & Legal Systems, Public Policy & Political Analysis, Race, Ethnicity, & Gender)",
+                "3 courses in a second field of concentration",
+                "2 courses in a third field of concentration",
+                "2 additional upper-division courses in Political Science"
+              ],
+              "electives": [
+                "POLI 4015 American State Politics and Policy Making",
+                "POLI 4040 International Law",
+                "POLI 4090 Ancient Political Thought"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Dr. Robert E. Hogan (Department Chair, Professor, American Politics)",
+              "Dr. Nichole Bauer (Associate Professor, American Politics, Media & Politics, Gender & Politics)",
+              "Dr. James C. Garand (Professor, American Politics, Public Policy)",
+              "Dr. Kathleen Bratton (Associate Professor, American Politics)"
+            ],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "PSYC 2000 Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College, formal admission to major after meeting GPA",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 2000 Introduction to Psychology",
+                "PSYC 2017 Introduction to Psychological Statistics",
+                "PSYC 2018 Methods in Psychology",
+                "PSYC 3040 Developmental Psychology",
+                "PSYC 3050 Cognitive Psychology",
+                "PSYC 3060 Social Psychology",
+                "PSYC 3080 Biological Psychology",
+                "PSYC 3082 Abnormal Psychology",
+                "PSYC 4017 Advanced Statistics in Psychology"
+              ],
+              "electives": [
+                "PSYC 4004 Psychology of Personality",
+                "PSYC 4010 Health Psychology",
+                "PSYC 4030 Industrial Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Alex Cohen (Professor, Clinical Psychology, Serious Mental Illnesses)",
+              "Dr. Paul Frick (Professor, Roy Crumpler Memorial Chair, Child & Adolescent Emotional/Behavioral Problems)",
+              "Dr. Emily Elliott (Professor, Cognitive Psychology, Working Memory)",
+              "Dr. Steve Greening (Assistant Professor, Neurocognitive Mechanisms, Affective Disorders)"
+            ],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. Students majoring in psychology must have a GPA of at least 2.5 in all work taken within the university and overall to be formally admitted to their major. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "ENGL 2000"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 2000 English Composition II",
+                "ENGL 2012 Introduction to Fiction",
+                "ENGL 2013 Introduction to Poetry",
+                "ENGL 2014 Introduction to Drama",
+                "ENGL 2020 Advanced Composition",
+                "ENGL 3070 Shakespeare",
+                "ENGL 3100 History of the English Language",
+                "ENGL 4000 Literary Criticism",
+                "One course in British Literature before 1800",
+                "One course in British Literature after 1800",
+                "One course in American Literature before 1900",
+                "One course in American Literature after 1900"
+              ],
+              "electives": [
+                "ENGL 4120 Creative Writing: Fiction",
+                "ENGL 4122 Creative Writing: Poetry",
+                "ENGL 4140 Technical Writing"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "SOCL 2001 Introductory Sociology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SOCL 2001 Introductory Sociology",
+                "SOCL 2201 Introduction to Social Research",
+                "SOCL 3001 Sociological Theory",
+                "SOCL 3201 Social Statistics",
+                "SOCL 4901 Senior Capstone in Sociology",
+                "Six additional courses in Sociology (3000-level or above)"
+              ],
+              "electives": [
+                "SOCL 3501 Sociology of the Family",
+                "SOCL 3601 Criminology",
+                "SOCL 4401 Race and Ethnic Relations"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "HIST 1001 Western Civilization to 1500",
+              "HIST 1003 American History to 1865"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIST 1001 Western Civilization to 1500",
+                "HIST 1003 American History to 1865",
+                "HIST 2001 Historical Methods",
+                "HIST 4001 Historiography",
+                "One course in Ancient/Medieval History",
+                "One course in Early Modern European History",
+                "One course in Modern European History",
+                "One course in Latin American, Asian, or African History",
+                "One course in American History since 1865",
+                "Five additional History courses (3000-level or above)"
+              ],
+              "electives": [
+                "HIST 3100 The Old South",
+                "HIST 3112 Civil War and Reconstruction",
+                "HIST 4070 History of Louisiana"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "CMST 1061 Introduction to Public Speaking (or CMST 2010 Interpersonal Communication)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CMST 1061 Introduction to Public Speaking",
+                "CMST 2010 Interpersonal Communication",
+                "CMST 2060 Argumentation and Debate",
+                "CMST 2063 Small Group Communication",
+                "CMST 3010 Communication Theory",
+                "CMST 3020 Research Methods in Communication",
+                "CMST 4010 Persuasion",
+                "Four additional Communication Studies courses (3000-level or above)"
+              ],
+              "electives": [
+                "CMST 3100 Intercultural Communication",
+                "CMST 4100 Organizational Communication",
+                "CMST 4110 Health Communication"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "International Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "POLI 1001 Fundamental Issues of Politics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Completion of a foreign language through the 2000-level. Emphasis tracks are chosen from Diplomacy, Global Cultures, or Global Development.",
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "IS 2000 Introduction to International Studies",
+                "IS 4001 Senior Seminar in International Studies",
+                "POLI 1001 Fundamental Issues of Politics",
+                "ECON 2000 Principles of Microeconomics",
+                "HIST 1001 Western Civilization to 1500 (or HIST 1002 Western Civilization since 1500)",
+                "Completion of a foreign language sequence through the 2000-level",
+                "Courses from chosen emphasis track"
+              ],
+              "electives": [
+                "POLI 4040 International Law",
+                "GEOG 4047 Geography of Development",
+                "FREN 3051 French Civilization"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Reid A. Bates (Professor, International Human Resource Development, Africa)",
+              "Dr. Wonik Kim (Associate Professor, East Asian Politics, Globalization)",
+              "Dr. Leonard P. Ray (Associate Professor, European Politics)"
+            ],
+            "notes": "Admission to the College of Humanities & Social Sciences generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "Manship School of Mass Communication",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "South Hall (Mass Communication Residential College - MCRC). Features modern two-student, suite-bathroom style rooms with a sink in the room. Includes offices for Manship School faculty advisors, a computer lab classroom, multiple study spaces, and outdoor courtyards. Located steps from the Journalism Building and athletic venues.",
+        "student_archetype": "Aspiring journalists, public relations specialists, advertisers, and political communicators who are driven, creative, and keen on developing strong communication skills. They value practical experience and networking within the media industry.",
+        "strategic_fit_advice": "First-year students declared in a Manship School of Mass Communication major (with specific concentrations) who are eager for an immersive, pre-professional experience with in-hall classes, exclusive seminars, and direct access to faculty and industry insights. Requires enrollment in specific MCRC courses.",
+        "majors": [
+          {
+            "name": "Mass Communication",
+            "degree_type": "B.A. in Mass Communication",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MC 2010 Media Writing"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MC 2010 Media Writing"
+            ],
+            "special_requirements": "Admission to the Manship School is competitive. Applicants must have completed at least 30 hours of college-level coursework, including MC 2010 Media Writing, with a grade of 'B' or better. A 3.00 LSU GPA and 3.00 cumulative GPA give priority for admission on a space-available basis.",
+            "admissions_pathway": "Competitive Admission to School",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "MC 2010 Media Writing",
+                "MC 2000 Introduction to Mass Communication",
+                "MC 3001 Mass Media Law",
+                "MC 3010 Mass Communication Theory",
+                "MC 3012 Mass Communication Research Methods",
+                "MC 4000 Ethics in Mass Communication",
+                "18 hours within chosen concentration (Digital Advertising, Journalism, Political Communication, or Public Relations)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "A minimum GPA of 2.00 on all university work and in the major field (mass communication) is required for graduation. At least a 'C' in any mass communication course. A minimum of 30 semester hours in residence in the Manship School and 15 credit hours of mass communication courses on the LSU campus, with 9 of these at 3000-level or above. Requires a minor outside mass communication. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "College of Music & Dramatic Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General freshman housing (e.g., modern dorms like Spruce, Cedar, Azalea, or traditional dorms like Miller, McVoy, Herget, Pentagon Community halls) for undergraduates, with opportunities for suite-style or hall bathrooms. Upperclassmen may choose apartments like East or West Campus Apartments, or Nicholson Gateway.",
+        "student_archetype": "Talented and dedicated performers, artists, and scholars passionate about music, theatre, dance, and film. They are often disciplined, creative, and seek extensive performance opportunities and mentorship.",
+        "strategic_fit_advice": "Applicants should demonstrate strong talent in their chosen area of music or dramatic arts through auditions or portfolios, and highlight their commitment to artistic excellence. While general LSU admissions apply, some programs may have selective admissions processes and specific requirements.",
+        "majors": [
+          {
+            "name": "Music (General)",
+            "degree_type": "B.A. in Music",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MUS 1010 Music Theory I",
+              "MUS 1001 Aural Skills I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for entry into any music program.",
+            "admissions_pathway": "Audition for School of Music",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MUS 1010 Music Theory I",
+                "MUS 1011 Music Theory II",
+                "MUS 1001 Aural Skills I",
+                "MUS 1002 Aural Skills II",
+                "MUS 2010 Music History I",
+                "MUS 2011 Music History II",
+                "MUS 2050 Basic Piano",
+                "MUS 3010 Music Theory III",
+                "MUS 3011 Music History III",
+                "MUS 4000 World Music",
+                "16 hours of applied music lessons",
+                "Participation in major ensemble each semester"
+              ],
+              "electives": [
+                "MUS 3040 Jazz History",
+                "MUS 4020 Music Technology",
+                "MUS 4030 Introduction to Composition"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. James Byo (Director of School of Music, Matthies Professor of Music Education)",
+              "Dr. Molly Austin (Music Education & Music Therapy Faculty)",
+              "Dr. David Dockan (Assistant Professor of Music Education)",
+              "Dr. David Saccardi (Assistant Professor of Music Education)"
+            ],
+            "notes": "A general liberal arts degree for students interested in music but not pursuing performance or education certification. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Music Performance (Instrumental/Vocal)",
+            "degree_type": "B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MUS 1010 Music Theory I",
+              "MUS 1001 Aural Skills I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MUS 1010 Music Theory I",
+              "MUS 1001 Aural Skills I"
+            ],
+            "special_requirements": "Highly competitive audition required for admission to the program. Maintaining specific performance levels throughout the degree is also a requirement.",
+            "admissions_pathway": "Audition for School of Music (Performance emphasis)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MUS 1010 Music Theory I",
+                "MUS 1011 Music Theory II",
+                "MUS 1001 Aural Skills I",
+                "MUS 1002 Aural Skills II",
+                "MUS 2010 Music History I",
+                "MUS 2011 Music History II",
+                "MUS 2050 Basic Piano",
+                "MUS 3010 Music Theory III",
+                "MUS 3011 Music History III",
+                "MUS 4000 Orchestration",
+                "28-32 hours of applied music lessons (primary instrument/voice)",
+                "Participation in major ensemble each semester",
+                "MUS 4800 Senior Recital"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. James Byo (Director of School of Music, Matthies Professor of Music Education)",
+              "Dr. Molly Austin (Music Education & Music Therapy Faculty)",
+              "Dr. David Dockan (Assistant Professor of Music Education)",
+              "Dr. David Saccardi (Assistant Professor of Music Education)"
+            ],
+            "notes": "A professional degree for students pursuing careers in music performance. Requires regular juries and recitals. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "LSU Health Sciences Center School of Nursing (BSN Program)",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Evangeline or Highland Hall (Science Residential College) for first-year students. Evangeline Hall is newly renovated. These halls offer a living-learning environment with on-site classes, tutoring, and faculty office hours.",
+        "student_archetype": "Inquisitive and analytical first-year students pursuing scientific disciplines such as biochemistry, biological sciences, chemistry, geology, mathematics, microbiology, or physics. They are often strong in STEM subjects, enjoy hands-on learning, and may be on pre-professional tracks like pre-med or pre-dental.",
+        "strategic_fit_advice": "First-year students with a declared major in the College of Science (or College of the Coast & Environment) who are eager for a strong scientific foundation, unique hands-on experiences, and a supportive academic community focused on scientific exploration. Strong performance in mathematics and science coursework is important.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001 English Composition I",
+              "MATH 1021 College Algebra",
+              "CHEM 1201 General Chemistry I",
+              "BIOL 1201 Biology for Science Majors I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 1201 Biology for Science Majors I",
+              "CHEM 1201 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 1201 Biology for Science Majors I",
+                "BIOL 1202 Biology for Science Majors II",
+                "BIOL 2051 General Genetics",
+                "BIOL 2083 Introductory Microbiology",
+                "BIOL 3101 Cell Biology",
+                "BIOL 3116 General Physiology",
+                "CHEM 1201 General Chemistry I",
+                "CHEM 1202 General Chemistry II",
+                "CHEM 2201 Organic Chemistry I",
+                "CHEM 2202 Organic Chemistry II",
+                "MATH 1550 Calculus I (or MATH 1022, MATH 1023)",
+                "PHYS 2001 General Physics I",
+                "PHYS 2002 General Physics II",
+                "EXST 2201 Introduction to Statistical Analysis"
+              ],
+              "electives": [
+                "BIOL 4000 Evolutionary Biology",
+                "BIOL 4010 Ecology",
+                "BIOL 4100 Molecular Biology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Robb T. Brumfield (Roy Paul Daniels Professor & Interim Dean, Ornithology, Evolution)",
+              "Dr. Jeremy M. Brown (Professor, Bioinformatics, Phylogenetics)",
+              "Dr. Michal Brylinski (Associate Professor, Computational Biology, Protein Structure)",
+              "Dr. David Burk (Associate Professor-Research, Cancer Biology)",
+              "Dr. Cynthia Peterson (Professor, Biochemistry, Enzyme Mechanisms)"
+            ],
+            "notes": "Admission to the College of Science generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1550 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1550 Calculus I",
+              "MATH 1552 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "MATH 2057 Multivariable Calculus",
+                "MATH 2065 Elementary Differential Equations",
+                "MATH 2070 Introduction to Linear Algebra",
+                "MATH 3355 Discrete Mathematics",
+                "MATH 4038 Advanced Calculus I",
+                "MATH 4039 Advanced Calculus II",
+                "CS 1253 Computer Science I",
+                "PHYS 2110 General Physics I"
+              ],
+              "electives": [
+                "MATH 4005 Numerical Analysis",
+                "MATH 4065 Abstract Algebra I",
+                "MATH 4171 Probability"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Science generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1550 Calculus I",
+              "CHEM 1201 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 1201 General Chemistry I",
+              "CHEM 2201 Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 1201 General Chemistry I",
+                "CHEM 1202 General Chemistry II",
+                "CHEM 2201 Organic Chemistry I",
+                "CHEM 2202 Organic Chemistry II",
+                "CHEM 2212 Organic Chemistry Lab",
+                "CHEM 3101 Physical Chemistry I",
+                "CHEM 3102 Physical Chemistry II",
+                "CHEM 3121 Analytical Chemistry",
+                "CHEM 4100 Inorganic Chemistry",
+                "CHEM 4501 Biochemistry I",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "PHYS 2110 General Physics I",
+                "PHYS 2112 General Physics II"
+              ],
+              "electives": [
+                "CHEM 4401 Polymer Chemistry",
+                "CHEM 4440 Environmental Chemistry",
+                "CHEM 4502 Biochemistry II"
+              ],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Science generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1550 Calculus I",
+              "PHYS 2110 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 2110 General Physics I",
+              "MATH 1550 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHYS 2110 General Physics I",
+                "PHYS 2112 General Physics II",
+                "PHYS 2108 Introduction to Modern Physics",
+                "PHYS 3101 Analytical Mechanics I",
+                "PHYS 3102 Electricity and Magnetism I",
+                "PHYS 4101 Quantum Mechanics I",
+                "PHYS 4102 Thermal Physics",
+                "PHYS 4115 Optics",
+                "MATH 1550 Calculus I",
+                "MATH 1552 Calculus II",
+                "MATH 2057 Multivariable Calculus",
+                "MATH 2065 Elementary Differential Equations",
+                "CS 1253 Computer Science I"
+              ],
+              "electives": [
+                "PHYS 4210 Astrophysics",
+                "PHYS 4252 Solid State Physics",
+                "PHYS 4300 Nuclear Physics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Science generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          },
+          {
+            "name": "Geology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 1001",
+              "MATH 1021 College Algebra",
+              "GEOL 1001 General Geology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "GEOL 1001 General Geology",
+              "CHEM 1201 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "GEOL 1001 General Geology",
+                "GEOL 1003 Historical Geology",
+                "GEOL 2080 Mineralogy and Petrology",
+                "GEOL 3010 Structural Geology",
+                "GEOL 3030 Sedimentology and Stratigraphy",
+                "GEOL 3050 Paleontology",
+                "GEOL 4001 Field Geology",
+                "CHEM 1201 General Chemistry I",
+                "CHEM 1202 General Chemistry II",
+                "MATH 1550 Calculus I (or MATH 1021, MATH 1022)",
+                "PHYS 2001 General Physics I"
+              ],
+              "electives": [
+                "GEOL 4020 Hydrogeology",
+                "GEOL 4040 Geomorphology",
+                "GEOL 4050 Petroleum Geology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Science generally requires a 2.0 LSU GPA and 2.0 cumulative GPA. A minimum GPA of 2.0 in the major field is required for graduation. Data source: LSU 2025-2026 General Catalog"
+          }
+        ]
+      },
+      {
+        "name": "University College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "University College primarily supports first-year and transfer students across all majors, so students would reside in various general freshman housing options such as modern dorms (Spruce, Cedar, Azalea) or traditional halls (Miller, McVoy, Herget, Pentagon Community halls), as well as residential colleges if they are also affiliated with a specific college.",
+        "student_archetype": "First-year and transfer students who are exploring majors, pre-nursing, or allied health fields, seeking foundational academic support, and guidance in navigating their initial college experience. They are often adaptable and open to various academic pathways.",
+        "strategic_fit_advice": "First-year students and transfer students who benefit from comprehensive support services, academic advising, and resources to ensure a smooth transition and successful progression towards their degree. It's ideal for students who may be undecided on a major or those in allied health/pre-nursing preparing for professional programs.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Business Administration Minor",
+      "Analytics Minor",
+      "Communication Studies Minor",
+      "Environmental Sciences Minor",
+      "Child Care Administration Undergraduate Certificate",
+      "International Business Minor",
+      "Leadership Development Minor",
+      "Digital Studies Minor",
+      "Anthropology Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Priority Deadline for Scholarships",
+        "date": "2025-12-15",
+        "is_binding": false,
+        "notes": "This is a priority deadline for merit-based scholarship consideration. While not a formal 'Early Action' or 'Early Decision' plan, submitting by this date offers a benefit for early applicants."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "LSU operates on a rolling admission basis, but this is the Regular Decision deadline for freshman applicants for the main campus."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Music (Undergraduate & Graduate)",
+        "requirement_type": "Audition",
+        "deadline": "Priority Scholarship Deadline: February 2, 2026; On-Campus Audition Dates: January 24, 2026, January 31, 2026",
+        "details": "Auditions are required for admission to the School of Music. Requirements vary by instrument/voice and degree level (undergraduate or graduate). Auditions can be in-person or submitted as a recorded video. Students interested in Music Education must also complete an interview."
+      },
+      {
+        "target_program": "Art (Undergraduate BFA - after first year for selective admission to a discipline)",
+        "requirement_type": "Portfolio",
+        "deadline": "March 20, 2025 (for Selective Admissions)",
+        "details": "After completing preliminary foundations courses in the first year of study, students pursuing a Bachelor of Fine Arts (BFA) must submit a 'Foundations Portfolio' and a 'discipline-specific portfolio' for selective admission into their chosen artistic discipline (e.g., Ceramics, Digital Art, Graphic Design, Painting & Drawing, Photography, Printmaking, Sculpture). Portfolios are submitted via the SlideRoom portal."
+      },
+      {
+        "target_program": "Art (Undergraduate BFA - optional for initial freshman admission)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "For initial freshman admission to the School of Art, while not a mandatory requirement, students who believe an existing portfolio better represents their artistic abilities can contact Student Services to schedule an on-campus meeting to show their work."
+      },
+      {
+        "target_program": "Interior Design (Graduate - MSID)",
+        "requirement_type": "Portfolio",
+        "deadline": "February 1",
+        "details": "A digital portfolio of creative and/or professional work (one PDF file, maximum 30 MB) is required for admission to the Master of Science in Interior Design (MSID)."
+      },
+      {
+        "target_program": "Architecture (Undergraduate BArch - for Upper Division admission or transfer credits)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "For current LSU Bachelor of Architecture students, a portfolio review is required for admission to the Upper Division (second year) of the program, along with a Statement of Intent (300-word maximum). Transfer students seeking credit for design studio courses must also submit a portfolio for faculty evaluation. There is no portfolio requirement for initial freshman admission."
+      },
+      {
+        "requirement": "Official Transcripts",
+        "type": "essay",
+        "target_program": "All",
+        "requirement_type": "essay"
+      },
+      {
+        "requirement": "ACT/SAT Scores (if submitted)",
+        "type": "essay",
+        "target_program": "All",
+        "requirement_type": "essay"
+      },
+      {
+        "requirement": "Letters of Recommendation (if submitted)",
+        "type": "essay",
+        "target_program": "All",
+        "requirement_type": "essay"
+      },
+      {
+        "requirement": "Resume/List of Activities",
+        "type": "essay",
+        "target_program": "All",
+        "requirement_type": "essay"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First generation",
+        "Alumni/ae relation",
+        "Geographical residence",
+        "State residency",
+        "Volunteer work",
+        "Work experience",
+        "Level of applicant's interest"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "LSU utilizes a comprehensive review process, evaluating applicants beyond just scores. The admissions committee reviews each application twice, considering academic performance, high school courses, grade trends over time, and grades in specific disciplines relevant to the intended major. LSU is test-optional, aligning with its full-file comprehensive review philosophy."
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+        "word_limit": "650 words",
+        "type": "Personal/Identity",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "What core aspect of your identity or experience truly defines you?",
+          "How has this background, identity, interest, or talent shaped your perspectives or actions?",
+          "What specific moments or challenges have arisen from this aspect of your life?",
+          "How does this unique part of you contribute to the person you are today and the student you hope to be at LSU?",
+          "If you couldn't write about this, what essential part of your story would be missing from your application?"
+        ]
+      },
+      {
+        "prompt": "The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?",
+        "word_limit": "650 words",
+        "type": "Challenge/Reflection",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "Describe the specific challenge, setback, or failure you faced. What was the context?",
+          "What emotions did you experience during this time, and how did you initially react?",
+          "What concrete steps did you take to address or overcome the obstacle?",
+          "Beyond simply overcoming it, what lasting knowledge, skill, or perspective did you gain?",
+          "How has this experience changed your approach to future difficulties or aspirations?"
+        ]
+      },
+      {
+        "prompt": "Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?",
+        "word_limit": "650 words",
+        "type": "Critical Thinking/Personal Growth",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "What specific belief or idea did you question or challenge? Was it your own, or someone else's?",
+          "What incident, conversation, or piece of information sparked your critical thinking?",
+          "What was your initial stance or the prevailing opinion, and why did you feel compelled to challenge it?",
+          "What was the immediate and long-term impact of your questioning or challenging?",
+          "How did this experience alter your understanding of the world, others, or yourself?"
+        ]
+      },
+      {
+        "prompt": "Reflect on something that someone has done for you that has made you happy or thankful in a surprising way. How has this gratitude affected or motivated you?",
+        "word_limit": "650 words",
+        "type": "Community/Personal",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "Who was the person, and what specific action did they take that surprised you?",
+          "What made this act of kindness or support particularly unexpected or impactful?",
+          "How did this experience initially make you feel (happy, thankful, etc.)?",
+          "In what ways did this gratitude translate into concrete actions or a change in your behavior or outlook?",
+          "How has this act influenced your interactions with others or your understanding of community and generosity?"
+        ]
+      },
+      {
+        "prompt": "Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+        "word_limit": "650 words",
+        "type": "Personal Growth/Achievement",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "What was the accomplishment, event, or realization, and what was its significance to you at the time?",
+          "What specific aspect of yourself or others did you come to understand differently?",
+          "How did this new understanding manifest in your thoughts, feelings, or actions?",
+          "Describe the 'before and after' of this experience—what were you like before, and how did you change?",
+          "What lingering impact does this period of growth have on your current goals or worldview?"
+        ]
+      },
+      {
+        "prompt": "Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?",
+        "word_limit": "650 words",
+        "type": "Academic/Intellectual Curiosity",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "What is this topic, idea, or concept that truly enthralls you?",
+          "What specific questions or mysteries within this area keep you deeply engaged?",
+          "When did you first discover this passion, and what was that initial spark?",
+          "How do you actively pursue learning more about this—what resources, people, or experiences do you seek out?",
+          "How has this intellectual curiosity influenced your academic pursuits or aspirations for college?"
+        ]
+      },
+      {
+        "prompt": "Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.",
+        "word_limit": "650 words",
+        "type": "Open-ended/Personal",
+        "required": "Generally required as part of the Common Application",
+        "brainstorming_questions": [
+          "What unique story or aspect of your personality have you not yet had the opportunity to share?",
+          "Is there a piece of writing you've already created that you feel strongly represents you?",
+          "What specific message or impression do you want to leave with the admissions committee?",
+          "What topic allows you to showcase your authentic voice and writing style most effectively?",
+          "Consider what story would add the most valuable context or insight to the rest of your application."
+        ]
+      }
+    ]
+  },
+  "application_strategy": {
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Louisiana State University has a moderately selective admissions process with an acceptance rate of around 73-75%, and admitted students typically have strong academic profiles, including an average GPA of 3.81 or higher and competitive standardized test scores (though test-optional).",
+        "implication": "Applicants should aim for a high GPA and a rigorous high school curriculum to be competitive. While LSU is test-optional, submitting strong SAT or ACT scores can enhance an application, as it provides an additional dimension to demonstrate academic capability."
+      },
+      {
+        "category": "Academic",
+        "insight": "LSU is a top-tier research institution with land-, sea-, and space-grant designations, offering a comprehensive array of academic programs and unique hands-on research opportunities across various fields. Popular and highly-regarded majors include Business, Engineering, Biological Sciences, Agriculture, Mass Communication, Kinesiology, and Coastal/Environmental Science.",
+        "implication": "Applicants with a strong interest in research or specific fields like engineering or environmental science should highlight their relevant experiences, projects, and intellectual curiosity in their application essays. Emphasizing how their academic goals align with LSU's strengths can make their application stand out."
+      },
+      {
+        "category": "Culture",
+        "insight": "LSU boasts a vibrant and diverse campus community known for its strong sense of spirit, particularly around athletics, and offers over 400 student clubs and organizations, providing numerous opportunities for involvement and leadership. It emphasizes a welcoming, friendly, and collaborative environment.",
+        "implication": "Applicants should showcase their involvement in extracurricular activities, leadership roles, and experiences that demonstrate teamwork and a desire to contribute to a lively campus community. Expressing genuine interest in LSU's spirited traditions and diverse student life can resonate positively with the admissions committee."
+      }
+    ],
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Competitive standardized test scores (if submitted)",
+      "Meaningful extracurricular involvement and leadership",
+      "Compelling essays"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Involvement in diverse student organizations",
+      "Music/arts involvement"
+    ],
+    "essay_tips": [
+      "Research LSU thoroughly to understand its values, academic strengths, and campus culture, and tailor your statement to align with what LSU is looking for in its students.",
+      "Use concrete examples and a specific narrative to showcase your achievements, aspirations, personal growth, and unique story, rather than just listing accomplishments.",
+      "If writing an optional essay, especially for scholarships or the Honors College, include a part talking about why LSU and how your experiences and goals connect to the university's offerings and values.",
+      "When referring to 'Louisiana State University,' spell it out in full the first time, and then use the commonly known abbreviation 'LSU' for subsequent mentions."
+    ],
+    "red_flags": [
+      "Grade decline senior year",
+      "Generic essays that could apply anywhere",
+      "List of activities without depth or impact",
+      "Poor rec letters from teachers who don't know you well"
+    ],
+    "major_selection_tactics": [
+      "Consider applying to a less competitive major if your top-choice, highly selective programs like Engineering are a concern for admission.",
+      "If uncertain about a major or aiming for flexibility, consider applying as 'undeclared' within a broader college, such as University College, to gain admission and then explore options.",
+      "Research specific admission requirements or typical applicant profiles for your intended major, as highly sought-after programs (e.g., Engineering, pre-professional tracks) may have implicitly higher standards than the general university acceptance rate.",
+      "Focus on maintaining a strong overall academic record (GPA and, if submitting, standardized test scores), as this is a significant factor for general admission to LSU, regardless of the chosen major."
+    ],
+    "college_ranking_tactics": [
+      "Assess the Strength and Reputation of Specific Academic Programs",
+      "Evaluate the Availability and Quality of Academic Support and Faculty Interaction",
+      "Prioritize Hands-on Learning, Research, and Experiential Opportunities",
+      "Consider Post-Graduation Outcomes and Career Preparation Resources"
+    ],
+    "alternate_major_strategy": "If applying to a competitive major, consider listing a backup major, potentially in a different college, as changing majors is generally possible at LSU, though some programs have more stringent transfer requirements. For instance, majors within Humanities and Social Sciences are typically easier to switch into or out of. If transferring to a major in a different college, students can schedule an advising appointment to discuss entrance requirements.",
+    "internal_transfer_difficulty": "The internal transfer process can be competitive for impacted or specialized majors. Some engineering programs, for example, have different admission standards or number limits, and Petroleum Engineering is noted as being tougher to switch to and from. Additionally, some colleges, such as the College of Art & Design, may require specific GPAs, coursework, and even a formal application for admission if a student decides to pursue a major later in their academic career."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 12472.0,
+        "total_coa": 36844.0,
+        "housing": 15404.0
+      },
+      "out_of_state": {
+        "tuition": 29148.0,
+        "total_coa": 53520.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 14981.0,
+    "average_merit_aid": 7583.0,
+    "percent_receiving_aid": 95.0,
+    "meets_full_need": false,
+    "notes": "LSU practices need-blind admissions, meaning financial need does not influence admission decisions. However, the university considers demonstration of financial need in its holistic scholarship review process, and on average, meets approximately 57% of a student's demonstrated financial need. Approximately 95% of students receive some form of scholarships or aid. The average need-based gift aid for freshmen was $14,981, and the average merit-based gift aid for freshmen with no financial need was $7,583, both based on 2023-24 data. Two out of three students graduate with zero debt.",
+    "scholarships": [
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full cost of attendance for four years (approx. $33,000/year for LA residents, $50,000/year for non-residents)",
+        "deadline": "December 15 (Scholarship Priority Deadline)",
+        "benefits": "Full tuition, fees, room & board, books, supplies, up to $14,000 for enrichment experiences, $1100 laptop stipend, opportunity to earn additional funding through President's Future Leaders in Research Program.",
+        "application_method": "Automatic consideration through Common Application upon admission by priority deadline; semifinalists submit essay and resume, finalists participate in interview."
+      },
+      {
+        "name": "President's Alumni Scholarship",
+        "type": "Merit",
+        "amount": "Full cost of attendance for four years (approx. $33,000/year for LA residents, $50,000/year for non-residents)",
+        "deadline": "December 15 (Scholarship Priority Deadline)",
+        "benefits": "Full tuition, fees, room & board, books, supplies, $2,000 study abroad stipend, opportunity to earn additional funding through President's Future Leaders in Research Program.",
+        "application_method": "Automatic consideration through Common Application upon admission by priority deadline; selected through a competitive process in consultation with the Ogden Honors College."
+      },
+      {
+        "name": "International Student Scholarship",
+        "type": "Merit/Non-Need",
+        "amount": "Minimum nonresident fee, maximum full tuition and nonresident fee",
+        "deadline": "January 1",
+        "benefits": "Fee exemptions (covering part or all of tuition and nonresident fees).",
+        "application_method": "Automatic consideration based on strong academic credentials and standardized test scores upon application to the university."
+      },
+      {
+        "name": "LSU Future Scholars Program",
+        "type": "Need-Based/Merit",
+        "amount": "Full tuition coverage (after federal and state aid is applied)",
+        "deadline": "Varies (requires successful completion of program and admission to LSU)",
+        "benefits": "Financial support to make LSU affordable for students from disadvantaged backgrounds.",
+        "application_method": "Program enrollment and successful completion; requires admission to LSU."
+      },
+      {
+        "name": "Departmental Scholarships",
+        "type": "Departmental/Merit",
+        "amount": "Varies (e.g., Engineering scholarships often range from $1,000 to $4,000 per year)",
+        "deadline": "Varies (often aligned with university scholarship deadlines)",
+        "benefits": "Financial support for students pursuing specific majors or within particular colleges.",
+        "application_method": "Application through LSU's scholarship portal (AcademicWorks) after admission; specific requirements and deadlines vary by department/college."
+      },
+      {
+        "name": "Roger Hadfield Ogden Leaders Program",
+        "type": "Merit/Project-Based",
+        "amount": "Up to $5,000",
+        "deadline": "Varies",
+        "benefits": "Funding to support self-guided projects of significance to Louisiana (e.g., independent travel, research, humanitarian efforts).",
+        "application_method": "Separate application for Ogden Honors College students who have completed 1-6 semesters; requires a self-designed project proposal."
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "A score of 3, 4, or 5 on Advanced Placement (AP) subject examinations grants credit for appropriate subjects.",
+      "exceptions": [
+        "LSU does not accept AP Seminar for course credit.",
+        "While specific requirements vary by exam, for some subjects like Computer Science, a score of 5 may be required for specific or more advanced course credit.",
+        "Students should consult the official LSU AP Credit charts on their Early Credit page for the most precise and up-to-date details, as policies are subject to yearly review and change."
+      ],
+      "usage": "AP credits can be used to earn college credit, gain advanced placement (allowing students to skip introductory courses), satisfy major prerequisites, fulfill general education requirements, and meet various graduation requirements. Utilizing AP credits can help save time and money and provide flexibility to explore new academic interests."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 4+ grant credit; SL not accepted",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "Tiger Transfer Tables",
+        "Louisiana Board of Regents Transfer Guide"
+      ],
+      "restrictions": "60 unit cap for community college credits through the Louisiana Transfer Associate Degree; prior written approval required for concurrent enrollment at another institution."
+    }
+  },
+  "student_insights": {
+    "campus_dynamics": {
+      "social_environment": "LSU offers a vibrant social atmosphere with numerous on-campus events and opportunities for students to make connections and get involved, fostering a strong sense of school spirit, particularly around sporting events. Many students express pride in the university's traditions and culture.",
+      "transportation_impact": "LSU's campus is largely considered walkable, and the university provides a campus transit system called Tiger Trails, offering bus services for students, including those with longer walks to class or without a car. Additionally, the Capital Area Transit System (CATS) has a bus route (Route #47) that runs from downtown Baton Rouge directly through the LSU campus. However, a large percentage of LSU students commute, which can lead to traffic and parking challenges, making long commutes a frustrating aspect of daily life for some.",
+      "research_impact": "LSU offers strong undergraduate research opportunities across various disciplines, with programs supported by the LSU Office of Undergraduate Research (OUR) and individual colleges. Students can engage in faculty-mentored research through paid positions, for course credit, scholarship opportunities, honors theses, or as volunteers. Participation in research provides hands-on experience, develops critical skills, enhances graduate school applications, and offers a competitive advantage in job searches. Specific programs include the Distinguished Undergraduate Researcher Program, Explorers Program for Freshmen, and various Research Experiences for Undergraduates (REU) sponsored by organizations like the National Science Foundation (NSF). There are also specialized research programs at LSU Health Shreveport, some of which target minority students and provide comprehensive research training."
+    },
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Competitive standardized test scores (if submitted)",
+      "Meaningful extracurricular involvement and leadership",
+      "Compelling essays"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics",
+      "Involvement in diverse student organizations",
+      "Music/arts involvement"
+    ],
+    "essay_tips": [
+      "Research LSU thoroughly to understand its values, academic strengths, and campus culture, and tailor your statement to align with what LSU is looking for in its students.",
+      "Use concrete examples and a specific narrative to showcase your achievements, aspirations, personal growth, and unique story, rather than just listing accomplishments.",
+      "If writing an optional essay, especially for scholarships or the Honors College, include a part talking about why LSU and how your experiences and goals connect to the university's offerings and values.",
+      "When referring to 'Louisiana State University,' spell it out in full the first time, and then use the commonly known abbreviation 'LSU' for subsequent mentions."
+    ],
+    "red_flags": [
+      "Grade decline senior year",
+      "Generic essays that could apply anywhere",
+      "List of activities without depth or impact",
+      "Poor rec letters from teachers who don't know you well"
+    ],
+    "general_insights": [
+      "Louisiana State University has a moderately selective admissions process with an acceptance rate of around 73-75%, and admitted students typically have strong academic profiles, including an average GPA of 3.81 or higher and competitive standardized test scores (though test-optional).",
+      "LSU is a top-tier research institution with land-, sea-, and space-grant designations, offering a comprehensive array of academic programs and unique hands-on research opportunities across various fields. Popular and highly-regarded majors include Business, Engineering, Biological Sciences, Agriculture, Mass Communication, Kinesiology, and Coastal/Environmental Science.",
+      "LSU boasts a vibrant and diverse campus community known for its strong sense of spirit, particularly around athletics, and offers over 400 student clubs and organizations, providing numerous opportunities for involvement and leadership. It emphasizes a welcoming, friendly, and collaborative environment."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 56900,
+    "employment_rate_2yr": 94.0,
+    "median_earnings_6yr": 43200,
+    "notes": "Median earnings 10 years after enrollment are 66% higher than the national median. The employment rate 2 years after graduation is approximated based on the 1-year and 5-year post-graduation employment rates.",
+    "top_employers": [
+      "Deloitte",
+      "JPMorgan Chase",
+      "Amazon",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Morgan Stanley",
+      "Google",
+      "Apple",
+      "Microsoft",
+      "Meta"
+    ],
+    "grad_school_rate": 19.3,
+    "loan_default_rate": 4.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.7,
+    "graduation_rate_4_year": 50.4,
+    "graduation_rate_6_year": 68.8
+  }
+}

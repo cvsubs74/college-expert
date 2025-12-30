@@ -1,4 +1,3 @@
-
 {
   "_id": "montclair_state_university",
   "metadata": {
@@ -66,7 +65,7 @@
         "applications_total": 26257,
         "admits_total": 23076,
         "enrolled_total": 4094,
-        "acceptance_rate_overall": 87.90,
+        "acceptance_rate_overall": 87.9,
         "yield_rate": 17.74,
         "notes": ""
       },
@@ -95,7 +94,7 @@
         "admits_total": 19535,
         "enrolled_total": 3946,
         "acceptance_rate_overall": 91.31,
-        "yield_rate": 20.20,
+        "yield_rate": 20.2,
         "notes": "",
         "waitlist_stats": {
           "year": 2023,
@@ -130,7 +129,7 @@
         "applications_total": 11888,
         "admits_total": 9827,
         "enrolled_total": 3136,
-        "acceptance_rate_overall": 82.70,
+        "acceptance_rate_overall": 82.7,
         "yield_rate": 31.91,
         "notes": ""
       }
@@ -149,7 +148,7 @@
         "sat_reading_middle_50_percent": "480-620",
         "sat_math_middle_50_percent": "430-590",
         "act_composite_middle_50_percent": "18-24",
-        "submission_rate": "Approximately 9% of enrolled students submitted SAT scores for the academic year 2025.",
+        "submission_rate": 9.0,
         "policy_note": "Montclair State University has a test-optional policy, meaning SAT/ACT scores are not required for admission but will be considered if submitted. Superscoring is allowed for undergraduate admissions."
       },
       "demographics": {
@@ -174,7 +173,7 @@
           "men": {
             "applicants": 9247,
             "admits": 7786,
-            "acceptance_rate": 84.20,
+            "acceptance_rate": 84.2,
             "note": "Figures are for first-time, first-year undergraduate applicants for Fall 2023, derived from a breakdown of total applicants and admitted students where the lower number was assumed to be men, consistent with general enrollment demographics at the university."
           },
           "women": {
@@ -186,10 +185,10 @@
           "non_binary": null
         },
         "racial_breakdown": {
-          "White": 34.30,
-          "Black/African American": 12.40,
-          "Hispanic/Latino": 35.00,
-          "Asian": 5.90,
+          "White": 34.3,
+          "Black/African American": 12.4,
+          "Hispanic/Latino": 35.0,
+          "Asian": 5.9,
           "Native American/Alaskan": 0.14,
           "Pacific Islander": 0.09,
           "Two or More Races": 2.37,
@@ -212,7 +211,7 @@
         "name": "College of Communication and Media",
         "admissions_model": "Pre-Major",
         "is_restricted_or_capped": false,
-        "housing_profile": null,
+        "housing_profile": "",
         "student_archetype": null,
         "strategic_fit_advice": null,
         "majors": [
@@ -706,43 +705,43 @@
       {
         "target_program": "All Applicants (excluding School of Nursing, College of the Arts, and Adult Learners)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Optional essay: Discuss your reasons for seeking admission to Montclair State University, including your academic strengths and interests. Explain any situations that may have impacted your academic record (positively or negatively). Alternatively, you may submit a writing sample from a graded class assignment."
       },
       {
         "target_program": "School of Nursing (BSN)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Required personal statement: Describe why you wish to pursue a career in Nursing."
       },
       {
         "target_program": "College of the Arts (all majors), and specific majors including Animation and Visual Effects, Illustration, Dance, Music, Music Therapy, Musical Theatre, Recording Arts and Production, Theatre, Visual Arts and Visual Communication Design",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Required essay: Discuss why you wish to study your program of choice in the College of the Arts at Montclair. Include highlights of your experience related to your chosen academic program and how those experiences have shaped your current career goals. (Recommended 250-500 words for College of Arts applicants)"
       },
       {
         "target_program": "Adult Learner Applicants (excluding RN to BSN)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Required personal statement: Demonstrate what you have learned through formal education and/or life experiences."
       },
       {
         "target_program": "Education Majors",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Required essay (500 words or less): Tell us why you would like to become a teacher and what experiences have motivated you to choose this career path. Use the Montclair Portrait of a Teacher to help guide your writing."
       },
       {
         "target_program": "Music (John J. Cali School of Music) - Undergraduate",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Required audition for all music applicants. Audition options include live, in-person auditions or video submissions. Both require a non-refundable $35 audition fee. Requirements vary by instrument (flute, oboe, clarinet, bassoon, saxophone, trumpet, French horn, trombone, euphonium, baritone horn, tuba, voice, percussion) and generally include scales (major, minor, chromatic), solo works, contrasting works or etudes, and potential sight-reading for live auditions. All audition pieces must be memorized for vocal and most instrumental performances. Applicants should bring sheet music to live auditions."
       },
       {
         "target_program": "Music (John J. Cali School of Music) - Graduate",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Graduate applicants do not complete a formal audition but must schedule an interview. During the interview, you will complete a self-accompaniment performance, singing two songs (one on guitar, one on piano) from any genre, using basic block chords. These should be pre-recorded as videos and submitted to your application portal. Specific requirements for Woodwind Doubling MM include auditioning on a minimum of 3 out of 5 instruments (flute, clarinet, saxophone, oboe, bassoon)."
       },
       {
@@ -935,12 +934,14 @@
     "philosophy": "Moderate Credit",
     "ap_policy": {
       "general_rule": "Montclair State University awards credit for qualifying AP exam scores, but the minimum score requirement varies by exam.",
-      "exceptions": "Students must consult the official AP Exam Equivalency Chart on the Montclair State University website for specific score requirements and any exams for which credit is not awarded.",
+      "exceptions": [
+        "Students must consult the official AP Exam Equivalency Chart on the Montclair State University website for specific score requirements and any exams for which credit is not awarded."
+      ],
       "usage": "AP credits can satisfy general education requirements, count as free electives, and potentially fulfill major prerequisites with advisor review. There is no limit on the number of AP credits accepted."
     },
     "ib_policy": {
       "general_rule": "Montclair State University generally accepts only High-Level (HL) exams with scores of 4 or better, although some exams may require a higher score for credit to be awarded. Official IB transcripts must be submitted for credit review.",
-      "diploma_bonus": "The university considers admitting students who complete the full IB Diploma program, and the IB diploma itself may be considered for advanced standing or transfer credit."
+      "diploma_bonus": false
     },
     "transfer_articulation": {
       "tools": [

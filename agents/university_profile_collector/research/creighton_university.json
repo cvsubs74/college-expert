@@ -203,8 +203,12 @@
           }
         ],
         "gender_breakdown": {
-          "men": null,
-          "women": null,
+          "men": {
+            "percentage": 0
+          },
+          "women": {
+            "percentage": 0
+          },
           "non_binary": null,
           "note": "Among undergraduates, 58% are women, 42% are men."
         },
@@ -810,7 +814,7 @@
       {
         "target_program": "All Undergraduate",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required essay: Why have you decided to apply to Creighton University? (250 words). This 'Why Us' essay encourages applicants to discuss their interest in specific programs, Jesuit identity, and contribution to the community."
       }
     ],
@@ -999,11 +1003,31 @@
       "Waiting until the last minute to apply and not confirming receipt of application materials."
     ],
     "insights": [
-      "Creighton takes a holistic approach to admissions, considering a variety of factors beyond just grades and test scores.",
-      "While test scores are optional, strong scores are beneficial to include (middle 50% SAT 1265-1430, ACT 26-31).",
-      "Admissions committees appreciate honesty and accountability when addressing academic struggles or other challenges, viewing them as opportunities to highlight personal growth.",
-      "Applying by the priority deadline is recommended for consideration for the most financial aid.",
-      "Creighton is known for strong programs in health sciences, business, and law, and emphasizes a close-knit, supportive community."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Creighton takes a holistic approach to admissions, considering a variety of factors beyond just grades and test scores."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test scores are optional, strong scores are beneficial to include (middle 50% SAT 1265-1430, ACT 26-31)."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admissions committees appreciate honesty and accountability when addressing academic struggles or other challenges, viewing them as opportunities to highlight personal growth."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying by the priority deadline is recommended for consideration for the most financial aid."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Creighton is known for strong programs in health sciences, business, and law, and emphasizes a close-knit, supportive community."
+      }
     ]
   },
   "outcomes": {

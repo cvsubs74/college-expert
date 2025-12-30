@@ -1036,19 +1036,19 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One Common Application essay required; no additional supplemental essays for general undergraduate admission."
       },
       {
         "target_program": "Music",
         "requirement_type": "Audition/Portfolio & Supplemental Application",
-        "deadline": null,
+        "deadline": "",
         "details": "Supplemental application from the Lamont School of Music and an audition or portfolio are required. Music applicants must apply for the Regular Decision deadline."
       },
       {
         "target_program": "BFA Programs",
         "requirement_type": "Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "A portfolio is required for BFA programs."
       }
     ],
@@ -1226,11 +1226,31 @@
       "Only focusing on GPA and test scores without showcasing a well-rounded profile."
     ],
     "insights": [
-      "DU takes a holistic approach to admissions, considering applicants beyond just grades and test scores.",
-      "While test-optional, submitting strong SAT/ACT scores can be beneficial for both admission and merit scholarships.",
-      "For specific programs like the Daniels College of Business, a secondary application process including a cover letter, resume, and interview may be required.",
-      "The optional supplemental essay (if applying via DU's Pioneer Application) should definitely be utilized to provide more insight into your personality.",
-      "Early Action and Early Decision options are available, with Early Decision being a binding agreement if accepted."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "DU takes a holistic approach to admissions, considering applicants beyond just grades and test scores."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, submitting strong SAT/ACT scores can be beneficial for both admission and merit scholarships."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For specific programs like the Daniels College of Business, a secondary application process including a cover letter, resume, and interview may be required."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The optional supplemental essay (if applying via DU's Pioneer Application) should definitely be utilized to provide more insight into your personality."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Early Action and Early Decision options are available, with Early Decision being a binding agreement if accepted."
+      }
     ]
   },
   "outcomes": {

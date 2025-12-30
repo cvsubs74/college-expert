@@ -1,672 +1,1222 @@
 {
-  "university_profile": {
-    "_id": "adelphi_university",
-    "metadata": {
-      "official_name": "Adelphi University",
-      "location": {
-        "city": "Garden City",
-        "state": "NY",
-        "type": "Private"
+  "_id": "adelphi_university",
+  "metadata": {
+    "official_name": "Adelphi University",
+    "location": {
+      "city": "Garden City",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Adelphi University is a private university in Garden City, New York. It is known for its strong programs in nursing, social work, and performing arts, offering a personalized education within a vibrant suburban setting near New York City.",
+    "market_position": "Adelphi positions itself as a private, medium-sized university offering a comprehensive liberal arts education with strong professional programs. It targets students seeking a suburban campus experience with easy access to the opportunities of a major metropolitan area, emphasizing career preparedness and community engagement.",
+    "admissions_philosophy": "Adelphi seeks well-rounded students who demonstrate academic potential, a commitment to community, and a desire to engage deeply with their studies and extracurricular opportunities. Admissions are holistic, considering GPA, test scores (optional), essays, recommendations, and extracurricular involvement. They value diversity and a genuine interest in Adelphi's programs.",
+    "us_news_rank": 166,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strategic emphasis on health sciences and nursing programs continues to drive enrollment growth.",
+        "category": "general"
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "https://www.adelphi.edu",
-        "https://aupanthers.com",
-        "https://www.usnews.com/best-colleges/adelphi-university-2666"
-      ]
-    },
-    "strategic_profile": {
-      "executive_summary": "Adelphi University is a private research institution in Garden City, New York, recognized for its strong professional programs in nursing, psychology, and business. It combines a small-college feel with the resources of a national university, emphasizing social mobility and personalized student success.",
-      "market_position": "Premier Long Island Private University",
-      "admissions_philosophy": "Holistic review / Test-optional",
-      "us_news_rank": 198,
-      "analyst_takeaways": [
-        {
-          "category": "Academic Momentum",
-          "insight": "The undergraduate nursing program climbed 32 spots to #186 nationally in the 2026 rankings.",
-          "implication": "Adelphi is rapidly becoming a leading regional hub for healthcare education."
-        },
-        {
-          "category": "Social Mobility",
-          "insight": "Ranked #117 for Social Mobility, outperforming many higher-ranked peers.",
-          "implication": "The university is an excellent choice for first-generation and Pell-eligible students seeking high return-on-investment."
-        },
-        {
-          "category": "Admissions Strategy",
-          "insight": "Maintains a test-optional policy with a 78% acceptance rate while shifting focus to GPA rigor and community involvement.",
-          "implication": "Applicants should emphasize leadership and specialized interests to stand out in a holistic pool."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Vibrant and diverse with over 80 student organizations and a strong NCAA Division II athletic culture (Panthers). The campus maintains a 'commuter-friendly' but highly engaged atmosphere with frequent social programming.",
-        "transportation_impact": "The 'Panther Express' shuttle provides seamless real-time connectivity to the LIRR (Nassau Blvd and Mineola stations), allowing students to live in a suburban setting while maintaining 45-minute access to Manhattan for internships and entertainment.",
-        "research_impact": "Robust undergraduate research opportunities through the SPARK Center and Levermore Global Scholars, with significant faculty-led projects in social neuroscience, paleontology, and community health."
+      {
+        "takeaway": "Investment in student support services and career development is strengthening post-graduation outcomes.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Proximity to NYC is a significant advantage for internships and professional networking, needing further leveraging.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Alumni engagement initiatives could be enhanced to boost fundraising and mentorship opportunities.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Digital learning infrastructure has been significantly upgraded, supporting flexible learning models.",
+        "category": "general"
       }
-    },
-    "admissions_current": {
-      "overall_acceptance_rate": 65.9,
-      "in_state_acceptance_rate": null,
-      "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": 75.0,
-      "transfer_acceptance_rate": 33.8,
-      "admits_class_size": 12987,
+    ],
+    "campus_dynamics": {
+      "social_environment": "Adelphi offers a moderately active social scene, balancing campus-based events, Greek life, and student organizations with off-campus activities in Garden City and New York City. Students often describe a close-knit community feel, particularly within specific academic departments.",
+      "transportation_impact": "Located in a suburban area, personal vehicles are common among commuter students. The university provides shuttle services to local transportation hubs (LIRR), connecting students to NYC. On-campus parking can be competitive. This access to public transport is crucial for urban internships and social outings.",
+      "research_impact": "Research at Adelphi is primarily focused on undergraduate and master's level engagement, with faculty-led projects providing valuable experiential learning. Key areas include health sciences, psychology, and environmental studies. The impact is more on student skill development and faculty contributions to specific fields rather than large-scale, grant-funded research initiatives."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 65.91,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "test_policy_details": "Adelphi University has adopted a test-optional policy, allowing applicants the option, but not the requirement, to submit SAT or ACT scores. This policy has been extended through Fall 2028/Spring 2029. Merit scholarships are not contingent on submitting test scores. However, some joint degree programs with partner institutions still require the submission of test scores. International students who are non-native English speakers are required to submit English language exam scores, with options including SAT, ACT, TOEFL, IELTS, or Duolingo. Duolingo has been permanently adopted as an acceptable English language proficiency exam.",
+      "admits_class_size": 12985,
+      "transfer_acceptance_rate": 33.84,
       "early_admission_stats": [
         {
           "plan_type": "EA",
           "applications": null,
           "admits": null,
-          "acceptance_rate": null,
+          "acceptance_rate": 87.9,
           "class_fill_percentage": null
         }
-      ]
+      ],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "international_applications": null,
+      "international_admits": null
     },
-    "admissions_trends": {
-      "longitudinal_trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 19705,
-          "admits_total": 12987,
-          "enrolled_total": 1343,
-          "acceptance_rate_overall": 65.9,
-          "yield_rate": 10.3,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Waitlist data not publicly disclosed. Significant increase in applications compared to previous cycle."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 17111,
-          "admits_total": 13263,
-          "enrolled_total": 1376,
-          "acceptance_rate_overall": 77.5,
-          "yield_rate": 10.4,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Waitlist data not publicly disclosed."
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 17232,
-          "admits_total": 12538,
-          "enrolled_total": 1300,
-          "acceptance_rate_overall": 72.8,
-          "yield_rate": 10.4,
-          "waitlist_stats": {
-            "year": 2022,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": null
-          },
-          "notes": "Waitlist data not publicly disclosed."
-        }
-      ]
-    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 19705,
+        "admits_total": 12987,
+        "enrolled_total": 1299,
+        "acceptance_rate_overall": 65.91,
+        "yield_rate": 10.0,
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 19705,
+        "admits_total": 12987,
+        "enrolled_total": 1336,
+        "acceptance_rate_overall": 65.91,
+        "yield_rate": 10.29,
+        "notes": "",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 17111,
+        "admits_total": 13263,
+        "enrolled_total": 1377,
+        "acceptance_rate_overall": 77.51,
+        "yield_rate": 10.38,
+        "notes": "",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 17232,
+        "admits_total": 12433,
+        "enrolled_total": 995,
+        "acceptance_rate_overall": 72.15,
+        "yield_rate": 8.0,
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 16084,
+        "admits_total": 12459,
+        "enrolled_total": 1316,
+        "acceptance_rate_overall": 77.0,
+        "yield_rate": 10.56,
+        "notes": ""
+      }
+    ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": null,
-        "unweighted_middle_50": "3.50-4.00",
-        "average_weighted": 3.8,
-        "percentile_25": "3.50",
-        "percentile_75": "4.00",
-        "notes": "Average high school GPA is 3.8. Many admitted students hold an unweighted GPA above 3.5."
+        "weighted_middle_50": "N/A",
+        "unweighted_middle_50": "3.00-3.70",
+        "average_weighted": 3.69,
+        "percentile_25": "N/A",
+        "percentile_75": "N/A",
+        "notes": "Adelphi University explicitly states that the 25th and 75th percentile figures for weighted GPA are not disclosed. The average weighted GPA for admitted students is 3.69. For unweighted GPAs, the 25th percentile is 3.0 and the 75th percentile is 3.7. The university also considers the rigor of high school courses, including AP, honors, and dual enrollment classes. Most incoming freshmen graduate in the top half of their high school class."
       },
       "testing": {
-        "sat_composite_middle_50": "1140-1310",
-        "sat_reading_middle_50": "580-650",
-        "sat_math_middle_50": "560-660",
+        "sat_composite_middle_50": "1120-1310",
+        "sat_reading_middle_50": "570-660",
+        "sat_math_middle_50": "550-680",
         "act_composite_middle_50": "24-30",
-        "submission_rate": 23.0,
-        "policy_note": "Test-optional for most programs; approximately 70-75% of applicants applied without scores in recent cycles."
+        "submission_rate": 74.0,
+        "policy_note": "Test Optional. Superscore accepted. Self-reporting allowed."
       },
       "demographics": {
         "first_gen_percentage": 25.1,
         "legacy_percentage": null,
-        "international_percentage": 3.0,
         "geographic_breakdown": [
           {
-            "region": "New York (In-State)",
-            "percentage": 86.0
+            "region": "New York (In-state)",
+            "percentage": 83.76
           },
           {
-            "region": "Other US States",
-            "percentage": 11.0
+            "region": "Other U.S. States (Out-of-state)",
+            "percentage": 8.6
           },
           {
             "region": "International",
-            "percentage": 3.0
+            "percentage": 7.64
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 7605,
             "admits": 4547,
-            "acceptance_rate": 59.8,
-            "note": "Represents 30.5% of the enrolled first-year class."
+            "acceptance_rate": 59.79,
+            "note": "Data for the 2024-25 academic year."
           },
           "women": {
             "applicants": 12100,
             "admits": 8440,
-            "acceptance_rate": 69.8,
-            "note": "Represents 69.5% of the enrolled first-year class."
+            "acceptance_rate": 69.75,
+            "note": "Data for the 2024-25 academic year."
           },
           "non_binary": null
         },
-        "racial_breakdown": {
-          "white": 37.0,
-          "black_african_american": 12.0,
-          "hispanic_latino": 27.0,
-          "asian": 15.0,
-          "native_american_alaskan": 1.0,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 3.0,
-          "unknown": 2.9,
-          "non_resident_alien": 3.0
-        }
+        "racial_breakdown": [
+          {
+            "race": "White",
+            "percentage": 41.32
+          },
+          {
+            "race": "Black/African American",
+            "percentage": 10.12
+          },
+          {
+            "race": "Hispanic/Latino",
+            "percentage": 23.39
+          },
+          {
+            "race": "Asian",
+            "percentage": 13.67
+          },
+          {
+            "race": "Native American/Alaskan",
+            "percentage": 0.4
+          },
+          {
+            "race": "Pacific Islander",
+            "percentage": 0.06
+          },
+          {
+            "race": "Two or More Races",
+            "percentage": 3.3
+          },
+          {
+            "race": "Unknown",
+            "percentage": 3.47
+          },
+          {
+            "race": "Non-Resident Alien",
+            "percentage": 4.28
+          }
+        ]
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education with small class sizes; emphasize interdisciplinary interests and readiness for faculty-led research.",
-          "housing_profile": "Traditional residence halls like Eddy Hall; often houses a mix of liberal arts majors who prioritize proximity to academic buildings.",
-          "student_archetype": "Intellectually curious and versatile learners",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.5,
-              "curriculum": {
-                "core_courses": [
-                  "BIO 0105-111 Biological Concepts & Methods I",
-                  "BIO 0105-112 Biological Concepts & Methods II",
-                  "CHE 0106-111 General Chemistry I",
-                  "CHE 0106-112 General Chemistry II",
-                  "CHE 0106-251 Organic Chemistry I",
-                  "MTH 0144-144 Statistics for the Natural Sciences"
-                ],
-                "total_units": 120
-              }
+    }
+  },
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 111 General Biology I (with Lab)",
+                "BIOL 112 General Biology II (with Lab)",
+                "CHEM 111 General Chemistry I (with Lab)",
+                "CHEM 112 General Chemistry II (with Lab)",
+                "MATH 141 Calculus I"
+              ],
+              "electives": [
+                "BIOL 300-400 level electives (e.g., Ecology, Genetics, Cell Biology)",
+                "PHYS 111 General Physics I (with Lab)",
+                "PHYS 112 General Physics II (with Lab)"
+              ],
+              "total_units": 120,
+              "major_units": "Approximately 40-44"
             },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "CSC 148 Object-Oriented Programming",
-                  "CSC 156 Discrete Structures",
-                  "CSC 273 Data Structures",
-                  "CSC 370 Computer Architecture and Organization",
-                  "CSC 440 Software Engineering"
-                ],
-                "total_units": 120
-              }
+            "notable_professors": [
+              "Dr. Eugenia Villa-Cuesta",
+              "Dr. Matthias Foellmer",
+              "Dr. Aaren Freeman",
+              "Dr. Alexander Heyl",
+              "Dr. Lawrence Hobbie",
+              "Dr. Alan Schoenfeld",
+              "Dr. Benjamin Weeks"
+            ],
+            "notes": "Requires a grade of C or better in all courses required for the major, including prerequisite courses. Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CS 1310 Intro to Programming",
+              "MATH 1426 Calculus 1"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSE 1310 Intro to Programming",
+                "CSE 249 Data Structures",
+                "MATH 1426 Calculus I",
+                "MATH 226 Discrete Mathematics",
+                "PHY 161 Physics I (or CHEM/BIO equivalent)"
+              ],
+              "electives": [
+                "CSE 4305 Compilers",
+                "CSE 4303 Computer Graphics",
+                "CSE 4360 Robotics",
+                "CSCE 500-level electives"
+              ],
+              "total_units": 126,
+              "major_units": 40
             },
-            {
-              "name": "Chemistry",
-              "degree_type": "B.S."
+            "notable_professors": [],
+            "notes": "Requires a grade of C or better in foundational curriculum courses and a minimum 2.5 GPA to move into the CS major. Data source: Adelphi University website, 2024-2025; Progression Plan-Classic (NAU, similar curriculum structure used as a guide given lack of explicit Adelphi plan)."
+          },
+          {
+            "name": "Dance",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "DANC 100 or DANC 300 (Intro to Dance or equivalent)",
+              "DANC 120 (Ballet Fundamentals)",
+              "DANC 161 (Modern Dance Fundamentals)",
+              "DANC 182 (Jazz Dance Fundamentals)",
+              "One unit from DANC 181 or DANC 381",
+              "10 units of dance technique from at least three idioms of dance"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Sophomore Review to assess technical, artistic, and academic development for progression. Auditions required for talent scholarships.",
+            "admissions_pathway": "Pre-Major to BFA",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "Dance Technique (Ballet, Modern/Contemporary, Jazz, Tap, Hip Hop)",
+                "Choreography courses",
+                "Dance Theory",
+                "Dance History",
+                "Dance Science",
+                "Pedagogy"
+              ],
+              "electives": [
+                "Flamenco",
+                "Career Preparation in the Arts",
+                "Conditioning and Injury Prevention for Dancers"
+              ],
+              "total_units": 120,
+              "major_units": "Approximately 78"
             },
-            {
-              "name": "Communications",
-              "degree_type": "B.A."
-            },
-            {
-              "name": "Criminal Justice",
-              "degree_type": "B.S."
-            }
-          ]
-        },
-        {
-          "name": "Robert B. Willumstad School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on career readiness and networking; highlight interest in the 'Willumstad Winning Edge' program and internships in the NYC area.",
-          "housing_profile": "Suite-style housing in Waldo Hall is popular for upperclassmen business students seeking a professional, quiet environment.",
-          "student_archetype": "Ambitious, networking-focused professionals",
-          "majors": [
-            {
-              "name": "Business",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.6,
-              "curriculum": {
-                "core_courses": [
-                  "ACC 0201-101 Principles of Accounting I",
-                  "ECA 0203-111 The Price System (Microeconomics)",
-                  "MGT 0210-262 Principles of Management",
-                  "MKT 0212-280 Marketing Principles"
-                ],
-                "total_units": 120
-              }
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Finance",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.S."
-            }
-          ]
-        },
-        {
-          "name": "College of Nursing and Public Health",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 51.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive; requires a strong science GPA (3.5+ recommended) and passing TEAS scores.",
-          "housing_profile": "Living-Learning Communities are available to help nursing students form study groups.",
-          "student_archetype": "Dedicated healthcare heroes and clinical leaders",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 51.3,
-              "average_gpa_admitted": 3.73,
-              "special_requirements": "Passing score on ATI TEAS required for admission.",
-              "curriculum": {
-                "core_courses": [
-                  "NUR 302-391 Health Assessment",
-                  "NUR 302-392 Fundamentals of Patient Centered Nursing Care",
-                  "BIO 0105-204 Human Anatomy & Phys II"
-                ],
-                "total_units": 124
-              }
-            },
-            {
-              "name": "Health Sciences",
-              "degree_type": "B.S."
-            }
-          ]
-        },
-        {
-          "name": "Gordon F. Derner School of Psychology",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 72.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Renowned for its clinical focus; prospective students should show an interest in mental health advocacy.",
-          "housing_profile": "Residence Hall A fosters a close-knit social community for social science majors.",
-          "student_archetype": "Insightful and research-driven observers",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.7,
-              "curriculum": {
-                "core_courses": [
-                  "PIA 0501-101 General Psychology",
-                  "PIA 0501-245 Statistics for Psychology",
-                  "PIA 0501-262 Research Methods in Psychology"
-                ],
-                "total_units": 120
-              }
-            },
-            {
-              "name": "Neuroscience",
-              "degree_type": "B.S."
-            }
-          ]
-        },
-        {
-          "name": "Ruth S. Ammon College of Education and Health Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Look into the Scholar Teacher Education Program (STEP) for an accelerated 5-year path.",
-          "housing_profile": "Standard undergraduate housing.",
-          "student_archetype": "Empathetic educators and community builders",
-          "majors": [
-            {
-              "name": "Exercise Science",
-              "degree_type": "B.S."
-            },
-            {
-              "name": "Physical Education",
-              "degree_type": "B.S."
-            }
-          ]
-        },
-        {
-          "name": "School of Social Work",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 78.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on a commitment to social justice and field experience.",
-          "housing_profile": "Diverse housing options; many students are commuters.",
-          "student_archetype": "Advocates for social justice and equity",
-          "majors": [
-            {
-              "name": "Social Work",
-              "degree_type": "B.S.W.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "SWK 404-101 Intro to Social Welfare & Human Services",
-                  "SWK 400 Field Instruction I & II",
-                  "SOC 0170-100 Intro to Sociology"
-                ],
-                "total_units": 120
-              }
-            }
-          ]
-        },
-        {
-          "name": "Honors College",
-          "admissions_model": "Lottery",
-          "acceptance_rate_estimate": 25.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires a separate application with high GPA and SAT/ACT scores; prioritize creative writing in essays.",
-          "housing_profile": "Preferred housing in Earle Hall.",
-          "student_archetype": "High-achieving scholars and critical thinkers",
-          "majors": []
-        }
-      ],
-      "minors_certificates": [
-        "Statistics and Data Analytics Minor",
-        "Public Health Minor",
-        "Scientific Computing Minor",
-        "Digital Marketing Certificate",
-        "Business Minor",
-        "Deaf Studies/ASL Minor",
-        "Human Resource Management Minor",
-        "Social Work Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Adelphi Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Decision typically released by December 31"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-03-01",
-          "is_binding": false,
-          "notes": "Priority deadline; rolling admissions continue after this date"
-        },
-        {
-          "plan_type": "Spring Admission",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Regular deadline for spring semester start"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "details": "500-word essay required via Common App or Adelphi App"
-        },
-        {
-          "target_program": "Honors College",
-          "requirement_type": "Supplemental Essay",
-          "deadline": "2024-12-01",
-          "details": "250-word essay on an idea from a book, song, or art that shaped your understanding"
-        },
-        {
-          "target_program": "Music",
-          "requirement_type": "Audition",
-          "deadline": "2024-12-14",
-          "details": "In-person or video audition required; Early Action audition by Nov 15"
-        },
-        {
-          "target_program": "Theatre",
-          "requirement_type": "Audition/Interview",
-          "deadline": "2025-01-31",
-          "details": "Two monologues for Acting; portfolio for Design/Tech"
-        },
-        {
-          "target_program": "Joint Degree Programs",
-          "requirement_type": "Statement of Interest",
-          "details": "One-page statement regarding professional goals and interest in the specific joint program"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Course Rigor",
-          "Personal Statement",
-          "Recommendations"
+            "notable_professors": [
+              "Orion Duckstein (Department Chair)",
+              "Daniel Padierna",
+              "Adelheid B. Strelick",
+              "Mike Aquino"
+            ],
+            "notes": "No audition is required for entry into the BFA program as of 2024-2025, but a Sophomore Review is conducted. Students must maintain a 2.5 GPA in the BFA Dance major to remain in the program. Data source: Adelphi University website, 2024-2025; CSULB Dance Undergraduate Student Handbook 2024-2025 (used for curriculum structure and GPA requirements given lack of explicit Adelphi program handbook)."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Environmental Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          }
         ],
-        "secondary_factors": [
-          "Extracurricular Activities",
-          "Talent/Ability",
-          "Character"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Recommended",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Strong",
-        "specific_differentiators": "Emphasis on 'personalized approach' and community engagement; evaluates potential beyond metrics through a holistic review."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to Arts & Sciences or Psychology if seeking a lower admission bar (2.3+ GPA) compared to Nursing (3.5+)",
-        "Use the 'Undecided' path to delay major declaration until 60 credits",
-        "Identify as 'Business 3-Year' only if GPA is 3.7+; otherwise use standard 4-year track",
-        "Target Joint Degree programs by Feb 1 for specialized advising"
-      ],
-      "college_ranking_tactics": [
-        "Rank Garden City primary for traditional residential experience",
-        "Prioritize Manhattan Center for NYC career networking",
-        "List Honors College for exclusive scholarships and Earle Hall housing"
-      ],
-      "alternate_major_strategy": "If applying to Nursing, list 'Pre-medical Biology' or 'Public Health' as the alternate major to ensure university admission and a secondary internal transfer attempt."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 49110,
-          "total_coa": 73654,
-          "housing": 20028
-        },
-        "out_of_state": {
-          "tuition": 49110,
-          "total_coa": 73654,
-          "supplemental_tuition": 0
-        }
+        "housing_profile": "Standard Adelphi residence halls offering a variety of furnished rooms (single, double, triple) and suite-style options with shared bathrooms. Amenities include lounges with kitchens, all-inclusive utilities, and Wi-Fi. Some rooms have air conditioning. Living-learning communities are available. [2, 4, 6, 8, 9]",
+        "student_archetype": "Intellectually curious students seeking a broad liberal arts education alongside in-depth study in diverse fields such as art, biology, creative writing, environmental studies, computer science, and engineering. They value critical thinking, interdisciplinary learning, and exploring a wide range of academic disciplines. [1, 3, 12]",
+        "strategic_fit_advice": "Ideal for students desiring a comprehensive academic experience that blends foundational liberal arts with specialized major studies. Applicants should demonstrate strong academic curiosity and an openness to diverse intellectual pursuits."
       },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 32000,
-      "average_merit_aid": 27000,
-      "percent_receiving_aid": 99.0,
-      "scholarships": []
+      {
+        "name": "Robert B. Willumstad School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Robert Adelberg (Adjunct Faculty)"
+            ],
+            "notes": "AACSB accredited. Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "AACSB accredited. Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "AACSB accredited. Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "AACSB accredited. Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Information Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "AACSB accredited. Data source: Adelphi University website, 2024-2025."
+          }
+        ],
+        "housing_profile": "Standard Adelphi residence halls providing furnished rooms (single, double, triple) and suite-style accommodations. Facilities include communal lounges with kitchens, all-inclusive utilities, and Wi-Fi. Some rooms are air-conditioned. [2, 4, 6, 8, 9]",
+        "student_archetype": "Ambitious and ethically-minded individuals aspiring to leadership roles in business. They are career-focused, value practical experience through internships, mentorships, networking with industry leaders, and developing technological and professional skills. [19, 25, 26, 28, 29]",
+        "strategic_fit_advice": "Best suited for students driven to achieve success in the business world, who thrive on real-world application, professional development, and networking opportunities. A commitment to ethical leadership and social responsibility is highly valued."
+      },
+      {
+        "name": "Ruth S. Ammon College of Education and Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 101 English Composition I",
+                "HSC 110 Medical Terminology",
+                "PSY 101 General Psychology",
+                "HSC 400 Introduction to Public Health",
+                "CHE 105 General, Organic & Biochemistry",
+                "HCM 350 U.S. Healthcare System"
+              ],
+              "electives": [
+                "Health Science Electives (BIO, BUS, CHE, ECO, ESC, FSI, HSC, HCM, NSG, PHY, PSY, RAD or RTC)"
+              ],
+              "total_units": 120,
+              "major_units": "Approximately 50-60"
+            },
+            "notable_professors": [],
+            "notes": "Prepares for various healthcare careers. Data source: Adelphi University website, 2024-2025; UHC Curriculum Guide for Bachelor of Science in Health Sciences -Pre-Public Health Track (2024-2025) (used as a guide for typical curriculum structure given lack of explicit Adelphi program handbook)."
+          },
+          {
+            "name": "Childhood Education",
+            "degree_type": "B.A. (with various concentrations)",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Offers a five-year combined bachelor's/master's degree program. Data source: Adelphi University website, 2024-2025."
+          },
+          {
+            "name": "Physical Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          }
+        ],
+        "housing_profile": "Standard Adelphi residence halls offering various furnished room types (single, double, triple, suite-style) with communal amenities like lounges with kitchens, all-inclusive utilities, and Wi-Fi. Air-conditioned rooms are available in some halls. [2, 4, 6, 8, 9]",
+        "student_archetype": "Dedicated individuals preparing for careers as educators, clinicians, or health and sport science professionals. They are committed to serving a multicultural society, valuing scholarship, reflective practice, social justice, wellness, and community engagement. [1]",
+        "strategic_fit_advice": "Recommended for students passionate about education, health, and sport sciences, with a strong commitment to social justice, community service, and developing practical skills to work with diverse populations."
+      },
+      {
+        "name": "Honors College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": "Dedicated first-year honors community on the first floor of Earle Hall, with upper-division students residing in honors suites within the same hall. Features suite-style living with shared bathrooms, common lounges with kitchenettes, TVs, and study tables. Students have 24/7 access to exclusive Honors College facilities including classrooms, a lounge, library, piano practice room, and computer labs. [2, 6, 13, 14]",
+        "student_archetype": "High-achieving, intellectually curious students who seek an enriched academic environment and a close-knit community. They value interdisciplinary learning, critical thinking, global perspectives (study abroad is encouraged), and strong mentorship from faculty and peers. [2, 14]",
+        "strategic_fit_advice": "Ideal for academically strong students who desire a challenging curriculum, personalized attention, and a vibrant intellectual community from their first year. Applicants should demonstrate a strong interest in engaging discussions and critical inquiry."
+      },
+      {
+        "name": "College of Nursing and Public Health",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": 51.3,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "General Chemistry with Lab (4 credits)",
+              "Anatomy and Physiology I with Lab (4 credits)",
+              "Anatomy and Physiology II with Lab (4 credits)",
+              "Microbiology (3 credits)",
+              "Introductory Psychology Course"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Minimum 3.20 GPA for pre-professional courses; minimum 3.0 overall GPA. C+ or better in all nursing courses and C or better in all non-nursing courses for progression. TEAS Requirements: 65% composite, 60% reading, 50% science.",
+            "admissions_pathway": "Direct Entry",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.3,
+            "curriculum": {
+              "core_courses": [
+                "NURS 200-level Sophomore Nursing Courses",
+                "NURS 300-level Professional Nursing Courses",
+                "NURS 400-level Professional Nursing Courses",
+                "General Education courses (English, Math, Biology, Sociology, Psychology)"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": "Approximately 70-80"
+            },
+            "notable_professors": [
+              "Deborah Hunt (Dean of College of Nursing and Public Health)"
+            ],
+            "notes": "Direct entry for first-year students. Students must maintain specific GPAs for progression into clinical courses. 128-134 total credits. Data source: Adelphi University website, 2024-2025; UTEP Traditional Bachelor of Science in Nursing 2024-2025 BSN Curriculum, Duquesne University 2024-2025 Bachelor of Science in Nursing (used as a guide for typical curriculum structure given lack of explicit Adelphi program handbook)."
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          }
+        ],
+        "housing_profile": "Standard Adelphi residence halls, providing furnished rooms (single, double, triple) and suite options. Amenities include lounges with kitchens, all-inclusive utilities, and Wi-Fi. Certain rooms are equipped with air conditioning. [2, 4, 6, 8, 9]",
+        "student_archetype": "Compassionate and dedicated students aspiring to become leaders in healthcare. They are committed to a rigorous education grounded in clinical practice, innovation, and efficiency, and thrive in a supportive 'learning family' environment that fosters shared experiences and knowledge. [27]",
+        "strategic_fit_advice": "Highly suitable for individuals with a strong calling to healthcare and community service, who will benefit from a collaborative learning model, extensive practical clinical experiences, and leadership development in nursing and public health."
+      },
+      {
+        "name": "Gordon F. Derner School of Psychology",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC 101 Introduction to Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 101 Introduction to Psychology",
+                "PSYC 200 Research Methods in Psychology",
+                "PSYC 203 Statistics in Psychology",
+                "PSYC 300-level courses (e.g., Developmental, Social, Cognitive, Abnormal Psychology)"
+              ],
+              "electives": [
+                "PSYC 300-400 level electives within various sub-fields of psychology"
+              ],
+              "total_units": 120,
+              "major_units": "Approximately 36-50"
+            },
+            "notable_professors": [],
+            "notes": "Offers a 4+1 accelerated program for BA+MA. Data source: Adelphi University website, 2024-2025; USCB 2024-2025 Bachelor of Arts in Psychology, LAU 2024-2025 Bachelor of Arts in Psychology, Daemen University 2024-2025 Bachelor of Arts in Psychology (used as a guide for typical curriculum structure given lack of explicit Adelphi program handbook)."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Adelphi University website, 2024-2025."
+          }
+        ],
+        "housing_profile": "Standard Adelphi residence halls, offering various furnished room types (single, double, triple, suite-style). Amenities include lounges with kitchens, all-inclusive utilities, and Wi-Fi, with some rooms featuring air conditioning. [2, 4, 6, 8, 9]",
+        "student_archetype": "Students passionate about understanding the mind and behavior, aiming for careers in mental health or various psychology fields. They are drawn to personalized mentoring, empirical research, interdisciplinary collaboration, and a commitment to social justice. [9, 18, 22]",
+        "strategic_fit_advice": "Suitable for students with a deep interest in psychology, from foundational studies to advanced clinical practice. Applicants should demonstrate a commitment to research, social justice, and a desire for personalized academic and professional growth."
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SW 150 Introduction to Social Work and Social Welfare",
+              "PSY 101 Introductory Psychology",
+              "SOC 101 Introduction to Sociology",
+              "BIO 104 Biology for the 21st Century (or BIO 120, BMS 202)",
+              "PLS 102 Issues in U.S. Politics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Minimum 2.0 overall GPA and 2.5 GPA in all social work courses to remain in the program. Completion of 425 hours of Practicum Education.",
+            "admissions_pathway": "Pre-Social Work Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "SW 150 Introduction to Social Work and Social Welfare",
+                "SW 300 Social Work and Difference, Diversity, and Privilege",
+                "SW 316 Interviewing in Social Work",
+                "SW 317 Generalist Practice I",
+                "SW 318 Generalist Practice II",
+                "SW 319 Social Welfare Policy and Services",
+                "SW 340 Human Behavior and the Social Environment I",
+                "SW 341 Human Behavior and the Social Environment II",
+                "SW 348 Professional Development in Social Work",
+                "SW 430 Social Work Research",
+                "SW 490 Social Work Field Education I"
+              ],
+              "electives": [
+                "Social Work Electives (6 credits)"
+              ],
+              "total_units": 120,
+              "major_units": "Approximately 48"
+            },
+            "notable_professors": [],
+            "notes": "Students declare as 'Social Work Candidate' initially and apply to the BSW program in their sophomore year. Data source: Adelphi University website, 2024-2025; BSW Student Handbook AY 2024-2025 (MTSU, used for curriculum structure and GPA requirements given lack of explicit Adelphi program handbook); Grand Valley State University 2025-2026 Undergraduate & Graduate Catalog (used for prerequisite courses as a guide)."
+          }
+        ],
+        "housing_profile": "Standard Adelphi residence halls, providing furnished rooms (single, double, triple) and suite-style accommodations. Common areas include lounges with kitchens, all-inclusive utilities, and Wi-Fi. Some rooms have air conditioning. [2, 4, 6, 8, 9]",
+        "student_archetype": "Individuals deeply committed to social justice, community service, and advocating for vulnerable populations. They are driven to address societal challenges, promote equity, and contribute to the well-being of individuals and communities through ethical practice. [18, 25, 26]",
+        "strategic_fit_advice": "Appropriate for those dedicated to making a positive social impact, who are passionate about community engagement, social justice, and working with diverse populations in various social work capacities."
+      },
+      {
+        "name": "College of Professional and Continuing Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [],
+        "housing_profile": "Primarily off-campus housing or general Adelphi residence halls for a subset of students on the Garden City campus. This college also serves students at specialized learning centers in Hauppauge, Hudson Valley, and New York City, where on-campus housing is not available. [8, 15]",
+        "student_archetype": "Motivated adult learners, working professionals, and individuals seeking flexible pathways to degrees, career advancement, or skill acquisition. They are often independent, goal-oriented, and balance their studies with other life and professional commitments. [1, 7]",
+        "strategic_fit_advice": "Best for self-disciplined adult learners and professionals who require flexible, career-focused programs, including online options, to achieve their educational and professional goals. Independence and time management skills are crucial."
+      }
+    ],
+    "minors": [
+      "Business Minor",
+      "Public Health Minor",
+      "Human Resource Management Minor",
+      "Biology Minor",
+      "Economics Minor",
+      "English Minor",
+      "Deaf Studies/ASL Minor"
+    ],
+    "certificates": [
+      "Basic Sciences for Health Professions Certificate",
+      "Digital Marketing Certificate",
+      "Marketing Analytics Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Adelphi's Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "For Fall start. Decision notification begins by December 31."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Priority deadline for Rolling Admission for Fall start. Applications received after this date will be considered on a space-available basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal statement or essay (500 words or less) is required. Applicants can respond to one of the provided questions or a topic of their choice. Alternatively, a report or paper written during the current school year may be submitted."
+      },
+      {
+        "target_program": "Art (Studio Art, Art and Design Education) - Undergraduate",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio of 12 to 20 examples of recent work demonstrating various artistic skills and mediums (e.g., drawing, painting, sculpture, digital art, photography) is required. At least three examples should be drawings observed from life. A letter of introduction to the department chair explaining interests and passions in art is also needed. Portfolios can be submitted digitally via SlideRoom or in person during scheduled 'portfolio review days' in the fall and spring semesters. The application cannot be reviewed until the portfolio is complete."
+      },
+      {
+        "target_program": "Music (Music, Music Education, Composition Concentration) - Undergraduate",
+        "requirement_type": "Audition",
+        "deadline": "November 10, 2025 (Fall 2026 Early Action video submissions); December 15, 2025 (Spring 2026 video submissions)",
+        "details": "Admission is by audition only. Applicants must prepare and present two contrasting works for their primary instrument/voice type. During the audition, rhythmic and harmonic sight-reading excerpts will also be performed, and a brief online test will assess musicianship skills. Video submissions are accepted for students living 200+ miles from the Garden City, NY campus. On-campus audition dates for Fall 2026 include November 15, 2025; December 14, 2025; January 24, 2026; February 14, 2026; and March 7, 2026. Applicants to the Composition Concentration must also present and discuss a small portfolio of printed or manuscript scores of their works (preferably with a recording). Music Education applicants will have an additional interview."
+      },
+      {
+        "target_program": "Dance - Undergraduate",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Admission is by audition, which is required for both majors and minors. The audition typically involves taking a 90-minute ballet class, a 90-minute modern dance class, and performing a two- to three-minute solo to music of the applicant's choice. Auditions are by appointment only and can be scheduled on Mondays, Wednesdays, and some Fridays. Video auditions are also accepted."
+      },
+      {
+        "target_program": "Theatre (Acting) - Undergraduate",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Admission is by audition. Applicants are required to present two monologues, each two to three minutes in length. One monologue should be classical (e.g., Shakespeare, Molière), and the other contemporary. In-person audition dates for the 2025-2026 academic year include November 1, 2025; January 31, 2026; February 20, 2026; March 14, 2026; and April 11, 2026. Digital submissions via SlideRoom are also accepted."
+      },
+      {
+        "target_program": "Theatre (Design Technology) - Undergraduate",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Entrance into the program is determined by a review of a portfolio for design or by an interview for technical theatre. The portfolio should include examples of previous artistic experience such as lighting plots, designs, sketches, drawings, paintings, models, sculpture pieces, or photographs of such work. Applicants also need a written statement about their professional goal, an informal photograph, and a résumé. Digital submissions via SlideRoom are accepted."
+      },
+      {
+        "target_program": "Art Education - Graduate (MA)",
+        "requirement_type": "Portfolio",
+        "deadline": "November 1st (for upcoming term review end date)",
+        "details": "An artistic portfolio of 15-20 images demonstrating competence in one area of specialization and breadth of studio experience in other media is required. The portfolio can be emailed or submitted on a CD/USB drive (PDF or JPG files preferred). A personal statement/essay addressing the desire to pursue graduate study in art education and a video statement (MP4 file preferred) following specific prompts are also required."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Character/Personal Qualities",
+        "Talent/Ability",
+        "Class Rank"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Emphasis on intellectual curiosity and community contribution; special admissions processes for Honors College and performing/visual arts majors."
     },
+    "essay_prompts": [
+      {
+        "prompt": "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+        "word_limit": "650 words",
+        "type": "Personal, Identity, Background, Interest, Talent",
+        "required": true,
+        "brainstorming_questions": [
+          "What core aspect of yourself, if left out, would make your application feel incomplete to you?",
+          "When did you first realize this background, identity, interest, or talent was deeply significant to you?",
+          "How has this element shaped your perspective, decisions, or aspirations?",
+          "Can you recall a specific moment or anecdote that vividly illustrates the impact of this aspect on your life?",
+          "Beyond just stating it, how can you *show* the reader the meaning and depth of this part of your identity or experience?"
+        ]
+      },
+      {
+        "prompt": "The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?",
+        "word_limit": "650 words",
+        "type": "Personal, Challenge, Reflection",
+        "required": true,
+        "brainstorming_questions": [
+          "What was a significant challenge you faced where the outcome was uncertain or negative?",
+          "Describe the immediate feelings and long-term impacts this setback had on you.",
+          "What specific actions did you take to address or overcome this challenge, or to cope with its aftermath?",
+          "How did this experience change your approach to future difficulties or your understanding of yourself?",
+          "What tangible skills, perspectives, or resilience did you gain that you still apply today?"
+        ]
+      },
+      {
+        "prompt": "Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?",
+        "word_limit": "650 words",
+        "type": "Personal, Reflection, Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "Was there a belief (personal, societal, academic) you once held or observed that you later doubted?",
+          "What specific event, conversation, or piece of information caused you to question it?",
+          "What was your initial internal reaction and how did you explore these new thoughts?",
+          "What was the eventual resolution or evolution of your thinking, and did it lead to any actions?",
+          "How did challenging this belief impact your understanding of the world or your own intellectual curiosity?"
+        ]
+      },
+      {
+        "prompt": "Reflect on something that someone has done for you that has made you happy or thankful in a surprising way. How has this gratitude affected or motivated you?",
+        "word_limit": "650 words",
+        "type": "Personal, Community, Gratitude",
+        "required": true,
+        "brainstorming_questions": [
+          "Think of a time someone's action, big or small, unexpectedly moved you or made a significant difference.",
+          "What was unique or surprising about their gesture or its impact on you?",
+          "How did this act of kindness or support change your immediate mood or your outlook?",
+          "In what ways has this feeling of gratitude inspired you to act differently or pursue new goals?",
+          "How do you now approach your interactions with others, or situations where you can offer help, because of this experience?"
+        ]
+      },
+      {
+        "prompt": "Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+        "word_limit": "650 words",
+        "type": "Personal, Accomplishment, Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "What achievement or significant event led to a profound shift in your self-perception?",
+          "What did you believe or understand about yourself or others *before* this turning point?",
+          "Describe the specific 'aha!' moment or the series of events that led to your new understanding.",
+          "How did this growth manifest in your actions, relationships, or future choices?",
+          "What lasting impact did this period of growth have on your character or your perspective on life?"
+        ]
+      },
+      {
+        "prompt": "Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?",
+        "word_limit": "650 words",
+        "type": "Personal, Intellectual, Interest, Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "What is a subject or idea that completely absorbs you, even outside of school?",
+          "What specific questions or mysteries within this topic do you find most compelling?",
+          "How did you first encounter this captivating subject, and when did you realize its deep appeal?",
+          "What resources (books, documentaries, mentors, experiments) have you used to deepen your knowledge?",
+          "How does your engagement with this topic reflect your intellectual curiosity and approach to learning?"
+        ]
+      },
+      {
+        "prompt": "Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.",
+        "word_limit": "650 words",
+        "type": "Personal, Open Topic",
+        "required": true,
+        "brainstorming_questions": [
+          "What story about yourself do you feel is essential for the admissions committee to know, even if it doesn't fit other prompts?",
+          "Is there a unique passion, experience, or aspect of your personality that hasn't been fully highlighted elsewhere?",
+          "What makes this particular story or reflection uniquely 'you' and distinct from other applicants?",
+          "If you could have a brief conversation with an admissions officer, what is the one personal insight you'd want to convey?",
+          "How does this essay demonstrate your voice, critical thinking, or creativity in a way that truly represents you?"
+        ]
+      }
+    ]
+  },
+  "application_strategy": {
+    "major_selection_tactics": [],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": ""
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 51950.0,
+        "total_coa": 78745.0,
+        "housing": 21385.0
+      },
+      "out_of_state": {
+        "tuition": 51950.0,
+        "total_coa": 78745.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 31189.0,
+    "average_merit_aid": 23770.0,
+    "percent_receiving_aid": 96.0,
+    "meets_full_need": false,
+    "notes": "Adelphi University meets 55% of demonstrated financial need. No specific policy regarding 'no loans for families under $75K' was found.",
     "scholarships": [
       {
-        "name": "Presidential Award",
+        "name": "Adelphi University Academic Merit Scholarships",
         "type": "Merit",
-        "amount": "Up to $35,000 per year",
-        "deadline": "Automatic consideration",
-        "benefits": "Renewable for four years with maintaining a 2.0 GPA",
-        "application_method": "Automatic Consideration"
+        "amount": "Ranges from $12,000 - $35,000 per year for first-year students; up to $30,000 for Presidential Scholarship; up to $16,500 for Dean's Award; up to $10,000 for Full-Time Transfer Merit Award",
+        "deadline": "Automatic consideration upon application submission",
+        "benefits": "Renewable annually based on maintaining academic criteria (e.g., 3.0 GPA for Presidential Scholarship)",
+        "application_method": "Automatic Consideration upon acceptance to Adelphi University"
       },
       {
         "name": "Honors College Scholarship",
         "type": "Merit",
         "amount": "$3,000 per year",
-        "deadline": "2025-01-15",
-        "benefits": "Dedicated honors housing in Earle Hall, priority registration, specialized honors advising",
-        "application_method": "Automatic Consideration with Honors Admission"
-      },
-      {
-        "name": "Trustee Talent Scholarship",
-        "type": "Merit/Talent",
-        "amount": "Up to $24,000 per year",
-        "deadline": "2025-02-15",
-        "benefits": "Recognition of exceptional ability in theatre, dance, art, music, or communications",
-        "application_method": "Separate Application and Portfolio/Audition"
+        "deadline": "Automatic consideration upon acceptance to Honors College",
+        "benefits": "May be combined with other scholarships; requires continued enrollment in the Honors College",
+        "application_method": "Automatic Consideration for admitted full-time first-year and transfer students accepted into the Honors College"
       },
       {
         "name": "Levermore Global Scholars Award",
         "type": "Merit",
         "amount": "$3,000 per year",
-        "deadline": "Rolling",
-        "benefits": "Global leadership training, study abroad opportunities, and research funding",
-        "application_method": "Automatic Consideration with Program Admission"
+        "deadline": "Automatic consideration upon acceptance to Levermore Global Scholars Program",
+        "benefits": "Supplements other scholarships and awards; requires continued enrollment in the Levermore Global Scholars program",
+        "application_method": "Automatic Consideration for admitted full-time first-year and transfer students accepted into the Levermore Global Scholars Program"
       },
       {
-        "name": "Phi Theta Kappa Select Award",
+        "name": "Adelphi University International Leadership Scholarship",
         "type": "Merit",
-        "amount": "$2,500 - $5,000 per year",
-        "deadline": "Rolling",
-        "benefits": "Specifically for transfer students with high academic achievement",
-        "application_method": "Separate Application (Proof of PTK Membership Required)"
+        "amount": "$10,000 - $18,000 per year",
+        "deadline": "Automatic consideration upon application submission",
+        "benefits": "Renewable each year of attendance",
+        "application_method": "Automatic Consideration for international undergraduate applicants based on academic excellence"
       },
       {
-        "name": "Panther Grant",
+        "name": "Adelphi University International Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room, and board",
+        "deadline": "Automatic consideration upon application submission",
+        "benefits": "Covers full cost of attendance; highly competitive, awarded to one new international student annually",
+        "application_method": "Automatic Consideration for international undergraduate applicants with strong academic profiles, leadership skills, or significant extracurricular accomplishments"
+      },
+      {
+        "name": "You Are Welcome Here Scholarship",
+        "type": "Merit",
+        "amount": "At least 50% of tuition fees",
+        "deadline": "Eligible students contacted directly",
+        "benefits": "Partial funding for international Bachelor's students",
+        "application_method": "Eligible non-U.S. citizens or permanent residents are contacted directly with application steps"
+      },
+      {
+        "name": "Need-Based Grants (Federal, State, Institutional)",
         "type": "Need",
-        "amount": "Varies",
-        "deadline": "2025-03-01",
-        "benefits": "Does not need to be repaid; supplements institutional merit aid",
-        "application_method": "FAFSA"
-      },
-      {
-        "name": "NY State Scholarship for Academic Excellence (Regents)",
-        "type": "Merit",
-        "amount": "$500 - $1,500 per year",
-        "deadline": "2025-06-30",
-        "benefits": "Awarded to top-ranking New York State high school graduates",
-        "application_method": "High School Nomination/Automatic"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 3 or 4 grant credit; max 30 credits total",
-        "exceptions": [
-          "Biology, Calculus, English require a 4",
-          "Computer Science A requires a 4; AP Research and AP Seminar require a 4"
-        ],
-        "usage": "Satisfies PATH (General Education) requirements"
-      },
-      "ib_policy": {
-        "general_rule": "Credit awarded for HL exams with score of 4 or higher",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transfer Evaluation System (TES)"
-        ],
-        "restrictions": "64 unit cap for community college; final 30 credits must be at Adelphi"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Rigorous course load with multiple AP/IB credits",
-        "A weighted GPA often exceeding 4.0 for Honors consideration",
-        "Demonstrated intellectual curiosity and a passion for interdisciplinary learning",
-        "Strong alignment with specialized programs like Nursing or Psychology"
-      ],
-      "common_activities": [
-        "Clinical volunteering for health-related majors",
-        "Independent research projects",
-        "Leadership roles in school clubs",
-        "Involvement in theatre productions or music ensembles",
-        "Participation in summer programs at major universities"
-      ],
-      "essay_tips": [
-        "Explicitly connect personal story to Adelphi\u2019s location",
-        "For Honors, focus on interdisciplinary thinking",
-        "Explain grade dips in 'additional information' section",
-        "Focus on a single meaningful event or realization"
-      ],
-      "red_flags": [
-        "Decline in rigor senior year",
-        "Citing wrong university name in recycled essay",
-        "Generic personal statements that lack self-reflection",
-        "Missing C+ threshold in science for nursing applicants"
-      ],
-      "insights": [
-        "Rolling admissions allows for flexibility as late as May",
-        "The Honors College interview is a critical, high-stakes component",
-        "Scholarships are often tied to program-specific applications (nursing, honors)",
-        "Transfer students need a minimum 3.5 GPA to be competitive for the Honors College"
-      ]
-    },
-    "outcomes_retention": {
-      "outcomes": {
-        "median_earnings_10yr": 75482,
-        "employment_rate_2yr": 92.0,
-        "grad_school_rate": 18.1,
-        "top_employers": [
-          "Deloitte",
-          "Northwell Health",
-          "Morgan Stanley",
-          "PwC",
-          "J.P. Morgan Chase",
-          "Memorial Sloan Kettering Cancer Center"
-        ],
-        "loan_default_rate": 0.0
-      },
-      "retention": {
-        "freshman_retention_rate": 83.0,
-        "graduation_rate_4_year": 62.0,
-        "graduation_rate_6_year": 73.0
-      }
-    }
-  },
-  "_id": "adelphi_university",
-  "application_process": {
-    "essay_prompts": [
-      {
-        "prompt": "Adelphi is committed to transforming lives through education. How has your education so far transformed your perspective or goals?",
-        "word_limit": "250 words",
-        "type": "Personal Growth",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking back to a specific moment where a class, a teacher, or even a challenging assignment at Adelphi (or a previous educational experience) made you see the world, a subject, or even yourself in a fundamentally different light, what was that moment and what was the 'before' and 'after' of your perspective?",
-          "Beyond academics, what's an extracurricular activity, club, or even a volunteer experience that has been particularly impactful in shaping your personal growth and how has that experience altered the way you approach your future aspirations or your understanding of your own capabilities?",
-          "Can you pinpoint a time when your education challenged a deeply held belief or assumption you had about yourself or the world, and what was the process of grappling with that challenge and how did it ultimately lead to a new understanding or a revised goal?",
-          "Adelphi emphasizes transforming lives. Reflect on a time when you witnessed your own education positively impact someone else's life or when you saw how a particular lesson learned in an educational setting could have a ripple effect. What was that situation, and how did it influence your own sense of purpose or your desired contribution to society?",
-          "Consider a time when you felt your education opened a door to a new possibility or passion you hadn't previously considered. What was that discovery, and how has it fundamentally shifted the trajectory of your educational journey and your vision for what you want to achieve after Adelphi?"
-        ]
+        "amount": "Varies based on financial need",
+        "deadline": "FAFSA priority deadline: March 1st each year",
+        "benefits": "Does not have to be repaid; renewable for students who meet FAFSA filing deadlines and continue to demonstrate financial need",
+        "application_method": "FAFSA (Free Application for Federal Student Aid) and other defined criteria"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/adelphi_university_logo.png"
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Adelphi University awards credit for scores of 3, 4, or 5 on many Advanced Placement (AP) exams. A score of 3 often qualifies for introductory course credit, with specific course equivalents detailed per subject. Up to 30 credits may be awarded.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "Adelphi University awards up to 30 credits for Higher Level (HL) International Baccalaureate (IB) exams with scores of 5, 6, or 7. Some Standard Level (SL) exams may also be considered for credit depending on the subject and score.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Adelphi University accepts transfer credits from accredited institutions, generally requiring a grade of C- or higher (with some exceptions allowing D grades for specific programs or strong overall GPA). They accept up to 64 credits from two-year colleges and up to 90 credits from four-year colleges. The university provides an online Transfer Course Equivalency tool and maintains numerous articulation agreements with other institutions to facilitate the transfer process."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including a high GPA and challenging coursework (e.g., AP/honors classes)",
+      "Meaningful extracurricular involvement, demonstrating depth and leadership (e.g., shadowing, club leadership, performing arts, Model UN, various internships)",
+      "Compelling and unique essays that highlight personal experiences and perspectives",
+      "Solid standardized test scores (though optional, competitive scores can enhance the application)"
+    ],
+    "common_activities": [
+      "Leadership in school clubs/organizations",
+      "Community service/volunteering",
+      "Varsity athletics/Sports teams",
+      "Music/Arts involvement",
+      "Research experience/Internships"
+    ],
+    "essay_tips": [
+      "Be authentic: Write in your own voice and share unique experiences, motivations, and aspirations. Avoid repeating information found elsewhere in your application.",
+      "Demonstrate specific interest in Adelphi University: Explain why you want to attend Adelphi and how it aligns with your career aspirations. Research and mention specific programs, classes, professors, clubs, or events that appeal to you to show why this particular school is a good fit.",
+      "Show, don't tell: Use concrete examples, stories, and detailed descriptions to illustrate your qualities and experiences, rather than simply stating them.",
+      "Connect your interests to specific resources at Adelphi: Go beyond general statements by linking your academic or extracurricular interests to particular offerings, faculty, or opportunities available at the university."
+    ],
+    "red_flags": [
+      "Generic Essays: Submitting a personal statement that could apply to any university and does not specifically articulate your motivations for attending Adelphi or how it aligns with your career aspirations is a significant red flag. The essay should be authentic and reflect your unique experiences.",
+      "Incomplete or Falsified Information: Providing an incomplete application or omitting/falsifying information, particularly regarding disciplinary history, can lead to denial or rescission of admission. Accuracy and completeness are crucial.",
+      "Weak or Generic Letters of Recommendation: While Adelphi requires letters of recommendation, submitting those that are weak or come from individuals who do not know you well can detract from your application. These letters are an opportunity for others to highlight your strengths and potential.",
+      "Procrastination and Missing Deadlines: Waiting until the last minute to submit your application is a common mistake and can be detrimental, potentially impacting your consideration for scholarships or admission on a space-available basis. Adelphi encourages early application, especially for early action and competitive programs."
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Adelphi University employs a personalized and holistic admissions process, considering factors beyond just GPA and test scores, with a moderately selective acceptance rate of around 78%."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "Adelphi emphasizes a uniquely personalized education with small class sizes (average of 21 students) and a 10:1 student-to-faculty ratio, leading to increased individual attention and academic support."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "The university fosters a close-knit, supportive, and welcoming community that actively helps students succeed, distinguishing itself from a 'cookie-cutter' educational experience."
+      },
+      {
+        "source": "student_review",
+        "category": "Value",
+        "insight": "Adelphi demonstrates strong post-graduation outcomes, with 95% of undergraduates employed or in graduate school within six months and an average starting salary 25% higher than the national average."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 75482,
+    "employment_rate_2yr": 95.5,
+    "top_employers": [
+      "Deloitte",
+      "JPMorgan Chase",
+      "Morgan Stanley",
+      "PricewaterhouseCoopers",
+      "Goldman Sachs",
+      "Google",
+      "Amazon",
+      "Apple",
+      "Microsoft"
+    ],
+    "median_earnings_6yr": 47100,
+    "grad_school_rate": 18.1,
+    "loan_default_rate": 4.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 83.0,
+    "graduation_rate_4_year": 59.0,
+    "graduation_rate_6_year": 69.0
+  }
 }

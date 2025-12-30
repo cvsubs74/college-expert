@@ -1,692 +1,1584 @@
+
 {
-  "university_profile": {
-    "_id": "the_catholic_university_of_america",
-    "university_name": "The Catholic University of America",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.catholic.edu/",
-      "https://www.usnews.com/best-colleges/catholic-university-of-america-1437",
-      "https://www.niche.com/colleges/the-catholic-university-of-america/",
-      "https://www.shiksha.com/studyabroad/usa/universities/the-catholic-university-of-america/ranking"
-    ],
-    "metadata": {
-      "official_name": "The Catholic University of America",
-      "location": {
-        "city": "Washington",
-        "state": "DC",
-        "type": "Private"
-      }
+  "_id": "the_catholic_university_of_america",
+  "metadata": {
+    "official_name": "The Catholic University of America",
+    "location": {
+      "city": "Washington",
+      "state": "District of Columbia",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "Located in the heart of the nation's capital, The Catholic University of America is the national university of the Catholic Church and the only higher education institution founded by U.S. bishops. It combines a rigorous liberal arts foundation with a newly elevated R1 research profile, offering a unique intersection of faith and reason.",
-      "market_position": "National Catholic Research University",
-      "admissions_philosophy": "Holistic review with a focus on mission-alignment and academic potential; currently test-optional for undergraduate applicants.",
-      "us_news_rank": 171,
-      "analyst_takeaways": [
-        {
-          "category": "Research Prestige",
-          "insight": "The university officially achieved R1 'Very High Research Activity' status in February 2025.",
-          "implication": "Expect increased federal funding, higher-tier faculty recruitment, and enhanced prestige for graduate doctoral programs."
-        },
-        {
-          "category": "Strategic Location",
-          "insight": "Direct on-campus access to the Washington Metro Red Line connects students to the city's power centers.",
-          "implication": "Students have a distinct advantage in securing high-profile internships with federal agencies like the FBI, NASA, and the CIA."
-        },
-        {
-          "category": "Institutional Identity",
-          "insight": "It maintains a deeply integrated Catholic identity, hosting the Basilica of the National Shrine of the Immaculate Conception on its grounds.",
-          "implication": "The school serves as a niche 'Hidden Gem' for students seeking a traditional religious environment within a major urban research setting."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "The social scene is characterized by a close-knit, mission-driven community where religious activities and service-learning programs are central. While it lacks a dominant Greek life, the 'Przybyla Center' and D.C.'s broader cultural offerings drive social interaction.",
-        "transportation_impact": "The Brookland-CUA Metro station is the campus's lifeline, making the university feel like an open gateway to the D.C. metropolitan area. This reduces the need for cars and fosters a 'commuter-friendly' but globally-connected atmosphere.",
-        "research_impact": "Research is highly collaborative and outward-facing, highlighted by a long-standing partnership with NASA's Goddard Space Flight Center and specialized centers for suicide prevention and nuclear waste containment."
-      }
-    },
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": null,
+  "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 82.8,
-      "admits_class_size": 5558,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "overall_acceptance_rate": 83.8,
+      "is_test_optional": false,
+      "test_policy_details": "Beginning in the 2020-2021 application year, The Catholic University of America implemented a test-blind policy. This means the Committee on Admission will not consider standardized tests (SAT or ACT scores) as part of the review for admission, the University Honors Program, the Cornerstone Scholars Program, or for any merit scholarships. This policy applies to all undergraduate applicants, including home-schooled and international candidates. However, international students whose native language is not English are still required to demonstrate English proficiency through exams such as TOEFL or IELTS.",
+      "admits_class_size": 4925,
+      "transfer_acceptance_rate": 57.0,
       "early_admission_stats": [
         {
-          "plan_type": "EA",
-          "applications": null,
-          "admits": null,
-          "acceptance_rate": null,
+          "plan_type": "ED",
+          "applications": 131,
+          "admits": 112,
+          "acceptance_rate": 85.5,
           "class_fill_percentage": null
         },
         {
-          "plan_type": "ED",
+          "plan_type": "EA",
+          "applications": 3387,
+          "admits": 2928,
+          "acceptance_rate": 86.45,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED2",
           "applications": null,
           "admits": null,
           "acceptance_rate": null,
           "class_fill_percentage": null
         }
-      ]
+      ],
+      "international_acceptance_rate": null,
+      "notes": "The Catholic University of America has an overall acceptance rate of approximately 82-86%. The university does not distinguish between local and international students in its admission statistics. International students comprise about 8.6% of the student body.",
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null
     },
     "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
-        "enrolled_total": 850,
-        "notes": "Fall 2025 enrollment reported at 850+ new undergraduates, marking a significant increase from previous year.",
-        "waitlist_stats": {
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        }
+        "applications_total": 6714,
+        "admits_total": 5558,
+        "enrolled_total": 742,
+        "acceptance_rate_overall": 82.78,
+        "yield_rate": 13.35,
+        "notes": "Applicants increased by 14.30% (840 applicants) compared to the previous year (2024).",
+        "waitlist_stats": null
       },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
-        "applications_total": 6714,
-        "admits_total": 5558,
-        "enrolled_total": 742,
-        "acceptance_rate_overall": 82.8,
-        "yield_rate": 13.3,
-        "waitlist_stats": {
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        }
+        "applications_total": 5874,
+        "admits_total": 4925,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 83.80,
+        "yield_rate": null,
+        "notes": "",
+        "waitlist_stats": null
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 5874,
         "admits_total": 4925,
-        "enrolled_total": 861,
-        "acceptance_rate_overall": 83.8,
-        "yield_rate": 17.5,
-        "waitlist_stats": {
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        }
+        "enrolled_total": 862,
+        "acceptance_rate_overall": 83.80,
+        "yield_rate": 17.50,
+        "notes": "Reported as having the highest number of incoming students in the last 5 years. [cite: 16 in prev step]",
+        "waitlist_stats": null
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 5801,
-        "admits_total": 4965,
-        "enrolled_total": 765,
-        "acceptance_rate_overall": 85.6,
-        "yield_rate": 15.4,
-        "waitlist_stats": {
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        }
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 85.60,
+        "yield_rate": null,
+        "notes": "",
+        "waitlist_stats": null
       },
       {
         "year": 2021,
         "cycle_name": "Class of 2025",
-        "applications_total": 5116,
-        "admits_total": 4400,
+        "applications_total": 5254,
+        "admits_total": 4519,
         "enrolled_total": 709,
-        "acceptance_rate_overall": 86.0,
-        "yield_rate": 16.1,
-        "waitlist_stats": {
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": null
-        }
+        "acceptance_rate_overall": 86.01,
+        "yield_rate": 15.69,
+        "notes": "Yield rate inferred using the average admission yield over the past 10 years due to lack of specific year-2021 data.",
+        "waitlist_stats": null
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "3.80-4.10",
-        "unweighted_middle_50": "3.30-3.60",
-        "average_weighted": 4.01,
-        "percentile_25": "3.30",
-        "percentile_75": "3.60",
-        "notes": "Admissions primarily looks at the unweighted GPA, which averages 3.49-3.51 for the most recent classes. Honors cohorts typically possess GPAs of 3.8+."
+        "weighted_middle_50": "3.3-3.7",
+        "unweighted_middle_50": "3.0-3.6",
+        "average_weighted": 3.51,
+        "percentile_25": "3.3",
+        "percentile_75": "3.7",
+        "notes": "The average weighted GPA for admitted students is 3.51. The 25th percentile for weighted GPA is 3.3, and the 75th percentile is 3.7. For unweighted GPAs, the 25th percentile is 3.0 and the 75th percentile is 3.6, with an average unweighted GPA of 3.3. Other sources report the average unweighted GPA for admitted students ranging from approximately 3.4 to 3.52. Information regarding '89% in top 10% of class' was not found in the search results."
       },
       "testing": {
-        "sat_composite_middle_50": "1070-1310",
-        "sat_reading_middle_50": "560-680",
-        "sat_math_middle_50": "540-670",
-        "act_composite_middle_50": "23-30",
-        "submission_rate": 85.0,
-        "policy_note": "Test-optional for all programs, including Honors, Nursing, and Engineering."
+        "sat_composite_middle_50": "1140-1320",
+        "sat_reading_middle_50": "580-660",
+        "sat_math_middle_50": "560-660",
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 57.0,
+        "policy_note": "The Catholic University of America is test-optional and allows superscoring. Scores are considered in a holistic review if submitted, but applicants are not disadvantaged if they choose not to submit. The submission rate of 57.0% is based on first-year applicants for Fall 2020, during a period when the university operated under a test-optional policy."
       },
       "demographics": {
-        "first_gen_percentage": 20.0,
-        "legacy_percentage": 9.3,
-        "international_percentage": 6.3,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Information on the percentage of first-generation college students and legacy students for The Catholic University of America was not explicitly found in the provided search results. While 'First-generation students' were mentioned in the context of mental health support, a specific percentage of the student body was not available.",
         "geographic_breakdown": [
           {
-            "region": "Middle Atlantic (NY, NJ, PA, DE)",
-            "percentage": 56.0
+            "region": "Maryland",
+            "percentage": 18.45
           },
           {
-            "region": "South Atlantic (MD, VA, DC, GA, etc.)",
-            "percentage": 15.0
+            "region": "New Jersey",
+            "percentage": 14.98
           },
           {
-            "region": "New England",
+            "region": "Pennsylvania",
+            "percentage": 13.87
+          },
+          {
+            "region": "New York",
+            "percentage": 12.21
+          },
+          {
+            "region": "Massachusetts",
+            "percentage": 6.93
+          },
+          {
+            "region": "Virginia",
+            "percentage": 6.93
+          },
+          {
+            "region": "Connecticut",
+            "percentage": 3.88
+          },
+          {
+            "region": "Florida",
+            "percentage": 3.74
+          },
+          {
+            "region": "Rhode Island",
+            "percentage": 2.91
+          },
+          {
+            "region": "District of Columbia",
+            "percentage": 2.22
+          },
+          {
+            "region": "International",
             "percentage": 7.0
-          },
-          {
-            "region": "Other US/International",
-            "percentage": 22.0
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 3080,
             "admits": 2476,
-            "acceptance_rate": 80.4,
-            "note": "Enrollment yield for men is approximately 14.4%."
+            "acceptance_rate": 80.40,
+            "note": "Data for first-year admission statistics, likely for the 2023 cycle."
           },
           "women": {
             "applicants": 3634,
             "admits": 3082,
-            "acceptance_rate": 84.8,
-            "note": "Enrollment yield for women is approximately 12.5%."
-          }
+            "acceptance_rate": 84.81,
+            "note": "Data for first-year admission statistics, likely for the 2023 cycle."
+          },
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 62.8,
-          "black_african_american": 9.2,
-          "hispanic_latino": 16.9,
-          "asian": 2.9,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 4.4,
-          "unknown": 3.6,
-          "non_resident_alien": 6.3
-        },
-        "religious_affiliation": "Approximately 70-80% of students identify as Catholic."
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "School of Architecture and Planning",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong focus on 'Building Stewardship' and the classical tradition; applicants should demonstrate an interest in the intersection of design and community service.",
-          "housing_profile": "Traditional single-sex dorms; architecture students often engage in the North Neighborhood social scene.",
-          "student_archetype": "Civic-minded designers and urban stewards",
-          "majors": [
-            {
-              "name": "Architecture",
-              "degree_type": "B.S.Arch.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ARPL 101 Design Studio I",
-                "ARPL 211 Statics & Strength of Materials"
-              ],
-              "special_requirements": "Portfolio review required for internal transfer and progression into 3rd year",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.7,
-              "notable_professors": [
-                "Dean Mark Ferguson",
-                "James McCrery",
-                "Dr. Adnan Morshed"
-              ],
-              "notes": "Known for its 'Classical Architecture and Urbanism' concentration."
-            }
-          ]
-        },
-        {
-          "name": "School of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 84.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a liberal arts foundation with deep roots in the Catholic intellectual tradition and access to D.C. internships.",
-          "housing_profile": "Houses the Honors Residential Community in Centennial Village (Camalier/McDonald Houses).",
-          "student_archetype": "Intellectually curious seekers of faith and reason",
-          "majors": [
-            {
-              "name": "Politics",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "weeder_courses": [
-                "POL 111 Intro to American Politics"
-              ],
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "curriculum": {
-                "core_courses": [
-                  "POL 111 American Government",
-                  "POL 112 World Politics",
-                  "POL 211 Intro to Political Theory",
-                  "POL 401 Senior Seminar"
-                ],
-                "electives": [
-                  "POL 323 Constitutional Law",
-                  "POL 352 East Asian Security",
-                  "POL 407A The Supreme Court"
-                ],
-                "total_units": 120,
-                "major_units": 42
-              },
-              "notable_professors": [
-                "Dr. Matthew Green",
-                "Dr. Jakub Grygiel",
-                "Dr. Andrew Yeo"
-              ],
-              "notes": "Strong pre-law track and Intelligence Studies certificate available."
-            },
-            {
-              "name": "Psychology",
-              "degree_type": "B.A./B.S.",
-              "is_impacted": false,
-              "weeder_courses": [
-                "PSY 201 General Psychology",
-                "PSY 322 Statistics for Social Science"
-              ],
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "curriculum": {
-                "core_courses": [
-                  "PSY 201 General Psychology",
-                  "PSY 322 Statistics",
-                  "PSY 323 Research Methods",
-                  "PSY 404 History and Systems"
-                ],
-                "electives": [
-                  "PSY 379 Growth & Development",
-                  "PSY 301 Abnormal Psychology",
-                  "PSY 307 Biopsychology"
-                ],
-                "total_units": 120,
-                "major_units": 36
-              },
-              "notable_professors": [
-                "Dr. Brendan A. Rich",
-                "Dr. David A. Jobes",
-                "Dr. Marcie Goeke-Morey"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tim and Steph Busch School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 86.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Emphasizes business as a 'noble vocation'; seeks students interested in virtuous leadership and human-centric entrepreneurship.",
-          "student_archetype": "Virtuous entrepreneurs and ethical leaders",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "MATH 114 (Statistics)",
-                "ECON 101",
-                "ECON 102"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ACCT 205 Financial Accounting",
-                "FIN 226 Financial Management"
-              ],
-              "special_requirements": "Completion of Career Discernment Program and BUS 498 Comprehensive Assessment",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "curriculum": {
-                "core_courses": [
-                  "MGT 118 The Vocation of Business",
-                  "ACCT 205 Financial Accounting",
-                  "FIN 226 Financial Management",
-                  "MKT 345 Principles of Marketing",
-                  "MGT 310 People and Organizations",
-                  "MGT 475 Business Strategy"
-                ],
-                "electives": [
-                  "ENT 301 Entrepreneurship",
-                  "FIN 389 Investment Analysis",
-                  "MKT 465 Digital Marketing"
-                ],
-                "total_units": 120,
-                "major_units": 66
-              },
-              "notable_professors": [
-                "Dr. Andreas Widmer",
-                "Dr. Catherine Pakaluk",
-                "Dr. Andrew Abela"
-              ],
-              "notes": "Offers 15 specializations including Sales and Data Analytics."
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering, Physics, and Computing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 82.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focuses on global problem-solving; strong math background highly recommended.",
-          "student_archetype": "Service-oriented innovators and technical problem-solvers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.C.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "Calculus I",
-                "Calculus II",
-                "General Physics I"
-              ],
-              "weeder_courses": [
-                "CSC 113 Intro to Programming",
-                "CSC 223 Data Structures"
-              ],
-              "special_requirements": "ABET Accredited; Ethics in Engineering course required",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.7,
-              "curriculum": {
-                "core_courses": [
-                  "CSC 113 Intro to CS",
-                  "CSC 124 Object-Oriented Programming",
-                  "CSC 223 Data Structures",
-                  "CSC 323 Algorithms",
-                  "CSC 312 Operating Systems",
-                  "CSC 491 Senior Design I"
-                ],
-                "electives": [
-                  "CSC 415 Machine Learning",
-                  "CSC 455 Cyber Security",
-                  "CSC 422 Artificial Intelligence"
-                ],
-                "total_units": 127,
-                "major_units": 72
-              },
-              "notable_professors": [
-                "Dr. Hang Liu",
-                "Dr. Biprodas Dutta"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Conway School of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive direct-entry model; heavy weight on science/math GPA.",
-          "student_archetype": "Compassionate healers with a scientific mindset",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "High School Biology",
-                "High School Chemistry"
-              ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "BIOL 232 Anatomy & Physiology I",
-                "CHEM 109 Organic/Biochem"
-              ],
-              "special_requirements": "75% composite score on HESI Nursing Progression Exam; minimum 2.75 science GPA",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "NURS 151 Intro to Health Systems",
-                  "BIOL 232 A&P I",
-                  "BIOL 233 A&P II",
-                  "BIOL 223 Microbiology",
-                  "NURS 371 Pathophysiology",
-                  "NURS 361 Health Assessment"
-                ],
-                "total_units": 124,
-                "major_units": 78
-              },
-              "notable_professors": [
-                "Dr. Marie Nolan",
-                "Dr. Patricia McMullen"
-              ],
-              "notes": "Internal transfers must enter via the Nursing Exploratory path."
-            }
-          ]
+          "white": 54.60,
+          "black_african_american": 9.03,
+          "hispanic_latino": 14.80,
+          "asian": 3.04,
+          "native_american_alaskan": 0.10,
+          "pacific_islander": 0.06,
+          "two_or_more_races": 5.65,
+          "unknown": 2.97,
+          "non_resident_alien": 9.75
         }
-      ],
-      "minors_certificates": [
-        "Intelligence Studies Certificate",
-        "Digital Art and Design Minor",
-        "Big Data for Economics Minor",
-        "Sustainability Minor",
-        "Pastoral Ministry Certificate",
-        "Data Analytics Minor",
-        "Peace and Justice Studies Minor",
-        "Neuroscience Minor",
-        "Spanish for Health Care Certificate",
-        "Islamic World Studies Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Decision I",
-          "date": "2024-11-01",
-          "is_binding": true,
-          "notes": "Binding commitment"
-        },
-        {
-          "plan_type": "Early Action",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Non-binding"
-        },
-        {
-          "plan_type": "Early Decision II",
-          "date": "2025-02-01",
-          "is_binding": true,
-          "notes": "Binding commitment"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-01",
-          "is_binding": false
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "details": "No university-specific supplemental essays required beyond the Common App personal statement."
-        },
-        {
-          "target_program": "Music, Drama, and Art",
-          "requirement_type": "Audition/Portfolio",
-          "details": "Specific audition or portfolio requirements vary by department within the Rome School."
-        },
-        {
-          "target_program": "Architecture",
-          "requirement_type": "Portfolio",
-          "details": "Portfolio highly recommended/required for admission consideration."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Application Essay",
-          "Teacher Recommendations"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Character/Personal Qualities",
-          "Talent/Ability"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Optional",
-        "legacy_consideration": "Considered",
-        "first_gen_boost": "Considered",
-        "specific_differentiators": "The university utilizes a test-blind policy and emphasizes qualitative traits such as personality, spirit, judgment, and heart alongside academic rigor."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply directly to professional schools like Nursing or Architecture if interested, as their rigid 4-year curricula make internal transferring difficult later.",
-        "Utilize the 'Undecided Engineering' or 'Business Exploratory' tracks if you are STEM-oriented but want to avoid the immediate pressure of a specific specialty.",
-        "Consider applying to the School of Philosophy or Arts & Sciences for potentially less competitive admission compared to the highly-ranked Nursing or Politics programs."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize internal schools based on their proximity to DC-specific internship pipelines.",
-        "Evaluate the core curriculum requirements early, as all students must complete several Theology and Philosophy courses.",
-        "Factor in the university's location on the Metro Red Line for off-campus accessibility and professional networking."
-      ],
-      "alternate_major_strategy": "If applying to a professional B.S. program like Architecture, list the B.A. in Architectural Studies as your alternate. For Nursing, list Psychology or Biology as an alternate to fulfill pre-med/health prerequisites while preparing for an internal transfer."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 58378,
-          "total_coa": 81296,
-          "housing": 18200
-        },
-        "out_of_state": {
-          "tuition": 58378,
-          "total_coa": 81296,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 41835,
-      "average_merit_aid": 15937,
-      "percent_receiving_aid": 94.0
-    },
-    "scholarships": [
-      {
-        "name": "Archdiocesan Scholarship",
-        "type": "Merit",
-        "amount": "Full Tuition",
-        "deadline": "2025-02-01",
-        "benefits": "Covers full tuition for four years; includes participation in an interview process for finalists.",
-        "application_method": "Automatic Consideration (Nomination-based)"
-      },
-      {
-        "name": "The Catholic University of America Scholarship",
-        "type": "Merit",
-        "amount": "$17,000 \u2013 $32,000 per year",
-        "deadline": "Automatic consideration",
-        "benefits": "Renewable for up to eight semesters; awarded based on high school GPA and curriculum rigor.",
-        "application_method": "Automatic Consideration"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Typically a score of 4 or 5 is required for academic credit",
-        "exceptions": [
-          "Score of 3 in foreign languages may grant placement but usually no credit",
-          "AP Physics 1 and 2 often require departmental review for credit",
-          "AP Research and Seminar are generally not listed for credit"
-        ],
-        "usage": "Credits can satisfy Liberal Arts (GE) requirements and apply toward major-specific courses"
-      },
-      "ib_policy": {
-        "general_rule": "Credit is awarded to students who earn the full IB Diploma and score 5 or higher on HL exams",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Course Equivalents by State database",
-          "TES (Transfer Evaluation System)"
-        ],
-        "restrictions": "Maximum of 60 transfer credits allowed; minimum grade of C- required."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Consistent GPA (average around 3.5) with a focus on core subject rigor",
-        "Character-driven profile that aligns with the mission of 'faith, reason, and service'",
-        "Strong performance in four years of English, Math, and Social Studies",
-        "Demonstrated interest in taking advantage of the school's unique D.C. location"
-      ],
-      "common_activities": [
-        "Campus Ministry and community service initiatives",
-        "Varsity or club sports (NCAA Division III)",
-        "Internships in the D.C. area (politics, non-profits, or government)",
-        "Leadership in student government or professional clubs like the Busch School societies"
-      ],
-      "essay_tips": [
-        "Explicitly mention how you will utilize the D.C. location for internships and research",
-        "Focus your personal statement on specific goals and how CUA\u2019s values support them",
-        "Be authentic\u2014admissions officers look for 'personality, spirit, and heart' beyond numbers"
-      ],
-      "red_flags": [
-        "Lack of senior year course rigor (e.g., dropping core math or science)",
-        "Essays that seem generic and don't mention the school's identity or D.C. context",
-        "Significant grade decline in the final semesters of high school"
-      ],
-      "insights": [
-        "Only D.C. university with a Metro stop directly on campus",
-        "Test-blind/optional, placing higher weight on high school transcript",
-        "While deeply Catholic, the community is welcoming to students of all faiths"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 73250,
-      "employment_rate_2yr": 95.0,
-      "grad_school_rate": 27.0,
-      "top_employers": [
-        "Ernst & Young (EY)",
-        "Lockheed Martin",
-        "NASA",
-        "Children's National Medical Center",
-        "U.S. Department of Defense",
-        "Federal Bureau of Investigation (FBI)",
-        "Alliance for Catholic Education"
-      ],
-      "loan_default_rate": 2.5,
-      "student_retention": {
-        "freshman_retention_rate": 83.0,
-        "graduation_rate_4_year": 75.0,
-        "graduation_rate_6_year": 81.0
       }
     }
   },
-  "_id": "the_catholic_university_of_america",
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "Conway School of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHIL 201 The Classical Mind: The Origin and Growth of Western Philosophy",
+              "TRS 201 Foundations of Theology I: Scripture and Jesus Christ",
+              "BIOL 232 Human Anatomy & Physiology I",
+              "NURS 151 Introduction to Health Systems and Professions",
+              "ENG 101 Writing and Rhetoric",
+              "NURS 257 Nutrition and Health",
+              "BIOL 223 Microbiology",
+              "BIOL 233 Human Anatomy & Physiology II",
+              "PHIL 202 The Modern Mind: Philosophy from Descartes to the Present",
+              "TRS 202A or TRS 202B The Church and the Human Person",
+              "PSY 379 Life Span Development",
+              "CHEM 109 General, Organic, and Biochemistry for the Health Sciences",
+              "CHEM 119 General, Organic and Biochemistry for Health Sciences Laboratory",
+              "PSY 201 General Psychology",
+              "NURS 371 Pathophysiology"
+            ],
+            "minimum_gpa_to_declare": "2.75 Science GPA and 3.0 Overall GPA for progression",
+            "weeder_courses": [
+              "HESI Nursing Progression Exam (minimum 75% overall composite, 75% in science, English, math composites)"
+            ],
+            "special_requirements": "Completion of HESI Nursing Progression Exam at the end of freshman year. Students not meeting scores receive remediation and may retake once.",
+            "admissions_pathway": "Direct Admit for Traditional 4-year BSN; Accelerated BSN (ABSN) for second-degree students",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PHIL 201 The Classical Mind: The Origin and Growth of Western Philosophy",
+                "TRS 201 Foundations of Theology I: Scripture and Jesus Christ",
+                "BIOL 232 Human Anatomy & Physiology I",
+                "NURS 151 Introduction to Health Systems and Professions",
+                "ENG 101 Writing and Rhetoric",
+                "NURS 257 Nutrition and Health",
+                "BIOL 223 Microbiology",
+                "BIOL 233 Human Anatomy & Physiology II",
+                "PHIL 202 The Modern Mind: Philosophy from Descartes to the Present",
+                "TRS 202A or TRS 202B The Church and the Human Person",
+                "PSY 379 Life Span Development",
+                "CHEM 109 General, Organic, and Biochemistry for the Health Sciences",
+                "CHEM 119 General, Organic and Biochemistry for Health Sciences Laboratory",
+                "PSY 201 General Psychology",
+                "NURS 371 Pathophysiology",
+                "NURS 254A Health and Wellness Across the Life Span",
+                "NURS 258 Health Assessment",
+                "NURS 309 Fundamental Applications",
+                "NURS 310 Pharmacology",
+                "MATH 114 Probability and Statistics",
+                "ART XXX Art Course",
+                "NURS 275L Adults in Health and Illness - Lecture",
+                "NURS 275C Adults in Health and Illness - Clinical I",
+                "NURS 423 Women in Health and Illness Lecture",
+                "NURS 428 Women in Health and Illness: Clinical Applications",
+                "TRS 333 or PHIL 303 Biomedical Ethics (required religion course)"
+              ],
+              "electives": [],
+              "total_units": 123,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Traditional 4-year BSN and 12-month Accelerated BSN programs are offered. The undergraduate nursing program is ranked 28th in the Nation by U.S. News & World Report.. ABSN program requires a bachelor's degree in a non-nursing field, undergraduate GPA of 3.0, and TEAS score of 58.7 or HESI of 80. Prerequisites for ABSN can be completed online at CUA starting Fall 2025.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Compassionate and dedicated students aspiring to a nursing career, with a strong emphasis on holistic patient care (mind, body, and spirit). They engage in extensive clinical affiliations, simulation labs, and are encouraged to pursue summer externships and study abroad opportunities.",
+        "strategic_fit_advice": "Highly recommended for students committed to a service-oriented healthcare profession, who desire a robust nursing education with practical clinical experiences, a holistic approach to patient well-being, and opportunities for global engagement."
+      },
+      {
+        "name": "The Tim and Steph Busch School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students wishing to prepare for the Certified Public Accountant (C.P.A.) exam must complete the B.S.A. requirements.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students may choose from among fifteen specializations within this degree program.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Business (Secondary Major)",
+            "degree_type": "Secondary Major",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Designed to be taken only as part of a double major with a primary major from another School. Satisfies the Liberal Arts Core 'focus' requirement. Requires ten unique 3-credit courses plus four 1-credit 'Career Discernment' courses.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Strategy, Management, and Operations",
+            "degree_type": "B.S.B.A. specialization",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026 (offered as a specialization within the B.S.B.A.)"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A. specialization",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026 (offered as a specialization within the B.S.B.A.)"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A. specialization",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026 (offered as a specialization within the B.S.B.A.)"
+          },
+          {
+            "name": "International Business",
+            "degree_type": "B.S.B.A. specialization",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026 (offered as a specialization within the B.S.B.A.)"
+          },
+          {
+            "name": "Entrepreneurship",
+            "degree_type": "B.S.B.A. specialization",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026 (offered as a specialization within the B.S.B.A.)"
+          },
+          {
+            "name": "Sales",
+            "degree_type": "B.S.B.A. specialization",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026 (offered as a specialization within the B.S.B.A.)"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Ethically-minded aspiring business leaders and entrepreneurs who are driven to place human dignity at the center of business. They are interested in entrepreneurship, innovative analysis, experiential learning, and actively engage in the university community and D.C.'s professional opportunities.",
+        "strategic_fit_advice": "Suited for students who want to combine a rigorous business education with strong ethical foundations rooted in Catholic social doctrine, seeking practical skills, real-world experience, and a vibrant community in the nation's capital."
+      },
+      {
+        "name": "College of Engineering, Physics, and Computing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.B.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.C.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Electrical and Computer Engineering",
+            "degree_type": "B.E.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.M.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 121 Calculus I",
+              "MATH 122 Calculus II",
+              "MATH 221 Calculus III",
+              "PHYS 215 University Physics I",
+              "PHYS 225 Mechanics Lab",
+              "PHYS 216 University Physics II",
+              "PHYS 226 Electricity Lab"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Normally declared in the spring of sophomore year.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 121 Calculus I",
+                "MATH 122 Calculus II",
+                "MATH 221 Calculus III",
+                "PHYS 215 University Physics I",
+                "PHYS 225 Mechanics Lab",
+                "PHYS 216 University Physics II",
+                "PHYS 226 Electricity Lab",
+                "Courses in classical and modern physics, analytical dynamics, electromagnetic theory, statistical physics, quantum mechanics, and calculus"
+              ],
+              "electives": [
+                "Eight program electives in physics, mathematics, and related fields"
+              ],
+              "total_units": null,
+              "major_units": "14 required courses in physics and mathematics, plus 8 program electives"
+            },
+            "notable_professors": [],
+            "notes": "A B.A. program in Physics is also possible. Majors meet weekly in an informal seminar with faculty. Most majors involved in research by sophomore year.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Chemical Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Ambitious problem-solvers and innovators seeking to address pressing global challenges. Graduates are described as 'go-to solution creators and thinkers' in diverse fields including academia, military, and NASA.",
+        "strategic_fit_advice": "Strong STEM background and an interest in innovative solutions are essential. Suited for students aiming for research-intensive careers or leadership roles in technology and engineering, especially those interested in applying their skills to global challenges."
+      },
+      {
+        "name": "Benjamin T. Rome School of Music, Drama, and Art",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Creative and expressive individuals who join a 'family of scholars and artists.' They engage in a wide range of experiences from private lessons and rehearsals to productions and art exhibitions, leveraging D.C.'s rich cultural resources and institutions for internships and professional development.",
+        "strategic_fit_advice": "Ideal for artistically talented students passionate about music, drama, or visual arts, seeking comprehensive training within both liberal arts and conservatory traditions, and eager to utilize Washington D.C.'s vibrant arts scene for learning, performance, and career opportunities."
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Drama (with Musical Theatre concentration)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "English Language and Literature",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Media and Communication Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Politics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Psychological and Brain Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Criminology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Intellectually curious and globally-minded students interested in a diverse range of fields from cancer research to journalism, politics, and psychology. They thrive on a liberal arts education combined with innovative approaches and leverage D.C. for internships and cultural immersion.",
+        "strategic_fit_advice": "Best for students seeking a comprehensive liberal arts education with opportunities for interdisciplinary study and extensive experiential learning in Washington D.C., preparing them for varied careers and civic engagement."
+      },
+      {
+        "name": "School of Architecture and Allied Arts",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.S. Arch.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Four-year, pre-professional degree. Students gain access to Fabrication Lab (3D printers, laser cutters, computer model buildings). The program incorporates liberal arts, science, architectural design, history, technology, sustainable design, urbanism, and social justice.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The School of Architecture and Planning is one of only 22 architecture schools in the country to offer the Integrated Path to Licensure (IPAL) program.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Architecture and Civil Engineering",
+            "degree_type": "B.S. Arch./B.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Dual degree program, typically completed in five years. 187-credit-hour joint program.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Architectural Studies",
+            "degree_type": "B.A. Arch. Studies",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Combines liberal arts education with general study of architecture and design. Electives can be concentrated in areas like architectural history, theory, design, or technology.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Art & Design",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Art History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Design-focused individuals passionate about sustainability, community, and stewardship. Students leverage Washington D.C. as an extended classroom and benefit from an open-studio culture. Opportunities exist for study at the Rome campus.",
+        "strategic_fit_advice": "Ideal for aspiring architects and urban planners who seek an immersive, studio-based education, value practical application of design principles to social issues, and wish to engage with the architectural context of Washington D.C. and potentially international study."
+      },
+      {
+        "name": "National Catholic School of Social Service",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Jo Ann R. Regan",
+              "Dr. Frederick L. Ahearn Jr.",
+              "Dr. Laura Daughtery",
+              "Dr. Peter J. Delany",
+              "Dr. Michaela Z. Farber",
+              "Dr. Melissa D. Grady",
+              "Dr. Ryan Hanlon",
+              "Dr. Jennifer L. Keast Charles",
+              "Dr. Eun Koh",
+              "Dr. Michael Massey",
+              "Dr. Lynn Milgram Mayer",
+              "Dr. Christine Sabatino",
+              "Dr. Roslynn Scott-Adams",
+              "Dr. Joseph Shields",
+              "Dr. Elizabeth M. Timberlake"
+            ],
+            "notes": "Prepares students for generalist social work practice.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Residence halls offer traditional, suite, and apartment styles, all with laundry, heating, and A/C.",
+        "student_archetype": "Compassionate and mission-driven individuals with an innate desire to promote social justice and serve those in need. They are committed to applying Catholic social teaching to real-world problems and gaining practical skills through extensive field education.",
+        "strategic_fit_advice": "Best for students dedicated to a career in social work, particularly those inspired by Catholic social teaching, who are eager to engage in hands-on service, advocate for human dignity, and work towards positive societal change."
+      },
+      {
+        "name": "School of Professional Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Interdisciplinary Studies",
+            "degree_type": "B.A.I.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Most popular 1-year bachelor's degree completion program. Flexible transfer credit policy (up to 84 credits may be accepted). Opportunities to gain undergraduate credit for college-level learning acquired through work and life experience (Prior Learning Assessment).",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Designed for adult learners with flexible online and on-campus classes.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Information Technology",
+            "degree_type": "B.A.I.T.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Designed for adult learners with flexible online and on-campus classes.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Human Services Administration",
+            "degree_type": "B.A.H.S.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Designed for adult learners with flexible online and on-campus classes.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Social Work for Professionals",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Designed for adult learners with flexible online and on-campus classes.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.A.Mgt.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Designed for adult learners with flexible online and on-campus classes.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Primarily caters to adult learners with online, evening, and accelerated course formats. On-campus housing is generally not available for non-traditional students, but Housing Services offers guidance for off-campus options.",
+        "student_archetype": "Working professionals, adult learners, and military personnel seeking flexible and career-focused degree or certificate programs. They value small class sizes, personalized advising, and resources for professional development and career advancement.",
+        "strategic_fit_advice": "Ideal for non-traditional students who require flexibility in their academic schedule, are motivated by career advancement, and seek a supportive learning environment tailored to adult learners, with a focus on practical skills and leveraging D.C. professional networks."
+      },
+      {
+        "name": "School of Theology and Religious Studies",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Theology and Religious Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The program offers extensive programs for students particularly interested in these studies, contributing to the University's Catholic mission.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          },
+          {
+            "name": "Sacred Theology",
+            "degree_type": "S.T.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "This degree is offered with the authority of the Pope.. Data source: The Catholic University of America Undergraduate Announcements 2025-2026"
+          }
+        ],
+        "housing_profile": "Standard university housing (single-sex residence halls for undergraduates, required for first six semesters; limited on-campus options for graduate students, with off-campus guidance). Additionally, religiously affiliated housing options are available, such as Theological College (for summer programs, often priests/religious) and Franciscan Monastery (for clergy and religious, with private baths, meals), and Centro Maria Residence and Casa Sacri Cuori for single young women.",
+        "student_archetype": "Students with a deep commitment to their faith who seek to explore theological and religious studies within the Catholic intellectual tradition. This includes individuals discerning religious vocations and laypeople desiring to deepen their understanding of Catholicism and its contemporary relevance, often valuing community and spiritual formation.",
+        "strategic_fit_advice": "Suited for individuals with a strong spiritual foundation and an academic interest in theology or religious studies, including those pursuing religious life. Ideal for students who desire a faith-integrated learning and living environment and wish to engage with the rich Catholic resources of Washington D.C.'s 'Little Rome' community."
+      }
+    ],
+    "minors_certificates": [
+      "Computer Science Minor",
+      "Data Analytics Minor",
+      "Writing Minor",
+      "Entrepreneurship Minor",
+      "Criminology Minor",
+      "Paralegal Studies Certificate",
+      "Digital Art and Design Certificate",
+      "Intelligence Studies Certificate",
+      "Spanish for Health Care Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Refers to Early Decision I."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Decision 2",
+        "date": "2026-02-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "For Fall admission."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "A completed Common Application with the Common Application Essay is required. Additionally, for the 2025-2026 application cycle, applicants must answer the question: 'As you consider your college and career aspirations, please describe why you are interested in attending The Catholic University of America? (750 words max.)' and three shorter questions (300 characters each) asking to know the applicant better. An additional statement is encouraged for home-schooled applicants explaining the choice of home schooling."
+      },
+      {
+        "target_program": "Music (Undergraduate & Graduate)",
+        "requirement_type": "Audition",
+        "deadline": "Undergraduate online-only submissions: January 15, 2026 (application), February 4, 2026 (materials grace period); Graduate online-only submissions: July 31, 2026 (rolling basis)",
+        "details": "Acceptance requires both university application and an audition for the program of interest, submitted via the Acceptd platform. Specific requirements vary by degree: BA in Music/Performance requires an audition on a principal instrument/voice. Master in Music requires a 10-minute audition with classical repertoire (memorized). Doctoral programs in performance require a 10-15 minute audition with classical repertoire. Auditionees are considered for scholarships."
+      },
+      {
+        "target_program": "Music (Composition - BA, MM, DMA)",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "Students wishing to study composition (BA) must submit original compositions. Master of Music and Doctor of Musical Arts in Composition applicants must submit a representative portfolio of compositions for review by the composition committee, which should include scores and recordings (if available). Doctoral portfolios for composition should include a major thesis work, a major work for large forces, a chamber work, and a vocal work."
+      },
+      {
+        "target_program": "Drama (Undergraduate BA)",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "A Bachelor of Arts (BA) in Drama does not require an audition."
+      },
+      {
+        "target_program": "Architecture (Undergraduate Freshman)",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "Submission of a portfolio is optional for incoming freshmen in Fall 2024. The optional design portfolio demonstrates creative productivity, artistry, craft, problem-solving, and illustration potential. It should be a PDF, maximum 20 pages and 20 MB, and can include architectural and/or visual creative work. Portfolios should be emailed to CUA Admissions (cua-admissions@cua.edu)."
+      },
+      {
+        "target_program": "Architecture (Graduate - Master of Architecture Three-Year Program)",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "Admission to the 600-level design studios is based on portfolio review and approval."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Holistic review emphasizing academic preparation, character, and a commitment to a global and diverse community. Offers significant support programs for first-generation students."
+    },
     "essay_prompts": [
       {
-        "prompt": "The Catholic University of America's mission is the discovery and impartation of truth. How has your pursuit of truth shaped your academic journey?",
-        "word_limit": "300 words",
-        "type": "Values",
+        "prompt": "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+        "word_limit": "650 words",
+        "type": "Personal/Identity",
         "required": true,
         "brainstorming_questions": [
-          "Thinking about CUA's mission of 'discovery and impartation of truth,' can you recall a specific moment in your academic life \u2013 perhaps a class, a research project, or even a challenging problem \u2013 where you felt you were genuinely grappling with uncovering something new or understanding a complex truth for the first time?",
-          "Beyond just learning facts, what academic experiences have genuinely challenged your existing beliefs or assumptions, pushing you to seek out a deeper or more nuanced understanding of truth in a particular subject?",
-          "Consider the 'impartation' aspect of CUA's mission. Have there been times when you've felt a strong urge to share a truth you've discovered with others, maybe through explaining a concept to a classmate, a presentation, or even a casual conversation that led to a new insight for someone else?",
-          "The pursuit of truth can sometimes involve confronting ambiguity or uncertainty. Can you describe an academic situation where you had to navigate conflicting information or perspectives to arrive at your own reasoned conclusion about what felt true or accurate?",
-          "How has your understanding of what constitutes 'truth' evolved throughout your academic journey, and can you point to a specific academic discipline or area of study at CUA that you believe is particularly well-suited to further nurturing this evolving understanding of truth in you?"
+          "What aspect of your background, identity, interest, or talent genuinely defines a significant part of who you are today?",
+          "How has this particular element influenced your perspective, decisions, or aspirations?",
+          "Can you recall a specific moment or series of events where this aspect played a pivotal role?",
+          "If you couldn't include this in your application, what important insight about yourself would be missing?",
+          "How might this unique part of your story enrich a college community like Catholic University of America?"
+        ]
+      },
+      {
+        "prompt": "The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?",
+        "word_limit": "650 words",
+        "type": "Challenge/Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "Describe a specific challenge, setback, or failure you experienced. What was the context and what were the initial emotions you felt?",
+          "What concrete steps did you take to address or overcome this obstacle?",
+          "Beyond simply resolving the issue, how did this experience change your approach to future difficulties or your understanding of your own capabilities?",
+          "Was there a moment of realization or a turning point during this experience that shifted your perspective?",
+          "How has the lesson learned from this challenge manifested in your actions or decisions since then?"
+        ]
+      },
+      {
+        "prompt": "Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?",
+        "word_limit": "650 words",
+        "type": "Reflection/Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "What was a specific belief or idea (personal, cultural, academic, etc.) that you once held or encountered and then questioned?",
+          "What specific event, piece of information, or conversation triggered your critical examination of this belief?",
+          "What internal or external conflicts arose as you questioned or challenged it?",
+          "How did your perspective evolve, and what was the ultimate impact on your understanding of yourself or the world?",
+          "What did you learn about the process of critical thinking, conviction, or intellectual bravery from this experience?"
+        ]
+      },
+      {
+        "prompt": "Reflect on something that someone has done for you that has made you happy or thankful in a surprising way. How has this gratitude affected or motivated you?",
+        "word_limit": "650 words",
+        "type": "Personal/Gratitude",
+        "required": true,
+        "brainstorming_questions": [
+          "Who was the person, and what was the specific action or gesture they performed?",
+          "Why was this act surprising, and what made it stand out from other kind deeds?",
+          "How did this experience initially make you feel, and how has that feeling resonated over time?",
+          "In what tangible ways has this gratitude influenced your own behavior, aspirations, or interactions with others?",
+          "What deeper understanding of connection, generosity, or human nature did this experience give you?"
+        ]
+      },
+      {
+        "prompt": "Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+        "word_limit": "650 words",
+        "type": "Growth/Realization",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific accomplishment, event, or realization immediately comes to mind when you think of significant personal growth?",
+          "What was your state of mind or understanding *before* this experience?",
+          "Describe the moment or process through which this growth or new understanding began to unfold.",
+          "How did this experience fundamentally alter your self-perception or your view of other people?",
+          "What lasting changes in your character, habits, or ambitions resulted from this period of growth?"
+        ]
+      },
+      {
+        "prompt": "Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?",
+        "word_limit": "650 words",
+        "type": "Intellectual/Interest",
+        "required": true,
+        "brainstorming_questions": [
+          "What specific topic, idea, or concept immediately draws your full attention, even outside of academic requirements?",
+          "What is it about this subject that intellectually or emotionally fascinates you?",
+          "Beyond typical coursework, how do you actively pursue and deepen your knowledge in this area (e.g., books, documentaries, experiments, discussions)?",
+          "Who are your go-to sources or mentors (authors, professors, online communities, personal connections) when you want to explore this topic further?",
+          "How does your engagement with this topic reflect your intellectual curiosity and potential contributions to an academic community?"
+        ]
+      },
+      {
+        "prompt": "Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.",
+        "word_limit": "650 words",
+        "type": "Open Choice",
+        "required": true,
+        "brainstorming_questions": [
+          "What story about yourself do you feel is most crucial for the admissions committee to know, even if it doesn't fit a specific category?",
+          "Is there a unique perspective, experience, or passion that hasn't been adequately covered elsewhere in your application?",
+          "If you had just one chance to truly introduce yourself beyond your grades and activities, what would you choose to highlight?",
+          "What existing piece of writing are you most proud of that reveals something authentic and significant about you?",
+          "What personal narrative would best showcase your voice, creativity, and ability to reflect meaningfully?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/the_catholic_university_of_america_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Utilize the Exploratory Major program if undecided.",
+      "Embrace the flexibility to change majors.",
+      "Align your major choice with personal interests and intellectual curiosity."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate Program-Specific Academic Excellence and Reputation: Students should research the specific academic reputation of the individual school or college and its programs (e.g., Nursing, Business, Engineering, Architecture, Theology, Philosophy) within The Catholic University of America. This includes looking at the expertise and engagement of professors within the chosen field, as well as opportunities for specialized research and the rigor of the curriculum.",
+      "Assess Career Preparation and Post-Graduation Outcomes by Program: Investigate the internship opportunities, career services, and success rates of graduates from specific schools or majors at CUA. Given its Washington D.C. location, the university offers extensive internship access, which can be a critical factor for various fields of study.",
+      "Consider Curriculum Design and Learning Environment: Examine the specific curriculum of the desired program, including the balance between specialized courses and the liberal arts core, which is a foundational element at CUA. Students should also consider class sizes, the quality of teaching, and how faith and reason are integrated into their chosen discipline."
+    ],
+    "alternate_major_strategy": {
+      "Initial Application and Flexibility": "Students apply to The Catholic University of America with a chosen major. However, the university provides flexibility to change this major, even before a student begins their first semester by contacting the Office of Admission.",
+      "Exploratory Major": "For incoming freshmen or sophomores who are undecided about their field of study, CUA offers an "Exploratory Major" option. Students in this program work closely with advisors to assess their talents and interests, learn about various areas of study, and develop a plan for major selection by the end of their sophomore year.",
+      "Early Declaration for Specific Fields": "For majors within professional schools (such as Architecture, Engineering, Music, and Nursing) or the natural sciences (like Biology or Chemistry), it is generally recommended to declare these majors at the beginning of the freshman year to ensure timely graduation.",
+      "Internal Transfer Difficulty Notes": {
+        "Common Occurrence": "Changing majors at The Catholic University of America is a common practice, with over two-thirds of students changing their major at least once during their academic career.",
+        "Process for Changing Majors": [
+          "Before First Semester: Students can change the major selected on their application by contacting the Office of Admission.",
+          "After Starting Classes: Once classes have begun, students should contact their undergraduate advisor or current major advisor to initiate the change process.",
+          "Between Different Schools: If a student wishes to change to a major in a different academic school, they must consult with both their current major advisor and their undergraduate advisor.",
+          "For Juniors and Seniors: A change of major for juniors or seniors must be accompanied by a written statement from the new department, outlining conditions for acceptance and a plan for completing required coursework within a specified timeframe."
+        ],
+        "No Explicit 'Impacted Majors'": "While the term "impacted majors" is not explicitly used in the provided information, the recommendation to declare majors in professional schools and natural sciences early suggests that a later transfer into these programs might require careful academic planning to meet all requirements on schedule."
+      }
+    }
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 58920.0,
+        "total_coa": 86972.0,
+        "housing": 20374.0
+      },
+      "out_of_state": {
+        "tuition": 58920.0,
+        "total_coa": 86972.0
+      },
+      "notes": "The housing cost ($20,374.00) includes housing allowance ($11,924) and food allowance ($8,450)."
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 41835.0,
+    "average_merit_aid": 15937.0,
+    "percent_receiving_aid": 95.0,
+    "meets_full_need": false,
+    "notes": "Meets 80% of demonstrated need.",
+    "scholarships": [
+      {
+        "name": "The Catholic University of America Scholarship (CUA Scholarship)",
+        "type": "Merit",
+        "amount": "$17,000 - $32,000 per year",
+        "deadline": "Automatic consideration with admission application (February 1 for regular decision)",
+        "benefits": "Renewable for up to eight semesters or until degree completion",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Archdiocesan Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "Automatic consideration with admission application; nominees notified mid-December, requires statement of interest and interviews",
+        "benefits": "For students at the top of their high school class with an 'A' average in a demanding curriculum and significant extracurricular involvement and leadership. Renewable for up to eight semesters or until degree completion, requires continuous full-time enrollment",
+        "application_method": "Automatic Consideration; requires additional steps for finalists"
+      },
+      {
+        "name": "Most Reverend David M. O'Connell Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "Automatic consideration with Undergraduate Application for Admission; finalists participate in an interview",
+        "benefits": "Awarded to a student with a demonstrated record of service and commitment to service. Strongly encouraged to submit a service resume",
+        "application_method": "Automatic Consideration; submission of service resume encouraged"
+      },
+      {
+        "name": "Parish Scholarship",
+        "type": "Merit",
+        "amount": "$4,000 annually",
+        "deadline": "Must be completed as part of the admission application process",
+        "benefits": "Renewable for up to four years, for undergraduate first-year and transfer applicants who are parishioners of Catholic churches in the U.S. and its territories",
+        "application_method": "Complete Parish Scholarship information in the Common Application"
+      },
+      {
+        "name": "Legacy Grant",
+        "type": "Merit",
+        "amount": "$1,000 annually",
+        "deadline": "Awarded at the time of admission",
+        "benefits": "Renewable for up to four years, for new undergraduate first-year and transfer students with a parent, grandparent, or sibling who graduated from Catholic University",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "School and Departmental Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Automatic consideration during admission review",
+        "benefits": "Offered by some schools and departments for students in certain fields. Awards are limited",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "International Student Merit Scholarships",
+        "type": "Merit",
+        "amount": "Up to $33,000 per year",
+        "deadline": "Automatic consideration during the admission process",
+        "benefits": "Available to international students; not eligible for federal or university need-based aid. Based on academic transcripts, English proficiency scores, and Common App essay",
+        "application_method": "Automatic Consideration with admission application"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 are typically required to receive AP credit for most exams",
+      "exceptions": [
+        "Minimum score requirements and credit hours are determined by individual departments, meaning some exams may have different score requirements or may not be awarded credit.",
+        "Specific details for exams like AP Research or Computer Science, including any score higher than 4 or outright denial of credit, are outlined in the university's AP Credit Chart, which was not directly accessible in the search results."
+      ],
+      "usage": "AP credits can count toward a student's major or satisfy Liberal Arts (General Education) requirements."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with qualifying scores (typically 5+) grant credit; SL exams are not accepted for credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "Undergraduate students can transfer a maximum of 60 earned credit hours; total transfer credits within a baccalaureate degree program are limited to half (usually 60 credit hours). Courses must be passed with a grade of at least C. Graduate students may transfer six credit hours of graduate work (up to 9 credits for programs 40+ credits) with a grade of B or above for a master's degree, earned within 5 years of the request. Doctoral students may transfer up to 24 credit hours with a grade of B or better, earned within 10 years of the request. Courses used toward another bachelor's-level degree are not eligible for transfer for a bachelor's degree. Certain business or economics online courses are not transferable unless from an AACSB-accredited institution."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [],
+    "common_activities": [
+      "Leadership in school clubs and student government.",
+      "Community service/volunteering.",
+      "Varsity or club athletics.",
+      "Music/arts involvement.",
+      "Academic and professional organizations."
+    ],
+    "essay_tips": [
+      "Show, Don't Tell with Concrete Examples: Instead of simply stating your qualities or experiences, illustrate them with specific anecdotes and details. Successful essays often use vivid descriptions to make your story memorable and demonstrate your points effectively.",
+      "Embrace Authenticity and Uniqueness: Strive to reveal something genuinely unique about yourself that might not be evident elsewhere in your application. Avoid generic statements and focus on personal reflections that showcase your individual perspective, self-awareness, and resilience.",
+      "Reflect on Your Experiences and Growth: When discussing an experience, accomplishment, or challenge, clearly articulate what you did, why it was important to you, and what you learned from it. Colleges want to understand how you've grown and what these experiences reveal about your character and potential.",
+      "Connect Your Interests to the University's Mission (if applicable): While not a specific prompt found in the search, for a Catholic university, considering how your values, academic interests, or personal goals align with CUA's mission as a faith-based institution can strengthen your essay, especially if you choose to write about a topic that allows for such a connection."
+    ],
+    "red_flags": [
+      "Significant decline in grades, particularly C's and D's, in academic coursework.",
+      "Submitting false or falsified information.",
+      "Generic essays that do not demonstrate genuine interest.",
+      "Poor or uninformative letters of recommendation from teachers."
+    ],
+    "insights": [
+      {
+        "category": "Selectivity",
+        "insight": "The Catholic University of America has a 'somewhat selective' to 'lightly selective' admissions process with an acceptance rate typically around 83-84%. Early Decision and Early Action options are available.",
+        "implication": "While the acceptance rate is relatively high, applying Early Decision or Early Action by the November 1st deadline can demonstrate strong commitment and potentially increase admission chances."
+      },
+      {
+        "category": "Academic",
+        "insight": "CUA emphasizes a strong liberal arts core alongside robust professional programs in areas like nursing, business, engineering, and architecture. Its Washington, D.C. location provides unique access to internships and research opportunities.",
+        "implication": "Highlight your interest in a well-rounded education, connect your academic passions to specific strong programs at CUA, and emphasize any relevant experiences that demonstrate a desire to leverage the D.C. location for internships or experiential learning."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university fosters a strong sense of community rooted in its Catholic identity, while also welcoming students from diverse backgrounds. There's an emphasis on personal growth, ethical leadership, and a variety of student organizations.",
+        "implication": "Showcase how your values align with a faith-informed educational environment, express your interest in community engagement, and highlight experiences that demonstrate leadership, service, and an ability to thrive in a diverse yet close-knit setting."
+      },
+      {
+        "category": "Academic",
+        "insight": "Catholic University has a test-optional admissions policy, focusing instead on a holistic review of an applicant's high school curriculum, performance, recommendations, and essay as the best indicators of future success.",
+        "implication": "Applicants should focus on demonstrating strong academic performance in challenging high school courses, securing compelling letters of recommendation, and crafting a thoughtful essay, as these elements will be heavily weighted in the absence of standardized test scores."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 58600,
+    "employment_rate_2yr": 90.0,
+    "median_earnings_6yr": 46800,
+    "notes": "The employment rate of 90.0% represents identified graduates from the Class of 2020 who are either employed, attending graduate school, or committed to other endeavors, not strictly an employment rate 2 years after graduation. Median earnings 10 years after enrollment are sourced from the U.S. Department of Education College Scorecard.",
+    "top_employers": [
+      "Ernst Young (EY)",
+      "Department of Defense",
+      "Federal Bureau of Investigation",
+      "Johnson & Johnson",
+      "Lockheed Martin",
+      "NASA",
+      "Children's National Medical Center",
+      "Executive Office of the President",
+      "National Football League"
+    ],
+    "grad_school_rate": 27.0,
+    "loan_default_rate": 2.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86.0,
+    "graduation_rate_4_year": 75.0,
+    "graduation_rate_6_year": 81.0
+  }
 }

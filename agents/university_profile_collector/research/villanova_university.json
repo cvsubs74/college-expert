@@ -880,7 +880,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One supplemental essay (approx. 250 words) chosen from five prompts. Prompts often include themes such as 'Why Villanova' and 'Community involvement'."
       }
     ],
@@ -1057,11 +1057,31 @@
       "Submitting standardized test scores below the average range (e.g., below 1360 SAT or 30 ACT) if optional, as higher scores generally make an applicant more competitive."
     ],
     "insights": [
-      "Villanova employs a holistic review process, meaning strong academics are crucial but are complemented by extracurriculars, essays, and recommendations.",
-      "Applying Early Decision (ED1 or ED2) can significantly boost acceptance chances if Villanova is your top choice, as it demonstrates strong commitment.",
-      "Choosing a less selective academic track, such as liberal arts within the College of Liberal Arts and Sciences, might be a strategic entry point, with the possibility of internal transfer later (though transfers to competitive schools like the Business School are difficult).",
-      "While Villanova does not track demonstrated interest through visits, applying ED can serve as a strong indicator of interest.",
-      "The supplemental essay is a critical component to showcase your personality, values, and how you would contribute to Villanova's specific community and Augustinian traditions."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Villanova employs a holistic review process, meaning strong academics are crucial but are complemented by extracurriculars, essays, and recommendations."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision (ED1 or ED2) can significantly boost acceptance chances if Villanova is your top choice, as it demonstrates strong commitment."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Choosing a less selective academic track, such as liberal arts within the College of Liberal Arts and Sciences, might be a strategic entry point, with the possibility of internal transfer later (though transfers to competitive schools like the Business School are difficult)."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While Villanova does not track demonstrated interest through visits, applying ED can serve as a strong indicator of interest."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The supplemental essay is a critical component to showcase your personality, values, and how you would contribute to Villanova's specific community and Augustinian traditions."
+      }
     ]
   },
   "outcomes": {

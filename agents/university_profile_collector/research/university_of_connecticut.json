@@ -827,7 +827,7 @@
       {
         "target_program": "All Applicants",
         "requirement_type": "Personal Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "A personal essay (250-650 words) is required as part of the Common Application or Coalition Application. It provides an opportunity to share academic goals, explain any gaps in education, and state reasons for applying to UConn."
       },
       {
@@ -851,7 +851,7 @@
       {
         "target_program": "Elisabeth DeLuca School of Nursing",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "Applicants will be prompted to answer a question discussing factors influencing their motivation to pursue nursing, including activities, academics, and life experiences."
       },
       {
@@ -894,7 +894,7 @@
           "Thinking about UConn's vibrant community, can you recall a specific moment when your unique perspective, perhaps born from a particular aspect of your identity or a defining experience, allowed you to see a situation or problem in a way others might have missed?",
           "When you consider the diverse tapestry of students at UConn, what's a specific instance where your lived experiences have given you a deeper understanding of a challenge or opportunity that is relevant to college life, and how did that understanding influence your actions?",
           "UConn prides itself on fostering a collaborative and inclusive environment. Can you pinpoint a time when your personal background or identity led you to contribute to a group in a way that made the collective effort stronger or more nuanced, and how might that translate to a UConn setting?",
-          "Beyond just your background, what's a specific 'lived experience' \u2013 a moment of learning, growth, or even struggle \u2013 that fundamentally shifted your outlook or your understanding of the world, and how do you envision sharing that wisdom at UConn?",
+          "Beyond just your background, what's a specific 'lived experience' – a moment of learning, growth, or even struggle – that fundamentally shifted your outlook or your understanding of the world, and how do you envision sharing that wisdom at UConn?",
           "If you imagine yourself as a current UConn student, what's one specific way your individual identity or a formative experience has prepared you to actively engage with and contribute to a particular aspect of UConn's campus life, be it an academic club, a cultural group, or a community initiative?"
         ]
       }
@@ -1047,11 +1047,31 @@
       "Failure to meet specific prerequisites or early deadlines for restricted special programs."
     ],
     "insights": [
-      "UConn employs a holistic review process, considering all aspects of an applicant's profile.",
-      "The acceptance rate for the main Storrs campus is moderately selective (around 54%), but in-state applicants to any of the five campuses have a significantly higher acceptance rate (approximately 90%).",
-      "Standardized test scores are optional, and applicants choosing not to submit them are not at a disadvantage for admissions, honors, or scholarships.",
-      "UConn recalculates GPAs to ensure a consistent metric for comparison across all applicants.",
-      "Merit scholarships and Honors program eligibility are assessed automatically during the initial application review."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UConn employs a holistic review process, considering all aspects of an applicant's profile."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The acceptance rate for the main Storrs campus is moderately selective (around 54%), but in-state applicants to any of the five campuses have a significantly higher acceptance rate (approximately 90%)."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Standardized test scores are optional, and applicants choosing not to submit them are not at a disadvantage for admissions, honors, or scholarships."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UConn recalculates GPAs to ensure a consistent metric for comparison across all applicants."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Merit scholarships and Honors program eligibility are assessed automatically during the initial application review."
+      }
     ]
   },
   "outcomes": {

@@ -1,452 +1,2166 @@
 {
-  "university_profile": {
-    "_id": "kansas_state_university",
-    "university_name": "Kansas State University",
-    "metadata": {
-      "official_name": "Kansas State University",
-      "location": {
-        "city": "Manhattan",
-        "state": "KS",
-        "type": "Public"
+  "_id": "kansas_state_university",
+  "metadata": {
+    "official_name": "Kansas State University",
+    "location": {
+      "city": "Manhattan",
+      "state": "Kansas",
+      "type": "main_campus"
+    },
+    "last_updated": "2024-07-27",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Kansas State University is a public land-grant research institution that ranks #158 among National Universities in the 2026 U.S. News & World Report Best Colleges rankings. Recognized for its strong programs in agriculture, engineering, and business, the university is committed to an exceptional student experience and impactful research. K-State is noted for its continuous improvements in national rankings and its reputation for excellence.",
+    "market_position": "Hidden Gem",
+    "admissions_philosophy": "Holistic review emphasizing intellectual curiosity",
+    "us_news_rank": 158,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Kansas State University has a moderately competitive admissions process with an acceptance rate typically between 79% and 82%, offering a test-optional policy where strong standardized test scores can still enhance an application.",
+        "implication": "While test scores are optional for admission, applicants with strong ACT or SAT scores should consider submitting them, as they can bolster an application and are often required for scholarship consideration."
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": []
-    },
-    "strategic_profile": {
-      "executive_summary": "Kansas State University is the nation's first operational land-grant institution, recognized for its high-tier research activity and exceptional student satisfaction. It combines a small-town 'family' atmosphere with global leadership in biodefense, food systems, and agricultural sciences.",
-      "market_position": "Land-Grant Powerhouse",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 158,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Acceptance rates have dropped from approximately 95% to 81% over the last three years, reflecting a sharp increase in applicant volume and competitiveness.",
-          "implication": "Prospective students should aim for early application cycles and emphasize their involvement in the holistic review process."
-        },
-        {
-          "category": "Value and Growth",
-          "insight": "The university climbed 42 places to #88 in Best Value Schools and rose to #84 among Top Public Schools in the 2026 rankings.",
-          "implication": "K-State is successfully positioning itself as a high-ROI destination with rising national prestige."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Consistently ranked as one of the 'happiest' campuses in the U.S., social life is defined by 'Purple Pride' and a close-knit, supportive community often called the 'K-State Family.'",
-        "transportation_impact": "Current Campus Master Plan efforts are shifting the university toward a pedestrian-focused core, reducing central parking by 10% and expanding the ATA Bus transit system to improve safety and accessibility.",
-        "research_impact": "As a leading R1 research university, K-State hosts the National Bio and Agro-Defense Facility (NBAF) and offers robust undergraduate research grants, particularly in one-health, sustainable infrastructure, and agriculture."
+      {
+        "category": "Academic",
+        "insight": "K-State is highly regarded for its programs in agriculture, engineering, and architecture, and provides significant opportunities for undergraduate research and experiential learning.",
+        "implication": "Prospective students interested in these academic areas should highlight any relevant projects, coursework, internships, or research experiences in their application to demonstrate a strong fit and enthusiasm for hands-on learning."
+      },
+      {
+        "category": "Culture",
+        "insight": "Kansas State University is characterized by a collaborative and supportive campus environment, often described with 'Midwestern friendliness' and a strong sense of community, embodying its land-grant mission of service.",
+        "implication": "Applicants should emphasize experiences that showcase teamwork, community engagement, and a desire to contribute to a cooperative and inclusive environment. Stories demonstrating a collaborative spirit will resonate well."
       }
-    },
-    "admissions_status": {
-      "overall_acceptance_rate": 81.7,
-      "in_state_acceptance_rate": 92.6,
-      "out_of_state_acceptance_rate": 83.7,
-      "international_acceptance_rate": 30.2,
+    ],
+    "campus_dynamics": {
+      "social_environment": "Kansas State University offers a welcoming and supportive community with a strong sense of belonging and camaraderie, often described as having a 'family' vibe. The social scene is lively, featuring football games, campus events, and active Greek life, alongside over 475 clubs and organizations for diverse interests. Professors are generally dedicated and approachable, fostering a friendly atmosphere with an emphasis on service and community engagement.",
+      "transportation_impact": "Kansas State University partners with the Flint Hills Area Transportation Agency (aTa) to provide free public transportation for students, faculty, and staff across the Manhattan campus and surrounding community with a K-State ID. The campus offers specific on-campus bus routes and an East/West Express route, with on-campus travel being free. The campus is generally walkable and bikeable, and the university's master plan aims to enhance walkability by closing some internal roads. Additional local transportation options include taxi services like Uber, Lyft, and Green Apple Bikes, a free bike-sharing program.",
+      "research_impact": "Kansas State University provides extensive undergraduate research opportunities, with many programs administered by the Office of Undergraduate Research and Creative Inquiry. Students can participate in various initiatives, including the Summer Undergraduate Research Opportunity Program (SUROP) and specific REU programs in STEM fields like physics, plant pathology, and disaster resilience. The university has strong industry ties as a land-grant institution and a leader in global food systems. Examples include the K-State Pet Food Program, which collaborates with ingredient companies, and K-State Innovation Partners, which facilitates corporate engagement and technology commercialization. These connections extend to local agricultural and engineering industries, offering robust internship opportunities with companies such as Koch Industries, Cargill, and Textron. Faculty in Industrial and Manufacturing Systems Engineering are recognized for their research in areas like advanced manufacturing, operations research, and systems engineering, including humanitarian logistics and transportation."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 81.69,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 95.0,
       "transfer_acceptance_rate": 93.4,
-      "admits_class_size": 3482,
+      "admits_class_size": 12669,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": null
+      "test_policy_details": "Kansas State University is test-optional for admission for the 2024-2025 application cycle, meaning applicants are not required to submit standardized test scores (ACT or SAT). However, some scholarships and awards for freshmen may require ACT or SAT scores. The university accepts superscores, using the highest subject scores when calculating an ACT Composite and when combining the SAT ERW+M. K-State does not prefer the ACT or SAT, and both scores are accepted. Self-reporting of scores is allowed, but submitting scores can enhance an application.",
+      "early_admission_stats": []
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
+        "applications_total": 17581,
+        "admits_total": 14360,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 81.69,
+        "yield_rate": null,
+        "notes": "Projected or early admission statistics for Fall 2025 enrollment. Final enrollment numbers for the Class of 2029 are not yet publicly available from official Common Data Sets. Applications and admits are estimated based on a reported 15.42% increase in applicants from the previous year and the stated 2025 acceptance rate.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
         "applications_total": 15509,
         "admits_total": 12669,
         "enrolled_total": 3482,
         "acceptance_rate_overall": 81.69,
         "yield_rate": 27.48,
-        "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Kansas State University does not maintain a waitlist policy for first-time freshmen."
-      },
-      {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
-        "applications_total": 13437,
-        "admits_total": 10663,
-        "enrolled_total": 3187,
-        "acceptance_rate_overall": 79.36,
-        "yield_rate": 29.89,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        }
+        "notes": "Data for first-time, first-year students for Fall 2024 enrollment. Overall university enrollment for Fall 2024 was 20,295.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
-        "applications_total": 9703,
-        "admits_total": 9231,
-        "enrolled_total": 2908,
-        "acceptance_rate_overall": 95.14,
-        "yield_rate": 31.5,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        }
+        "applications_total": 13437,
+        "admits_total": 10663,
+        "enrolled_total": 3184,
+        "acceptance_rate_overall": 79.35,
+        "yield_rate": 29.86,
+        "notes": "Data for first-time, first-year students for Fall 2023 enrollment. Overall university enrollment for Fall 2023 was 19,745.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 9935,
+        "admits_total": 9449,
+        "enrolled_total": 2713,
+        "acceptance_rate_overall": 95.11,
+        "yield_rate": 28.71,
+        "notes": "Data for first-time, first-year students for Fall 2022 enrollment.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 9822,
+        "admits_total": 9391,
+        "enrolled_total": 2803,
+        "acceptance_rate_overall": 95.61,
+        "yield_rate": 29.85,
+        "notes": "Data for first-time, first-year students for Fall 2021 enrollment. Overall university enrollment for Fall 2021 was 20,229.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       }
     ],
     "admitted_student_profile": {
       "gpa": {
         "weighted_middle_50": "3.50-4.00",
-        "unweighted_middle_50": "3.40-3.60",
-        "average_weighted": 3.78,
-        "notes": "Admission is generally guaranteed with a 3.25+ GPA."
+        "unweighted_middle_50": "2.50-3.70",
+        "average_weighted": 3.79,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "Admission to Kansas State University is test-optional. Assured admission requires a cumulative high school GPA (weighted or unweighted) of 3.25 or higher, OR an ACT composite score of 21 or higher, OR an SAT ERW+M score of 1060 or higher. Certain programs, including Architecture, Planning and Design, Engineering, Interior Design, Wildlife and Outdoor Management, Music and Music Education, Business, and Pre-Health, may have higher admission standards."
       },
       "testing": {
-        "sat_composite_middle_50": "1040-1260",
+        "sat_composite_middle_50": "1050-1240",
         "sat_reading_middle_50": "490-580",
         "sat_math_middle_50": "560-660",
         "act_composite_middle_50": "20-27",
         "submission_rate": 81.0,
-        "policy_note": "Test optional but recommended for scholarships and honors programs."
+        "policy_note": "Kansas State University is test-optional, meaning applicants are not required to submit standardized test scores for admission. The university accepts superscores for both the ACT and SAT (highest subject scores are used for composite calculations). Self-reporting of scores is allowed. Test scores may be required for certain scholarships or awards."
       },
       "demographics": {
-        "first_gen_percentage": 21.0,
-        "international_percentage": 2.5,
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": null,
+        "notes": "First-generation defined as undergraduate students whose parents or guardians did not complete a four-year college degree. Legacy percentage not found in search results.",
         "geographic_breakdown": [
           {
-            "region": "Kansas",
+            "region": "Kansas (In-State)",
             "percentage": 73.2
           },
           {
-            "region": "Other US States",
+            "region": "Other U.S. States (Out-of-State)",
             "percentage": 25.8
           },
           {
             "region": "International",
             "percentage": 1.0
+          },
+          {
+            "region": "Nebraska",
+            "percentage": 2.06
+          },
+          {
+            "region": "Colorado",
+            "percentage": 1.55
+          },
+          {
+            "region": "Illinois",
+            "percentage": 1.12
+          },
+          {
+            "region": "California",
+            "percentage": 0.77
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 7247,
             "admits": 5796,
-            "acceptance_rate": 79.98
+            "acceptance_rate": 79.98,
+            "note": "Data for academic year 2024-25."
           },
           "women": {
             "applicants": 8258,
             "admits": 6872,
-            "acceptance_rate": 83.22
+            "acceptance_rate": 83.22,
+            "note": "Data for academic year 2024-25."
+          },
+          "non_binary": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": null,
+            "note": "Data for academic year 2024-25, reported as 'Another Gender' with 0 applicants/admits."
           }
         },
         "racial_breakdown": {
-          "white": 76.2,
-          "black_african_american": 2.94,
-          "hispanic_latino": 8.68,
-          "asian": 2.12,
-          "native_american_alaskan": 0.43,
-          "pacific_islander": 0.086,
-          "two_or_more_races": 3.49,
-          "unknown": 1.2,
-          "non_resident_alien": 5.5
+          "White": 78,
+          "Black/African American": 4,
+          "Hispanic/Latino": 7,
+          "Asian": 1,
+          "Native American/Alaskan": 0,
+          "Pacific Islander": 0,
+          "Two or more races": 3,
+          "Unknown": 1,
+          "Non-resident alien (international students)": 6
         }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Agriculture",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 85.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strongly suited for students with interests in food systems, natural resources, and community leadership.",
-          "housing_profile": "Commonly found in the Derby Community due to proximity to agriculture facilities.",
-          "student_archetype": "The 'Wildcat Backbone': Community-oriented and practical-minded.",
-          "majors": [
-            {
-              "name": "Animal Sciences and Industry",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "BIOL 198 Principles of Biology"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ASI 102 Principles of Animal Science"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "ASI 102 Principles of Animal Science",
-                  "ASI 202 Domestic Animal Anatomy",
-                  "ASI 300 Animal Nutrition"
-                ],
-                "total_units": 120
-              },
-              "notes": "Most popular major; strong ties to College of Veterinary Medicine."
-            }
-          ]
-        },
-        {
-          "name": "College of Architecture, Planning and Design (APDesign)",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 45.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Selective admissions require a high GPA (avg 3.75) and priority deadline (Dec 1).",
-          "housing_profile": "Often reside in Wefald Hall (Kramer).",
-          "student_archetype": "Disciplined Makers: High-achieving designers.",
-          "majors": [
-            {
-              "name": "Architecture",
-              "degree_type": "M. Arch (5-year non-baccalaureate)",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.75,
-              "prerequisite_courses": [
-                "MATH 100",
-                "PHYS 113",
-                "Studio Art"
-              ],
-              "minimum_gpa_to_declare": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "ENVD 201 Environmental Design Studio I",
-                  "ARCH 248 Building Science"
-                ],
-                "total_units": 170
-              },
-              "notes": "Integrated professional master's degree."
-            }
-          ]
-        },
-        {
-          "name": "Carl R. Ice College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Selective admissions with Feb 1 priority deadline.",
-          "housing_profile": "Primarily housed in the Kramer Community (Wefald, Goodnow, Marlatt).",
-          "student_archetype": "Pragmatic Problem-Solvers: Solution-oriented students.",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.3,
-              "prerequisite_courses": [
-                "MATH 220",
-                "MATH 221"
-              ],
-              "weeder_courses": [
-                "CIS 300",
-                "CIS 301"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "CIS 115 Intro to Computing Science",
-                  "CIS 200 Programming Fundamentals"
-                ],
-                "total_units": 120
-              }
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Data Analytics Certificate",
-        "Entrepreneurship and Innovation Minor",
-        "Global Food Systems Certificate",
-        "Professional Strategic Selling Certificate",
-        "Leadership Studies Minor",
-        "Conflict Analysis and Resolution Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "K-State Online Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Admission & Financial Aid",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Priority deadline for FAFSA and select programs."
-        },
-        {
-          "plan_type": "Competitive Awards Deadline",
-          "date": "2024-12-15",
-          "is_binding": false,
-          "notes": "Deadline for top-tier competitive scholarships."
-        },
-        {
-          "plan_type": "Rolling Admission",
-          "date": "2025-08-01",
-          "is_binding": false
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "University Honors Program",
-          "requirement_type": "Essay",
-          "deadline": "2024-12-15",
-          "details": "Requires a 300-500 word essay on motivation."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Test Scores",
-          "Course Rigor"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Leadership",
-          "Character"
-        ],
-        "essay_importance": "Low",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "specific_differentiators": "K-State operates primarily on 'Assured Admission' (3.25+ GPA or 21+ ACT)."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to the 'Open Option' track in Arts and Sciences if undecided.",
-        "Target niche programs in Agriculture like Bakery Science.",
-        "Submit to Engineering or Architecture by Feb 1 priority deadline."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize Kramer Community for Engineering or STEM.",
-        "Rank Derby Community higher for a more social environment."
-      ],
-      "alternate_major_strategy": "If applying to Computer Science, list a related backup major like Mathematics or Information Systems."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 11221,
-          "housing": 12830,
-          "total_coa": 28141
-        },
-        "out_of_state": {
-          "tuition": 28568,
-          "housing": 12830,
-          "supplemental_tuition": 17347,
-          "total_coa": 45488
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 9399,
-      "average_merit_aid": 6988,
-      "percent_receiving_aid": 80.0,
-      "scholarships": [
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "$80,000 over 4 years",
-          "deadline": "2025-12-15",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Wildcat Nonresident Award",
-          "type": "Merit",
-          "amount": "Waives 50-100% of nonresident tuition",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Land Grant Promise",
-          "type": "Need",
-          "amount": "Covers remaining in-state tuition costs",
-          "application_method": "FAFSA"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams",
-        "exceptions": [
-          "AP Research (3+) grants 3 units of 100-level elective credit",
-          "AP Seminar (3+) grants ENGL 200 credit"
-        ],
-        "usage": "Satisfies K-State 8 general education requirements."
-      },
-      "ib_policy": {
-        "general_rule": "Credit awarded for HL and SL exams with score of 4+.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "TES",
-          "DirectLink"
-        ],
-        "restrictions": "75 unit cap for community college credits; 30 resident credits required."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Minimum 3.25 HS GPA or 21 ACT for assured admission.",
-        "Competitive stats (29+ ACT) for Veterinary Early Admission.",
-        "A transcript reflecting academic rigor."
-      ],
-      "common_activities": [
-        "K-State sports culture (football/basketball).",
-        "Undergraduate research (e.g., campus nuclear reactor).",
-        "Ag-specific clubs like Rodeo or Bakery Science."
-      ],
-      "essay_tips": [
-        "Be specific about K-State's unique offerings like the Insect Zoo.",
-        "Write in your natural voice\u2014avoid 'thesaurus abuse'."
-      ],
-      "insights": [
-        "The 'K-State Family' is a real cultural pillar.",
-        "Manhattan, KS (the 'Little Apple') is a quintessential college town.",
-        "Only Bakery Science major in the U.S."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 57262,
-      "employment_rate_2yr": 94.0,
-      "grad_school_rate": 19.0,
-      "top_employers": [
-        "Burns & McDonnell",
-        "Garmin",
-        "Koch Industries",
-        "Cargill",
-        "Textron"
-      ],
-      "student_retention": {
-        "freshman_retention_rate": 87.1,
-        "graduation_rate_4_year": 51.1,
-        "graduation_rate_6_year": 67.9
       }
     }
   },
-  "_id": "kansas_state_university",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agriculture",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Access to general K-State residence halls offering traditional and suite-style rooms. Features amenities like 24-hour front desks, WiFi, study rooms, and dining options. There is an 'Animal Health and Nutrition' Residential CAT Community, which is Pre-Vet focused and provides a living-learning environment with shared academic interests.",
+        "student_archetype": "Driven and innovative 'AgCats' passionate about making a difference in agricultural and animal sciences. Students are hands-on learners who value community and career preparation through real-world experiences.",
+        "strategic_fit_advice": "Students with a strong interest in agriculture, animal sciences, or related fields who are seeking hands-on learning, a supportive community, and robust career preparation should apply. Consider the 'Animal Health and Nutrition' CAT Community for an integrated experience.",
+        "majors": [
+          {
+            "name": "Agribusiness",
+            "degree_type": "B.S. in Agribusiness",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AGEC 120 Introduction to Agricultural Economics",
+                "AGEC 318 Farm and Ranch Management",
+                "AGEC 320 Quantitative Methods in Agricultural Economics",
+                "AGEC 370 Agribusiness Management",
+                "AGEC 410 Agricultural Marketing",
+                "AGEC 420 Agricultural Finance",
+                "ECON 110 Principles of Macroeconomics",
+                "ECON 120 Principles of Microeconomics",
+                "MATH 205 General Calculus",
+                "STAT 325 Introduction to Statistics"
+              ],
+              "electives": [
+                "AGEC 505 Agricultural Law",
+                "AGEC 530 International Agricultural Development",
+                "MANGT 366 Introduction to Business Analytics and Information Systems"
+              ],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [],
+            "notes": "Offers options in Agribusiness, Food Industry, and International Agribusiness. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Agricultural Education",
+            "degree_type": "B.S. in Agricultural Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Teacher Education program required for licensure pathway.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "AGED 110 Introduction to Agricultural Education",
+                "AGED 310 Foundations of Agricultural Education",
+                "AGED 420 Methods of Teaching Agriculture",
+                "AGED 510 Program Planning in Agricultural Education",
+                "AGRON 220 Crop Science",
+                "ANSC 100 General Animal Science",
+                "DED 310 Foundations of Education",
+                "EDCI 315 Educational Psychology",
+                "EDCI 320 Introduction to Professionalism in Education"
+              ],
+              "electives": [
+                "AGED 600 Agricultural Communication",
+                "HORT 301 General Horticulture"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Animal Sciences and Industry",
+            "degree_type": "B.S. in Animal Sciences and Industry",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 198 Principles of Biology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ANSC 100 General Animal Science",
+                "ANSC 340 Principles of Animal Nutrition",
+                "ANSC 350 Principles of Animal Breeding",
+                "ANSC 360 Anatomy and Physiology of Domestic Animals",
+                "ANSC 400 Animal Reproduction",
+                "BIOL 198 Principles of Biology",
+                "CHEM 110 General Chemistry I",
+                "CHEM 111 General Chemistry II",
+                "MATH 100 College Algebra",
+                "STAT 325 Introduction to Statistics"
+              ],
+              "electives": [
+                "ANSC 525 Meat Science",
+                "ANSC 540 Dairy Science",
+                "ANSC 570 Equine Science"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Offers various options within the major. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Horticulture",
+            "degree_type": "B.S. in Agriculture",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HORT 101 Introduction to Horticulture",
+                "HORT 301 General Horticulture",
+                "HORT 310 Plant Propagation",
+                "HORT 320 Woody Plants",
+                "HORT 325 Herbaceous Plants",
+                "HORT 501 Horticultural Crop Physiology",
+                "BIOL 198 Principles of Biology",
+                "CHEM 110 General Chemistry I",
+                "PLPTH 300 Principles of Plant Pathology",
+                "SOIL 310 Introduction to Soil Science"
+              ],
+              "electives": [
+                "HORT 510 Landscape Design I",
+                "HORT 530 Greenhouse Management",
+                "HORT 550 Fruit and Vegetable Production"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Offers options like Landscape Horticulture and Horticulture Production. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Food Science and Industry",
+            "degree_type": "B.S. in Food Science and Industry",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 110 General Chemistry I",
+              "MATH 100 College Algebra"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 210 Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FDSCI 101 Introduction to Food Science",
+                "FDSCI 302 Principles of Food Processing",
+                "FDSCI 400 Food Chemistry",
+                "FDSCI 401 Food Microbiology",
+                "FDSCI 501 Food Analysis",
+                "CHEM 210 Chemistry I",
+                "CHEM 220 Chemistry II",
+                "BIOL 198 Principles of Biology",
+                "MATH 205 General Calculus",
+                "STAT 325 Introduction to Statistics"
+              ],
+              "electives": [
+                "FDSCI 520 Cereal Technology",
+                "FDSCI 530 Dairy Processing",
+                "FDSCI 540 Meat Processing"
+              ],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Agricultural Communications and Journalism",
+            "degree_type": "B.S. in Agricultural Communications and Journalism",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Agronomy",
+            "degree_type": "B.S. in Agriculture",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Bakery Science and Management",
+            "degree_type": "B.S. in Bakery Science and Management",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Grain Science and Industry",
+            "degree_type": "B.S. in Grain Science and Industry",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Architecture, Planning and Design",
+        "admissions_model": "Selective Admission",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to general K-State residence halls with various room styles and amenities. An 'APDesign Community' Residential CAT Community is available, offering a living-learning environment that fosters professional development and community building for design students.",
+        "student_archetype": "Creative problem-solvers interested in multidisciplinary design, planning, and real-world projects. Students often engage in study abroad opportunities and collaborative learning.",
+        "strategic_fit_advice": "Aspiring architects, designers, and planners who value collaborative, project-based learning, interdisciplinary approaches, and opportunities for global experiences should consider this college, especially engaging with the APDesign Community.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "Master of Architecture (M.ARCH) - professional degree",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.0,
+            "prerequisite_courses": [
+              "Completion of Environmental Design Studies (first-year program)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Electronic portfolio review required for admission to professional program. Application deadline Feb 1.",
+            "admissions_pathway": "Direct Admit / Pre-professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ENVD 100 Environmental Design Studies I",
+                "ENVD 101 Environmental Design Studies II",
+                "ARCH 201 Architectural Design I",
+                "ARCH 202 Architectural Design II",
+                "ARCH 315 Structures I",
+                "ARCH 316 Structures II",
+                "ARCH 350 History of Architecture I",
+                "ARCH 351 History of Architecture II",
+                "ARCH 420 Environmental Systems I",
+                "ARCH 421 Environmental Systems II"
+              ],
+              "electives": [],
+              "total_units": 160,
+              "major_units": 120
+            },
+            "notable_professors": [],
+            "notes": "Accredited professional degree program. The M.ARCH is a professional degree, but undergraduate students can enter through a pre-professional Environmental Design Studies program. The GPA for consideration for admission is 3.0. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Interior Architecture & Product Design",
+            "degree_type": "Master of Interior Architecture & Product Design",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.0,
+            "prerequisite_courses": [
+              "Completion of Environmental Design Studies (first-year program)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Electronic portfolio review required for admission to professional program. Application deadline Feb 1.",
+            "admissions_pathway": "Direct Admit / Pre-professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited professional degree program. Undergraduate students can enter through a pre-professional Environmental Design Studies program. The GPA for consideration for admission is 3.0. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Landscape Architecture",
+            "degree_type": "Master of Landscape Architecture",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.0,
+            "prerequisite_courses": [
+              "Completion of Environmental Design Studies (first-year program)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Electronic portfolio review required for admission to professional program. Application deadline Feb 1.",
+            "admissions_pathway": "Direct Admit / Pre-professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited professional degree program. Undergraduate students can enter through a pre-professional Environmental Design Studies program. The GPA for consideration for admission is 3.0. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Regional & Community Planning",
+            "degree_type": "Master of Regional & Community Planning",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.0,
+            "prerequisite_courses": [
+              "Completion of Environmental Design Studies (first-year program)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Electronic portfolio may be required for admission to professional program. Application deadline Feb 1.",
+            "admissions_pathway": "Direct Admit / Pre-professional program",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited professional degree program. Undergraduate students can enter through a pre-professional Environmental Design Studies program. The GPA for consideration for admission is 3.0. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Architectural Engineering",
+            "degree_type": "B.S. in Architectural Engineering",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 100 College Algebra",
+              "PHYS 113 General Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ARE 100 Introduction to Architectural Engineering",
+                "ARE 201 Architectural Engineering Graphics",
+                "CE 212 Statics",
+                "CE 333 Mechanics of Materials",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "PHYS 213 Engineering Physics I",
+                "PHYS 214 Engineering Physics II"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 90
+            },
+            "notable_professors": [],
+            "notes": "Total credit hours required for graduation: 128. Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit / Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to diverse K-State residence halls, including traditional shared rooms and suite-style options. Specific Residential CAT Communities like 'Fandom and Film Studies,' 'Honors Community: Well-being in Practice,' 'Medicine, Science, and Society' (Pre-Med focused), and 'Psychology of Social Media' are available. Boyd Hall is noted for large community spaces.",
+        "student_archetype": "Students with diverse academic interests spanning the arts, humanities, social sciences, and natural sciences. They are encouraged to explore multiple fields, engage in interdisciplinary studies, and participate in research. There's a strong emphasis on well-being and belonging within the community.",
+        "strategic_fit_advice": "Ideal for students with broad academic curiosities, those exploring different majors, or individuals seeking interdisciplinary studies, research opportunities, and a welcoming, diverse community that supports individual well-being and belonging.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 198 Principles of Biology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 198 Principles of Biology",
+                "BIOL 301 General Genetics",
+                "BIOL 302 General Genetics Laboratory",
+                "BIOL 330 General Ecology",
+                "BIOL 335 General Ecology Laboratory",
+                "CHEM 110 General Chemistry I",
+                "CHEM 111 General Chemistry II",
+                "MATH 100 College Algebra",
+                "PHYS 113 General Physics I"
+              ],
+              "electives": [
+                "BIOL 500 Cell Biology",
+                "BIOL 520 Molecular Biology",
+                "BIOL 550 Evolution"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYCH 110 General Psychology"
+            ],
+            "special_requirements": "Higher GPA may be required for admission to the program.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYCH 110 General Psychology",
+                "PSYCH 320 Statistical Methods in Psychology",
+                "PSYCH 400 Research Methods in Psychology",
+                "PSYCH 500 History and Systems of Psychology",
+                "PSYCH 510 Cognitive Psychology",
+                "PSYCH 520 Social Psychology",
+                "PSYCH 530 Developmental Psychology",
+                "PSYCH 540 Biological Psychology",
+                "PSYCH 550 Abnormal Psychology"
+              ],
+              "electives": [
+                "PSYCH 600 Industrial/Organizational Psychology",
+                "PSYCH 610 Health Psychology",
+                "PSYCH 620 Forensic Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 110 Principles of Macroeconomics",
+              "ECON 120 Principles of Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 110 Principles of Macroeconomics",
+                "ECON 120 Principles of Microeconomics",
+                "ECON 510 Intermediate Microeconomics",
+                "ECON 520 Intermediate Macroeconomics",
+                "ECON 530 Economic Statistics",
+                "MATH 205 General Calculus"
+              ],
+              "electives": [
+                "ECON 505 International Economics",
+                "ECON 535 Public Finance",
+                "ECON 540 Money and Banking"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ENGL 200 Expository Writing I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 200 Expository Writing I",
+                "ENGL 210 Expository Writing II",
+                "ENGL 220 Introduction to Literature",
+                "ENGL 300 Survey of English Literature I",
+                "ENGL 301 Survey of English Literature II",
+                "ENGL 350 Introduction to Literary Theory",
+                "ENGL 500 Advanced Composition"
+              ],
+              "electives": [
+                "ENGL 510 Creative Writing: Fiction",
+                "ENGL 511 Creative Writing: Poetry",
+                "ENGL 580 World Literature"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 100 College Algebra"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 110 General Chemistry I",
+              "CHEM 111 General Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 110 General Chemistry I",
+                "CHEM 111 General Chemistry II",
+                "CHEM 210 Chemistry I",
+                "CHEM 220 Chemistry II",
+                "CHEM 350 General Organic Chemistry I",
+                "CHEM 351 General Organic Chemistry II",
+                "CHEM 510 Physical Chemistry I",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "PHYS 213 Engineering Physics I"
+              ],
+              "electives": [
+                "CHEM 531 Analytical Chemistry",
+                "CHEM 560 Biochemistry I"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Journalism and Mass Communications",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Art",
+            "degree_type": "B.A. or B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ART 174 2D Design",
+              "ART 180 Color, Light, and Perception Lab",
+              "ART 194 Drawing I",
+              "ART 200 Visual Representation and Fabrication"
+            ],
+            "special_requirements": "Portfolio review required for B.F.A. concentrations.",
+            "admissions_pathway": "Open (B.A.) / Portfolio Review (B.F.A.)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ART 174 2D Design",
+                "ART 180 Color, Light, and Perception Lab",
+                "ART 194 Drawing I",
+                "ART 200 Visual Representation and Fabrication",
+                "ART 195 Survey of Western Art History I",
+                "ART 196 Survey of Western Art History II"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "B.F.A. offers concentrations in Studio Art or Visual Communication Design. Portfolio review required after foundation courses for B.F.A. entry. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Business Administration",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to general K-State residence halls such as those in the Derby and Kramer Communities (which includes Wefald Hall with modern amenities). Jardine Apartments are available for upperclassmen seeking more independent living.",
+        "student_archetype": "Career-focused and driven individuals seeking to develop leadership skills, professional acumen, and strong networking connections. They benefit from robust support systems including academic advisors, career coaches, and executive mentorship.",
+        "strategic_fit_advice": "Ambitious students aiming for business careers who will benefit from strong mentorship, comprehensive career services, and a focus on professional development should consider this college.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S. in Business Administration (BSBA)",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MATH 205 General Calculus",
+              "ECON 110 Principles of Macroeconomics",
+              "ECON 120 Principles of Microeconomics"
+            ],
+            "special_requirements": "Completion of 45 credit hours with a K-State GPA of at least 2.5 is required for admission to a degree track (major). Transfer students need 12 graded hours at K-State.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "GENBA 105 Business Orientation",
+                "GENBA 205 Career Accelerator",
+                "ACCTG 231 Introduction to Managerial Accounting",
+                "ACCTG 241 Introduction to Financial Accounting",
+                "ECON 110 Principles of Macroeconomics",
+                "ECON 120 Principles of Microeconomics",
+                "FINAN 450 Principles of Finance",
+                "MANGT 220 Principles of Management",
+                "MANGT 366 Introduction to Business Analytics and Information Systems",
+                "MANGT 421 Introduction to Operations and Supply Chain Management",
+                "MANGT 595 Strategic Management",
+                "MANGT 596 Business Ethics and Corporate Citizenship",
+                "MKTG 250 Introduction to Marketing",
+                "MATH 205 General Calculus",
+                "STAT 350 Business and Economic Statistics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [],
+            "notes": "Offers various majors within the BSBA, including Accounting, Entrepreneurship and Innovation, Finance, Management, Marketing, Management Information Systems, Operations and Supply Chain Management, and Professional Strategic Selling. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S. in Business Administration",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCTG 231 Introduction to Managerial Accounting",
+              "ACCTG 241 Introduction to Financial Accounting"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ACCTG 231 Introduction to Managerial Accounting",
+              "ACCTG 241 Introduction to Financial Accounting"
+            ],
+            "special_requirements": "3.0 K-State GPA required for admission to the Accounting degree-track.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCTG 331 Intermediate Accounting I",
+                "ACCTG 332 Intermediate Accounting II",
+                "ACCTG 341 Cost Accounting",
+                "ACCTG 431 Federal Income Tax",
+                "ACCTG 442 Auditing",
+                "ACCTG 450 Accounting Information Systems",
+                "FINAN 450 Principles of Finance",
+                "MANGT 220 Principles of Management",
+                "MKTG 250 Introduction to Marketing"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S. in Business Administration",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MKTG 250 Introduction to Marketing"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "2.5 K-State GPA required for admission to the Marketing degree-track.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MKTG 450 Consumer Behavior",
+                "MKTG 540 Marketing Research",
+                "MKTG 560 Marketing Communications",
+                "MKTG 690 Marketing Strategy"
+              ],
+              "electives": [
+                "MKTG 325 International Marketing",
+                "MKTG 420 Digital Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S. in Business Administration",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FINAN 450 Principles of Finance"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "2.5 K-State GPA required for admission to the Finance degree-track.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FINAN 510 Investments",
+                "FINAN 520 Financial Markets and Institutions",
+                "FINAN 530 Corporate Finance",
+                "FINAN 540 Financial Modeling"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.S. in Business Administration",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MANGT 366 Introduction to Business Analytics and Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "2.5 K-State GPA required for admission to the Management Information Systems degree-track.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MIS 300 Introduction to Information Systems",
+                "MIS 500 Database Management Systems",
+                "MIS 510 Systems Analysis and Design",
+                "MIS 520 Project Management for Information Systems"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Entrepreneurship and Innovation",
+            "degree_type": "B.S. in Business Administration",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "2.5 K-State GPA required for admission to the Entrepreneurship and Innovation degree-track.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Operations and Supply Chain Management",
+            "degree_type": "B.S. in Business Administration",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "2.5 K-State GPA required for admission to the Operations and Supply Chain Management degree-track.",
+            "admissions_pathway": "Pre-Business Administration Program (BAPP)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to general K-State residence halls, offering various room types and community amenities. No specific education-themed residential communities were identified, but students can join university-wide clubs and organizations.",
+        "student_archetype": "Individuals dedicated to becoming knowledgeable, ethical, and caring educators. They are committed to professional development, community service, and actively engage in education-related student organizations to promote the teaching profession.",
+        "strategic_fit_advice": "Suitable for individuals passionate about teaching and leadership, who are committed to fostering learning, embracing diversity, and making a positive impact in various educational settings.",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Teacher Education program required.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "DED 310 Foundations of Education",
+                "EDCI 315 Educational Psychology",
+                "EDCI 320 Introduction to Professionalism in Education",
+                "EDCI 330 Teaching Reading and Writing in Elementary Schools",
+                "EDCI 340 Teaching Mathematics in Elementary Schools",
+                "EDCI 350 Teaching Science in Elementary Schools",
+                "EDCI 360 Teaching Social Studies in Elementary Schools",
+                "EDCI 515 Classroom Management",
+                "EDCI 520 Assessment in Education"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Prepares individuals for K-6 teacher licensure. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Secondary Education",
+            "degree_type": "B.S. in Education",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Teacher Education program required. Requires a teaching field in a specific subject area.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "DED 310 Foundations of Education",
+                "EDCI 315 Educational Psychology",
+                "EDCI 320 Introduction to Professionalism in Education",
+                "EDCI 530 Methods of Teaching Secondary Education",
+                "EDCI 540 Differentiated Instruction for Diverse Learners",
+                "EDCI 550 Technology Integration in Education"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Prepares individuals for secondary teacher licensure in specific subject areas. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Educational Studies",
+            "degree_type": "B.S. in Educational Studies",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Prepares graduates for non-school settings, educational policy, and entrepreneurial roles. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to general K-State residence halls. Wefald Hall is noted for modern amenities and often houses many freshmen engineers. Ford Hall is also specifically set up with engineering students in mind, fostering a community engaged in similar academic pursuits. An 'Engineering Futures' Residential CAT Community provides a living-learning environment.",
+        "student_archetype": "Ambitious problem-solvers, innovative thinkers, and hands-on learners interested in research and aiming for high-demand careers in various engineering fields. They thrive in a collaborative environment.",
+        "strategic_fit_advice": "Students with a strong STEM background, a desire for practical application of knowledge, and an interest in technological leadership should apply. Consider the 'Engineering Futures' CAT Community or living in Ford or Wefald Hall for an integrated experience.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "CIS 115 Introduction to Computing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "CIS 200 Programming Fundamentals"
+            ],
+            "special_requirements": "Admission to the College of Engineering is selective. Declaration of desired curriculum does not guarantee admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CIS 115 Introduction to Computing",
+                "CIS 200 Programming Fundamentals",
+                "CIS 300 Data Structures and Algorithms",
+                "CIS 301 Logic and Program Design",
+                "CIS 400 Computer Organization and Assembly Language",
+                "CIS 450 Operating Systems",
+                "CIS 501 Software Engineering",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "MATH 320 Elementary Differential Equations",
+                "STAT 510 Introduction to Probability and Statistics I",
+                "PHYS 213 Engineering Physics I",
+                "PHYS 214 Engineering Physics II"
+              ],
+              "electives": [
+                "CIS 570 Database Management Systems",
+                "CIS 575 Computer Networks",
+                "CIS 640 Artificial Intelligence"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "PHYS 213 Engineering Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "PHYS 213 Engineering Physics I"
+            ],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ME 101 Introduction to Mechanical Engineering",
+                "ME 212 Engineering Graphics",
+                "ME 310 Thermodynamics I",
+                "ME 320 Mechanics of Materials",
+                "ME 330 Dynamics",
+                "ME 400 Fluid Mechanics",
+                "ME 410 Heat Transfer",
+                "ME 513 Machine Design I",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "MATH 320 Elementary Differential Equations",
+                "PHYS 213 Engineering Physics I",
+                "PHYS 214 Engineering Physics II"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 90
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "PHYS 213 Engineering Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "PHYS 213 Engineering Physics I"
+            ],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CE 101 Introduction to Civil Engineering",
+                "CE 212 Statics",
+                "CE 320 Fluid Mechanics",
+                "CE 333 Mechanics of Materials",
+                "CE 340 Structural Analysis",
+                "CE 410 Soil Mechanics",
+                "CE 420 Environmental Engineering",
+                "CE 450 Transportation Engineering",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "MATH 320 Elementary Differential Equations",
+                "PHYS 213 Engineering Physics I",
+                "PHYS 214 Engineering Physics II"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 90
+            },
+            "notable_professors": [],
+            "notes": "Offers seven tracks within the degree. Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "PHYS 213 Engineering Physics I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "PHYS 213 Engineering Physics I"
+            ],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EE 101 Introduction to Electrical Engineering",
+                "EE 212 Electric Circuits I",
+                "EE 215 Electric Circuits II",
+                "EE 310 Electronics I",
+                "EE 320 Electromagnetics",
+                "EE 340 Signals and Systems",
+                "EE 360 Digital Systems Design",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "MATH 320 Elementary Differential Equations",
+                "PHYS 213 Engineering Physics I",
+                "PHYS 214 Engineering Physics II"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 90
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "CHEM 210 Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 220 Analytic Geometry and Calculus I",
+              "CHEM 210 Chemistry I"
+            ],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHE 101 Introduction to Chemical Engineering",
+                "CHE 210 Chemical Engineering Thermodynamics I",
+                "CHE 320 Fluid Flow",
+                "CHE 330 Heat Transfer",
+                "CHE 340 Mass Transfer",
+                "CHE 410 Chemical Reaction Engineering",
+                "CHE 420 Process Control",
+                "CHEM 210 Chemistry I",
+                "CHEM 220 Chemistry II",
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "MATH 320 Elementary Differential Equations",
+                "PHYS 213 Engineering Physics I"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 90
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Biological and Agricultural Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Construction Science and Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Total credit hours required for graduation: 120. Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Industrial Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Nuclear Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission to the College of Engineering is selective.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission to the College of Engineering is selective. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Health and Human Sciences",
+        "admissions_model": "Direct Admit / Selective Admission",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Access to general K-State residence halls. The 'Honors Community: Well-being in Practice' Residential CAT Community is relevant for students interested in health professions and holistic well-being.",
+        "student_archetype": "Caring individuals passionate about helping others and improving human well-being. Students often seek interdisciplinary collaborations and practical experience in fields related to health, human development, and consumer sciences.",
+        "strategic_fit_advice": "Students dedicated to service, health, and human development, who value a supportive community and opportunities for practical experience across various health and human sciences fields.",
+        "majors": [
+          {
+            "name": "Athletic Training and Rehabilitation Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 198 Principles of Biology",
+              "PHYS 113 General Physics I",
+              "PSYCH 110 General Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Pre-professional program prepares students for graduate athletic training programs. Requires 120 hours.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ATRS 100 Introduction to Athletic Training and Rehabilitation Sciences",
+                "ATRS 200 Medical Terminology for Health Professions",
+                "ATRS 300 Fundamentals of Athletic Training",
+                "ATRS 310 Therapeutic Modalities",
+                "ATRS 320 Therapeutic Exercise",
+                "BIOL 198 Principles of Biology",
+                "CHEM 110 General Chemistry I",
+                "FNDH 132 Basic Human Nutrition",
+                "KIN 220 Anatomy and Physiology I",
+                "KIN 321 Anatomy and Physiology II",
+                "PHYS 113 General Physics I",
+                "PSYCH 110 General Psychology"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "This pre-professional program prepares students for a career as an allied-health professional and/or entry into graduate professional degree programs. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Kinesiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 198 Principles of Biology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "KIN 100 Introduction to Kinesiology",
+                "KIN 220 Anatomy and Physiology I",
+                "KIN 321 Anatomy and Physiology II",
+                "KIN 340 Exercise Physiology",
+                "KIN 350 Biomechanics",
+                "KIN 410 Motor Learning and Control",
+                "BIOL 198 Principles of Biology",
+                "CHEM 110 General Chemistry I",
+                "PHYS 113 General Physics I",
+                "PSYCH 110 General Psychology"
+              ],
+              "electives": [
+                "KIN 510 Sport Psychology",
+                "KIN 520 Exercise Testing and Prescription"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Nutritional Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 110 General Chemistry I",
+              "BIOL 198 Principles of Biology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FNDH 132 Basic Human Nutrition",
+                "FNDH 310 Macronutrients",
+                "FNDH 312 Micronutrients",
+                "FNDH 400 Food Science",
+                "FNDH 410 Medical Nutrition Therapy I",
+                "FNDH 412 Medical Nutrition Therapy II",
+                "BIOL 198 Principles of Biology",
+                "CHEM 210 Chemistry I",
+                "CHEM 350 General Organic Chemistry I"
+              ],
+              "electives": [
+                "FNDH 500 Community Nutrition",
+                "FNDH 520 Sports Nutrition"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 198 Principles of Biology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Human Development and Family Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYCH 110 General Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Technology and Aviation (Salina Campus)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Existing suite-style residence halls (Earhart, Harbin, Schilling) on campus. A new 104-bed residence hall was recently completed or is under construction to accommodate rising enrollment. Students are not required to live on campus. 'Aviation' and 'Generation One' Living Learning Communities are available.",
+        "student_archetype": "Hands-on learners focused on careers in aviation or engineering technology. Students gain practical experience early in their programs, with pilot students beginning flying in their first week. First-generation students are specifically supported.",
+        "strategic_fit_advice": "Students seeking specialized, hands-on training in aerospace or technology, who value a smaller campus environment with strong industry connections and early practical experience. First-generation students are particularly encouraged.",
+        "majors": [
+          {
+            "name": "Aeronautical Technology - Professional Aviation",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 100 College Algebra"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Designed as a degree completion program, allowing up to 60 credit hours of technical aviation specialty and general education to transfer.",
+            "admissions_pathway": "Direct Admit / Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AT 100 Introduction to Aviation",
+                "AT 200 Aviation Regulations",
+                "AT 300 Aviation Safety",
+                "AT 400 Aviation Leadership",
+                "AT 410 Aviation Operations",
+                "BUS 315 Supervisory Management"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "This option is offered at the Kansas State University Salina Aerospace and Technology Campus and online. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Aeronautical Technology - Aviation Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 100 College Algebra"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students have the option of learning in-person or online.",
+            "admissions_pathway": "Direct Admit / Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "This option is offered at the Kansas State University Salina Aerospace and Technology Campus and online. Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Computer Systems Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Electronic and Computer Engineering Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          },
+          {
+            "name": "Mechanical Engineering Technology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Data source: Kansas State University Undergraduate Catalog 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "Mary Lynn and Warren Staley School of Leadership",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Business Minor",
+      "Nutrition Minor",
+      "Advertising & Public Relations Minor",
+      "Entrepreneurship and Innovation Minor",
+      "Data Analytics Certificate",
+      "The Business of Sports and Entertainment Certificate",
+      "Conflict Resolution Certificate",
+      "International Business Certificate",
+      "Marketing Technology Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Priority date for freshman fall admission and maximum consideration for general university scholarships/awards. Applications are accepted after this date, but scholarship offers are pending availability of funds."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All (Holistic Review for Admission)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "For students who do not initially meet assured admission standards, a personal statement with a series of short answer essay questions is required. These essays should explain why the student can be successful at Kansas State University, addressing past academic performance, future academic achievement, personal growth, and plans for financing their education. Other relevant information can also be included."
+      },
+      {
+        "target_program": "University Honors Program",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "An extra essay (approximately 300-500 words) is required, describing what motivates your application to the University Honors Program."
+      },
+      {
+        "target_program": "Specific Scholarships (e.g., Vanier Family Business Administration Best Of Kansas Scholarship)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Some specific scholarships, such as the Vanier Family Business Administration Best Of Kansas Scholarship, require essay questions (e.g., 4 essay questions for Vanier). Students can also create a profile in the K-State Scholarship Network (KSN) for additional scholarship opportunities."
+      },
+      {
+        "target_program": "Developing Scholars Program (DSP)",
+        "requirement_type": "Essays",
+        "deadline": "2026-03-01",
+        "details": "Requires essay question responses (2,500 characters or 500 words each) addressing research interests, motivation for applying to the DSP, career goals, how DSP will help achieve those goals, and any additional personal information."
+      },
+      {
+        "target_program": "Music Majors",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "All future music majors must audition for the instructor(s) of their primary performing medium for acceptance into the music program. Audition repertoire requirements typically include one lyrical étude and one technical étude OR a solo showcasing two contrasting musical styles, major scales (up to 4 flats/4 sharps), and a full-range chromatic scale. Proficiency exams in music theory and aural skills are also required. Scholarship auditions are also available."
+      },
+      {
+        "target_program": "Music (Graduate Assistantship)",
+        "requirement_type": "Audition",
+        "deadline": "February 1 (video submission), February 12 (in-person)",
+        "details": "Graduate applicants for a Graduate Assistantship may submit a video audition by February 1 or have an in-person audition by February 12. Audition requirements generally include 25-30 minutes of music, comprising solo literature (standard sonatas, concertos, suites, and transcripts) and may also include orchestral and/or band excerpts. A resume and three reference contacts are also needed."
+      },
+      {
+        "target_program": "Theatre (Performance in Fall Productions)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Theatre Majors, Minors, and Graduate Students who wish to perform in the Fall Production are required to participate in 'Cattle Call/Unified Auditions.' Auditions for mainstage productions are open to all registered K-State students regardless of major. Scholarship auditions are also available."
+      },
+      {
+        "target_program": "Dance (Scholarships)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Auditions are required for scholarships available to students pursuing a secondary major in Dance and the Human Experience. Auditions are also held for performance opportunities in Mainstage Concerts (Winter and Spring Dance Concerts) and ensembles (e.g., Contemporary Dance Ensemble, K-State Tap Ensemble), open to all K-State students. Prior experience is preferred but not required for concert auditions. Students should arrive 30 minutes early to warm up and submit audition materials including weekly availability."
+      },
+      {
+        "target_program": "Architecture (Graduate Admissions with Design Background)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio is required for applicants to graduate programs like the Master of Landscape Architecture (MLA) if they have a design background. For other applicants, a portfolio is welcome but not required. The portfolio may include design projects, research projects, samples of written work, and other examples of creative and/or research efforts."
+      },
+      {
+        "target_program": "Architecture, Interior Architecture, Industrial Design, Landscape Architecture, or Regional and Community Planning (Transfer Admissions)",
+        "requirement_type": "Portfolio",
+        "deadline": "February 1",
+        "details": "An electronic portfolio is required for admission for transfer students to the College of Architecture, Planning & Design (APDesign). This portfolio should be prepared based on work completed in specific studio courses (e.g., JCCC courses ARCH 127, ARCH 292, ARCH 131, ARCH 140)."
+      },
+      {
+        "target_program": "Architecture, Interior Architecture (Current Students for Studio Advancement)",
+        "requirement_type": "Portfolio",
+        "deadline": "First day of Fall semester (for ARCH508/509, IA508, ARCH608 or IA608)",
+        "details": "A digital, comprehensive professional portfolio is a prerequisite for advancement in the studio course sequence. It must be submitted on the first day of the Fall semester for specific courses (e.g., ARCH508/509, IA508, ARCH608, or IA608). The portfolio should be developed in 8.5” x 11” (portrait orientation) in two-page spreads with front and back covers, include a resume, and examples of at least one major project from each semester of the design sequence (including foundations studios). It must be uploaded as a single PDF (max 250MB) and an ISSUU link."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Class rank",
+        "Application Essay",
+        "Recommendation(s)",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Kansas State University demonstrates a strong institutional commitment to supporting first-generation students through a dedicated center, specialized programs, and scholarships. Their admissions policy is test-optional, and applications from students who do not meet assured admission requirements are still reviewed individually."
+    },
     "essay_prompts": [
       {
-        "prompt": "Tell us about your background, experiences, and goals. Why have you chosen your intended major?",
+        "prompt": "Have you experienced any special circumstances that may have affected your academic achievement?",
         "word_limit": "250 words",
-        "type": "Major",
+        "type": "Personal / Explanatory",
         "required": false,
         "brainstorming_questions": [
-          "Thinking about your background in Kansas or elsewhere, what's a specific moment or observation that sparked your initial curiosity about the field of [Intended Major]? Perhaps a childhood fascination, a family tradition, or a community issue?",
-          "Beyond academics, what are some of your most meaningful hands-on experiences, hobbies, or even challenges that have shaped your understanding of [Intended Major] and demonstrated your aptitude or passion for it?",
-          "K-State is known for [mention a specific K-State program, value, or tradition related to the major, e.g., 'its hands-on research opportunities in agriculture,' or 'its commitment to community engagement in engineering']. How do you see your own past experiences aligning with or being enhanced by K-State's specific approach to [Intended Major]?",
-          "When you picture yourself as a graduate in your intended field, what tangible problem or challenge are you most driven to address, and how have your past experiences prepared you for that specific goal?",
-          "Imagine you're explaining your chosen major to someone who knows nothing about it. What's the one story from your background or a personal experience you'd share to make them truly understand why this field matters to you and why you're pursuing it at K-State?"
+          "What specific circumstances (e.g., health, family issues, learning differences, significant life events) impacted your academic performance?",
+          "When did these circumstances occur, and for how long did they affect you?",
+          "How did you personally cope with or respond to these circumstances?",
+          "What steps, if any, did you take to mitigate the impact on your studies?",
+          "What did you learn about yourself or your resilience during this time?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/kansas_state_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Target less competitive majors if your academic profile is a concern.",
+      "Consider applying as \"undeclared\" or to a general college if unsure or aiming for a later transfer.",
+      "Prioritize meeting or exceeding the general university admission criteria.",
+      "Thoroughly research and understand specific major requirements and deadlines."
+    ],
+    "college_ranking_tactics": [
+      "Assess specific academic program and major rankings and strengths",
+      "Evaluate the quality of campus life and student support resources",
+      "Investigate career services and post-graduation opportunities",
+      "Consider experiential learning opportunities",
+      "Analyze the overall value and return on investment"
+    ],
+    "alternate_major_strategy": "Kansas State University offers several pathways and considerations for students exploring alternate majors, both during the initial application process and for those looking to change their focus after admission.\n\n### Alternate Major Strategy During Application\n\nWhile K-State does not explicitly detail a \"backup major\" selection on its primary application, students applying to competitive programs may consider applying as \"undeclared\" or through the \"Exploratory Studies\" program. This approach allows students to enter the university without being locked into a specific, highly selective major upfront.\n\n*   **Exploratory Studies:** Kansas State University offers an Exploratory Studies program for students who are undecided about their major or wish to explore different academic areas before committing. This can serve as an alternate strategy, allowing students more time to discover their best fit major while completing general education requirements. Advisors in Exploratory Studies can assist students in navigating their interests and making informed decisions about their academic path. Students are generally required to declare a major and move out of Exploratory by the time they have completed 60 credit hours, though many aim to choose a major before the end of their first year.\n*   **Opportunity to Boost GPA:** For competitive majors, applying as undecided can provide an opportunity to boost one's GPA in general education classes before applying to a selective program. This can make a student's application to their chosen major more competitive.\n\n### Internal Transfer Difficulty for Impacted Majors\n\nInternal transfer into certain \"impacted\" or competitive majors at Kansas State University can be challenging and often involves specific requirements.\n\n*   **Selective Admission:** Several programs at K-State have selective admission, which is based on academic performance and space availability. These include majors within the College of Architecture, Planning and Design, the Carl R. Ice College of Engineering, the College of Business, Interior Design, Psychology, and all health-related professions. For transfer students, these programs often require higher GPAs than the general university admission requirement.\n*   **Specific GPA and Prerequisite Requirements:** Changing majors, especially into a different college, may require fulfilling specific GPA requirements or prerequisite classes. For example, the College of Education requires grades of C or better in admission to teacher education courses, and some health and human sciences programs also have grade requirements for foundational courses.\n*   **Process for Changing Majors:** If a student initially applies to a less competitive major or as undeclared and later decides to pursue a competitive major like Computer Science (in the Carl R. Ice College of Engineering), they would need to follow specific internal transfer procedures. This typically involves discussing the desired change with their current academic advisor and contacting the Dean's Office or Student Services of the college that houses the new major. For instance, to transfer into the College of Engineering, students would email Engineering Student Services, informing them of their current curriculum and the desired new curriculum.\n\n**Example:** If a student initially applies to K-State with a strong interest in Computer Science within the College of Engineering, but is concerned about direct admission, they might consider:\n*   **Applying to Exploratory Studies or a less competitive major:** This allows them to demonstrate academic success in initial coursework.\n*   **Considering a related but less competitive field as a fallback:** While not explicitly stated as an application strategy, an academic advisor could help students identify related majors with potentially less stringent entry requirements. For instance, if Computer Science is highly competitive, a student might initially pursue a major like Cognitive Science (often found in the College of Arts & Sciences) while completing foundational math and science courses that would also apply to a Computer Science degree. This would allow them to build a strong K-State GPA before attempting an internal transfer into the Computer Science program. The internal transfer process for competitive majors often entails meeting specific GPA benchmarks and prerequisite coursework to be considered for admission into the desired program."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 12694.0,
+        "total_coa": 30552.0,
+        "housing": 13652.0
+      },
+      "out_of_state": {
+        "tuition": 30388.0,
+        "total_coa": 48246.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 7202.0,
+    "average_merit_aid": 6988.0,
+    "percent_receiving_aid": 83.0,
+    "meets_full_need": false,
+    "notes": "Kansas State University's Land Grant Promise assures full-time, Pell-eligible Kansas resident undergraduates with a total household income of $70,000 or less will receive a total grant and/or scholarship aid package covering tuition (up to 30 credit hours per academic year).",
+    "scholarships": [
+      {
+        "name": "Kansas Resident Top General University Award",
+        "type": "Merit",
+        "amount": "$5,500/year ($22,000 over 4 years)",
+        "deadline": "Priority Application Date (Automatic Consideration)",
+        "benefits": "One of the highest merit scholarship awards in the state, automatically awarded",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Wildcat Nonresident Award",
+        "type": "Merit",
+        "amount": "50% to 100% reduction on non-resident tuition",
+        "deadline": "Priority Application Date (Automatic Consideration)",
+        "benefits": "Reduces non-resident portion of tuition based on GPA, no test score required for consideration",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Missouri Match Tuition Award",
+        "type": "Merit",
+        "amount": "Tuition equivalent to in-state rates",
+        "deadline": "Priority Application Date (Automatic Consideration)",
+        "benefits": "Matches in-state tuition rates for eligible Missouri residents",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "K-State Alumni Association International Student Scholarship",
+        "type": "Merit/Leadership",
+        "amount": "$1,000 for the academic year",
+        "deadline": "2026-03-17",
+        "benefits": "Supports international students demonstrating leadership in promoting international engagement on campus",
+        "application_method": "Separate Application through International Student and Scholars Services"
+      },
+      {
+        "name": "OIP Scholarship for International Students",
+        "type": "Merit",
+        "amount": "$750",
+        "deadline": "Selection in Spring each year",
+        "benefits": "Awarded to an outstanding international student who has completed at least one semester at K-State",
+        "application_method": "Selection based on internal criteria (implied, guidelines available)"
+      },
+      {
+        "name": "Departmental Scholarships (via K-State Scholarship Network - KSN)",
+        "type": "Merit/Various",
+        "amount": "Varies",
+        "deadline": "Incoming Domestic Freshmen: February 1; Incoming Transfer and All International Students: March 15",
+        "benefits": "Opportunities for newly admitted and current students across various colleges and departments",
+        "application_method": "K-State Scholarship Network (KSN) application"
+      },
+      {
+        "name": "Kansas State Scholarship (Kansas Board of Regents)",
+        "type": "Need-based (State Program)",
+        "amount": "Up to $1,000 annually ($500/semester)",
+        "deadline": "August 1 (Priority)",
+        "benefits": "Financial assistance for Kansas high school graduates designated as State Scholars based on financial need",
+        "application_method": "FAFSA and State of Kansas Student Aid Application"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Kansas State University generally awards college credit for AP exam scores of 3 or higher in many subjects. Specific score requirements vary by subject, with 4s or 5s sometimes required for higher-level equivalencies or specific major credit. Credit applies towards general education requirements or specific courses as outlined in the K-State AP equivalency guide.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "Kansas State University typically grants college credit for Higher Level (HL) IB exam scores of 4 or higher in many subjects. Standard Level (SL) exams may also be considered for credit in certain areas. Specific course equivalencies and credit hours are determined based on the subject and score, contributing to general education or specific course requirements.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Kansas State University has comprehensive transfer articulation agreements, especially with Kansas community colleges, ensuring smooth credit transfer. Credits from regionally accredited institutions are generally accepted if comparable to K-State courses. An online transfer course equivalency guide is available, and students are advised to use it to plan their transfer. A maximum number of transfer credits may apply, and some upper-division credits or major-specific courses might require departmental review or be required to be taken in residence."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated passion in 1-2 areas rather than scattered activities (inferred from general college admission advice and the competitive nature of some specific programs like prevet, though not explicitly stated by K-State accepted students for general admission)",
+      "Authentic essays that show self-reflection (inferred from general college admission advice, not specific K-State student testimonials for general admission)",
+      "Leadership in meaningful extracurriculars (inferred from general college admission advice, not specific K-State student testimonials for general admission)"
+    ],
+    "common_activities": [
+      "Involvement in student organizations/clubs (academic, cultural, special interest)",
+      "Community service and volunteering (e.g., HandsOn Kansas State)",
+      "Participation in recreational sports and intramurals",
+      "Engagement in arts, music, theatre, and dance activities",
+      "Leadership roles within campus organizations",
+      "Attending athletic events"
+    ],
+    "essay_tips": [
+      "**Be specific about why K-State, referencing unique programs and resources.** Go beyond general interest and research specific offerings of the program or university you're applying to (e.g., the Honors Program). Mention particular resources and explain precisely how you plan to utilize them to achieve your goals.",
+      "**Show, don't tell, using concrete examples and vivid imagery.** Instead of simply stating your qualities or interests, craft a narrative that demonstrates how a program aligns with your lifestyle and aspirations. Incorporate vivid imagery, specific details, and personal experiences to make your essay engaging and thoughtful.",
+      "**Connect your interests to specific resources at the school.** Demonstrate an authentic connection between your personal interests and the university's offerings. Explain how K-State's resources will help you pursue your specific goals.",
+      "**Share your story with \"telling details\" that complement your resume.** Avoid rehashing your resume. Instead, provide specific anecdotes and details that reveal significant aspects of your journey, such as what motivates your goals, valuable skills you've developed, meaningful experiences, or personal challenges you've overcome. This personal element humanizes your application and adds authenticity.",
+      "**Clearly articulate your goals and demonstrate synergy with the opportunity.** Outline your future aspirations and establish a clear connection between the specific opportunity (e.g., the Honors Program) and how it will help you achieve those goals. Show a strong sense of purpose."
+    ],
+    "red_flags": [
+      "Weak academic performance (e.g., low GPA, lack of rigorous coursework)",
+      "Generic essays that could apply anywhere",
+      "List of activities without depth or impact",
+      "Incomplete or late submission of application materials",
+      "Dishonesty or withholding information about past conduct"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Kansas State University has a moderately competitive admissions process with an acceptance rate typically between 79% and 82%, offering a test-optional policy where strong standardized test scores can still enhance an application."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "K-State is highly regarded for its programs in agriculture, engineering, and architecture, and provides significant opportunities for undergraduate research and experiential learning."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "Kansas State University is characterized by a collaborative and supportive campus environment, often described with 'Midwestern friendliness' and a strong sense of community, embodying its land-grant mission of service."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 57260,
+    "employment_rate_2yr": 96.0,
+    "median_earnings_6yr": 39000,
+    "notes": "Median earnings 10 years after enrollment are based on median earnings for graduates and non-completers. The employment rate of 96% includes graduates who are either employed or furthering their education, typically reported within six months after graduation, not specifically 2 years after graduation. Median earnings 6 years after enrollment is reported as an average salary after attending Kansas State University.",
+    "top_employers": [
+      "Goldman Sachs",
+      "JPMorgan",
+      "Deloitte",
+      "Bain Capital / Bain & Company",
+      "Apple",
+      "Microsoft",
+      "Burns & McDonnell",
+      "Garmin",
+      "Koch Industries"
+    ],
+    "grad_school_rate": 19.0,
+    "loan_default_rate": 4.7
+  },
+  "student_retention": {
+    "freshman_retention_rate": 87.0,
+    "graduation_rate_4_year": 47.0,
+    "graduation_rate_6_year": 70.0
+  }
 }

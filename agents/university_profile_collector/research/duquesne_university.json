@@ -1,356 +1,1826 @@
+
 {
   "_id": "duquesne_university",
-  "university_name": "Duquesne University",
-  "last_updated": "2025-12-19",
-  "report_source_files": [
-    "https://www.duq.edu/news/2025/09/national-rankings-highlight-academic-excellence.php",
-    "https://www.usnews.com/best-colleges/duquesne-university-3258",
-    "https://datausa.io/profile/university/duquesne-university"
-  ],
+  "metadata": {
+    "official_name": "Duquesne University of the Holy Spirit",
+    "location": {
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "type": "Private"
+    },
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
   "strategic_profile": {
-    "executive_summary": "Founded in 1878, Duquesne is the only Spiritan university in the United States, blending a rigorous private research environment with a deep-seated commitment to social justice and community service. It is recognized as an R2 doctoral university with high research activity, particularly in health sciences and law.",
-    "market_position": "Hidden Gem",
-    "admissions_philosophy": "Holistic review",
+    "executive_summary": "Duquesne University is a private Spiritan Catholic institution consistently recognized among National Universities. For 2026, U.S. News & World Report ranked it #169 nationally. The university is known for its strong programs in health sciences, business, law, and music, and is highlighted for its value, academic quality, and student outcomes. It is a private Catholic university known for its robust professional programs and commitment to service, located in downtown Pittsburgh. It offers a diverse range of undergraduate and graduate degrees, emphasizing ethical leadership and intellectual inquiry within a faith-based tradition.",
+    "market_position": "Reputable Private University",
+    "admissions_philosophy": "Holistic review emphasizing intellectual curiosity. Duquesne seeks students who demonstrate academic promise, leadership potential, and a commitment to community engagement and service. A holistic review process considers high school performance, essays, recommendations, and extracurricular involvement, aligning with the university's mission to educate the whole person.",
     "us_news_rank": 169,
     "analyst_takeaways": [
       {
         "category": "Selectivity",
-        "insight": "Acceptance rates have shown volatility, dropping from roughly 87% to 79% in a single cycle due to a 14% surge in application volume.",
-        "implication": "Applicants should focus on demonstrating alignment with the university's service-oriented mission to stand out in a growing pool."
+        "insight": "Duquesne University is a somewhat selective institution, with acceptance rates generally ranging from 79% to 84%. The university offers an Early Action application option with a November 15 deadline.",
+        "implication": "While not 'extremely competitive,' applying Early Action by November 15 can demonstrate strong interest and potentially provide an earlier admission decision, which can be advantageous. Meeting the average GPA (around 3.79) and submitting competitive test scores (if not applying test-optional) will strengthen an application."
       },
       {
-        "category": "Testing Policy",
-        "insight": "The university remains test-optional for all programs through 2026, including high-demand health professions.",
-        "implication": "Strong GPA and leadership experience can effectively compensate for absent test scores under their holistic model."
+        "category": "Academic",
+        "insight": "Duquesne emphasizes a strong liberal arts education and offers a wide array of over 85 undergraduate majors and notable programs in areas like pharmacy, nursing, business, and education. A test-optional admission policy is available for all programs.",
+        "implication": "Applicants should highlight their intellectual curiosity and any experiences related to liberal arts or their chosen strong programs. If SAT/ACT scores don't reflect academic ability, utilizing the test-optional policy is a viable strategy, emphasizing high school curriculum, academic achievement, leadership, and extracurricular involvement instead."
+      },
+      {
+        "category": "Culture",
+        "insight": "As a private Catholic university with a Spiritan tradition, Duquesne focuses on moral and spiritual development, community service, and fostering a supportive campus environment. It boasts a distinct urban campus on 'The Bluff' in Pittsburgh, offering city advantages while maintaining a traditional college feel.",
+        "implication": "Applicants should articulate how their values align with a service-oriented, faith-based education (if applicable) and a desire to contribute to a strong community. Emphasizing a preference for an urban setting with a campus feel and highlighting any community service or leadership experiences can resonate well with the admissions committee."
       }
     ],
     "campus_dynamics": {
-      "social_environment": "The social scene is defined by a strong 'service-first' culture and a significant commuter presence, balanced by an active Greek life and a 'self-contained' hilltop campus.",
-      "transportation_impact": "Campus life is heavily influenced by the 'UPass' program and South Side shuttles, facilitating a seamless connection between the urban campus and Pittsburgh\u2019s business districts.",
-      "research_impact": "With R2 status and recent $1.5M+ grants in nanoparticle and transplantation research, the university leverages its location near UPMC and the Pittsburgh 'Tech Hub' for industry-integrated undergraduate research."
+      "social_environment": "Duquesne University fosters a tight-knit and welcoming community with a vibrant campus life, offering over 250 student-led clubs and organizations for social engagement and academic growth. The compact campus creates a 'small town feel' within Pittsburgh, and school spirit is high, particularly during sporting events and traditions like the 'Night of Lights'.",
+      "transportation_impact": "While situated in downtown Pittsburgh, Duquesne University's campus is secluded from the city's bustle, yet remains walkable and close to urban amenities like restaurants and shopping. Public transportation is available for students to access other areas of Pittsburgh, although it may take some time to get accustomed to.",
+      "research_impact": "Duquesne University provides strong and numerous undergraduate research opportunities across various disciplines, including science, engineering, chemistry, biology, computer science, and mathematics. These include hands-on experiences through programs like the 10-week Summer Undergraduate Research Program (URP), often involving funded projects and collaborations with major research institutions and industry. Students have opportunities to present their research at events such as the Duquesne University Undergraduate Research and Scholarship Symposium (URSS)."
     }
   },
-  "admissions_current": {
-    "overall_acceptance_rate": 83.6,
-    "in_state_acceptance_rate": 85.0,
-    "out_of_state_acceptance_rate": 86.1,
-    "international_acceptance_rate": 63.5,
-    "transfer_acceptance_rate": 72.0,
-    "admits_class_size": 10773,
-    "is_test_optional": true,
-    "test_policy_details": "Test Optional",
-    "early_admission_stats": [
-      {
-        "plan_type": "EA",
-        "applications": null,
-        "admits": null,
-        "acceptance_rate": null,
-        "class_fill_percentage": null
-      }
-    ]
-  },
-  "admissions_trends": [
-    {
-      "year": 2025,
-      "cycle_name": "Class of 2029",
-      "applications_total": 13000,
-      "enrolled_total": 1500,
-      "waitlist_stats": {
-        "year": 2025,
-        "is_waitlist_ranked": false
-      },
-      "notes": "Preliminary data; applications were a university record for domestic first-year students."
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 83.56,
+      "is_test_optional": true,
+      "test_policy_details": "Duquesne University offers test-optional admission for all programs, meaning applicants are not required to submit standardized test scores (SAT, ACT, or CLT). The university takes a holistic approach to admissions, considering factors such as high school curriculum, academic achievement, leadership ability, extracurricular involvement, and volunteer experience. Applicants with a GPA below 3.0 are encouraged to submit scores. Students can choose whether to have their standardized test scores considered at the time of application. Duquesne accepts self-reported standardized test scores, but official reports will be required before enrollment. The university also 'super scores,' combining the highest section scores across all submitted SAT or ACT test dates. Students can revise their application to include scores if they initially applied test-optional.",
+      "admits_class_size": 10773,
+      "transfer_acceptance_rate": 71.9,
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 1687,
+          "admits": 953,
+          "acceptance_rate": 56.49,
+          "class_fill_percentage": null
+        }
+      ],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "is_public": false,
+      "notes": "Duquesne University is a private institution, therefore in-state and out-of-state acceptance rates are not differentiated.",
+      "international_acceptance_rate": 63.5,
+      "international_applications": 1061,
+      "international_admits": 674
     },
-    {
-      "year": 2024,
-      "cycle_name": "Class of 2028",
-      "applications_total": 12893,
-      "admits_total": 10773,
-      "enrolled_total": 1441,
-      "acceptance_rate_overall": 83.6,
-      "yield_rate": 13.4,
-      "waitlist_stats": {
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 13000,
+        "admits_total": null,
+        "enrolled_total": 1500,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Record number of applications for the Class of 2029, marking the fifth straight year of breaking application records. Over 13,000 first-year applications were received. The university expects to enroll approximately 1,500 first-year students. The admitted class profile includes 62% women and 38% men; 65% applied test-optional; and 30% are first-generation college students. The average GPA of admitted students is 3.83. Students hail from 48 states and 79 countries, including 186 valedictorians and 109 salutatorians."
+      },
+      {
         "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 12893,
+        "admits_total": 10773,
+        "enrolled_total": 1439,
+        "acceptance_rate_overall": 83.56,
+        "yield_rate": 13.36,
+        "notes": "The incoming Class of 2028 showed strong academic preparation. Approximately 22% identified as Black, Latina/o, Asian American or Native American; about two-thirds were women; 65% of students applied test-optional; and about 30% were first-generation college students. The average GPA for the incoming class was 3.79.",
         "offered_spots": 560,
         "accepted_spots": 537,
         "admitted_from_waitlist": 183,
-        "waitlist_admit_rate": 34.1,
+        "waitlist_admit_rate": 34.08,
         "is_waitlist_ranked": false
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 14112,
+        "admits_total": 11128,
+        "enrolled_total": 1473,
+        "acceptance_rate_overall": 78.85,
+        "yield_rate": 13.24,
+        "notes": "This marked the third consecutive year of record applications. The enrolling class included about 1,500 first-year students and 200 transfer students. Admitted students represented 80 countries and 48 states, with more than 243 valedictorians and 114 salutatorians. Demographically, 37% identified as Black, Latina/o, Asian American or Native American, roughly two-thirds were women and one-third men, and 65% applied test-optional. The average GPA for the class was 3.58.",
+        "offered_spots": 494,
+        "accepted_spots": 478,
+        "admitted_from_waitlist": 116,
+        "waitlist_admit_rate": 24.27,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 12379,
+        "admits_total": 10832,
+        "enrolled_total": 1439,
+        "acceptance_rate_overall": 87.50,
+        "yield_rate": 13.28,
+        "notes": "The acceptance rate for the application year 2022 was 87.5%. The total number of first-time, full-time freshmen enrolled was 1,439.",
+        "offered_spots": 999,
+        "accepted_spots": 766,
+        "admitted_from_waitlist": 274,
+        "waitlist_admit_rate": 35.77,
+        "is_waitlist_ranked": false
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 9634,
+        "admits_total": 8855,
+        "enrolled_total": 1231,
+        "acceptance_rate_overall": 91.90,
+        "yield_rate": 13.90,
+        "notes": "The acceptance rate for the application year 2021 was 91.9%. The total number of first-time, full-time freshmen enrolled was 1,231."
       }
-    }
-  ],
-  "admitted_student_profile": {
-    "gpa": {
-      "weighted_middle_50": "3.60-4.10",
-      "unweighted_middle_50": "3.50-4.00",
-      "average_weighted": 3.82,
-      "percentile_25": "3.50",
-      "percentile_75": "4.00",
-      "notes": "Roughly 61% of enrollees ranked in the top 25% of their high school class."
-    },
-    "testing": {
-      "sat_composite_middle_50": "1190-1330",
-      "sat_reading_middle_50": "600-670",
-      "sat_math_middle_50": "580-670",
-      "act_composite_middle_50": "26-32",
-      "submission_rate": 25.0,
-      "policy_note": "Duquesne is test-optional for most programs."
-    },
-    "demographics": {
-      "first_gen_percentage": 30.0,
-      "international_percentage": 4.0,
-      "geographic_breakdown": [
-        {
-          "region": "Pennsylvania",
-          "percentage": 58.0
-        },
-        {
-          "region": "Out-of-State",
-          "percentage": 38.0
-        },
-        {
-          "region": "International",
-          "percentage": 4.0
-        }
-      ],
-      "gender_breakdown": {
-        "men": {
-          "acceptance_rate": 76.1
-        },
-        "women": {
-          "acceptance_rate": 80.5
-        }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "N/A",
+        "unweighted_middle_50": "3.50-4.00",
+        "average_weighted": 3.82,
+        "percentile_25": "N/A",
+        "percentile_75": "N/A",
+        "notes": "Duquesne University does not disclose the 25th and 75th percentiles for weighted GPA. The average unweighted GPA for admitted students is 3.75, with the 25th percentile at 3.5 and the 75th percentile at 4.0. For the incoming Class of 2029, 27% of students ranked in the top 10% of their high school class, and 55% were in the top 25%."
       },
-      "racial_breakdown": {
-        "white": 78.6,
-        "black_african_american": 4.9,
-        "hispanic_latino": 4.5,
-        "asian": 3.6,
-        "native_american_alaskan": 0.2,
-        "pacific_islander": 0.1,
-        "two_or_more_races": 3.5,
-        "unknown": 4.6
+      "testing": {
+        "sat_composite_middle_50": "1170-1338",
+        "sat_reading_middle_50": "590-680",
+        "sat_math_middle_50": "570-670",
+        "act_composite_middle_50": "23-30",
+        "submission_rate": 73.0,
+        "policy_note": "Superscore accepted, Test-optional, Self-reporting allowed"
       },
-      "religious_affiliation": "Catholic (Spiritan tradition); approximately 50% of students identify as Catholic."
+      "demographics": {
+        "first_gen_percentage": 30.0,
+        "legacy_percentage": null,
+        "notes": "First-generation defined as students whose parents or guardians did not obtain a four-year degree from a college or university. Legacy percentage not found in search results.",
+        "geographic_breakdown": [
+          {
+            "region": "Pennsylvania",
+            "percentage": 71.0
+          },
+          {
+            "region": "Out-of-State (U.S.)",
+            "percentage": 27.0
+          },
+          {
+            "region": "International",
+            "percentage": 3.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 4399,
+            "admits": 3808,
+            "acceptance_rate": 86.55,
+            "note": "Data from the 2022-2023 Common Data Set."
+          },
+          "women": {
+            "applicants": 7883,
+            "admits": 6967,
+            "acceptance_rate": 88.38,
+            "note": "Data from the 2022-2023 Common Data Set."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "White": 78.6,
+          "Black or African American": 4.9,
+          "Hispanic or Latino": 4.5,
+          "Asian": 3.6,
+          "Native American/Alaskan": 0.2,
+          "Pacific Islander": 0.1,
+          "Two or More Races": 3.5,
+          "Unknown": 4.6,
+          "Non-Resident Alien (International Students)": 3
+        }
+      }
     }
   },
   "academic_structure": {
-    "structure_type": "Colleges and Schools",
     "colleges": [
       {
-        "name": "McAnulty College of Liberal Arts",
+        "name": "McAnulty College and Graduate School of Liberal Arts",
         "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 79.0,
         "is_restricted_or_capped": false,
+        "housing_profile": "First-year students are part of Residential Learning Communities (RLCs) and live on designated residence hall floors, fostering academic and social transition. The Honors College also has its own LLC in Assumption Hall. Upperclassmen can choose traditional dorms or apartment-style living in Lumina properties. [2, 4, 7, 11]",
+        "student_archetype": "Inquisitive, critical thinkers with a broad range of interests, socially conscious, and engaged in interdisciplinary studies. Students often seek connections between their courses and real-world issues. [2]",
+        "strategic_fit_advice": "Ideal for students seeking an integrated living and learning experience, value collaborative learning, and are interested in exploring diverse academic fields within a supportive community. Strong writing and analytical skills are beneficial. [2, 4]",
         "majors": [
           {
-            "name": "Psychology",
+            "name": "African Studies",
             "degree_type": "B.A.",
             "is_impacted": false,
-            "curriculum": {
-              "total_units": 120,
-              "major_units": 36
-            }
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Any undergraduate student can pursue a second major in African Studies. Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Catholic Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Communication and Rhetorical Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Cybersecurity Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "International Relations",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "International Security Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Media",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Organizational Leadership",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "This is an online program. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
           },
           {
             "name": "Theology",
             "degree_type": "B.A.",
-            "is_impacted": false
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most majors in the McAnulty College lead to a Bachelor of Arts degree. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Palumbo-Donahue School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Ambitious, entrepreneurial, and career-focused individuals interested in business, finance, marketing, and management, often seeking practical experience and networking opportunities.",
+        "strategic_fit_advice": "A good fit for students with strong quantitative abilities, leadership potential, and a desire to engage with real-world business challenges. Participation in business-related extracurriculars is a plus.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "ACCT 301 Intermediate Accounting I",
+                "ACCT 302 Intermediate Accounting II",
+                "ACCT 303 Cost Accounting",
+                "ACCT 307 Federal Income Tax I",
+                "ACCT 401 Auditing",
+                "ACCT 402 Accounting Information Systems"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 72
+            },
+            "notable_professors": [
+              "William Spangler (Department Chairperson, Accounting, Information Systems and Technology, and Supply Chain Management)",
+              "Seleshi Sisaye (Professor of Accounting)",
+              "Robert J. Kollar (Associate Professor of Practice in Accounting)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Curriculum beyond core not explicitly detailed per major in the online catalog. Accelerated B.S.B.A. to MAcc (Master of Science in Accountancy) program available, requiring 3.3 overall GPA and 3.3 Accounting GPA for eligibility. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "ECON 301 Intermediate Microeconomics",
+                "ECON 302 Intermediate Macroeconomics",
+                "ECON 401 Econometrics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Gokhan Sonaer (Department Chairperson, Economics and Finance)",
+              "Pinar Geylani (Professor of Economics)",
+              "Matthew R. Marlin (Professor of Economics)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Specific major course list beyond core not explicitly detailed in the online catalog. Economics Department seeks teacher-scholars committed to research and instruction at both undergraduate and graduate levels. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Entrepreneurship and Innovation",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "BUAD 103L First Year Innovation Experience (Experiential, hands-on project)",
+                "ENTR 301 Foundations of Entrepreneurship",
+                "ENTR 401 New Venture Creation",
+                "ENTR 402 Entrepreneurial Finance",
+                "ENTR 403 Social Entrepreneurship"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 66
+            },
+            "notable_professors": [
+              "Mark Geiger (Associate Professor of Entrepreneurship)",
+              "Staci Offutt (Director, Center for Excellence in Entrepreneurship; Instructor, Entrepreneurship)",
+              "Peter T. Gianiodis (Professor of Entrepreneurship)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. The Center for Excellence in Entrepreneurship hosts the annual Duquesne New Venture Challenge with prizes. Specific major course list beyond core not explicitly detailed in the online catalog. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "FINC 320 Investments",
+                "FINC 330 Financial Institutions and Markets",
+                "FINC 410 Corporate Finance",
+                "FINC 420 Advanced Investments",
+                "FINC 430 Portfolio Management"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 66
+            },
+            "notable_professors": [
+              "Gokhan Sonaer (Department Chairperson, Economics and Finance)",
+              "Ryan Garvey (Professor of Finance, Donahue Chair in Investment Management)",
+              "Rui Liu (William and Helen Lyons Faculty Fellow in Finance; Associate Professor of Finance)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Specific major course list beyond core not explicitly detailed in the online catalog, but the Investment Strategy Institute provides opportunities for students interested in corporate finance, asset management, financial planning, and wealth management. A new Financial Planning Track was approved by CFP Board, effective January 1, 2025. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Information Systems & Technology",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "ISYS 310 Database Management Systems",
+                "ISYS 320 Systems Analysis and Design",
+                "ISYS 330 Networking and Telecommunications",
+                "ISYS 410 Information Security",
+                "ISYS 450 Project Management in IT"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 66
+            },
+            "notable_professors": [
+              "William Spangler (Department Chairperson, Accounting, Information Systems and Technology, and Supply Chain Management)",
+              "Kathleen S. Hartzel (Associate Professor of Information Systems & Technology)",
+              "Karoly Bozan (Assistant Professor of Information Systems and Technology)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Specific major course list beyond core not explicitly detailed in the online catalog. The Association for Information Systems at Duquesne (AIS@DUQ) is a student organization promoting knowledge in the IT field. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "MGMT 301 Human Resource Management",
+                "MGMT 305 Operations Management",
+                "MGMT 401 Organizational Theory and Design",
+                "MGMT 405 Strategic Human Resource Management"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 63
+            },
+            "notable_professors": [
+              "Akwasi Opoku-Dakwa (Department Chairperson, Management and Marketing)",
+              "Aimee A. Kane (Associate Professor of Management)",
+              "Nagaraj Sivasubramaniam (Associate Professor of Management)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Specific major course list beyond core not explicitly detailed in the online catalog. The curriculum aims to provide knowledge in managing human and physical resources in domestic and international organizations. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "MKTG 310 Consumer Behavior",
+                "MKTG 320 Marketing Research",
+                "MKTG 410 Marketing Management",
+                "MKTG 420 Digital Marketing"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 63
+            },
+            "notable_professors": [
+              "Akwasi Opoku-Dakwa (Department Chairperson, Management and Marketing)",
+              "Karen Russo Donovan (Sr. Associate Dean, Academic Programs and Executive Education; Associate Professor of Marketing)",
+              "Audrey Guskey (Associate Professor of Marketing)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Specific major course list beyond core not explicitly detailed in the online catalog. The American Marketing Association is active at Duquesne, providing networking and professional development. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Supply Chain Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 214 Financial Accounting",
+                "ACCT 215 Managerial Accounting",
+                "BLAW 251 Business Law",
+                "BUAD 103/103L First Year Innovation Experience",
+                "BUAD 110 Internship Prep Practicum",
+                "BUAD 111 Business Math",
+                "BUAD 210 Career Preparation Practicum",
+                "COMM 202W Business and Professional Communication",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 313 Business Finance",
+                "ISYS 184 Business Information Systems",
+                "ISYS 284 Data for Decision Making",
+                "MGMT 261 Management and Organizational Behavior",
+                "MGMT 262 Global Insights",
+                "MGMT 368W Business Ethics & Global Citizenship",
+                "MGMT 499W Strategic Management",
+                "MKTG 271 Marketing and Business Development",
+                "SCMG 267 Supply Chain Operations Management",
+                "STAT 285 Business Statistics",
+                "SCMG 375 Supply Chain Process Improvement",
+                "SCMG 385 SCM Information Systems and Technology",
+                "SCMG 472 Global Transportation and Logistics",
+                "SCMG 474 Supply Management Purchasing",
+                "SCMG 480 Forecasting, Production and Inventory Planning"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 69
+            },
+            "notable_professors": [
+              "William Spangler (Department Chairperson, Accounting, Information Systems and Technology, and Supply Chain Management)",
+              "Ryan Atkins (Associate Professor of Supply Chain Management)",
+              "Kathryn Marley (Associate Professor of Supply Chain Management)"
+            ],
+            "notes": "Minimum of 120 earned credits for B.S.B.A. degree, 51 credits from Business Core. Specific major course list beyond core not explicitly detailed in the online catalog. The Center for Excellence in Supply Chain Management focuses on how information systems and technology can enhance the management of complex, integrated supply chains. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "School of Education",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Compassionate, patient, and dedicated individuals passionate about teaching, learning, and human development. Students often seek to make a positive impact in educational settings and communities.",
+        "strategic_fit_advice": "A good fit for students with strong communication skills, a nurturing demeanor, and an interest in pedagogy, psychology, and educational leadership. Volunteer experience with children or in educational settings is beneficial.",
+        "majors": [
+          {
+            "name": "Early Childhood Education (PreK-4)",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by the Council for Accreditation of Educator Preparation (CAEP) and approved by the Pennsylvania Department of Education (PDE). Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Middle Level (4-8) Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by the Council for Accreditation of Educator Preparation (CAEP) and approved by the Pennsylvania Department of Education (PDE). Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Secondary Education",
+            "degree_type": "B.S.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by the Council for Accreditation of Educator Preparation (CAEP) and approved by the Pennsylvania Department of Education (PDE). Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Rangos School of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Problem-solvers, scientifically curious, and service-oriented individuals pursuing careers in various health professions. Students are often collaborative and focused on improving health outcomes.",
+        "strategic_fit_advice": "Best suited for students with a strong science background, critical thinking skills, and a commitment to interprofessional collaboration in healthcare. Experience in shadowing health professionals can be advantageous.",
+        "majors": [
+          {
+            "name": "Athletic Training",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 2.75 GPA is recommended for transfer into Athletic Training. Accredited by the Commission on Accreditation of Athletic Training Education (CAATE). Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Health Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 2.75 GPA is recommended for transfer into Health Administration. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 2.75 GPA is recommended for transfer into Health Sciences. Pathways in Pre-Med, Pre-PA, and Pre-PT, as well as concentrations in Health, Strength and Conditioning, and Exercise Science are offered. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Occupational Therapy",
+            "degree_type": "Entry-level Master's (B.S. to M.S.O.T. pathway)",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Minimum of 40 shadowing hours with a registered and licensed occupational therapist prior to entrance to the professional phase (December of the third year).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 3.0 GPA overall and 3.0 GPA in science/math courses are recommended for transfer into Occupational Therapy. Accredited by the Accreditation Council for Occupational Therapy Education (ACOTE). This is often a direct entry 3+2 or 4+2 program. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Physical Therapy",
+            "degree_type": "Entry-level Doctorate (B.S. to D.P.T. pathway)",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Documentation of 100 volunteer hours in a minimum of two different clinical sites prior to admittance into the professional phase of the program (fall of the fourth year).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 3.0 GPA overall and 3.0 GPA in science/math courses are recommended for transfer into Physical Therapy. Accredited by the Commission on Accreditation in Physical Therapy Education (CAPTE). This is often a direct entry 3+3 or 4+3 program. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Physician Assistant Studies",
+            "degree_type": "M.P.A.S. (B.S. to M.P.A.S. pathway)",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit Only",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "This program is Direct Admit Only. Due to capacity constraints, Duquesne only considers first-time freshmen to the Physician Assistant Studies program and is not accepting transfer or second-degree applications at this time. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 2.75 GPA is recommended for transfer into Public Health. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Speech-Language Pathology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A 3.0 GPA is recommended for transfer into Speech-Language Pathology. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Mary Pappert School of Music",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Creative, disciplined, and passionate musicians, performers, composers, and educators. Students are typically dedicated to honing their craft, collaborating with peers, and engaging in numerous performances.",
+        "strategic_fit_advice": "Suited for individuals with demonstrated musical talent, a strong commitment to practice and performance, and a desire to pursue music professionally. Auditions and portfolios are typically required for admission.",
+        "majors": [
+          {
+            "name": "Music (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Formal audition required for admission to the School of Music.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "All School of Music programs are accredited by the National Association of Schools of Music (NASM). Offers a Music Technology concentration or the option for a secondary major outside of music. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Music Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Formal audition required for admission to the School of Music.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "All School of Music programs are accredited by the National Association of Schools of Music (NASM) and the Bachelor of Science in Music Education program is accredited by the Council for the Accreditation of Educator Preparation (CAEP). Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Music Performance",
+            "degree_type": "B.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Formal audition required for admission to the School of Music.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "All School of Music programs are accredited by the National Association of Schools of Music (NASM). Offers a jazz studies option. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
           }
         ]
       },
       {
         "name": "School of Nursing",
         "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 55.0,
         "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Empathetic, resilient, and scientifically grounded individuals committed to healthcare, patient advocacy, and evidence-based practice. Students are often driven by a desire to provide direct patient care.",
+        "strategic_fit_advice": "Ideal for students with a strong aptitude for science, excellent interpersonal skills, and a genuine desire to care for others. Clinical experience or volunteer work in healthcare is valuable.",
         "majors": [
           {
             "name": "Nursing",
             "degree_type": "B.S.N.",
             "is_impacted": true,
-            "curriculum": {
-              "total_units": 134,
-              "major_units": 90
-            }
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Highly competitive program. Transfer admission for Physician Assistant program is not accepted. Nursing is a fall-start only program, but students may pursue an internal transfer to Nursing after one semester on-campus.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited by the Commission on Collegiate Nursing Education (CCNE). Programs are fully approved by the Pennsylvania State Board of Nursing. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
           }
         ]
       },
       {
         "name": "School of Pharmacy",
         "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 45.0,
         "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Dedicated, detail-oriented, and scientifically inclined students with a strong interest in healthcare, pharmacology, and patient care. Often focused on rigorous academic preparation for a demanding profession.",
+        "strategic_fit_advice": "Ideal for students with a solid foundation in science (chemistry, biology), excellent problem-solving skills, and a commitment to patient well-being and ethical practice in pharmacy.",
         "majors": [
           {
-            "name": "Pharmacy",
-            "degree_type": "Pharm.D.",
-            "is_impacted": true,
-            "curriculum": {
-              "total_units": 180,
-              "major_units": 64
-            }
+            "name": "Pharmaceutical Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The Mylan School of Pharmacy offers a Bachelor of Science in Pharmaceutical Sciences. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
           }
         ]
+      },
+      {
+        "name": "School of Science and Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate housing options include traditional dorms (Assumption, St. Ann, Towers for first-years; Des Places for sophomores and above) and apartment-style living for upperclassmen in Lumina properties. Graduate students have Lumina apartment options. [5, 7, 11]",
+        "student_archetype": "Analytical, innovative, and detail-oriented individuals driven by a passion for scientific discovery, technological advancement, and engineering solutions. Students are often engaged in research. [14]",
+        "strategic_fit_advice": "Strong STEM background (math, physics, chemistry, computer science) is essential. Ideal for students who enjoy problem-solving, hands-on experimentation, and contributing to research, even at the undergraduate level. [14]",
+        "majors": [
+          {
+            "name": "Applied Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. A 3.0 GPA is recommended for transfer into Biomedical Engineering. This program is part of an expansion in April 2023. A dual BME/BSN program is also available. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. This program is part of an expansion in April 2023. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. This program is part of an expansion in April 2023. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. This program is part of an expansion in April 2023. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Environmental Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. The Center for Environmental Research and Education (CERE) is associated with this program. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "General Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. This program is part of an expansion in April 2023. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. This program is part of an expansion in April 2023. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "General Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Minimum QPA of 2.50 required to transfer into the School of Science and Engineering. Detailed curriculum not explicitly found in the online catalog snippets. Data source: Duquesne University 2025-2026 Undergraduate Catalog."
+          }
+        ]
+      },
+      {
+        "name": "College of Osteopathic Medicine",
+        "admissions_model": null,
+        "is_restricted_or_capped": null,
+        "housing_profile": "Medical students have the option of apartment-style living in Lumina Student Apartments (Brottier, McGinley, St. Martin Halls) offering independent living with campus convenience, or traditional collegiate residence halls. [5, 11]",
+        "student_archetype": "Dedicated, empathetic, and scientifically rigorous individuals committed to a holistic approach to medicine. Students are often community-minded and focused on patient-centered care.",
+        "strategic_fit_advice": "Highly competitive. Requires a strong undergraduate science background, research experience, clinical exposure, and a demonstrated commitment to the osteopathic philosophy of medicine. MCAT scores are crucial. [5]",
+        "majors": []
+      },
+      {
+        "name": "Thomas R. Kline School of Law of Duquesne University",
+        "admissions_model": null,
+        "is_restricted_or_capped": null,
+        "housing_profile": "Graduate and law students have the option of apartment-style living in Lumina Student Apartments (Brottier, McGinley, St. Martin Halls) offering independent living with campus convenience, or traditional collegiate residence halls. [5, 11]",
+        "student_archetype": "Highly motivated, analytical, detail-oriented individuals with strong communication and research skills, committed to legal studies and often pursuing careers in law. [5]",
+        "strategic_fit_advice": "Best suited for individuals with a rigorous academic background, a passion for justice, and a strong work ethic. Prior experience in research or debate can be advantageous. [5]",
+        "majors": []
       }
     ],
-    "minors_certificates": [
-      "Business Analytics Minor",
-      "Cybersecurity Certificate",
-      "Pre-Medical Certificate"
-    ]
+    "minors_and_certificates": {
+      "minors": [
+        "Data Science Minor",
+        "Computer Science Minor",
+        "Entrepreneurship Minor",
+        "Digital Marketing & Analytics Minor",
+        "Peace, Justice, and Conflict Resolution Minor"
+      ],
+      "certificates": [
+        "Entrepreneurship Certificate",
+        "Actuarial Science Certificate",
+        "Intercultural Engagement Certificate",
+        "Professional Selling Certificate",
+        "Business Analytics Certificate"
+      ]
+    }
   },
   "application_process": {
     "platforms": [
       "Common App",
-      "Coalition with Scoir",
-      "Duquesne Future Focused Application"
+      "Coalition App",
+      "Duquesne's Future Focused Application"
     ],
     "application_deadlines": [
       {
         "plan_type": "Early Action",
-        "date": "2025-11-01",
-        "is_binding": false
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Physician Assistant Studies also has a November 15 deadline; select Early Action on the application. The application review committee begins to review applications for this program after the deadline."
       },
       {
         "plan_type": "Regular Decision",
-        "date": "2026-01-15",
-        "is_binding": false
-      },
-      {
-        "plan_type": "Physician Assistant Studies",
-        "date": "2026-01-15",
-        "is_binding": false
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Admission notifications will be sent on a rolling basis after January 15."
       }
     ],
     "supplemental_requirements": [
+      "Official High School Transcripts",
+      "SAT/ACT Scores (Test-optional available)",
+      "Letter(s) of Recommendation (optional, but recommended)",
+      "Counselor Report",
       {
-        "target_program": "All",
-        "requirement_type": "Personal Statement",
-        "details": "Highly recommended for scholarship consideration."
+        "target_program": "Physician Assistant Studies",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "A personal essay is required. It should include a statement about yourself, why you would like to become a physician assistant, and why you chose Duquesne University. Examples of research, shadowing, or volunteer experiences should be included. If applying via Common App, the Common App essay is *not* accepted for this program."
+      },
+      {
+        "target_program": "Athletic Training, Occupational Therapy, Physical Therapy, Speech-Language Pathology",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "A personal essay is recommended but not required. If applying via Common App, the Common App essay is accepted."
+      },
+      {
+        "target_program": "All other programs (undergraduate)",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "A personal essay is optional. If applying via Common App, the Common App essay is accepted."
       },
       {
         "target_program": "Music",
-        "requirement_type": "Audition/Portfolio",
-        "deadline": "2025-03-01"
+        "requirement_type": "Audition",
+        "deadline": "March 1, 2026 (recommended for maximum award consideration)",
+        "details": "A performance audition is required and consists of two parts: an Audition Portfolio and a live audition (in-person or online). The Audition Portfolio, containing pre-recorded music media, must be submitted at least one week prior to the scheduled live audition. Applicants should prepare approximately 30 minutes of repertoire. Audition dates include December 5, 2025 (online or in-person), January 16, 2026 (campus only), January 30, 2026 (online only), February 13, 2026 (campus only), and February 27, 2026 (campus only). Post-season appointments may be available. Full acceptance requires successful completion of the audition process."
+      },
+      {
+        "target_program": "Physical Therapy",
+        "requirement_type": "Other",
+        "deadline": "August before your first year",
+        "details": "Documentation of a minimum of 40 hours of volunteer, paid, or shadowing experience in a physical therapy setting is required."
       }
     ],
     "holistic_factors": {
       "primary_factors": [
-        "Course Rigor",
-        "GPA",
-        "Academic Achievement"
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Class rank",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)"
       ],
       "secondary_factors": [
-        "Leadership Potential",
-        "Extracurriculars",
-        "Character"
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Talent/ability",
+        "Volunteer work",
+        "Work experience",
+        "Alumni/ae relation"
       ],
-      "essay_importance": "Moderate",
-      "demonstrated_interest": "Considered",
-      "interview_policy": "Recommended",
-      "legacy_consideration": "None",
-      "first_gen_boost": "Moderate"
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Unknown",
+      "specific_differentiators": "Holistic review considering academic preparation, extracurriculars, leadership potential, unique perspective, individual talents, character, and recommendations. Also considers overcoming adversity and potential to contribute to intellectual, spiritual, and social growth."
     },
     "essay_prompts": [
       {
-        "prompt": "Duquesne's Spiritan mission emphasizes service to others and ethical leadership. How do these values align with your goals?",
-        "word_limit": "300 words",
-        "type": "Values",
+        "source": "Common App",
+        "prompts": [
+          "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+          "The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?",
+          "Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?",
+          "Reflect on something that someone has done for you that has made you feel appreciated, supported, or loved. How has this act of generosity or compassion changed you or your perspective toward the world?",
+          "Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+          "Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?",
+          "Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design."
+        ]
+      },
+      {
+        "prompt": "A personal essay is required for Physicians Assistant Studies applicants and should discuss the following: Tell us something unique about you, why you chose Physician Assistant Studies major, and how you expect Duquesne University to help you achieve your academic, personal and professional goals. Please include any examples of your research, shadowing or volunteer experiences.",
+        "word_limit": "Not specified (typically 500-650 words for essays of this scope)",
+        "type": "Major / Why This School / Personal / Experience",
         "required": true,
         "brainstorming_questions": [
-          "Think about a time you were genuinely inspired by someone's selfless act or ethical decision-making. What was the situation, what did they do, and how did that moment shape your understanding of what it means to lead and serve?",
-          "Beyond the typical volunteer experiences, can you recall a situation where you actively chose to prioritize the needs of others over your own immediate convenience or desires? What was that choice, what made it challenging, and what did you learn from it?",
-          "What ethical dilemmas have you encountered, either personally or through observation, that made you pause and consider the 'right' course of action? How did you navigate those complexities, and what principles guided you?",
-          "Looking at your aspirations for the future, where do you see yourself making a tangible positive impact on a community or group of people? How does the idea of ethical leadership, as opposed to just being a leader, play into that vision?",
-          "Duquesne's Spiritan mission is rooted in a specific tradition. When you think about 'service to others' and 'ethical leadership,' what specific personal experiences or formative moments come to mind that feel most deeply connected to these ideals, even if you didn't have the words for them at the time?"
+          "What core personal quality or experience makes you distinctly 'you' and relevant to a career in healthcare?",
+          "Beyond a general interest in medicine, what specific aspects of the Physician Assistant role resonate with your skills and aspirations?",
+          "How do Duquesne University's specific PA curriculum, faculty, facilities, or mission align with your learning style and career objectives?",
+          "Can you pinpoint a specific moment or cumulative experiences from your research, shadowing, or volunteering that solidified your commitment to becoming a PA?",
+          "Imagine yourself five years after graduating from Duquesne's PA program – what kind of impact do you envision making, and how did Duquesne prepare you for it?"
         ]
       }
     ]
   },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider less competitive majors, especially if not set on highly selective programs.",
+      "Explore applying as "undecided" within a broad college, particularly for Liberal Arts or other general studies.",
+      "Be aware that some majors require a personal essay, while others do not.",
+      "Understand that certain programs have higher academic requirements for admission.",
+      "Leverage Duquesne's "super score" policy for standardized tests."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate Specific Program Strengths and Specializations",
+      "Assess Student-to-Faculty Ratios and Research Opportunities by Program",
+      "Consider Post-Graduation Outcomes and Career Services for Specific Schools/Majors",
+      "Analyze the Core Curriculum (General Education Requirements)",
+      "Review Campus Life and Support Services, including Housing Quality"
+    ],
+    "alternate_major_strategy": "There is no explicit advice from Duquesne University suggesting applying to a less competitive major in a different college as a 'backdoor' to a highly competitive one. The internal transfer process for impacted majors like Health Sciences, Nursing, Pharmacy, and Science and Engineering is competitive, and meeting minimum requirements does not guarantee acceptance. For most majors, changing before sophomore year is generally not an issue as students typically declare their major then. The School of Science and Engineering offers a 'Year-1 Program' that allows students to explore different engineering fields before committing, offering flexibility within engineering disciplines.",
+    "internal_transfer_difficulty": "The internal transfer process for impacted majors, including Health Sciences, Nursing, Pharmacy, and Science and Engineering, is competitive. Meeting minimum requirements for these programs does not guarantee acceptance due to program and curriculum constraints.",
+    "essay_tips": [
+      "Be highly specific about Duquesne",
+      "Connect your interests to Duquesne's resources",
+      "For "Why Major" essays, articulate your motivation clearly",
+      "Show, don't just tell, your strengths and contributions"
+    ],
+    "red_flags": [
+      "Generic Essays",
+      "Lack of Depth in Extracurriculars",
+      "Poor Letters of Recommendation",
+      "Academic Decline, especially in Senior Year",
+      "Typos and Grammatical Errors"
+    ]
+  },
   "financials": {
-    "tuition_model": "Annual Increase",
+    "tuition_model": "Annual Increase (~3%)",
     "cost_of_attendance_breakdown": {
-      "academic_year": "2024-2025",
+      "academic_year": "2025-2026",
       "in_state": {
-        "tuition": 48986,
-        "total_coa": 70847,
-        "housing": 16374
+        "tuition": 51068.0,
+        "total_coa": 73626.0,
+        "housing": 17070.0
       },
       "out_of_state": {
-        "tuition": 48986,
-        "total_coa": 70847
+        "tuition": 51068.0,
+        "total_coa": 73626.0
       }
     },
-    "aid_philosophy": "Merit Focused",
-    "average_need_based_aid": 28599,
-    "average_merit_aid": 22090,
-    "percent_receiving_aid": 100.0
+    "aid_philosophy": "Need-Aware / Meets 100% of Need (for specific scholarships)",
+    "average_need_based_aid": 28599.0,
+    "average_merit_aid": 14437.0,
+    "percent_receiving_aid": 100.0,
+    "meets_full_need": true,
+    "notes": "Duquesne offers specific scholarships, such as the Spirit of Community Scholarship, that cover 100% of demonstrated financial need. Additionally, the Rangos School of Health Sciences Empowering Inclusion No-Loan Tuition Scholarship covers 100% of tuition costs. However, the university states that while every attempt is made to meet a student's demonstrated need, it is not always possible for all students. The average financial aid package for first-time full-time freshmen with financial need is $28,599.",
+    "scholarships": [
+      {
+        "name": "National Recognition Scholarship",
+        "type": "Merit (Full-Tuition)",
+        "amount": "Full tuition for four years",
+        "deadline": "January 15 (Early Action preferred: November 15)",
+        "benefits": "Awarded to highest-ranked National Recognition Program Finalists, based on GPA, class rank, high school rigor, and leadership potential.",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Spirit of Excellence Scholarship",
+        "type": "Merit (Full-Tuition)",
+        "amount": "Full tuition for four years",
+        "deadline": "January 15",
+        "benefits": "Awarded to five exceptional U.S. citizen leaders with a minimum 'B' average, demonstrating achievement and involvement in significant activities. Special consideration for those who've overcome hardship.",
+        "application_method": "Separate Application (including essay and activities resume) and admission application"
+      },
+      {
+        "name": "Academic Scholarships (First-Year)",
+        "type": "Merit",
+        "amount": "$5,000 to $30,000 per academic year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for a maximum of eight semesters (12 for Pharmacy). Based on GPA, test scores (if submitted), curriculum rigor, and extracurricular contributions.",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Libermann Scholarship",
+        "type": "Merit (International Student)",
+        "amount": "$9,000 to $26,000 per academic year",
+        "deadline": "Automatic consideration",
+        "benefits": "Renewable for four years/eight semesters of study. Based on academic performance for admitted international undergraduate students. Full scholarships and financial aid are not available to international students.",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Spirit of Community Scholarship",
+        "type": "Need-based/Merit",
+        "amount": "100% of demonstrated financial need towards total cost of attendance",
+        "deadline": "January 15",
+        "benefits": "For incoming first-year undergraduate students passionate about community engagement and social justice. Includes University gift aid, state, federal, and self-help resources.",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Dr. Thomas F. and Norma Weir Endowed Scholarship",
+        "type": "Merit/Need-Based (Departmental)",
+        "amount": "Up to $10,000 per year",
+        "deadline": "January 15",
+        "benefits": "For exceptional incoming first-year students pursuing a degree in Chemistry or Nursing. Recognizes academic achievements, financial need, and commitment to the chosen field.",
+        "application_method": "Separate Application; FAFSA required for consideration"
+      }
+    ]
   },
-  "scholarships": [
-    {
-      "name": "Spirit of Excellence",
-      "type": "Merit",
-      "amount": "Full-tuition",
-      "deadline": "2026-01-15"
-    },
-    {
-      "name": "STEM Scholars",
-      "type": "Merit (STEM)",
-      "amount": "Full-tuition",
-      "deadline": "2026-01-15"
-    },
-    {
-      "name": "Spirit of Community",
-      "type": "Merit/Need",
-      "amount": "100% of Need",
-      "deadline": "2026-01-15"
-    }
-  ],
   "credit_policies": {
-    "philosophy": "Generous Credit",
+    "philosophy": "Moderate",
     "ap_policy": {
-      "general_rule": "Scores of 3 or higher grant credit",
-      "usage": "Applies toward Bridges core curriculum"
+      "general_rule": "A score of 3 or higher generally grants credit for many AP exams. For instance, a score of 3 earns credit for African American Studies, AP Research, AP Seminar, Biology, 2-D Art and Design, and 3-D Art and Design.",
+      "exceptions": "Specific score requirements can differ by exam and academic department. For example, while many exams accept a score of 3, other specific exams may require higher scores or have different equivalencies as determined by the relevant college or school. No specific information was found to confirm that AP Computer Science requires a score of 5 at Duquesne University. However, Duquesne does grant credit for AP Research with a score of 3.",
+      "usage": [
+        "They can satisfy various course requirements, including prerequisites for some majors.",
+        "AP credits may contribute to fulfilling general education requirements.",
+        "They can potentially open up opportunities to pursue a minor.",
+        "For students in the Honors College, AP credits can count toward Honors College Core classes or other course requirements.",
+        "Credit earned through AP exams may also count as \"credits-in-residence\" for a major or minor.",
+        "Overall, AP credits can help reduce the total number of required degree hours for graduation."
+      ]
     },
     "ib_policy": {
-      "general_rule": "HL exams with 5-7 typically awarded credit",
+      "general_rule": "Both IB Standard and Higher Level subjects with scores of 4, 5, 6, or 7 can receive advanced standing credit.",
       "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "Undergraduate: Maximum of 60 credits from a two-year community college, or up to 90 credits from a four-year institution. Minimum grade of 'C' (2.0 on a 4.0 scale) for transfer. Final 30 credits must be completed at Duquesne University. Graduate: Generally, a minimum grade of 'B' (3.0 on a 4.0 scale) or better is required. A maximum of 6 credits for a 30-credit master's degree, no more than 25% of total semester hours for master's degrees over 30 credits, and no more than 33% for doctoral degrees (excluding dissertation credits)."
     }
   },
   "student_insights": {
     "what_it_takes": [
-      "GPA 3.7+ for competitive programs",
-      "Alignment with Spiritan values (servant leadership)",
-      "Strong standardized scores if not test-optional"
+      "Dedication to academics",
+      "Proactive engagement in extracurriculars",
+      "Strong time management skills",
+      "Ability to articulate personal goals",
+      "Resilience in the face of challenges"
+    ],
+    "common_activities": [
+      "Volunteering in the community",
+      "Participating in school clubs or organizations",
+      "Playing sports",
+      "Engaging in part-time jobs or internships",
+      "Academic competitions or research projects"
+    ],
+    "essay_tips": [
+      "Be authentic and let your unique voice shine through",
+      "Focus on specific anecdotes rather than general statements",
+      "Proofread meticulously for grammar and spelling errors",
+      "Address the prompt directly and answer the question asked",
+      "Get feedback from trusted mentors or teachers"
     ],
     "red_flags": [
-      "GPA below 3.0",
-      "Essays that ignore Catholic identity",
-      "Lack of community service commitment"
+      "Submitting a generic essay that could apply to any university",
+      "Missing application deadlines",
+      "Lack of research about the university's specific programs or culture",
+      "Not showcasing genuine interest in the institution",
+      "Grammatical errors or typos in application materials"
     ],
-    "insights": [
-      "Faculty is exceptionally supportive",
-      "Campus is a 'secluded bubble' in downtown Pittsburgh",
-      "Strict attendance policies (often 80%+)"
-    ]
+    "insights": []
   },
   "outcomes": {
-    "median_earnings_10yr": 65100,
-    "employment_rate_2yr": 95.0,
+    "median_earnings_10yr": 74742,
+    "employment_rate_2yr": 97.0,
+    "median_earnings_6yr": 62627,
+    "notes": "Median earnings are significantly above the national midpoint for 4-year colleges, and 6-year median earnings are approximately 43% above the national median.",
+    "top_employers": [],
     "grad_school_rate": 23.0,
-    "top_employers": [
-      "PNC Financial Services",
-      "BNY Mellon",
-      "UPMC",
-      "Deloitte"
-    ],
     "loan_default_rate": 2.8
   },
   "student_retention": {
     "freshman_retention_rate": 86.0,
     "graduation_rate_4_year": 67.0,
     "graduation_rate_6_year": 77.0
-  },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/duquesne_university_logo.png"
+  }
 }

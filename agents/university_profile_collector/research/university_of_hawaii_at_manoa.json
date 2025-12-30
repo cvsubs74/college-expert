@@ -1,465 +1,2248 @@
 {
-  "university_profile": {
-    "_id": "university_of_hawaii_at_manoa",
-    "university_name": "University of Hawai\u02bbi at M\u0101noa",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "U.S. News & World Report 2026 Best Colleges Rankings",
-      "University of Hawai\u02bbi System News (2025)",
-      "Forbes Top Colleges 2026",
-      "UH M\u0101noa Office of Admissions Data",
-      "Common Data Set (2021-2024)"
+  "_id": "university_of_hawaii_at_manoa",
+  "metadata": {
+    "official_name": "University of Hawaiʻi at Mānoa",
+    "location": {
+      "city": "Honolulu",
+      "state": "Hawaii",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-30",
+    "report_source_files": [],
+    "is_public": true
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Hawaiʻi at Mānoa is a public land-grant research university and the flagship campus of the University of Hawaiʻi system, established in 1907. It is classified as an R1 research university, recognized for very high research activity and unique strengths in tropical agriculture, oceanography, astronomy, and earth and environmental sciences, offering a multicultural global experience.",
+    "market_position": "Flagship Public Research University with Global Research Strengths and Excellent Value",
+    "admissions_philosophy": "Seeks to enroll a diverse student body, including residents and international students, who demonstrate academic potential and an interest in unique research opportunities and cultural experiences tied to Hawaii and the Pacific.",
+    "us_news_rank": 169,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Hawaiʻi at Mānoa generally has a moderately selective admissions process, with an overall admitted rate around 70-73% according to some sources, but the Fall 2025 freshman snapshot indicates an 88% admitted rate for applicants. Hawaiʻi residents with at least a 3.2 cumulative GPA and completed high school course requirements are offered admission.",
+        "implication": "Applicants should focus on meeting the baseline academic requirements (e.g., strong GPA, required coursework). While the university is test-optional, competitive standardized test scores can still strengthen an application. For specific or highly competitive programs, or for out-of-state applicants, a strong personal statement and unique qualifications are key to standing out."
+      },
+      {
+        "category": "Academic",
+        "insight": "UH Mānoa is a leading public research university with internationally recognized programs directly tied to its unique Pacific location, including top global rankings in atmospheric sciences, oceanography, and strong programs in marine biology, Hawaiian studies, Asian and Pacific area studies, geology, geophysics, and an extensive offering of languages.",
+        "implication": "Prospective students with interests in environmental sciences, marine studies, astronomy, tropical agriculture, or Asian and Pacific cultures and languages should highlight relevant experiences, research interests, and any cultural connections in their applications, demonstrating how they would leverage the university's distinctive strengths and resources."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university offers a distinctive campus culture characterized by its natural Hawaiian beauty, an outdoor-oriented lifestyle, a highly diverse and international student body, and a strong emphasis on sustainability and Native Hawaiian cultural immersion.",
+        "implication": "Applicants should articulate their appreciation for cultural diversity, environmental stewardship, and a genuine interest in engaging with the unique island community and lifestyle. Essays and extracurricular activities that demonstrate adaptability, cross-cultural competence, and a connection to nature or community service in diverse settings would be highly beneficial."
+      }
     ],
-    "strategic_profile": {
-      "executive_summary": "As the flagship of the University of Hawai\u02bbi system, UH M\u0101noa is a premier R1 research institution known for its global leadership in oceanography, astronomy, and tropical sciences. It provides an affordable, multicultural education that integrates traditional Hawaiian learning with cutting-edge environmental research.",
-      "market_position": "Flagship Public",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 169,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The overall acceptance rate has climbed to approximately 86.6% for the 2025 cycle, signaling a shift toward higher accessibility compared to previous years.",
-          "implication": "Prospective students have a high probability of admission if they meet basic academic thresholds, particularly for out-of-state applicants."
-        },
-        {
-          "category": "In-State Advantage",
-          "insight": "Hawai\u02bbi residents are offered guaranteed admission with a 3.2 cumulative GPA and completion of standard course requirements.",
-          "implication": "Local students can treat the university as a reliable 'safety' school while benefiting from significantly lower tuition rates."
-        },
-        {
-          "category": "Programmatic Strength",
-          "insight": "UH M\u0101noa is a land-, sea-, space-, and sun-grant institution, a rare quadruple distinction.",
-          "implication": "Students in STEM, particularly Earth and Marine sciences, have access to research resources that rival Ivy League institutions."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "One of the most ethnically diverse campuses in the U.S., social life is shaped by a multicultural 'commuter-plus' vibe, with strong emphasis on local culture, surfing, and Division I athletics (Rainbow Warriors).",
-        "transportation_impact": "Severe parking shortages make it a high-reliance commuter campus for the 25,000 daily visitors; students heavily utilize the integrated 'TheBus' pass and on-campus 'Rainbow Shuttle' to navigate the dense urban setting.",
-        "research_impact": "With over $570 million in annual extramural funding, research is the campus's primary economic and academic driver, offering undergraduates rare opportunities for mentored fieldwork in unique Pacific ecosystems."
-      }
+    "campus_dynamics": {
+      "social_environment": "The University of Hawaii at Manoa fosters a diverse, welcoming, and interconnected community with a wide array of clubs and organizations. While a 'laid-back, \"hang loose\" mentality' is prevalent, students are also noted as hard workers. Opportunities for social engagement are ample, particularly for those living on campus, though some students may find it challenging to form close friendships initially.",
+      "transportation_impact": "Public transportation, known as 'The Bus,' offers convenient access to various destinations around the island. However, on-campus parking is described as expensive and difficult to secure, posing a challenge for students who rely on cars or mopeds.",
+      "research_impact": "The university provides strong undergraduate research opportunities through its Undergraduate Research Opportunities Program (UROP). UROP facilitates mentored research and creative work across all disciplines, offering merit-based scholarship funds for student projects. Programs like the Summer Undergraduate Research Experience (SURE) provide additional infrastructure, professional development, and presentation venues. Students can also apply for specialized fellowships, such as NASA Undergraduate Space Grant Fellowships, to support research in fields relevant to NASA's objectives."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 86.6,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Hawaiʻi at Mānoa is test-optional, meaning students can choose whether or not to submit SAT or ACT scores for admission consideration. The university has a “Do No Harm” policy, which ensures that submitted test scores will not penalize an applicant. If a submitted score would negatively impact the likelihood for admission or scholarship, it will be excluded from consideration. However, certain scholarships or direct entry programs to specific departments may still require test scores for consideration.",
+      "admits_class_size": 14481,
+      "transfer_acceptance_rate": 79.43,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 42.8
     },
-    "admissions": {
-      "current": {
-        "overall_acceptance_rate": 88.0,
-        "in_state_acceptance_rate": 90.0,
-        "out_of_state_acceptance_rate": 87.6,
-        "international_acceptance_rate": 76.2,
-        "transfer_acceptance_rate": 79.4,
-        "admits_class_size": 3319,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional; scores are only used if they benefit the applicant ('Do No Harm' policy).",
-        "early_admission_stats": []
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 17389,
+        "admits_total": 15302,
+        "enrolled_total": 3319,
+        "acceptance_rate_overall": 88.0,
+        "yield_rate": 21.69,
+        "notes": "Data from Freshman/First-Year Admission Snapshot – Fall 2025.",
+        "waitlist_stats": null
       },
-      "trends": [
-        {
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 16722,
+        "admits_total": 14481,
+        "enrolled_total": 3103,
+        "acceptance_rate_overall": 86.6,
+        "yield_rate": 21.43,
+        "notes": "Data for academic year 2024-25 admissions.",
+        "waitlist_stats": {
           "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 16722,
-          "admits_total": 14481,
-          "enrolled_total": 0,
-          "acceptance_rate_overall": 86.6,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Acceptance rate saw a significant increase to 86.6% according to preliminary 2024 cycle reports. Historical CDS indicates no waitlist policy."
-        },
-        {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 19211,
+        "admits_total": 13388,
+        "enrolled_total": 3042,
+        "acceptance_rate_overall": 69.7,
+        "yield_rate": 22.72,
+        "notes": "Data from Common Data Set 2023-2024. The acceptance rate and yield rate align with other reported figures for 2023.",
+        "waitlist_stats": {
           "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 19211,
-          "admits_total": 13388,
-          "enrolled_total": 3056,
-          "acceptance_rate_overall": 69.7,
-          "yield_rate": 22.8,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Common Data Set Section C2 indicates the university does not maintain a freshman waitlist."
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
         }
-      ],
-      "admitted_profile": {
-        "gpa": {
-          "unweighted_middle_50": "3.49-4.04",
-          "average_weighted": 3.69,
-          "percentile_25": "3.49",
-          "percentile_75": "4.04",
-          "notes": "Admissions are holistic, but a cumulative GPA of 3.2+ generally guarantees admission for Hawaii residents. Roughly 49% of admitted students have a GPA of 3.75 or higher."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1130-1350",
-          "sat_reading_middle_50": "530-640",
-          "sat_math_middle_50": "540-650",
-          "act_composite_middle_50": "21-29",
-          "submission_rate": 2.0,
-          "policy_note": "Test-optional for most programs; however, scores are recommended for certain competitive majors and scholarship consideration."
-        },
-        "demographics": {
-          "first_gen_percentage": 50.0,
-          "international_percentage": 6.17,
-          "geographic_breakdown": [
-            {
-              "region": "Hawaii (In-State)",
-              "percentage": 62.0
-            },
-            {
-              "region": "Other US States",
-              "percentage": 31.0
-            },
-            {
-              "region": "International",
-              "percentage": 7.0
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 5763,
-              "admits": 4017,
-              "acceptance_rate": 69.7
-            },
-            "women": {
-              "applicants": 13256,
-              "admits": 9239,
-              "acceptance_rate": 69.7
-            },
-            "non_binary": null
-          },
-          "racial_breakdown": {
-            "white": 21.6,
-            "black_african_american": 1.4,
-            "hispanic_latino": 12.5,
-            "asian": 30.5,
-            "native_american_alaskan": 0.2,
-            "pacific_islander": 3.0,
-            "two_or_more_races": 24.0,
-            "unknown": 0.8,
-            "non_resident_alien": 6.0
-          }
-        }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges and Schools",
-      "colleges": [
-        {
-          "name": "Shidler College of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires high GPA and test scores for the Freshman Direct Admit Program (DAP); emphasizes leadership and professional networking.",
-          "housing_profile": "Hale Aloha Lokelani features a dedicated Residential Learning Program (RLP) for business students.",
-          "student_archetype": "Ambitious networkers and corporate-minded professionals",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5,
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "weeder_courses": [
-                "ACC 200 Intro to Accounting I",
-                "BUS 250 Applied Calculus"
-              ]
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 2.5,
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "weeder_courses": [
-                "ACC 200 Intro to Accounting I"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 45.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires a secondary review of math and science readiness; B or better in Calculus and Physics is preferred.",
-          "housing_profile": "Engineering-specific Residential Learning Program provides peer mentoring and maker-space access.",
-          "student_archetype": "Hands-on problem solvers and STEM enthusiasts",
-          "majors": [
-            {
-              "name": "Civil Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "minimum_gpa_to_declare": 3.0,
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "weeder_courses": [
-                "PHYS 170 General Physics I",
-                "MATH 242 Calculus II",
-                "CEE 270 Applied Mechanics I"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Nancy Atmospera-Walch School of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 4.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extreme selectivity for High School Direct Entry (DEN); prioritizes healthcare experience and top-tier academic performance.",
-          "housing_profile": "Often housed in freshman residence halls with cohort-based study groups.",
-          "student_archetype": "Compassionate, high-achieving healthcare leaders",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 10.0,
-              "minimum_gpa_to_declare": 3.0,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "weeder_courses": [
-                "PHYL 141 Human Anatomy & Physiology I",
-                "MICR 130 General Microbiology"
-              ],
-              "special_requirements": "Requires TEAS exam with minimum 78% overall score; two-step application process (NCAS)."
-            }
-          ]
-        },
-        {
-          "name": "College of Natural Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking research opportunities in unique Pacific ecosystems.",
-          "housing_profile": "Hale Aloha Mokihana hosts the Natural Sciences Residential Learning Program.",
-          "student_archetype": "Scientific researchers and nature enthusiasts",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "weeder_courses": [
-                "ICS 211 Intro to Computer Science II",
-                "MATH 241 Calculus I"
-              ],
-              "special_requirements": "Requires B or better in ICS 111 and ICS 211 to advance."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Certificate",
-        "Peace Studies Minor",
-        "Marine Biology Minor",
-        "Sustainable Tourism Certificate",
-        "Agribusiness Management Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "University of Hawaii System Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Fall Priority",
-          "date": "2025-01-05",
-          "is_binding": false,
-          "notes": "Recommended for scholarship and financial aid consideration."
-        },
-        {
-          "plan_type": "Fall Regular",
-          "date": "2025-04-01",
-          "is_binding": false,
-          "notes": "Late applications may be accepted until June 2 on a space-available basis."
-        },
-        {
-          "plan_type": "Spring Priority",
-          "date": "2024-09-01",
-          "is_binding": false,
-          "notes": "Final Spring deadline is October 1."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA"
-        ],
-        "secondary_factors": [
-          "Application Essay",
-          "Recommendations",
-          "Extracurriculars",
-          "Talent/Ability",
-          "State Residency"
-        ],
-        "essay_importance": "Moderate",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "None",
-        "specific_differentiators": "Guaranteed admission for Hawaii residents with a 3.2+ cumulative GPA. Operates a 'Do No Harm' test-optional policy."
       },
-      "supplemental_requirements": {
-        "essay_prompts": [
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 18974,
+        "admits_total": 13806,
+        "enrolled_total": 3106,
+        "acceptance_rate_overall": 72.8,
+        "yield_rate": 22.5,
+        "notes": "Data from Common Data Set 2022-2023. Applications and admits were calculated based on reported 2023 data and percentage changes.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 19607,
+        "admits_total": 13721,
+        "enrolled_total": 3106,
+        "acceptance_rate_overall": 70.0,
+        "yield_rate": 22.64,
+        "notes": "Data from Common Data Set 2021-2022.",
+        "waitlist_stats": null
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.49-4.04",
+        "unweighted_middle_50": "2.5-3.5",
+        "average_weighted": 4.0,
+        "percentile_25": "3.49",
+        "percentile_75": "4.04",
+        "notes": "The University of Hawaii at Manoa utilizes a holistic admissions process, considering a student's academic record, including completion of high school courses, grade performance, academic trends, and curricular rigor (e.g., AP, IB, dual enrollment classes)."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1070-1270",
+        "sat_reading_middle_50": "540-630",
+        "sat_math_middle_50": "530-640",
+        "act_composite_middle_50": "21-29",
+        "submission_rate": 38.5,
+        "policy_note": "Test-optional. Superscore accepted for SAT."
+      },
+      "demographics": {
+        "first_gen_percentage": 30.0,
+        "legacy_percentage": null,
+        "geographic_breakdown": [
           {
-            "prompt": "Please describe any special circumstances or qualifications which you feel should be considered in the review of your admission credentials.",
-            "word_limit": 500,
-            "required": false,
-            "note": "Optional personal statement",
-            "application_cycle": "2025-2026"
+            "region": "Hawaii",
+            "percentage": 59.0
+          },
+          {
+            "region": "California",
+            "percentage": 18.25
+          },
+          {
+            "region": "Washington",
+            "percentage": 3.78
+          },
+          {
+            "region": "Colorado",
+            "percentage": 3.04
+          },
+          {
+            "region": "Oregon",
+            "percentage": 1.09
+          },
+          {
+            "region": "Arizona",
+            "percentage": 0.86
+          },
+          {
+            "region": "Nevada",
+            "percentage": 0.8
+          },
+          {
+            "region": "Texas",
+            "percentage": 0.68
+          },
+          {
+            "region": "Florida",
+            "percentage": 0.57
+          },
+          {
+            "region": "International",
+            "percentage": 6.0
           }
-        ]
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply as 'Undeclared' or to a liberal arts major like Marketing to ensure general admission if your stats are borderline.",
-        "Utilize the High School Direct Entry (HSDE) route for Nursing if you have a 3.9+ GPA to bypass the 'competitive as hell' traditional pre-nursing route.",
-        "Check if you qualify for the Western Undergraduate Exchange (WUE) before selecting a major."
-      ],
-      "college_ranking_tactics": [
-        "Select the College of Engineering to automatically waive the mandatory two-year Hawaiian/Second Language requirement.",
-        "Prioritize Shidler College of Business specifically for its nationally ranked International Business program if seeking mainland prestige.",
-        "Choose SOEST (School of Ocean and Earth Science and Technology) for high-tier research opportunities."
-      ],
-      "alternate_major_strategy": "If rejected from Computer Science, apply to Creative Media (ACM) which offers technical tracks like Game Dev and VR, or Management Information Systems (MIS) in the Shidler College. For Nursing rejects, Kapi'olani Community College offers a high-quality RN program with a smoother internal transfer path to UHM later."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 12186,
-          "total_coa": 32331,
-          "housing": 15216
-        },
-        "out_of_state": {
-          "tuition": 34218,
-          "total_coa": 54363,
-          "supplemental_tuition": 22032
-        }
-      },
-      "aid_philosophy": "Need-Blind",
-      "average_need_based_aid": 12102,
-      "average_merit_aid": 13240,
-      "percent_receiving_aid": 79.0,
-      "scholarships": [
-        {
-          "name": "Regents Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition, $4,000 annual stipend, and $2,000 travel grant",
-          "deadline": "2025-01-15",
-          "benefits": "Honors Program membership, personalized advising, priority registration",
-          "application_method": "Supplemental Application (New Warrior Scholarships)"
-        },
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition for 2 years, $4,000 annual stipend, and $2,000 travel grant",
-          "deadline": "2025-03-15",
-          "benefits": "Honors Program membership, priority registration, travel support",
-          "application_method": "Supplemental Application (Upper-level Program)"
-        },
-        {
-          "name": "Manoa Academic Merit Scholarship",
-          "type": "Merit",
-          "amount": "$8,000 to $16,000 over 4 years",
-          "deadline": "2025-01-05",
-          "benefits": "Renewable award for high-achieving incoming freshmen",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "State of Hawai\u02bbi B Plus Scholarship",
-          "type": "Need/Merit",
-          "amount": "Up to $2,000 per year",
-          "deadline": "2025-02-01",
-          "benefits": "Renewable for up to four years for public HS graduates",
-          "application_method": "FAFSA and High School Transcript"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams, including common electives.",
-        "exceptions": [
-          "Calculus AB: Score of 3 yields no credit (only placement); 4-5 needed for credit",
-          "English Language/Literature: Score of 4-5 required for ENG 100 credit",
-          "AP Seminar: Score of 4-5 required for ENG 100 credit"
         ],
-        "usage": "Can satisfy General Education (Foundations and Diversification) and major prerequisites"
-      },
-      "ib_policy": {
-        "general_rule": "Higher Level (HL) exams with scores of 5+ generally grant credit (some subjects like Economics accept 4)",
-        "diploma_bonus": false
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Minimum 3.2 cumulative GPA for guaranteed admission (Hawaii residents)",
-        "Mid-range GPA between 3.5 and 4.0 for competitive out-of-state applicants",
-        "Completion of specific core units: 4 English, 3 Math (including Algebra II), and 3 Science"
-      ],
-      "essay_tips": [
-        "Avoid the 'beach clich\u00e9'; connect the location to your specific academic goals",
-        "Highlight a 'Sense of Place' and how you will contribute to the diverse campus community",
-        "Be sincere\u2014admissions values an authentic voice over a perfectly polished, generic one"
-      ],
-      "red_flags": [
-        "The 'Checkbox Fallacy'\u2014having many shallow activities with no clear focus",
-        "Failing to disclose all previous post-secondary enrollment/credits",
-        "Missing the March 1st priority deadline for financial aid and scholarships"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 57624,
-      "employment_rate_2yr": 93.5,
-      "grad_school_rate": 30.0,
-      "top_employers": [
-        "Amazon",
-        "Deloitte",
-        "Ernst & Young (EY)",
-        "Hawaiian Airlines",
-        "NOAA",
-        "State of Hawai\u02bbi",
-        "U.S. Navy"
-      ],
-      "loan_default_rate": 0.0,
-      "student_retention": {
-        "freshman_retention_rate": 80.0,
-        "graduation_rate_4_year": 41.1,
-        "graduation_rate_6_year": 62.6
+        "gender_breakdown": {
+          "men": {
+            "applicants": 5558,
+            "admits": 3980,
+            "acceptance_rate": 71.61,
+            "note": "Data for Fall 2021 enrollment season."
+          },
+          "women": {
+            "applicants": 13906,
+            "admits": 9630,
+            "acceptance_rate": 69.25,
+            "note": "Data for Fall 2021 enrollment season."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 21.6,
+          "black_african_american": 1.42,
+          "hispanic_latino": 12.5,
+          "asian": 30.5,
+          "native_american_alaskan": 0.21,
+          "pacific_islander": 2.99,
+          "two_or_more_races": 24.0,
+          "unknown": 0.61,
+          "non_resident_alien": 6.17
+        }
       }
     }
   },
-  "_id": "university_of_hawaii_at_manoa",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "School of Architecture",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Creative and analytical individuals with a strong interest in design, urban planning, and environmental aesthetics. They are often visually oriented, problem-solvers who are keen on shaping built environments. [14]",
+        "strategic_fit_advice": "For the Bachelor of Environmental Design (BEnvD) program, strong academic performance and a portfolio demonstrating design aptitude (if applicable, especially for transfer) can be beneficial. Graduate programs (DArch, MLA) require a baccalaureate degree and a minimum 3.0 GPA for undergraduate and any post-baccalaureate work. [7, 14] Highlight creativity, critical thinking, and a commitment to sustainable and culturally sensitive design."
+      },
+      {
+        "name": "College of Arts, Languages & Letters",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options like Frear Suites and RISE with A/C available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Students with a passion for humanities, diverse cultures, and creative expression. Likely to be intellectually curious and interested in exploring different perspectives through language, literature, and arts.",
+        "strategic_fit_advice": "Prospective students should highlight their interests in global cultures, language acquisition, critical thinking, and creative pursuits in their application. Engagement in relevant extracurricular activities (e.g., debate, creative writing, cultural clubs) is beneficial. Strong writing and analytical skills are key.",
+        "majors": [
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENG 200 Introduction to English Studies",
+                "ENG 306 English Grammar",
+                "ENG 313 Introduction to Literary Study",
+                "ENG 314 Introduction to Critical Theory",
+                "ENG 320 British Literature to 1800",
+                "ENG 321 British Literature from 1800",
+                "ENG 330 American Literature to 1865",
+                "ENG 331 American Literature from 1865",
+                "ENG 490 Capstone Seminar in English"
+              ],
+              "electives": [
+                "ENG 350 Creative Writing: Fiction",
+                "ENG 351 Creative Writing: Poetry",
+                "ENG 407 Shakespeare",
+                "ENG 460 Major Authors"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Christian Y. Oh (Asian American Literature, Pacific Literatures)",
+              "Dr. Cynthia Franklin (Life Writing, Contemporary American Literature)",
+              "Dr. Glenn Man (Film Studies, Modern and Contemporary Literature)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. Students must maintain a 2.0 GPA in the major."
+          },
+          {
+            "name": "Art",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ART 113 Introduction to Drawing",
+                "ART 123 Introduction to Design",
+                "ART 175 Introduction to Digital Art",
+                "ART 270 History of Art I",
+                "ART 271 History of Art II",
+                "ART 300 Studio Art Survey",
+                "ART 490 Senior Project"
+              ],
+              "electives": [
+                "ART 320 Painting",
+                "ART 330 Sculpture",
+                "ART 340 Photography",
+                "ART 360 Printmaking"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Professor Gaye Chan (Photography, Social Practice)",
+              "Professor Charles C. H. Lee (Drawing, Painting)",
+              "Professor Wendy Kawabata (Printmaking, Book Arts)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. Minimum 2.0 GPA in Art courses."
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MUS 100 Music Fundamentals",
+              "MUS 103 Aural Skills I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Audition required for performance concentrations.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MUS 107 Western Music History I",
+                "MUS 108 Western Music History II",
+                "MUS 160 Music Theory I",
+                "MUS 161 Music Theory II",
+                "MUS 260 Music Theory III",
+                "MUS 261 Music Theory IV",
+                "MUS 307 Ethnomusicology",
+                "MUS 309 World Music Performance"
+              ],
+              "electives": [
+                "MUS 311 Hawaiian Music Ensemble",
+                "MUS 312 Gamelan Ensemble",
+                "MUS 321 Piano",
+                "MUS 322 Voice"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. J. Michele Edwards (Musicology)",
+              "Dr. John Riggle (Composition)",
+              "Dr. Jonathan Sypert (Ethnomusicology)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. Audition required for specific concentrations."
+          },
+          {
+            "name": "Japanese",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "JPN 101 Elementary Japanese I",
+              "JPN 102 Elementary Japanese II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "JPN 201 Intermediate Japanese I",
+                "JPN 202 Intermediate Japanese II",
+                "JPN 301 Third-Year Japanese I",
+                "JPN 302 Third-Year Japanese II",
+                "JPN 361 Survey of Japanese Literature",
+                "JPN 362 Survey of Japanese Culture"
+              ],
+              "electives": [
+                "JPN 405 Japanese Business Communication",
+                "JPN 451 Japanese Cinema",
+                "JPN 471 Japanese Linguistics"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Sharon A. Minichiello (Japanese History)",
+              "Dr. Robert Huey (Japanese Literature)",
+              "Dr. Patricia Wetzel (Japanese Linguistics)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Chinese",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHN 101 Elementary Chinese I",
+              "CHN 102 Elementary Chinese II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHN 201 Intermediate Chinese I",
+                "CHN 202 Intermediate Chinese II",
+                "CHN 301 Third-Year Chinese I",
+                "CHN 302 Third-Year Chinese II",
+                "CHN 361 Survey of Chinese Literature",
+                "CHN 362 Survey of Chinese Culture"
+              ],
+              "electives": [
+                "CHN 405 Chinese Business Communication",
+                "CHN 451 Chinese Cinema",
+                "CHN 471 Chinese Linguistics"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Cynthia Ning (Chinese Language and Pedagogy)",
+              "Dr. Hu Yong (Modern Chinese Literature)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Liberal Arts",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is an interdisciplinary program allowing for broad study. Specific curriculum depends on chosen focus areas."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COMG 151 Personal and Public Speech"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMG 251 Principles of Communication",
+                "COMG 281 Introduction to Intercultural Communication",
+                "COMG 301 Communication Theory",
+                "COMG 302 Research Methods in Communication",
+                "COMG 495 Communication Capstone"
+              ],
+              "electives": [
+                "COMG 306 Argumentation and Debate",
+                "COMG 340 Nonverbal Communication",
+                "COMG 410 Crisis Communication"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "College of Natural Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General UH Manoa dorms. The College of Natural Sciences has a dedicated Residential Learning Program (RLP) located in Hale Aloha Mokihana, designed for students to connect with staff, faculty, and peers, and immerse themselves in extracurricular experiences related to natural science fields. [3, 33]",
+        "student_archetype": "Inquisitive and analytical students with a strong aptitude for science and mathematics. They are likely driven by a desire to understand the natural world, conduct research, and solve complex scientific problems.",
+        "strategic_fit_advice": "Applicants should demonstrate strong academic performance in challenging science and math courses. Participation in science fairs, research projects, or STEM-related clubs can strengthen an application. Expressing a clear interest in a specific scientific discipline is advisable. Consider joining the Natural Sciences RLP for enhanced academic and social integration. [33]",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II",
+              "ICS 111 Introduction to Computer Science I",
+              "ICS 211 Introduction to Computer Science II"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ICS 211 Introduction to Computer Science II",
+              "ICS 212 Program Structure"
+            ],
+            "special_requirements": "Admission to the major requires a C or better in all prerequisite courses and a 2.5 GPA in ICS 111, 211, 212.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ICS 141 Discrete Mathematics for Computer Science I",
+                "ICS 212 Program Structure",
+                "ICS 241 Discrete Mathematics for Computer Science II",
+                "ICS 311 Algorithms",
+                "ICS 313 Programming Language Theory",
+                "ICS 331 Organization of Computer Systems",
+                "ICS 361 Introduction to Computer Graphics",
+                "ICS 414 Software Engineering I",
+                "ICS 421 Database Management I"
+              ],
+              "electives": [
+                "ICS 425 Computer Security",
+                "ICS 435 Machine Learning",
+                "ICS 441 Automata, Computability, and Formal Languages"
+              ],
+              "total_units": 120,
+              "major_units": 61
+            },
+            "notable_professors": [
+              "Dr. Philip Johnson (Software Engineering, Collaborative Software Development)",
+              "Dr. Jason Leigh (Data Visualization, Human-Computer Interaction)",
+              "Dr. Scott Robertson (Artificial Intelligence, Cognitive Science)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This major is competitive due to high demand. Minimum 2.5 GPA in core ICS courses for admission."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 171 General Biology I",
+              "BIOL 172 General Biology II",
+              "CHEM 161 General Chemistry I",
+              "CHEM 162 General Chemistry II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 171 General Biology I",
+              "CHEM 161 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 265 Ecology and Evolutionary Biology",
+                "BIOL 275 Genetics",
+                "BIOL 300 Biostatistics",
+                "BIOL 301 Cell and Molecular Biology",
+                "BIOL 305 Experimental Biology",
+                "BIOL 490 Biology Capstone"
+              ],
+              "electives": [
+                "BIOL 310 Marine Biology",
+                "BIOL 340 Evolution",
+                "BIOL 402 Animal Physiology"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Michael Lenz (Marine Biology, Ecology)",
+              "Dr. Celia Smith (Marine Botany, Invasive Species)",
+              "Dr. Brian Bowen (Molecular Ecology, Conservation Genetics)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. Students must complete BIOL 3000, 3010 and 3020 with a minimum cumulative 2.700 GPA to declare the BS in Biology."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 161 General Chemistry I",
+              "CHEM 162 General Chemistry II",
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 271 Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 271 Organic Chemistry I",
+                "CHEM 272 Organic Chemistry II",
+                "CHEM 272L Organic Chemistry Lab",
+                "CHEM 351 Physical Chemistry I",
+                "CHEM 352 Physical Chemistry II",
+                "CHEM 351L Physical Chemistry Lab",
+                "CHEM 400 Chemistry Seminar",
+                "CHEM 431 Analytical Chemistry",
+                "CHEM 431L Analytical Chemistry Lab"
+              ],
+              "electives": [
+                "CHEM 403 Biochemistry",
+                "CHEM 445 Inorganic Chemistry",
+                "CHEM 471 Advanced Organic Chemistry"
+              ],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [
+              "Dr. Ralf I. Kaiser (Physical Chemistry, Astrochemistry)",
+              "Dr. Thomas E. Cooney (Analytical Chemistry)",
+              "Dr. Marcus Tius (Organic Chemistry)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 244 Calculus III",
+              "MATH 253 Linear Algebra"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 244 Calculus III",
+                "MATH 253 Linear Algebra and Differential Equations",
+                "MATH 302 Introduction to Proofs",
+                "MATH 311 Introduction to Analysis",
+                "MATH 321 Introduction to Abstract Algebra",
+                "MATH 407 Complex Analysis",
+                "MATH 442 Differential Equations"
+              ],
+              "electives": [
+                "MATH 371 Discrete Mathematics",
+                "MATH 454 Numerical Analysis",
+                "MATH 471 Probability"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Dr. Monique Chyba (Control Theory, Robotics)",
+              "Dr. George Wilkens (Algebraic Geometry)",
+              "Dr. Rupert Yu (Differential Geometry)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 170 General Physics I",
+              "PHYS 272 General Physics II",
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 272 General Physics II",
+              "MATH 244 Calculus III"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PHYS 274 General Physics III",
+                "PHYS 305 Classical Mechanics",
+                "PHYS 310 Electronics for Scientists",
+                "PHYS 311 Classical Electrodynamics I",
+                "PHYS 315 Quantum Mechanics I",
+                "PHYS 430 Statistical Mechanics",
+                "PHYS 480 Senior Physics Lab"
+              ],
+              "electives": [
+                "PHYS 400 Astrophysics",
+                "PHYS 405 Particle Physics",
+                "PHYS 410 Solid State Physics"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. John G. Learned (Experimental Neutrino Astrophysics)",
+              "Dr. Karl W. Glazebrook (Observational Cosmology)",
+              "Dr. Axel D. Brandes (Condensed Matter Physics)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Marine Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 171 General Biology I",
+              "BIOL 172 General Biology II",
+              "CHEM 161 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 265 Ecology and Evolutionary Biology",
+                "OCN 201 Science of the Sea",
+                "MB 300 General Microbiology",
+                "MB 350 Marine Biology",
+                "MB 470 Marine Ecology",
+                "MB 490 Marine Biology Capstone"
+              ],
+              "electives": [
+                "MB 440 Coral Reef Ecology",
+                "MB 460 Marine Mammal Biology",
+                "OCN 401 Biological Oceanography"
+              ],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [
+              "Dr. Robert Richmond (Coral Reef Ecology, Conservation Biology)",
+              "Dr. Elizabeth Madin (Marine Community Ecology)",
+              "Dr. Craig Nelson (Microbial Oceanography)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "College of Social Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Socially aware and analytical students interested in human behavior, societal structures, and policy. They are often critical thinkers who want to understand and address real-world social issues.",
+        "strategic_fit_advice": "Highlight coursework in social studies, psychology, economics, and political science. Demonstrate engagement in community service, volunteer work, or advocacy. Strong analytical and communication skills are valuable. Emphasize an interest in understanding and contributing to society.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 100 Survey of Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 210 Statistical Methods"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSY 210 Statistical Methods",
+                "PSY 220 Research Methods in Psychology",
+                "PSY 301 History and Systems of Psychology",
+                "PSY 311 Introduction to Behavioral Neuroscience",
+                "PSY 320 Cognitive Psychology",
+                "PSY 340 Social Psychology",
+                "PSY 370 Developmental Psychology",
+                "PSY 490 Senior Seminar"
+              ],
+              "electives": [
+                "PSY 322 Sensation and Perception",
+                "PSY 330 Abnormal Psychology",
+                "PSY 350 Personality"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Bruce E. Morton (Cognitive Psychology, Human Memory)",
+              "Dr. Alika Maunakea (Neuroscience, Epigenetics)",
+              "Dr. Jeanette Johnson (Clinical Psychology, Child Development)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. A minimum GPA of 2.0 in Psychology courses is required."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 130 Principles of Microeconomics",
+              "ECON 131 Principles of Macroeconomics",
+              "MATH 215 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 300 Intermediate Microeconomics",
+              "ECON 301 Intermediate Macroeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 300 Intermediate Microeconomics",
+                "ECON 301 Intermediate Macroeconomics",
+                "ECON 321 Introduction to Econometrics",
+                "ECON 429 Economic Development",
+                "ECON 490 Senior Seminar in Economics"
+              ],
+              "electives": [
+                "ECON 340 Money and Banking",
+                "ECON 370 International Economics",
+                "ECON 450 Environmental Economics"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [
+              "Dr. Sumner J. La Croix (Economic History, Law and Economics)",
+              "Dr. Carl Bonham (Macroeconomics, Econometrics)",
+              "Dr. Matthew Webb (Environmental Economics)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. A minimum cumulative GPA of 2.0 in Economics courses is required."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POLS 110 Introduction to Political Science"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POLS 200 Political Inquiry",
+                "POLS 300 Political Analysis",
+                "POLS 301 Introduction to Political Theory",
+                "POLS 305 American Government",
+                "POLS 306 Comparative Politics",
+                "POLS 307 International Relations",
+                "POLS 490 Senior Seminar"
+              ],
+              "electives": [
+                "POLS 310 Public Policy",
+                "POLS 340 Politics of Asia",
+                "POLS 350 International Law"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Robert Perkinson (American Politics, Criminal Justice)",
+              "Dr. Kristian G. Skrede Gleditsch (International Relations, Conflict Research)",
+              "Dr. Kate Zhou (Chinese Politics, Development)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOC 100 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SOC 200 Introduction to Sociological Theory",
+                "SOC 201 Introduction to Social Research",
+                "SOC 300 Social Statistics",
+                "SOC 310 Social Inequality",
+                "SOC 490 Senior Seminar in Sociology"
+              ],
+              "electives": [
+                "SOC 330 Race and Ethnic Relations",
+                "SOC 340 Criminology",
+                "SOC 350 Sociology of the Family"
+              ],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [
+              "Dr. Monisha Das Gupta (Gender, Migration, Transnationalism)",
+              "Dr. Jerry Imoto (Criminology, Social Control)",
+              "Dr. Kiyoshi Ikeda (Aging, Social Demography)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANTH 150 Culture and Humanity"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ANTH 200 Cultural Anthropology",
+                "ANTH 201 Biological Anthropology",
+                "ANTH 202 Archaeology",
+                "ANTH 203 Linguistic Anthropology",
+                "ANTH 300 History of Anthropological Theory",
+                "ANTH 301 Research Methods in Anthropology",
+                "ANTH 490 Senior Seminar"
+              ],
+              "electives": [
+                "ANTH 320 Peoples of the Pacific",
+                "ANTH 340 Archaeology of Hawaii",
+                "ANTH 370 Medical Anthropology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Michael Graves (Archaeology, Pacific Prehistory)",
+              "Dr. Christine R. Yano (Cultural Anthropology, Japan)",
+              "Dr. Alex Golub (Digital Anthropology, Melanesia)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Shidler College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UH Manoa dorms. The Shidler College of Business has a dedicated Residential Learning Program (RLP) located in Hale Aloha Lokelani, providing a living and learning experience for students pursuing business careers. [3, 33]",
+        "student_archetype": "Ambitious and career-oriented students interested in various business disciplines, often with leadership potential and an entrepreneurial spirit. They are driven to succeed in the global marketplace, particularly with a focus on Asia-Pacific. [10, 16, 32]",
+        "strategic_fit_advice": "For direct freshman admission, applicants are invited based on strong high school performance. Transfer students need 60 earned credits, a minimum cumulative GPA of 2.50 (2.00 at UH Mānoa if applicable), computer competency, and completion of 7 pre-business core courses with a minimum combined GPA of 2.50 and no grade below 'C'. [32] Demonstrate leadership, analytical skills, and a clear interest in business through coursework and extracurriculars. Consider joining the Shidler College of Business RLP for a connected experience. [33]",
+        "majors": [
+          {
+            "name": "Business Administration (General Business)",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 201 Introduction to Financial Accounting",
+              "BLAW 200 Legal Environment of Business",
+              "ECON 130 Principles of Microeconomics",
+              "ECON 131 Principles of Macroeconomics",
+              "IS 101 Introduction to Information Systems",
+              "MATH 203 Calculus for Business and Social Sciences",
+              "NREM 203 Statistics for Natural Resources and Environmental Management (or equivalent statistics)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACC 201 Introduction to Financial Accounting",
+              "MATH 203 Calculus for Business and Social Sciences"
+            ],
+            "special_requirements": "Admission to Shidler College of Business is competitive. A minimum 2.5 cumulative GPA is required, with higher GPA for direct admission/internal transfer.",
+            "admissions_pathway": "Direct Admit / Pre-Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 310 Business Communication",
+                "BUS 312 Business Statistics",
+                "BUS 314 Business, Society, and Ethics",
+                "FIN 307 Finance",
+                "MGT 305 Managing Organizations",
+                "MKT 311 Principles of Marketing",
+                "OM 301 Operations Management",
+                "BUS 490 Strategic Management"
+              ],
+              "electives": [
+                "ACC 301 Intermediate Accounting I",
+                "IS 380 Information System Analysis and Design",
+                "MGT 341 Human Resource Management"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Vance Roley (Finance, Dean of Shidler College)",
+              "Dr. Shirley Daniel (Accounting, International Accounting)",
+              "Dr. Dana L. Alden (Marketing, Consumer Behavior)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is an impacted college. Higher GPA is recommended for admission."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 201 Introduction to Financial Accounting",
+              "ACC 202 Introduction to Managerial Accounting",
+              "MATH 203 Calculus for Business and Social Sciences"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACC 201 Introduction to Financial Accounting"
+            ],
+            "special_requirements": "Admission to Shidler College of Business is competitive. A minimum 2.5 cumulative GPA is required.",
+            "admissions_pathway": "Pre-Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACC 301 Intermediate Accounting I",
+                "ACC 302 Intermediate Accounting II",
+                "ACC 303 Cost Accounting",
+                "ACC 305 Federal Income Tax",
+                "ACC 407 Auditing",
+                "BUS 490 Strategic Management",
+                "FIN 307 Finance",
+                "MGT 305 Managing Organizations",
+                "MKT 311 Principles of Marketing"
+              ],
+              "electives": [
+                "ACC 401 Advanced Accounting",
+                "ACC 406 Accounting Information Systems"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Shirley Daniel (International Accounting, Financial Reporting)",
+              "Dr. Jian Zhou (Auditing, Financial Accounting)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MKT 311 Principles of Marketing"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Shidler College of Business. Minimum 2.5 cumulative GPA.",
+            "admissions_pathway": "Pre-Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "MKT 321 Marketing Research",
+                "MKT 323 Consumer Behavior",
+                "MKT 331 International Marketing",
+                "MKT 490 Strategic Marketing Management",
+                "BUS 490 Strategic Management",
+                "FIN 307 Finance",
+                "MGT 305 Managing Organizations",
+                "OM 301 Operations Management"
+              ],
+              "electives": [
+                "MKT 341 Advertising and Promotion Management",
+                "MKT 351 Retailing",
+                "MKT 361 Digital Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Dana L. Alden (Consumer Behavior, Cross-Cultural Marketing)",
+              "Dr. Qimei Chen (Marketing Strategy, Social Media Marketing)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FIN 307 Finance",
+              "ACC 201 Introduction to Financial Accounting",
+              "MATH 203 Calculus for Business and Social Sciences"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "FIN 307 Finance"
+            ],
+            "special_requirements": "Admission to Shidler College of Business. Minimum 2.5 cumulative GPA.",
+            "admissions_pathway": "Pre-Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "FIN 311 Investment Analysis",
+                "FIN 312 Financial Institutions and Markets",
+                "FIN 315 Corporate Finance",
+                "FIN 400 International Financial Management",
+                "FIN 490 Advanced Financial Management",
+                "BUS 490 Strategic Management",
+                "MGT 305 Managing Organizations",
+                "MKT 311 Principles of Marketing",
+                "OM 301 Operations Management"
+              ],
+              "electives": [
+                "FIN 320 Real Estate Finance",
+                "FIN 330 Personal Financial Planning",
+                "FIN 440 Derivatives"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Vance Roley (Financial Markets, Macroeconomics)",
+              "Dr. Chen-Miao Lin (Corporate Finance, Investments)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "IS 101 Introduction to Information Systems"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Admission to Shidler College of Business. Minimum 2.5 cumulative GPA.",
+            "admissions_pathway": "Pre-Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "IS 300 Business Systems Analysis and Design",
+                "IS 310 Introduction to Database Management",
+                "IS 320 Introduction to Networking and Data Communication",
+                "IS 360 Object-Oriented Programming for Business",
+                "IS 490 Project Management for Information Systems",
+                "BUS 490 Strategic Management",
+                "FIN 307 Finance",
+                "MGT 305 Managing Organizations",
+                "MKT 311 Principles of Marketing",
+                "OM 301 Operations Management"
+              ],
+              "electives": [
+                "IS 410 Web Application Development",
+                "IS 420 Cyber Security for Business",
+                "IS 430 Data Analytics for Business"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Karlene J. Cousins (IT Strategy, IS in Healthcare)",
+              "Dr. Rui Chen (Business Analytics, Machine Learning)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Passionate and empathetic individuals committed to fostering learning and development in others. They are patient, good communicators, and dedicated to educational impact.",
+        "strategic_fit_advice": "Showcase experiences working with children or in educational settings (tutoring, mentoring, volunteer work). A genuine interest in specific age groups or subject areas for teaching is beneficial. Strong academic performance, particularly in subjects related to their intended teaching area, is important.",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.Ed.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDEF 200 Education as a Field of Study",
+              "PSY 100 Survey of Psychology",
+              "COMG 151 Personal and Public Speech",
+              "Math General Education courses",
+              "Science General Education courses",
+              "English General Education courses"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "EDEF 200 Education as a Field of Study"
+            ],
+            "special_requirements": "Admission to the College of Education is competitive. Interview and portfolio may be required. Minimum 2.75 cumulative GPA.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDEF 310 Culture in Education",
+                "EDEP 311 Child and Adolescent Development",
+                "LTEC 336 Introduction to Educational Technology",
+                "ITE 302 Elementary School Curriculum",
+                "ITE 303 Elementary School Methods: Language Arts",
+                "ITE 304 Elementary School Methods: Math",
+                "ITE 305 Elementary School Methods: Science",
+                "ITE 306 Elementary School Methods: Social Studies",
+                "ITE 401 Classroom Management",
+                "ITE 402 Student Teaching Elementary"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Patricia Halagao (Curriculum Studies, Multicultural Education)",
+              "Dr. Kavita Rao (Special Education, Technology in Education)",
+              "Dr. Joanne Yamada (Elementary Education, Literacy)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is an impacted program with specific admission requirements."
+          },
+          {
+            "name": "Secondary Education",
+            "degree_type": "B.Ed.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDEF 200 Education as a Field of Study",
+              "PSY 100 Survey of Psychology",
+              "COMG 151 Personal and Public Speech",
+              "Content area specific courses (e.g., MATH, ENG, HIST, SCI)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "EDEF 200 Education as a Field of Study"
+            ],
+            "special_requirements": "Admission to the College of Education is competitive. Interview and portfolio may be required. Minimum 2.75 cumulative GPA. Content area major requirements.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDEF 310 Culture in Education",
+                "EDEP 311 Child and Adolescent Development",
+                "LTEC 336 Introduction to Educational Technology",
+                "ITE 311 Secondary School Curriculum",
+                "ITE 312 Secondary School Methods",
+                "ITE 410 Classroom Management Secondary",
+                "ITE 412 Student Teaching Secondary"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is an impacted program with specific admission requirements and a requirement for a content area major."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Ambitious problem-solvers with a strong foundation and interest in mathematics and science. They are likely driven to design, build, and innovate, often possessing strong analytical and critical thinking skills. [6]",
+        "strategic_fit_advice": "Applicants must demonstrate high academic performance (typically B's or better) in relevant math (Calculus, Trigonometry/Precalculus) and science (Chemistry, Physics) courses. [6] A strong background in calculus-based physics and general chemistry is crucial for transfer students. An overall GPA of 3.0 or higher is required for transfer. [6] Show involvement in STEM-related clubs, projects, or competitions.",
+        "majors": [
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II",
+              "PHYS 170 General Physics I",
+              "EE 211 Circuits and Logic Design I",
+              "ICS 111 Introduction to Computer Science I",
+              "ICS 211 Introduction to Computer Science II"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "EE 211 Circuits and Logic Design I",
+              "EE 213 Circuits and Logic Design II"
+            ],
+            "special_requirements": "Admission to the major is competitive. A minimum 2.5 GPA in prerequisite courses is typically required.",
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EE 213 Circuits and Logic Design II",
+                "EE 260 Introduction to Digital Systems",
+                "EE 315 Probability and Statistics for Engineers",
+                "EE 342 Microprocessor Systems",
+                "EE 361 Engineering Electromagnetics",
+                "EE 367 Modern Electronic Devices and Circuits",
+                "EE 446 Digital System Design",
+                "ICS 212 Program Structure",
+                "ICS 311 Algorithms"
+              ],
+              "electives": [
+                "EE 491 Special Topics in Computer Engineering",
+                "ICS 425 Computer Security"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Anthony Kuh (Signal Processing, Machine Learning)",
+              "Dr. Wayne Shiroma (Electromagnetics, Microwaves)",
+              "Dr. Aaron Ohta (MEMS, Nanotechnology)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is a highly competitive major."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II",
+              "CHEM 161 General Chemistry I",
+              "PHYS 170 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CEE 270 Applied Mechanics I (Statics)",
+              "CEE 271 Applied Mechanics II (Dynamics)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CEE 270 Applied Mechanics I (Statics)",
+                "CEE 271 Applied Mechanics II (Dynamics)",
+                "CEE 305 Fluid Mechanics",
+                "CEE 320 Environmental Engineering",
+                "CEE 330 Introduction to Structural Analysis",
+                "CEE 361 Geotechnical Engineering",
+                "CEE 370 Transportation Engineering",
+                "CEE 485 Civil Engineering Design I",
+                "CEE 486 Civil Engineering Design II"
+              ],
+              "electives": [
+                "CEE 422 Water Resources Engineering",
+                "CEE 431 Reinforced Concrete Design",
+                "CEE 462 Foundation Engineering"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. H. Ronald Riggs (Structural Engineering, Computational Mechanics)",
+              "Dr. Roger Chen (Transportation Engineering)",
+              "Dr. David Ma (Geotechnical Engineering)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II",
+              "CHEM 161 General Chemistry I",
+              "PHYS 170 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ME 213 Engineering Graphics",
+              "ME 200 Introduction to Engineering Analysis"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ME 200 Introduction to Engineering Analysis",
+                "ME 213 Engineering Graphics",
+                "ME 220 Engineering Mechanics I (Statics)",
+                "ME 221 Engineering Mechanics II (Dynamics)",
+                "ME 322 Mechanics of Materials",
+                "ME 330 Thermodynamics",
+                "ME 340 Fluid Mechanics",
+                "ME 371 System Dynamics and Control",
+                "ME 490 Senior Design Project"
+              ],
+              "electives": [
+                "ME 411 Renewable Energy Systems",
+                "ME 420 Advanced Mechanics of Materials",
+                "ME 460 Robotics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Mehrdad N. Ghasemi (Fluid Mechanics, Heat Transfer)",
+              "Dr. Lloyd Hihara (Thermodynamics, Materials)",
+              "Dr. Wayne W. W. Chung (Robotics, Control Systems)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II",
+              "PHYS 170 General Physics I",
+              "EE 211 Circuits and Logic Design I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "EE 211 Circuits and Logic Design I",
+              "EE 213 Circuits and Logic Design II"
+            ],
+            "special_requirements": "Admission to the major is competitive. A minimum 2.5 GPA in prerequisite courses is typically required.",
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EE 213 Circuits and Logic Design II",
+                "EE 260 Introduction to Digital Systems",
+                "EE 315 Probability and Statistics for Engineers",
+                "EE 323 Signals and Systems",
+                "EE 361 Engineering Electromagnetics",
+                "EE 367 Modern Electronic Devices and Circuits",
+                "EE 452 Power Systems Analysis",
+                "EE 475 Communication Systems",
+                "EE 496 Senior Design Project"
+              ],
+              "electives": [
+                "EE 411 Control Systems",
+                "EE 422 Digital Signal Processing",
+                "EE 465 Photonics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Linqing Li (Control Systems, Robotics)",
+              "Dr. Olga Boric-Lubecke (RF/Microwave Circuits, Biomedical Sensing)",
+              "Dr. Reza Ghorbani (Power Systems, Renewable Energy)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is a highly competitive major."
+          },
+          {
+            "name": "Engineering Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 215 Calculus I",
+              "MATH 216 Calculus II",
+              "CHEM 161 General Chemistry I",
+              "PHYS 170 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 100 Introduction to Engineering",
+                "ENGR 203 Engineering Statistics",
+                "ENGR 204 Introduction to Programming for Engineers",
+                "ENGR 213 Engineering Graphics",
+                "ENGR 220 Engineering Mechanics I (Statics)",
+                "ENGR 300 Thermodynamics",
+                "ENGR 301 Fluid Mechanics",
+                "ENGR 302 Mechanics of Materials",
+                "ENGR 400 Senior Design Project"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This major offers flexibility with concentrations in various engineering fields."
+          }
+        ]
+      },
+      {
+        "name": "Hawaiʻinuiākea School of Hawaiian Knowledge",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "General UH Manoa dorms. There is a 'Hawaiian Residential Learning Program' located in Johnson Hall, which offers reserved housing for students interested in Hawaiian Culture, Hawaiian Language, or Hawaiian Studies. This program fosters cultural learning experiences and academic development. [3, 18]",
+        "student_archetype": "Students deeply interested in Hawaiian culture, language, history, and indigenous knowledge systems. They are often culturally sensitive, community-minded, and dedicated to the preservation and advancement of Hawaiian heritage.",
+        "strategic_fit_advice": "Express a strong commitment to learning about and engaging with Hawaiian culture and language. Participation in cultural events, community initiatives, or relevant coursework is beneficial. Consider applying for the Hawaiian Residential Learning Program for an immersive cultural living experience. [18]",
+        "majors": [
+          {
+            "name": "Hawaiian Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HWST 107 Hawaiian Perspectives",
+              "HWST 284 Hoʻoulu Lāhui: Cultivating Nation"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Proficiency in Hawaiian Language (HAW 202 or equivalent).",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HAW 101 Elementary Hawaiian I",
+                "HAW 102 Elementary Hawaiian II",
+                "HAW 201 Intermediate Hawaiian I",
+                "HAW 202 Intermediate Hawaiian II",
+                "HWST 301 Hawaiian History",
+                "HWST 302 Hawaiian Cultural Traditions",
+                "HWST 305 Hawaiian Land & Resource Management",
+                "HWST 490 Senior Seminar in Hawaiian Studies"
+              ],
+              "electives": [
+                "HWST 341 Hawaiian Surfing",
+                "HWST 390 Hula as Cultural Expression",
+                "HWST 420 Contemporary Hawaiian Issues"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Dr. Jon Osorio (Hawaiian Studies, History)",
+              "Dr. Kawika Winter (Hawaiian Studies, Resource Management)",
+              "Dr. Noʻeau Warner (Hawaiian Language, Education)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. Requires Hawaiian Language proficiency."
+          },
+          {
+            "name": "Hawaiian Language",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HAW 101 Elementary Hawaiian I",
+              "HAW 102 Elementary Hawaiian II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HAW 201 Intermediate Hawaiian I",
+                "HAW 202 Intermediate Hawaiian II",
+                "HAW 301 Advanced Hawaiian I",
+                "HAW 302 Advanced Hawaiian II",
+                "HAW 383 Structure of Hawaiian",
+                "HAW 401 Hawaiian Oral Traditions",
+                "HAW 402 Hawaiian Written Traditions",
+                "HAW 490 Senior Seminar in Hawaiian Language"
+              ],
+              "electives": [
+                "HAW 331 Hawaiian Chants",
+                "HAW 332 Hawaiian Song Composition",
+                "HAW 451 Hawaiian Language Teaching"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Dr. Larry Kimura (Hawaiian Language Revitalization)",
+              "Dr. Kekeha Solis (Hawaiian Language Pedagogy)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Nancy Atmospera-Walch School of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Caring, detail-oriented, and resilient individuals committed to healthcare professions. Nursing students are focused on patient care and health promotion, while dental hygiene students are dedicated to oral health. They must be prepared for rigorous academic and clinical demands. [11, 20, 23, 25, 35]",
+        "strategic_fit_advice": "Admission is competitive, especially for the Traditional BS in Nursing (acceptance rate around 10-11%). [35] Strong academic performance in prerequisite science courses (e.g., Chemistry, Anatomy & Physiology, Microbiology) is essential, with minimum GPA requirements (e.g., 3.0 combined undergraduate GPA for nursing, 2.5 cumulative and basic science GPA for dental hygiene). [11, 23, 25, 35] Demonstrate compassion, strong communication skills, and relevant experience through volunteer work or healthcare exposure. Preference is given to Hawaii residents for nursing. [35]",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 171 General Biology I",
+              "BIOL 172 General Biology II",
+              "CHEM 161 General Chemistry I",
+              "PHYL 141 Human Physiology",
+              "PHYL 142 Human Physiology Lab",
+              "MICR 130 General Microbiology",
+              "NUR 203 Introduction to Professional Nursing",
+              "ENG 100 Expository Writing",
+              "COMG 151 Personal and Public Speech",
+              "PSY 100 Survey of Psychology",
+              "SOC 100 Introduction to Sociology",
+              "FS 101 The Art and Science of Food"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "BIOL 171 General Biology I",
+              "CHEM 161 General Chemistry I",
+              "PHYL 141 Human Physiology"
+            ],
+            "special_requirements": "Direct entry program is highly competitive. Minimum 2.75 GPA in prerequisite courses. Separate application to the School of Nursing required.",
+            "admissions_pathway": "Direct Admit / Competitive Entry",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NUR 300 Health & Illness Concepts",
+                "NUR 301 Health Assessment",
+                "NUR 302 Pharmacology & Therapeutics I",
+                "NUR 303 Foundations of Nursing Practice",
+                "NUR 304 Adult Health Nursing I",
+                "NUR 305 Pediatric Nursing",
+                "NUR 306 Maternal-Newborn Nursing",
+                "NUR 400 Mental Health Nursing",
+                "NUR 401 Community Health Nursing",
+                "NUR 402 Adult Health Nursing II",
+                "NUR 403 Nursing Leadership & Management",
+                "NUR 404 Senior Preceptorship"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. Clementina D. Ceria-Ulep (Nursing Education, Health Promotion)",
+              "Dr. Michele Bray (Community Health Nursing)",
+              "Dr. Rosanne Harrigan (Health Policy, Gerontology)"
+            ],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is a highly competitive and direct-entry program. No internal transfers once enrolled in other UH Manoa majors, must apply directly to nursing. Minimum 2.75 GPA in prerequisite courses for admission consideration."
+          },
+          {
+            "name": "Dental Hygiene",
+            "degree_type": "B.S.D.H.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 171 General Biology I",
+              "CHEM 161 General Chemistry I",
+              "PHYL 141 Human Physiology",
+              "PHYL 142 Human Physiology Lab",
+              "MICR 130 General Microbiology",
+              "ENG 100 Expository Writing",
+              "COMG 151 Personal and Public Speech",
+              "PSY 100 Survey of Psychology",
+              "SOC 100 Introduction to Sociology",
+              "FS 101 The Art and Science of Food"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "BIOL 171 General Biology I",
+              "CHEM 161 General Chemistry I",
+              "PHYL 141 Human Physiology"
+            ],
+            "special_requirements": "Highly competitive. Separate application to the Dental Hygiene program required. Minimum 2.75 GPA in prerequisite courses. Observation hours may be required.",
+            "admissions_pathway": "Direct Entry / Competitive Entry",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "DH 210 Oral Anatomy",
+                "DH 211 Oral Histology and Embryology",
+                "DH 212 Head and Neck Anatomy",
+                "DH 220 Preclinical Dental Hygiene",
+                "DH 221 Clinical Dental Hygiene I",
+                "DH 222 Dental Materials",
+                "DH 310 Periodontology",
+                "DH 311 Oral Pathology",
+                "DH 320 Clinical Dental Hygiene II",
+                "DH 321 Pain Control and Local Anesthesia",
+                "DH 490 Community Dental Health"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025. This is a highly competitive and direct-entry program. No internal transfers once enrolled in other UH Manoa majors, must apply directly to Dental Hygiene."
+          }
+        ]
+      },
+      {
+        "name": "College of Tropical Agriculture and Human Resources",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Students interested in sustainable practices, agricultural sciences, human nutrition, fashion, and family resources. They often have an interest in addressing challenges related to food systems, environmental management, and community well-being, especially within a tropical context. [15]",
+        "strategic_fit_advice": "Applicants should highlight their interest in agriculture, environmental issues, human well-being, or related fields. Specific programs like Fashion, Design, and Merchandising (FDM), Natural Resources and Environmental Management (NREM), Family Resources (FAMR), and Food Science and Human Nutrition (FSHN) have specific GPA requirements (2.5-2.8 minimum transfer GPA). [15] Show engagement in environmental clubs, community gardens, or relevant volunteer work.",
+        "majors": [
+          {
+            "name": "Animal Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 171 General Biology I",
+              "CHEM 161 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ANSC 200 Introduction to Animal Sciences",
+                "ANSC 300 Animal Nutrition",
+                "ANSC 310 Animal Physiology",
+                "ANSC 320 Animal Breeding and Genetics",
+                "ANSC 330 Animal Health and Disease",
+                "ANSC 490 Capstone in Animal Sciences"
+              ],
+              "electives": [
+                "ANSC 350 Livestock Production",
+                "ANSC 400 Equine Science",
+                "ANSC 410 Aquaculture"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Tropical Plant and Soil Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 171 General Biology I",
+              "CHEM 161 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "TPSS 200 Introduction to Tropical Plant & Soil Sciences",
+                "TPSS 304 Plant Physiology",
+                "TPSS 305 Soil Science",
+                "TPSS 369 Plant Propagation",
+                "TPSS 405 Sustainable Tropical Crop Production",
+                "TPSS 490 Capstone in TPSS"
+              ],
+              "electives": [
+                "TPSS 300 Organic Food Crop Production",
+                "TPSS 401 Turfgrass Management",
+                "TPSS 402 Tropical Ornamental Crops"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          },
+          {
+            "name": "Fashion Design and Merchandising",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FDM 100 Introduction to Fashion Design & Merchandising"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FDM 200 Fashion Illustration",
+                "FDM 210 Textile Science",
+                "FDM 300 Fashion Merchandising",
+                "FDM 310 Apparel Design I",
+                "FDM 320 Fashion Marketing",
+                "FDM 490 Senior Project"
+              ],
+              "electives": [
+                "FDM 311 Apparel Design II",
+                "FDM 350 Fashion Buying",
+                "FDM 420 Global Fashion Supply Chain"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [],
+            "notes": "Data source: UH Manoa Catalog 2024-2025."
+          }
+        ]
+      },
+      {
+        "name": "Thompson School of Social Work & Public Health",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true
+      },
+      {
+        "name": "School of Nursing and Dental Hygiene",
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Caring, detail-oriented, and resilient individuals committed to healthcare professions. Nursing students are focused on patient care and health promotion, while dental hygiene students are dedicated to oral health. They must be prepared for rigorous academic and clinical demands. [11, 20, 23, 25, 35]",
+        "strategic_fit_advice": "Admission is competitive, especially for the Traditional BS in Nursing (acceptance rate around 10-11%). [35] Strong academic performance in prerequisite science courses (e.g., Chemistry, Anatomy & Physiology, Microbiology) is essential, with minimum GPA requirements (e.g., 3.0 combined undergraduate GPA for nursing, 2.5 cumulative and basic science GPA for dental hygiene). [11, 23, 25, 35] Demonstrate compassion, strong communication skills, and relevant experience through volunteer work or healthcare exposure. Preference is given to Hawaii residents for nursing. [35]",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "School of Hawaiian Knowledge",
+        "housing_profile": "General UH Manoa dorms. There is a 'Hawaiian Residential Learning Program' located in Johnson Hall, which offers reserved housing for students interested in Hawaiian Culture, Hawaiian Language, or Hawaiian Studies. This program fosters cultural learning experiences and academic development. [3, 18]",
+        "student_archetype": "Students deeply interested in Hawaiian culture, language, history, and indigenous knowledge systems. They are often culturally sensitive, community-minded, and dedicated to the preservation and advancement of Hawaiian heritage.",
+        "strategic_fit_advice": "Express a strong commitment to learning about and engaging with Hawaiian culture and language. Participation in cultural events, community initiatives, or relevant coursework is beneficial. Consider applying for the Hawaiian Residential Learning Program for an immersive cultural living experience. [18]",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "School of Ocean and Earth Science and Technology (SOEST)",
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Scientifically curious and environmentally conscious individuals passionate about understanding Earth's oceans, atmosphere, and geological processes. They are often drawn to field research, data analysis, and addressing global environmental challenges. [13, 42]",
+        "strategic_fit_advice": "Strong background in science and mathematics is critical. For graduate programs (MS and PhD), applicants should have a relevant undergraduate degree. [13, 42] Demonstrate interest through coursework in geology, oceanography, meteorology, marine biology, and related fields. Research experience, fieldwork, or participation in relevant clubs can enhance an application. The mission includes promoting STEM education and encouraging research. [42]",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "School of Pacific and Asian Studies",
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Globally minded students with a deep interest in the languages, cultures, histories, and contemporary issues of the Pacific and Asia regions. They are often culturally sensitive, open-minded, and may have aspirations for international careers or academic pursuits.",
+        "strategic_fit_advice": "Highlight coursework in Asian or Pacific studies, foreign languages, history, or political science. Demonstrate cross-cultural awareness and engagement through travel, volunteer work, or cultural clubs. Strong research and analytical skills are valuable for understanding complex regional dynamics.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "School of Social Work",
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Empathetic, socially conscious individuals dedicated to promoting social justice and improving the well-being of individuals, families, and communities. They are often strong advocates and committed to helping vulnerable populations. [17, 19, 22, 34, 38]",
+        "strategic_fit_advice": "For the BSW program, a minimum cumulative GPA of 2.5 is required, along with evidence of motivation for and commitment to social work (e.g., personal, volunteer, and/or social work-related experience). [17] MSW applicants need a bachelor's degree, a minimum 3.0 undergraduate GPA, and provide evidence of personal qualifications and related experiences. [22] Strong interpersonal skills, a commitment to ethical practice, and a desire to make a positive social impact are key.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "School of Travel Industry Management (TIM)",
+        "housing_profile": "General UH Manoa dorms (mixed reviews, some newer options available). Residential Learning Programs (RLPs) focusing on various interests are available and can enhance the living experience by fostering connections and offering academic and cultural development. [3, 19, 28, 30, 33]",
+        "student_archetype": "Service-oriented and business-savvy individuals passionate about the tourism, hospitality, and event management industries. They are often excellent communicators, problem-solvers, and enjoy working in dynamic, customer-focused environments.",
+        "strategic_fit_advice": "Demonstrate interest and experience in the travel, tourism, or hospitality sectors (e.g., internships, part-time jobs, volunteer work). Strong communication, leadership, and organizational skills are important. A global perspective and an understanding of cultural nuances relevant to the industry are also beneficial.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "Outreach College",
+        "housing_profile": "Primarily caters to non-traditional students, distance learners, and those taking continuing education courses, so on-campus housing is less relevant or typically not provided directly through the college. Students needing housing would access general UH Manoa dorms or off-campus options. [3, 19, 28, 30]",
+        "student_archetype": "Diverse learners seeking flexible education, professional development, or personal enrichment. This can include working professionals, lifelong learners, and individuals pursuing specific certifications or non-degree programs.",
+        "strategic_fit_advice": "Focus on how the flexible or specialized programs offered align with career goals or personal development interests. Admission requirements will vary greatly by program, so applicants should carefully review the specific program's criteria.",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "John A. Burns School of Medicine (JABSOM)",
+        "housing_profile": "The John A. Burns School of Medicine is located adjacent to Kakaʻako Waterfront Park, separate from the main Manoa campus. As a professional school, students typically arrange their own housing off-campus. [5, 6, 12, 26, 41]",
+        "student_archetype": "Highly driven, academically excellent, and compassionate individuals committed to a career in medicine, particularly those interested in serving Hawaiʻi and the Pacific region. They possess strong scientific aptitude, research experience, and a dedication to service. [5, 12, 26, 43]",
+        "strategic_fit_advice": "Admission is highly competitive with an acceptance rate around 3.25%. [5, 26] Successful applicants typically have a high GPA (median ~3.79-3.88) and MCAT score (median ~512-513). [5, 12, 26, 41, 43] Emphasize strong academic records in challenging science courses, significant clinical and volunteer experience, research involvement, and a compelling personal statement demonstrating motivation and fit with JABSOM's mission and ties to Hawaii or the Pacific. [12, 26, 43]",
+        "admissions_model": "Direct Admit"
+      },
+      {
+        "name": "William S. Richardson School of Law",
+        "housing_profile": "The law school is located on the Manoa campus, but like most professional schools, students typically arrange their own housing. Access to general UH Manoa housing or off-campus options would apply. [3, 6, 19, 28, 30]",
+        "student_archetype": "Academically strong, analytical, and ethically minded individuals passionate about law and justice, with a particular interest in Hawaiʻi, the Asia-Pacific region, or environmental law. They are often collaborative and community-oriented. [4, 8, 21, 24]",
+        "strategic_fit_advice": "Admission is selective (acceptance rate around 26-52%). [4, 8, 9] Admitted students typically have an LSAT score ranging from 155-162 (median 158) and an undergraduate GPA from 3.40-3.80 (median 3.62). [4, 9] Highlight strong academic achievement, analytical and writing skills, and any ties to or special interest in Hawaiʻi or the Asia-Pacific region. Public service and diverse experiences are also considered. [24] Both full-time in-person and part-time online JD programs are available. [24]",
+        "admissions_model": "Direct Admit"
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Certificate",
+      "Writing Minor",
+      "Computer Science Minor",
+      "One Health Interdisciplinary Undergraduate Certificate",
+      "Undergraduate Certificate in Aging",
+      "Business Administration Minor",
+      "Asian Studies Minor"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "University of Hawaii at Manoa Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": null,
+        "is_binding": false,
+        "notes": "University of Hawaii at Manoa does not explicitly offer an Early Decision plan for undergraduate admissions, or information is not publicly available."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": null,
+        "is_binding": false,
+        "notes": "University of Hawaii at Manoa does not explicitly offer an Early Action plan for undergraduate admissions, or information is not publicly available."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": "This date is identified as both the regular admissions application deadline and the priority deadline for Fall 2025 admissions."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All (Undergraduate)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal statement is required as part of the Common Application. The University of Hawaii at Manoa uses the Common Application, which includes a personal statement, typically around 650 words. Historically, UHM has not traditionally asked for additional supplemental essays for all applicants."
+      },
+      {
+        "target_program": "Business (Undergraduate - Exploratory Business)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Applicants who initially complete the standard UH Manoa application and indicate 'Exploratory Business' will then receive an email inviting them to write and submit a personal statement specifically for the business school."
+      },
+      {
+        "target_program": "Music (Undergraduate and Graduate Performance Majors)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "All music majors and graduate performance majors are required to audition for the music faculty. Live auditions are preferred for applicants on O'ahu. Neighbor island, national, and international applicants may audition live or submit high quality, unedited recordings. Specific repertoire requirements vary by instrument/area. Recordings will not be reviewed until the application is complete."
+      },
+      {
+        "target_program": "Architecture (Doctor of Architecture - DArch, Master of Landscape Architecture - MLA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Students wishing to enter the second three-year segment of the professional DArch or MLA programs must successfully complete a portfolio review process, typically after completing three years of study (for DArch, after ARCH 341 and ARCH 342). Students transferring into the second three-year segment must also submit and pass a portfolio review. A strong design portfolio is also required for an MLA I AP applicant to be granted advanced standing."
+      },
+      {
+        "target_program": "Dance (Bachelor of Fine Arts - BFA)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Admission to the BFA in Theatre & Dance with a Dance concentration is by audition only. Incoming students may declare a BA major in Theatre and Dance with a Dance concentration on their university application and then audition for the BFA degree Dance concentration."
+      },
+      {
+        "target_program": "Dance (Bachelor of Fine Arts - BFA)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio of student work, including a resume and self-assessment essay, is a graduation requirement for BFA Dance students, to be submitted in their final semester. This is distinct from an admissions requirement."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Recommendation",
+        "Class rank",
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Guaranteed admission for Hawaii residents with a 3.2 GPA and completed high school requirements; 'Do No Harm' test-optional policy where submitted scores will be excluded if they would penalize the applicant; Holistic review of academic record."
+    },
     "essay_prompts": [
       {
-        "prompt": "UH Manoa is unique in its location and cultural diversity. How will you contribute to our diverse community?",
-        "word_limit": "250 words",
-        "type": "Diversity",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about UH Manoa's specific island context and connection to the Pacific, what's a particular cultural tradition, value, or perspective from your own background that you're excited to share and how might it resonate with or offer a new lens to the existing diversity on campus?",
-          "Beyond simply listing your heritage, can you recall a specific moment or experience where your unique cultural background shaped your understanding of a challenge or opportunity, and how would that insight be valuable in a collaborative or community setting at UH Manoa?",
-          "The prompt mentions cultural diversity. What's a personal encounter you've had with someone from a very different cultural background that surprised you, taught you something new, or even challenged your own assumptions, and how would you aim to foster similar learning moments within the UH Manoa community?",
-          "Considering UH Manoa's unique geographical setting, is there an aspect of your past experiences \u2013 perhaps related to the environment, community engagement, or a specific local issue \u2013 that has given you a particular perspective on resilience, adaptation, or interconnectedness, and how would you bring that to Manoa?",
-          "When you envision yourself at UH Manoa, what's a specific way you see yourself actively bridging different cultural groups or fostering understanding, perhaps through a club, a project, or even just daily interactions, that goes beyond passive participation?"
-        ]
+        "name": "Common Application Personal Essay",
+        "type": "Personal / Identity / Background / Interest",
+        "word_limit": 650,
+        "required": true,
+        "details": "The University of Hawaii at Manoa primarily utilizes the Common Application, which includes its own personal essay (also known as the personal statement). Applicants choose one of the seven Common Application essay prompts. Example prompt: Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story. Program-specific essays may be required for certain scholarships or direct entry programs (e.g., Shidler College of Business, Direct Admit Nursing Program), but exact prompts are not universally disclosed."
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_hawaii_at_manoa_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if not set on highly impacted fields.",
+      "Consider applying as 'Exploratory-BA' (undeclared) for Letters and Science.",
+      "Research and leverage direct admit programs if your academic profile aligns.",
+      "Understand that some majors have lower acceptance rates and plan accordingly."
+    ],
+    "college_ranking_tactics": [
+      "Align the chosen college/major with personal interests, abilities, and values by assessing passions, skills, and career goals.",
+      "Thoroughly research major-specific requirements and program details, including prerequisite courses, total credits, GPA requirements, and admission criteria, using the university catalog and departmental websites.",
+      "Investigate career outcomes and job prospects associated with specific majors, including potential earnings and available resources at the career center.",
+      "Evaluate the academic support and resources offered by the specific college or department, suchs as academic advising, tutoring services, and writing centers.",
+      "Consider the campus life and environment, including student organizations and social opportunities relevant to the chosen area of study or college."
+    ],
+    "alternate_major_strategy": "If applying to a competitive major, consider applying as an 'exploratory' student or to a less competitive, related major, with a clear plan to meet prerequisites and apply for internal transfer to your desired competitive major after admission. Consult extensively with academic advisors to plan prerequisite coursework and understand specific program admission requirements for internal transfer.",
+    "internal_transfer_difficulty": "Competitive internal transfer process for impacted and professional majors (e.g., pre-nursing). Requires meeting specific GPA and prerequisite coursework, similar to new applicants for that program. Changing majors generally involves specific paperwork and advisor consultation, and approval is needed from the relevant colleges/schools for multiple majors."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~2%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 11520.0,
+        "total_coa": 32316.0,
+        "housing": 15216.0
+      },
+      "out_of_state": {
+        "tuition": 33552.0,
+        "total_coa": 54348.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 6256.0,
+    "average_merit_aid": 13240.0,
+    "percent_receiving_aid": 54.0,
+    "meets_full_need": false,
+    "notes": "The stated average need-based aid refers to the 'Average Grant Award' which may encompass institutional grants often tied to financial need. The university meets 75% of demonstrated financial need.",
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Full-Ride",
+        "amount": "Full Tuition + $5,600/year stipend + $2,500 one-time travel grant",
+        "eligibility": "Hawaiʻi residents, incoming freshmen, record of outstanding academic achievement. Historically, 16 awarded annually. Recipients are also Honors Program Scholars.",
+        "application_method": "Automatic consideration based on admission application; students offered more than one merit award may only accept one."
+      },
+      {
+        "name": "Provost Achievement Scholarship",
+        "type": "Merit",
+        "amount": "$10,000/year for 4 years",
+        "eligibility": "Hawaiʻi residents, incoming freshmen, students with a 3.7 cumulative high school GPA or higher, demonstrated positive impact on the UH Mānoa community.",
+        "application_method": "Automatic consideration based on admission application; students offered more than one merit award may only accept one."
+      },
+      {
+        "name": "Mānoa Academic Merit Scholarship",
+        "type": "Merit",
+        "amount": "$2,000 - $4,000 per academic year for 4 years (for students enrolling Fall 2026 and later)",
+        "eligibility": "First-year, degree-seeking students enrolling in the semester following high school graduation. Award amounts vary based on high school academic performance and cumulative GPA. For Hawai'i residents, $3,000/year for 3.0-3.59 GPA, $4,000/year for 3.6 GPA or higher. For U.S. citizen non-Hawai'i residents (including WUE-eligible), $2,000/year for 3.0 GPA or higher.",
+        "application_method": "Automatic consideration based on a student's admission application and holistic academic record review. No separate application is needed."
+      },
+      {
+        "name": "Mānoa Excellence Scholarship",
+        "type": "Merit",
+        "amount": "Equivalent to Hawaiʻi resident tuition rates (approximately $22,032 per year for 4 years for non-WUE U.S. non-Hawaiʻi residents; approximately $5,652 per year for 4 years for WUE-eligible students)",
+        "eligibility": "High-achieving U.S. citizens who are non-Hawaiʻi residents (including WUE-eligible students) and embody UH Mānoa excellence in academics and community engagement.",
+        "application_method": "Automatic consideration based on admission application; students offered more than one merit award may only accept one."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "The University of Hawaiʻi at Mānoa awards credit for appropriate scores on Advanced Placement (AP) examinations. Generally, scores of 3, 4, or 5 are accepted for specific course credit, depending on the subject. For instance, a score of 3 on AP English Language/Composition can earn 3 credits for ENG 100. The specific credits and course equivalencies are detailed in their official AP credit equivalency table, with many subjects accepting a score of 3.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "UH Mānoa awards credit for appropriate scores on Higher Level (HL) International Baccalaureate (IB) examinations. Typically, scores of 5, 6, or 7 are required for credit, with specific course equivalencies and credit amounts varying by subject. For example, an HL score of 5 or higher in certain subjects can earn 3-8 credits. Standard Level (SL) exams generally do not receive credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "The University of Hawaiʻi at Mānoa accepts credits from regionally accredited institutions. Courses are evaluated for equivalency to UH Mānoa courses and applicability to degree requirements. They have established transfer pathways, particularly within the University of Hawaiʻi System (e.g., Kaʻieʻie Transfer Pathways for UH Community Colleges). An online Transfer Credit Search tool is available to help students determine equivalencies. General policies include a minimum grade of C- or higher for transferred courses, and certain limits on the total number of transfer credits that can apply towards a degree (e.g., typically 30 of the last 45 credits for a bachelor's degree must be completed in residence). Remedial or vocational courses typically do not transfer unless directly applicable to a specific program."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated passion in 1-2 areas rather than scattered activities",
+      "Authentic essays that show self-reflection",
+      "Leadership in meaningful extracurriculars"
+    ],
+    "common_activities": [
+      "Participation in Student Clubs and Organizations",
+      "Athletics",
+      "Community Service and Volunteering",
+      "Arts and Culture Involvement",
+      "Research Experience",
+      "Leadership Roles",
+      "Internships"
+    ],
+    "essay_tips": [
+      "Be specific about why UH Manoa, referencing unique programs and cultural context.",
+      "Connect your interests to specific resources and opportunities at the school.",
+      "Show, don't tell, using concrete examples.",
+      "Avoid clichés, especially those related to Hawaii as a \"paradise.\""
+    ],
+    "red_flags": [
+      "Incomplete or Inaccurate Application Information",
+      "Missing Application Deadlines",
+      "Generic or Untailored Essays/Personal Statements",
+      "Unofficial or Unaccredited Transcripts/Coursework"
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Hawaiʻi at Mānoa generally has a moderately selective admissions process,\n        with an overall admitted rate around 70-73% according to some sources,\n        but the Fall 2025 freshman snapshot indicates an 88% admitted rate for applicants.\n        Hawaiʻi residents with at least a 3.2 cumulative GPA and completed high school course requirements are offered admission.",
+        "implication": "Applicants should focus on meeting the baseline academic requirements (e.g.,\n        strong GPA, required coursework). While the university is test-optional,\n        competitive standardized test scores can still strengthen an application.\n        For specific or highly competitive programs, or for out-of-state applicants,\n        a strong personal statement and unique qualifications are key to standing out."
+      },
+      {
+        "category": "Academic",
+        "insight": "UH Mānoa is a leading public research university with internationally recognized programs directly tied to its unique Pacific location,\n        including top global rankings in atmospheric sciences, oceanography,\n        and strong programs in marine biology, Hawaiian studies, Asian and Pacific area studies, geology,\n        geophysics, and an extensive offering of languages.",
+        "implication": "Prospective students with interests in environmental sciences, marine studies, astronomy,\n        tropical agriculture, or Asian and Pacific cultures and languages should highlight relevant experiences,\n        research interests, and any cultural connections in their applications,\n        demonstrating how they would leverage the university's distinctive strengths and resources."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university offers a distinctive campus culture characterized by its natural Hawaiian beauty,\n        an outdoor-oriented lifestyle, a highly diverse and international student body,\n        and a strong emphasis on sustainability and Native Hawaiian cultural immersion.",
+        "implication": "Applicants should articulate their appreciation for cultural diversity, environmental stewardship,\n        and a genuine interest in engaging with the unique island community and lifestyle.\n        Essays and extracurricular activities that demonstrate adaptability,\n        cross-cultural competence, and a connection to nature or community service in diverse settings would be highly beneficial."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Hawaii at Manoa fosters a diverse, welcoming, and interconnected community with a wide array of clubs and organizations. While a 'laid-back, \"hang loose\" mentality' is prevalent, students are also noted as hard workers. Opportunities for social engagement are ample, particularly for those living on campus, though some students may find it challenging to form close friendships initially.",
+      "transportation_impact": "Public transportation, known as 'The Bus,' offers convenient access to various destinations around the island. However, on-campus parking is described as expensive and difficult to secure, posing a challenge for students who rely on cars or mopeds.",
+      "research_impact": "The university provides strong undergraduate research opportunities through its Undergraduate Research Opportunities Program (UROP). UROP facilitates mentored research and creative work across all disciplines, offering merit-based scholarship funds for student projects. Programs like the Summer Undergraduate Research Experience (SURE) provide additional infrastructure, professional development, and presentation venues. Students can also apply for specialized fellowships, such as NASA Undergraduate Space Grant Fellowships, to support research in fields relevant to NASA's objectives."
+    }
+  },
+  "outcomes": {
+    "median_earnings_10yr": 57624,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 56055,
+    "notes": "Median earnings (10 years after enrollment) are $57,624. Median earnings at 6 years after enrollment are $56,055. The employment rate 2 years after graduation was not explicitly found in the provided College Scorecard data. The University of Hawaii at Manoa is consistently ranked in the top 2% nationally and internationally by major university ranking services.",
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Apple",
+      "Deloitte",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "McKinsey & Company",
+      "Boston Consulting Group (BCG)",
+      "Bain & Company"
+    ],
+    "grad_school_rate": null,
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 75.0,
+    "graduation_rate_4_year": 41.1,
+    "graduation_rate_6_year": 62.6
+  }
 }

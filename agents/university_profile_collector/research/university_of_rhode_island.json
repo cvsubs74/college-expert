@@ -1,545 +1,2666 @@
 {
-  "university_profile": {
-    "_id": "university_of_rhode_island",
-    "university_name": "University of Rhode Island",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "US News & World Report 2026 Best Colleges",
-      "Wall Street Journal/College Pulse 2026 Best Colleges",
-      "URI Official Admissions Portal",
-      "URI Department of Transportation and Parking (TAP) Reports"
+  "_id": "university_of_rhode_island",
+  "metadata": {
+    "official_name": "University of Rhode Island",
+    "location": {
+      "city": "Kingston",
+      "state": "Rhode Island",
+      "type": "Public"
+    },
+    "last_updated": "2024-07-29",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "URI offers a diverse academic portfolio with a focus on experiential learning and research, set in a coastal environment.",
+    "market_position": "Public flagship known for marine sciences and nursing, strong regional presence.",
+    "admissions_philosophy": "Holistic review considering academic performance, essays, recommendations, and extracurricular involvement. Emphasizes intellectual curiosity and community engagement.",
+    "us_news_rank": 150,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong growth in research funding over the last five years.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Increasing demand for marine science programs.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Opportunity to enhance industry partnerships in the biotech sector.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Student body shows high engagement in community service initiatives.",
+        "category": "general"
+      }
     ],
-    "metadata": {
-      "official_name": "University of Rhode Island",
-      "location": {
-        "city": "Kingston",
-        "state": "RI",
-        "type": "Public"
-      },
-      "us_news_rank": 151,
-      "market_position": "Public Flagship"
-    },
-    "strategic_profile": {
-      "executive_summary": "The University of Rhode Island (URI) is a flagship public research university and a designated Land, Sea, and Urban Grant institution with an R1 classification for very high research activity. It is recognized as a regional leader in marine science, nursing, and engineering, leveraging its coastal location for specialized research and industry ties.",
-      "admissions_philosophy": "Holistic review",
-      "analyst_takeaways": [
+    "campus_dynamics": {
+      "social_environment": "Vibrant and active, with a strong Greek life presence, numerous clubs, and a supportive community. Close-knit feel despite being a larger institution.",
+      "transportation_impact": "Campus is walkable, but a car is often useful for off-campus excursions. RIPTA bus service available. Parking can be challenging during peak hours.",
+      "research_impact": "Significant research output, especially in oceanography, environmental science, and pharmaceutical sciences, often involving undergraduate students in projects."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 72.17,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Rhode Island is a test-optional institution for the 2024-2025 admission cycle. If applicants choose to submit SAT or ACT scores, official scores must be sent electronically by the testing service (URI ID code is 3919 for SAT and 3818 for ACT). The writing section of the ACT or the optional SAT essay are not required. URI superscores, taking the highest combination of scores from each section across all test dates. When completing the Common Application, applicants will be asked if they would like their test scores to be considered. If 'yes', the application review will await receipt of test scores. Test scores are not required for transfer applicants, particularly those with fewer than 24 credits; if submitted, they must be sent electronically.",
+      "admits_class_size": 19475,
+      "transfer_acceptance_rate": 64.3,
+      "early_admission_stats": [
         {
-          "category": "Selectivity",
-          "insight": "First-year applications hit a record 28,036 for the Fall 2025 cycle, reflecting surging interest.",
-          "implication": "Admission is becoming increasingly competitive, particularly for specialized 0-6 Pharm.D. and Engineering programs."
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null,
+          "Details": "The application deadline for Early Decision is November 1, with notification by December 1. ED is a binding commitment, and enrollment and housing deposits are due by February 1, or within two weeks of receiving a financial aid award."
         },
         {
-          "category": "Outcome Value",
-          "insight": "Ranked #76 nationally by Wall Street Journal (2026) based on student outcomes and salary impact.",
-          "implication": "The university provides high ROI relative to its US News academic reputation ranking (#151)."
-        },
-        {
-          "category": "Research Prowess",
-          "insight": "Designated as a 'Blue Economy' hub with $3.75M in recent federal funding for marine initiatives.",
-          "implication": "Students in STEM and maritime fields have unique access to elite, well-funded research pipelines."
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null,
+          "Details": "The application deadline for Early Action is December 1, with decision notification by January 31 or December 15. The enrollment deposit is due by May 1. The University of Rhode Island's Early Action plan is not restrictive, meaning students are not limited from applying to other early plans."
         }
       ],
-      "campus_dynamics": {
-        "social_environment": "A large suburban campus characterized by its proximity to Narragansett beaches and a solid liberal ideology. Social life is anchored by Greek life, Division I athletics (Rams), and over 100 student organizations.",
-        "transportation_impact": "Highly reliant on the 'Rhody Shuttle' and RIPTA bus lines; recent student senate initiatives focus on improving shuttle frequency and sustainability to accommodate a significant commuter population.",
-        "research_impact": "Strong research culture centered on the 'Academic Health Collaborative' and the Graduate School of Oceanography, with extensive collaborative ties to Brown University and local healthcare systems."
+      "in_state_acceptance_rate": 72.16,
+      "out_of_state_acceptance_rate": 72.16,
+      "international_acceptance_rate": 67.4
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 26987,
+        "admits_total": 19475,
+        "enrolled_total": 3004,
+        "acceptance_rate_overall": 72.17,
+        "yield_rate": 15.42,
+        "notes": "URI achieved prestigious Carnegie R1 status in February 2025."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 26987,
+        "admits_total": 19475,
+        "enrolled_total": 3350,
+        "acceptance_rate_overall": 72.17,
+        "yield_rate": 17.19,
+        "notes": "Record number of undergraduate applications (26,983 or 26,987 depending on source). URI became test-optional.",
+        "waitlist_stats": {
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 25391,
+        "admits_total": 19568,
+        "enrolled_total": 3289,
+        "acceptance_rate_overall": 77.06,
+        "yield_rate": 16.81,
+        "notes": "",
+        "waitlist_stats": {
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 25481,
+        "admits_total": 19465,
+        "enrolled_total": 3007,
+        "acceptance_rate_overall": 76.39,
+        "yield_rate": 15.45,
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 25105,
+        "admits_total": 19196,
+        "enrolled_total": 3130,
+        "acceptance_rate_overall": 76.46,
+        "yield_rate": 16.3,
+        "notes": ""
       }
-    },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 72.2,
-        "in_state_acceptance_rate": 75.9,
-        "out_of_state_acceptance_rate": 77.4,
-        "international_acceptance_rate": 67.4,
-        "transfer_acceptance_rate": 64.3,
-        "admits_class_size": 3004,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
-          {
-            "plan_type": "EA",
-            "applications": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "class_fill_percentage": 0.0
-          },
-          {
-            "plan_type": "ED",
-            "applications": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "class_fill_percentage": 0.0
-          }
-        ]
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.40-4.12",
+        "unweighted_middle_50": "3.1-3.7",
+        "average_weighted": 3.76,
+        "percentile_25": "3.40",
+        "percentile_75": "4.12",
+        "notes": "The University of Rhode Island's 2025 Admitted First-Year Student Profile indicates a middle 50% GPA range of 3.40-4.12. URI recalculates GPAs, factoring in core academic classes from grades 9-11 and assigning extra weight to honors or AP courses. The admission process is holistic, taking into account extracurricular activities and test scores, as URI is a test-optional institution. The average weighted GPA provided is an inference based on the midpoint of the weighted middle 50% range, as a specific average weighted GPA was not explicitly stated in the provided sources. An unweighted middle 50% GPA range of 3.1-3.7 was found from previous data."
       },
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": "3.40-4.12",
-          "percentile_25": "3.40",
-          "percentile_75": "4.12",
-          "notes": "Data reflects the 2025 Admitted Student Profile. URI uses a holistic review process that considers the rigor of the high school curriculum."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1180-1350",
-          "sat_reading_middle_50": "520-650",
-          "sat_math_middle_50": "500-630",
-          "act_composite_middle_50": "26-31",
-          "submission_rate": 27.4,
-          "policy_note": "Test-optional for most programs. SAT/ACT scores are considered if submitted and can be used for merit scholarship evaluation."
-        },
-        "demographics": {
-          "first_gen_percentage": 33.3,
-          "international_percentage": 1.7,
-          "geographic_breakdown": [
-            {
-              "region": "Rhode Island",
-              "percentage": 47.0
-            },
-            {
-              "region": "Out-of-State",
-              "percentage": 51.8
-            },
-            {
-              "region": "International",
-              "percentage": 1.2
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 9498,
-              "admits": 6672,
-              "acceptance_rate": 70.2
-            },
-            "women": {
-              "applicants": 16968,
-              "admits": 12776,
-              "acceptance_rate": 75.3,
-              "note": "The student body is significantly female-heavy, with a female-to-male ratio of approximately 1.4:1."
-            }
-          },
-          "racial_breakdown": {
-            "white": 72.8,
-            "black_african_american": 5.3,
-            "hispanic_latino": 12.6,
-            "asian": 3.7,
-            "native_american_alaskan": 0.1,
-            "two_or_more_races": 4.3,
-            "unknown": 7.9,
-            "non_resident_alien": 1.7
-          }
-        }
+      "testing": {
+        "SAT Composite": "1030-1270",
+        "SAT Reading and Writing": "520-650",
+        "SAT Math": "510-620",
+        "ACT Composite": "26-31",
+        "submission_rate": 0.27,
+        "notes": "The University of Rhode Island is a test-optional institution that accepts superscored SAT and ACT results."
       },
-      "longitudinal_trends": [
-        {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": 27000,
-          "enrolled_total": 3300,
-          "notes": "Preliminary data indicates a record-breaking 27,000 applications for the first cycle featuring a binding Early Decision option.",
-          "waitlist_stats": {
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 26987,
-          "admits_total": 19475,
-          "enrolled_total": 3004,
-          "acceptance_rate_overall": 72.17,
-          "yield_rate": 15.42,
-          "waitlist_stats": {
-            "offered_spots": 2459,
-            "accepted_spots": 795,
-            "admitted_from_waitlist": 474,
-            "waitlist_admit_rate": 59.62,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 25391,
-          "admits_total": 19568,
-          "enrolled_total": 3286,
-          "acceptance_rate_overall": 77.06,
-          "acceptance_rate_in_state": 75.89,
-          "acceptance_rate_out_of_state": 77.4,
-          "yield_rate": 16.79,
-          "waitlist_stats": {
-            "offered_spots": 1983,
-            "accepted_spots": 776,
-            "admitted_from_waitlist": 333,
-            "waitlist_admit_rate": 42.91,
-            "is_waitlist_ranked": false
-          }
-        }
-      ]
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 6.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extremely competitive; applicants must demonstrate high achievement in biology and chemistry. Early Action (Dec 1) is virtually mandatory for serious consideration.",
-          "housing_profile": "Nursing Living and Learning Community (LLC) featuring peer mentoring and study groups for rigorous clinical prerequisites.",
-          "student_archetype": "High-achieving, service-oriented healers",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 15.0,
-              "average_gpa_admitted": 4.1,
-              "prerequisite_courses": [
-                "BIO 220",
-                "CHM 103",
-                "WRT 104"
-              ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "BIO 220 Anatomy & Physiology I",
-                "CHM 103 Introductory Chemistry"
-              ],
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "NUR 100",
-                  "NUR 203",
-                  "NUR 213",
-                  "NUR 208",
-                  "NUR 233",
-                  "NUR 253",
-                  "NUR 443",
-                  "NUR 444"
-                ],
-                "total_units": 120,
-                "major_units": 64
-              },
-              "notable_professors": [
-                "Dr. Barbara Wolfe"
-              ],
-              "notes": "Non-nursing majors must apply as internal transfers but seats are limited by clinical space."
-            }
-          ]
-        },
-        {
-          "name": "College of Pharmacy",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 21.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Zero-to-six Pharm.D. program is highly selective. Requires strong math/science background and two letters of recommendation.",
-          "housing_profile": "Pharmacy LLC designed to support students through heavy chemistry and lab-based workloads.",
-          "student_archetype": "Rigorous researchers and clinical experts",
-          "majors": [
-            {
-              "name": "Pharmacy",
-              "degree_type": "Pharm.D.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.9,
-              "prerequisite_courses": [
-                "CHM 101",
-                "MTH 141",
-                "BIO 101"
-              ],
-              "minimum_gpa_to_declare": 2.7,
-              "weeder_courses": [
-                "CHM 112 General Chemistry II",
-                "BPS 333 Nursing Pharmacology"
-              ],
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.7,
-              "notable_professors": [
-                "Dr. Thomas Ryan"
-              ],
-              "notes": "0-6 Program; progression to professional years requires minimum 2.7 science GPA."
-            }
-          ]
-        },
-        {
-          "name": "College of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 55.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong math preparation through pre-calculus or calculus is expected. Highlight interests in the International Engineering Program (IEP).",
-          "housing_profile": "Engineering LLC (ELLC) with dedicated maker spaces and resident academic mentors.",
-          "student_archetype": "Global-minded problem solvers",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.8,
-              "prerequisite_courses": [
-                "MTH 141",
-                "CHM 101",
-                "PHY 203"
-              ],
-              "weeder_courses": [
-                "MTH 142 Calculus II",
-                "EGR 105 Foundations of Engineering I",
-                "MCE 262 Statics"
-              ],
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "EGR 105",
-                  "EGR 106",
-                  "MCE 201",
-                  "MCE 262",
-                  "MCE 263",
-                  "MCE 341",
-                  "MCE 354",
-                  "MCE 372",
-                  "MCE 401"
-                ],
-                "total_units": 120,
-                "major_units": 68
-              },
-              "notable_professors": [
-                "Dr. Mehrshad Amini",
-                "Dr. Michael Lambert"
-              ]
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Cyber Security Undergraduate Certificate",
-        "Data Science Minor",
-        "Engineering Entrepreneurship Minor",
-        "Innovation and Entrepreneurship Minor",
-        "Marine Affairs Minor",
-        "Underwater Archaeology Minor",
-        "Chinese Language Flagship Certificate",
-        "Digital Forensics Minor"
-      ]
-    },
-    "application": {
-      "process": {
-        "platforms": [
-          "Common App",
-          "URI Transfer Application"
-        ],
-        "deadlines": [
+      "demographics": {
+        "first_gen_percentage": 33.0,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children",
+        "geographic_breakdown": [
           {
-            "plan_type": "Early Decision",
-            "date": "2024-11-01",
-            "is_binding": true,
-            "notes": "Binding; Fall start"
+            "region": "Rhode Island (In-State)",
+            "percentage": 44.07
           },
           {
-            "plan_type": "Early Action",
-            "date": "2024-12-01",
-            "is_binding": false,
-            "notes": "Priority for merit aid"
+            "region": "Massachusetts",
+            "percentage": 18.16
           },
           {
-            "plan_type": "Regular Decision",
-            "date": "2025-02-01",
-            "is_binding": false,
-            "notes": "Final Fall deadline"
+            "region": "Connecticut",
+            "percentage": 12.85
           },
           {
-            "plan_type": "Spring Admission",
-            "date": "2024-12-15",
-            "is_binding": false
+            "region": "New York",
+            "percentage": 8.99
+          },
+          {
+            "region": "New Jersey",
+            "percentage": 7.99
+          },
+          {
+            "region": "New Hampshire",
+            "percentage": 2.27
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 1.49
+          },
+          {
+            "region": "Maine",
+            "percentage": 1.0
+          },
+          {
+            "region": "Vermont",
+            "percentage": 0.56
+          },
+          {
+            "region": "Maryland",
+            "percentage": 0.53
+          },
+          {
+            "region": "International",
+            "percentage": 1.2
+          },
+          {
+            "region": "Other US States",
+            "percentage": 0.89
           }
         ],
-        "supplemental_requirements": [
-          {
-            "target_program": "Nursing, Pharmacy (PharmD)",
-            "requirement_type": "Short Response",
-            "deadline": "2024-12-01",
-            "details": "Statement explaining choice of major (approx. 250 words)"
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9498,
+            "admits": 6672,
+            "acceptance_rate": 70.25,
+            "note": "Data for the 2024-2025 academic year."
           },
-          {
-            "target_program": "Honors Program",
-            "requirement_type": "Essay",
-            "deadline": "2025-02-01",
-            "details": "Propose a theme for the URI Honors Colloquium (250 words)"
-          }
-        ],
-        "holistic_factors": {
-          "primary_factors": [
-            "Course Rigor",
-            "GPA",
-            "STARS Record (SRAR/SSAR)"
-          ],
-          "secondary_factors": [
-            "Extracurriculars",
-            "Recommendations",
-            "Talents",
-            "Character"
-          ],
-          "essay_importance": "High",
-          "demonstrated_interest": "Not Considered",
-          "interview_policy": "Not Offered",
-          "legacy_consideration": "None",
-          "first_gen_boost": "Strong",
-          "specific_differentiators": "Uses the STARS record for self-reported academic history; heavily emphasizes math and science readiness for Nursing and Engineering programs"
-        }
-      },
-      "strategy": {
-        "major_selection_tactics": [
-          "Apply to Humanities or Social Sciences (e.g., History, English) for a higher baseline admission probability.",
-          "Use the 'Undeclared' option within a specific college to secure a spot without high GPA thresholds.",
-          "Prioritize Early Action (Dec 1) for Nursing, Pharmacy, and Engineering."
-        ],
-        "alternate_major_strategy": "If applying to the highly selective 6-year Pharm.D. program, list the B.S. in Pharmaceutical Sciences (BSPS) as your alternate choice. For Nursing, list Health Sciences or Kinesiology as a backup."
-      }
-    },
-    "financials": {
-      "cost_of_attendance": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 14630,
-          "total_coa": 36477,
-          "housing": 15607
+          "women": {
+            "applicants": 16968,
+            "admits": 12776,
+            "acceptance_rate": 75.29,
+            "note": "Data for the 2024-2025 academic year."
+          },
+          "non_binary": null
         },
-        "out_of_state": {
-          "tuition": 34834,
-          "total_coa": 56681,
-          "supplemental_tuition": 20204
+        "racial_breakdown": {
+          "white": 70.9,
+          "black_african_american": 4.91,
+          "hispanic_latino": 10.9,
+          "asian": 3.49,
+          "native_american_alaskan": 0.16,
+          "pacific_islander": 0.05,
+          "two_or_more_races": 3.33,
+          "non_resident_alien": 2.27,
+          "unknown": 3.99
         }
-      },
-      "aid": {
-        "philosophy": "Merit Focused",
-        "average_need_based_aid": 11857,
-        "average_merit_aid": 10105,
-        "percent_receiving_aid": 89.0
-      },
-      "scholarships": [
-        {
-          "name": "Thomas M. Ryan Scholars Award",
-          "type": "Merit/Full-Ride",
-          "amount": "Full tuition, fees, housing, meals, and books for 4 years",
-          "deadline": "2024-12-01 (Priority)",
-          "benefits": "Honors Program, Leadership Institute, global J-Term travel",
-          "application_method": "Automatic consideration then invitation for interview"
-        },
-        {
-          "name": "Alfred J. Verrecchia Business Scholars Award",
-          "type": "Merit/Full-Ride",
-          "amount": "Full tuition, fees, housing, meals, and books for 4 years",
-          "deadline": "2024-12-01 (Priority)",
-          "benefits": "Business mentor, career coach, travel stipend",
-          "application_method": "Automatic consideration for Business majors"
-        },
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "Up to $17,000 per year",
-          "deadline": "Automatic consideration",
-          "benefits": "Renewable for 4 years with 2.8 cumulative GPA",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Scores of 3, 4, or 5 grant credit for most subjects including STEM, Humanities, and Arts.",
-        "usage": "Can satisfy General Education (GE) requirements and foundational major prerequisites."
-      },
-      "ib_policy": {
-        "general_rule": "Credit is awarded for Higher Level (HL) exams with scores of 5, 6, or 7.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "restrictions": "Minimum grade of C required for all transferable courses; maximum of 60 credits accepted from 2-year institutions; 90 credit cap for 4-year institutions."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A strong academic profile with a middle 50% GPA range between 3.4 and 4.12",
-        "Four years of challenging coursework in math and science, especially for competitive majors like Nursing and Pharmacy",
-        "Evidence of demonstrated interest, such as campus visits or counselor outreach, to stand out in the applicant pool",
-        "A minimum of B or better in core subjects to be competitive for high-demand STEM programs"
-      ],
-      "common_activities": [
-        "Research experience in marine biology, engineering, or life sciences",
-        "Leadership roles in school clubs or local community organizations",
-        "Involvement in varsity athletics or intramural sports",
-        "Volunteer work or participation in programs like Talent Development for eligible residents",
-        "Part-time employment or internships that show real-world responsibility"
-      ],
-      "essay_tips": [
-        "Be highly specific in program-specific supplements (Nursing/Pharmacy) by connecting personal goals to URI's faculty and facilities",
-        "Avoid reciting impersonal facts or statistics about URI; focus instead on how those resources benefit your specific journey",
-        "Use the personal statement to highlight resilience and self-reflection",
-        "Structure essays with a compelling anecdote that ties back to your chosen field of study"
-      ],
-      "red_flags": [
-        "Slacking off or showing a grade decline during senior year",
-        "Lack of necessary science and math prerequisites for competitive PharmD or Nursing pathways",
-        "Generic essays that lack a personal connection to the Kingston campus or specific major",
-        "A 'wall of text' formatting in the personal statement that suggests poor attention to detail"
-      ]
-    },
-    "outcomes": {
-      "earnings_employment": {
-        "median_earnings_10yr": 56200,
-        "employment_rate_2yr": 96.0,
-        "top_employers": [
-          "CVS Health",
-          "Fidelity Investments",
-          "Citizens Bank",
-          "General Dynamics Electric Boat",
-          "Hasbro",
-          "Raytheon Technologies",
-          "Lifespan"
-        ]
-      },
-      "retention_graduation": {
-        "freshman_retention_rate": 85.0,
-        "graduation_rate_4_year": 57.0,
-        "graduation_rate_6_year": 71.0
-      }
-    },
-    "application_process": {
-      "supplemental_requirements": {
-        "essay_prompts": [
-          {
-            "prompt": "Please share anything you would like us to know about yourself that perhaps was not evident in other parts of this application.",
-            "word_limit": 500,
-            "required": false,
-            "note": "Optional personal statement",
-            "application_cycle": "2025-2026"
-          }
-        ]
       }
     }
   },
-  "_id": "university_of_rhode_island",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
       {
-        "prompt": "URI is committed to helping students discover their potential. What do you hope to discover about yourself during your time at URI?",
-        "word_limit": "250 words",
-        "type": "Goals",
-        "required": false,
-        "brainstorming_questions": [
-          "When you think about URI's commitment to discovering potential, what's one specific skill or area of knowledge you feel you haven't fully explored yet, and why does that particular one call to you?",
-          "Imagine yourself looking back on your time at URI four years from now, having discovered something profound about yourself. What kind of challenge or experience would likely have led to that significant discovery?",
-          "URI encourages growth and exploration. Can you recall a moment, perhaps in or out of school, where you stepped outside your comfort zone and learned something unexpected and valuable about your own capabilities or limitations?",
-          "URI's diverse community offers many opportunities. Is there a particular aspect of URI's programs, clubs, or research that makes you curious about uncovering a hidden talent or a new passion within yourself?",
-          "Beyond academic achievements, what kind of personal growth do you envision for yourself at URI that would make you feel like you've truly discovered a deeper sense of who you are and what you're capable of?"
+        "name": "University College for Academic Success",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Primarily first-year Living and Learning Communities (LLCs) in corridor-style dorms, with academic and social programming designed for smooth transition to college life. Specific LLCs exist for various disciplines within the college.",
+        "student_archetype": "Intellectually curious and diverse learners exploring a wide range of academic disciplines, from humanities to sciences, and seeking foundational collegiate experiences.",
+        "strategic_fit_advice": "Highlight the rich intellectual environment and opportunities for interdisciplinary exploration, emphasizing community living.",
+        "majors": [
+          {
+            "name": "Computer Science (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSC 106 Problem Solving and Programming (4 credits)",
+                "CSC 211 Data Structures and Algorithms (4 credits)",
+                "CSC 212 Object-Oriented Programming (4 credits)",
+                "CSC 305 Computer Organization (4 credits)",
+                "CSC 340 Computer Architecture (4 credits)",
+                "CSC 402 Operating Systems (4 credits)",
+                "CSC 412 Algorithms (4 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 243 Discrete Structures (3 credits)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Lisa DiPippo (Computer Science)",
+              "Dr. Victor Fay-Wolfe (Computer Science)",
+              "Dr. Edmund Lamagna (Computer Science)",
+              "Dr. Marco Alvarez (Director of Undergraduate Studies, Computer Science)",
+              "Dr. Shaun Wallace (Assistant Professor, Human-Centered Experiential Technologies lab (HAX))"
+            ],
+            "notes": "Students are advised to complete CSC 106, 211, 212, and relevant math courses early. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Psychology (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 113 General Psychology (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 113 General Psychology (3 credits)",
+                "PSY 200 Quantitative Methods in Psychology (4 credits)",
+                "PSY 300 Research Methods in Psychology (4 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. David Schnyer (Professor, Department Chair, Psychology)",
+              "Dr. Ellen Flannery-Schroeder (Dr. Glenda L. Vittimberga '88 Endowed Professor of Psychology)",
+              "Dr. Lisa Weyandt (Psychology Professor, Director Interdisciplinary Neuroscience Program)",
+              "Dr. Mark L. Robbins (Professor, Director, Mental and Behavioral Health Counseling M.S. Program)",
+              "Dr. Lyn Stein (Professor, Clinical Psychology)"
+            ],
+            "notes": "Minimum 2.0 GPA in psychology courses required for graduation. Students typically take a distribution of courses across behavioral neuroscience, cognitive, developmental, social, and clinical psychology. Data source: URI 2025-2026 Catalog, Department of Psychology faculty website."
+          },
+          {
+            "name": "Biology (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "BIO 102 Principles of Biology II (3 credits)",
+              "BIO 104 Principles of Biology II Lab (1 credit)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)",
+              "CHM 112 General Chemistry II (3 credits)",
+              "CHM 114 General Chemistry II Lab (1 credit)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)",
+              "PHY 111 General Physics I (3 credits)",
+              "PHY 185 General Physics I Lab (1 credit)",
+              "PHY 112 General Physics II (3 credits)",
+              "PHY 186 General Physics II Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHM 112 General Chemistry II",
+              "CHM 124 Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIO 101 Principles of Biology I (3 credits)",
+                "BIO 103 Principles of Biology I Lab (1 credit)",
+                "BIO 102 Principles of Biology II (3 credits)",
+                "BIO 104 Principles of Biology II Lab (1 credit)",
+                "CMB 201 Cell and Molecular Biology (4 credits)",
+                "BIO 352 Genetics (4 credits)",
+                "BIO 340 Evolution (3 credits)",
+                "BIO 341 Evolution Laboratory (1 credit)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 35
+            },
+            "notable_professors": [
+              "Dr. Andrew Davies (Professor, Biological Sciences)",
+              "Dr. Serena Moseman-Valtierra (Associate Professor, Biological Sciences)",
+              "Dr. Carlos Prada (Assistant Professor, Biological Sciences)",
+              "Dr. Jonathan Puritz (Associate Professor, Biological Sciences)",
+              "Dr. Hollie Putnam (Associate Professor, Biological Sciences)",
+              "Dr. Bradley Wetherbee (Assistant Professor, Biological Sciences)"
+            ],
+            "notes": "Minimum 2.0 cumulative GPA required in all BIO and CMB courses for graduation. Students must also complete courses from 'Plant', 'Animal', and 'Lab' lists. Data source: URI 2025-2026 Catalog, Department of Biological Sciences faculty website."
+          },
+          {
+            "name": "Political Science (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSC 113 Introduction to American Politics (4 credits)",
+                "PSC 116 Introduction to International Politics (4 credits)",
+                "PSC 210 or 211 (Introductory Political Science Course - 4 credits)",
+                "PSC 310 Introduction to Political Science Research (4 credits)",
+                "PSC 3xx (300-level Political Science course - 4 credits)",
+                "PSC 4xx (400-level Political Science course - 4 credits)",
+                "PSC 4xx (another 400-level Political Science course - 4 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 32
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.0 major and cumulative GPA required for graduation. Most Political Science classes are 4 credits each. Students can choose tracks in International Relations or American Politics. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Criminal Justice (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CCJ/SOC 230 Introduction to Criminology and Criminal Justice (3 credits)",
+                "CCJ/PSC 274 Law, Justice and Society (3 credits)",
+                "One research course from: ECN 306, PSC 310, PSY 200, or SOC 301 (3-4 credits)",
+                "CCJ 403, 410, or CCJ/PSC 476 (Capstone - 3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Interdisciplinary program with courses from Sociology & Anthropology, Political Science, Psychology, Economics, Philosophy, Africana Studies, History, and Chemistry. Minimum 2.0 major and cumulative GPA required. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Chemistry (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MTH 141 Calculus I (4 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "PHY 203 Elementary Physics I (3 credits)",
+              "PHY 273 Elementary Physics I Lab (1 credit)",
+              "PHY 204 Elementary Physics II (3 credits)",
+              "PHY 274 Elementary Physics II Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHM 112 General Chemistry II",
+              "CHM 227 Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "CHM 112 General Chemistry II (3 credits)",
+                "CHM 114 General Chemistry II Lab (1 credit)",
+                "CHM 227 Organic Chemistry I (3 credits)",
+                "CHM 228 Organic Chemistry I Lab (1 credit)",
+                "CHM 226 Organic Chemistry II (3 credits)",
+                "CHM 229 Organic Chemistry II Lab (1 credit)",
+                "CHM 310 Quantitative Analysis (4 credits)",
+                "CHM 314 Physical Chemistry I (3 credits)",
+                "CHM 315 Physical Chemistry I Lab (1 credit)",
+                "CHM 431 Inorganic Chemistry (3 credits)",
+                "CHM 432 Inorganic Chemistry Lab (1 credit)",
+                "CHM 491 Senior Seminar I (1 credit)",
+                "CHM 492 Senior Seminar II (1 credit)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "A minimum grade of C- is required in all chemistry courses for the major. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Mathematics (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "MTH 142 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 243 Discrete Structures (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "MTH 307 Differential Equations (3 credits)",
+                "MTH 314 Introduction to Analysis (3 credits)",
+                "MTH 415 Abstract Algebra I (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Physics (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MTH 141 Calculus I (4 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHY 203 Elementary Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "PHY 310 Mathematical Physics (3 credits)",
+                "PHY 313 Modern Physics (3 credits)",
+                "PHY 316 Analytical Mechanics (3 credits)",
+                "PHY 318 Thermodynamics and Statistical Physics (3 credits)",
+                "PHY 405 Electricity and Magnetism I (3 credits)",
+                "PHY 406 Electricity and Magnetism II (3 credits)",
+                "PHY 420 Quantum Mechanics I (3 credits)",
+                "PHY 491 Physics Senior Seminar I (1 credit)",
+                "PHY 492 Physics Senior Seminar II (1 credit)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "MTH 307 Differential Equations (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "English (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "WRT 104 or 106 or equivalent (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENG 200 Literary Studies (3 credits)",
+                "ENG 220 Introduction to Professional Writing (3 credits)",
+                "One course in British Literature before 1800 (3 credits)",
+                "One course in British Literature after 1800 (3 credits)",
+                "One course in American Literature before 1900 (3 credits)",
+                "One course in American Literature after 1900 (3 credits)",
+                "One course in Global/Transnational Literature (3 credits)",
+                "ENG 400 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "History (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIS 101 Introduction to World History I (3 credits)",
+                "HIS 102 Introduction to World History II (3 credits)",
+                "HIS 200 Historical Methods (3 credits)",
+                "HIS 498 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Sociology (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOC 100 Introduction to Sociological Perspectives (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SOC 100 Introduction to Sociological Perspectives (3 credits)",
+                "SOC 200 Social Statistics (3 credits)",
+                "SOC 301 Sociological Research Methods (3 credits)",
+                "SOC 302 Sociological Theory (3 credits)",
+                "SOC 498 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Economics (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "ECN 305 Intermediate Microeconomics (3 credits)",
+                "ECN 306 Introduction to Economic Research Methods (3 credits)",
+                "ECN 323 Intermediate Macroeconomics (3 credits)",
+                "ECN 498 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog. Median earnings for Economics graduates at URI are $43,419."
+          },
+          {
+            "name": "Communication Studies (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COM 100 Communication Fundamentals (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COM 100 Communication Fundamentals (3 credits)",
+                "COM 202 Public Speaking (3 credits)",
+                "COM 221 Interpersonal Communication (3 credits)",
+                "COM 381 Research Methods in Communication (3 credits)",
+                "COM 382 Communication Theory (3 credits)",
+                "SCM 495 The Harrington Capstone Experience (3 credits)"
+              ],
+              "electives": [
+                "COM 243G Advertising and Consumerism (3 credits)",
+                "COM 246 New Media and Society (3 credits)",
+                "COM 351 Organizational Communication Skills (3 credits)",
+                "COM 402 Leadership and Motivation (3 credits)"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.0 major and cumulative GPA required. COM 100 is a prerequisite to the major and does not count towards the 33-credit minimum for the major. Data source: URI 2025-2026 Catalog, Communication Studies B.A. Curriculum page."
+          },
+          {
+            "name": "Journalism (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "WRT 104 or 106 or equivalent (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "JRN 100 Introduction to Journalism (3 credits)",
+                "JRN 200 News Writing and Reporting (3 credits)",
+                "JRN 220 Visual Storytelling (3 credits)",
+                "JRN 300 Multimedia Journalism (3 credits)",
+                "JRN 310 Advanced Reporting (3 credits)",
+                "JRN 400 Media Law and Ethics (3 credits)",
+                "JRN 490 Senior Seminar in Journalism (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Public Relations (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "WRT 104 or 106 or equivalent (3 credits)",
+              "PRS 200 Introduction to Public Relations (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PRS 200 Introduction to Public Relations (3 credits)",
+                "PRS 210 Public Relations Writing (3 credits)",
+                "PRS 300 Public Relations Research (3 credits)",
+                "PRS 310 Public Relations Strategies (3 credits)",
+                "PRS 410 Crisis Communication (3 credits)",
+                "PRS 420 Case Studies in Public Relations (3 credits)",
+                "PRS 490 Public Relations Capstone (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Film Media (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "FLM 101 Introduction to Film Media (3 credits)",
+                "FLM 201 Film History I (3 credits)",
+                "FLM 202 Film History II (3 credits)",
+                "FLM 250 Introduction to Digital Filmmaking (3 credits)",
+                "FLM 350 Advanced Filmmaking (3 credits)",
+                "FLM 490 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Art (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ART 101 Drawing I (3 credits)",
+                "ART 103 Two-Dimensional Design (3 credits)",
+                "ART 104 Three-Dimensional Design (3 credits)",
+                "ART 207 Art History I (3 credits)",
+                "ART 208 Art History II (3 credits)",
+                "ART 490 Senior Project (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          }
         ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year Living and Learning Community (BLLC) in Adams Hall and Browning Hall, offering corridor-style rooms with community bathrooms, WiFi, and cable TV.",
+        "student_archetype": "Ambitious and globally-minded individuals interested in problem-solving, innovation, and leadership within the business world, seeking career-focused programming and networking opportunities.",
+        "strategic_fit_advice": "Suited for incoming first-year students pursuing business majors (including textile marketing, textiles, fashion merchandising and design, and business undecided) who will benefit from academic tutoring, club meetings, and career-related programming.",
+        "majors": [
+          {
+            "name": "Finance (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "ECN 201 Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)",
+                "FIN 301 Financial Management (3 credits)",
+                "FIN 310 Investments (3 credits)",
+                "FIN 450 Advanced Financial Management (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Median earnings for Finance graduates at URI are $50,030. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Accounting (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)",
+                "ACC 301 Intermediate Accounting I (3 credits)",
+                "ACC 302 Intermediate Accounting II (3 credits)",
+                "ACC 310 Cost Accounting (3 credits)",
+                "ACC 320 Federal Income Taxation I (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Median earnings for Accounting graduates at URI are $47,356. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Marketing (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)",
+                "MKT 301 Consumer Behavior (3 credits)",
+                "MKT 302 Marketing Research (3 credits)",
+                "MKT 401 Marketing Management (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Median earnings for Marketing graduates at URI are $42,261. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Supply Chain Management (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)",
+                "SCM 301 Principles of Supply Chain Management (3 credits)",
+                "SCM 302 Sourcing and Procurement (3 credits)",
+                "SCM 401 Supply Chain Analytics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Management (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)",
+                "MGT 301 Principles of Management (3 credits)",
+                "MGT 345 Human Resource Management (3 credits)",
+                "MGT 480 Strategic Management (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "General Business Administration (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Median earnings for Business Administration, Management and Operations graduates at URI are $50,450. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Global Business Management (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 201 Microeconomics (3 credits)",
+              "ECN 202 Macroeconomics (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits) or STA 307 Biostatistics (4 credits) or STA 308 Introductory Statistics (4 credits)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)",
+              "One 100-level foreign language course (3-4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MTH 141 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BUS 111 Introduction to Business (3 credits)",
+                "ACC 201 Introduction to Financial Accounting (3 credits)",
+                "ACC 202 Introduction to Managerial Accounting (3 credits)",
+                "ECN 201 Microeconomics (3 credits)",
+                "ECN 202 Macroeconomics (3 credits)",
+                "BAI 210 Business Analytics (3 credits)",
+                "BAI 310 Operations and Supply Chain Management (3 credits)",
+                "MGT 341 Organizational Behavior (3 credits)",
+                "MKT 201 Marketing Principles (3 credits)",
+                "IBP 301 Introduction to International Business (3 credits)",
+                "IBP 401 Global Business Strategy (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 cumulative GPA and 2.5 GPA in business courses required to declare and for graduation. Requires foreign language proficiency. Data source: URI 2025-2026 Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Feinstein College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year Living and Learning Community (CEPS LLC) located in Bressler Hall, providing double occupancy rooms with community bathrooms, WiFi, and cable TV. It includes access to an Education Maker Space.",
+        "student_archetype": "Aspiring educators committed to fostering curiosity, engaging and inspiring learners of all ages, and passionate about social justice and equitable educational practices.",
+        "strategic_fit_advice": "Ideal for first-year students with an education major who seek a supportive community to prepare for the complexities of the teaching profession, with opportunities for volunteering and academic support.",
+        "majors": [
+          {
+            "name": "Elementary Education (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDC 101 Introduction to Education (3 credits)",
+              "EDC 102 Diversity and Equity in Education (3 credits)",
+              "PSY 113 General Psychology (3 credits)",
+              "HDF 200 Life Span Development (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Minimum 2.75 cumulative GPA for admission to professional sequence. Passing scores on Praxis Core Academic Skills for Educators or equivalent. Interview process.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDC 101 Introduction to Education (3 credits)",
+                "EDC 102 Diversity and Equity in Education (3 credits)",
+                "EDC 310 Educational Psychology (3 credits)",
+                "EDC 312 Educational Measurement and Assessment (3 credits)",
+                "EDC 331 Teaching Reading in Elementary Schools (3 credits)",
+                "EDC 332 Language Arts in Elementary Schools (3 credits)",
+                "EDC 333 Teaching Mathematics in Elementary Schools (3 credits)",
+                "EDC 334 Teaching Science in Elementary Schools (3 credits)",
+                "EDC 335 Teaching Social Studies in Elementary Schools (3 credits)",
+                "EDC 410 Classroom Management (3 credits)",
+                "EDC 440 Student Teaching Seminar (3 credits)",
+                "EDC 441 Student Teaching in Elementary Education (12 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.75 cumulative GPA required for the professional education sequence. Students must complete a primary concentration in an academic discipline. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Secondary Education (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "EDC 101 Introduction to Education (3 credits)",
+              "EDC 102 Diversity and Equity in Education (3 credits)",
+              "PSY 113 General Psychology (3 credits)",
+              "HDF 200 Life Span Development (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Minimum 2.75 cumulative GPA for admission to professional sequence. Passing scores on Praxis Core Academic Skills for Educators or equivalent. Interview process.",
+            "admissions_pathway": "Pre-Education",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "EDC 101 Introduction to Education (3 credits)",
+                "EDC 102 Diversity and Equity in Education (3 credits)",
+                "EDC 310 Educational Psychology (3 credits)",
+                "EDC 312 Educational Measurement and Assessment (3 credits)",
+                "EDC 410 Classroom Management (3 credits)",
+                "EDC 440 Student Teaching Seminar (3 credits)",
+                "EDC 442 Student Teaching in Secondary Education (12 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Students must complete a major in an academic content area (e.g., English, History, Mathematics, Science). Minimum 2.75 cumulative GPA required for the professional education sequence. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Human Development and Family Science (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HDF 190 Introduction to Human Development and Family Studies (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HDF 190 Introduction to Human Development and Family Studies (3 credits)",
+                "HDF 200 Life Span Development (3 credits)",
+                "HDF 201 Research Methods in Human Development and Family Science (3 credits)",
+                "HDF 300 Family Relations (3 credits)",
+                "HDF 302 Child Development (3 credits)",
+                "HDF 304 Adolescent Development (3 credits)",
+                "HDF 306 Adult Development and Aging (3 credits)",
+                "HDF 490 Professional Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year Engineering Living and Learning Community (ELLC) located in Hillside Hall, offering double and triple occupancy rooms with air conditioning, WiFi, and cable TV.",
+        "student_archetype": "Analytical, problem-solvers, technically inclined, hands-on learners.",
+        "strategic_fit_advice": "Emphasize access to specialized resources, mentorship, and a strong cohort experience within the LLCs.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "EGR 105 Foundations of Engineering I (3 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "PHY 203/273 Elementary Physics I/Lab (4 credits)",
+              "EGR 106 Foundations of Engineering II (3 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "MTH 215 Applied Linear Algebra (3 credits)",
+              "MTH 250 Multivariable Calculus (3 credits)",
+              "PHY 204/274 Elementary Physics II/Lab (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "PHY 203 Elementary Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EGR 105 Foundations of Engineering I (3 credits)",
+                "EGR 106 Foundations of Engineering II (3 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "MCE 201 Engineering Graphics (3 credits)",
+                "MCE 202 Statics (3 credits)",
+                "MCE 262 Dynamics (3 credits)",
+                "MCE 301 Application of Mechanics in Design (3 credits)",
+                "MCE 302 Design of Machinery (3 credits)",
+                "MCE 313 Introduction to Mechanical Engineering Experimentation (3 credits)",
+                "MCE 341 Fundamentals of Thermodynamics (3 credits)",
+                "MCE 348 Heat and Mass Transfer (3 credits)",
+                "MCE 354 Fluid Mechanics (3 credits)",
+                "MCE 366 System Dynamics (3 credits)",
+                "MCE 480 Senior Design Project I (3 credits)",
+                "MCE 481 Senior Design Project II (3 credits)",
+                "EGR 316G Engineering Ethics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Carl-Ernst Rousseau (Professor and Department Chair, Mechanical, Industrial and Systems Engineering)",
+              "Dr. David Chelidze (Professor, Mechanical, Industrial and Systems Engineering)",
+              "Dr. Mohammad Faghri (Professor, Mechanical, Industrial and Systems Engineering)",
+              "Dr. Yang Lin (Assistant Professor, Mechanical Engineering)",
+              "Dr. Arun Shukla (Distinguished Engineering Professor, Mechanical, Industrial and Systems Engineering)"
+            ],
+            "notes": "A total of 120 credits is required to graduate. The program is accredited by ABET. Median earnings for Mechanical Engineering graduates at URI are $64,907. Data source: URI 2025-2026 Catalog, Department of Mechanical, Industrial and Systems Engineering curriculum page."
+          },
+          {
+            "name": "Computer Engineering (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "EGR 105 Foundations of Engineering I (3 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "PHY 203/273 Elementary Physics I/Lab (4 credits)",
+              "EGR 106 Foundations of Engineering II (3 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "MTH 215 Applied Linear Algebra (3 credits)",
+              "MTH 250 Multivariable Calculus (3 credits)",
+              "PHY 204/274 Elementary Physics II/Lab (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "PHY 203 Elementary Physics I",
+              "ELE 201 Circuit Theory I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EGR 105 Foundations of Engineering I (3 credits)",
+                "EGR 106 Foundations of Engineering II (3 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "ELE 201 Circuit Theory I (3 credits)",
+                "ELE 202 Circuit Theory II (3 credits)",
+                "ELE 205 Electrical and Computer Engineering Lab I (1 credit)",
+                "ELE 206 Electrical and Computer Engineering Lab II (1 credit)",
+                "ELE 303 Digital Systems Design (3 credits)",
+                "ELE 304 Microprocessor Systems (3 credits)",
+                "CSC 211 Data Structures and Algorithms (4 credits)",
+                "CSC 305 Computer Organization (4 credits)",
+                "ELE 481 Senior Design Project I (3 credits)",
+                "ELE 482 Senior Design Project II (3 credits)",
+                "EGR 316G Engineering Ethics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "A total of 120 credits is required to graduate. The program is accredited by ABET. Median earnings for Computer Engineering graduates at URI are $68,976. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Electrical Engineering (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "EGR 105 Foundations of Engineering I (3 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "PHY 203/273 Elementary Physics I/Lab (4 credits)",
+              "EGR 106 Foundations of Engineering II (3 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "MTH 215 Applied Linear Algebra (3 credits)",
+              "MTH 250 Multivariable Calculus (3 credits)",
+              "PHY 204/274 Elementary Physics II/Lab (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "PHY 203 Elementary Physics I",
+              "ELE 201 Circuit Theory I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EGR 105 Foundations of Engineering I (3 credits)",
+                "EGR 106 Foundations of Engineering II (3 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "ELE 201 Circuit Theory I (3 credits)",
+                "ELE 202 Circuit Theory II (3 credits)",
+                "ELE 205 Electrical and Computer Engineering Lab I (1 credit)",
+                "ELE 206 Electrical and Computer Engineering Lab II (1 credit)",
+                "ELE 309 Signals and Systems (3 credits)",
+                "ELE 313 Electromagnetics (3 credits)",
+                "ELE 314 Electronics I (3 credits)",
+                "ELE 481 Senior Design Project I (3 credits)",
+                "ELE 482 Senior Design Project II (3 credits)",
+                "EGR 316G Engineering Ethics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "A total of 120 credits is required to graduate. The program is accredited by ABET. Median earnings for Electrical, Electronics and Communications Engineering graduates at URI are $71,134. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Chemical Engineering (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "EGR 105 Foundations of Engineering I (3 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "PHY 203/273 Elementary Physics I/Lab (4 credits)",
+              "EGR 106 Foundations of Engineering II (3 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "MTH 215 Applied Linear Algebra (3 credits)",
+              "MTH 250 Multivariable Calculus (3 credits)",
+              "PHY 204/274 Elementary Physics II/Lab (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "CHM 112 General Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EGR 105 Foundations of Engineering I (3 credits)",
+                "EGR 106 Foundations of Engineering II (3 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "CHM 112 General Chemistry II (3 credits)",
+                "CHM 114 General Chemistry II Lab (1 credit)",
+                "CHM 227 Organic Chemistry I (3 credits)",
+                "CHM 228 Organic Chemistry I Lab (1 credit)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "CHE 212 Chemical Engineering Principles I (3 credits)",
+                "CHE 213 Chemical Engineering Principles II (3 credits)",
+                "CHE 313 Chemical Engineering Thermodynamics (3 credits)",
+                "CHE 314 Fluid Flow and Heat Transfer (3 credits)",
+                "CHE 315 Chemical Separations (3 credits)",
+                "CHE 413 Process Dynamics and Control (3 credits)",
+                "CHE 414 Chemical Reactor Design (3 credits)",
+                "CHE 481 Chemical Engineering Design I (3 credits)",
+                "CHE 482 Chemical Engineering Design II (3 credits)",
+                "EGR 316G Engineering Ethics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "A total of 120 credits is required to graduate. The program is accredited by ABET. Median earnings for Chemical Engineering graduates at URI are $66,167. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Biomedical Engineering (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "EGR 105 Foundations of Engineering I (3 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "PHY 203/273 Elementary Physics I/Lab (4 credits)",
+              "EGR 106 Foundations of Engineering II (3 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "MTH 215 Applied Linear Algebra (3 credits)",
+              "MTH 250 Multivariable Calculus (3 credits)",
+              "PHY 204/274 Elementary Physics II/Lab (4 credits)",
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "PHY 203 Elementary Physics I",
+              "BIO 101 Principles of Biology I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EGR 105 Foundations of Engineering I (3 credits)",
+                "EGR 106 Foundations of Engineering II (3 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "BIO 101 Principles of Biology I (3 credits)",
+                "BIO 103 Principles of Biology I Lab (1 credit)",
+                "BME 207 Biomedical Engineering Fundamentals (3 credits)",
+                "BME 208 Biomedical Engineering Analysis (3 credits)",
+                "BME 301 Biomechanics (3 credits)",
+                "BME 302 Bioinstrumentation (3 credits)",
+                "BME 305 Biomaterials (3 credits)",
+                "BME 481 Biomedical Engineering Design I (3 credits)",
+                "BME 482 Biomedical Engineering Design II (3 credits)",
+                "EGR 316G Engineering Ethics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "A total of 120 credits is required to graduate. The program is accredited by ABET. Median earnings for Biomedical/Medical Engineering graduates at URI are $61,791. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Civil Engineering (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "EGR 105 Foundations of Engineering I (3 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "PHY 203/273 Elementary Physics I/Lab (4 credits)",
+              "EGR 106 Foundations of Engineering II (3 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "MTH 215 Applied Linear Algebra (3 credits)",
+              "MTH 250 Multivariable Calculus (3 credits)",
+              "PHY 204/274 Elementary Physics II/Lab (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MTH 141 Calculus I",
+              "PHY 203 Elementary Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "EGR 105 Foundations of Engineering I (3 credits)",
+                "EGR 106 Foundations of Engineering II (3 credits)",
+                "MTH 141 Calculus I (4 credits)",
+                "MTH 142 Calculus II (4 credits)",
+                "MTH 215 Applied Linear Algebra (3 credits)",
+                "MTH 250 Multivariable Calculus (3 credits)",
+                "CHM 101 General Chemistry I (3 credits)",
+                "CHM 102 General Chemistry I Lab (1 credit)",
+                "PHY 203 Elementary Physics I (3 credits)",
+                "PHY 273 Elementary Physics I Lab (1 credit)",
+                "PHY 204 Elementary Physics II (3 credits)",
+                "PHY 274 Elementary Physics II Lab (1 credit)",
+                "CVE 206 Plane Surveying (3 credits)",
+                "CVE 220 Mechanics of Materials (3 credits)",
+                "CVE 304 Structural Analysis (3 credits)",
+                "CVE 334 Environmental Engineering (3 credits)",
+                "CVE 346 Soil Mechanics (3 credits)",
+                "CVE 370 Fluid Mechanics (3 credits)",
+                "CVE 405 Reinforced Concrete Design (3 credits)",
+                "CVE 481 Civil Engineering Design I (3 credits)",
+                "CVE 482 Civil Engineering Design II (3 credits)",
+                "EGR 316G Engineering Ethics (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "A total of 120 credits is required to graduate. The program is accredited by ABET. Median earnings for Civil Engineering graduates at URI are $59,773. Data source: URI 2025-2026 Catalog."
+          }
+        ]
+      },
+      {
+        "name": "College of the Environment and Life Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First-year Living and Learning Community (CELS LLC) in Ellery or Fayerweather Halls, featuring suite-style bathrooms (in Fayerweather) or semi-private communities on each floor (Ellery).",
+        "student_archetype": "Environmentally conscious, scientific, field-oriented, keen on research and conservation.",
+        "strategic_fit_advice": "Highlight connections to nature, sustainability efforts, and access to field research opportunities, encouraging an active, eco-conscious lifestyle.",
+        "majors": [
+          {
+            "name": "Marine Biology (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "BIO 102 Principles of Biology II (3 credits)",
+              "BIO 104 Principles of Biology II Lab (1 credit)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)",
+              "CHM 112 General Chemistry II (3 credits)",
+              "CHM 114 General Chemistry II Lab (1 credit)",
+              "MTH 141 Calculus I (4 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "PHY 203 Elementary Physics I (3 credits)",
+              "PHY 273 Elementary Physics I Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHM 112 General Chemistry II",
+              "MTH 142 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIO 101 Principles of Biology I (3 credits)",
+                "BIO 103 Principles of Biology I Lab (1 credit)",
+                "BIO 102 Principles of Biology II (3 credits)",
+                "BIO 104 Principles of Biology II Lab (1 credit)",
+                "CMB 201 Cell and Molecular Biology (4 credits)",
+                "BIO 352 Genetics (4 credits)",
+                "OCG 200 General Oceanography (3 credits)",
+                "OCG 201 General Oceanography Lab (1 credit)",
+                "BIO 302 Marine Biology (4 credits)",
+                "BIO 4xx (Marine Biology upper-level course - 3-4 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Niels-Viggo Hobbs (Associate Teaching Professor and Marine Biology Program Coordinator)"
+            ],
+            "notes": "Marine biology faculty are members of several departments and colleges, bringing diverse research interests. Data source: URI 2025-2026 Catalog, Biological Sciences faculty website."
+          },
+          {
+            "name": "Environmental Science and Management (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)",
+              "MTH 131 Applied Calculus I (3 credits) or MTH 141 Calculus I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENV 100 Introduction to Environmental Science (3 credits)",
+                "ENV 200 Environmental Issues (3 credits)",
+                "ENV 300 Environmental Policy and Law (3 credits)",
+                "NRS 212 Introduction to Environmental Statistics (3 credits)",
+                "NRS 300 Natural Resource Measurement and Analysis (4 credits)",
+                "ENV 498 Senior Capstone in Environmental Science and Management (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Animal and Veterinary Science (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AVS 101 Introduction to Animal Science (3 credits)",
+                "AVS 201 Animal Nutrition (3 credits)",
+                "AVS 202 Animal Physiology (3 credits)",
+                "AVS 301 Animal Breeding and Genetics (3 credits)",
+                "AVS 302 Animal Health and Disease (3 credits)",
+                "AVS 490 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Offers three tracks: Animal Management, Animal Science, or Pre-Veterinary. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Fisheries and Aquaculture (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "AFS 101 Introduction to Fisheries and Aquaculture (3 credits)",
+                "AFS 201 Fish Biology (3 credits)",
+                "AFS 301 Aquaculture Systems (3 credits)",
+                "AFS 302 Fisheries Science (3 credits)",
+                "AFS 490 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Sustainable Agriculture and Food Systems (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "SAF 100 Introduction to Sustainable Agriculture and Food Systems (3 credits)",
+                "SAF 200 Agroecology (3 credits)",
+                "SAF 201 Soil Science (3 credits)",
+                "SAF 300 Sustainable Food Systems (3 credits)",
+                "SAF 490 Senior Capstone in Sustainable Agriculture and Food Systems (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          }
+        ]
+      },
+      {
+        "name": "College of Health Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year Living and Learning Community (LLC residence halls not explicitly named, but offers an environment promoting personal growth and academic success).",
+        "student_archetype": "Aspiring healthcare professionals and individuals interested in promoting physical and mental well-being, seeking a supportive community for academic success and personal development.",
+        "strategic_fit_advice": "Incoming first-year students admitted with a College of Health Sciences major will benefit from a living environment that focuses on academic success and a smooth transition to college.",
+        "majors": [
+          {
+            "name": "Nursing (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 220/221 Anatomy & Physiology I/Lab (4 credits)",
+              "BIO 222/223 Anatomy & Physiology II/Lab (4 credits)",
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "MIC 211 General Microbiology (3 credits)",
+              "MIC 212 General Microbiology Lab (1 credit)",
+              "PSY 113 General Psychology (3 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits)",
+              "NUR 105 Introduction to Professional Nursing (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BIO 220 Anatomy & Physiology I",
+              "CHM 101 General Chemistry I",
+              "MIC 211 General Microbiology"
+            ],
+            "special_requirements": "Competitive admission to clinical major after prerequisite coursework. Minimum 3.0 GPA in science prerequisites and overall. Completion of a specific sequence of courses.",
+            "admissions_pathway": "Pre-Nursing",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "NUR 105 Introduction to Professional Nursing (3 credits)",
+                "NUR 203 Health Assessment and Clinical Decision Making I (3 credits)",
+                "NUR 204 Health Assessment and Clinical Decision Making I Lab (1 credit)",
+                "NUR 213 Foundations of Professional Nursing I (3 credits)",
+                "NUR 214 Foundations of Professional Nursing I Clinical (2 credits)",
+                "NUR 223 Health and Illness Concepts in Nursing I (3 credits)",
+                "NUR 224 Health and Illness Concepts in Nursing I Clinical (2 credits)",
+                "NUR 303 Health Assessment and Clinical Decision Making II (3 credits)",
+                "NUR 304 Health Assessment and Clinical Decision Making II Lab (1 credit)",
+                "NUR 313 Foundations of Professional Nursing II (3 credits)",
+                "NUR 314 Foundations of Professional Nursing II Clinical (2 credits)",
+                "NUR 323 Health and Illness Concepts in Nursing II (3 credits)",
+                "NUR 324 Health and Illness Concepts in Nursing II Clinical (2 credits)",
+                "NUR 403 Population Focused Nursing (3 credits)",
+                "NUR 404 Population Focused Nursing Clinical (2 credits)",
+                "NUR 413 Leadership and Management in Nursing (3 credits)",
+                "NUR 414 Leadership and Management in Nursing Clinical (2 credits)",
+                "NUR 423 Transition to Professional Practice (3 credits)",
+                "NUR 424 Transition to Professional Practice Clinical (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [
+              "Dr. Amy D'Agata (Associate Professor, College of Nursing, Neonatal intensive care research)",
+              "Dr. Erica Liebermann (Assistant Professor, College of Nursing, Adult/Women's health nurse practitioner and clinician scientist)",
+              "Dr. Susan DeSanto-Madeya (Interim Associate Dean, College of Nursing)",
+              "Dr. Danny G. Willis (Dean, College of Nursing)"
+            ],
+            "notes": "Admission to the clinical major is competitive and requires a strong GPA in prerequisite courses. BSN program is accredited. Median earnings for Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing graduates at URI are $68,484. Data source: URI 2025-2026 Catalog, College of Nursing faculty website."
+          },
+          {
+            "name": "Kinesiology (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 220/221 Anatomy & Physiology I/Lab (4 credits)",
+              "BIO 222/223 Anatomy & Physiology II/Lab (4 credits)",
+              "CHM 103 General Chemistry (3 credits)",
+              "PSY 113 General Psychology (3 credits)",
+              "MTH 101 or 103 or 111 or 131 (College-level Math)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "BIO 220 Anatomy & Physiology I",
+              "CHM 103 General Chemistry"
+            ],
+            "special_requirements": "Early Contingent Physical Therapy track requires a 3.3 GPA at the end of freshman year and 3.4 GPA at the end of sophomore year, plus 30 hours of observation in a PT setting.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "URI 101 Planning for Academic Success (1 credit)",
+                "BIO 220/221 Anatomy & Physiology I/Lab (4 credits)",
+                "BIO 222/223 Anatomy & Physiology II/Lab (4 credits)",
+                "CHM 103 General Chemistry (3 credits)",
+                "KIN 275 Introduction to Exercise Science (3 credits)",
+                "KIN 300 Exercise Physiology (3 credits)",
+                "KIN 301 Exercise Physiology Lab (1 credit)",
+                "KIN 320 Resistance Training (3 credits)",
+                "KIN 325 Exercise Testing & Prescription (3 credits)",
+                "KIN 370 Kinesiology (3 credits)",
+                "KIN 381 Physical Activity Behavior (3 credits)",
+                "KIN 390 Seminar (2 credits)",
+                "KIN 484 Internship (12 credits)",
+                "One Statistics course (PSY 200, STA 220, STA 307, or STA 308) (3-4 credits)",
+                "One Psychology course (PSY 232, 235, 254, or 255) (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [],
+            "notes": "Minimum 2.5 GPA required for the internship. Students with a GPA below 2.5 must take 12 additional credits of KIN or health-related courses. Data source: URI 2025-2026 Catalog, Department of Kinesiology curriculum page."
+          },
+          {
+            "name": "Health Sciences (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "CHM 101 General Chemistry I (3 credits)",
+              "CHM 102 General Chemistry I Lab (1 credit)",
+              "PSY 113 General Psychology (3 credits)",
+              "SOC 100 Introduction to Sociological Perspectives (3 credits)",
+              "MTH 101 or 103 or 111 or 131 (College-level Math)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HSC 100 Introduction to Health Sciences (3 credits)",
+                "HSC 200 Medical Terminology (3 credits)",
+                "HSC 210 Public Health (3 credits)",
+                "HSC 300 Health Care Systems (3 credits)",
+                "HSC 305 Health Research Methods (3 credits)",
+                "HSC 480 Health Sciences Capstone (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Communicative Disorders (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 113 General Psychology (3 credits)",
+              "MTH 101 or 103 or 111 or 131 (College-level Math)",
+              "PHY 109 The Physics of Sound and Hearing (3 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CMD 101 Introduction to Communicative Disorders (3 credits)",
+                "CMD 200 Phonetics (3 credits)",
+                "CMD 201 Speech and Language Development (3 credits)",
+                "CMD 203 Anatomy and Physiology of the Speech and Hearing Mechanisms (3 credits)",
+                "CMD 301 Speech Science (3 credits)",
+                "CMD 302 Audiology (3 credits)",
+                "CMD 375 Introduction to Clinical Practice (3 credits)",
+                "CMD 495 Senior Seminar (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog. Median earnings for Communication Disorders Sciences and Services graduates at URI are $19,717."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year Living and Learning Community in Hillside Hall, offering double and triple occupancy rooms with air conditioning, WiFi, and cable TV.",
+        "student_archetype": "Compassionate and dedicated individuals committed to patient care, research, and leadership in healthcare, seeking unique clinical experiences and cross-discipline work.",
+        "strategic_fit_advice": "Highly recommended for first-year nursing majors who will gain from programming such as simulation learning, tutoring, access to anatomy models, and academic boot camps.",
+        "majors": []
+      },
+      {
+        "name": "College of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First-year Living and Learning Community in Barlow Hall, a corridor-style residence hall encouraging social interaction, with amenities like 3D printing, molecular modeling access, and yoga classes.",
+        "student_archetype": "Science-oriented students with an interest in patient care and pharmaceutical research, who value a close-knit community and diverse career paths in pharmacy.",
+        "strategic_fit_advice": "Ideal for incoming first-year students admitted with a Pharm.D. or B.S.P.S. major, who will benefit from specialized academic support, hands-on learning opportunities, and a strong sense of community.",
+        "majors": [
+          {
+            "name": "Pharmaceutical Sciences (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "MTH 142 Calculus II (4 credits)",
+              "BIO 101 Principles of Biology I (3 credits)",
+              "BIO 103 Principles of Biology I Lab (1 credit)",
+              "PHY 203 Elementary Physics I (3 credits)",
+              "PHY 273 Elementary Physics I Lab (1 credit)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHM 112 General Chemistry II",
+              "MTH 142 Calculus II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BPS 105 Introduction to Pharmaceutical Sciences (3 credits)",
+                "BPS 201 Pharmaceutical Calculations (3 credits)",
+                "BPS 205 Dosage Forms and Drug Delivery Systems (3 credits)",
+                "BPS 301 Principles of Pharmacology (3 credits)",
+                "BPS 302 Pharmacokinetics (3 credits)",
+                "BPS 310 Medicinal Chemistry I (3 credits)",
+                "BPS 311 Medicinal Chemistry II (3 credits)",
+                "BPS 401 Drug Discovery and Development (3 credits)",
+                "BPS 491 Senior Seminar I (1 credit)",
+                "BPS 492 Senior Seminar II (1 credit)",
+                "CHM 227 Organic Chemistry I (3 credits)",
+                "CHM 228 Organic Chemistry I Lab (1 credit)",
+                "CHM 226 Organic Chemistry II (3 credits)",
+                "CHM 229 Organic Chemistry II Lab (1 credit)",
+                "BIO 220/221 Anatomy & Physiology I/Lab (4 credits)",
+                "BIO 222/223 Anatomy & Physiology II/Lab (4 credits)",
+                "MIC 211 General Microbiology (3 credits)",
+                "MIC 212 General Microbiology Lab (1 credit)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Students interested in the Pharm.D. program should consult with an advisor regarding specific prerequisite coursework. Data source: URI 2025-2026 Catalog. Median earnings for Pharmacy, Pharmaceutical Sciences, and Administration graduates (First Professional Degree) at URI are $112,800."
+          },
+          {
+            "name": "Doctor of Pharmacy (Pharm.D.)",
+            "degree_type": "Pharm.D.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 101/102 General Chemistry I/Lab (4 credits)",
+              "CHM 112/114 General Chemistry II/Lab (4 credits)",
+              "CHM 227/228 Organic Chemistry I/Lab (4 credits)",
+              "CHM 226/229 Organic Chemistry II/Lab (4 credits)",
+              "BIO 101/103 Principles of Biology I/Lab (4 credits)",
+              "BIO 102/104 Principles of Biology II/Lab (4 credits)",
+              "BIO 220/221 Anatomy & Physiology I/Lab (4 credits)",
+              "BIO 222/223 Anatomy & Physiology II/Lab (4 credits)",
+              "MIC 211/212 General Microbiology/Lab (4 credits)",
+              "MTH 141 Calculus I (4 credits)",
+              "STA 220 Statistics for Health Sciences (3 credits)",
+              "ECN 201 Microeconomics (3 credits)",
+              "PSY 113 General Psychology (3 credits)",
+              "PSC 113 Introduction to American Politics (4 credits)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHM 112 General Chemistry II",
+              "MTH 141 Calculus I",
+              "BIO 220 Anatomy & Physiology I"
+            ],
+            "special_requirements": "Competitive admissions process, including PCAT exam, interview, and strong academic record. Pre-pharmacy curriculum typically takes two years.",
+            "admissions_pathway": "Direct Entry (High School) / Transfer (College)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 145,
+              "major_units": 105
+            },
+            "notable_professors": [],
+            "notes": "The Pharm.D. is a professional doctorate program. Students can enter directly from high school (0-6 program) or transfer after completing prerequisite coursework. A minimum of 2.5 GPA in prerequisite coursework is required. The curriculum involves professional courses beyond the typical undergraduate structure. Data source: URI 2025-2026 Catalog."
+          }
+        ]
+      },
+      {
+        "name": "Harrington School of Communication and Media",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First-year Living and Learning Community in Butterfield Hall, a corridor-style building with a dining hall, student lounge, WiFi, and cable TV. Beyond living spaces, the school has modern, high-tech learning spaces in Ranger Hall, including a broadcast studio, editing suites, recording studio, film screening room, and social media lab.",
+        "student_archetype": "Creative and dynamic communicators, interested in multimedia journalism, corporate communications, film production, or digital and social media, seeking hands-on experience and a strong connection to faculty and industry.",
+        "strategic_fit_advice": "Highly recommended for first-year students with a Harrington School major who desire practical experience, access to state-of-the-art facilities, and opportunities for career and internship advising, digital media workshops, and exclusive trips.",
+        "majors": [
+          {
+            "name": "Sports Media and Communication (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COM 100 Communication Fundamentals (3 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COM 100 Communication Fundamentals (3 credits)",
+                "SPM 101 Introduction to Sports Media and Communication (3 credits)",
+                "SPM 200 Sports Reporting and Writing (3 credits)",
+                "SPM 300 Sports Public Relations (3 credits)",
+                "SPM 310 Sports Broadcasting (3 credits)",
+                "SPM 490 Senior Seminar in Sports Media and Communication (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Interdisciplinary major drawing on various departments. Data source: URI 2025-2026 Catalog."
+          },
+          {
+            "name": "Digital Media and Design (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "DMD 101 Introduction to Digital Media (3 credits)",
+                "DMD 200 Digital Storytelling (3 credits)",
+                "DMD 210 Web Design I (3 credits)",
+                "DMD 300 Interactive Media (3 credits)",
+                "DMD 310 Motion Graphics (3 credits)",
+                "DMD 490 Senior Project in Digital Media (3 credits)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: URI 2025-2026 Catalog."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Computer Science Minor",
+      "Cyber Security Minor",
+      "Strength and Conditioning Certificate",
+      "Human Resources Certificate",
+      "Finance and Technology (FinTech) Certificate",
+      "Econometrics and Data Analysis Certificate",
+      "Early Childhood Care and Education Accelerated Undergraduate Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment; students agree to enroll at URI if admitted and withdraw applications from other colleges. Priority FAFSA filing deadline is January 15."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Non-binding; students may apply to multiple colleges. This is also the priority scholarship deadline for first-year students."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "Decisions are typically made by April 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "Target Program": "Nursing",
+        "Requirement Type": "Essays",
+        "Deadline": null,
+        "Details": "A statement of 250 words or fewer explaining the choice of major.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Pharm.D. (Pharmacy)",
+        "Requirement Type": "Essays",
+        "Deadline": null,
+        "Details": "A statement of 250 words or fewer explaining the choice of major. Additionally, Pharmacy applicants are required to provide two letters of recommendation.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Honors Program",
+        "Requirement Type": "Essays",
+        "Deadline": null,
+        "Details": "An essay of 250 words proposing a theme for the Honors Colloquium. This essay should show a personal connection, why other students would care about it, and why the topic matters in the world now.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Talent Development Program",
+        "Requirement Type": "Essays",
+        "Deadline": null,
+        "Details": "A statement of 500 words or fewer explaining aspects of the applicant's lived experience that make them an ideal candidate for the program.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Music (Undergraduate Majors, Minors, and Scholarship Consideration)",
+        "Requirement Type": "Audition",
+        "Deadline": "December 6, 2025 (for scholarship eligibility), January 31, 2026 (for scholarship eligibility), February 21, 2026 (for scholarship eligibility), March 14, 2026 (non-scholarship).",
+        "Details": "Students planning to major, minor, or seek a scholarship in music are required to complete a performance audition in their principal performing area and a placement theory examination. Admission to the music program is contingent upon a successful audition and acceptance to the University.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Music (Master of Music - Composition Option)",
+        "Requirement Type": "Portfolio",
+        "Deadline": null,
+        "Details": "A portfolio of original compositions is required.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Music (Graduate Assistantships)",
+        "Requirement Type": "Essays",
+        "Deadline": "February 1 (annually)",
+        "Details": "Candidates should send a resume along with a letter of interest/request.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      },
+      {
+        "Target Program": "Landscape Architecture (Upper-Division)",
+        "Requirement Type": "Portfolio, Essays",
+        "Deadline": null,
+        "Details": "Admission to the upper-division (junior) design sequence requires submission of a portfolio showcasing lower-division work, alongside an academic transcript and a written essay. This is not an initial first-year admission requirement.",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Class rank",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Alumni/ae relationship",
+        "Geographical residence",
+        "State residency",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The University of Rhode Island emphasizes a holistic review process that evaluates student potential. They have a strong commitment to supporting first-generation college students through programs like Rhody F1rst, which provides peer support, mentorship, and advocacy. Additionally, the Talent Development Program offers special admission to students of color and those from disadvantaged backgrounds, reflecting a legacy of commitment to diversity and access."
+    },
+    "essay_prompts": []
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on highly competitive fields like Nursing, Engineering, or Pharmacy, as these have additional requirements and higher standards for admission.",
+      "Consider applying as 'undeclared' through the University College for Academic Success if uncertain about a major, as it provides advising and resources to explore options and switch majors.",
+      "Research major-specific admission requirements and competitiveness before applying, especially for programs like Nursing, Engineering, Music, and Pharmacy, which have specific academic prerequisites (e.g., strong math and science grades) and may encourage early application.",
+      "Be aware that some majors, such as Nursing and Engineering, have lower acceptance rates, and applicants not admitted to these competitive programs may be considered for other majors on a space-available basis."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate General Education (GE) Requirements: Students can compare the general education requirements across different colleges to see how they align with their academic interests and preferences, rather than solely focusing on the overall prestige of the university or specific college.",
+      "Assess Housing Quality and Availability by College/Program: While housing might be university-wide, specific living-learning communities or dedicated housing options could be affiliated with certain colleges or academic programs. Prospective students might consider the quality and type of housing available that best supports their college choice.",
+      "Examine 4-Year Graduation Rates by College/Program: Analyzing the graduation rates specific to each college or major can provide insight into the program's effectiveness and student support, helping students make informed decisions about where they are most likely to succeed within four years.",
+      "Compare Student-Faculty Ratios and Class Sizes within Departments: Although URI has a university-wide student-faculty ratio of 15:1 and a significant percentage of classes with fewer than 20 students, these figures can vary between individual colleges and departments. Investigating these numbers for specific programs can indicate the level of individualized attention students might receive.",
+      "Investigate Career Services and Outcomes Specific to Each College: Different colleges within URI may have specialized career services, internship opportunities, and post-graduation employment rates relevant to their specific fields. Researching these college-specific outcomes can be a valuable ranking tactic."
+    ],
+    "alternate_major_strategy": "When applying to the University of Rhode Island (URI), strategic consideration of alternate majors can be beneficial, particularly for highly competitive programs. URI also has a structured process for changing majors after admission, though transferring into certain impacted fields remains competitive.\n\n### Alternate Major Strategy During Admission\n\nFor applicants to highly competitive programs such as Engineering, Nursing, and the Doctor of Pharmacy (Pharm.D.) program, URI's admission process allows for flexibility. If an applicant is not admissible to their first-choice competitive major, they may still have the opportunity to be considered for admission to another major on a space-available basis. This suggests that indicating a backup major, or being open to an alternative, can increase an applicant's chances of admission to the university, even if not to their initial top-choice program.\n\n### Changing Major After Admission (Internal Transfer)\n\nThe University of Rhode Island has a \"streamlined\" process for students looking to change their major after admission. Statistics show that approximately 50% of first and second-year students at URI change their majors, often between the fall and spring semesters.\n\nThe general process for changing majors involves several steps:\n1.  **Log in to Starfish:** Students use their URI single sign-on credentials to access the Starfish system.\n2.  **Find an Advisor:** Through Starfish, students can locate an advisor for their desired new major. If unsure, they can use the \"Discuss Change of Major/Minor\" service.\n3.  **Schedule and Attend an Appointment:** Students schedule a meeting with the advisor for the new major, noting their interest in switching majors in the comment box.\n4.  **Complete Change of Major Form:** During the meeting, the advisor will guide the student through the next steps, including filling out the necessary change of major form.\n\nFor first and second-year students, the University College for Academic Success (UCAS) plays a key role in guiding them through this process. It is important for students to discuss how a major change might affect their financial aid, scholarships, and projected graduation year.\n\n### Internal Transfer Difficulty for Impacted Majors\n\nWhile the process for changing majors is generally accessible, transferring into certain \"impacted\" or highly competitive majors, such as Nursing, can be challenging. Admission to these programs is not guaranteed, even for students already admitted to URI with a different major, due to limited capacity and competitive selection processes. Many students who switch majors do so due to academic struggles, particularly in courses heavy in science, technology, and math, such as those found in engineering and nursing programs. This highlights that while a change of major is possible, strong academic performance is often crucial for successful internal transfer into demanding fields."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 15148.0,
+        "total_coa": 38104.0,
+        "housing": 16128.0
+      },
+      "out_of_state": {
+        "tuition": 36070.0,
+        "total_coa": 59776.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 11857.0,
+    "average_merit_aid": 6120.0,
+    "percent_receiving_aid": 71.0,
+    "meets_full_need": false,
+    "notes": "Most financial aid is awarded on the basis of demonstrated financial need. The university meets 55% of demonstrated need on average.",
+    "scholarships": [
+      {
+        "name": "Thomas M. Ryan Scholars Program",
+        "type": "Merit",
+        "amount": "Full scholarship (tuition, fees, housing, food, books) and one Global Winter Travel J-Term experience for four years",
+        "deadline": "Priority consideration by December 1 (for admission application)",
+        "benefits": "Access to Honors Program and Colloquium, Leadership Institute, special advising team, priority course registration, yearly donor retreat, special university events.",
+        "application_method": "Automatic Consideration (selected from initial application, then campus visits and interviews)"
+      },
+      {
+        "name": "Alfred J. Verrecchia Business Scholars Program",
+        "type": "Merit",
+        "amount": "Full scholarship (tuition, fees, housing, food, books) and one Global Winter Travel J-Term experience for four years",
+        "deadline": "Priority consideration by December 1 (for admission application)",
+        "benefits": "Access to Honors Program and Colloquium, Leadership Institute, alumni business mentor, personal career coach, yearly donor retreat and roundtable CEO meeting, priority course registration, special university events. (For business majors).",
+        "application_method": "Automatic Consideration (selected from initial application, then campus visits and interviews)"
+      },
+      {
+        "name": "Helen Izzi Schilling '54 and Francis Schilling Scholars Program",
+        "type": "Merit",
+        "amount": "Up to $20,000 annually on top of University and Presidential Merit Scholarships, plus $1,000 yearly book stipend and $3,000 Winter J-Term or summer global travel award",
+        "deadline": "Priority consideration by December 1 (for admission application)",
+        "benefits": "Mentors, advising, and leadership development. (Specifically for high-achieving STEM students).",
+        "application_method": "Automatic Consideration (based on credentials at time of application)"
+      },
+      {
+        "name": "University and Presidential Merit Scholarships",
+        "type": "Merit",
+        "amount": "$2,000-$17,000 annually ($12,000-$68,000 total renewable value over four years, six for PharmD)",
+        "deadline": "Priority consideration by December 1 (for admission application)",
+        "benefits": "Renewable each semester with continuous full-time enrollment and minimum 2.8 GPA. Eligibility based on high school academic performance (minimum 3.2 GPA).",
+        "application_method": "Automatic Consideration (no separate application required)"
+      },
+      {
+        "name": "International Merit Scholarship",
+        "type": "Merit",
+        "amount": "$8,750-$15,000 annually",
+        "deadline": "Automatic consideration with completed Common Application",
+        "benefits": "Partial tuition scholarship, renewable each year if minimum required GPA is maintained. Does not cover room and board or miscellaneous fees.",
+        "application_method": "Automatic Consideration (by submitting a completed Common Application)"
+      },
+      {
+        "name": "URI Narragansett Undergraduate Scholarship",
+        "type": "Merit/Specific Ancestry",
+        "amount": "Full, in-state tuition and fees for up to four years",
+        "deadline": "Automatic consideration upon acceptance",
+        "benefits": "Covers full in-state tuition and fees.",
+        "application_method": "Automatic Consideration (for students of Narragansett ancestry accepted to a URI undergraduate program)"
+      },
+      {
+        "name": "Federal Pell Grant / Supplemental Educational Opportunity Grant (SEOG)",
+        "type": "Need",
+        "amount": "Varies based on Student Aid Index (SAI)",
+        "deadline": "FAFSA deadline (priority financial aid filing date is March 1 for U.S. citizens living abroad)",
+        "benefits": "Federally funded grants for students demonstrating financial need. Pell Grant disbursement based on enrollment intensity. SEOG for exceptional financial need, prioritizing Pell Grant recipients.",
+        "application_method": "FAFSA"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_rhode_island_logo.png"
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "exceptions": [
+        "AP Research and AP Seminar: A score of 3 grants 3 credits, but there is no direct course equivalent.",
+        "AP Chinese Language and Culture, AP Spanish Language and Culture, and AP Spanish Literature and Culture: Higher scores may grant credit for different courses or more credits.",
+        "AP Computer Science A and Principles: A score of 3 grants credit for CSC 106, while a score of 4 or 5 allows for direct placement out of CSC106 without an exemption exam."
+      ],
+      "usage": "AP credits are applied toward the total credits required for a student's baccalaureate degree and can fulfill or partially satisfy course requirements, including general education requirements."
+    },
+    "ib_policy": {
+      "general_rule": "The University of Rhode Island (URI) grants college credit for International Baccalaureate (IB) Higher Level (HL) exams with scores of 5, 6, or 7. Students must submit official scores to the Office of Admission to receive credit. URI does not award credit for Standard Level (SL) exams.\n\nThere is no indication of additional benefits or a \"diploma bonus\" for students who complete the full IB Diploma. Credit is awarded based on individual Higher Level exam scores.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "Transfer Evaluation System (TES) Public View"
+      ],
+      "restrictions": "A minimum grade of C (2.0) is required for courses to be eligible for transfer credit. The University of Rhode Island accepts no more than 60 credits from community colleges or other associate degree-granting institutions. Transfer students generally must earn at least one-fourth of the credits required for graduation in-residence at URI (typically at least 30 credits). GPA requirements vary based on the number of attempted transferable credits: a minimum 2.8 GPA for fewer than 24 credits, and a minimum 2.5 GPA for at least 24 credits. Some competitive majors may have additional coursework and/or higher GPA requirements. Courses cannot duplicate those already earned or transferred to URI. Pass/Fail or Satisfactory/Unsatisfactory courses are generally not transferable unless an official letter grade is recorded, though exceptions exist. All students planning to transfer credits must complete a 'Prior Approval for Off-Campus-Study' form. College-level credit earned at CCRI or RIC with a grade of D, D+, or C- will transfer as free elective credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, including honors and AP courses",
+      "Authentic essays that show self-reflection, especially important for competitive majors like nursing and pharmacy",
+      "Meaningful extracurricular involvement, with students actively participating in a variety of clubs and activities",
+      "Strong recommendations, as they are a required component of the application"
+    ],
+    "common_activities": [
+      "Involvement in Student Clubs and Organizations: With over 150 student clubs and organizations, admitted students often participate in groups ranging from academic and special interest clubs (e.g., sustainability, shark club, gaming, information security) to cultural and recreational groups (e.g., anime, slam poetry, hip hop dance, alpine racing).",
+      "Leadership Programs: Many students get involved in leadership development opportunities offered on campus, often integrated with student organizations and service initiatives.",
+      "Community Service and Volunteering: The university emphasizes opportunities for students to engage in service and volunteering, which allows them to develop new skills and contribute to the community.",
+      "Varsity Athletics and Recreation: Participation in one of the 21 NCAA Div III men's and women's varsity athletics programs or other recreational sports is a common way for students to get involved and build social connections.",
+      "Greek Life: Joining fraternities and sororities is another popular avenue for admitted students, offering benefits such as leadership, scholarship, service, and social engagement.",
+      "Arts and Culture: Involvement in music, arts, and cultural groups, such as those related to slam poetry or hip hop dance, also provides avenues for student engagement."
+    ],
+    "essay_tips": [
+      "Be Specific About \"Why This Major/Program\" and URI: For \"Why This Major\" essays (like Nursing or PharmD), articulate your genuine passion for the field and how your experiences have shaped this decision. Admissions officers want to see your connection to the specific major and an understanding of what a career in that field entails. Crucially, connect your interests to *specific* aspects of URI's programs, faculty, projects, or campus culture, rather than listing general statistics or prestige. Mentioning a visit or a particular connection you've had with an aspect of the school can make your essay stand out.",
+      "Show, Don't Just Tell, Your Experiences and Resilience: Instead of making vague statements (e.g., \"I want to help people\"), use concrete examples and narratives to demonstrate your commitment, growth, and how you've overcome challenges. For instance, in the Talent Development essay, highlight aspects of your lived experience that make you an ideal candidate and show how you've demonstrated resilience.",
+      "Avoid Common Cliches and Generic Statements: Steer clear of overused topics like \"loving to learn\" or focusing solely on job stability/salary. For majors, don't emphasize the prestige of the profession; instead, demonstrate a genuine passion. In general, avoid overly political, religious, or dramatic statements, and don't make excuses for academic shortcomings.",
+      "Connect Your Past Experiences to Future Goals at URI: Clearly explain how your academic, personal, and professional experiences have led you to this point and how the specific URI program will help you achieve your aspirations. Discuss the type of work you intend to pursue and how the degree will help you realize those career goals. Mention specific courses you hope to take or faculty you'd like to work with if applicable."
+    ],
+    "red_flags": [
+      "Grade decline senior year. The University of Rhode Island considers your senior year course selection and advises applicants to continue taking challenging courses. A significant drop in grades during your final year of high school could negatively impact your application.",
+      "Generic essays that could apply anywhere. Your essay is a factor in admission and scholarship decisions. Submitting an essay that contains spelling and grammar errors, or one that isn't tailored to URI specifically, can make a poor impression.",
+      "Listing activities without depth or impact. While involvement and leadership in school and community are considered, merely listing extracurriculars without articulating what you learned or the impact you made can be a mistake.",
+      "Poor recommendation letters from teachers who don't know you well. Letters of recommendation are a component of the application that URI considers. Weak recommendations, often from teachers who don't know you well enough to highlight your strengths effectively, can be a red flag.",
+      "Skipping over application requirements or submitting incomplete documents. Failing to thoroughly read and adhere to all application requirements or submitting an incomplete application can lead to it being overlooked."
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Rhode Island fosters a vibrant community with many students appreciating the supportive professors and the diverse range of majors available. The campus is described as beautiful and walkable, offering numerous clubs, sports, and organizations for engagement. While Greek life is a part of the social scene, students can easily find activities and connections even without affiliation.",
+      "transportation_impact": "The University of Rhode Island campus is walkable, and a shuttle service, the Rhody Shuttle, is available for convenient movement around campus. For off-campus transportation, RIPTA (Rhode Island Public Transit Authority) buses provide service from campus, and the Kingston Amtrak Station is also located nearby.",
+      "research_impact": "The University of Rhode Island offers strong undergraduate research opportunities across various disciplines, with programs such as Undergraduate Research in Science and Engineering (URISE), Energy Fellows, Summer Undergraduate Research Fellowship Opportunities (SURFO), and initiatives supporting biomedical and marine science research. The university actively cultivates industry partnerships through its College of Engineering, the VentureWell Ocean Enterprise Accelerator, and the URI Research Foundation, facilitating collaborations, sponsored research, and connecting students with businesses for internships and career opportunities."
+    },
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Rhode Island has a moderately selective admissions process, with an acceptance rate around 72-77% in recent years, though showing a slight downward trend indicating increasing competitiveness.",
+        "implication": "Applicants should aim for SAT scores in the 1030-1270 range or ACT scores of 26-31, and strong B to A grades (GPA 3.1-3.8) to be competitive. Applying Early Action or Early Decision may also offer an advantage."
+      },
+      {
+        "category": "Academic",
+        "insight": "URI offers a wide array of over 90 majors and distinctive interdisciplinary international programs, such as International Engineering, Chinese Flagship, and International Business, alongside highly regarded programs in marine biology, oceanography, engineering, and pharmacy.",
+        "implication": "Prospective students should highlight their specific academic interests and how they align with URI's diverse offerings, especially if interested in unique interdisciplinary or international programs. Demonstrating a strong interest in fields like marine sciences or engineering can be particularly beneficial."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of Rhode Island is characterized by a warm, inviting, and community-oriented campus culture, offering a balanced student life with numerous social activities, clubs, sports, and a prominent Greek life scene.",
+        "implication": "Applicants should emphasize their ability to contribute positively to a vibrant campus community, showcasing involvement in extracurriculars, teamwork, and a desire for an engaging social and academic environment in their application and essays."
+      }
+    ],
+    "ranking_tactics": [
+      "Evaluate General Education (GE) Requirements: Students can compare the general education requirements across different colleges to see how they align with their academic interests and preferences, rather than solely focusing on the overall prestige of the university or specific college.",
+      "Assess Housing Quality and Availability by College/Program: While housing might be university-wide, specific living-learning communities or dedicated housing options could be affiliated with certain colleges or academic programs. Prospective students might consider the quality and type of housing available that best supports their college choice.",
+      "Examine 4-Year Graduation Rates by College/Program: Analyzing the graduation rates specific to each college or major can provide insight into the program's effectiveness and student support, helping students make informed decisions about where they are most likely to succeed within four years.",
+      "Compare Student-Faculty Ratios and Class Sizes within Departments: Although URI has a university-wide student-faculty ratio of 15:1 and a significant percentage of classes with fewer than 20 students, these figures can vary between individual colleges and departments. Investigating these numbers for specific programs can indicate the level of individualized attention students might receive.",
+      "Investigate Career Services and Outcomes Specific to Each College: Different colleges within URI may have specialized career services, internship opportunities, and post-graduation employment rates relevant to their specific fields. Researching these college-specific outcomes can be a valuable ranking tactic."
+    ],
+    "alternate_major_strategy": "When applying to the University of Rhode Island (URI), strategic consideration of alternate majors can be beneficial, particularly for highly competitive programs. URI also has a structured process for changing majors after admission, though transferring into certain impacted fields remains competitive.\n\n### Alternate Major Strategy During Admission\n\nFor applicants to highly competitive programs such as Engineering, Nursing, and the Doctor of Pharmacy (Pharm.D.) program, URI's admission process allows for flexibility. If an applicant is not admissible to their first-choice competitive major, they may still have the opportunity to be considered for admission to another major on a space-available basis. This suggests that indicating a backup major, or being open to an alternative, can increase an applicant's chances of admission to the university, even if not to their initial top-choice program.\n\n### Changing Major After Admission (Internal Transfer)\n\nThe University of Rhode Island has a \"streamlined\" process for students looking to change their major after admission. Statistics show that approximately 50% of first and second-year students at URI change their majors, often between the fall and spring semesters.\n\nThe general process for changing majors involves several steps:\n1.  **Log in to Starfish:** Students use their URI single sign-on credentials to access the Starfish system.\n2.  **Find an Advisor:** Through Starfish, students can locate an advisor for their desired new major. If unsure, they can use the \"Discuss Change of Major/Minor\" service.\n3.  **Schedule and Attend an Appointment:** Students schedule a meeting with the advisor for the new major, noting their interest in switching majors in the comment box.\n4.  **Complete Change of Major Form:** During the meeting, the advisor will guide the student through the next steps, including filling out the necessary change of major form.\n\nFor first and second-year students, the University College for Academic Success (UCAS) plays a key role in guiding them through this process. It is important for students to discuss how a major change might affect their financial aid, scholarships, and projected graduation year.\n\n### Internal Transfer Difficulty for Impacted Majors\n\nWhile the process for changing majors is generally accessible, transferring into certain \"impacted\" or highly competitive majors, such as Nursing, can be challenging. Admission to these programs is not guaranteed, even for students already admitted to URI with a different major, due to limited capacity and competitive selection processes. Many students who switch majors do so due to academic struggles, particularly in courses heavy in science, technology, and math, such as those found in engineering and nursing programs. This highlights that while a change of major is possible, strong academic performance is often crucial for successful internal transfer into demanding fields.",
+    "housing_info": [
+      {
+        "college_name": "College of Arts and Sciences (General)",
+        "housing_profile": "Primarily first-year Living and Learning Communities (LLCs) in corridor-style dorms, with academic and social programming designed for smooth transition to college life. Specific LLCs exist for various disciplines within the college.",
+        "student_archetype": "Intellectually curious and diverse learners exploring a wide range of academic disciplines, from humanities to sciences, and seeking foundational collegiate experiences.",
+        "strategic_fit_advice": "Students interested in broad academic exploration, strong faculty mentorship, and a supportive first-year residential experience should consider the various Arts and Sciences LLCs."
+      },
+      {
+        "college_name": "College of Arts and Sciences (Fine Arts LLC)",
+        "housing_profile": "First-year Living and Learning Community in Peck Hall, offering corridor-style living that fosters a safe and welcoming environment for artistic pursuits.",
+        "student_archetype": "Creatively inclined individuals with a passion for art, design, music, music therapy, or theatre, eager to connect with peers and faculty who share artistic interests.",
+        "strategic_fit_advice": "Ideal for incoming first-year students majoring in Art and Art History, Music, or Theatre who seek a community to cultivate their creativity and explore diverse career options in the arts."
+      },
+      {
+        "college_name": "College of Arts and Sciences (Humanities LLC)",
+        "housing_profile": "First-year Living and Learning Community (LLC residence hall not explicitly named but similar to Fine Arts LLC structure), promoting personal growth and academic success with peer study groups, tutoring, and a 'free library'.",
+        "student_archetype": "Students passionate about culture, language, history, literature, and philosophy, seeking a supportive community for intellectual exploration and academic development.",
+        "strategic_fit_advice": "Recommended for first-year students majoring in English, History, Languages, or Philosophy, who desire an immersive academic and social environment with opportunities for field trips to cultural sites."
+      },
+      {
+        "college_name": "College of Business",
+        "housing_profile": "First-year Living and Learning Community (BLLC) in Adams Hall and Browning Hall, offering corridor-style rooms with community bathrooms, WiFi, and cable TV.",
+        "student_archetype": "Ambitious and globally-minded individuals interested in problem-solving, innovation, and leadership within the business world, seeking career-focused programming and networking opportunities.",
+        "strategic_fit_advice": "Suited for incoming first-year students pursuing business majors (including textile marketing, textiles, fashion merchandising and design, and business undecided) who will benefit from academic tutoring, club meetings, and career-related programming."
+      },
+      {
+        "college_name": "Feinstein College of Education",
+        "housing_profile": "First-year Living and Learning Community (CEPS LLC) located in Bressler Hall, providing double occupancy rooms with community bathrooms, WiFi, and cable TV. It includes access to an Education Maker Space.",
+        "student_archetype": "Aspiring educators committed to fostering curiosity, engaging and inspiring learners of all ages, and passionate about social justice and equitable educational practices.",
+        "strategic_fit_advice": "Ideal for first-year students with an education major who seek a supportive community to prepare for the complexities of the teaching profession, with opportunities for volunteering and academic support."
+      },
+      {
+        "college_name": "College of Engineering",
+        "housing_profile": "First-year Engineering Living and Learning Community (ELLC) located in Hillside Hall, offering double and triple occupancy rooms with air conditioning, WiFi, and cable TV.",
+        "student_archetype": "Problem-solvers with strong STEM backgrounds, eager to connect with peers and faculty, and seeking hands-on learning, academic support in technical subjects, and career guidance.",
+        "strategic_fit_advice": "Highly recommended for incoming first-year engineering majors (including undeclared engineering) who will benefit from peer study groups, academic coaching, tutoring in math, physics, chemistry, and introductory engineering courses, and programming designed specifically for engineers."
+      },
+      {
+        "college_name": "College of the Environment and Life Sciences",
+        "housing_profile": "First-year Living and Learning Community (CELS LLC) in Ellery or Fayerweather Halls, featuring suite-style bathrooms (in Fayerweather) or semi-private communities on each floor (Ellery).",
+        "student_archetype": "Students dedicated to understanding the living world and their place within it, eager for hands-on experiences, interdisciplinary research, and addressing global environmental challenges.",
+        "strategic_fit_advice": "Suitable for first-year students with a CELS major who thrive in an environment promoting academic success through professional advising, academic help in biology and chemistry, and social networking with faculty and peers."
+      },
+      {
+        "college_name": "College of Health Sciences",
+        "housing_profile": "First-year Living and Learning Community (LLC residence halls not explicitly named, but offers an environment promoting personal growth and academic success).",
+        "student_archetype": "Aspiring healthcare professionals and individuals interested in promoting physical and mental well-being, seeking a supportive community for academic success and personal development.",
+        "strategic_fit_advice": "Incoming first-year students admitted with a College of Health Sciences major will benefit from a living environment that focuses on academic success and a smooth transition to college."
+      },
+      {
+        "college_name": "College of Nursing",
+        "housing_profile": "First-year Living and Learning Community in Hillside Hall, offering double and triple occupancy rooms with air conditioning, WiFi, and cable TV.",
+        "student_archetype": "Compassionate and dedicated individuals committed to patient care, research, and leadership in healthcare, seeking unique clinical experiences and cross-discipline work.",
+        "strategic_fit_advice": "Highly recommended for first-year nursing majors who will gain from programming such as simulation learning, tutoring, access to anatomy models, and academic boot camps."
+      },
+      {
+        "college_name": "College of Pharmacy",
+        "housing_profile": "First-year Living and Learning Community in Barlow Hall, a corridor-style residence hall encouraging social interaction, with amenities like 3D printing, molecular modeling access, and yoga classes.",
+        "student_archetype": "Science-oriented students with an interest in patient care and pharmaceutical research, who value a close-knit community and diverse career paths in pharmacy.",
+        "strategic_fit_advice": "Ideal for incoming first-year students admitted with a Pharm.D. or B.S.P.S. major, who will benefit from specialized academic support, hands-on learning opportunities, and a strong sense of community."
+      },
+      {
+        "college_name": "Graduate School of Oceanography",
+        "housing_profile": "For graduate students, housing includes apartment suites at Brookside Hall (single-occupancy bedrooms, full kitchen, two bathrooms per suite), and new University Graduate Village Apartments are under construction to offer brand-new, state-of-the-art apartments with private bedrooms and shared common areas/kitchens.",
+        "student_archetype": "Dedicated and collaborative researchers with a strong curiosity and initiative, focused on ocean science and exploration, and committed to advancing knowledge of the changing ocean planet.",
+        "strategic_fit_advice": "Prospective graduate students should demonstrate strong research potential, align with faculty interests, and possess qualities like perseverance, teamwork, and a realistic self-appraisal. Early contact with potential faculty advisors is encouraged."
+      },
+      {
+        "college_name": "Harrington School of Communications and Media",
+        "housing_profile": "First-year Living and Learning Community in Butterfield Hall, a corridor-style building with a dining hall, student lounge, WiFi, and cable TV. Beyond living spaces, the school has modern, high-tech learning spaces in Ranger Hall, including a broadcast studio, editing suites, recording studio, film screening room, and social media lab.",
+        "student_archetype": "Creative and dynamic communicators, interested in multimedia journalism, corporate communications, film production, or digital and social media, seeking hands-on experience and a strong connection to faculty and industry.",
+        "strategic_fit_advice": "Highly recommended for first-year students with a Harrington School major who desire practical experience, access to state-of-the-art facilities, and opportunities for career and internship advising, digital media workshops, and exclusive trips."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 56200,
+    "employment_rate_2yr": 90.0,
+    "median_earnings_6yr": 41600,
+    "notes": "Median earnings 10 years after enrollment are 64% higher than the national median. The employment rate of 90.0% reflects graduates who are either employed or continuing their education immediately after graduation.",
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft"
+    ],
+    "grad_school_rate": 15.0,
+    "loan_default_rate": 4.4
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 53.0,
+    "graduation_rate_6_year": 73.0
+  }
 }

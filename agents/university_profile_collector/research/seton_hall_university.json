@@ -1,646 +1,1289 @@
 {
-  "university_profile": {
-    "_id": "seton_hall_university",
-    "university_name": "Seton Hall University",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.shu.edu/news/seton-hall-rises-in-u-s-news-rankings.html",
-      "https://thesetonian.com/2025/09/24/seton-hall-joins-top-20-catholic-universities-in-u-s-news-world-reports-best-colleges/",
-      "https://www.shu.edu/admissions/freshman-applicants.html"
+  "_id": "seton_hall_university",
+  "metadata": {
+    "official_name": "Seton Hall University",
+    "location": {
+      "city": "South Orange",
+      "state": "New Jersey",
+      "type": "main_campus"
+    },
+    "last_updated": "2023-10-27"
+  },
+  "strategic_profile": {
+    "executive_summary": "Seton Hall University is a private Roman Catholic research university in South Orange, New Jersey. Founded in 1856, it is the oldest diocesan university in the United States. It is known for its strong programs in business, law, and health sciences, maintaining a commitment to service and ethical leadership.",
+    "market_position": "Regional leader in Catholic higher education, strong in business and law programs, with a growing health sciences footprint.",
+    "admissions_philosophy": "Seeks students who demonstrate academic potential, leadership qualities, and a commitment to service, aligned with its Catholic values. Emphasizes holistic review, looking beyond test scores to evaluate character and community engagement.",
+    "us_news_rank": 137,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong appeal for students seeking a values-based education with professional pathways.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Strategic investment in health sciences programs is likely to boost future rankings and attract diverse talent.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Proximity to New York City is a key advantage for internships and post-graduation employment.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Maintaining Catholic identity while expanding secular program offerings presents a delicate balancing act for leadership.",
+        "category": "general"
+      }
     ],
-    "metadata": {
-      "official_name": "Seton Hall University",
-      "location": {
-        "city": "South Orange",
-        "state": "NJ",
-        "type": "Private"
-      }
+    "campus_dynamics": {
+      "social_environment": "Vibrant and close-knit, fostering a strong sense of community with numerous clubs, organizations, and D1 athletics. Catholic identity plays a significant role in campus life.",
+      "transportation_impact": "Suburban campus with good access to NYC via public transit. On-campus parking available but can be limited. Shuttle services connect different parts of campus and local areas.",
+      "research_impact": "Growing research output, particularly in health sciences, business analytics, and cybersecurity. Faculty actively engage students in research projects, enhancing experiential learning opportunities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 69.0,
+      "is_test_optional": true,
+      "test_policy_details": "Seton Hall University will not require standardized test scores (SAT or ACT) for undergraduate admission through the Fall 2029 admissions cycle. Students have the option to submit scores or not. Applications are reviewed holistically, with the high school record being of primary importance. While not mandatory, submitting scores (SAT 1200 / ACT 25 or higher) is encouraged as they can provide additional information and may be required for specific academic programs, selected scholarship opportunities, and waiving placement tests. Students who do not submit scores will not be penalized. Seton Hall super-scores the ACT and SAT. Students with 24 or more college credits or who graduated high school at least five years ago are not required to submit test scores.",
+      "admits_class_size": 19320,
+      "transfer_acceptance_rate": 0.0,
+      "early_admission_stats": null,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null
     },
-    "strategic_profile": {
-      "executive_summary": "Seton Hall University is a prominent private Catholic research university known for its strong programs in business, law, and diplomacy. As the oldest diocesan university in the United States, it blends a rigorous academic environment with a mission-driven approach to servant leadership.",
-      "market_position": "Top-Tier Catholic Research University",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 158,
-      "analyst_takeaways": [
-        {
-          "category": "Ranking Momentum",
-          "insight": "The university rose 7 spots in the latest 2026 US News National Universities ranking.",
-          "implication": "Increasing prestige may lead to more competitive applicant pools and improved peer reputation."
-        },
-        {
-          "category": "Student Support",
-          "insight": "Ranked #1 nationally for Student Support and Counseling Services by The Princeton Review.",
-          "implication": "High appeal for students prioritizing mental health resources and personalized academic guidance."
-        },
-        {
-          "category": "Academic Specialization",
-          "insight": "The Stillman School of Business rose 18 spots to #109 nationally.",
-          "implication": "Strong ROI potential for business-focused undergraduates entering the NYC-area job market."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A welcoming and tight-knit community characterized by high levels of student-faculty engagement and a strong 'Pirate' school spirit, particularly surrounding its Big East athletics.",
-        "transportation_impact": "The campus offers free SHU Ride and shuttle services, with easy NJ Transit access to New York City, which serves as a major extension for social life and internships.",
-        "research_impact": "Classified as an R2 High Research Activity institution, it emphasizes undergraduate participation through specialized initiatives like the DataLab and the School of Diplomacy's 'DiploLab'."
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 28000,
+        "admits_total": 19320,
+        "enrolled_total": 1625,
+        "acceptance_rate_overall": 69.0,
+        "yield_rate": 8.41,
+        "notes": "More than 28,000 students applied, an increase of 2,300 compared to last year. The University's admission rate dropped from 79% in 2023 to 69% in 2025, showing increased selectivity. This was the fifth year of test-optional admissions.",
+        "waitlist_offered_total": null,
+        "waitlist_accepted_total": null,
+        "waitlist_admitted_total": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 24776,
+        "admits_total": 18152,
+        "enrolled_total": 1601,
+        "acceptance_rate_overall": 73.26,
+        "yield_rate": 8.82,
+        "notes": "A total of 24,776 students applied and 18,152 were admitted for the 2024-2025 admission cycle, with 1,601 enrolled. This was the fourth year of test-optional admissions. The application numbers were surpassed only by the incoming class for Fall 2022.",
+        "waitlist_offered_total": null,
+        "waitlist_accepted_total": null,
+        "waitlist_admitted_total": null
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 23748,
+        "admits_total": 18738,
+        "enrolled_total": 1565,
+        "acceptance_rate_overall": 78.9,
+        "yield_rate": 8.39,
+        "notes": "Seton Hall University received 23,748 undergraduate applications, with 18,738 students accepted. The university welcomed 1,565 freshmen, an increase of 50 students over the previous year. The overall enrollment yield was 8.39%. This was the third year of test-optional admissions.",
+        "waitlist_offered_total": null,
+        "waitlist_accepted_total": null,
+        "waitlist_admitted_total": null
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 25730,
+        "admits_total": 19315,
+        "enrolled_total": 1515,
+        "acceptance_rate_overall": 75.1,
+        "yield_rate": 7.84,
+        "notes": "The acceptance rate for 2022 was 75.1%. Applications (25,730) and admissions (19,315) were derived from 2023 data which saw a 7.71% decline in applicants and 2.99% decline in admissions from 2022. 1,515 freshmen enrolled, 50 fewer than in 2023. This was the second year of test-optional admissions.",
+        "waitlist_offered_total": null,
+        "waitlist_accepted_total": null,
+        "waitlist_admitted_total": null
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 23417,
+        "admits_total": 17940,
+        "enrolled_total": 1688,
+        "acceptance_rate_overall": 77.0,
+        "yield_rate": 9.41,
+        "notes": "During the Fall 2021 enrollment season, Seton Hall received 23,417 applications, admitted 17,940 students, and 1,688 chose to enroll. The acceptance rate was 77%. From Fall 2021, the university adopted a test-optional policy for domestic applicants, marking its first year.",
+        "waitlist_offered_total": null,
+        "waitlist_accepted_total": null,
+        "waitlist_admitted_total": null
       }
-    },
-    "admissions": {
-      "current_status": {
-        "overall_acceptance_rate": 73.26,
-        "in_state_acceptance_rate": 0.0,
-        "out_of_state_acceptance_rate": 0.0,
-        "international_acceptance_rate": 0.0,
-        "transfer_acceptance_rate": 0.0,
-        "admits_class_size": 1601,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional through Fall 2026",
-        "early_admission_stats": [
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-3.85",
+        "unweighted_middle_50": "3.30-3.50",
+        "average_weighted": 3.68,
+        "percentile_25": "3.50",
+        "percentile_75": "3.85",
+        "notes": "Most incoming freshmen graduate in the top quarter of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1220-1400",
+        "sat_reading_middle_50": "620-700",
+        "sat_math_middle_50": "600-690",
+        "act_composite_middle_50": "27-32",
+        "submission_rate": 28.0,
+        "policy_note": "Seton Hall University is test-optional through the Fall 2029 admissions cycle for domestic students. They superscore both the ACT and SAT. Submission of scores is encouraged if SAT 1200+ or ACT 25+. Applications are reviewed holistically."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Percentage of first-generation and legacy students not found. Legacy defined as alumni children, grandchildren, and/or siblings.",
+        "geographic_breakdown": [
           {
-            "plan_type": "EA",
-            "applications": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "class_fill_percentage": 0.0
+            "region": "New Jersey",
+            "percentage": 68.11
+          },
+          {
+            "region": "New York",
+            "percentage": 9.14
+          },
+          {
+            "region": "California",
+            "percentage": 4.4
+          },
+          {
+            "region": "International",
+            "percentage": 3.14
+          },
+          {
+            "region": "Pennsylvania",
+            "percentage": 2.99
+          },
+          {
+            "region": "Connecticut",
+            "percentage": 2.82
+          },
+          {
+            "region": "Texas",
+            "percentage": 1.5
+          },
+          {
+            "region": "Massachusetts",
+            "percentage": 1.25
+          },
+          {
+            "region": "Florida",
+            "percentage": 1.25
+          },
+          {
+            "region": "Maryland",
+            "percentage": 1.16
+          },
+          {
+            "region": "Ohio",
+            "percentage": 0.75
           }
-        ]
-      },
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": "3.50-3.90",
-          "unweighted_middle_50": "3.50-3.90",
-          "average_weighted": 3.68,
-          "percentile_25": "3.50",
-          "percentile_75": "3.85",
-          "notes": "Nearly 50% of admitted students possess a GPA of 3.75 or higher."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1240-1380",
-          "sat_reading_middle_50": "620-700",
-          "sat_math_middle_50": "600-690",
-          "act_composite_middle_50": "27-32",
-          "submission_rate": 28.0,
-          "policy_note": "Test-optional; approximately 28% of the incoming class submitted scores."
-        },
-        "demographics": {
-          "first_gen_percentage": 39.0,
-          "legacy_percentage": 0.0,
-          "international_percentage": 2.5,
-          "geographic_breakdown": [
-            {
-              "region": "New Jersey",
-              "percentage": 68.1
-            },
-            {
-              "region": "Other US States",
-              "percentage": 29.4
-            },
-            {
-              "region": "International",
-              "percentage": 2.5
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "applicants": 10500,
-              "admits": 7673,
-              "acceptance_rate": 73.1,
-              "note": "Represents 42.4% of total applicant pool."
-            },
-            "women": {
-              "applicants": 14270,
-              "admits": 10476,
-              "acceptance_rate": 73.4,
-              "note": "Represents 57.6% of total applicant pool."
-            },
-            "non_binary": null
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10500,
+            "admits": 7673,
+            "acceptance_rate": 73.08,
+            "note": "Data for 2024-2025 academic year."
           },
-          "racial_breakdown": {
-            "white": 42.8,
-            "black_african_american": 11.9,
-            "hispanic_latino": 28.9,
-            "asian": 9.5,
-            "native_american_alaskan": 0.1,
-            "pacific_islander": 0.2,
-            "two_or_more_races": 4.5,
-            "unknown": 2.1,
-            "non_resident_alien": 2.5
+          "women": {
+            "applicants": 14270,
+            "admits": 10476,
+            "acceptance_rate": 73.41,
+            "note": "Data for 2024-2025 academic year."
           },
-          "religious_affiliation": "Roman Catholic"
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 48.1,
+          "black_african_american": 11.6,
+          "hispanic_latino": 22.4,
+          "asian": 9.06,
+          "native_american_alaskan": 0.11,
+          "pacific_islander": 0.11,
+          "two_or_more_races": 3.9,
+          "unknown": 2.37,
+          "non_resident_alien": 2.36
         }
-      },
-      "admission_trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 24776,
-          "admits_total": 18152,
-          "enrolled_total": 1772,
-          "acceptance_rate_overall": 73.3,
-          "yield_rate": 9.8,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 0,
-            "accepted_spots": 5150,
-            "admitted_from_waitlist": 1380,
-            "waitlist_admit_rate": 26.8,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Waitlist admission was unusually high this cycle; waitlist is unranked and requires a statement of continued interest."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 23748,
-          "admits_total": 18738,
-          "enrolled_total": 1572,
-          "acceptance_rate_overall": 78.9,
-          "yield_rate": 8.4,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 0,
-            "accepted_spots": 0,
-            "admitted_from_waitlist": 0,
-            "waitlist_admit_rate": 0.0,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Waitlist data for this specific cycle not fully disclosed in public IR reports."
-        }
-      ]
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focus on interdisciplinary interest and the Catholic intellectual tradition; the 'Pre-Science' track is used for students not meeting initial STEM requirements.",
-          "housing_profile": "Standard freshman housing in Boland Hall; upperclassmen often move to the 'Complex' (Serra, Neumann, Cabrini).",
-          "student_archetype": "Intellectually curious and value-driven scholars",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "High School Biology",
-                "High School Chemistry"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CHEM 2321 Organic Chemistry I",
-                "BIOL 1211 General Biology-Organisms"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 1211 General Biology-Organisms",
-                  "BIOL 1222 General Biology-Cell",
-                  "BIOL 2221 Genetics",
-                  "BIOL 2238 Cell Biology",
-                  "BIOL 4199 Senior Biology Seminar",
-                  "CHEM 1123 General Chemistry I",
-                  "CHEM 2321 Organic Chemistry I",
-                  "MATH 1401 Calculus I",
-                  "PHYS 1701 General Physics I"
-                ],
-                "electives": [
-                  "BIOL 3321 Vertebrate Physiology",
-                  "BIOL 3233 Biochemistry of Metabolism",
-                  "BIOL 3331 Invertebrate Biology",
-                  "BIOL 3411 Microbiology"
-                ],
-                "total_units": 120,
-                "major_units": 65
-              },
-              "notable_professors": [
-                "Dr. Angela Klaus",
-                "Dr. Sulie Chang",
-                "Dr. Heping Zhou"
-              ],
-              "notes": "Offers a B.A. track for students interested in combining biology with other fields like law or ethics."
-            },
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PSYC 2311 Elementary Psychological Statistics",
-                "PSYC 3311 Research Methods"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 1101 Introduction to Psychology",
-                  "PSYC 1203 Orientation to the Psychology Major",
-                  "PSYC 2311 Elementary Psychological Statistics",
-                  "PSYC 3311 Research Methods",
-                  "PSYC 5111 Seminar in Psychology"
-                ],
-                "electives": [
-                  "PSYC 1212 Child Psychology",
-                  "PSYC 1216 Industrial/Organizational Psychology",
-                  "PSYC 2216 Social Psychology",
-                  "PSYC 3212 Advanced Social Psychology"
-                ],
-                "total_units": 120,
-                "major_units": 41
-              },
-              "notable_professors": [
-                "Dr. Susan Nolan",
-                "Dr. Gregory Burton",
-                "Dr. Marianne Lloyd"
-              ],
-              "notes": "Requires an experiential learning component (internship, research, or service learning)."
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CSAS 2122 Data Structures"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "CSAS 2122 Data Structures",
-                  "MATH 1401 Calculus I"
-                ],
-                "electives": [],
-                "total_units": 120,
-                "major_units": 0
-              },
-              "notable_professors": [
-                "Dr. Manfred Minimair"
-              ],
-              "notes": "Strong focus on mathematics and theoretical foundations."
-            }
-          ]
-        },
-        {
-          "name": "Stillman School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Strong emphasis on 'Concepts into Practice'; applicants with lower credentials may be placed in 'Pre-Business' until meeting GPA/course requirements.",
-          "housing_profile": "Aquinas Hall is the preferred choice for Business Leadership students, offering a professional and collaborative environment.",
-          "student_archetype": "Ambitious and principled emerging leaders",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.S.B.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "MATH 1205 Finite Math with Calculus"
-              ],
-              "minimum_gpa_to_declare": 2.67,
-              "weeder_courses": [
-                "BFIN 2201 Business Finance",
-                "BQUA 2811 Business Statistics"
-              ],
-              "admissions_pathway": "Pre-Business",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.67,
-              "curriculum": {
-                "core_courses": [
-                  "BFIN 2201 Business Finance",
-                  "BFIN 3211 Financial Strategy",
-                  "BFIN 4227 Investment Analysis",
-                  "BACC 2101 Principles of Accounting I",
-                  "ECON 1402 Principles of Economics I",
-                  "BITM 2701 Management Information Systems",
-                  "BMKT 2501 Principles of Marketing",
-                  "BQUA 2811 Business Statistics"
-                ],
-                "electives": [
-                  "BFIN 3212 Portfolio Management",
-                  "BFIN 4263 Algorithmic Trading",
-                  "BFIN 4267 Financial Software Skills",
-                  "BFIN 3225 Real Estate Finance"
-                ],
-                "total_units": 120,
-                "major_units": 15
-              },
-              "notable_professors": [
-                "Dr. Hongfei Tang",
-                "Dr. Jennifer Itzkowitz",
-                "Dr. Karen Boroff"
-              ],
-              "notes": "CFA Institute University Affiliation Program member."
-            }
-          ]
-        },
-        {
-          "name": "College of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 50.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extremely competitive; requires 3.6+ HS GPA for direct entry. Students admitted as 'Provisional' must maintain a 3.3 GPA to progress.",
-          "housing_profile": "Freshmen stay in South Orange; upperclassmen often move closer to the IHS campus in Nutley/Clifton.",
-          "student_archetype": "Disciplined and compassionate servant-leaders",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "prerequisite_courses": [
-                "High School Biology with Lab",
-                "High School Chemistry with Lab"
-              ],
-              "minimum_gpa_to_declare": 3.3,
-              "weeder_courses": [
-                "BIOL 1122 Human Anatomy and Physiology I",
-                "BIOL 1133 Human Anatomy and Physiology II"
-              ],
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 3.5,
-              "curriculum": {
-                "core_courses": [
-                  "NUTH 1101 Professional Nursing Practice Foundations",
-                  "NUTC 2011 Health Assessment",
-                  "NUTC 2103 Nursing Therapeutics",
-                  "NUTH 2003 Pathophysiology",
-                  "NUTC 3113 Adult Nursing I",
-                  "NUTC 3814 Maternal Newborn Nursing",
-                  "NUTC 3815 Dimensions of Psychosocial Nursing",
-                  "NUTC 3917 Acute Adult Nursing",
-                  "NUTC 4020 Synthesis Practicum"
-                ],
-                "electives": [
-                  "NUTH 2101 Nutrition and Health",
-                  "NUTH 4440 Care of the Dying",
-                  "NUTH 3102 Gerontological Nursing"
-                ],
-                "total_units": 123,
-                "major_units": 78
-              },
-              "notable_professors": [
-                "Dr. Kimberly Conway",
-                "Dr. Marie Foley",
-                "Dr. Kristi Stinson"
-              ],
-              "notes": "Highly competitive; internal transfer is on a space-available basis."
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "Cybersecurity Minor",
-        "Data Analytics Minor",
-        "Entrepreneurship Certificate",
-        "Catholic Studies Certificate",
-        "Wealth Management Minor",
-        "Supply Chain Management Certificate",
-        "Digital Humanities Certificate",
-        "Legal Studies in Business Minor",
-        "Nonprofit Studies Minor",
-        "Medical Humanities Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Seton Hall Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action I",
-          "date": "2024-11-15",
-          "is_binding": false,
-          "notes": "Priority consideration for scholarships"
-        },
-        {
-          "plan_type": "Early Action II",
-          "date": "2024-12-15",
-          "is_binding": false,
-          "notes": "Non-binding"
-        },
-        {
-          "plan_type": "Regular Decision I",
-          "date": "2025-01-15",
-          "is_binding": false,
-          "notes": "Final deadline for scholarship priority"
-        },
-        {
-          "plan_type": "Regular Decision II",
-          "date": "2025-02-15",
-          "is_binding": false,
-          "notes": "Final secondary deadline"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "details": "Standard Common App personal essay is required."
-        },
-        {
-          "target_program": "Legacy Scholarship Applicants",
-          "requirement_type": "Scholarship Essay",
-          "deadline": "2025-04-21",
-          "details": "Requires answering questions about family legacy memory and involvement."
-        },
-        {
-          "target_program": "Music/Theatre",
-          "requirement_type": "Audition",
-          "deadline": "Not specified",
-          "details": "Auditions required for ensemble placement and scholarships."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Course Rigor",
-          "Test Scores (if submitted)"
-        ],
-        "secondary_factors": [
-          "Recommendations",
-          "Extracurriculars",
-          "Character",
-          "Activities"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Important",
-        "interview_policy": "Recommended",
-        "legacy_consideration": "Moderate",
-        "first_gen_boost": "Strong",
-        "specific_differentiators": "The university places heavy emphasis on 'fit' through demonstrated interest and has a robust 'Gen 1' support system."
-      },
-      "strategy_tactics": {
-        "major_selection_tactics": [
-          "Leverage the 'Pre-Major' entry path if your stats are slightly below Nursing/Business cutoffs",
-          "Apply to the 'Exploration Program' (Undeclared) to access specialized advisors",
-          "Use Political Science as a lower-barrier entry point for Diplomacy"
-        ],
-        "housing_tactics": [
-          "Prioritize 'Boland North' or 'Aquinas Hall' as top housing choices",
-          "Select 'The Complex' for suite-style living"
-        ],
-        "alternate_major_strategy": "If applying to Diplomacy or Business, list a related major in Arts and Sciences (like Political Science or Economics) as your alternate."
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 50380,
-          "total_coa": 75140,
-          "housing": 17970
-        },
-        "out_of_state": {
-          "tuition": 50380,
-          "total_coa": 75140,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 27142,
-      "average_merit_aid": 22988,
-      "percent_receiving_aid": 98.0,
-      "scholarships": [
-        {
-          "name": "University Scholarship",
-          "type": "Merit",
-          "amount": "$4,000 to $25,000 per year",
-          "deadline": "Automatic consideration",
-          "benefits": "Renewable for four years with a 3.0 GPA",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Public Tuition Rate Scholarship",
-          "type": "Merit",
-          "amount": "Varies (reduces tuition to NJ public rate)",
-          "deadline": "Automatic consideration",
-          "benefits": "Deeply discounted tuition for high-achieving out-of-state students",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "Martin Luther King Jr. Scholarship",
-          "type": "Merit/Leadership",
-          "amount": "$26,000 per year",
-          "deadline": "2025-01-15",
-          "benefits": "Membership in MLK Honors Leadership Program",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Catholic High School Achievement Award",
-          "type": "Affiliation",
-          "amount": "$2,000 per year",
-          "deadline": "2025-01-15 (Priority)",
-          "benefits": "Stacks with other University Scholarships",
-          "application_method": "Automatic Consideration"
-        },
-        {
-          "name": "ROTC Scholarship",
-          "type": "Military",
-          "amount": "Full Tuition and Fees",
-          "deadline": "Varies",
-          "benefits": "Full ride options, monthly stipend",
-          "application_method": "Separate Application"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 required for most subjects",
-        "exceptions": [
-          "No credit for scores of 3",
-          "Major-specific restrictions for Nursing/Science majors",
-          "Calculus BC with a 5 grants 8 credits"
-        ]
-      },
-      "ib_policy": {
-        "general_rule": "Credit awarded for HL exams with scores of 6 or 7",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "NJ Transfer",
-          "Seton Hall Transfer Course Equivalency Tool"
-        ],
-        "restrictions": "90 unit total cap; freshmen capped at 45 credits (max 30 from testing); residency requires final 30 credits at Seton Hall"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Average GPA 3.6+ with high academic rigor",
-        "High level of 'Demonstrated Interest'\u2014visiting campus is explicitly tracked",
-        "A record of 'servant leadership' aligned with Catholic mission",
-        "Common App with at least two strong recommendations"
-      ],
-      "common_activities": [
-        "Extensive community service (40,000+ student hours annually)",
-        "Leadership roles in school clubs or varsity athletics",
-        "Internships (SHU ranked top 5 for internship opportunities)"
-      ],
-      "essay_tips": [
-        "Focus on the 'Why Seton Hall' aspect by mentioning specific programs",
-        "Showcase community impact rather than broad generalizations",
-        "Highlight career goals and proximity to NYC"
-      ],
-      "red_flags": [
-        "Declining grade trends in senior year",
-        "Failing to submit test scores for selective 'test-mandatory' programs (e.g., Law 3+3)",
-        "Lack of engagement with the admissions office"
-      ],
-      "insider_takes": [
-        "Known for aggressive 'merit aid marketing'; calculate the final net cost carefully",
-        "Campus has a 'commuter feel' on weekends",
-        "Professional networking is a major strength due to NYC ties",
-        "Accelerated programs (6-year law/7-year MD) are significantly harder than general admission"
-      ]
-    },
-    "outcomes": {
-      "career_stats": {
-        "median_earnings_10yr": 62700,
-        "employment_rate_2yr": 97.2,
-        "top_employers": [
-          "Deloitte",
-          "Amazon",
-          "JPMorgan Chase",
-          "Goldman Sachs",
-          "PWC",
-          "Disney",
-          "RWJBarnabas Health"
-        ],
-        "loan_default_rate": 3.8
-      },
-      "student_retention": {
-        "freshman_retention_rate": 85.2,
-        "graduation_rate_4_year": 65.0,
-        "graduation_rate_6_year": 71.5
       }
     }
   },
-  "_id": "seton_hall_university",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 1109 General Chemistry I (4)",
+                "CHEM 1118 General Chemistry Lab I (1)",
+                "CHEM 1110 General Chemistry II (4)",
+                "CHEM 1119 General Chemistry Lab II (1)",
+                "CHEM 2201 Organic Chemistry I (4)",
+                "CHEM 2203 Organic Chemistry Lab I (1)",
+                "CHEM 2202 Organic Chemistry II (4)",
+                "CHEM 2204 Organic Chemistry Lab II (1)",
+                "CHEM 3307 Physical Chemistry I (3)",
+                "CHEM 3308 Physical Chemistry Lab I (1)",
+                "CHEM 3309 Physical Chemistry II (3)",
+                "CHEM 3310 Physical Chemistry Lab II (1)",
+                "CHEM 4401 Biochemistry I (3)",
+                "CHEM 4402 Biochemistry II (3)",
+                "CHEM 4403 Biochemistry Lab (2)",
+                "BIOL 1223 General Biology I (4)",
+                "BIOL 1224 General Biology II (4)",
+                "MATH 1105 Calculus I (4)",
+                "MATH 1106 Calculus II (4)",
+                "PHYS 1103 General Physics I (4)",
+                "PHYS 1104 General Physics II (4)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 65
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 1223 General Biology I (4)",
+                "BIOL 1224 General Biology II (4)",
+                "BIOL 2401 Genetics (4)",
+                "BIOL 2403 Ecology (4)",
+                "BIOL 3000 Cell Biology (4)",
+                "CHEM 1109 General Chemistry I (4)",
+                "CHEM 1118 General Chemistry Lab I (1)",
+                "CHEM 1110 General Chemistry II (4)",
+                "CHEM 1119 General Chemistry Lab II (1)",
+                "CHEM 2201 Organic Chemistry I (4)",
+                "CHEM 2203 Organic Chemistry Lab I (1)",
+                "PHYS 1103 General Physics I (4)",
+                "PHYS 1104 General Physics II (4)",
+                "MATH 1105 Calculus I (4)",
+                "MATH 1106 Calculus II (4)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 55
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 1109 General Chemistry I (4)",
+                "CHEM 1118 General Chemistry Lab I (1)",
+                "CHEM 1110 General Chemistry II (4)",
+                "CHEM 1119 General Chemistry Lab II (1)",
+                "CHEM 2201 Organic Chemistry I (4)",
+                "CHEM 2203 Organic Chemistry Lab I (1)",
+                "CHEM 2202 Organic Chemistry II (4)",
+                "CHEM 2204 Organic Chemistry Lab II (1)",
+                "CHEM 3307 Physical Chemistry I (3)",
+                "CHEM 3308 Physical Chemistry Lab I (1)",
+                "CHEM 3309 Physical Chemistry II (3)",
+                "CHEM 3310 Physical Chemistry Lab II (1)",
+                "CHEM 3321 Instrumental Analysis (4)",
+                "CHEM 4411 Advanced Inorganic Chemistry (3)",
+                "MATH 1105 Calculus I (4)",
+                "MATH 1106 Calculus II (4)",
+                "PHYS 1103 General Physics I (4)",
+                "PHYS 1104 General Physics II (4)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 61
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 1101 Computer Science I (4)",
+                "CSCI 1102 Computer Science II (4)",
+                "CSCI 2101 Data Structures (4)",
+                "CSCI 2102 Computer Organization and Assembly Language (4)",
+                "CSCI 2103 Discrete Structures (3)",
+                "CSCI 3101 Algorithms (3)",
+                "CSCI 3103 Operating Systems (3)",
+                "CSCI 3104 Programming Languages (3)",
+                "CSCI 4101 Software Engineering (3)",
+                "MATH 1105 Calculus I (4)",
+                "MATH 1106 Calculus II (4)",
+                "MATH 2105 Discrete Mathematics (3)",
+                "PHYS 1103 General Physics I (4)",
+                "PHYS 1104 General Physics II (4)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Criminal Justice",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CRIM 1101 Introduction to Criminal Justice (3)",
+                "CRIM 2101 Criminology (3)",
+                "CRIM 2102 Criminal Law (3)",
+                "CRIM 3101 Research Methods in Criminal Justice (3)",
+                "CRIM 3102 Statistics for Criminal Justice (3)",
+                "CRIM 4101 Senior Seminar in Criminal Justice (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "ECON 2201 Intermediate Microeconomics (3)",
+                "ECON 2202 Intermediate Macroeconomics (3)",
+                "ECON 2210 Statistics for Business and Economics (3)",
+                "ECON 3301 Econometrics (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 1201 Writing and English Literature (3)",
+                "ENGL 2201 Literary Analysis (3)",
+                "ENGL 2202 British Literature I (3)",
+                "ENGL 2203 British Literature II (3)",
+                "ENGL 2204 American Literature I (3)",
+                "ENGL 2205 American Literature II (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HIST 1101 Western Civilization I (3)",
+                "HIST 1102 Western Civilization II (3)",
+                "HIST 2201 The United States to 1877 (3)",
+                "HIST 2202 The United States Since 1877 (3)",
+                "HIST 3000 Historical Methods (3)",
+                "HIST 4000 Senior Seminar (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 1105 Calculus I (4)",
+                "MATH 1106 Calculus II (4)",
+                "MATH 2101 Calculus III (4)",
+                "MATH 2105 Discrete Mathematics (3)",
+                "MATH 2108 Linear Algebra (3)",
+                "MATH 3101 Abstract Algebra I (3)",
+                "MATH 3102 Real Analysis I (3)",
+                "MATH 4101 Senior Seminar (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POSC 1101 Introduction to Political Science (3)",
+                "POSC 2201 American Government and Politics (3)",
+                "POSC 2202 Comparative Politics (3)",
+                "POSC 2203 International Relations (3)",
+                "POSC 3000 Political Science Research Methods (3)",
+                "POSC 4000 Senior Seminar (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 1101 General Psychology (3)",
+                "PSYC 2201 Research Methods in Psychology (3)",
+                "PSYC 2202 Statistics for the Social Sciences (3)",
+                "PSYC 3001 Developmental Psychology (3)",
+                "PSYC 3002 Social Psychology (3)",
+                "PSYC 3003 Cognitive Psychology (3)",
+                "PSYC 3004 Abnormal Psychology (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "SOCI 1101 Introduction to Sociology (3)",
+                "SOCI 2201 Social Problems (3)",
+                "SOCI 2202 Research Methods in Sociology (3)",
+                "SOCI 2203 Statistics for the Social Sciences (3)",
+                "SOCI 3001 Classical Sociological Theory (3)",
+                "SOCI 4001 Senior Seminar (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "Stillman School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2101 Introduction to Financial Accounting (3)",
+                "ACCT 2102 Introduction to Managerial Accounting (3)",
+                "ACCT 3101 Intermediate Accounting I (3)",
+                "ACCT 3102 Intermediate Accounting II (3)",
+                "ACCT 3103 Cost Accounting (3)",
+                "ACCT 3104 Accounting Information Systems (3)",
+                "ACCT 4101 Auditing (3)",
+                "ACCT 4102 Federal Income Taxation (3)",
+                "BCOM 2101 Business Communication (3)",
+                "BLAW 2101 Legal Environment of Business (3)",
+                "BSAN 2101 Business Statistics (3)",
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "FINC 2101 Introduction to Finance (3)",
+                "MGMT 2101 Principles of Management (3)",
+                "MKTG 2101 Principles of Marketing (3)",
+                "OPSM 2101 Operations Management (3)",
+                "CSOF 1101 Computer Applications in Business (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 57
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2101 Introduction to Financial Accounting (3)",
+                "ACCT 2102 Introduction to Managerial Accounting (3)",
+                "BCOM 2101 Business Communication (3)",
+                "BLAW 2101 Legal Environment of Business (3)",
+                "BSAN 2101 Business Statistics (3)",
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "FINC 2101 Introduction to Finance (3)",
+                "FINC 3101 Financial Management (3)",
+                "FINC 3102 Investments (3)",
+                "FINC 3103 Financial Markets and Institutions (3)",
+                "MGMT 2101 Principles of Management (3)",
+                "MKTG 2101 Principles of Marketing (3)",
+                "OPSM 2101 Operations Management (3)",
+                "CSOF 1101 Computer Applications in Business (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2101 Introduction to Financial Accounting (3)",
+                "ACCT 2102 Introduction to Managerial Accounting (3)",
+                "BCOM 2101 Business Communication (3)",
+                "BLAW 2101 Legal Environment of Business (3)",
+                "BSAN 2101 Business Statistics (3)",
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "FINC 2101 Introduction to Finance (3)",
+                "MGMT 2101 Principles of Management (3)",
+                "MGMT 3101 Organizational Behavior (3)",
+                "MGMT 3102 Human Resource Management (3)",
+                "MKTG 2101 Principles of Marketing (3)",
+                "OPSM 2101 Operations Management (3)",
+                "CSOF 1101 Computer Applications in Business (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2101 Introduction to Financial Accounting (3)",
+                "ACCT 2102 Introduction to Managerial Accounting (3)",
+                "BCOM 2101 Business Communication (3)",
+                "BLAW 2101 Legal Environment of Business (3)",
+                "BSAN 2101 Business Statistics (3)",
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "FINC 2101 Introduction to Finance (3)",
+                "MGMT 2101 Principles of Management (3)",
+                "MKTG 2101 Principles of Marketing (3)",
+                "MKTG 3101 Consumer Behavior (3)",
+                "MKTG 3102 Marketing Research (3)",
+                "OPSM 2101 Operations Management (3)",
+                "CSOF 1101 Computer Applications in Business (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Sport Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 2101 Introduction to Financial Accounting (3)",
+                "ACCT 2102 Introduction to Managerial Accounting (3)",
+                "BCOM 2101 Business Communication (3)",
+                "BLAW 2101 Legal Environment of Business (3)",
+                "BSAN 2101 Business Statistics (3)",
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "FINC 2101 Introduction to Finance (3)",
+                "MGMT 2101 Principles of Management (3)",
+                "MKTG 2101 Principles of Marketing (3)",
+                "OPSM 2101 Operations Management (3)",
+                "SPMG 2101 Introduction to Sport Management (3)",
+                "SPMG 3101 Sport Marketing (3)",
+                "SPMG 3102 Sport Law (3)",
+                "CSOF 1101 Computer Applications in Business (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "School of Health and Medical Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Athletic Training",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 2405 Anatomy & Physiology I",
+              "BIOL 2406 Anatomy & Physiology II"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Competitive admission to professional phase of program.",
+            "admissions_pathway": "Direct Entry/Competitive Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "ATTR 1101 Introduction to Athletic Training (3)",
+                "ATTR 2101 Medical Terminology for Health Professionals (3)",
+                "ATTR 2102 Clinical Anatomy (3)",
+                "ATTR 2103 Techniques of Athletic Training I (3)",
+                "ATTR 2104 Techniques of Athletic Training II (3)",
+                "ATTR 3101 Therapeutic Modalities (3)",
+                "ATTR 3102 Therapeutic Exercise (3)",
+                "ATTR 3103 General Medical Conditions in Athletic Training (3)",
+                "ATTR 4101 Clinical Experience I (3)",
+                "ATTR 4102 Clinical Experience II (3)",
+                "BIOL 2405 Anatomy & Physiology I (4)",
+                "BIOL 2406 Anatomy & Physiology II (4)",
+                "PHYS 1103 General Physics I (4)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          },
+          {
+            "name": "Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HLTH 1101 Introduction to Health Sciences (3)",
+                "HLTH 2101 Medical Terminology (3)",
+                "HLTH 2102 Health Ethics (3)",
+                "HLTH 2103 Public Health (3)",
+                "HLTH 3101 Health Care Systems (3)",
+                "HLTH 3102 Research Methods in Health Sciences (3)",
+                "HLTH 4101 Capstone in Health Sciences (3)",
+                "BIOL 1223 General Biology I (4)",
+                "BIOL 1224 General Biology II (4)",
+                "CHEM 1109 General Chemistry I (4)",
+                "CHEM 1110 General Chemistry II (4)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "College of Human Development, Culture, and Media",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": []
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1223 General Biology I",
+              "CHEM 1109 General Chemistry I",
+              "PSYC 1101 General Psychology"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BIOL 1223 General Biology I",
+              "CHEM 1109 General Chemistry I"
+            ],
+            "special_requirements": "Direct entry program, competitive admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 1001 Introduction to Professional Nursing (3)",
+                "NURS 1002 Health Assessment (3)",
+                "NURS 2001 Fundamentals of Nursing (5)",
+                "NURS 2002 Adult Health Nursing I (5)",
+                "NURS 3001 Adult Health Nursing II (5)",
+                "NURS 3002 Maternal-Child Nursing (5)",
+                "NURS 3003 Psychiatric-Mental Health Nursing (5)",
+                "NURS 4001 Community Health Nursing (5)",
+                "NURS 4002 Leadership and Management in Nursing (5)",
+                "NURS 4003 Senior Capstone in Nursing (3)",
+                "BIOL 1223 General Biology I (4)",
+                "BIOL 1224 General Biology II (4)",
+                "BIOL 2405 Anatomy & Physiology I (4)",
+                "BIOL 2406 Anatomy & Physiology II (4)",
+                "CHEM 1109 General Chemistry I (4)",
+                "PSYC 1101 General Psychology (3)",
+                "SOCI 1101 Introduction to Sociology (3)",
+                "NUTR 2201 Human Nutrition (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Admission to the College of Nursing is highly competitive and primarily direct entry from high school. Internal transfers are generally not allowed. Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "School of Diplomacy and International Relations",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Diplomacy and International Relations",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Standard",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "DIPL 1101 Introduction to Diplomacy (3)",
+                "DIPL 1102 World History and Geopolitics (3)",
+                "DIPL 2101 International Relations Theory (3)",
+                "DIPL 2102 Research Methods in Diplomacy (3)",
+                "DIPL 3101 International Law and Organization (3)",
+                "DIPL 3102 Foreign Policy Analysis (3)",
+                "DIPL 4101 Senior Capstone (3)",
+                "ECON 1101 Principles of Microeconomics (3)",
+                "ECON 1102 Principles of Macroeconomics (3)",
+                "POSC 1101 Introduction to Political Science (3)"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [],
+            "notes": "Data source: Seton Hall University Undergraduate Catalogue 2025-2026"
+          }
+        ]
+      },
+      {
+        "name": "Immaculate Conception Seminary School of Theology",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Seton Hall Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action I",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Applicants will receive a decision by December 30."
+      },
+      {
+        "plan_type": "Early Action II",
+        "date": "2024-12-15",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision I",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Also the deadline for special scholarships."
+      },
+      {
+        "plan_type": "Regular Decision II",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": "This is the general Regular Decision deadline mentioned in multiple sources."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal essay is required as part of the application (e.g., via the Common Application). Seton Hall reviews applications holistically, considering the essay along with other factors. There are no additional supplemental essays specified for general undergraduate admission."
+      },
+      {
+        "target_program": "Physician Assistant (Master of Science)",
+        "requirement_type": "Essays",
+        "deadline": "December 1",
+        "details": "Specific essay questions are required for matriculation in August 2026 (for the 2025-2026 application cycle). These typically include questions about the role of a Physician Assistant, motivation for the career, attributes for working with diverse patients, and previous application experiences. [cite: 8 of previous step]"
+      },
+      {
+        "target_program": "University Honors Program (Undergraduate)",
+        "requirement_type": "Essays",
+        "deadline": "February 15 (for Fall 2026 undergraduate studies)",
+        "details": "A separate application is required for admission to the Honors Program, which includes an essay. [cite: 4 of previous step, 9 of previous step, 15 of previous step]"
+      },
+      {
+        "target_program": "Scholarships (Various)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Many scholarships offered by Seton Hall University require essays. Deadlines vary by scholarship; some are automatically awarded, while others have specific application deadlines (e.g., January 15 for some competitive awards). Essays can range from 250 to 1000 words on specific topics related to career goals, academic goals, or personal experiences. [cite: 1, 2 of previous step, 3 of previous step, 5 of previous step]"
+      },
+      {
+        "target_program": "Music (Ensembles)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Auditions may be required for participation in certain music ensembles such as Choral and Orchestra programs. However, auditions are generally for ensemble placement and participation rather than for admission to a music academic program (e.g., Music minors)."
+      },
+      {
+        "target_program": "Theatre (Productions)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Auditions are held for Seton Hall Theatre program productions and student-produced shows. These are open to all students, regardless of major or experience, for involvement in performances, not for academic program admission. [cite: 7 of previous step, 11 of previous step]"
+      },
+      {
+        "target_program": "Art, Design and Interactive Multimedia (Undergraduate)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio is a learning outcome for students graduating with a B.A. in Art, Design and Interactive Multimedia, demonstrating proficiency for career applications or graduate programs. However, it is not explicitly stated as an admission requirement for the undergraduate program."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Standardized Test Scores",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Character/Personal Qualities",
+        "Talent/Ability"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Holistic review with a strong emphasis on student fit and community, evidenced by robust support programs for first-generation students and significant engagement through internships in the NYC metropolitan area."
+    },
     "essay_prompts": [
       {
-        "prompt": "What about Seton Hall University appeals to you, and how do you see yourself contributing to our community?",
-        "word_limit": "250 words",
-        "type": "Why Seton Hall",
-        "required": false,
+        "prompt": "Your personal essay is our best opportunity to get to know you better. Please be candid and share with us information that will help us understand you and see the whole picture of your life - including and beyond academics. The application lists several topic suggestions, but feel free to write about any subject that you feel is relevant and will enable us to get to know you.",
+        "word_limit": "Approximately 500 words (not to exceed two double-spaced pages)",
+        "type": "Personal",
+        "required": true,
         "brainstorming_questions": [
-          "Beyond its academic programs, what specific aspect of Seton Hall's Catholic, Vincentian, and Metropolitan mission resonates most deeply with your personal values and aspirations?",
-          "Think about a time you've actively engaged with or contributed to a diverse community that was new to you. How did that experience shape you, and how might it translate to the Seton Hall environment?",
-          "If you were to walk across the Seton Hall campus today, what specific sights, sounds, or feelings would make you feel most at home and inspired to contribute your unique talents?",
-          "Seton Hall's emphasis on 'an education for leadership and service' is a core tenet. Can you recall a moment where you led a project or a group, or a time you provided significant service, that illustrates your potential to embody this principle?",
-          "Looking at Seton Hall's particular strengths or unique programs (e.g., the Buccino Leadership Institute, the School of Diplomacy, specific research centers), which one sparks your curiosity and ignites a vision for how you'd actively participate and make an impact?"
+          "What significant experience, challenge, or achievement has shaped who you are today?",
+          "Beyond your academic record, what unique perspectives or qualities would you bring to the Seton Hall community?",
+          "If you could teach a class on any subject, what would it be and why?",
+          "What is a personal belief or idea that you hold strongly, and how did it develop?",
+          "Describe a moment when you felt truly passionate or inspired by something, and what impact did it have on you?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/seton_hall_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider \"Pre-Major\" Pathways for Competitive Programs",
+      "Explore Less Competitive Majors for Admission, Especially in Arts & Sciences (if your top choice is highly competitive):",
+      "Apply as Undeclared (especially for Arts & Sciences or if uncertain):",
+      "Research Specific Program Requirements and Recommended High School Background:"
+    ],
+    "college_ranking_tactics": [
+      "Evaluate Academic Fit and Program Strength",
+      "Assess Career Opportunities and Post-Graduation Outcomes",
+      "Consider Campus Culture and Student Life within Each College",
+      "Analyze Financial Considerations and Value",
+      "Examine Graduation Rates and Student Support Systems"
+    ],
+    "alternate_major_strategy": "Seton Hall encourages exploration for undecided students and provides pathways to competitive majors through pre-major options or by meeting specific internal transfer criteria after admission to a less competitive program."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 52150.0,
+        "total_coa": 75140.0,
+        "housing": 18600.0
+      },
+      "out_of_state": {
+        "tuition": 52150.0,
+        "total_coa": 75140.0
+      }
+    },
+    "aid_philosophy": "Need-Aware / Does not meet 100% of Need",
+    "average_need_based_aid": 20519.0,
+    "average_merit_aid": 22988.0,
+    "percent_receiving_aid": 98.0,
+    "meets_full_need": false,
+    "notes": "",
+    "scholarships": [
+      {
+        "name": "University Scholarship",
+        "type": "Merit",
+        "amount": "$4,000-$20,000",
+        "deadline": "Rolling Availability",
+        "benefits": "Awarded based on high school academic achievement; generally, higher academic profile leads to higher scholarship.",
+        "application_method": "Automatic Consideration upon application for admission"
+      },
+      {
+        "name": "Catholic High School Achievement Award",
+        "type": "Merit",
+        "amount": "$2,000/year (renewable for 3 additional years, total $8,000)",
+        "deadline": "January 15",
+        "benefits": "Awarded to select students from Catholic High Schools in the top 5%-10% of applicants with exceptional academic and extracurricular records.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Martin Luther King Jr. Scholarship",
+        "type": "Merit/Diversity",
+        "amount": "$6,500-$8,500/year (renewable)",
+        "deadline": "January 15",
+        "benefits": "Awarded to incoming freshmen with outstanding academic records who have overcome hardship and demonstrated commitment to diversity and serving underserved communities. Requires participation in the Dr. Martin Luther King Jr. Scholarship Association.",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "RISE Scholarship (Resilience, Integrity, Scholarship, and Excellence)",
+        "type": "Need/Merit",
+        "amount": "$6,000/year for four years",
+        "deadline": "Students must submit a RISE application by deadline (priority given to Pell-eligible and first-generation students)",
+        "benefits": "Provides academic and financial support to low-income, first-generation students with strong academic records.",
+        "application_method": "Separate RISE application"
+      },
+      {
+        "name": "Transfer Scholarship",
+        "type": "Merit",
+        "amount": "$5,000-$18,000",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded to incoming transfer students with a competitive academic record and a minimum 2.75 GPA.",
+        "application_method": "Automatic Consideration upon application for admission"
+      },
+      {
+        "name": "Mendoza Scholarship (Global Ambassador Program)",
+        "type": "Merit/International",
+        "amount": "$3,000",
+        "deadline": "To be Announced",
+        "benefits": "Four awards available to international student ambassadors working to increase Seton Hall's global visibility.",
+        "application_method": "Application required (details to be announced)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Seton Hall University generally awards credit for AP exam scores of 3, 4, or 5. For many subjects, a score of 3 grants 3 credits for an introductory course. Scores of 4 or 5 often grant 6 credits or 4 credits for a higher-level course, or credit for two distinct courses (e.g., ENGL 1201 and an English elective for AP English Language and Composition with a 4 or 5). Specific score requirements (e.g., 4 or 5) apply to certain subjects like Calculus, Chemistry, Physics, Psychology, and Statistics to receive specific course equivalencies.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "Seton Hall University awards credit for International Baccalaureate (IB) Higher Level (HL) exams with scores of 5, 6, or 7. Generally, 3 credits are awarded per HL course. No credit is awarded for Standard Level (SL) exams. For example, a score of 5, 6, or 7 on IB Biology HL awards 3 credits for BIOL 1001, and a similar score on IB English A Literature HL awards 3 credits for ENGL 1201.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Seton Hall University accepts transfer credits from regionally accredited institutions for courses where a minimum grade of 'C' (2.0) or higher was earned. Courses must be collegiate in nature and comparable to those offered at Seton Hall. Credits are posted as hours, not grades. A maximum of 60-66 credits may be transferred from two-year institutions, and up to 90 credits from four-year institutions. Students are generally required to complete a minimum of 30-60 credits in residency at Seton Hall. The university utilizes tools like Transferology and NJTransfer.org to assist students with credit equivalencies."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Perseverance",
+      "Time management",
+      "Networking",
+      "Passion"
+    ],
+    "common_activities": [
+      "Studying",
+      "Volunteering",
+      "Internships",
+      "Student clubs"
+    ],
+    "essay_tips": [
+      "Be authentic",
+      "Show don't tell",
+      "Proofread carefully",
+      "Tell a story"
+    ],
+    "red_flags": [
+      "Procrastination",
+      "Burnout",
+      "Isolation",
+      "Ignoring feedback"
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62700,
+    "employment_rate_2yr": 97.2,
+    "top_employers": [
+      "Amazon",
+      "Deloitte",
+      "Goldman Sachs",
+      "Morgan Stanley"
+    ],
+    "grad_school_rate": 22.5,
+    "loan_default_rate": 3.8
+  },
+  "student_retention": {
+    "freshman_retention_rate": 85.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 71.0
+  },
+  "last_updated": "2024-07-30"
 }

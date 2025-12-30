@@ -1,800 +1,1250 @@
 {
-  "university_profile": {
-    "_id": "simmons_university",
-    "name": "Simmons University",
+  "_id": "simmons_university",
+  "metadata": {
+    "official_name": "Simmons University",
     "location": {
       "city": "Boston",
-      "state": "MA",
+      "state": "Massachusetts",
       "type": "Private"
     },
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.simmons.edu/about/rankings-and-awards",
-      "https://www.usnews.com/best-colleges/simmons-university-2151"
-    ],
-    "strategic_profile": {
-      "executive_summary": "Simmons University is a private institution in Boston known for its women-centered undergraduate curriculum and strong professional graduate programs in nursing, social work, and library science. It emphasizes experiential learning and leadership, leveraging its location in a global medical and educational hub.",
-      "market_position": "Hidden Gem",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 165,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The undergraduate acceptance rate has trended downward from approximately 84% in 2021 to 66% for the 2024-2025 cycle.",
-          "implication": "The university is becoming increasingly competitive; applicants should prioritize articulating a strong fit for its women-centered leadership mission."
-        },
-        {
-          "category": "Infrastructure",
-          "insight": "The 'One Simmons' project is consolidating the dual-campus model into a single, modernized urban hub including a 21-story Living and Learning Center.",
-          "implication": "Prospective students will benefit from significantly upgraded facilities and a more cohesive on-campus social environment."
-        },
-        {
-          "category": "ROI and Value",
-          "insight": "Simmons consistently ranks highly for social mobility (#126) and best value (#33).",
-          "implication": "The institution is a strong choice for students focused on career-readiness and high graduate outcomes in specialized fields like healthcare and library science."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A small-college feel within a massive student city; students have access to the 'Colleges of the Fenway' (COF) consortium for cross-registration and shared social events.",
-        "transportation_impact": "Highly urban and transit-dependent; campus life is shaped by the MBTA 'T' (Green Line) and MASCO shuttles connecting the residential and academic sectors.",
-        "research_impact": "Significant research output in healthcare and information sciences, particularly within the School of Library and Information Science (SLIS) which is ranked in the top 10 nationally."
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Simmons University is a private university in Boston, Massachusetts, focused on empowering women to lead. It is known for its undergraduate women's college and co-educational graduate programs, particularly in health sciences and library information science.",
+    "market_position": "Niche market leader in women-focused undergraduate education with strong co-ed graduate programs in high-demand fields; faces competition from larger research universities but offers a distinct, supportive learning environment.",
+    "admissions_philosophy": "Seeks intellectually curious and community-minded students, especially women for undergraduate programs, who are committed to making a difference. Emphasizes holistic review, valuing academic achievement, leadership potential, and personal essays.",
+    "us_news_rank": 142,
+    "analyst_takeaways": [
+      {
+        "takeaway": "Strong historical brand in women's education.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Strategic investments in health sciences and online programs show growth potential.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Urban location provides significant internship and career opportunities.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Requires continuous innovation to stay competitive against larger institutions.",
+        "category": "general"
+      },
+      {
+        "takeaway": "Community engagement initiatives are highly valued by prospective students.",
+        "category": "general"
       }
-    },
-    "admissions_current": {
+    ],
+    "campus_dynamics": {
+      "social_environment": "Supportive and collaborative, particularly within the undergraduate women's college. Graduate programs foster a professional and interconnected community. Many student organizations focus on advocacy and social impact.",
+      "transportation_impact": "Located in the heart of Boston's Longwood Medical Area, well-served by public transportation (MBTA Green Line). This connectivity is crucial for student commutes, internships, and accessing city amenities, reducing reliance on personal vehicles.",
+      "research_impact": "Growing research output, especially in nursing, physical therapy, and library information science. Faculty often engage students in projects that address real-world challenges, contributing to local community health and information literacy initiatives."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
       "overall_acceptance_rate": 69.98,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 0.0,
-      "transfer_acceptance_rate": 0.0,
-      "admits_class_size": 3340,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "test_policy_details": "Simmons University is test-optional, meaning students may apply without submitting standardized test scores (SAT or ACT) for admission or scholarship consideration. While not required, submitting high SAT or ACT scores can enhance an application, especially for competitive programs. For international students, proof of English proficiency (TOEFL/IELTS/Duolingo English Test or SAT/ACT scores) is required if English is not their first language.",
+      "admits_class_size": 3340,
+      "transfer_acceptance_rate": null,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "in_out_state_notes": "Simmons University is a private institution, so in-state and out-of-state acceptance rates are not applicable.",
+      "international_acceptance_rate": null,
+      "international_acceptance_notes": "Specific data regarding Simmons University's international student acceptance rate, international applications, and international admits is unavailable. One source estimates the international student acceptance rate at 70.0% based on regional norms for similar institutions, noting that this is an an estimate due to specific data being unavailable. Simmons University's overall acceptance rate for the Class of 2028 was approximately 76.0%, while other sources report overall acceptance rates ranging from 66% to 70% for other years.",
       "early_admission_stats": [
         {
           "plan_type": "EA",
-          "applications": 0,
-          "admits": 0,
-          "acceptance_rate": 0.0,
-          "class_fill_percentage": 0.0
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
       ]
     },
-    "admissions_trends": [
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 4773,
+        "admits_total": 3340,
+        "enrolled_total": 361,
+        "acceptance_rate_overall": 69.98,
+        "yield_rate": 10.81,
+        "notes": "Projected data based on trends. Acceptance and yield rates from College Tuition Compare, applications calculated based on a decrease of 98 applicants from the previous year, as reported by College Tuition Compare.",
+        "waitlist_stats": null
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 4871,
         "admits_total": 3215,
-        "enrolled_total": 338,
+        "enrolled_total": 460,
         "acceptance_rate_overall": 66.0,
-        "yield_rate": 10.5,
+        "yield_rate": 14.31,
+        "notes": "Data for applications, admits, acceptance rate, and enrolled students from CollegeData and Clastify. The acceptance rate for application year 2024 was 66%.",
         "waitlist_stats": {
           "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
           "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed. Simmons is a women's university for undergraduates. Application numbers increased significantly over the last three years."
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
-        "applications_total": 4001,
-        "admits_total": 3059,
-        "enrolled_total": 361,
-        "acceptance_rate_overall": 76.5,
-        "yield_rate": 11.8,
+        "applications_total": 4871,
+        "admits_total": 3215,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 66.0,
+        "yield_rate": null,
+        "notes": "Applications, admits, and acceptance rate from Clastify. This source indicates the same application and admitted numbers as the previous year. Enrolled and yield data were not consistently available from public sources for this year.",
         "waitlist_stats": {
           "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
           "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed."
+        }
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 3516,
-        "admits_total": 2937,
-        "enrolled_total": 450,
-        "acceptance_rate_overall": 83.5,
-        "yield_rate": 15.3,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed."
+        "applications_total": 4001,
+        "admits_total": 3041,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.0,
+        "yield_rate": null,
+        "notes": "Applications, admits (calculated), and acceptance rate from Clastify. Enrolled and yield data were not consistently available from public sources for this year.",
+        "waitlist_stats": null
       },
       {
         "year": 2021,
         "cycle_name": "Class of 2025",
-        "applications_total": 2905,
-        "admits_total": 2398,
-        "enrolled_total": 451,
-        "acceptance_rate_overall": 82.5,
-        "yield_rate": 18.8,
-        "waitlist_stats": {
-          "year": 2021,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed."
+        "applications_total": 3516,
+        "admits_total": 2953,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 84.0,
+        "yield_rate": null,
+        "notes": "Applications, admits (calculated), and acceptance rate from Clastify. Enrolled and yield data were not consistently available from public sources for this year.",
+        "waitlist_stats": null
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "3.50-4.00",
+        "weighted_middle_50": null,
         "unweighted_middle_50": "3.30-3.80",
         "average_weighted": 3.77,
-        "percentile_25": "3.50",
-        "percentile_75": "4.00",
-        "notes": "Simmons employs a holistic review process; the average weighted GPA for the Class of 2028 was 3.77."
+        "percentile_25": "3.30",
+        "percentile_75": "3.80",
+        "notes": "The average weighted GPA for the Class of 2028 was 3.77. The middle 50% range for GPA for admitted students is between 3.3 and 3.8, which is likely an unweighted range given that the average unweighted GPA for admitted students is around 3.5. Most incoming freshmen graduate in the top quarter of their high school class. For enrolled freshmen, 23% were in the top tenth of their high school class, 38% in the top quarter, and 86% in the top half. Simmons University values a holistic approach in admissions, considering academic performance alongside personal statements, extracurriculars, and other elements. A specific weighted middle 50% GPA range was not provided in the available data."
       },
       "testing": {
-        "sat_composite_middle_50": "1210-1430",
-        "sat_reading_middle_50": "625-700",
+        "sat_composite_middle_50": "1230-1390",
+        "sat_reading_middle_50": "640-710",
         "sat_math_middle_50": "590-680",
-        "act_composite_middle_50": "27-32",
-        "submission_rate": 10.0,
-        "policy_note": "Test-optional; 90% of the Class of 2028 applied without submitting test scores."
+        "act_composite_middle_50": "26-31",
+        "submission_rate": 20.0,
+        "policy_note": "Test Optional; Superscore accepted"
       },
       "demographics": {
-        "first_gen_percentage": 43.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 4.3,
+        "first_gen_percentage": 35.0,
+        "legacy_percentage": null,
+        "notes": "Legacy defined as alumni children",
         "geographic_breakdown": [
           {
-            "region": "Massachusetts",
-            "percentage": 57.3
+            "region": "Massachusetts (In-state)",
+            "percentage": 57.0
           },
           {
-            "region": "Other US States",
-            "percentage": 38.4
+            "region": "Other U.S. States (Out-of-state)",
+            "percentage": 37.0
           },
           {
             "region": "International",
-            "percentage": 4.3
+            "percentage": 3.42
+          },
+          {
+            "notes": "Simmons University attracts students from 49 states and U.S. territories; specific percentage breakdowns for individual states beyond Massachusetts are not consistently provided."
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 0,
             "admits": 0,
-            "acceptance_rate": 0.0,
-            "note": "Undergraduate programs are women-centered; men are not admitted to undergraduate degrees."
+            "acceptance_rate": null,
+            "note": "Data for undergraduate admissions (2024-2025) indicates 0 male applicants and admits. Simmons University's undergraduate program is women-centered, but its graduate programs are coeducational, where men are enrolled and receive degrees. Specific applicant/admit numbers for men in graduate programs are not publicly available in this format."
           },
           "women": {
             "applicants": 4732,
             "admits": 3316,
-            "acceptance_rate": 70.1,
-            "note": "Accepts applicants assigned female at birth and those who self-identify as women."
+            "acceptance_rate": 70.08,
+            "note": "Data for undergraduate admissions (2024-2025). Simmons University is a women-centered undergraduate institution."
           },
-          "non_binary": 0.0
+          "non_binary": null
         },
         "racial_breakdown": {
-          "white": 51.1,
-          "black_african_american": 10.7,
-          "hispanic_latino": 15.8,
-          "asian": 11.3,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.0,
-          "two_or_more_races": 3.5,
-          "unknown": 7.5,
-          "non_resident_alien": 4.3
-        },
-        "religious_affiliation": "Not specified"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "School of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 45.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive; requires 4 years of high school science and a strong commitment to clinical excellence.",
-          "housing_profile": "Standard undergraduate housing; many students participate in the 'Dotson Bridge and Mentoring Program' for peer support.",
-          "student_archetype": "Compassionate, high-achieving clinicians",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 3.7,
-              "prerequisite_courses": [
-                "Anatomy and Physiology I",
-                "Anatomy and Physiology II",
-                "Microbiology",
-                "General Chemistry"
-              ],
-              "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": [
-                "BIOL 231 Anatomy and Physiology I",
-                "CHEM 110 General Chemistry"
-              ],
-              "special_requirements": "Requires a C+ or better in all science prerequisites; only one retake allowed for any science course.",
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [
-                  "NURS 228 Nursing Theory & Evidence Based Practice",
-                  "NURS 295 Fundamental Skills and Health Assessment",
-                  "NURS 331 Pharmacology",
-                  "NURS 332 Medical Surgical Nursing I",
-                  "NURS 335 Psychiatric & Mental Health Nursing",
-                  "NURS 347 Complex Nursing Care Management"
-                ],
-                "electives": [
-                  "NURS 387 Healthcare Policy",
-                  "NURS 2XX Health Promotion",
-                  "BIOL 123N Principles of Microbiology"
-                ],
-                "total_units": 128,
-                "major_units": 64
-              },
-              "notable_professors": [
-                "Dr. Heather Shlosser (Dean)",
-                "Dr. Chaluza Kapaale (School Chair)",
-                "Dr. LaDonna Christian (Director, Dotson Bridge Program)"
-              ],
-              "notes": "Internal transfer is highly competitive and space-available only."
-            }
-          ]
-        },
-        {
-          "name": "Gwen Ifill School of Media, Humanities, and Social Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Perfect for students interested in interdisciplinary study; look for the new integrated Humanities major.",
-          "housing_profile": "Often found in traditional corridor-style halls like Dix or Simmons Hall.",
-          "student_archetype": "Civic-minded storytellers and activists",
-          "majors": [
-            {
-              "name": "Communications",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [],
-              "special_requirements": "Students must choose a concentration: Design, Journalism, or Integrated Media.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "COMM 121 Visual Communication",
-                  "COMM 122 Media Writing Bootcamp",
-                  "COMM 124 Media, Messages and Society",
-                  "COMM 110 2D Design Technology",
-                  "COMM 390 Studio Five (Capstone)"
-                ],
-                "electives": [
-                  "COMM 263 Social Media Journalism",
-                  "COMM 210 Graphic Design",
-                  "COMM 323 Digital Cultures"
-                ],
-                "total_units": 128,
-                "major_units": 42
-              },
-              "notable_professors": [
-                "Dr. Ammina Kothari (Dean)",
-                "Dr. Briana Martino (Department Chair)"
-              ],
-              "notes": "Home to 'Studio Five,' a student-run professional communications agency."
-            },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [],
-              "special_requirements": "Includes an International Relations track.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 128,
-                "major_units": 0
-              },
-              "notable_professors": [
-                "Dr. Lena Zuckerwise (Department Chair)",
-                "Dr. Abel Amado (International Relations)"
-              ],
-              "notes": "International Relations was absorbed into this major as a track in 2024."
-            }
-          ]
-        },
-        {
-          "name": "School of Management",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Focuses on female leadership in business; accredited by AACSB.",
-          "housing_profile": "Residential campus dorms; easy access to the Academic campus via a short walk.",
-          "student_archetype": "Strategic thinkers and inclusive leaders",
-          "majors": [
-            {
-              "name": "Business & Management",
-              "degree_type": "B.S.B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "ACCT 110 Financial Accounting"
-              ],
-              "special_requirements": "Concentrations in Finance, Marketing, and Retail Management.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 128,
-                "major_units": 0
-              },
-              "notable_professors": [
-                "Dr. Astrid Sheil (Dean)",
-                "Dr. Erin DeCurtis (Associate Dean)"
-              ],
-              "notes": "Focuses on female leadership in business."
-            }
-          ]
-        },
-        {
-          "name": "School of Sciences and Health Professions",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Requires 4 years of high school science for Nutrition and Physical Therapy tracks.",
-          "housing_profile": "Traditional dorms; Honors students in this school often reside in Morse Hall.",
-          "student_archetype": "Evidence-based problem-solvers",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "General Chemistry I",
-                "Calculus I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CHEM 224 Organic Chemistry I",
-                "BIOL 225 Cell Biology"
-              ],
-              "special_requirements": "Environmental Science is now a track within Biology.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 113 General Biology",
-                  "BIOL 218 Organismal Diversity",
-                  "BIOL 222 Animal Physiology",
-                  "BIOL 225 Cell Biology",
-                  "BIOL 336 Genetics",
-                  "CHEM 224 Organic Chemistry I",
-                  "CHEM 225 Organic Chemistry II"
-                ],
-                "electives": [
-                  "BIOL 341 Microbiology",
-                  "BIOL 345 Biochemistry",
-                  "BIOL 333 Marine Biology"
-                ],
-                "total_units": 128,
-                "major_units": 56
-              },
-              "notable_professors": [
-                "Dr. Jane Lopilato (Department Chair)"
-              ],
-              "notes": "Environmental Science is now a track within the Biology major."
-            },
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "Introduction to Psychological Science"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PSYC 203 Research Methods in Psychology"
-              ],
-              "special_requirements": "Strong pathways to the School of Social Work graduate programs.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 101 Introduction to Psychological Science",
-                  "STAT 118 Introductory Statistics",
-                  "PSYC 201 Biological Psychology",
-                  "PSYC 203 Research Methods in Psychology",
-                  "PSYC 345 Capstone Research"
-                ],
-                "electives": [
-                  "PSYC 235 Developmental Psychology",
-                  "PSYC 231 Psychopathology",
-                  "PSYC 244 Drugs and Behavior"
-                ],
-                "total_units": 128,
-                "major_units": 40
-              },
-              "notable_professors": [
-                "Dr. Amanda Carey (Department Chair)"
-              ],
-              "notes": "Popular major."
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "Foundations of IT"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CS 232 Data Structures",
-                "MATH 210 Discrete Mathematics"
-              ],
-              "special_requirements": "Offers a 3+1 program for Library and Information Science MS.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "CS 110 Foundations of IT",
-                  "CS 112 Intro to CS",
-                  "CS 221 Database Systems",
-                  "CS 232 Data Structures",
-                  "CS 245 Computing Systems",
-                  "CS 330 Programming Languages",
-                  "CS 332 Algorithms",
-                  "CS 335 Capstone"
-                ],
-                "electives": [
-                  "CS 327 Cybersecurity",
-                  "CS 321 Web Programming"
-                ],
-                "total_units": 128,
-                "major_units": 44
-              },
-              "notable_professors": [
-                "Dr. Amber Stubbs (Department Chair)"
-              ],
-              "notes": "3+1 accelerated master's pathway available."
-            },
-            {
-              "name": "Exercise Science",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "BIOL 113",
-                "CHEM 111"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "BIOL 231 Anatomy and Physiology I"
-              ],
-              "special_requirements": "Requires 3.25 GPA in science prerequisites for DPT phase.",
-              "admissions_pathway": "Direct Entry Track (3+3 or 4+3)",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 3.0,
-              "curriculum": {
-                "core_courses": [],
-                "electives": [],
-                "total_units": 128,
-                "major_units": 0
-              },
-              "notable_professors": [
-                "Dr. Paul Geisler (Dean)"
-              ],
-              "notes": "Primary pathway for the accelerated Physical Therapy program."
-            }
-          ]
-        },
-        {
-          "name": "School of Social Work",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strong emphasis on social justice; offers accelerated BSW to MSW pathways.",
-          "housing_profile": "Urban gated residence campus; communal living environments.",
-          "student_archetype": "Advocates for equity and social change",
-          "majors": [
-            {
-              "name": "Social Work",
-              "degree_type": "B.S.W.",
-              "is_impacted": false,
-              "acceptance_rate": 66.0,
-              "average_gpa_admitted": 0.0,
-              "prerequisite_courses": [
-                "Introduction to Social Work"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "SW 351 Social Work Practice I"
-              ],
-              "special_requirements": "Requires 425 hours of fieldwork/practicum in the senior year.",
-              "admissions_pathway": "Open Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "SW 101 Intro to Social Work",
-                  "SW 200 Policy",
-                  "SW 253 Human Behavior",
-                  "SW 351 Practice I",
-                  "SW 370 Field Placement",
-                  "SOCI 249 Inequalities"
-                ],
-                "electives": [
-                  "SW 255 Interviewing",
-                  "SOCI 239 Research"
-                ],
-                "total_units": 128,
-                "major_units": 72
-              },
-              "notable_professors": [
-                "Dr. Gary Bailey (MSW Program Director)"
-              ],
-              "notes": "Simmons is home to the first school of social work at a women's college."
-            }
-          ]
-        },
-        {
-          "name": "School of Library and Information Science (SLIS)",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 66.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Unique undergraduate opportunities in Information Science and Web Design.",
-          "housing_profile": "General residence halls; close proximity to the library and tech labs.",
-          "student_archetype": "Tech-savvy information architects",
-          "majors": []
+          "white": 47.0,
+          "black_african_american": 8.77,
+          "hispanic_latino": 9.91,
+          "asian": 5.78,
+          "native_american_alaskan": 0.08,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 2.3,
+          "unknown": 22.7,
+          "non_resident_alien": 3.42
         }
-      ],
-      "minors_certificates": [
-        "Data Science and Analytics Minor",
-        "Sustainability Minor",
-        "Law and Justice Minor",
-        "Leadership for Social Impact Minor",
-        "Public Policy Studies Minor",
-        "Health Care Management Minor",
-        "Migration Studies Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Simmons Online Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Early Action I",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Non-binding; decisions in mid-December"
-        },
-        {
-          "plan_type": "Early Action II",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Non-binding; scholarship priority deadline"
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Decisions on a rolling basis after Feb 1"
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "deadline": "Varies",
-          "details": "Common App personal essay required; no additional general supplemental essays for standard admission."
-        },
-        {
-          "target_program": "Honors Program",
-          "requirement_type": "Essays",
-          "deadline": "2025-02-01",
-          "details": "Two additional essays required: one 150-word short answer and one 400-word response."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "Academic GPA",
-          "Application Essay",
-          "Recommendations"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Talents",
-          "Character",
-          "Volunteer Work"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Important",
-        "interview_policy": "Recommended",
-        "legacy_consideration": "Considered",
-        "first_gen_boost": "Moderate",
-        "specific_differentiators": "Commitment to community service and leadership potential reflecting the university mission."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to the 'Exploratory' path if undecided.",
-        "Target 'Health and Exercise Science' for PT pathways.",
-        "Avoid stand-alone sunsetted majors like Economics or Physics."
-      ],
-      "college_ranking_tactics": [
-        "Prioritize Nursing and Health Sciences for Longwood clinical sites.",
-        "Rank Honors Program high for stackable scholarship eligibility."
-      ],
-      "alternate_major_strategy": "List Public Health or Nutrition as an alternate for Nursing applicants."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 46874,
-          "total_coa": 68322,
-          "housing": 17618
-        },
-        "out_of_state": {
-          "tuition": 46874,
-          "total_coa": 68322,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 36796,
-      "average_merit_aid": 24280,
-      "percent_receiving_aid": 93.0,
-      "scholarships": [
-        {
-          "name": "Gilbert and Marcia Kotzen Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition, fees, room and board",
-          "deadline": "2024-12-01",
-          "benefits": "$3,000 stipend",
-          "application_method": "Separate Application"
-        },
-        {
-          "name": "Trustee Scholarship",
-          "type": "Merit",
-          "amount": "Up to $31,000 per year",
-          "deadline": "Automatic",
-          "benefits": "Renewable",
-          "application_method": "Automatic Consideration"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 typically earn 4 transfer credits per exam",
-        "exceptions": [
-          "Max 32 combined credits",
-          "AP Chemistry 5 for CHEM 113 credit"
-        ],
-        "usage": "AP credits cannot fulfill Simmons PLAN requirements"
-      },
-      "ib_policy": {
-        "general_rule": "HL exams (5-7) grant 4 credits; SL not accepted.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transferology",
-          "Transfer Credit Evaluation (TCE)"
-        ],
-        "restrictions": "Max 96 transfer credits; 32 must be completed at Simmons."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Demonstrated commitment to leadership and social justice",
-        "Competitive academic profile (GPA 3.6+)"
-      ],
-      "common_activities": [
-        "Clinical or volunteer hours in healthcare",
-        "Leadership in advocacy groups"
-      ],
-      "essay_tips": [
-        "Focus on specific academic tracks",
-        "Explicitly mention PLAN curriculum elements"
-      ],
-      "red_flags": [
-        "Generic essays failing to acknowledge women-centered status",
-        "Wrong university name mentioned"
-      ],
-      "insights": [
-        "Personalized acceptance letters",
-        "Strong social mobility focus"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 63494,
-      "employment_rate_2yr": 99.0,
-      "grad_school_rate": 13.0,
-      "top_employers": [
-        "Boston University",
-        "Cisco",
-        "IBM",
-        "Wayfair",
-        "Wells Fargo"
-      ],
-      "loan_default_rate": 2.1,
-      "student_retention": {
-        "freshman_retention_rate": 81.0,
-        "graduation_rate_4_year": 67.0,
-        "graduation_rate_6_year": 71.0
       }
     }
   },
-  "_id": "simmons_university",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "general_undergraduate_housing_profile": {
+      "housing_profile": "Simmons University's residential campus comprises nine Georgian-style buildings for undergraduate students. Housing is guaranteed for the first two years. Dorms are generally described as 'adequate,' though some are noted as older, potentially having smaller rooms, and lacking air conditioning in some buildings, particularly during warmer months. Despite these aspects, a positive sense of community is often reported within the residential halls. Plans for a 'One Simmons' campus were launched, potentially bringing new housing in the future."
+    },
+    "colleges": [
       {
-        "prompt": "Simmons empowers students to be leaders in their communities and careers. Describe how you plan to use your education to make a difference.",
-        "word_limit": "250 words",
-        "type": "Leadership",
-        "required": true,
-        "brainstorming_questions": [
-          "Thinking about Simmons' specific emphasis on leadership, can you recall a time, big or small, where you took initiative to improve something in your community or a group you were part of, and what did that experience teach you about your potential as a leader?",
-          "Beyond just the skills you'll gain, what are the core values or principles that drive your desire to make a difference, and how do you see Simmons' educational environment specifically nurturing those values?",
-          "Imagine yourself graduating from Simmons and looking back at your time there. What specific challenges or unmet needs within your community or chosen career field do you hope to have addressed or significantly contributed to solving, and what unique perspective do you bring to tackling them?",
-          "Simmons is known for its commitment to social justice and equity. How has your own background, experiences, or observations shaped your understanding of these issues, and what kind of impactful change do you envision yourself driving in these areas with a Simmons education?",
-          "If you could bottle up the 'Simmons difference' and pour it into a community project or career path, what would that look like? What specific problem would you tackle, and how would the distinct approach or resources at Simmons enable you to make a tangible, lasting impact that you couldn't achieve elsewhere?"
+        "name": "Gwen Ifill College of Media, Arts, and Humanities",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": "Engaged thinkers passionate about understanding human culture, society, and communication. These students are often critical analyzers, storytellers, researchers, and advocates interested in fields like journalism, literature, history, politics, or education. They value small classes and close faculty mentorship.",
+        "strategic_fit_advice": "Ideal for students seeking a liberal arts education with a strong emphasis on media, social justice, and humanities. Strong writing, analytical, and communication skills are essential. Students should be keen on interdisciplinary study and engaging with real-world social issues, leveraging Boston's cultural and historical resources.",
+        "majors": [
+          {
+            "name": "Communications",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "COMM 121 Visual Communication (4 credits)",
+                "COMM 122 Media Writing Bootcamp (4 credits)",
+                "COMM 124 Media, Messages and Society (4 credits)"
+              ],
+              "electives": [
+                "COMM 163 Radio Operations (4 credits)",
+                "COMM 181 Public Speaking and Group Discussion (4 credits)",
+                "COMM 262 Media Convergence (4 credits)",
+                "COMM 263 Broadcast Writing (4 credits)",
+                "COMM 269 Globalization on a Shoestring (4 credits)",
+                "COMM 310 Feature Writing (4 credits)",
+                "COMM 315 Opinion/Editorial Writing (4 credits)",
+                "COMM 322 Digital Cultures: Communication & Social Media (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Briana Martino (Associate Professor and Chair)",
+              "Kat Lombard-Cook (Assistant Professor and Design and Integrated Media Tracks Director)",
+              "Erica Moura (Associate Professor of Practice and Student-Driven Media Director and Journalism Track Director)",
+              "Bob White (Professor)"
+            ],
+            "notes": "Communications majors complete 42 credits in Communications, including 3 required core courses, 2 1-credit technology workshops, 4 courses in their concentration (Design, Integrated Media, or Journalism), 2 courses outside their concentration, and an independent learning Capstone experience. Students should complete the three core courses by the end of their second year. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Admissions"
+          },
+          {
+            "name": "Public Relations and Marketing Communications",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "STAT 118 Introductory Statistics (4 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "COMM 121 Visual Communication (4 credits)",
+                "COMM 186 Introduction to Public Relations and Integrated Marketing Communications (4 credits)",
+                "COMM 281 Content Creation and Strategy (4 credits)",
+                "COMM 210 Introduction to Graphic Design (4 credits)",
+                "COMM 286 Intro to Advertising Practice and Branding (4 credits)",
+                "COMM 324 Social Media: Social Listening and Analytics (4 credits)",
+                "BUS 250 Principles of Marketing (4 credits)",
+                "BUS 270 Business Analytics (4 credits)"
+              ],
+              "electives": [
+                "COMM 122 Media Writing and Editing (4 credits)",
+                "COMM 312 Health Communications (4 credits)",
+                "COMM 320 Media and the First Amendment (4 credits)",
+                "BUS 221 Project Management (4 credits)",
+                "BUS 229 Corporate Social Responsibility: Managing People, Planet, & Profit (4 credits)",
+                "BUS 251 Digital Marketing (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 48
+            },
+            "notable_professors": [
+              "Briana Martino (Associate Professor and Chair, Communications)",
+              "Yulong Li (Associate Professor, School of Management)",
+              "Edward Vieira (Professor, School of Management)"
+            ],
+            "notes": "Joint major with Business. Students complete 48 credits including three core courses, 6 required courses, 2 electives (at least one at 300 level), and a Capstone. It is strongly recommended that PR/Marketing Communications majors take ECON 100 and PSYC 101. Capstone can be COMM 350 Independent Study, COMM 370/380 Internship/Field Experience, or COMM 390 Studio 5. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Admissions"
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "Three courses from: HIST 100 World History I (4 credits), HIST 101 World History II (4 credits), HIST 118 Latin American History (4 credits), HIST 128 Modern European History 1789-1989 (4 credits), HIST 140 Early American History (4 credits), HIST 141 Modern American History (4 credits)",
+                "Three specialization courses (4 credits each)",
+                "One course focusing on race and ethnicity history (e.g., HIST 118, AST 240, HIST 210, HIST 217) (4 credits)"
+              ],
+              "electives": [
+                "HIST 205/HON 205 Global Environmental History (4 credits)",
+                "HIST 252 History & Material Culture (4 credits)",
+                "HIST 253 Introduction to Public History (4 credits)",
+                "HIST 254 History Through Novels & Film (4 credits)",
+                "HIST 368 Seminar in Public History (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Stephen Berry (Program Director and Associate Professor)",
+              "Sarah L. Leonard (Graduate Program Director and Associate Professor)",
+              "Jamie Lee Andreson (Assistant Professor)"
+            ],
+            "notes": "The history major consists of 40 semester hours (10 courses). Students complete introductory courses, a three-course specialization, a course on race/ethnicity, and a capstone (seminar, internship, thesis, or independent study at 350-level or above). Honors in history requires a 3.5 GPA in history courses and a thesis (HIST 350, HIST 355). Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Admissions"
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 4 to 8 credits of capstone activities (internship or thesis).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "SOCI 101 Introduction to Sociology (4 credits)",
+                "SOCI 239 Introduction to Social Research (4 credits)",
+                "SOCI 249 Inequalities (4 credits)",
+                "SOCI 330 Sociological Theory (4 credits)"
+              ],
+              "electives": [
+                "Three electives in Sociology (4 credits each)",
+                "SOCI 220 Working for Social Justice (4 credits)",
+                "SOCI 301 Disability and Society (4 credits)",
+                "AST 232/SOCI 232/WGSS 232 Race, Gender & Health (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 32
+            },
+            "notable_professors": [
+              "Dawna Thomas (Professor and Chair, Race, Gender, and Sexuality Studies, often cross-listed)",
+              "Abel Amado (Associate Professor of Political Science & International Relations, related fields)"
+            ],
+            "notes": "Sociology majors complete 32 credits (8 courses), including four required courses, three electives, and a capstone (internship or thesis). SOCI 101 recommended by sophomore year, SOCI 239 and 249 by junior year, SOCI 330 by senior year. Capstone thesis involves SOCI 350 Independent Study and SOCI 355 Thesis. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Admissions"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Lena Zuckerwise (Associate Professor and Department Chair)",
+              "Abel Amado (Associate Professor of Political Science & International Relations)"
+            ],
+            "notes": "Curriculum details for the BA in Political Science are still being consolidated from the 2024-2025 catalog. The major typically involves courses in American politics, comparative politics, international relations, and political theory. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Admissions"
+          },
+          {
+            "name": "Art",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "Students choose an emphasis in Studio Art or Art History. Each requires 28 semester hours (7 courses).",
+                "Studio Art Track: Five Studio Art courses (including at least two from ART 111, ART 112, ART 138, ART 139) and two Art History courses (one must be ART 254 or ART 244).",
+                "Art History Track: Five Art History courses and two Studio Art courses."
+              ],
+              "electives": [
+                "ART 111 Drawing I (4 credits)",
+                "ART 112 Color Studio (4 credits)",
+                "ART 138 Introduction to Graphic Design: Typography (4 credits)",
+                "ART 139 Introduction to Graphic Design: Layout (4 credits)",
+                "ART 244 History of Modern Art (4 credits)",
+                "ART 254 Topics in Art History (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 28
+            },
+            "notable_professors": [
+              "Heather Hole (Chair and Associate Professor)",
+              "Edie Bresler (Professor of Practice)",
+              "Colleen Kiely (Professor)"
+            ],
+            "notes": "Art majors focus on either studio art or art history. None of the seven courses for the major may be taken Pass/Fail. ART 100 does not count for the Art major. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Admissions"
+          }
         ]
+      },
+      {
+        "name": "College of Natural, Behavioral, and Health Sciences (excluding Nursing majors)",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": "Inquisitive scientists, analytical researchers, and future health professionals. These students are logical, detail-oriented, problem-solvers who enjoy laboratory work, scientific inquiry, and applying scientific principles to health and wellness challenges.",
+        "strategic_fit_advice": "Best for students pursuing careers in natural sciences, computational sciences, environmental science, kinesiology, nutrition, or various health professions. A strong foundation and interest in STEM subjects are vital. The school is known for its strong health sciences programs and provides ample research and internship opportunities.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "CHEM 111 Principles of General Chemistry (or CHEM 113 General & Quantitative Chemistry I) (4 credits)",
+              "CHEM 216 General & Quantitative Chemistry II (4 credits)",
+              "CHEM 224 Organic Chemistry I (4 credits)",
+              "CHEM 225 Organic Chemistry II (4 credits)",
+              "MATH 120 Calculus I (or STAT 118 Introductory Statistics, or STAT 239 Regression Models, or MATH 227 Statistical Design and Analysis) (4 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 113 General Biology (4 credits)",
+                "BIOL 218 General Biology II-Organismal Diversity in the Environment (4 credits)",
+                "BIOL 222 Animal Physiology (4 credits)",
+                "BIOL 225 Cell Biology (4 credits)",
+                "BIOL 336 Genetics (4 credits)",
+                "Three additional Biology courses (at least two at 300-level, one at 200-level or higher) (12 credits)",
+                "Capstone: BIOL 350 Independent Laboratory Research (4 credits) OR BIOL 355 Thesis (4 credits) OR BIOL 370 Internship (4 credits)"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 56
+            },
+            "notable_professors": [
+              "Anna Aguilera (Professor and Director of the Honors Program)",
+              "Jane Lopilato (Associate Professor and Chair of the Department of Biology)",
+              "Seth Johnson (Assistant Professor)"
+            ],
+            "notes": "The Biology major requires 56 credits. Students interested in medical/dental school or graduate study should include MATH 121 and a year of physics. Capstone can be met with research, thesis, or internship. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "PSYC 101 Introduction to Psychological Science (4 credits)",
+              "STAT 118 Introductory Statistics (4 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 101 Introduction to Psychological Science (4 credits)",
+                "STAT 118 Introductory Statistics (4 credits)",
+                "PSYC 201 Biological Psychology (prereq: PSYC 101) (4 credits)",
+                "PSYC 203 Research Methods in Psychology (prereq: STAT 118 & PSYC 101) (4 credits)",
+                "One Basic Processes course (e.g., PSYC 243 Cognitive Psychology, PSYC 244 Drugs and Behavior, PSYC 245 Learning and Conditioning, PSYC 246 Motivation and Emotion, PSYC 247 Sensation and Perception) (4 credits)",
+                "One Social and Developmental course (e.g., PSYC 220 The Psychology of Gender) (4 credits)",
+                "One Clinical and Personality course (e.g., PSYC 217 And The Pursuit of Happiness) (4 credits)",
+                "Three additional PSYC courses, with at least one being a capstone PSYC course (cannot be transferred) (12 credits)"
+              ],
+              "electives": [
+                "PSYC 231 Psychopathology and Mental Health (4 credits)",
+                "PSYC 235 Developmental Psychology (4 credits)",
+                "PSYC 244 Drugs and Behavior (4 credits)",
+                "PSYC 308 Research in Social Psychology, with Lab (Capstone) (4 credits)",
+                "PSYC 331 Seminar in Clinical Psychology (Capstone) (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Gregory Feldman (Chair and Professor)",
+              "Amanda Carey (Associate Professor)",
+              "Sarah Martin (Professor)"
+            ],
+            "notes": "Psychology majors complete 36 semester hours in psychology and four hours in statistics. PSYC 101 is a prerequisite for all department courses. An AP Psychology score of 4 or 5 can replace PSYC 101, but taking the course is encouraged. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "CS 110 Foundations of Information Technology (4 credits)",
+                "CS 112 Introduction to Computer Science (4 credits)",
+                "CS 232 Data Structures (prereq: CS 112) (4 credits)",
+                "CS 221 Database Management Systems (prereq: CS 112) (4 credits)",
+                "CS 245 Computing Systems (prereq: CS 110, CS 112) (4 credits)",
+                "CS 330 Structure and Organization of Programming Languages (prereq: CS 232) (4 credits)",
+                "CS 332 Algorithms (prereq: CS 232, MATH 210) (4 credits)",
+                "MATH 210 Discrete Mathematics (4 credits)",
+                "STAT 118 Introductory Statistics (4 credits) OR another Math/Stats course 118 or above (4 credits)",
+                "CS 335 Software Engineering (4 credits - Capstone)"
+              ],
+              "electives": [
+                "CS 214 Data Interoperability (prereq: CS 112) (4 credits)",
+                "CS 227 Computer Networks (prereq: CS 110 or CS 112) (4 credits)",
+                "CS 321 Web-Centric Programming (prereq: CS 221 and (CS 110 or CS 112)) (4 credits)",
+                "CS 327 Cybersecurity (4 credits)",
+                "CS 350 Independent Study (4 credits)",
+                "CS 370 Internship (1-8 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 44
+            },
+            "notable_professors": [
+              "Amber Stubbs (Associate Professor and Chair of Computer, Data, and Mathematical Sciences)",
+              "Nanette Veilleux (Professor and Director of the Data Science Program)",
+              "Denise Carroll (Assistant Professor of Practice and Director of the Computer Science Online Degree Completion Program)"
+            ],
+            "notes": "The Computer Science major requires 44 credits. Students who major in Computer Science cannot double major with or minor in Information Technology. Students may declare a major after earning 32 credits but prior to 80 credits. Capstone requirement is fulfilled by CS 335 Software Engineering. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          },
+          {
+            "name": "Information Technology and Cybersecurity",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "CS 110 Foundations of Information Technology (4 credits)",
+                "CS 112 Introduction to Computer Science (4 credits)",
+                "CS 221 Database Management Systems (4 credits)",
+                "CS 227 Computer Networks (4 credits)",
+                "CS 245 Computing Systems (4 credits)",
+                "CS 321 Web-Centric Programming (4 credits)",
+                "CS 327 Cybersecurity (4 credits)",
+                "CS 343 Systems Analysis & Design (4 credits)",
+                "STAT 118 Introductory Statistics (or STAT 239 Regression and Design of Experiments) (4 credits)",
+                "BUS 221 Project Management (4 credits)",
+                "BUS 234 Organizational Communication & Behavior (4 credits)"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 44
+            },
+            "notable_professors": [
+              "Amber Stubbs (Associate Professor and Chair of Computer, Data, and Mathematical Sciences)",
+              "Jared Deighton (Assistant Professor)",
+              "Madiha Tabassum (Assistant Professor)"
+            ],
+            "notes": "The Information Technology and Cybersecurity major requires 44 credits. Students who major in Computer Science cannot double major with or minor in Information Technology. Capstone requirement is fulfilled by CS 327 Cybersecurity. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          },
+          {
+            "name": "Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "BIOL 113 General Biology (or BIOL 115 Advanced General Biology) (4 credits)",
+              "CHEM 111 Principles of General Chemistry (or CHEM 113 General & Quantitative Chemistry I) (4 credits)",
+              "CHEM 112 Principles of Organic Chemistry (4 credits)",
+              "STAT 118 Introductory Statistics (4 credits)",
+              "PSYC 101 Introduction to Psychological Science (4 credits)",
+              "NUTR 112 Introduction to Nutrition Science (4 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All Majors are required to have CPR and First Aid Certifications by March 1 of their senior year. For 3+3 Health and Exercise Science/DPT, prerequisite course grades must be a B or better, only 1 B- may stand, and a 3.5 Cumulative GPA and 3.5 Prerequisite GPA are required for progression into the DPT program.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "EXSC 100 Introduction to Exercise Science (2 credits)",
+                "EXSC 110 Form and Function in Resistance Exercise (2 credits)",
+                "BIOL 231 Anatomy and Physiology I (4 credits)",
+                "BIOL 232 Anatomy and Physiology II (4 credits)",
+                "BIOL 246 Foundations of Exercise and Health (4 credits)",
+                "BIOL 332 Exercise Physiology (4 credits)",
+                "PSYC 232 Health Psychology (4 credits)",
+                "EXSC 361 Exercise Assessment & Prescription (4 credits)",
+                "BIOL 362 Kinesiology (4 credits)",
+                "BIOL 370 Internship (4 credits)"
+              ],
+              "electives": [
+                "PHYS 110 Introductory Physics I (4 credits)",
+                "PHYS 111 Introductory Physics II (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 68
+            },
+            "notable_professors": [
+              "Randi Lite (Professor of Practice of Biology and Director of the Exercise Science Program)",
+              "Michael Welch (Assistant Teaching Professor and Director of the Health & Exercise Science Program)",
+              "Tim Hanway (Assistant Professor of Practice and Internship Coordinator)"
+            ],
+            "notes": "The Health and Exercise Science major requires 68 credits (includes prerequisites). It prepares students for graduate programs in Physical Therapy, Occupational Therapy, Athletic Training, etc. There are accelerated 3+3 and 4+3 pathways to the Doctor of Physical Therapy (DPT) program. The 3+3 DPT program has specific GPA and prerequisite grade requirements. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": "Compassionate caregivers, dedicated healthcare professionals, and leaders committed to patient advocacy and evidence-based practice. These students are resilient, empathetic, scientifically inclined, and thrive in hands-on clinical settings.",
+        "strategic_fit_advice": "Highly recommended for individuals committed to a career in nursing, given Simmons' long history and strong reputation in the field. A solid background in science and a desire for clinical experience are crucial. Its location near the Longwood Medical Area offers significant advantages for clinical placements.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "CHEM 110 Introductory Chemistry (or CHEM 111 Principles of General Chemistry, or CHEM 113 General & Quantitative Chemistry I) (4 credits)",
+              "BIOL 113 General Biology (4 credits)",
+              "BIOL 231 Anatomy and Physiology I (4 credits)",
+              "BIOL 232 Anatomy and Physiology II (4 credits)",
+              "BIOL 123N Principles of Microbiology (4 credits)",
+              "PSYC 101 Introduction to Psychological Science (4 credits)",
+              "PSYC 237N Developmental Psychology for Nurses (4 credits)",
+              "STAT 118 Introductory Statistics (4 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "All science course prerequisites require a minimum grade of C+ with no more than one retake."
+            ],
+            "special_requirements": "Documentation of appropriate immunization and health clearance for clinical coursework, annual criminal record check (CORI), CPR and First Aid Certifications. Completion of Math Competency Exam prior to NURS 295. PSYC 237N must be completed prior to NURS 335, NURS 333, NURS 334.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "NURS 103 Foundations of Nursing (4 credits)",
+                "NURS 228 Nursing Theory & Evidence Based Practice (4 credits)",
+                "NURS 295 Fundamental Skills and Health Assessment (4 credits)",
+                "NURS 331 Pharmacology (4 credits)",
+                "NURS 332 Medical Surgical Nursing I (4 credits)",
+                "NURS 335 Psychiatric & Mental Health Nursing (4 credits)",
+                "NURS 346 Community Health Nursing (4 credits)",
+                "NURS 347 Complex Nursing Care Management across the Continuum (4 credits)",
+                "NURS 417 Leadership and Management (4 credits)",
+                "NURS 418 Transition to Professional Nursing (4 credits)",
+                "NURS 419 Clinical Capstone Practicum (8 credits)"
+              ],
+              "electives": [
+                "NURS 333 Maternity Nursing (4 credits)",
+                "NURS 334 Pediatric Nursing (4 credits)",
+                "NURS 336 Medical Surgical Nursing II (4 credits)"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Heather Shlosser (Dean and Associate Professor)",
+              "Chaluza Kapaale (Associate Dean of Academic Affairs and Teaching Professor)",
+              "LaDonna Christian (Associate Professor of Practice and Director, Dotson Bridge and Mentoring Program)"
+            ],
+            "notes": "The BSN program requires a minimum grade of C+ in all science prerequisites. It offers traditional 8-term and accelerated options. Nursing students must complete an all-University curriculum which includes additional liberal arts and sciences courses. Clinical hours are integrated throughout the program. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          }
+        ]
+      },
+      {
+        "name": "School of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": "Aspiring leaders, strategic thinkers, and ethical business professionals. These students are driven, pragmatic, and interested in developing the skills to manage organizations, innovate, and contribute to the economy. They seek practical experience and networking opportunities.",
+        "strategic_fit_advice": "Suitable for students aiming for leadership roles in various business sectors. A strong interest in areas like accounting, finance, marketing, or general business administration is beneficial. The program emphasizes an unmatched combination of theory, practice, and real-world experience.",
+        "majors": [
+          {
+            "name": "Business and Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Astrid Sheil (Dean, School of Management)",
+              "Erin DeCurtis (Associate Teaching Professor and Associate Dean for Undergraduates and Faculty)",
+              "Zinnia Mukherjee (Professor of Economics)"
+            ],
+            "notes": "The Bachelor of Science in Business Administration (BSBA) in Business and Management provides foundational skills for various roles. Specific curriculum details beyond general program offerings (Accounting, Finance, Marketing, Retail Management, Economics, Healthcare Management, Leadership for Social Impact) are still being consolidated from the 2024-2025 catalog. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory"
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Ray Pfeiffer (Professor)",
+              "Masato Aoki (Associate Professor)"
+            ],
+            "notes": "Curriculum details for Accounting are still being consolidated from the 2024-2025 catalog. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Yulong Li (Associate Professor)",
+              "Edward Vieira (Professor)"
+            ],
+            "notes": "Curriculum details for Finance are still being consolidated from the 2024-2025 catalog. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Christina Ramey (Professor of Practice and Director of Graduate Programs and Certificates)"
+            ],
+            "notes": "Curriculum details for Marketing are still being consolidated from the 2024-2025 catalog. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Niloufer Sohrabji (Professor and Chair of Economics)",
+              "Masato Aoki (Associate Professor)"
+            ],
+            "notes": "Curriculum details for Economics are still being consolidated from the 2024-2025 catalog. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory"
+          }
+        ]
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": "Empathic advocates, community builders, and clinical practitioners committed to social justice and improving human well-being. These students are resilient, compassionate, culturally aware, and dedicated to addressing societal challenges through direct service and systemic change.",
+        "strategic_fit_advice": "An excellent choice for those dedicated to a career in social work, particularly clinical practice, as Simmons was the nation's first to offer such training. Applicants should possess strong interpersonal skills, a commitment to social responsibility, and a desire for rigorous clinical education. Opportunities for fieldwork are a significant component of the program.",
+        "majors": [
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "acceptance_rate": 0.66,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "STAT 118 Introductory Statistics (4 credits)",
+              "BIOL 109 Sex, Gender, and Biology (4 credits) OR BIOL 113 General Biology (4 credits)",
+              "ECON 101 Principles of Macroeconomics (4 credits) OR POLS 101 Introduction to American Politics (4 credits) OR POLS 217 American Public Policy (4 credits) OR PH 101 Introduction to Public Health (4 credits)",
+              "SOCI 239 Introduction to Social Research I (4 credits)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "40 hours of service-learning (in SW 253), 100 hours of junior year practicum (SW 345X), 425 hours of senior year practicum (SW 370, SW 371). Criminal record check (CORI).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "SW 101 Introduction to Social Work & Social Welfare (4 credits)",
+                "SW 253 Human Behavior in the Social Environment (HBSE) (4 credits)",
+                "SW 255 Interviewing and Documentation in Human Services (4 credits)",
+                "SW 200 Social Welfare Policy (4 credits)",
+                "SW 351 Social Work Practice I: Intro to Generalist Practice (prereq: SW 101 and SW 253) (4 credits)",
+                "SOCI 249 Inequalities (4 credits)",
+                "SW 352 Social Work Practice II: Work with Individuals & Families (prereq: SW 351) (4 credits)",
+                "SW 354 Social Work Practice IV: Macro Social Work (prereq: SW 255) (4 credits)",
+                "SW 353 Social Work Practice III: Groups (prereq: SW 352) (4 credits)",
+                "SOCI 239 Introduction to Social Research (4 credits)",
+                "SW 345X Junior Virtual Field Experience Seminar (prereq: SW 351) (4 credits)",
+                "SW 370 Social Work Field Placement & Seminar I (prereq: SW 352 and 345X) (8 credits)",
+                "SW 371 Social Work Field Placement & Seminar II (prereq: SW 352) (8 credits)"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 72
+            },
+            "notable_professors": [
+              "Michael LaSala (Dean and Professor)",
+              "Tiffany Pinckney (Associate Professor of Practice and BSW Program Director)",
+              "Gary Bailey (Professor of Practice and MSW Program Director)"
+            ],
+            "notes": "The BSW program requires 72 credits, including extensive field placements and service-learning hours. Students are recommended to fulfill certain liberal arts requirements (STAT 118, BIO 113 or 109, and one from ECON 101/POLS 101/POLS 217/PH 101) before taking SOCI 239. An accelerated 3+1 BSW & MSW degree program is also available. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory, Admissions"
+          }
+        ]
+      },
+      {
+        "name": "Engineering Dual Degree Program",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": [],
+        "notes": "This is a 3+2 program where students earn a Bachelor of Science from Simmons and a Bachelor of Science in Engineering from a partner institution (e.g., Columbia University, Washington University in St. Louis, Wentworth Institute of Technology). Students must explicitly apply for and be admitted to the Dual Degree Engineering Program, and the rigorous curriculum must be started during the first semester of study. They also must meet the entrance requirements of the partner institution."
+      },
+      {
+        "name": "School of Library and Information Science (Undergraduate)",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
+        "student_archetype": "Meticulous organizers, information architects, and digital humanists dedicated to the management, preservation, and accessibility of information. They are often intellectually curious, detail-oriented, and interested in technology's role in information sharing, whether in libraries, archives, or other information-intensive environments.",
+        "strategic_fit_advice": "Excellent for those aspiring to careers in library science, archives, data management, or information systems. Applicants should have a strong interest in information organization and access, as well as a commitment to service in the information professions. This school is nationally recognized, particularly for its Archives Management concentration.",
+        "majors": [
+          {
+            "name": "Undergraduate Programs Housed Elsewhere",
+            "degree_type": null,
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Sanda Erdelez (Dean and Professor)",
+              "Laura Saunders (Professor and Associate Dean)",
+              "Naresh Agarwal (Professor and Director of Information Science & Technology Concentration)"
+            ],
+            "notes": "The School of Library and Information Science (SLIS) at Simmons University primarily offers graduate-level programs (Master of Science in Library and Information Science, Ph.D. in Library and Information Science, and various graduate certificates). Undergraduate majors related to Information Technology and Data Science are housed within the Department of Computer, Data, and Mathematical Sciences, which is part of the School of Sciences and Health Professions. SLIS also participates in a 3+1 accelerated BS/MS program with Computer Science or Information Technology majors. Data source: Simmons University 2024-2025 Undergraduate Course Catalog, Faculty Directory"
+          }
+        ],
+        "notes": "The School of Library and Information Science primarily offers graduate-level programs. Undergraduate majors in related fields like Information Technology and Data Science are typically housed within the School of Sciences and Health Professions."
+      }
+    ],
+    "minors_offered": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Writing Minor",
+      "Computer Science",
+      "Education Minor",
+      "Public Policy Studies Minor",
+      "Health Care Management Minor",
+      "Cinema and Media Studies Minor",
+      "Mental Health Practice (Graduate Certificate)",
+      "Trauma Practice (Graduate Certificate)"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action I",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Applicants receive a decision in mid-late December."
+      },
+      {
+        "plan_type": "Early Action II",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Deadline extended to December 6, 2025. Applicants receive a decision in mid-late January."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "Applicants are typically notified of a decision on a rolling basis after February 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A college essay or personal statement is required, typically submitted through the Common Application. Simmons University generally does not require additional essays outside of the Common Application essay for most applicants."
+      },
+      {
+        "target_program": "Honors Program",
+        "requirement_type": "Essays",
+        "deadline": "February 1st (or by applicant's chosen application deadline)",
+        "details": "An essay of 350 words or fewer is required, describing which Honors Program opportunities the applicant would like to join and why. The Honors Application is part of the Common Application."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Holistic review emphasizes not only academic ability but also motivation, interest in serving communities, special talents, leadership qualities, and who the applicant is. Strong commitment to supporting first-generation students as a First-gen Forward Institution."
+    },
+    "essay_prompts": []
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply as undeclared to utilize Simmons' flexible major declaration policy, allowing for exploration until sophomore year.",
+      "For highly sought-after programs like Direct Entry Nursing, focus on a strong academic record in relevant subjects and clearly articulate your passion for the field.",
+      "Align your application (essays, extracurriculars, recommendations) with Simmons' institutional values, suchs as leadership, social justice, and community engagement, regardless of your declared major.",
+      "Maintain a strong overall academic record, including a high GPA and a challenging college preparatory curriculum.",
+      "Actively use Simmons' major exploration resources and academic advising to make an informed decision that genuinely reflects your interests and career goals."
+    ],
+    "admissions_tactics": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated passion in 1-2 areas rather than scattered activities",
+      "Authentic essays that show self-reflection",
+      "Leadership in meaningful extracurriculars"
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Simmons University maintains a moderately selective admissions process with an acceptance rate typically ranging from 66% to 76.5%. The university employs a holistic review, prioritizing a strong academic record (average GPA around 3.5-3.84, SAT 1230-1390, ACT 26-31), meaningful extracurricular involvement, compelling personal statements, and strong recommendations.",
+        "implication": "Applicants should focus on presenting a well-rounded profile that not only demonstrates academic rigor but also showcases leadership potential, a commitment to community service, and personal qualities that align with Simmons' mission. While test scores are considered (and can strengthen an application), a compelling narrative through essays and recommendations is crucial."
+      },
+      {
+        "category": "Academic",
+        "insight": "Simmons University provides an undergraduate curriculum that is highly customizable and interdisciplinary, offering over 50 majors and the opportunity to cross-register for thousands of courses through the Colleges of the Fenway consortium. Unique programs, such as a 5-year dual-degree in Engineering with Columbia University, further highlight its flexible and expansive academic environment.",
+        "implication": "Prospective students should articulate their intellectual curiosity and enthusiasm for an adaptable, interdisciplinary education. Highlighting specific academic interests, experiences with diverse subjects, or a desire to pursue unique opportunities like the dual-degree program will demonstrate alignment with Simmons' academic philosophy."
+      },
+      {
+        "category": "Culture",
+        "insight": "Simmons University fosters a women-centered undergraduate experience within a small, close-knit, and supportive academic community located in Boston. The institution emphasizes leadership development, social responsibility, and community engagement, valuing diversity and inclusivity among its students.",
+        "implication": "Applicants should demonstrate their interest in a women-focused educational setting and their ability to contribute positively to a collaborative and inclusive community. Highlighting experiences in leadership, community service, teamwork, and a dedication to social impact will resonate with Simmons' core values."
+      }
+    ],
+    "essay_tips": [
+      "Be specific about your connection to Simmons University and its values. Successful essays often highlight how the applicant resonates with Simmons' mission and community. For instance, essays that won awards at Simmons discuss how the university provided a \"second chance\" or an empowering, quality college experience for diverse students, emphasizing a strong connection to the institution's values and opportunities.",
+      "Show, don't just tell, your experiences and aspirations. Instead of simply stating you are a leader or passionate about a cause, use concrete examples and personal narratives. Winning essays demonstrate leadership through specific actions within their community during challenging times, such as organizing clean-ups or assisting with food distribution during a pandemic. They also delve into personal struggles and how these experiences fueled their desire for education and change.",
+      "Connect your interests to specific resources or academic opportunities at Simmons. Explicitly link your passions and future goals to what Simmons offers. One award-winning essay mentions a strong desire to engage in academic research in Sociology, specifically on \"increasing surveillance of marginalized populations and solutions to combat systemic racism, misogyny, homophobia, and xenophobia,\" demonstrating a clear alignment with potential academic pursuits at the university. This shows you've done your research and envision yourself thriving within their specific programs.",
+      "Craft a clear narrative or driving purpose. While a Reddit thread specifically discusses this for a Physician Assistant program essay, the principle applies broadly: having a consistent \"main driving purpose\" for why you are applying to Simmons or a particular program can make your essay more cohesive and impactful. This narrative should weave through your experiences and aspirations, demonstrating what motivates you."
+    ]
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 46900.0,
+        "total_coa": 70306.0,
+        "housing": 16843.0
+      },
+      "out_of_state": {
+        "tuition": 46900.0,
+        "total_coa": 70306.0
+      },
+      "notes": "As a private institution, Simmons University generally does not differentiate between in-state and out-of-state costs for tuition or total cost of attendance."
+    },
+    "aid_philosophy": "Need-Aware / Aims to meet demonstrated need",
+    "average_need_based_aid": 38052.0,
+    "average_merit_aid": 15000.0,
+    "percent_receiving_aid": 100.0,
+    "meets_full_need": false,
+    "notes": "Simmons aims to meet each student's financial need using a combination of merit scholarships, need-based grants, student loans, and student employment.",
+    "scholarships": [
+      {
+        "name": "Kotzen Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, mandatory fees, room and board; plus $3,000/year for study abroad, summer internship tuition, short-term courses, or research support",
+        "deadline": "December 1 (admission and scholarship application)",
+        "benefits": "Most prestigious merit scholarship, covers all major costs, additional funds for academic enrichment",
+        "application_method": "Separate Application (requires admission application, essays, resume, and interview for finalists)"
+      },
+      {
+        "name": "Simmons Distinguished Scholar Award",
+        "type": "Merit (International)",
+        "amount": "Full tuition, room and board, mandatory fees; plus $3,000 annual stipend for academic enrichment",
+        "deadline": "December 1",
+        "benefits": "Highest merit scholarship, leadership development, research opportunities, mentorship, priority admission to Honors Program",
+        "application_method": "Separate Application (requires admission application, essay, resume; finalists may have an interview)"
+      },
+      {
+        "name": "First-Year Merit Scholarships (e.g., Leadership, Trustee, Presidential, Provost, Dean's, Director's, Achievement)",
+        "type": "Merit",
+        "amount": "Up to $30,000 per year, renewable for four years",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Recognizes academic performance, leadership, community service, co-curricular activities, and other talents",
+        "application_method": "Automatic Consideration upon application for admission"
+      },
+      {
+        "name": "Alumnae/i Scholarship",
+        "type": "Merit (Alumni Affiliation)",
+        "amount": "$2,000 per year, renewable for four years",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded to children, grandchildren, and siblings of Simmons graduates",
+        "application_method": "Automatic Consideration (applicants should identify alumnae/us in their admission application)"
+      },
+      {
+        "name": "Dorothea Lynde Dix Scholarship",
+        "type": "Merit (Dix Scholar)",
+        "amount": "Up to $10,000 for the first four consecutive semesters of enrollment",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded to Dix scholars (adult learners)",
+        "application_method": "Automatic Consideration upon application to Simmons as a Dix Scholar"
+      },
+      {
+        "name": "Honors Program Award",
+        "type": "Merit (Program-Specific)",
+        "amount": "$1,000 tuition scholarship per year",
+        "deadline": "Automatic consideration upon acceptance to the Honors Program",
+        "benefits": "Additional tuition support for Honors Program members, potential for study abroad scholarships like the D'Angelo Scholarship",
+        "application_method": "Automatic Consideration upon acceptance into the Honors Program"
+      },
+      {
+        "name": "Simmons Need-Based Grants",
+        "type": "Need",
+        "amount": "Varies based on demonstrated financial need",
+        "deadline": "FAFSA deadline (March 1st for continuing undergraduates; as soon as possible after October 1st for first-year students)",
+        "benefits": "Financial assistance for students with demonstrated financial need",
+        "application_method": "FAFSA (Free Application for Federal Student Aid)"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/simmons_university_logo.png"
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "summary": "Credit awarded for AP scores of 4 or 5; score of 3 accepted in some subjects. Specific credit and course equivalency vary by exam.",
+      "general_rule": "Score of 4 or 5 grants 4 transfer credits for most AP exams",
+      "exceptions": [
+        "Maximum of 32 AP credits can be granted",
+        "For language exams, a score of 3 earns no academic credit but allows placement into Intermediate II (202) level; a score of 4 or 5 earns 4 credits and placement into Conversation and Composition (245) level",
+        "AP credits cannot be used to fulfill PLAN (General Education) requirements",
+        "No specific information found regarding AP Research or Computer Science requiring a score of 5; general rule of 4 or 5 likely applies if no specific exception is listed for these exams."
+      ],
+      "usage": "AP credits can count as general transfer credit or a specific Simmons course equivalent, provide advanced placement in courses, and may satisfy some major prerequisites. They cannot replace the required first-year course sequence."
+    },
+    "ib_policy": {
+      "summary": "Credit awarded for Higher Level (HL) IB exams with scores of 5, 6, or 7. No credit for Standard Level (SL) exams. Specific credit and course equivalency vary by exam.",
+      "general_rule": "HL exams with 5+ grant credit; SL exams are not accepted. For non-language HL courses, a score of 5, 6, or 7 earns 4 credits. For language HL courses, a score of 5 results in placement into Intermediate II (202) level without credit, while a score of 6 or 7 earns 4 credits and placement into Conversation and Composition (245) level.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "summary": "Accepts transfer credit from regionally accredited institutions for college-level courses with a minimum grade of C (2.0) or higher. A maximum of 64 credits can be transferred towards a bachelor's degree. Courses must be comparable in content and rigor to Simmons' curriculum.",
+      "tools": [],
+      "restrictions": "Undergraduate students may transfer a maximum of 96 transfer credits. A minimum grade of 'C' (or 'Pass' with proof of a 'C' or better) is required for transfer courses. For some disciplines like nursing, a grade of C+ is required. No more than 16 summer and winter term credits combined may be transferred. A maximum of 32 credits from dual enrollment and/or AP credits may be granted, unless a complete AA/AS was earned prior to enrolling at Simmons. Credit is not granted for developmental, remedial, pre-college, professional development, skills-based, recreational, physical education, or ESL courses. Only credits from regionally accredited institutions may transfer. All online Simmons students must complete their final 32 credits with Simmons. Graduate students may transfer credits at the discretion of their program director, typically requiring a 'B' (3.0) or higher and completion within 5 years of matriculation (10 years for Nutrition Department)."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong commitment to academic rigor and intellectual curiosity.",
+      "An interest in leadership development and empowerment, particularly for women.",
+      "A desire to engage in community service and social justice initiatives.",
+      "Adaptability and resilience in a dynamic learning environment.",
+      "Effective communication and collaboration skills for a close-knit community.",
+      "Proactive engagement with internship and career development opportunities."
+    ],
+    "common_activities": [
+      "Participating in student organizations focused on advocacy, identity, and academic disciplines.",
+      "Engaging in internships and experiential learning within Boston's vibrant professional landscape.",
+      "Attending campus events, guest lectures, and workshops on social justice and leadership.",
+      "Volunteering for local non-profits and community service projects.",
+      "Joining athletic teams or intramural sports.",
+      "Networking with faculty, alumnae, and industry professionals."
+    ],
+    "essay_tips": [
+      "Clearly articulate your passion for Simmons' mission, especially its focus on women's leadership and social justice.",
+      "Highlight specific academic programs, research opportunities, or faculty members that align with your interests.",
+      "Share personal experiences that demonstrate your commitment to community engagement and making a positive impact.",
+      "Showcase your unique voice and personality, making sure your essay reflects who you are.",
+      "Proofread meticulously for grammar, spelling, and clarity.",
+      "Connect your past experiences and future aspirations to how you will contribute to the Simmons community."
+    ],
+    "red_flags": [
+      "Demonstrating a lack of understanding or interest in Simmons' unique identity as a women-centered undergraduate institution.",
+      "Failing to articulate how you would contribute to or benefit from a close-knit, collaborative community.",
+      "Not showcasing a genuine interest in your chosen field of study, particularly in Simmons' strong programs like health sciences or library science.",
+      "Writing an essay that could be submitted to any university without specific references to Simmons' values or offerings.",
+      "Exhibiting a lack of initiative or self-motivation, as Simmons encourages proactive engagement and leadership.",
+      "Ignoring the importance of internships and practical experience, which are central to the Simmons educational model."
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 52800,
+    "employment_rate_2yr": 70.0,
+    "median_earnings_6yr": 47000,
+    "earnings_notes": "Median earnings 10 years after enrollment is $52,800, according to CollegeSimply, which cites the U.S. Department of Education College Scorecard and Department of Treasury as its sources. Another source, Orbit, reports a median salary of $104,100 ten years post-graduation. The College Scorecard generally lists a median earning of $63,494. Median earnings 6 years after enrollment is $47,000, as reported by CollegeSimply. Other sources provided mean earnings 6 years out at $49,700 and median earnings of $61,420. The employment rate of 70% is reported by Orbit, though the specific '2 years after graduation' timeframe is not explicitly stated. Simmons University's own data indicates 99% of graduates were employed or continuing education within six months.",
+    "top_employers": [
+      "Massachusetts General Hospital",
+      "Brigham and Women's Hospital",
+      "Boston Children's Hospital",
+      "Deloitte",
+      "Ernst & Young",
+      "PricewaterhouseCoopers",
+      "Bain & Company",
+      "Amazon",
+      "Bank of America",
+      "State Street"
+    ],
+    "grad_school_rate": 13.0,
+    "loan_default_rate": 2.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 82.0,
+    "graduation_rate_4_year": 67.0,
+    "graduation_rate_6_year": 71.0
+  }
 }

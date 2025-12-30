@@ -692,13 +692,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One required supplemental essay: 'Why Us' (Share with us anything that has made you interested in our institution, 150 words or fewer). Up to four optional essays/lists are also available, including prompts about intellectual curiosity, a Dr. Maya Angelou quote (community focus), a list of five intriguing books, and a 'Top Ten List'."
       },
       {
         "target_program": "Music (Optional Arts Supplement)",
         "requirement_type": "Audition/Portfolio",
-        "deadline": null,
+        "deadline": "",
         "details": "Applicants with talent in music may choose to submit an optional arts supplement, which can include an audition or performance recording, via SlideRoom. Auditions for the Music Performance concentration occur in the second year. Presidential Scholarships for Distinguished Achievement in music require an application, audition, and interview by November 15."
       }
     ],
@@ -728,7 +728,7 @@
         "type": "Intellectual",
         "required": true,
         "brainstorming_questions": [
-          "Thinking about the specific books, music, or art that truly grab you, what's a moment where that interest led you to actively *do* something you wouldn't have otherwise \u2013 perhaps try a new skill, start a project, or seek out a specific experience?",
+          "Thinking about the specific books, music, or art that truly grab you, what's a moment where that interest led you to actively *do* something you wouldn't have otherwise – perhaps try a new skill, start a project, or seek out a specific experience?",
           "Beyond just enjoying it, can you recall a specific piece of media (a song, a film, a blog post) that genuinely challenged a belief you held or made you see something familiar in a completely new light?",
           "When you're deeply engrossed in something that fuels your passion, what's the *feeling* you experience? Can you describe a time that feeling pushed you to learn more or explore a related topic in a way that felt surprising to you?",
           "Consider something you're passionate about. Is there a specific question that this interest consistently raises for you, or a puzzle it seems to be unraveling, that you find yourself returning to again and again?",
@@ -741,7 +741,7 @@
         "type": "Personal",
         "required": true,
         "brainstorming_questions": [
-          "Beyond the obvious or expected answers, think about a time when someone else (a friend, family member, teacher, even a stranger) specifically pointed out something you do exceptionally well \u2013 what was it, and what did it feel like to hear that?",
+          "Beyond the obvious or expected answers, think about a time when someone else (a friend, family member, teacher, even a stranger) specifically pointed out something you do exceptionally well – what was it, and what did it feel like to hear that?",
           "When you're working on something you genuinely enjoy and are good at, what's the internal feeling or flow state that washes over you? Can you describe a specific instance where you felt completely absorbed and energized by this skill?",
           "Reflect on a moment where you realized a skill you possess unexpectedly helped you navigate a challenging situation or connect with someone. What was the challenge, what was the skill, and what did you learn from that experience?",
           "If you could wave a magic wand and instantly become proficient in something entirely new, what would it be and why? What does the *desire* for this improvement reveal about your aspirations or values that might not be apparent in your current strengths?",
@@ -886,11 +886,31 @@
       "Poor grammar and editing in application materials."
     ],
     "insights": [
-      "Wake Forest practices holistic admissions, evaluating applicants beyond just grades and test scores, focusing on individual qualities.",
-      "Demonstrated interest is crucial; visiting campus, doing an in-person interview, and actively engaging with the admissions office can show Wake Forest is your top choice.",
-      "While test-optional, submitting strong SAT (1310-1470) or ACT (29-33) scores can enhance an application, with admitted students often having scores in these ranges or higher.",
-      "The 'Pro Humanitate' motto is central to the university's identity, and applicants who embody a commitment to service and leadership are highly valued.",
-      "The university emphasizes a close-knit academic community with small class sizes and accessible professors, which is often highlighted by current students."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Wake Forest practices holistic admissions, evaluating applicants beyond just grades and test scores, focusing on individual qualities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Demonstrated interest is crucial; visiting campus, doing an in-person interview, and actively engaging with the admissions office can show Wake Forest is your top choice."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test-optional, submitting strong SAT (1310-1470) or ACT (29-33) scores can enhance an application, with admitted students often having scores in these ranges or higher."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The 'Pro Humanitate' motto is central to the university's identity, and applicants who embody a commitment to service and leadership are highly valued."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university emphasizes a close-knit academic community with small class sizes and accessible professors, which is often highlighted by current students."
+      }
     ]
   },
   "outcomes": {

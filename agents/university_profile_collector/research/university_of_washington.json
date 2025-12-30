@@ -964,13 +964,13 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two required essays and one optional essay. The University of Washington does not review the Common App personal essay.\nRequired Essay 1 (Personal Story): Tell a story from your life, describing an experience that either demonstrates your character or helped to shape it. (650 words or fewer)\nRequired Essay 2 (Community): Our families and communities often define us and our individual worlds. Describe the world you come from and how you, as a product of it, might add to the diversity of the UW. (300 words)\nOptional Essay (Additional Information): You may include additional information if something has particular significance to you, such as personal hardships, limited activities, or unusual circumstances. (200 words)"
       },
       {
         "target_program": "Honors College",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Additional essay required: Describe your enthusiasm for learning unfamiliar things and exploring different ways of thinking. (450 words)"
       }
     ],
@@ -1157,11 +1157,31 @@
       "Significant discrepancies between reported academic coursework and final transcripts upon admission."
     ],
     "insights": [
-      "UW does not participate in Early Decision or Early Action.",
-      "Admission to certain popular majors (like Computer Science and Business) is highly competitive and often requires a separate application process once admitted to the university.",
-      "While test scores are considered, UW places less emphasis on SAT/ACT and doesn't disadvantage students for not submitting them; high scores can still enhance a borderline application.",
-      "In-state applicants have a higher acceptance rate than out-of-state applicants.",
-      "The most successful essays are often around 400 words, even for prompts with higher word limits."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UW does not participate in Early Decision or Early Action."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admission to certain popular majors (like Computer Science and Business) is highly competitive and often requires a separate application process once admitted to the university."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While test scores are considered, UW places less emphasis on SAT/ACT and doesn't disadvantage students for not submitting them; high scores can still enhance a borderline application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "In-state applicants have a higher acceptance rate than out-of-state applicants."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The most successful essays are often around 400 words, even for prompts with higher word limits."
+      }
     ]
   },
   "outcomes": {

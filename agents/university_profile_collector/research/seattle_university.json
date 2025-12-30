@@ -1,530 +1,572 @@
 {
-  "university_profile": {
-    "_id": "seattle_university",
-    "university_name": "Seattle University",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.seattleu.edu",
-      "https://www.usnews.com/best-colleges/seattle-university-3790"
-    ],
-    "metadata": {
-      "official_name": "Seattle University",
-      "location": {
-        "city": "Seattle",
-        "state": "WA",
-        "type": "Private"
-      }
+  "_id": "seattle_university",
+  "metadata": {
+    "official_name": "Seattle University",
+    "location": {
+      "city": "Seattle",
+      "state": "Washington",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "Seattle University is a premier Jesuit Catholic institution located in the heart of Seattle's Capitol Hill neighborhood, emphasizing the education of the whole person and professional formation. The university is distinguished by its commitment to social justice, sustainability, and high-impact undergraduate research within a vibrant urban setting.",
-      "market_position": "Elite Private",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 151,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "Acceptance rates have tightened significantly, dropping from 85.1% in 2022 to approximately 76% in the most recent cycle.",
-          "implication": "Prospective students should treat the application as increasingly competitive and leverage the optional supplemental essays to demonstrate alignment with Jesuit values."
-        },
-        {
-          "category": "Value & Mobility",
-          "insight": "Ranked #65 nationally for 'Best Value' and recognized as the top private university in Washington for social mobility.",
-          "implication": "The school is an attractive option for high-achieving students seeking a high ROI and strong institutional support for diverse backgrounds."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A close-knit, mission-driven community where 180+ student clubs and NCAA Division I athletics coexist with a deep-seated culture of service-learning and political awareness.",
-        "transportation_impact": "As an urban campus with a high commuter population, the university integrates life through 'Commuter Link' spaces, subsidized ORCA transit cards, and facilities like commuter showers to maintain a unified campus feel.",
-        "research_impact": "Strong emphasis on 'Engaged Student Scholarship' through the Office of Undergraduate Research, which facilitates faculty-mentored projects and hosts the annual Student Research and Creativity Conference (SRCCon)."
-      }
-    },
-    "admissions_profile": {
-      "current": {
-        "overall_acceptance_rate": 76.9,
-        "international_acceptance_rate": 87.5,
-        "transfer_acceptance_rate": 62.5,
-        "admits_class_size": 6514,
-        "is_test_optional": true,
-        "is_waitlist_active": true,
-        "test_policy_details": "Test Optional; for the most recent class, only about 8% of enrolled students submitted SAT scores and 1% submitted ACT scores.",
-        "early_admission_stats": [
-          {
-            "plan_type": "EA",
-            "acceptance_rate": 90.7
-          }
-        ],
-        "waitlist_stats": {
-          "offered_spots": 133,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "is_waitlist_ranked": false
-        }
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Seattle University is a private Jesuit institution recognized for its academic excellence, strong sense of community, and deep commitment to ethical leadership and social justice. Ranked #152 among National Universities by U.S. News & World Report for 2025, it offers rigorous, experiential-based academics and is noted as the top-ranked university for best value in Washington state for 2026. The university is particularly strong in its business, nursing, and law programs, fostering a vibrant and inclusive learning environment within Seattle.",
+    "market_position": "Leading Private Jesuit University",
+    "admissions_philosophy": "Seattle University's admissions philosophy is rooted in its Jesuit tradition, emphasizing a holistic review process that seeks students committed to academic rigor, ethical leadership, and service to others. It values applicants who demonstrate intellectual curiosity, a desire for personal growth, and a willingness to engage in community service, aligning with its mission to educate the whole person and empower leaders for a just and humane world.",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Seattle University is moderately selective with an acceptance rate typically around 76-77%, and it offers a test-optional admissions policy where not submitting scores does not disadvantage applicants.",
+        "implication": "Applicants should focus on presenting a strong holistic application, emphasizing high school GPA, challenging coursework, compelling essays, and strong letters of recommendation, as standardized test scores are de-emphasized. Applying Early Action (deadline November 15) could be beneficial for an earlier decision."
       },
-      "trends": [
-        {
-          "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 8976,
-          "admits_total": 6826,
-          "enrolled_total": 1049,
-          "acceptance_rate_overall": 76.1,
-          "yield_rate": 15.4,
-          "notes": "Seattle University reported a significant decrease in acceptance rate from 85.1% to 76.1% this cycle."
-        },
-        {
-          "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 7936,
-          "admits_total": 6755,
-          "enrolled_total": 1004,
-          "acceptance_rate_overall": 85.1,
-          "yield_rate": 14.9
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 8277,
-          "admits_total": 6795,
-          "enrolled_total": 977,
-          "acceptance_rate_overall": 82.1,
-          "yield_rate": 14.4
-        },
-        {
-          "year": 2021,
-          "cycle_name": "Class of 2025",
-          "enrolled_total": 920,
-          "acceptance_rate_overall": 83.2,
-          "yield_rate": 12.2
-        }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": "3.90-4.20",
-          "unweighted_middle_50": "3.50-4.00",
-          "average_unweighted": 3.67,
-          "percentile_25": "3.50",
-          "percentile_75": "4.00"
-        },
-        "testing": {
-          "sat_composite_middle_50": "1220-1410",
-          "sat_reading_middle_50": "620-710",
-          "sat_math_middle_50": "580-720",
-          "act_composite_middle_50": "23-30",
-          "submission_rate": 24.0,
-          "policy_note": "Test-optional; SAT math of 560+ and ACT math of 23+ recommended if submitting."
-        },
-        "demographics": {
-          "first_gen_percentage": 18.0,
-          "international_percentage": 7.4,
-          "religious_affiliation": 30.0,
-          "geographic_breakdown": [
-            {
-              "region": "Washington (In-State)",
-              "percentage": 54.3
-            },
-            {
-              "region": "California",
-              "percentage": 32.0
-            },
-            {
-              "region": "Other US States",
-              "percentage": 11.0
-            },
-            {
-              "region": "International",
-              "percentage": 2.7
-            }
-          ],
-          "gender_breakdown": {
-            "men": 39.0,
-            "women": 61.0,
-            "non_binary": 1.0
-          },
-          "racial_breakdown": {
-            "white": 31.0,
-            "black_african_american": 8.1,
-            "hispanic_latino": 17.1,
-            "asian": 30.3,
-            "native_american_alaskan": 0.2,
-            "pacific_islander": 1.2,
-            "two_or_more_races": 11.1,
-            "unknown": 1.1,
-            "non_resident_alien": 7.4
-          }
-        }
+      {
+        "category": "Academic",
+        "insight": "Seattle University boasts a highly supportive academic environment with small class sizes, dedicated faculty, and a strong emphasis on practical, experiential learning, particularly in its well-regarded Nursing, Business, and Engineering programs.",
+        "implication": "Prospective students, especially those interested in Nursing, Business (Analytics, Marketing, Accounting, Finance), or Engineering, should highlight relevant experiences, projects, and career aspirations in their applications. Emphasize how a collaborative, hands-on learning approach and the Jesuit tradition of ethical leadership align with their academic and personal goals."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus culture at Seattle University is characterized by its urban setting in Capitol Hill, a strong commitment to diversity, inclusion, social justice, and sustainability, and a collaborative, community-focused student body.",
+        "implication": "Applicants should demonstrate their engagement with community service, social justice issues, or sustainability initiatives. Essays and recommendations should reflect a desire to contribute to a diverse and inclusive environment and thrive in a collaborative urban campus, highlighting experiences that showcase teamwork and community involvement."
       }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges and Schools",
-      "colleges": [
-        {
-          "name": "Albers School of Business and Economics",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Candidates should emphasize ethical leadership. Strong quantitative preparation is recommended for competitive majors like Finance and Accounting.",
-          "housing_profile": "First-year students often live in Bellarmine Hall, which houses the Albers advising satellite.",
-          "student_archetype": "Ethical entrepreneurs and socially-conscious professionals",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.A.B.A.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.44,
-              "prerequisite_courses": [
-                "Business Calculus",
-                "Statistics",
-                "Macroeconomics",
-                "Microeconomics",
-                "Financial Accounting",
-                "Managerial Accounting"
-              ],
-              "minimum_gpa_to_declare": 2.25,
-              "weeder_courses": [
-                "ACCT 2300 Financial Accounting",
-                "ECON 2110 Principles of Microeconomics"
-              ],
-              "admissions_pathway": "Direct or Internal Transfer",
-              "curriculum": {
-                "core_courses": [
-                  "ACCT 2300 Financial Accounting",
-                  "ACCT 2310 Managerial Accounting",
-                  "ECON 2110 Microeconomics",
-                  "FINC 3400 Business Finance"
-                ],
-                "total_units": 180,
-                "major_units": 105
-              }
-            },
-            {
-              "name": "Accounting",
-              "degree_type": "B.A.B.A.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "Pre-Calculus",
-                "Financial Accounting",
-                "Managerial Accounting"
-              ],
-              "minimum_gpa_to_declare": 2.25,
-              "admissions_pathway": "Direct or Internal Transfer"
-            },
-            {
-              "name": "Marketing",
-              "degree_type": "B.A.B.A.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "Statistics",
-                "Microeconomics"
-              ],
-              "minimum_gpa_to_declare": 2.25,
-              "admissions_pathway": "Direct or Internal Transfer",
-              "curriculum": {
-                "core_courses": [
-                  "MKTG 3500 Introduction to Marketing",
-                  "MKTG 3510 Consumer Behavior",
-                  "ECON 2110 Microeconomics"
-                ],
-                "total_units": 180,
-                "major_units": 105
-              }
-            }
-          ]
-        },
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education grounded in Jesuit values.",
-          "student_archetype": "Intellectually curious and socially active global citizens",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A. / B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "Introductory Psychology"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PSYC 2010 Statistics",
-                "PSYC 2020 Research Methods"
-              ],
-              "admissions_pathway": "Open Major",
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 1200 Introductory Psychology",
-                  "PSYC 2010 Statistics and Data Analysis",
-                  "PSYC 2020 Research Design and Methods"
-                ],
-                "total_units": 180,
-                "major_units": 65
-              }
-            },
-            {
-              "name": "Criminal Justice",
-              "degree_type": "B.A.",
-              "is_impacted": false,
-              "minimum_gpa_to_declare": 2.0,
-              "admissions_pathway": "Open Major"
-            }
-          ]
-        },
-        {
-          "name": "College of Science and Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Focus on project-based learning. Applicants should demonstrate a strong STEM foundation.",
-          "student_archetype": "Purpose-driven innovators and collaborative problem-solvers",
-          "majors": [
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "average_gpa_admitted": 3.85,
-              "prerequisite_courses": [
-                "Programming I & II",
-                "Calculus I",
-                "Calculus II",
-                "Calculus III",
-                "Linear Algebra"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CPSC 1430 Programming II",
-                "MATH 1335 Calculus II"
-              ],
-              "admissions_pathway": "Direct or Internal Transfer",
-              "curriculum": {
-                "core_courses": [
-                  "CPSC 1420 Programming I",
-                  "CPSC 2430 Data Structures",
-                  "CPSC 4100 Design and Analysis of Algorithms"
-                ],
-                "total_units": 180,
-                "major_units": 122
-              }
-            }
-          ]
-        },
-        {
-          "name": "College of Nursing and Health Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive cohort-based program. Requires a dedicated supplemental essay.",
-          "student_archetype": "Values-based and resilient healthcare leaders",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.",
-              "is_impacted": true,
-              "average_gpa_admitted": 3.67,
-              "prerequisite_courses": [
-                "Anatomy & Physiology I & II",
-                "Microbiology",
-                "Introductory Chemistry",
-                "Introductory Biology",
-                "Statistics"
-              ],
-              "minimum_gpa_to_declare": 2.75,
-              "weeder_courses": [
-                "BIOL 2200 Anatomy & Physiology I",
-                "BIOL 2220 Microbiology"
-              ],
-              "admissions_pathway": "Direct Admit / Junior Transfer",
-              "curriculum": {
-                "core_courses": [
-                  "NURS 2100 Physical Assessment",
-                  "NURS 3100 Nursing Skills Lab",
-                  "BIOL 2200 Human Anatomy & Physiology I"
-                ],
-                "total_units": 137,
-                "major_units": 86
-              }
-            }
-          ]
-        }
-      ],
-      "minors_certificates": [
-        "African & African American Studies Minor",
-        "Entrepreneurship & Innovation Minor",
-        "Data Science Minor",
-        "Catholic Studies Minor",
-        "Diagnostic Ultrasound Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App"
-      ],
-      "application_deadlines": [
+    ],
+    "campus_dynamics": {
+      "social_environment": "Seattle University fosters an intimate, supportive, and welcoming community with small class sizes that encourage strong relationships with professors. Students often describe it as a tight-knit environment within a 'city oasis'. The university's culture reflects Seattle's spirit, with many students showing passion for social justice and progressive causes. While some students express a desire for more diversity and a more vibrant campus social scene, the overall atmosphere is characterized by support and friendliness.",
+      "transportation_impact": "Seattle University's urban campus in downtown Seattle provides ample opportunities for students to engage with the city. Its central location allows students to readily 'take advantage of all the city has to offer'. Commuter students find the campus amenities helpful, and the accessibility to the city makes exploring new places easy. Although specific transport modes like 'walkable campus' and 'bus access' are not explicitly detailed, the urban setting implies good walkability and public transportation options.",
+      "research_impact": "Seattle University offers strong undergraduate research opportunities across various disciplines. The College of Science and Engineering has a thriving summer undergraduate research program, supported by over $1 million in grants, endowments, and gift funds, providing paid research positions and opportunities for students to collaborate with faculty on contemporary problems. The Office of Undergraduate Research facilitates faculty-mentored experiences and hosts the annual Student Research and Creativity Conference (SRCCon). Students can also publish their work in the Seattle University Undergraduate Research Journal (SUURJ). A significant 94% of undergraduate students reportedly participate in on-campus, summer, or industry-sponsored research, preparing them for graduate programs and careers. The university also leverages its location to provide industry partnerships with major companies like Amazon and Microsoft for internships and professional experiences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 76.0,
+      "is_test_optional": true,
+      "test_policy_details": "Seattle University is test-optional for all first-year applicants, meaning SAT or ACT scores are not required for admission. Applicants can choose whether or not to submit their scores. If scores are submitted, Seattle University accepts self-reported scores provisionally but requires official scores if the student enrolls. The university uses a 'superscoring' policy, considering the highest section scores across all SAT test dates submitted. The SAT Essay/ACT Writing section is optional and may not be included in admissions consideration.",
+      "admits_class_size": 6826,
+      "transfer_acceptance_rate": 62.5,
+      "early_admission_stats": [
         {
           "plan_type": "Early Action",
-          "date": "2024-11-15",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "2025-01-15",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Rolling Admission",
-          "date": "2025-01-25",
-          "is_binding": false
+          "date": "2025-11-15",
+          "notification_by": "December 23",
+          "is_binding": false,
+          "statistics_available": false,
+          "note": "Specific statistics (applicants, admits, acceptance rate) for Early Action or any other early admission plans are not publicly available for recent application years. The overall acceptance rate for Seattle University typically ranges between 76% and 77%."
         }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "details": "Two optional supplemental essays (250 words each): 'Why Seattle U' and 'Equity, Inclusion, and Belonging'."
-        },
-        {
-          "target_program": "Nursing/Diagnostic Ultrasound",
-          "requirement_type": "Program Essay",
-          "details": "Required essay explaining interest in the profession."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Application Essay",
-          "Recommendations"
-        ],
-        "essay_importance": "Critical",
-        "demonstrated_interest": "Considered",
-        "specific_differentiators": "Emphasis on Jesuit values, social justice, and leadership."
-      }
-    },
-    "strategy_tactics": {
-      "application_strategy": {
-        "major_selection_tactics": [
-          "Apply directly to high-demand programs like Nursing or Business.",
-          "Use 'Pre-Science' or 'Pre-Engineering' if math is below Calculus level.",
-          "Leverage test-optional policy if scores are below 1200/25."
-        ],
-        "alternate_major_strategy": "List a second-choice major in the College of Arts and Sciences if applying to competitive tracks."
-      }
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 56721,
-          "total_coa": 75128,
-          "housing": 15702
-        },
-        "out_of_state": {
-          "tuition": 56721,
-          "total_coa": 75128,
-          "housing": 15702
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 41627,
-      "average_merit_aid": 23911,
-      "percent_receiving_aid": 95.8
-    },
-    "scholarships": [
-      {
-        "name": "Sullivan Scholarship",
-        "type": "Merit/Leadership (Full Ride)",
-        "amount": "Full tuition, room, and board",
-        "deadline": "2026-01-15"
-      },
-      {
-        "name": "Presidential Scholarship",
-        "type": "Merit",
-        "amount": "$15,000/year",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Trustees Scholarship",
-        "type": "Merit",
-        "amount": "$12,000/year",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Bannan Scholarship",
-        "type": "Departmental",
-        "amount": "$5,000/year",
-        "benefits": "Specific to STEM majors"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit; 4+ typically satisfies Core requirements."
-      },
-      "ib_policy": {
-        "general_rule": "HL exams with scores of 5, 6, or 7 grant credit."
-      },
-      "transfer_articulation": {
-        "restrictions": "90 quarter unit cap for lower-division credits."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Alignment with Jesuit values",
-        "Solid academic preparation",
-        "Interest in urban service"
-      ],
-      "essay_tips": [
-        "Connect goals to Jesuit ethos",
-        "Mention specific SU programs",
-        "Focus on equity for supplemental prompt"
-      ],
-      "red_flags": [
-        "Recycled essays",
-        "Senior year grade decline",
-        "Broad cliches"
-      ],
-      "insights": [
-        "Small class sizes (11:1 ratio)",
-        "Emphasis on 'care for the whole person'",
-        "Prime urban location in Capitol Hill"
       ]
     },
-    "outcomes": {
-      "median_earnings_10yr": 75272,
-      "employment_rate_2yr": 95.0,
-      "top_employers": [
-        "Amazon",
-        "Microsoft",
-        "Boeing",
-        "Starbucks",
-        "Google"
-      ],
-      "loan_default_rate": 1.9,
-      "student_retention": {
-        "freshman_retention_rate": 85.0,
-        "graduation_rate_4_year": 66.0,
-        "graduation_rate_6_year": 77.0
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 8468,
+        "admits_total": 6514,
+        "enrolled_total": 888,
+        "acceptance_rate_overall": 76.92,
+        "yield_rate": 13.63,
+        "notes": "Data for the 2024-2025 admission cycle (Class of 2029 entry year). The number of applicants decreased by 5.66% (508 applicants) compared to the previous year. [cite: 2, 3 (from step 2)]",
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 8976,
+        "admits_total": 6826,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.0,
+        "yield_rate": null,
+        "notes": "Data for the application year 2024. The Fall 2024 commitment deadline for first-year admits was extended from May 1 to June 1 due to FAFSA delays, suggesting enrollment figures might not be fully finalized or publicly released yet. [cite: 3, 20 (from step 2)]",
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 8976,
+        "admits_total": 6826,
+        "enrolled_total": 1041,
+        "acceptance_rate_overall": 76.0,
+        "yield_rate": 15.25,
+        "notes": "Data for the application year 2023. Freshmen enrolled figures are for full-time students. [cite: 3, 9 (from step 3)]",
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": 1004,
+        "acceptance_rate_overall": 85.2,
+        "yield_rate": null,
+        "notes": "First-year enrolled students. Specific total applications and admits for 2022 were not consistently available across sources. The acceptance rate for 2022 was 85.2%.",
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 8539,
+        "admits_total": 7012,
+        "enrolled_total": 994,
+        "acceptance_rate_overall": 82.12,
+        "yield_rate": 14.18,
+        "notes": "First-time undergraduate students enrolled. [cite: 19 (from step 2)]",
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.9-4.2",
+        "unweighted_middle_50": "3.5-4.0",
+        "average_weighted": 4.0,
+        "percentile_25": "3.9",
+        "percentile_75": "4.2",
+        "notes": "Seattle University reports a weighted GPA average of 4.0 for its incoming students, with the middle 50% of weighted GPAs ranging from 3.9 to 4.2. The unweighted GPA average for admitted students is 3.85, and the middle 50% of unweighted GPAs fall between 3.5 and 4.0. Seattle University employs a holistic admissions approach, considering factors beyond GPA, such as course rigor (AP, IB, or honors courses), SAT/ACT scores (test-optional), personal statements, letters of recommendation, and extracurricular activities. Approximately 49% of admitted freshmen were in the top quarter of their high school class, and 16% were in the top 10%."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1350",
+        "sat_reading_middle_50": "570-670",
+        "sat_math_middle_50": "570-670",
+        "act_composite_middle_50": "23-30",
+        "submission_rate": 24.0,
+        "policy_note": "Seattle University is test-optional for admissions. The university allows superscoring for both SAT and ACT. Self-reported scores are provisionally accepted for application review, but official scores are required upon enrollment for students who choose to submit them."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "notes": "Information on the exact percentages of first-generation and legacy students at Seattle University is not readily available through public searches, including their Common Data Set or official reports.",
+        "geographic_breakdown": [
+          {
+            "region": "Washington (In-State)",
+            "percentage": 54.0
+          },
+          {
+            "region": "Out-of-State (U.S. excluding Washington)",
+            "percentage": 43.0
+          },
+          {
+            "region": "International",
+            "percentage": 3.0
+          },
+          {
+            "region": "California (estimated)",
+            "percentage": 4.3
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 3117,
+            "admits": 2472,
+            "acceptance_rate": 79.3,
+            "note": "Data for first-year admission statistics from College Raptor."
+          },
+          "women": {
+            "applicants": 5322,
+            "admits": 4025,
+            "acceptance_rate": 75.63,
+            "note": "Data for first-year admission statistics from College Raptor."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 35.91,
+          "black_african_american": 6.03,
+          "hispanic_latino": 13.6,
+          "asian": 21.22,
+          "native_american_alaskan": 0.28,
+          "pacific_islander": 0.61,
+          "two_or_more_races": 8.38,
+          "unknown": 1.74,
+          "non_resident_alien": 12.23
+        }
       }
     }
   },
-  "_id": "seattle_university",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Albers School of Business & Economics",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First and second-year students typically reside in traditional residence halls (Bellarmine, Campion, Xavier Global House) with common amenities. Upper-division students have options like Murphy Apartments, The Douglas, The Yobi, and Vi Hilbert Hall, which offer more independent, apartment-style living. Starting Fall 2026, the Catalyst RLC in Bellarmine Hall is a strong fit for students interested in innovation and entrepreneurship, with connections to the Albers School and the Center for Business Ethics.",
+        "student_archetype": "Future business leaders with an ethical mindset, seeking practical, real-world experience and networking opportunities. They are often career-focused, value mentorship, and are engaged in extracurricular activities like business plan competitions and leadership programs.",
+        "strategic_fit_advice": "Ideal for students passionate about ethical business practices, leadership development, and hands-on learning. Involvement in programs like the Albers Mentor Program and participation in the Catalyst RLC are highly beneficial for professional growth.",
+        "majors": []
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First and second-year students typically live in traditional residence halls (Bellarmine, Campion, Xavier Global House) offering communal living, study lounges, and community kitchens. Upper-division students can choose from apartment-style options such as Murphy Apartments, The Douglas, The Yobi, and Vi Hilbert Hall. Starting Fall 2026, the Balance and Being RLC might appeal to students interested in psychology or counseling, focusing on health, well-being, and holistic wellness. The Atlas RLC, centered on exploring different cultures and global awareness, could also be relevant.",
+        "student_archetype": "Diverse and intellectually curious individuals with a broad range of interests across humanities, arts, behavioral, and social sciences. They are often reflective, community-oriented, and engaged in interdisciplinary studies, seeking to understand and shape the world around them through a Jesuit intellectual tradition.",
+        "strategic_fit_advice": "Well-suited for students who value a liberal arts education, enjoy exploring diverse subjects, and are committed to personal growth within a supportive community. Engaging with Residential Learning Communities that align with their interests can enhance their overall experience.",
+        "majors": []
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First and second-year students reside in traditional residence halls (Bellarmine, Campion, Xavier Global House) with standard amenities. Upper-division students can opt for apartment-style living in Murphy Apartments, The Douglas, The Yobi, and Vi Hilbert Hall. There isn't a specifically designated housing profile for the College of Education, so students will be integrated into the general university residential communities.",
+        "student_archetype": "Compassionate and dedicated individuals aspiring to careers in education and service. They are often focused on fostering learning environments, promoting social justice, and contributing to the development of individuals and communities.",
+        "strategic_fit_advice": "Students committed to a career in education who appreciate a strong sense of community and opportunities for leadership within the wider university residential context. Actively participating in campus-wide student life and community service initiatives will enrich their experience.",
+        "majors": []
+      },
+      {
+        "name": "College of Nursing & Health Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "First and second-year students are housed in traditional residence halls (Bellarmine, Campion, Xavier Global House). Upper-division students may choose from apartment-style options like Murphy Apartments, The Douglas, The Yobi, and Vi Hilbert Hall. Starting Fall 2026, the Balance and Being RLC is particularly relevant for these students, focusing on health, well-being, and holistic wellness, with potential collaborations with public health, nursing, medicine, psychology, counseling, and social work faculty.",
+        "student_archetype": "Empathetic and academically driven individuals dedicated to healthcare professions and promoting well-being. They possess a strong sense of service, are detail-oriented, and committed to rigorous academic and clinical preparation.",
+        "strategic_fit_advice": "Highly recommended for students dedicated to health sciences who seek a supportive environment that integrates academic pursuits with personal well-being. Participation in the Balance and Being RLC would be especially beneficial for connecting with peers and faculty in related fields.",
+        "majors": []
+      },
+      {
+        "name": "College of Science & Engineering",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "housing_profile": "First and second-year students typically reside in traditional residence halls (Bellarmine, Campion, Xavier Global House) with common amenities like kitchens, laundry, and study areas. Starting Fall 2026, students interested in innovation and entrepreneurship may opt for the Catalyst RLC in Bellarmine Hall, which focuses on creativity, problem-solving, and entrepreneurial skills through collaborative projects and mentorship.",
+        "student_archetype": "Ambitious problem-solvers and innovators driven by scientific inquiry and technological advancement. They are often engaged in hands-on projects and seek opportunities for real-world application of their studies, with a growing interest in entrepreneurial endeavors. Many appreciate the supportive faculty and smaller class sizes.",
+        "strategic_fit_advice": "Students with a strong STEM background who thrive in a collaborative environment and are eager to apply their knowledge to solve contemporary challenges. Those interested in developing entrepreneurial skills and connecting with the business ethics community should consider the Catalyst RLC.",
+        "majors": []
+      },
+      {
+        "name": "Cornish College of the Arts at Seattle University",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Cornish Commons is a state-of-the-art, 20-story residence hall exclusively for Cornish students, located in South Lake Union near their main campus. It offers a variety of modern furnished rooms (single, double, triple, some with kitchenettes), private bathrooms, community lounges, creative spaces, an art studio, music practice rooms, a fitness center, and a 20th-floor lounge with panoramic views.",
+        "student_archetype": "Creative and expressive artists across various disciplines (visual, performing, literary) who thrive in a vibrant, supportive community of fellow artists. They are dedicated to their craft, collaborative, and seek opportunities to create, perform, and explore within an urban artistic hub.",
+        "strategic_fit_advice": "Essential for students committed to an immersive arts education in a dedicated artistic community. Living in Cornish Commons provides direct access to specialized facilities and a strong peer network crucial for artistic development.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Computer Science Fundamentals Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "Applicants will be notified about admission by late December. Early Action is non-binding."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Applicants will be sent an admission decision in early March."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Two optional short answer essays are available for all applicants. Prompt 1 (250 words): 'What is it that drew you to apply to Seattle University? Where do you hope a Seattle University education will take you?' Prompt 2 (250 words): 'Tell us about an experience you have had involving equity, inclusion, or belonging—whether through celebration, inspiration, challenge, or adversity—and why it was meaningful to you and how it would demonstrate your unique ability to contribute to the University.' While optional, applicants are encouraged to complete these essays to provide additional detail to their application."
+      },
+      {
+        "target_program": "Nursing / Diagnostic Ultrasound",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A required essay (250 words or less) asks: 'Why are you applying to the Nursing/Diagnostic Ultrasound program at Seattle University and what aspects of the profession uniquely excite you?'"
+      },
+      {
+        "target_program": "University Honors Program",
+        "requirement_type": "Essays",
+        "deadline": "January 25 (Honors Application)",
+        "details": "A required Honors Application Essay (600 words or fewer) that addresses the program's distinctive features and the applicant's curiosity and desire to learn. This application is available within the Redhawk Admissions Portal after submitting the Common Application. The Common Application must be submitted by January 15 for Honors consideration, and the Honors application is due by January 25."
+      },
+      {
+        "target_program": "University Honors Program",
+        "requirement_type": "Recommendation",
+        "deadline": "January 25 (Honors Application)",
+        "details": "A letter of recommendation from a teacher speaking to intellectual preparedness and academic potential is required. This can be the same letter submitted with the general admissions application. The recommender is nominated through the Redhawk Admissions Portal."
+      },
+      {
+        "target_program": "Music (Minor or BA in Interdisciplinary Arts with a Music Specialization)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "An audition is required for acceptance into the Music minor or the BA in Interdisciplinary Arts with a Music specialization. Students must first be admitted to Seattle University before auditioning for the music program. Auditions for choral ensembles and private lessons typically take place during the first week of Fall Quarter, but new singers may be accepted mid-year. Auditions include singing a short solo of choice, vocalizing range, a short musicianship evaluation, and learning a new song. For scholarship consideration, applicants submit a YouTube or Vimeo recording of two contrasting songs and one recommendation letter."
+      },
+      {
+        "target_program": "Cornish College of the Arts (BFA or BM degrees)",
+        "requirement_type": "Audition / Portfolio",
+        "deadline": "November 20, 2025 (Early Action Recorded Video Auditions); January 15, 2026 (Regular Decision Application); January 31, 2026 (Regular Decision On-Campus Audition Date); February 28, 2026 (Regular Decision On-Campus Audition Date)",
+        "details": "For students pursuing a Bachelor of Fine Arts (BFA) or Bachelor of Music (BM) degree through Cornish College of the Arts (an affiliate of Seattle University), an audition or portfolio is required for admission. For Bachelor of Music applicants, three selections (2-12 minutes each) representing the applicant's musical range are required. These can be live performances (encouraged) or video submissions. Video auditions for Early Action are due by November 20, 2025. On-campus audition dates for Regular Decision are January 31, 2026, and February 28, 2026, with the Regular Decision application due by January 15, 2026. Recorded auditions should include an introduction and the name/composer of pieces, and for performers, at least two work samples must be live recordings. Composers require at least one live recording. A 2-3 minute interview-style video response is also required for video auditions."
+      },
+      {
+        "target_program": "Architectural Design (BA)",
+        "requirement_type": "None",
+        "deadline": "",
+        "details": "Based on current information, Seattle University does not have a direct-entry Bachelor of Arts in Architectural Design program requiring a portfolio for first-year applicants. Information found regarding Architectural Design portfolios primarily pertains to the University of Washington."
+      },
+      {
+        "target_program": "Art & Visual Culture Studies (BA)",
+        "requirement_type": "None",
+        "deadline": "",
+        "details": "For the Bachelor of Arts in Art & Visual Culture Studies at Seattle University, a portfolio is not explicitly listed as an admission requirement for first-year applicants. Portfolio review is mentioned for continuing students at the sophomore year to determine eligibility to continue in the major, or for transfer credits."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Unknown",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Emphasis on educating the 'whole person', professional formation, and empowering leaders for a more just and humane world; strong alignment with mission and community engagement are valued. Direct-entry Nursing program is a key feature."
+    },
     "essay_prompts": [
       {
-        "prompt": "Seattle University's Jesuit mission emphasizes developing the whole person. How have you grown intellectually, personally, and spiritually in high school?",
-        "word_limit": "300 words",
-        "type": "Personal Growth",
+        "prompt": "Located in one of the world's top cities for technology and innovation and deeply rooted in 500 years of Jesuit tradition, a Seattle University education is innovative, rigorous, global and holistic. We encourage students to challenge preconceived notions, reflect before they react, and strive for the greater good. What is it that drew you to apply to Seattle University? Where do you hope a Seattle University education will take you?",
+        "word_limit": "250 words",
+        "type": "Why This School",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the city and Jesuit tradition, what specific academic programs, courses, or faculty members at Seattle University truly excite you?",
+          "How do the values of 'challenging preconceived notions,' 'reflecting before reacting,' or 'striving for the greater good' resonate with your personal experiences or aspirations?",
+          "What concrete skills, knowledge, or personal growth do you expect to gain from a Seattle University education, and how will these help you achieve your future goals?",
+          "Have you had any specific interactions with Seattle University (e.g., campus visit, virtual event, conversation with an alum/student) that solidified your interest, and what did you learn?",
+          "How do you envision yourself contributing to the 'innovative, rigorous, global and holistic' learning environment at Seattle University?"
+        ]
+      },
+      {
+        "prompt": "At Seattle University we are inspired by the diversity of our campus community and are committed to a culture where equity, inclusion, and belonging are hallmarks of who we are. Tell us about an experience you have had involving equity, inclusion, or belonging—whether through celebration, inspiration, challenge, or adversity—and why it was meaningful to you and how it would demonstrate your unique ability to contribute to the University.",
+        "word_limit": "250 words",
+        "type": "Community/Diversity",
+        "required": false,
+        "brainstorming_questions": [
+          "Can you recall a specific instance where you felt a strong sense of belonging, or helped someone else feel included, and what was the impact?",
+          "Have you ever experienced or witnessed an inequity, and how did it affect you or what did you do in response?",
+          "What did you learn from an experience where your perspective was challenged by someone with a different background or viewpoint?",
+          "How have you actively contributed to making a group or community more inclusive and equitable?",
+          "What unique cultural, social, or personal perspective do you bring that would enrich Seattle University's commitment to diversity, equity, and belonging?"
+        ]
+      },
+      {
+        "prompt": "The Nursing/Diagnostic Ultrasound program at Seattle University is a competitive program that admits students directly to the four-year Nursing/Diagnostic Ultrasound cohort. The College of Nursing and Health Sciences' mission is to educate and inspire leaders to transform healthcare for a just and humane world. Why are you applying to the Nursing/Diagnostic Ultrasound program at Seattle University and what aspects of the profession uniquely excite you?",
+        "word_limit": "250 words",
+        "type": "Major",
         "required": true,
         "brainstorming_questions": [
-          "Think about a time in high school when you were challenged to think about something in a completely new way, perhaps by a class, a book, or even a conversation. What was that challenge, and how did it shift your intellectual perspective?",
-          "Can you recall a moment during your high school years where you had to step outside your comfort zone or confront a personal fear? What was the situation, what did you learn about yourself through that experience, and how did it shape you as a person?",
-          "Seattle University's Jesuit mission often encourages reflection on one's place in the world and a call to service. Was there an experience in high school that ignited a deeper sense of purpose or a desire to contribute to something larger than yourself? What was that experience, and how did it impact your spiritual growth?",
-          "Beyond academics, how have your extracurricular activities, volunteer work, or even your relationships with others in high school pushed you to develop a more compassionate or understanding view of different people and perspectives, contributing to your personal growth?",
-          "Consider a time when your beliefs or values were tested or questioned during high school. What was the situation, what internal dialogue did you have, and what did you discover about your spiritual or personal foundation as a result?"
+          "What specific experiences (e.g., volunteering, shadowing, personal health experiences, coursework) sparked your interest in Nursing or Diagnostic Ultrasound?",
+          "How do the specific values of Seattle University's College of Nursing and Health Sciences, such as 'transforming healthcare for a just and humane world,' align with your personal aspirations?",
+          "Beyond general interest, what specific challenges or opportunities within the Nursing or Diagnostic Ultrasound profession do you find most compelling?",
+          "What unique qualities, skills, or perspectives do you possess that you believe would make you a strong candidate for this direct-entry program?",
+          "How do you envision yourself growing as a leader and making a tangible impact in healthcare after completing this specific program at Seattle University?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/seattle_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Be aware of competitive direct-entry programs like Nursing, Diagnostic Ultrasound, Business, Law, Computer Science, and Engineering, as these often have higher admission requirements.",
+      "Consider applying to majors within the College of Arts & Sciences or Humanities, such as foreign languages, anthropology, sociology, history, philosophy, or general sciences like biology and chemistry, which may have higher acceptance rates.",
+      "Utilize the undeclared or pre-major option if direct entry into a highly competitive major is uncertain, as Seattle University offers pathways to a desired degree through these programs.",
+      "Thoroughly research and understand the specific direct entry admission requirements for your intended major and its respective college before applying."
+    ],
+    "college_ranking_tactics": [
+      "Assess General Education (GE) requirements",
+      "Compare career prospects and post-graduation success rates by program/college",
+      "Investigate student-to-faculty ratios and class sizes within intended colleges/departments",
+      "Evaluate the overall student life and campus environment, including housing options"
+    ],
+    "alternate_major_strategy": "If applying to a competitive major, it can be a strategic approach to consider an alternate major, potentially in a different college, that aligns with your academic strengths and interests. While Seattle University's official admissions information doesn't explicitly advise listing a 'backup' major in the sense of a second-choice field on the application itself (the Common Application allows for a first and sometimes second choice major, but the university's specific handling of this isn't detailed as a formal 'strategy'), the fact that applicants may be admitted to a 'different major that aligns better with your high school coursework' suggests flexibility on the university's part if the primary choice isn't feasible. For instance, if an applicant is highly interested in Computer Science within the College of Science and Engineering, but also has a strong aptitude for a related but less directly competitive field like Cognitive Science (which might fall under Arts & Sciences), they could apply for the competitive major and potentially be considered for an alternate if their qualifications are strong for the university but perhaps not for direct entry into the most competitive program."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~4.5%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 59266.0,
+        "total_coa": 79863.0,
+        "housing": 10440.0
+      },
+      "out_of_state": {
+        "tuition": 59266.0,
+        "total_coa": 79863.0
+      }
+    },
+    "aid_philosophy": "Need-Aware; Meets 100% of Demonstrated Need for Washington College Bound Program students; Offers merit-based scholarships.",
+    "average_need_based_aid": 47192.0,
+    "average_merit_aid": 15000.0,
+    "percent_receiving_aid": 100.0,
+    "meets_full_need": true,
+    "notes": "Seattle University's full-need scholarship program for Washington College Bound students covers 100% of demonstrated financial need for four years. Institutional gift aid in a financial aid package is guaranteed for the years a student is eligible. On average, 35% of SU students do not need to take out any loans. The average financial award for first-year students is $51,000. Need-based scholarship or grant award averages $41,627, and need-based loan amount averages $5,565. Merit scholarships start at least at $8,000 per year.",
+    "scholarships": [
+      {
+        "name": "Undergraduate University Merit Scholarships",
+        "type": "Merit",
+        "amount": "Starting at $8,000 per year, up to $48,000 over 4 academic years for international students",
+        "deadline": "Automatic consideration with admissions application",
+        "benefits": "Renewable for up to four years for first-year students, up to three years for transfer students with more than 45 credits, or up to four years for transfer students with less than 45 credits. Based on academic achievement.",
+        "application_method": "Automatic Consideration upon completion of admissions application"
+      },
+      {
+        "name": "Sullivan Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room and board, and all academic fees for four years",
+        "deadline": "Automatic consideration with admissions application (typically by regular decision deadline)",
+        "benefits": "Comprehensive funding for four years. Awarded annually to two exceptional students from Jesuit or Catholic high schools.",
+        "application_method": "Automatic Consideration (granted to exceptional students from Jesuit or Catholic high schools)"
+      },
+      {
+        "name": "Seattle U Bound Scholarship",
+        "type": "Need-based",
+        "amount": "Covers full demonstrated financial need for four years",
+        "deadline": "Application by January 15, FAFSA by February 1 of senior year",
+        "benefits": "Financial aid covering the difference between Student Aid Index (SAI) and total Cost of Attendance, including grants, scholarships, work-study, and low-interest loans. For Washington's College Bound Program participants.",
+        "application_method": "Apply for Fall Quarter by January 15, file FAFSA by February 1. Requires enrollment in Washington's College Bound Program and a minimum 3.5 cumulative unweighted high school GPA."
+      },
+      {
+        "name": "University Honors Program Scholarship",
+        "type": "Merit",
+        "amount": "$1,800 per year",
+        "deadline": "Honors Priority Deadlines: November 25 (Priority 1), January 25 (Priority 2)",
+        "benefits": "Renewable for two years. Opportunity to join a select learning community. Strong candidates for other scholarships.",
+        "application_method": "Separate application after receiving an invitation (minimum 3.5 GPA required), submitted via the Redhawk Admissions Portal after Common Application."
+      },
+      {
+        "name": "Madsen Family Honors Program Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Awards typically made in the Spring of each year (after first year in program)",
+        "benefits": "Awarded to outstanding students at the end of their first year in the Honors Program, based on academic performance and commitment, with priority for Intellectual Traditions track students.",
+        "application_method": "Automatic consideration for current Honors students in Intellectual Traditions and Society, Policy and Citizenship tracks with a 3.0+ GPA after their first year."
+      },
+      {
+        "name": "International Student Merit Scholarships",
+        "type": "Merit",
+        "amount": "Up to $48,000 over 4 academic years ($12,000 per year)",
+        "deadline": "Automatic consideration with admissions application",
+        "benefits": "Renewable for up to four years for students who maintain satisfactory academic progress. Based on academic achievement from admissions application.",
+        "application_method": "Automatic Consideration upon completion of undergraduate admissions application. Requires a U.S. GPA equivalent of 3.0 on a 4.0 scale and English proficiency."
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "policy_found": false,
+      "details": "The AP credit policy for Seattle University could not be found through the conducted searches. The available search results consistently pertained to other universities or provided general information about Advanced Placement exams, rather than specific policies for Seattle University."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant credit; SL exams with 6 or 7 may grant credit by department review",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Guide",
+        "Transferology"
+      ],
+      "restrictions": "Maximum of 135 total transfer quarter credits (90 lower division and 45 upper division); 90 quarter credit cap for lower division/community college credits; minimum 45 quarter credits must be completed at Seattle University (residency requirement); generally, a 3.0 cumulative GPA is recommended for admission; grades for transferred courses do not become part of the Seattle University record, but specific programs may have grade requirements for major courses."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong commitment to social justice and community engagement.",
+      "Academic curiosity and a drive for rigorous study, especially in STEM, business, or nursing.",
+      "Adaptability and an_appreciation_for_an_urban_campus_environment.",
+      "Self-motivation to pursue internships and experiential learning opportunities in a vibrant city.",
+      "An openness to diverse perspectives and a willingness to engage in thoughtful reflection.",
+      "A proactive approach to networking and career development."
+    ],
+    "common_activities": [
+      "Engaging in service-learning projects and volunteer work across Seattle.",
+      "Participating in internships with local tech companies, non-profits, healthcare providers, or law firms.",
+      "Exploring Seattle's diverse neighborhoods, coffee shops, and culinary scene.",
+      "Joining campus clubs focused on social justice, cultural advocacy, or professional development.",
+      "Attending campus lectures, cultural events, and spiritual reflection sessions.",
+      "Studying collaboratively in the Lemieux Library & McGoldrick Learning Commons.",
+      "Participating in intramural sports or club teams."
+    ],
+    "essay_tips": [
+      "Highlight your passion for service, social justice, or community involvement, aligning with Jesuit values.",
+      "Connect your personal experiences to Seattle University's mission and specific academic programs.",
+      "Demonstrate a genuine interest in the urban Seattle environment and how you plan to engage with it.",
+      "Showcase your reflective thinking and ability to learn from diverse perspectives.",
+      "Be specific about what draws you to Seattle University over other institutions.",
+      "Proofread meticulously for clarity, grammar, and spelling."
+    ],
+    "red_flags": [
+      "Ignoring the university's Jesuit mission and values in your application or campus engagement.",
+      "Expecting a traditional 'college town' feel instead of an integrated urban campus experience.",
+      "Failing to articulate how you will contribute to or benefit from SU's diverse community.",
+      "Underestimating the importance of early networking and internship seeking in a competitive job market like Seattle's.",
+      "Not being prepared for Seattle's climate and embracing outdoor activities regardless of weather."
+    ],
+    "insights": [
+      "Seattle University excels at connecting students with real-world opportunities in a thriving urban environment.",
+      "The institution fosters a strong sense of community and purpose, emphasizing holistic development.",
+      "Students often find a balance between rigorous academics and a vibrant social life both on and off campus.",
+      "The alumni network in the Pacific Northwest is robust and highly engaged, offering valuable mentorship and career paths.",
+      "A high percentage of graduates secure employment or pursue further education shortly after graduation, often within the Seattle area."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 75272,
+    "employment_rate_2yr": 95.0,
+    "median_earnings_6yr": 64656,
+    "top_employers": [],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 1.9,
+    "notes": "Median earnings 10 years after enrollment from College Scorecard. Median earnings 6 years after enrollment from EDsmart. Employment rate is 1 year after graduation. Seattle University is ranked in the top 10% nationally for overall quality."
+  },
+  "student_retention": {
+    "freshman_retention_rate": 85.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 73.0
+  }
 }

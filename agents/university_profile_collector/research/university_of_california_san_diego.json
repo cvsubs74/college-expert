@@ -398,7 +398,7 @@
             ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
-            "internal_transfer_allowed": null,
+            "internal_transfer_allowed": false,
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
             "curriculum": {
@@ -569,7 +569,8 @@
             "notable_professors": [],
             "notes": null
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
         "name": "School of Biological Sciences",
@@ -730,7 +731,8 @@
             ],
             "notes": "Designed for students interested in human health and medicine, often a strong pre-med pathway."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
         "name": "Division of Social Sciences",
@@ -939,7 +941,8 @@
             "notable_professors": [],
             "notes": "Interdisciplinary program incorporating courses from Anthropology, Biology, Cognitive Science, Communication, Education Studies, Ethnic Studies, History, Linguistics, Literature, Psychology, Sociology, and Urban Studies and Planning. Offers B.A. and B.S. degrees, and specializations in Equity and Diversity and Healthy Aging."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
         "name": "Division of Physical Sciences",
@@ -1034,10 +1037,11 @@
             "notable_professors": [],
             "notes": "Offers various majors and specializations, including Applied Mathematics, Math-Computer Science, Math-Applied Science, Math-Secondary Education (B.A.), Joint Major in Math & Economics (B.S.), Probability & Statistics, and Mathematical Biology."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
-        "name": "Hal\u0131c\u0131o\u011flu Data Science Institute",
+        "name": "Halıcıoğlu Data Science Institute",
         "majors": [
           {
             "name": "Data Science",
@@ -1081,7 +1085,8 @@
             "notable_professors": [],
             "notes": "The program emphasizes predictive modeling, data analysis, and computational techniques, along with expertise in a particular subject domain. Students will complete a senior project."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
         "name": "Scripps Institution of Oceanography",
@@ -1179,7 +1184,8 @@
             "notable_professors": [],
             "notes": "Interdisciplinary program. The Environmental Policy track leads to a B.A. Other tracks like Earth Sciences, Ecology, Behavior, and Evolution, and Environmental Chemistry lead to a B.S."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
         "name": "Division of Arts and Humanities",
@@ -1258,7 +1264,8 @@
             "notable_professors": [],
             "notes": "The Literature department offers various specializations, including Literatures in English, World Literature and Culture, French Literature, Spanish Literature, and Writing."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       },
       {
         "name": "Division of Cognitive Science",
@@ -1309,7 +1316,8 @@
             "notable_professors": [],
             "notes": "Highly interdisciplinary, integrating psychology, neuroscience, linguistics, computer science, and philosophy. Offers B.A. and B.S. degrees with specializations such as Clinical Aspects of Cognition, Design and Interaction, Language and Culture, and Machine Learning and Neural Computation."
           }
-        ]
+        ],
+        "admissions_model": "Direct Admit"
       }
     ],
     "minors_certificates": []
@@ -1326,80 +1334,13 @@
         "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
       }
     ],
-    "supplemental_requirements": {
-      "requirements_list": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "deadline": null,
-          "details": "Applicants must answer 4 out of 8 Personal Insight Questions (PIQs), each limited to 350 words. All questions receive equal consideration."
-        },
-        {
-          "target_program": "Arts (Music, Theatre & Dance, Visual Arts)",
-          "requirement_type": "Portfolio/Audition",
-          "deadline": null,
-          "details": "Optional portfolio/audition video. Submission will be reviewed by the department and shared with undergraduate admissions, potentially adding value to the application."
-        }
-      ],
-      "essay_prompts": [
-        {
-          "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "What have you done to make your school or your community a better place?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        }
-      ]
-    },
+    "supplemental_requirements": [
+      {
+        "requirement": "{'requirements_list': [{'target_program': 'All', 'requirement_type': 'Essays', 'deadline': None, 'details': 'Applicants must answer 4 out of 8 Personal Insight Questions (PIQs), each limited to 350 words. All questions receive equal consideration.'}, {'target_program': 'Arts (Music, Theatre & Dance, Visual Arts)', 'requirement_type': 'Portfolio/Audition', 'deadline': None, 'details': 'Optional portfolio/audition video. Submission will be reviewed by the department and shared with undergraduate admissions, potentially adding value to the application.'}], 'essay_prompts': [{'prompt': 'Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What have you done to make your school or your community a better place?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}]}",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      }
+    ],
     "holistic_factors": {
       "primary_factors": [
         "Course Rigor",
@@ -1577,11 +1518,31 @@
       "Including information not considered in the holistic review, such as test scores (as UCSD is test-blind), or focusing on race/ethnicity or family income beyond what the application explicitly asks for."
     ],
     "insights": [
-      "UCSD conducts a holistic review of applications, thoroughly evaluating every component, including personal insight questions, to identify students who will contribute to the Triton community.",
-      "The acceptance rate for UCSD is competitive, around 25-27%.",
-      "Transferring between UCSD's different colleges can be difficult, and some colleges have significantly more rigorous general education requirements.",
-      "Students often highlight UCSD's beautiful campus, ideal location near the beach, strong STEM programs, and excellent research opportunities.",
-      "While UCSD is known for strong academics, some students perceive the social scene as less active compared to other universities, emphasizing the need for active engagement to foster social connections."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UCSD conducts a holistic review of applications, thoroughly evaluating every component, including personal insight questions, to identify students who will contribute to the Triton community."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The acceptance rate for UCSD is competitive, around 25-27%."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Transferring between UCSD's different colleges can be difficult, and some colleges have significantly more rigorous general education requirements."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Students often highlight UCSD's beautiful campus, ideal location near the beach, strong STEM programs, and excellent research opportunities."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While UCSD is known for strong academics, some students perceive the social scene as less active compared to other universities, emphasizing the need for active engagement to foster social connections."
+      }
     ]
   },
   "outcomes": {

@@ -27,7 +27,7 @@
       },
       {
         "category": "Research Opportunities",
-        "insight": "Clemson is classified as an R1: Doctoral University \u2013 Very High Research Activity.",
+        "insight": "Clemson is classified as an R1: Doctoral University – Very High Research Activity.",
         "implication": "Undergraduate and graduate students have extensive opportunities for involvement in cutting-edge research across various disciplines, including specific programs like Creative Inquiry and REUs."
       }
     ],
@@ -947,10 +947,10 @@
       "Business Administration Minor (not open to Accounting, BS Economics, Financial Management, Management, or Marketing majors)",
       "Chemistry Minor (cannot replace Emphasis area in Chemical Engineering)",
       "Chinese Studies Minor (not open to LIB/LIH-Chinese majors)",
-      "Cluster\u2013Engineering Minor",
-      "Cluster\u2013Life Sciences Minor",
-      "Cluster\u2013Physical Sciences Minor (not open to Chemistry and Physics majors)",
-      "Cluster\u2013Social Sciences Minor (not open to Psychology majors)",
+      "Cluster–Engineering Minor",
+      "Cluster–Life Sciences Minor",
+      "Cluster–Physical Sciences Minor (not open to Chemistry and Physics majors)",
+      "Cluster–Social Sciences Minor (not open to Psychology majors)",
       "Communication Studies (General) Minor (not open to Sport Communication majors)",
       "Communication Studies (Sports) Minor (not open to Communication majors)",
       "Computer Science Minor (not open to Computer Information Systems majors)",
@@ -1023,19 +1023,19 @@
       {
         "target_program": "All",
         "requirement_type": "Optional Personal Statement",
-        "deadline": null,
+        "deadline": "",
         "details": "Clemson does not require a personal statement for the standard application, but applicants are encouraged to submit one as an optional upload."
       },
       {
         "target_program": "Honors College",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two required essays (academic interests/goals, and response to a Common App prompt) and one optional essay (special circumstances) are required for Honors College applicants."
       },
       {
         "target_program": "Music/Theatre",
         "requirement_type": "Audition",
-        "deadline": null,
+        "deadline": "",
         "details": "Auditions are required for students interested in pursuing music or theatre concentrations."
       }
     ],
@@ -1218,11 +1218,31 @@
       "Failure to meet application deadlines or submit all required materials."
     ],
     "insights": [
-      "Clemson's admissions process is moderately challenging with an acceptance rate around 38-43%, emphasizing a strong academic record, test scores, and course rigor.",
-      "The university uses a 'data-driven' model, heavily weighing GPA, test scores, coursework rigor, and class rank.",
-      "Recruited athletes and legacy applicants may have an advantage in the admissions process.",
-      "For in-state students who are deferred, there's a high chance (95%) of being offered a path to Clemson through Fall admission, Summer Start, or the Bridge to Clemson program.",
-      "Out-of-state applicants should aim for even higher academic credentials as it can be more competitive, though acceptance rates for in-state and out-of-state can be similar in some cycles."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Clemson's admissions process is moderately challenging with an acceptance rate around 38-43%, emphasizing a strong academic record, test scores, and course rigor."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university uses a 'data-driven' model, heavily weighing GPA, test scores, coursework rigor, and class rank."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Recruited athletes and legacy applicants may have an advantage in the admissions process."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "For in-state students who are deferred, there's a high chance (95%) of being offered a path to Clemson through Fall admission, Summer Start, or the Bridge to Clemson program."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Out-of-state applicants should aim for even higher academic credentials as it can be more competitive, though acceptance rates for in-state and out-of-state can be similar in some cycles."
+      }
     ]
   },
   "outcomes": {

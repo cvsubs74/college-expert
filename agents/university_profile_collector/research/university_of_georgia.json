@@ -1455,7 +1455,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One main personal statement using Common App prompts (250-650 words) and one UGA-specific supplemental essay (200-300 words suggested). The UGA-specific prompt asks applicants to share a book that seriously impacted them during the transition from middle to high school, focusing on the impact rather than the plot/theme."
       },
       {
@@ -1502,7 +1502,7 @@
           "UGA's motto includes 'to serve.' Can you recall a specific instance where you went out of your way to help someone or a group, and what did that act of service reveal about your values and how you want to contribute to a community?",
           "The ideal 'to teach' doesn't always mean in a classroom. When have you found yourself sharing knowledge, explaining a concept, or guiding someone through a difficult process? What did you learn about yourself and the value of imparting understanding through that experience?",
           "Consider how the 'inquire into the nature of things' aspect of the motto might connect to a challenge you've faced where the 'why' was unclear, and you had to dig deep to understand the underlying issues. What was that challenge, and how did your investigation shape your perspective?",
-          "Looking at all three ideals \u2013 to teach, to serve, and to inquire \u2013 can you pinpoint a moment, big or small, where you felt all three were coming together in your actions? What was happening, and why did that particular experience feel so meaningful and aligned with these principles?"
+          "Looking at all three ideals – to teach, to serve, and to inquire – can you pinpoint a moment, big or small, where you felt all three were coming together in your actions? What was happening, and why did that particular experience feel so meaningful and aligned with these principles?"
         ]
       }
     ]
@@ -1657,11 +1657,31 @@
       "Sending non-traditional items like baked goods, elaborate videos, or clothing articles to admissions, as they do not impact decisions."
     ],
     "insights": [
-      "UGA values curriculum rigor almost as much as GPA, expecting students to take the most challenging courses available.",
-      "Legacy status does not play a role in the admission process at UGA.",
-      "Applying for Early Action or Regular Decision does not impact the admission decision; it's more about when you are ready for your file to be reviewed.",
-      "UGA does not admit based on major, as many students change their major, so choosing an 'uncommon' major doesn't offer an advantage.",
-      "UGA aims to build a 'well-rounded class' of students with diverse 'edges' and passions, rather than admitting only 'well-rounded' individuals."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UGA values curriculum rigor almost as much as GPA, expecting students to take the most challenging courses available."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Legacy status does not play a role in the admission process at UGA."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying for Early Action or Regular Decision does not impact the admission decision; it's more about when you are ready for your file to be reviewed."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UGA does not admit based on major, as many students change their major, so choosing an 'uncommon' major doesn't offer an advantage."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UGA aims to build a 'well-rounded class' of students with diverse 'edges' and passions, rather than admitting only 'well-rounded' individuals."
+      }
     ]
   },
   "outcomes": {

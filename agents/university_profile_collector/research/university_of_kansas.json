@@ -1,487 +1,878 @@
+
 {
-  "university_profile": {
-    "_id": "university_of_kansas",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.ku.edu",
-      "https://www.usnews.com/best-colleges/university-of-kansas-1948",
-      "https://kuathletics.com/traditions"
-    ],
-    "metadata": {
-      "official_name": "University of Kansas",
-      "location": {
-        "city": "Lawrence",
-        "state": "Kansas",
-        "type": "Public"
-      }
+  "_id": "university_of_kansas",
+  "metadata": {
+    "official_name": "University of Kansas",
+    "location": {
+      "city": "Lawrence",
+      "state": "Kansas",
+      "type": "Public"
     },
-    "strategic_profile": {
-      "executive_summary": "The University of Kansas (KU) is a flagship public research institution and a member of the prestigious Association of American Universities (AAU). It is globally recognized for its R1 research status, vibrant school spirit anchored by the Jayhawk mascot, and top-tier programs in special education, public administration, and basketball culture.",
-      "market_position": "Public Ivy",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 152,
-      "analyst_takeaways": [
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Kansas (KU) is a public research institution with a main campus in Lawrence, Kansas, and is classified among 'R1: Doctoral Universities – Very high research activity'. It holds membership in the prestigious Association of American Universities (AAU), a select group of leading research universities. KU is recognized for its strong academic programs and commitment to research excellence, serving as a major comprehensive teaching university.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "KU seeks diverse, academically prepared students who demonstrate intellectual curiosity, leadership potential, and a commitment to community. We value a well-rounded application that reflects academic achievement, extracurricular involvement, and personal essays revealing character and aspirations. Test scores are considered alongside GPA and other factors.",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Kansas has a relatively high acceptance rate, typically between 88% and 93.5%, and offers assured admission pathways based on GPA or a combination of GPA and test scores. Beyond these metrics, a holistic review considers course rigor and quality extracurricular involvement.",
+        "implication": "Applicants should prioritize a strong academic record, especially GPA and challenging coursework, to meet assured admission criteria. Even with optional test scores, demonstrating leadership and significant engagement in extracurricular activities will strengthen your application under the holistic review process."
+      },
+      {
+        "category": "Academic",
+        "insight": "KU is a top-tier R1 research institution and a member of the prestigious Association of American Universities (AAU), offering highly-ranked programs in diverse fields like local government management, special education, and paleontology. Students have access to extensive research and experiential learning opportunities.",
+        "implication": "Highlight any involvement in research, advanced placement courses (AP/IB), and articulate your intellectual curiosity in your essays. Expressing interest in specific top-ranked programs or the University Honors Program can demonstrate alignment with KU's academic strengths."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of Kansas is known for its strong campus spirit, epitomized by the unique Jayhawk mascot and an ardent basketball tradition. The campus is set in Lawrence, a diverse town described as inclusive and supportive, offering a vibrant community experience.",
+        "implication": "Showcase how you would contribute to a dynamic university community. Mentioning involvement in community service, leadership roles, or expressing enthusiasm for a spirited college environment and extracurricular engagement could be beneficial."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Kansas offers a vibrant college experience characterized by a strong sense of community, supportive professors, and a lively campus with numerous events and activities. Students often express a sense of belonging and pride. The campus community is seen as inclusive, with people from diverse backgrounds. A significant sports culture, particularly around basketball, adds excitement to student life. While there is a notable Greek life presence, the Greek community frequently interacts with non-Greeks.",
+      "transportation_impact": "The University of Kansas provides sustainable and safe transportation options, with all KU and Lawrence Transit buses being fare-free for students in 2025, which significantly increased ridership in the past. This free bus service, including KU on Wheels and JayLift, helps students navigate the campus, which is built on a hill. Despite these services, some reviews mention concerns about parking difficulties around campus for students. The KU Medical Center also offers shuttle and escort services for its campus.",
+      "research_impact": "The University of Kansas offers strong undergraduate research opportunities across various disciplines, supported by the Center for Undergraduate Research & Fellowships. Students can engage in mentored research with faculty and graduate students, develop scientific skills, and participate in professional development activities. There are numerous programs such as the intensive 10-week summer Research Experience for Undergraduates (REU) funded by the National Science Foundation, focusing on areas like molecular biosciences, ecology, evolutionary biology, and computational biology. Other opportunities include the Jewell Summer Research Training Program at the KU Cancer Center, offering hands-on, mentor-guided research in cancer-related fields, and the Summer Undergraduate Research Fellowship (SURF) Program in Pharmacology, Toxicology, and Therapeutics at the University of Kansas Medical Center. These experiences nurture critical thinking, problem-solving, communication, and teamwork skills, preparing students for various careers. Professors are often actively engaged in research, providing cutting-edge knowledge and mentorship to students. The University of Kansas Transportation Center (KUTC) also conducts and promotes transportation training, technology transfer, and research, addressing transportation problems in Kansas and the surrounding region."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 93.48,
+      "is_test_optional": true,
+      "test_policy_details": "The University of Kansas is test-optional. First-year students are automatically admitted to KU's College of Liberal Arts & Sciences with a submitted official or unofficial transcript if they meet at least one of these admission requirements: a cumulative high school GPA (weighted or unweighted) of 3.25 or higher; OR an official ACT score of at least 21 or an official SAT score of at least 1060 with a minimum GPA of 2.0 on a 4.0 scale. Submission of ACT and/or SAT test scores is highly encouraged as they will not negatively impact admission eligibility but may be used in professional school admission decisions, for placement into courses, or for scholarship purposes.",
+      "admits_class_size": 5323,
+      "transfer_acceptance_rate": 82.56,
+      "early_admission_stats": [
         {
-          "category": "Selectivity",
-          "insight": "The acceptance rate has stabilized around 88-93% despite a significant 16% increase in applicant volume over the last three years.",
-          "implication": "While the overall university is accessible, specific schools like Business, Architecture, and Engineering maintain significantly higher 'assured admission' bars, requiring targeted preparation for direct entry."
-        },
-        {
-          "category": "Strategic Growth",
-          "insight": "KU is aggressively expanding its medical and aerospace research footprints through regional campuses and industry partnerships.",
-          "implication": "Students in STEM and Health fields should leverage the multi-campus system (KC, Wichita, Salina) for clinical and industry rotations."
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
         }
       ],
-      "campus_dynamics": {
-        "social_environment": "Driven by the 'Rock Chalk Jayhawk' tradition and a legendary basketball culture centered at Allen Fieldhouse. The atmosphere is highly social with a strong emphasis on Greek life, student-led organizations, and high-energy game days.",
-        "transportation_impact": "The campus is situated on Mount Oread (The Hill), making internal bus transit (KU Buses) and 'Jayhawk on Demand' vital for navigating the steep terrain. Walkability is high but physically demanding, which concentrates social activity in core campus zones.",
-        "research_impact": "As an R1 institution, research is deeply integrated into the undergraduate experience through the Center for Undergraduate Research. Strong industry ties in medicinal chemistry, aerospace, and petroleum engineering provide robust internship and post-grad pipelines."
-      }
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 78.0
     },
-    "admissions_current": {
-      "overall_acceptance_rate": 93.5,
-      "in_state_acceptance_rate": 94.3,
-      "out_of_state_acceptance_rate": 93.1,
-      "international_acceptance_rate": 93.3,
-      "transfer_acceptance_rate": 82.6,
-      "admits_class_size": 20905,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": null
-    },
-    "admissions_trends": [
+    "longitudinal_trends": [
       {
         "year": 2025,
         "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": 5040,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "notes": "Fall 2025 freshman enrollment figure is available. Full application and admission statistics for the Class of 2029 (Fall 2025 entry) are not yet published in an official Common Data Set for the 2025-2026 academic year.",
+        "waitlist_stats": null
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
         "applications_total": 22363,
         "admits_total": 20905,
         "enrolled_total": 5323,
-        "acceptance_rate_overall": 93.5,
-        "acceptance_rate_in_state": 94.3,
-        "acceptance_rate_out_of_state": 93.1,
-        "yield_rate": 23.8,
+        "acceptance_rate_overall": 93.48,
+        "yield_rate": 25.46,
+        "notes": "Data derived from the University of Kansas Common Data Set 2024-2025, Section C1.",
         "waitlist_stats": {
-          "year": 2025,
           "offered_spots": null,
           "accepted_spots": null,
           "admitted_from_waitlist": null,
           "waitlist_admit_rate": null,
           "is_waitlist_ranked": false
-        },
-        "notes": "The University of Kansas does not utilize a freshman waiting list (Section C2)."
-      },
-      {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
-        "applications_total": 19226,
-        "admits_total": 16958,
-        "enrolled_total": 5259,
-        "acceptance_rate_overall": 88.2,
-        "acceptance_rate_in_state": 92.7,
-        "acceptance_rate_out_of_state": 85.5,
-        "yield_rate": 31.0,
-        "waitlist_stats": {
-          "year": 2024
-        },
-        "notes": "No waitlist policy reported. Out-of-state rate excludes international applicants."
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
-        "applications_total": 16204,
-        "admits_total": 14234,
-        "enrolled_total": 4457,
-        "acceptance_rate_overall": 87.8,
-        "yield_rate": 31.3,
+        "applications_total": 22192,
+        "admits_total": 19890,
+        "enrolled_total": 5045,
+        "acceptance_rate_overall": 89.63,
+        "yield_rate": 25.36,
+        "notes": "Data derived from the University of Kansas Common Data Set 2023-2024, Section C1.",
         "waitlist_stats": {
-          "year": 2023
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
         }
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 15275,
-        "admits_total": 14129,
-        "enrolled_total": 4045,
-        "acceptance_rate_overall": 92.5,
-        "yield_rate": 28.6,
+        "applications_total": 21780,
+        "admits_total": 19944,
+        "enrolled_total": 4879,
+        "acceptance_rate_overall": 91.57,
+        "yield_rate": 24.46,
+        "notes": "Data derived from the University of Kansas Common Data Set 2022-2023, Section C1.",
         "waitlist_stats": {
-          "year": 2022
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
         }
       },
       {
         "year": 2021,
         "cycle_name": "Class of 2025",
-        "applications_total": 15042,
-        "admits_total": 13678,
-        "enrolled_total": 3829,
-        "acceptance_rate_overall": 90.9,
-        "yield_rate": 28.0,
+        "applications_total": 19376,
+        "admits_total": 17998,
+        "enrolled_total": 4119,
+        "acceptance_rate_overall": 92.89,
+        "yield_rate": 22.89,
+        "notes": "Data derived from the University of Kansas Common Data Set 2021-2022, Section C1.",
         "waitlist_stats": {
-          "year": 2021
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
         }
       }
     ],
-    "admitted_profile": {
+    "admitted_student_profile": {
       "gpa": {
-        "unweighted_middle_50": "3.50-3.99",
-        "average_weighted": 3.68,
-        "percentile_25": "3.49",
-        "percentile_75": "3.99",
-        "notes": "Approximately 59% of admitted students had a GPA of 3.75 or higher."
+        "weighted_middle_50": "N/A",
+        "unweighted_middle_50": "3.50-4.00",
+        "average_weighted": 3.25,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "The University of Kansas generally considers a high school GPA of 3.25 or higher (weighted or unweighted) for assured admission to the College of Liberal Arts & Sciences. The average unweighted high school GPA for admitted students is consistently reported around 3.6 to 3.68. While one source mentions an 'average weighted GPA of 3.25', specific percentile data for weighted GPAs is not disclosed. The middle 50% of admitted students typically have an unweighted GPA between 3.5 and 4.0. University of Kansas utilizes a holistic review process for admissions, and test scores (ACT/SAT) are optional. Most incoming freshmen graduate in the top quarter of their high school class."
       },
       "testing": {
-        "sat_composite_middle_50": "1090-1280",
+        "sat_composite_middle_50": "1070-1300",
         "sat_reading_middle_50": "540-650",
         "sat_math_middle_50": "530-650",
         "act_composite_middle_50": "20-28",
-        "submission_rate": 55.2,
-        "policy_note": "Test-optional for most programs; scores used for course placement and scholarship formulas."
+        "submission_rate": 63.8,
+        "policy_note": "The University of Kansas is test-optional. Test scores will not negatively impact admission eligibility but may be used in professional school admission decisions and for academic advising (Math and English Placement). Superscore accepted."
       },
       "demographics": {
-        "first_gen_percentage": 20.1,
-        "legacy_percentage": 23.1,
-        "international_percentage": 6.7,
+        "first_gen_percentage": 17.4,
+        "legacy_percentage": 25.2,
+        "notes": "First-generation students are defined as undergraduates whose parents did not graduate from college/have a bachelor's degree. Legacy students are defined as undergraduates with at least one parent, step-parent, legal guardian, grandparent, step-grandparent, great-grandparent, or step-great-grandparent who graduated from KU with a bachelor's, master's, first professional, or doctoral degree. Data is for Fall 2025.",
         "geographic_breakdown": [
           {
-            "region": "Kansas",
-            "percentage": 58.0
+            "region": "Kansas (In-State)",
+            "percentage": 57.24
           },
           {
-            "region": "Other US States",
-            "percentage": 35.3
+            "region": "Illinois",
+            "percentage": 6.75
           },
           {
             "region": "International",
-            "percentage": 6.7
+            "percentage": 4.63
+          },
+          {
+            "region": "Texas",
+            "percentage": 3.26
+          },
+          {
+            "region": "Nebraska",
+            "percentage": 3.23
+          },
+          {
+            "region": "Colorado",
+            "percentage": 2.91
+          },
+          {
+            "region": "California",
+            "percentage": 2.13
+          },
+          {
+            "region": "Oklahoma",
+            "percentage": 1.18
+          },
+          {
+            "region": "Wisconsin",
+            "percentage": 0.94
+          },
+          {
+            "region": "Iowa",
+            "percentage": 0.50
+          },
+          {
+            "region": "Other US Out-of-State",
+            "percentage": 17.23
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 9927,
             "admits": 9166,
-            "acceptance_rate": 92.3
+            "acceptance_rate": 92.33,
+            "note": "Data for first-time freshmen, Fall 2024, from the University of Kansas Common Data Set 2024-2025."
           },
           "women": {
             "applicants": 12436,
             "admits": 11739,
-            "acceptance_rate": 94.4
+            "acceptance_rate": 94.40,
+            "note": "Data for first-time freshmen, Fall 2024, from the University of Kansas Common Data Set 2024-2025."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 65.8,
-          "black_african_american": 4.4,
-          "hispanic_latino": 9.4,
+          "white": 69.0,
+          "black_african_american": 4.0,
+          "hispanic_latino": 10.0,
           "asian": 6.0,
-          "native_american_alaskan": 0.5,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 5.4,
-          "unknown": 0.9,
-          "non_resident_alien": 7.5
+          "native_american_alaskan": 0.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 6.0,
+          "unknown": 1.0,
+          "non_resident_alien": 3.0
         }
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "College of Liberal Arts & Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 88.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "The heart of the university with the most flexibility. Assured admission with a 3.25 GPA.",
-          "student_archetype": "Intellectually curious and socially active",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "minimum_gpa_to_declare": 2.0,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 37
-              }
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.A.",
-              "minimum_gpa_to_declare": 2.0,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 33
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Engineering",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 70.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires strong math preparation (Calc 1 ready).",
-          "majors": [
-            {
-              "name": "Mechanical Engineering",
-              "degree_type": "B.S.",
-              "minimum_gpa_to_declare": 2.5,
-              "curriculum": {
-                "total_units": 128,
-                "major_units": 84
-              }
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.S.",
-              "minimum_gpa_to_declare": 2.5,
-              "curriculum": {
-                "total_units": 126,
-                "major_units": 78
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Direct admit uses a 3.4 GPA threshold or a specific Index Score.",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.B.",
-              "minimum_gpa_to_declare": 2.5,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 60
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Architecture & Design",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 55.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Extremely selective; BFA programs require a portfolio.",
-          "majors": []
-        },
-        {
-          "name": "School of Journalism & Mass Communications",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "majors": [
-            {
-              "name": "Multimedia Journalism",
-              "degree_type": "B.S.J.",
-              "minimum_gpa_to_declare": 2.5,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 48
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Education & Human Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 80.0,
-          "is_restricted_or_capped": false,
-          "majors": []
-        },
-        {
-          "name": "School of Nursing",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 15.0,
-          "is_restricted_or_capped": true,
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "minimum_gpa_to_declare": 2.75,
-              "curriculum": {
-                "total_units": 120,
-                "major_units": 62
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Music",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 60.0,
-          "is_restricted_or_capped": true,
-          "majors": []
-        }
-      ],
-      "minors_certificates": [
-        "Name, Image, and Likeness (NIL) Certificate",
-        "Data Science Minor",
-        "Environmental Health Minor",
-        "Social Justice in the U.S. Minor",
-        "Entrepreneurship Certificate"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "KU Selective Admissions Portal"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Scholarship / Early Action",
-          "date": "2024-12-01",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Regular Decision (Rolling)",
-          "date": "2025-02-01",
-          "is_binding": false
-        },
-        {
-          "plan_type": "Spring Admission",
-          "date": "2024-11-15",
-          "is_binding": false
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "University Honors Program",
-          "requirement_type": "Essays",
-          "deadline": "2024-12-01"
-        },
-        {
-          "target_program": "School of Architecture & Design",
-          "requirement_type": "Portfolio",
-          "deadline": "2024-11-01"
-        },
-        {
-          "target_program": "Engineering (SELF Program)",
-          "requirement_type": "Supplemental Essays",
-          "deadline": "2024-12-01"
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "GPA",
-          "Course Rigor"
-        ],
-        "secondary_factors": [
-          "Standardized Test Scores (Optional)",
-          "Talent"
-        ],
-        "demonstrated_interest": "Not Considered",
-        "specific_differentiators": "General admission is primarily metric-driven through 'Assured Admission' standards."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply to CLAS for assured admission if GPA is 3.25+ to secure a spot before transferring to competitive schools.",
-        "Use 'Exploratory Pathways' if undecided to align GE courses with degree tracks.",
-        "Check math preparedness benchmarks before applying to Engineering."
-      ],
-      "alternate_major_strategy": "List an alternate major within CLAS (e.g., Economics as an alternate for Finance) to ensure university admission."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 12284,
-          "total_coa": 28808,
-          "housing": 11358
-        },
-        "out_of_state": {
-          "tuition": 30432,
-          "total_coa": 47138
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "percent_receiving_aid": 75.0
-    },
-    "scholarships": [
-      {
-        "name": "Chancellor's Scholarship",
-        "type": "Merit",
-        "amount": "$20,000 over 4 years",
-        "deadline": "2025-12-01"
-      },
-      {
-        "name": "KU Excellence Scholarship",
-        "type": "Merit (OOS)",
-        "amount": "$64,000 over 4 years",
-        "deadline": "2025-12-01"
-      },
-      {
-        "name": "SELF Engineering Fellowship",
-        "type": "Departmental",
-        "amount": "$28,000+",
-        "deadline": "2025-12-01"
-      },
-      {
-        "name": "Jayhawk Access Grant",
-        "type": "Need",
-        "amount": "Varies",
-        "deadline": "2025-02-01"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit for most exams"
-      },
-      "ib_policy": {
-        "general_rule": "Scores of 4+ on HL and SL exams grant credit",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "restrictions": "75 unit cap for community college credits"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "High school GPA above 3.5 (average 3.68)",
-        "Early application by December 1"
-      ],
-      "insights": [
-        "The campus is notoriously hilly\u2014comfortable walking shoes are a necessity.",
-        "Basketball culture is massive; 'camping' for games is a core social experience.",
-        "KU is a major research institution with significant early undergraduate opportunities."
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 54600,
-      "top_employers": [
-        "Cerner",
-        "Garmin",
-        "Burns & McDonnell",
-        "Black & Veatch",
-        "Deloitte"
-      ],
-      "student_retention": {
-        "freshman_retention_rate": 86.0,
-        "graduation_rate_6_year": 69.0
       }
     }
   },
-  "_id": "university_of_kansas",
-  "application_process": {
-    "essay_prompts": [
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
       {
-        "prompt": "KU is committed to developing leaders who will shape our world. How will your education at KU contribute to your goals?",
-        "word_limit": "250 words",
-        "type": "Goals",
-        "required": false,
-        "brainstorming_questions": [
-          "Thinking about KU's commitment to developing leaders, what specific skills or knowledge do you hope to cultivate in your chosen field of study that you believe will directly enable you to 'shape the world' in a unique way?",
-          "Beyond academics, what specific programs, organizations, or unique campus opportunities at KU resonate with your vision of leadership development and how do you see yourself actively engaging with them to achieve your world-shaping goals?",
-          "Can you recall a specific moment in your past where you felt the potential to influence or lead, and how do you envision your KU education building upon that nascent ability to effect larger, more impactful change?",
-          "When you imagine yourself as a KU graduate who has successfully 'shaped the world,' what does that look like in practice? What kind of challenges are you tackling, and what distinct qualities or experiences gained at KU will allow you to approach them differently?",
-          "Considering KU's location and its connection to Kansas and the broader Midwest, are there any specific regional challenges or opportunities that pique your interest, and how do you see your KU education equipping you to lead in addressing them?"
+        "name": "College of Liberal Arts & Sciences",
+        "admissions_model": "direct_admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "A wide range of options across all housing districts (Daisy Hill, Central, North), including traditional halls, suite-style, and apartments. Facilities generally include study lounges, fitness centers, and communal areas, catering to diverse preferences for privacy and social interaction.",
+        "student_archetype": "Diverse and adaptable students with varied academic interests. They seek a balanced college experience, valuing social connections, academic resources, and the vibrant campus life at KU. Likely to participate in a wide array of student organizations.",
+        "strategic_fit_advice": "Students should choose housing based on their preferred social environment (e.g., lively traditional hall vs. quieter suite), budget, and proximity to specific campus areas that align with their interests (e.g., library, recreation centers). KU's general housing aims to provide a secure and inspiring environment for all.",
+        "majors": []
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "direct_admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Modern suite-style living in Self Hall, home to the Engineering Learning Community (ELC). Features study spaces and fosters a collaborative environment for freshmen engineering and computing students. Upper-level engineering students serve as Resident Assistants. Self Hall is located on Daisy Hill, within easy walking distance of the School of Engineering.",
+        "student_archetype": "Ambitious problem-solvers and collaborative learners. Students are focused on STEM fields, eager to form study groups, and benefit from peer support and academic resources.",
+        "strategic_fit_advice": "Ideal for incoming engineering or computing freshmen seeking an immersive academic and social experience with peers in their field. Early application is recommended due to limited spaces in the ELC.",
+        "majors": []
+      },
+      {
+        "name": "School of Business",
+        "admissions_model": "pre_major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Proximity to academic buildings is a key feature. Downs Hall (a modern residence hall with suite and private bedroom options) is located across the street from the School of Business and near the School of Music, offering convenient access to academic and athletic facilities.",
+        "student_archetype": "Students, possibly with a strong interest in business or music, who appreciate modern facilities and proximity to their academic pursuits and campus amenities. They are likely to be active in campus life due to the central location.",
+        "strategic_fit_advice": "Consider Downs Hall for its modern amenities and central location, especially if proximity to the Schools of Business or Music is a priority. While not a specific LLC, the convenience supports academic and extracurricular engagement.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 200 Financial Accounting 1",
+              "BSAN 202 Statistics",
+              "ECON 142 Principles of Microeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Business to Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer requires a cumulative GPA of 2.5+ and completion of specific foundation courses. Data source: KU School of Business 2025-2026 admission requirements. [cite: 5 in previous output]"
+          }
         ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "pre_major",
+        "is_restricted_or_capped": true,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Chemistry w/lab",
+              "Microbiology",
+              "Anatomy & Physiology with lab",
+              "Nutrition",
+              "Human Growth & Development Across the Lifespan"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [],
+            "special_requirements": "Prerequisite courses must be no older than five years. B- or better in each prerequisite course. May require a criminal background check and drug screen upon admission. [cite: 11 in previous output]",
+            "admissions_pathway": "Competitive Admission",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Competitive admission. Minimum cumulative GPA of 2.8 for B.S.N. option, 3.0 for A.B.S.N. option (Accelerated). Science GPA of 3.0 for A.B.S.N. Prerequisite courses must have a B- or better for some programs, or a C or better for others. Data source: UMKC School of Nursing & Health Studies 2025-2026 Academic Catalog. [cite: 11 in previous output]"
+          }
+        ]
+      },
+      {
+        "name": "School of Music",
+        "admissions_model": "pre_major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Proximity to academic buildings is a key feature. Downs Hall (a modern residence hall with suite and private bedroom options) is located across the street from the School of Business and near the School of Music, offering convenient access to academic and athletic facilities.",
+        "student_archetype": "Students, possibly with a strong interest in business or music, who appreciate modern facilities and proximity to their academic pursuits and campus amenities. They are likely to be active in campus life due to the central location.",
+        "strategic_fit_advice": "Consider Downs Hall for its modern amenities and central location, especially if proximity to the Schools of Business or Music is a priority. While not a specific LLC, the convenience supports academic and extracurricular engagement.",
+        "majors": [
+          {
+            "name": "Music Performance (Instrumental)",
+            "degree_type": "B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All students seeking admission into the School of Music as a major or minor are required to complete an audition on their primary instrument/voice. Pre-screening videos may be required for some areas (e.g., Piano Performance B.M.). [cite: 11 in previous output]",
+            "admissions_pathway": "Audition",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "All music majors/minors require an audition. Data source: KU School of Music 2025-2026 Undergraduate Audition Information. [cite: 11 in previous output]"
+          }
+        ]
+      },
+      {
+        "name": "School of Journalism & Mass Communications",
+        "admissions_model": "direct_admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "School of Education and Human Sciences",
+        "admissions_model": "direct_admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "School of Professional Studies",
+        "admissions_model": "pre_major",
+        "is_restricted_or_capped": false,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "School of Social Welfare",
+        "admissions_model": "direct_admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "School of Architecture & Design",
+        "admissions_model": "direct_admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "No specific residential community is explicitly linked. However, the school emphasizes hands-on, design-build projects like the Phoenix House, showcasing innovative and sustainable architectural practices. Students may opt for general campus housing, with an emphasis on access to design studios and collaborative workspaces.",
+        "student_archetype": "Creative, practical, and sustainably-minded designers and builders. Students are engaged in hands-on projects, focused on innovation, community impact, and exploring new construction methods.",
+        "strategic_fit_advice": "Prospective students should seek housing that supports a demanding studio culture, potentially offering ample study space. While no specific dorm is linked, an interest in experiential learning and sustainable design is paramount for this program.",
+        "majors": []
+      },
+      {
+        "name": "School of Health Professions",
+        "admissions_model": "pre_major",
+        "is_restricted_or_capped": true,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      },
+      {
+        "name": "School of Pharmacy",
+        "admissions_model": "pre_major",
+        "is_restricted_or_capped": true,
+        "housing_profile": null,
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Certificate",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Business Minor",
+      "Leadership Engagement Certificate",
+      "Environmental Health Minor",
+      "Social Justice in the U.S. Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University of Kansas Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "For Fall 2026 admissions; also the deadline for scholarship consideration and the University Honors Program. Applying by this date allows students to apply for housing in November and receive a KU game day flag in their admit packet."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-07-25",
+        "is_binding": false,
+        "notes": "Final application deadline for Fall 2026 admission for domestic students."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-06-01",
+        "is_binding": false,
+        "notes": "Final application deadline for Fall 2026 admission for international students."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-12-01",
+        "is_binding": false,
+        "notes": "Final application deadline for Spring 2027 admission for domestic students."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-11-01",
+        "is_binding": false,
+        "notes": "Final application deadline for Spring 2027 admission for international students."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "The University of Kansas does not have any school-wide supplemental essays for general admission."
+      },
+      {
+        "target_program": "Honors Program",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Applicants must submit an essay and short responses to three questions. The essay should be intellectually curious, thoughtful, well-organized, proofread, and limited to 500 words, responding to one of three prompts. Short answers for the three questions should be uploaded as a single Word or PDF document, limited to a total of 1,200 words combined."
+      },
+      {
+        "target_program": "Engineering SELF Program",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Applicants must submit written responses to program-specific questions, along with their Common App. This includes a main essay describing how personal vision aligns with the SELF Program mission, and short responses addressing leadership, entrepreneurship, or business, and discussing an activity and its impact on pursuing SELF Program opportunities."
+      },
+      {
+        "target_program": "School of Medicine (MD Applicants)",
+        "requirement_type": "Essays",
+        "deadline": "November 15, 2024",
+        "details": "Secondary essay prompts for the 2024-2025 cycle include questions about campus preference, alignment with the School of Medicine's vision, healthcare experiences, leadership experience, significant challenges, community contributions, and clarification of academic discrepancies. All questions have a 1000-character maximum for the 2025-2026 cycle."
+      },
+      {
+        "target_program": "School of Medicine (MD/PhD Applicants)",
+        "requirement_type": "Essays",
+        "deadline": "October 15, 2025",
+        "details": "Secondary essay prompts for the 2024-2025 cycle include questions about campus preference, alignment with the School of Medicine's vision, healthcare experiences, leadership experience, significant challenges, community contributions, and clarification of academic discrepancies. All questions have a 1000-character maximum for the 2025-2026 cycle."
+      },
+      {
+        "target_program": "School of Music (Undergraduate - all majors/minors)",
+        "requirement_type": "Audition",
+        "deadline": "May 15 (Fall 2026 Audition Priority Deadline)",
+        "details": "All students seeking admission into the School of Music as a major or minor are required to complete an audition on their primary instrument/voice. Auditions are available in-person or virtually. Specific audition requirements vary by instrument/voice."
+      },
+      {
+        "target_program": "School of Music (Undergraduate - Piano Performance B.M.)",
+        "requirement_type": "Pre-screening Video",
+        "deadline": "December 1 (for Fall 2026 admits)",
+        "details": "A pre-screening video must be submitted."
+      },
+      {
+        "target_program": "School of Music (Undergraduate - Music Education & Music Therapy)",
+        "requirement_type": "Interview",
+        "deadline": null,
+        "details": "In addition to the musical audition, students seeking admission to these programs are required to complete an admission interview with faculty from their respective program. Virtual auditioning students should contact musicauditions@ku.edu to schedule an online meeting."
+      },
+      {
+        "target_program": "School of Music (Graduate - Piano, Voice, and Conducting Performance)",
+        "requirement_type": "Pre-screening Video",
+        "deadline": "December 1",
+        "details": "All Piano, Voice, and Conducting performance applicants must submit a pre-screening audition video within the application system. Missing this deadline may result in application denial or deferral. For Piano Performance, the pre-screening video should be 20 minutes of works from at least 2 periods, including the first movement of a Classical Sonata."
+      },
+      {
+        "target_program": "School of Music (Graduate - all other audition-required programs)",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "Graduate programs such as Church Music (MM, DMA), Conducting (MM, DMA), and Performance (Cert, MM, DMA) require an audition to the School of Music. Both live and virtual audition options are offered and considered equally. Auditions generally take place in early spring on designated days."
+      },
+      {
+        "target_program": "School of Music (Graduate - Music Education PhD)",
+        "requirement_type": "Interview",
+        "deadline": null,
+        "details": "Students applying to the PhD in Music Education are required to complete an online interview; no auditions are required. A link to sign up for the interview is sent once the application is complete."
+      }
+    ],
+    "holistic_review_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Work experience",
+        "Volunteer work"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "The University of Kansas offers assured admission based on GPA or a combination of GPA and test scores, but also conducts an individual review for applicants who do not meet these assured admission requirements. They are a 'First-Gen Forward Institution' with dedicated programs like Hawk Link and Jayhawk JumpStart, as well as specific scholarships to support first-generation students. The university is test-optional for general admission and many institutional scholarships are awarded based solely on GPA. The University Honors Program conducts a holistic review assessing challenge, depth, breadth, and leadership potential."
+    },
+    "essay_prompts": {
+      "general_admission_essays": "The University of Kansas does not have school-wide supplemental essays for general undergraduate admission for the 2024-2025 application cycle.",
+      "program_specific_essays": [
+        {
+          "program": "University Honors Program",
+          "description": "Applicants must submit an essay and short responses to three questions. The essay should be intellectually curious, thoughtful, well-organized, proofread, and limited to 500 words, responding to one of three prompts. Short answers for the three questions should be uploaded as a single Word or PDF document, limited to a total of 1,200 words combined.",
+          "prompts": [
+            {
+              "type": "Honors Essay Option 1",
+              "prompt": "The University Honors Program highly values interdisciplinarity. Identify two of your academic interests or passions that significantly contrast and describe the ways they interact or uniquely intersect. How might the exploration and connection of these two ideas influence your plans for college and the future?",
+              "word_limit": 500,
+              "required": true,
+              "brainstorming_questions": [
+                "What seemingly unrelated subjects or activities genuinely capture your curiosity?",
+                "Can you think of a specific project, idea, or challenge where these two interests converged or offered a unique perspective?",
+                "How have you already attempted to bridge these diverse interests in your academic or personal life?",
+                "What specific resources or courses at KU's Honors Program would allow you to further explore and synthesize these passions?",
+                "Beyond college, how do you envision these interdisciplinary connections shaping your future contributions or career path?"
+              ]
+            },
+            {
+              "type": "Honors Essay Option 2",
+              "prompt": "Pulitzer Prize winner and native Kansan William Allen White once wrote that “youth should demand change in the world. Youth should not accept the old order if the world is to move on.” Drawing on your own experiences, what change do you want to see in the world? What will your role be in seeing these changes through, and how will your time in college prepare you?",
+              "word_limit": 500,
+              "required": true,
+              "brainstorming_questions": [
+                "What specific issue or aspect of society genuinely frustrates you or sparks a desire for improvement?",
+                "What personal experience or observation has most deeply connected you to this need for change?",
+                "What concrete actions, no matter how small, have you already taken (or envisioned taking) to address this issue?",
+                "How do your personal strengths, skills, or unique perspectives equip you to contribute to this change?",
+                "How do you see the academic and co-curricular opportunities within the KU Honors Program specifically empowering you to enact this change?"
+              ]
+            },
+            {
+              "type": "Honors Essay Option 3",
+              "prompt": "Amelia Earhart, Kansan and first woman to fly over the Atlantic, said: “Some of us have great runways already built for us. If you have one, take off. But if you don't have one, realize it is your responsibility to grab a shovel and build one for yourself and for those who will follow after you.” What are your plans for building a runway for yourself and others, and where are you headed once the path has been paved?",
+              "word_limit": 500,
+              "required": true,
+              "brainstorming_questions": [
+                "Reflect on a time you encountered a significant obstacle or a lack of opportunity. How did you respond?",
+                "What "runway" are you actively building or envisioning for yourself right now, and what tools or qualities are you using to construct it?",
+                "Beyond your personal advancement, how do your efforts intentionally create pathways or opportunities for others?",
+                "Describe a specific instance where you’ve helped clear a path or provided support for someone else's journey.",
+                "What impact do you ultimately hope to achieve, both individually and collectively, once your "runway" (or others') is complete?"
+              ]
+            }
+          ]
+        },
+        {
+          "program": "University Honors Program Short Answers",
+          "description": "All THREE questions required. 1,200 words combined for all three short answers.",
+          "prompts": [
+            {
+              "type": "Honors Short Answer 1",
+              "prompt": "List no more than five items — clubs and organizations, employment, community service, awards and recognition, extra-curricular interests, personal or family obligations — in descending order of significance, with the most significant item first. For each, explain your role, time commitment, length of involvement, and responsibilities. Transfer and current students only need to provide three items.",
+              "word_limit": null,
+              "required": true,
+              "brainstorming_questions": [
+                "What activity or obligation has had the most profound impact on your personal growth or skill development?",
+                "How did your specific responsibilities within each item challenge you or allow you to contribute uniquely?",
+                "Beyond a simple description, what was a key learning or outcome from your involvement in each item?",
+                "Consider the "descending order of significance" – what criteria are you using to define significance (e.g., time, impact, personal growth, skill development)?",
+                "How do these selected items collectively paint a picture of who you are and what you value?"
+              ]
+            },
+            {
+              "type": "Honors Short Answer 2",
+              "prompt": "Help us learn about you, your life, and your experiences.",
+              "word_limit": null,
+              "required": true,
+              "brainstorming_questions": [
+                "What is a unique or defining aspect of your background or daily life that isn't highlighted elsewhere in your application?",
+                "Is there a specific incident, anecdote, or "slice of life" that reveals a core personality trait or belief you hold?",
+                "What challenges or triumphs in your personal life have most significantly shaped your character or perspective?",
+                "What kind of environment or community have you grown up in, and how has it influenced your experiences?",
+                "If an admissions officer spent a day with you, what three things would they learn about your life and experiences that you want them to know?"
+              ]
+            },
+            {
+              "type": "Honors Short Answer 3",
+              "prompt": "Honors students make the most of available opportunities. Based on course availability at your school, how did you select the classes you took? Is there anything you want the admissions committee to know about your transcript?",
+              "word_limit": null,
+              "required": true,
+              "brainstorming_questions": [
+                "Beyond core requirements, what was the driving force behind your elective course choices? Did you pursue specific interests or seek new challenges?",
+                "Were there any instances where limited course availability impacted your academic path? If so, how did you adapt or seek alternatives?",
+                "Is there a particular grade or course on your transcript that doesn't fully reflect your effort, learning, or circumstances, and what's the story behind it?",
+                "What does your transcript, viewed holistically, reveal about your intellectual curiosity, resilience, or academic priorities?",
+                "How have you actively sought out and utilized educational opportunities, both inside and outside the classroom, despite any constraints?"
+              ]
+            }
+          ]
+        },
+        {
+          "program": "Madison (Al) and Lila Self Engineering Leadership Program",
+          "description": "Applicants must submit written responses to program-specific questions, along with their Common App. This includes a main essay describing how personal vision aligns with the SELF Program mission, and short responses addressing leadership, entrepreneurship, or business, and discussing an activity and its impact on pursuing SELF Program opportunities.",
+          "prompts": [
+            {
+              "type": "SELF Engineering Leadership Fellows Essay",
+              "prompt": "The mission of the Madison (Al) and Lila Self Engineering Leadership Program is to develop passionate engineering and computer science graduates who are strongly goal-oriented and who bring the business skills and vision needed to guide the technology-based corporations of tomorrow. Describe how your personal vision aligns with the mission of the SELF Program.",
+              "word_limit": 500,
+              "required": true,
+              "brainstorming_questions": [
+                "What specific aspects of the SELF Program's mission (e.g., passionate, goal-oriented, business skills, vision for technology corporations) resonate most strongly with your personal aspirations?",
+                "How has a particular experience in engineering, computer science, or a related field ignited your passion for a future in technology leadership?",
+                "What concrete examples from your past demonstrate your goal-oriented nature or an early interest in the business side of technology?",
+                "What specific kind of impact do you envision making in the technology sector, and how does the SELF Program seem like the ideal path to achieve it?",
+                "If you could fast-forward 10-15 years, what role would you ideally hold, and how would that role embody the values and skills promoted by the SELF Program?"
+              ]
+            },
+            {
+              "type": "SELF Engineering Leadership Fellows Short Response 1",
+              "prompt": "Leadership, entrepreneurship and business are three points of emphasis for the SELF Program. Choose one of these and discuss specific actions that you might take and how you see yourself growing in this area during your time in the SELF Program and beyond.",
+              "word_limit": 500,
+              "required": true,
+              "brainstorming_questions": [
+                "Which of the three emphases (leadership, entrepreneurship, business) excites you the most, and why?",
+                "Can you recall a specific experience where you demonstrated potential in your chosen area, even if informally?",
+                "What tangible skills or knowledge do you hope to gain specifically through the SELF Program's curriculum or activities in your chosen area?",
+                "How do you envision applying these developing skills in a specific project, team, or venture while at KU?",
+                "Looking beyond KU, how will mastery in this chosen area help you achieve your long-term career aspirations or contribute to innovation?"
+              ]
+            },
+            {
+              "type": "SELF Engineering Leadership Fellows Short Response 2",
+              "prompt": "Discuss an activity you are currently involved in and explain how it helped you realize that you wanted to pursue opportunities such as those offered by the SELF Program.",
+              "word_limit": 500,
+              "required": true,
+              "brainstorming_questions": [
+                "What is an activity you are deeply invested in that has taught you valuable lessons beyond the surface level?",
+                "How did a specific challenge or success within this activity reveal your interest in leadership, problem-solving, or innovation within an engineering context?",
+                "What particular skills or perspectives did this activity help you develop that align with the goals of the SELF Program?",
+                "Was there a "lightbulb moment" during this activity that connected your experiences to the kind of opportunities offered by the SELF Program?",
+                "How has this activity influenced your understanding of teamwork, project management, or the practical application of ideas, preparing you for a program like SELF?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Understand the Difference Between University and Major-Specific Admission",
+      "Consider Starting in a Less Competitive Major or as Undeclared",
+      "Research Major Popularity and Specific Program Demands",
+      "Prioritize Strong Academic Performance and Relevant Coursework",
+      "Leverage Advising and Career Resources Early"
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": {
+      "strategy": "If applying to a competitive major within a Professional School (e.g., Engineering, Business, Journalism), a recommended strategy is to first apply for assured admission to the University of Kansas's College of Liberal Arts & Sciences. This secures admission to the university, after which the student can work towards meeting the specific prerequisites and GPA requirements for internal transfer into their desired competitive Professional School. [5, 7, 8, 15, 17]",
+      "internal_transfer_difficulty": "Internal transfer to competitive 'Professional Schools' at the University of Kansas, such as Business, Journalism, Engineering, Architecture, Education and Human Sciences, Nursing, and Pharmacy, is a selective process. [7, 8, 11, 15] These schools have specific admission and GPA requirements, as well as application deadlines, that students must meet to be accepted. [7, 8, 15] For example, the School of Business requires sophomore standing, completion of specific pre-admission foundation courses (e.g., Financial Accounting, Statistics, Microeconomics), and a cumulative GPA of 2.5+ (overall and professional GPA). [15] If a student is initially admitted to a Professional School but later decides to change majors out of it, they would typically transfer to the College of Liberal Arts & Sciences until they are accepted into a different program. [7] Changing a major within the College of Liberal Arts & Sciences generally involves contacting an academic advisor and submitting an online form, appearing to be a more straightforward process. [7, 8, 11, 13]"
+    }
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 12998.0,
+        "total_coa": 30481.0,
+        "housing": 12031.0
+      },
+      "out_of_state": {
+        "tuition": 31487.0,
+        "total_coa": 46970.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 11239.0,
+    "average_merit_aid": 9469.0,
+    "percent_receiving_aid": 75.0,
+    "meets_full_need": false,
+    "notes": "",
+    "scholarships": [
+      {
+        "name": "KU Excellence Scholarship",
+        "type": "Merit",
+        "amount": "$16,000 per year (up to $64,000 over 4 years)",
+        "deadline": "December 1 (priority for freshmen admission)",
+        "benefits": "Awarded to out-of-state and international freshmen with a 3.95+ GPA, renewable for up to eight semesters with a 3.0 KU GPA and full-time enrollment.",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Chancellor Scholarship",
+        "type": "Merit",
+        "amount": "$5,000 per year (up to $20,000 over 4 years)",
+        "deadline": "December 1 (priority for freshmen admission)",
+        "benefits": "Awarded to in-state freshmen with a 3.95+ GPA, renewable for up to eight semesters with a 3.0 KU GPA and full-time enrollment.",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "International Excellence Award",
+        "type": "Merit",
+        "amount": "Up to $16,000 per year (up to $64,000 across entire KU career)",
+        "deadline": "May 1 (for fall freshmen admission)",
+        "benefits": "Partial funding toward tuition costs for academically exceptional international undergraduate students (minimum 3.5 GPA). Renewable with a 3.0 KU GPA and full-time enrollment.",
+        "application_method": "Automatic Consideration with admission application"
+      },
+      {
+        "name": "Honors Opportunity Award",
+        "type": "Merit/Enrichment",
+        "amount": "$250-$1,500",
+        "deadline": "2025-04-07",
+        "benefits": "Financial support for Honors Students to engage in intellectual and academic growth opportunities such as study abroad, internships, conferences, or research.",
+        "application_method": "Separate Application (requires essay and description of opportunity)"
+      },
+      {
+        "name": "National Merit Finalist Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 per year",
+        "deadline": "Select KU as #1 choice with NMSC",
+        "benefits": "Additional funding for National Merit Finalists; added to existing merit awards.",
+        "application_method": "Automatic Consideration if KU is chosen as #1 with National Merit Scholarship Corporation"
+      },
+      {
+        "name": "Need-Based Grant",
+        "type": "Need",
+        "amount": "Varies based on financial need",
+        "deadline": "February 1 (for admitted seniors, FAFSA deadline)",
+        "benefits": "Assistance to cover educational expenses based on demonstrated financial need, may include Pell Grant and other institutional grants.",
+        "application_method": "FAFSA"
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_kansas_logo.png"
+  "credit_policies": {
+    "philosophy": "Comprehensive",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "exceptions": [
+        "No credit for AP Research (implied by absence from explicit credit lists)",
+        "AP Computer Science A and Computer Science Principles grant credit with a score of 3+"
+      ],
+      "usage": "Can satisfy some major prerequisites and General Education (KU Core 34) requirements, and may provide placement into higher-level courses."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4 or higher on individual IB Higher Level (HL) or Standard Level (SL) exams are awarded credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "CredTran",
+        "Transferology"
+      ],
+      "restrictions": "A maximum of 75 credits from 2-year institutions can be applied to degree requirements at KU. A grade of C- or higher is required for transfer coursework to count toward undergraduate degree requirements."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong Academic Record (GPA and Challenging Coursework)",
+      "Solid Standardized Test Scores (if submitted)",
+      "Meeting Kansas Qualified Admissions Curriculum (for Kansas residents)",
+      "Timely and Complete Application Submission"
+    ],
+    "common_activities": [
+      "Over 500 student organizations",
+      "Significant Greek life presence (often intermingles with non-Greeks)",
+      "Strong basketball culture deeply influencing campus spirit",
+      "Extensive study abroad programs (165+ options in 70+ countries)",
+      "Vibrant student life in Lawrence, Kansas ('perfect college town')",
+      "Over 500 student organizations",
+      "Significant Greek life presence (often intermingles with non-Greeks)",
+      "Strong basketball culture deeply influencing campus spirit",
+      "Extensive study abroad programs (165+ options in 70+ countries)",
+      "Vibrant student life in Lawrence, Kansas ('perfect college town')"
+    ],
+    "essay_tips": [
+      "Be specific about why this school and its unique programs.",
+      "Show, don't tell—use concrete examples.",
+      "Avoid clichés.",
+      "Connect your interests to specific resources at the school."
+    ],
+    "red_flags": [
+      "Incomplete or Deficient Applications",
+      "Generic Essays",
+      "Weak or Uninformative Letters of Recommendation",
+      "Lack of Demonstrated Depth in Extracurricular Activities",
+      "Failure to Meet Academic Standards (GPA/Test Scores)"
+    ],
+    "insights": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Kansas has a relatively high acceptance rate, typically between 88% and 93.5%, and offers assured admission pathways based on GPA or a combination of GPA and test scores. Beyond these metrics, a holistic review considers course rigor and quality extracurricular involvement.",
+        "implication": "Applicants should prioritize a strong academic record, especially GPA and challenging coursework, to meet assured admission criteria. Even with optional test scores, demonstrating leadership and significant engagement in extracurricular activities will strengthen your application under the holistic review process."
+      },
+      {
+        "category": "Academic",
+        "insight": "KU is a top-tier R1 research institution and a member of the prestigious Association of American Universities (AAU), offering highly-ranked programs in diverse fields like local government management, special education, and paleontology. Students have access to extensive research and experiential learning opportunities.",
+        "implication": "Highlight any involvement in research, advanced placement courses (AP/IB), and articulate your intellectual curiosity in your essays. Expressing interest in specific top-ranked programs or the University Honors Program can demonstrate alignment with KU's academic strengths."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of Kansas is known for its strong campus spirit, epitomized by the unique Jayhawk mascot and an ardent basketball tradition. The campus is set in Lawrence, a diverse town described as inclusive and supportive, offering a vibrant community experience.",
+        "implication": "Showcase how you would contribute to a dynamic university community. Mentioning involvement in community service, leadership roles, or expressing enthusiasm for a spirited college environment and extracurricular engagement could be beneficial."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 58993,
+    "employment_rate_2yr": null,
+    "median_earnings_6yr": 43500,
+    "notes": "Median earnings 10 years after enrollment for University of Kansas graduates and non-completers is $58,993. The average earnings 6 years after enrollment is $43,500. The specific employment rate 2 years after graduation is not directly available in the provided sources. The closest available figure indicates that 94.6% of graduates are either employed or pursuing further education within a year of graduation.",
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "McKinsey & Company",
+      "Deloitte",
+      "Cerner (now Oracle Health)",
+      "IBM",
+      "PwC",
+      "Accenture",
+      "Garmin"
+    ],
+    "grad_school_rate": 35.0,
+    "loan_default_rate": 4.6
+  },
+  "student_retention": {
+    "freshman_retention_rate": 87.5,
+    "graduation_rate_4_year": 54.0,
+    "graduation_rate_6_year": 69.0
+  }
 }

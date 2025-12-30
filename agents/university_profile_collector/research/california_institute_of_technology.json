@@ -824,7 +824,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Multiple short answer questions required for the 2025-2026 cycle, covering STEM interests, intellectual curiosity, meaningful STEM experiences, personal identity, hobbies, and concepts that blew your mind."
       }
     ],
@@ -855,7 +855,7 @@
         "type": "Major",
         "required": true,
         "brainstorming_questions": [
-          "Thinking about the most mind-bending STEM concept you've encountered \u2013 whether in a class, a book, or even a casual conversation \u2013 what specifically about it sparked a deeper curiosity, and how did that curiosity lead you to explore it further?",
+          "Thinking about the most mind-bending STEM concept you've encountered – whether in a class, a book, or even a casual conversation – what specifically about it sparked a deeper curiosity, and how did that curiosity lead you to explore it further?",
           "When you imagine yourself working in a STEM field, what's a specific problem or challenge you feel a strong urge to tackle, and what personal experiences have made you feel so compelled by this particular issue?",
           "Caltech is known for its intense, hands-on approach. Can you recall a time you've been completely absorbed in solving a complex STEM-related puzzle or building something, even if it was just a personal project, and what did that feeling of deep engagement tell you about your ideal STEM environment?",
           "Beyond the textbook definitions, what real-world application or scientific breakthrough in STEM has genuinely amazed you, and what about that specific innovation makes you want to be part of creating or understanding similar advancements?",
@@ -868,7 +868,7 @@
         "type": "STEM",
         "required": true,
         "brainstorming_questions": [
-          "Think about a specific STEM-related experience in the last few years \u2013 was there a moment where you felt genuinely stuck, perhaps facing a problem that seemed impossible to solve, and how did you push through that challenge?",
+          "Think about a specific STEM-related experience in the last few years – was there a moment where you felt genuinely stuck, perhaps facing a problem that seemed impossible to solve, and how did you push through that challenge?",
           "Beyond just completing a task, can you recall a time during this STEM experience where you found yourself asking 'why' or 'how' repeatedly, even after getting an initial answer? What sparked that deeper questioning?",
           "Caltech is all about tackling hard problems. Looking back at your experience, was there a particular piece of data, an observation, or a result that defied your initial expectations or understanding, and what did that discrepancy make you want to explore further?",
           "Describe a moment during your STEM experience where you had to collaborate with others. What was a specific interaction or shared discovery that made you appreciate the power of collective inquiry or opened your eyes to a new way of thinking?",
@@ -1062,11 +1062,31 @@
       "Perception of Caltech as merely a stepping stone for other endeavors, rather than a genuine desire to engage with its unique academic environment."
     ],
     "insights": [
-      "Caltech's academic environment is extremely rigorous and intense, emphasizing theoretical understanding and challenging coursework that often includes graduate-level material.",
-      "The institution values a collaborative spirit among students and supportive relationships with professors and TAs despite the academic difficulty.",
-      "Caltech seeks students with a deep love for math and science, viewing mathematics as the bedrock of all coursework.",
-      "Admissions are holistic; they look for potential to succeed, collaborate, and be creative, not just a sum of accomplishments.",
-      "The undergraduate experience includes unique traditions like the House system, Ditch Day, and an ongoing prank war with MIT, balancing intense academics with quirky social elements."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Caltech's academic environment is extremely rigorous and intense, emphasizing theoretical understanding and challenging coursework that often includes graduate-level material."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The institution values a collaborative spirit among students and supportive relationships with professors and TAs despite the academic difficulty."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Caltech seeks students with a deep love for math and science, viewing mathematics as the bedrock of all coursework."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admissions are holistic; they look for potential to succeed, collaborate, and be creative, not just a sum of accomplishments."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The undergraduate experience includes unique traditions like the House system, Ditch Day, and an ongoing prank war with MIT, balancing intense academics with quirky social elements."
+      }
     ]
   },
   "outcomes": {

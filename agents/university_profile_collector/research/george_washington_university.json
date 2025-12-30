@@ -957,19 +957,19 @@
       {
         "target_program": "All (General Admission)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One optional supplemental essay required, choose from two prompts: 'If you had the power to change the course of history in your community or the world, what would you do and why?' or 'Describe a time when you engaged others in meaningful dialogue around an issue that was important to you. Did this exchange create change, new perspectives, or deeper relationships?'. Each essay should be 500 words or fewer."
       },
       {
         "target_program": "Honors Program",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Two supplemental essays required, showcasing how the program would aid studies."
       },
       {
         "target_program": "Seven-Year B.A./M.D. Program",
         "requirement_type": "Interview",
-        "deadline": null,
+        "deadline": "",
         "details": "Approximately 20-30 students are brought to campus for interviews with current GW faculty to determine finalists."
       }
     ],
@@ -1155,11 +1155,31 @@
       "While GW states they invest in financial aid for admitted students, some older student reviews and discussions suggest that financial need historically could impact admissions, particularly for early decision applicants not seeking aid."
     ],
     "insights": [
-      "George Washington University employs a holistic review process, considering academic background, course rigor, GPA, essays, recommendations, and extracurriculars.",
-      "Applying Early Decision may increase chances of admission, though it is a binding commitment.",
-      "The university's prime location in Washington D.C. is a significant draw, offering unparalleled access to internships, research, and career opportunities, especially in political science and international affairs.",
-      "Students are encouraged to explore multiple interests across various schools and programs, reflecting a diverse academic environment.",
-      "While the student body is diverse, some reviews indicate mixed feelings about community cohesion, potentially due to the urban campus environment and high levels of student ambition."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "George Washington University employs a holistic review process, considering academic background, course rigor, GPA, essays, recommendations, and extracurriculars."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Decision may increase chances of admission, though it is a binding commitment."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university's prime location in Washington D.C. is a significant draw, offering unparalleled access to internships, research, and career opportunities, especially in political science and international affairs."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Students are encouraged to explore multiple interests across various schools and programs, reflecting a diverse academic environment."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While the student body is diverse, some reviews indicate mixed feelings about community cohesion, potentially due to the urban campus environment and high levels of student ambition."
+      }
     ]
   },
   "outcomes": {

@@ -22,12 +22,12 @@
       },
       {
         "category": "Research Focus",
-        "insight": "Pitt is classified as an 'R1: Doctoral University \u2013 Very high research activity' and is a major recipient of federal research funding, with strong ties to its affiliated UPMC medical center.",
+        "insight": "Pitt is classified as an 'R1: Doctoral University – Very high research activity' and is a major recipient of federal research funding, with strong ties to its affiliated UPMC medical center.",
         "implication": "Students interested in research, especially in health sciences, engineering, and other STEM fields, will find abundant opportunities for undergraduate involvement and faculty mentorship, potentially leading to significant professional development."
       },
       {
         "category": "Urban Campus Integration",
-        "insight": "The campus is deeply integrated into Pittsburgh\u2019s vibrant Oakland neighborhood, offering students seamless access to city life, cultural institutions, and extensive public transportation.",
+        "insight": "The campus is deeply integrated into Pittsburgh’s vibrant Oakland neighborhood, offering students seamless access to city life, cultural institutions, and extensive public transportation.",
         "implication": "Students benefit from a rich 'college town' experience combined with the advantages of a major city, including diverse social opportunities and easy mobility around the region without heavy reliance on personal vehicles."
       }
     ],
@@ -1289,13 +1289,13 @@
       {
         "target_program": "All (for scholarship/Honors/test-optional/international)",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Submission of a personal statement (Common App essay or Pitt Personal Statement) is required for scholarship consideration, Frederick Honors College consideration, international students, and those applying test-optional."
       },
       {
         "target_program": "International Applicants",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "Required essay: Describe an experience where you had to adapt to a new environment (i.e. a different culture, situation, or way of thinking)."
       },
       {
@@ -1334,7 +1334,7 @@
         "brainstorming_questions": [
           "Thinking about your time in Pittsburgh, what's a moment, big or small, that felt like a turning point or a significant 'aha!' in your understanding of yourself or the world around you?",
           "The University of Pittsburgh is known for its diverse communities and urban environment. Can you recall an interaction with someone from a background very different from your own in Pittsburgh, and how that encounter challenged or broadened your perspective?",
-          "Consider a time you felt genuinely challenged by a specific Pittsburgh setting \u2013 perhaps navigating its hills, a unique cultural event, or even a specific academic endeavor at Pitt. What did you learn about your own resilience or problem-solving skills through that experience?",
+          "Consider a time you felt genuinely challenged by a specific Pittsburgh setting – perhaps navigating its hills, a unique cultural event, or even a specific academic endeavor at Pitt. What did you learn about your own resilience or problem-solving skills through that experience?",
           "Pitt's motto is 'Veritas et Virtus' (Truth and Valor). Can you identify an instance where you had to stand up for something you believed in, even when it was difficult, and how that experience has solidified your values?",
           "Beyond academics, what's a habit, interest, or passion that you've discovered or deepened since arriving at the University of Pittsburgh, and what does that say about the person you're becoming?"
         ]
@@ -1490,11 +1490,31 @@
       "Applying late in the rolling admissions cycle, which may result in fewer available spots."
     ],
     "insights": [
-      "Pitt operates on a rolling admissions basis, making early application highly beneficial.",
-      "The university is test-optional for many programs, but strong scores can still boost an application.",
-      "Applicants to the Frederick Honors College or Guaranteed Admissions Programs may have earlier deadlines.",
-      "The STARS record must accurately reflect your transcript; do not convert or average grades.",
-      "While a 4.0+ weighted GPA is common for accepted students, a well-rounded profile with strong extracurriculars can also be key."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Pitt operates on a rolling admissions basis, making early application highly beneficial."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university is test-optional for many programs, but strong scores can still boost an application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applicants to the Frederick Honors College or Guaranteed Admissions Programs may have earlier deadlines."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The STARS record must accurately reflect your transcript; do not convert or average grades."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While a 4.0+ weighted GPA is common for accepted students, a well-rounded profile with strong extracurriculars can also be key."
+      }
     ]
   },
   "outcomes": {

@@ -1491,7 +1491,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": null,
+        "deadline": "",
         "details": "One essay required (minimum 250 words, maximum 650 words) from a list of prompts. The essay is considered a positive factor for admissibility and scholarship consideration."
       }
     ],
@@ -1678,11 +1678,31 @@
       "Lack of demonstrated leadership, talents, or diversity of experience."
     ],
     "insights": [
-      "Applying Early Action (by November 1st) can demonstrate interest and potentially boost chances of acceptance.",
-      "MSU is test-optional, but competitive SAT/ACT scores can still enhance a profile (middle 50% SAT 1100-1320, ACT 26-31).",
-      "The acceptance rate is around 80-84%, indicating it's somewhat selective but not extremely difficult to get into.",
-      "Letters of recommendation from teachers or mentors who know you well are advised.",
-      "Focusing on what you can control, like your work ethic and effort, is a recurring theme in successful essays."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Applying Early Action (by November 1st) can demonstrate interest and potentially boost chances of acceptance."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "MSU is test-optional, but competitive SAT/ACT scores can still enhance a profile (middle 50% SAT 1100-1320, ACT 26-31)."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The acceptance rate is around 80-84%, indicating it's somewhat selective but not extremely difficult to get into."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Letters of recommendation from teachers or mentors who know you well are advised."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Focusing on what you can control, like your work ethic and effort, is a recurring theme in successful essays."
+      }
     ]
   },
   "outcomes": {

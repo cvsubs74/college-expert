@@ -1,46 +1,54 @@
 {
-  "university_profile": {
-    "_id": "loyola_university_chicago",
-    "university_name": "Loyola University Chicago",
-    "last_updated": "2025-12-19",
-    "report_source_files": [
-      "https://www.luc.edu/rankings/",
-      "https://www.collegetuitioncompare.com/trends/loyola-university-chicago/admission/",
-      "https://www.theintelligencer.com/news/article/us-news-2026-best-colleges-illinois-st-louis-19790680.php"
-    ],
-    "strategic_profile": {
-      "executive_summary": "Loyola University Chicago is a comprehensive Jesuit research university defined by its dual-campus urban presence and commitment to 'cura personalis'. It balances a traditional lakeside undergraduate experience with high-ranking professional schools in nursing, business, and law located in the heart of downtown Chicago.",
-      "market_position": "Jesuit Research Powerhouse",
-      "admissions_philosophy": "Holistic review with rolling admissions",
-      "us_news_rank": 132,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The university's acceptance rate has steadily increased from approximately 70.5% in 2020 to 81.6% for the 2025 cycle, indicating a shift toward broader accessibility.",
-          "implication": "Loyola serves as a high-probability target for qualified students seeking an urban research environment, though its yield rates have softened."
-        },
-        {
-          "category": "Programmatic Strength",
-          "insight": "While the aggregate national rank is 132, specific colleges like Nursing (#13) and International Business (#10) hold elite-tier status.",
-          "implication": "Applicants should target Loyola for its specialized professional pipelines rather than its general institutional ranking."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "The social atmosphere is bifurcated between the Rogers Park 'Lake Shore' campus, which offers a traditional residential feel, and the 'Water Tower' campus, which provides a fast-paced professional environment on the Magnificent Mile.",
-        "transportation_impact": "The campus is deeply integrated into the Chicago Transit Authority (CTA) network; every student receives a U-Pass for unlimited transit, making the entire city an extension of the campus for social and professional life.",
-        "research_impact": "Strong emphasis on early-stage research through the Loyola Undergraduate Research Opportunities Program (LUROP) and Mulcahy Scholars, leveraging Chicago's industry ties in medicine, social work, and finance."
-      }
+  "_id": "loyola_university_chicago",
+  "metadata": {
+    "official_name": "Loyola University Chicago",
+    "location": {
+      "city": "Chicago",
+      "state": "Illinois",
+      "type": "Private"
     },
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Loyola University Chicago is a nationally recognized private Jesuit institution, ranking 132nd among National Universities by U.S. News & World Report for 2026. It is distinguished for its commitment to undergraduate teaching, value, and academic excellence across various programs. As one of the largest Jesuit universities in the country, it continues to solidify its reputation as a top-tier university dedicated to Jesuit values and social justice.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Seeks intellectually curious and socially conscious students who align with the Jesuit values of service, justice, and faith. Holistic review considers academic achievement, extracurricular involvement, essays, and recommendations, looking for potential to contribute to a diverse campus community.",
+    "us_news_rank": 132,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Loyola University Chicago has a moderately selective admissions process with an acceptance rate typically around 81-82%. While not 'extremely competitive,' the university values strong academic performance (average admitted GPA is approximately 3.91) and a holistic review of applicants.",
+        "implication": "Applicants should prioritize maintaining a high GPA and demonstrating academic rigor in their coursework. Given the holistic review, it's crucial to highlight leadership roles, service experiences, and unique personal qualities in essays and recommendations. Applying early decision (if offered and applicable) or as early as possible for rolling admissions can also maximize chances for both admission and merit scholarship consideration."
+      },
+      {
+        "category": "Academic",
+        "insight": "Loyola, as a Jesuit institution, is known for its strong academic pathways and a well-rounded curriculum that includes core requirements, alongside notable strengths in specific programs such as Business (Quinlan School of Business ranked #1 in Chicago), Nursing (BSN program ranked #26 nationally), and Engineering (ranked #37 nationally among non-doctorate programs). The university emphasizes experiential learning, research, and internships.",
+        "implication": "Prospective students interested in these highlighted fields should emphasize relevant academic achievements, projects, or extracurriculars. All applicants should demonstrate an appreciation for a comprehensive liberal arts education, highlighting intellectual curiosity and any experiences with hands-on learning, research, or community engagement that align with Loyola's academic philosophy."
+      },
+      {
+        "category": "Culture",
+        "insight": "Loyola University Chicago fosters a supportive, community-oriented, and civically engaged environment rooted in Jesuit values, emphasizing 'cura personalis' (care for the whole person) and social justice. The vibrant campus life offers over 250 student clubs and organizations, situated strategically in an urban setting along Lake Michigan, providing easy access to Chicago's diverse cultural and professional opportunities.",
+        "implication": "Applicants should articulate how they embody values such as service, collaboration, and social responsibility. Highlight experiences demonstrating active participation in community service, leadership in clubs, or diverse group projects. Express a genuine interest in leveraging the unique urban and lakeside setting of Chicago for academic, personal, and professional growth."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Loyola University Chicago offers a welcoming and intellectually vibrant social atmosphere with a strong sense of community and numerous campus activities and clubs. Students often describe a 'real feel of family' and an accepting environment. While lively, the party scene is generally minimal and influenced by Greek life.",
+      "transportation_impact": "Loyola University Chicago's urban campuses offer diverse and convenient transportation options, including trains, buses, bicycles, and pedestrian routes. Students receive a public transportation pass included in tuition, and the university provides shuttles connecting campuses. The university promotes alternative transportation modes to reduce single-occupancy vehicle use.",
+      "research_impact": "Loyola University Chicago provides strong undergraduate research opportunities across various disciplines, with students engaged in investigating critical social and environmental topics. The university emphasizes ethical applications of research, including new AI-focused minors that involve partnerships with businesses. Loyola's career services, supported by a vast network of companies and alumni, help students connect with industry for career development."
+    }
+  },
+  "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 81.6,
+      "overall_acceptance_rate": 81.5,
+      "is_test_optional": true,
+      "test_policy_details": "Loyola University Chicago is test-optional, meaning applicants can choose whether to submit SAT or ACT scores. The university allows self-reporting of scores. Loyola superscores results, reviewing the highest subscore from each section over multiple exams. If accepted, official scores must be sent by May 1.",
+      "admits_class_size": 32081,
+      "transfer_acceptance_rate": 51.7,
+      "early_admission_stats": [],
       "in_state_acceptance_rate": null,
       "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": 38.8,
-      "transfer_acceptance_rate": 51.8,
-      "admits_class_size": 2763,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": []
+      "international_acceptance_rate": 38.7
     },
     "longitudinal_trends": [
       {
@@ -48,20 +56,15 @@
         "cycle_name": "Class of 2029",
         "applications_total": null,
         "admits_total": null,
-        "enrolled_total": null,
+        "enrolled_total": 2763,
         "acceptance_rate_overall": null,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
         "yield_rate": null,
-        "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Cycle still in progress; waitlist not utilized per university policy."
+        "notes": "Admission data (applications, admits) for Fall 2025 (Class of 2029) is not yet fully released in Common Data Set. Enrolled figure is from Fall 2025 First-year student count on 'Fast Facts' page.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       },
       {
         "year": 2024,
@@ -70,536 +73,1501 @@
         "admits_total": 32081,
         "enrolled_total": 2763,
         "acceptance_rate_overall": 81.6,
-        "acceptance_rate_in_state": 81.4,
-        "acceptance_rate_out_of_state": 89.2,
-        "yield_rate": 8.6,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Loyola does not maintain an undergraduate waitlist."
+        "yield_rate": 8.61,
+        "notes": "Data from 2024-2025 Common Data Set.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 40468,
         "admits_total": 32937,
-        "enrolled_total": 2864,
+        "enrolled_total": 2952,
         "acceptance_rate_overall": 81.4,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 8.7,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Waitlist not utilized per CDS Section C2."
+        "yield_rate": 8.96,
+        "notes": "Data from 2023-2024 Common Data Set, with enrolled calculated from reported yield rate.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": false
       },
       {
         "year": 2022,
         "cycle_name": "Class of 2026",
-        "applications_total": 39316,
-        "admits_total": 31101,
-        "enrolled_total": 2867,
-        "acceptance_rate_overall": 79.1,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 9.2,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Waitlist not utilized."
+        "applications_total": 40909,
+        "admits_total": 32379,
+        "enrolled_total": 2864,
+        "acceptance_rate_overall": 79.15,
+        "yield_rate": 8.84,
+        "notes": "Data from 2022-2023 Common Data Set.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       },
       {
         "year": 2021,
         "cycle_name": "Class of 2025",
-        "applications_total": 31597,
-        "admits_total": 24329,
+        "applications_total": 37824,
+        "admits_total": 29117,
         "enrolled_total": 2867,
-        "acceptance_rate_overall": 77.0,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 11.8,
-        "waitlist_stats": {
-          "year": 2021,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": null
-        },
-        "notes": "Waitlist not utilized."
+        "acceptance_rate_overall": 76.98,
+        "yield_rate": 9.85,
+        "notes": "Data from 2021-2022 Common Data Set.",
+        "offered_spots": null,
+        "accepted_spots": null,
+        "admitted_from_waitlist": null,
+        "waitlist_admit_rate": null,
+        "is_waitlist_ranked": null
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "3.70-4.00",
-        "unweighted_middle_50": "3.60-3.85",
+        "weighted_middle_50": "3.7-3.9",
+        "unweighted_middle_50": "3.6-3.85",
         "average_weighted": 3.82,
-        "percentile_25": "3.70",
-        "percentile_75": "4.00",
-        "notes": "Middle 50% values reflect weighted cumulative high school GPA for the most recent admitted class."
+        "percentile_25": "3.7",
+        "percentile_75": "3.9",
+        "notes": "The average weighted GPA for admitted students is 3.82, with the middle 50% ranging from 3.7 to 3.9. The average unweighted GPA is 3.74, with the middle 50% ranging from 3.6 to 3.85. Most incoming freshmen graduate in the top quarter of their high school class. Loyola University Chicago typically accepts students with an A- average, and admissions considers a holistic review."
       },
       "testing": {
-        "sat_composite_middle_50": "1200-1370",
+        "sat_composite_middle_50": "1210-1370",
         "sat_reading_middle_50": "600-690",
         "sat_math_middle_50": "570-670",
         "act_composite_middle_50": "27-32",
-        "submission_rate": 25.0,
-        "policy_note": "Test optional; scores are considered if submitted. SAT submission rate is approximately 25% and ACT is approximately 12%."
+        "submission_rate": 23.0,
+        "policy_note": "Loyola is test-optional. The university superscores results, reviewing the highest subscore from each section over multiple exams. Students may self-report test scores."
       },
       "demographics": {
-        "first_gen_percentage": 25.0,
+        "first_gen_percentage": 26.0,
         "legacy_percentage": null,
-        "international_percentage": 3.0,
         "geographic_breakdown": [
           {
             "region": "Illinois",
             "percentage": 56.0
           },
           {
+            "region": "Michigan",
+            "percentage": 4.48
+          },
+          {
+            "region": "Ohio",
+            "percentage": 4.24
+          },
+          {
+            "region": "Wisconsin",
+            "percentage": 4.2
+          },
+          {
+            "region": "California",
+            "percentage": 3.35
+          },
+          {
+            "region": "Indiana",
+            "percentage": 2.84
+          },
+          {
+            "region": "Florida",
+            "percentage": 1.17
+          },
+          {
+            "region": "Texas",
+            "percentage": 1.09
+          },
+          {
+            "region": "New York",
+            "percentage": 1.01
+          },
+          {
+            "region": "Massachusetts",
+            "percentage": 0.89
+          },
+          {
             "region": "Other US States",
-            "percentage": 41.0
+            "percentage": 18.73
           },
           {
             "region": "International",
-            "percentage": 3.0
+            "percentage": 2.0
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 13086,
             "admits": 10143,
-            "acceptance_rate": 77.5,
-            "note": "Men represent approximately 31% of the total undergraduate population."
+            "acceptance_rate": 77.51,
+            "note": "Data for the 2024-2025 academic year."
           },
           "women": {
             "applicants": 26209,
             "admits": 21927,
-            "acceptance_rate": 83.7,
-            "note": "Women represent approximately 69% of the total undergraduate population."
+            "acceptance_rate": 83.66,
+            "note": "Data for the 2024-2025 academic year."
           },
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 48.2,
-          "black_african_american": 8.2,
-          "hispanic_latino": 23.8,
-          "asian": 13.2,
-          "native_american_alaskan": 0.1,
-          "pacific_islander": 0.1,
-          "two_or_more_races": 5.1,
-          "unknown": 1.3,
-          "non_resident_alien": null
-        },
-        "religious_affiliation": "Roman Catholic (Jesuit)"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 81.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a traditional Jesuit liberal arts foundation or those pursuing the unique Engineering program housed here.",
-          "housing_profile": "Access to various Lake Shore Campus dorms; common choice is Mertz Hall.",
-          "student_archetype": "Intellectually curious and socially conscious",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 81.0,
-              "admissions_pathway": "Direct Admit / Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "direct_admit_only": false,
-              "prerequisite_courses": [
-                "BIOL 101 General Biology I",
-                "BIOL 111 General Biology Lab I",
-                "MATH 131 Applied Calculus I"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "CHEM 160 Chemical Structure and Properties",
-                "CHEM 240 Chemical Reactivity II",
-                "BIOL 282 Genetics"
-              ],
-              "special_requirements": "Pre-health students must complete the updated Chemistry sequence.",
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 101 General Biology I",
-                  "BIOL 251 Cell Biology",
-                  "BIOL 282 Genetics"
-                ],
-                "total_units": 120,
-                "major_units": 37
-              }
-            },
-            {
-              "name": "Psychology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "acceptance_rate": 81.0,
-              "admissions_pathway": "Direct Admit / Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.0,
-              "direct_admit_only": false,
-              "prerequisite_courses": [
-                "PSYC 101 General Psychology"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "PSYC 304 Statistics",
-                "PSYC 306 Research Methods"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 101 General Psychology",
-                  "PSYC 304 Statistics"
-                ],
-                "total_units": 120,
-                "major_units": 43
-              }
-            }
-          ]
-        },
-        {
-          "name": "Quinlan School of Business",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 75.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strong emphasis on business ethics; benefits from proximity to Chicago's Loop.",
-          "housing_profile": "Baumhart Hall in later years.",
-          "student_archetype": "Ambitious and ethically-minded professionals",
-          "majors": [
-            {
-              "name": "Finance",
-              "degree_type": "B.B.A.",
-              "is_impacted": true,
-              "acceptance_rate": null,
-              "admissions_pathway": "Direct Admit / Pre-Major",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "direct_admit_only": false,
-              "prerequisite_courses": [
-                "MATH 110 Business Precalculus"
-              ],
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "ACCT 201 Introductory Accounting I"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "FINC 301 Introductory Business Finance"
-                ],
-                "total_units": 120,
-                "major_units": 78
-              }
-            }
-          ]
-        },
-        {
-          "name": "Marcella Niehoff School of Nursing",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 65.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Highly competitive direct-entry BSN program.",
-          "housing_profile": "Simpson Living-Learning Center.",
-          "student_archetype": "Compassionate and high-achieving caregivers",
-          "majors": [
-            {
-              "name": "Nursing",
-              "degree_type": "B.S.N.",
-              "is_impacted": true,
-              "acceptance_rate": 81.0,
-              "admissions_pathway": "Direct Admit",
-              "internal_transfer_allowed": true,
-              "internal_transfer_gpa": 2.5,
-              "direct_admit_only": false,
-              "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": [
-                "GNUR 157 Human Anatomy and Physiology I",
-                "GNUR 293 Pathophysiology"
-              ],
-              "curriculum": {
-                "core_courses": [
-                  "GNUR 102 Intro to Professional Nursing Practice"
-                ],
-                "total_units": 120,
-                "major_units": 90
-              }
-            }
-          ]
-        },
-        {
-          "name": "School of Environmental Sustainability",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 81.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Perfect for students interested in climate action, featuring a student-run biodiesel lab.",
-          "housing_profile": "San Francisco Hall (LEED Gold certified) is a natural fit.",
-          "student_archetype": "Eco-conscious activists and researchers",
-          "majors": []
-        },
-        {
-          "name": "Parkinson School of Health Sciences and Public Health",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 78.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Combines healthcare administration with public health data.",
-          "housing_profile": "Traditional Lake Shore dorms.",
-          "student_archetype": "Future healthcare leaders and wellness advocates",
-          "majors": []
-        },
-        {
-          "name": "Arrupe College",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": null,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "A dedicated two-year associate’s program for students with high financial need.",
-          "housing_profile": "Primarily commuter-focused.",
-          "student_archetype": "Determined and community-oriented first-generation students",
-          "majors": []
+          "white": 49.42,
+          "black_african_american": 7.33,
+          "hispanic_latino": 19.1,
+          "asian": 11.81,
+          "native_american_alaskan": 0.12,
+          "pacific_islander": 0.07,
+          "two_or_more_races": 4.15,
+          "unknown": 4.86,
+          "non_resident_alien": 3.14
         }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Minor",
-        "Bioethics Minor",
-        "Peace and Justice Studies Minor",
-        "Leadership Studies Minor",
-        "Baumhart Certificate in ESG",
-        "Healthcare Administration Minor",
-        "Arabic Language & Culture Minor",
-        "Sociolegal Studies Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "Coalition App",
-        "Loyola University Chicago Application"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Admission / Scholarship Deadline",
-          "date": "2024-12-01",
-          "is_binding": false,
-          "notes": "Priority deadline for merit scholarship consideration."
-        },
-        {
-          "plan_type": "Spring Admission Priority",
-          "date": "2024-11-01",
-          "is_binding": false,
-          "notes": "Priority deadline for spring start."
-        },
-        {
-          "plan_type": "Regular Decision (Priority)",
-          "date": "2025-02-15",
-          "is_binding": false,
-          "notes": "Secondary priority date."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "deadline": null,
-          "details": "Loyola is officially 'Essay Optional' for the 2024-2025 cycle."
-        },
-        {
-          "target_program": "Music & Dance",
-          "requirement_type": "Audition",
-          "deadline": "2025-02-14",
-          "details": "Requires separate audition application."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Academic Record"
-        ],
-        "secondary_factors": [
-          "Extracurricular Activities",
-          "Recommendations",
-          "Character",
-          "Talent/Ability"
-        ],
-        "essay_importance": "Moderate",
-        "demonstrated_interest": "Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "Minimal",
-        "first_gen_boost": "Strong",
-        "specific_differentiators": "Emphasis on 'Cura Personalis' and Jesuit values."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Prioritize the December 1st priority deadline to maximize eligibility for merit scholarships.",
-        "Apply directly to the Marcella Niehoff School of Nursing if set on the field.",
-        "Consider Public Health in the Parkinson School as a strategic alternative to Biology."
-      ],
-      "college_ranking_tactics": [
-        "Rank Arrupe College as primary choice if seeking an affordable associate-to-bachelor's pathway.",
-        "Select Quinlan School of Business for the urban Water Tower Campus environment.",
-        "Evaluate colleges based on Core Curriculum 'double-dipping' opportunities."
-      ],
-      "alternate_major_strategy": "If applying to Nursing or Engineering, list a related major in CAS (e.g., Biology or Physics) as your alternate."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 52230,
-          "total_coa": 74020,
-          "housing": 17010
-        },
-        "out_of_state": {
-          "tuition": 52230,
-          "total_coa": 74020,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 28000,
-      "average_merit_aid": 25000,
-      "percent_receiving_aid": 91.0
-    },
-    "scholarships": [
-      {
-        "name": "Ignatian Scholarship",
-        "type": "Merit/Full Ride",
-        "amount": "Full Tuition",
-        "deadline": "2025-02-01",
-        "benefits": "Renewable for four years; includes participation in a distinguished cohort of scholars",
-        "application_method": "Invite-only based on Admission Application"
-      },
-      {
-        "name": "Regents Scholarship",
-        "type": "Merit",
-        "amount": "$14,000 - $31,000 per year",
-        "deadline": "Automatic consideration",
-        "benefits": "Renewable for four years of undergraduate study",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Catholic Heritage Award",
-        "type": "Merit/Affiliation",
-        "amount": "$2,500 per year",
-        "deadline": "Automatic consideration",
-        "benefits": "Specifically for graduates of Catholic high schools",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Jesuit, BVM, and SCC High School Scholarship",
-        "type": "Merit/Affiliation",
-        "amount": "Half Tuition",
-        "deadline": "2025-03-15",
-        "benefits": "Awarded to one student from each eligible Jesuit or Sisters of Christian Charity high school",
-        "application_method": "Nomination by High School Principal"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 are required for credit in most subjects.",
-        "usage": "Credits can satisfy University Core and specific major prerequisites."
-      },
-      "ib_policy": {
-        "general_rule": "Credit is awarded only for Higher Level (HL) exams with scores of 5, 6, or 7.",
-        "diploma_bonus": false
-      },
-      "transfer_articulation": {
-        "tools": [
-          "MyList (LOCUS)",
-          "Transferology",
-          "Illinois Articulation Initiative (IAI)"
-        ],
-        "restrictions": "64-unit cap for community college transfers; 36 total external credit cap for freshmen."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "A solid academic record, typically with a GPA of 3.4+ for strong scholarship consideration",
-        "Demonstrated alignment with Jesuit values, specifically service and social justice",
-        "Rigorous high school curriculum including Honors, AP, or IB courses"
-      ],
-      "common_activities": [
-        "Community service and volunteer work with local non-profits",
-        "Pre-professional experience, such as CNA certification or medical shadowing",
-        "Leadership roles in school-based clubs or student government"
-      ],
-      "essay_tips": [
-        "Include a specific 'Why Loyola' section that mentions unique programs or the lakeside campus",
-        "Reflect on how your personal mission aligns with 'cura personalis'",
-        "Use the 500-word free-form optional essay to showcase your personality"
-      ],
-      "red_flags": [
-        "A significant decline in grades during senior year",
-        "Generic recommendation letters from counselors who do not know the student",
-        "Missing the December 1st priority deadline"
-      ],
-      "insights": [
-        "Renowned for Nursing, Psychology, and Pre-Health programs",
-        "The Lake Shore Campus location is a major selling point",
-        "Merit scholarships are widely available but dependent on early application"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 71530,
-      "employment_rate_2yr": null,
-      "grad_school_rate": 21.2,
-      "top_employers": [
-        "Deloitte",
-        "Northwestern Medicine",
-        "PwC",
-        "Amazon",
-        "Google",
-        "Walgreens"
-      ],
-      "loan_default_rate": 3.2,
-      "student_retention": {
-        "freshman_retention_rate": 84.0,
-        "graduation_rate_4_year": 69.0,
-        "graduation_rate_6_year": 72.0
       }
     }
   },
-  "_id": "loyola_university_chicago",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Arrupe College",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Arrupe College students can live in Baumhart Hall, often on graduate student floors. The college emphasizes affordability and access to university resources.",
+        "student_archetype": "Resilient, ambitious, and often first-generation college students from diverse backgrounds with limited financial resources, highly motivated to succeed academically and overcome barriers.",
+        "strategic_fit_advice": "Specifically designed for students committed to earning an associate's degree as a stepping stone to a bachelor's, valuing a close-knit community and significant support systems.",
+        "majors": []
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Traditional freshman dorms like Mertz Hall (central, social), San Francisco Hall (modern, eco-friendly), Simpson Living-Learning Center (academically focused), and Regis Hall (renovated, good location). Upperclassmen may move to apartment-style dorms or off-campus housing in Rogers Park/Edgewater.",
+        "student_archetype": "Intellectually curious, broad-minded, and engaged in a wide array of campus activities, seeking a well-rounded university experience with a commitment to social justice and critical thinking.",
+        "strategic_fit_advice": "Students who thrive in a diverse academic environment, appreciate the Jesuit tradition of holistic development, and desire access to both campus life and the cultural opportunities of Chicago.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 101 General Biology I",
+              "CHEM 101 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 101 General Biology I",
+                "BIOL 102 General Biology II",
+                "BIOL 251 Genetics",
+                "BIOL 265 Cell Biology",
+                "CHEM 101 General Chemistry I",
+                "CHEM 102 General Chemistry II",
+                "CHEM 221 Organic Chemistry I",
+                "CHEM 222 Organic Chemistry II",
+                "PHYS 101 General Physics I",
+                "PHYS 102 General Physics II",
+                "MATH 131 Calculus I",
+                "MATH 132 Calculus II"
+              ],
+              "electives": [
+                "BIOL 300-level+ courses",
+                "BIOL 302 Microbiology",
+                "BIOL 319 Human Anatomy",
+                "BIOL 320 Human Physiology"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Offers Ecology and Molecular Biology emphases. Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC 100 General Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 100 General Psychology",
+                "PSYC 304 Statistics for the Social Sciences",
+                "PSYC 306 Research Methods in Psychology",
+                "PSYC 300-level courses from different areas (e.g., Developmental, Social, Cognitive, Clinical)"
+              ],
+              "electives": [
+                "PSYC 308 Abnormal Psychology",
+                "PSYC 310 Developmental Psychology",
+                "PSYC 312 Social Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "COMP 170 Introduction to Computer Science I",
+              "MATH 131 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "COMP 170 Introduction to Computer Science I",
+                "COMP 171 Introduction to Computer Science II",
+                "COMP 271 Data Structures",
+                "COMP 313 Computer Organization and Assembly Language",
+                "COMP 317 Discrete Structures",
+                "COMP 350 Software Engineering",
+                "COMP 363 Design and Analysis of Algorithms",
+                "MATH 131 Calculus I",
+                "MATH 132 Calculus II",
+                "STAT 212 Statistics"
+              ],
+              "electives": [
+                "COMP 342 Web Application Development",
+                "COMP 345 Database Management Systems",
+                "COMP 375 Introduction to Artificial Intelligence"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Criminal Justice and Criminology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CJCR 101 Introduction to Criminal Justice"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CJCR 101 Introduction to Criminal Justice",
+                "CJCR 200 Criminological Theory",
+                "CJCR 201 Research Methods in Criminal Justice",
+                "CJCR 300 Statistics for Criminal Justice",
+                "CJCR 301 Law and Society"
+              ],
+              "electives": [
+                "CJCR 305 Policing in America",
+                "CJCR 307 Corrections",
+                "CJCR 309 Juvenile Delinquency"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PLSC 101 American Government"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PLSC 101 American Government",
+                "PLSC 200 Introduction to Political Theory",
+                "PLSC 201 Introduction to Comparative Politics",
+                "PLSC 202 Introduction to International Relations",
+                "PLSC 300 Research Methods in Political Science"
+              ],
+              "electives": [
+                "PLSC 310 Constitutional Law I",
+                "PLSC 320 Public Policy",
+                "PLSC 330 International Law"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ANTH 100 Introduction to Cultural Anthropology",
+                "ANTH 105 Introduction to Biological Anthropology",
+                "ANTH 106 Introduction to Archaeology",
+                "ANTH 201 Anthropological Theory",
+                "ANTH 300 Research Methods in Anthropology"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 101 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 101 General Chemistry I",
+                "CHEM 102 General Chemistry II",
+                "CHEM 221 Organic Chemistry I",
+                "CHEM 222 Organic Chemistry II",
+                "CHEM 301 Physical Chemistry I",
+                "CHEM 302 Physical Chemistry II",
+                "CHEM 361 Instrumental Analysis",
+                "MATH 131 Calculus I",
+                "MATH 132 Calculus II",
+                "PHYS 101 General Physics I",
+                "PHYS 102 General Physics II"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "ECON 303 Intermediate Microeconomics",
+                "ECON 304 Intermediate Macroeconomics",
+                "ECON 305 Econometrics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ENGL 101 Academic Writing"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 101 Academic Writing",
+                "ENGL 200-level Literature course",
+                "ENGL 300-level Literature course (British)",
+                "ENGL 300-level Literature course (American)",
+                "ENGL 300-level Literature course (Global)",
+                "ENGL 370 Literary Theory"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "HIST 101 Western Civilization I",
+                "HIST 102 Western Civilization II",
+                "HIST 200-level US History course",
+                "HIST 200-level World History course",
+                "HIST 300 Historical Methods"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 131 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MATH 131 Calculus I",
+                "MATH 132 Calculus II",
+                "MATH 201 Multivariable Calculus",
+                "MATH 212 Introduction to Linear Algebra",
+                "MATH 215 Introduction to Discrete Mathematics",
+                "MATH 300 Introduction to Abstract Algebra",
+                "MATH 310 Introduction to Real Analysis"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHIL 100 Introduction to Philosophy"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHIL 100 Introduction to Philosophy",
+                "PHIL 201 Ancient Philosophy",
+                "PHIL 202 Modern Philosophy",
+                "PHIL 300 Metaphysics",
+                "PHIL 301 Epistemology",
+                "PHIL 302 Ethics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 30
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 131 Calculus I",
+              "PHYS 101 General Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 101 General Physics I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PHYS 101 General Physics I",
+                "PHYS 102 General Physics II",
+                "PHYS 201 Modern Physics",
+                "PHYS 221 Classical Mechanics",
+                "PHYS 231 Electricity and Magnetism",
+                "PHYS 301 Quantum Mechanics",
+                "MATH 131 Calculus I",
+                "MATH 132 Calculus II",
+                "MATH 201 Multivariable Calculus"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Quinlan School of Business",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Undergraduates follow general university housing for their first two years. Graduate students often seek off-campus housing, though Baumhart Hall on the Water Tower Campus offers apartment-style living for upper-class, transfer, and graduate students. Resources like StudentSpace are available for graduate students.",
+        "student_archetype": "Ambitious, career-focused individuals with strong analytical and leadership aspirations, keen on networking, internships, and leveraging Chicago's business landscape. Graduate students are typically professionals seeking career advancement.",
+        "strategic_fit_advice": "Ideal for students seeking a business education grounded in ethical leadership within a major urban center, with opportunities for hands-on learning and professional development.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCT 201 Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Financial Accounting",
+                "ACCT 202 Managerial Accounting",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 335 Financial Management",
+                "FINC 337 Investments",
+                "FINC 338 Financial Markets and Institutions",
+                "ISSC 241 Information Systems in Organizations",
+                "MGMT 201 Managing People and Organizations",
+                "MRKT 201 Principles of Marketing",
+                "SCMG 201 Operations and Supply Chain Management",
+                "STAT 212 Statistics"
+              ],
+              "electives": [
+                "FINC 340 International Finance",
+                "FINC 345 Real Estate Finance",
+                "FINC 350 Corporate Finance"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCT 201 Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Financial Accounting",
+                "ACCT 202 Managerial Accounting",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 335 Financial Management",
+                "ISSC 241 Information Systems in Organizations",
+                "MGMT 201 Managing People and Organizations",
+                "MRKT 201 Principles of Marketing",
+                "MRKT 301 Consumer Behavior",
+                "MRKT 302 Marketing Research",
+                "SCMG 201 Operations and Supply Chain Management",
+                "STAT 212 Statistics"
+              ],
+              "electives": [
+                "MRKT 305 Digital Marketing",
+                "MRKT 308 Advertising and Promotion",
+                "MRKT 310 International Marketing"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCT 201 Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Financial Accounting",
+                "ACCT 202 Managerial Accounting",
+                "ACCT 303 Intermediate Accounting I",
+                "ACCT 304 Intermediate Accounting II",
+                "ACCT 308 Cost Accounting",
+                "ACCT 310 Individual Income Tax",
+                "ACCT 312 Auditing",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 335 Financial Management",
+                "ISSC 241 Information Systems in Organizations",
+                "MGMT 201 Managing People and Organizations",
+                "MRKT 201 Principles of Marketing",
+                "SCMG 201 Operations and Supply Chain Management",
+                "STAT 212 Statistics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Human Resources",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MGMT 201 Managing People and Organizations"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MGMT 201 Managing People and Organizations"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Financial Accounting",
+                "ACCT 202 Managerial Accounting",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 335 Financial Management",
+                "ISSC 241 Information Systems in Organizations",
+                "MGMT 201 Managing People and Organizations",
+                "MGMT 303 Human Resource Management",
+                "MGMT 304 Staffing Organizations",
+                "MGMT 305 Compensation and Benefits",
+                "MRKT 201 Principles of Marketing",
+                "SCMG 201 Operations and Supply Chain Management",
+                "STAT 212 Statistics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Information Systems and Analytics",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ISSC 241 Information Systems in Organizations"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ISSC 241 Information Systems in Organizations"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Financial Accounting",
+                "ACCT 202 Managerial Accounting",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 335 Financial Management",
+                "ISSC 241 Information Systems in Organizations",
+                "ISSC 320 Database Management",
+                "ISSC 321 Systems Analysis and Design",
+                "ISSC 322 Business Intelligence and Analytics",
+                "MGMT 201 Managing People and Organizations",
+                "MRKT 201 Principles of Marketing",
+                "SCMG 201 Operations and Supply Chain Management",
+                "STAT 212 Statistics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "International Business",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 201 Principles of Microeconomics",
+              "ECON 202 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACCT 201 Financial Accounting",
+              "ECON 201 Principles of Microeconomics"
+            ],
+            "special_requirements": "Study abroad experience is required for the major.",
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Financial Accounting",
+                "ACCT 202 Managerial Accounting",
+                "ECON 201 Principles of Microeconomics",
+                "ECON 202 Principles of Macroeconomics",
+                "FINC 335 Financial Management",
+                "ISSC 241 Information Systems in Organizations",
+                "MGMT 201 Managing People and Organizations",
+                "IBUS 340 International Business Environment",
+                "IBUS 341 Global Marketing",
+                "IBUS 342 International Financial Management",
+                "MRKT 201 Principles of Marketing",
+                "SCMG 201 Operations and Supply Chain Management",
+                "STAT 212 Statistics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Marcella Niehoff School of Nursing",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate nursing students follow the general university housing requirements. Graduate nursing students typically live off-campus. The school emphasizes support for students whether they live on or off campus.",
+        "student_archetype": "Empathetic, detail-oriented, and resilient individuals dedicated to patient care and health promotion, often practical, collaborative, and committed to lifelong learning in a dynamic healthcare field.",
+        "strategic_fit_advice": "Ideal for students with a strong aptitude for science and a compassionate drive to work in healthcare, seeking a program that combines academic excellence with hands-on clinical experience.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 101 General Biology I",
+              "CHEM 101 General Chemistry I",
+              "MATH 131 Calculus I",
+              "PSYC 100 General Psychology",
+              "SOCL 101 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BIOL 101 General Biology I",
+              "CHEM 101 General Chemistry I"
+            ],
+            "special_requirements": "Competitive admission to the clinical major. Specific GPA requirements for progression in the program.",
+            "admissions_pathway": "Direct Admit (highly preferred) or Internal Transfer (very limited)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 101 General Biology I",
+                "BIOL 102 General Biology II",
+                "BIOL 251 Genetics",
+                "CHEM 101 General Chemistry I",
+                "CHEM 102 General Chemistry II",
+                "NURS 201 Foundations of Nursing Practice",
+                "NURS 202 Health Assessment",
+                "NURS 301 Adult Health Nursing I",
+                "NURS 302 Adult Health Nursing II",
+                "NURS 303 Psychiatric Mental Health Nursing",
+                "NURS 304 Child and Family Nursing",
+                "NURS 401 Community Health Nursing",
+                "NURS 402 Leadership and Management in Nursing",
+                "NURS 403 Senior Synthesis in Nursing",
+                "PSYC 100 General Psychology",
+                "SOCL 101 Introduction to Sociology",
+                "STAT 212 Statistics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [],
+            "notes": "Highly competitive program. Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Parkinson School of Health Sciences and Public Health",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate students likely follow general university housing policy. Graduate students would typically seek off-campus housing or potential graduate housing options at the Health Sciences Campus in Maywood.",
+        "student_archetype": "Health-conscious, analytical, and socially responsible individuals interested in public health, health administration, and health informatics, focusing on improving community health outcomes.",
+        "strategic_fit_advice": "Suited for students passionate about improving community health, health policy, or the operational aspects of healthcare, seeking a program that integrates scientific inquiry with social impact.",
+        "majors": [
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 101 General Biology I",
+              "PSYC 100 General Psychology",
+              "SOCL 101 Introduction to Sociology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 101 General Biology I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 101 General Biology I",
+                "PBHL 100 Introduction to Public Health",
+                "PBHL 201 Epidemiology",
+                "PBHL 202 Biostatistics",
+                "PBHL 301 Health Policy and Management",
+                "PBHL 302 Environmental Health",
+                "PBHL 303 Social and Behavioral Sciences in Public Health",
+                "PSYC 100 General Psychology",
+                "SOCL 101 Introduction to Sociology"
+              ],
+              "electives": [
+                "PBHL 305 Global Health",
+                "PBHL 308 Community Health Education",
+                "PBHL 310 Maternal and Child Health"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "School of Communication",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Undergraduates typically reside in general university dorms for their first two years. Due to the Water Tower Campus's role, some students may opt for Baumhart Hall later in their studies for its downtown location.",
+        "student_archetype": "Creative, expressive, and socially aware individuals interested in media, public relations, journalism, and digital storytelling, often articulate and eager to engage with contemporary issues.",
+        "strategic_fit_advice": "Suited for students who want to develop strong communication skills, are interested in the vibrant media and cultural scene of Chicago, and value a program with practical, real-world applications.",
+        "majors": [
+          {
+            "name": "Advertising & Public Relations",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "COMM 100 Introduction to Communication"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COMM 100 Introduction to Communication",
+                "COMM 200 Communication Theory",
+                "COMM 201 Communication Research Methods",
+                "ADPR 250 Principles of Advertising",
+                "ADPR 260 Principles of Public Relations",
+                "ADPR 300 Strategic Communication Writing",
+                "ADPR 301 Media Planning"
+              ],
+              "electives": [
+                "ADPR 305 Social Media Marketing",
+                "ADPR 308 Crisis Communication",
+                "ADPR 310 International Advertising and Public Relations"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "COMM 100 Introduction to Communication"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "COMM 100 Introduction to Communication",
+                "COMM 200 Communication Theory",
+                "COMM 201 Communication Research Methods",
+                "JOUR 201 News Reporting and Writing",
+                "JOUR 202 Multimedia Journalism",
+                "JOUR 301 Advanced Reporting",
+                "JOUR 302 Editing and Design"
+              ],
+              "electives": [
+                "JOUR 305 Investigative Journalism",
+                "JOUR 308 Broadcast Journalism",
+                "JOUR 310 Photojournalism"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "School of Continuing and Professional Studies",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Primarily serves adult learners and working professionals; on-campus housing is generally not a primary focus. Students are typically commuters or live independently off-campus.",
+        "student_archetype": "Motivated, independent adult learners, often balancing work, family, and studies, focused on career advancement, skill development, or completing a degree later in life.",
+        "strategic_fit_advice": "Best for individuals seeking flexible academic programs, professional development, and degree completion options that accommodate their existing commitments, with minimal reliance on traditional campus residential life.",
+        "majors": []
+      },
+      {
+        "name": "School of Environmental Sustainability",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Undergraduate students follow general university housing requirements. San Francisco Hall is noted for being environmentally friendly and connected to the Institute for Environmental Sustainability.",
+        "student_archetype": "Environmentally conscious, scientifically curious, and civically engaged individuals dedicated to understanding and addressing complex environmental challenges, often seeking interdisciplinary approaches.",
+        "strategic_fit_advice": "Ideal for students committed to environmental stewardship and sustainability, who desire a program combining scientific study with practical solutions and policy engagement, particularly within an urban context.",
+        "majors": [
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 101 General Biology I",
+              "CHEM 101 General Chemistry I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 101 General Biology I",
+              "CHEM 101 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit or Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 101 General Biology I",
+                "CHEM 101 General Chemistry I",
+                "ENVS 101 Introduction to Environmental Science",
+                "ENVS 201 Environmental Research Methods",
+                "ENVS 301 Environmental Policy and Law",
+                "ENVS 305 GIS and Remote Sensing",
+                "MATH 131 Calculus I",
+                "STAT 212 Statistics"
+              ],
+              "electives": [
+                "ENVS 310 Ecology",
+                "ENVS 315 Conservation Biology",
+                "ENVS 320 Renewable Energy Systems"
+              ],
+              "total_units": 120,
+              "major_units": 45
+            },
+            "notable_professors": [],
+            "notes": "Data source: Loyola University Chicago Undergraduate Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "School of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": true,
+        "housing_profile": "Undergraduate education students adhere to the general university residency requirements. Graduate education students primarily live off-campus, utilizing university resources for off-campus housing assistance if needed.",
+        "student_archetype": "Passionate, community-oriented individuals dedicated to shaping future generations, often possessing strong interpersonal skills, empathy, and a commitment to social justice in educational settings.",
+        "strategic_fit_advice": "Ideal for students committed to careers in education, who seek a program emphasizing ethical teaching practices and engagement with diverse communities, particularly within an urban context.",
+        "majors": []
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": false,
+        "housing_profile": "Undergraduate social work students adhere to the university's residency requirements. Graduate social work students generally live off-campus, with university resources available for housing assistance. The Water Tower Campus is a hub for graduate and professional students.",
+        "student_archetype": "Socially conscious, empathetic, and action-oriented individuals committed to advocating for vulnerable populations and promoting social justice, often excellent communicators and problem-solvers.",
+        "strategic_fit_advice": "Best for students passionate about making a tangible difference in communities, prepared for challenging coursework and field placements, and who align with the Jesuit values of service and justice.",
+        "majors": []
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "housing_profile": "",
+        "student_archetype": null,
+        "strategic_fit_advice": null,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Computer Science Minor",
+      "Entrepreneurship Minor",
+      "Marketing Minor",
+      "Psychology Minor",
+      "Communication and Media Minor",
+      "Data Science Certificate",
+      "Cybersecurity Technology Management Certificate",
+      "User Experience Design Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Loyola Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "This is the Priority Application Deadline for first-year students applying for Fall admission, offering best consideration for academic scholarships and ensuring space. Loyola University Chicago operates on a rolling admission basis."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "Loyola University Chicago operates on a rolling admission basis, reviewing applications after the priority deadline as long as space is available. While there is no strict 'Regular Decision' cutoff date, applying by this date is often recommended for timely consideration for Fall admission."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Optional: Applicants may submit an essay or personal statement to share more about themselves. This can be done through the activities section of the chosen application or by submitting a resume and essay after completing the application."
+      },
+      {
+        "target_program": "Music Major",
+        "requirement_type": "Audition",
+        "deadline": "March 1, 2026 (for video auditions)",
+        "details": "Application to the Music Major is a two-part process: admission to the University and an application to audition for the major. In-person auditions are scheduled for Saturday, February 14, 2026, at 9:00 AM on the Lakeshore Campus. Students unable to attend in-person may submit a video audition by March 1, 2026."
+      },
+      {
+        "target_program": "Dance Major",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Admission to the Dance Major is by audition only, requiring a two-part application process: university admission and a major audition. The application requires a two-minute solo video in any style and a personal statement. In-person auditions typically occur in early February, with an opportunity for video submissions in the Fall. Auditions are not required for dance minors or for students taking Level I dance classes."
+      },
+      {
+        "target_program": "Theatre Major",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Prospective Theatre majors and minors are not required to audition to enter the program. Once accepted to the University, students can declare the Theatre major or minor."
+      },
+      {
+        "target_program": "Fine Arts (Art History, Drawing, Painting, Printmaking, Photography, Sculpture, Ceramics, Visual Communication)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "A portfolio review is not required for admission into Fine Arts programs. Students apply to the university and, once admitted, declare a major or minor within the Fine Arts program."
+      },
+      {
+        "target_program": "Architecture (Undergraduate)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Specific portfolio requirements for undergraduate Architecture at Loyola University Chicago were not found. Based on the general Fine Arts department policy, a portfolio is not required for admission to Fine Arts programs. For transfer students seeking advanced placement in architecture at other institutions (e.g., UIC), an optional portfolio might be required."
+      },
+      {
+        "target_program": "Stritch School of Medicine (SSOM)",
+        "requirement_type": "Essays",
+        "deadline": "December 12, 2025 (Secondary Deadline for 2024-2025 cycle)",
+        "details": "Five required secondary essays with a minimum of 100 words and maximum of 500 words each (for questions 1-5). Additional questions (6-13) may apply. Essay prompts include topics such as motivation for medicine, social justice experiences, handling professional challenges/feedback, and personal conflicts."
+      },
+      {
+        "target_program": "Juris Doctor (JD) - School of Law",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires a Personal Statement (two pages, detailing motivation, career aspirations, and how the program aligns with goals) and an optional essay (statement of background, perspectives, and experiences)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Class Rank",
+        "Standardized Test Scores",
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Volunteer Work",
+        "Work Experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Loyola University Chicago employs a holistic admissions process, evaluating applicants to understand them as a whole person beyond just academic performance. The university explicitly considers factors such as character/personal qualities and talent/ability in its admission decisions."
+    },
     "essay_prompts": [
       {
-        "prompt": "Loyola Chicago is committed to preparing people to lead extraordinary lives. What does 'living an extraordinary life' mean to you?",
-        "word_limit": "300 words",
-        "type": "Values",
-        "required": true,
+        "prompt": "Share more about yourself through an essay or personal statement. (Optional)",
+        "word_limit": "Varies by application platform (e.g., Common App typically 650 words maximum), but generally expected to be a standard essay length.",
+        "type": "Personal (Optional)",
+        "required": false,
         "brainstorming_questions": [
-          "When you think about someone you deeply admire who seems to be living an 'extraordinary life,' what specific actions or qualities do they embody that resonate most with you, and how have you seen or practiced those yourself?",
-          "Beyond the typical definitions of success (fame, wealth, etc.), what are some of the quieter, more personal moments or achievements in your life that have felt profoundly meaningful or 'extraordinary' to you?",
-          "Loyola Chicago emphasizes 'leadership.' How have you, in your own way, taken initiative or guided others, even in small capacities, that has felt like a step towards living a more impactful or 'extraordinary' life?",
-          "Reflecting on a time you faced a significant challenge or disappointment, what did you learn about yourself or the world that shifted your perspective and perhaps redefined what an 'extraordinary' existence looks like for you?",
-          "Consider the Jesuit values of service and justice. How have your experiences interacting with your community, or witnessing injustice, shaped your understanding of what it means to contribute meaningfully and lead an 'extraordinary' life?"
+          "What is a significant experience or aspect of your identity that has shaped who you are today?",
+          "What intellectual curiosity or passion drives you, and how have you explored it?",
+          "Describe a challenge you faced and how you overcame it, highlighting what you learned about yourself.",
+          "What unique perspective or quality would you bring to a college community?",
+          "Beyond your grades and activities, what do you want the admissions committee to know about you?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/loyola_university_chicago_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider applying as 'undeclared' for flexibility, especially in the College of Arts and Sciences. Loyola University Chicago allows students to apply as undecided, and many students begin their studies without a declared major. The College of Arts and Sciences, in particular, offers flexibility, and students can enroll in general core courses while exploring their options. Most majors do not require four full years to complete, providing ample time to decide. Academic advisors are available to assist undeclared students in researching majors and selecting introductory courses in areas of interest.",
+      "Be aware of direct-admit programs like Nursing. Certain professional schools, such as the Marcella Niehoff School of Nursing, require students to apply directly to the program when applying to the university and begin the program in their freshman year. It is generally not possible to transfer into these programs later. This implies that some majors have a more structured and competitive entry process from the outset.",
+      "Focus on a strong academic profile regardless of major. While specific major-specific admit rates are not provided, Loyola University Chicago has a holistic admissions process, with a strong emphasis on academic strength. Admitted students generally have a high GPA (average around 3.74-3.91) and strong standardized test scores, even though the university is test-optional. Challenging high school coursework, including AP or IB classes, is also considered important. This suggests that a strong overall application is key, rather than trying to find a 'backdoor' through a less competitive major, with the exception of specific direct-admit programs.",
+      "Apply early, especially for merit scholarships. Loyola University Chicago practices rolling admissions, and applying as early as possible can increase your chances of admission and securing merit-based financial aid. This isn't directly related to major selection but can be a strategic move for overall admission."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "When applying to competitive programs or if undecided, students can select a major within a less competitive college or a general 'Undecided' path, focusing on core courses. Changing a major within the same college (e.g., College of Arts and Sciences) can be done through LOCUS. For prospective students considering a competitive major, it can be inferred that listing a backup in a different college, such as selecting Cognitive Science as an alternate if applying to Computer Science in Engineering, could be a viable strategy, given the structured internal transfer process for switching between different schools/colleges after admission.",
+    "internal_transfer_difficulty": "Internal transfers for changing majors between different schools or colleges (e.g., from the College of Arts and Sciences to the Quinlan School of Business) require submitting an Internal Transfer Application. Specific, competitive programs like Engineering and Nursing have particular application requirements and may involve additional coursework even for external transfer students, suggesting that internal transfers into such 'impacted majors' would likely also be competitive and require meeting specific prerequisites.",
+    "essay_tips": [
+      "Be specific about why Loyola: Reference unique programs, courses, faculty, or resources at the university that directly align with your academic and career goals.",
+      "Connect your personal narrative and experiences to your future aspirations: Illustrate how your past experiences and motivations have led you to pursue further education and how they relate to your career goals.",
+      "Demonstrate how Loyola's programs will specifically help you achieve your goals: Clearly articulate how the university's offerings will equip you to meet your academic and professional objectives.",
+      "Show, don't tell, using concrete examples: Instead of making general statements, use specific anecdotes and detailed descriptions to illustrate your qualities, experiences, and motivations.",
+      "If applicable, discuss challenges and personal growth: If you've faced academic or personal difficulties, explain how you overcame them and how those experiences led to a change in mindset or significant personal development."
+    ],
+    "red_flags": [
+      "Grade decline senior year: A significant drop in grades during your senior year, especially in core subjects, can be a red flag, as it may suggest a lack of sustained effort or preparedness for college-level work. Even one low grade, like a D, could raise concerns after acceptance. Loyola University Chicago considers a rigorous high school curriculum important, and consistent academic performance is expected.",
+      "Generic essays that could apply anywhere: Your personal essay is an opportunity to showcase your unique personality, values, and motivations. A generic essay that lacks specific details about your experiences or your genuine interest in Loyola University Chicago will not effectively convey who you are beyond your academic record.",
+      "List of activities without depth or impact: While extracurricular involvement is valued, Loyola emphasizes 'quality more than quantity.' Listing many short-term commitments without demonstrating deep engagement, leadership, or significant impact in a few activities can be less impressive than focused, meaningful involvement.",
+      "Poor letters of recommendation from teachers who don't know you well: Although letters of recommendation are optional, strong ones can significantly enhance an application. Generic or unenthusiastic letters from recommenders who don't know you well or cannot speak to your specific strengths and character can be a missed opportunity to present a comprehensive view of yourself."
+    ],
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated good character and community engagement",
+      "Authentic essays/personal statement",
+      "Strong letters of recommendation"
+    ],
+    "common_activities": [
+      "Community service/volunteering",
+      "Involvement in school clubs and organizations",
+      "Athletics",
+      "Research experience",
+      "Music/arts involvement"
+    ]
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3-4%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 55781.0,
+        "total_coa": 74020.0,
+        "housing": 18710.0
+      },
+      "out_of_state": {
+        "tuition": 55781.0,
+        "total_coa": 74020.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 29754.0,
+    "average_merit_aid": 21323.0,
+    "percent_receiving_aid": 99.0,
+    "meets_full_need": false,
+    "notes": "Meets approximately 82% of demonstrated financial need.",
+    "scholarships": [
+      {
+        "name": "Presidential, Damen, Loyola, Trustee, Dean, and Regent's Scholarships",
+        "type": "Merit",
+        "amount": "$14,000 to $31,000 per year",
+        "deadline": "December 1 (Freshmen priority deadline for scholarship consideration)",
+        "benefits": "Awarded based on academic achievement, without regard to financial need.",
+        "application_method": "Automatic Consideration (with completed undergraduate admission application)"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition (for finalists who name Loyola Chicago as first-choice)",
+        "deadline": "March 1st (for submitting award letter from National Merit Corporation)",
+        "benefits": "Full tuition coverage. A $2,000 Loyola-sponsored scholarship for finalists not receiving full tuition.",
+        "application_method": "Submit award letter from National Merit Corporation and name Loyola Chicago as first-choice."
+      },
+      {
+        "name": "Jesuit High School Scholarship",
+        "type": "Merit",
+        "amount": "Half tuition",
+        "deadline": "March 15th (nomination deadline)",
+        "benefits": "Awarded to one student from each Jesuit, B.V.M., and Sisters of Christian Charity high school in the U.S., Canada, and Puerto Rico. Requires a minimum 3.0 GPA.",
+        "application_method": "Nomination by high school principal."
+      },
+      {
+        "name": "International Student Scholarship",
+        "type": "Need-Based",
+        "amount": "Varies",
+        "deadline": "Beginning of February (priority deadline for CSS Profile)",
+        "benefits": "Specifically for international students demonstrating financial need.",
+        "application_method": "Submit CSS Profile."
+      },
+      {
+        "name": "Departmental Scholarships",
+        "type": "Merit/Specific Criteria",
+        "amount": "Varies by department",
+        "deadline": "Varies by department",
+        "benefits": "Offered to students typically beyond the freshman level, based on major and departmental criteria.",
+        "application_method": "Inquire with academic department once established in major."
+      },
+      {
+        "name": "Ignatian Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "Invite-only",
+        "benefits": "Full tuition coverage for freshman year, renewable.",
+        "application_method": "Invite-only."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Loyola University Chicago accepts Advanced Placement (AP) scores of 3, 4, or 5 for most exams, granting specific course equivalencies as detailed on their admissions website. A maximum of 32 credit hours can be earned from a combination of AP, IB, and other external exam programs (e.g., CLEP). Official scores must be sent directly from the College Board.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "Loyola University Chicago accepts Higher Level (HL) International Baccalaureate (IB) exam scores of 5, 6, or 7, granting specific course equivalencies. Standard Level (SL) exams are generally not accepted for credit. A maximum of 32 credit hours can be earned from a combination of AP, IB, and other external exam programs. Official scores must be sent directly from the IB Organization.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Loyola University Chicago accepts transfer credits for courses completed with a grade of 'C' or better (2.0 on a 4.0 scale) from regionally accredited institutions. A maximum of 64 semester hours may be transferred from two-year colleges, and a maximum of 90 semester hours may be transferred from four-year colleges. Students must complete a minimum of 30 credit hours at Loyola. Transfer credits are evaluated by the Office of Registration and Records and relevant academic departments. Online courses are generally accepted if they meet the same criteria as on-campus courses. Students can utilize Transferology to check course equivalencies, and Loyola has established articulation agreements with various community colleges."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework",
+      "Demonstrated good character and community engagement",
+      "Authentic essays/personal statement",
+      "Strong letters of recommendation"
+    ],
+    "common_activities": [
+      "Community service/volunteering",
+      "Involvement in school clubs and organizations",
+      "Athletics",
+      "Research experience",
+      "Music/arts involvement"
+    ],
+    "essay_tips": [
+      "Be specific about why Loyola: Reference unique programs, courses, faculty, or resources at the university that directly align with your academic and career goals.",
+      "Connect your personal narrative and experiences to your future aspirations: Illustrate how your past experiences and motivations have led you to pursue further education and how they relate to your career goals.",
+      "Demonstrate how Loyola's programs will specifically help you achieve your goals: Clearly articulate how the university's offerings will equip you to meet your academic and professional objectives.",
+      "Show, don't tell, using concrete examples: Instead of making general statements, use specific anecdotes and detailed descriptions to illustrate your qualities, experiences, and motivations.",
+      "If applicable, discuss challenges and personal growth: If you've faced academic or personal difficulties, explain how you overcame them and how those experiences led to a change in mindset or significant personal development."
+    ],
+    "red_flags": [
+      "Grade decline senior year: A significant drop in grades during your senior year, especially in core subjects, can be a red flag, as it may suggest a lack of sustained effort or preparedness for college-level work. Even one low grade, like a D, could raise concerns after acceptance. Loyola University Chicago considers a rigorous high school curriculum important, and consistent academic performance is expected.",
+      "Generic essays that could apply anywhere: Your personal essay is an opportunity to showcase your unique personality, values, and motivations. A generic essay that lacks specific details about your experiences or your genuine interest in Loyola University Chicago will not effectively convey who you are beyond your academic record.",
+      "List of activities without depth or impact: While extracurricular involvement is valued, Loyola emphasizes 'quality more than quantity.' Listing many short-term commitments without demonstrating deep engagement, leadership, or significant impact in a few activities can be less impressive than focused, meaningful involvement.",
+      "Poor letters of recommendation from teachers who don't know you well: Although letters of recommendation are optional, strong ones can significantly enhance an application. Generic or unenthusiastic letters from recommenders who don't know you well or cannot speak to your specific strengths and character can be a missed opportunity to present a comprehensive view of yourself."
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Loyola University Chicago has a moderately selective admissions process with an acceptance rate typically around 81-82%. While not 'extremely competitive,' the university values strong academic performance (average admitted GPA is approximately 3.91) and a holistic review of applicants."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "Loyola, as a Jesuit institution, is known for its strong academic pathways and a well-rounded curriculum that includes core requirements, alongside notable strengths in specific programs such as Business (Quinlan School of Business ranked #1 in Chicago), Nursing (BSN program ranked #26 nationally), and Engineering (ranked #37 nationally among non-doctorate programs). The university emphasizes experiential learning, research, and internships."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "Loyola University Chicago fosters a supportive, community-oriented, and civically engaged environment rooted in Jesuit values, emphasizing 'cura personalis' (care for the whole person) and social justice. The vibrant campus life offers over 250 student clubs and organizations, situated strategically in an urban setting along Lake Michigan, providing easy access to Chicago's diverse cultural and professional opportunities."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71530,
+    "employment_rate_2yr": null,
+    "top_employers": [
+      "Deloitte",
+      "PwC",
+      "Morgan Stanley",
+      "Apple",
+      "KPMG",
+      "Bank of America",
+      "Accenture",
+      "Discover Financial",
+      "CDW",
+      "Epic"
+    ],
+    "grad_school_rate": 17.0,
+    "loan_default_rate": 3.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 69.0,
+    "graduation_rate_6_year": 76.0
+  }
 }

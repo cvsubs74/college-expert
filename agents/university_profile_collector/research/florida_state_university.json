@@ -944,7 +944,7 @@
       {
         "target_program": "All",
         "requirement_type": "Essay",
-        "deadline": null,
+        "deadline": "",
         "details": "FSU highly recommends the Common App's personal essay or offers prompts on its own application/Coalition App. Only one essay is required."
       },
       {
@@ -1132,11 +1132,31 @@
       "Submitting an incomplete application or neglecting important components like the personal statement."
     ],
     "insights": [
-      "FSU's acceptance rate is around 25%, making it a highly competitive institution.",
-      "While not always required, strong recommendation letters can positively influence an application.",
-      "Transferring with an Associate's (AA) degree from a Florida community college can provide a pathway to FSU, though specific major requirements still apply.",
-      "Some Reddit users note that popular majors like business, psychology, engineering, and nursing are particularly competitive.",
-      "Out-of-state applicants often face a more selective admissions process."
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "FSU's acceptance rate is around 25%, making it a highly competitive institution."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While not always required, strong recommendation letters can positively influence an application."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Transferring with an Associate's (AA) degree from a Florida community college can provide a pathway to FSU, though specific major requirements still apply."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Some Reddit users note that popular majors like business, psychology, engineering, and nursing are particularly competitive."
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Out-of-state applicants often face a more selective admissions process."
+      }
     ]
   },
   "outcomes": {

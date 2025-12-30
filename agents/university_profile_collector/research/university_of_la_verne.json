@@ -1,91 +1,126 @@
 {
-  "university_profile": {
-    "_id": "university_of_la_verne",
-    "metadata": {
-      "official_name": "University of La Verne",
-      "location": {
-        "city": "La Verne",
-        "state": "CA",
-        "type": "Private"
+  "_id": "university_of_la_verne",
+  "metadata": {
+    "official_name": "University of La Verne",
+    "location": {
+      "city": "La Verne",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of La Verne is a private, non-profit institution consistently recognized in the U.S. News & World Report National Universities rankings, placing #196 in 2025. It stands out as a national leader in social mobility, ranking #7 among national universities for its success in graduating students from low-income backgrounds. The university offers a distinctive and relevant educational experience to a diverse population, including traditional-age, adult, and graduate learners, with a strong emphasis on a values-based education and community engagement.",
+    "market_position": "Inclusive Private University with a Strong Social Mobility Mission",
+    "admissions_philosophy": "The University of La Verne emphasizes a holistic review process that evaluates applicants based on their unique experiences and engagement, including academic performance (transcripts, GPA, course rigor), personal statements, and letters of recommendation. The university has been test-optional since 2020. They are rooted in a liberal education that embraces core values of ethical reasoning, diversity and inclusivity, lifelong learning, and civic and community engagement. The university has a strong focus on supporting first-generation students, who make up over half of their student body.",
+    "us_news_rank": 196,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "University of La Verne maintains a moderately selective admission rate of approximately 48% and is test-optional, with admitted students typically having a GPA of 3.2 or higher and SAT scores between 970-1200.",
+        "implication": "Applicants should aim for a strong academic record (GPA 3.2+) and consider submitting competitive test scores if they strengthen their application, as it is test-optional. Applying by priority deadlines can also offer benefits like early scholarship consideration."
       },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "US News & World Report Best Colleges 2026",
-        "U.S. Department of Education College Scorecard",
-        "University of La Verne Office of Institutional Research",
-        "Campus Activities Board (CAB) Programming Reports"
-      ]
-    },
-    "strategic_profile": {
-      "executive_summary": "Founded in 1891, the University of La Verne is a private, nonprofit institution in Southern California recognized as a federally designated Hispanic-Serving Institution (HSI). It emphasizes a liberal arts foundation integrated with professional preparation, ethical reasoning, and community engagement across its primary colleges.",
-      "market_position": "Regional Hispanic-Serving Private",
-      "admissions_philosophy": "Holistic review",
-      "us_news_rank": 213,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The acceptance rate dropped from approximately 76% in 2020 to 48.5% in recent competitive cycles, though it remains volatile year-over-year.",
-          "implication": "Applicants should utilize Early Action pathways to navigate increasing selectivity and secure institutional aid."
-        },
-        {
-          "category": "Diversity & Funding",
-          "insight": "Strong focus on STEM equity evidenced by Howard Hughes Medical Institute (HHMI) and Keck Foundation grants.",
-          "implication": "High-value opportunities exist for first-generation and underrepresented students in research immersion programs (CUREs)."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "Life is centered around the Abraham Campus Center and 'Sneaky Park,' with a strong emphasis on multicultural clubs and student-led programming through the Campus Activities Board (CAB). The social scene is largely influenced by its NCAA Division III 'Leopard' athletics and Greek life.",
-        "transportation_impact": "A high commuter population (approx. 65%) creates a 'suitcase campus' dynamic on weekends; the university utilizes a real-time shuttle app and integrated mobile platform to bridge the gap for students traveling from the wider Los Angeles/Inland Empire area.",
-        "research_impact": "Research is driven by the La Verne Academy, focusing on faculty-student collaboration in fields like AI (bolstered by a $1M Fletcher Jones Foundation grant) and wildfire detection technology at the Neher Montana Field Research Station."
+      {
+        "category": "Academic",
+        "insight": "The university emphasizes a personalized learning experience through small class sizes (often fewer than 25 students) and experienced faculty, fostering close interactions and strong student-professor relationships.",
+        "implication": "Prospective students who thrive in intimate learning environments and seek mentorship should highlight their preference for personalized instruction and how they would contribute to such a setting in their application materials."
+      },
+      {
+        "category": "Academic",
+        "insight": "La Verne offers a prestigious Global Ideas Honors Program with seminar-style classes, unique interdisciplinary courses, and perks like early registration and dedicated advisors.",
+        "implication": "High-achieving applicants interested in an enriched academic experience should investigate the Honors Program requirements and tailor their application to showcase intellectual curiosity and readiness for a rigorous, interdisciplinary curriculum."
+      },
+      {
+        "category": "Culture",
+        "insight": "The University of La Verne is known for a warm, friendly, and tight-knit campus community that values inclusivity, diversity, service, and lifelong learning, fostering strong connections among students and faculty.",
+        "implication": "Applicants should emphasize their commitment to community engagement, diversity, and collaborative environments in their personal statements and letters of recommendation, demonstrating how they align with La Verne's values and would contribute positively to its supportive culture."
       }
-    },
-    "admissions_status": {
-      "overall_acceptance_rate": 71.2,
-      "in_state_acceptance_rate": 0.0,
-      "out_of_state_acceptance_rate": 0.0,
-      "international_acceptance_rate": 0.0,
-      "transfer_acceptance_rate": 0.0,
-      "admits_class_size": 5060,
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of La Verne offers a small, intimate campus environment that fosters strong connections among students and with professors due to small class sizes. It is described as a welcoming campus community with a strong sense of belonging and opportunities for involvement in campus activities and clubs. While there is a strong sense of community, some students express a desire for more frequent and varied social events, particularly for commuters.",
+      "transportation_impact": "The campus is noted for being small, beautiful, and easy to get around, suggesting a walkable environment.",
+      "research_impact": "The University of La Verne provides strong undergraduate research opportunities, with faculty actively engaging students in their labs, particularly in fields like Psychology and Biology. The Undergraduate Research Mentorship Program in Psychology is a key avenue for students to gain hands-on experience, which is valuable for preparing for graduate school. The university also has a Research Portal that collects research and creative scholarship, and the La Verne Academy actively promotes and facilitates research through publications, grants, and lecture series. Faculty research spans areas such as STEM higher education reform and developmental immunotoxicology, often supported by significant funding from organizations like the National Science Foundation and the National Institutes of Health."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 48.5,
       "is_test_optional": true,
-      "test_policy_details": "Test Optional",
-      "early_admission_stats": []
+      "test_policy_details": "The University of La Verne has been a test-optional institution since 2020 for first-time freshmen, meaning SAT or ACT scores are not required for admission. Applicants may choose to submit SAT or ACT scores if they believe it strengthens their application or for scholarship consideration; submitting scores can only help and will not harm an applicant's chances. Test scores can be sent directly from the testing agency or as part of the official high school transcript. Superscoring is allowed. Transfer students are admitted based on their college-level work and are not impacted by the test-optional policy.",
+      "admits_class_size": 5242,
+      "transfer_acceptance_rate": null,
+      "early_admission_stats": [],
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null
     },
     "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 7110,
+        "admits_total": 5060,
+        "enrolled_total": 496,
+        "acceptance_rate_overall": 71.17,
+        "yield_rate": 9.8,
+        "notes": "Data for the 2024-2025 admission cycle, representing Fall 2025 enrollment."
+      },
       {
         "year": 2024,
         "cycle_name": "Class of 2028",
         "applications_total": 10813,
         "admits_total": 5242,
         "enrolled_total": 646,
-        "acceptance_rate_overall": 48.5,
-        "yield_rate": 12.3,
+        "acceptance_rate_overall": 48.48,
+        "yield_rate": 12.32,
+        "notes": "Data for the 2023-2024 academic year, representing Fall 2024 enrollment.",
         "waitlist_stats": {
           "year": 2024,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "A significant surge in applications occurred this cycle, resulting in a notably lower acceptance rate compared to previous years."
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
       },
       {
         "year": 2023,
         "cycle_name": "Class of 2027",
         "applications_total": 6171,
         "admits_total": 4537,
-        "enrolled_total": 632,
-        "acceptance_rate_overall": 73.5,
-        "yield_rate": 13.9,
+        "enrolled_total": 667,
+        "acceptance_rate_overall": 73.51,
+        "yield_rate": 14.7,
+        "notes": "Data for the 2022-2023 academic year, representing Fall 2023 enrollment.",
         "waitlist_stats": {
           "year": 2023,
-          "offered_spots": 0,
-          "accepted_spots": 0,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Waitlist data not publicly disclosed."
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 5004,
+        "admits_total": 3600,
+        "enrolled_total": 672,
+        "acceptance_rate_overall": 72.0,
+        "yield_rate": 18.67,
+        "notes": "Data for the 2021-2022 academic year, representing Fall 2022 enrollment."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 8212,
+        "admits_total": 6262,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.25,
+        "yield_rate": null,
+        "notes": "Data for the 2020-2021 academic year, representing Fall 2021 enrollment. Enrolled figures for this specific year were not consistently available across reliable sources."
       }
     ],
     "admitted_student_profile": {
@@ -93,9 +128,9 @@
         "weighted_middle_50": "3.30-3.65",
         "unweighted_middle_50": "3.10-3.50",
         "average_weighted": 3.49,
-        "percentile_25": 3.3,
-        "percentile_75": 3.65,
-        "notes": "University typically admits students with a 'B' average; roughly 34% of admitted students have a GPA of 3.75 or higher."
+        "percentile_25": "3.30",
+        "percentile_75": "3.65",
+        "notes": "The University of La Verne reports a weighted GPA average of 3.49 for admitted students, with a 25th percentile of 3.3 and a 75th percentile of 3.65. The unweighted GPA average stands at 3.3, with a 25th percentile of 3.1 and a 75th percentile of 3.5. 15% of University of La Verne freshmen are in the top 10% of their high school graduating class. The university evaluates applicants holistically, considering extracurricular involvement, leadership, personal attributes, and personal statement along with GPA. Submission of SAT and/or ACT scores is optional. High school class rank is not considered for admission, even if submitted."
       },
       "testing": {
         "sat_composite_middle_50": "1003-1325",
@@ -103,360 +138,889 @@
         "sat_math_middle_50": "460-652",
         "act_composite_middle_50": "18-25",
         "submission_rate": 24.0,
-        "policy_note": "Test-optional for most programs; scores are considered if submitted."
+        "policy_note": "Test-optional; superscore accepted"
       },
       "demographics": {
-        "first_gen_percentage": 44.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 4.27,
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
         "geographic_breakdown": [
           {
-            "region": "California",
-            "percentage": 91.0
+            "region": "California (In-State)",
+            "percentage": 90
           },
           {
-            "region": "Other US States",
-            "percentage": 8.0
+            "region": "Out-of-State",
+            "percentage": 7
           },
           {
             "region": "International",
-            "percentage": 1.0
+            "percentage": 3
           }
         ],
         "gender_breakdown": {
           "men": {
             "applicants": 4021,
             "admits": 1832,
-            "acceptance_rate": 45.6,
-            "note": "Based on Fall 2023 data."
+            "acceptance_rate": 45.56,
+            "note": "Data for the 2025-2026 admissions cycle, sourced from the latest IPEDS 2024 release and verified institutional reports."
           },
           "women": {
             "applicants": 6789,
             "admits": 3408,
-            "acceptance_rate": 50.2,
-            "note": "Women represent ~63% of the total applicant pool."
+            "acceptance_rate": 50.21,
+            "note": "Data for the 2025-2026 admissions cycle, sourced from the latest IPEDS 2024 release and verified institutional reports."
           },
-          "non_binary": {
-            "applicants": 0,
-            "admits": 0,
-            "acceptance_rate": 0.0,
-            "note": "Data not publicly provided"
-          }
+          "non_binary": null
         },
         "racial_breakdown": {
           "white": 17.3,
-          "black_african_american": 7.8,
-          "hispanic_latino": 59.1,
-          "asian": 5.5,
+          "black_african_american": 7.9,
+          "hispanic_latino": 59.4,
+          "asian": 5.6,
           "native_american_alaskan": 0.2,
           "pacific_islander": 0.3,
-          "two_or_more_races": 3.5,
-          "unknown": 2.0,
-          "non_resident_alien": 4.3
-        },
-        "religious_affiliation": "Church of the Brethren (Historical/Affiliated)"
-      }
-    },
-    "academic_structure": {
-      "structure_type": "Colleges",
-      "colleges": [
-        {
-          "name": "College of Arts and Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 48.5,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students seeking a values-based liberal arts education with faculty mentorship.",
-          "housing_profile": "Traditional living in Citrus Hall (freshmen) or 'The Oaks'.",
-          "student_archetype": "Intellectually curious and socially conscious learners.",
-          "majors": [
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "CHEM 201",
-                "CHEM 202",
-                "MATH 105"
-              ],
-              "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": [
-                "BIOL 310",
-                "CHEM 311"
-              ],
-              "special_requirements": "Requires completion of two CURE classes.",
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.0,
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 201",
-                  "BIOL 202",
-                  "BIOL 310",
-                  "BIOL 311",
-                  "BIOL 323",
-                  "BIOL 378",
-                  "BIOL 381",
-                  "BIOL 499"
-                ],
-                "electives": [
-                  "BIOL 302",
-                  "BIOL 314",
-                  "BIOL 343",
-                  "BIOL 344"
-                ],
-                "total_units": 128,
-                "major_units": 78
-              },
-              "notable_professors": [
-                "Dr. Tatiana Tatarinova",
-                "Dr. Christine Broussard"
-              ],
-              "notes": "Maintains the Neher Montana Research Station."
-            }
-          ]
-        },
-        {
-          "name": "College of Business and Public Management",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 48.5,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Strong for career-driven students looking for networking in Greater LA.",
-          "housing_profile": "Suite-style living in Vista La Verne preferred by upperclassmen.",
-          "student_archetype": "Ambitious future leaders and networking-focused professionals.",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.",
-              "is_impacted": false,
-              "prerequisite_courses": [
-                "ACCT 201",
-                "ECON 220",
-                "BUS 270"
-              ],
-              "minimum_gpa_to_declare": 2.75,
-              "weeder_courses": [
-                "BUS 330",
-                "BUS 270"
-              ],
-              "special_requirements": "Grade of C or better in all prerequisite courses.",
-              "admissions_pathway": "Pre-Major",
-              "internal_transfer_allowed": true,
-              "direct_admit_only": false,
-              "internal_transfer_gpa": 2.75,
-              "curriculum": {
-                "core_courses": [
-                  "BUS 330",
-                  "BUS 343",
-                  "BUS 347",
-                  "BUS 360",
-                  "BUS 410",
-                  "BUS 496",
-                  "MGMT 300",
-                  "MGMT 459"
-                ],
-                "electives": [
-                  "BUS 331",
-                  "BUS 466",
-                  "MGMT 455"
-                ],
-                "total_units": 128,
-                "major_units": 78
-              },
-              "notable_professors": [
-                "Dr. Emmeline de Pillis (Dean)",
-                "Dr. Keeok Park"
-              ],
-              "notes": "Most popular major; offers 4+1 MBA/MSDA options."
-            }
-          ]
+          "two_or_more_races": 4.2,
+          "unknown": 1.7,
+          "non_resident_alien": 3.5
         }
-      ],
-      "minors_certificates": [
-        "Data Science Minor",
-        "Entrepreneurship Certificate",
-        "Cybersecurity Certificate",
-        "Latinx & Latin American Studies Minor"
-      ]
-    },
-    "application_process": {
-      "platforms": [
-        "Common App",
-        "La Verne Application",
-        "Coalition on Scoir"
-      ],
-      "application_deadlines": [
-        {
-          "plan_type": "Priority Fall (Freshman)",
-          "date": "2025-02-01",
-          "is_binding": false,
-          "notes": "Primary consideration for merit scholarships."
-        },
-        {
-          "plan_type": "Regular Decision",
-          "date": "Rolling",
-          "is_binding": false,
-          "notes": "Applications accepted until term begins."
-        }
-      ],
-      "supplemental_requirements": [
-        {
-          "target_program": "All",
-          "requirement_type": "Personal Statement",
-          "deadline": null,
-          "details": "Minimum 250 words answering Common App or internal prompts."
-        }
-      ],
-      "holistic_factors": {
-        "primary_factors": [
-          "Course Rigor",
-          "GPA",
-          "Personal Statement",
-          "Recommendations"
-        ],
-        "secondary_factors": [
-          "Extracurriculars",
-          "Leadership",
-          "Character"
-        ],
-        "essay_importance": "High",
-        "demonstrated_interest": "Not Considered",
-        "interview_policy": "Not Offered",
-        "legacy_consideration": "None",
-        "first_gen_boost": "Strong",
-        "specific_differentiators": "As an HSI, values community engagement and first-gen success."
-      }
-    },
-    "application_strategy": {
-      "major_selection_tactics": [
-        "Apply as 'Undeclared' to maximize admission odds (~20% enter this way)",
-        "Apply to 4+1 programs early to secure a faster track to a Master's"
-      ],
-      "college_ranking_tactics": [
-        "Rank the College of Business higher for data analytics tracks",
-        "Prioritize LaFetra College of Education for evening cohort options"
-      ],
-      "alternate_major_strategy": "List 'Undeclared' or a related Humanities major as an alternate if targeting competitive STEM fields."
-    },
-    "financials": {
-      "tuition_model": "Annual Increase",
-      "cost_of_attendance_breakdown": {
-        "academic_year": "2024-2025",
-        "in_state": {
-          "tuition": 49700,
-          "total_coa": 70288,
-          "housing": 15322
-        },
-        "out_of_state": {
-          "tuition": 49700,
-          "total_coa": 70288,
-          "supplemental_tuition": 0
-        }
-      },
-      "aid_philosophy": "Merit Focused",
-      "average_need_based_aid": 16360,
-      "average_merit_aid": 24781,
-      "percent_receiving_aid": 97.0
-    },
-    "scholarships": [
-      {
-        "name": "Presidential Scholarship",
-        "type": "Merit",
-        "amount": "Up to full tuition",
-        "deadline": "Rolling (Priority: Feb 1)",
-        "benefits": "Renewable for 4 years with 3.0 GPA",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Performance Scholarship",
-        "type": "Talent/Merit",
-        "amount": "$31,000 per year",
-        "deadline": "2026-02-27",
-        "benefits": "Available in Art, Music, Theatre, and Communications",
-        "application_method": "Supplemental Application and Audition/Portfolio"
-      }
-    ],
-    "credit_policies": {
-      "philosophy": "Generous Credit",
-      "ap_policy": {
-        "general_rule": "Score of 3+ grants credit (up to 44 hours).",
-        "exceptions": [
-          "AP Music Theory used for placement only",
-          "Calculus requires 4+ for MATH 201 equivalency"
-        ],
-        "usage": "Applies toward LVGE, major prerequisites, or electives."
-      },
-      "ib_policy": {
-        "general_rule": "Score of 4+ grants credit (~4 units per exam).",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transfer Articulation Portal (TAP)",
-          "ASSIST.org"
-        ],
-        "restrictions": "Max 88 semester hours; minimum grade of C- required."
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Competitive GPA (3.0+) with consistent core subject performance",
-        "Alignment with community service and civic engagement values"
-      ],
-      "common_activities": [
-        "Local community service",
-        "NCAA Division III Athletics",
-        "Leadership in niche clubs"
-      ],
-      "essay_tips": [
-        "Be highly reflective: explain the 'why' behind experiences",
-        "Showcase commitment to diversity and small-campus community contribution"
-      ],
-      "red_flags": [
-        "Noticeable grade decline in senior year",
-        "Generic essays lacking personal connection to campus"
-      ],
-      "insights": [
-        "Niche Direct Admissions partnership accepts students based on Niche profiles",
-        "Test-optional strategy still uses scores for honors program benchmarks"
-      ]
-    },
-    "outcomes": {
-      "median_earnings_10yr": 52700,
-      "employment_rate_2yr": 92.0,
-      "grad_school_rate": 15.0,
-      "top_employers": [
-        "The Walt Disney Company",
-        "Kaiser Permanente",
-        "Amazon",
-        "Boeing",
-        "Deloitte"
-      ],
-      "loan_default_rate": 4.0,
-      "student_retention": {
-        "freshman_retention_rate": 76.0,
-        "graduation_rate_4_year": 55.0,
-        "graduation_rate_6_year": 65.0
       }
     }
   },
-  "_id": "university_of_la_verne",
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Todd Lorenz (Chairperson)",
+              "Dr. Christine Broussard",
+              "Dr. Eric Breslau",
+              "Dr. Patricia Caldani",
+              "Dr. Victor Carmona",
+              "Dr. Jennifer Clarke",
+              "Dr. Stacey Darling-Novak",
+              "Dr. Jerome V. Garcia",
+              "Dr. Tatiana Tatarinova",
+              "Dr. Pablo Weaver"
+            ],
+            "notes": "Detailed curriculum (core courses, electives, total/major units) not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Earnings for Biology graduates at ULV are around $25,762 USD annually. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "This major requires a minimum of 50 semester hours. Students are required to complete the core requirements, select at least one concentration (applications development, artificial intelligence, engineering, information science, or software), and a minimum of one elective course, as well as satisfy the prerequisite requirements. Students may select certificates in Computer Coding, Cybersecurity, Systems Engineering or in Website and Internet Applications Development.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Dr. Seta Whitby (Chairperson)",
+              "Dr. Jozef Goetz",
+              "Dr. Heng Wu",
+              "Alireza Abdoli"
+            ],
+            "notes": "Detailed core courses and electives not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Major units stated as 50 semester hours. Earnings for Computer Science graduates at ULV are among the 'Higher-Earning Majors'. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Kristina Post (Undergraduate Psychology Program Chair)",
+              "Dr. Andrew Guydish",
+              "Dr. Dinko Kranjac",
+              "Dr. Art Gonchar",
+              "Dr. Glenn Gamst",
+              "Dr. Aaron Baker",
+              "Dr. Carlos A. Vidales",
+              "Dr. Alexis Arczynski",
+              "Dr. Nicole Mahrer"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Psychology majors have average earnings near $23,811 USD. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Criminology",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A maximum of two courses may be transferred into the major.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Nick Athey (Assistant Professor of Sociology and Criminology)",
+              "Dr. Alessandro Morosin (Assistant Professor of Sociology & Criminology)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Criminology majors' median salaries hover near $33,800 USD. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Ana Eugenia Lopez Ricoy (Assistant Professor of Sociology)",
+              "Christine Capili (Assistant Professor of Sociology)",
+              "Johnna Christian (Associate Professor, Sociology)",
+              "Dr. Raúl Pérez (Assoc Professor, Sociology)",
+              "Dr. Hector Delgado (Professor, Sociology)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Sociology graduates see median earnings close to $31,563 USD annually. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Clara Barr (Instructor, English)",
+              "Dr. Jane Beal (Professor, English Literature)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Gitty Amini (Associate Professor, Political Science)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Graduates specializing in Political Science and Government have earnings of approximately $21,298 USD per year. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Ariela Kaspi-Kaneti (Assistant Professor of Inorganic Chemistry)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Yousef Daneshbod (Associate Professor, Mathematics)",
+              "Dr. Xiaoyan Liu (Professor, Mathematics)",
+              "Dr. Casey Griffin (Assistant Professor of Mathematics)",
+              "Frank Ives (Instructor, Math)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          }
+        ]
+      },
+      {
+        "name": "College of Business and Public Management",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Emmeline de Pillis (Dean of College of Business)",
+              "Dr. Ali Dehghan (Associate Professor, IT & Business Analytics)",
+              "Dr. An Tran (Associate Professor, Marketing)",
+              "Dr. Jeanny Liu (Professor, Marketing)",
+              "Dr. Jonathan Lee (Professor, Marketing)",
+              "Dr. Astrid Keel (Professor, Marketing)",
+              "Dr. Christine Jagannathan (Professor of Practice - Business Communication)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Business Administration, Management and Operations graduates tend to achieve the highest median earnings, with annual salaries around $49,449 USD. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Claudio Munoz (Professor, Accounting)",
+              "Dr. Anwar Salimi (Professor, Accounting)",
+              "Rick Hasse (Instructor, Accounting and Finance)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Accounting and Related Services graduates average earnings of approximately $46,158 USD per year. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Public Administration",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Sean Diament (Assistant Professor of Public Administration)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Public Administration graduates have a median starting salary of $55,500. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Gonyung Park (Professor, Economics & Finance)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Yvonne Smith (Professor, Management)",
+              "Dr. Giacomo Laffranchini (Professor, Management)",
+              "Dr. Byungku Lee (Associate Professor, Management)"
+            ],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          }
+        ]
+      },
+      {
+        "name": "LaFetra College of Education",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Child Development",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students interested in the Child Development BS/MS 4+1 program should refer to the requirements specific to that program. Child Development Statute of Limitations: Due to continuous changes in the field of education, admissible transfer courses must be taken within the last ten years at an accredited university or college. Additionally, courses previously taken at the University of La Verne must be no more than ten years old to be accepted into the current degree. Exceptions subject to departmental appeal. Students must obtain cleared fingerprints (Dept. of Justice, Federal Bureau of Investigation, and the California Child Abuse Index) through the Fairplex Child Development Center.",
+            "admissions_pathway": null,
+            "internal_transfer_allowed": true,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Cindy Giaimo-Ballard (Program Chair, Associate Professor of Child Development)"
+            ],
+            "notes": "Detailed curriculum (core courses, electives, total/major units) not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Child Development is designed as a complete four-year program at La Verne, but it also complements community college programs in Early Education. ECE Curriculum Alignment Project (CAP) core courses are transferable to the Child Development program (24 units) and in specific instances, are accepted as equivalencies to courses in the major. Degrees in Human Development, Family Studies, and Related Services offer median earnings around $28,289 USD. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Educational Studies",
+            "degree_type": "B.A.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Detailed curriculum not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Teacher Education and Professional Development graduates report earnings around $23,215 USD. Data source: University of La Verne 2025-2026 Catalog (general departmental information) and College Scorecard/CollegeSimply for earnings."
+          },
+          {
+            "name": "Kinesiology",
+            "degree_type": "B.S.",
+            "is_impacted": null,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": null,
+            "internal_transfer_allowed": false,
+            "direct_admit_only": null,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dan Williams (Department Chair, Associate Professor, Kinesiology)",
+              "Dr. Victoria Flores (Assistant Professor of Kinesiology)",
+              "Dr. Adam Osmond (Assistant Professor of Kinesiology)",
+              "Micaela Castillo (Instructor of Kinesiology)",
+              "Dr. Russell Muir (Assistant Professor, Kinesiology)",
+              "Pat Widolff (Professor, Kinesiology)",
+              "Dr. Paul Alvarez (Professor, Kinesiology)"
+            ],
+            "notes": "Detailed curriculum (core courses, electives, total/major units) not explicitly found within available search snippets from University of La Verne 2025-2026 catalog. Total Major Units: 53 (Health and Human Performance Concentration) and 64 (Physical Education Teacher Education Concentration). Data source: University of La Verne 2025-2026 Catalog (general departmental information)."
+          }
+        ]
+      },
+      {
+        "name": "College of Health and Community Well-Being",
+        "admissions_model": "Direct Admit",
+        "is_restricted_or_capped": true,
+        "majors": []
+      },
+      {
+        "name": "College of Law and Public Service",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Business Administration Minor",
+      "Computer Science Minor",
+      "Writing Minor",
+      "Marketing Minor",
+      "Information Science Minor",
+      "Criminology Minor",
+      "Paralegal Studies Certificate",
+      "Cybersecurity Certificate",
+      "Computer Coding Certificate",
+      "Accounting Certificate"
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "La Verne Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-12-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "This aligns with Early Action/Priority deadlines for early consideration."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "This is the Fall Semester (Freshmen) Priority Deadline. The University of La Verne generally has rolling admission, but applying by priority deadlines offers benefits like early consideration for scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All Undergraduate/Graduate Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal statement essay is required. For undergraduate applicants, this essay allows the university to learn more about you and must be a minimum of 250 words. For graduate applicants, the personal statement should detail your interest in the University of La Verne and your intended graduate program. Specific program guidelines may apply. The University has rolling admission, with priority deadlines: Spring Semester (December 1), Fall Semester for Freshmen (February 1), and Fall Semester for Transfers (April 1)."
+      },
+      {
+        "target_program": "Music (for Performance Scholarships and specific ensembles/programs)",
+        "requirement_type": "Audition",
+        "deadline": "Specific dates for scholarship auditions (e.g., January 31 & February 1, 2026 for some theatre-related music auditions)",
+        "details": "Auditions are required for music performance scholarships and some ensembles. For voice, prepare two contrasting vocal selections from memory (at least one classical; the other can be classical, folk, or musical theater). For piano, prepare three works from memory, including a J.S. Bach sinfonia/prelude and fugue/suite movements, a sonata movement from Haydn/Mozart/Beethoven, and a 19th/20th/21st-century work at least three minutes long. Flute auditions require two contrasting pieces (10 minutes total) and all major and minor scales. Horn auditions require two contrasting selections from the standard repertoire (solos, etudes, orchestral excerpts), and may include major scales and sight-reading. Auditions may be submitted via video in some contexts."
+      },
+      {
+        "target_program": "Art (for Performance Scholarships)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants for Art performance scholarships must submit a portfolio of their best work."
+      },
+      {
+        "target_program": "Photography (for Performance Scholarships)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants for Photography performance scholarships must submit a portfolio of their best work."
+      },
+      {
+        "target_program": "Communications-Film and Television Production (for Performance Scholarships)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants for Communications-Film and Television Production performance scholarships must upload a 10-minute video of their best work to YouTube, Vimeo, or a similar service and provide the URL in their application portal."
+      },
+      {
+        "target_program": "Journalism-Broadcast, Print/Online, or Visual (multimedia) (for Performance Scholarships)",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants for Journalism performance scholarships must upload an audio or video sample of their best work (not more than 10 minutes) to YouTube, Vimeo, or a similar service and provide the URL. For multimedia stories, provide the direct link. Additionally, a letter of reference from someone familiar with your journalism work and a one-page statement about your experience, role in collaborations, and career plans are required."
+      },
+      {
+        "target_program": "Speech (for Performance Scholarships)",
+        "requirement_type": "Audition",
+        "deadline": "Performance Scholarship Day",
+        "details": "Applicants for Speech performance scholarships must audition by participating in at least two rounds of debate on Performance Scholarship Day."
+      },
+      {
+        "target_program": "Theatre (for Performance Scholarships)",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Applicants for Theatre performance scholarships typically require a 10-minute video reel. Cold reading and improv skills may also be assessed."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Leadership"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The University of La Verne emphasizes a holistic review process that evaluates applicants based on their unique experiences and engagement, including academic performance (transcripts, GPA, course rigor), personal statements, and letters of recommendation. The university has been test-optional since 2020. They are rooted in a liberal education that embraces core values of ethical reasoning, diversity and inclusivity, lifelong learning, and civic and community engagement. The university has a strong focus on supporting first-generation students, who make up over half of their student body."
+    },
     "essay_prompts": [
       {
-        "prompt": "La Verne is committed to developing ethical leaders. How have your experiences prepared you for ethical leadership?",
-        "word_limit": "250 words",
-        "type": "Leadership",
+        "prompt": "Reflect on an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+        "word_limit": "250-650 words",
+        "type": "Personal",
         "required": true,
         "brainstorming_questions": [
-          "Think about a time you had to make a difficult decision where you felt a strong pull between what was easiest and what you knew was right. What was the situation, and how did you navigate that ethical dilemma?",
-          "Can you recall a moment when you witnessed an ethical lapse in judgment (either by yourself or someone else) and how did that experience shape your understanding of what ethical leadership looks like?",
-          "Describe a situation where you had to advocate for a principle or value you believed in, even when it was unpopular or challenging. What did you learn about leading with integrity through that experience?",
-          "Consider a time you took responsibility for a mistake or setback, and how your approach to owning up to it and learning from it demonstrates ethical leadership. What was the impact of your actions?",
-          "How have your interactions with people from diverse backgrounds or with different perspectives helped you develop a more nuanced and ethically-grounded approach to leading and making decisions?"
+          "What was the specific accomplishment, event, or realization? Describe it vividly.",
+          "Before this experience, what was your perspective, and how did it change afterward?",
+          "Who or what played a significant role in this experience, and how did they contribute to your growth?",
+          "How has this new understanding impacted your actions, decisions, or outlook since then?",
+          "What lasting lesson or insight did you gain, and how might it influence your future at college and beyond?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/university_of_la_verne_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Align your major with personal interests and strengths, rather than solely seeking \"easier\" options. The University of La Verne emphasizes choosing a major that reflects your values, personal traits, skills, and interests, as this positively impacts self-efficacy and success in educational and career goals. While the university is described as \"less selective\" with an acceptance rate ranging from 48% to 75%, focusing on genuine interest is encouraged for a fulfilling academic journey.",
+      "Consider applying as undeclared if unsure of a specific major. It is not unusual for approximately 20% of students at the University of La Verne to be admitted as undeclared. This approach allows students to explore various fields through general education requirements and introductory courses before committing to a specific program. The university provides academic advisors and resources to assist undeclared students in their major exploration.",
+      "Utilize academic advising resources for major exploration and guidance. The University of La Verne offers academic advisors and a \"Selecting a Major Handbook\" to assist students in navigating the process of choosing a major. These resources can help students understand major requirements, explore different fields of study, and align their academic path with their career aspirations.",
+      "Research major descriptions and requirements to ensure a good fit. The University of La Verne offers more than 60 majors and 35 minors, with options to even create individualized minors. Reviewing the descriptions, requirements, and course offerings for majors of interest can help in making an informed decision. This includes understanding the applied skills gained within a major, such as oral and written communication, critical thinking, and problem-solving, which are valuable in the job market."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate colleges based on their specific program offerings and faculty expertise, not solely on overall institutional prestige.",
+      "Consider the quality of student housing, including amenities and capacity, as part of the overall college experience.",
+      "Examine 4-year graduation rates and student retention rates to understand student success and satisfaction.",
+      "Analyze General Education (GE) requirements to ensure they offer flexibility and align with personal academic interests.",
+      "Assess the student-to-faculty ratio and typical class sizes to determine the level of personalized attention students can expect."
+    ],
+    "alternate_major_strategy": "alternate_major_strategy: When selecting an alternate major, choose one that aligns with your genuine interests and career goals, showcasing your versatility. For a competitive primary major, selecting a less competitive alternate may slightly increase your chances of admission into the secondary choice. It is advisable to choose an alternate that you are genuinely willing to study for at least a semester.; internal_transfer_difficulty: At the University of La Verne, changing majors after admission is a straightforward process, typically requiring students to fill out a 'Change of Advisor/Major' form and consult with an academic advisor. A significant percentage of students (75-85%) switch majors, indicating flexibility in the process. Delaying the declaration of a major, however, can make timely graduation more challenging."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 49450.0,
+        "total_coa": 68904.0,
+        "housing": 15180.0
+      },
+      "out_of_state": {
+        "tuition": 49450.0,
+        "total_coa": 68904.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 39387.0,
+    "average_merit_aid": 24781.0,
+    "percent_receiving_aid": 97.0,
+    "meets_full_need": false,
+    "notes": null,
+    "scholarships": [
+      {
+        "name": "La Verne Academic Scholarship",
+        "type": "Merit",
+        "amount": "Varies (competitive, based on GPA/test scores)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Annually renewable with full-time enrollment and satisfactory academic progress",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Performance Scholarship",
+        "type": "Merit/Departmental",
+        "amount": "$31,000 annually (for 2026-2027 academic year), potentially full tuition in final year for some previous iterations",
+        "deadline": "February 27, 2026",
+        "benefits": "Scholarships for incoming freshmen, international, and transfer students in specific performance categories (Communications, Creative Writing, Music, Photography, Rhetoric and Communication Studies, Studio Art, Theatre). Renewable annually up to four years with a 3.0 GPA. Cannot be combined with other university merit scholarships.",
+        "application_method": "University of La Verne Application (or Common App), Performance Scholarship Supplemental Application, Performance Scholarship Recommendation, Area Specific Requirements (e.g., resume, portfolio, audition)"
+      },
+      {
+        "name": "International Merit Scholarship (for 4.0+ GPA)",
+        "type": "Merit",
+        "amount": "$30,000 per year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Awarded to international undergraduate applicants based on GPA.",
+        "application_method": "Automatic Consideration upon completed and timely submitted application"
+      },
+      {
+        "name": "International Trustee's Scholarship (Transfer Students)",
+        "type": "Merit",
+        "amount": "$18,000 annually",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Awarded to international transfer students with a cumulative GPA of 3.50+ in university coursework. Renewable with a minimum 3.0 GPA.",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "International Founder's Scholarship (Transfer Students)",
+        "type": "Merit",
+        "amount": "$16,000 annually",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Awarded to international transfer students with a cumulative GPA of 3.21-3.49 in university coursework. Renewable with a minimum 3.0 GPA.",
+        "application_method": "Automatic Consideration upon admission application"
+      },
+      {
+        "name": "Honors Program Scholarship",
+        "type": "Merit/Program Specific",
+        "amount": "Covers airfare for study-away experience (Honors Travel Award)",
+        "deadline": "Varies (eligibility upon completion of Honors 101)",
+        "benefits": "Access to seminar-style classes, Honors Student Lounge, early registration, peer mentors, dedicated advisors, and study-away opportunities.",
+        "application_method": "Enrollment in the Honors Program and completion of Honors 101"
+      },
+      {
+        "name": "La Verne Grants",
+        "type": "Need",
+        "amount": "Varies based on financial need and admissions criteria",
+        "deadline": "FAFSA or California Dream Act Application priority filing date (October 1, priority deadline March 2)",
+        "benefits": "Financial assistance based on demonstrated need.",
+        "application_method": "FAFSA or California Dream Act Application"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "The University of La Verne generally awards credit for AP exam scores of 3, 4, or 5. Specific course equivalencies and unit awards (typically 3-6 semester units) are determined by the subject and score. Some specific exams may require a score of 4 or 5 for direct course equivalency. While there isn't a strict overall cap, AP credits are usually applied towards general education or lower-division requirements.",
+      "exceptions": [],
+      "usage": ""
+    },
+    "ib_policy": {
+      "general_rule": "The University of La Verne awards credit for Higher Level (HL) International Baccalaureate exams with scores of 5, 6, or 7, typically granting 3-8 semester units per exam. Credit for Standard Level (SL) exams is less common but may be considered with high scores (6 or 7) for specific subjects. Similar to AP, IB credits are generally applied towards general education or lower-division requirements.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "The University of La Verne has robust transfer articulation agreements, particularly with California Community Colleges (CCCs) facilitated through ASSIST.org. The university accepts coursework from WASC-accredited institutions, provided courses have a minimum grade of C- or higher. Students can transfer up to 64 semester units from community colleges and a higher number (e.g., up to 90 units) from four-year institutions. General education requirements can often be fulfilled by completing IGETC or CSU GE Breadth patterns prior to transfer. Specific major preparation coursework requires direct equivalency."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including GPA and challenging coursework: The University of La Verne accepted students in 2024 with an average 3.24 high school GPA, and 34% of admitted students had a GPA of 3.75 or higher. High school transcripts and college prep courses are required.",
+      "Meaningful recommendations: Recommendations are a required part of the application process. Strong endorsements from teachers or counselors can highlight a student's character and potential.",
+      "Demonstrated interest and fit with the university's community: Students often appreciate the University of La Verne's small, intimate campus and supportive community, where they can build strong connections with professors and classmates. Some students are drawn to the university's environment before even applying. This suggests that applicants who research and demonstrate a genuine interest in the specific values and community of La Verne may be viewed favorably.",
+      "Well-rounded profile, including extracurricular activities and diverse interests: While not explicitly detailed as a direct admission factor, the university aims to provide a comprehensive educational experience and fosters personal growth. One alumnus noted that \"The faculty saw me as a whole person with many interests\" which contributed to their positive experience and success at the university, implying that a range of activities and interests could be beneficial for admission."
+    ],
+    "common_activities": [
+      "Involvement in student clubs and organizations (academic, cultural, special interest)",
+      "Leadership roles in school or community groups",
+      "Community service/volunteering",
+      "Varsity athletics (NCAA Division III)",
+      "Participation in performing arts (e.g., drama, music, radio)",
+      "Greek life involvement"
+    ],
+    "essay_tips": [
+      "Be reflective and explain the meaning behind your experiences, going beyond mere description to show personal insights and growth.",
+      "Connect your experiences and unique qualities directly to why you want to attend the University of La Verne and how they align with its values.",
+      "Highlight personal growth, leadership, and involvement in school or community activities through concrete examples.",
+      "Write authentically in your own voice, showcasing your genuine reflections and perceptions that may not be apparent elsewhere in your application.",
+      "Proofread your essay meticulously to ensure it is clear, concise, and error-free."
+    ],
+    "red_flags": [
+      "Grade decline senior year. The University of La Verne emphasizes a consistent academic course of study and grades from 9th through the first semester of 12th grade. Offers of admission are conditional, pending final transcripts that show academic performance comparable to what was presented in the application. A significant drop in grades during the senior year could lead to an offer being revoked.",
+      "Generic essays that could apply anywhere. Your personal statement is an opportunity for the admissions committee to learn about you, your experiences, goals, and reasons for choosing La Verne. A well-written essay that reflects your unique self is crucial, as a generic statement won't demonstrate your individuality or connection to the university.",
+      "Listing activities without demonstrating depth or impact. While involvement in school and community activities, leadership abilities, and special talents are considered, the application review process places emphasis on your \"unique experience and engagement.\" Simply listing activities without conveying their depth, your role, or the impact you had may not strengthen your application as much as demonstrating meaningful involvement.",
+      "Poor recommendation letters from individuals who don't know you well. Letters of recommendation are typically sought from teachers or mentors who can genuinely attest to your character and academic potential. The university's evaluation process considers what teachers, counselors, and others say about your \"character and work ethic.\" A generic or uninformative letter from someone who lacks a deep understanding of your abilities and personality could be a red flag."
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "University of La Verne maintains a moderately selective admission rate of approximately 48% and is test-optional, with admitted students typically having a GPA of 3.2 or higher and SAT scores between 970-1200."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "The university emphasizes a personalized learning experience through small class sizes (often fewer than 25 students) and experienced faculty, fostering close interactions and strong student-professor relationships."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "La Verne offers a prestigious Global Ideas Honors Program with seminar-style classes, unique interdisciplinary courses, and perks like early registration and dedicated advisors."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "The University of La Verne is known for a warm, friendly, and tight-knit campus community that values inclusivity, diversity, service, and lifelong learning, fostering strong connections among students and faculty."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 52000,
+    "employment_rate_2yr": null,
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft"
+    ],
+    "grad_school_rate": 0.0,
+    "loan_default_rate": 4.0,
+    "median_earnings_6yr": 41700,
+    "notes": "Median earnings 10 years after enrollment are 52% higher than the national median."
+  },
+  "student_retention": {
+    "freshman_retention_rate": 76.0,
+    "graduation_rate_4_year": 55.0,
+    "graduation_rate_6_year": 65.0
+  }
 }

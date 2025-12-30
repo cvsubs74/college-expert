@@ -1,684 +1,1121 @@
 {
-  "university_profile": {
-    "metadata": {
-      "_id": "clark_university",
-      "official_name": "Clark University",
-      "location": {
-        "city": "Worcester",
-        "state": "MA",
-        "type": "Private"
-      },
-      "last_updated": "2025-12-19",
-      "report_source_files": [
-        "https://www.clarku.edu/admissions/apply/process/",
-        "https://www.clarku.edu/about/rankings-recognition/",
-        "https://www.usnews.com/best-colleges/clark-university-2139",
-        "https://thescarlet.org/clark-drops-45-spots-in-u-s-news-rankings/"
-      ]
+  "_id": "clark_university",
+  "metadata": {
+    "official_name": "Clark University",
+    "location": {
+      "city": "Worcester",
+      "state": "Massachusetts",
+      "type": "Private"
     },
-    "strategic_profile": {
-      "executive_summary": "Founded in 1887, Clark University is a private research university known for its small-school intimacy and rigorous R2-level doctoral research activity. It centers its identity on the motto 'Challenge Convention. Change our World,' emphasizing undergraduate involvement in social and environmental problem-solving.",
-      "market_position": "Hidden Gem Research Powerhouse",
-      "admissions_philosophy": "Holistic review",
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "official_name": "Clark University",
+    "location": {
+      "city": "Worcester",
+      "state": "Massachusetts",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-30",
+    "report_source_files": [],
+    "rankings": {
       "us_news_rank": 132,
-      "analyst_takeaways": [
-        {
-          "category": "Selectivity",
-          "insight": "The university has maintained an acceptance rate between 48% and 53% while becoming increasingly selective in its holistic 'whole-person' review.",
-          "implication": "Applicants should focus on demonstrating social engagement and leadership rather than just standardized metrics."
-        },
-        {
-          "category": "Rank Volatility",
-          "insight": "Rankings fell sharply to 142 in 2024 due to U.S. News methodology changes but have stabilized at 132 for the 2026 edition.",
-          "implication": "The school's 'Best Value' rank (#37) remains its strongest marketing asset to counter ranking fluctuations."
-        },
-        {
-          "category": "Institutional Identity",
-          "insight": "One of the few R2 research universities that explicitly lacks Greek life and focuses on 130+ student-led clubs.",
-          "implication": "Best suited for students seeking a collaborative, intellectually focused community over traditional social hierarchies."
-        }
-      ],
-      "campus_dynamics": {
-        "social_environment": "A deeply intellectual and collaborative atmosphere driven by community activism and creative student organizations; notably excludes fraternities and sororities.",
-        "transportation_impact": "A compact, highly walkable 50-acre urban campus where most students live on-site, supplemented by a dedicated shuttle system for city access and late-night safety.",
-        "research_impact": "Undergraduate students gain disproportionate access to high-level research in climate change and genocide studies, with ties to the Higher Education Consortium of Central Massachusetts (HECCMA)."
-      }
+      "market_position": "Hidden Gem",
+      "executive_summary": "Clark University is a private research institution in Worcester, Massachusetts, recognized for its commitment to research-based learning, social change, and interdisciplinary approaches to complex issues. It is particularly known for strong programs in areas like Game Design, which is globally ranked, and for its significant research institutes. The university consistently holds a position in national and global rankings, with a U.S. News & World Report National Universities rank of #132 for 2025."
     },
-    "admissions_profile": {
-      "current_status": {
-        "overall_acceptance_rate": 39.5,
-        "in_state_acceptance_rate": null,
-        "out_of_state_acceptance_rate": null,
-        "international_acceptance_rate": null,
-        "transfer_acceptance_rate": 30.1,
-        "admits_class_size": 4528,
-        "is_test_optional": true,
-        "test_policy_details": "Test Optional",
-        "early_admission_stats": [
-          {
-            "plan_type": "ED",
-            "applications": null,
-            "admits": null,
-            "acceptance_rate": 73.0,
-            "class_fill_percentage": null
-          },
-          {
-            "plan_type": "EA",
-            "applications": null,
-            "admits": null,
-            "acceptance_rate": null,
-            "class_fill_percentage": null
-          }
-        ]
+    "campus_dynamics": {
+      "social_environment": "Clark University offers a collaborative, welcoming, and inclusive social environment with a strong emphasis on personal connections with professors and a variety of clubs and activities. The small campus size fosters social interaction and numerous affinity groups support diverse identities, including strong support for LGBTQ+ students. While the party scene is limited, students find meaningful connections through campus events and clubs.",
+      "transportation_impact": "Clark University's campus is walkable. Students have access to public transit, including RIPTA buses, for getting around Worcester. The university also provides free bus shuttles to Boston twice a month on Saturdays and to two different malls every Friday and Saturday. Additionally, Clark offers free car rides from 4 PM to 4 AM for students within a 0.5-mile radius of the campus.",
+      "research_impact": "Clark University has strong undergraduate research opportunities across various disciplines, with a particular emphasis in sciences, liberal arts, psychology, and geography. Students can participate in research through courses, independent projects, honors theses, and funded fellowships, often collaborating with faculty on their projects. Funding for undergraduate research is available through various sources, including the Graduate School of Geography and the LEEP Center. Opportunities extend to internships at places like UMass Memorial Medical Center or biotechnology companies, as well as summer fellowships at Clark and other institutions. Students also have opportunities to present their research at events like ClarkFEST."
+    },
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Clark University has a competitive admissions process with a 42% acceptance rate and a holistic review, emphasizing academic rigor, personal growth, and engagement.",
+        "implication": "Applicants should focus on demonstrating a strong academic record, particularly in challenging courses, and craft a compelling personal statement that showcases their unique story, passions, and why Clark is the right fit. Applying Early Decision (ED) can significantly boost acceptance chances, as it demonstrates Clark is a top choice, and admitted ED students receive 100% of their demonstrated financial need."
       },
-      "historical_trends": [
+      {
+        "category": "Academic",
+        "insight": "Clark University offers a highly personalized academic experience with a 9:1 student-faculty ratio and 62% of classes having fewer than 20 students, fostering close interaction with faculty and providing opportunities for graduate-level attention as an undergraduate. The 4+1 Accelerated Master's Program allows students to earn both a bachelor's and master's degree in five years, often with tuition scholarships for the fifth year.",
+        "implication": "Prospective students should highlight their intellectual curiosity, specific academic interests, and how they would leverage the small class sizes and faculty access in their application materials. For those interested in advanced studies, emphasizing academic ambition and suitability for an accelerated program could be beneficial."
+      },
+      {
+        "category": "Culture",
+        "insight": "Clark University is characterized by a community-focused culture with a strong commitment to social justice, community engagement, and unconventional, independent thinking. The university emphasizes being curious, compassionate, and ready to make a positive impact, rather than a traditional 'party school' atmosphere.",
+        "implication": "Applicants should showcase their involvement in community service, leadership roles, and any experiences demonstrating a commitment to social impact or collaborative projects. Essays and interviews should convey authenticity, a desire to engage with the community, and an alignment with Clark's values of making a difference."
+      }
+    ],
+    "admissions_philosophy": "Holistic Review"
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 39.5,
+      "is_test_optional": true,
+      "test_policy_details": "Clark University has been test-optional since 2012, believing standardized tests do not fully represent most students. The university reviews applications holistically, considering academic strengths, leadership, community engagement, recommendations, essays, and interviews. Test scores are not factored into merit aid decisions. All applicants can apply without submitting SAT or ACT scores; if submitted, they will be added as supplemental material.",
+      "admits_class_size": 4528,
+      "transfer_acceptance_rate": 30.07,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 86.6,
+      "is_public": false,
+      "notes": "Clark University is a private institution, therefore in-state and out-of-state acceptance rates are not differentiated.",
+      "early_admission_stats": [
         {
-          "year": 2025,
-          "cycle_name": "Class of 2029",
-          "applications_total": 12224,
-          "admits_total": 4659,
-          "enrolled_total": 438,
-          "acceptance_rate_overall": 38.1,
-          "yield_rate": 9.4,
-          "waitlist_stats": {
-            "year": 2025,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Yield rate hit a decade low of 9.4%. Enrollment numbers based on preliminary reports from August 2025."
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 73.0,
+          "class_fill_percentage": null
         },
         {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED2",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 11452,
+        "admits_total": 4528,
+        "enrolled_total": 486,
+        "acceptance_rate_overall": 39.54,
+        "yield_rate": 10.73,
+        "notes": "Data for the 2025 admissions cycle reflects enrollment for Fall 2025 (Class of 2029)."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 10730,
+        "admits_total": 4471,
+        "enrolled_total": 629,
+        "acceptance_rate_overall": 41.67,
+        "yield_rate": 14.07,
+        "notes": "Data for the 2024 admissions cycle reflects enrollment for Fall 2024 (Class of 2028).",
+        "waitlist_stats": {
           "year": 2024,
-          "cycle_name": "Class of 2028",
-          "applications_total": 11452,
-          "admits_total": 4528,
-          "enrolled_total": 486,
-          "acceptance_rate_overall": 39.5,
-          "yield_rate": 10.7,
-          "waitlist_stats": {
-            "year": 2024,
-            "offered_spots": 730,
-            "accepted_spots": 309,
-            "admitted_from_waitlist": 57,
-            "waitlist_admit_rate": 18.4,
-            "is_waitlist_ranked": false
-          },
-          "notes": "Waitlist admission rate significantly higher than the previous cycle due to yield volatility."
-        },
-        {
+          "offered_spots": 3704,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.16,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 10735,
+        "admits_total": 4498,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 41.89,
+        "yield_rate": null,
+        "notes": "Applications and admits for Fall 2023 (Class of 2027) are cited from Clark University's Common Data Set 2023–2024. Enrolled data for first-time, first-year students for this specific cohort was not found in the search results.",
+        "waitlist_stats": {
           "year": 2023,
-          "cycle_name": "Class of 2027",
-          "applications_total": 10735,
-          "admits_total": 4498,
-          "enrolled_total": 634,
-          "acceptance_rate_overall": 41.9,
-          "yield_rate": 14.1,
-          "waitlist_stats": {
-            "year": 2023,
-            "offered_spots": 1612,
-            "accepted_spots": null,
-            "admitted_from_waitlist": 101,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2022,
-          "cycle_name": "Class of 2026",
-          "applications_total": 8591,
-          "admits_total": 4323,
-          "enrolled_total": 700,
-          "acceptance_rate_overall": 50.3,
-          "yield_rate": 16.2,
-          "waitlist_stats": {
-            "year": 2022,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          }
-        },
-        {
-          "year": 2021,
-          "cycle_name": "Class of 2025",
-          "applications_total": 8757,
-          "admits_total": 4202,
-          "enrolled_total": 505,
-          "acceptance_rate_overall": 48.0,
-          "yield_rate": 12.0,
-          "waitlist_stats": {
-            "year": 2021,
-            "offered_spots": null,
-            "accepted_spots": null,
-            "admitted_from_waitlist": null,
-            "waitlist_admit_rate": null,
-            "is_waitlist_ranked": false
-          }
+          "offered_spots": 1612,
+          "accepted_spots": 517,
+          "admitted_from_waitlist": 101,
+          "waitlist_admit_rate": 19.54,
+          "is_waitlist_ranked": false
         }
-      ],
-      "admitted_student_profile": {
-        "gpa": {
-          "weighted_middle_50": null,
-          "unweighted_middle_50": "3.60-4.00",
-          "average_weighted": null,
-          "percentile_25": "3.60",
-          "percentile_75": "4.00",
-          "notes": "Average unweighted GPA is approximately 3.68-3.70; 59% of admitted students have a GPA of 3.75 or higher."
-        },
-        "testing": {
-          "sat_composite_middle_50": "1300-1440",
-          "sat_reading_middle_50": "658-740",
-          "sat_math_middle_50": "630-720",
-          "act_composite_middle_50": "29-33",
-          "submission_rate": 23.0,
-          "policy_note": "Test-optional; scores are considered if submitted but not required for admission or merit scholarships."
-        },
-        "demographics": {
-          "first_gen_percentage": 18.0,
-          "legacy_percentage": null,
-          "international_percentage": 5.1,
-          "geographic_breakdown": [
-            {
-              "region": "Massachusetts",
-              "percentage": 38.1
-            },
-            {
-              "region": "Mid-Atlantic",
-              "percentage": 20.4
-            },
-            {
-              "region": "Other New England",
-              "percentage": 19.9
-            },
-            {
-              "region": "West",
-              "percentage": 5.5
-            },
-            {
-              "region": "South",
-              "percentage": 3.8
-            },
-            {
-              "region": "Midwest",
-              "percentage": 3.1
-            },
-            {
-              "region": "Southwest",
-              "percentage": 2.1
-            },
-            {
-              "region": "International",
-              "percentage": 5.1
-            },
-            {
-              "region": "Other Territories",
-              "percentage": 1.9
-            }
-          ],
-          "gender_breakdown": {
-            "men": {
-              "acceptance_rate": 34.1,
-              "note": "Men represent approximately 44% of the applicant pool."
-            },
-            "women": {
-              "acceptance_rate": 43.8,
-              "note": "Women represent approximately 56% of the applicant pool."
-            },
-            "non_binary": {
-              "acceptance_rate": 57.7,
-              "note": "Reported as 'Another Gender' in Common Data Set."
-            }
-          },
-          "racial_breakdown": {
-            "white": 60.5,
-            "black_african_american": 4.8,
-            "hispanic_latino": 9.4,
-            "asian": 6.6,
-            "native_american_alaskan": 0.05,
-            "pacific_islander": 0.0,
-            "two_or_more_races": 3.3,
-            "unknown": 7.7,
-            "non_resident_alien": 7.6
-          }
-        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 8757,
+        "admits_total": 4291,
+        "enrolled_total": 630,
+        "acceptance_rate_overall": 49.0,
+        "yield_rate": 14.68,
+        "notes": "Data is from Clark University's Common Data Set 2022-2023 (for Fall 2022 enrollment)."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 8740,
+        "admits_total": 4606,
+        "enrolled_total": 505,
+        "acceptance_rate_overall": 52.7,
+        "yield_rate": 10.96,
+        "notes": "Data is from Clark University's Common Data Set 2021-2022 (for Fall 2021 enrollment)."
       }
-    },
-    "academic_structure": {
-      "structure_type": "Schools",
-      "colleges": [
-        {
-          "name": "Arts and Sciences",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 42.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Ideal for students who value a liberal arts foundation and interdisciplinary inquiry. Success requires an interest in 'Problems of Practice' and combining research with community-focused action.",
-          "housing_profile": "First-year students often reside in Bullock Hall (known for a 'quirky' atmosphere) or Wright Hall (more athletic-focused).",
-          "student_archetype": "Intellectually daring and socially conscious individuals who value authenticity over prestige.",
-          "majors": [
-            {
-              "name": "Psychology",
-              "degree_type": "B.A.",
-              "curriculum": {
-                "core_courses": [
-                  "PSYC 101",
-                  "PSYC 105",
-                  "PSYC 108",
-                  "PSYC 109"
-                ],
-                "total_units": 32,
-                "major_units": 10
-              },
-              "notes": "Most popular major at Clark; emphasizes sociocultural contexts and diversity."
-            },
-            {
-              "name": "Political Science",
-              "degree_type": "B.A.",
-              "curriculum": {
-                "core_courses": [
-                  "PSCI 010",
-                  "PSCI 070",
-                  "PSCI 069",
-                  "PSCI 107",
-                  "PSCI 155"
-                ],
-                "total_units": 32,
-                "major_units": 13
-              }
-            },
-            {
-              "name": "Biology",
-              "degree_type": "B.S.",
-              "curriculum": {
-                "core_courses": [
-                  "BIOL 101",
-                  "BIOL 102",
-                  "BIOL 105",
-                  "BIOL 118"
-                ],
-                "total_units": 32,
-                "major_units": 10
-              },
-              "notes": "Highly research-oriented; offers accelerated B.A./M.S. pathway."
-            },
-            {
-              "name": "Computer Science",
-              "degree_type": "B.A.",
-              "curriculum": {
-                "core_courses": [
-                  "CSCI 120",
-                  "CSCI 121",
-                  "CSCI 122",
-                  "CSCI 140",
-                  "CSCI 160"
-                ],
-                "total_units": 32,
-                "major_units": 11
-              }
-            },
-            {
-              "name": "Economics",
-              "degree_type": "B.S.",
-              "curriculum": {
-                "core_courses": [
-                  "ECON 010",
-                  "ECON 011",
-                  "ECON 160",
-                  "ECON 205",
-                  "ECON 206"
-                ],
-                "total_units": 32,
-                "major_units": 11
-              }
-            }
-          ]
-        },
-        {
-          "name": "Becker School of Design & Technology",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": 35.0,
-          "is_restricted_or_capped": true,
-          "strategic_fit_advice": "Requires a strong creative portfolio or technical aptitude in computing. Applicants should emphasize their collaborative mindset and desire to use game design for social impact.",
-          "housing_profile": "Access to state-of-the-art Center for Media Arts, Computing, and Design.",
-          "student_archetype": "Visionary gamers and digital storytellers.",
-          "majors": []
-        },
-        {
-          "name": "School of Business",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 42.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Best for students who want a business degree with a heavy emphasis on ethics and corporate responsibility.",
-          "housing_profile": "Traditional housing for early years; juniors/seniors often move to Blackstone Hall.",
-          "student_archetype": "Future leaders looking to combine entrepreneurial drive with a socially responsible worldview.",
-          "majors": [
-            {
-              "name": "Business Administration",
-              "degree_type": "B.S.",
-              "curriculum": {
-                "core_courses": [
-                  "ECON 010",
-                  "MGMT 100",
-                  "MGMT 210",
-                  "MKT 230",
-                  "FIN 200"
-                ],
-                "total_units": 32,
-                "major_units": 15
-              },
-              "notes": "Now a B.S. for students entering Fall 2025 and beyond."
-            }
-          ]
-        },
-        {
-          "name": "School of Climate, Environment, and Society",
-          "admissions_model": "Pre-Major",
-          "acceptance_rate_estimate": 42.0,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Candidates should showcase a track record of environmental advocacy or scientific curiosity.",
-          "housing_profile": "Likely to utilize themed or affinity housing options centering on sustainability.",
-          "student_archetype": "Environmental activists and scientists dedicated to solving the climate crisis.",
-          "majors": [
-            {
-              "name": "Environmental Science",
-              "degree_type": "B.S.",
-              "curriculum": {
-                "core_courses": [
-                  "EN 101",
-                  "GEOG 104",
-                  "BIOL 101",
-                  "CHEM 101",
-                  "GEOG 190"
-                ],
-                "total_units": 32,
-                "major_units": 17
-              },
-              "notes": "Administered primarily by the Graduate School of Geography."
-            }
-          ]
-        },
-        {
-          "name": "School of Professional Studies",
-          "admissions_model": "Direct Admit",
-          "acceptance_rate_estimate": null,
-          "is_restricted_or_capped": false,
-          "strategic_fit_advice": "Tailored for students seeking practical, career-ready skills.",
-          "housing_profile": "Mix of traditional dorms and Clark-owned houses.",
-          "student_archetype": "Career-focused doers often pursuing accelerated pathways.",
-          "majors": []
-        }
-      ],
-      "minors_certificates": [
-        "Actuarial and Financial Mathematics Minor",
-        "Data Science Minor",
-        "Entrepreneurship and Innovation Minor",
-        "Health, Science, & Society Minor",
-        "International Development and Social Change Minor",
-        "Women's and Gender Studies Minor",
-        "Youth Work Practice Certificate",
-        "Advanced Graduate Study Certificate"
-      ]
-    },
-    "application_details": {
-      "application_process": {
-        "platforms": [
-          "Common App",
-          "Coalition App"
-        ],
-        "application_deadlines": [
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.60-3.80",
+        "unweighted_middle_50": "3.55-3.80",
+        "average_weighted": 3.7,
+        "percentile_25": "3.6",
+        "percentile_75": "3.8",
+        "notes": "Clark University considers both weighted and unweighted GPAs, emphasizing rigorous coursework such as AP, Honors, and dual-enrollment programs. The admissions process is holistic, evaluating various factors beyond academic performance. Most incoming freshmen graduate in the top quarter of their high school class. In 2019, 47% of incoming students had average GPAs of 3.75 and above."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1300-1450",
+        "sat_reading_middle_50": "640-710",
+        "sat_math_middle_50": "600-690",
+        "act_composite_middle_50": "30-33",
+        "submission_rate": 0.61,
+        "policy_note": "Clark University has a test-optional admissions policy and superscores the SAT. It combines the highest section scores from all test dates for the SAT. For the ACT, Clark University does not superscore, but considers the highest composite score submitted."
+      },
+      "demographics": {
+        "first_gen_percentage": 18.0,
+        "legacy_percentage": 0.0,
+        "notes": "First-generation percentage refers to first-year undergraduates. Legacy status is not considered in admissions.",
+        "geographic_breakdown": [
           {
-            "plan_type": "Early Decision I",
-            "date": "2024-11-01",
-            "is_binding": true,
-            "notes": "Decision notification by mid-December."
+            "region": "Massachusetts",
+            "percentage": 38.1
           },
           {
-            "plan_type": "Early Action",
-            "date": "2024-11-01",
-            "is_binding": false,
-            "notes": "Non-binding; notification by late December."
+            "region": "Mid-Atlantic",
+            "percentage": 20.4
           },
           {
-            "plan_type": "Early Decision II",
-            "date": "2025-01-15",
-            "is_binding": true,
-            "notes": "Binding; notification by mid-February."
+            "region": "Other New England",
+            "percentage": 19.9
           },
           {
-            "plan_type": "Regular Decision",
-            "date": "2025-01-15",
-            "is_binding": false,
-            "notes": "Decision notification by late March."
+            "region": "West",
+            "percentage": 5.5
+          },
+          {
+            "region": "International",
+            "percentage": 5.1
+          },
+          {
+            "region": "South",
+            "percentage": 3.8
+          },
+          {
+            "region": "Midwest",
+            "percentage": 3.1
+          },
+          {
+            "region": "Southwest",
+            "percentage": 2.1
+          },
+          {
+            "region": "Other Territories",
+            "percentage": 1.9
           }
         ],
-        "supplemental_requirements": [
-          {
-            "target_program": "All",
-            "requirement_type": "Essays",
-            "details": "Two optional but strongly recommended short-answer prompts on community and impact."
+        "gender_breakdown": {
+          "men": {
+            "applicants": 3267,
+            "admits": 1470,
+            "acceptance_rate": 45.0,
+            "note": "Data for Fall 2021"
           },
-          {
-            "target_program": "Honors Program",
-            "requirement_type": "Essay",
-            "deadline": "2025-01-15",
-            "details": "Additional essay required for those wishing to be considered for the Traina or Fiat Lux Honors programs."
-          }
-        ],
-        "holistic_factors": {
-          "primary_factors": [
-            "Course Rigor",
-            "Academic GPA",
-            "Application Essay",
-            "Recommendations"
-          ],
-          "secondary_factors": [
-            "Extracurricular Activities",
-            "Talent/Ability",
-            "Character/Personal Qualities"
-          ],
-          "essay_importance": "Critical",
-          "demonstrated_interest": "Important",
-          "interview_policy": "Recommended",
-          "legacy_consideration": "None",
-          "first_gen_boost": "Moderate",
-          "specific_differentiators": "Clark seeks 'challenge convention' thinkers who demonstrate collaborative spirits and community engagement."
+          "women": {
+            "applicants": 4884,
+            "admits": 2442,
+            "acceptance_rate": 50.0,
+            "note": "Data for Fall 2021"
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 42.7,
+          "black_african_american": 3.9,
+          "hispanic_latino": 8.29,
+          "asian": 4.63,
+          "native_american_alaskan": 0.02,
+          "pacific_islander": 0.07,
+          "two_or_more_races": 2.96,
+          "unknown": 2.31,
+          "non_resident_alien": 35.11
         }
-      },
-      "application_strategy": {
-        "major_selection_tactics": [
-          "Apply as 'Undeclared' to maximize flexibility.",
-          "Tailor the personal statement to Clark's 'Challenge Convention, Change the World' motto.",
-          "Target Geography or Psychology for historically prestigious departments.",
-          "Submit a portfolio for Becker School of Design & Technology."
-        ],
-        "college_ranking_tactics": [
-          "Prioritize the 5th-Year Accelerated Master's program to receive a 100% tuition scholarship for graduate school.",
-          "Leverage the HECCMA consortium for courses at WPI or Holy Cross.",
-          "Evaluate programs based on their alignment with 'LEEP' requirements."
-        ],
-        "alternate_major_strategy": "If applying to the competitive Interactive Media major, list 'Media, Culture, and the Arts' or 'Computer Science' as an alternate."
-      }
-    },
-    "financials": {
-      "cost_of_attendance": {
-        "academic_year": "2024-2025",
-        "tuition": 58867,
-        "housing": 13700,
-        "total_coa": 73317
-      },
-      "financial_aid": {
-        "aid_philosophy": "Need-Blind",
-        "average_need_based_aid": 41033,
-        "average_merit_aid": 20757,
-        "percent_receiving_aid": 98.0
-      },
-      "scholarships": [
-        {
-          "name": "Presidential Scholarship",
-          "type": "Merit",
-          "amount": "Full tuition, on-campus housing, and meals for 4 years",
-          "application_method": "Common Application interest check + 2 additional essays",
-          "benefits": "Potential for tuition-free master's degree, funded research project, and mentorship"
-        },
-        {
-          "name": "Richard Traina Scholarship",
-          "type": "Merit",
-          "amount": "$20,000 \u2013 $28,000 per year",
-          "application_method": "Automatic Consideration",
-          "benefits": "Summer research stipend ($3,000) and housing for science research"
-        },
-        {
-          "name": "Robert Goddard Achievement Scholarship",
-          "type": "Merit",
-          "amount": "$17,000 \u2013 $26,000 per year",
-          "application_method": "Automatic Consideration",
-          "benefits": "Renewable for four years based on academic standing"
-        },
-        {
-          "name": "Jonas Clark Scholarship",
-          "type": "Merit",
-          "amount": "$14,000 \u2013 $21,000 per year",
-          "application_method": "Automatic Consideration",
-          "benefits": "Renewable for four years regardless of financial need"
-        },
-        {
-          "name": "Scarlet Award",
-          "type": "Merit",
-          "amount": "$16,000 per year",
-          "application_method": "Automatic Consideration",
-          "benefits": "Awarded for exceptional academic devotion or community endeavors"
-        },
-        {
-          "name": "Global Scholars Program Scholarship",
-          "type": "Merit",
-          "amount": "$15,000 \u2013 $25,000 per year",
-          "application_method": "Common Application interest check",
-          "benefits": "Includes a $2,500 guaranteed taxable stipend for a paid internship"
-        },
-        {
-          "name": "1887 Scholarship",
-          "type": "Merit",
-          "amount": "$13,000 per year",
-          "application_method": "Automatic Consideration",
-          "benefits": "Named in honor of the university's founding year"
-        }
-      ]
-    },
-    "credit_policies": {
-      "philosophy": "Moderate",
-      "ap_policy": {
-        "general_rule": "Scores of 4 or 5 grant 1 unit of degree credit each",
-        "usage": "Can satisfy Clark Core requirements (up to 3 waivers) and major prerequisites",
-        "exceptions": [
-          "Maximum of 8 units total for all advanced standing credit",
-          "Score of 5 required for PHYS 110 equivalency",
-          "Score of 5 in English Lit/Comp required to waive Written Expression requirement"
-        ]
-      },
-      "ib_policy": {
-        "general_rule": "Higher Level (HL) exams with scores of 5 or higher grant 1 unit of credit each",
-        "diploma_bonus": true
-      },
-      "transfer_articulation": {
-        "tools": [
-          "Transfer Credit Evaluation Form",
-          "Articulation agreements with Quinsigamond and Mount Wachusett Community Colleges"
-        ],
-        "restrictions": "16 unit cap for all external credits; minimum grade of C required for transfer"
-      }
-    },
-    "student_insights": {
-      "what_it_takes": [
-        "Academic growth specifically in junior and senior years as part of a 'whole-person' review",
-        "Demonstrated alignment with Clark's 'Challenge Convention, Change Our World' motto",
-        "Evidence of being community-focused and eager to engage with social or environmental issues",
-        "Average GPA around 3.68, though the school is test-optional and holistic"
-      ],
-      "common_activities": [
-        "Undergraduate research, often started as early as freshman year",
-        "Community service and engagement within the Worcester/Main South neighborhood",
-        "Internships through the LEEP (Liberal Education and Effective Practice) program",
-        "Leadership in awareness-based or advocacy-focused campus clubs",
-        "Part-time jobs or significant family responsibilities (highly valued as 'context')"
-      ],
-      "essay_tips": [
-        "Highlight 'unconventional thinking' and how you navigate unexpected challenges",
-        "Connect your personal story to Clark\u2019s specific culture of social impact and community",
-        "Discuss how you would utilize the LEEP framework for real-world application of your studies",
-        "Focus more on reflection and self-analysis than just narrating a chronological story",
-        "Be specific about why a small, research-intensive liberal arts setting fits your goals"
-      ],
-      "red_flags": [
-        "Generic 'Why Clark' essays that don't mention the school's unique relationship with Worcester",
-        "An 'arrogant or entitled' tone that conflicts with the school's collaborative, humble culture",
-        "Inconsistencies between listed activities and the narrative provided in the personal statement",
-        "Copy-pasting an essay from a larger university that fails to address Clark's tight-knit community"
-      ],
-      "insights": [
-        "Known for independent, socially conscious 'Clarkies' who are often slightly quirky",
-        "The 'Main South' area of Worcester is central to campus life; students are expected to be respectful neighbors",
-        "The university offers a 4+1 accelerated master's program that is a major draw for many applicants",
-        "There is no application fee, making it a common 'hidden gem' choice",
-        "The social scene is described as 'stagnant' if you don't join clubs early; minimal party culture"
-      ]
-    },
-    "outcomes": {
-      "career_outcomes": {
-        "median_earnings_10yr": 62381,
-        "employment_rate_2yr": 97.0,
-        "grad_school_rate": 44.0,
-        "top_employers": [
-          "Amazon",
-          "Goldman Sachs",
-          "Deloitte",
-          "Accenture",
-          "Fidelity Investments",
-          "Bank of America",
-          "IBM",
-          "Apple"
-        ],
-        "loan_default_rate": 1.9
-      },
-      "student_retention": {
-        "freshman_retention_rate": 86.0,
-        "graduation_rate_4_year": 71.0,
-        "graduation_rate_6_year": 77.0
-      }
-    },
-    "application_process": {
-      "supplemental_requirements": {
-        "essay_prompts": [
-          {
-            "prompt": "Clark University invites students to 'Challenge Convention. Change Our World.' Describe a time when you challenged a conventional idea, norm, or practice.",
-            "word_limit": 300,
-            "required": false,
-            "note": "Optional supplemental essay",
-            "application_cycle": "2025-2026"
-          }
-        ]
       }
     }
   },
-  "_id": "clark_university",
+  "academic_structure": {
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "At least one lab or research course is required. A capstone experience is typically integrated into upper-level coursework or research.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 101 Introduction to Psychology",
+                "PSYC 105 Statistics",
+                "PSYC 200 Research Methods in Psychology"
+              ],
+              "electives": [
+                "PSYC 135 Developmental Psychology",
+                "PSYC 160 Social Psychology",
+                "PSYC 210 Abnormal Psychology",
+                "PSYC 240 Cognitive Psychology"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [
+              "Dr. Nicole Overstreet (Undergraduate Program Director)",
+              "Dr. James Cordova (Clinical Psychology)",
+              "Dr. Esteban Cardemil (Clinical Psychology)"
+            ],
+            "notes": "Popular major with opportunities for research and experiential learning. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 010 Economics and the World Economy",
+              "ECON 011 Principles of Economics",
+              "MATH 119 Precalculus Mathematics OR MATH 120 Calculus I OR MATH 124 Honors Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 205 Microeconomic Theory",
+              "ECON 206 Macroeconomic Theory"
+            ],
+            "special_requirements": "A capstone course in the senior year is required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 010 Economics and the World Economy",
+                "ECON 011 Principles of Economics",
+                "ECON 160 Introduction to Statistical Analysis",
+                "ECON 205 Microeconomic Theory",
+                "ECON 206 Macroeconomic Theory",
+                "ECON 265 Econometrics"
+              ],
+              "electives": [
+                "ECON 108 International Economics: Trade and Finance",
+                "ECON 128 Intro to Economic Development",
+                "ECON 152 Economics of Climate Change",
+                "ECON 207 International Trade Theory"
+              ],
+              "total_units": 32,
+              "major_units": 11
+            },
+            "notable_professors": [
+              "Dr. Moshi Alam (Economics)",
+              "Dr. Sang Hoo Bae (Economics)",
+              "Dr. Dana Bauer (Environmental Economics)"
+            ],
+            "notes": "Offers strong analytical and quantitative skills. Opportunities for honors, study abroad, and internships. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSCI 050 Introduction to American Government OR PSCI 070 Introduction to Comparative Politics OR PSCI 069 Introduction to International Relations"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A capstone course in the chosen subfield during the junior or senior year is required. One course in the History department and one in the Economics department are also required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSCI 050 Introduction to American Government OR PSCI 070 Introduction to Comparative Politics OR PSCI 069 Introduction to International Relations",
+                "PSCI 155 Roots of Political Thought (or other Normative Political Theory course)"
+              ],
+              "electives": [
+                "PSCI 103 Africa and the World",
+                "PSCI 120 International Negotiation and Mediation",
+                "PSCI 147 World Order and Globalization",
+                "PSCI 226 International Political Economy"
+              ],
+              "total_units": 32,
+              "major_units": 13
+            },
+            "notable_professors": [
+              "Dr. Robert Boatright (American Politics)",
+              "Dr. Valerie Sperling (Comparative Politics)",
+              "Dr. Ora Szekely (International Relations)"
+            ],
+            "notes": "Students must declare a specialization in one of three subfields. A grade of C- or higher is required for all major courses, with no more than one D or D+. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 101 Introduction to Biology I",
+              "BIOL 102 Introduction to Biology II",
+              "CHEM 101 Introductory Chemistry I",
+              "CHEM 102 Introductory Chemistry II (or CHEM 103 Accelerated Introductory Chemistry)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 131 Organic Chemistry Principles",
+              "CHEM 230 Organic Chemistry in Depth"
+            ],
+            "special_requirements": "One course that develops research techniques, a seminar course, and a capstone experience (upper-level research, internship, or directed research).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 101 Introduction to Biology I",
+                "BIOL 102 Introduction to Biology II",
+                "BIOL 105 Evolution",
+                "BIOL 118 Genetics"
+              ],
+              "electives": [
+                "BIOL 109 Microbiology",
+                "BIOL 114 Marine Biology",
+                "BIOL 204 Cell Biology",
+                "BIOL 216 Ecology"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "Suitable for students intending to pursue health sciences or graduate studies in biological sciences. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSCI 120 Introduction to Computing OR CSCI 124 Accelerated Introduction to Computing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSCI 121 Data Structures",
+              "CSCI 160 Algorithms"
+            ],
+            "special_requirements": "A capstone requirement completed through a 200-level course or an alternative experience.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 120 Introduction to Computing OR CSCI 124 Accelerated Introduction to Computing",
+                "CSCI 121 Data Structures",
+                "CSCI 122 Introduction to Discrete Structures OR MATH 114 Discrete Mathematics",
+                "CSCI 140 Assembly Language And Computer Organization",
+                "CSCI 160 Algorithms"
+              ],
+              "electives": [
+                "CSCI 210 Artificial Intelligence",
+                "CSCI 215 Operating Systems",
+                "CSCI 250 Software Engineering",
+                "CSCI 262 Computer Vision"
+              ],
+              "total_units": 32,
+              "major_units": 9
+            },
+            "notable_professors": [],
+            "notes": "Emphasizes both theory and problem-solving, preparing students for industry or research. Graduates have high earning potential. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 101 Introduction to Biology I",
+              "EN 101 Environmental Science and Policy: Introductory Case Studies",
+              "GEOG 104 Earth System Science"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A senior project for honors is encouraged for advanced students.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 101 Introduction to Biology I",
+                "EN 101 Environmental Science and Policy: Introductory Case Studies",
+                "GEOG 104 Earth System Science",
+                "EN 120 Foundational Science of Environmental Problems"
+              ],
+              "electives": [
+                "ECON 152 Economics of Climate Change",
+                "EN 207 Climate Change, Energy and Development",
+                "GEOG 116 Forest Ecology",
+                "PHIL 131 Environmental Ethics"
+              ],
+              "total_units": 32,
+              "major_units": 11
+            },
+            "notable_professors": [],
+            "notes": "Interdisciplinary major focusing on physical, biological, geographical, and policy aspects of the environment. Faculty drawn from multiple departments. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 101 Introductory Chemistry I",
+              "CHEM 102 Introductory Chemistry II OR CHEM 103 Accelerated Introductory Chemistry"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 131 Organic Chemistry Principles",
+              "CHEM 140 Analytical Chemistry"
+            ],
+            "special_requirements": "A capstone experience, two mathematics courses, and two science courses outside chemistry or biochemistry. Honors program available.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 131 Organic Chemistry Principles",
+                "CHEM 140 Analytical Chemistry",
+                "CHEM 260 Physical Chemistry I OR BCMB 264 Biophysical Chemistry"
+              ],
+              "electives": [
+                "CHEM 230 Organic Chemistry in Depth",
+                "CHEM 250 Inorganic Chemistry",
+                "CHEM 262 Physical Chemistry II",
+                "BCMB 271 Foundations in Biochemistry"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [
+              "Dr. Elizabeth Bafaro (Chemistry)",
+              "Dr. Julio M. D'Arcy (Chemistry)",
+              "Dr. Sergio Granados-Focil (Chemistry)"
+            ],
+            "notes": "Offers a program consistent with ACS accreditation requirements. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 120 Calculus I AND MATH 121 Calculus II OR MATH 124 Honors Calculus I AND MATH 125 Honors Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 130 Linear Algebra",
+              "MATH 131 Multivariate Calculus",
+              "MATH 172 Introduction to Modern Analysis"
+            ],
+            "special_requirements": "A capstone requirement in the senior year (e.g., honors project, capstone project in a 200-level course, directed study, research experience).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 130 Linear Algebra",
+                "MATH 131 Multivariate Calculus",
+                "MATH 172 Introduction to Modern Analysis",
+                "MATH 225 Abstract Algebra"
+              ],
+              "electives": [
+                "MATH 210 Introduction to Quantitative Finance",
+                "MATH 212 Numerical Analysis",
+                "MATH 230 Topology",
+                "MATH 250 Complex Analysis"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "Provides a solid education in mathematical principles for various career paths or graduate studies. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A Capstone Project (honors thesis, directed study with a research paper, or a 200-level elective with a research paper). Two interdisciplinary courses outside philosophy are also required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PHIL 141 History of Ancient Philosophy",
+                "PHIL 143 History of Early Modern Philosophy",
+                "PHIL 150 Introduction to Logic (or other formal logic course)"
+              ],
+              "electives": [
+                "PHIL 220 Theories of Ethics",
+                "PHIL 222 Political Philosophy",
+                "PHIL 270 Philosophy of Law",
+                "PHIL 201 Metaphysics"
+              ],
+              "total_units": 32,
+              "major_units": 9
+            },
+            "notable_professors": [
+              "Dr. Timothy Nulty (Philosophy)"
+            ],
+            "notes": "Accommodates liberal arts students, double majors, and those considering graduate study in philosophy. Students must receive at least a 'C-' grade in major courses. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All students majoring in History must take HIST 120 Writing History. A capstone course, usually taken in the senior year.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "HIST 120 Writing History"
+              ],
+              "electives": [
+                "HIST 011 Survey of U.S. History to 1865",
+                "HIST 070 Survey of European History to 1715",
+                "HIST 116 Pre-Colonial African History",
+                "HIST 201 Era of the American Revolution"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "Develops research and analytical skills. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A capstone experience, often a senior seminar or thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGL 100 Introduction to Literary Study",
+                "ENGL 101 Critical Methods"
+              ],
+              "electives": [
+                "ENGL 120 American Literature I",
+                "ENGL 150 British Literature II",
+                "ENGL 200 Creative Writing: Fiction",
+                "ENGL 230 Studies in Poetry"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "Develops strong analytical, critical thinking, and communication skills. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 120 Calculus I",
+              "CSCI 120 Introduction to Computing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A capstone project or practicum is common.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 121 Data Structures",
+                "MATH 123 Introduction to Statistics",
+                "CSCI 210 Artificial Intelligence",
+                "DS 201 Data Visualization"
+              ],
+              "electives": [
+                "CSCI 220 Database Management And Systems Design",
+                "MATH 210 Introduction to Quantitative Finance",
+                "ECON 160 Introduction to Statistical Analysis",
+                "GEOG 190 Introduction to Geographic Information Science"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "A newer and emerging field, preparing students for careers in data analytics and related industries. Data source: Clark University Academic Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "School of Business",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 010 Economics and the World Economy"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "All major courses must be taken for a letter grade (except for the MGMT 298 internship course).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MGMT 100 Introduction to Management",
+                "ACCT 101 Financial Accounting",
+                "FINA 101 Principles of Finance",
+                "MKTG 101 Principles of Marketing",
+                "MGMT 210 Organizational Behavior"
+              ],
+              "electives": [
+                "MKTG 150 Marketing Research",
+                "FINA 120 Investments",
+                "MGMT 130 Entrepreneurship and Innovation",
+                "ACCT 102 Managerial Accounting"
+              ],
+              "total_units": 32,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Undergraduate and graduate business programs are accredited by AACSB-International. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 010 Economics and the World Economy",
+              "ACCT 101 Financial Accounting"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Often involves a capstone or portfolio management course.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FINA 101 Principles of Finance",
+                "FINA 120 Investments",
+                "FINA 201 Corporate Finance",
+                "FINA 230 Financial Markets and Institutions"
+              ],
+              "electives": [
+                "FINA 130 Personal Financial Planning",
+                "FINA 240 International Finance",
+                "FINA 250 Real Estate Finance",
+                "FINA 260 Risk Management"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "Prepares students for careers in financial services, investment banking, and corporate finance. Data source: Clark University Academic Catalog 2025-2026."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MGMT 100 Introduction to Management",
+              "MKTG 101 Principles of Marketing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Often includes a marketing strategy capstone or internship.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MKTG 101 Principles of Marketing",
+                "MKTG 150 Marketing Research",
+                "MKTG 201 Consumer Behavior",
+                "MKTG 210 Marketing Management"
+              ],
+              "electives": [
+                "MKTG 160 Digital Marketing",
+                "MKTG 220 Advertising and Promotion",
+                "MKTG 230 Brand Management",
+                "MKTG 240 International Marketing"
+              ],
+              "total_units": 32,
+              "major_units": 10
+            },
+            "notable_professors": [],
+            "notes": "Focuses on understanding consumer behavior and developing effective marketing strategies. Data source: Clark University Academic Catalog 2025-2026."
+          }
+        ]
+      },
+      {
+        "name": "Becker School of Design & Technology",
+        "admissions_model": "Pre-Major",
+        "is_restricted_or_capped": false,
+        "majors": []
+      }
+    ],
+    "minors_and_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship and Innovation Minor",
+      "Writing Minor",
+      "Computer Science Minor",
+      "Actuarial and Financial Mathematics Minor",
+      "Environmental Science Minor",
+      "Youth Work Practice Certificate",
+      "Strategic Analytics, Assessment & Institutional Research Certificate"
+    ],
+    "housing_info": [
+      {
+        "college_name": "Clark University",
+        "housing_profile": "Clark University offers a range of housing options for students, with 68% living on campus. Dormitories vary in age and amenities. For instance, Dana Hall is noted as an older building without an elevator, which can get hot, though some reviews suggest it has less 'drama' compared to other halls. Johnson Sanford Center (JSC) is a larger upperclassmen hall with recently renovated study rooms and lounges, offering traditional dorm rooms (singles, doubles, and some triples), and also includes 8-person suites. Dodd Hall is an all-women's dorm with kitchens, and Maywood Hall is popular among sophomores, though residents typically still require a full meal plan and it has only one communal kitchen. Clark also provides convenient, move-in ready housing for graduate students, which includes Wi-Fi and furniture. The university's Facilities Management department is committed to maintaining a safe, clean, and attractive living environment.",
+        "student_archetype": "Clark University attracts intellectually curious, community-oriented, and socially responsible students who are eager to make a difference in the world. The student body is diverse, with a notable presence of out-of-state students and a percentage of international students. Students are often described as friendly, thoughtful, and engaged in a wide array of over 130 clubs and organizations, conducting research, and even starting their own businesses. Academics are prioritized, with professors who are supportive and eager to help students succeed, emphasizing real-world application and hands-on learning. There's a balance between competitive athletics (NCAA Division III) and academic commitments, along with strong support for health and well-being. Important student issues often include politics and the environment.",
+        "strategic_fit_advice": "Prospective students who thrive in a close-knit, welcoming community with a strong emphasis on academic engagement, research opportunities, and social responsibility would find Clark University to be a good fit. Those who appreciate professors who know their name and provide individualized support, and who are eager to participate in a diverse range of extracurricular activities and community involvement, should consider applying. Applicants should be prepared for a campus that encourages critical thinking, entrepreneurial spirit, and a desire to challenge convention and enact positive change. While living in an urban setting in Worcester, students also have access to study abroad programs and consortium courses with other local universities like WPI or Holy Cross."
+      }
+    ]
+  },
   "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2026-01-15",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Applicants are required to choose one of two optional supplemental essay prompts to help the admissions committee get to know them better. Each response should be 250 words.\n    *   Option A: \"The communities we belong to shape our values, our aspirations, and who we are as people. Share a story of a community that has impacted you the most and how it will influence your time as a member of the Clark community.\"\n    *   Option B: \"At Clark, we are a force for change. We work together to improve the lives of others and the future of our planet. Share a story of how you've worked with others to make a positive impact.\""
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations",
+        "Extracurriculars"
+      ],
+      "secondary_factors": [
+        "Talents/Abilities",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Clark University's mission is to 'Challenge Convention, Change the World.' They seek applicants with an authentic and original voice whose personal values align with this mission. The university emphasizes holistic development and extensive support for first-generation college students."
+    },
     "essay_prompts": [
       {
-        "prompt": "Clark's motto is 'Challenge Convention, Change Our World.' How do you plan to challenge convention in your education and career?",
+        "prompt": "Clark is known for being a rigorous academic environment that is also equally committed to being a kind, welcoming, engaged, and inclusive community. Choose one of the following prompts to help us get to know you better:\n\nOption A: The communities we belong to shape our values, our aspirations, and who we are as people. Share a story of the community that has impacted you the most and how it will influence what you will bring to the Clark community.",
         "word_limit": "250 words",
-        "type": "Values",
+        "type": "Community",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond family or school, what specific group (online, club, neighborhood, shared interest) has most profoundly influenced your sense of self?",
+          "Can you recall a defining moment or challenge within this community that shifted your perspective or values?",
+          "What unique skill, perspective, or quality did you develop or strengthen through your involvement in this community?",
+          "How do the values or practices of this community align with Clark's commitment to being welcoming, engaged, or inclusive?",
+          "Imagine yourself at Clark: how would the lessons or experiences from your impactful community manifest in your contributions to campus life, specific clubs, or academic discussions?"
+        ]
+      },
+      {
+        "prompt": "Clark is known for being a rigorous academic environment that is also equally committed to being a kind, welcoming, engaged, and inclusive community. Choose one of the following prompts to help us get to know you better:\n\nOption B: At Clark, we are a force for change. We work together to improve the lives of others and the future of our planet. Share a story of how you've worked with others to make a positive impact.",
+        "word_limit": "250 words",
+        "type": "Community/Impact",
+        "required": false,
+        "brainstorming_questions": [
+          "Think about a time you collaborated with others on a project or initiative; what specific problem were you trying to solve?",
+          "What was your distinct role within this group effort, and what challenges did you personally encounter while working with others?",
+          "How did this collaborative experience teach you about making a tangible difference, regardless of the scale of the impact?",
+          "What did you learn about teamwork, leadership, or navigating diverse perspectives during this experience?",
+          "How does your desire to be a 'force for change' align with Clark's values, and what kind of positive impact do you envision making at Clark or beyond?"
+        ]
+      },
+      {
+        "prompt": "What piece of media (a book, film, photograph, video game, article, etc.) truly captivates you and why? How have you pursued this interest in your life either in and out of the classroom? How might you share your fascination with your peers in the Clark Honors Experience?",
+        "word_limit": "200-350 words",
+        "type": "Personal/Activity",
         "required": true,
         "brainstorming_questions": [
-          "Think about a time you felt stifled by a rigid system, a rule that didn't make sense, or a commonly accepted approach. What was that situation, and how did you push back or find a different way?",
-          "Beyond academics, what's an idea, belief, or common practice that you find yourself questioning or wanting to re-examine? How might you bring that critical perspective to your studies and future work?",
-          "If you imagine Clark's motto, 'Challenge Convention, Change Our World,' as a call to action, what's a specific area where you see convention that desperately needs challenging, and what's your initial thought about how you might contribute to that change?",
-          "Consider a moment where you learned something profound not by following the established path, but by taking a detour or forging your own. What was that experience, and how did it teach you to approach learning and problem-solving differently?",
-          "What's a 'convention' in your chosen field of interest that you find particularly limiting or even counterproductive? How do you envision yourself disrupting or rethinking that convention as you progress through your education at Clark and beyond?"
+          "Beyond mere enjoyment, what deeper questions, themes, or ideas does this piece of media spark in your mind?",
+          "How has your engagement with this media evolved over time? Did it lead you to create something, research further, or connect with others?",
+          "Can you pinpoint a specific moment or detail within the media that profoundly impacted your understanding or perspective?",
+          "If you were to introduce this fascination to a group of intellectually curious peers, what specific aspects would you highlight, and how would you encourage discussion?",
+          "What unique intellectual journey or new way of thinking has this piece of media inspired in you that you believe would enrich the Honors Experience?"
         ]
       }
     ]
   },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/clark_university_logo.png"
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Align Major Choice with Demonstrated Interest and Strengths, Especially in Popular Fields: Clark University's most popular majors include Psychology, Business Administration and Management, Biology, Political Science, and Economics. While these fields attract many applicants, demonstrating genuine passion and strong academic performance in your chosen area, even if it's a popular one, is crucial. Clark emphasizes a holistic review process, looking for \"curiosity and the drive to make a difference\" and valuing how applicants have challenged themselves and shown growth.",
+      "Leverage the Test-Optional Policy by Focusing on a Strong Transcript and Holistic Profile: Clark University has been test-optional since 2012 and emphasizes that standardized test scores do not fully represent most students. Instead, they look at your high school GPA (average unweighted GPA for admitted students is 3.69), challenging coursework, and involvement in extracurricular activities, family commitments, and part-time jobs. Your chosen major should be supported by a strong academic record in relevant subjects.",
+      "Consider Applying to Less Subscribed Majors if Not Fully Set on a Highly Competitive Field, but Prioritize Genuine Interest: While the data doesn't explicitly state \"easier majors to get into,\" majors with fewer graduates might have less competition. However, this should not override genuine interest. Clark offers a wide array of majors, and exploring less common fields where you have a strong, authentic interest could allow your unique profile to stand out. For example, while Psychology graduates 100 students, other majors like Comparative Literature (1 graduate), Criminal Justice/Safety Studies (3 graduates), or Computational and Applied Mathematics (4 graduates) have significantly fewer.",
+      "Utilize Early Decision if Clark is Your Top Choice and You Have a Strong Major Preference: Clark offers Early Decision I and II, which are binding agreements, and have a higher acceptance rate (e.g., Early Decision Acceptance Rate of 73% compared to an overall 42-49%). If you are certain about attending Clark and have a clear major in mind, applying Early Decision could significantly increase your chances of admission."
+    ],
+    "college_ranking_tactics": [
+      "Clark University is a private research university that does not operate on a \"college system\" akin to large public university systems where students apply to distinct, separate colleges within the university. Instead, Clark University is a single institution with various schools and departments, such as Clark College (for undergraduates), the School of Management, and the Becker School of Design & Technology, which function as academic divisions under a unified university structure. Undergraduate admissions are centralized, and all students adhere to a core liberal arts curriculum.\n\nTherefore, strategies for ranking *colleges* within a larger university system are not applicable to Clark University."
+    ],
+    "alternate_major_strategy": "Clark University is a private research university located in Worcester, Massachusetts, United States. Founded in 1887 by prominent businessman Jonas Gilman Clark, it was originally established as one of the first all-graduate institutions in the country. The university later admitted its first undergraduates in 1902 and began enrolling women in 1942.\n\nAcademics and Programs:\nClark University offers a rigorous liberal arts curriculum within a research-intensive environment. The university provides 46 undergraduate majors, minors, and interdisciplinary concentrations, and 34 graduate majors. Students also have the option to design specialized majors and pursue pre-professional programs. Popular undergraduate majors, based on 2021 graduates, include Psychology, Economics, Political Science and Government, Business Administration and Management, and Biology/Biological Sciences. New majors offered include interactive media/game design (ranked #3 in the world by The Princeton Review), marketing, data science, finance, and mathematics education. Clark has a student-faculty ratio of 9:1, and 94% of its faculty hold doctoral or terminal degrees. One-third of Clark students go on to earn their master's degree through a tuition-free Accelerated B.A./Master's program.\n\nRankings and Recognition:\nClark University is accredited by the New England Commission of Higher Education. In the QS World University Rankings 2026, Clark was ranked #1001-1200. U.S. News & World Report placed Clark University at No. 142 in its 2024 rankings of national universities. The Princeton Review has recognized Clark for its Game Design programs (ranked #2 Top Northeast Game Design: Ugrad, and #3 Top 50 Game Design: Ugrad), as well as being LGBTQ-Friendly (#16) and a Top 20 Best School for Making an Impact (Private Schools) (#16). Clark is also noted for its undergraduate research opportunities and for being a \"Best Value School\".\n\nCampus and Student Life:\nClark University's campus is situated on 72 acres in an urban setting in Worcester, Massachusetts. Worcester is New England's second-largest city and a hub for biotech, higher education, healthcare, and the arts. The university's student body comprises approximately 2,203 undergraduates and 1,356 graduate students. The majority of undergraduate students, 66%, live on campus in a variety of housing options including traditional residence halls and houses.\n\nClark fosters a creative, intellectually daring, and playful community with over 130 student clubs and organizations. Students are actively engaged in groundbreaking research and entrepreneurial ventures, such as the Clark Tank competition. Clark is an NCAA Division III school and competes in 17 varsity sports as the Clark Cougars. Students can also participate in intramural and club sports, with over half of all \"Clarkies\" involved in athletics and recreation. Through the Higher Education Consortium of Central Massachusetts, Clark students can cross-register for courses at other local institutions like Worcester Polytechnic Institute and the College of the Holy Cross.\n\nNotable Alumni:\nClark University boasts a distinguished list of alumni who have made significant contributions across various fields. Some notable alumni include:\n*   Robert H. Goddard: A pioneering rocket scientist who conducted many experiments on campus and is credited with creating and building the world's first liquid-fueled rocket.\n*   Francis Sumner: The first African-American to receive a Ph.D. in psychology, often referred to as the \"father of black psychology\".\n*   Edward Bradford Titchener: An English psychologist known for creating structuralism.\n*   Paul Siple: An Antarctic explorer and inventor of the wind chill factor, who named a mountain range in Antarctica after Clark University.\n*   Padma Lakshmi: Emmy-nominated host and executive producer of Bravo's Top Chef.\n*   Jeffrey Lurie: Billionaire owner of the Philadelphia Eagles.\n*   Marc Lasry: Billionaire CEO and co-founder of Avenue Capital Group.\n*   Sonia Gardner: Co-founder of Avenue Capital Group.\n*   William Leonard Langer: American historian and chairman of the history department at Harvard University.\n*   Li Ji (Li Chi): Influential Chinese archaeologist instrumental in proving the historical authenticity of the Shang dynasty."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase (~3%)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 59680.0,
+        "total_coa": 76390.0,
+        "housing": 13700.0
+      },
+      "out_of_state": {
+        "tuition": 59680.0,
+        "total_coa": 76390.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 41033.0,
+    "average_merit_aid": 21395.0,
+    "percent_receiving_aid": 99.0,
+    "meets_full_need": false,
+    "notes": "Need-blind for domestic applicants, need-aware for international applicants. Meets 100% of demonstrated need for Early Decision applicants.",
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, on-campus housing and meals for all four years",
+        "deadline": "February 1 (for essays for all applicants); November 1 (Early Decision I and Early Action for initial interest indication)",
+        "benefits": "Covers full cost of attendance, recognition for outstanding academic achievement and leadership potential.",
+        "application_method": "Indicate interest on Common Application, then submit two additional essays."
+      },
+      {
+        "name": "Clark Global Scholarship Program",
+        "type": "Merit/Need-Based (primarily merit, with potential for additional need-based aid)",
+        "amount": "$15,000 to $25,000 per year (for four years), plus up to an additional $5,000 in need-based aid if eligible",
+        "deadline": "November 15 (Early Action/Early Decision I essay submission); February 1 (Regular Decision essay submission)",
+        "benefits": "Supports international first-year applicants demonstrating leadership potential and academic achievement.",
+        "application_method": "Indicate interest on Common Application, submit CSS/Financial Aid PROFILE, then complete a short essay."
+      },
+      {
+        "name": "Richard Traina Scholarship",
+        "type": "Merit",
+        "amount": "$112,000 over four years ($28,000 per year)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Recognizes commitment to leadership, scholarship, and community.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Robert Goddard Scholarship",
+        "type": "Merit",
+        "amount": "$104,000 over four years ($26,000 per year)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Awards strong academic potential and ability to achieve on projects of meaning.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Jonas Clark Scholarship",
+        "type": "Merit",
+        "amount": "$84,000 over four years ($21,000 per year)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Recognizes potential to challenge convention and change the world.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Scarlet Award Scholarship",
+        "type": "Merit",
+        "amount": "$64,000 over four years ($16,000 per year)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Awards remarkable devotion to academics or community endeavors.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Clark University Grant",
+        "type": "Need",
+        "amount": "Varies based on financial need",
+        "deadline": "November 15 (Early Action/Early Decision); January 15 (Regular Admission)",
+        "benefits": "Assists students demonstrating financial need to cover educational costs.",
+        "application_method": "FAFSA (for U.S. citizens/permanent residents) or CSS International Profile (for international students)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "ap_policy": {
+      "general_rule": "Score of 4 or 5 grants one unit of credit for most exams.",
+      "exceptions": [
+        "Physics 110 equivalency requires a score of 5",
+        "No credit is awarded for elementary language courses if more than two years of that language were completed in high school"
+      ],
+      "usage": "AP credits can contribute up to 8 units towards graduation requirements. They can also fulfill certain Clark Core (general education) waivers, with a maximum of 3 Core waivers. A score of 5 in English Literature/Composition can waive the Written Expression (WE) requirement."
+    },
+    "ib_policy": {
+      "general_rule": "Individual Higher Level (HL) exams with a score of 5 or higher are awarded one Clark unit each, up to a maximum of three Clark units for students who do not complete the full IB Diploma.",
+      "full_ib_diploma_benefits": [
+        "Students with a full IB Diploma (a minimum of 24 composite points) will receive four Clark units, equivalent to one semester of advanced standing credit.",
+        "Students who achieve a full IB Diploma with a minimum of 36 composite points and scores of 5 or higher in all six of their IB examinations (including Standard Level scores) will receive eight Clark units, equivalent to one full year of advanced standing credit."
+      ]
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "A maximum of 16 Clark units (equivalent to 64 semester hours) may be accepted for transfer. Students must earn a grade of C or higher in courses for them to be considered for transfer credit. Online courses are considered for credit if taken through a regionally accredited higher education institution with a grade of C or higher. A maximum of 50% of departmental major requirements may be fulfilled through external credits with permission of the department chairperson. The final 16 units for a bachelor's degree must be earned in residence at Clark. Credits are generally accepted from regionally accredited institutions. Clark University does not pre-evaluate courses for transfer credit; evaluation is made at the time of admission. Outside seminars, internships, and remedial or vocational coursework are not transferable."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework: A high GPA, with many admitted students having a GPA between 3.6 and 4.0, is crucial. Taking rigorous courses like AP, Honors, or dual-enrollment programs is also highly valued.",
+      "Demonstrated passion for learning and genuine interest in subjects: Clark values students who are truly interested in what they are learning rather than just memorizing for exams. Professors appreciate students who show passion for their subjects.",
+      "Authentic essays and strong letters of recommendation: The admissions process is holistic, and strong personal statements (essays) and supportive letters of recommendation are important components of the application.",
+      "Meaningful extracurricular involvement demonstrating leadership and interests: The university looks for students who demonstrate leadership, creativity, and a passion for their interests through their involvement outside of academics."
+    ],
+    "common_activities": [
+      "Leadership in school clubs",
+      "Community service/volunteering",
+      "Varsity/Club/Intramural Athletics",
+      "Music/arts involvement",
+      "Academic and professional clubs (e.g., Mock Trial, Model UN)",
+      "Research experience"
+    ],
+    "essay_tips": [
+      "Be specific about why Clark University, referencing unique programs and opportunities. Avoid generic statements about \"strong academics\" or \"low student-to-faculty ratios.\" Instead, demonstrate a deep understanding of Clark by mentioning specific resources, departments, research opportunities, or campus communities that genuinely resonate with your interests and aspirations.",
+      "Show, don't tell, by using concrete examples. Rather than simply stating your qualities (e.g., \"I am a leader\"), illustrate them through specific stories and actions. Provide detailed examples of your involvement in extracurricular activities or work experiences, highlighting your contributions, challenges, and successes.",
+      "Connect your experiences and values to the Clark community. Clark emphasizes being a \"kind, welcoming, engaged, and inclusive community\" and a \"force for change.\" Your essays should demonstrate how your past experiences, particularly in community involvement or making a positive impact, align with these values and how you envision contributing specifically to the Clark community.",
+      "Avoid clichés and generic topics, or offer a unique perspective on a common theme. Admissions officers read countless essays. Steer clear of overused narratives like winning a big sports game or a typical mission trip. If you choose a common topic, focus on a unique moment or a fresh perspective that reveals something distinct about your personality, values, or growth."
+    ],
+    "red_flags": [
+      "Grade decline senior year",
+      "Generic essays that could apply anywhere",
+      "List of activities without depth or impact",
+      "Poor rec letters from teachers who don't know you well"
+    ],
+    "insights": [
+      {
+        "source": "student_review",
+        "category": "Selectivity",
+        "insight": "Clark University has a competitive admissions process with a 42% acceptance rate and a holistic review, emphasizing academic rigor, personal growth, and engagement."
+      },
+      {
+        "source": "student_review",
+        "category": "Academic",
+        "insight": "Clark University offers a highly personalized academic experience with a 9:1 student-faculty ratio and 62% of classes having fewer than 20 students, fostering close interaction with faculty and providing opportunities for graduate-level attention as an undergraduate. The 4+1 Accelerated Master's Program allows students to earn both a bachelor's and master's degree in five years, often with tuition scholarships for the fifth year."
+      },
+      {
+        "source": "student_review",
+        "category": "Culture",
+        "insight": "Clark University is characterized by a community-focused culture with a strong commitment to social justice, community engagement, and unconventional, independent thinking. The university emphasizes being curious, compassionate, and ready to make a positive impact, rather than a traditional 'party school' atmosphere."
+      }
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 50100,
+    "employment_rate_2yr": 76.0,
+    "median_earnings_6yr": 34900,
+    "notes": "Median earnings 10 years after enrollment are from the U.S. Department of Education College Scorecard. The employment rate of 76.0% represents graduates offered full-time employment within 6 months, as a specific 2-year post-graduation employment rate was not found in the search results. Median earnings 6 years after enrollment refer to alumni working per year.",
+    "top_employers": [
+      "Google",
+      "Goldman Sachs",
+      "Amazon",
+      "Deloitte",
+      "Morgan Stanley",
+      "Apple",
+      "Microsoft",
+      "Fidelity Investments"
+    ],
+    "grad_school_rate": 44.0,
+    "loan_default_rate": 1.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 88.0,
+    "graduation_rate_4_year": 71.0,
+    "graduation_rate_6_year": 77.0
+  }
 }

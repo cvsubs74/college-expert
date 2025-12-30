@@ -1195,80 +1195,13 @@
         "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
       }
     ],
-    "supplemental_requirements": {
-      "requirements_list": [
-        {
-          "target_program": "All",
-          "requirement_type": "Essays",
-          "deadline": "2025-12-01",
-          "details": "Applicants must respond to four out of eight Personal Insight Questions (PIQs), each with a maximum of 350 words. These are submitted as part of the main UC Application."
-        },
-        {
-          "target_program": "Haas School of Business (Undergraduate)",
-          "requirement_type": "Video Interview",
-          "deadline": null,
-          "details": "A video interview is required as part of the Haas supplemental application for first-year applicants seeking admission directly into the business major."
-        }
-      ],
-      "essay_prompts": [
-        {
-          "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "What have you done to make your school or your community a better place?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        },
-        {
-          "prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?",
-          "word_limit": 350,
-          "required": false,
-          "note": "Choose 4 of 8 PIQs",
-          "application_cycle": "2025-2026"
-        }
-      ]
-    },
+    "supplemental_requirements": [
+      {
+        "requirement": "{'requirements_list': [{'target_program': 'All', 'requirement_type': 'Essays', 'deadline': '2025-12-01', 'details': 'Applicants must respond to four out of eight Personal Insight Questions (PIQs), each with a maximum of 350 words. These are submitted as part of the main UC Application.'}, {'target_program': 'Haas School of Business (Undergraduate)', 'requirement_type': 'Video Interview', 'deadline': None, 'details': 'A video interview is required as part of the Haas supplemental application for first-year applicants seeking admission directly into the business major.'}], 'essay_prompts': [{'prompt': 'Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What have you done to make your school or your community a better place?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}]}",
+        "target_program": "All",
+        "requirement_type": "Essays"
+      }
+    ],
     "holistic_factors": {
       "primary_factors": [
         "Course Rigor",
@@ -1303,7 +1236,7 @@
           "Think about a specific moment where a teacher, professor, or even a peer at Berkeley (or a similar academic environment you've experienced) opened your eyes to a new way of learning or a subject you hadn't considered. What was that interaction, and how did it shift your perspective?",
           "When you consider an 'educational barrier,' what's one specific instance where you felt genuinely challenged to learn or succeed, and what internal or external resources did you tap into to navigate it? What did you discover about your own resilience in that moment?",
           "Berkeley is known for its diverse academic offerings. Can you recall a time when you actively sought out a unique course, research project, or even a specific professor's office hours that went beyond the standard curriculum, and what was the tangible outcome of that proactive engagement?",
-          "Beyond formal classrooms, what unconventional learning experiences have you pursued \u2013 perhaps a club, a workshop, an independent study, or even a self-taught skill \u2013 that significantly contributed to your intellectual growth and demonstrated your initiative?",
+          "Beyond formal classrooms, what unconventional learning experiences have you pursued – perhaps a club, a workshop, an independent study, or even a self-taught skill – that significantly contributed to your intellectual growth and demonstrated your initiative?",
           "Looking back, what's one educational 'aha!' moment you've had, where a difficult concept suddenly clicked or a complex problem became clear? Describe the journey leading up to that moment, and what made it particularly impactful for your learning style or future aspirations?"
         ]
       },
@@ -1313,7 +1246,7 @@
         "type": "PIQ 2",
         "required": true,
         "brainstorming_questions": [
-          "Think about a time you encountered a challenge \u2013 maybe in school, a hobby, or even a daily task \u2013 where the 'standard' solution just wasn't working. What was that situation, and what unusual or unconventional approach did you try to overcome it?",
+          "Think about a time you encountered a challenge – maybe in school, a hobby, or even a daily task – where the 'standard' solution just wasn't working. What was that situation, and what unusual or unconventional approach did you try to overcome it?",
           "Beyond artistic pursuits like painting or music, where have you found yourself naturally generating new ideas or putting a unique spin on things? Can you recall a specific instance where you felt a spark of original thought that led to a different outcome?",
           "Berkeley values innovative thinking. Can you pinpoint a moment when you took something that already existed and reimagined it, improved it, or combined it with something else to create something novel, even if it was on a small scale?",
           "Consider situations where you've had to explain a complex idea or concept to someone. What methods or analogies did you invent to make it clearer or more understandable for them, and what does that reveal about your creative process?",
@@ -1494,11 +1427,31 @@
       "Focusing too heavily on stats and not enough on personal story and contributions"
     ],
     "insights": [
-      "UC Berkeley no longer uses SAT/ACT scores in admissions, making essays and GPA even more important",
-      "Admissions readers rate applicants on categories such as 'Academic Record,' 'Sustained Extracurricular Involvement,' 'Notable Impact,' 'Love for Learning,' 'Leadership,' and 'Cross-Cultural Involvement'",
-      "The university is highly competitive with an acceptance rate around 12-14.5%",
-      "Freshman year grades are generally not calculated into the UC GPA",
-      "While academics are rigorous, especially for STEM, numerous resources like tutoring and office hours are available"
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "UC Berkeley no longer uses SAT/ACT scores in admissions, making essays and GPA even more important"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Admissions readers rate applicants on categories such as 'Academic Record,' 'Sustained Extracurricular Involvement,' 'Notable Impact,' 'Love for Learning,' 'Leadership,' and 'Cross-Cultural Involvement'"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "The university is highly competitive with an acceptance rate around 12-14.5%"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "Freshman year grades are generally not calculated into the UC GPA"
+      },
+      {
+        "source": "student_review",
+        "category": "general",
+        "insight": "While academics are rigorous, especially for STEM, numerous resources like tutoring and office hours are available"
+      }
     ]
   },
   "outcomes": {
