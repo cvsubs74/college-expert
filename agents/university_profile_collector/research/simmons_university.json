@@ -934,8 +934,8 @@
         "admissions_model": "Direct Admit",
         "is_restricted_or_capped": true,
         "housing_profile": "Older, adequate dorms with community focus (for undergraduates).",
-        "student_archetype": null,
-        "strategic_fit_advice": null,
+        "student_archetype": "",
+        "strategic_fit_advice": "",
         "majors": [],
         "notes": "This is a 3+2 program where students earn a Bachelor of Science from Simmons and a Bachelor of Science in Engineering from a partner institution (e.g., Columbia University, Washington University in St. Louis, Wentworth Institute of Technology). Students must explicitly apply for and be admitted to the Dual Degree Engineering Program, and the rigorous curriculum must be started during the first semester of study. They also must meet the entrance requirements of the partner institution."
       },
@@ -949,7 +949,7 @@
         "majors": [
           {
             "name": "Undergraduate Programs Housed Elsewhere",
-            "degree_type": null,
+            "degree_type": "B.S.",
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
@@ -957,9 +957,9 @@
             "minimum_gpa_to_declare": null,
             "weeder_courses": [],
             "special_requirements": null,
-            "admissions_pathway": null,
+            "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": false,
-            "direct_admit_only": null,
+            "direct_admit_only": false,
             "internal_transfer_gpa": null,
             "curriculum": null,
             "notable_professors": [

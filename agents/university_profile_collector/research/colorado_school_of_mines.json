@@ -1,4 +1,3 @@
-
 {
   "_id": "colorado_school_of_mines",
   "metadata": {
@@ -76,7 +75,7 @@
         "applications_total": 10886,
         "admits_total": 6314,
         "enrolled_total": 1515,
-        "acceptance_rate_overall": 58.00,
+        "acceptance_rate_overall": 58.0,
         "yield_rate": 23.99,
         "notes": "Guaranteed admissions pathway with Jeffco Public Schools announced, starting with Class of 2026. Test-optional university.",
         "waitlist_stats": {
@@ -127,8 +126,8 @@
         "weighted_middle_50": "3.70-3.95",
         "unweighted_middle_50": "3.75-4.00",
         "average_weighted": 3.83,
-        "percentile_25": 3.70,
-        "percentile_75": 3.95,
+        "percentile_25": "3.7",
+        "percentile_75": "3.95",
         "notes": "The average unweighted GPA for admitted students typically falls around 3.85 or higher. The admissions committee emphasizes strong performance in a challenging curriculum, especially in core math and science (STEM) courses. While GPA is an important factor, admissions officers consider all aspects of an application, including standardized test scores, extracurricular activities, and essays, to evaluate candidacy holistically."
       },
       "testing": {
@@ -146,7 +145,7 @@
         "geographic_breakdown": [
           {
             "region": "Colorado",
-            "percentage": 49.00
+            "percentage": 49.0
           },
           {
             "region": "Texas",
@@ -194,7 +193,7 @@
           },
           {
             "region": "International",
-            "percentage": 2.00
+            "percentage": 2.0
           }
         ],
         "gender_breakdown": {
@@ -213,14 +212,14 @@
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 65.30,
+          "white": 65.3,
           "black_african_american": 1.36,
-          "hispanic_latino": 11.60,
+          "hispanic_latino": 11.6,
           "asian": 5.76,
           "native_american_alaskan": 0.45,
           "pacific_islander": 0.08,
           "two_or_more_races": 5.88,
-          "unknown": 2.30,
+          "unknown": 2.3,
           "non_resident_alien": 7.27
         }
       }
@@ -1100,11 +1099,8 @@
       {
         "target_program": "All",
         "requirement_type": "Essays",
-        "deadline": {
-          "Early Action": "November 1",
-          "Regular Decision": "January 15"
-        },
-        "details": "Two supplemental essays are "strongly encouraged" (though technically optional) for the 2024-2025 and 2025-2026 application cycles, each with a 250-word limit.\nPrompt 1 (2025-2026): \"What element on the periodic table best represents you and why?\" (250 words)\nPrompt 2 (2025-2026): \"Why do you want to be an Oredigger? You can share what you want to study, your future involvement and activities, or anything else about the Mines experience that excites you.\" (250 words)\nPrompt 1 (2024-2025): \"Reflect on a time when you had to collaborate with individuals whose backgrounds, culture, experiences, or viewpoints are different from your own. How did this experience impact your understanding of your own identity and how do you think this experience will influence your approach in building inclusive teams?\" (250 words)\nPrompt 2 (2024-2025): \"Please share a bit more about your academic interests. Why did you choose Mines and what do you hope to study? If you are undecided, what area(s) of study are you considering? What has inspired your interests in these areas? Think about your prior/current coursework, extracurricular activities, work/volunteer experiences, future goals, or anything else that has shaped your interests.\" (250 words)"
+        "deadline": "Early Action: November 1 / Regular Decision: January 15",
+        "details": "Two supplemental essays are \"strongly encouraged\" (though technically optional) for the 2024-2025 and 2025-2026 application cycles, each with a 250-word limit. Prompt 1 (2025-2026): \"What element on the periodic table best represents you and why?\" (250 words) Prompt 2 (2025-2026): \"Why do you want to be an Oredigger? You can share what you want to study, your future involvement and activities, or anything else about the Mines experience that excites you.\" (250 words)"
       },
       {
         "target_program": "Music Ensembles",
@@ -1156,21 +1152,7 @@
       "Assess faculty quality, student-to-faculty ratio, and academic support systems (e.g., tutoring, professor accessibility)",
       "Consider the long-term Return on Investment (ROI) and post-graduation earning potential"
     ],
-    "alternate_major_strategy": {
-      "description": "Colorado School of Mines employs a unique admissions approach where applicants are admitted to the university as a whole, rather than to a specific major. This significantly impacts alternate major strategies and the ease of changing majors after admission.",
-      "during_application": {
-        "strategy": "Apply for the major you are genuinely interested in pursuing, as listing an 'alternate' or 'backup' major is not a critical strategic move to improve admission chances, given acceptance is to the entire university.",
-        "notes": "Majors are not capped, and there are no competitive majors during the admission process."
-      },
-      "internal_transfer_difficulty": "Not considered competitive or difficult.",
-      "internal_transfer_details": [
-        "Admission to the University, Not the Major: Students are accepted into the university and have flexibility to study any major.",
-        "Common First-Year Curriculum: First year (and often first couple of semesters) largely consists of core classes common across all majors, providing time for exploration.",
-        "Late Major Declaration: Students typically do not officially declare until end of first year or later, sometimes end of sophomore year.",
-        "Easy Change Process: Changing intended major before or during first year is straightforward, often a simple form. Advisors (CASA advisors) assist.",
-        "No Caps or Secondary Admissions: No internal caps or secondary admission processes for specific majors once enrolled."
-      ]
-    }
+    "alternate_major_strategy": "Colorado School of Mines employs a unique admissions approach where applicants are admitted to the university as a whole, rather than to a specific major. This significantly impacts alternate major strategies and the ease of changing majors after admission."
   },
   "financials": {
     "tuition_model": "Annual Increase (~3%)",
@@ -1270,54 +1252,15 @@
         "Articulation Agreements and Transfer Guides",
         "Pre-Approved Colorado Community College System (CCCS) Courses"
       ],
-      "restrictions": {
-        "credit_limits": {
-          "undergraduate": "Maximum of 56 credits of prior learning (including AP, IB) may be applied to an undergraduate degree. Up to 14 semester credits for military training.",
-          "graduate": {
-            "certificates": "0 transfer credits allowed.",
-            "master_degrees": {
-              "30_credit_programs": "Maximum 9 transfer credits.",
-              "36_credit_programs": "Maximum 15 transfer credits."
-            },
-            "phd_degrees": {
-              "thesis_based_masters_transfer": "Up to 36 credits (from another university).",
-              "individual_coursework_or_non_thesis_masters_transfer": "Up to 24 credits (from another university)."
-            }
-          }
-        },
-        "grade_requirements": "Courses must have a grade of 'C' or higher. Grades of 'Pass' or 'Satisfactory' are accepted only if equivalent to a 'C' or better. Courses with a 'C-' will not transfer. Some departments or degree programs may stipulate a higher minimum grade.",
-        "other_restrictions": [
-          "Credits must be earned at a regionally-accredited institution.",
-          "Courses must be applicable to a degree at Mines.",
-          "Science and math courses must be at a level high enough to be applicable to a Mines degree (e.g., Calculus I or Physics I - Calculus-Based); general core science courses must include a lab component.",
-          "Vocational, CLEP, DSST, theological, remedial-level, internships, co-ops, practicums, life experience courses, Independent Study, precalculus courses below Calculus I (e.g., trigonometry and geometry), and non-calculus based general/introductory Physics courses are not accepted.",
-          "Courses cannot be more than 10 years old prior to the start of your program at Mines, unless reviewed and approved by the appropriate academic department.",
-          "Courses cannot be a duplicate of credit already earned at Mines, nor can they be for a course that the student has failed twice or more at Mines.",
-          "The same transfer credits cannot be used towards both a major and a minor.",
-          "For minors, the total number of transfer credits must be less than half of the required credits for the minor.",
-          "Official transcripts must be sent directly from the issuing institution to Mines."
-        ]
-      }
+      "restrictions": "credit_limits: {'undergraduate': 'Maximum of 56 credits of prior learning (including AP, IB) may be applied to an undergraduate degree. Up to 14 semester credits for military training.', 'graduate': {'certificates': '0 transfer credits allowed.', 'master_degrees': {'30_credit_programs': 'Maximum 9 transfer credits.', '36_credit_programs': 'Maximum 15 transfer credits.'}, 'phd_degrees': {'thesis_based_masters_transfer': 'Up to 36 credits (from another university).', 'individual_coursework_or_non_thesis_masters_transfer': 'Up to 24 credits (from another university).'}}}; grade_requirements: Courses must have a grade of 'C' or higher. Grades of 'Pass' or 'Satisfactory' are accepted only if equivalent to a 'C' or better. Courses with a 'C-' will not transfer. Some departments or degree programs may stipulate a higher minimum grade.; other_restrictions: ['Credits must be earned at a regionally-accredited institution.', 'Courses must be applicable to a degree at Mines.', 'Science and math courses must be at a level high enough to be applicable to a Mines degree (e.g., Calculus I or Physics I - Calculus-Based); general core science courses must include a lab component.', 'Vocational, CLEP, DSST, theological, remedial-level, internships, co-ops, practicums, life experience courses, Independent Study, precalculus courses below Calculus I (e.g., trigonometry and geometry), and non-calculus based general/introductory Physics courses are not accepted.', 'Courses cannot be more than 10 years old prior to the start of your program at Mines, unless reviewed and approved by the appropriate academic department.', 'Courses cannot be a duplicate of credit already earned at Mines, nor can they be for a course that the student has failed twice or more at Mines.', 'The same transfer credits cannot be used towards both a major and a minor.', 'For minors, the total number of transfer credits must be less than half of the required credits for the minor.', 'Official transcripts must be sent directly from the issuing institution to Mines.']"
     }
   },
   "student_insights": {
     "what_it_takes": [
-      {
-        "factor": "Strong academic record with challenging coursework",
-        "details": "A high school GPA is required, and college preparatory courses are essential. Successful applicants often undertake a rigorous curriculum, including numerous AP and college-level classes, even if their GPA falls slightly below the average range. The average GPA for enrolled freshmen is 3.83."
-      },
-      {
-        "factor": "Meaningful extracurricular involvement and leadership",
-        "details": "Beyond just participating, students note that their extracurriculars and supplemental questions played a significant role in their acceptance. Balancing academic rigor with participation in extracurricular activities is also a recurring theme in student experiences, with advice to join both professional and social groups. Leadership roles within these activities demonstrate initiative and commitment."
-      },
-      {
-        "factor": "Demonstrated passion for STEM and the \"Mines\" community",
-        "details": "Students express that a genuine excitement to learn and become engineers is a special aspect of the Mines community. While not explicitly an admissions requirement, this passion likely comes through in essays and interviews, aligning with the school's focus on engineering and science."
-      },
-      {
-        "factor": "Authentic and reflective essays",
-        "details": "While not directly stated as a \"student success factor\" in the provided snippets, the mention of \"supplemental questions\" being a reason for acceptance implies that well-crafted and authentic essays that showcase self-reflection and alignment with Mines' values are crucial."
-      }
+      "Strong academic record with challenging coursework: A high school GPA is required, and college preparatory courses are essential. Successful applicants often undertake a rigorous curriculum, including numerous AP and college-level classes, even if their GPA falls slightly below the average range. The average GPA for enrolled freshmen is 3.83.",
+      "Meaningful extracurricular involvement and leadership: Beyond just participating, students note that their extracurriculars and supplemental questions played a significant role in their acceptance. Balancing academic rigor with participation in extracurricular activities is also a recurring theme in student experiences, with advice to join both professional and social groups. Leadership roles within these activities demonstrate initiative and commitment.",
+      "Demonstrated passion for STEM and the \"Mines\" community: Students express that a genuine excitement to learn and become engineers is a special aspect of the Mines community. While not explicitly an admissions requirement, this passion likely comes through in essays and interviews, aligning with the school's focus on engineering and science.",
+      "Authentic and reflective essays: While not directly stated as a \"student success factor\" in the provided snippets, the mention of \"supplemental questions\" being a reason for acceptance implies that well-crafted and authentic essays that showcase self-reflection and alignment with Mines' values are crucial."
     ],
     "common_activities": [
       "Leadership in student organizations and government",

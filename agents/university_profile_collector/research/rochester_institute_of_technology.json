@@ -131,7 +131,7 @@
       "gpa": {
         "weighted_middle_50": "Data not consistently available in X.XX-X.XX format exceeding 4.0. RIT reports middle 50% on a 100-point scale, varying by college (e.g., 91-98).",
         "unweighted_middle_50": "Data not consistently available in X.XX-X.XX format. Average unweighted GPA is around 3.7.",
-        "average_weighted": "Approximately 4.18 (inferred, as average GPA on a 100-point scale is 93.8% or 93.4, and weighted GPAs can exceed 4.0).",
+        "average_weighted": 4.18,
         "percentile_25": "Data not consistently available in X.XX format. On a 100-point scale, the 25th percentile for accepted applicants varies by college, with lows around 91.",
         "percentile_75": "Data not consistently available in X.XX format. On a 100-point scale, the 75th percentile for accepted applicants varies by college, with highs around 98.",
         "notes": "RIT evaluates applicants through a holistic admission process, considering academic preparation, counselor recommendations, and personal career interests. A strong performance in a college preparatory program is expected, typically including 4 years of English, 3-4 years of mathematics, 2-3 years of science, and 3 years of social studies and/or history. RIT is test-optional. Weighted GPAs are considered, and an A in an AP class, for example, could count as a 5.0. [cite: 8 in previous turn] Most incoming freshmen graduate in the top quarter of their high school class."
@@ -1081,8 +1081,8 @@
         "admissions_model": "Pre-Major",
         "is_restricted_or_capped": true,
         "housing_profile": "",
-        "student_archetype": null,
-        "strategic_fit_advice": null,
+        "student_archetype": "",
+        "strategic_fit_advice": "",
         "majors": []
       }
     ],

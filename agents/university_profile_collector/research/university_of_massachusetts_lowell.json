@@ -119,7 +119,7 @@
         "applications_total": 12519,
         "admits_total": 10766,
         "enrolled_total": 1939,
-        "acceptance_rate_overall": 86.00,
+        "acceptance_rate_overall": 86.0,
         "yield_rate": 18.01,
         "notes": "Data reflects the 2021-2022 admission cycle for students entering Fall 2022, sourced from Common Data Set 2022-2023."
       },
@@ -185,10 +185,10 @@
           "non_binary": null
         },
         "racial_breakdown": {
-          "white": 50.20,
+          "white": 50.2,
           "black_african_american": 8.24,
-          "hispanic_latino": 13.20,
-          "asian": 12.60,
+          "hispanic_latino": 13.2,
+          "asian": 12.6,
           "native_american_alaskan": 0.07,
           "pacific_islander": 0.03,
           "two_or_more_races": 2.86,
@@ -213,7 +213,8 @@
               "BA",
               "BFA"
             ],
-            "admission_notes": "Requires portfolio submission."
+            "admission_notes": "Requires portfolio submission.",
+            "degree_type": "B.S."
           },
           {
             "name": "Music",
@@ -221,25 +222,29 @@
               "BA",
               "BM"
             ],
-            "admission_notes": "Requires entrance audition."
+            "admission_notes": "Requires entrance audition.",
+            "degree_type": "B.S."
           },
           {
             "name": "English",
             "degree_types": [
               "BA"
-            ]
+            ],
+            "degree_type": "B.S."
           },
           {
             "name": "Psychology",
             "degree_types": [
               "BA"
-            ]
+            ],
+            "degree_type": "B.S."
           },
           {
             "name": "Criminal Justice",
             "degree_types": [
               "BS"
-            ]
+            ],
+            "degree_type": "B.S."
           }
         ],
         "housing_profile": "Students in this college have the option to join the Fine Arts, Humanities, and Social Sciences (FAHSS) Living Learning Community located in Sheehy Hall on South Campus. Sheehy Hall provides four-, six-, and eight-person suites with Wi-Fi, cable TV, and laundry facilities. General housing options range from traditional dorms to suites and apartments, offering a variety of living arrangements.",
@@ -257,26 +262,30 @@
             "degree_types": [
               "BS"
             ],
-            "admission_notes": "Internal transfer requires a minimum 3.000 GPA with demonstrated strength in Calculus, Chemistry, and Physics."
+            "admission_notes": "Internal transfer requires a minimum 3.000 GPA with demonstrated strength in Calculus, Chemistry, and Physics.",
+            "degree_type": "B.S."
           },
           {
             "name": "Chemical Engineering",
             "degree_types": [
               "BS"
             ],
-            "admission_notes": "Internal transfer requires a minimum 2.750 GPA with specific course passes."
+            "admission_notes": "Internal transfer requires a minimum 2.750 GPA with specific course passes.",
+            "degree_type": "B.S."
           },
           {
             "name": "Computer Engineering",
             "degree_types": [
               "BS"
-            ]
+            ],
+            "degree_type": "B.S."
           },
           {
             "name": "Civil Engineering",
             "degree_types": [
               "BS"
-            ]
+            ],
+            "degree_type": "B.S."
           }
         ],
         "housing_profile": "Students have access to traditional dorms, suite-style, and apartment-style housing across East and South Campuses. Many engineering students reside in Leitch Hall as part of the Engineers of the Future House Living-Learning Community, which focuses on providing a hands-on, real-world educational experience. General dorm amenities include Wi-Fi, laundry facilities, cable TV, and access to dining halls. Some suites and apartments feature kitchenettes or full kitchens.",
@@ -294,19 +303,22 @@
             "degree_types": [
               "BS"
             ],
-            "admission_notes": "Internal transfer into the Computer Science major requires a B- or better in 'Computing I and lab' and a cumulative GPA of at least 2.300."
+            "admission_notes": "Internal transfer into the Computer Science major requires a B- or better in 'Computing I and lab' and a cumulative GPA of at least 2.300.",
+            "degree_type": "B.S."
           },
           {
             "name": "Biology",
             "degree_types": [
               "BS"
-            ]
+            ],
+            "degree_type": "B.S."
           },
           {
             "name": "Chemistry",
             "degree_types": [
               "BS"
-            ]
+            ],
+            "degree_type": "B.S."
           }
         ],
         "housing_profile": "Students in the Kennedy College of Sciences, like other STEM fields, may find themselves in residences like Leitch Hall, which houses the 'Engineers of the Future House' Living-Learning Community, also encompassing Science, Technology, and Mathematics-related fields. General university housing includes traditional, suite, and apartment-style options with amenities such as Wi-Fi, common areas, and laundry facilities.",
@@ -324,7 +336,8 @@
             "degree_types": [
               "BS"
             ],
-            "admission_notes": "First-year students are initially registered as Business Administration (BA). Must complete first semester of sophomore year before applying for upper division and declaring a concentration."
+            "admission_notes": "First-year students are initially registered as Business Administration (BA). Must complete first semester of sophomore year before applying for upper division and declaring a concentration.",
+            "degree_type": "B.S."
           }
         ],
         "housing_profile": "Business students can reside in Donahue Hall on East Campus, which is home to the Business Living-Learning Community. Donahue Hall offers four-, six-, or eight-person suites, each with its own bathroom and common area, and is in close proximity to a parking garage and dining hall. University housing generally provides fully furnished rooms and meal plans.",
@@ -342,20 +355,23 @@
             "degree_types": [
               "BSN"
             ],
-            "admission_notes": "Enrollment is extremely limited, especially for transfers. All applicants to the nursing program must apply Early Action I or II."
+            "admission_notes": "Enrollment is extremely limited, especially for transfers. All applicants to the nursing program must apply Early Action I or II.",
+            "degree_type": "B.S."
           },
           {
             "name": "Public Health",
             "degree_types": [
               "BS"
-            ]
+            ],
+            "degree_type": "B.S."
           },
           {
             "name": "Doctor of Physical Therapy (DPT)",
             "degree_types": [
               "DPT"
             ],
-            "admission_notes": "Guaranteed freshman admission pathway involves an interview process, indicating a restricted direct admit."
+            "admission_notes": "Guaranteed freshman admission pathway involves an interview process, indicating a restricted direct admit.",
+            "degree_type": "B.S."
           }
         ],
         "housing_profile": "Students can live in suite-style housing within Riverview West and Riverview East on South Campus, which host the Health Sciences Living Learning Community. These residences offer opportunities for students to meet other health science majors, form study groups, and benefit from dedicated faculty mentorship. General university housing includes furnished rooms, food plans, and access to campus amenities like fitness centers.",
