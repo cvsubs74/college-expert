@@ -541,6 +541,7 @@ deploy_payment_manager() {
         -e "s|\${STRIPE_SECRET_KEY}|${STRIPE_SECRET_KEY}|g" \
         -e "s|\${STRIPE_WEBHOOK_SECRET}|${STRIPE_WEBHOOK_SECRET}|g" \
         -e "s|\${ES_API_KEY}|${ES_API_KEY}|g" \
+        -e "s|\${ES_CLOUD_ID}|${ES_CLOUD_ID}|g" \
         env.deploy.yaml
     rm -f env.deploy.yaml.bak
     

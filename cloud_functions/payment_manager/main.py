@@ -24,18 +24,27 @@ logger = logging.getLogger(__name__)
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY', 'sk_test_placeholder')
 
 # Initialize Elasticsearch
-ES_HOST = os.environ.get('ES_HOST', 'https://college-search-9522040934.us-east1.run.app')
+ES_CLOUD_ID = os.environ.get('ES_CLOUD_ID')
 ES_API_KEY = os.environ.get('ES_API_KEY', '')
+ES_HOST = os.environ.get('ES_HOST', 'https://college-search-9522040934.us-east1.run.app')
 ES_USER_PURCHASES_INDEX = 'user_purchases'
 ES_USER_USAGE_INDEX = 'user_usage'
 
 try:
-    es_client = Elasticsearch(
-        ES_HOST,
-        api_key=ES_API_KEY,
-        verify_certs=True,
-        request_timeout=30
-    )
+    if ES_CLOUD_ID:
+        es_client = Elasticsearch(
+            cloud_id=ES_CLOUD_ID,
+            api_key=ES_API_KEY,
+            verify_certs=True,
+            request_timeout=30
+        )
+    else:
+        es_client = Elasticsearch(
+            ES_HOST,
+            api_key=ES_API_KEY,
+            verify_certs=True,
+            request_timeout=30
+        )
 except Exception as e:
     logger.error(f"Failed to initialize Elasticsearch: {e}")
     es_client = None
@@ -528,6 +537,36 @@ def handle_subscription_lifecycle_webhooks(event):
             
             logger.info(f"Subscription updated: {subscription_id}, cancel_at_period_end={cancel_at_period_end}")
             
+            # Update user in ES
+            try:
+                query = {
+                    "query": {
+                        "term": {"stripe_subscription_id.keyword": subscription_id}
+                    }
+                }
+                result = es_client.search(index=ES_USER_PURCHASES_INDEX, body=query, size=1)
+                
+                if result['hits']['total']['value'] > 0:
+                    doc = result['hits']['hits'][0]
+                    doc_id = doc['_id']
+                    purchases = doc['_source']
+                    
+                    # Update cancellation status
+                    purchases['subscription_cancel_at_period_end'] = cancel_at_period_end
+                    purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
+                    
+                    # Update period end if changed
+                    if subscription.get('current_period_end'):
+                         purchases['subscription_current_period_end'] = datetime.fromtimestamp(subscription.get('current_period_end'), timezone.utc).isoformat()
+                    
+                    es_client.index(index=ES_USER_PURCHASES_INDEX, id=doc_id, body=purchases)
+                    logger.info(f"Updated subscription for user: cancel_at_period_end={cancel_at_period_end}")
+                else:
+                    logger.warning(f"No user found for subscription update: {subscription_id}")
+                    
+            except Exception as e:
+                logger.error(f"Error updating user for subscription {subscription_id}: {e}")
+            
         elif event_type == 'customer.subscription.deleted':
             # Subscription ended (canceled or payment failed)
             subscription = event['data']['object']
@@ -598,7 +637,14 @@ def handle_get_purchases(request, user_id):
         'app_readiness_available': purchases.get('app_readiness', 0) - purchases.get('app_readiness_used', 0),
         'ai_messages_available': purchases.get('ai_messages', 5) - purchases.get('ai_messages_used', 0) if not purchases.get('ai_unlimited') else 'unlimited',
         'ai_unlimited': purchases.get('ai_unlimited', False),
-        'is_free_tier': not purchases.get('explorer_access', False) and len(purchases.get('purchases', [])) == 0
+        'is_free_tier': not purchases.get('explorer_access', False) and len(purchases.get('purchases', [])) == 0,
+        
+        # Subscription Details (Pass through for frontend)
+        'subscription_active': purchases.get('subscription_active', False),
+        'subscription_plan': purchases.get('subscription_plan'),
+        'subscription_end_date': purchases.get('subscription_end_date'),
+        'subscription_cancel_at_period_end': purchases.get('subscription_cancel_at_period_end', False),
+        'subscription_current_period_end': purchases.get('subscription_current_period_end')
     }
     
     return add_cors_headers({

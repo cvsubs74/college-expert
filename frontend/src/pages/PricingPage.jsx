@@ -7,21 +7,24 @@ import {
     RocketLaunchIcon,
     ArrowRightIcon,
     AcademicCapIcon,
-    LightBulbIcon
+    LightBulbIcon,
+    CheckCircleIcon
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { createCheckoutSession } from '../services/paymentService';
+import { createCheckoutSession, reactivateSubscription } from '../services/paymentService';
 import CancelSubscriptionModal from '../components/CancelSubscriptionModal';
 
 const PricingPage = () => {
     const navigate = useNavigate();
     const { currentUser } = useAuth();
-    const { creditsRemaining, creditsTier, isMonthly, isSeasonal } = usePayment();
+    const { creditsRemaining, creditsTier, isMonthly, isSeasonal, purchases } = usePayment();
     const [loading, setLoading] = useState(null);
     const [showCancelModal, setShowCancelModal] = useState(false);
     const [cancelEndDate, setCancelEndDate] = useState(null);
+
+    const isCanceling = purchases?.subscription_cancel_at_period_end;
 
     const handleGetStarted = async (planId) => {
         try {
@@ -82,6 +85,26 @@ const PricingPage = () => {
             setLoading(null);
         }
     };
+
+    const handleReactivate = async () => {
+        if (!currentUser?.email) return;
+
+        setLoading('reactivate');
+        try {
+            const result = await reactivateSubscription(currentUser.email);
+            if (result.success) {
+                // Refresh page to show active status
+                window.location.reload();
+            }
+        } catch (error) {
+            console.error('Error reactivating:', error);
+        } finally {
+            setLoading(null);
+        }
+    };
+
+    const cancellationDate = purchases?.subscription_end_date ? new Date(purchases.subscription_end_date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+    const renewalDate = purchases?.subscription_current_period_end ? new Date(purchases.subscription_current_period_end).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '';
 
     const allPlans = [
         {
@@ -288,27 +311,61 @@ const PricingPage = () => {
                                         ))}
                                     </ul>
 
-                                    {/* CTA Button */}
-                                    <button
-                                        onClick={() => {
-                                            if (isCurrentPlan && (isMonthly || isSeasonal)) {
-                                                // Show themed modal instead of browser confirm
-                                                handleCancelClick();
-                                            } else {
-                                                !plan.disabled && handleGetStarted(plan.id);
-                                            }
-                                        }}
-                                        disabled={loading === plan.id || (plan.disabled && (!isCurrentPlan || (!isMonthly && !isSeasonal)))}
-                                        className={`w-full py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${loading === plan.id ? 'opacity-50 cursor-wait' :
-                                            (isCurrentPlan && (isMonthly || isSeasonal)) ? 'bg-red-600 text-white hover:bg-red-700' :
-                                                plan.ctaStyle
-                                            }`}
-                                    >
-                                        {loading === plan.id ? 'Processing...' :
-                                            (isCurrentPlan && (isMonthly || isSeasonal)) ? 'Cancel Subscription' :
-                                                plan.cta}
-                                        {loading !== plan.id && !(isCurrentPlan && (isMonthly || isSeasonal)) && !plan.disabled && <ArrowRightIcon className="h-4 w-4" />}
-                                    </button>
+                                    {/* CTA Button Area */}
+                                    <div className="space-y-4">
+                                        {/* Renewal/Cancellation Message */}
+                                        {isCurrentPlan && (isMonthly || isSeasonal) && (
+                                            <div className="text-center">
+                                                {isCanceling ? (
+                                                    <p className="text-sm text-red-600 font-medium">Cancels on {cancellationDate}</p>
+                                                ) : (
+                                                    <p className="text-sm text-[#1A4D2E] font-medium flex items-center justify-center gap-1">
+                                                        <SparklesIcon className="h-4 w-4" />
+                                                        Renews automatically on {renewalDate}
+                                                    </p>
+                                                )}
+                                            </div>
+                                        )}
+
+                                        {/* Main CTA Button */}
+                                        <button
+                                            onClick={() => {
+                                                if (isCurrentPlan && isCanceling) {
+                                                    handleReactivate();
+                                                } else if (!isCurrentPlan) {
+                                                    !plan.disabled && handleGetStarted(plan.id);
+                                                }
+                                            }}
+                                            disabled={loading === plan.id || loading === 'reactivate' || (plan.disabled && !isCurrentPlan) || (isCurrentPlan && !isCanceling)}
+                                            className={`w-full py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${loading === plan.id || loading === 'reactivate' ? 'opacity-50 cursor-wait' :
+                                                (isCurrentPlan && isCanceling) ? 'bg-green-600 text-white hover:bg-green-700' :
+                                                    (isCurrentPlan && !isCanceling) ? 'bg-[#D6E8D5] text-[#1A4D2E] border border-[#A8C5A6] cursor-default' :
+                                                        plan.ctaStyle
+                                                }`}
+                                        >
+                                            {loading === plan.id ? 'Processing...' :
+                                                loading === 'reactivate' ? 'Reactivating...' :
+                                                    (isCurrentPlan && isCanceling) ? 'Reactivate Subscription' :
+                                                        (isCurrentPlan && !isCanceling) ? (
+                                                            <>
+                                                                <CheckCircleIcon className="h-5 w-5" />
+                                                                Active Plan
+                                                            </>
+                                                        ) :
+                                                            plan.cta}
+                                            {loading !== plan.id && loading !== 'reactivate' && !isCurrentPlan && !plan.disabled && <ArrowRightIcon className="h-4 w-4" />}
+                                        </button>
+
+                                        {/* De-emphasized Cancel Link */}
+                                        {isCurrentPlan && (isMonthly || isSeasonal) && !isCanceling && (
+                                            <button
+                                                onClick={handleCancelClick}
+                                                className="w-full text-sm text-gray-400 hover:text-red-600 hover:underline transition-colors block text-center"
+                                            >
+                                                Cancel Subscription
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
                             );
                         })}
