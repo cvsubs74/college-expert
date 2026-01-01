@@ -278,6 +278,57 @@ const StratiaLaunchpad = () => {
         }
     };
 
+    // Handle major change - recompute fit analysis
+    const handleMajorChange = async (universityId, newMajor) => {
+        if (!currentUser?.email) return;
+
+        console.log(`[StratiaLaunchpad] Changing major for ${universityId} to ${newMajor}`);
+
+        // Show analysis progress modal
+        const college = collegeList.find(c => c.university_id === universityId);
+        setAnalysisModal({
+            isOpen: true,
+            universityName: college?.university_name || universityId,
+            step: 'fit',
+            progress: 30
+        });
+
+        try {
+            // Update college list with new major
+            setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 50 }));
+
+            // Recompute fit with new major (pass major as parameter if API supports it)
+            await computeSingleFit(currentUser.email, universityId, false);
+
+            setAnalysisModal(prev => ({ ...prev, step: 'saving', progress: 70 }));
+
+            // Update local state with new major
+            setCollegeList(prev => prev.map(c =>
+                c.university_id === universityId
+                    ? { ...c, selected_major: newMajor }
+                    : c
+            ));
+
+            // Small delay for ES to index
+            await new Promise(resolve => setTimeout(resolve, 600));
+
+            // Refresh to get new fit data
+            await fetchCollegeList();
+
+            setAnalysisModal(prev => ({ ...prev, step: 'complete', progress: 100 }));
+
+            // Auto-close modal
+            setTimeout(() => {
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+            }, 1500);
+
+            console.log(`[StratiaLaunchpad] Major changed to ${newMajor}, fit recomputed`);
+        } catch (err) {
+            console.error('[StratiaLaunchpad] Error changing major:', err);
+            setAnalysisModal(prev => ({ ...prev, step: 'error', progress: 0 }));
+        }
+    };
+
     // Discovery panel functions
     const fetchDiscoverySchools = async (category = 'SAFETY') => {
         if (!currentUser?.email) return;
@@ -481,6 +532,7 @@ const StratiaLaunchpad = () => {
                     universityId={chatCollege?.university_id}
                     universityName={chatCollege?.university_name}
                     fitCategory={chatCollege?.fit_analysis?.fit_category}
+                    intendedMajor={chatCollege?.selected_major || chatCollege?.fit_analysis?.major_strategy?.intended_major}
                     isOpen={isChatOpen}
                     onClose={handleCloseChat}
                 />
@@ -621,11 +673,15 @@ const StratiaLaunchpad = () => {
                                             acceptance_rate: college.acceptance_rate || college.fit_analysis?.acceptance_rate,
                                             us_news_rank: college.us_news_rank || college.fit_analysis?.us_news_rank,
                                             fit_category: college.fit_analysis?.fit_category || college.soft_fit_category || 'TARGET',
-                                            match_score: college.fit_analysis?.match_score || 0
+                                            match_score: college.fit_analysis?.match_score || 0,
+                                            // Major data
+                                            selected_major: college.selected_major,
+                                            available_majors: college.available_majors || []
                                         }}
                                         onViewAnalysis={handleViewAnalysis}
                                         onOpenChat={handleOpenChat}
                                         onEssayHelp={handleEssayHelp}
+                                        onMajorChange={handleMajorChange}
                                         canRemove={!isFreeTier}
                                         onRemove={handleRemoveCollege}
                                     />

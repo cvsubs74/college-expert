@@ -30,7 +30,7 @@ const PROFILE_MANAGER_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL ||
  * @param {boolean} isOpen - Whether the chat is currently open
  * @param {function} onClose - Callback to close the chat
  */
-const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onClose }) => {
+const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajor, isOpen, onClose }) => {
     const { currentUser } = useAuth();
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
@@ -49,6 +49,42 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
     // Rename state
     const [editingConversationId, setEditingConversationId] = useState(null);
     const [editTitle, setEditTitle] = useState('');
+
+    const [suggestedQuestions, setSuggestedQuestions] = useState([]);
+
+    // Initialize suggested questions based on fit category and intended major
+    useEffect(() => {
+        const baseQuestions = [
+            "Why am I this fit category?",
+            "What can I improve?",
+        ];
+
+        if (intendedMajor) {
+            baseQuestions.unshift(`How is the ${intendedMajor} program here?`);
+        }
+
+        let initialQuestions = [];
+        if (fitCategory === 'SUPER_REACH' || fitCategory === 'REACH') {
+            initialQuestions = [
+                ...baseQuestions,
+                "What are my chances of admission?",
+                "How can I strengthen my application?",
+            ];
+        } else if (fitCategory === 'SAFETY') {
+            initialQuestions = [
+                ...baseQuestions,
+                "Should I apply Early Decision?",
+                "Will I get merit scholarships?",
+            ];
+        } else {
+            initialQuestions = [
+                ...baseQuestions,
+                "What makes me a good fit?",
+                "What specific programs stand out here?",
+            ];
+        }
+        setSuggestedQuestions(initialQuestions);
+    }, [fitCategory, intendedMajor]);
 
     // Fit category colors - Stratia theme consistency
     const fitColors = {
@@ -265,6 +301,8 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
         setInput('');
         setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
         setLoading(true);
+        // Clear previous suggestions while loading
+        setSuggestedQuestions([]);
 
         console.log('[FitChat] Sending message:', {
             user_email: currentUser.email,
@@ -294,6 +332,11 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
                 ];
                 setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
                 setConversationHistory(data.conversation_history || []);
+
+                // Update suggestions from backend if available
+                if (data.suggested_questions && data.suggested_questions.length > 0) {
+                    setSuggestedQuestions(data.suggested_questions);
+                }
 
                 // Auto-save after each exchange
                 setTimeout(() => {
@@ -348,75 +391,14 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
         }
     };
 
-    // Dynamic suggested questions based on fit category
-    const getSuggestedQuestions = () => {
-        const baseQuestions = [
-            "Why am I this fit category?",
-            "What can I improve?",
-        ];
-
-        if (fitCategory === 'SUPER_REACH' || fitCategory === 'REACH') {
-            return [
-                ...baseQuestions,
-                "What are my chances of admission?",
-                "How can I strengthen my application?",
-            ];
-        } else if (fitCategory === 'SAFETY') {
-            return [
-                ...baseQuestions,
-                "Should I apply Early Decision?",
-                "Will I get merit scholarships?",
-            ];
-        } else {
-            return [
-                ...baseQuestions,
-                "What makes me a good fit?",
-                "What specific programs stand out here?",
-            ];
-        }
-    };
-
-    // Follow-up questions after AI response (contextual based on conversation)
-    const getFollowUpQuestions = () => {
-        const messageCount = messages.length;
-
-        // First round of follow-ups
-        if (messageCount <= 2) {
-            if (fitCategory === 'SUPER_REACH' || fitCategory === 'REACH') {
-                return [
-                    "What's the acceptance rate?",
-                    "How can I improve my chances?",
-                    "What makes a strong applicant?",
-                ];
-            } else if (fitCategory === 'SAFETY') {
-                return [
-                    "What scholarships are available?",
-                    "What are the strongest programs?",
-                    "Is Early Decision worth it?",
-                ];
-            } else {
-                return [
-                    "What makes me competitive?",
-                    "Popular majors here?",
-                    "Campus culture?",
-                ];
-            }
-        }
-
-        // Deeper follow-ups after more conversation
-        return [
-            "Tell me more about this",
-            "What else should I know?",
-            "How can I best demonstrate interest?",
-        ];
-    };
-
     // Auto-submit a suggested question
     const handleSuggestedQuestion = async (question) => {
         if (loading || !currentUser?.email) return;
         setInput('');
         setMessages(prev => [...prev, { role: 'user', content: question }]);
         setLoading(true);
+        // Clear suggestions while loading
+        setSuggestedQuestions([]);
 
         console.log('[FitChat] Suggested question:', {
             user_email: currentUser.email,
@@ -446,6 +428,11 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
                 ];
                 setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
                 setConversationHistory(data.conversation_history || []);
+
+                // Update suggestions from backend if available
+                if (data.suggested_questions && data.suggested_questions.length > 0) {
+                    setSuggestedQuestions(data.suggested_questions);
+                }
 
                 // Auto-save
                 setTimeout(() => {
@@ -635,12 +622,12 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
                                 Ask about your fit with {universityName}
                             </p>
                             <div className="space-y-2">
-                                {getSuggestedQuestions().map((q, i) => (
+                                {suggestedQuestions.map((q, i) => (
                                     <button
                                         key={i}
                                         onClick={() => handleSuggestedQuestion(q)}
                                         disabled={loading}
-                                        className={`block w-full text-left px-3 py-2 text-sm text-gray-600 bg-white rounded-lg border border-gray-200 hover:border-current ${colors.text} hover:${colors.bgLight} transition-colors disabled:opacity-50`}
+                                        className={`block w-full text-left px-3 py-2 text-sm rounded-lg border border-transparent ${colors.bgLight} ${colors.text} hover:opacity-80 transition-opacity disabled:opacity-50`}
                                     >
                                         {q}
                                     </button>
@@ -670,15 +657,15 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
                             ))}
 
                             {/* Follow-up question suggestions - show after last assistant message */}
-                            {!loading && messages.length > 0 && messages[messages.length - 1].role === 'assistant' && (
+                            {!loading && messages.length > 0 && messages[messages.length - 1].role === 'assistant' && suggestedQuestions.length > 0 && (
                                 <div className="pt-2 space-y-1.5">
-                                    <p className="text-xs text-gray-400 px-1">Follow-up questions:</p>
+                                    <p className="text-xs text-gray-400 px-1">Suggested follow-ups:</p>
                                     <div className="flex flex-wrap gap-2">
-                                        {getFollowUpQuestions().map((q, i) => (
+                                        {suggestedQuestions.map((q, i) => (
                                             <button
                                                 key={i}
                                                 onClick={() => handleSuggestedQuestion(q)}
-                                                className={`px-3 py-1.5 text-xs font-medium rounded-full border border-gray-200 bg-white hover:bg-gray-50 ${colors.text} hover:border-current transition-colors`}
+                                                className={`px-3 py-1.5 text-xs font-medium rounded-full border border-transparent ${colors.bgLight} ${colors.text} hover:opacity-80 transition-opacity text-left`}
                                             >
                                                 {q}
                                             </button>

@@ -2090,6 +2090,41 @@ def handle_update_college_list(request):
                 logger.info(f"[LIST] Removed {university['id']} for {user_id}")
             except Exception as e:
                 logger.warning(f"[LIST] Document not found or already deleted: {e}")
+
+        elif action == 'update':
+            # Update specific fields
+            update_doc = {}
+            if 'selected_major' in data:
+                update_doc['selected_major'] = data['selected_major']
+            
+            # Allow updating other future fields here if needed
+            
+            if update_doc:
+                try:
+                    es_client.update(
+                        index=ES_LIST_ITEMS_INDEX, 
+                        id=doc_id, 
+                        body={"doc": update_doc}, 
+                        refresh=True
+                    )
+                    logger.info(f"[LIST] Updated {university['id']} for {user_id}: {update_doc}")
+                except NotFoundError:
+                     # If doc doesn't exist, create it (auto-add) but simpler
+                    if 'selected_major' in update_doc:
+                        list_doc = {
+                            'user_email': user_id,
+                            'university_id': original_uni_id,
+                            'university_name': university.get('name', ''),
+                            'status': 'favorites',
+                            'selected_major': update_doc['selected_major'],
+                            'added_at': datetime.utcnow().isoformat(),
+                            'updated_at': datetime.utcnow().isoformat()
+                        }
+                        es_client.index(index=ES_LIST_ITEMS_INDEX, id=doc_id, body=list_doc, refresh=True)
+                        logger.info(f"[LIST] Auto-added {university['id']} during update")
+                except Exception as e:
+                    logger.error(f"[LIST] Update failed: {e}")
+                    raise e
         
         # Fetch updated college list
         college_list = get_user_college_list(es_client, user_id)
@@ -2099,7 +2134,7 @@ def handle_update_college_list(request):
             'action': action,
             'university_id': university['id'],
             'college_list': college_list,
-            'message': f'College {"added to" if action == "add" else "removed from"} list'
+            'message': f'College {"updated" if action == "update" else "added to" if action == "add" else "removed from"} list'
         }, 200)
         
     except Exception as e:
@@ -3650,27 +3685,42 @@ RULES:
 - Be encouraging but realistic
 - Format responses in markdown when helpful
 - If information is not in the data, say so honestly
+
+SUGGESTED QUESTIONS:
+Also provide 3 suggested follow-up questions that would be most useful for this student to ask next.
+"Useful" means:
+1. Helps the student understand their admission chances specifically
+2. Explores academic fit (majors, classes) or social fit
+3. Finds actionable steps to improve their application
+IMPORTANT: Keep questions short and concise (max 15 words).
+
+RESPONSE FORMAT:
+Return a JSON object with this structure:
+{{
+  "answer": "your markdown answer here...",
+  "suggested_questions": ["question 1", "question 2", "question 3"]
+}}
 """
         
         # Build conversation for Gemini
         contents = []
         
-        # Add system context as first user message
+        # Add system context
         contents.append(types.Content(
             role="user",
             parts=[types.Part(text=system_prompt)]
-        ))
-        contents.append(types.Content(
-            role="model",
-            parts=[types.Part(text=f"I'm ready to help you understand your fit with {university_name}. What would you like to know?")]
         ))
         
         # Add conversation history
         for msg in conversation_history:
             role = "user" if msg.get("role") == "user" else "model"
+            content = msg.get("content", "")
+            # Skip tool outputs/empty messages
+            if not content:
+                continue
             contents.append(types.Content(
                 role=role,
-                parts=[types.Part(text=msg.get("content", ""))]
+                parts=[types.Part(text=content)]
             ))
         
         # Add current question
@@ -3679,34 +3729,44 @@ RULES:
             parts=[types.Part(text=question)]
         ))
         
-        # Call Gemini
+        # Call Gemini with JSON mode
         client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         response = client.models.generate_content(
             model="gemini-2.5-flash-lite",
             contents=contents,
             config=types.GenerateContentConfig(
                 temperature=0.7,
-                max_output_tokens=1024
+                max_output_tokens=2048,
+                response_mime_type="application/json"
             )
         )
         
-        answer = response.text
-        
-        # Update history
+        # Parse JSON response
+        try:
+            response_data = json.loads(response.text)
+            answer = response_data.get("answer", response.text)
+            suggested_questions = response_data.get("suggested_questions", [])
+        except json.JSONDecodeError:
+            # Fallback if model fails to return JSON
+            logger.warning("[FIT_CHAT] Model failed to return valid JSON, using raw text")
+            answer = response.text
+            suggested_questions = []
+
+        # Update history - keep only text content for history
         updated_history = conversation_history + [
             {"role": "user", "content": question},
             {"role": "assistant", "content": answer}
         ]
         
-        logger.info(f"Fit chat for {user_id}/{university_id}: question='{question[:50]}...', answer_length={len(answer)}")
+        logger.info(f"[FIT_CHAT] Q: '{question[:30]}...' -> A: {len(answer)} chars, Suggestions: {len(suggested_questions)}")
         
         return {
             "success": True,
             "answer": answer,
+            "suggested_questions": suggested_questions,
             "conversation_history": updated_history,
             "university_name": university_name,
-            "university_id": university_id,
-            "fit_category": fit_data.get("fit_category")
+            "university_id": university_id
         }
         
     except Exception as e:
