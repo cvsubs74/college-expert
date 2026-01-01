@@ -567,6 +567,32 @@ deploy_payment_manager() {
     cd ../..
 }
 
+deploy_contact_form() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Contact Form Function (SMTP Email)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/contact_form
+    
+    gcloud functions deploy contact-form \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=send_contact_email \
+        --trigger-http \
+        --allow-unauthenticated \
+        --timeout=30s \
+        --memory=256MB \
+        --max-instances=5
+    
+    CONTACT_FORM_URL=$(gcloud functions describe contact-form --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Contact Form deployed: ${CONTACT_FORM_URL}${NC}"
+    
+    cd ../..
+}
+
 deploy_agent_adk() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying ADK Agent${NC}"
@@ -869,13 +895,13 @@ deploy_frontend() {
     echo -e "  Knowledge Base RAG URL: ${KNOWLEDGE_BASE_URL}"
     echo -e "  Knowledge Base ES URL: ${KNOWLEDGE_BASE_ES_URL}"
     
-    # Firebase Configuration - using correct project ID
-    export VITE_FIREBASE_API_KEY="AIzaSyDfxSzWnAsjUF5rdiaQ8WJtNfC-6AHWTCI"
+    # Firebase Configuration - consolidated to college-counselling-478115
+    export VITE_FIREBASE_API_KEY="AIzaSyAdo23UHvjlHgGuK0BYIqjPeLUoVUEx7t4"
     export VITE_FIREBASE_AUTH_DOMAIN="college-counselling-478115.firebaseapp.com"
     export VITE_FIREBASE_PROJECT_ID="college-counselling-478115"
     export VITE_FIREBASE_STORAGE_BUCKET="college-counselling-478115.firebasestorage.app"
     export VITE_FIREBASE_MESSAGING_SENDER_ID="808989169388"
-    export VITE_FIREBASE_APP_ID="1:808989169388:web:6e7d2d9e7f1f7b7f7f7f7f"
+    export VITE_FIREBASE_APP_ID="1:808989169388:web:d74ceea7c5002dd4bab7c9"
     
     ./deploy_frontend.sh
     echo -e "${GREEN}✓ Frontend deployed: https://college-strategy.web.app${NC}"
@@ -956,6 +982,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
         deploy_payment_manager
+        deploy_contact_form
         ;;
     "backend")
         echo -e "${CYAN}Deploying backend (agents + cloud functions)...${NC}"
@@ -971,6 +998,9 @@ case "$DEPLOY_TARGET" in
     "frontend")
         deploy_frontend
         ;;
+    "contact")
+        deploy_contact_form
+        ;;
     "all")
         echo -e "${CYAN}Deploying complete system...${NC}"
         deploy_agents
@@ -981,6 +1011,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
         deploy_payment_manager
+        deploy_contact_form
         deploy_frontend
         ;;
     *)

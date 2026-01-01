@@ -15,18 +15,39 @@ const ContactPage = () => {
         subject: 'General Inquiry',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
-    const handleSubmit = (e) => {
+    const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || 'https://contact-form-pfnwjfp26a-ue.a.run.app';
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        // Create mailto link with form data
-        const mailtoLink = `mailto:cvsubs@gmail.com?subject=${encodeURIComponent(
-            `CollegeAI Pro: ${formData.subject}`
-        )}&body=${encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-        )}`;
+        try {
+            const response = await fetch(CONTACT_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        window.location.href = mailtoLink;
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e) => {
@@ -34,6 +55,8 @@ const ContactPage = () => {
             ...prev,
             [e.target.name]: e.target.value
         }));
+        // Clear status when user starts typing again
+        if (submitStatus) setSubmitStatus(null);
     };
 
     const quickLinks = [
@@ -82,18 +105,20 @@ const ContactPage = () => {
                     {/* Hero */}
                     <div className="text-center mb-16">
                         <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#2C2C2C] mb-4">
-                            Get in Touch
+                            We'd Love to Hear From You
                         </h1>
-                        <p className="text-xl text-gray-600">
-                            Have questions about Stratia Admissions? We're here to help.
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Your feedback shapes our product. Share feature requests, report issues,
+                            or just tell us what you think—every message helps us build a better Stratia.
                         </p>
                     </div>
 
-                    <div className="grid lg:grid-cols-5 gap-12 mb-20">
+                    <div className="max-w-2xl mx-auto mb-20">
                         {/* Contact Form */}
-                        <div className="lg:col-span-3">
+                        <div>
                             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                                <p className="text-gray-600 mb-6">Feature requests • Feedback • Bug reports • Questions</p>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid md:grid-cols-2 gap-6">
@@ -166,55 +191,46 @@ const ContactPage = () => {
 
                                     <button
                                         type="submit"
-                                        className="w-full py-4 bg-[#1A4D2E] text-white text-lg font-bold rounded-xl hover:bg-[#2D6B45] transition-all shadow-lg flex items-center justify-center gap-2"
+                                        disabled={isSubmitting}
+                                        className={`w-full py-4 text-white text-lg font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 ${isSubmitting
+                                            ? 'bg-gray-400 cursor-not-allowed'
+                                            : 'bg-[#1A4D2E] hover:bg-[#2D6B45]'
+                                            }`}
                                     >
-                                        <EnvelopeIcon className="h-5 w-5" />
-                                        Send Message
-                                        <ArrowRightIcon className="h-5 w-5" />
+                                        {isSubmitting ? (
+                                            <>
+                                                <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <EnvelopeIcon className="h-5 w-5" />
+                                                Send Message
+                                                <ArrowRightIcon className="h-5 w-5" />
+                                            </>
+                                        )}
                                     </button>
                                 </form>
 
-                                <p className="text-gray-500 text-sm text-center mt-4">
-                                    This will open your email client with a pre-filled message.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Sidebar */}
-                        <div className="lg:col-span-2 space-y-6">
-                            {/* Direct Email */}
-                            <div className="bg-[#FDFCF7] rounded-3xl p-6 border border-[#A8C5A6]">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-3 bg-white rounded-xl shadow-sm">
-                                        <EnvelopeIcon className="h-6 w-6 text-[#1A4D2E]" />
+                                {/* Status Messages */}
+                                {submitStatus === 'success' && (
+                                    <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-center">
+                                        ✓ Message sent successfully! We'll get back to you soon.
                                     </div>
-                                    <div>
-                                        <h3 className="font-bold text-gray-900">Email Us Directly</h3>
-                                        <p className="text-gray-600 text-sm">We'll respond within 24 hours</p>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-center">
+                                        Failed to send message. Please try again or email us directly.
                                     </div>
-                                </div>
-                                <a
-                                    href="mailto:cvsubs@gmail.com?subject=Stratia%20Inquiry"
-                                    className="block text-center py-3 bg-white text-[#1A4D2E] font-semibold rounded-xl border border-[#A8C5A6] hover:bg-[#D6E8D5] transition-all"
-                                >
-                                    cvsubs@gmail.com
-                                </a>
+                                )}
                             </div>
 
-                            {/* Response Time */}
-                            <div className="bg-white rounded-2xl p-6 border border-gray-200">
-                                <h3 className="font-bold text-gray-900 mb-3">Response Times</h3>
-                                <ul className="space-y-2 text-sm text-gray-600">
-                                    <li className="flex justify-between">
-                                        <span>General inquiries</span>
-                                        <span className="text-[#1A4D2E] font-medium">&lt; 24 hours</span>
-                                    </li>
-                                    <li className="flex justify-between">
-                                        <span>Technical support</span>
-                                        <span className="text-[#1A4D2E] font-medium">&lt; 12 hours</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <p className="text-center text-gray-500 text-sm mt-6">
+                                We typically respond within 24 hours.
+                            </p>
                         </div>
                     </div>
 
@@ -251,7 +267,7 @@ const ContactPage = () => {
                                 },
                                 {
                                     q: 'What if I need technical support?',
-                                    a: 'If you encounter any issues, please email us directly at cvsubs@gmail.com or use the form above. We prioritize technical support requests.'
+                                    a: 'If you encounter any issues, please email us directly at support@stratiaadmissions.com or use the form above. We prioritize technical support requests.'
                                 }
                             ].map((faq, idx) => (
                                 <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#A8C5A6] transition-colors">

@@ -121,7 +121,7 @@ const PricingPage = () => {
             features: [
                 { text: '3 fit analysis credits', included: true, highlight: true },
                 { text: 'Chat with AI on university pages', included: true },
-                { text: 'Browse 150+ university profiles', included: true },
+                { text: 'Browse 200+ university profiles', included: true },
                 { text: 'Build your student profile', included: true },
             ],
             cta: currentUser ? 'Go to Dashboard' : 'Start Free',

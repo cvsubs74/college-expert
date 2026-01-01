@@ -9,7 +9,8 @@ import {
   DocumentTextIcon,
   AcademicCapIcon,
   ChartBarIcon,
-  PencilSquareIcon
+  PencilSquareIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
 import { motion, useInView } from 'framer-motion';
@@ -184,11 +185,10 @@ const LandingPage = () => {
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#1A4D2E] leading-[1.05] tracking-tight mb-8">
               One platform.
               <br />
-              <span className="text-[#4A4A4A]">Your perfect college.</span>
+              <span className="text-[#4A4A4A]">Your dream college.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#6B6B6B] leading-relaxed mb-12 max-w-2xl mx-auto">
-              Stratia is where students build their profile, discover schools, and get AI-powered
-              fit analysis. All in one place.
+              Build your profile, discover schools where you'll thrive, and apply with a strategy that actually works.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -212,9 +212,9 @@ const LandingPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {[
-              { value: "1,600+", label: "Universities", sublabel: "U.S. colleges & programs" },
-              { value: "100%", label: "Automated", sublabel: "Profile building from documents" },
-              { value: "Real-time", label: "AI Analysis", sublabel: "Instant fit score calculation" }
+              { value: "200+", label: "Top Universities", sublabel: "Curated deep-dive profiles" },
+              { value: "100%", label: "Holistic", sublabel: "Story-driven profile building" },
+              { value: "4-Year", label: "Journey", sublabel: "Freshman to Senior guidance" }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -234,6 +234,139 @@ const LandingPage = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          PAIN POINTS SECTION - The Real Problem
+          ============================================ */}
+      <section className="py-20 lg:py-28 px-6 lg:px-8 bg-[#FDFCF7]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#1A4D2E] mb-6">
+              College Admissions is a Multi-Dimensional Puzzle.
+              <br />
+              <span className="text-[#4A4A4A]">Stratia Connects the Dots.</span>
+            </h2>
+            <p className="text-xl text-[#6B6B6B] max-w-3xl mx-auto">
+              Finding the right <strong>colleges</strong>, discovering <strong>majors</strong> that fit,
+              identifying every dimension of your <strong>profile</strong>, and weaving it all into
+              a <strong>compelling narrative</strong>—this is the real challenge. Most students have the
+              pieces, but don't know how to connect them.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Pain Point 1 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+              <div className="text-4xl mb-4">😰</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                "I Forgot Half My Activities"
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                By senior year, students scramble to remember freshman and sophomore achievements.
+                Leadership roles, volunteer hours, and awards slip through the cracks.
+              </p>
+            </div>
+
+            {/* Pain Point 2 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+              <div className="text-4xl mb-4">⏰</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                "I Waited Until the Last Minute"
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                College prep is a 4-year journey, not a senior-year sprint. Last-minute cramming
+                produces applications that feel rushed and inauthentic.
+              </p>
+            </div>
+
+            {/* Pain Point 3 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+              <div className="text-4xl mb-4">🧩</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                "I Have the Pieces, But No Story"
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                You have experiences and achievements—but weaving them into a cohesive narrative
+                that resonates with admissions officers is the real challenge.
+              </p>
+            </div>
+
+            {/* Pain Point 4 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+              <div className="text-4xl mb-4">📋</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                "I Don't Know What Matters"
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Should you list 10 activities or 3 deep ones? Does that summer job count?
+                Without guidance, students leave out meaningful experiences.
+              </p>
+            </div>
+
+            {/* Pain Point 5 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+              <div className="text-4xl mb-4">⚖️</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                "My List is 90% Reach Schools"
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Without data, students fall in love with dream schools and forget to build a
+                balanced Reach / Target / Safety list based on real admission data.
+              </p>
+            </div>
+
+            {/* Pain Point 6 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-red-100 shadow-sm">
+              <div className="text-4xl mb-4">💸</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                "I Can't Afford a Counselor"
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Private college counselors cost $5,000–$10,000+. Most families can't afford
+                personalized guidance, leaving students to figure it out alone.
+              </p>
+            </div>
+          </div>
+
+          {/* Solution Teaser - Expanded */}
+          <div className="mt-16 bg-[#1A4D2E] rounded-3xl p-8 lg:p-12">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full text-sm font-medium mb-4">
+                <SparklesIcon className="h-4 w-4" />
+                How Stratia Solves This
+              </div>
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                100+ Data Points. One Clear Fit Score.
+              </h3>
+              <p className="text-xl text-[#D6E8D5] max-w-3xl mx-auto">
+                We analyze <strong>100+ data points per university</strong>—including GPA ranges,
+                test scores, acceptance rates, demographics, essay requirements, and financial
+                aid—then compare them against your profile to generate a transparent Fit Score.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white/10 rounded-xl p-6">
+                <div className="text-4xl font-bold text-white mb-2">Reach</div>
+                <p className="text-[#A8C5A6] text-sm">Schools where you're below the typical admitted student stats</p>
+              </div>
+              <div className="bg-white/10 rounded-xl p-6">
+                <div className="text-4xl font-bold text-white mb-2">Target</div>
+                <p className="text-[#A8C5A6] text-sm">Schools where your profile aligns well with admitted students</p>
+              </div>
+              <div className="bg-white/10 rounded-xl p-6">
+                <div className="text-4xl font-bold text-white mb-2">Safety</div>
+                <p className="text-[#A8C5A6] text-sm">Schools where you exceed typical admitted student profiles</p>
+              </div>
+            </div>
+
+            <p className="text-center text-[#D6E8D5] mt-8 text-sm">
+              Every score is fully transparent—see exactly why a school is a Reach, Target, or Safety,
+              and chat with AI to understand what you can improve.
+            </p>
           </div>
         </div>
       </section>
@@ -285,8 +418,8 @@ const LandingPage = () => {
               {
                 step: "5",
                 icon: PencilSquareIcon,
-                title: "Write Essays",
-                description: "Get AI-guided brainstorming, personalized starters, and detailed feedback."
+                title: "Perfect Your Narrative",
+                description: "Find your authentic voice. Get AI guidance to turn your unique experiences into essays that stand out."
               }
             ].map((item, index) => (
               <motion.div
@@ -340,8 +473,8 @@ const LandingPage = () => {
         description="Drop your transcript, test scores, and activities. Our AI extracts everything automatically—no manual data entry required."
         features={[
           "Supports PDF, DOCX, TXT, and image files",
-          "Extracts GPA, courses, test scores, and activities",
-          "Review and edit before finalizing",
+          "Weaves scattered docs into a cohesive story",
+          "Identify gaps in your narrative early",
           "Processing takes seconds, not hours"
         ]}
         demo={<DocumentUploadDemo />}
@@ -350,8 +483,8 @@ const LandingPage = () => {
       />
 
       <FeatureDemoSection
-        title="See your full academic profile."
-        description="Everything in one place—academics, test scores, activities, and awards. Know exactly what colleges will see."
+        title="Visualize your 4-year growth."
+        description="Don't leave it to the last minute. Track your development from freshman year to application day. See how your activities and achievements stack up over time."
         features={[
           "Complete academic snapshot at a glance",
           "Track all honors, AP, and IB courses",
@@ -363,8 +496,8 @@ const LandingPage = () => {
       />
 
       <FeatureDemoSection
-        title="Explore 1,600+ universities."
-        description="Browse every U.S. college with real data—acceptance rates, rankings, costs, and majors. View notable professors, curriculum details, and career outcomes all in one place."
+        title="Explore 200+ top universities."
+        description="Go beyond rankings. Understand the culture, curriculum, and 'vibe' of each school to find where your story fits best."
         features={[
           "Search by name, state, major, or ranking",
           "See detailed academic programs and professors",
@@ -405,7 +538,7 @@ const LandingPage = () => {
 
       <FeatureDemoSection
         title="Your AI writing partner."
-        description="The Essay Workshop guides you from blank page to polished draft. Brainstorm with guided questions, get personalized starters based on your profile, and receive detailed feedback with scores."
+        description="The Essay Workshop guides you from blank page to polished narrative. Brainstorm with guided questions, find your unique 'hook', and craft a story that admissions officers remember."
         features={[
           "Guiding questions to spark your thinking",
           "AI-generated essay starters tailored to you",
@@ -490,8 +623,9 @@ const LandingPage = () => {
 
             <div className="flex gap-8 text-sm text-[#A8C5A6]">
               <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
-              <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
 
