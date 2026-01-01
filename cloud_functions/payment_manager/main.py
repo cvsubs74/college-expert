@@ -119,8 +119,14 @@ def get_default_purchases():
         'subscription_active': False,
         'subscription_plan': None,  # 'monthly' or 'annual'
         'subscription_end_date': None,
+        'subscription_cancel_at_period_end': False,
+        'subscription_current_period_end': None,
         'trial_started': None,
         'trial_ended': False,
+        
+        # Stripe IDs for subscription management
+        'stripe_customer_id': None,
+        'stripe_subscription_id': None,
         
         # Monthly AI messages (resets each month)
         'ai_messages_limit': 30,  # Free tier: 30/month
@@ -134,6 +140,9 @@ def get_default_purchases():
         
         # Add-on college slots (beyond free 3)
         'college_slots_purchased': 0,
+        
+        # Separately purchased credit packs (NEVER expire, independent of subscription)
+        'credit_packs_purchased': 0,
         
         # Purchase history
         'purchases': [],
@@ -154,6 +163,14 @@ def update_user_purchases(user_id, grants, purchase_details):
         # Get current purchases
         current = get_user_purchases(user_id)
         
+        # Store Stripe IDs if available (for subscription management)
+        if 'stripe_customer_id' in purchase_details and purchase_details['stripe_customer_id']:
+            current['stripe_customer_id'] = purchase_details['stripe_customer_id']
+        if 'stripe_subscription_id' in purchase_details and purchase_details['stripe_subscription_id']:
+            current['stripe_subscription_id'] = purchase_details['stripe_subscription_id']
+        if 'subscription_current_period_end' in purchase_details:
+            current['subscription_current_period_end'] = purchase_details['subscription_current_period_end']
+        
         # Apply grants based on type
         for key, value in grants.items():
             if key == 'access_full' and value:
@@ -166,10 +183,11 @@ def update_user_purchases(user_id, grants, purchase_details):
                 else:
                     end_date = datetime.now(timezone.utc) + timedelta(days=30)
                 current['subscription_end_date'] = end_date.isoformat()
+                current['subscription_cancel_at_period_end'] = False  # New subscription is active
                 
             elif key == 'ai_messages':
-                # Subscription sets monthly limit to 100
-                current['ai_messages_limit'] = value
+                # Subscription sets monthly limit
+                current['ai_messages_limit'] = value if value != -1 else 999999  # -1 means unlimited
                 # Reset used count for new billing period
                 current['ai_messages_used'] = 0
                 current['ai_messages_reset_date'] = datetime.now(timezone.utc).isoformat()
@@ -235,20 +253,39 @@ def handle_create_checkout(request, user_id):
                 'interval': product['interval']
             }
 
-        session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            line_items=[line_item],
-            mode='payment' if product['type'] != 'subscription' else 'subscription',
-            success_url=success_url,
-            cancel_url=cancel_url,
-            client_reference_id=user_id,
-            metadata={
+        # For subscriptions, get or create Stripe customer
+        customer_id = None
+        if product['type'] == 'subscription':
+            purchases = get_user_purchases(user_id)
+            customer_id = purchases.get('stripe_customer_id')
+            
+            # If no customer ID exists, let Stripe create one in the checkout session
+            # We'll capture it in the webhook
+
+        session_params = {
+            'payment_method_types': ['card'],
+            'line_items': [line_item],
+            'mode': 'payment' if product['type'] != 'subscription' else 'subscription',
+            'success_url': success_url,
+            'cancel_url': cancel_url,
+            'client_reference_id': user_id,
+            'metadata': {
                 'product_id': product_id,
                 'quantity': quantity,
                 'college_id': college_id or '',
                 'user_email': user_id
             }
-        )
+        }
+        
+        # Add customer ID if it exists
+        if customer_id:
+            session_params['customer'] = customer_id
+        else:
+            # For new customers, set customer_email so Stripe creates a customer
+            session_params['customer_email'] = user_id
+
+        session = stripe.checkout.Session.create(**session_params)
+
         
         return add_cors_headers({
             'success': True,
@@ -284,6 +321,11 @@ def handle_webhook(request):
         elif event['type'] == 'payment_intent.succeeded':
             payment_intent = event['data']['object']
             logger.info(f"Payment succeeded: {payment_intent['id']}")
+        elif event['type'] in ['customer.subscription.created', 'customer.subscription.updated', 
+                                 'customer.subscription.deleted', 'invoice.payment_succeeded', 
+                                 'invoice.payment_failed']:
+            # Handle subscription lifecycle events
+            handle_subscription_lifecycle_webhooks(event)
         
         return add_cors_headers({'received': True})
         
@@ -330,6 +372,21 @@ def handle_successful_payment(session):
         'payment_status': session.get('payment_status', 'paid')
     }
     
+    # For subscriptions, capture Stripe customer_id and subscription_id
+    if product['type'] == 'subscription':
+        purchase_details['stripe_customer_id'] = session.get('customer')
+        purchase_details['stripe_subscription_id'] = session.get('subscription')
+        purchase_details['plan'] = product.get('interval', 'monthly')
+        # Extract subscription period end if available
+        if session.get('subscription'):
+            try:
+                subscription = stripe.Subscription.retrieve(session['subscription'])
+                purchase_details['subscription_current_period_end'] = datetime.fromtimestamp(
+                    subscription.current_period_end, tz=timezone.utc
+                ).isoformat()
+            except Exception as e:
+                logger.error(f"Error retrieving subscription details: {e}")
+    
     # Update user's purchases
     success = update_user_purchases(user_id, grants, purchase_details)
     
@@ -337,6 +394,194 @@ def handle_successful_payment(session):
         logger.info(f"Successfully processed payment for {user_id}: {product_id} x{quantity}")
     else:
         logger.error(f"Failed to update purchases for {user_id}")
+
+def handle_cancel_subscription(request, user_id):
+    """Cancel subscription at period end (downgrade to free)"""
+    try:
+        purchases = get_user_purchases(user_id)
+        subscription_id = purchases.get('stripe_subscription_id')
+        
+        if not subscription_id:
+            return add_cors_headers({'error': 'No active subscription found'}, 404)
+        
+        if not purchases.get('subscription_active'):
+            return add_cors_headers({'error': 'Subscription is not active'}, 400)
+        
+        # Cancel subscription at period end via Stripe
+        try:
+            subscription = stripe.Subscription.modify(
+                subscription_id,
+                cancel_at_period_end=True
+            )
+            
+            # Update ES with cancellation status
+            user_hash = get_user_hash(user_id)
+            doc_id = f"purchases_{user_hash}"
+            
+            purchases['subscription_cancel_at_period_end'] = True
+            purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
+            
+            es_client.index(index=ES_USER_PURCHASES_INDEX, id=doc_id, body=purchases)
+            
+            return add_cors_headers({
+                'success': True,
+                'message': 'Subscription will be canceled at period end',
+                'cancel_at': purchases.get('subscription_current_period_end') or purchases.get('subscription_end_date'),
+                'credits_valid_until': purchases.get('subscription_end_date')
+            })
+            
+        except stripe.error.StripeError as e:
+            logger.error(f"Stripe error canceling subscription: {e}")
+            return add_cors_headers({'error': f'Failed to cancel subscription: {str(e)}'}, 500)
+            
+    except Exception as e:
+        logger.error(f"Error canceling subscription for {user_id}: {e}")
+        return add_cors_headers({'error': 'Failed to cancel subscription'}, 500)
+
+def handle_reactivate_subscription(request, user_id):
+    """Reactivate a scheduled cancellation"""
+    try:
+        purchases = get_user_purchases(user_id)
+        subscription_id = purchases.get('stripe_subscription_id')
+        
+        if not subscription_id:
+            return add_cors_headers({'error': 'No subscription found'}, 404)
+        
+        if not purchases.get('subscription_cancel_at_period_end'):
+            return add_cors_headers({'error': 'Subscription is not scheduled for cancellation'}, 400)
+        
+        # Reactivate subscription via Stripe
+        try:
+            subscription = stripe.Subscription.modify(
+                subscription_id,
+                cancel_at_period_end=False
+            )
+            
+            # Update ES
+            user_hash = get_user_hash(user_id)
+            doc_id = f"purchases_{user_hash}"
+            
+            purchases['subscription_cancel_at_period_end'] = False
+            purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
+            
+            es_client.index(index=ES_USER_PURCHASES_INDEX, id=doc_id, body=purchases)
+            
+            return add_cors_headers({
+                'success': True,
+                'message': 'Subscription reactivated successfully',
+                'next_billing_date': purchases.get('subscription_current_period_end') or purchases.get('subscription_end_date')
+            })
+            
+        except stripe.error.StripeError as e:
+            logger.error(f"Stripe error reactivating subscription: {e}")
+            return add_cors_headers({'error': f'Failed to reactivate subscription: {str(e)}'}, 500)
+            
+    except Exception as e:
+        logger.error(f"Error reactivating subscription for {user_id}: {e}")
+        return add_cors_headers({'error': 'Failed to reactivate subscription'}, 500)
+
+def handle_get_subscription_status(request, user_id):
+    """Get current subscription status including cancellation details"""
+    try:
+        purchases = get_user_purchases(user_id)
+        
+        subscription_info = {
+            'subscription_active': purchases.get('subscription_active', False),
+            'subscription_plan': purchases.get('subscription_plan'),
+            'subscription_end_date': purchases.get('subscription_end_date'),
+            'subscription_cancel_at_period_end': purchases.get('subscription_cancel_at_period_end', False),
+            'subscription_current_period_end': purchases.get('subscription_current_period_end'),
+            'fit_analysis_credits': purchases.get('fit_analysis_credits', 0),
+            'ai_messages_limit': purchases.get('ai_messages_limit', 30),
+            'stripe_customer_id': purchases.get('stripe_customer_id'),
+            'stripe_subscription_id': purchases.get('stripe_subscription_id')
+        }
+        
+        return add_cors_headers({
+            'success': True,
+            'subscription': subscription_info
+        })
+        
+    except Exception as e:
+        logger.error(f"Error getting subscription status for {user_id}: {e}")
+        return add_cors_headers({'error': 'Failed to get subscription status'}, 500)
+
+def handle_subscription_lifecycle_webhooks(event):
+    """Process subscription lifecycle webhook events"""
+    event_type = event['type']
+    
+    try:
+        if event_type == 'customer.subscription.created':
+            # New subscription created
+            subscription = event['data']['object']
+            customer_id = subscription.get('customer')
+            subscription_id = subscription.get('id')
+            
+            logger.info(f"Subscription created: {subscription_id} for customer: {customer_id}")
+            
+        elif event_type == 'customer.subscription.updated':
+            # Subscription updated (plan change, cancellation scheduled, etc.)
+            subscription = event['data']['object']
+            customer_id = subscription.get('customer')
+            subscription_id = subscription.get('id')
+            cancel_at_period_end = subscription.get('cancel_at_period_end', False)
+            
+            logger.info(f"Subscription updated: {subscription_id}, cancel_at_period_end={cancel_at_period_end}")
+            
+        elif event_type == 'customer.subscription.deleted':
+            # Subscription ended (canceled or payment failed)
+            subscription = event['data']['object']
+            customer_id = subscription.get('customer')
+            subscription_id = subscription.get('id')
+            
+            logger.info(f"Subscription deleted: {subscription_id}")
+            
+            # Find user and deactivate subscription but KEEP credits until period end
+            try:
+                query = {
+                    "query": {
+                        "term": {"stripe_subscription_id.keyword": subscription_id}
+                    }
+                }
+                result = es_client.search(index=ES_USER_PURCHASES_INDEX, body=query, size=1)
+                
+                if result['hits']['total']['value'] > 0:
+                    doc = result['hits']['hits'][0]
+                    doc_id = doc['_id']
+                    purchases = doc['_source']
+                    
+                    # Deactivate subscription but keep credits until end date
+                    purchases['subscription_active'] = False
+                    purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
+                    
+                    es_client.index(index=ES_USER_PURCHASES_INDEX, id=doc_id, body=purchases)
+                    logger.info(f"Deactivated subscription for user,credits valid until {purchases.get('subscription_end_date')}")
+                else:
+                    logger.warning(f"No user found with subscription_id: {subscription_id}")
+                    
+            except Exception as e:
+                logger.error(f"Error finding user for subscription {subscription_id}: {e}")
+                
+        elif event_type == 'invoice.payment_succeeded':
+            # Successful renewal payment
+            invoice = event['data']['object']
+            subscription_id = invoice.get('subscription')
+            
+            if subscription_id:
+                logger.info(f"Payment succeeded for subscription: {subscription_id}")
+                
+        elif event_type == 'invoice.payment_failed':
+            # Failed renewal payment
+            invoice = event['data']['object']
+            subscription_id = invoice.get('subscription')
+            customer_email = invoice.get('customer_email')
+            
+            logger.warning(f"Payment failed for subscription: {subscription_id}, customer: {customer_email}")
+            # TODO: Send notification email to user
+            
+    except Exception as e:
+        logger.error(f"Error handling subscription webhook {event_type}: {e}")
+
 
 def handle_get_purchases(request, user_id):
     """Get user's current purchases and available credits"""
@@ -509,6 +754,12 @@ def payment_manager(request):
             return handle_use_credit(request, user_id)
         elif endpoint == 'check-access':
             return handle_check_access(request, user_id)
+        elif endpoint == 'cancel-subscription' and request.method == 'POST':
+            return handle_cancel_subscription(request, user_id)
+        elif endpoint == 'reactivate-subscription' and request.method == 'POST':
+            return handle_reactivate_subscription(request, user_id)
+        elif endpoint == 'subscription-status' and request.method == 'GET':
+            return handle_get_subscription_status(request, user_id)
         elif endpoint == 'products' and request.method == 'GET':
             return add_cors_headers({
                 'success': True,

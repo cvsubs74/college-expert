@@ -171,6 +171,75 @@ export const getProducts = async () => {
 };
 
 /**
+ * Cancel subscription (downgrade to free at period end)
+ */
+export const cancelSubscription = async (userEmail) => {
+    try {
+        const response = await fetch(`${PAYMENT_API_URL}/cancel-subscription`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-User-Email': userEmail,
+            },
+        });
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error canceling subscription:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+};
+
+/**
+ * Reactivate a scheduled subscription cancellation
+ */
+export const reactivateSubscription = async (userEmail) => {
+    try {
+        const response = await fetch(`${PAYMENT_API_URL}/reactivate-subscription`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-User-Email': userEmail,
+            },
+        });
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error reactivating subscription:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+};
+
+/**
+ * Get subscription status including cancellation details
+ */
+export const getSubscriptionStatus = async (userEmail) => {
+    try {
+        const response = await fetch(`${PAYMENT_API_URL}/subscription-status`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-User-Email': userEmail,
+            },
+        });
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error getting subscription status:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+};
+
+/**
  * Default access for free tier (fallback)
  */
 const getDefaultAccess = (feature) => {
@@ -217,5 +286,8 @@ export default {
     checkAccess,
     useCredit,
     getProducts,
+    cancelSubscription,
+    reactivateSubscription,
+    getSubscriptionStatus,
     PRODUCTS,
 };

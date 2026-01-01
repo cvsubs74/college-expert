@@ -262,7 +262,7 @@ ESSAY_PROMPTS = {
 
 
 def update_university_essay_prompts(university_id: str, prompts: list) -> dict:
-    """Update a university's JSON file with essay prompts."""
+    """Update a university's JSON file with essay prompts at application_process.essay_prompts."""
     file_path = RESEARCH_DIR / f"{university_id}.json"
     
     if not file_path.exists():
@@ -272,35 +272,12 @@ def update_university_essay_prompts(university_id: str, prompts: list) -> dict:
         with open(file_path, 'r') as f:
             data = json.load(f)
         
-        # Find the right path to application_process
-        if "university_profile" in data:
-            profile = data["university_profile"]
-        elif "profile" in data:
-            profile = data["profile"]
-        else:
-            profile = data
-        
         # Ensure application_process exists
-        if "application_process" not in profile:
-            profile["application_process"] = {}
+        if "application_process" not in data:
+            data["application_process"] = {}
         
-        # Handle supplemental_requirements - may be list or dict
-        existing_supp = profile["application_process"].get("supplemental_requirements")
-        
-        if isinstance(existing_supp, list):
-            # Convert list to object structure, preserving existing data
-            profile["application_process"]["supplemental_requirements"] = {
-                "requirements_list": existing_supp,
-                "essay_prompts": prompts
-            }
-        elif isinstance(existing_supp, dict):
-            # Already an object, just add essay_prompts
-            existing_supp["essay_prompts"] = prompts
-        else:
-            # Doesn't exist or is None
-            profile["application_process"]["supplemental_requirements"] = {
-                "essay_prompts": prompts
-            }
+        # Add essay_prompts to application_process (correct location)
+        data["application_process"]["essay_prompts"] = prompts
         
         # Write back
         with open(file_path, 'w') as f:

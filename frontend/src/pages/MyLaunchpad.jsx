@@ -157,34 +157,55 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
 
                 {/* Actions */}
                 <div className="md:col-span-3 flex items-center justify-end gap-2">
-                    <button
-                        onClick={() => onViewDetails && onViewDetails(college)}
-                        className="p-2 text-gray-600 hover:text-[#1A4D2E] hover:bg-[#D6E8D5] rounded-lg transition-colors flex items-center gap-2"
-                        title="View Fit Analysis"
-                    >
-                        <ChartBarIcon className="h-5 w-5" />
-                        <span className="hidden xl:inline text-sm font-medium">Analysis</span>
-                    </button>
-
-                    {onOpenChat && (
+                    {/* View Analysis Button - Colored with Tooltip */}
+                    <div className="relative group/tooltip">
                         <button
-                            onClick={() => onOpenChat(college)}
-                            className="p-2 text-gray-600 hover:text-[#1A4D2E] hover:bg-[#D6E8D5] rounded-lg transition-colors"
-                            title="Ask AI"
+                            onClick={() => onViewDetails && onViewDetails(college)}
+                            className="px-3 py-2 bg-[#1A4D2E] text-white hover:bg-[#2D6B45] rounded-lg transition-all shadow-sm flex items-center gap-2"
                         >
-                            <ChatBubbleLeftRightIcon className="h-5 w-5" />
+                            <ChartBarIcon className="h-5 w-5" />
+                            <span className="hidden xl:inline text-sm font-medium">Analysis</span>
                         </button>
+                        {/* Tooltip */}
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                            View detailed fit analysis and recommendations
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                        </div>
+                    </div>
+
+                    {/* Chat Button - Colored with Tooltip */}
+                    {onOpenChat && (
+                        <div className="relative group/tooltip">
+                            <button
+                                onClick={() => onOpenChat(college)}
+                                className="px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all shadow-sm"
+                            >
+                                <ChatBubbleLeftRightIcon className="h-5 w-5" />
+                            </button>
+                            {/* Tooltip */}
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                                Ask AI questions about this university
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                            </div>
+                        </div>
                     )}
 
+                    {/* Remove Button - Maintains red styling */}
                     {canRemove && (
-                        <button
-                            onClick={() => onRemove(college)}
-                            disabled={isRemoving}
-                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                            title="Remove"
-                        >
-                            <TrashIcon className="h-5 w-5" />
-                        </button>
+                        <div className="relative group/tooltip">
+                            <button
+                                onClick={() => onRemove(college)}
+                                disabled={isRemoving}
+                                className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                            >
+                                <TrashIcon className="h-5 w-5" />
+                            </button>
+                            {/* Tooltip */}
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                                Remove from your list
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>

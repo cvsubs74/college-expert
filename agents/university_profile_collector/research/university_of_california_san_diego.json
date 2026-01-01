@@ -1041,7 +1041,7 @@
         "admissions_model": "Direct Admit"
       },
       {
-        "name": "Halıcıoğlu Data Science Institute",
+        "name": "Hal\u0131c\u0131o\u011flu Data Science Institute",
         "majors": [
           {
             "name": "Data Science",
@@ -1336,7 +1336,7 @@
     ],
     "supplemental_requirements": [
       {
-        "requirement": "{'requirements_list': [{'target_program': 'All', 'requirement_type': 'Essays', 'deadline': None, 'details': 'Applicants must answer 4 out of 8 Personal Insight Questions (PIQs), each limited to 350 words. All questions receive equal consideration.'}, {'target_program': 'Arts (Music, Theatre & Dance, Visual Arts)', 'requirement_type': 'Portfolio/Audition', 'deadline': None, 'details': 'Optional portfolio/audition video. Submission will be reviewed by the department and shared with undergraduate admissions, potentially adding value to the application.'}], 'essay_prompts': [{'prompt': 'Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'What have you done to make your school or your community a better place?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}, {'prompt': 'Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?', 'word_limit': 350, 'required': False, 'note': 'Choose 4 of 8 PIQs', 'application_cycle': '2025-2026'}]}",
+        "requirement": "Applicants must answer 4 out of 8 Personal Insight Questions (PIQs), each limited to 350 words. All questions receive equal consideration.",
         "target_program": "All",
         "requirement_type": "Essays"
       }
@@ -1371,7 +1371,65 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Looking for fearless innovators, bold risk-takers, those with a compulsive urge to discover and create, intellectual independence, originality, and creativity."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "What have you done to make your school or your community a better place?",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      },
+      {
+        "prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?",
+        "word_limit": 350,
+        "required": false,
+        "note": "Choose 4 of 8 PIQs",
+        "application_cycle": "2025-2026"
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

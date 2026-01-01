@@ -578,7 +578,7 @@ def ingest_university(profile: dict) -> dict:
             "media": media,  # Visual content (infographics, slides, videos)
             "profile": profile,
             "indexed_at": datetime.now(timezone.utc).isoformat(),
-            "last_updated": last_updated
+            "last_updated": datetime.now(timezone.utc).isoformat()  # Use current time, not file's metadata
         }
 
         

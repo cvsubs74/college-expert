@@ -13,12 +13,15 @@ import { signInWithGoogle } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { createCheckoutSession } from '../services/paymentService';
+import CancelSubscriptionModal from '../components/CancelSubscriptionModal';
 
 const PricingPage = () => {
     const navigate = useNavigate();
     const { currentUser } = useAuth();
     const { creditsRemaining, creditsTier, isMonthly, isSeasonal } = usePayment();
     const [loading, setLoading] = useState(null);
+    const [showCancelModal, setShowCancelModal] = useState(false);
+    const [cancelEndDate, setCancelEndDate] = useState(null);
 
     const handleGetStarted = async (planId) => {
         try {
@@ -40,6 +43,42 @@ const PricingPage = () => {
             setLoading(null);
         } catch (error) {
             console.error('Failed to process:', error);
+            setLoading(null);
+        }
+    };
+
+    const handleCancelClick = async () => {
+        // Get subscription end date for modal display
+        try {
+            const { getSubscriptionStatus } = await import('../services/paymentService');
+            const status = await getSubscriptionStatus(currentUser.email);
+            if (status.success && status.subscription_current_period_end) {
+                const endDate = new Date(status.subscription_current_period_end).toLocaleDateString();
+                setCancelEndDate(endDate);
+            }
+        } catch (error) {
+            console.error('Failed to get subscription status:', error);
+            setCancelEndDate('the end of your billing period');
+        }
+        setShowCancelModal(true);
+    };
+
+    const handleCancelConfirm = async () => {
+        try {
+            setLoading('canceling');
+            const { cancelSubscription } = await import('../services/paymentService');
+            const result = await cancelSubscription(currentUser.email);
+
+            if (result.success) {
+                // Refresh page to update UI
+                window.location.reload();
+            } else {
+                alert(`Failed to cancel: ${result.error || 'Unknown error'}`);
+            }
+        } catch (error) {
+            console.error('Failed to cancel subscription:', error);
+            alert('Failed to cancel subscription. Please try again.');
+        } finally {
             setLoading(null);
         }
     };
@@ -251,13 +290,24 @@ const PricingPage = () => {
 
                                     {/* CTA Button */}
                                     <button
-                                        onClick={() => !plan.disabled && handleGetStarted(plan.id)}
-                                        disabled={loading === plan.id || plan.disabled}
-                                        className={`w-full py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${loading === plan.id ? 'opacity-50 cursor-wait' : plan.ctaStyle
+                                        onClick={() => {
+                                            if (isCurrentPlan && (isMonthly || isSeasonal)) {
+                                                // Show themed modal instead of browser confirm
+                                                handleCancelClick();
+                                            } else {
+                                                !plan.disabled && handleGetStarted(plan.id);
+                                            }
+                                        }}
+                                        disabled={loading === plan.id || (plan.disabled && (!isCurrentPlan || (!isMonthly && !isSeasonal)))}
+                                        className={`w-full py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${loading === plan.id ? 'opacity-50 cursor-wait' :
+                                            (isCurrentPlan && (isMonthly || isSeasonal)) ? 'bg-red-600 text-white hover:bg-red-700' :
+                                                plan.ctaStyle
                                             }`}
                                     >
-                                        {loading === plan.id ? 'Processing...' : plan.cta}
-                                        {loading !== plan.id && !plan.disabled && <ArrowRightIcon className="h-4 w-4" />}
+                                        {loading === plan.id ? 'Processing...' :
+                                            (isCurrentPlan && (isMonthly || isSeasonal)) ? 'Cancel Subscription' :
+                                                plan.cta}
+                                        {loading !== plan.id && !(isCurrentPlan && (isMonthly || isSeasonal)) && !plan.disabled && <ArrowRightIcon className="h-4 w-4" />}
                                     </button>
                                 </div>
                             );
@@ -344,6 +394,15 @@ const PricingPage = () => {
                     </p>
                 </div>
             </footer>
+
+            {/* Cancel Subscription Modal */}
+            <CancelSubscriptionModal
+                isOpen={showCancelModal}
+                onClose={() => setShowCancelModal(false)}
+                onConfirm={handleCancelConfirm}
+                subscriptionType={isMonthly ? 'subscription_monthly' : 'subscription_annual'}
+                endDate={cancelEndDate || 'the end of your billing period'}
+            />
         </div>
     );
 };

@@ -146,6 +146,22 @@ const StratiaLaunchpad = () => {
         fetchCollegeList();
     }, [currentUser?.email]);
 
+    // Scroll to last viewed school when returning from detail pages
+    useEffect(() => {
+        if (collegeList.length > 0 && !loading) {
+            const lastSchoolId = sessionStorage.getItem('lastViewedSchool');
+            if (lastSchoolId) {
+                setTimeout(() => {
+                    const element = document.getElementById(`school-${lastSchoolId}`);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    sessionStorage.removeItem('lastViewedSchool');
+                }, 300);
+            }
+        }
+    }, [collegeList, loading]);
+
     // Categorize colleges by fit
     const categorizedColleges = useMemo(() => {
         const categories = {
@@ -203,6 +219,11 @@ const StratiaLaunchpad = () => {
 
     // Handlers
     const handleViewAnalysis = (college) => {
+        // Store scroll position before navigating
+        const element = document.getElementById(`school-${college.university_id}`);
+        if (element) {
+            sessionStorage.setItem('lastViewedSchool', college.university_id);
+        }
         setFitModalCollege(college);
     };
 
@@ -218,9 +239,22 @@ const StratiaLaunchpad = () => {
 
     const handleCloseFitModal = () => {
         setFitModalCollege(null);
+        // Scroll back to the school after a brief delay to let the list render
+        setTimeout(() => {
+            const lastSchoolId = sessionStorage.getItem('lastViewedSchool');
+            if (lastSchoolId) {
+                const element = document.getElementById(`school-${lastSchoolId}`);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                sessionStorage.removeItem('lastViewedSchool');
+            }
+        }, 100);
     };
 
     const handleEssayHelp = (college) => {
+        // Store scroll position before navigating 
+        sessionStorage.setItem('lastViewedSchool', college.university_id);
         navigate(`/essay-help/${college.university_id}`);
     };
 
@@ -571,6 +605,7 @@ const StratiaLaunchpad = () => {
                             {filteredColleges.map((college, index) => (
                                 <div
                                     key={college.university_id}
+                                    id={`school-${college.university_id}`}
                                     style={{ animationDelay: `${index * 50}ms` }}
                                 >
                                     <UniversityCard

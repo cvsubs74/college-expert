@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPinIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 /**
  * UniversityCard - Rich, interactive M3 card for university listings
@@ -22,7 +22,7 @@ const UniversityCard = ({
     onRemove,
     canRemove = false
 }) => {
-    const [activeAction, setActiveAction] = useState(null);
+    const [isRemoving, setIsRemoving] = useState(false);
 
     const {
         university_name,
@@ -63,12 +63,6 @@ const UniversityCard = ({
         if (score >= 40) return '#2D6B45'; // Light forest
         return '#C05838'; // Terracotta
     };
-
-    const actions = [
-        { key: 'analysis', label: 'View Analysis', onClick: onViewAnalysis },
-        { key: 'essay', label: '✏️ Essay Help', onClick: onEssayHelp },
-        { key: 'chat', label: 'Chat', onClick: onOpenChat }
-    ];
 
     return (
         <div className="stratia-card-outlined p-4 group animate-fade-up">
@@ -163,22 +157,61 @@ const UniversityCard = ({
                 </div>
             </div>
 
-            {/* Action Buttons - Segmented Button Group */}
+            {/* Action Buttons - Colored Buttons with Icons and Tooltips */}
             <div className="mt-4 pt-4 border-t border-[#E0DED8] flex justify-between items-center">
-                {/* Action Buttons */}
-                <div className="stratia-segmented-group">
-                    {actions.map((action) => (
+                {/* Action Buttons - Colored with Icons & Tooltips */}
+                <div className="flex items-center gap-2">
+                    {/* Fit Analysis Button */}
+                    <div className="relative group/tooltip">
                         <button
-                            key={action.key}
-                            className={`stratia-segment ${activeAction === action.key ? 'stratia-segment-active' : ''}`}
-                            onClick={() => {
-                                setActiveAction(action.key);
-                                action.onClick?.(university);
-                            }}
+                            onClick={() => onViewAnalysis?.(university)}
+                            className="px-3 py-2 bg-[#1A4D2E] text-white hover:bg-[#2D6B45] rounded-lg transition-all shadow-sm flex items-center gap-2"
                         >
-                            {action.label}
+                            <ChartBarIcon className="h-5 w-5" />
+                            <span className="text-sm font-medium">Fit Analysis</span>
                         </button>
-                    ))}
+                        {/* Tooltip */}
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                            View detailed fit analysis and recommendations
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                        </div>
+                    </div>
+
+                    {/* Essay Help Button */}
+                    {onEssayHelp && (
+                        <div className="relative group/tooltip">
+                            <button
+                                onClick={() => onEssayHelp?.(university)}
+                                className="px-3 py-2 bg-amber-600 text-white hover:bg-amber-700 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                            >
+                                <PencilSquareIcon className="h-5 w-5" />
+                                <span className="text-sm font-medium">Essay Help</span>
+                            </button>
+                            {/* Tooltip */}
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                                Get help with supplemental essays
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Chat Button */}
+                    {onOpenChat && (
+                        <div className="relative group/tooltip">
+                            <button
+                                onClick={() => onOpenChat?.(university)}
+                                className="px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                            >
+                                <ChatBubbleLeftRightIcon className="h-5 w-5" />
+                                <span className="text-sm font-medium">Chat</span>
+                            </button>
+                            {/* Tooltip */}
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                                Ask AI questions about this university
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* Remove Button (paid plans only) - Right side, single click */}
