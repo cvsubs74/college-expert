@@ -239,7 +239,7 @@ def handle_create_checkout(request, user_id):
         product = PRODUCTS[product_id]
         
         # Create checkout session - redirect to frontend, not backend
-        FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://college-strategy.web.app')
+        FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://stratiaadmissions.com')
         success_url = f"{FRONTEND_URL}/payment-success?session_id={{CHECKOUT_SESSION_ID}}&product_id={product_id}"
         cancel_url = f"{FRONTEND_URL}/pricing"
         

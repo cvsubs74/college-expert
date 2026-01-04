@@ -39,19 +39,27 @@ def reset_user_via_api(email):
         return False
     
     try:
+        # 1. Reset Purchase History (MD5)
         user_hash = get_user_hash(email)
-        doc_id = f"purchases_{user_hash}"
+        doc_id_purchases = f"purchases_{user_hash}"
         
-        # Check if document exists
-        if es_client.exists(index=ES_USER_PURCHASES_INDEX, id=doc_id):
-            # Delete the document
-            es_client.delete(index=ES_USER_PURCHASES_INDEX, id=doc_id)
-            print(f"✅ Reset {email}")
-            print(f"   Deleted document: {doc_id}")
-            return True
+        # Check if purchase exists
+        if es_client.exists(index=ES_USER_PURCHASES_INDEX, id=doc_id_purchases):
+            es_client.delete(index=ES_USER_PURCHASES_INDEX, id=doc_id_purchases)
+            print(f"✅ Reset {email} purchases (doc_id: {doc_id_purchases})")
         else:
-            print(f"ℹ️  No purchase data found for {email} (doc_id: {doc_id})")
-            return True
+            print(f"ℹ️  No purchase data found for {email}")
+
+        # 2. Reset Credits/Tier (SHA256)
+        doc_id_credits = hashlib.sha256(email.encode()).hexdigest()
+        
+        if es_client.exists(index='user_credits', id=doc_id_credits):
+            es_client.delete(index='user_credits', id=doc_id_credits)
+            print(f"✅ Reset {email} credits/tier (doc_id: {doc_id_credits})")
+        else:
+            print(f"ℹ️  No credits/tier data found for {email}")
+
+        return True
             
     except Exception as e:
         print(f"❌ Error resetting {email}: {e}")
