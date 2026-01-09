@@ -16,7 +16,8 @@ import {
   startSession,
   extractFullResponse,
   recomputeLaunchpadFits,
-  resetAllProfile
+  resetAllProfile,
+  profileChat
 } from '../services/api';
 import ProfileViewCard from '../components/ProfileViewCard';
 import ProfileBuilder from '../components/ProfileBuilder';
@@ -68,6 +69,7 @@ function Profile() {
   const [chatMessages, setChatMessages] = useState([]);
   const [chatInput, setChatInput] = useState('');
   const [isSending, setIsSending] = useState(false);
+  const [suggestedQuestions, setSuggestedQuestions] = useState([]);
   const chatEndRef = useRef(null);
 
   // Get knowledge base approach from context (profile manager follows same approach)
@@ -393,35 +395,42 @@ function Profile() {
 
 
   // Handle sending chat message
-  const handleSendMessage = async () => {
-    if (!chatInput.trim() || isSending) return;
+  const handleSendMessage = async (messageText = null) => {
+    const message = messageText || chatInput.trim();
+    if (!message || isSending) return;
 
-    const userMessage = chatInput.trim();
-    setChatInput('');
-    setChatMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    if (!messageText) {
+      setChatInput('');
+    }
+    setChatMessages(prev => [...prev, { role: 'user', content: message }]);
     setIsSending(true);
 
     try {
-      const prompt = `[USER_EMAIL: ${currentUser.email}]
-${userMessage}
+      // Call profile-chat API function
+      const data = await profileChat(currentUser.email, message, chatMessages);
 
-If this is a request to update or modify my profile, make the changes and confirm what was updated.
-If this is a question about my profile, answer based on my profile data.`;
-
-      const response = await startSession(prompt);
-      const fullResponse = extractFullResponse(response);
-      const aiMessage = fullResponse.result || fullResponse;
-
-      setChatMessages(prev => [...prev, { role: 'assistant', content: aiMessage }]);
-
-      // Refresh profile markdown after updates
-      if (userMessage.toLowerCase().includes('update') || userMessage.toLowerCase().includes('change') ||
-        userMessage.toLowerCase().includes('add') || userMessage.toLowerCase().includes('remove')) {
-        await loadProfileMarkdown();
+      if (data.success) {
+        setChatMessages(data.conversation_history || [
+          ...chatMessages,
+          { role: 'user', content: message },
+          { role: 'assistant', content: data.answer }
+        ]);
+        // Update suggested questions
+        setSuggestedQuestions(data.suggested_questions || []);
+      } else {
+        setChatMessages(prev => [...prev, {
+          role: 'assistant',
+          content: data.error || 'Sorry, I encountered an error. Please try again.'
+        }]);
+        setSuggestedQuestions([]);
       }
     } catch (err) {
       console.error('Error sending message:', err);
-      setChatMessages(prev => [...prev, { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }]);
+      setChatMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Sorry, I encountered an error. Please try again.'
+      }]);
+      setSuggestedQuestions([]);
     } finally {
       setIsSending(false);
     }
@@ -911,7 +920,7 @@ If this is a question about my profile, answer based on my profile data.`;
             }`}
         >
           <ChatBubbleLeftRightIcon className="h-5 w-5" />
-          Ask & Update
+          Self-Discovery
         </button>
       </div>
 
@@ -989,10 +998,10 @@ If this is a question about my profile, answer based on my profile data.`;
                 <div className="p-2 bg-gray-100 rounded-xl">
                   <SparklesIcon className="h-5 w-5 text-gray-600" />
                 </div>
-                Edit Profile with AI
+                Discover Your Story
               </h2>
               <p className="text-sm text-gray-500 mt-1 ml-12">
-                Tell me what to update in your profile. Example: "Update my GPA to 3.9" or "Add robotics club to activities"
+                Explore insights about your journey and strengths
               </p>
             </div>
 
@@ -1003,15 +1012,20 @@ If this is a question about my profile, answer based on my profile data.`;
                   <div className="p-4 bg-gray-100 rounded-2xl inline-block mb-4">
                     <ChatBubbleLeftRightIcon className="h-10 w-10 text-gray-500" />
                   </div>
-                  <p className="text-gray-600">Start a conversation to edit your profile</p>
+                  <p className="text-gray-600">Reflect on your profile</p>
                   <div className="mt-4 flex flex-wrap gap-2 justify-center">
-                    {['Update my GPA to 3.85', 'Add SAT score: 1480', 'Add tennis to activities', 'Change intended major to Computer Science'].map(suggestion => (
+                    {[
+                      { q: "What are my biggest strengths?", color: "from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700" },
+                      { q: "How do my activities connect?", color: "from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" },
+                      { q: "What makes me unique?", color: "from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700" },
+                      { q: "Where have I grown most?", color: "from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700" }
+                    ].map(({ q, color }) => (
                       <button
-                        key={suggestion}
-                        onClick={() => setChatInput(suggestion)}
-                        className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 border border-gray-200 transition-colors"
+                        key={q}
+                        onClick={() => handleSendMessage(q)}
+                        className={`px-4 py-2 bg-gradient-to-r ${color} text-white rounded-xl text-sm font-medium transition-all shadow-sm hover:shadow-md`}
                       >
-                        {suggestion}
+                        {q}
                       </button>
                     ))}
                   </div>
@@ -1051,28 +1065,62 @@ If this is a question about my profile, answer based on my profile data.`;
                   </div>
                 </div>
               )}
+
+              {/* Suggested Follow-up Questions */}
+              {!isSending && suggestedQuestions.length > 0 && (
+                <div className="space-y-2">
+                  <p className="text-xs font-medium text-gray-500">💡 Discover more:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {suggestedQuestions.map((question, index) => {
+                      const colors = [
+                        "from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700",
+                        "from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700",
+                        "from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700"
+                      ];
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => handleSendMessage(question)}
+                          className={`px-3 py-2 bg-gradient-to-r ${colors[index % 3]} text-white rounded-xl text-sm font-medium transition-all shadow-sm hover:shadow-md`}
+                        >
+                          {question}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               <div ref={chatEndRef} />
             </div>
 
             {/* Chat Input */}
             <div className="p-4 border-t border-gray-100 bg-gray-50">
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={chatInput}
-                  onChange={(e) => setChatInput(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
-                  placeholder="Tell me what to update..."
-                  className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white"
-                  disabled={isSending}
-                />
-                <button
-                  onClick={handleSendMessage}
-                  disabled={!chatInput.trim() || isSending}
-                  className="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                >
-                  <PaperAirplaneIcon className="h-5 w-5" />
-                </button>
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={chatInput}
+                    onChange={(e) => setChatInput(e.target.value.slice(0, 500))}
+                    onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
+                    placeholder="Ask a question about your profile..."
+                    maxLength={500}
+                    className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white"
+                    disabled={isSending}
+                  />
+                  <button
+                    onClick={handleSendMessage}
+                    disabled={!chatInput.trim() || isSending}
+                    className="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  >
+                    <PaperAirplaneIcon className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="text-xs text-right">
+                  <span className={chatInput.length > 450 ? "text-red-500 font-semibold" : "text-gray-500"}>
+                    {chatInput.length}/500
+                  </span>
+                </div>
               </div>
             </div>
           </div>

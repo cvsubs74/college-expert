@@ -511,6 +511,41 @@ export const saveOnboardingProfile = async (userEmail, onboardingData) => {
 };
 
 /**
+ * Profile Chat - Q&A about user's profile
+ * Answers questions about the profile without making updates
+ * @param {string} userEmail - User's email address
+ * @param {string} question - Question about the profile
+ * @param {Array} conversationHistory - Previous messages in conversation
+ * @returns {object} Result with answer and updated conversation history
+ */
+export const profileChat = async (userEmail, question, conversationHistory = []) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    console.log(`[API] Profile chat for ${userEmail}`);
+
+    const response = await axios.post(`${baseUrl}/profile-chat`, {
+      user_email: userEmail,
+      question: question,
+      conversation_history: conversationHistory
+    }, {
+      timeout: 30000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error in profile chat:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
+
+/**
  * Check onboarding status for a user
  * Returns whether user has completed or skipped onboarding
  * @param {string} userEmail - User's email address

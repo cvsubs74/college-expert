@@ -397,35 +397,43 @@ Question: ${question}`;
 
         {/* Input Area */}
         <div className="px-6 py-4 border-t border-amber-100 bg-amber-50/50">
-          <form onSubmit={handleSendMessage} className="flex space-x-3">
-            <input
-              type="text"
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              placeholder="Ask anything - college info, my chances, recommendations..."
-              className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:ring-amber-500 focus:border-amber-500 bg-white"
-              disabled={sending}
-            />
-            <button
-              type="submit"
-              disabled={sending || !inputMessage.trim()}
-              className={`px-6 py-3 rounded-xl flex items-center space-x-2 transition-all ${sending || !inputMessage.trim()
-                ? 'bg-gray-300 cursor-not-allowed'
-                : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-200'
-                } text-white`}
-            >
-              {sending ? (
-                <>
-                  <ArrowPathIcon className="h-5 w-5 animate-spin" />
-                  <span>Sending</span>
-                </>
-              ) : (
-                <>
-                  <PaperAirplaneIcon className="h-5 w-5" />
-                  <span>Send</span>
-                </>
-              )}
-            </button>
+          <form onSubmit={handleSendMessage} className="space-y-2">
+            <div className="flex space-x-3">
+              <input
+                type="text"
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value.slice(0, 500))}
+                placeholder="Ask anything - college info, my chances, recommendations..."
+                maxLength={500}
+                className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:ring-amber-500 focus:border-amber-500 bg-white"
+                disabled={sending}
+              />
+              <button
+                type="submit"
+                disabled={sending || !inputMessage.trim()}
+                className={`px-6 py-3 rounded-xl flex items-center space-x-2 transition-all ${sending || !inputMessage.trim()
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-200'
+                  } text-white`}
+              >
+                {sending ? (
+                  <>
+                    <ArrowPathIcon className="h-5 w-5 animate-spin" />
+                    <span>Sending</span>
+                  </>
+                ) : (
+                  <>
+                    <PaperAirplaneIcon className="h-5 w-5" />
+                    <span>Send</span>
+                  </>
+                )}
+              </button>
+            </div>
+            <div className="text-xs text-right">
+              <span className={inputMessage.length > 450 ? "text-red-500 font-semibold" : "text-gray-500"}>
+                {inputMessage.length}/500
+              </span>
+            </div>
           </form>
         </div>
       </div>

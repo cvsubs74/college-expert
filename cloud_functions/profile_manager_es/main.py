@@ -33,6 +33,9 @@ from essay_copilot import (
     get_starter_context
 )
 
+from profile_chat import profile_chat
+
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -5867,6 +5870,18 @@ def profile_manager_es_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'user_email, university_id, and question required'}, 400)
             
             result = essay_chat(user_email, university_id, prompt_text, current_text, user_question)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        elif resource_type == 'profile-chat' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            question = data.get('question', '')
+            conversation_history = data.get('conversation_history', [])
+            
+            if not user_email or not question:
+                return add_cors_headers({'success': False, 'error': 'user_email and question required'}, 400)
+            
+            result = profile_chat(user_email, question, conversation_history)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         elif resource_type == 'save-essay-draft' and request.method == 'POST':

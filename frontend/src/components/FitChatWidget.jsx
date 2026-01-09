@@ -692,22 +692,32 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
                 {/* Input */}
                 <div className="p-3 border-t bg-white">
                     <div className="flex gap-2">
-                        <input
-                            ref={inputRef}
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                            placeholder="Ask about your fit..."
-                            className={`flex-1 px-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-opacity-20 focus:border-current transition-all`}
-                            disabled={loading}
-                        />
-                        <button
-                            onClick={sendMessage}
-                            disabled={loading || !input.trim()}
-                            className={`p-2.5 bg-gradient-to-r ${colors.bg} text-white rounded-xl hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg`}
-                        >
-                            <PaperAirplaneIcon className="h-5 w-5" />
-                        </button>
+                        <div className="flex flex-col flex-1 gap-2">
+                            <div className="flex gap-2">
+                                <input
+                                    ref={inputRef}
+                                    value={input}
+                                    onChange={(e) => setInput(e.target.value.slice(0, 500))}
+                                    onKeyPress={handleKeyPress}
+                                    placeholder="Ask about your fit..."
+                                    maxLength={500}
+                                    className={`flex-1 px-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-opacity-20 focus:border-current transition-all`}
+                                    disabled={loading}
+                                />
+                                <button
+                                    onClick={sendMessage}
+                                    disabled={loading || !input.trim()}
+                                    className={`p-2.5 bg-gradient-to-r ${colors.bg} text-white rounded-xl hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg`}
+                                >
+                                    <PaperAirplaneIcon className="h-5 w-5" />
+                                </button>
+                            </div>
+                            <div className="text-xs text-right">
+                                <span className={input.length > 450 ? "text-red-500 font-semibold" : "text-gray-500"}>
+                                    {input.length}/500
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
