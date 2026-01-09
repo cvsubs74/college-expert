@@ -70,7 +70,56 @@ const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 
 
                     {/* Plans Grid */}
                     <div className="px-6 pb-8">
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-3 gap-4">
+                            {/* Free Tier */}
+                            <div className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-gray-300 transition-all cursor-pointer group"
+                                onClick={() => {
+                                    onClose();
+                                    navigate('/launchpad');
+                                }}>
+                                <div className="flex items-start gap-3 mb-4">
+                                    <div className="p-2 bg-gray-100 rounded-lg">
+                                        <SparklesIcon className="w-5 h-5 text-gray-600" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-gray-900">Free</h3>
+                                        <p className="text-xs text-gray-500">Perfect for exploring. Try fit analysis on your top 3 schools.</p>
+                                    </div>
+                                </div>
+
+                                <div className="mb-4">
+                                    <span className="text-3xl font-bold text-gray-900">$0</span>
+                                    <span className="text-gray-500">/forever</span>
+                                </div>
+
+                                <div className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full mb-4">
+                                    <BoltIcon className="w-3 h-3" />
+                                    3 credits
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-4 mb-4">
+                                    <p className="text-xs font-semibold text-gray-400 mb-2">BEST FOR</p>
+                                    <p className="text-sm text-gray-700">Sophomores & Juniors exploring</p>
+                                </div>
+
+                                <ul className="space-y-2 mb-6">
+                                    <FeatureItem>3 fit analysis credits</FeatureItem>
+                                    <FeatureItem>Chat with AI on universities</FeatureItem>
+                                    <FeatureItem>Browse 200+ profiles</FeatureItem>
+                                    <FeatureItem>Build your profile</FeatureItem>
+                                </ul>
+
+                                <button
+                                    onClick={() => {
+                                        onClose();
+                                        navigate('/launchpad');
+                                    }}
+                                    className="w-full py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors"
+                                >
+                                    Use Free Plan →
+                                </button>
+                            </div>
+
                             {/* Monthly Plan */}
                             <div className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-[#1A4D2E] transition-all cursor-pointer group"
                                 onClick={handleMonthlyUpgrade}>

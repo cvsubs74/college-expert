@@ -580,7 +580,7 @@ const StratiaLaunchpad = () => {
                             {/* Add School / Upgrade Button */}
                             <button
                                 onClick={() => isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
-                                    ? setShowCreditsModal(true)
+                                    ? navigate('/pricing')
                                     : handleOpenDiscovery('SAFETY')}
                                 className={`flex items-center gap-2 ${isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
                                     ? 'bg-[#C05838] hover:bg-[#A04828] text-white px-4 py-2 rounded-full font-medium transition-colors'
