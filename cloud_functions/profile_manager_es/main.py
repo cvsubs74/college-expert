@@ -1184,7 +1184,7 @@ def handle_delete_profile(request):
         # If we only have filename and user_id, we might need to search for the ID
         # But for now assuming document_id is passed correctly or is the filename
         
-        result = delete_student_profile(document_id)
+        result = delete_student_profile(document_id, user_id=user_id, filename=filename)
         
         if result['success']:
             return add_cors_headers(result, 200)
@@ -1430,26 +1430,50 @@ def handle_get_structured_profile(request):
             'error': f'Get profile failed: {str(e)}'
         }, 500)
 
-def delete_student_profile(document_id):
-    """Delete student profile from Elasticsearch."""
+def delete_student_profile(document_id, user_id=None, filename=None):
+    """Delete student profile file from GCS.
+    
+    Args:
+        document_id: Legacy parameter (not used for GCS)
+        user_id: User's email address
+        filename: Filename to delete from GCS
+    """
     try:
-        client = get_elasticsearch_client()
+        # We need user_id and filename to delete from GCS
+        if not user_id or not filename:
+            logger.error(f"[DELETE ERROR] Missing user_id or filename")
+            return {
+                "success": False,
+                "error": "User ID and filename are required"
+            }
         
-        # Delete document
-        response = client.delete(index=ES_INDEX_NAME, id=document_id)
+        # Delete file from GCS
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(GCS_BUCKET_NAME)
+        blob_path = f"{user_id}/{filename}"
+        blob = bucket.blob(blob_path)
         
-        logger.info(f"[ES] Deleted profile {document_id}")
-        return {
-            "success": True,
-            "message": "Profile deleted successfully"
-        }
+        if blob.exists():
+            blob.delete()
+            logger.info(f"[GCS] Deleted file: gs://{GCS_BUCKET_NAME}/{blob_path}")
+            return {
+                "success": True,
+                "message": "File deleted successfully from storage"
+            }
+        else:
+            logger.warning(f"[GCS] File not found: gs://{GCS_BUCKET_NAME}/{blob_path}")
+            return {
+                "success": True,  # Don't fail if file doesn't exist
+                "message": "File not found in storage (may have been already deleted)"
+            }
         
     except Exception as e:
-        logger.error(f"[ES ERROR] Failed to delete profile: {e}")
+        logger.error(f"[DELETE ERROR] Failed to delete file: {e}")
         return {
             "success": False,
             "error": str(e)
         }
+
 
 
 # ============================================
