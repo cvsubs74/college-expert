@@ -959,6 +959,25 @@ def index_student_profile(user_id, filename, content_markdown, metadata=None, pr
                 if key in existing_profile:
                     document[key] = existing_profile[key]
         
+        # NEW: Track field sources (which document contributed which field)
+        field_sources = existing_profile.get('field_sources', {})
+        
+        if profile_data:
+            # Track all fields that have non-null values from this document
+            for field_name, value in profile_data.items():
+                if value is not None and value != [] and value != '':
+                    # Initialize sources list if field is new
+                    if field_name not in field_sources:
+                        field_sources[field_name] = []
+                    
+                    # Add this filename as a source if not already tracked
+                    if filename not in field_sources[field_name]:
+                        field_sources[field_name].append(filename)
+                        logger.info(f"[FIELD_TRACKING] {field_name} += {filename}")
+        
+        # Store field sources in document
+        document['field_sources'] = field_sources
+        
         # Index document
         response = client.index(index=ES_INDEX_NAME, id=document_id, body=document)
         
@@ -1080,6 +1099,64 @@ def handle_search(request):
             'error': f'Search failed: {str(e)}'
         }, 500)
 
+def cleanup_profile_on_document_delete(user_id, filename):
+    """Remove fields that are only sourced from the deleted document."""
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Get user's profile
+        import hashlib
+        document_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        try:
+            doc = es_client.get(index=ES_INDEX_NAME, id=document_id)
+            profile = doc.get('_source', {})
+        except:
+            logger.warning(f"[CLEANUP] No profile found for {user_id}")
+            return
+        
+        field_sources = profile.get('field_sources', {})
+        if not field_sources:
+            logger.info(f"[CLEANUP] No field_sources tracking for {user_id}, skipping cleanup")
+            return
+        
+        fields_to_remove = []
+        
+        # Check each field's sources
+        for field_name, sources in list(field_sources.items()):
+            if filename in sources:
+                # Remove this document from the sources list
+                sources.remove(filename)
+                logger.info(f"[CLEANUP] Removed {filename} from {field_name} sources")
+                
+                # If no sources left, mark field for removal
+                if len(sources) == 0:
+                    fields_to_remove.append(field_name)
+                    del field_sources[field_name]
+                    logger.info(f"[CLEANUP] {field_name} has no sources left, will be removed")
+        
+        # Remove orphaned fields from profile
+        for field in fields_to_remove:
+            if field in profile:
+                del profile[field]
+                logger.info(f"[CLEANUP] Deleted orphaned field: {field}")
+        
+        # Remove from uploaded_files list
+        uploaded_files = profile.get('uploaded_files', [])
+        if filename in uploaded_files:
+            uploaded_files.remove(filename)
+            profile['uploaded_files'] = uploaded_files
+            logger.info(f"[CLEANUP] Removed {filename} from uploaded_files")
+        
+        # Update profile in ES
+        profile['field_sources'] = field_sources
+        es_client.index(index=ES_INDEX_NAME, id=document_id, body=profile)
+        logger.info(f"[CLEANUP] Profile updated for {user_id} after deleting {filename}")
+        
+    except Exception as e:
+        logger.error(f"[CLEANUP ERROR] Failed to cleanup profile: {e}")
+        # Don't fail the delete operation if cleanup fails
+
 def handle_delete_profile(request):
     """Handle delete profile request (RAG compatible)."""
     try:
@@ -1091,9 +1168,18 @@ def handle_delete_profile(request):
         # ES needs document_id. 
         document_id = data.get('document_id') or data.get('document_name')
         user_id = data.get('user_email')
+        filename = data.get('filename')
         
         if not document_id:
              return add_cors_headers({'error': 'Document ID is required'}, 400)
+        
+        # If filename not provided, use document_id as filename (backward compatibility)
+        if not filename:
+            filename = document_id
+            
+        # NEW: Clean up profile before deleting the file
+        if user_id and filename:
+            cleanup_profile_on_document_delete(user_id, filename)
              
         # If we only have filename and user_id, we might need to search for the ID
         # But for now assuming document_id is passed correctly or is the filename
