@@ -30,7 +30,7 @@ import {
   CheckCircleIcon,
   XCircleIcon,
   ArrowPathIcon,
-  EyeIcon,
+  ArrowDownTrayIcon,
   XMarkIcon,
   ChatBubbleLeftRightIcon,
   PaperAirplaneIcon,
@@ -698,6 +698,45 @@ function Profile() {
     });
   };
 
+  const handleDownloadDocument = async (filename) => {
+    try {
+      const baseUrl = import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+
+      const response = await fetch(`${baseUrl}/download-document`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user_email: currentUser.email,
+          filename: filename
+        })
+      });
+
+      if (response.ok) {
+        // Get the content as blob
+        const blob = await response.blob();
+
+        // Create download link - use original filename from backend
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to download: ${errorData.error || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error('Download error:', error);
+      alert('An error occurred while downloading the document.');
+    }
+  };
+
+  // Keep preview for backward compatibility (if needed elsewhere)
   const handlePreview = async (profile) => {
     setPreviewDocument(profile);
     setPreviewContent(null);
@@ -1456,11 +1495,11 @@ function Profile() {
                           </div>
                           <div className="flex items-center space-x-2">
                             <button
-                              onClick={() => handlePreview(profile)}
-                              className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
-                              title="Preview document"
+                              onClick={() => handleDownloadDocument(profile.display_name)}
+                              className="p-2 text-green-600 hover:text-green-800 hover:bg-green-50 rounded-md transition-colors"
+                              title="Download document"
                             >
-                              <EyeIcon className="h-5 w-5" />
+                              <ArrowDownTrayIcon className="h-5 w-5" />
                             </button>
                             <button
                               onClick={() => handleDelete(profile.id, profile.display_name)}

@@ -913,6 +913,10 @@ def index_student_profile(user_id, filename, content_markdown, metadata=None, pr
             "uploaded_files": existing_filenames,
         }
         
+        # Add metadata (including GCS path for original file download)
+        if metadata:
+            document.update(metadata)
+        
         # Merge flattened profile data
         if profile_data:
             # Personal info - merge scalars (prefer new non-null values)
@@ -978,55 +982,53 @@ def search_student_profiles(user_id, query_text="", size=10, from_index=0):
     try:
         es_client = get_elasticsearch_client()
         
-        # Build search query
-        must_conditions = [{"term": {"user_id.keyword": user_id}}]
+        # Get the single merged profile document for this user
+        import hashlib
+        document_id = hashlib.sha256(user_id.encode()).hexdigest()
         
-        if query_text:
-            must_conditions.append({
-                "multi_match": {
-                    "query": query_text,
-                    "fields": ["content", "filename"],
-                    "type": "best_fields"
-                }
-            })
-
-            
-        search_body = {
-            "size": size,
-            "from": from_index,
-            "query": {
-                "bool": {
-                    "must": must_conditions
-                }
-            },
-            "sort": [
-                {"_score": {"order": "desc"}},
-                {"indexed_at": {"order": "desc"}}
-            ]
-        }
+        try:
+            doc = es_client.get(index=ES_INDEX_NAME, id=document_id)
+            source = doc.get('_source', {})
+        except:
+            # No profile found
+            return {
+                "success": True,
+                "total": 0,
+                "documents": [],
+                "size": size,
+                "from": from_index
+            }
         
-        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        # Get list of uploaded files
+        uploaded_files = source.get('uploaded_files', [])
+        indexed_at = source.get('indexed_at', '')
         
+        # Convert each filename into a document for the UI
         documents = []
-        for hit in response['hits']['hits']:
-            source = hit['_source']
-            doc_id = hit['_id']
-            
+        for filename in uploaded_files:
             documents.append({
-                "name": doc_id,  # Use ID as name
-                "display_name": source.get('filename', source.get('file_name', 'Unknown')),
-                "create_time": source.get('upload_date', source.get('indexed_at', '')),
-                "update_time": source.get('indexed_at', ''),
+                "name": filename,
+                "display_name": filename,
+                "create_time": indexed_at,
+                "update_time": indexed_at,
                 "state": "ACTIVE",
-                "size_bytes": source.get('file_size', 0),
-                "mime_type": "text/plain", # Default for ES
-                "id": doc_id, # Keep ID for reference
-                "document": source # Keep full source for backward compatibility if needed
+                "size_bytes": 0,
+                "mime_type": "application/octet-stream",
+                "id": f"{document_id}_{filename}",
+                "document": {"filename": filename}
             })
+        
+        # Apply query filter
+        if query_text:
+            query_lower = query_text.lower()
+            documents = [doc for doc in documents if query_lower in doc['display_name'].lower()]
+        
+        total = len(documents)
+        documents = documents[from_index:from_index + size]
         
         return {
             "success": True,
-            "total": response['hits']['total']['value'],
+            "total": total,
             "documents": documents,
             "size": size,
             "from": from_index
@@ -1165,6 +1167,80 @@ def handle_get_content(request):
         return add_cors_headers({
             'success': False,
             'error': f'Get content failed: {str(e)}'
+        }, 500)
+
+def handle_download_document(request):
+    """Download document as file."""
+    try:
+        data = request.get_json()
+        if not data:
+            return add_cors_headers({'error': 'No data provided'}, 400)
+            
+        user_id = data.get('user_email')
+        filename = data.get('filename')
+        
+        if not user_id or not filename:
+            return add_cors_headers({'error': 'User Email and Filename are required'}, 400)
+            
+        # Get the GCS path from Elasticsearch
+        es_client = get_elasticsearch_client()
+        
+        # Use user_id as document ID to get the full profile
+        import hashlib
+        document_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        try:
+            doc = es_client.get(index=ES_INDEX_NAME, id=document_id)
+            source = doc.get('_source', {})
+            
+            # Get GCS path (stored during upload)
+            gcs_path = source.get('gcs_path')
+            
+            if not gcs_path:
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'File not found in storage. Please re-upload the document.'
+                }, 404)
+            
+            # Fetch file from GCS
+            storage_client = storage.Client()
+            bucket = storage_client.bucket(GCS_BUCKET_NAME)
+            blob = bucket.blob(gcs_path)
+            
+            if not blob.exists():
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'File no longer exists in storage'
+                }, 404)
+            
+            # Download file content
+            file_content = blob.download_as_bytes()
+            
+            # Return original file with proper headers
+            from flask import make_response
+            response = make_response(file_content)
+            response.headers['Content-Type'] = blob.content_type or 'application/octet-stream'
+            response.headers['Content-Disposition'] = f'attachment; filename="{filename}"'
+            
+            # Add CORS headers directly to response
+            response.headers['Access-Control-Allow-Origin'] = '*'
+            response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+            response.headers['Access-Control-Allow-Headers'] = 'Content-Type, X-User-Email'
+            
+            return response
+            
+        except Exception as e:
+            logger.error(f"[DOWNLOAD ERROR] Document not found: {e}")
+            return add_cors_headers({
+                'success': False,
+                'error': 'Document not found'
+            }, 404)
+            
+    except Exception as e:
+        logger.error(f"[DOWNLOAD ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Download failed: {str(e)}'
         }, 500)
 
 
@@ -5452,6 +5528,19 @@ def profile_manager_es_http_entry(request):
                 file_content = file.read()
                 filename = file.filename
                 
+                # Upload original file to GCS for later download
+                storage_client = storage.Client()
+                bucket = storage_client.bucket(GCS_BUCKET_NAME)
+                blob_path = f"{user_id}/{filename}"
+                blob = bucket.blob(blob_path)
+                
+                # Upload with original content type
+                from mimetypes import guess_type
+                content_type, _ = guess_type(filename)
+                blob.upload_from_string(file_content, content_type=content_type or 'application/octet-stream')
+                
+                logger.info(f"[GCS] Uploaded original file to: gs://{GCS_BUCKET_NAME}/{blob_path}")
+                
                 # Extract and convert to markdown using Gemini
                 extracted_content = extract_profile_content_with_gemini(file_content, filename)
                 content_markdown = extracted_content.get('content_markdown', '')
@@ -5462,11 +5551,13 @@ def profile_manager_es_http_entry(request):
                     content_markdown = extracted_content.get('raw_content', 'Error: Could not extract content')
                 
                 # Index in Elasticsearch with markdown AND flattened profile data
+                # Also store GCS path for original file download
                 result = index_student_profile(
                     user_id, 
                     filename, 
                     content_markdown,
-                    profile_data=structured_profile
+                    profile_data=structured_profile,
+                    metadata={'gcs_path': blob_path}
                 )
                 
                 if result["success"]:
@@ -5537,6 +5628,10 @@ def profile_manager_es_http_entry(request):
         # --- GET CONTENT ROUTE (RAG Compatible) ---
         elif resource_type == 'get-profile-content' and request.method == 'POST':
             return handle_get_content(request)
+        
+        # --- DOWNLOAD DOCUMENT ROUTE ---
+        elif resource_type == 'download-document' and request.method == 'POST':
+            return handle_download_document(request)
         
         # --- GET STRUCTURED PROFILE (for ProfileViewCard) ---
         elif resource_type == 'get-profile' and request.method == 'GET':
