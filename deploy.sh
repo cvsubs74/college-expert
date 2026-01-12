@@ -65,6 +65,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}agents${NC}      - Deploy all agents (recommended)"
     echo -e "  ${YELLOW}profile-rag${NC}  - Deploy RAG profile manager function"
     echo -e "  ${YELLOW}profile-es${NC}  - Deploy Elasticsearch profile manager function"
+    echo -e "  ${YELLOW}profile-v2${NC}  - Deploy Firestore V2 profile manager function (RECOMMENDED)"
     echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
     echo -e "  ${YELLOW}knowledge-universities${NC} - Deploy Universities knowledge base function"
@@ -367,6 +368,51 @@ deploy_profile_manager_es() {
     
     PROFILE_MANAGER_ES_URL=$(gcloud functions describe $PROFILE_MANAGER_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
     echo -e "${GREEN}✓ Profile Manager ES deployed: ${PROFILE_MANAGER_ES_URL}${NC}"
+    cd ../..
+}
+
+deploy_profile_manager_v2() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Profile Manager V2 Function (Firestore)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    echo -e "${YELLOW}Deploying Profile Manager V2 (Firestore)...${NC}"
+    
+    cd cloud_functions/profile_manager_v2
+    
+    # Create deploy-time env.yaml with substituted values
+    cat > env.deploy.yaml <<EOF
+GCP_PROJECT_ID: ${PROJECT_ID}
+REGION: ${REGION}
+GCS_BUCKET_NAME: college-counselling-478115-student-profiles
+GEMINI_API_KEY: ${GEMINI_API_KEY}
+FIRESTORE_DATABASE: "(default)"
+KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+LOG_EXECUTION_ID: "true"
+EOF
+    
+    gcloud functions deploy profile-manager-v2 \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=profile_manager_v2_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.deploy.yaml \
+        --timeout=540s \
+        --memory=1024MB \
+        --cpu=1 \
+        --min-instances=1 \
+        --max-instances=10
+    
+    PROFILE_MANAGER_V2_URL=$(gcloud functions describe profile-manager-v2 --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Profile Manager V2 deployed: ${PROFILE_MANAGER_V2_URL}${NC}"
+    
+    # Clean up deploy-time env file
+    rm -f env.deploy.yaml
+    
     cd ../..
 }
 
@@ -927,6 +973,9 @@ case "$DEPLOY_TARGET" in
     "profile-es")
         deploy_profile_manager_es
         ;;
+    "profile-v2")
+        deploy_profile_manager_v2
+        ;;
     "knowledge-rag")
         deploy_knowledge_base_manager_rag
         ;;
@@ -978,6 +1027,7 @@ case "$DEPLOY_TARGET" in
         echo -e "${CYAN}Deploying all cloud functions for dynamic routing...${NC}"
         deploy_profile_manager_rag
         deploy_profile_manager_es
+        deploy_profile_manager_v2
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
