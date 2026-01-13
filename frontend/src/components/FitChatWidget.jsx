@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import { useAuth } from '../context/AuthContext';
+import ConfirmationModal from './ConfirmationModal';
 
 // API Configuration
 const PROFILE_MANAGER_V2_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL ||
@@ -49,6 +50,9 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
     // Rename state
     const [editingConversationId, setEditingConversationId] = useState(null);
     const [editTitle, setEditTitle] = useState('');
+
+    // Delete confirmation state
+    const [deleteConfirmation, setDeleteConfirmation] = useState({ isOpen: false, conversationId: null });
 
     const [suggestedQuestions, setSuggestedQuestions] = useState([]);
 
@@ -205,11 +209,15 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         setLoadingHistory(false);
     };
 
-    // Delete a conversation
-    const deleteConversation = async (conversationId, e) => {
+    // Show delete confirmation modal
+    const showDeleteConfirmation = (conversationId, e) => {
         e.stopPropagation();
+        setDeleteConfirmation({ isOpen: true, conversationId });
+    };
+
+    // Delete a conversation (called after confirmation)
+    const deleteConversation = async (conversationId) => {
         if (!currentUser?.email) return;
-        if (!confirm('Delete this conversation?')) return;
 
         try {
             await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-delete`, {
@@ -596,7 +604,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
                                                             <PencilIcon className="h-4 w-4" />
                                                         </button>
                                                         <button
-                                                            onClick={(e) => deleteConversation(conv.conversation_id, e)}
+                                                            onClick={(e) => showDeleteConfirmation(conv.conversation_id, e)}
                                                             className="p-1 hover:bg-red-100 rounded text-gray-400 hover:text-red-500 transition-colors"
                                                             title="Delete"
                                                         >
@@ -721,6 +729,18 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
                     </div>
                 </div>
             </div>
+
+            {/* Delete Confirmation Modal */}
+            <ConfirmationModal
+                isOpen={deleteConfirmation.isOpen}
+                onClose={() => setDeleteConfirmation({ isOpen: false, conversationId: null })}
+                onConfirm={() => deleteConversation(deleteConfirmation.conversationId)}
+                title="Delete Conversation"
+                message="Are you sure you want to delete this conversation? This action cannot be undone."
+                confirmText="Delete"
+                cancelText="Cancel"
+                variant="danger"
+            />
         </div>
     );
 };
