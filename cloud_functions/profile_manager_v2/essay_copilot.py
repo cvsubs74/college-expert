@@ -911,6 +911,41 @@ def generate_essay_outline(user_email: str, university_id: str, prompt_text: str
         if university_profile:
             university_name = university_profile.get('profile', {}).get('metadata', {}).get('official_name', university_name)
         
+        # Extract word limit from prompt text
+        word_limit = 650  # Default
+        import re
+        # Look for patterns like "500 words", "500-word", "maximum 500 words", etc.
+        word_patterns = [
+            r'(\d+)\s*words?\s*max',
+            r'max(?:imum)?\s*(?:of\s*)?(\d+)\s*words?',
+            r'(\d+)\s*word\s*limit',
+            r'(\d+)-word',
+            r'up\s*to\s*(\d+)\s*words?',
+            r'no\s*more\s*than\s*(\d+)\s*words?'
+        ]
+        
+        for pattern in word_patterns:
+            match = re.search(pattern, prompt_text, re.IGNORECASE)
+            if match:
+                word_limit = int(match.group(1))
+                break
+        
+        # Calculate word distribution based on total limit
+        # Typical distribution: Intro (12%), Body (70%), Conclusion (18%)
+        intro_words = int(word_limit * 0.12)
+        conclusion_words = int(word_limit * 0.18)
+        body_words = word_limit - intro_words - conclusion_words
+        
+        # Distribute body into 2-3 paragraphs
+        if body_words > 300:
+            # 3 body paragraphs
+            body_para_words = body_words // 3
+            num_body_paras = 3
+        else:
+            # 2 body paragraphs
+            body_para_words = body_words // 2
+            num_body_paras = 2
+        
         # Build Gemini prompt
         profile_json = json.dumps(profile_summary, indent=2, default=str)
         
@@ -919,6 +954,8 @@ def generate_essay_outline(user_email: str, university_id: str, prompt_text: str
 ESSAY PROMPT:
 {prompt_text}
 
+WORD LIMIT: {word_limit} words total (CRITICAL: outline must sum to EXACTLY {word_limit} words)
+
 STUDENT PROFILE:
 {profile_json}
 
@@ -926,21 +963,21 @@ UNIVERSITY: {university_name}
 
 {f'SELECTED HOOK (integrate this into the outline):\\n{selected_hook}' if selected_hook else ''}
 
-Create a detailed essay outline with:
+Create a detailed essay outline with EXACTLY {word_limit} words distributed as follows:
 
-1. **Introduction** (50-75 words)
+1. **Introduction** ({intro_words} words)
    - Opening hook (use selected hook if provided, otherwise suggest one based on profile)
    - Context/background from student's life
    - Clear thesis statement
 
-2. **Body Paragraphs** (2-3 paragraphs, 100-125 words each)
+2. **Body Paragraphs** ({num_body_paras} paragraphs, {body_para_words} words each)
    - Each paragraph should have:
      * Main point that answers the prompt
      * Specific evidence from student's background (activities, achievements, experiences)
      * Analysis/reflection showing growth or learning
    - Use concrete details from the student's profile
 
-3. **Conclusion** (50-75 words)
+3. **Conclusion** ({conclusion_words} words)
    - Tie back to thesis
    - Broader significance or impact
    - Forward-looking statement
@@ -948,7 +985,7 @@ Create a detailed essay outline with:
 IMPORTANT:
 - Base outline on the student's ACTUAL experiences from their profile
 - Be specific - reference real activities/achievements
-- Suggest word counts for each section
+- The word counts MUST sum to EXACTLY {word_limit} words
 - Include 3-4 actionable writing tips
 
 Return ONLY valid JSON in this format:
@@ -956,7 +993,7 @@ Return ONLY valid JSON in this format:
   "outline": [
     {{
       "section": "Introduction",
-      "word_count": "50-75 words",
+      "word_count": "{intro_words} words",
       "points": [
         "Hook: [specific hook based on student]",
         "Context: [specific background detail]",
@@ -965,7 +1002,7 @@ Return ONLY valid JSON in this format:
     }},
     {{
       "section": "Body Paragraph 1",
-      "word_count": "100-125 words",
+      "word_count": "{body_para_words} words",
       "points": [
         "Point: [main idea]",
         "Evidence: [specific experience from profile]",
@@ -973,7 +1010,7 @@ Return ONLY valid JSON in this format:
       ]
     }}
   ],
-  "total_word_count": "400-650 words",
+  "total_word_count": "{word_limit} words",
   "writing_tips": [
     "Show don't tell - use specific moments",
     "Connect experiences to future goals",
@@ -984,7 +1021,7 @@ Return ONLY valid JSON in this format:
         # Call Gemini
         client = genai.Client(api_key=GEMINI_API_KEY)
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model="gemini-2.5-flash-lite",
             contents=system_prompt,
             config=types.GenerateContentConfig(
                 temperature=0.8,
