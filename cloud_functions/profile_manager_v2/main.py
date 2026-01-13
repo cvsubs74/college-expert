@@ -296,7 +296,15 @@ def profile_manager_v2_http_entry(request):
             university_id = university['id']
             
             if action == 'add':
-                result = add_university_to_list(user_id, university_id, data)
+                # Extract university_name from multiple possible sources
+                university_data = {
+                    'university_name': university.get('name') or data.get('university_name') or university_id,
+                    'category': university.get('category', 'target'),
+                    'notes': university.get('notes', ''),
+                    'status': university.get('status', 'planning'),
+                    'application_deadline': university.get('application_deadline')
+                }
+                result = add_university_to_list(user_id, university_id, university_data)
             else:  # remove
                 result = remove_university_from_list(user_id, university_id)
             

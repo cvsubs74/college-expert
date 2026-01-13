@@ -35,14 +35,14 @@ const getAppName = () => {
 };
 
 // Determine profile manager URL based on approach
-// Note: Hybrid approach uses profile_manager_es for student profiles
+// Note: Hybrid and Elasticsearch approaches now use profile_manager_v2 (Firestore)
 const getProfileManagerUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
   if (approach === 'hybrid') {
-    return import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+    return import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
   }
   if (approach === 'elasticsearch') {
-    return import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+    return import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
   }
   if (approach === 'vertexai') {
     return import.meta.env.VITE_PROFILE_MANAGER_VERTEXAI_URL || 'https://profile-manager-vertexai-pfnwjfp26a-ue.a.run.app';

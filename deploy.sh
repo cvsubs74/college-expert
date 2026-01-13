@@ -921,6 +921,7 @@ deploy_frontend() {
     ES_AGENT_URL=$(gcloud run services describe $ES_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
     PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
     PROFILE_MANAGER_ES_URL=$(gcloud functions describe $PROFILE_MANAGER_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    PROFILE_MANAGER_V2_URL=$(gcloud functions describe profile-manager-v2 --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "https://profile-manager-v2-pfnwjfp26a-ue.a.run.app")
     
     # Get all knowledge base URLs for dynamic switching
     KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
@@ -930,6 +931,7 @@ deploy_frontend() {
     export VITE_ES_AGENT_URL=$ES_AGENT_URL
     export VITE_PROFILE_MANAGER_URL=$PROFILE_MANAGER_URL
     export VITE_PROFILE_MANAGER_ES_URL=$PROFILE_MANAGER_ES_URL
+    export VITE_PROFILE_MANAGER_V2_URL=$PROFILE_MANAGER_V2_URL
     export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
     export VITE_KNOWLEDGE_BASE_ES_URL=$KNOWLEDGE_BASE_ES_URL
     
@@ -938,6 +940,7 @@ deploy_frontend() {
     echo -e "  ES Agent URL: ${ES_AGENT_URL}"
     echo -e "  Profile Manager RAG URL: ${PROFILE_MANAGER_URL}"
     echo -e "  Profile Manager ES URL: ${PROFILE_MANAGER_ES_URL}"
+    echo -e "  Profile Manager V2 URL: ${PROFILE_MANAGER_V2_URL}"
     echo -e "  Knowledge Base RAG URL: ${KNOWLEDGE_BASE_URL}"
     echo -e "  Knowledge Base ES URL: ${KNOWLEDGE_BASE_ES_URL}"
     
