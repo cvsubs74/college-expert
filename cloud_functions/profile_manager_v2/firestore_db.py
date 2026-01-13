@@ -277,6 +277,60 @@ class FirestoreDB:
         except Exception as e:
             logger.error(f"[Firestore] Error deleting conversation: {e}")
             return False
+    
+    # ==================== FIT CHAT CONVERSATIONS ====================
+    
+    def save_fit_conversation(self, user_id: str, conversation_id: str, conversation_data: Dict) -> bool:
+        """Save fit chat conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('fit_chat_conversations').document(conversation_id)
+            conversation_data['updated_at'] = datetime.utcnow().isoformat()
+            doc_ref.set(conversation_data, merge=True)
+            logger.info(f"[Firestore] Saved fit conversation {conversation_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving fit conversation: {e}")
+            return False
+    
+    def get_fit_conversation(self, user_id: str, conversation_id: str) -> Optional[Dict]:
+        """Get fit chat conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('fit_chat_conversations').document(conversation_id)
+            doc = doc_ref.get()
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting fit conversation: {e}")
+            return None
+    
+    def list_fit_conversations(self, user_id: str, university_id: Optional[str] = None, limit: int = 20) -> List[Dict]:
+        """List user's fit chat conversations, optionally filtered by university."""
+        try:
+            convs_ref = self.db.collection('users').document(user_id).collection('fit_chat_conversations')
+            
+            # Filter by university if provided
+            if university_id:
+                query = convs_ref.where(filter=FieldFilter('university_id', '==', university_id))
+            else:
+                query = convs_ref
+            
+            # Order by updated_at descending and limit
+            docs = query.order_by('updated_at', direction=firestore.Query.DESCENDING).limit(limit).stream()
+            return [{'conversation_id': doc.id, **doc.to_dict()} for doc in docs]
+        except Exception as e:
+            logger.error(f"[Firestore] Error listing fit conversations: {e}")
+            return []
+    
+    def delete_fit_conversation(self, user_id: str, conversation_id: str) -> bool:
+        """Delete fit chat conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('fit_chat_conversations').document(conversation_id)
+            doc_ref.delete()
+            logger.info(f"[Firestore] Deleted fit conversation {conversation_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error deleting fit conversation: {e}")
+            return False
+
 
 
 # Global instance

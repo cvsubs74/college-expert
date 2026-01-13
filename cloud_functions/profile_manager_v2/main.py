@@ -43,6 +43,13 @@ from credits import (
     upgrade_subscription
 )
 from profile_chat import profile_chat
+from fit_chat_firestore import (
+    fit_chat,
+    save_fit_chat_conversation,
+    list_fit_chat_conversations,
+    load_fit_chat_conversation,
+    delete_fit_chat_conversation
+)
 from essay_copilot import (
     generate_essay_starters,
     get_copilot_suggestion,
@@ -491,6 +498,84 @@ def profile_manager_v2_http_entry(request):
             result = profile_chat(user_email, question, conversation_history)
             return add_cors_headers(result)
         
+        # --- FIT CHAT (Context Injection) ---
+        elif resource_type == 'fit-chat' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            question = data.get('question', '')
+            history = data.get('conversation_history', [])
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            if not university_id or not question:
+                return add_cors_headers({'success': False, 'error': 'university_id and question required'}, 400)
+            
+            result = fit_chat(user_email, university_id, question, history)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION SAVE ---
+        elif resource_type == 'fit-chat-save' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            university_name = data.get('university_name', university_id)
+            messages = data.get('messages', [])
+            conversation_id = data.get('conversation_id')  # Optional for updates
+            title = data.get('title')  # Optional, auto-generated if not provided
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            if not messages:
+                return add_cors_headers({'success': False, 'error': 'messages required'}, 400)
+            
+            result = save_fit_chat_conversation(user_email, university_id, university_name, 
+                                               messages, conversation_id, title)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION LIST ---
+        elif resource_type == 'fit-chat-list' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id') or request.args.get('university_id')  # Optional filter
+            limit = int(data.get('limit') or request.args.get('limit') or 20)
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = list_fit_chat_conversations(user_email, university_id, limit)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION LOAD ---
+        elif resource_type == 'fit-chat-load' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id') or request.args.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            result = load_fit_chat_conversation(user_email, conversation_id)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION DELETE ---
+        elif resource_type == 'fit-chat-delete' and request.method in ['POST', 'DELETE']:
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            result = delete_fit_chat_conversation(user_email, conversation_id)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
         # --- ESSAY COPILOT ---
         elif resource_type == 'generate-essay-starters' and request.method == 'POST':
             data = request.get_json()
@@ -502,6 +587,60 @@ def profile_manager_v2_http_entry(request):
                 return add_cors_headers({'error': 'user_email, university_id, and prompt_text required'}, 400)
             
             result = generate_essay_starters(user_email, university_id, prompt_text)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        # Alias for frontend compatibility
+        elif resource_type == 'essay-starters' and request.method == 'POST':
+            data = request.get_json()
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            prompt_text = data.get('prompt_text')
+            notes = data.get('notes', '')
+            
+            if not user_email or not university_id or not prompt_text:
+                return add_cors_headers({'error': 'user_email, university_id, and prompt_text required'}, 400)
+            
+            result = generate_essay_starters(user_email, university_id, prompt_text, notes)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        # Context for selected essay starter
+        elif resource_type == 'starter-context' and request.method == 'POST':
+            data = request.get_json()
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            selected_hook = data.get('selected_hook')
+            prompt_text = data.get('prompt_text')
+            
+            if not user_email or not university_id or not selected_hook:
+                return add_cors_headers({'error': 'user_email, university_id, and selected_hook required'}, 400)
+            
+            result = get_starter_context(user_email, university_id, selected_hook, prompt_text)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        # Essay copilot suggestions
+        elif resource_type == 'essay-copilot' and request.method == 'POST':
+            data = request.get_json()
+            prompt_text = data.get('prompt_text')
+            current_text = data.get('current_text', '')
+            action = data.get('action', 'suggest')
+            
+            if not prompt_text:
+                return add_cors_headers({'error': 'prompt_text required'}, 400)
+            
+            result = get_copilot_suggestion(prompt_text, current_text, action)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        # Essay feedback
+        elif resource_type == 'essay-feedback' and request.method == 'POST':
+            data = request.get_json()
+            prompt_text = data.get('prompt_text')
+            draft_text = data.get('draft_text')
+            university_name = data.get('university_name', '')
+            
+            if not prompt_text or not draft_text:
+                return add_cors_headers({'error': 'prompt_text and draft_text required'}, 400)
+            
+            result = get_draft_feedback(prompt_text, draft_text, university_name)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         elif resource_type == 'copilot-suggest' and request.method == 'POST':
