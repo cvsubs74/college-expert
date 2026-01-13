@@ -16,8 +16,8 @@ import ReactMarkdown from 'react-markdown';
 import { useAuth } from '../context/AuthContext';
 
 // API Configuration
-const PROFILE_MANAGER_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL ||
-    'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+const PROFILE_MANAGER_V2_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL ||
+    'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 
 /**
  * FitChatWidget - A floating chat widget for asking questions about fit analysis.
@@ -131,7 +131,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         if (!currentUser?.email) return;
         setLoadingHistory(true);
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-list`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-list`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -155,7 +155,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         if (!currentUser?.email || messages.length === 0) return;
         setSavingConversation(true);
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-save`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-save`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -183,7 +183,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         if (!currentUser?.email) return;
         setLoadingHistory(true);
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-load`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-load`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -212,7 +212,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         if (!confirm('Delete this conversation?')) return;
 
         try {
-            await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-delete`, {
+            await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-delete`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -247,7 +247,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
 
         try {
             // Load the conversation first to get messages
-            const loadResponse = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-load`, {
+            const loadResponse = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-load`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -259,7 +259,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
 
             if (loadData.success && loadData.conversation) {
                 // Save with new title
-                await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-save`, {
+                await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-save`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -311,7 +311,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         });
 
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -364,7 +364,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
     const saveConversationSilent = async (msgs) => {
         if (!currentUser?.email || !msgs || msgs.length === 0) return;
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat-save`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat-save`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -407,7 +407,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
         });
 
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/fit-chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

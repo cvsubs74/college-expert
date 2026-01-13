@@ -58,7 +58,8 @@ from essay_copilot import (
     save_essay_draft,
     get_essay_drafts,
     get_starter_context,
-    fetch_university_profile
+    fetch_university_profile,
+    generate_essay_outline
 )
 from fit_computation import calculate_fit_for_college
 
@@ -641,6 +642,20 @@ def profile_manager_v2_http_entry(request):
                 return add_cors_headers({'error': 'prompt_text and draft_text required'}, 400)
             
             result = get_draft_feedback(prompt_text, draft_text, university_name)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        # Generate essay outline
+        elif resource_type == 'generate-outline' and request.method == 'POST':
+            data = request.get_json()
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            prompt_text = data.get('prompt_text')
+            selected_hook = data.get('selected_hook')
+            
+            if not user_email or not university_id or not prompt_text:
+                return add_cors_headers({'error': 'user_email, university_id, and prompt_text required'}, 400)
+            
+            result = generate_essay_outline(user_email, university_id, prompt_text, selected_hook)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         elif resource_type == 'copilot-suggest' and request.method == 'POST':

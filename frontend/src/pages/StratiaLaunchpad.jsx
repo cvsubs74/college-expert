@@ -76,7 +76,7 @@ const StratiaLaunchpad = () => {
         try {
             // Fetch both college list and precomputed fits in parallel
             const [listResponse, fitsResult] = await Promise.all([
-                fetch(`${import.meta.env.VITE_PROFILE_MANAGER_ES_URL}/get-college-list?user_email=${encodeURIComponent(currentUser.email)}`),
+                fetch(`${import.meta.env.VITE_PROFILE_MANAGER_V2_URL}/get-college-list?user_email=${encodeURIComponent(currentUser.email)}`),
                 getPrecomputedFits(currentUser.email, {}, 200)
             ]);
 

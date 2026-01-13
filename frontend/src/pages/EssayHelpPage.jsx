@@ -15,7 +15,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
-const PROFILE_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+const PROFILE_V2_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 
 // Fallback brainstorming questions if none are persisted
 const getDefaultBrainstormingQuestions = (promptText) => {
@@ -114,6 +114,10 @@ export default function EssayHelpPage() {
     // Version state - stores all versions per prompt
     const [draftVersions, setDraftVersions] = useState({}); // { promptIndex: [{ version: 0, version_name: "Main", draft_text: "..." }, ...] }
     const [currentVersion, setCurrentVersion] = useState({}); // { promptIndex: 0 } - currently selected version
+    // Outline state
+    const [outline, setOutline] = useState({});
+    const [loadingOutline, setLoadingOutline] = useState({});
+    const [outlineExpanded, setOutlineExpanded] = useState({});
 
     const fetchUniversityData = useCallback(async () => {
         try {
@@ -148,7 +152,7 @@ export default function EssayHelpPage() {
 
             // Auto-save draft with the new note
             try {
-                await fetch(`${PROFILE_ES_URL}/save-essay-draft`, {
+                await fetch(`${PROFILE_V2_URL}/save-essay-draft`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -171,7 +175,7 @@ export default function EssayHelpPage() {
         setLoadingStarters(prev => ({ ...prev, [promptIndex]: true }));
         try {
             const notes = savedNotes[promptIndex]?.join('\n') || '';
-            const response = await fetch(`${PROFILE_ES_URL}/essay-starters`, {
+            const response = await fetch(`${PROFILE_V2_URL}/essay-starters`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -199,7 +203,7 @@ export default function EssayHelpPage() {
         setStarters(prev => ({ ...prev, [promptIndex]: null })); // Hide other starters
 
         try {
-            const response = await fetch(`${PROFILE_ES_URL}/starter-context`, {
+            const response = await fetch(`${PROFILE_V2_URL}/starter-context`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -220,12 +224,39 @@ export default function EssayHelpPage() {
         }
     };
 
+    // Generate essay outline
+    const handleGenerateOutline = async (promptIndex, promptText) => {
+        setLoadingOutline(prev => ({ ...prev, [promptIndex]: true }));
+        try {
+            const response = await fetch(`${PROFILE_V2_URL}/generate-outline`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_email: currentUser?.email,
+                    university_id: universityId,
+                    prompt_text: promptText,
+                    selected_hook: selectedHook[promptIndex] || null
+                })
+            });
+            const data = await response.json();
+            if (data.success && data.outline) {
+                setOutline(prev => ({ ...prev, [promptIndex]: data }));
+                setOutlineExpanded(prev => ({ ...prev, [promptIndex]: true }));
+            }
+        } catch (err) {
+            console.error('Failed to generate outline:', err);
+        } finally {
+            setLoadingOutline(prev => ({ ...prev, [promptIndex]: false }));
+        }
+    };
+
+
     // Get copilot suggestions (now returns array for 'suggest' action)
     const handleGetSuggestion = async (promptIndex, promptText, action = 'suggest') => {
         setLoadingCopilot(prev => ({ ...prev, [promptIndex]: true }));
         try {
             const currentText = essayDrafts[promptIndex] || '';
-            const response = await fetch(`${PROFILE_ES_URL}/essay-copilot`, {
+            const response = await fetch(`${PROFILE_V2_URL}/essay-copilot`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -252,7 +283,7 @@ export default function EssayHelpPage() {
 
         setLoadingChat(prev => ({ ...prev, [promptIndex]: true }));
         try {
-            const response = await fetch(`${PROFILE_ES_URL}/essay-chat`, {
+            const response = await fetch(`${PROFILE_V2_URL}/essay-chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -280,7 +311,7 @@ export default function EssayHelpPage() {
         setLoadingFeedback(prev => ({ ...prev, [promptIndex]: true }));
         try {
             const draftText = essayDrafts[promptIndex] || '';
-            const response = await fetch(`${PROFILE_ES_URL}/essay-feedback`, {
+            const response = await fetch(`${PROFILE_V2_URL}/essay-feedback`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -327,7 +358,7 @@ export default function EssayHelpPage() {
                 ? (draftVersions[promptIndex]?.length || 1)  // Next version number
                 : (currentVersion[promptIndex] || 0);
 
-            const response = await fetch(`${PROFILE_ES_URL}/save-essay-draft`, {
+            const response = await fetch(`${PROFILE_V2_URL}/save-essay-draft`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -361,7 +392,7 @@ export default function EssayHelpPage() {
     const loadDrafts = useCallback(async () => {
         if (!currentUser?.email) return;
         try {
-            const response = await fetch(`${PROFILE_ES_URL}/get-essay-drafts`, {
+            const response = await fetch(`${PROFILE_V2_URL}/get-essay-drafts`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

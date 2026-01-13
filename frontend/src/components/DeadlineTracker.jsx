@@ -11,8 +11,8 @@ import {
 import { useAuth } from '../context/AuthContext';
 
 // API Configuration
-const PROFILE_MANAGER_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL ||
-    'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+const PROFILE_MANAGER_V2_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL ||
+    'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 
 // Application plan options
 const APPLICATION_PLANS = [
@@ -49,7 +49,7 @@ const DeadlineTracker = ({ onSchoolClick }) => {
         setError(null);
 
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/get-deadlines`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/get-deadlines`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user_email: currentUser.email })
@@ -73,7 +73,7 @@ const DeadlineTracker = ({ onSchoolClick }) => {
         setUpdatingPlan(universityId);
 
         try {
-            const response = await fetch(`${PROFILE_MANAGER_ES_URL}/update-application-plan`, {
+            const response = await fetch(`${PROFILE_MANAGER_V2_URL}/update-application-plan`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -232,8 +232,8 @@ const DeadlineTracker = ({ onSchoolClick }) => {
                             key={tab.key}
                             onClick={() => setFilter(tab.key)}
                             className={`px-3 py-1 text-xs font-medium rounded-full transition-colors ${filter === tab.key
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                                ? 'bg-indigo-600 text-white'
+                                : 'bg-white text-gray-600 hover:bg-gray-100'
                                 }`}
                         >
                             {tab.label}
@@ -270,8 +270,8 @@ const DeadlineTracker = ({ onSchoolClick }) => {
                                         onChange={(e) => updatePlan(uni.university_id, e.target.value || null)}
                                         disabled={updatingPlan === uni.university_id}
                                         className={`text-xs pl-2 pr-6 py-1 rounded border appearance-none cursor-pointer transition-colors ${uni.user_application_plan
-                                                ? 'bg-indigo-50 border-indigo-200 text-indigo-700'
-                                                : 'bg-gray-50 border-gray-200 text-gray-500'
+                                            ? 'bg-indigo-50 border-indigo-200 text-indigo-700'
+                                            : 'bg-gray-50 border-gray-200 text-gray-500'
                                             } ${updatingPlan === uni.university_id ? 'opacity-50' : ''}`}
                                     >
                                         {APPLICATION_PLANS.map(plan => (

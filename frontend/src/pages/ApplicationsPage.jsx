@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import '../styles/ApplicationsPage.css';
 
 // API URLs
-const API_BASE_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+const API_BASE_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
 
 export default function ApplicationsPage() {

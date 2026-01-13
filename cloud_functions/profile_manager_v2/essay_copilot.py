@@ -864,3 +864,160 @@ def get_essay_drafts(
             "error": str(e),
             "drafts": []
         }
+
+
+def generate_essay_outline(user_email: str, university_id: str, prompt_text: str, selected_hook: str = None) -> dict:
+    """
+    Generate a personalized essay outline based on prompt, profile, and selected hook.
+    
+    Args:
+        user_email: Student's email
+        university_id: University ID for context
+        prompt_text: Essay prompt
+        selected_hook: Optional selected essay starter/hook
+        
+    Returns:
+        dict with outline structure, word counts, and writing tips
+    """
+    try:
+        db = get_db()
+        
+        # Get student profile from Firestore
+        profile_doc = db.get_profile(user_email)
+        if not profile_doc:
+            return {
+                "success": False,
+                "error": "Student profile not found"
+            }
+        
+        # Extract key profile information
+        profile_summary = {
+            "name": profile_doc.get("full_name", "Student"),
+            "grade": profile_doc.get("grade", ""),
+            "interests": profile_doc.get("interests", []),
+            "activities": profile_doc.get("extracurriculars", []),
+            "achievements": profile_doc.get("achievements", []),
+            "intended_major": profile_doc.get("intended_major", ""),
+            "background": {
+                "ethnicity": profile_doc.get("ethnicity", ""),
+                "first_gen": profile_doc.get("first_generation", False),
+                "income_level": profile_doc.get("income_level", "")
+            }
+        }
+        
+        # Get university profile for additional context
+        university_profile = fetch_university_profile(university_id)
+        university_name = "the university"
+        if university_profile:
+            university_name = university_profile.get('profile', {}).get('metadata', {}).get('official_name', university_name)
+        
+        # Build Gemini prompt
+        profile_json = json.dumps(profile_summary, indent=2, default=str)
+        
+        system_prompt = f"""You are an expert college essay coach. Generate a detailed essay outline for a student.
+
+ESSAY PROMPT:
+{prompt_text}
+
+STUDENT PROFILE:
+{profile_json}
+
+UNIVERSITY: {university_name}
+
+{f'SELECTED HOOK (integrate this into the outline):\\n{selected_hook}' if selected_hook else ''}
+
+Create a detailed essay outline with:
+
+1. **Introduction** (50-75 words)
+   - Opening hook (use selected hook if provided, otherwise suggest one based on profile)
+   - Context/background from student's life
+   - Clear thesis statement
+
+2. **Body Paragraphs** (2-3 paragraphs, 100-125 words each)
+   - Each paragraph should have:
+     * Main point that answers the prompt
+     * Specific evidence from student's background (activities, achievements, experiences)
+     * Analysis/reflection showing growth or learning
+   - Use concrete details from the student's profile
+
+3. **Conclusion** (50-75 words)
+   - Tie back to thesis
+   - Broader significance or impact
+   - Forward-looking statement
+
+IMPORTANT:
+- Base outline on the student's ACTUAL experiences from their profile
+- Be specific - reference real activities/achievements
+- Suggest word counts for each section
+- Include 3-4 actionable writing tips
+
+Return ONLY valid JSON in this format:
+{{
+  "outline": [
+    {{
+      "section": "Introduction",
+      "word_count": "50-75 words",
+      "points": [
+        "Hook: [specific hook based on student]",
+        "Context: [specific background detail]",
+        "Thesis: [clear thesis statement]"
+      ]
+    }},
+    {{
+      "section": "Body Paragraph 1",
+      "word_count": "100-125 words",
+      "points": [
+        "Point: [main idea]",
+        "Evidence: [specific experience from profile]",
+        "Analysis: [what student learned/grew]"
+      ]
+    }}
+  ],
+  "total_word_count": "400-650 words",
+  "writing_tips": [
+    "Show don't tell - use specific moments",
+    "Connect experiences to future goals",
+    "Be authentic - use your natural voice"
+  ]
+}}"""
+
+        # Call Gemini
+        client = genai.Client(api_key=GEMINI_API_KEY)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash-exp",
+            contents=system_prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.8,
+                max_output_tokens=2048,
+                response_mime_type="application/json"
+            )
+        )
+        
+        # Parse response
+        try:
+            outline_data = json.loads(response.text)
+            
+            logger.info(f"[OUTLINE] Generated for {user_email}, prompt: {prompt_text[:50]}...")
+            
+            return {
+                "success": True,
+                "outline": outline_data.get("outline", []),
+                "total_word_count": outline_data.get("total_word_count", "400-650 words"),
+                "writing_tips": outline_data.get("writing_tips", []),
+                "selected_hook": selected_hook
+            }
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"[OUTLINE] JSON parse error: {e}")
+            logger.error(f"[OUTLINE] Response text: {response.text[:200]}")
+            return {
+                "success": False,
+                "error": "Failed to parse outline response"
+            }
+        
+    except Exception as e:
+        logger.error(f"[OUTLINE] Generation failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }

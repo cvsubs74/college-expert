@@ -700,7 +700,7 @@ function Profile() {
 
   const handleDownloadDocument = async (filename) => {
     try {
-      const baseUrl = import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+      const baseUrl = import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 
       const response = await fetch(`${baseUrl}/download-document`, {
         method: 'POST',
