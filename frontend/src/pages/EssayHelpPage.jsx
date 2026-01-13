@@ -759,11 +759,11 @@ export default function EssayHelpPage() {
                                         {/* Generate Outline Button - Add after contextPanel */}
                                         {
                                             contextPanel[index] && (
-                                                <div className="text-center my-4">
+                                                <div className="flex justify-end mt-4">
                                                     <button
                                                         onClick={() => handleGenerateOutline(index, prompt)}
                                                         disabled={loadingOutline[index]}
-                                                        className="px-5 py-2.5 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-sm rounded-lg font-medium hover:opacity-90 disabled:opacity-50 transition-all flex items-center gap-2 shadow-sm mx-auto"
+                                                        className="px-4 py-2 bg-[#1A4D2E] text-white text-sm rounded-lg font-medium hover:bg-[#2A6D4E] disabled:opacity-50 transition-all flex items-center gap-2 shadow-sm "
                                                     >
                                                         {loadingOutline[index] ? (
                                                             <>
