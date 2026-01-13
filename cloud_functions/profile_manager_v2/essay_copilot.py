@@ -866,7 +866,7 @@ def get_essay_drafts(
         }
 
 
-def generate_essay_outline(user_email: str, university_id: str, prompt_text: str, selected_hook: str = None) -> dict:
+def generate_essay_outline(user_email: str, university_id: str, prompt_text: str, selected_hook: str = None, word_limit: int = None) -> dict:
     """
     Generate a personalized essay outline based on prompt, profile, and selected hook.
     
@@ -875,6 +875,7 @@ def generate_essay_outline(user_email: str, university_id: str, prompt_text: str
         university_id: University ID for context
         prompt_text: Essay prompt
         selected_hook: Optional selected essay starter/hook
+        word_limit: Optional word limit (if not provided, will try to extract from prompt_text)
         
     Returns:
         dict with outline structure, word counts, and writing tips
@@ -911,24 +912,28 @@ def generate_essay_outline(user_email: str, university_id: str, prompt_text: str
         if university_profile:
             university_name = university_profile.get('profile', {}).get('metadata', {}).get('official_name', university_name)
         
-        # Extract word limit from prompt text
-        word_limit = 650  # Default
-        import re
-        # Look for patterns like "500 words", "500-word", "maximum 500 words", etc.
-        word_patterns = [
-            r'(\d+)\s*words?\s*max',
-            r'max(?:imum)?\s*(?:of\s*)?(\d+)\s*words?',
-            r'(\d+)\s*word\s*limit',
-            r'(\d+)-word',
-            r'up\s*to\s*(\d+)\s*words?',
-            r'no\s*more\s*than\s*(\d+)\s*words?'
-        ]
+        # Determine word limit - prioritize parameter over regex extraction
+        if word_limit is None:
+            # Extract word limit from prompt text as fallback
+            word_limit = 650  # Default
+            import re
+            # Look for patterns like "500 words", "500-word", "maximum 500 words", etc.
+            word_patterns = [
+                r'(\d+)\s*words?\s*max',
+                r'max(?:imum)?\s*(?:of\s*)?(\d+)\s*words?',
+                r'(\d+)\s*word\s*limit',
+                r'(\d+)-word',
+                r'up\s*to\s*(\d+)\s*words?',
+                r'no\s*more\s*than\s*(\d+)\s*words?'
+            ]
+            
+            for pattern in word_patterns:
+                match = re.search(pattern, prompt_text, re.IGNORECASE)
+                if match:
+                    word_limit = int(match.group(1))
+                    break
         
-        for pattern in word_patterns:
-            match = re.search(pattern, prompt_text, re.IGNORECASE)
-            if match:
-                word_limit = int(match.group(1))
-                break
+        logger.info(f"[OUTLINE] Using word limit: {word_limit} for prompt: {prompt_text[:50]}...")
         
         # Calculate word distribution based on total limit
         # Typical distribution: Intro (12%), Body (70%), Conclusion (18%)

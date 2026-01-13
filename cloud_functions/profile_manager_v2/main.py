@@ -651,11 +651,12 @@ def profile_manager_v2_http_entry(request):
             university_id = data.get('university_id')
             prompt_text = data.get('prompt_text')
             selected_hook = data.get('selected_hook')
+            word_limit = data.get('word_limit')  # Optional
             
             if not user_email or not university_id or not prompt_text:
                 return add_cors_headers({'error': 'user_email, university_id, and prompt_text required'}, 400)
             
-            result = generate_essay_outline(user_email, university_id, prompt_text, selected_hook)
+            result = generate_essay_outline(user_email, university_id, prompt_text, selected_hook, word_limit)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         elif resource_type == 'copilot-suggest' and request.method == 'POST':
