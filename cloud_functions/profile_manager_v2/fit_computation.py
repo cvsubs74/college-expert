@@ -545,6 +545,41 @@ You have access to COMPLETE university data. Generate recommendations across ALL
                 if result['fit_category'] not in valid_categories:
                     result['fit_category'] = 'REACH'
                 
+                # === POST-PROCESSING: ENSURE MATCH_PERCENTAGE ALIGNS WITH CATEGORY ===
+                # This prevents LLM from giving inconsistent percentages for same category
+                original_percentage = result['match_percentage']
+                category = result['fit_category']
+                
+                # Define percentage ranges for each category
+                # SUPER_REACH: 0-34, REACH: 35-54, TARGET: 55-74, SAFETY: 75-100
+                if category == 'SUPER_REACH':
+                    # Cap at 34% for SUPER_REACH schools
+                    if result['match_percentage'] > 34:
+                        result['match_percentage'] = min(34, max(15, result['match_percentage'] - 30))
+                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (SUPER_REACH cap)")
+                elif category == 'REACH':
+                    # Clamp to 35-54% for REACH schools
+                    if result['match_percentage'] < 35:
+                        result['match_percentage'] = 35
+                    elif result['match_percentage'] > 54:
+                        result['match_percentage'] = 54
+                    if original_percentage != result['match_percentage']:
+                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (REACH range)")
+                elif category == 'TARGET':
+                    # Clamp to 55-74% for TARGET schools
+                    if result['match_percentage'] < 55:
+                        result['match_percentage'] = 55
+                    elif result['match_percentage'] > 74:
+                        result['match_percentage'] = 74
+                    if original_percentage != result['match_percentage']:
+                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (TARGET range)")
+                elif category == 'SAFETY':
+                    # Clamp to 75-100% for SAFETY schools
+                    if result['match_percentage'] < 75:
+                        result['match_percentage'] = 75
+                    if original_percentage != result['match_percentage']:
+                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (SAFETY floor)")
+                
                 # Add metadata
                 result['university_name'] = uni_name
                 result['calculated_at'] = datetime.utcnow().isoformat()
