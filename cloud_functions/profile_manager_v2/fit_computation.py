@@ -582,6 +582,19 @@ You have access to COMPLETE university data. Generate recommendations across ALL
                 
                 # Add metadata
                 result['university_name'] = uni_name
+                result['university_id'] = university_data.get('university_id')
+                
+                # Location
+                city = university_data.get('city')
+                state = university_data.get('state')
+                if city and state:
+                    result['location'] = f"{city}, {state}"
+                elif city:
+                    result['location'] = city
+                elif state:
+                    result['location'] = state
+                    
+                result['logo_url'] = f"https://storage.googleapis.com/college-counselor-media/universities/{university_data.get('university_id')}/logo.png" if university_data.get('university_id') else None
                 result['calculated_at'] = datetime.utcnow().isoformat()
                 result['selectivity_tier'] = selectivity_tier
                 result['acceptance_rate'] = acceptance_rate

@@ -1058,6 +1058,48 @@ def knowledge_base_manager_universities_http_entry(req):
                 result = university_chat(university_id, question, history)
                 return add_cors_headers(result)
             
+            # Batch get request - get multiple universities by IDs
+            elif 'university_ids' in data:
+                university_ids = data.get('university_ids', [])
+                if not university_ids:
+                    return add_cors_headers({"success": True, "universities": []})
+                
+                # Fetch universities from ES
+                try:
+                    es_client = get_elasticsearch_client()
+                    response = es_client.search(
+                        index=ES_INDEX_NAME,
+                        body={
+                            "size": len(university_ids),
+                            "query": {
+                                "terms": {"university_id": university_ids}
+                            },
+                            "_source": ["university_id", "official_name", "location", "acceptance_rate", 
+                                       "soft_fit_category", "us_news_rank", "summary", "media", "profile"]
+                        }
+                    )
+                    
+                    universities = []
+                    for hit in response['hits']['hits']:
+                        source = hit['_source']
+                        universities.append({
+                            "university_id": source.get('university_id'),
+                            "official_name": source.get('official_name'),
+                            "location": source.get('location'),
+                            "acceptance_rate": source.get('acceptance_rate'),
+                            "soft_fit_category": source.get('soft_fit_category'),
+                            "us_news_rank": source.get('us_news_rank'),
+                            "summary": source.get('summary'),
+                            "media": source.get('media'),
+                            "profile": source.get('profile'),
+                            "logo_url": source.get('logo_url') or (source.get('profile', {}).get('logo_url') if source.get('profile') else None)
+                        })
+                    
+                    return add_cors_headers({"success": True, "universities": universities})
+                except Exception as e:
+                    logger.error(f"Batch get failed: {e}")
+                    return add_cors_headers({"success": False, "error": str(e), "universities": []}, 500)
+            
             else:
                 return add_cors_headers({"error": "Invalid request. Provide 'query' for search or 'profile' for ingest."}, 400)
         

@@ -108,7 +108,8 @@ const StratiaLaunchpad = () => {
                             scholarship_matches: fit.scholarship_matches || [],
                             test_strategy: fit.test_strategy || {},
                             major_strategy: fit.major_strategy || {},
-                            infographic_url: fit.infographic_url
+                            infographic_url: fit.infographic_url,
+                            logo_url: fit.logo_url
                         };
                     });
 
@@ -122,9 +123,12 @@ const StratiaLaunchpad = () => {
                             return {
                                 ...college,
                                 fit_analysis: precomputed,
-                                infographic_url: precomputed.infographic_url
+                                infographic_url: precomputed.infographic_url,
+                                logo_url: college.logo_url || precomputed.logo_url,
+                                location: college.location || precomputed.location
                             };
                         }
+                        console.log('[StratiaLaunchpad] Logo for', college.university_id, ':', college.logo_url || (precomputed && precomputed.logo_url));
                         return college;
                     });
                     console.log('[StratiaLaunchpad] Merged:', colleges.filter(c => c.fit_analysis?.fit_category).length, 'colleges with fit data');

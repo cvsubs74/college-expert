@@ -84,7 +84,27 @@ def get_all_fits(user_id: str) -> List[Dict]:
     """
     try:
         db = get_db()
-        return db.get_all_fits(user_id)
+        fits = db.get_all_fits(user_id)
+        
+        # Enrich fits with missing logo_url and location
+        for fit in fits:
+            # Construct location if missing
+            if not fit.get('location'):
+                city = fit.get('city')
+                state = fit.get('state')
+                if city and state:
+                    fit['location'] = f"{city}, {state}"
+                elif city:
+                    fit['location'] = city
+                elif state:
+                    fit['location'] = state
+
+            if not fit.get('logo_url'):
+                university_id = fit.get('university_id')
+                if university_id:
+                    fit['logo_url'] = f"https://storage.googleapis.com/college-counselor-media/universities/{university_id}/logo.png"
+        
+        return fits
     except Exception as e:
         logger.error(f"[FIT_ANALYSIS] Get all fits failed: {e}")
         return []

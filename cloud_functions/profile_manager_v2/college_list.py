@@ -4,12 +4,20 @@ Handles adding/removing universities to/from user's college list (Launchpad).
 """
 
 import logging
+import os
+import requests
 from datetime import datetime
 from typing import List, Dict, Optional
 
 from firestore_db import get_db
 
 logger = logging.getLogger(__name__)
+
+# Knowledge base URL for enriching university data
+KNOWLEDGE_BASE_UNIVERSITIES_URL = os.getenv(
+    "KNOWLEDGE_BASE_UNIVERSITIES_URL",
+    "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+)
 
 
 def add_university_to_list(user_id: str, university_id: str, university_data: dict) -> dict:
@@ -96,17 +104,105 @@ def remove_university_from_list(user_id: str, university_id: str) -> dict:
 
 def get_college_list(user_id: str) -> List[Dict]:
     """
-    Get user's college list.
+    Get user's college list, enriched with university data from knowledge base.
+    
+    This mirrors the ES backend's handle_get_college_list() which fetches
+    logo_url, location, and other data from the knowledgebase_universities index.
     
     Args:
         user_id: User's email
         
     Returns:
-        List of university dicts
+        List of university dicts enriched with KB data
     """
     try:
         db = get_db()
-        return db.get_college_list(user_id)
+        items = db.get_college_list(user_id)
+        
+        if not items:
+            return []
+        
+        # Collect university IDs for batch lookup
+        university_ids = [item.get('university_id') for item in items if item.get('university_id')]
+        
+        # Fetch enrichment data from knowledge base API
+        university_data = {}
+        if university_ids:
+            try:
+                # Call the knowledge base API to get university details (batch get via POST)
+                response = requests.post(
+                    KNOWLEDGE_BASE_UNIVERSITIES_URL,
+                    json={"university_ids": university_ids},
+                    timeout=10
+                )
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    if data.get('success') and data.get('universities'):
+                        for uni in data['universities']:
+                            uni_id = uni.get('university_id')
+                            if uni_id:
+                                # Extract location string from location object
+                                location = uni.get('location', {})
+                                location_str = None
+                                if isinstance(location, dict):
+                                    city = location.get('city', '')
+                                    state = location.get('state', '')
+                                    if city and state:
+                                        location_str = f"{city}, {state}"
+                                    elif state:
+                                        location_str = state
+                                elif isinstance(location, str):
+                                    location_str = location
+                                
+                                # Get logo_url from profile if available
+                                profile = uni.get('profile', {}) or {}
+                                logo_url = uni.get('logo_url') or profile.get('logo_url')
+                                
+                                university_data[uni_id] = {
+                                    'location': location_str,
+                                    'acceptance_rate': uni.get('acceptance_rate'),
+                                    'soft_fit_category': uni.get('soft_fit_category'),
+                                    'us_news_rank': uni.get('us_news_rank'),
+                                    'summary': uni.get('summary'),
+                                    'logo_url': logo_url,
+                                    'media': uni.get('media')
+                                }
+                        logger.info(f"[COLLEGE_LIST] Enriched {len(university_data)} universities with KB data")
+                else:
+                    logger.warning(f"[COLLEGE_LIST] KB batch-get returned {response.status_code}")
+                    
+            except requests.exceptions.RequestException as e:
+                logger.warning(f"[COLLEGE_LIST] Could not fetch university KB data: {e}")
+            except Exception as e:
+                logger.warning(f"[COLLEGE_LIST] Error parsing KB response: {e}")
+        
+        # Enrich items with knowledge base data
+        enriched_items = []
+        for item in items:
+            uni_id = item.get('university_id')
+            uni_info = university_data.get(uni_id, {})
+            
+            # Build enriched item
+            enriched_item = {
+                'university_id': uni_id,
+                'university_name': item.get('university_name'),
+                'status': item.get('status', 'favorites'),
+                'category': item.get('category'),
+                'order': item.get('order'),
+                'added_at': item.get('added_at'),
+                'notes': item.get('notes') or item.get('student_notes'),
+                # Enriched fields from knowledge base
+                'location': uni_info.get('location') or item.get('location'),
+                'acceptance_rate': uni_info.get('acceptance_rate') or item.get('acceptance_rate'),
+                'soft_fit_category': uni_info.get('soft_fit_category') or item.get('soft_fit_category'),
+                'us_news_rank': uni_info.get('us_news_rank') or item.get('us_news_rank'),
+                'summary': uni_info.get('summary') or item.get('summary'),
+                'logo_url': uni_info.get('logo_url') or item.get('logo_url'),
+            }
+            enriched_items.append(enriched_item)
+        
+        return enriched_items
     except Exception as e:
         logger.error(f"[COLLEGE_LIST] Get list failed: {e}")
         return []

@@ -228,10 +228,12 @@ export default function EssayHelpPage() {
     const handleGenerateOutline = async (promptIndex, prompt) => {
         setLoadingOutline(prev => ({ ...prev, [promptIndex]: true }));
         try {
-            // Extract numeric word limit from prompt.word_limit (e.g., "250 words" -> 250)
+            // Extract numeric word limit from prompt.word_limit (e.g., "250 words" -> 250, or just 250)
             let wordLimit = null;
             if (prompt.word_limit) {
-                const match = prompt.word_limit.match(/(\d+)/);
+                // Handle both string ("250 words") and number (250) formats
+                const wordLimitStr = String(prompt.word_limit);
+                const match = wordLimitStr.match(/(\d+)/);
                 if (match) {
                     wordLimit = parseInt(match[1]);
                 }
@@ -751,23 +753,23 @@ export default function EssayHelpPage() {
                                                     )}
 
                                                     <p className="text-xs text-[#6B6B6B] mt-4 text-center italic">
-                                                    {/* Generate Outline Button - Inside card */}
-                                                    <div className="flex justify-end mt-3">
-                                                        <button
-                                                            onClick={() => handleGenerateOutline(index, prompt)}
-                                                            disabled={loadingOutline[index]}
-                                                            className="px-4 py-2 bg-[#1A4D2E] text-white text-sm rounded-lg font-medium hover:bg-[#2A6D4E] disabled:opacity-50 transition-all flex items-center gap-2 shadow-sm"
-                                                        >
-                                                            {loadingOutline[index] ? (
-                                                                <>
-                                                                    <ArrowPathIcon className="w-4 h-4 animate-spin" />
-                                                                    Generating Outline...
-                                                                </>
-                                                            ) : (
-                                                                "📝 Generate Essay Outline"
-                                                            )}
-                                                        </button>
-                                                    </div>
+                                                        {/* Generate Outline Button - Inside card */}
+                                                        <div className="flex justify-end mt-3">
+                                                            <button
+                                                                onClick={() => handleGenerateOutline(index, prompt)}
+                                                                disabled={loadingOutline[index]}
+                                                                className="px-4 py-2 bg-[#1A4D2E] text-white text-sm rounded-lg font-medium hover:bg-[#2A6D4E] disabled:opacity-50 transition-all flex items-center gap-2 shadow-sm"
+                                                            >
+                                                                {loadingOutline[index] ? (
+                                                                    <>
+                                                                        <ArrowPathIcon className="w-4 h-4 animate-spin" />
+                                                                        Generating Outline...
+                                                                    </>
+                                                                ) : (
+                                                                    "📝 Generate Essay Outline"
+                                                                )}
+                                                            </button>
+                                                        </div>
 
                                                         Use these pointers as inspiration — write your answer in the essay area below ↓
                                                     </p>
