@@ -809,11 +809,30 @@ export const getUniversitiesByCategory = async (category, excludeIds = [], limit
   try {
     const baseUrl = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
 
-    // Fetch all universities from KB
-    const response = await axios.get(baseUrl, { timeout: 30000 });
+    // Build URL with fit_category filter - use server-side filtering
+    // For REACH, include both REACH and SUPER_REACH categories
+    const params = new URLSearchParams({
+      limit: '200', // Get enough to have good selection after filtering
+      fit_category: category === 'REACH' ? 'REACH' : category
+    });
+
+    const response = await axios.get(`${baseUrl}?${params}`, { timeout: 30000 });
 
     if (!response.data.success || !response.data.universities) {
-      return { success: false, universities: [], error: 'Failed to fetch universities' };
+      // If server-side filter returns nothing for REACH, try SUPER_REACH
+      if (category === 'REACH') {
+        const superReachParams = new URLSearchParams({
+          limit: '100',
+          fit_category: 'SUPER_REACH'
+        });
+        const superReachResponse = await axios.get(`${baseUrl}?${superReachParams}`, { timeout: 30000 });
+        if (superReachResponse.data.success && superReachResponse.data.universities) {
+          response.data = superReachResponse.data;
+        }
+      }
+      if (!response.data.success) {
+        return { success: false, universities: [], error: 'Failed to fetch universities' };
+      }
     }
 
     // Normalize exclude IDs for comparison
@@ -821,11 +840,8 @@ export const getUniversitiesByCategory = async (category, excludeIds = [], limit
       excludeIds.map(id => id.toLowerCase().replace(/[-\s]+/g, '_'))
     );
 
-    // Filter by category and exclude existing
+    // Filter to exclude already-added universities (server already filtered by category)
     let filtered = response.data.universities.filter(uni => {
-      // Match category
-      if (uni.soft_fit_category !== category) return false;
-
       // Exclude already-added universities
       const normalizedId = (uni.university_id || '').toLowerCase().replace(/[-\s]+/g, '_');
       if (normalizedExcludeIds.has(normalizedId)) return false;

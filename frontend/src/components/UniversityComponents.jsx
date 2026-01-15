@@ -77,7 +77,6 @@ export const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
                                     fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
                                         fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
                                             '✅ Safety'}
-                                {fitAnalysis.match_percentage && ` ${fitAnalysis.match_percentage}%`}
                             </span>
                         )}
                     </div>

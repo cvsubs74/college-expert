@@ -246,7 +246,11 @@ const PricingPage = () => {
                     <div className="grid md:grid-cols-3 gap-6">
                         {plans.map((plan) => {
                             const Icon = plan.icon;
-                            const isCurrentPlan = (plan.id === 'free' && creditsTier === 'free') ||
+                            // Free plan is current only if user has NO active subscription
+                            // Monthly/Annual are current if user has that subscription
+                            const isSubscriptionPlan = plan.id === 'subscription_monthly' || plan.id === 'subscription_annual';
+                            const isCurrentPlan =
+                                (plan.id === 'free' && !isMonthly && !isSeasonal) ||
                                 (plan.id === 'subscription_monthly' && isMonthly) ||
                                 (plan.id === 'subscription_annual' && isSeasonal);
 
@@ -313,8 +317,8 @@ const PricingPage = () => {
 
                                     {/* CTA Button Area */}
                                     <div className="space-y-4">
-                                        {/* Renewal/Cancellation Message */}
-                                        {isCurrentPlan && (isMonthly || isSeasonal) && (
+                                        {/* Renewal/Cancellation Message - only for SUBSCRIPTION plans */}
+                                        {isCurrentPlan && isSubscriptionPlan && (isMonthly || isSeasonal) && (
                                             <div className="text-center">
                                                 {isCanceling ? (
                                                     <p className="text-sm text-red-600 font-medium">Cancels on {cancellationDate}</p>
@@ -330,22 +334,23 @@ const PricingPage = () => {
                                         {/* Main CTA Button */}
                                         <button
                                             onClick={() => {
-                                                if (isCurrentPlan && isCanceling) {
+                                                // Only allow reactivation for subscription plans
+                                                if (isCurrentPlan && isSubscriptionPlan && isCanceling) {
                                                     handleReactivate();
                                                 } else if (!isCurrentPlan) {
                                                     !plan.disabled && handleGetStarted(plan.id);
                                                 }
                                             }}
-                                            disabled={loading === plan.id || loading === 'reactivate' || (plan.disabled && !isCurrentPlan) || (isCurrentPlan && !isCanceling)}
+                                            disabled={loading === plan.id || loading === 'reactivate' || (plan.disabled && !isCurrentPlan) || (isCurrentPlan && !(isSubscriptionPlan && isCanceling))}
                                             className={`w-full py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${loading === plan.id || loading === 'reactivate' ? 'opacity-50 cursor-wait' :
-                                                (isCurrentPlan && isCanceling) ? 'bg-green-600 text-white hover:bg-green-700' :
+                                                (isCurrentPlan && isSubscriptionPlan && isCanceling) ? 'bg-green-600 text-white hover:bg-green-700' :
                                                     (isCurrentPlan && !isCanceling) ? 'bg-[#D6E8D5] text-[#1A4D2E] border border-[#A8C5A6] cursor-default' :
                                                         plan.ctaStyle
                                                 }`}
                                         >
                                             {loading === plan.id ? 'Processing...' :
                                                 loading === 'reactivate' ? 'Reactivating...' :
-                                                    (isCurrentPlan && isCanceling) ? 'Reactivate Subscription' :
+                                                    (isCurrentPlan && isSubscriptionPlan && isCanceling) ? 'Reactivate Subscription' :
                                                         (isCurrentPlan && !isCanceling) ? (
                                                             <>
                                                                 <CheckCircleIcon className="h-5 w-5" />
@@ -356,8 +361,8 @@ const PricingPage = () => {
                                             {loading !== plan.id && loading !== 'reactivate' && !isCurrentPlan && !plan.disabled && <ArrowRightIcon className="h-4 w-4" />}
                                         </button>
 
-                                        {/* De-emphasized Cancel Link */}
-                                        {isCurrentPlan && (isMonthly || isSeasonal) && !isCanceling && (
+                                        {/* De-emphasized Cancel Link - only for subscription plans */}
+                                        {isCurrentPlan && isSubscriptionPlan && (isMonthly || isSeasonal) && !isCanceling && (
                                             <button
                                                 onClick={handleCancelClick}
                                                 className="w-full text-sm text-gray-400 hover:text-red-600 hover:underline transition-colors block text-center"

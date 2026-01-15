@@ -69,6 +69,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
     echo -e "  ${YELLOW}knowledge-universities${NC} - Deploy Universities knowledge base function"
+    echo -e "  ${YELLOW}knowledge-universities-v2${NC} - Deploy Universities KB V2 (Firestore, no ES)"
     echo -e "  ${YELLOW}payment${NC}     - Deploy Payment manager function (Stripe integration)"
     echo -e "  ${YELLOW}source-curator${NC} - Deploy Source Curator UI (React + FastAPI)"
     echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
@@ -535,6 +536,42 @@ deploy_knowledge_base_manager_universities() {
     cd ../..
 }
 
+deploy_knowledge_base_manager_universities_v2() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager Universities V2 (Firestore)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/knowledge_base_manager_universities_v2
+    
+    # Create env.deploy.yaml with secrets
+    cat > env.deploy.yaml << EOF
+GEMINI_API_KEY: ${GEMINI_API_KEY}
+FIRESTORE_COLLECTION: universities
+EOF
+    
+    gcloud functions deploy knowledge-base-manager-universities-v2 \
+        --gen2 \
+        --runtime=python311 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=knowledge_base_manager_universities_v2_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.deploy.yaml \
+        --timeout=300s \
+        --memory=512MB \
+        --min-instances=0 \
+        --max-instances=10
+    
+    KNOWLEDGE_BASE_UNIVERSITIES_V2_URL=$(gcloud functions describe knowledge-base-manager-universities-v2 --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager Universities V2 deployed: ${KNOWLEDGE_BASE_UNIVERSITIES_V2_URL}${NC}"
+    
+    # Cleanup temp env file
+    rm -f env.deploy.yaml
+    cd ../..
+}
+
 deploy_profile_manager_vertexai() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Profile Manager Vertex AI Function${NC}"
@@ -987,6 +1024,9 @@ case "$DEPLOY_TARGET" in
         ;;
     "knowledge-universities")
         deploy_knowledge_base_manager_universities
+        ;;
+    "knowledge-universities-v2")
+        deploy_knowledge_base_manager_universities_v2
         ;;
     "agent-adk")
         deploy_agent_adk

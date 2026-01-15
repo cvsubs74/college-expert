@@ -56,6 +56,53 @@ import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
     'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
 
+// State name to code mappings for normalization
+const STATE_NAME_TO_CODE = {
+    'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA',
+    'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA',
+    'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA',
+    'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD',
+    'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO',
+    'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ',
+    'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH',
+    'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC',
+    'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT',
+    'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY',
+    'District of Columbia': 'DC'
+};
+
+// Normalize state to 2-letter code
+const normalizeState = (state) => {
+    if (!state) return null;
+    // If already a 2-letter code, return as-is
+    if (state.length === 2 && state === state.toUpperCase()) return state;
+    // Convert full name to code
+    return STATE_NAME_TO_CODE[state] || state;
+};
+
+// All US states for dropdown (sorted alphabetically by code)
+const ALL_US_STATES = [
+    'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL',
+    'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'MA',
+    'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE',
+    'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI',
+    'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'
+];
+
+// State code to full name for display
+const STATE_CODE_TO_NAME = {
+    'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
+    'CO': 'Colorado', 'CT': 'Connecticut', 'DC': 'District of Columbia', 'DE': 'Delaware', 'FL': 'Florida',
+    'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana',
+    'IA': 'Iowa', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'MA': 'Massachusetts',
+    'MD': 'Maryland', 'ME': 'Maine', 'MI': 'Michigan', 'MN': 'Minnesota', 'MO': 'Missouri',
+    'MS': 'Mississippi', 'MT': 'Montana', 'NC': 'North Carolina', 'ND': 'North Dakota', 'NE': 'Nebraska',
+    'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NV': 'Nevada', 'NY': 'New York',
+    'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island',
+    'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah',
+    'VA': 'Virginia', 'VT': 'Vermont', 'WA': 'Washington', 'WI': 'Wisconsin', 'WV': 'West Virginia', 'WY': 'Wyoming'
+};
+
 // --- Badge Component ---
 const Badge = ({ children, color }) => {
     const colorClasses = {
@@ -181,11 +228,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
             {/* Fit Category Ribbon */}
             <div className={`absolute top-0 left-0 px-4 py-1.5 bg-gradient-to-r ${fit.gradient} text-white text-xs font-bold rounded-br-xl shadow-sm z-10 flex items-center gap-1.5`}>
                 <span>{fit.icon}</span>
-                {matchPercentage ? (
-                    <span>{matchPercentage}% {fit.label}</span>
-                ) : (
-                    <span>{fit.label}</span>
-                )}
+                <span>{fit.label}</span>
             </div>
 
             {/* Single Column Layout */}
@@ -358,7 +401,6 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
                                 fitCategory === 'REACH' ? '🎯 Reach' :
                                     fitCategory === 'TARGET' ? '🎯 Target' :
                                         '✅ Safety'}
-                            {matchPercentage && ` ${matchPercentage}%`}
                         </span>
                     )}
                 </div>
@@ -679,10 +721,12 @@ const UniversityExplorer = () => {
     const [selectedUni, setSelectedUni] = useState(null);
     const [comparisonList, setComparisonList] = useState([]);
 
-    // Pagination and sorting
-    const [currentPage, setCurrentPage] = useState(0);
+    // Pagination and sorting (server-side)
+    const [currentPage, setCurrentPage] = useState(1); // 1-indexed for server
     const [sortBy, setSortBy] = useState("usNews"); // Default sort by US News rank
-    const CARDS_PER_PAGE = 6;
+    const [totalCount, setTotalCount] = useState(0);
+    const [totalPages, setTotalPages] = useState(1);
+    const CARDS_PER_PAGE = 10; // 10 universities per page for fast loading
 
     // News sentiment tracking with localStorage persistence
     const [sentimentData, setSentimentData] = useState(() => {
@@ -1135,15 +1179,66 @@ const UniversityExplorer = () => {
         };
     };
 
-    // Fetch universities from API
+    // Map frontend sortBy to backend sort_by
+    const getSortByParam = (frontendSort) => {
+        switch (frontendSort) {
+            case 'usNews': return 'us_news_rank';
+            case 'acceptance': return 'acceptance_rate';
+            case 'name': return 'official_name';
+            default: return 'us_news_rank';
+        }
+    };
+
+    // Debounced search term for server-side search
+    const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+
+    // Debounce search term input
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedSearchTerm(searchTerm);
+            // Reset to page 1 when search changes
+            if (searchTerm !== debouncedSearchTerm) {
+                setCurrentPage(1);
+            }
+        }, 500); // 500ms debounce
+
+        return () => clearTimeout(handler);
+    }, [searchTerm]);
+
+    // Fetch universities from API with pagination and search
     useEffect(() => {
         const fetchUniversities = async () => {
             try {
                 setLoading(true);
                 setError(null);
 
-                // Fetch all universities (list endpoint)
-                const response = await fetch(KNOWLEDGE_BASE_UNIVERSITIES_URL, {
+                // Build URL with pagination and search params
+                const params = new URLSearchParams({
+                    page: currentPage.toString(),
+                    limit: CARDS_PER_PAGE.toString(),
+                    sort_by: getSortByParam(sortBy)
+                });
+
+                // Add search param if present
+                if (debouncedSearchTerm.trim()) {
+                    params.append('search', debouncedSearchTerm.trim());
+                }
+
+                // Add filter params if not "All"
+                if (selectedType !== "All") {
+                    params.append('type', selectedType);
+                }
+                if (selectedState !== "All") {
+                    params.append('state', selectedState);
+                }
+                if (maxAcceptance < 100) {
+                    params.append('max_acceptance', maxAcceptance.toString());
+                }
+                if (selectedFitCategory !== "All") {
+                    params.append('fit_category', selectedFitCategory);
+                }
+
+                const response = await fetch(`${KNOWLEDGE_BASE_UNIVERSITIES_URL}?${params}`, {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -1155,26 +1250,16 @@ const UniversityExplorer = () => {
                 const data = await response.json();
 
                 if (data.success && data.universities) {
-                    // For list view, we have basic info - need to fetch full profiles
-                    // Or use search to get full profiles
-                    const searchResponse = await fetch(KNOWLEDGE_BASE_UNIVERSITIES_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            query: "university",
-                            limit: 1000,
-                            search_type: "keyword"
-                        })
-                    });
+                    // Use list data directly - it already contains all needed fields
+                    // (official_name, location, acceptance_rate, us_news_rank, summary, media, etc.)
+                    const transformedData = data.universities.map(transformUniversityData);
+                    setUniversities(transformedData);
 
-                    const searchData = await searchResponse.json();
+                    // Update pagination state from server
+                    setTotalCount(data.total || 0);
+                    setTotalPages(data.total_pages || 1);
 
-                    if (searchData.success && searchData.results) {
-                        const transformedData = searchData.results.map(transformUniversityData);
-                        setUniversities(transformedData);
-                    } else {
-                        throw new Error('Failed to load university profiles');
-                    }
+                    console.log(`[Universities] Page ${currentPage}, filters: state=${selectedState}, maxAcc=${maxAcceptance}, fit=${selectedFitCategory}: loaded ${transformedData.length} universities`);
                 }
             } catch (err) {
                 console.error('Error fetching universities:', err);
@@ -1185,21 +1270,27 @@ const UniversityExplorer = () => {
         };
 
         fetchUniversities();
-    }, []);
+    }, [currentPage, sortBy, debouncedSearchTerm, selectedType, selectedState, maxAcceptance, selectedFitCategory]); // Re-fetch when page, sort, search, or filters change
 
-    // Get unique states from data
+    // Reset to page 1 when filters change
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedType, selectedState, maxAcceptance, selectedFitCategory]);
+
+    // Get unique states from data (normalized to 2-letter codes)
     const uniqueStates = useMemo(() => {
-        const states = [...new Set(universities.map(u => u.location?.state).filter(Boolean))];
+        const states = [...new Set(universities.map(u => normalizeState(u.location?.state)).filter(Boolean))];
         return states.sort();
     }, [universities]);
 
-    // Filter Data
+    // Filter Data (client-side filters for Type, State, Acceptance Rate, Fit Category)
+    // Note: Search is now server-side, so we don't filter by searchTerm here
     const filteredUniversities = useMemo(() => {
         return universities.filter(uni => {
-            const matchesSearch = uni.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                uni.shortName?.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesType = selectedType === "All" || uni.location?.type === selectedType;
-            const matchesState = selectedState === "All" || uni.location?.state === selectedState;
+            // Normalize both the university's state and selected state for comparison
+            const uniState = normalizeState(uni.location?.state);
+            const matchesState = selectedState === "All" || uniState === selectedState;
             const acceptanceRate = uni.admissions?.acceptanceRate;
             const matchesAcceptance = acceptanceRate === 'N/A' ||
                 acceptanceRate === null ||
@@ -1220,9 +1311,9 @@ const UniversityExplorer = () => {
                 }
             }
 
-            return matchesSearch && matchesType && matchesState && matchesAcceptance && matchesFitCategory;
+            return matchesType && matchesState && matchesAcceptance && matchesFitCategory;
         });
-    }, [universities, searchTerm, selectedType, selectedState, maxAcceptance, selectedFitCategory, precomputedFits]);
+    }, [universities, selectedType, selectedState, maxAcceptance, selectedFitCategory, precomputedFits]);
 
     // Sort filtered universities
     const sortedUniversities = useMemo(() => {
@@ -1249,18 +1340,10 @@ const UniversityExplorer = () => {
         return sorted;
     }, [filteredUniversities, sortBy]);
 
-    // Paginated universities - all tiers can browse
-    const paginatedUniversities = useMemo(() => {
-        const start = currentPage * CARDS_PER_PAGE;
-        return sortedUniversities.slice(start, start + CARDS_PER_PAGE);
-    }, [sortedUniversities, currentPage]);
+    // Display universities - server handles filtering, sorting, and pagination
+    const displayUniversities = universities;
 
-    const totalPages = Math.ceil(sortedUniversities.length / CARDS_PER_PAGE);
-
-    // Reset page when filters change
-    useEffect(() => {
-        setCurrentPage(0);
-    }, [searchTerm, selectedType, selectedState, maxAcceptance, sortBy, selectedFitCategory]);
+    // Note: Filtering (state, acceptance, fit category) is now server-side
 
     // Parse sentiment from research response
     const parseSentiment = (responseText) => {
@@ -1373,16 +1456,16 @@ const UniversityExplorer = () => {
         return;
 
         /* Original code - kept for reference
-        if (scanningBatch || paginatedUniversities.length === 0) {
-            console.log('[Auto-Scan] Skipped:', { scanningBatch, universitiesCount: paginatedUniversities.length });
+        if (scanningBatch || displayUniversities.length === 0) {
+            console.log('[Auto-Scan] Skipped:', { scanningBatch, universitiesCount: displayUniversities.length });
             return;
         }
 
-        console.log(`[Auto-Scan] Triggered for page ${currentPage + 1} with ${paginatedUniversities.length} universities`);
+        console.log(`[Auto-Scan] Triggered for page ${currentPage + 1} with ${displayUniversities.length} universities`);
 
         // Delay auto-scan slightly to avoid initial load conflicts
         const timer = setTimeout(() => {
-            handleBatchScanNews(paginatedUniversities);
+            handleBatchScanNews(displayUniversities);
         }, 1000);
 
         return () => clearTimeout(timer);
@@ -1450,7 +1533,7 @@ const UniversityExplorer = () => {
             {activeView === 'detail' && selectedUni && (
                 <UniversityProfilePage
                     university={selectedUni}
-                    fitAnalysis={getCollegeFitAnalysis(selectedUni.id)}
+                    fitAnalysis={null}
                     onBack={handleBack}
                 />
             )}
@@ -1555,8 +1638,8 @@ const UniversityExplorer = () => {
                                                 className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
                                             >
                                                 <option value="All">All States</option>
-                                                {uniqueStates.map(state => (
-                                                    <option key={state} value={state}>{state}</option>
+                                                {ALL_US_STATES.map(code => (
+                                                    <option key={code} value={code}>{STATE_CODE_TO_NAME[code]} ({code})</option>
                                                 ))}
                                             </select>
                                         </div>
@@ -1617,40 +1700,13 @@ const UniversityExplorer = () => {
                                     />
                                 )}
 
-                                {/* Grid Results with Carousel */}
+                                {/* Grid Results */}
                                 <div className="relative">
-                                    {/* Carousel Navigation */}
-                                    {totalPages > 1 && (
-                                        <div className="flex items-center justify-between mb-4">
-                                            <p className="text-sm text-gray-600">
-                                                Showing {currentPage * CARDS_PER_PAGE + 1}-{Math.min((currentPage + 1) * CARDS_PER_PAGE, sortedUniversities.length)} of {sortedUniversities.length} universities
-                                            </p>
-                                            <div className="flex items-center gap-2">
-                                                <button
-                                                    onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
-                                                    disabled={currentPage === 0}
-                                                    className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
-                                                >
-                                                    <ChevronLeftIcon className="h-5 w-5" />
-                                                </button>
-                                                <span className="text-sm font-medium text-gray-700 min-w-[80px] text-center">
-                                                    Page {currentPage + 1} of {totalPages}
-                                                </span>
-                                                <button
-                                                    onClick={() => setCurrentPage(p => Math.min(totalPages - 1, p + 1))}
-                                                    disabled={currentPage >= totalPages - 1}
-                                                    className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
-                                                >
-                                                    <ChevronRightIcon className="h-5 w-5" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                    )}
 
                                     {/* Cards Grid - One per row */}
                                     <div className="grid grid-cols-1 gap-6">
-                                        {paginatedUniversities.length > 0 ? (
-                                            paginatedUniversities.map((uni) => {
+                                        {displayUniversities.length > 0 ? (
+                                            displayUniversities.map((uni) => {
                                                 // Free tier: limit reached when 3 colleges already added (and this uni not in list)
                                                 const isInList = isInCollegeList(uni.id);
                                                 const isLimitReached = !canAccessLaunchpad && !isInList && myCollegeList.length >= 3;
@@ -1698,20 +1754,54 @@ const UniversityExplorer = () => {
                                         )}
                                     </div>
 
-                                    {/* Bottom Carousel Navigation */}
-                                    {totalPages > 1 && paginatedUniversities.length > 0 && (
-                                        <div className="flex justify-center mt-6">
-                                            <div className="flex items-center gap-1">
-                                                {Array.from({ length: totalPages }, (_, i) => (
-                                                    <button
-                                                        key={i}
-                                                        onClick={() => setCurrentPage(i)}
-                                                        className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentPage
-                                                            ? 'bg-blue-600 w-6'
-                                                            : 'bg-gray-300 hover:bg-gray-400'
-                                                            }`}
-                                                    />
-                                                ))}
+                                    {/* Bottom Pagination Navigation */}
+                                    {totalPages > 1 && displayUniversities.length > 0 && (
+                                        <div className="flex flex-col items-center gap-3 mt-6">
+                                            <div className="text-sm text-gray-500">
+                                                Page {currentPage} of {totalPages} ({totalCount} universities)
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <button
+                                                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                                                    disabled={currentPage === 1}
+                                                    className="px-3 py-1.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                >
+                                                    Previous
+                                                </button>
+                                                <div className="flex items-center gap-1">
+                                                    {Array.from({ length: Math.min(totalPages, 7) }, (_, i) => {
+                                                        // Show pages around current page
+                                                        let pageNum;
+                                                        if (totalPages <= 7) {
+                                                            pageNum = i + 1;
+                                                        } else if (currentPage <= 4) {
+                                                            pageNum = i + 1;
+                                                        } else if (currentPage >= totalPages - 3) {
+                                                            pageNum = totalPages - 6 + i;
+                                                        } else {
+                                                            pageNum = currentPage - 3 + i;
+                                                        }
+                                                        return (
+                                                            <button
+                                                                key={pageNum}
+                                                                onClick={() => setCurrentPage(pageNum)}
+                                                                className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${pageNum === currentPage
+                                                                    ? 'bg-[#1A4D2E] text-white'
+                                                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                                                    }`}
+                                                            >
+                                                                {pageNum}
+                                                            </button>
+                                                        );
+                                                    })}
+                                                </div>
+                                                <button
+                                                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                                                    disabled={currentPage === totalPages}
+                                                    className="px-3 py-1.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                >
+                                                    Next
+                                                </button>
                                             </div>
                                         </div>
                                     )}
