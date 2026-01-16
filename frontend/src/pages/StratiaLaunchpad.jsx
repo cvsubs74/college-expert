@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit } from '../services/api';
 import {
     BackgroundBlobs,
     HeroSection,
@@ -35,7 +35,7 @@ import {
  */
 const StratiaLaunchpad = () => {
     const { currentUser } = useAuth();
-    const { isFreeTier } = usePayment();
+    const { isFreeTier, fetchCredits } = usePayment();
     const navigate = useNavigate();
     const FREE_TIER_SCHOOL_LIMIT = 3;
 
@@ -414,7 +414,29 @@ const StratiaLaunchpad = () => {
         });
 
         try {
-            // Step 1: Add to college list
+            // Step 1: Deduct Credit
+            // Fit Analysis costs 1 credit
+            try {
+                const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
+                if (!deduction.success) {
+                    setShowCreditsModal(true);
+                    setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                    setAddingSchoolId(null); // Reset loading state
+                    return;
+                }
+                await fetchCredits(); // Refresh global credits
+                console.log('[Discovery] Credit deducted:', deduction);
+            } catch (creditErr) {
+                console.error('[Discovery] Credit deduction failed:', creditErr);
+                // If 402, it would be caught here if API throws, but api.js handles it gracefully usually
+                // Safe to fallback to modal
+                setShowCreditsModal(true);
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                setAddingSchoolId(null);
+                return;
+            }
+
+            // Step 2: Add to college list
             setAnalysisModal(prev => ({ ...prev, step: 'adding', progress: 20 }));
             const addResult = await updateCollegeList(currentUser.email, 'add', {
                 id: school.university_id,
@@ -422,7 +444,7 @@ const StratiaLaunchpad = () => {
             });
 
             if (addResult.success) {
-                // Step 2: Compute fit analysis
+                // Step 3: Compute fit analysis
                 setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 40 }));
                 await computeSingleFit(currentUser.email, school.university_id, false);
 

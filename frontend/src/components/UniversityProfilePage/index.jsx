@@ -18,7 +18,8 @@ import {
     CalendarIcon,
     DocumentTextIcon,
     ChartBarIcon,
-    FilmIcon
+    FilmIcon,
+    InformationCircleIcon
 } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
 import MediaGallery from '../MediaGallery';
@@ -64,11 +65,7 @@ const HeroSection = ({ university, fitAnalysis, onAskAI }) => {
                         <MapPinIcon className="h-5 w-5" />
                         <span>{university?.location?.city}, {university?.location?.state}</span>
                     </div>
-                    {university?.summary && (
-                        <p className="mt-4 text-white/90 max-w-2xl line-clamp-2">
-                            {university.summary}
-                        </p>
-                    )}
+                    {/* Right side: Fit Score Ring */}{/* Removed Summary from here */}
                 </div>
 
                 {/* Right side: Fit Score Ring */}
@@ -491,7 +488,18 @@ const AdmissionsTab = ({ university }) => {
 const FinancialsTab = ({ university }) => {
     const fullProfile = university?.fullProfile || {};
     const financials = fullProfile?.financials || {};
-    const coa = financials?.cost_of_attendance || {};
+
+    // Handle V2 nested structure vs V1 flat structure
+    const breakdown = financials?.cost_of_attendance_breakdown;
+
+    // Normalize data to expected flat structure
+    const coa = {
+        tuition_in_state: breakdown?.in_state?.tuition || financials?.cost_of_attendance?.tuition_in_state,
+        tuition_out_of_state: breakdown?.out_of_state?.tuition || financials?.cost_of_attendance?.tuition_out_of_state,
+        room_and_board: breakdown?.out_of_state?.housing || breakdown?.in_state?.housing || financials?.cost_of_attendance?.room_and_board,
+        total_estimated: breakdown?.out_of_state?.total_coa || breakdown?.in_state?.total_coa || financials?.cost_of_attendance?.total_estimated
+    };
+
     const scholarships = financials?.scholarships || [];
 
     return (
@@ -504,19 +512,27 @@ const FinancialsTab = ({ university }) => {
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <p className="text-2xl font-bold text-gray-900">${(coa.tuition_in_state || university?.financials?.inStateTuition || 0).toLocaleString()}</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                            {coa.tuition_in_state ? `$${coa.tuition_in_state.toLocaleString()}` : 'N/A'}
+                        </p>
                         <p className="text-sm text-gray-500">In-State Tuition</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <p className="text-2xl font-bold text-gray-900">${(coa.tuition_out_of_state || university?.financials?.outOfStateTuition || 0).toLocaleString()}</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                            {coa.tuition_out_of_state ? `$${coa.tuition_out_of_state.toLocaleString()}` : '$0'}
+                        </p>
                         <p className="text-sm text-gray-500">Out-of-State</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <p className="text-2xl font-bold text-gray-900">${(coa.room_and_board || 0).toLocaleString()}</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                            {coa.room_and_board ? `$${coa.room_and_board.toLocaleString()}` : '$0'}
+                        </p>
                         <p className="text-sm text-gray-500">Room & Board</p>
                     </div>
                     <div className="text-center p-3 bg-purple-50 rounded-lg">
-                        <p className="text-2xl font-bold text-purple-700">${(coa.total_estimated || 0).toLocaleString()}</p>
+                        <p className="text-2xl font-bold text-purple-700">
+                            {coa.total_estimated ? `$${coa.total_estimated.toLocaleString()}` : '$0'}
+                        </p>
                         <p className="text-sm text-purple-600">Total Estimated</p>
                     </div>
                 </div>
@@ -741,6 +757,19 @@ const DetailsTab = ({ university }) => {
                 <MediaGallery media={university.media} />
             )}
 
+            {/* About Section */}
+            {university?.summary && (
+                <div className="border-b border-gray-200 pb-8">
+                    <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
+                        <InformationCircleIcon className="h-5 w-5 text-blue-600" />
+                        About {university.name}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                        {university.summary}
+                    </p>
+                </div>
+            )}
+
             {/* Campus Life Section */}
             <div className="border-t border-gray-200 pt-8">
                 <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
@@ -806,6 +835,50 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
         };
         checkUserCredits();
     }, [currentUser?.email]);
+
+
+
+
+    const handleGenerateInfographic = async (forceRegenerate = false) => {
+        if (!currentUser) return;
+
+        setIsGenerating(true);
+        setGenerationError(null);
+
+        try {
+            // Deduct credit if needed
+            if (forceRegenerate) {
+                const deduction = await deductCredit(currentUser.email, 1, 'infographic_generation');
+                if (!deduction.success) {
+                    throw new Error('Insufficient credits');
+                }
+                // Refresh local state credits immediately by re-fetching
+                if (currentUser?.email) {
+                    const result = await checkCredits(currentUser.email, 1);
+                    setHasCredits(result.has_credits === true);
+                    setCreditsRemaining(result.credits_remaining || 0);
+                }
+
+                // Refresh local state credits
+                const result = await checkCredits(currentUser.email, 1);
+                setCreditsRemaining(result.credits_remaining || 0);
+                setHasCredits(result.has_credits === true);
+            }
+
+            // Simulate generation delay
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Set mock URL for now (or real logic if available)
+            // In a real app, this would be the result of an API call
+            setInfographicUrl('https://storage.googleapis.com/college-counselor-assets/infographics/sample_fit.png');
+
+        } catch (err) {
+            console.error('Generation error:', err);
+            setGenerationError(err.message || 'Failed to generate infographic');
+        } finally {
+            setIsGenerating(false);
+        }
+    };
 
     // ==========================================
     // INFOGRAPHIC GENERATION REMOVED
@@ -1088,9 +1161,55 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
 // ============================================================================
 // MAIN COMPONENT
 // ============================================================================
+import axios from 'axios';
+
+const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
+    'https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app';
+
+
 const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
     const [activeTab, setActiveTab] = useState('details');
     const [showChat, setShowChat] = useState(false);
+    const [fullDetails, setFullDetails] = useState(university);
+    const [loadingDetails, setLoadingDetails] = useState(false);
+
+    // Update local state when prop changes
+    useEffect(() => {
+        setFullDetails(university);
+    }, [university]);
+
+    // Fetch full profile if missing (data from list view is summary only)
+    useEffect(() => {
+        const fetchFullProfile = async () => {
+            if (university?.id && (!university.fullProfile || Object.keys(university.fullProfile).length <= 1)) {
+                try {
+                    console.log(`[UniversityProfilePage] Fetching full details for ${university.name} (${university.id})...`);
+                    setLoadingDetails(true);
+
+                    const response = await axios.get(`${KNOWLEDGE_BASE_UNIVERSITIES_URL}`, {
+                        params: { id: university.id }
+                    });
+
+                    if (response.data && response.data.success && response.data.university) {
+                        const backendData = response.data.university;
+                        console.log('[UniversityProfilePage] Successfully fetched full profile');
+
+                        setFullDetails(prev => ({
+                            ...prev,
+                            fullProfile: backendData.profile || {},
+                            media: backendData.media || prev.media
+                        }));
+                    }
+                } catch (err) {
+                    console.error('[UniversityProfilePage] Error fetching full details:', err);
+                } finally {
+                    setLoadingDetails(false);
+                }
+            }
+        };
+
+        fetchFullProfile();
+    }, [university]);
 
     const tabs = [
         { id: 'details', label: 'University Details', icon: BuildingLibraryIcon },
@@ -1116,18 +1235,31 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
             <div className="max-w-6xl mx-auto px-4 py-6">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
                     <HeroSection
-                        university={university}
+                        university={fullDetails}
                         fitAnalysis={fitAnalysis}
                         onAskAI={() => setShowChat(true)}
                     />
 
-                    {/* Tab Navigation - Only 2 Tabs */}
-                    <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
+                    {/* Tab Navigation */}
+                    {tabs.length > 1 && (
+                        <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
+                    )}
 
                     {/* Tab Content */}
                     <div className="p-6 min-h-[400px]">
-                        {activeTab === 'details' && <DetailsTab university={university} />}
-                        {activeTab === 'fit' && <UpdatedFitAnalysisTab fitAnalysis={fitAnalysis} university={university} />}
+                        {loadingDetails ? (
+                            <div className="flex items-center justify-center h-64">
+                                <div className="text-center">
+                                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1A4D2E] mx-auto mb-4"></div>
+                                    <p className="text-gray-500">Loading full profile details...</p>
+                                </div>
+                            </div>
+                        ) : (
+                            <>
+                                {activeTab === 'details' && <DetailsTab university={fullDetails} />}
+                                {activeTab === 'fit' && <UpdatedFitAnalysisTab fitAnalysis={fitAnalysis} university={fullDetails} />}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
@@ -1146,16 +1278,16 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
                 </button>
             )}
 
-            {/* Floating Chat Widget */}
-            <UniversityChatWidget
-                universityId={university.id}
-                universityName={university.name}
-                isOpen={showChat}
-                onClose={() => setShowChat(false)}
-            />
+            {/* Chat Widget */}
+            {showChat && (
+                <UniversityChatWidget
+                    university={fullDetails}
+                    isOpen={showChat}
+                    onClose={() => setShowChat(false)}
+                />
+            )}
         </div>
     );
 };
 
 export default UniversityProfilePage;
-
