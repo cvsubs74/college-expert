@@ -37,17 +37,9 @@ const getAppName = () => {
 // Determine profile manager URL based on approach
 // Note: Hybrid and Elasticsearch approaches now use profile_manager_v2 (Firestore)
 const getProfileManagerUrl = () => {
-  const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
-  if (approach === 'hybrid') {
-    return import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
-  }
-  if (approach === 'elasticsearch') {
-    return import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
-  }
-  if (approach === 'vertexai') {
-    return import.meta.env.VITE_PROFILE_MANAGER_VERTEXAI_URL || 'https://profile-manager-vertexai-pfnwjfp26a-ue.a.run.app';
-  }
-  return import.meta.env.VITE_PROFILE_MANAGER_URL || 'https://profile-manager-pfnwjfp26a-ue.a.run.app';
+  // ALWAYS use Profile Manager V2 (Firestore) as per user instruction and V2 migration.
+  // This ensures credits (which are managed by V2) work for all approaches.
+  return import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 };
 
 // Create axios instance for agent API
@@ -1470,7 +1462,16 @@ export const getUserCredits = async (userEmail) => {
       params: { user_email: userEmail },
       headers: { 'X-User-Email': userEmail }
     });
-    return response.data;
+
+    // Normalize response: V2 returns flat object, Frontend expects { success: true, credits: {...} }
+    const data = response.data;
+    if (data.credits_remaining !== undefined && !data.success) {
+      return {
+        success: true,
+        credits: data
+      };
+    }
+    return data;
   } catch (error) {
     console.error('Error getting user credits:', error);
     return {

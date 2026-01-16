@@ -35,7 +35,7 @@ import {
 import { StarIcon as StarIconSolid, FilmIcon } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, checkCredits, deductCredit } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { useToast } from '../components/Toast';
@@ -705,7 +705,7 @@ const LoadingSkeleton = () => (
 
 // --- Main App Component ---
 const UniversityExplorer = () => {
-    const { canAccessLaunchpad, isFreeTier, promptUpgrade, promptCreditsUpgrade, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature } = usePayment();
+    const { canAccessLaunchpad, isFreeTier, promptUpgrade, promptCreditsUpgrade, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature, fetchCredits } = usePayment();
     const toast = useToast();
     const [universities, setUniversities] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -901,8 +901,8 @@ const UniversityExplorer = () => {
         const action = isInList ? 'remove' : 'add';
 
         // Free tier: 3 colleges maximum, PERMANENT (no removal)
+        // Note: isFreeTier comes from usePayment() hook at line 708, not from canAccessLaunchpad
         const FREE_TIER_MAX_COLLEGES = 3;
-        const isFreeTier = !canAccessLaunchpad;
 
         if (isFreeTier) {
             // Block removal for free tier - colleges are permanent
@@ -918,6 +918,23 @@ const UniversityExplorer = () => {
         }
 
         try {
+            // Deduct credit if adding a new school
+            if (action === 'add') {
+                try {
+                    const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
+                    if (!deduction.success) {
+                        promptCreditsUpgrade('adding a new school for fit analysis');
+                        return;
+                    }
+                    await fetchCredits(); // Refresh global credits
+                    console.log('[Explorer] Credit deducted for analyze:', deduction);
+                } catch (creditErr) {
+                    console.error('[Explorer] Credit deduction failed:', creditErr);
+                    promptCreditsUpgrade('adding a new school for fit analysis');
+                    return;
+                }
+            }
+
             const result = await updateCollegeList(
                 currentUser.email,
                 action,

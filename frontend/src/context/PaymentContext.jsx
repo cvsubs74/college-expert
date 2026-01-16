@@ -155,14 +155,13 @@ export const PaymentProvider = ({ children }) => {
     // DETERMINE USER'S TIER
     // =============================================================================
     const getUserTier = useCallback(() => {
-        // Check subscription status from BOTH backends:
-        // 1. `credits` from profile-manager-es (updated by PaymentSuccess via upgradeSubscription)
-        // 2. `purchases` from payment-manager (Stripe webhook)
+        // Single source of truth: credits collection from Firestore (updated by payment_manager)
+        // The backend now syncs both purchases and credits on payment success
 
-        // PRIORITY: Check credits.tier first (from profile-manager-es) as it's updated immediately on payment
+        // Check credits.tier first (authoritative source)
         if (credits?.tier && credits.tier !== 'free') {
             const tier = credits.tier.toLowerCase();
-            if (tier === 'season_pass' || tier.includes('season') || tier.includes('annual')) {
+            if (tier === 'season_pass' || tier.includes('season') || tier.includes('annual') || tier.includes('year')) {
                 return TIERS.SEASONAL;
             }
             if (tier === 'monthly' || tier.includes('month') || tier.includes('pro')) {
@@ -170,30 +169,18 @@ export const PaymentProvider = ({ children }) => {
             }
         }
 
-        // Check credits.subscription_active (also from profile-manager-es)
+        // Check credits.subscription_active
         if (credits?.subscription_active) {
             const plan = credits?.subscription_plan?.toLowerCase() || credits?.tier?.toLowerCase() || '';
-            if (plan.includes('season') || plan.includes('annual')) {
+            if (plan.includes('season') || plan.includes('annual') || plan.includes('year')) {
                 return TIERS.SEASONAL;
             }
             return TIERS.MONTHLY;
         }
 
-        // Fallback to payment-manager purchases
-        if (!purchases?.subscription_active) {
-            return TIERS.FREE;
-        }
-        // Check subscription plan from backend
-        const plan = purchases?.subscription_plan?.toLowerCase() || '';
-        if (plan.includes('season') || plan.includes('annual')) {
-            return TIERS.SEASONAL;
-        }
-        if (plan.includes('month') || plan.includes('pro')) {
-            return TIERS.MONTHLY;
-        }
-        // Default to MONTHLY if has active subscription but unclear plan
-        return TIERS.MONTHLY;
-    }, [purchases, credits]);
+        // Default to FREE tier
+        return TIERS.FREE;
+    }, [credits]);
 
     const currentTier = getUserTier();
     const tierFeatures = TIER_FEATURES[currentTier];
@@ -272,9 +259,11 @@ export const PaymentProvider = ({ children }) => {
         tierLabel: tierFeatures.label,
 
         // Tier checks
+        // Tier checks
         isFreeTier: currentTier === TIERS.FREE,
-        isMonthly: currentTier === TIERS.MONTHLY || creditsTier === 'monthly' || creditsTier === 'pro', // Backward compatibility for 'pro'
         isSeasonal: currentTier === TIERS.SEASONAL || creditsTier === 'season_pass',
+        // Ensure strictly mutually exclusive - Seasonal takes precedence
+        isMonthly: (currentTier === TIERS.MONTHLY || creditsTier === 'monthly' || creditsTier === 'pro') && !(currentTier === TIERS.SEASONAL || creditsTier === 'season_pass'),
         hasActiveSubscription: currentTier !== TIERS.FREE,
 
         // Feature access

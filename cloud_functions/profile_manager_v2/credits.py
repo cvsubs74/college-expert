@@ -154,19 +154,24 @@ def deduct_credit(user_id: str, credit_count: int = 1, reason: str = "fit_analys
         db = get_db()
         credits = get_user_credits(user_id)
         
+        # Ensure credit values are integers (may be stored as strings in Firestore)
+        credits_remaining = int(credits.get('credits_remaining', 0))
+        credits_used = int(credits.get('credits_used', 0))
+        credit_count = int(credit_count)
+        
         # Check if enough credits
-        if credits['credits_remaining'] < credit_count:
+        if credits_remaining < credit_count:
             logger.warning(f"[CREDITS] Insufficient credits for {user_id}")
             return {
                 "success": False,
                 "error": "Insufficient credits",
-                "credits_remaining": credits['credits_remaining'],
+                "credits_remaining": credits_remaining,
                 "credits_needed": credit_count
             }
         
         # Deduct credits
-        credits['credits_used'] += credit_count
-        credits['credits_remaining'] -= credit_count
+        credits['credits_used'] = credits_used + credit_count
+        credits['credits_remaining'] = credits_remaining - credit_count
         credits['last_updated'] = datetime.utcnow().isoformat()
         
         # Add to history
@@ -294,8 +299,8 @@ def upgrade_subscription(user_id: str, subscription_expires: str = None, plan_ty
                 expiry_date = datetime.utcnow() + timedelta(days=30)
             subscription_expires = expiry_date.isoformat()
         
-        # Update credits
-        credits['tier'] = 'pro'
+        # Update credits - tier should be the plan name for frontend detection
+        credits['tier'] = plan_type  # 'monthly' or 'season_pass' (not 'pro')
         credits['subscription_active'] = True
         credits['subscription_expires'] = subscription_expires
         credits['subscription_plan'] = plan_type
@@ -321,7 +326,7 @@ def upgrade_subscription(user_id: str, subscription_expires: str = None, plan_ty
         
         return {
             "success": True,
-            "tier": "pro",
+            "tier": plan_type,  # Return plan_type, not 'pro'
             "credits_added": new_credits,
             "subscription_expires": subscription_expires,
             "subscription_plan": plan_type

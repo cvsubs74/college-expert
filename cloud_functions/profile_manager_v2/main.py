@@ -462,13 +462,16 @@ def profile_manager_v2_http_entry(request):
         elif resource_type == 'deduct-credit' and request.method == 'POST':
             data = request.get_json()
             user_email = data.get('user_email')
-            operation = data.get('operation', 'unknown')
-            credits = data.get('credits', 1)
+            # Accept multiple parameter names for credits count
+            credit_count = data.get('amount') or data.get('credits') or data.get('credit_count', 1)
+            # Accept multiple parameter names for reason
+            reason = data.get('action') or data.get('operation') or data.get('reason', 'fit_analysis')
             
             if not user_email:
                 return add_cors_headers({'error': 'user_email required'}, 400)
             
-            result = deduct_credit(user_email, operation, credits)
+            # Call with correct parameter order: user_id, credit_count, reason
+            result = deduct_credit(user_email, credit_count, reason)
             return add_cors_headers(result)
         
         elif resource_type == 'add-credits' and request.method == 'POST':
@@ -491,7 +494,7 @@ def profile_manager_v2_http_entry(request):
             if not user_email or not tier:
                 return add_cors_headers({'error': 'user_email and tier required'}, 400)
             
-            result = upgrade_subscription(user_email, tier)
+            result = upgrade_subscription(user_email, plan_type=tier)
             return add_cors_headers(result)
         
         # --- PROFILE CHAT ---
