@@ -54,6 +54,13 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
     // Delete confirmation state
     const [deleteConfirmation, setDeleteConfirmation] = useState({ isOpen: false, conversationId: null });
 
+    // Dynamic suggested questions from AI response
+    const [suggestedQuestions, setSuggestedQuestions] = useState([
+        "What's the acceptance rate?",
+        "What majors are popular?",
+        "Tell me about campus life"
+    ]);
+
     // Scroll to bottom when messages change
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -233,6 +240,13 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                 setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
                 setConversationHistory(data.conversation_history || []);
 
+                // Update suggested questions from AI response
+                console.log('[UniversityChat] Suggested questions from API:', data.suggested_questions);
+                if (data.suggested_questions && data.suggested_questions.length > 0) {
+                    console.log('[UniversityChat] Setting suggested questions:', data.suggested_questions);
+                    setSuggestedQuestions(data.suggested_questions);
+                }
+
                 // Auto-save after each exchange
                 setTimeout(() => {
                     saveConversationSilent(newMessages);
@@ -261,44 +275,6 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
         }
     };
 
-    // Suggested questions for initial state
-    const suggestedQuestions = [
-        "What's the acceptance rate?",
-        "What majors are popular?",
-        "Tell me about campus life",
-        "What are the SAT/ACT requirements?"
-    ];
-
-    // Follow-up questions based on conversation
-    const getFollowUpQuestions = () => {
-        const messageCount = messages.length;
-
-        // First round of follow-ups
-        if (messageCount <= 2) {
-            return [
-                "Tuition & financial aid?",
-                "Housing options?",
-                "Career outcomes?",
-            ];
-        }
-
-        // Second round
-        if (messageCount <= 4) {
-            return [
-                "Application deadlines?",
-                "Student life & clubs?",
-                "Research opportunities?",
-            ];
-        }
-
-        // Later rounds
-        return [
-            "Tell me more",
-            "Compare to similar schools",
-            "Why should I apply?",
-        ];
-    };
-
     // Auto-submit a suggested question
     const handleSuggestedQuestion = async (question) => {
         if (loading) return;
@@ -307,6 +283,7 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
         setLoading(true);
 
         try {
+            console.log('[UniversityChat] Sending suggested question:', question);
             const response = await fetch(KNOWLEDGE_BASE_UNIVERSITIES_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -319,6 +296,7 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
             });
 
             const data = await response.json();
+            console.log('[UniversityChat] Suggested question response:', data);
 
             if (data.success) {
                 const newMessages = [...messages,
@@ -327,6 +305,12 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                 ];
                 setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
                 setConversationHistory(data.conversation_history || []);
+
+                // Update suggested questions from AI response
+                console.log('[UniversityChat] New suggestions from API:', data.suggested_questions);
+                if (data.suggested_questions && data.suggested_questions.length > 0) {
+                    setSuggestedQuestions(data.suggested_questions);
+                }
 
                 // Auto-save
                 setTimeout(() => {
@@ -428,8 +412,8 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                                             key={conv.conversation_id}
                                             onClick={() => loadConversation()}
                                             className={`flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer transition-colors ${conv.conversation_id === currentConversationId
-                                                    ? 'bg-[#D6E8D5] border border-[#1A4D2E]'
-                                                    : 'hover:bg-gray-50'
+                                                ? 'bg-[#D6E8D5] border border-[#1A4D2E]'
+                                                : 'hover:bg-gray-50'
                                                 }`}
                                         >
                                             <div className="flex-1 min-w-0 mr-2">
@@ -499,15 +483,15 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                             ))}
 
                             {/* Follow-up question suggestions */}
-                            {!loading && messages.length > 0 && messages[messages.length - 1].role === 'assistant' && (
+                            {!loading && messages.length > 0 && messages[messages.length - 1].role === 'assistant' && suggestedQuestions.length > 0 && (
                                 <div className="pt-2 space-y-1.5">
                                     <p className="text-xs text-gray-400 px-1">Suggested follow-ups:</p>
                                     <div className="flex flex-wrap gap-2">
-                                        {getFollowUpQuestions().map((q, i) => (
+                                        {suggestedQuestions.map((q, i) => (
                                             <button
                                                 key={i}
                                                 onClick={() => handleSuggestedQuestion(q)}
-                                                className="px-3 py-1.5 text-xs font-medium rounded-full border border-gray-200 bg-white text-gray-700 hover:border-[#1A4D2E] hover:bg-[#D6E8D5] transition-colors"
+                                                className="px-3 py-1.5 text-xs font-medium rounded-full border border-transparent bg-[#D6E8D5] text-[#1A4D2E] hover:opacity-80 transition-opacity text-left"
                                             >
                                                 {q}
                                             </button>

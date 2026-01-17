@@ -536,7 +536,7 @@ def university_chat(university_id: str, question: str, conversation_history: lis
         conversation_history: List of {role, content} dicts for context
     
     Returns:
-        dict with answer and updated conversation history
+        dict with answer, suggested_questions, and updated conversation history
     """
     try:
         if conversation_history is None:
@@ -579,6 +579,15 @@ RULES:
 - Be concise and direct
 - Format responses in markdown when helpful
 - Be friendly and helpful
+
+RESPONSE FORMAT:
+You MUST respond with valid JSON in this exact format:
+{{
+  "answer": "Your helpful response here using markdown formatting",
+  "suggested_questions": ["Question 1?", "Question 2?", "Question 3?"]
+}}
+
+The suggested_questions should be 3 relevant follow-up questions the user might want to ask about {university_name} based on the conversation context. Make them specific and helpful.
 """
         
         # Build conversation for Gemini
@@ -591,7 +600,7 @@ RULES:
         ))
         contents.append(types.Content(
             role="model",
-            parts=[types.Part(text=f"I'm ready to answer questions about {university_name}. What would you like to know?")]
+            parts=[types.Part(text='{"answer": "I\'m ready to answer questions about ' + university_name + '. What would you like to know?", "suggested_questions": ["What is the acceptance rate?", "What majors are offered?", "Tell me about campus life"]}')]
         ))
         
         # Add conversation history
@@ -608,30 +617,45 @@ RULES:
             parts=[types.Part(text=question)]
         ))
         
-        # Call Gemini
+        # Call Gemini with JSON response format
         client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         response = client.models.generate_content(
             model="gemini-2.5-flash-lite",
             contents=contents,
             config=types.GenerateContentConfig(
                 temperature=0.7,
-                max_output_tokens=1024
+                max_output_tokens=1024,
+                response_mime_type="application/json"
             )
         )
         
-        answer = response.text
+        response_text = response.text
         
-        # Update history
+        # Parse JSON response
+        suggested_questions = []
+        try:
+            parsed = json.loads(response_text)
+            answer = parsed.get("answer", response_text)
+            suggested_questions = parsed.get("suggested_questions", [])
+            # Ensure we have at max 3 questions
+            suggested_questions = suggested_questions[:3]
+        except json.JSONDecodeError:
+            # Fallback: use raw response as answer
+            answer = response_text
+            logger.warning(f"Failed to parse JSON from university_chat response, using raw text")
+        
+        # Update history (store just the answer portion, not the JSON)
         updated_history = conversation_history + [
             {"role": "user", "content": question},
             {"role": "assistant", "content": answer}
         ]
         
-        logger.info(f"University chat for {university_id}: question='{question[:50]}...', answer_length={len(answer)}")
+        logger.info(f"University chat for {university_id}: question='{question[:50]}...', answer_length={len(answer)}, suggestions={len(suggested_questions)}")
         
         return {
             "success": True,
             "answer": answer,
+            "suggested_questions": suggested_questions,
             "conversation_history": updated_history,
             "university_name": university_name,
             "university_id": university_id
