@@ -1281,7 +1281,8 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
             {/* Chat Widget */}
             {showChat && (
                 <UniversityChatWidget
-                    university={fullDetails}
+                    universityId={fullDetails?.university_id || fullDetails?.id || university?.university_id || university?.id}
+                    universityName={fullDetails?.university_name || fullDetails?.name || university?.university_name || university?.name}
                     isOpen={showChat}
                     onClose={() => setShowChat(false)}
                 />

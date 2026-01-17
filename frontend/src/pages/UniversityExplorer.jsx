@@ -273,7 +273,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                                 e.stopPropagation();
                                 if (uni.isLimitReached) {
                                     // Navigate to upgrade page
-                                    window.location.href = '/payment';
+                                    window.location.href = '/pricing';
                                 } else {
                                     onToggleList(uni);
                                 }
@@ -2081,8 +2081,8 @@ const UniversityExplorer = () => {
 
             {/* University Chat Widget */}
             <UniversityChatWidget
-                universityId={chatUniversity?.id}
-                universityName={chatUniversity?.name}
+                universityId={chatUniversity?.university_id || chatUniversity?.id}
+                universityName={chatUniversity?.university_name || chatUniversity?.name}
                 isOpen={isChatOpen}
                 onClose={handleCloseChat}
             />

@@ -16,7 +16,8 @@ from firestore_db import get_db
 from profile_operations import (
     process_and_index_profile,
     get_student_profile,
-    cleanup_profile_on_document_delete
+    cleanup_profile_on_document_delete,
+    update_profile_field
 )
 from gcs_storage import (
     download_file_from_gcs,
@@ -242,6 +243,23 @@ def profile_manager_v2_http_entry(request):
                     'error': 'No profile found for user',
                     'profile': None
                 }, 404)
+        
+        
+        # --- SEARCH ENDPOINT (for fit recomputation check) ---
+        elif resource_type == 'update-structured-field' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_id = data.get('user_email') or data.get('user_id')
+            field_path = data.get('field_path')
+            value = data.get('value')
+            operation = data.get('operation', 'set')
+            
+            if not user_id:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            if not field_path:
+                return add_cors_headers({'error': 'field_path required'}, 400)
+            
+            result = update_profile_field(user_id, field_path, value, operation)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
         
         
         # --- SEARCH ENDPOINT (for fit recomputation check) ---
@@ -588,6 +606,191 @@ def profile_manager_v2_http_entry(request):
             result = delete_fit_chat_conversation(user_email, conversation_id)
             return add_cors_headers(result, 200 if result.get('success') else 400)
         
+        # --- PROFILE (SELF-DISCOVERY) CHAT SAVE ---
+        elif resource_type == 'profile-chat-save' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            messages = data.get('messages', [])
+            conversation_id = data.get('conversation_id')  # Optional for updates
+            title = data.get('title')  # Optional, auto-generated if not provided
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            if not messages:
+                return add_cors_headers({'success': False, 'error': 'messages required'}, 400)
+            
+            db = get_db()
+            import json
+            from datetime import datetime
+            
+            # Generate conversation ID if not provided (new conversation)
+            if not conversation_id:
+                conversation_id = f"profile_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
+            
+            # Auto-generate title from first user message if not provided
+            if not title and messages:
+                for msg in messages:
+                    if msg.get('role') == 'user':
+                        first_question = msg.get('content', '')[:50]
+                        title = first_question + ('...' if len(msg.get('content', '')) > 50 else '')
+                        break
+            if not title:
+                title = f"Self-Discovery {datetime.utcnow().strftime('%b %d')}"
+            
+            # Preserve created_at if updating existing
+            existing = db.get_profile_conversation(user_email, conversation_id)
+            created_at = existing.get('created_at') if existing else datetime.utcnow().isoformat()
+            
+            conversation_data = {
+                'conversation_id': conversation_id,
+                'title': title,
+                'messages': json.dumps(messages),
+                'message_count': len(messages),
+                'created_at': created_at
+            }
+            success = db.save_profile_conversation(user_email, conversation_id, conversation_data)
+            return add_cors_headers({
+                'success': success,
+                'conversation_id': conversation_id,
+                'title': title
+            }, 200 if success else 400)
+        
+        # --- PROFILE (SELF-DISCOVERY) CHAT LIST ---
+        elif resource_type == 'profile-chat-list' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            limit = int(data.get('limit') or request.args.get('limit') or 20)
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            db = get_db()
+            conversations = db.list_profile_conversations(user_email, limit)
+            
+            # Format for frontend
+            formatted = []
+            for conv in conversations:
+                formatted.append({
+                    'conversation_id': conv.get('conversation_id'),
+                    'title': conv.get('title', 'Untitled'),
+                    'message_count': conv.get('message_count', 0),
+                    'updated_at': conv.get('updated_at'),
+                    'created_at': conv.get('created_at')
+                })
+            
+            return add_cors_headers({
+                'success': True,
+                'conversations': formatted
+            })
+        
+        # --- PROFILE (SELF-DISCOVERY) CHAT LOAD ---
+        elif resource_type == 'profile-chat-load' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id') or request.args.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            db = get_db()
+            import json
+            conversation = db.get_profile_conversation(user_email, conversation_id)
+            if conversation:
+                messages = json.loads(conversation.get('messages', '[]'))
+                return add_cors_headers({
+                    'success': True,
+                    'conversation': {
+                        'conversation_id': conversation.get('conversation_id'),
+                        'title': conversation.get('title'),
+                        'messages': messages,
+                        'message_count': conversation.get('message_count', 0),
+                        'updated_at': conversation.get('updated_at'),
+                        'created_at': conversation.get('created_at')
+                    }
+                })
+            else:
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'Conversation not found'
+                }, 404)
+        
+        # --- PROFILE (SELF-DISCOVERY) CHAT DELETE ---
+        elif resource_type == 'profile-chat-delete' and request.method in ['POST', 'DELETE']:
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            db = get_db()
+            success = db.delete_profile_conversation(user_email, conversation_id)
+            return add_cors_headers({
+                'success': success,
+                'message': 'Conversation deleted' if success else 'Failed to delete'
+            })
+
+        
+        # --- UNIVERSITY CHAT SAVE ---
+        elif resource_type == 'university-chat-save' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            university_name = data.get('university_name', university_id)
+            messages = data.get('messages', [])
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            
+            db = get_db()
+            import json
+            conversation_data = {
+                'university_name': university_name,
+                'messages': json.dumps(messages),
+                'message_count': len(messages)
+            }
+            success = db.save_university_conversation(user_email, university_id, conversation_data)
+            return add_cors_headers({
+                'success': success,
+                'message': 'Conversation saved' if success else 'Failed to save'
+            }, 200 if success else 400)
+        
+        # --- UNIVERSITY CHAT LOAD ---
+        elif resource_type == 'university-chat-load' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id') or request.args.get('university_id')
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            
+            db = get_db()
+            import json
+            conversation = db.get_university_conversation(user_email, university_id)
+            if conversation:
+                messages = json.loads(conversation.get('messages', '[]'))
+                return add_cors_headers({
+                    'success': True,
+                    'university_name': conversation.get('university_name'),
+                    'messages': messages,
+                    'message_count': conversation.get('message_count', 0)
+                })
+            else:
+                return add_cors_headers({
+                    'success': True,
+                    'messages': [],
+                    'message_count': 0
+                })
+        
         # --- ESSAY COPILOT ---
         elif resource_type == 'generate-essay-starters' and request.method == 'POST':
             data = request.get_json()
@@ -699,15 +902,19 @@ def profile_manager_v2_http_entry(request):
             data = request.get_json()
             user_email = data.get('user_email') or request.headers.get('X-User-Email')
             university_id = data.get('university_id')
-            message = data.get('message')
-            draft_text = data.get('draft_text', '')
+            
+            # Support both 'question' (frontend) and 'message' (legacy/API)
+            user_question = data.get('question') or data.get('message')
+            
+            # Support both 'current_text' (frontend) and 'draft_text' (legacy)
+            current_text = data.get('current_text') or data.get('draft_text', '')
             prompt_text = data.get('prompt_text', '')
-            session_id = data.get('session_id')
             
-            if not user_email or not university_id or not message:
-                return add_cors_headers({'error': 'user_email, university_id, and message required'}, 400)
+            if not user_email or not university_id or not user_question:
+                return add_cors_headers({'error': 'user_email, university_id, and question required'}, 400)
             
-            result = essay_chat(user_email, university_id, message, draft_text, prompt_text, session_id)
+            # Correct argument order: user_email, university_id, prompt_text, current_text, user_question
+            result = essay_chat(user_email, university_id, prompt_text, current_text, user_question)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         # --- PROFILE CHAT ---

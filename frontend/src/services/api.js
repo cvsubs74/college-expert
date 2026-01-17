@@ -435,7 +435,7 @@ export const fetchStructuredProfile = async (userEmail) => {
  */
 export const updateProfileField = async (userEmail, fieldPath, value, operation = 'set') => {
   try {
-    const url = `${PROFILE_MANAGER_ES_URL}/update-structured-field`;
+    const url = `${getProfileManagerUrl()}/update-structured-field`;
     console.log(`[API] Updating profile field: ${fieldPath} with operation: ${operation}`);
 
     const response = await axios.post(url, {
@@ -534,6 +534,146 @@ export const profileChat = async (userEmail, question, conversationHistory = [])
       success: false,
       error: error.message
     };
+  }
+};
+
+/**
+ * Save profile (Self-Discovery) chat conversation
+ * @param {string} userEmail - User's email
+ * @param {Array} messages - Conversation messages
+ * @param {string} conversationId - Optional conversation ID (for updates)
+ * @param {string} title - Optional title
+ */
+export const saveProfileChat = async (userEmail, messages, conversationId = null, title = null) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/profile-chat-save`, {
+      user_email: userEmail,
+      messages: messages,
+      conversation_id: conversationId,
+      title: title
+    }, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving profile chat:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * List profile (Self-Discovery) chat conversations
+ * @param {string} userEmail - User's email
+ * @param {number} limit - Max conversations to return
+ */
+export const listProfileChats = async (userEmail, limit = 20) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/profile-chat-list`, {
+      user_email: userEmail,
+      limit: limit
+    }, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error listing profile chats:', error);
+    return { success: false, conversations: [], error: error.message };
+  }
+};
+
+/**
+ * Load profile (Self-Discovery) chat conversation
+ * @param {string} userEmail - User's email
+ * @param {string} conversationId - Conversation ID to load
+ */
+export const loadProfileChat = async (userEmail, conversationId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/profile-chat-load`, {
+      user_email: userEmail,
+      conversation_id: conversationId
+    }, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error loading profile chat:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Delete profile (Self-Discovery) chat conversation
+ * @param {string} userEmail - User's email
+ * @param {string} conversationId - Conversation ID to delete
+ */
+export const deleteProfileChat = async (userEmail, conversationId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/profile-chat-delete`, {
+      user_email: userEmail,
+      conversation_id: conversationId
+    }, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error deleting profile chat:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Save university chat conversation
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID
+ * @param {string} universityName - University display name
+ * @param {Array} messages - Conversation messages
+ */
+export const saveUniversityChat = async (userEmail, universityId, universityName, messages) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/university-chat-save`, {
+      user_email: userEmail,
+      university_id: universityId,
+      university_name: universityName,
+      messages: messages
+    }, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving university chat:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Load university chat conversation
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID
+ */
+export const loadUniversityChat = async (userEmail, universityId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/university-chat-load`, {
+      user_email: userEmail,
+      university_id: universityId
+    }, {
+      timeout: 10000,
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error loading university chat:', error);
+    return { success: false, messages: [], error: error.message };
   }
 };
 

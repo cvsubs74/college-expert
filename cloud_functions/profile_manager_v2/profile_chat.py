@@ -56,69 +56,107 @@ def profile_chat(user_id: str, question: str, conversation_history: list = None)
         import json
         profile_json = json.dumps(profile_data, indent=2)
         
-        system_prompt = f"""You are a helpful assistant that answers questions about this student's profile.
+        system_prompt = f"""You are Stratia, a warm and insightful college counseling advisor helping a student understand their unique story and strengths.
 
-PROFILE DATA:
+STUDENT PROFILE DATA:
 {profile_json}
 
-RULES:
-1. Only answer questions about THIS specific student profile
-2. Do NOT make any updates or changes to the profile
-3. Do NOT answer questions about universities, colleges, or college admissions
-4. If asked about universities, politely redirect: "I can only answer questions about your profile. For university information, please use the University Explorer."
-5. If asked to update the profile, respond: "I can't update your profile. Please use the Profile Editor tab to make changes."
-6. Be concise and accurate
-7. If a field is empty or missing from the profile, say so clearly
-8. Use friendly, conversational language
-9. After answering, suggest 2-3 insightful follow-up questions that help the student reflect on their profile
+YOUR ROLE:
+You are the student's personal guide for self-discovery and college preparation. You help them:
+- Understand their unique strengths, passions, and defining experiences
+- Discover meaningful themes and narratives in their activities and achievements
+- Brainstorm compelling essay topics and angles based on their authentic story
+- Reflect deeply on what makes them unique as an applicant
+- Connect their experiences to potential college fit and major interests
+
+RESPONSE GUIDELINES:
+1. **Be Insightful & Specific**: Analyze their profile deeply. Don't just list facts—interpret what they mean. Find patterns, connections, and unique angles others might miss.
+
+2. **Provide Detailed Reasoning**: Explain your thinking. If you identify a strength or theme, explain WHY you see it and HOW it manifests in their profile.
+
+3. **Use Markdown Formatting**: Structure your responses with:
+   - **Bold** for key insights and themes
+   - Bullet points for lists of ideas
+   - Clear paragraphs for explanation
+   - > Blockquotes for particularly important points
+
+4. **Be Personal & Warm**: Use "you" and "your." Reference specific activities, courses, and achievements by name. Make them feel seen.
+
+5. **Essay Brainstorming is WELCOME**: When asked about essays, provide 3-5 specific, unique angles based on their profile. For each angle:
+   - Name the theme/angle
+   - Explain why it's compelling for THIS student
+   - Suggest a potential hook or approach
+
+6. **Encourage Deeper Reflection**: After answering, prompt them to think more deeply with a thoughtful follow-up question.
+
+WHAT TO AVOID:
+- Generic, surface-level responses ("You have good activities!")
+- Refusing to help with essay brainstorming or college-related self-reflection
+- Listing profile data without interpretation
+- Short, one-sentence answers
+
+IMPORTANT: The student may ask about essays, their story, what makes them unique, or how to present themselves to colleges. These are ALL profile-related questions you SHOULD answer thoughtfully by analyzing their profile data.
+
+Only redirect to University Explorer if they ask for specific data about a university (acceptance rates, programs, etc.).
 
 Your response should be in JSON format:
 {{
-  "answer": "your response here",
+  "answer": "your detailed, well-formatted response here (use markdown)",
   "suggested_questions": ["question 1", "question 2", "question 3"]
 }}
 
-The suggested questions MUST:
+IMPORTANT: The "answer" field should ONLY contain your response to the student's question. Do NOT include the suggested_questions in the answer text - they will be displayed as clickable buttons separately in the UI.
+
+The suggested_questions MUST:
 - Be 8 words or less (STRICT LIMIT)
 - Be personal and reflective (use "my", "I")
-- Help the student gain self-awareness
+- Help the student gain deeper self-awareness
 - Build on what was just discussed
-- Be direct and conversational
+- ONLY appear in the suggested_questions array, NOT in the answer text
 
 GOOD examples:
 - "What are my biggest strengths?"
-- "How do my activities connect to courses?"
+- "How do my activities show growth?"
 - "What unique perspectives do I bring?"
-- "Where have I shown the most growth?"
-
-BAD examples (too long):
-- "How do you think your performance in community college courses has prepared you for studying business in college?"
-- "Are there any academic areas you feel you need to improve in before starting college?"
+- "Which experience changed me most?"
+- "What essay theme fits me best?"
 """
         
         # Build conversation content
         contents = []
         
         # Add system prompt
-        contents.append({"role": "user", "parts": [{"text": system_prompt}]})
-        contents.append({"role": "model", "parts": [{"text": "I understand. I'll answer questions about your profile only, and provide insightful follow-up questions."}]})
+        contents.append(types.Content(
+            role="user",
+            parts=[types.Part(text=system_prompt)]
+        ))
         
         # Add conversation history
         for msg in conversation_history:
             role = "user" if msg["role"] == "user" else "model"
-            contents.append({"role": role, "parts": [{"text": msg["content"]}]})
+            contents.append(types.Content(
+                role=role,
+                parts=[types.Part(text=msg["content"])]
+            ))
         
         # Add current question
-        contents.append({"role": "user", "parts": [{"text": question}]})
+        contents.append(types.Content(
+            role="user",
+            parts=[types.Part(text=question)]
+        ))
         
-        # Call Gemini
+        # Call Gemini with JSON response format
         client = genai.Client(api_key=GEMINI_API_KEY)
         response = client.models.generate_content(
-            model='gemini-2.0-flash-exp',
-            contents=contents
+            model='gemini-2.5-flash-lite',
+            contents=contents,
+            config=types.GenerateContentConfig(
+                response_mime_type='application/json'
+            )
         )
         
         response_text = response.text.strip()
+        logger.info(f"[PROFILE_CHAT] Raw response length: {len(response_text)}, starts with: {response_text[:100]}...")
         
         # Parse JSON response
         try:
@@ -130,14 +168,51 @@ BAD examples (too long):
                 response_text = '\n'.join(lines[start_idx:end_idx])
                 if response_text.startswith('json'):
                     response_text = response_text[4:].strip()
+                logger.info(f"[PROFILE_CHAT] After cleaning markdown: {response_text[:100]}...")
             
-            parsed_response = json.loads(response_text)
-            answer = parsed_response.get('answer', response_text)
-            suggested_questions = parsed_response.get('suggested_questions', [])
+            # Try to find JSON in the response
+            json_start = response_text.find('{')
+            json_end = response_text.rfind('}')
+            
+            if json_start != -1 and json_end != -1 and json_end > json_start:
+                json_str = response_text[json_start:json_end + 1]
+                logger.info(f"[PROFILE_CHAT] Attempting to parse JSON of length {len(json_str)}")
+                parsed_response = json.loads(json_str)
+                answer = parsed_response.get('answer', response_text)
+                suggested_questions = parsed_response.get('suggested_questions', [])
+                logger.info(f"[PROFILE_CHAT] JSON parsed successfully. suggested_questions: {suggested_questions}")
+            else:
+                # No JSON structure found, use raw text
+                logger.warning(f"[PROFILE_CHAT] No JSON structure found in response")
+                answer = response_text
+                suggested_questions = []
         except json.JSONDecodeError:
             # If JSON parsing fails, use the whole response as answer
-            answer = response_text
-            suggested_questions = []
+            # But first try to extract the "answer" field if it looks like JSON
+            import re
+            match = re.search(r'"answer"\s*:\s*"((?:[^"\\]|\\.)*)"', response_text, re.DOTALL)
+            if match:
+                answer = match.group(1).replace('\\n', '\n').replace('\\"', '"')
+            else:
+                answer = response_text
+            
+            # Also try to extract suggested_questions from the JSON
+            sq_match = re.search(r'"suggested_questions"\s*:\s*\[(.*?)\]', response_text, re.DOTALL)
+            if sq_match:
+                # Extract question strings from the matched array
+                questions_str = sq_match.group(1)
+                question_matches = re.findall(r'"([^"]+)"', questions_str)
+                suggested_questions = question_matches[:5]  # Limit to 5
+            else:
+                suggested_questions = []
+        
+        # Fallback: if no suggested questions were parsed, provide defaults
+        if not suggested_questions:
+            suggested_questions = [
+                "What are my biggest strengths?",
+                "What unique story can I tell?",
+                "How do my experiences connect?"
+            ]
         
         # Update conversation history
         updated_history = conversation_history + [

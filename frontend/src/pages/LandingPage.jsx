@@ -102,7 +102,7 @@ const LandingPage = () => {
   const handleSignIn = async () => {
     try {
       await signInWithGoogle();
-      navigate('/launchpad');
+      navigate('/universities');
     } catch (error) {
       console.error('Sign in failed:', error);
     }
@@ -110,7 +110,7 @@ const LandingPage = () => {
 
   const handleGetStarted = () => {
     if (currentUser) {
-      navigate('/launchpad');
+      navigate('/universities');
     } else {
       handleSignIn();
     }

@@ -330,7 +330,98 @@ class FirestoreDB:
         except Exception as e:
             logger.error(f"[Firestore] Error deleting fit conversation: {e}")
             return False
+    
+    # ==================== PROFILE CHAT (SELF-DISCOVERY) CONVERSATIONS ====================
+    # Supports multiple conversations per user, matching fit_chat pattern
+    
+    def save_profile_conversation(self, user_id: str, conversation_id: str, conversation_data: Dict) -> bool:
+        """Save profile chat (Self-Discovery) conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('profile_chat_conversations').document(conversation_id)
+            conversation_data['updated_at'] = datetime.utcnow().isoformat()
+            doc_ref.set(conversation_data, merge=True)
+            logger.info(f"[Firestore] Saved profile conversation {conversation_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving profile conversation: {e}")
+            return False
+    
+    def get_profile_conversation(self, user_id: str, conversation_id: str) -> Optional[Dict]:
+        """Get profile chat (Self-Discovery) conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('profile_chat_conversations').document(conversation_id)
+            doc = doc_ref.get()
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting profile conversation: {e}")
+            return None
+    
+    def list_profile_conversations(self, user_id: str, limit: int = 20) -> List[Dict]:
+        """List user's profile chat (Self-Discovery) conversations."""
+        try:
+            convs_ref = self.db.collection('users').document(user_id).collection('profile_chat_conversations')
+            docs = convs_ref.order_by('updated_at', direction=firestore.Query.DESCENDING).limit(limit).stream()
+            return [{'conversation_id': doc.id, **doc.to_dict()} for doc in docs]
+        except Exception as e:
+            logger.error(f"[Firestore] Error listing profile conversations: {e}")
+            return []
+    
+    def delete_profile_conversation(self, user_id: str, conversation_id: str) -> bool:
+        """Delete profile chat (Self-Discovery) conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('profile_chat_conversations').document(conversation_id)
+            doc_ref.delete()
+            logger.info(f"[Firestore] Deleted profile conversation {conversation_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error deleting profile conversation: {e}")
+            return False
 
+    
+    # ==================== UNIVERSITY CHAT CONVERSATIONS ====================
+    
+    def save_university_conversation(self, user_id: str, university_id: str, conversation_data: Dict) -> bool:
+        """Save university chat conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('university_chat_conversations').document(university_id)
+            conversation_data['updated_at'] = datetime.utcnow().isoformat()
+            doc_ref.set(conversation_data, merge=True)
+            logger.info(f"[Firestore] Saved university conversation for {user_id}/{university_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving university conversation: {e}")
+            return False
+    
+    def get_university_conversation(self, user_id: str, university_id: str) -> Optional[Dict]:
+        """Get university chat conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('university_chat_conversations').document(university_id)
+            doc = doc_ref.get()
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting university conversation: {e}")
+            return None
+    
+    def list_university_conversations(self, user_id: str, limit: int = 20) -> List[Dict]:
+        """List user's university chat conversations."""
+        try:
+            convs_ref = self.db.collection('users').document(user_id).collection('university_chat_conversations')
+            docs = convs_ref.order_by('updated_at', direction=firestore.Query.DESCENDING).limit(limit).stream()
+            return [{'university_id': doc.id, **doc.to_dict()} for doc in docs]
+        except Exception as e:
+            logger.error(f"[Firestore] Error listing university conversations: {e}")
+            return []
+    
+    def clear_university_conversation(self, user_id: str, university_id: str) -> bool:
+        """Clear university chat conversation."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('university_chat_conversations').document(university_id)
+            doc_ref.delete()
+            logger.info(f"[Firestore] Cleared university conversation for {user_id}/{university_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error clearing university conversation: {e}")
+            return False
 
 
 # Global instance

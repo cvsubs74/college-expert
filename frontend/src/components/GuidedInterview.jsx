@@ -269,8 +269,19 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                 setCurrentArrayItem({});
             }
         } else {
-            const saved = await saveCurrentAnswer();
-            if (!saved) return;
+            // Check if current question is required and empty
+            const question = currentSection.questions[questionIndex];
+            const answer = answers[question.key];
+
+            if (!answer && question.required) {
+                console.log(`[GuidedInterview] Blocking navigation - required field ${question.key} is empty`);
+                return; // Block only if required field is empty
+            }
+
+            // Attempt to save (but don't block navigation on failure)
+            saveCurrentAnswer().catch(e =>
+                console.warn('[GuidedInterview] Save failed but continuing navigation:', e)
+            );
 
             if (questionIndex < currentSection.questions.length - 1) {
                 setQuestionIndex(questionIndex + 1);
@@ -316,7 +327,9 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
     // Calculate progress
     const totalQuestions = ASSESSMENT_SECTIONS.reduce((sum, s) => sum + (s.isArray ? 1 : s.questions.length), 0);
     const currentQuestionNum = ASSESSMENT_SECTIONS.slice(0, sectionIndex).reduce((sum, s) => sum + (s.isArray ? 1 : s.questions.length), 0) + (isArraySection ? 1 : questionIndex + 1);
-    const answeredCount = Object.keys(answers).filter(k => answers[k]).length;
+    const scalarCount = Object.keys(answers).filter(k => answers[k]).length;
+    const arrayCount = Object.values(arrayItems).reduce((sum, arr) => sum + (arr?.length || 0), 0);
+    const answeredCount = scalarCount + arrayCount;
 
     if (loading) {
         return (

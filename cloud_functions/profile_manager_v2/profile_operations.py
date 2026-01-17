@@ -346,3 +346,83 @@ def get_student_profile(user_id: str) -> Optional[Dict]:
     except Exception as e:
         logger.error(f"[PROFILE] Error getting profile: {e}")
         return None
+
+
+def update_profile_field(user_id: str, field_path: str, value, operation: str = 'set') -> dict:
+    """
+    Update a single field in the student profile.
+    
+    Args:
+        user_id: User's email
+        field_path: The field to update (e.g., 'sat_math', 'courses', 'name')
+        value: The new value to set
+        operation: 'set' (replace), 'append' (add to array), 'remove' (remove from array)
+        
+    Returns:
+        Dict with success status
+    """
+    try:
+        db = get_db()
+        existing_profile = db.get_profile(user_id) or {}
+        
+        if operation == 'set':
+            # Simple field update
+            existing_profile[field_path] = value
+            
+        elif operation == 'append':
+            # Append to array field
+            current_array = existing_profile.get(field_path, [])
+            if not isinstance(current_array, list):
+                current_array = []
+            if isinstance(value, list):
+                current_array.extend(value)
+            else:
+                current_array.append(value)
+            existing_profile[field_path] = current_array
+            
+        elif operation == 'remove':
+            # Remove from array field
+            current_array = existing_profile.get(field_path, [])
+            if isinstance(current_array, list):
+                # For dict items, try to match by 'name' or 'subject' field
+                if isinstance(value, dict):
+                    key_field = 'name' if 'name' in value else 'subject' if 'subject' in value else None
+                    if key_field:
+                        current_array = [
+                            item for item in current_array
+                            if not (isinstance(item, dict) and 
+                                   item.get(key_field, '').lower() == value.get(key_field, '').lower())
+                        ]
+                else:
+                    # Simple value removal
+                    current_array = [item for item in current_array if item != value]
+                existing_profile[field_path] = current_array
+        else:
+            return {
+                'success': False,
+                'error': f'Unknown operation: {operation}'
+            }
+        
+        # Save updated profile
+        existing_profile['updated_at'] = datetime.utcnow().isoformat()
+        success = db.save_profile(user_id, existing_profile, merge=True)
+        
+        if success:
+            logger.info(f"[PROFILE] Updated field '{field_path}' for {user_id}")
+            return {
+                'success': True,
+                'message': f'Field {field_path} updated successfully'
+            }
+        else:
+            return {
+                'success': False,
+                'error': 'Failed to save profile update'
+            }
+            
+    except Exception as e:
+        logger.error(f"[PROFILE] Error updating field {field_path}: {e}")
+        return {
+            'success': False,
+            'error': str(e)
+        }
+

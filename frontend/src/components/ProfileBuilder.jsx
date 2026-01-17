@@ -195,6 +195,22 @@ const ProfileSection = ({ sectionKey, section, profile, onUpdate, expandedSectio
         setSaving(true);
         try {
             await onUpdate(fieldKey, value);
+
+            // Auto-compute SAT Total when Math or Reading is updated
+            if (fieldKey === 'sat_math' || fieldKey === 'sat_reading') {
+                const currentMath = fieldKey === 'sat_math' ? value : profile?.sat_math;
+                const currentReading = fieldKey === 'sat_reading' ? value : profile?.sat_reading;
+
+                // If both scores exist, compute and save total
+                if (currentMath && currentReading) {
+                    const total = parseInt(currentMath) + parseInt(currentReading);
+                    if (total >= 400 && total <= 1600) {
+                        await onUpdate('sat_total', total);
+                        console.log(`[ProfileBuilder] Auto-computed SAT Total: ${total}`);
+                    }
+                }
+            }
+
             setEditingField(null);
         } catch (e) {
             console.error('Failed to save:', e);

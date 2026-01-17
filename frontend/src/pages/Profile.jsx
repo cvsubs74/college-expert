@@ -17,11 +17,16 @@ import {
   extractFullResponse,
   recomputeLaunchpadFits,
   resetAllProfile,
-  profileChat
+  profileChat,
+  saveProfileChat,
+  listProfileChats,
+  loadProfileChat,
+  deleteProfileChat
 } from '../services/api';
 import ProfileViewCard from '../components/ProfileViewCard';
 import ProfileBuilder from '../components/ProfileBuilder';
 import GuidedInterview from '../components/GuidedInterview';
+import ConfirmationModal from '../components/ConfirmationModal';
 
 import {
   DocumentArrowUpIcon,
@@ -36,7 +41,10 @@ import {
   PaperAirplaneIcon,
   SparklesIcon,
   UserCircleIcon,
-  PencilSquareIcon
+  PencilSquareIcon,
+  ClockIcon,
+  PlusIcon,
+  ChevronDownIcon
 } from '@heroicons/react/24/outline';
 
 function Profile() {
@@ -71,6 +79,19 @@ function Profile() {
   const [isSending, setIsSending] = useState(false);
   const [suggestedQuestions, setSuggestedQuestions] = useState([]);
   const chatEndRef = useRef(null);
+
+  // Self-Discovery chat history state - matching FitChat pattern
+  const [savedConversations, setSavedConversations] = useState([]);
+  const [currentConversationId, setCurrentConversationId] = useState(null);
+  const [showChatHistory, setShowChatHistory] = useState(false);
+  const [loadingChatHistory, setLoadingChatHistory] = useState(false);
+
+  // Rename state for chat conversations
+  const [editingConversationId, setEditingConversationId] = useState(null);
+  const [editTitle, setEditTitle] = useState('');
+
+  // Delete confirmation state for chat
+  const [deleteChatConfirmation, setDeleteChatConfirmation] = useState({ isOpen: false, conversationId: null });
 
   // Get knowledge base approach from context (profile manager follows same approach)
   const { selectedApproach: knowledgeBaseApproach } = useApproach();
@@ -410,13 +431,19 @@ function Profile() {
       const data = await profileChat(currentUser.email, message, chatMessages);
 
       if (data.success) {
-        setChatMessages(data.conversation_history || [
+        const newMessages = data.conversation_history || [
           ...chatMessages,
           { role: 'user', content: message },
           { role: 'assistant', content: data.answer }
-        ]);
+        ];
+        setChatMessages(newMessages);
         // Update suggested questions
         setSuggestedQuestions(data.suggested_questions || []);
+
+        // Auto-save conversation history after each exchange
+        setTimeout(() => {
+          saveConversationSilent(newMessages);
+        }, 100);
       } else {
         setChatMessages(prev => [...prev, {
           role: 'assistant',
@@ -447,6 +474,139 @@ function Profile() {
       loadProfileMarkdown();
     }
   }, [activeTab]);
+
+  // Load conversation list when switching to chat tab
+  useEffect(() => {
+    if (activeTab === 'chat' && currentUser?.email) {
+      loadConversationList();
+    }
+  }, [activeTab, currentUser?.email]);
+
+  // Load saved conversations list
+  const loadConversationList = async () => {
+    if (!currentUser?.email) return;
+    setLoadingChatHistory(true);
+    try {
+      const result = await listProfileChats(currentUser.email);
+      if (result.success) {
+        setSavedConversations(result.conversations || []);
+      }
+    } catch (e) {
+      console.error('[Profile] Error loading conversation list:', e);
+    }
+    setLoadingChatHistory(false);
+  };
+
+  // Save conversation (silent auto-save)
+  const saveConversationSilent = async (msgs) => {
+    if (!currentUser?.email || !msgs || msgs.length === 0) return;
+    try {
+      const result = await saveProfileChat(currentUser.email, msgs, currentConversationId);
+      if (result.success && !currentConversationId) {
+        setCurrentConversationId(result.conversation_id);
+      }
+    } catch (e) {
+      console.error('[Profile] Silent save failed:', e);
+    }
+  };
+
+  // Load a specific conversation
+  const handleLoadConversation = async (conversationId) => {
+    if (!currentUser?.email) return;
+    setLoadingChatHistory(true);
+    try {
+      const result = await loadProfileChat(currentUser.email, conversationId);
+      if (result.success && result.conversation) {
+        setChatMessages(result.conversation.messages || []);
+        setCurrentConversationId(result.conversation.conversation_id);
+        // Keep history dropdown open so user can switch between conversations
+      }
+    } catch (e) {
+      console.error('[Profile] Error loading conversation:', e);
+    }
+    setLoadingChatHistory(false);
+  };
+
+  // Start a new conversation
+  const handleStartNewConversation = () => {
+    setChatMessages([]);
+    setSuggestedQuestions([]);
+    setCurrentConversationId(null);
+    setShowChatHistory(false);
+  };
+
+  // Show delete confirmation
+  const handleShowDeleteConfirmation = (conversationId, e) => {
+    e.stopPropagation();
+    setDeleteChatConfirmation({ isOpen: true, conversationId });
+  };
+
+  // Delete a conversation
+  const handleDeleteConversation = async (conversationId) => {
+    if (!currentUser?.email) return;
+    try {
+      await deleteProfileChat(currentUser.email, conversationId);
+      // If deleting current conversation, start fresh
+      if (conversationId === currentConversationId) {
+        handleStartNewConversation();
+      }
+      loadConversationList();
+    } catch (e) {
+      console.error('[Profile] Error deleting conversation:', e);
+    }
+  };
+
+  // Start editing a conversation title
+  const handleStartRename = (conv, e) => {
+    e.stopPropagation();
+    setEditingConversationId(conv.conversation_id);
+    setEditTitle(conv.title || '');
+  };
+
+  // Save renamed title
+  const handleSaveRename = async (conversationId, e) => {
+    e.stopPropagation();
+    if (!currentUser?.email || !editTitle.trim()) {
+      setEditingConversationId(null);
+      return;
+    }
+
+    try {
+      // Load conversation, update title, save back
+      const loadResult = await loadProfileChat(currentUser.email, conversationId);
+      if (loadResult.success && loadResult.conversation) {
+        await saveProfileChat(
+          currentUser.email,
+          loadResult.conversation.messages,
+          conversationId,
+          editTitle.trim()
+        );
+        loadConversationList();
+      }
+    } catch (e) {
+      console.error('[Profile] Error renaming conversation:', e);
+    }
+    setEditingConversationId(null);
+  };
+
+  // Cancel rename
+  const handleCancelRename = (e) => {
+    e.stopPropagation();
+    setEditingConversationId(null);
+    setEditTitle('');
+  };
+
+  // Format date for display
+  const formatChatDate = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    return date.toLocaleDateString();
+  };
 
   const handleFileSelect = (event) => {
     const files = Array.from(event.target.files);
@@ -1030,19 +1190,133 @@ function Profile() {
 
         {/* Chat Tab */}
         {activeTab === 'chat' && (
-          <div className="bg-white shadow-sm rounded-2xl flex flex-col h-[600px] border border-gray-200">
-            {/* Chat Header */}
-            <div className="p-4 border-b border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-3">
-                <div className="p-2 bg-gray-100 rounded-xl">
-                  <SparklesIcon className="h-5 w-5 text-gray-600" />
+          <div className="bg-white shadow-sm rounded-2xl flex flex-col h-[600px] border border-gray-200 overflow-hidden">
+            {/* Chat Header - Stratia green theme matching FitChat */}
+            <div className="px-4 py-3 border-b bg-[#D6E8D5] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-lg">
+                  <SparklesIcon className="h-4 w-4 text-white" />
                 </div>
-                Discover Your Story
-              </h2>
-              <p className="text-sm text-gray-500 mt-1 ml-12">
-                Explore insights about your journey and strengths
-              </p>
+                <div>
+                  <h3 className="font-semibold text-gray-900 text-sm">Self-Discovery</h3>
+                  <p className="text-xs text-gray-500">AI-powered insights</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-1">
+                {/* History toggle */}
+                <button
+                  onClick={() => setShowChatHistory(!showChatHistory)}
+                  className={`p-1.5 rounded-lg transition-colors ${showChatHistory ? 'bg-white shadow-sm' : 'hover:bg-white/50'}`}
+                  title="Conversation history"
+                >
+                  <ClockIcon className={`h-5 w-5 ${showChatHistory ? 'text-[#1A4D2E]' : 'text-gray-500'}`} />
+                </button>
+                {/* New conversation */}
+                <button
+                  onClick={handleStartNewConversation}
+                  className="p-1.5 hover:bg-white/50 rounded-lg transition-colors"
+                  title="New conversation"
+                >
+                  <PlusIcon className="h-5 w-5 text-gray-500" />
+                </button>
+              </div>
             </div>
+
+            {/* Conversation History Dropdown - matching FitChat exactly */}
+            {showChatHistory && (
+              <div className="border-b-2 border-gray-200 bg-white shadow-sm">
+                {/* Clickable header to collapse */}
+                <div
+                  onClick={() => setShowChatHistory(false)}
+                  className="flex items-center justify-between px-4 py-2 bg-gray-100 cursor-pointer hover:bg-gray-150 border-b border-gray-200"
+                >
+                  <span className="text-xs font-medium text-gray-600">Past Conversations ({savedConversations.length})</span>
+                  <ChevronDownIcon className="h-4 w-4 text-gray-400 transform rotate-180" />
+                </div>
+                <div className="p-2 max-h-48 overflow-y-auto">
+                  {loadingChatHistory ? (
+                    <div className="text-center py-4 text-gray-400 text-sm">Loading...</div>
+                  ) : savedConversations.length === 0 ? (
+                    <div className="text-center py-4 text-gray-400 text-sm">No saved conversations yet</div>
+                  ) : (
+                    <div className="space-y-1">
+                      {savedConversations.map((conv) => (
+                        <div
+                          key={conv.conversation_id}
+                          onClick={() => editingConversationId !== conv.conversation_id && handleLoadConversation(conv.conversation_id)}
+                          className={`flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer transition-colors ${conv.conversation_id === currentConversationId
+                            ? 'bg-[#D6E8D5] border border-[#1A4D2E]'
+                            : 'hover:bg-gray-50'
+                            }`}
+                        >
+                          <div className="flex-1 min-w-0 mr-2">
+                            {editingConversationId === conv.conversation_id ? (
+                              <input
+                                type="text"
+                                value={editTitle}
+                                onChange={(e) => setEditTitle(e.target.value)}
+                                onClick={(e) => e.stopPropagation()}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter') handleSaveRename(conv.conversation_id, e);
+                                  if (e.key === 'Escape') handleCancelRename(e);
+                                }}
+                                autoFocus
+                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-[#1A4D2E] focus:border-[#1A4D2E]"
+                                placeholder="Enter title..."
+                              />
+                            ) : (
+                              <p className="text-sm font-medium text-gray-800 truncate">
+                                {conv.title || 'Untitled'}
+                              </p>
+                            )}
+                            <p className="text-xs text-gray-400">
+                              {formatChatDate(conv.updated_at)} • {conv.message_count || 0} messages
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            {editingConversationId === conv.conversation_id ? (
+                              <>
+                                <button
+                                  onClick={(e) => handleSaveRename(conv.conversation_id, e)}
+                                  className="p-1 hover:bg-green-100 rounded text-gray-400 hover:text-green-600 transition-colors"
+                                  title="Save"
+                                >
+                                  <CheckCircleIcon className="h-4 w-4" />
+                                </button>
+                                <button
+                                  onClick={handleCancelRename}
+                                  className="p-1 hover:bg-gray-200 rounded text-gray-400 hover:text-gray-600 transition-colors"
+                                  title="Cancel"
+                                >
+                                  <XMarkIcon className="h-4 w-4" />
+                                </button>
+                              </>
+                            ) : (
+                              <>
+                                <button
+                                  onClick={(e) => handleStartRename(conv, e)}
+                                  className="p-1 hover:bg-blue-100 rounded text-gray-400 hover:text-blue-600 transition-colors"
+                                  title="Rename"
+                                >
+                                  <PencilSquareIcon className="h-4 w-4" />
+                                </button>
+                                <button
+                                  onClick={(e) => handleShowDeleteConfirmation(conv.conversation_id, e)}
+                                  className="p-1 hover:bg-red-100 rounded text-gray-400 hover:text-red-500 transition-colors"
+                                  title="Delete"
+                                >
+                                  <TrashIcon className="h-4 w-4" />
+                                </button>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Chat Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -1616,6 +1890,21 @@ function Profile() {
 
       {/* Reset Profile Modal */}
       <ResetProfileModal />
+
+      {/* Delete Chat Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={deleteChatConfirmation.isOpen}
+        onClose={() => setDeleteChatConfirmation({ isOpen: false, conversationId: null })}
+        onConfirm={() => {
+          handleDeleteConversation(deleteChatConfirmation.conversationId);
+          setDeleteChatConfirmation({ isOpen: false, conversationId: null });
+        }}
+        title="Delete Conversation"
+        message="Are you sure you want to delete this conversation? This action cannot be undone."
+        confirmText="Delete"
+        cancelText="Cancel"
+        variant="danger"
+      />
     </div>
   );
 }
