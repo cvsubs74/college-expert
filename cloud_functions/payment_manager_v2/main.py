@@ -26,23 +26,27 @@ logger = logging.getLogger(__name__)
 # Initialize Stripe
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY', 'sk_test_placeholder')
 
+# Validate critical configuration on startup
+STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET', '')
+if not STRIPE_WEBHOOK_SECRET:
+    logger.warning("⚠️  STRIPE_WEBHOOK_SECRET not configured - webhook signature verification will be SKIPPED. This is a SECURITY RISK in production!")
+else:
+    logger.info("✓ STRIPE_WEBHOOK_SECRET is configured")
+
+if stripe.api_key == 'sk_test_placeholder':
+    logger.warning("⚠️  Using placeholder Stripe API key - payments will NOT work!")
+
 # Profile Manager V2 URL (for credits sync)
 PROFILE_MANAGER_V2_URL = os.environ.get('PROFILE_MANAGER_V2_URL', 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app')
 
-# Price IDs - Created via Stripe API
+# Price IDs - Stratia Admissions Stripe Account
 STRIPE_PRICES = {
     # Subscriptions
-    'subscription_monthly': 'price_1SfBO6Ifpb0uVZkCWaSvtevk',  # $15/mo
-    'subscription_annual': 'price_1SfBO7Ifpb0uVZkCkY6JgQrx',   # $99/yr
-    
-    # Add-on Packs
-    'addon_1_college': 'price_1SfBO7Ifpb0uVZkC7mEzsNeN',     # $9
-    'addon_3_colleges': 'price_1SfBO8Ifpb0uVZkCJgHqELLf',    # $20
-    'addon_5_colleges': 'price_1SfBO8Ifpb0uVZkCUtd6xh7o',    # $29
-    'addon_10_colleges': 'price_1SfBO8Ifpb0uVZkCZhG9slEP',   # $49
+    'subscription_monthly': 'price_1SqQVcIaK5CUG9Yla77ky1yN',  # $15/mo
+    'subscription_annual': 'price_1SqQWJIaK5CUG9YlURqKB9HM',   # $99/yr (Season Pass)
     
     # Credit Packs
-    'credit_pack_10': 'price_1SfBO8Ifpb0uVZkCZhG9slEP',  # $9 for 10 credits
+    'credit_pack_10': 'price_1SqQWhIaK5CUG9YlWbbAy7DN',  # $9 for 10 credits
 }
 
 # Product details for display and fulfillment
@@ -286,16 +290,15 @@ def handle_create_checkout(request, user_id):
 
 def handle_webhook(request):
     """Handle Stripe webhooks for payment confirmation"""
-    webhook_secret = os.environ.get('STRIPE_WEBHOOK_SECRET', '')
     payload = request.get_data()
     sig_header = request.headers.get('Stripe-Signature', '')
     
     try:
-        if webhook_secret:
-            event = stripe.Webhook.construct_event(payload, sig_header, webhook_secret)
+        if STRIPE_WEBHOOK_SECRET:
+            event = stripe.Webhook.construct_event(payload, sig_header, STRIPE_WEBHOOK_SECRET)
         else:
             event = json.loads(payload)
-            logger.warning("Webhook signature verification skipped - no secret configured")
+            logger.warning("⚠️  Webhook signature verification SKIPPED - SECURITY RISK in production!")
         
         if event['type'] == 'checkout.session.completed':
             session = event['data']['object']
@@ -461,14 +464,99 @@ def handle_subscription_lifecycle_webhooks(event):
         elif event_type == 'invoice.payment_succeeded':
             invoice = event['data']['object']
             subscription_id = invoice.get('subscription')
-            if subscription_id:
-                logger.info(f"Payment succeeded for subscription: {subscription_id}")
+            billing_reason = invoice.get('billing_reason')  # 'subscription_cycle' for renewals
+            customer_id = invoice.get('customer')
+            
+            if subscription_id and billing_reason == 'subscription_cycle':
+                # This is a renewal - reset monthly credits
+                logger.info(f"Subscription renewal payment succeeded: {subscription_id}")
+                
+                try:
+                    customer = stripe.Customer.retrieve(customer_id)
+                    user_email = customer.get('email')
+                    
+                    if user_email:
+                        purchases = db.get_purchases(user_email)
+                        if purchases and purchases.get('stripe_subscription_id') == subscription_id:
+                            subscription_plan = purchases.get('subscription_plan', 'monthly')
+                            
+                            # Determine credits to grant based on plan
+                            if subscription_plan == 'annual' or subscription_plan == 'season_pass':
+                                # Annual plans don't reset monthly - they have 150 for the year
+                                logger.info(f"Annual subscription renewed for {user_email} - no credit reset needed")
+                            else:
+                                # Monthly plan - reset to 20 credits
+                                new_credits = PRODUCTS.get('subscription_monthly', {}).get('grants', {}).get('fit_analysis', 20)
+                                
+                                purchases['fit_analysis_credits'] = new_credits
+                                purchases['credits_reset_date'] = datetime.now(timezone.utc).isoformat()
+                                purchases['payment_failed'] = False  # Clear any previous failure flag
+                                purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
+                                
+                                # Update subscription end date
+                                subscription = stripe.Subscription.retrieve(subscription_id)
+                                if subscription.get('current_period_end'):
+                                    purchases['subscription_end_date'] = datetime.fromtimestamp(
+                                        subscription.get('current_period_end'), timezone.utc
+                                    ).isoformat()
+                                    purchases['subscription_current_period_end'] = purchases['subscription_end_date']
+                                
+                                db.save_purchases(user_email, purchases)
+                                
+                                # Sync credits collection
+                                db.save_credits(user_email, {
+                                    'credits_remaining': new_credits,
+                                    'credits_total': new_credits,
+                                    'credits_reset_date': purchases['credits_reset_date'],
+                                    'subscription_active': True,
+                                    'subscription_expires': purchases.get('subscription_end_date'),
+                                    'tier': 'monthly'
+                                })
+                                
+                                logger.info(f"Monthly credits reset for {user_email}: {new_credits} credits granted")
+                        else:
+                            logger.warning(f"Subscription ID mismatch for renewal: {user_email}")
+                    else:
+                        logger.warning(f"No email found for customer: {customer_id}")
+                        
+                except Exception as e:
+                    logger.error(f"Error processing renewal for subscription {subscription_id}: {e}")
+            else:
+                logger.info(f"Payment succeeded for subscription: {subscription_id} (reason: {billing_reason})")
                 
         elif event_type == 'invoice.payment_failed':
             invoice = event['data']['object']
             subscription_id = invoice.get('subscription')
+            customer_id = invoice.get('customer')
             customer_email = invoice.get('customer_email')
-            logger.warning(f"Payment failed for subscription: {subscription_id}, customer: {customer_email}")
+            attempt_count = invoice.get('attempt_count', 1)
+            next_payment_attempt = invoice.get('next_payment_attempt')
+            
+            logger.warning(f"Payment failed for subscription: {subscription_id}, customer: {customer_email}, attempt: {attempt_count}")
+            
+            # Update user's purchase record to flag payment failure
+            try:
+                if customer_id:
+                    customer = stripe.Customer.retrieve(customer_id)
+                    user_email = customer.get('email') or customer_email
+                    
+                    if user_email:
+                        purchases = db.get_purchases(user_email)
+                        if purchases and purchases.get('stripe_subscription_id') == subscription_id:
+                            purchases['payment_failed'] = True
+                            purchases['payment_failure_count'] = attempt_count
+                            purchases['payment_failure_date'] = datetime.now(timezone.utc).isoformat()
+                            if next_payment_attempt:
+                                purchases['next_payment_attempt'] = datetime.fromtimestamp(
+                                    next_payment_attempt, timezone.utc
+                                ).isoformat()
+                            purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
+                            
+                            db.save_purchases(user_email, purchases)
+                            logger.info(f"Updated payment failure status for {user_email}")
+                            
+            except Exception as e:
+                logger.error(f"Error updating payment failure status: {e}")
             
     except Exception as e:
         logger.error(f"Error handling subscription webhook {event_type}: {e}")
