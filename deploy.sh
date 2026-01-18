@@ -37,6 +37,7 @@ KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
 KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities"
 PAYMENT_MANAGER_FUNCTION="payment-manager"
+PAYMENT_MANAGER_V2_FUNCTION="payment-manager-v2"
 UNIVERSITY_COLLECTOR_SERVICE_NAME="university-profile-collector"
 FRONTEND_SITE_NAME="college-counselor"
 
@@ -70,7 +71,8 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
     echo -e "  ${YELLOW}knowledge-universities${NC} - Deploy Universities knowledge base function"
     echo -e "  ${YELLOW}knowledge-universities-v2${NC} - Deploy Universities KB V2 (Firestore, no ES)"
-    echo -e "  ${YELLOW}payment${NC}     - Deploy Payment manager function (Stripe integration)"
+    echo -e "  ${YELLOW}payment${NC}     - Deploy Payment manager function (Stripe, ES backend)"
+    echo -e "  ${YELLOW}payment-v2${NC}  - Deploy Payment manager V2 (Stripe, Firestore backend) [RECOMMENDED]"
     echo -e "  ${YELLOW}source-curator${NC} - Deploy Source Curator UI (React + FastAPI)"
     echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
     echo -e "  ${YELLOW}backend${NC}     - Deploy both agents + all functions (recommended)"
@@ -650,6 +652,36 @@ deploy_payment_manager() {
     cd ../..
 }
 
+deploy_payment_manager_v2() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Payment Manager V2 (Firestore + Email Service)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/payment_manager_v2
+    
+    # Payment Manager V2 uses env.yaml directly with actual values (not placeholders)
+    # The env.yaml in payment_manager_v2 already has the live Stripe keys
+    
+    gcloud functions deploy $PAYMENT_MANAGER_V2_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=payment_manager_v2 \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.yaml \
+        --timeout=60s \
+        --memory=512MB \
+        --max-instances=10
+    
+    PAYMENT_MANAGER_V2_URL=$(gcloud functions describe $PAYMENT_MANAGER_V2_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Payment Manager V2 deployed: ${PAYMENT_MANAGER_V2_URL}${NC}"
+    
+    cd ../..
+}
+
 deploy_contact_form() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Contact Form Function (SMTP Email)${NC}"
@@ -1043,6 +1075,9 @@ case "$DEPLOY_TARGET" in
     "payment")
         deploy_payment_manager
         ;;
+    "payment-v2")
+        deploy_payment_manager_v2
+        ;;
     "source-curator")
         deploy_source_curator
         ;;
@@ -1074,7 +1109,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
-        deploy_payment_manager
+        deploy_payment_manager_v2
         deploy_contact_form
         ;;
     "backend")

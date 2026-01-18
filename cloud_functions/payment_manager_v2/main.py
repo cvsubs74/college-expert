@@ -18,6 +18,13 @@ from datetime import datetime, timezone, timedelta
 from flask import jsonify
 import stripe
 from firestore_db import get_payment_db
+from email_service import (
+    send_welcome_email,
+    send_payment_failed_email,
+    send_subscription_ended_email,
+    send_cancellation_confirmed_email,
+    send_renewal_success_email
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -376,6 +383,15 @@ def handle_successful_payment(session):
     
     if success:
         logger.info(f"Successfully processed payment for {user_id}: {product_id} x{quantity}")
+        
+        # Send welcome email for new subscriptions
+        if product['type'] == 'subscription':
+            try:
+                credits = grants.get('fit_analysis', 0)
+                send_welcome_email(user_id, product['name'], credits)
+                logger.info(f"Welcome email sent to {user_id}")
+            except Exception as e:
+                logger.error(f"Failed to send welcome email to {user_id}: {e}")
     else:
         logger.error(f"Failed to update purchases for {user_id}")
 
@@ -441,6 +457,7 @@ def handle_subscription_lifecycle_webhooks(event):
                 if user_email:
                     purchases = db.get_purchases(user_email)
                     if purchases and purchases.get('stripe_subscription_id') == subscription_id:
+                        plan_name = purchases.get('subscription_plan', 'subscription')
                         purchases['subscription_active'] = False
                         purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
                         db.save_purchases(user_email, purchases)
@@ -453,6 +470,14 @@ def handle_subscription_lifecycle_webhooks(event):
                         })
                         
                         logger.info(f"Deactivated subscription for {user_email}")
+                        
+                        # Send subscription ended email
+                        try:
+                            plan_display = "Season Pass" if plan_name in ['annual', 'season_pass'] else "Monthly"
+                            send_subscription_ended_email(user_email, f"Stratia Admissions {plan_display}")
+                            logger.info(f"Subscription ended email sent to {user_email}")
+                        except Exception as email_err:
+                            logger.error(f"Failed to send subscription ended email: {email_err}")
                     else:
                         logger.warning(f"Subscription ID mismatch for deleted sub: {user_email}")
                 else:
@@ -514,6 +539,26 @@ def handle_subscription_lifecycle_webhooks(event):
                                 })
                                 
                                 logger.info(f"Monthly credits reset for {user_email}: {new_credits} credits granted")
+                                
+                                # Send renewal success email
+                                try:
+                                    next_billing = purchases.get('subscription_end_date', '')
+                                    if next_billing:
+                                        # Format date nicely
+                                        next_billing_dt = datetime.fromisoformat(next_billing.replace('Z', '+00:00'))
+                                        next_billing_display = next_billing_dt.strftime("%B %d, %Y")
+                                    else:
+                                        next_billing_display = "Next billing cycle"
+                                    
+                                    send_renewal_success_email(
+                                        user_email,
+                                        "Stratia Admissions Monthly",
+                                        new_credits,
+                                        next_billing_display
+                                    )
+                                    logger.info(f"Renewal success email sent to {user_email}")
+                                except Exception as email_err:
+                                    logger.error(f"Failed to send renewal email: {email_err}")
                         else:
                             logger.warning(f"Subscription ID mismatch for renewal: {user_email}")
                     else:
@@ -546,14 +591,22 @@ def handle_subscription_lifecycle_webhooks(event):
                             purchases['payment_failed'] = True
                             purchases['payment_failure_count'] = attempt_count
                             purchases['payment_failure_date'] = datetime.now(timezone.utc).isoformat()
+                            next_attempt_display = None
                             if next_payment_attempt:
-                                purchases['next_payment_attempt'] = datetime.fromtimestamp(
-                                    next_payment_attempt, timezone.utc
-                                ).isoformat()
+                                next_attempt_dt = datetime.fromtimestamp(next_payment_attempt, timezone.utc)
+                                purchases['next_payment_attempt'] = next_attempt_dt.isoformat()
+                                next_attempt_display = next_attempt_dt.strftime("%B %d, %Y")
                             purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
                             
                             db.save_purchases(user_email, purchases)
                             logger.info(f"Updated payment failure status for {user_email}")
+                            
+                            # Send payment failed email
+                            try:
+                                send_payment_failed_email(user_email, attempt_count, next_attempt_display)
+                                logger.info(f"Payment failed email sent to {user_email}")
+                            except Exception as email_err:
+                                logger.error(f"Failed to send payment failed email: {email_err}")
                             
             except Exception as e:
                 logger.error(f"Error updating payment failure status: {e}")
@@ -582,10 +635,29 @@ def handle_cancel_subscription(request, user_id):
             purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
             db.save_purchases(user_id, purchases)
             
+            cancel_at = purchases.get('subscription_current_period_end') or purchases.get('subscription_end_date')
+            
+            # Send cancellation confirmed email
+            try:
+                plan_name = purchases.get('subscription_plan', 'monthly')
+                plan_display = "Season Pass" if plan_name in ['annual', 'season_pass'] else "Monthly"
+                
+                # Format end date nicely
+                if cancel_at:
+                    end_dt = datetime.fromisoformat(cancel_at.replace('Z', '+00:00'))
+                    end_date_display = end_dt.strftime("%B %d, %Y")
+                else:
+                    end_date_display = "End of billing period"
+                
+                send_cancellation_confirmed_email(user_id, f"Stratia Admissions {plan_display}", end_date_display)
+                logger.info(f"Cancellation confirmed email sent to {user_id}")
+            except Exception as email_err:
+                logger.error(f"Failed to send cancellation email: {email_err}")
+            
             return add_cors_headers({
                 'success': True,
                 'message': 'Subscription will be canceled at period end',
-                'cancel_at': purchases.get('subscription_current_period_end') or purchases.get('subscription_end_date'),
+                'cancel_at': cancel_at,
                 'credits_valid_until': purchases.get('subscription_end_date')
             })
             
