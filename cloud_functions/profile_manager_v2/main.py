@@ -63,6 +63,7 @@ from essay_copilot import (
     generate_essay_outline
 )
 from fit_computation import calculate_fit_for_college
+from email_service import send_signup_welcome_email
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -1034,6 +1035,39 @@ def profile_manager_v2_http_entry(request):
                 return add_cors_headers({
                     'success': False,
                     'error': f'Reset failed: {str(e)}'
+                }, 500)
+        
+        # --- SEND WELCOME EMAIL ---
+        elif resource_type == 'send-welcome-email' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            
+            logger.info(f"[WELCOME_EMAIL] Sending welcome email to {user_email}")
+            
+            try:
+                success = send_signup_welcome_email(user_email)
+                
+                if success:
+                    logger.info(f"[WELCOME_EMAIL] Successfully sent to {user_email}")
+                    return add_cors_headers({
+                        'success': True,
+                        'message': 'Welcome email sent successfully'
+                    })
+                else:
+                    logger.error(f"[WELCOME_EMAIL] Failed to send to {user_email}")
+                    return add_cors_headers({
+                        'success': False,
+                        'error': 'Failed to send welcome email'
+                    }, 500)
+                    
+            except Exception as e:
+                logger.error(f"[WELCOME_EMAIL ERROR] {str(e)}")
+                return add_cors_headers({
+                    'success': False,
+                    'error': f'Email error: {str(e)}'
                 }, 500)
         
         # --- NOT FOUND ---

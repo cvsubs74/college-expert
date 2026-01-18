@@ -25,7 +25,7 @@ import { PaymentProvider, usePayment } from './context/PaymentContext';
 import { ToastProvider } from './components/Toast';
 import UpgradeModal from './components/UpgradeModal';
 import { logout } from './services/authService';
-import { checkOnboardingStatus, saveOnboardingProfile, fetchUserProfile } from './services/api';
+import { checkOnboardingStatus, saveOnboardingProfile, fetchUserProfile, sendWelcomeEmail } from './services/api';
 import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
@@ -175,6 +175,18 @@ function AppLayout() {
         } else {
           console.log('[App] v2 - No profile found, showing onboarding');
           setShowOnboarding(true);
+
+          // Send welcome email to new user (fire and forget)
+          const welcomeEmailKey = `welcome_email_sent_${currentUser.email}`;
+          if (!localStorage.getItem(welcomeEmailKey)) {
+            console.log('[App] Sending welcome email to new user:', currentUser.email);
+            sendWelcomeEmail(currentUser.email).then(result => {
+              if (result.success) {
+                localStorage.setItem(welcomeEmailKey, 'true');
+                console.log('[App] Welcome email sent successfully');
+              }
+            }).catch(err => console.error('[App] Welcome email failed:', err));
+          }
         }
       } catch (error) {
         console.error('[App] v2 - Error checking profile:', error);

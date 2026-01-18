@@ -1737,5 +1737,33 @@ export const deductCredit = async (userEmail, creditCount = 1, reason = 'infogra
 
 // ============== END CREDITS API ==============
 
+// ============== EMAIL API ==============
+
+/**
+ * Send welcome email to new user
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{success: boolean, message?: string, error?: string}>}
+ */
+export const sendWelcomeEmail = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/send-welcome-email`, {
+      user_email: userEmail
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+    console.log('[API] Welcome email sent successfully to', userEmail);
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error sending welcome email:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
+
+// ============== END EMAIL API ==============
+
 export default api;
 
