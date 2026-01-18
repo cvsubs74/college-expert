@@ -716,6 +716,7 @@ const UniversityExplorer = () => {
     const [selectedState, setSelectedState] = useState("All");
     const [selectedFitCategory, setSelectedFitCategory] = useState("All");
     const [maxAcceptance, setMaxAcceptance] = useState(100);
+    const [maxAcceptancePreview, setMaxAcceptancePreview] = useState(100); // Preview value during slider drag
 
     const [activeView, setActiveView] = useState("list");
     const [selectedUni, setSelectedUni] = useState(null);
@@ -1666,14 +1667,16 @@ const UniversityExplorer = () => {
                                                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
                                                     Max Acceptance Rate
                                                 </label>
-                                                <span className="text-xs font-bold text-blue-600">{maxAcceptance}%</span>
+                                                <span className="text-xs font-bold text-blue-600">{maxAcceptancePreview}%</span>
                                             </div>
                                             <input
                                                 type="range"
                                                 min="0"
                                                 max="100"
-                                                value={maxAcceptance}
-                                                onChange={(e) => setMaxAcceptance(Number(e.target.value))}
+                                                value={maxAcceptancePreview}
+                                                onChange={(e) => setMaxAcceptancePreview(Number(e.target.value))}
+                                                onMouseUp={(e) => setMaxAcceptance(Number(e.target.value))}
+                                                onTouchEnd={(e) => setMaxAcceptance(Number(e.target.value))}
                                                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
                                             />
                                         </div>

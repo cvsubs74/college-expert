@@ -5,7 +5,7 @@
  */
 
 // Stripe publishable key (safe to expose in frontend)
-export const STRIPE_PUBLISHABLE_KEY = 'pk_live_51OYhyQIfpb0uVZkCjf8ZN9gR42vOCibCYUBXe8VjdJ2nJVUGuUvXm3uYCsZyIlGMQtnC2BnwzjG6LuCDBRvXFiTA00bSzGs5l8';
+export const STRIPE_PUBLISHABLE_KEY = 'pk_live_51SqNZkIaK5CUG9YlONnCNLkWwwTYBD324TUpLXTVsnQwFaicXGj98w6NW7KRSGEe1H5eO3LJ347oePk7z6JwMk4N00IwF4aijO';
 
 // API endpoint - Payment Manager V2 (Firestore backend)
 const PAYMENT_API_URL = import.meta.env.VITE_PAYMENT_V2_API_URL || import.meta.env.VITE_PAYMENT_API_URL || 'https://payment-manager-v2-pfnwjfp26a-ue.a.run.app';

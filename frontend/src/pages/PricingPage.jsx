@@ -188,8 +188,10 @@ const PricingPage = () => {
                 { text: 'Use with any plan', included: true },
                 { text: 'Instant activation', included: true },
             ],
-            cta: 'Buy Credits',
-            ctaStyle: 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md',
+            cta: (isMonthly || isSeasonal) ? 'Buy Credits' : 'Requires Subscription',
+            ctaStyle: (isMonthly || isSeasonal) ? 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md' : 'bg-gray-300 text-gray-500 cursor-not-allowed',
+            disabled: !(isMonthly || isSeasonal),
+            subscriberOnly: true,
         }
     ];
 
