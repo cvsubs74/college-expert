@@ -203,15 +203,28 @@ def update_user_purchases(user_id, grants, purchase_details):
         db.add_purchase_record(user_id, purchase_details)
         
         # Sync credits collection for frontend consistency
+        # IMPORTANT: Use ACTUAL credits_remaining from credits collection, not fit_analysis_credits
+        # which may include old/used free tier credits
+        current_credits = db.get_credits(user_id) or {}
+        actual_remaining = current_credits.get('credits_remaining', 0)
+        
+        # For subscriptions/credit packs, add the granted credits to actual remaining balance
+        credits_to_add = grants.get('fit_analysis', 0)
+        new_remaining = actual_remaining + credits_to_add
+        
         credits_update = {
-            'credits_remaining': current.get('fit_analysis_credits', 0),
-            'credits_total': current.get('fit_analysis_credits', 0),
+            'credits_remaining': new_remaining,
+            'credits_total': current_credits.get('credits_total', 0) + credits_to_add,
+            'credits_used': current_credits.get('credits_used', 0),
             'subscription_active': current.get('subscription_active', False),
             'subscription_plan': current.get('subscription_plan'),
             'subscription_expires': current.get('subscription_end_date'),
             'tier': 'season_pass' if current.get('subscription_plan') == 'annual' else ('monthly' if current.get('subscription_active') else 'free')
         }
         db.save_credits(user_id, credits_update)
+        
+        # Also update fit_analysis_credits in purchases to match
+        current['fit_analysis_credits'] = new_remaining
         
         logger.info(f"[PaymentManagerV2] Updated purchases and credits for {user_id}")
         return True
