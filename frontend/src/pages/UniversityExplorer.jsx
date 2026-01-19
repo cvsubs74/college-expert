@@ -705,7 +705,7 @@ const LoadingSkeleton = () => (
 
 // --- Main App Component ---
 const UniversityExplorer = () => {
-    const { canAccessLaunchpad, isFreeTier, promptUpgrade, promptCreditsUpgrade, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature, fetchCredits } = usePayment();
+    const { canAccessLaunchpad, isFreeTier, promptUpgrade, promptCreditsUpgrade, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature, fetchCredits, hasCredits } = usePayment();
     const toast = useToast();
     const [universities, setUniversities] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -1729,7 +1729,8 @@ const UniversityExplorer = () => {
                                             displayUniversities.map((uni) => {
                                                 // Free tier: limit reached when 3 colleges already added (and this uni not in list)
                                                 const isInList = isInCollegeList(uni.id);
-                                                const isLimitReached = !canAccessLaunchpad && !isInList && myCollegeList.length >= 3;
+                                                // Show Upgrade button if: (1) no credits remaining, OR (2) free tier at school limit
+                                                const isLimitReached = !isInList && (!hasCredits || (!canAccessLaunchpad && myCollegeList.length >= 3));
                                                 return (
                                                     <UniversityCard
                                                         key={uni.id}

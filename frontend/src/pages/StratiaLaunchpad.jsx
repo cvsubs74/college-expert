@@ -798,11 +798,13 @@ const StratiaLaunchpad = () => {
                                                 </div>
                                             </div>
                                             <button
-                                                onClick={() => handleAddDiscoverySchool(school)}
+                                                onClick={() => !hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT)
+                                                    ? navigate('/pricing')
+                                                    : handleAddDiscoverySchool(school)}
                                                 disabled={addingSchoolId === school.university_id}
                                                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${addingSchoolId === school.university_id
                                                     ? 'bg-gray-200 text-gray-500 cursor-wait'
-                                                    : isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
+                                                    : !hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT)
                                                         ? 'bg-[#FCEEE8] text-[#C05838] hover:bg-[#C05838] hover:text-white'
                                                         : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#1A4D2E] hover:text-white'
                                                     }`}
@@ -812,10 +814,10 @@ const StratiaLaunchpad = () => {
                                                         <ArrowPathIcon className="h-4 w-4 animate-spin" />
                                                         Adding...
                                                     </>
-                                                ) : isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT ? (
+                                                ) : !hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT) ? (
                                                     <>
                                                         <RocketLaunchIcon className="h-4 w-4" />
-                                                        Upgrade
+                                                        {!hasCredits ? 'Get Credits' : 'Upgrade'}
                                                     </>
                                                 ) : (
                                                     <>
