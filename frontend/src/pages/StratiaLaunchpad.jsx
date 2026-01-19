@@ -617,7 +617,7 @@ const StratiaLaunchpad = () => {
                                 {!hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT) ? (
                                     <>
                                         <RocketLaunchIcon className="w-5 h-5" />
-                                        <span className="hidden sm:inline">{!hasCredits ? 'Get Credits' : 'Upgrade'}</span>
+                                        <span className="hidden sm:inline">{isFreeTier ? 'Upgrade' : 'Get Credits'}</span>
                                     </>
                                 ) : (
                                     <>
@@ -817,7 +817,7 @@ const StratiaLaunchpad = () => {
                                                 ) : !hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT) ? (
                                                     <>
                                                         <RocketLaunchIcon className="h-4 w-4" />
-                                                        {!hasCredits ? 'Get Credits' : 'Upgrade'}
+                                                        {isFreeTier ? 'Upgrade' : 'Get Credits'}
                                                     </>
                                                 ) : (
                                                     <>

@@ -210,7 +210,7 @@ const transformUniversityData = (apiData) => {
 };
 
 // --- University Card Component ---
-const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat }) => {
+const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat, isFreeTier }) => {
     // Fit category ribbon styling
     const fitConfig = {
         SAFETY: { gradient: 'from-[#1A4D2E] to-[#2D6B45]', label: 'Safety', icon: '🛡️' },
@@ -288,7 +288,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {isInList ? (
                                 <><CheckCircleIcon className="h-4 w-4" /> Saved</>
                             ) : uni.isLimitReached ? (
-                                <><SparklesIcon className="h-4 w-4" /> Upgrade</>
+                                <><SparklesIcon className="h-4 w-4" /> {isFreeTier ? 'Upgrade' : 'Get Credits'}</>
                             ) : (
                                 <><RocketLaunchIcon className="h-4 w-4" /> Save</>
                             )}
@@ -1753,6 +1753,7 @@ const UniversityExplorer = () => {
                                                             setShowFitModal(true);
                                                         }}
                                                         onOpenChat={handleOpenChat}
+                                                        isFreeTier={isFreeTier}
                                                     />
                                                 );
                                             })
