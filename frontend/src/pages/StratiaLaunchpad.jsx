@@ -35,7 +35,7 @@ import {
  */
 const StratiaLaunchpad = () => {
     const { currentUser } = useAuth();
-    const { isFreeTier, fetchCredits } = usePayment();
+    const { isFreeTier, fetchCredits, hasCredits } = usePayment();
     const navigate = useNavigate();
     const FREE_TIER_SCHOOL_LIMIT = 3;
 
@@ -604,19 +604,20 @@ const StratiaLaunchpad = () => {
                             </div>
 
                             {/* Add School / Upgrade Button */}
+                            {/* Show Upgrade if: (1) no credits remaining, OR (2) free tier and at school limit */}
                             <button
-                                onClick={() => isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
+                                onClick={() => !hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT)
                                     ? navigate('/pricing')
                                     : handleOpenDiscovery('SAFETY')}
-                                className={`flex items-center gap-2 ${isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
+                                className={`flex items-center gap-2 ${!hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT)
                                     ? 'bg-[#C05838] hover:bg-[#A04828] text-white px-4 py-2 rounded-full font-medium transition-colors'
                                     : 'stratia-btn-filled'
                                     }`}
                             >
-                                {isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT ? (
+                                {!hasCredits || (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT) ? (
                                     <>
                                         <RocketLaunchIcon className="w-5 h-5" />
-                                        <span className="hidden sm:inline">Upgrade</span>
+                                        <span className="hidden sm:inline">{!hasCredits ? 'Get Credits' : 'Upgrade'}</span>
                                     </>
                                 ) : (
                                     <>
