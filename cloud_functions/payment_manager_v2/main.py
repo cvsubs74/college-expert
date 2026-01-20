@@ -23,7 +23,8 @@ from email_service import (
     send_payment_failed_email,
     send_subscription_ended_email,
     send_cancellation_confirmed_email,
-    send_renewal_success_email
+    send_renewal_success_email,
+    send_credits_low_email
 )
 
 # Configure logging
@@ -793,7 +794,20 @@ def handle_use_credit(request, user_id):
         if credit_type == 'ai_messages' and purchases.get('ai_unlimited'):
             return add_cors_headers({'success': True, 'unlimited': True})
         
-        available = purchases.get(credit_type, 0) - purchases.get(f'{credit_type}_used', 0)
+        # Map credit_type to actual field names in Firestore
+        CREDIT_FIELD_MAP = {
+            'fit_analysis': ('fit_analysis_credits', 'fit_analysis_used', 3),  # (total_field, used_field, default)
+            'college_slots': ('college_slots', 'college_slots_used', 2),
+            'essay_strategy': ('essay_strategy', 'essay_strategy_used', 0),
+            'app_readiness': ('app_readiness', 'app_readiness_used', 0),
+            'ai_messages': ('ai_messages_limit', 'ai_messages_used', 30),
+        }
+        
+        total_field, used_field, default_total = CREDIT_FIELD_MAP[credit_type]
+        total_credits = purchases.get(total_field, default_total)
+        used_credits = purchases.get(used_field, 0)
+        available = total_credits - used_credits
+        
         if available <= 0:
             return add_cors_headers({
                 'error': 'No credits available',
@@ -802,7 +816,8 @@ def handle_use_credit(request, user_id):
                 'upgrade_required': True
             }, 403)
         
-        purchases[f'{credit_type}_used'] = purchases.get(f'{credit_type}_used', 0) + 1
+        # Increment used counter
+        purchases[used_field] = used_credits + 1
         purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
         
         if college_id and credit_type in ['fit_analysis', 'essay_strategy', 'app_readiness']:
@@ -814,10 +829,23 @@ def handle_use_credit(request, user_id):
         
         db.save_purchases(user_id, purchases)
         
+        # Calculate remaining credits after usage
+        remaining = total_credits - (used_credits + 1)
+
+        
+        # Send low credits email if fit_analysis credits are running low (5 or fewer)
+        LOW_CREDITS_THRESHOLD = 5
+        if credit_type == 'fit_analysis' and remaining <= LOW_CREDITS_THRESHOLD and remaining > 0:
+            try:
+                send_credits_low_email(user_id, remaining)
+                logger.info(f"[LOW_CREDITS] Sent low credits warning to {user_id}, {remaining} remaining")
+            except Exception as email_error:
+                logger.warning(f"[LOW_CREDITS] Failed to send low credits email: {email_error}")
+        
         return add_cors_headers({
             'success': True,
             'credit_type': credit_type,
-            'remaining': purchases.get(credit_type, 0) - purchases.get(f'{credit_type}_used', 0)
+            'remaining': remaining
         })
         
     except Exception as e:
