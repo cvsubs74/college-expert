@@ -164,9 +164,11 @@ def update_user_purchases(user_id, grants, purchase_details):
             current['subscription_current_period_end'] = purchase_details['subscription_current_period_end']
         
         # Apply grants based on type
+        is_subscription_purchase = False
         for key, value in grants.items():
             if key == 'access_full' and value:
                 # Subscription activated
+                is_subscription_purchase = True
                 current['subscription_active'] = True
                 current['subscription_plan'] = purchase_details.get('plan', 'monthly')
                 if purchase_details.get('plan') == 'annual':
@@ -182,7 +184,14 @@ def update_user_purchases(user_id, grants, purchase_details):
                 current['ai_messages_reset_date'] = datetime.now(timezone.utc).isoformat()
                 
             elif key == 'fit_analysis':
-                current['fit_analysis_credits'] = current.get('fit_analysis_credits', 0) + value
+                if is_subscription_purchase:
+                    # For NEW subscriptions: SET credits to granted amount (replace, don't add)
+                    # This ensures upgrading from free tier gives exactly the subscription credits
+                    current['fit_analysis_credits'] = value
+                    current['fit_analysis_used'] = 0  # Reset used count for new subscription
+                else:
+                    # For credit packs: ADD to existing credits
+                    current['fit_analysis_credits'] = current.get('fit_analysis_credits', 0) + value
                 
             elif key == 'college_slots':
                 current['college_slots_purchased'] = current.get('college_slots_purchased', 0) + value
@@ -204,19 +213,24 @@ def update_user_purchases(user_id, grants, purchase_details):
         db.add_purchase_record(user_id, purchase_details)
         
         # Sync credits collection for frontend consistency
-        # IMPORTANT: Use ACTUAL credits_remaining from credits collection, not fit_analysis_credits
-        # which may include old/used free tier credits
         current_credits = db.get_credits(user_id) or {}
-        actual_remaining = current_credits.get('credits_remaining', 0)
+        credits_granted = grants.get('fit_analysis', 0)
         
-        # For subscriptions/credit packs, add the granted credits to actual remaining balance
-        credits_to_add = grants.get('fit_analysis', 0)
-        new_remaining = actual_remaining + credits_to_add
+        if is_subscription_purchase:
+            # For subscriptions: SET to granted amount (fresh start)
+            new_remaining = credits_granted
+            new_total = credits_granted
+            new_used = 0
+        else:
+            # For credit packs: ADD to existing balance
+            new_remaining = current_credits.get('credits_remaining', 0) + credits_granted
+            new_total = current_credits.get('credits_total', 0) + credits_granted
+            new_used = current_credits.get('credits_used', 0)
         
         credits_update = {
             'credits_remaining': new_remaining,
-            'credits_total': current_credits.get('credits_total', 0) + credits_to_add,
-            'credits_used': current_credits.get('credits_used', 0),
+            'credits_total': new_total,
+            'credits_used': new_used,
             'subscription_active': current.get('subscription_active', False),
             'subscription_plan': current.get('subscription_plan'),
             'subscription_expires': current.get('subscription_end_date'),
@@ -226,6 +240,7 @@ def update_user_purchases(user_id, grants, purchase_details):
         
         # Also update fit_analysis_credits in purchases to match
         current['fit_analysis_credits'] = new_remaining
+
         
         logger.info(f"[PaymentManagerV2] Updated purchases and credits for {user_id}")
         return True
