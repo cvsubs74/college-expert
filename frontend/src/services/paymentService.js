@@ -86,6 +86,12 @@ export const createCheckoutSession = async (userEmail, productId, quantity = 1, 
             return { success: true, redirecting: true };
         }
 
+        if (data.redirect_to_portal && data.url) {
+            // Redirect to Customer Portal (Smart Upgrade)
+            window.location.href = data.url;
+            return { success: true, redirecting: true };
+        }
+
         return data;
     } catch (error) {
         console.error('Error creating checkout:', error);

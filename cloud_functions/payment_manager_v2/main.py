@@ -284,9 +284,43 @@ def handle_create_checkout(request, user_id):
             }
 
         customer_id = None
+        # Check for existing subscription
+        purchases = get_user_purchases(user_id)
+        customer_id = purchases.get('stripe_customer_id')
+
         if product['type'] == 'subscription':
-            purchases = get_user_purchases(user_id)
-            customer_id = purchases.get('stripe_customer_id')
+            # Smart Upgrade Logic:
+            # If user already has an active subscription, redirect to portal for upgrade/downgrade
+            # This ensures proration and prevents double billing
+            if purchases.get('subscription_active'):
+                # Check if they are trying to buy the SAME plan
+                current_plan = purchases.get('subscription_plan')
+                target_plan = product.get('interval', 'monthly')
+                
+                # If plans match (e.g. monthly -> monthly), it's just a billing update -> Portal
+                # If plans differ (e.g. monthly -> annual), it's an upgrade -> Portal
+                
+                # We can generate the portal URL directly here for convenience
+                try:
+                    FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://stratiaadmissions.com')
+                    portal_session = stripe.billing_portal.Session.create(
+                        customer=customer_id,
+                        return_url=f"{FRONTEND_URL}/pricing",
+                    )
+                    
+                    return add_cors_headers({
+                        'success': True,
+                        'redirect_to_portal': True,
+                        'url': portal_session.url,
+                        'message': 'You already have an active subscription. Redirecting to billing portal for upgrades.'
+                    })
+                except Exception as portal_err:
+                    logger.error(f"Failed to auto-generate portal link: {portal_err}")
+                    # Fallback to simple error if portal fails
+                    return add_cors_headers({
+                        'error': 'You already have an active subscription. Please use the Billing Portal to upgrade.',
+                        'redirect_to_portal': True
+                    }, 400)
 
         session_params = {
             'payment_method_types': ['card'],
@@ -355,6 +389,39 @@ def handle_webhook(request):
     except stripe.error.SignatureVerificationError as e:
         logger.error(f"Invalid signature: {e}")
         return add_cors_headers({'error': 'Invalid signature'}, 400)
+
+
+def handle_create_portal_session(request, user_id):
+    """Create Stripe Customer Portal session"""
+    try:
+        # Get customer ID from purchases
+        purchases = get_user_purchases(user_id)
+        customer_id = purchases.get('stripe_customer_id')
+        
+        if not customer_id:
+            return add_cors_headers({'error': 'No billing account found'}, 404)
+            
+        FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://stratiaadmissions.com')
+        return_url = f"{FRONTEND_URL}/pricing"  # Return to pricing page
+        
+        # Create portal session
+        session = stripe.billing_portal.Session.create(
+            customer=customer_id,
+            return_url=return_url,
+        )
+        
+        return add_cors_headers({
+            'success': True,
+            'url': session.url,
+            'portal_session_id': session.id
+        })
+        
+    except stripe.error.StripeError as e:
+        logger.error(f"Stripe error creating portal session: {e}")
+        return add_cors_headers({'error': f'Failed to create portal session: {str(e)}'}, 500)
+    except Exception as e:
+        logger.error(f"Error creating portal session for {user_id}: {e}")
+        return add_cors_headers({'error': 'Failed to create portal session'}, 500)
 
 
 def handle_successful_payment(session):
@@ -971,6 +1038,8 @@ def payment_manager_v2(request):
                 'products': PRODUCTS,
                 'stripe_configured': True
             })
+        elif endpoint == 'create-portal-session' and request.method == 'POST':
+            return handle_create_portal_session(request, user_id)
         else:
             return add_cors_headers({'error': 'Endpoint not found'}, 404)
             
