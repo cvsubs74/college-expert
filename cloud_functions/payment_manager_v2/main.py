@@ -303,10 +303,25 @@ def handle_create_checkout(request, user_id):
                 # We can generate the portal URL directly here for convenience
                 try:
                     FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://stratiaadmissions.com')
-                    portal_session = stripe.billing_portal.Session.create(
-                        customer=customer_id,
-                        return_url=f"{FRONTEND_URL}/pricing",
-                    )
+                    
+                    # Create session parameters
+                    session_params = {
+                        'customer': customer_id,
+                        'return_url': f"{FRONTEND_URL}/pricing",
+                    }
+                    
+                    # If we have a subscription ID, deep link directly to the update page
+                    # This skips the main portal menu and saves the user a click
+                    subscription_id = purchases.get('stripe_subscription_id')
+                    if subscription_id:
+                        session_params['flow_data'] = {
+                            'type': 'subscription_update',
+                            'subscription_update': {
+                                'subscription': subscription_id
+                            }
+                        }
+                    
+                    portal_session = stripe.billing_portal.Session.create(**session_params)
                     
                     return add_cors_headers({
                         'success': True,
