@@ -18,7 +18,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingModal from './components/OnboardingModal';
-import ApproachIndicator from './components/ApproachIndicator';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ApproachProvider } from './context/ApproachContext';
 import { PaymentProvider, usePayment } from './context/PaymentContext';

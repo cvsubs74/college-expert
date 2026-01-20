@@ -39,7 +39,6 @@ import { startSession, sendMessage, extractFullResponse, getCollegeList, updateC
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { useToast } from '../components/Toast';
-import FitBreakdownPanel from '../components/FitBreakdownPanel';
 import FitAnalysisModal from '../components/FitAnalysisModal';
 import UniversityProfilePage from '../components/UniversityProfilePage';
 import {
