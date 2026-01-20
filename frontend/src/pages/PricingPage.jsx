@@ -40,6 +40,14 @@ const PricingPage = () => {
             // Start Stripe checkout for paid plans
             setLoading(planId);
             const result = await createCheckoutSession(currentUser.email, planId);
+
+            // Handle Direct Upgrade Success
+            if (result.success && result.upgraded) {
+                alert(result.message || 'Upgrade successful!');
+                window.location.reload();
+                return;
+            }
+
             if (result.setup_required) {
                 alert('Payment system is being configured. Please try again later.');
             }

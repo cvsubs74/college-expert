@@ -289,36 +289,56 @@ def handle_create_checkout(request, user_id):
         customer_id = purchases.get('stripe_customer_id')
 
         if product['type'] == 'subscription':
-            # Smart Upgrade Logic:
-            # If user already has an active subscription, redirect to portal for upgrade/downgrade
-            # This ensures proration and prevents double billing
+            # Smart Upgrade Logic
             if purchases.get('subscription_active'):
-                # Check if they are trying to buy the SAME plan
-                current_plan = purchases.get('subscription_plan')
-                target_plan = product.get('interval', 'monthly')
+                try:
+                    current_plan = purchases.get('subscription_plan') # 'monthly' or 'annual'
+                    target_plan = 'annual' if product_id == 'subscription_annual' else 'monthly'
+                    
+                    subscription_id = purchases.get('stripe_subscription_id')
+                    
+                    # Case 1: Upgrade/Switch Plan (Direct API Call)
+                    if current_plan != target_plan and subscription_id:
+                        logger.info(f"Attempting direct upgrade for {user_id} from {current_plan} to {target_plan}")
+                        
+                        # Get current subscription item
+                        sub = stripe.Subscription.retrieve(subscription_id)
+                        item_id = sub['items']['data'][0]['id']
+                        new_price_id = STRIPE_PRICES[product_id]
+                        
+                        # Attempt immediate upgrade
+                        updated_sub = stripe.Subscription.modify(
+                            subscription_id,
+                            items=[{'id': item_id, 'price': new_price_id}],
+                            proration_behavior='always_invoice',
+                            payment_behavior='error_if_incomplete' # Fail if card declined, so we can fallback to portal
+                        )
+                        
+                        logger.info(f"Direct upgrade successful for {user_id}")
+                        return add_cors_headers({
+                            'success': True,
+                            'upgraded': True,
+                            'message': f'Successfully upgraded to {product["name"]}!'
+                        })
+
+                    # Case 2: Same Plan (Billing Update) OR Upgrade Failed -> Fallback to Portal
+                    # Fall through to Portal logic below...
+                    
+                except Exception as upgrade_err:
+                    logger.warning(f"Direct upgrade failed (falling back to portal): {upgrade_err}")
                 
-                # If plans match (e.g. monthly -> monthly), it's just a billing update -> Portal
-                # If plans differ (e.g. monthly -> annual), it's an upgrade -> Portal
-                
-                # We can generate the portal URL directly here for convenience
+                # Portal Fallback (for billing updates or failed upgrades)
                 try:
                     FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://stratiaadmissions.com')
-                    
-                    # Create session parameters
                     session_params = {
                         'customer': customer_id,
                         'return_url': f"{FRONTEND_URL}/pricing",
                     }
                     
-                    # If we have a subscription ID, deep link directly to the update page
-                    # This skips the main portal menu and saves the user a click
-                    subscription_id = purchases.get('stripe_subscription_id')
                     if subscription_id:
                         session_params['flow_data'] = {
                             'type': 'subscription_update',
-                            'subscription_update': {
-                                'subscription': subscription_id
-                            }
+                            'subscription_update': {'subscription': subscription_id}
                         }
                     
                     portal_session = stripe.billing_portal.Session.create(**session_params)
@@ -327,15 +347,11 @@ def handle_create_checkout(request, user_id):
                         'success': True,
                         'redirect_to_portal': True,
                         'url': portal_session.url,
-                        'message': 'You already have an active subscription. Redirecting to billing portal for upgrades.'
+                        'message': 'Redirecting to billing portal...'
                     })
                 except Exception as portal_err:
-                    logger.error(f"Failed to auto-generate portal link: {portal_err}")
-                    # Fallback to simple error if portal fails
-                    return add_cors_headers({
-                        'error': 'You already have an active subscription. Please use the Billing Portal to upgrade.',
-                        'redirect_to_portal': True
-                    }, 400)
+                    logger.error(f"Failed to generate portal link: {portal_err}")
+                    return add_cors_headers({'error': 'Failed to access billing portal'}, 400)
 
         session_params = {
             'payment_method_types': ['card'],
