@@ -314,12 +314,42 @@ def handle_create_checkout(request, user_id):
                             payment_behavior='error_if_incomplete' # Fail if card declined, so we can fallback to portal
                         )
                         
-                        logger.info(f"Direct upgrade successful for {user_id}")
-                        return add_cors_headers({
-                            'success': True,
-                            'upgraded': True,
-                            'message': f'Successfully upgraded to {product["name"]}!'
-                        })
+                        # CRITICAL: Manually update credits/purchases since no checkout webhook fires for this
+                        # Construct grants and details
+                        upgraded_grants = PRODUCTS[product_id]['grants']
+                        purchase_details = {
+                            'product_id': product_id,
+                            'product_name': product['name'],
+                            'amount': PRODUCTS[product_id]['price'], # Use standard price as reference
+                            'quantity': 1,
+                            'college_id': college_id,
+                            'stripe_subscription_id': subscription_id,
+                            'stripe_customer_id': customer_id,
+                            'plan': product.get('interval', 'monthly'),
+                            'payment_status': 'paid',
+                            'subscription_current_period_end': datetime.fromtimestamp(
+                                updated_sub.current_period_end, tz=timezone.utc
+                            ).isoformat()
+                        }
+                        
+                        update_success = update_user_purchases(user_id, upgraded_grants, purchase_details)
+                        
+                        if update_success:
+                            logger.info(f"Direct upgrade successful and credits sync for {user_id}")
+                            return add_cors_headers({
+                                'success': True,
+                                'upgraded': True,
+                                'message': f'Successfully upgraded to {product["name"]}!'
+                            })
+                        else:
+                            logger.error(f"Upgrade succeeded but credit sync failed for {user_id}")
+                            # Still return success as the usage will work, but credits might be delayed? 
+                            # Actually better to return success but log error.
+                            return add_cors_headers({
+                                'success': True,
+                                'upgraded': True,
+                                'message': f'Upgraded to {product["name"]}. Credits will refresh shortly.'
+                            })
 
                     # Case 2: Same Plan (Billing Update) OR Upgrade Failed -> Fallback to Portal
                     # Fall through to Portal logic below...
@@ -619,9 +649,9 @@ def handle_subscription_lifecycle_webhooks(event):
             billing_reason = invoice.get('billing_reason')  # 'subscription_cycle' for renewals
             customer_id = invoice.get('customer')
             
-            if subscription_id and billing_reason == 'subscription_cycle':
-                # This is a renewal - reset monthly credits
-                logger.info(f"Subscription renewal payment succeeded: {subscription_id}")
+            if subscription_id and billing_reason in ['subscription_cycle', 'subscription_update']:
+                # This is a renewal OR an immediate upgrade - reset/grant credits
+                logger.info(f"Subscription payment succeeded ({billing_reason}): {subscription_id}")
                 
                 try:
                     customer = stripe.Customer.retrieve(customer_id)
@@ -630,14 +660,34 @@ def handle_subscription_lifecycle_webhooks(event):
                     if user_email:
                         purchases = db.get_purchases(user_email)
                         if purchases and purchases.get('stripe_subscription_id') == subscription_id:
-                            subscription_plan = purchases.get('subscription_plan', 'monthly')
-                            
+                            # CRITICAL: Fetch fresh subscription from Stripe to get authoritative plan
+                            # This avoids Firestore race conditions and is safer than parsing invoice lines (due to proration)
+                            try:
+                                stripe_sub = stripe.Subscription.retrieve(subscription_id)
+                                price_id = stripe_sub['items']['data'][0]['price']['id']
+                                
+                                # Reverse lookup to find internal plan name
+                                valid_prices = {v: k for k, v in STRIPE_PRICES.items()}
+                                if price_id in valid_prices:
+                                    product_key = valid_prices[price_id]
+                                    subscription_plan = PRODUCTS[product_key].get('interval', 'monthly')
+                                    logger.info(f"Retrieved authoritative plan from Stripe: {subscription_plan}")
+                                else:
+                                    logger.warning(f"Unknown price ID in webhook: {price_id}")
+                                    subscription_plan = purchases.get('subscription_plan', 'monthly')
+                            except Exception as stripe_err:
+                                logger.error(f"Failed to retrieve subscription in webhook: {stripe_err}")
+                                subscription_plan = purchases.get('subscription_plan', 'monthly')
+
+
                             # Determine credits to grant based on plan
-                            if subscription_plan == 'annual' or subscription_plan == 'season_pass':
-                                # Annual plans don't reset monthly - they have 150 for the year
-                                logger.info(f"Annual subscription renewed for {user_email} - no credit reset needed")
+                            if subscription_plan == 'annual':
+                                # Annual plans / Season Pass -> 150 credits
+                                # note: 'season_pass' and 'annual' are treated same in logic
+                                new_credits = PRODUCTS.get('subscription_annual', {}).get('grants', {}).get('fit_analysis', 150)
+                                logger.info(f"Processing Annual/Season Pass payment - setting {new_credits} credits")
                             else:
-                                # Monthly plan - reset to 20 credits
+                                # Monthly plan -> 20 credits
                                 new_credits = PRODUCTS.get('subscription_monthly', {}).get('grants', {}).get('fit_analysis', 20)
                                 
                                 purchases['fit_analysis_credits'] = new_credits
