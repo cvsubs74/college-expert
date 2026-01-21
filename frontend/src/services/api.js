@@ -12,6 +12,7 @@ const KNOWLEDGE_BASE_ES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL;
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL;
 const PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_URL;
 const PROFILE_MANAGER_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL;
+const COUNSELOR_AGENT_URL = import.meta.env.VITE_COUNSELOR_AGENT_URL || 'https://us-east1-college-counselling-478115.cloudfunctions.net/counselor-agent';
 
 // Get knowledge base approach from environment
 const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
@@ -1764,6 +1765,69 @@ export const sendWelcomeEmail = async (userEmail) => {
 };
 
 // ============== END EMAIL API ==============
+
+// ============== COUNSELOR AGENT API ==============
+
+export const fetchStudentRoadmap = async (userEmail, gradeLevel) => {
+  try {
+    const response = await axios.post(`${COUNSELOR_AGENT_URL}/roadmap`, {
+      user_email: userEmail,
+      grade_level: gradeLevel
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error fetching roadmap:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Chat with the Intelligent Counselor Agent
+ * Uses /chat endpoint on counselor-agent
+ */
+export const fetchCounselorChat = async (userEmail, message, history = []) => {
+  try {
+    const response = await axios.post(`${COUNSELOR_AGENT_URL}/chat`, {
+      user_email: userEmail,
+      message: message,
+      history: history
+    }, {
+      timeout: 60000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error in counselor chat:', error);
+    return { success: false, error: error.message, reply: "I'm having trouble connecting right now." };
+  }
+};
+
+/**
+ * Mark a roadmap task as complete/incomplete
+ * Uses /mark-task endpoint on counselor-agent
+ */
+export const markRoadmapTask = async (userEmail, taskId, completed = true) => {
+  try {
+    const response = await axios.post(`${COUNSELOR_AGENT_URL}/mark-task`, {
+      user_email: userEmail,
+      task_id: taskId,
+      completed: completed
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error marking task:', error);
+    return { success: false, error: error.message };
+  }
+};
 
 export default api;
 

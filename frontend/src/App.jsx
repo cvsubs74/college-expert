@@ -16,6 +16,7 @@ import ContactPage from './pages/ContactPage';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import CounselorPage from './pages/CounselorPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingModal from './components/OnboardingModal';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -47,6 +48,7 @@ function Navigation() {
     { path: '/profile', label: 'Profile', icon: DocumentTextIcon },
     { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
     { path: '/launchpad', label: 'My Schools', icon: RocketLaunchIcon },
+    { path: '/counselor', label: 'Roadmap', icon: SparklesIcon },
   ];
 
 
@@ -268,6 +270,7 @@ function App() {
                   {/* <Route path="/chat" element={<Chat />} /> */}
                   <Route path="/universities" element={<UniversityExplorer />} />
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
+                  <Route path="/counselor" element={<CounselorPage />} />
                   <Route path="/applications" element={<ApplicationsPage />} />
                   <Route path="/essay-help/:universityId" element={<EssayHelpPage />} />
                   <Route path="/fit-visualizer" element={<FitVisualizer />} />

@@ -39,6 +39,7 @@ KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities"
 PAYMENT_MANAGER_FUNCTION="payment-manager"
 PAYMENT_MANAGER_V2_FUNCTION="payment-manager-v2"
 UNIVERSITY_COLLECTOR_SERVICE_NAME="university-profile-collector"
+COUNSELOR_AGENT_FUNCTION="counselor-agent"
 FRONTEND_SITE_NAME="college-counselor"
 
 # Parse command line arguments
@@ -979,6 +980,47 @@ deploy_source_curator() {
     echo -e "${GREEN}  Open in browser: ${SOURCE_CURATOR_URL}${NC}"
 }
 
+deploy_counselor_agent() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Counselor Agent Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/counselor_agent
+    
+    # Create env.deploy.yaml with URLs for dependencies
+    # We use standard Cloud Functions Gen 2 URL pattern or fetch if possible
+    
+    PM_URL="https://$REGION-$PROJECT_ID.cloudfunctions.net/profile-manager-v2"
+    KB_URL="https://$REGION-$PROJECT_ID.cloudfunctions.net/knowledge-base-manager-universities-v2"
+    
+    cat > env.deploy.yaml <<EOF
+PROFILE_MANAGER_URL: "${PM_URL}"
+KNOWLEDGE_BASE_UNIVERSITIES_URL: "${KB_URL}"
+GEMINI_API_KEY: "${GEMINI_API_KEY}"
+EOF
+
+    gcloud functions deploy $COUNSELOR_AGENT_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=counselor_agent_http \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.deploy.yaml \
+        --timeout=300s \
+        --memory=512MB \
+        --min-instances=0 \
+        --max-instances=10
+
+    COUNSELOR_AGENT_URL=$(gcloud functions describe $COUNSELOR_AGENT_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Counselor Agent deployed: ${COUNSELOR_AGENT_URL}${NC}"
+    
+    rm -f env.deploy.yaml
+    cd ../..
+}
+
 deploy_frontend() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Frontend${NC}"
@@ -1004,6 +1046,10 @@ deploy_frontend() {
     export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
     export VITE_KNOWLEDGE_BASE_ES_URL=$KNOWLEDGE_BASE_ES_URL
     
+    # Get Counselor Agent URL
+    COUNSELOR_AGENT_URL=$(gcloud functions describe $COUNSELOR_AGENT_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    export VITE_COUNSELOR_AGENT_URL=$COUNSELOR_AGENT_URL
+    
     echo -e "${GREEN}✓ URLs configured:${NC}"
     echo -e "  RAG Agent URL: ${RAG_AGENT_URL}"
     echo -e "  ES Agent URL: ${ES_AGENT_URL}"
@@ -1011,7 +1057,9 @@ deploy_frontend() {
     echo -e "  Profile Manager ES URL: ${PROFILE_MANAGER_ES_URL}"
     echo -e "  Profile Manager V2 URL: ${PROFILE_MANAGER_V2_URL}"
     echo -e "  Knowledge Base RAG URL: ${KNOWLEDGE_BASE_URL}"
+    echo -e "  Knowledge Base RAG URL: ${KNOWLEDGE_BASE_URL}"
     echo -e "  Knowledge Base ES URL: ${KNOWLEDGE_BASE_ES_URL}"
+    echo -e "  Counselor Agent URL: ${COUNSELOR_AGENT_URL}"
     
     # Firebase Configuration - consolidated to college-counselling-478115
     export VITE_FIREBASE_API_KEY="AIzaSyAdo23UHvjlHgGuK0BYIqjPeLUoVUEx7t4"
@@ -1084,6 +1132,9 @@ case "$DEPLOY_TARGET" in
     "datamine")
         deploy_datamine
         ;;
+    "counselor-agent")
+        deploy_counselor_agent
+        ;;
     "sourcery-frontend")
         deploy_sourcery_frontend
         ;;
@@ -1111,6 +1162,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_universities
         deploy_payment_manager_v2
         deploy_contact_form
+        deploy_counselor_agent
         ;;
     "backend")
         echo -e "${CYAN}Deploying backend (agents + cloud functions)...${NC}"
@@ -1122,6 +1174,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
+        deploy_counselor_agent
         ;;
     "frontend")
         deploy_frontend
@@ -1140,6 +1193,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_universities
         deploy_payment_manager
         deploy_contact_form
+        deploy_counselor_agent
         deploy_frontend
         ;;
     *)
