@@ -96,11 +96,18 @@ def extract_deadlines(university_data):
     app_process = university_data.get('application_process', {})
     raw_deadlines = app_process.get('application_deadlines', [])
     
+    # Deadline types to EXCLUDE (not relevant for high school senior Fall admissions)
+    excluded_types = ['summer semester', 'spring semester', 'summer session', 'spring session']
+    
     for item in raw_deadlines:
         # Standardize structure
         d_date = item.get('date') or item.get('deadline')
         d_type = item.get('plan_type') or item.get('type', 'Regular Decision')
         d_notes = item.get('notes', '')
+        
+        # Skip summer/spring semester deadlines
+        if d_type and d_type.lower() in excluded_types:
+            continue
         
         if d_date:
             # Filter out non-date strings if possible, or keep them if useful

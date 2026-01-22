@@ -299,7 +299,196 @@ TEMPLATES = {
 
 
 # Import tools
-from counselor_tools import fetch_aggregated_deadlines, get_student_profile
+from counselor_tools import fetch_aggregated_deadlines, get_student_profile, get_college_list
+
+# =============================================================================
+# COLLEGE-SPECIFIC TRANSLATION
+# =============================================================================
+
+def get_college_context(user_email):
+    """
+    Fetch college list and build context for roadmap personalization.
+    
+    Returns:
+        {
+            'colleges': [...],  # List of colleges with deadlines
+            'uc_schools': ['UCI', 'UCSD'],  # Grouped UC school names
+            'has_early_decision': bool,
+            'has_early_action': bool
+        }
+    """
+    try:
+        deadlines = fetch_aggregated_deadlines(user_email)
+        
+        uc_schools = []
+        has_ed = False
+        has_ea = False
+        
+        colleges = []
+        for d in deadlines:
+            uni_id = d['university_id']
+            uni_name = d['university_name']
+            
+            # Check if UC school
+            if 'university_of_california' in uni_id.lower():
+                # Extract short name
+                short_name = uni_name
+                if 'Los Angeles' in uni_name or 'los_angeles' in uni_id:
+                    short_name = 'UCLA'
+                elif 'San Diego' in uni_name or 'san_diego' in uni_id:
+                    short_name = 'UCSD'
+                elif 'Berkeley' in uni_name or 'berkeley' in uni_id:
+                    short_name = 'UC Berkeley'
+                elif 'Davis' in uni_name:
+                    short_name = 'UC Davis'
+                elif 'Irvine' in uni_name:
+                    short_name = 'UCI'
+                elif 'Santa Barbara' in uni_name:
+                    short_name = 'UCSB'
+                elif 'Santa Cruz' in uni_name:
+                    short_name = 'UCSC'
+                elif 'Riverside' in uni_name:
+                    short_name = 'UCR'
+                elif 'Merced' in uni_name:
+                    short_name = 'UC Merced'
+                
+                if short_name not in uc_schools:
+                    uc_schools.append(short_name)
+            
+            # Check deadline types
+            deadline_type = d.get('deadline_type', '').lower()
+            if 'early decision' in deadline_type or 'ed' in deadline_type:
+                has_ed = True
+            if 'early action' in deadline_type or 'ea' in deadline_type:
+                has_ea = True
+            
+            colleges.append({
+                'id': uni_id,
+                'name': uni_name,
+                'deadline': d.get('date'),
+                'deadline_type': d.get('deadline_type'),
+                'is_uc': 'university_of_california' in uni_id.lower()
+            })
+        
+        return {
+            'colleges': colleges,
+            'uc_schools': sorted(set(uc_schools)),
+            'has_early_decision': has_ed,
+            'has_early_action': has_ea
+        }
+    except Exception as e:
+        logger.error(f"Error getting college context: {e}")
+        return {'colleges': [], 'uc_schools': [], 'has_early_decision': False, 'has_early_action': False}
+
+
+def translate_rd_submission(task, context):
+    """Translate 'Submit RD Applications' to specific colleges."""
+    tasks = []
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    
+    # Group UCs if present
+    if context['uc_schools']:
+        uc_names = ', '.join(context['uc_schools'])
+        # Find UC deadline
+        uc_deadline = None
+        for college in context['colleges']:
+            if college['is_uc']:
+                uc_deadline = college.get('deadline')
+                break
+        
+        if uc_deadline:
+            # Check if overdue
+            is_overdue = uc_deadline < current_date
+            overdue_marker = "⚠️ OVERDUE - " if is_overdue else ""
+            
+            tasks.append({
+                'id': 'task_submit_uc',
+                'title': f"{overdue_marker}Submit UC Application ({uc_names}) - Deadline: {uc_deadline}",
+                'due_date': uc_deadline,
+                'type': 'deadline',
+                'is_overdue': is_overdue
+            })
+    
+    # Individual non-UC colleges
+    for college in context['colleges']:
+        if not college['is_uc']:
+            deadline = college.get('deadline', '')
+            is_overdue = deadline and deadline < current_date
+            overdue_marker = "⚠️ OVERDUE - " if is_overdue else ""
+            
+            tasks.append({
+                'id': f"task_submit_{college['id']}",
+                'title': f"{overdue_marker}Submit {college['name']} - Deadline: {deadline}",
+                'due_date': deadline,
+                'type': 'deadline',
+                'is_overdue': is_overdue
+            })
+    
+    return tasks if tasks else [task]  # Fallback to generic if no colleges
+
+
+
+def translate_essay_tasks(task, context):
+    """Translate 'Complete Essays/Supplements' to specific prompts."""
+    tasks = []
+    
+    # UC PIQs if present
+    if context['uc_schools']:
+        uc_names = ', '.join(context['uc_schools'])
+        tasks.append({
+            'id': 'task_uc_piqs',
+            'title': f"Complete 4 of 8 UC PIQs ({uc_names})",
+            'type': 'core'
+        })
+    
+    # Other colleges' supplements
+    for college in context['colleges']:
+        if not college['is_uc']:
+            tasks.append({
+                'id': f"task_essays_{college['id']}",
+                'title': f"Complete {college['name']} supplemental essays",
+                'type': 'core'
+            })
+    
+    return tasks if tasks else [task]
+
+
+def translate_verification(task, context):
+    """Translate 'Verify Materials' to specific colleges."""
+    if not context['colleges']:
+        return [task]
+    
+    college_names = ', '.join([c['name'] for c in context['colleges'][:5]])  # Max 5 for readability
+    count = len(context['colleges'])
+    
+    return [{
+        'id': 'task_verify_materials',
+        'title': f"Verify all materials received by {college_names}{' and more' if count > 5 else ''} ({count} colleges)",
+        'type': 'core'
+    }]
+
+
+def translate_task(generic_task, college_context):
+    """
+    Main translation dispatcher - converts generic tasks to college-specific ones.
+    
+    Returns: List of specific tasks (may be 1 or multiple)
+    """
+    title = generic_task.get('title', '')
+    
+    # Translation rules - check if generic title contains these patterns
+    if 'Submit' in title and ('Regular Decision' in title or 'RD Applications' in title or 'Applications' in title):
+        return translate_rd_submission(generic_task, college_context)
+    
+    elif 'Essay' in title or 'Supplement' in title:
+        return translate_essay_tasks(generic_task, college_context)
+    
+    elif 'Verify' in title and 'Materials' in title:
+        return translate_verification(generic_task, college_context)
+    
+    # No match → return generic task unchanged
+    return [generic_task]
+
 
 def generate_roadmap(request):
     """
@@ -397,33 +586,35 @@ def generate_roadmap(request):
         # Get base template
         template = TEMPLATES.get(template_key, TEMPLATES['senior_fall']).copy()
         
-        # If user_email provided, fetch real deadlines and inject
-        deadline_tasks = []
+        # Get college context and translate tasks to be college-specific
+        college_context = None
         if user_email:
-            deadlines = fetch_aggregated_deadlines(user_email)
-            for d in deadlines:
-                task = {
-                    'id': f"task_deadline_{d['university_id']}",
-                    'title': f"Submit {d['deadline_type']} to {d['university_name']}",
-                    'due_date': d['date'],
-                    'type': 'deadline',
-                    'university_id': d['university_id']
-                }
-                deadline_tasks.append(task)
+            college_context = get_college_context(user_email)
+            logger.info(f"[ROADMAP] Got college context: {len(college_context.get('colleges', []))} colleges, UC schools: {college_context.get('uc_schools', [])}")
+        
+        # Translate each task in each phase
+        if college_context and college_context.get('colleges'):
+            for phase in template['phases']:
+                translated_tasks = []
                 
-        # Inject deadlines into "Applications" phase if it exists
-        # This is a simple injection strategy; a more robust one would date-sort
-        for phase in template['phases']:
-            if phase['id'] == 'phase_applications':
-                # Add deadlines at the top of tasks
-                phase['tasks'] = deadline_tasks + phase['tasks']
+                for generic_task in phase['tasks']:
+                    # Translate → may return 1 or multiple tasks
+                    specific_tasks = translate_task(generic_task, college_context)
+                    translated_tasks.extend(specific_tasks)
+                
+                phase['tasks'] = translated_tasks
+            
+            logger.info(f"[ROADMAP] Translated template tasks to college-specific tasks")
+        else:
+            logger.info(f"[ROADMAP] No college list - using generic template tasks")
         
         return {
             'success': True,
             'roadmap': template,
             'metadata': {
                 'template_used': template_key,
-                'deadlines_found': len(deadline_tasks),
+                'colleges_count': len(college_context.get('colleges', [])) if college_context else 0,
+                'personalized': bool(college_context and college_context.get('colleges')),
                 'last_updated': datetime.now().isoformat()
             }
         }
