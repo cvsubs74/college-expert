@@ -4,6 +4,7 @@ Provides clean interface for all profile manager database operations.
 """
 
 import os
+import hashlib
 import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Any
@@ -665,7 +666,10 @@ class FirestoreDB:
             
             for essay in essays:
                 # Create unique ID from university + prompt hash
-                essay_id = f"{essay.get('university_id', 'shared')}_{hash(essay.get('prompt', '')[:50]) % 100000}"
+                # Use hashlib for deterministic hashing (Python's hash() changes between runs)
+                prompt_text = essay.get('prompt_text') or essay.get('prompt') or ''
+                prompt_hash = hashlib.md5(prompt_text[:100].encode()).hexdigest()[:8]
+                essay_id = f"{essay.get('university_id', 'shared')}_{prompt_hash}"
                 
                 if essay_id not in existing:
                     doc_ref = tracker_ref.document(essay_id)

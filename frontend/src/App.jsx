@@ -50,9 +50,9 @@ function Navigation() {
   const navLinks = [
     { path: '/profile', label: 'Profile', icon: DocumentTextIcon },
     { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
-    { path: '/launchpad', label: 'My Schools', icon: RocketLaunchIcon },
+    { path: '/launchpad', label: 'Launchpad', icon: RocketLaunchIcon },
     { path: '/counselor', label: 'Roadmap', icon: SparklesIcon },
-    { path: '/progress', label: 'My Progress', icon: ChartBarSquareIcon },
+    { path: '/progress', label: 'Tracker', icon: ChartBarSquareIcon },
   ];
 
 

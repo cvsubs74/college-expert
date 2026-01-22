@@ -77,6 +77,18 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 logger.info(f"[INIT] Profile Manager V2 (Firestore) starting...")
 logger.info(f"[INIT] Project: {GCP_PROJECT_ID}, Bucket: {GCS_BUCKET_NAME}")
 
+# Hardcoded UC Personal Insight Questions (2025-2026) - All UC schools share these 8 prompts
+UC_PIQ_PROMPTS = [
+    {"prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "What have you done to make your school or your community a better place?", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+    {"prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?", "word_limit": 350, "type": "UC PIQ", "required": False, "note": "Choose 4 of 8 PIQs"},
+]
+
 
 # ============== CORS HELPER ==============
 
@@ -1368,63 +1380,113 @@ def profile_manager_v2_http_entry(request):
                     return add_cors_headers({
                         'success': True,
                         'message': 'No colleges in list',
-                        'essays_synced': 0
+                        'essays_synced': 0,
+                        'essays': []
                     })
                 
                 all_essays = []
-                uc_piq_added = False  # Track if we've added UC PIQs (shared across UCs)
+                uc_schools = []  # Collect all UC school names for grouping
+                seen_prompts = set()  # Track (university_id, prompt_text[:50]) to avoid duplicates
                 
+                # First pass: identify all UC schools and collect non-UC schools
+                non_uc_colleges = []
                 for college in college_list:
+                    university_id = college.get('university_id', '')
+                    university_name = college.get('university_name', university_id.replace('_', ' ').title())
+                    
+                    # Check if this is a UC school by ID or name
+                    is_uc_school = (
+                        'university_of_california' in university_id.lower() or
+                        university_name.startswith('University of California')
+                    )
+                    
+                    if is_uc_school:
+                        # Extract short name (e.g., "UCLA", "UCSD", "UC Berkeley")
+                        short_name = university_name
+                        if 'Los Angeles' in university_name or 'los_angeles' in university_id:
+                            short_name = 'UCLA'
+                        elif 'San Diego' in university_name or 'san_diego' in university_id:
+                            short_name = 'UCSD'
+                        elif 'Berkeley' in university_name or 'berkeley' in university_id:
+                            short_name = 'UC Berkeley'
+                        elif 'Davis' in university_name or 'davis' in university_id:
+                            short_name = 'UC Davis'
+                        elif 'Irvine' in university_name or 'irvine' in university_id:
+                            short_name = 'UCI'
+                        elif 'Santa Barbara' in university_name or 'santa_barbara' in university_id:
+                            short_name = 'UCSB'
+                        elif 'Santa Cruz' in university_name or 'santa_cruz' in university_id:
+                            short_name = 'UCSC'
+                        elif 'Riverside' in university_name or 'riverside' in university_id:
+                            short_name = 'UCR'
+                        elif 'Merced' in university_name or 'merced' in university_id:
+                            short_name = 'UC Merced'
+                        uc_schools.append(short_name)
+                        # SKIP UC schools from supplemental essay collection
+                        # UC schools only use the 8 shared PIQs, no school-specific supplements
+                    else:
+                        # Only add non-UC schools to the processing list
+                        non_uc_colleges.append(college)
+                
+                # Add UC PIQs if user has any UC schools
+                if uc_schools:
+                    # Create display name showing all UC schools
+                    uc_display_name = f"UC Application ({', '.join(sorted(set(uc_schools)))})"
+                    logger.info(f"[ESSAY_SYNC] Adding 8 UC PIQs for: {uc_display_name}")
+                    
+                    for prompt in UC_PIQ_PROMPTS:
+                        prompt_copy = dict(prompt)
+                        prompt_copy['university_id'] = 'uc_system'
+                        prompt_copy['university_name'] = uc_display_name
+                        prompt_copy['selection_rule'] = {'required': 4, 'of': 8}
+                        all_essays.append(prompt_copy)
+                
+                # Process non-UC colleges - fetch essays from KB
+                for college in non_uc_colleges:
                     university_id = college.get('university_id')
-                    university_name = college.get('university_name', university_id)
+                    university_name = college.get('university_name', university_id.replace('_', ' ').title())
                     
-                    # Check if this is a UC school
-                    is_uc = 'university_of_california' in university_id.lower()
-                    
-                    # Use existing fetch_university_profile function (imported from essay_copilot)
+                    # Fetch university profile from KB
                     uni_data = fetch_university_profile(university_id)
                     
                     if not uni_data:
-                        logger.warning(f"[ESSAY_SYNC] No data found for {university_id}")
+                        logger.warning(f"[ESSAY_SYNC] No KB data for {university_id}")
                         continue
                     
                     # Get essay prompts - check multiple possible locations
-                    # KB data may have essay_prompts at different paths depending on structure
-                    profile_data = uni_data.get('profile', uni_data)  # Handle nested profile
-                    essay_prompts = profile_data.get('application_process', {}).get('essay_prompts', [])
-                    if not essay_prompts:
-                        essay_prompts = uni_data.get('application_process', {}).get('essay_prompts', [])
-                    if not essay_prompts:
-                        essay_prompts = uni_data.get('essay_prompts', [])
+                    profile_data = uni_data.get('profile', uni_data)
+                    essay_prompts = (
+                        profile_data.get('application_process', {}).get('essay_prompts', []) or
+                        uni_data.get('application_process', {}).get('essay_prompts', []) or
+                        uni_data.get('essay_prompts', [])
+                    )
                     
                     if not essay_prompts:
-                        logger.info(f"[ESSAY_SYNC] No essay prompts for {university_id}")
+                        logger.info(f"[ESSAY_SYNC] No essay prompts found for {university_id}")
                         continue
                     
-                    for prompt in essay_prompts:
-                        if isinstance(prompt, str):
-                            continue  # Skip if not properly structured
-                        
-                        # Make a copy to avoid modifying the original
-                        prompt_copy = dict(prompt)
-                        prompt_type = prompt_copy.get('type', 'supplement')
-                        
-                        # Handle UC PIQs - only add once (shared across all UC schools)
-                        if is_uc and 'PIQ' in str(prompt_type):
-                            if uc_piq_added:
-                                continue
-                            # Add selection rule for UC PIQs
-                            prompt_copy['selection_rule'] = {'required': 4, 'of': 8}
-                            prompt_copy['university_id'] = 'uc_system'
-                            prompt_copy['university_name'] = 'UC Application (All UC Schools)'
-                        else:
-                            prompt_copy['university_id'] = university_id
-                            prompt_copy['university_name'] = university_name
-                        
-                        all_essays.append(prompt_copy)
+                    logger.info(f"[ESSAY_SYNC] Found {len(essay_prompts)} prompts for {university_name}")
                     
-                    if is_uc and any('PIQ' in str(p.get('type', '')) for p in essay_prompts if isinstance(p, dict)):
-                        uc_piq_added = True
+                    # Add each essay prompt for this university
+                    for prompt in essay_prompts:
+                        if not isinstance(prompt, dict):
+                            continue
+                        
+                        prompt_text = prompt.get('prompt', '') or prompt.get('prompt_text', '')
+                        if not prompt_text:
+                            continue
+                        
+                        # Deduplicate by (university_id, prompt_text[:50])
+                        dedup_key = (university_id, prompt_text[:50].strip().lower())
+                        if dedup_key in seen_prompts:
+                            continue
+                        seen_prompts.add(dedup_key)
+                        
+                        prompt_copy = dict(prompt)
+                        prompt_copy['university_id'] = university_id
+                        prompt_copy['university_name'] = university_name
+                        prompt_copy['type'] = prompt.get('type', 'Supplement')
+                        all_essays.append(prompt_copy)
                 
                 # Sync to Firestore
                 if all_essays:

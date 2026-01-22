@@ -79,16 +79,25 @@ const EssayDashboard = ({ embedded = false }) => {
         setExpandedGroups(prev => ({ ...prev, [group]: !prev[group] }));
     };
 
-    // Group essays by type
-    const groupedEssays = {
-        uc_piq: essays.filter(e => e.prompt_type?.includes('PIQ') || e.university_id === 'uc_system'),
-        common_app: essays.filter(e => e.prompt_type?.toLowerCase().includes('common')),
-        supplements: essays.filter(e =>
-            !e.prompt_type?.includes('PIQ') &&
-            e.university_id !== 'uc_system' &&
-            !e.prompt_type?.toLowerCase().includes('common')
-        )
-    };
+    // Group essays by university
+    const groupedByUniversity = {};
+    essays.forEach(essay => {
+        const uniName = essay.university_name || essay.university_id || 'Other';
+        if (!groupedByUniversity[uniName]) {
+            groupedByUniversity[uniName] = [];
+        }
+        groupedByUniversity[uniName].push(essay);
+    });
+
+    // Sort universities: UC Application first, then alphabetically
+    const sortedUniversities = Object.keys(groupedByUniversity).sort((a, b) => {
+        if (a.startsWith('UC Application')) return -1;
+        if (b.startsWith('UC Application')) return 1;
+        return a.localeCompare(b);
+    });
+
+    // Check if UC PIQs exist
+    const hasUcPiqs = sortedUniversities.some(u => u.startsWith('UC Application'));
 
     // Filter essays
     const filterEssays = (essayList) => {
@@ -111,9 +120,10 @@ const EssayDashboard = ({ embedded = false }) => {
     };
 
     // UC PIQ selection rule
+    const ucPiqEssays = essays.filter(e => e.university_id === 'uc_system');
     const ucPiqStats = {
-        total: groupedEssays.uc_piq.length,
-        completed: groupedEssays.uc_piq.filter(e => e.status === 'final' || e.status === 'review' || e.status === 'draft').length,
+        total: ucPiqEssays.length,
+        completed: ucPiqEssays.filter(e => e.status === 'final' || e.status === 'review' || e.status === 'draft').length,
         required: 4
     };
 
@@ -218,8 +228,8 @@ const EssayDashboard = ({ embedded = false }) => {
                     </span>
                     {isUcPiq && ucPiqStats.total > 0 && (
                         <span className={`text-xs px-2 py-0.5 rounded-full ${ucPiqStats.completed >= ucPiqStats.required
-                                ? 'bg-emerald-100 text-emerald-700'
-                                : 'bg-amber-100 text-amber-700'
+                            ? 'bg-emerald-100 text-emerald-700'
+                            : 'bg-amber-100 text-amber-700'
                             }`}>
                             {ucPiqStats.completed} of {ucPiqStats.required} selected
                         </span>
@@ -334,35 +344,37 @@ const EssayDashboard = ({ embedded = false }) => {
                     </div>
                 ) : (
                     <div className="space-y-4">
-                        {/* UC PIQs */}
-                        {groupedEssays.uc_piq.length > 0 && (
-                            <div className="bg-white rounded-xl border border-stone-200 overflow-hidden">
-                                {renderGroupHeader('UC Personal Insight Questions', AcademicCapIcon, 'uc_piq', groupedEssays.uc_piq.length, true)}
-                                {expandedGroups.uc_piq && (
-                                    <div className="p-4 border-t border-stone-100">
-                                        <div className="flex items-start gap-2 mb-4 p-3 bg-blue-50 rounded-lg">
-                                            <InformationCircleIcon className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                                            <p className="text-sm text-blue-700">
-                                                Select <strong>4 of 8</strong> prompts to answer. Each response should be 350 words max.
-                                            </p>
-                                        </div>
-                                        {renderEssayList(groupedEssays.uc_piq)}
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                        {sortedUniversities.map((universityName) => {
+                            const universityEssays = groupedByUniversity[universityName] || [];
+                            const isUcApplication = universityName.startsWith('UC Application');
+                            const groupKey = universityName.replace(/\s+/g, '_').toLowerCase();
+                            const isExpanded = expandedGroups[groupKey] !== false; // Default to expanded
 
-                        {/* Supplements */}
-                        {groupedEssays.supplements.length > 0 && (
-                            <div className="bg-white rounded-xl border border-stone-200 overflow-hidden">
-                                {renderGroupHeader('Supplemental Essays', BuildingLibraryIcon, 'supplements', groupedEssays.supplements.length)}
-                                {expandedGroups.supplements && (
-                                    <div className="p-4 border-t border-stone-100">
-                                        {renderEssayList(groupedEssays.supplements)}
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                            return (
+                                <div key={universityName} className="bg-white rounded-xl border border-stone-200 overflow-hidden">
+                                    {renderGroupHeader(
+                                        universityName,
+                                        isUcApplication ? AcademicCapIcon : BuildingLibraryIcon,
+                                        groupKey,
+                                        universityEssays.length,
+                                        isUcApplication
+                                    )}
+                                    {isExpanded && (
+                                        <div className="p-4 border-t border-stone-100">
+                                            {isUcApplication && (
+                                                <div className="flex items-start gap-2 mb-4 p-3 bg-blue-50 rounded-lg">
+                                                    <InformationCircleIcon className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                                                    <p className="text-sm text-blue-700">
+                                                        Select <strong>4 of 8</strong> prompts to answer. Each response should be 350 words max.
+                                                    </p>
+                                                </div>
+                                            )}
+                                            {renderEssayList(universityEssays)}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 )}
             </div>
