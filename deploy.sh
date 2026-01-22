@@ -74,6 +74,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}knowledge-universities-v2${NC} - Deploy Universities KB V2 (Firestore, no ES)"
     echo -e "  ${YELLOW}payment${NC}     - Deploy Payment manager function (Stripe, ES backend)"
     echo -e "  ${YELLOW}payment-v2${NC}  - Deploy Payment manager V2 (Stripe, Firestore backend) [RECOMMENDED]"
+    echo -e "  ${YELLOW}counselor${NC}   - Deploy Counselor Agent function"
     echo -e "  ${YELLOW}source-curator${NC} - Deploy Source Curator UI (React + FastAPI)"
     echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
     echo -e "  ${YELLOW}backend${NC}     - Deploy both agents + all functions (recommended)"
@@ -1119,6 +1120,9 @@ case "$DEPLOY_TARGET" in
         ;;
     "profile-vertexai")
         deploy_profile_manager_vertexai
+        ;;
+    "counselor")
+        deploy_counselor_agent
         ;;
     "payment")
         deploy_payment_manager
