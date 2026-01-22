@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ExclamationTriangleIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
 
 /**
  * UniversityCard - Rich, interactive M3 card for university listings
@@ -39,7 +39,8 @@ const UniversityCard = ({
         acceptance_rate,
         us_news_rank,
         selected_major,
-        available_majors = []
+        available_majors = [],
+        application_status = null  // planning, in_progress, submitted, decision_pending, decision
     } = university || {};
 
     // Handle major selection with confirmation
@@ -131,11 +132,32 @@ const UniversityCard = ({
                         </div>
 
                         {/* Tags */}
-                        <div className="flex items-center gap-2 mt-2">
+                        <div className="flex items-center gap-2 mt-2 flex-wrap">
                             {/* Fit Category Chip */}
                             <span className={`stratia-chip ${chipStyles[fit_category] || chipStyles.TARGET}`}>
                                 {chipLabels[fit_category] || 'Target'}
                             </span>
+
+                            {/* Application Status Badge */}
+                            {application_status && (
+                                <span className={`stratia-chip flex items-center gap-1 ${application_status === 'decision' ? 'bg-emerald-100 text-emerald-700 border border-emerald-300' :
+                                        application_status === 'submitted' ? 'bg-blue-100 text-blue-700 border border-blue-300' :
+                                            application_status === 'decision_pending' ? 'bg-purple-100 text-purple-700 border border-purple-300' :
+                                                application_status === 'in_progress' ? 'bg-amber-100 text-amber-700 border border-amber-300' :
+                                                    'bg-gray-100 text-gray-600 border border-gray-300'
+                                    }`}>
+                                    {application_status === 'decision' && <CheckCircleIcon className="w-3.5 h-3.5" />}
+                                    {application_status === 'submitted' && <PaperAirplaneIcon className="w-3.5 h-3.5" />}
+                                    {application_status === 'decision_pending' && <DocumentCheckIcon className="w-3.5 h-3.5" />}
+                                    {application_status === 'in_progress' && <ClockIcon className="w-3.5 h-3.5" />}
+                                    {application_status === 'planning' && <ClockIcon className="w-3.5 h-3.5" />}
+                                    {application_status === 'decision' ? 'Decision' :
+                                        application_status === 'submitted' ? 'Submitted' :
+                                            application_status === 'decision_pending' ? 'Awaiting Decision' :
+                                                application_status === 'in_progress' ? 'In Progress' :
+                                                    'Planning'}
+                                </span>
+                            )}
 
                             {/* Additional info chips */}
                             {us_news_rank && (

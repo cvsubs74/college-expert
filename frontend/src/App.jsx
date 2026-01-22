@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
-import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon, ChartBarSquareIcon } from '@heroicons/react/24/outline';
 import CreditsBadge from './components/CreditsBadge';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
@@ -17,6 +17,9 @@ import PaymentSuccess from './pages/PaymentSuccess';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CounselorPage from './pages/CounselorPage';
+import EssayDashboard from './pages/EssayDashboard';
+import FinancialAidComparison from './pages/FinancialAidComparison';
+import ProgressPage from './pages/ProgressPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingModal from './components/OnboardingModal';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -49,6 +52,7 @@ function Navigation() {
     { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
     { path: '/launchpad', label: 'My Schools', icon: RocketLaunchIcon },
     { path: '/counselor', label: 'Roadmap', icon: SparklesIcon },
+    { path: '/progress', label: 'My Progress', icon: ChartBarSquareIcon },
   ];
 
 
@@ -275,6 +279,9 @@ function App() {
                   <Route path="/essay-help/:universityId" element={<EssayHelpPage />} />
                   <Route path="/fit-visualizer" element={<FitVisualizer />} />
                   <Route path="/knowledge-base" element={<KnowledgeBase />} />
+                  <Route path="/progress" element={<ProgressPage />} />
+                  <Route path="/essays" element={<EssayDashboard />} />
+                  <Route path="/financial-aid" element={<FinancialAidComparison />} />
                 </Route>
               </Routes>
               <UpgradeModal />

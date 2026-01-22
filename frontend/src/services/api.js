@@ -1829,5 +1829,431 @@ export const markRoadmapTask = async (userEmail, taskId, completed = true) => {
   }
 };
 
+// ==================== COUNSELOR CHAT HISTORY ====================
+
+/**
+ * Save counselor chat conversation
+ */
+export const saveCounselorChat = async (userEmail, conversationId, messages, title = null) => {
+  try {
+    const response = await axios.post(`${COUNSELOR_AGENT_URL}/save-chat`, {
+      user_email: userEmail,
+      conversation_id: conversationId,
+      messages: messages,
+      title: title
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving counselor chat:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Load a specific counselor chat conversation
+ */
+export const loadCounselorChat = async (userEmail, conversationId) => {
+  try {
+    const response = await axios.get(`${COUNSELOR_AGENT_URL}/load-chat`, {
+      params: {
+        user_email: userEmail,
+        conversation_id: conversationId
+      },
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error loading counselor chat:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * List counselor chat conversations
+ */
+export const listCounselorChats = async (userEmail, limit = 20) => {
+  try {
+    const response = await axios.get(`${COUNSELOR_AGENT_URL}/list-chats`, {
+      params: {
+        user_email: userEmail,
+        limit: limit
+      },
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error listing counselor chats:', error);
+    return { success: false, conversations: [] };
+  }
+};
+
+/**
+ * Get the most recent active counselor conversation
+ */
+export const getActiveCounselorChat = async (userEmail) => {
+  try {
+    const response = await axios.get(`${COUNSELOR_AGENT_URL}/get-active-chat`, {
+      params: { user_email: userEmail },
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting active chat:', error);
+    return { success: false, conversation: null };
+  }
+};
+
+// ==================== ROADMAP TASKS ====================
+
+/**
+ * Generate personalized roadmap tasks from university data
+ */
+export const generateRoadmapTasks = async (userEmail) => {
+  try {
+    const response = await axios.post(`${COUNSELOR_AGENT_URL}/generate-tasks`, {
+      user_email: userEmail,
+      save: true
+    }, {
+      timeout: 30000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error generating tasks:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Get user's roadmap tasks
+ * @param {string} userEmail 
+ * @param {string} status - Optional: 'pending', 'completed', 'in_progress'
+ * @param {string} universityId - Optional: filter by university
+ */
+export const getRoadmapTasks = async (userEmail, status = null, universityId = null) => {
+  try {
+    const params = { user_email: userEmail };
+    if (status) params.status = status;
+    if (universityId) params.university_id = universityId;
+
+    const response = await axios.get(`${COUNSELOR_AGENT_URL}/get-tasks`, {
+      params: params,
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting roadmap tasks:', error);
+    return { success: false, tasks: [] };
+  }
+};
+
+/**
+ * Update task status
+ */
+export const updateTaskStatus = async (userEmail, taskId, status) => {
+  try {
+    const response = await axios.post(`${PROFILE_MANAGER_URL}/update-task-status`, {
+      user_email: userEmail,
+      task_id: taskId,
+      status: status
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating task status:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// ==================== APPLICATION STATUS ====================
+
+/**
+ * Update application status for a university
+ */
+export const updateApplicationStatus = async (userEmail, universityId, statusData) => {
+  try {
+    const response = await axios.post(`${PROFILE_MANAGER_URL}/update-application-status`, {
+      user_email: userEmail,
+      university_id: universityId,
+      ...statusData
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating application status:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// ==================== ESSAYS ====================
+
+/**
+ * Save essay draft
+ */
+export const saveEssay = async (userEmail, essayId, essayData) => {
+  try {
+    const response = await axios.post(`${PROFILE_MANAGER_URL}/save-essay`, {
+      user_email: userEmail,
+      essay_id: essayId,
+      ...essayData
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving essay:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Get all essays for user
+ */
+export const getEssays = async (userEmail, universityId = null) => {
+  try {
+    const params = { user_email: userEmail };
+    if (universityId) params.university_id = universityId;
+
+    const response = await axios.get(`${PROFILE_MANAGER_URL}/get-essays`, {
+      params: params,
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting essays:', error);
+    return { success: false, essays: [] };
+  }
+};
+
+/**
+ * Update essay status
+ */
+export const updateEssayStatus = async (userEmail, essayId, status) => {
+  try {
+    const response = await axios.post(`${PROFILE_MANAGER_URL}/update-essay-status`, {
+      user_email: userEmail,
+      essay_id: essayId,
+      status: status
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating essay status:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// ==================== FINANCIAL AID ====================
+
+/**
+ * Save financial aid package for a university
+ */
+export const saveAidPackage = async (userEmail, universityId, aidData) => {
+  try {
+    const response = await axios.post(`${PROFILE_MANAGER_URL}/save-aid-package`, {
+      user_email: userEmail,
+      university_id: universityId,
+      ...aidData
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving aid package:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Get all financial aid packages for user
+ */
+export const getAidPackages = async (userEmail) => {
+  try {
+    const response = await axios.get(`${PROFILE_MANAGER_URL}/get-aid-packages`, {
+      params: { user_email: userEmail },
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting aid packages:', error);
+    return { success: false, packages: [] };
+  }
+};
+
+
+// ==================== ESSAY TRACKER (Auto-populated from college list) ====================
+
+/**
+ * Sync essay prompts from user's college list to their essay tracker
+ * This pulls essay prompts from all universities in the user's college list
+ */
+export const syncEssayTracker = async (userEmail) => {
+  try {
+    const url = getProfileManagerUrl();
+    const response = await axios.post(`${url}/sync-essay-tracker`, {
+      user_email: userEmail
+    }, {
+      timeout: 30000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error syncing essay tracker:', error);
+    return { success: false, error: error.message, essays: [] };
+  }
+};
+
+/**
+ * Get all essays from the essay tracker
+ */
+export const getEssayTracker = async (userEmail) => {
+  try {
+    const url = getProfileManagerUrl();
+    const response = await axios.get(`${url}/get-essay-tracker`, {
+      params: { user_email: userEmail },
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting essay tracker:', error);
+    return { success: false, essays: [] };
+  }
+};
+
+/**
+ * Update essay progress (status, content, word count)
+ */
+export const updateEssayProgress = async (userEmail, essayId, updates) => {
+  try {
+    const url = getProfileManagerUrl();
+    const response = await axios.post(`${url}/update-essay-progress`, {
+      user_email: userEmail,
+      essay_id: essayId,
+      ...updates
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating essay progress:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// ==================== SCHOLARSHIP TRACKER (Auto-populated from college list) ====================
+
+/**
+ * Sync scholarships from user's college list to their scholarship tracker
+ * This pulls available scholarships from all universities in the user's college list
+ */
+export const syncScholarshipTracker = async (userEmail) => {
+  try {
+    const url = getProfileManagerUrl();
+    const response = await axios.post(`${url}/sync-scholarship-tracker`, {
+      user_email: userEmail
+    }, {
+      timeout: 30000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error syncing scholarship tracker:', error);
+    return { success: false, error: error.message, scholarships: [] };
+  }
+};
+
+/**
+ * Get all scholarships from the scholarship tracker
+ */
+export const getScholarshipTracker = async (userEmail) => {
+  try {
+    const url = getProfileManagerUrl();
+    const response = await axios.get(`${url}/get-scholarship-tracker`, {
+      params: { user_email: userEmail },
+      timeout: 10000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting scholarship tracker:', error);
+    return { success: false, scholarships: [] };
+  }
+};
+
+/**
+ * Update scholarship application status
+ */
+export const updateScholarshipStatus = async (userEmail, scholarshipId, status, notes = null) => {
+  try {
+    const url = getProfileManagerUrl();
+    const response = await axios.post(`${url}/update-scholarship-status`, {
+      user_email: userEmail,
+      scholarship_id: scholarshipId,
+      status,
+      notes
+    }, {
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating scholarship status:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+
 export default api;
 

@@ -703,7 +703,9 @@ const StratiaLaunchpad = () => {
                                             match_score: college.fit_analysis?.match_score || 0,
                                             // Major data
                                             selected_major: college.selected_major,
-                                            available_majors: college.available_majors || []
+                                            available_majors: college.available_majors || [],
+                                            // Application status
+                                            application_status: college.application_status || null
                                         }}
                                         onViewAnalysis={handleViewAnalysis}
                                         onOpenChat={handleOpenChat}

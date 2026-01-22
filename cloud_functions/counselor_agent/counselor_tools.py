@@ -147,3 +147,47 @@ def fetch_aggregated_deadlines(user_email):
     aggregated.sort(key=sort_key)
     
     return aggregated
+
+def extract_scholarships(university_data):
+    """Extract scholarships from university profile."""
+    if not university_data:
+        return []
+    
+    financials = university_data.get('financials', {})
+    return financials.get('scholarships', [])
+
+def get_targeted_university_context(user_email):
+    """
+    Fetch targeted sections from university profiles for chat context:
+    - Application deadlines
+    - Scholarships (name, type, amount, deadline, application_method)
+    - Financial aid info (aid_philosophy, average_need_based_aid, average_merit_aid)
+    
+    Returns compact dict keyed by university_id for efficient context injection.
+    """
+    college_list = get_college_list(user_email)
+    context = {}
+    
+    for college in college_list:
+        uni_id = college.get('university_id')
+        uni_name = college.get('university_name', uni_id)
+        
+        uni_data = get_university_data(uni_id)
+        if not uni_data:
+            continue
+            
+        # Extract targeted sections
+        financials = uni_data.get('financials', {})
+        app_process = uni_data.get('application_process', {})
+        
+        context[uni_id] = {
+            'name': uni_name,
+            'deadlines': app_process.get('application_deadlines', []),
+            'scholarships': financials.get('scholarships', []),
+            'aid_philosophy': financials.get('aid_philosophy'),
+            'avg_need_aid': financials.get('average_need_based_aid'),
+            'avg_merit_aid': financials.get('average_merit_aid'),
+            'percent_receiving_aid': financials.get('percent_receiving_aid')
+        }
+        
+    return context

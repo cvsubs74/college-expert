@@ -1,8 +1,8 @@
 
-import React, { useState, useRef, useEffect } from 'react';
-import { PaperAirplaneIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { PaperAirplaneIcon, SparklesIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../context/AuthContext';
-import { fetchCounselorChat, fetchStudentRoadmap } from '../../services/api';
+import { fetchCounselorChat, fetchStudentRoadmap, saveCounselorChat, listCounselorChats, loadCounselorChat } from '../../services/api';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -12,6 +12,9 @@ const CounselorChat = () => {
     const [inputValue, setInputValue] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [roadmapTitle, setRoadmapTitle] = useState('');
+    const [conversationId, setConversationId] = useState(null);
+    const [previousChats, setPreviousChats] = useState([]);
+    const [showHistory, setShowHistory] = useState(false);
     const messagesEndRef = useRef(null);
 
     const scrollToBottom = () => {
@@ -72,6 +75,85 @@ const CounselorChat = () => {
 
         loadRoadmap();
     }, [user]);
+
+    // Auto-save conversation after messages change (debounced)
+    const saveConversation = useCallback(async (msgs, convId) => {
+        if (!user?.email || msgs.length <= 1) return; // Don't save just welcome message
+
+        // Convert messages to saveable format
+        const saveableMessages = msgs.map(m => ({
+            role: m.sender === 'user' ? 'user' : 'assistant',
+            content: m.text
+        }));
+
+        // Generate conversation ID if not set
+        const id = convId || `counselor_${Date.now()}`;
+        if (!convId) setConversationId(id);
+
+        await saveCounselorChat(user.email, id, saveableMessages);
+    }, [user]);
+
+    // Save after each agent response
+    useEffect(() => {
+        const lastMsg = messages[messages.length - 1];
+        if (lastMsg && lastMsg.sender === 'agent' && messages.length > 1) {
+            saveConversation(messages, conversationId);
+        }
+    }, [messages, conversationId, saveConversation]);
+
+    // Load previous chats on mount
+    useEffect(() => {
+        const loadPreviousChats = async () => {
+            if (!user?.email) return;
+            const result = await listCounselorChats(user.email, 5);
+            if (result.success && result.conversations) {
+                setPreviousChats(result.conversations);
+            }
+        };
+        loadPreviousChats();
+    }, [user]);
+
+    // Load a specific conversation
+    const handleLoadChat = async (chatId) => {
+        if (!user?.email) return;
+        setIsLoading(true);
+        try {
+            const result = await loadCounselorChat(user.email, chatId);
+            if (result.success && result.messages) {
+                const loadedMessages = result.messages.map((m, idx) => ({
+                    id: idx + 1,
+                    sender: m.role === 'user' ? 'user' : 'agent',
+                    text: m.content,
+                    quickActions: []
+                }));
+                setMessages(loadedMessages);
+                setConversationId(chatId);
+                setShowHistory(false);
+            }
+        } catch (error) {
+            console.error('Failed to load chat:', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    // Start new conversation
+    const handleNewChat = () => {
+        setConversationId(null);
+        setShowHistory(false);
+        // Reset to welcome message
+        setMessages([{
+            id: 1,
+            sender: 'agent',
+            text: roadmapTitle
+                ? `Hi there! I'm your AI Counselor. Ready to continue working on your **${roadmapTitle}**?`
+                : "Hi there! I'm your AI Counselor. Ready to help with your college journey!",
+            quickActions: [
+                { label: 'Show my Reach schools', action: 'Show my Reach schools' },
+                { label: 'Check deadlines', action: 'What are my upcoming deadlines?' }
+            ]
+        }]);
+    };
 
     const handleSend = async (manualMessage = null) => {
         const textToSend = manualMessage || inputValue;
@@ -149,9 +231,51 @@ const CounselorChat = () => {
     return (
         <div className="flex flex-col h-full bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
             {/* Header */}
-            <div className="p-4 border-b border-stone-100 bg-[#FDFCF7] flex items-center gap-2">
-                <SparklesIcon className="h-5 w-5 text-[#1A4D2E]" />
-                <h3 className="font-medium text-[#1A4D2E]">Counselor Assistant</h3>
+            <div className="p-4 border-b border-stone-100 bg-[#FDFCF7] flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <SparklesIcon className="h-5 w-5 text-[#1A4D2E]" />
+                    <h3 className="font-medium text-[#1A4D2E]">Counselor Assistant</h3>
+                </div>
+                <div className="flex items-center gap-2">
+                    {previousChats.length > 0 && (
+                        <div className="relative">
+                            <button
+                                onClick={() => setShowHistory(!showHistory)}
+                                className="p-2 text-stone-500 hover:text-[#1A4D2E] hover:bg-stone-100 rounded-lg transition-colors"
+                                title="Chat History"
+                            >
+                                <ClockIcon className="h-5 w-5" />
+                            </button>
+                            {showHistory && (
+                                <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-stone-200 z-50 max-h-72 overflow-y-auto">
+                                    <div className="p-2 border-b border-stone-100 flex justify-between items-center">
+                                        <span className="text-xs font-medium text-stone-500">Previous Chats</span>
+                                        <button
+                                            onClick={handleNewChat}
+                                            className="text-xs text-[#1A4D2E] hover:underline"
+                                        >
+                                            + New Chat
+                                        </button>
+                                    </div>
+                                    {previousChats.map((chat) => (
+                                        <button
+                                            key={chat.conversation_id}
+                                            onClick={() => handleLoadChat(chat.conversation_id)}
+                                            className="w-full p-3 text-left hover:bg-stone-50 border-b border-stone-50 last:border-0"
+                                        >
+                                            <div className="text-sm font-medium text-stone-700 truncate">
+                                                {chat.title || 'Untitled Chat'}
+                                            </div>
+                                            <div className="text-xs text-stone-400 mt-1">
+                                                {chat.message_count || 0} messages
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
 
             {/* Messages Area */}

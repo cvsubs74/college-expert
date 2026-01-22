@@ -201,3 +201,147 @@ def send_signup_welcome_email(user_email: str) -> bool:
     
     html = get_email_wrapper(content, "Welcome to Stratia Admissions! Start your college journey today.")
     return send_email(user_email, "Welcome to Stratia Admissions! 🎓", html)
+
+
+def send_deadline_reminder_email(user_email: str, tasks: list, urgency: str = "upcoming") -> bool:
+    """
+    Send deadline reminder email.
+    
+    Args:
+        user_email: Recipient email
+        tasks: List of tasks with title, due_date, university_name
+        urgency: 'urgent' (3 days), 'upcoming' (7 days), or 'soon' (14 days)
+    """
+    if not tasks:
+        return False
+    
+    urgency_config = {
+        'urgent': {'emoji': '🚨', 'color': '#dc2626', 'subject': 'URGENT: Deadlines in 3 Days!'},
+        'upcoming': {'emoji': '⏰', 'color': '#d97706', 'subject': 'Deadlines Coming Up This Week'},
+        'soon': {'emoji': '📅', 'color': '#059669', 'subject': 'Upcoming Deadlines in 2 Weeks'}
+    }
+    
+    config = urgency_config.get(urgency, urgency_config['upcoming'])
+    
+    # Build task list HTML
+    task_rows = ""
+    for task in tasks[:10]:  # Limit to 10 tasks
+        task_rows += f"""
+        <tr>
+            <td style="padding: 12px; border-bottom: 1px solid #eee;">
+                <strong style="color: #333;">{task.get('title', 'Task')}</strong><br>
+                <span style="color: #666; font-size: 13px;">{task.get('university_name', '')}</span>
+            </td>
+            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right; white-space: nowrap;">
+                <span style="background-color: {config['color']}22; color: {config['color']}; padding: 4px 10px; border-radius: 12px; font-size: 13px; font-weight: 600;">
+                    {task.get('due_date', 'TBD')}
+                </span>
+            </td>
+        </tr>
+        """
+    
+    content = f"""
+    <h2 style="color: {config['color']}; margin: 0 0 20px 0; font-size: 24px;">
+        {config['emoji']} {config['subject']}
+    </h2>
+    
+    <p style="color: #333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        You have <strong>{len(tasks)} task{'s' if len(tasks) > 1 else ''}</strong> with upcoming deadlines. 
+        Don't wait until the last minute!
+    </p>
+    
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+        <thead>
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 12px; text-align: left; color: #666; font-weight: 600;">Task</th>
+                <th style="padding: 12px; text-align: right; color: #666; font-weight: 600;">Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {task_rows}
+        </tbody>
+    </table>
+    
+    {get_button_html("View All Tasks", f"{FRONTEND_URL}/counselor")}
+    
+    <p style="color: {BRAND_GRAY}; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0;">
+        Pro tip: Start essays at least 2 weeks before the deadline to allow time for feedback and revisions.
+    </p>
+    """
+    
+    html = get_email_wrapper(content, f"You have {len(tasks)} upcoming deadlines")
+    return send_email(user_email, f"{config['emoji']} {config['subject']}", html)
+
+
+def send_weekly_summary_email(user_email: str, summary_data: dict) -> bool:
+    """
+    Send weekly progress summary email.
+    
+    Args:
+        user_email: Recipient email
+        summary_data: Dict with tasks_completed, tasks_upcoming, essays_status, schools_count
+    """
+    tasks_completed = summary_data.get('tasks_completed', 0)
+    tasks_upcoming = summary_data.get('tasks_upcoming', 0)
+    essays_final = summary_data.get('essays_final', 0)
+    essays_total = summary_data.get('essays_total', 0)
+    schools_count = summary_data.get('schools_count', 0)
+    
+    # Progress message based on activity
+    if tasks_completed >= 5:
+        progress_msg = "Fantastic progress this week! 🎉"
+        progress_color = "#059669"
+    elif tasks_completed >= 2:
+        progress_msg = "Good momentum! Keep it going! 💪"
+        progress_color = "#d97706"
+    else:
+        progress_msg = "Let's pick up the pace this week! 🚀"
+        progress_color = "#dc2626"
+    
+    content = f"""
+    <h2 style="color: {BRAND_GREEN}; margin: 0 0 20px 0; font-size: 24px;">
+        📊 Your Weekly Progress
+    </h2>
+    
+    <p style="color: {progress_color}; font-size: 18px; font-weight: 600; margin: 0 0 20px 0;">
+        {progress_msg}
+    </p>
+    
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin: 20px 0;">
+        <tr>
+            <td style="padding: 15px; background-color: #f0fdf4; border-radius: 8px; text-align: center; width: 33%;">
+                <div style="font-size: 28px; font-weight: 700; color: #059669;">{tasks_completed}</div>
+                <div style="font-size: 13px; color: #666;">Tasks Completed</div>
+            </td>
+            <td width="10"></td>
+            <td style="padding: 15px; background-color: #fff7ed; border-radius: 8px; text-align: center; width: 33%;">
+                <div style="font-size: 28px; font-weight: 700; color: #d97706;">{tasks_upcoming}</div>
+                <div style="font-size: 13px; color: #666;">Due This Week</div>
+            </td>
+            <td width="10"></td>
+            <td style="padding: 15px; background-color: #f5f5f4; border-radius: 8px; text-align: center; width: 33%;">
+                <div style="font-size: 28px; font-weight: 700; color: #1A4D2E;">{essays_final}/{essays_total}</div>
+                <div style="font-size: 13px; color: #666;">Essays Finalized</div>
+            </td>
+        </tr>
+    </table>
+    
+    <div style="background-color: {BRAND_GREEN_LIGHT}; border-radius: 8px; padding: 20px; margin: 20px 0;">
+        <h3 style="color: {BRAND_GREEN}; margin: 0 0 10px 0; font-size: 16px;">🎯 This Week's Focus</h3>
+        <ul style="color: #333; margin: 0; padding-left: 20px; line-height: 1.8;">
+            <li>You have <strong>{tasks_upcoming} tasks</strong> due this week</li>
+            <li>You're tracking <strong>{schools_count} schools</strong> on your list</li>
+            {f"<li><strong>{essays_total - essays_final} essays</strong> still need work</li>" if essays_total > essays_final else ""}
+        </ul>
+    </div>
+    
+    {get_button_html("View Your Roadmap", f"{FRONTEND_URL}/counselor")}
+    
+    <p style="color: {BRAND_GRAY}; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0;">
+        Keep up the great work! Consistency is key in the college application process.
+    </p>
+    """
+    
+    html = get_email_wrapper(content, f"Your weekly progress: {tasks_completed} tasks completed")
+    return send_email(user_email, "📊 Your Weekly College Prep Summary", html)
+

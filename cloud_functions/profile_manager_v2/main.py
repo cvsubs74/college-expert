@@ -792,6 +792,283 @@ def profile_manager_v2_http_entry(request):
                     'message_count': 0
                 })
         
+        # --- COUNSELOR CHAT SAVE ---
+        elif resource_type == 'save-counselor-chat' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id')
+            conversation_data = data.get('conversation_data', {})
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            db = get_db()
+            import json
+            from datetime import datetime
+            
+            # Generate conversation ID if not provided
+            if not conversation_id:
+                conversation_id = f"counselor_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
+            
+            success = db.save_counselor_conversation(user_email, conversation_id, conversation_data)
+            return add_cors_headers({
+                'success': success,
+                'conversation_id': conversation_id,
+                'message': 'Conversation saved' if success else 'Failed to save'
+            }, 200 if success else 400)
+        
+        # --- COUNSELOR CHAT LOAD ---
+        elif resource_type == 'get-counselor-chat' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id') or request.args.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            db = get_db()
+            conversation = db.get_counselor_conversation(user_email, conversation_id)
+            if conversation:
+                return add_cors_headers({
+                    'success': True,
+                    'conversation': conversation
+                })
+            else:
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'Conversation not found'
+                }, 404)
+        
+        # --- COUNSELOR CHAT LIST ---
+        elif resource_type == 'list-counselor-chats' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            limit = int(data.get('limit') or request.args.get('limit', 20))
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            db = get_db()
+            conversations = db.list_counselor_conversations(user_email, limit)
+            return add_cors_headers({
+                'success': True,
+                'conversations': conversations,
+                'count': len(conversations)
+            })
+        
+        # --- COUNSELOR CHAT DELETE ---
+        elif resource_type == 'delete-counselor-chat' and request.method in ['POST', 'DELETE']:
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            db = get_db()
+            success = db.delete_counselor_conversation(user_email, conversation_id)
+            return add_cors_headers({
+                'success': success,
+                'message': 'Conversation deleted' if success else 'Failed to delete'
+            })
+        
+        # --- ROADMAP TASK SAVE ---
+        elif resource_type == 'save-roadmap-task' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            task_id = data.get('task_id')
+            task_data = data.get('task_data', {})
+            
+            if not user_email or not task_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and task_id required'}, 400)
+            
+            db = get_db()
+            success = db.save_roadmap_task(user_email, task_id, task_data)
+            return add_cors_headers({
+                'success': success,
+                'task_id': task_id,
+                'message': 'Task saved' if success else 'Failed to save'
+            }, 200 if success else 400)
+        
+        # --- ROADMAP TASKS GET ---
+        elif resource_type == 'get-roadmap-tasks' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            status = data.get('status') or request.args.get('status')
+            university_id = data.get('university_id') or request.args.get('university_id')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            db = get_db()
+            tasks = db.get_roadmap_tasks(user_email, status=status, university_id=university_id)
+            return add_cors_headers({
+                'success': True,
+                'tasks': tasks,
+                'count': len(tasks)
+            })
+        
+        # --- ROADMAP TASK STATUS UPDATE ---
+        elif resource_type == 'update-task-status' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            task_id = data.get('task_id')
+            status = data.get('status', 'completed')
+            
+            if not user_email or not task_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and task_id required'}, 400)
+            
+            db = get_db()
+            from datetime import datetime
+            completed_at = datetime.utcnow().isoformat() if status == 'completed' else None
+            success = db.update_task_status(user_email, task_id, status, completed_at)
+            return add_cors_headers({
+                'success': success,
+                'task_id': task_id,
+                'status': status,
+                'message': 'Task updated' if success else 'Failed to update'
+            }, 200 if success else 400)
+        
+        # --- APPLICATION STATUS UPDATE ---
+        elif resource_type == 'update-application-status' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            status_data = data.get('status_data', {})
+            
+            # Allow passing individual fields for convenience
+            if 'status' in data and 'status' not in status_data:
+                status_data['status'] = data['status']
+            if 'checklist' in data:
+                status_data['checklist'] = data['checklist']
+            if 'decision' in data:
+                status_data['decision'] = data['decision']
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            
+            db = get_db()
+            success = db.update_application_status(user_email, university_id, status_data)
+            return add_cors_headers({
+                'success': success,
+                'university_id': university_id,
+                'status_data': status_data,
+                'message': 'Application status updated' if success else 'Failed to update'
+            }, 200 if success else 400)
+        
+        # --- ESSAY SAVE ---
+        elif resource_type == 'save-essay' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            essay_id = data.get('essay_id')
+            essay_data = data.get('essay_data', {})
+            
+            # Allow passing fields directly
+            for field in ['university_id', 'prompt', 'content', 'word_limit', 'status', 'word_count']:
+                if field in data and field not in essay_data:
+                    essay_data[field] = data[field]
+            
+            if not user_email or not essay_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and essay_id required'}, 400)
+            
+            db = get_db()
+            success = db.save_essay(user_email, essay_id, essay_data)
+            return add_cors_headers({
+                'success': success,
+                'essay_id': essay_id,
+                'message': 'Essay saved' if success else 'Failed to save'
+            }, 200 if success else 400)
+        
+        # --- ESSAYS GET ---
+        elif resource_type == 'get-essays' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id') or request.args.get('university_id')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            db = get_db()
+            essays = db.get_essays(user_email, university_id)
+            return add_cors_headers({
+                'success': True,
+                'essays': essays,
+                'count': len(essays)
+            })
+        
+        # --- ESSAY STATUS UPDATE ---
+        elif resource_type == 'update-essay-status' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            essay_id = data.get('essay_id')
+            status = data.get('status', 'draft')
+            
+            if not user_email or not essay_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and essay_id required'}, 400)
+            
+            db = get_db()
+            success = db.update_essay_status(user_email, essay_id, status)
+            return add_cors_headers({
+                'success': success,
+                'essay_id': essay_id,
+                'status': status
+            }, 200 if success else 400)
+        
+        # --- FINANCIAL AID PACKAGE SAVE ---
+        elif resource_type == 'save-aid-package' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            aid_data = data.get('aid_data', {})
+            
+            # Allow passing fields directly
+            for field in ['cost_of_attendance', 'grants_scholarships', 'loans_offered', 'work_study', 
+                          'net_cost', 'parent_contribution', 'student_contribution', 'outside_scholarships', 'notes']:
+                if field in data and field not in aid_data:
+                    aid_data[field] = data[field]
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            
+            db = get_db()
+            success = db.save_aid_package(user_email, university_id, aid_data)
+            return add_cors_headers({
+                'success': success,
+                'university_id': university_id,
+                'message': 'Aid package saved' if success else 'Failed to save'
+            }, 200 if success else 400)
+        
+        # --- FINANCIAL AID PACKAGES GET ---
+        elif resource_type == 'get-aid-packages' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            db = get_db()
+            packages = db.get_aid_packages(user_email)
+            return add_cors_headers({
+                'success': True,
+                'packages': packages,
+                'count': len(packages)
+            })
+        
         # --- ESSAY COPILOT ---
         elif resource_type == 'generate-essay-starters' and request.method == 'POST':
             data = request.get_json()
@@ -1069,6 +1346,273 @@ def profile_manager_v2_http_entry(request):
                     'success': False,
                     'error': f'Email error: {str(e)}'
                 }, 500)
+        
+        # ==================== ESSAY TRACKER ====================
+        
+        # --- SYNC ESSAY TRACKER ---
+        elif resource_type == 'sync-essay-tracker' and request.method == 'POST':
+            """Sync essay prompts from user's college list to their essay tracker."""
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            
+            try:
+                db = get_db()
+                
+                # Get user's college list
+                college_list = db.get_college_list(user_email)
+                
+                if not college_list:
+                    return add_cors_headers({
+                        'success': True,
+                        'message': 'No colleges in list',
+                        'essays_synced': 0
+                    })
+                
+                all_essays = []
+                uc_piq_added = False  # Track if we've added UC PIQs (shared across UCs)
+                
+                for college in college_list:
+                    university_id = college.get('university_id')
+                    university_name = college.get('university_name', university_id)
+                    
+                    # Check if this is a UC school
+                    is_uc = 'university_of_california' in university_id.lower()
+                    
+                    # Use existing fetch_university_profile function (imported from essay_copilot)
+                    uni_data = fetch_university_profile(university_id)
+                    
+                    if not uni_data:
+                        logger.warning(f"[ESSAY_SYNC] No data found for {university_id}")
+                        continue
+                    
+                    # Get essay prompts - check multiple possible locations
+                    # KB data may have essay_prompts at different paths depending on structure
+                    profile_data = uni_data.get('profile', uni_data)  # Handle nested profile
+                    essay_prompts = profile_data.get('application_process', {}).get('essay_prompts', [])
+                    if not essay_prompts:
+                        essay_prompts = uni_data.get('application_process', {}).get('essay_prompts', [])
+                    if not essay_prompts:
+                        essay_prompts = uni_data.get('essay_prompts', [])
+                    
+                    if not essay_prompts:
+                        logger.info(f"[ESSAY_SYNC] No essay prompts for {university_id}")
+                        continue
+                    
+                    for prompt in essay_prompts:
+                        if isinstance(prompt, str):
+                            continue  # Skip if not properly structured
+                        
+                        # Make a copy to avoid modifying the original
+                        prompt_copy = dict(prompt)
+                        prompt_type = prompt_copy.get('type', 'supplement')
+                        
+                        # Handle UC PIQs - only add once (shared across all UC schools)
+                        if is_uc and 'PIQ' in str(prompt_type):
+                            if uc_piq_added:
+                                continue
+                            # Add selection rule for UC PIQs
+                            prompt_copy['selection_rule'] = {'required': 4, 'of': 8}
+                            prompt_copy['university_id'] = 'uc_system'
+                            prompt_copy['university_name'] = 'UC Application (All UC Schools)'
+                        else:
+                            prompt_copy['university_id'] = university_id
+                            prompt_copy['university_name'] = university_name
+                        
+                        all_essays.append(prompt_copy)
+                    
+                    if is_uc and any('PIQ' in str(p.get('type', '')) for p in essay_prompts if isinstance(p, dict)):
+                        uc_piq_added = True
+                
+                # Sync to Firestore
+                if all_essays:
+                    db.sync_essay_tracker(user_email, all_essays)
+                
+                # Get updated tracker
+                essays = db.get_essay_tracker(user_email)
+                
+                logger.info(f"[ESSAY_SYNC] Synced {len(all_essays)} prompts, tracker has {len(essays)} essays for {user_email}")
+                
+                return add_cors_headers({
+                    'success': True,
+                    'essays_synced': len(all_essays),
+                    'total_essays': len(essays),
+                    'essays': essays
+                })
+                
+            except Exception as e:
+                logger.error(f"[ESSAY_SYNC ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+        
+        # --- GET ESSAY TRACKER ---
+        elif resource_type == 'get-essay-tracker' and request.method in ['GET', 'POST']:
+            user_email = request.args.get('user_email') or (request.get_json() or {}).get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            
+            try:
+                db = get_db()
+                essays = db.get_essay_tracker(user_email)
+                
+                return add_cors_headers({
+                    'success': True,
+                    'essays': essays,
+                    'total': len(essays)
+                })
+            except Exception as e:
+                logger.error(f"[GET_ESSAY_TRACKER ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+        
+        # --- UPDATE ESSAY PROGRESS ---
+        elif resource_type == 'update-essay-progress' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            essay_id = data.get('essay_id')
+            
+            if not user_email or not essay_id:
+                return add_cors_headers({'error': 'user_email and essay_id required'}, 400)
+            
+            try:
+                db = get_db()
+                
+                # Extract allowed update fields
+                updates = {}
+                if 'status' in data:
+                    updates['status'] = data['status']
+                if 'content' in data:
+                    updates['content'] = data['content']
+                    updates['word_count'] = len(data['content'].split()) if data['content'] else 0
+                if 'word_count' in data:
+                    updates['word_count'] = data['word_count']
+                
+                db.update_essay_progress(user_email, essay_id, updates)
+                
+                return add_cors_headers({
+                    'success': True,
+                    'message': 'Essay progress updated'
+                })
+            except Exception as e:
+                logger.error(f"[UPDATE_ESSAY_PROGRESS ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+        
+        # ==================== SCHOLARSHIP TRACKER ====================
+        
+        # --- SYNC SCHOLARSHIP TRACKER ---
+        elif resource_type == 'sync-scholarship-tracker' and request.method == 'POST':
+            """Sync scholarships from user's college list to their tracker."""
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            
+            try:
+                db = get_db()
+                
+                # Get user's college list and profile
+                college_list = db.get_college_list(user_email)
+                user_profile = db.get_profile(user_email)
+                
+                if not college_list:
+                    return add_cors_headers({
+                        'success': True,
+                        'message': 'No colleges in list',
+                        'scholarships_synced': 0
+                    })
+                
+                all_scholarships = []
+                
+                for college in college_list:
+                    university_id = college.get('university_id')
+                    university_name = college.get('university_name', university_id)
+                    
+                    # Use existing fetch_university_profile function (imported from essay_copilot)
+                    uni_data = fetch_university_profile(university_id)
+                    
+                    if not uni_data:
+                        logger.warning(f"[SCHOLARSHIP_SYNC] No data found for {university_id}")
+                        continue
+                    
+                    # Get scholarships from financials - check nested paths
+                    profile_data = uni_data.get('profile', uni_data)  # Handle nested profile
+                    scholarships = profile_data.get('financials', {}).get('scholarships', [])
+                    if not scholarships:
+                        scholarships = uni_data.get('financials', {}).get('scholarships', [])
+                    
+                    for scholarship in scholarships:
+                        if isinstance(scholarship, dict):
+                            # Make a copy to avoid modifying original
+                            scholarship_copy = dict(scholarship)
+                            scholarship_copy['university_id'] = university_id
+                            scholarship_copy['university_name'] = university_name
+                            all_scholarships.append(scholarship_copy)
+                
+                # Sync to Firestore with eligibility calculation
+                if all_scholarships:
+                    db.sync_scholarship_tracker(user_email, all_scholarships, user_profile)
+                
+                # Get updated tracker
+                scholarships = db.get_scholarship_tracker(user_email)
+                
+                logger.info(f"[SCHOLARSHIP_SYNC] Synced {len(all_scholarships)} scholarships for {user_email}")
+                
+                return add_cors_headers({
+                    'success': True,
+                    'scholarships_synced': len(all_scholarships),
+                    'total_scholarships': len(scholarships),
+                    'scholarships': scholarships
+                })
+                
+            except Exception as e:
+                logger.error(f"[SCHOLARSHIP_SYNC ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+        
+        # --- GET SCHOLARSHIP TRACKER ---
+        elif resource_type == 'get-scholarship-tracker' and request.method in ['GET', 'POST']:
+            user_email = request.args.get('user_email') or (request.get_json() or {}).get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            
+            try:
+                db = get_db()
+                scholarships = db.get_scholarship_tracker(user_email)
+                
+                return add_cors_headers({
+                    'success': True,
+                    'scholarships': scholarships,
+                    'total': len(scholarships)
+                })
+            except Exception as e:
+                logger.error(f"[GET_SCHOLARSHIP_TRACKER ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+        
+        # --- UPDATE SCHOLARSHIP STATUS ---
+        elif resource_type == 'update-scholarship-status' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            scholarship_id = data.get('scholarship_id')
+            status = data.get('status')
+            
+            if not user_email or not scholarship_id or not status:
+                return add_cors_headers({'error': 'user_email, scholarship_id, and status required'}, 400)
+            
+            try:
+                db = get_db()
+                notes = data.get('notes')
+                
+                db.update_scholarship_status(user_email, scholarship_id, status, notes)
+                
+                return add_cors_headers({
+                    'success': True,
+                    'message': 'Scholarship status updated'
+                })
+            except Exception as e:
+                logger.error(f"[UPDATE_SCHOLARSHIP_STATUS ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
         
         # --- NOT FOUND ---
         else:
