@@ -1,0 +1,13 @@
+Context: I am conducting a forensic audit of's admissions stability and enrollment strategy. I need to move beyond the current year's "headline" acceptance rate to understand the structural trends of the last five years.
+
+Task: Locate the Common Data Set (CDS) archives or Institutional Research "Fact Books" for for the academic years 2019-2020 through 2024-2025. Perform a comparative longitudinal analysis of Section C (First-Time, First-Year Admission) focused on the following:
+
+Application Velocity: Create a table showing the year-over-year percentage change in application volume. Identify any "shocks" (e.g., a >20% increase in a single year) and correlate them with policy changes like "Test Optional" or "Common App adoption."
+
+The "Artificial" Exclusivity Check: Analyze the "Admitted" count (the numerator) versus the "Enrolled" count. Has the university reduced its class size to artificially lower its acceptance rate, or is it expanding capacity (like UCSD)?
+
+Waitlist Volatility (Section C2): Extract the data for "Number of Waitlist Offers" versus "Number of Waitlist Admits" for each year. Calculate the "Waitlist Admit Rate." Identify years with "Zero Admits" or "Mass Admits" to assess the reliability of the waitlist as a pathway.
+
+Yield Rate Evolution: Calculate the Yield Rate (Enrolled / Admitted) for each year. Is the yield increasing (indicating rising prestige) or decreasing (indicating the school is a "safety" for more applicants)?
+
+Output Requirement: Present the findings in a Markdown table titled "Five-Year Enrollment Matrix:" followed by a narrative analysis of the institution's strategic behavior.

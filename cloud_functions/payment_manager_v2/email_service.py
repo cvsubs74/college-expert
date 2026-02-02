@@ -27,10 +27,19 @@ BRAND_GREEN_LIGHT = "#D6E8D5"
 BRAND_GRAY = "#666666"
 
 
+# Global Secret Manager Client (Lazy initialization to avoid import-time errors)
+_secret_manager_client = None
+
+def get_secret_manager_client():
+    global _secret_manager_client
+    if _secret_manager_client is None:
+        _secret_manager_client = secretmanager.SecretManagerServiceClient()
+    return _secret_manager_client
+
 def get_secret(secret_id: str) -> str:
     """Fetch secret from Google Cloud Secret Manager"""
     try:
-        client = secretmanager.SecretManagerServiceClient()
+        client = get_secret_manager_client()
         project_id = os.environ.get('GCP_PROJECT', 'college-counselling-478115')
         name = f"projects/{project_id}/secrets/{secret_id}/versions/latest"
         response = client.access_secret_version(request={"name": name})

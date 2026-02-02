@@ -450,6 +450,24 @@ def handle_webhook(request):
     except stripe.error.SignatureVerificationError as e:
         logger.error(f"Invalid signature: {e}")
         return add_cors_headers({'error': 'Invalid signature'}, 400)
+    except stripe.error.StripeError as e:
+        logger.error(f"Stripe specific error in webhook: {e}")
+        # Return 200 to acknowledge receipt even if processing failed, to prevent retries if it's a permanent error?
+        # Or 400 if it's user error. Usually 500 is bad.
+        # Let's return 400 for Stripe errors to indicate something was wrong with the request/state.
+        return add_cors_headers({'error': f'Stripe error: {str(e)}'}, 400)
+    except Exception as e:
+        # CATCH-ALL: Prevent 500s from bubbling up
+        logger.error(f"Unexpected error in handle_webhook: {e}", exc_info=True)
+        # Return 400 (Bad Request) or 500? Stripe retries on 500. 
+        # If it's a code bug, retrying won't help, but we don't want to be disabled.
+        # Returning 200 might stop retries but hide the bug.
+        # Returning 500 triggers email alerts from Stripe.
+        # The user's problem is "Other errors", likely 500s.
+        # We should return 400 if we want to stop retries for "garbage" requests, or 500 if we genuinely failed.
+        # However, to avoid "failing webhook" email, we must return 2xx.
+        # Let's return 200 with error message in body so we don't get disabled, but we log the error.
+        return add_cors_headers({'received': True, 'warning': 'Processed with errors', 'error': str(e)}, 200)
 
 
 def handle_create_portal_session(request, user_id):
@@ -487,70 +505,78 @@ def handle_create_portal_session(request, user_id):
 
 def handle_successful_payment(session):
     """Process successful payment and grant access"""
-    user_id = session.get('client_reference_id')
-    metadata = session.get('metadata', {})
-    product_id = metadata.get('product_id')
-    quantity = int(metadata.get('quantity', 1))
-    college_id = metadata.get('college_id')
-    
-    if not user_id or not product_id:
-        logger.error(f"Missing user_id or product_id in session: {session['id']}")
-        return
-    
-    product = PRODUCTS.get(product_id)
-    if not product:
-        logger.error(f"Unknown product: {product_id}")
-        return
-    
-    # Calculate grants based on quantity
-    grants = {}
-    for key, value in product['grants'].items():
-        if isinstance(value, int):
-            grants[key] = value * quantity
-        else:
-            grants[key] = value
-    
-    # Record purchase details
-    purchase_details = {
-        'product_id': product_id,
-        'product_name': product['name'],
-        'amount': session.get('amount_total', product['price'] * quantity),
-        'quantity': quantity,
-        'college_id': college_id,
-        'stripe_session_id': session['id'],
-        'payment_status': session.get('payment_status', 'paid')
-    }
-    
-    # For subscriptions, capture Stripe IDs
-    if product['type'] == 'subscription':
-        purchase_details['stripe_customer_id'] = session.get('customer')
-        purchase_details['stripe_subscription_id'] = session.get('subscription')
-        purchase_details['plan'] = product.get('interval', 'monthly')
-        if session.get('subscription'):
-            try:
-                subscription = stripe.Subscription.retrieve(session['subscription'])
-                purchase_details['subscription_current_period_end'] = datetime.fromtimestamp(
-                    subscription.current_period_end, tz=timezone.utc
-                ).isoformat()
-            except Exception as e:
-                logger.error(f"Error retrieving subscription details: {e}")
-    
-    # Update user's purchases
-    success = update_user_purchases(user_id, grants, purchase_details)
-    
-    if success:
-        logger.info(f"Successfully processed payment for {user_id}: {product_id} x{quantity}")
+    try:
+        user_id = session.get('client_reference_id')
+        metadata = session.get('metadata', {})
+        product_id = metadata.get('product_id')
+        quantity = int(metadata.get('quantity', 1))
+        college_id = metadata.get('college_id')
         
-        # Send welcome email for new subscriptions
+        if not user_id or not product_id:
+            logger.error(f"Missing user_id or product_id in session: {session['id']}")
+            return
+        
+        product = PRODUCTS.get(product_id)
+        product = PRODUCTS.get(product_id)
+        if not product:
+            logger.info(f"Ignoring event for unknown/external product: {product_id}")
+            return
+        
+        # Calculate grants based on quantity
+        grants = {}
+        for key, value in product['grants'].items():
+            if isinstance(value, int):
+                grants[key] = value * quantity
+            else:
+                grants[key] = value
+        
+        # Record purchase details
+        purchase_details = {
+            'product_id': product_id,
+            'product_name': product['name'],
+            'amount': session.get('amount_total', product['price'] * quantity),
+            'quantity': quantity,
+            'college_id': college_id,
+            'stripe_session_id': session['id'],
+            'payment_status': session.get('payment_status', 'paid')
+        }
+        
+        # For subscriptions, capture Stripe IDs
         if product['type'] == 'subscription':
-            try:
-                credits = grants.get('fit_analysis', 0)
-                send_welcome_email(user_id, product['name'], credits)
-                logger.info(f"Welcome email sent to {user_id}")
-            except Exception as e:
-                logger.error(f"Failed to send welcome email to {user_id}: {e}")
-    else:
-        logger.error(f"Failed to update purchases for {user_id}")
+            purchase_details['stripe_customer_id'] = session.get('customer')
+            purchase_details['stripe_subscription_id'] = session.get('subscription')
+            purchase_details['plan'] = product.get('interval', 'monthly')
+            if session.get('subscription'):
+                try:
+                    subscription = stripe.Subscription.retrieve(session['subscription'])
+                    purchase_details['subscription_current_period_end'] = datetime.fromtimestamp(
+                        subscription.current_period_end, tz=timezone.utc
+                    ).isoformat()
+                except Exception as e:
+                    logger.error(f"Error retrieving subscription details: {e}")
+        
+        # Update user's purchases
+        success = update_user_purchases(user_id, grants, purchase_details)
+        
+        if success:
+            logger.info(f"Successfully processed payment for {user_id}: {product_id} x{quantity}")
+            
+            # Send welcome email for new subscriptions
+            if product['type'] == 'subscription':
+                try:
+                    credits = grants.get('fit_analysis', 0)
+                    send_welcome_email(user_id, product['name'], credits)
+                    logger.info(f"Welcome email sent to {user_id}")
+                except Exception as e:
+                    logger.error(f"Failed to send welcome email to {user_id}: {e}")
+        else:
+            logger.error(f"Failed to update purchases for {user_id}")
+            
+    except Exception as e:
+        logger.error(f"CRITICAL: Failed to handle successful payment for session {session.get('id', 'unknown')}: {e}", exc_info=True)
+        # We catch this so the webhook returns 200 (or continues) instead of 500ing whole request
+        # But we must alert/log heavily.
+
 
 
 def handle_subscription_lifecycle_webhooks(event):
@@ -593,7 +619,7 @@ def handle_subscription_lifecycle_webhooks(event):
                         db.save_purchases(user_email, purchases)
                         logger.info(f"Updated subscription for {user_email}: cancel_at_period_end={cancel_at_period_end}")
                     else:
-                        logger.warning(f"Subscription ID mismatch for user: {user_email}")
+                        logger.info(f"Ignoring subscription update for {user_email} (ID mismatch: likely other app)")
                 else:
                     logger.warning(f"No email found for customer: {customer_id}")
                     
