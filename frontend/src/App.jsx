@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
-import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon, ChartBarSquareIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon } from '@heroicons/react/24/outline';
 import CreditsBadge from './components/CreditsBadge';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
@@ -20,6 +20,7 @@ import CounselorPage from './pages/CounselorPage';
 import EssayDashboard from './pages/EssayDashboard';
 import FinancialAidComparison from './pages/FinancialAidComparison';
 import ProgressPage from './pages/ProgressPage';
+import RoadmapPage from './pages/RoadmapPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingModal from './components/OnboardingModal';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -46,13 +47,16 @@ function Navigation() {
     }
   };
 
-  // Navigation links with Stratia styling
+  // Navigation links with Stratia styling.
+  // The single "Roadmap" entry points at the consolidated /roadmap surface
+  // (Plan / Essays / Scholarships / Colleges tabs). The old /counselor and
+  // /progress URLs still resolve for any direct links — redirects land in
+  // M1 PR #7. Removed from nav now to avoid two competing entry points.
   const navLinks = [
     { path: '/profile', label: 'Profile', icon: DocumentTextIcon },
     { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
     { path: '/launchpad', label: 'Launchpad', icon: RocketLaunchIcon },
-    { path: '/counselor', label: 'Roadmap', icon: SparklesIcon },
-    { path: '/progress', label: 'Tracker', icon: ChartBarSquareIcon },
+    { path: '/roadmap', label: 'Roadmap', icon: SparklesIcon },
   ];
 
 
@@ -274,6 +278,9 @@ function App() {
                   {/* <Route path="/chat" element={<Chat />} /> */}
                   <Route path="/universities" element={<UniversityExplorer />} />
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
+                  <Route path="/roadmap" element={<RoadmapPage />} />
+                  {/* Legacy routes — still resolve for direct URLs / bookmarks.
+                      Replaced by /roadmap?tab=... redirects in M1 PR #7. */}
                   <Route path="/counselor" element={<CounselorPage />} />
                   <Route path="/applications" element={<ApplicationsPage />} />
                   <Route path="/essay-help/:universityId" element={<EssayHelpPage />} />
