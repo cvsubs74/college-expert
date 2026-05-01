@@ -26,6 +26,10 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Configuration
+# college-expert lives in a separate GCP project + Google account from the
+# user's other work (notably ot-labs-sandbox / csubramanian@onetrust.com).
+# Pin both here; override via env var if needed.
+GCP_ACCOUNT=${GCP_ACCOUNT:-"cvsubs@gmail.com"}
 PROJECT_ID=${GCP_PROJECT_ID:-"college-counselling-478115"}
 REGION="us-east1"
 RAG_AGENT_SERVICE_NAME="college-expert-rag-agent"
@@ -98,9 +102,36 @@ echo -e "${BLUE}║     Dynamic Routing: All approaches supported              �
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
+# Check if project ID is set
+if [ -z "$PROJECT_ID" ]; then
+    echo -e "${RED}Error: GCP_PROJECT_ID environment variable is not set${NC}"
+    echo "Please set it with: export GCP_PROJECT_ID='your-project-id'"
+    exit 1
+fi
+
+# Verify the right gcloud account is authenticated. We do NOT call
+# `gcloud config set ...` because that mutates global config and would leak
+# into other shells/projects. CLOUDSDK_CORE_* env vars are scoped to this
+# process and are inherited by every child gcloud invocation, so every
+# secret fetch / function deploy / Cloud Run call below targets the right
+# account+project regardless of the user's active gcloud config.
+if ! gcloud auth list --format="value(account)" 2>/dev/null | grep -qx "$GCP_ACCOUNT"; then
+    echo -e "${RED}Error: gcloud account '${GCP_ACCOUNT}' is not authenticated${NC}"
+    echo -e "${YELLOW}Run: gcloud auth login ${GCP_ACCOUNT}${NC}"
+    echo -e "${YELLOW}(Override the expected account by setting GCP_ACCOUNT=...)${NC}"
+    exit 1
+fi
+export CLOUDSDK_CORE_ACCOUNT="$GCP_ACCOUNT"
+export CLOUDSDK_CORE_PROJECT="$PROJECT_ID"
+
+echo -e "${GREEN}Using GCP Account: ${GCP_ACCOUNT}${NC}"
+echo -e "${GREEN}Using GCP Project: ${PROJECT_ID}${NC}"
+echo -e "${GREEN}Region: ${REGION}${NC}"
+echo ""
+
 # Always fetch GEMINI_API_KEY from Secret Manager (overwrite any existing value)
 echo -e "${YELLOW}Fetching GEMINI_API_KEY from Secret Manager...${NC}"
-if GEMINI_API_KEY=$(gcloud secrets versions access latest --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
+if GEMINI_API_KEY=$(gcloud secrets versions access latest --secret=gemini-api-key 2>/dev/null); then
     echo -e "${GREEN}✓ Successfully fetched GEMINI_API_KEY from Secret Manager${NC}"
     export GEMINI_API_KEY
 else
@@ -111,7 +142,7 @@ fi
 
 # Always fetch Elasticsearch credentials from Secret Manager (needed for ES cloud functions)
 echo -e "${YELLOW}Fetching ES_CLOUD_ID from Secret Manager...${NC}"
-if ES_CLOUD_ID=$(gcloud secrets versions access latest --secret=es-cloud-id --project=$PROJECT_ID 2>/dev/null); then
+if ES_CLOUD_ID=$(gcloud secrets versions access latest --secret=es-cloud-id 2>/dev/null); then
     echo -e "${GREEN}✓ Successfully fetched ES_CLOUD_ID from Secret Manager${NC}"
     export ES_CLOUD_ID
 else
@@ -119,7 +150,7 @@ else
 fi
 
 echo -e "${YELLOW}Fetching ES_API_KEY from Secret Manager...${NC}"
-if ES_API_KEY=$(gcloud secrets versions access latest --secret=es-api-key --project=$PROJECT_ID 2>/dev/null); then
+if ES_API_KEY=$(gcloud secrets versions access latest --secret=es-api-key 2>/dev/null); then
     echo -e "${GREEN}✓ Successfully fetched ES_API_KEY from Secret Manager${NC}"
     export ES_API_KEY
 else
@@ -130,17 +161,6 @@ fi
 if [ -z "$ES_INDEX_NAME" ]; then
     export ES_INDEX_NAME="university_documents"
 fi
-echo ""
-
-# Check if project ID is set
-if [ -z "$PROJECT_ID" ]; then
-    echo -e "${RED}Error: GCP_PROJECT_ID environment variable is not set${NC}"
-    echo "Please set it with: export GCP_PROJECT_ID='your-project-id'"
-    exit 1
-fi
-
-echo -e "${GREEN}Using GCP Project: ${PROJECT_ID}${NC}"
-echo -e "${GREEN}Region: ${REGION}${NC}"
 echo ""
 
 # Function to check if command exists
@@ -177,11 +197,6 @@ if [ ${#MISSING_TOOLS[@]} -gt 0 ]; then
 fi
 
 echo -e "${GREEN}✓ All required tools are installed${NC}"
-echo ""
-
-# Set GCP project
-echo -e "${YELLOW}Setting GCP project...${NC}"
-gcloud config set project $PROJECT_ID
 echo ""
 
 # Deployment Functions
