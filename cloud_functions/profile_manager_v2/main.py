@@ -12,7 +12,7 @@ import functions_framework
 from flask import jsonify, request
 
 # Import all modules  
-from firestore_db import get_db
+from firestore_db import get_db, NOTES_COLLECTIONS
 from profile_operations import (
     process_and_index_profile,
     get_student_profile,
@@ -1675,7 +1675,62 @@ def profile_manager_v2_http_entry(request):
             except Exception as e:
                 logger.error(f"[UPDATE_SCHOLARSHIP_STATUS ERROR] {str(e)}")
                 return add_cors_headers({'success': False, 'error': str(e)}, 500)
-        
+
+        # --- UPDATE NOTES (cross-collection write for the consolidated Roadmap UI) ---
+        # Single endpoint covering the five user-owned collections that already
+        # carry a `notes` field. Whitelisted via NOTES_COLLECTIONS in firestore_db
+        # so the endpoint can never write to arbitrary collections.
+        elif resource_type == 'update-notes' and request.method == 'POST':
+            data = request.get_json(silent=True) or {}
+            user_email = data.get('user_email')
+            collection = data.get('collection')
+            item_id = data.get('item_id')
+            notes = data.get('notes', '')
+
+            if not user_email or not collection or not item_id:
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'user_email, collection, and item_id required'
+                }, 400)
+            if collection not in NOTES_COLLECTIONS:
+                return add_cors_headers({
+                    'success': False,
+                    'error': f'collection must be one of: {sorted(NOTES_COLLECTIONS)}'
+                }, 400)
+            if not isinstance(notes, str):
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'notes must be a string (use empty string to clear)'
+                }, 400)
+            # 50KB cap. Plenty of room for free-form notes; well under the
+            # 1 MB Firestore document size limit even with other fields present.
+            if len(notes) > 50_000:
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'notes too long (max 50000 chars)'
+                }, 400)
+
+            try:
+                db = get_db()
+                result = db.update_notes(user_email, collection, item_id, notes)
+                if result.get('ok'):
+                    return add_cors_headers({
+                        'success': True,
+                        'updated_at': result['updated_at']
+                    }, 200)
+                if result.get('reason') == 'not_found':
+                    return add_cors_headers({
+                        'success': False,
+                        'error': f'{collection}/{item_id} not found for {user_email}'
+                    }, 404)
+                return add_cors_headers({
+                    'success': False,
+                    'error': result.get('message', 'unknown error')
+                }, 500)
+            except Exception as e:
+                logger.error(f"[UPDATE_NOTES ERROR] {str(e)}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+
         # --- NOT FOUND ---
         else:
             return add_cors_headers({'error': 'Not Found', 'resource': resource_type}, 404)

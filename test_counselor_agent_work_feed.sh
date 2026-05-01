@@ -21,32 +21,32 @@ FAILED=0
 
 assert_status() {
     local name="$1" url="$2" expected="$3"
-    ((TOTAL++))
+    TOTAL=$((TOTAL + 1))
     local actual
     actual=$(curl -s -o /dev/null -w "%{http_code}" "$url")
     if [ "$actual" = "$expected" ]; then
         echo -e "${GREEN}✓${NC} $name (HTTP $actual)"
-        ((PASSED++))
+        PASSED=$((PASSED + 1))
     else
         echo -e "${RED}✗${NC} $name (expected $expected, got $actual)"
         echo -e "  URL: $url"
-        ((FAILED++))
+        FAILED=$((FAILED + 1))
     fi
 }
 
 assert_json_field() {
     local name="$1" url="$2" jq_filter="$3" expected="$4"
-    ((TOTAL++))
+    TOTAL=$((TOTAL + 1))
     local body actual
     body=$(curl -s "$url")
     actual=$(echo "$body" | jq -r "$jq_filter" 2>/dev/null || echo "<jq-error>")
     if [ "$actual" = "$expected" ]; then
         echo -e "${GREEN}✓${NC} $name ($jq_filter == $expected)"
-        ((PASSED++))
+        PASSED=$((PASSED + 1))
     else
         echo -e "${RED}✗${NC} $name (expected $expected, got $actual)"
         echo -e "  Body: $(echo "$body" | head -c 200)"
-        ((FAILED++))
+        FAILED=$((FAILED + 1))
     fi
 }
 
