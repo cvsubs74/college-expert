@@ -302,6 +302,137 @@ TEMPLATES = {
 from counselor_tools import fetch_aggregated_deadlines, get_student_profile, get_college_list
 
 # =============================================================================
+# GRADE & SEMESTER RESOLUTION
+# =============================================================================
+# These helpers map (caller hints + profile + current date) → a template key.
+# Behavior is additive over the legacy logic that lived inline in
+# generate_roadmap: callers that pass BOTH grade_level and semester get their
+# values honored; otherwise the resolver falls back to the existing
+# graduation_year + month-based inference. The bar for "honor caller" is
+# intentionally high — passing only grade_level (which today's frontend
+# hardcodes to '11th Grade') does NOT trigger override, so we don't break
+# users whose profile.graduation_year is up-to-date while the frontend still
+# ships a stale grade.
+
+VALID_SEMESTERS = ('fall', 'spring', 'summer')
+
+# Some grade/semester combos don't have their own template (academic calendar
+# doesn't really have a freshman-summer or senior-summer phase). Fall back to
+# the spring template of the same grade — that's the closest semantic match
+# and matches the legacy behavior for senior summer.
+_TEMPLATE_FALLBACKS = {
+    'freshman_summer': 'freshman_spring',
+    'sophomore_summer': 'sophomore_spring',
+    'senior_summer': 'senior_spring',
+}
+
+
+def semester_from_date(now=None):
+    """Return 'fall' (Aug-Dec), 'spring' (Jan-May), or 'summer' (Jun-Jul)."""
+    now = now or datetime.now()
+    m = now.month
+    if 8 <= m <= 12:
+        return 'fall'
+    if 1 <= m <= 5:
+        return 'spring'
+    return 'summer'
+
+
+def grade_name_from_grade_level(grade_level):
+    """
+    Map a UI-style grade label ('9th Grade', 'Junior', '11th', etc.) to one
+    of ('freshman', 'sophomore', 'junior', 'senior'). Returns None if the
+    string doesn't clearly indicate a grade.
+    """
+    if not grade_level or not isinstance(grade_level, str):
+        return None
+    g = grade_level.lower()
+    if '9' in g or 'freshman' in g:
+        return 'freshman'
+    if '10' in g or 'sophomore' in g:
+        return 'sophomore'
+    if '11' in g or 'junior' in g:
+        return 'junior'
+    if '12' in g or 'senior' in g:
+        return 'senior'
+    return None
+
+
+def grade_name_from_graduation_year(grad_year, now=None):
+    """
+    Compute the student's current grade name from their graduation year and
+    today's date, mirroring the inline mapping that used to live in
+    generate_roadmap (so users without caller-provided overrides see the same
+    template they got before this refactor).
+    """
+    now = now or datetime.now()
+    years_until_grad = grad_year - now.year
+    semester = semester_from_date(now)
+
+    if years_until_grad <= 0:
+        return 'senior'
+    if years_until_grad == 1:
+        return 'senior' if semester == 'fall' else 'junior'
+    if years_until_grad == 2:
+        return 'junior' if semester == 'fall' else 'sophomore'
+    if years_until_grad == 3:
+        return 'sophomore' if semester == 'fall' else 'freshman'
+    return 'freshman'
+
+
+def _compose_template_key(grade, semester):
+    """Compose '<grade>_<semester>' with the summer-fallback table applied."""
+    candidate = f'{grade}_{semester}'
+    if candidate in TEMPLATES:
+        return candidate
+    return _TEMPLATE_FALLBACKS.get(candidate)
+
+
+def resolve_template_key(grade_level=None, semester=None, profile=None, now=None):
+    """
+    Pick a template key honoring caller hints when both are provided, else
+    falling back to profile.graduation_year + computed semester, else default.
+
+    Returns (template_key, source) where source is one of:
+      'caller'  — both grade_level and semester were provided and resolved.
+      'profile' — derived from profile.graduation_year + computed semester.
+      'default' — no usable input; conservative default ('senior_fall').
+    """
+    sem_in = semester if semester in VALID_SEMESTERS else None
+    grade_in = grade_name_from_grade_level(grade_level)
+
+    # Caller wins only when BOTH are provided AND resolve to a known template.
+    if grade_in and sem_in:
+        key = _compose_template_key(grade_in, sem_in)
+        if key:
+            return key, 'caller'
+
+    # Profile-based fallback. Compute semester from date (Aug-Dec=fall, etc.).
+    computed_sem = sem_in or semester_from_date(now)
+    grad_year = None
+    if profile:
+        try:
+            grad_year_raw = profile.get('graduation_year')
+            grad_year = int(grad_year_raw) if grad_year_raw else None
+        except (TypeError, ValueError):
+            grad_year = None
+
+    if grad_year:
+        computed_grade = grade_name_from_graduation_year(grad_year, now=now)
+        key = _compose_template_key(computed_grade, computed_sem)
+        if key:
+            return key, 'profile'
+
+    # Last resort: caller passed grade alone but no profile/grad_year? Use it.
+    if grade_in:
+        key = _compose_template_key(grade_in, computed_sem)
+        if key:
+            return key, 'caller-grade-only'
+
+    return 'senior_fall', 'default'
+
+
+# =============================================================================
 # COLLEGE-SPECIFIC TRANSLATION
 # =============================================================================
 
@@ -493,96 +624,35 @@ def translate_task(generic_task, college_context):
 def generate_roadmap(request):
     """
     Generate or retrieve a student roadmap.
-    Payload: { "grade_level": "12th Grade", "user_email": "student@example.com" }
+    Payload: {
+        "user_email":   "student@example.com",     # required for personalization
+        "grade_level":  "12th Grade",              # optional caller hint
+        "semester":     "fall" | "spring" | "summer"  # optional caller hint
+    }
+    Caller-provided (grade_level, semester) win when BOTH are present and
+    resolve to a known template; otherwise the resolver falls back to
+    profile.graduation_year + the current month's semester.
     Returns: dict (not Response object)
     """
     try:
-        data = request.get_json()
+        data = request.get_json() or {}
         user_email = data.get('user_email')
-        
-        # Determine grade level from profile graduation_year if available
-        template_key = 'senior_fall'  # Default
-        
-        if user_email:
-            profile = get_student_profile(user_email)
-            
-            if profile and profile.get('graduation_year'):
-                from datetime import datetime
-                current_year = datetime.now().year
-                current_month = datetime.now().month
-                grad_year = int(profile.get('graduation_year'))
-                
-                # Calculate current grade based on graduation year
-                # School year: Aug-May, with graduation typically in May/June
-                # Determine current semester: Fall (Aug-Dec), Spring (Jan-May), Summer (Jun-Jul)
-                years_until_grad = grad_year - current_year
-                is_fall = current_month >= 8  # Aug-Dec
-                is_spring = 1 <= current_month <= 5  # Jan-May
-                
-                # Map years to grade level and semester
-                if years_until_grad == 0:
-                    # Graduating this year - Senior Spring (Jan-May) or post-graduation
-                    if is_spring:
-                        template_key = 'senior_spring'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Senior Spring (current: {current_year}-{current_month:02d})")
-                    else:
-                        # June onwards after graduation - default to spring
-                        template_key = 'senior_spring'
-                        logger.info(f"[ROADMAP] Student graduated {grad_year}, showing Senior Spring timeline (current: {current_year}-{current_month:02d})")
-                        
-                elif years_until_grad == 1:
-                    # Graduating next year - Senior Fall, Junior Summer, or Junior Spring
-                    is_summer = 6 <= current_month <= 7  # June-July = Summer
-                    
-                    if is_fall:
-                        template_key = 'senior_fall'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Senior Fall (current: {current_year}-{current_month:02d})")
-                    elif is_summer:
-                        # Rising senior in summer - CRITICAL TIME for essay prep
-                        template_key = 'junior_summer'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Junior Summer (current: {current_year}-{current_month:02d})")
-                    else:
-                        template_key = 'junior_spring'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Junior Spring (current: {current_year}-{current_month:02d})")
-                        
-                elif years_until_grad == 2:
-                    # Graduating in 2 years - Junior or Sophomore
-                    if is_fall:
-                        template_key = 'junior_fall'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Junior Fall (current: {current_year}-{current_month:02d})")
-                    else:
-                        template_key = 'sophomore_spring'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Sophomore Spring (current: {current_year}-{current_month:02d})")
-                        
-                elif years_until_grad == 3:
-                    # Graduating in 3 years - Sophomore or Freshman
-                    if is_fall:
-                        template_key = 'sophomore_fall'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Sophomore Fall (current: {current_year}-{current_month:02d})")
-                    else:
-                        template_key = 'freshman_spring'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Freshman Spring (current: {current_year}-{current_month:02d})")
-                        
-                elif years_until_grad >= 4:
-                    # Graduating in 4+ years - Freshman or earlier
-                    if is_fall:
-                        template_key = 'freshman_fall'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Freshman Fall (current: {current_year}-{current_month:02d})")
-                    else:
-                        template_key = 'freshman_spring'
-                        logger.info(f"[ROADMAP] Student graduating {grad_year} = Freshman Spring (current: {current_year}-{current_month:02d})")
-                        
-                else:
-                    # Negative years_until_grad - already graduated, default to senior spring
-                    template_key = 'senior_spring'
-                    logger.warning(f"[ROADMAP] Student already graduated ({grad_year}), defaulting to Senior Spring (current: {current_year}-{current_month:02d})")
-            else:
-                # Fallback to grade_level parameter if provided
-                current_grade = data.get('grade_level', '12th Grade')
-                if '11' in current_grade or 'Junior' in current_grade:
-                    template_key = 'junior_spring'
-                logger.info(f"[ROADMAP] No graduation_year found, using grade_level={current_grade}")
-        
+        caller_grade_level = data.get('grade_level')
+        caller_semester = data.get('semester')
+
+        profile = get_student_profile(user_email) if user_email else None
+
+        template_key, resolution_source = resolve_template_key(
+            grade_level=caller_grade_level,
+            semester=caller_semester,
+            profile=profile,
+        )
+        logger.info(
+            f"[ROADMAP] Resolved template_key={template_key} source={resolution_source} "
+            f"(caller_grade={caller_grade_level!r}, caller_semester={caller_semester!r}, "
+            f"profile_grad_year={(profile or {}).get('graduation_year')!r})"
+        )
+
         # Get base template
         template = TEMPLATES.get(template_key, TEMPLATES['senior_fall']).copy()
         
@@ -608,11 +678,18 @@ def generate_roadmap(request):
         else:
             logger.info(f"[ROADMAP] No college list - using generic template tasks")
         
+        # Surface the resolved grade/semester so the client can render labels
+        # consistently with what the server actually used (and so debug logs
+        # can be cross-referenced quickly).
+        resolved_grade, _, resolved_semester = template_key.partition('_')
         return {
             'success': True,
             'roadmap': template,
             'metadata': {
                 'template_used': template_key,
+                'grade_used': resolved_grade,
+                'semester_used': resolved_semester,
+                'resolution_source': resolution_source,
                 'colleges_count': len(college_context.get('colleges', [])) if college_context else 0,
                 'personalized': bool(college_context and college_context.get('colleges')),
                 'last_updated': datetime.now().isoformat()
