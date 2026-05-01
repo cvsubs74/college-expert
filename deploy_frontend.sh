@@ -11,9 +11,27 @@ BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+# college-expert uses a separate Google account from the user's other work.
+# Pin both account and Firebase project here; pass them explicitly to firebase
+# rather than relying on the active default (which may be an unrelated account).
+FIREBASE_ACCOUNT=${GCP_ACCOUNT:-"cvsubs@gmail.com"}
+FIREBASE_PROJECT=${GCP_PROJECT_ID:-"college-counselling-478115"}
+
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║     College Counselor - Frontend Deployment               ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
+echo ""
+
+# Verify the right Firebase account is authenticated. firebase login:list
+# emits both the active account and "Other available accounts" — we accept
+# either, since we always pass --account explicitly to firebase deploy below.
+if ! firebase login:list 2>/dev/null | grep -q "$FIREBASE_ACCOUNT"; then
+    echo -e "${RED}Error: Firebase CLI is not authenticated as '${FIREBASE_ACCOUNT}'${NC}"
+    echo -e "${YELLOW}Run: firebase login:add ${FIREBASE_ACCOUNT}${NC}"
+    exit 1
+fi
+echo -e "${GREEN}Using Firebase account: ${FIREBASE_ACCOUNT}${NC}"
+echo -e "${GREEN}Using Firebase project: ${FIREBASE_PROJECT}${NC}"
 echo ""
 
 cd frontend
@@ -92,7 +110,7 @@ npm run build
 
 # Deploy to Firebase
 echo -e "${YELLOW}Deploying to Firebase...${NC}"
-firebase deploy --only hosting
+firebase deploy --only hosting --account "$FIREBASE_ACCOUNT" --project "$FIREBASE_PROJECT"
 
 echo ""
 echo -e "${GREEN}✓ Frontend deployed successfully!${NC}"
