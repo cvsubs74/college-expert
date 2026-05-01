@@ -1016,6 +1016,9 @@ KNOWLEDGE_BASE_UNIVERSITIES_URL: "${KB_URL}"
 GEMINI_API_KEY: "${GEMINI_API_KEY}"
 EOF
 
+    # min-instances=1 keeps one warm instance so the /work-feed focus card on
+    # the Roadmap tab never lands on a cold start. Same pattern used by the
+    # hybrid ADK agent. See docs/design/roadmap-consolidation.md.
     gcloud functions deploy $COUNSELOR_AGENT_FUNCTION \
         --gen2 \
         --runtime=python312 \
@@ -1027,7 +1030,7 @@ EOF
         --env-vars-file=env.deploy.yaml \
         --timeout=300s \
         --memory=512MB \
-        --min-instances=0 \
+        --min-instances=1 \
         --max-instances=10
 
     COUNSELOR_AGENT_URL=$(gcloud functions describe $COUNSELOR_AGENT_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')

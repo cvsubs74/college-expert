@@ -182,6 +182,24 @@ def counselor_agent_http(request):
                 logger.error(f"Error in get-tasks: {e}")
                 return add_cors_headers({'error': str(e)}, 500)
             
+        elif path == 'work-feed':
+            # Unified focus list across roadmap_tasks, essays, scholarships, and
+            # college deadlines. Powers the "This Week" card on the Roadmap tab.
+            try:
+                from work_feed import get_work_feed
+                user_email = request.args.get('user_email')
+                if not user_email:
+                    return add_cors_headers({'error': 'user_email required'}, 400)
+                try:
+                    limit = int(request.args.get('limit', 8))
+                except (TypeError, ValueError):
+                    return add_cors_headers({'error': 'limit must be an integer'}, 400)
+                result = get_work_feed(user_email, limit=limit)
+                return add_cors_headers(result, 200)
+            except Exception as e:
+                logger.error(f"Error in work-feed: {e}")
+                return add_cors_headers({'error': str(e)}, 500)
+
         elif path == 'health':
             return add_cors_headers({'status': 'ok', 'agent': 'counselor_v1', 'upstream': PROFILE_MANAGER_URL})
         
