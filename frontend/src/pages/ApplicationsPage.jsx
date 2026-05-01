@@ -6,7 +6,7 @@ import '../styles/ApplicationsPage.css';
 const API_BASE_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
 
-export default function ApplicationsPage() {
+export default function ApplicationsPage({ embedded = false }) {
     const { currentUser } = useAuth();
     const [schools, setSchools] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -95,7 +95,7 @@ export default function ApplicationsPage() {
 
     if (loading) {
         return (
-            <div className="essay-page">
+            <div className={embedded ? '' : 'essay-page'}>
                 <div className="loading-state">
                     <div className="spinner"></div>
                     <p>Loading your schools...</p>
@@ -106,7 +106,7 @@ export default function ApplicationsPage() {
 
     if (error) {
         return (
-            <div className="essay-page">
+            <div className={embedded ? '' : 'essay-page'}>
                 <div className="error-state">
                     <p>Error: {error}</p>
                     <button onClick={fetchSchools}>Retry</button>
@@ -116,12 +116,14 @@ export default function ApplicationsPage() {
     }
 
     return (
-        <div className="essay-page">
-            {/* Header */}
-            <header className="essay-header">
-                <h1>Essay Assistant</h1>
-                <p className="subtitle">Deadlines and essay guidance for your saved schools</p>
-            </header>
+        <div className={embedded ? '' : 'essay-page'}>
+            {/* Header — hidden when embedded inside the consolidated Roadmap tab */}
+            {!embedded && (
+                <header className="essay-header">
+                    <h1>Essay Assistant</h1>
+                    <p className="subtitle">Deadlines and essay guidance for your saved schools</p>
+                </header>
+            )}
 
             {/* School Cards */}
             <div className="school-cards">
