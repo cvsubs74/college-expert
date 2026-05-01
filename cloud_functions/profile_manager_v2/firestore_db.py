@@ -13,6 +13,20 @@ from google.cloud.firestore_v1.base_query import FieldFilter
 
 logger = logging.getLogger(__name__)
 
+# Whitelist of user-owned subcollections that carry a free-form `notes` field
+# the consolidated Roadmap UI is allowed to edit via /update-notes. Adding a new
+# collection here without a corresponding `notes` field in its schema is
+# harmless (Firestore will create the field), but the inverse — letting the
+# endpoint write to arbitrary collections — is what this set guards against.
+NOTES_COLLECTIONS = frozenset({
+    'roadmap_tasks',
+    'essay_tracker',
+    'scholarship_tracker',
+    'college_list',
+    'aid_packages',
+})
+
+
 class FirestoreDB:
     """Firestore database client with methods for all profile operations."""
     
@@ -818,6 +832,34 @@ class FirestoreDB:
         except Exception as e:
             logger.error(f"[Firestore] Error updating scholarship status: {e}")
             return False
+
+    # ==================== NOTES (cross-collection) ====================
+
+    def update_notes(self, user_id: str, collection: str, item_id: str, notes: str) -> Dict:
+        """
+        Update the `notes` field on a document in one of the notes-bearing
+        collections (see NOTES_COLLECTIONS). Caller is responsible for
+        validating `collection` against NOTES_COLLECTIONS before calling.
+
+        Returns one of:
+            {'ok': True, 'updated_at': '<iso>'}                 — success
+            {'ok': False, 'reason': 'not_found'}                — item missing
+            {'ok': False, 'reason': 'error', 'message': '...'}  — Firestore error
+        """
+        try:
+            doc_ref = (
+                self.db.collection('users').document(user_id)
+                .collection(collection).document(item_id)
+            )
+            if not doc_ref.get().exists:
+                return {'ok': False, 'reason': 'not_found'}
+            updated_at = datetime.utcnow().isoformat()
+            doc_ref.update({'notes': notes, 'updated_at': updated_at})
+            logger.info(f"[Firestore] Updated notes on {collection}/{item_id} for {user_id}")
+            return {'ok': True, 'updated_at': updated_at}
+        except Exception as e:
+            logger.error(f"[Firestore] Error updating notes on {collection}/{item_id}: {e}")
+            return {'ok': False, 'reason': 'error', 'message': str(e)}
 
 
 # Global instance
