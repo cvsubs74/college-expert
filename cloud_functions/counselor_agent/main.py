@@ -200,6 +200,34 @@ def counselor_agent_http(request):
                 logger.error(f"Error in work-feed: {e}")
                 return add_cors_headers({'error': str(e)}, 500)
 
+        elif path == 'deadlines':
+            # Aggregated college application deadlines for a user, as a flat
+            # list. Thin wrapper over fetch_aggregated_deadlines (the same
+            # helper /work-feed and /roadmap already use). Powers the
+            # ApplicationsPage / Colleges tab on the Roadmap surface.
+            #
+            # Accepts GET (?user_email=...) or POST ({ user_email }) so the
+            # existing ApplicationsPage POST shape works without a frontend
+            # method change.
+            try:
+                from counselor_tools import fetch_aggregated_deadlines
+                if request.method == 'POST':
+                    body = request.get_json(silent=True) or {}
+                    user_email = body.get('user_email') or request.args.get('user_email')
+                else:
+                    user_email = request.args.get('user_email')
+                if not user_email:
+                    return add_cors_headers({'error': 'user_email required'}, 400)
+                deadlines = fetch_aggregated_deadlines(user_email) or []
+                return add_cors_headers({
+                    'success': True,
+                    'deadlines': deadlines,
+                    'count': len(deadlines),
+                }, 200)
+            except Exception as e:
+                logger.error(f"Error in deadlines: {e}")
+                return add_cors_headers({'success': False, 'error': str(e)}, 500)
+
         elif path == 'health':
             return add_cors_headers({'status': 'ok', 'agent': 'counselor_v1', 'upstream': PROFILE_MANAGER_URL})
         
