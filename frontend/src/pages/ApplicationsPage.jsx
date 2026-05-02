@@ -3,7 +3,9 @@ import { useAuth } from '../context/AuthContext';
 import '../styles/ApplicationsPage.css';
 
 // API URLs
-const API_BASE_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL || 'https://profile-manager-v2-pfnwjfp26a-ue.a.run.app';
+// Aggregated deadlines come from counselor_agent (the read-side aggregator
+// that owns this logic). profile_manager_v2 does not expose /get-deadlines.
+const COUNSELOR_AGENT_URL = import.meta.env.VITE_COUNSELOR_AGENT_URL || 'https://us-east1-college-counselling-478115.cloudfunctions.net/counselor-agent';
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
 
 export default function ApplicationsPage({ embedded = false }) {
@@ -19,7 +21,7 @@ export default function ApplicationsPage({ embedded = false }) {
 
         try {
             setLoading(true);
-            const response = await fetch(`${API_BASE_URL}/get-deadlines`, {
+            const response = await fetch(`${COUNSELOR_AGENT_URL}/deadlines`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user_email: currentUser.email })
@@ -144,7 +146,7 @@ export default function ApplicationsPage({ embedded = false }) {
                                         <h3>{school.university_name}</h3>
                                         {nextDeadline && (
                                             <div className={`deadline-badge ${getUrgencyClass(daysUntil)}`}>
-                                                <span className="deadline-plan">{nextDeadline.plan_type}</span>
+                                                <span className="deadline-plan">{nextDeadline.deadline_type}</span>
                                                 <span className="deadline-date">
                                                     {new Date(nextDeadline.date).toLocaleDateString('en-US', {
                                                         month: 'short',
