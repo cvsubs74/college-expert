@@ -10,6 +10,7 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { fetchStudentRoadmap } from '../services/api';
 import RoadmapView from '../components/counselor/RoadmapView';
+import ThisWeekFocusCard from '../components/roadmap/ThisWeekFocusCard';
 import EssayDashboard from './EssayDashboard';
 import ScholarshipTracker from './ScholarshipTracker';
 import ApplicationsPage from './ApplicationsPage';
@@ -131,25 +132,28 @@ const PlanTab = ({ userEmail }) => {
         return () => { cancelled = true; };
     }, [userEmail]);
 
-    if (error) {
-        return (
-            <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex items-start gap-3">
-                <ExclamationTriangleIcon className="h-5 w-5 text-red-600 mt-0.5" />
-                <div>
-                    <h3 className="text-sm font-medium text-red-800">Connection Error</h3>
-                    <p className="text-sm text-red-600 mt-1">{error}</p>
-                    <button
-                        onClick={() => window.location.reload()}
-                        className="mt-2 text-xs font-medium text-red-700 hover:text-red-900 underline"
-                    >
-                        Retry Connection
-                    </button>
+    return (
+        <>
+            <ThisWeekFocusCard userEmail={userEmail} />
+            {error ? (
+                <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex items-start gap-3">
+                    <ExclamationTriangleIcon className="h-5 w-5 text-red-600 mt-0.5" />
+                    <div>
+                        <h3 className="text-sm font-medium text-red-800">Connection Error</h3>
+                        <p className="text-sm text-red-600 mt-1">{error}</p>
+                        <button
+                            onClick={() => window.location.reload()}
+                            className="mt-2 text-xs font-medium text-red-700 hover:text-red-900 underline"
+                        >
+                            Retry Connection
+                        </button>
+                    </div>
                 </div>
-            </div>
-        );
-    }
-
-    return <RoadmapView roadmap={roadmap} isLoading={loading} />;
+            ) : (
+                <RoadmapView roadmap={roadmap} isLoading={loading} />
+            )}
+        </>
+    );
 };
 
 export default RoadmapPage;
