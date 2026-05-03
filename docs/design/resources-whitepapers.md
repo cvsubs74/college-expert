@@ -1,6 +1,6 @@
 # Design: Resources & Whitepapers
 
-Status: Draft (awaiting approval)
+Status: Approved
 Last updated: 2026-05-03
 Related PRD: [docs/prd/resources-whitepapers.md](../prd/resources-whitepapers.md)
 

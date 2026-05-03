@@ -1,6 +1,6 @@
 # PRD: Resources & Whitepapers
 
-Status: Draft (awaiting approval)
+Status: Approved
 Owner: Product
 Last updated: 2026-05-03
 
