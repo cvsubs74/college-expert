@@ -1,0 +1,20 @@
+{
+    "id": "all_uc_only",
+    "description": "Junior with an all-UC college list. Stresses the UC group-task translation specifically.",
+    "default_student_name": "Avery Thompson",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.6,
+        "intended_major": "Sociology",
+        "interests": ["volunteering", "writing", "tennis"]
+    },
+    "colleges_template": [
+        "university_of_california_berkeley",
+        "university_of_california_los_angeles",
+        "university_of_california_san_diego",
+        "university_of_california_davis"
+    ],
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

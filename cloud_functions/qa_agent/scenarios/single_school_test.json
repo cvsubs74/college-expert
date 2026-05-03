@@ -1,0 +1,15 @@
+{
+    "id": "single_school_test",
+    "description": "Edge case: junior with a one-school list. Exercises the per-school translation in isolation (no UC grouping, no multi-school sort).",
+    "default_student_name": "Drew Wilson",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.4,
+        "intended_major": "History",
+        "interests": ["museum docent", "running"]
+    },
+    "colleges_template": ["university_of_minnesota_twin_cities"],
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

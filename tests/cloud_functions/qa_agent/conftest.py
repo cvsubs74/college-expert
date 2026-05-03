@@ -1,0 +1,129 @@
+"""
+Test setup for the QA agent.
+
+Stubs the heavy Google libraries (firestore, firebase-admin, generativeai)
+so the agent's logic can be unit-tested without provisioning credentials,
+network, or actual Cloud SDKs.
+
+The qa_agent module imports its way down through firestore_store →
+google.cloud.firestore, auth → firebase_admin, and corpus →
+google.generativeai. We stub each at the module level before any test
+imports the qa_agent package.
+"""
+
+import sys
+import types
+from pathlib import Path
+
+# Source on sys.path so `import auth, corpus, runner` etc. work as if
+# we were inside the function bundle.
+SOURCE_DIR = Path(__file__).resolve().parents[3] / 'cloud_functions' / 'qa_agent'
+if str(SOURCE_DIR) not in sys.path:
+    sys.path.insert(0, str(SOURCE_DIR))
+
+
+def _ensure_module(name):
+    if name in sys.modules:
+        return sys.modules[name]
+    mod = types.ModuleType(name)
+    sys.modules[name] = mod
+    mod.__path__ = []
+    return mod
+
+
+# --- Stub google.cloud.firestore ---------------------------------------------
+_firestore = _ensure_module('google.cloud.firestore')
+
+
+class _Query:
+    DESCENDING = 'desc'
+
+
+_firestore.Query = _Query
+
+
+class _StubClient:
+    """A bare-minimum Firestore client stub. Tests that exercise
+    firestore_store inject their own fake; this exists so the import
+    works."""
+
+    def collection(self, *_a, **_k):
+        return _StubCollection()
+
+
+class _StubCollection:
+    def document(self, *_a, **_k):
+        return _StubDoc()
+
+    def order_by(self, *_a, **_k):
+        return self
+
+    def limit(self, *_a, **_k):
+        return self
+
+    def stream(self):
+        return iter(())
+
+
+class _StubDoc:
+    def get(self):
+        class _Snap:
+            exists = False
+            def to_dict(self):
+                return None
+        return _Snap()
+
+    def set(self, *_a, **_k):
+        return None
+
+    @property
+    def reference(self):
+        return self
+
+    def delete(self):
+        return None
+
+
+_firestore.Client = _StubClient
+
+
+# --- Stub firebase_admin -----------------------------------------------------
+_fa = _ensure_module('firebase_admin')
+_fa._apps = {}
+
+
+def _initialize_app():
+    _fa._apps['DEFAULT'] = object()
+
+
+_fa.initialize_app = _initialize_app
+
+
+_fa_auth = _ensure_module('firebase_admin.auth')
+
+
+def _create_custom_token(uid):
+    # Returns bytes — that's what the real SDK does.
+    return f'custom-token-for-{uid}'.encode('utf-8')
+
+
+_fa_auth.create_custom_token = _create_custom_token
+
+# `from firebase_admin import credentials` — used by auth.py's lazy init.
+_ensure_module('firebase_admin.credentials')
+
+
+# --- Stub google.generativeai -------------------------------------------------
+_genai = _ensure_module('google.generativeai')
+_genai.configure = lambda *_a, **_k: None
+
+
+class _StubModel:
+    def __init__(self, *_a, **_k):
+        pass
+
+    def generate_content(self, *_a, **_k):
+        return types.SimpleNamespace(text='')
+
+
+_genai.GenerativeModel = _StubModel

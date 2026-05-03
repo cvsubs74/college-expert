@@ -1045,6 +1045,51 @@ EOF
     cd ../..
 }
 
+deploy_qa_agent() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying QA Agent Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+
+    cd cloud_functions/qa_agent
+
+    PM_URL="https://$REGION-$PROJECT_ID.cloudfunctions.net/profile-manager-v2"
+    CA_URL="https://$REGION-$PROJECT_ID.cloudfunctions.net/$COUNSELOR_AGENT_FUNCTION"
+
+    # The QA agent's secrets — admin token, web API key, and the test
+    # user UID — must already exist in Secret Manager. See
+    # docs/qa-agent-setup.md for the one-time provisioning steps.
+    cat > env.deploy.yaml <<EOF
+PROFILE_MANAGER_URL: "${PM_URL}"
+COUNSELOR_AGENT_URL: "${CA_URL}"
+QA_TEST_USER_EMAIL: "duser8531@gmail.com"
+GEMINI_API_KEY: "${GEMINI_API_KEY}"
+EOF
+
+    # No --min-instances: cold starts are fine for an on-demand /
+    # scheduled monitor. Memory bumped a notch above default to give
+    # the LLM client + multiple in-flight HTTP calls headroom.
+    gcloud functions deploy qa-agent \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=qa_agent \
+        --trigger-http \
+        --no-allow-unauthenticated \
+        --env-vars-file=env.deploy.yaml \
+        --set-secrets="QA_ADMIN_TOKEN=qa-admin-token:latest,FIREBASE_WEB_API_KEY=firebase-web-api-key:latest,QA_TEST_USER_UID=qa-test-user-uid:latest" \
+        --timeout=540s \
+        --memory=512MB \
+        --max-instances=2
+
+    QA_AGENT_URL=$(gcloud functions describe qa-agent --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ QA Agent deployed: ${QA_AGENT_URL}${NC}"
+
+    rm -f env.deploy.yaml
+    cd ../..
+}
+
 deploy_frontend() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Frontend${NC}"
@@ -1208,6 +1253,9 @@ case "$DEPLOY_TARGET" in
         ;;
     "contact")
         deploy_contact_form
+        ;;
+    "qa-agent")
+        deploy_qa_agent
         ;;
     "all")
         echo -e "${CYAN}Deploying complete system...${NC}"

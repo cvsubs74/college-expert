@@ -1,0 +1,21 @@
+{
+    "id": "senior_spring_decisions",
+    "description": "Senior in spring — applications submitted, waiting for decisions. Tests the late-cycle template and overdue-marker behavior on past deadlines.",
+    "default_student_name": "Casey Morgan",
+    "profile_template": {
+        "grade_level": "12th Grade",
+        "graduation_year": 2026,
+        "gpa": 3.7,
+        "intended_major": "English",
+        "interests": ["writing", "journalism", "theater"]
+    },
+    "colleges_template": [
+        "northwestern_university",
+        "university_of_chicago",
+        "vanderbilt_university",
+        "boston_university",
+        "penn_state_university"
+    ],
+    "expected_template_used": "senior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

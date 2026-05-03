@@ -862,6 +862,54 @@ class FirestoreDB:
             return {'ok': False, 'reason': 'error', 'message': str(e)}
 
 
+    # ==================== QA / TEST DATA HARNESS ====================
+
+    def clear_test_data(self, user_id: str) -> Dict:
+        """
+        Wipe every document under `users/{user_id}/{collection}/` for a
+        QA test user. Used by the qa_agent between scenarios so each run
+        starts from a known-empty state.
+
+        IMPORTANT: caller is responsible for verifying that `user_id` is
+        the dedicated QA test account. This method does not check the
+        email allowlist — that's the endpoint's job (see main.py).
+
+        Returns a dict {ok: True, deleted: {<collection>: <count>, ...}}.
+
+        We delete by enumerating each known subcollection rather than
+        recursively walking — keeps the operation bounded and avoids
+        accidentally wiping a future subcollection we don't know about.
+        """
+        # Subcollections that the QA agent and its scenarios touch. The
+        # set is intentionally explicit; adding here is a deliberate
+        # choice, not an oversight.
+        TEST_SUBCOLLECTIONS = (
+            'profile',
+            'roadmap_tasks',
+            'essay_tracker',
+            'scholarship_tracker',
+            'college_list',
+            'aid_packages',
+            'tasks',  # legacy alias used by some endpoints
+        )
+
+        deleted_counts: Dict[str, int] = {}
+        try:
+            user_ref = self.db.collection('users').document(user_id)
+            for sub in TEST_SUBCOLLECTIONS:
+                count = 0
+                for doc in user_ref.collection(sub).stream():
+                    doc.reference.delete()
+                    count += 1
+                if count:
+                    deleted_counts[sub] = count
+            logger.info(f"[Firestore] clear_test_data({user_id}) deleted {deleted_counts}")
+            return {'ok': True, 'deleted': deleted_counts}
+        except Exception as e:
+            logger.error(f"[Firestore] clear_test_data({user_id}) failed: {e}")
+            return {'ok': False, 'reason': 'error', 'message': str(e)}
+
+
 # Global instance
 _db_instance = None
 

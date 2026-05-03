@@ -1,0 +1,15 @@
+{
+    "id": "freshman_fall_starter",
+    "description": "Freshman in fall semester, just starting to think about college. One state-school target on the list.",
+    "default_student_name": "Alex Rivera",
+    "profile_template": {
+        "grade_level": "9th Grade",
+        "graduation_year": 2030,
+        "gpa": 3.5,
+        "intended_major": "Undecided",
+        "interests": ["reading", "soccer"]
+    },
+    "colleges_template": ["university_of_texas_at_austin"],
+    "expected_template_used": "freshman_fall",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

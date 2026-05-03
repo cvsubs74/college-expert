@@ -1731,6 +1731,54 @@ def profile_manager_v2_http_entry(request):
                 logger.error(f"[UPDATE_NOTES ERROR] {str(e)}")
                 return add_cors_headers({'success': False, 'error': str(e)}, 500)
 
+        # --- CLEAR TEST DATA (QA agent only) ---
+        # Wipes every subcollection under users/{email}/ for the dedicated
+        # QA test account. Two gates, both required:
+        #   1. The target email must match QA_TEST_USER_EMAIL env var
+        #      (defaults to duser8531@gmail.com — the dedicated test
+        #      account).
+        #   2. The X-Admin-Token header must match QA_ADMIN_TOKEN secret.
+        # If either gate fails the endpoint refuses without revealing
+        # which check failed (avoid leaking which protection is in
+        # place).
+        elif resource_type == 'clear-test-data' and request.method == 'POST':
+            import os, secrets as _secrets
+            data = request.get_json(silent=True) or {}
+            user_email = data.get('user_email', '')
+
+            allowed_email = os.getenv('QA_TEST_USER_EMAIL', 'duser8531@gmail.com')
+            expected_token = os.getenv('QA_ADMIN_TOKEN', '')
+            provided_token = request.headers.get('X-Admin-Token', '')
+
+            email_ok = bool(user_email) and user_email == allowed_email
+            token_ok = bool(expected_token) and _secrets.compare_digest(
+                provided_token, expected_token
+            )
+            if not (email_ok and token_ok):
+                logger.warning(
+                    "[CLEAR_TEST_DATA] refused: email_ok=%s, token_ok=%s",
+                    email_ok, token_ok,
+                )
+                return add_cors_headers({
+                    'success': False, 'error': 'forbidden'
+                }, 403)
+
+            try:
+                db = get_db()
+                result = db.clear_test_data(user_email)
+                if result.get('ok'):
+                    return add_cors_headers({
+                        'ok': True,
+                        'deleted': result.get('deleted', {}),
+                    }, 200)
+                return add_cors_headers({
+                    'ok': False,
+                    'error': result.get('message', 'unknown error'),
+                }, 500)
+            except Exception as e:
+                logger.error(f"[CLEAR_TEST_DATA] {str(e)}", exc_info=True)
+                return add_cors_headers({'ok': False, 'error': str(e)}, 500)
+
         # --- NOT FOUND ---
         else:
             return add_cors_headers({'error': 'Not Found', 'resource': resource_type}, 404)
