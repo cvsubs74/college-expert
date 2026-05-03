@@ -116,5 +116,9 @@ firebase deploy --only hosting --account "$FIREBASE_ACCOUNT" --project "$FIREBAS
 
 echo ""
 echo -e "${GREEN}✓ Frontend deployed successfully!${NC}"
-echo -e "${GREEN}  URL: https://college-counsellor.web.app${NC}"
+echo -e "${GREEN}  URLs:${NC}"
+echo -e "${GREEN}    https://stratiaadmissions.com   (custom domain)${NC}"
+echo -e "${GREEN}    https://college-strategy.web.app (Firebase default)${NC}"
+echo -e "${GREEN}    https://college-strategy.firebaseapp.com${NC}"
+echo -e "${YELLOW}  Note: college-counsellor.web.app hosts a different app (UniMiner) — don't use it.${NC}"
 echo ""
