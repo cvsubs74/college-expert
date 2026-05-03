@@ -219,6 +219,9 @@ const PricingPage = () => {
                         />
                     </Link>
                     <div className="flex items-center gap-4">
+                        <Link to="/resources" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
+                            Resources
+                        </Link>
                         {currentUser && (
                             <div className="flex items-center gap-2 px-3 py-1.5 bg-[#D6E8D5] rounded-full text-sm font-medium text-[#1A4D2E]">
                                 <BoltIcon className="h-4 w-4" />

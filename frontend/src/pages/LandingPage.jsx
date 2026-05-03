@@ -139,6 +139,9 @@ const LandingPage = () => {
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">
+              <Link to="/resources" className="text-[#4A4A4A] hover:text-[#1A4D2E] text-sm font-medium transition-colors">
+                Resources
+              </Link>
               <Link to="/pricing" className="text-[#4A4A4A] hover:text-[#1A4D2E] text-sm font-medium transition-colors">
                 Pricing
               </Link>
@@ -622,6 +625,7 @@ const LandingPage = () => {
             </Link>
 
             <div className="flex gap-8 text-sm text-[#A8C5A6]">
+              <Link to="/resources" className="hover:text-white transition-colors">Resources</Link>
               <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
