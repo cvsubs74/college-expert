@@ -62,12 +62,17 @@ const formatDueLabel = (item) => {
     return urgency || null;
 };
 
-const ThisWeekFocusCard = ({ userEmail, limit = 8 }) => {
+const ThisWeekFocusCard = ({ userEmail, limit = 8, refreshKey = 0 }) => {
     const navigate = useNavigate();
     const [items, setItems] = useState([]);
     const [total, setTotal] = useState(0);
     const [loading, setLoading] = useState(true);
 
+    // refreshKey lets the parent force a refetch after a mutation (e.g.,
+    // a manually-added task should appear immediately in the focus list).
+    // The /work-feed endpoint has a per-instance 60-120s cache, so this
+    // refetch may still see the cached payload — but the new task will
+    // bypass the cache once it expires (server-side TTL).
     useEffect(() => {
         if (!userEmail) return;
         let cancelled = false;
@@ -81,7 +86,7 @@ const ThisWeekFocusCard = ({ userEmail, limit = 8 }) => {
         };
         load();
         return () => { cancelled = true; };
-    }, [userEmail, limit]);
+    }, [userEmail, limit, refreshKey]);
 
     const handleItemClick = (item) => {
         if (item.deep_link) navigate(item.deep_link);

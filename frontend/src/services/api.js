@@ -1970,6 +1970,58 @@ export const getRoadmapTasks = async (userEmail, status = null, universityId = n
 };
 
 /**
+ * Create a user-authored task in the user's roadmap_tasks subcollection.
+ * Stamps `created_by: 'user'` so future surfaces can distinguish manually
+ * added tasks from template-translated ones. Uses the existing generic
+ * /save-roadmap-task endpoint on profile_manager_v2 — no new backend.
+ *
+ * @param {string} userEmail
+ * @param {{title: string, dueDate?: string, universityId?: string, notes?: string}} input
+ *   `dueDate` is YYYY-MM-DD or null. `universityId` is one of the user's
+ *   college_list ids, optional.
+ * @returns {Promise<{success: boolean, task_id: string, error?: string}>}
+ */
+export const createUserTask = async (userEmail, input) => {
+  if (!userEmail || !input?.title?.trim()) {
+    return { success: false, error: 'user_email and a non-empty title are required' };
+  }
+  // Deterministic-enough id: timestamp + random nibble. Avoids collisions
+  // across the same millisecond and is short enough to sort lexicographically.
+  const taskId = `user_task_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+  const taskData = {
+    title: input.title.trim(),
+    status: 'pending',
+    type: 'user',
+    created_by: 'user',
+  };
+  if (input.dueDate) taskData.due_date = input.dueDate;
+  if (input.universityId) taskData.university_id = input.universityId;
+  if (input.notes) taskData.notes = input.notes;
+
+  try {
+    const response = await axios.post(
+      `${getProfileManagerUrl()}/save-roadmap-task`,
+      { user_email: userEmail, task_id: taskId, task_data: taskData },
+      {
+        timeout: 10000,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-User-Email': userEmail,
+        },
+      }
+    );
+    return { ...response.data, task_id: response.data?.task_id || taskId };
+  } catch (error) {
+    console.error('[API] Error creating user task:', error);
+    return {
+      success: false,
+      task_id: taskId,
+      error: error?.response?.data?.error || error.message || 'Failed to create task',
+    };
+  }
+};
+
+/**
  * Fetch the unified "This Week" focus list — the top urgent items across
  * roadmap_tasks, essays, scholarships, and college deadlines for a user.
  * Server-side composes, sorts, and applies urgency thresholds; the client

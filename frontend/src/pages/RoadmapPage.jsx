@@ -6,6 +6,7 @@ import {
     AcademicCapIcon,
     BuildingLibraryIcon,
     ExclamationTriangleIcon,
+    PlusIcon,
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
 import { fetchStudentRoadmap, fetchUserProfile } from '../services/api';
@@ -13,6 +14,7 @@ import { useToast } from '../components/Toast';
 import RoadmapView from '../components/counselor/RoadmapView';
 import ThisWeekFocusCard from '../components/roadmap/ThisWeekFocusCard';
 import FloatingCounselorChat from '../components/roadmap/FloatingCounselorChat';
+import AddTaskModal from '../components/roadmap/AddTaskModal';
 import EssayDashboard from './EssayDashboard';
 import ScholarshipTracker from './ScholarshipTracker';
 import ApplicationsPage from './ApplicationsPage';
@@ -126,6 +128,11 @@ const PlanTab = ({ userEmail }) => {
     const [roadmap, setRoadmap] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [isAddTaskOpen, setIsAddTaskOpen] = useState(false);
+
+    // Bumped after a manual task is saved to force ThisWeekFocusCard to
+    // refetch /work-feed so the new task shows up immediately.
+    const [focusCardRefreshKey, setFocusCardRefreshKey] = useState(0);
 
     useEffect(() => {
         if (!userEmail) return;
@@ -188,7 +195,22 @@ const PlanTab = ({ userEmail }) => {
 
     return (
         <>
-            <ThisWeekFocusCard userEmail={userEmail} />
+            {/* Action row sits above the focus card so users can add a task
+                without scrolling past their week's work. */}
+            <div className="flex items-center justify-end mb-3">
+                <button
+                    type="button"
+                    onClick={() => setIsAddTaskOpen(true)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium
+                        text-[#1A4D2E] bg-[#D6E8D5]/40 hover:bg-[#D6E8D5]
+                        rounded-full transition-colors"
+                >
+                    <PlusIcon className="w-4 h-4" />
+                    Add task
+                </button>
+            </div>
+
+            <ThisWeekFocusCard userEmail={userEmail} refreshKey={focusCardRefreshKey} />
             {error ? (
                 <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex items-start gap-3">
                     <ExclamationTriangleIcon className="h-5 w-5 text-red-600 mt-0.5" />
@@ -206,6 +228,13 @@ const PlanTab = ({ userEmail }) => {
             ) : (
                 <RoadmapView roadmap={roadmap} isLoading={loading} />
             )}
+
+            <AddTaskModal
+                userEmail={userEmail}
+                isOpen={isAddTaskOpen}
+                onClose={() => setIsAddTaskOpen(false)}
+                onSaved={() => setFocusCardRefreshKey((k) => k + 1)}
+            />
         </>
     );
 };
