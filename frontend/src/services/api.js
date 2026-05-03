@@ -1961,6 +1961,30 @@ export const getRoadmapTasks = async (userEmail, status = null, universityId = n
 };
 
 /**
+ * Fetch the unified "This Week" focus list — the top urgent items across
+ * roadmap_tasks, essays, scholarships, and college deadlines for a user.
+ * Server-side composes, sorts, and applies urgency thresholds; the client
+ * just renders.
+ *
+ * @returns {Promise<{success: boolean, items: Array, total: number}>}
+ *   On error, returns { success: false, items: [], total: 0 } so callers
+ *   can render an empty state without special-casing failures.
+ */
+export const fetchWorkFeed = async (userEmail, limit = 8) => {
+  try {
+    const response = await axios.get(`${COUNSELOR_AGENT_URL}/work-feed`, {
+      params: { user_email: userEmail, limit },
+      timeout: 15000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error fetching work feed:', error);
+    return { success: false, items: [], total: 0 };
+  }
+};
+
+/**
  * Update task status
  */
 export const updateTaskStatus = async (userEmail, taskId, status) => {
