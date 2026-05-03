@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { getPaperBySlug, papers } from '../data/resources';
 import PaperHero from '../components/resources/PaperHero';
 import PaperSection from '../components/resources/PaperSection';
-import ResourcesHeader from '../components/resources/ResourcesHeader';
+import Navigation from '../components/Navigation';
 
 // /resources/<slug> — long-form reading view for a single whitepaper.
 //
@@ -53,7 +53,7 @@ const ResourcePaperPage = () => {
 
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            <ResourcesHeader />
+            <Navigation />
             <PaperHero paper={paper} />
 
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">

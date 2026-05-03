@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { BookOpenIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { papers } from '../data/resources';
 import PaperCard from '../components/resources/PaperCard';
-import ResourcesHeader from '../components/resources/ResourcesHeader';
+import Navigation from '../components/Navigation';
 
 // /resources hub. Public-readable. Lists every whitepaper as a card.
 //
@@ -18,7 +18,7 @@ const ResourcesPage = () => {
 
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            <ResourcesHeader />
+            <Navigation />
 
             {/* Hero */}
             <section className="relative overflow-hidden border-b border-[#E0DED8]">
