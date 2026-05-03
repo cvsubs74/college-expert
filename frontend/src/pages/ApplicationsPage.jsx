@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
-import { getCollegeList } from '../services/api';
+import { getCollegeList, getEssayTracker, getScholarshipTracker } from '../services/api';
 import NotesAffordance from '../components/roadmap/NotesAffordance';
 import '../styles/ApplicationsPage.css';
 
@@ -11,11 +13,21 @@ const COUNSELOR_AGENT_URL = import.meta.env.VITE_COUNSELOR_AGENT_URL || 'https:/
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
 
 export default function ApplicationsPage({ embedded = false }) {
+    const navigate = useNavigate();
     const { currentUser } = useAuth();
     const [schools, setSchools] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [essayHelpModal, setEssayHelpModal] = useState({ open: false, school: null });
+
+    // Per-school expansion state for the mini-dashboard. Keyed by
+    // university_id; missing or false = collapsed. Default-collapsed so the
+    // page stays scannable for users with many schools.
+    const [expandedSchools, setExpandedSchools] = useState({});
+
+    const toggleSchoolExpanded = (universityId) => {
+        setExpandedSchools((prev) => ({ ...prev, [universityId]: !prev[universityId] }));
+    };
 
     // Fetch user's schools with deadlines
     const fetchSchools = useCallback(async () => {
@@ -24,16 +36,21 @@ export default function ApplicationsPage({ embedded = false }) {
         try {
             setLoading(true);
 
-            // Fetch deadlines and the user's college_list in parallel.
-            // college_list is the source of the per-school `notes` field that
-            // the NotesAffordance reads/writes; we merge it in below.
-            const [deadlinesResp, listResp] = await Promise.all([
+            // Fetch four user-data sources in parallel:
+            //   - deadlines  (counselor_agent — per-school deadline list)
+            //   - college_list (notes field per school for NotesAffordance)
+            //   - essay_tracker / scholarship_tracker (mini-dashboard rows)
+            // Tracker fetches are best-effort: failures yield empty arrays
+            // rather than blocking the whole page.
+            const [deadlinesResp, listResp, essayResp, scholarshipResp] = await Promise.all([
                 fetch(`${COUNSELOR_AGENT_URL}/deadlines`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_email: currentUser.email })
                 }).then(r => r.json()),
                 getCollegeList(currentUser.email).catch(() => ({ college_list: [] })),
+                getEssayTracker(currentUser.email).catch(() => ({ essays: [] })),
+                getScholarshipTracker(currentUser.email).catch(() => ({ scholarships: [] })),
             ]);
 
             if (deadlinesResp.success) {
@@ -48,6 +65,26 @@ export default function ApplicationsPage({ embedded = false }) {
                     }
                 });
 
+                // Bucket essays / scholarships by university for the
+                // mini-dashboard. Items without a university_id are skipped
+                // (e.g., shared Common App essays without a school binding —
+                // those live on the Essays tab, not a per-school card).
+                const essaysByUniversity = {};
+                const essaysArr = Array.isArray(essayResp?.essays) ? essayResp.essays : [];
+                essaysArr.forEach((e) => {
+                    if (!e?.university_id) return;
+                    (essaysByUniversity[e.university_id] ||= []).push(e);
+                });
+
+                const scholarshipsByUniversity = {};
+                const scholarshipsArr = Array.isArray(scholarshipResp?.scholarships)
+                    ? scholarshipResp.scholarships
+                    : [];
+                scholarshipsArr.forEach((s) => {
+                    if (!s?.university_id) return;
+                    (scholarshipsByUniversity[s.university_id] ||= []).push(s);
+                });
+
                 // Group deadlines by university and seed each school's notes.
                 const schoolMap = {};
                 deadlinesResp.deadlines.forEach(d => {
@@ -57,7 +94,9 @@ export default function ApplicationsPage({ embedded = false }) {
                             university_name: d.university_name,
                             deadlines: [],
                             essay_tips: [],
-                            notes: notesByUniversity[d.university_id] || ''
+                            notes: notesByUniversity[d.university_id] || '',
+                            essays: essaysByUniversity[d.university_id] || [],
+                            scholarships: scholarshipsByUniversity[d.university_id] || [],
                         };
                     }
                     schoolMap[d.university_id].deadlines.push(d);
@@ -221,6 +260,14 @@ export default function ApplicationsPage({ embedded = false }) {
                                         </div>
                                     )}
 
+                                    {/* Mini-dashboard toggle */}
+                                    <MiniDashboard
+                                        school={school}
+                                        isExpanded={!!expandedSchools[school.university_id]}
+                                        onToggle={() => toggleSchoolExpanded(school.university_id)}
+                                        onNavigate={(deepLink) => navigate(deepLink)}
+                                    />
+
                                     {/* Action Button */}
                                     <button
                                         className="ai-help-btn"
@@ -243,6 +290,186 @@ export default function ApplicationsPage({ embedded = false }) {
                 />
             )}
         </div>
+    );
+}
+
+// MiniDashboard — collapsible per-school summary rendered inside the
+// Colleges-tab cards. Aggregates the user's existing data (deadlines,
+// essays, scholarships) into one drill-in view so the user doesn't have
+// to bounce between tabs to see per-school progress.
+//
+// All data is sourced from the parent's already-fetched school object;
+// this component is purely presentational + click-routing.
+function MiniDashboard({ school, isExpanded, onToggle, onNavigate }) {
+    const deadlines = Array.isArray(school.deadlines) ? school.deadlines : [];
+    const essays = Array.isArray(school.essays) ? school.essays : [];
+    const scholarships = Array.isArray(school.scholarships) ? school.scholarships : [];
+
+    // Progress: % essays at status=final, % scholarships at status=applied|received.
+    // We deliberately count "final" essays as done (rather than e.g. "review")
+    // since final is the explicit terminal state in the essay status enum.
+    // Scholarships count "applied" OR "received" as forward progress —
+    // applied is the user-actionable terminal state, received is the bonus.
+    const essaysDone = essays.filter((e) => (e.status || '').toLowerCase() === 'final').length;
+    const scholarshipsApplied = scholarships.filter((s) => {
+        const st = (s.status || '').toLowerCase();
+        return st === 'applied' || st === 'received';
+    }).length;
+    const essayPct = essays.length ? Math.round((essaysDone / essays.length) * 100) : 0;
+    const scholarshipPct = scholarships.length
+        ? Math.round((scholarshipsApplied / scholarships.length) * 100)
+        : 0;
+
+    // Empty card-level state: nothing to expand into. Hide the toggle entirely
+    // rather than offering a click that opens an empty drawer.
+    if (deadlines.length === 0 && essays.length === 0 && scholarships.length === 0) {
+        return null;
+    }
+
+    return (
+        <div className="mt-4 border-t border-stone-200 pt-3">
+            <button
+                type="button"
+                onClick={onToggle}
+                aria-expanded={isExpanded}
+                className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide
+                    text-[#1A4D2E] hover:text-[#2D6B45] transition-colors"
+            >
+                {isExpanded ? (
+                    <ChevronUpIcon className="w-4 h-4" />
+                ) : (
+                    <ChevronDownIcon className="w-4 h-4" />
+                )}
+                {isExpanded ? 'Hide progress' : 'Show progress'}
+            </button>
+
+            {isExpanded && (
+                <div className="mt-3 space-y-4 text-sm">
+                    {/* All deadlines (the card header shows just the next one) */}
+                    {deadlines.length > 0 && (
+                        <section>
+                            <h4 className="text-xs font-semibold uppercase tracking-wide text-[#6B6B6B] mb-2">
+                                Deadlines ({deadlines.length})
+                            </h4>
+                            <ul className="space-y-1">
+                                {[...deadlines]
+                                    .sort((a, b) => new Date(a.date) - new Date(b.date))
+                                    .map((d, i) => (
+                                        <li key={`${d.deadline_type}-${d.date}-${i}`} className="flex items-baseline justify-between gap-2">
+                                            <span className="text-[#4A4A4A]">{d.deadline_type || 'Deadline'}</span>
+                                            <span className="text-[#6B6B6B] text-xs whitespace-nowrap">{d.date}</span>
+                                        </li>
+                                    ))}
+                            </ul>
+                        </section>
+                    )}
+
+                    {/* Essays for this school. Each row jumps to the Essays tab. */}
+                    {essays.length > 0 && (
+                        <section>
+                            <div className="flex items-baseline justify-between mb-2">
+                                <h4 className="text-xs font-semibold uppercase tracking-wide text-[#6B6B6B]">
+                                    Essays ({essaysDone}/{essays.length})
+                                </h4>
+                                <ProgressBar pct={essayPct} />
+                            </div>
+                            <ul className="space-y-1">
+                                {essays.map((e) => (
+                                    <li key={e.essay_id}>
+                                        <button
+                                            type="button"
+                                            onClick={() => onNavigate(`/roadmap?tab=essays&essay_id=${e.essay_id}`)}
+                                            className="w-full text-left flex items-baseline justify-between gap-2
+                                                px-2 py-1 -mx-2 rounded hover:bg-[#F8F6F0] transition-colors"
+                                        >
+                                            <span className="text-[#4A4A4A] truncate">
+                                                {e.prompt_text || e.prompt || 'Essay'}
+                                            </span>
+                                            <StatusPill value={e.status || 'not_started'} kind="essay" />
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    )}
+
+                    {/* Scholarships for this school. Same click-to-jump pattern. */}
+                    {scholarships.length > 0 && (
+                        <section>
+                            <div className="flex items-baseline justify-between mb-2">
+                                <h4 className="text-xs font-semibold uppercase tracking-wide text-[#6B6B6B]">
+                                    Scholarships ({scholarshipsApplied}/{scholarships.length} applied)
+                                </h4>
+                                <ProgressBar pct={scholarshipPct} />
+                            </div>
+                            <ul className="space-y-1">
+                                {scholarships.map((s) => (
+                                    <li key={s.scholarship_id}>
+                                        <button
+                                            type="button"
+                                            onClick={() => onNavigate(`/roadmap?tab=scholarships&scholarship_id=${s.scholarship_id}`)}
+                                            className="w-full text-left flex items-baseline justify-between gap-2
+                                                px-2 py-1 -mx-2 rounded hover:bg-[#F8F6F0] transition-colors"
+                                        >
+                                            <span className="text-[#4A4A4A] truncate">{s.scholarship_name || 'Scholarship'}</span>
+                                            <StatusPill value={s.status || 'not_applied'} kind="scholarship" />
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    )}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function ProgressBar({ pct }) {
+    return (
+        <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="w-20 h-1.5 bg-stone-200 rounded-full overflow-hidden">
+                <div
+                    className="h-full bg-[#1A4D2E] transition-all"
+                    style={{ width: `${Math.max(0, Math.min(100, pct))}%` }}
+                />
+            </div>
+            <span className="text-xs text-[#6B6B6B] tabular-nums w-9 text-right">{pct}%</span>
+        </div>
+    );
+}
+
+const STATUS_PILL_STYLES = {
+    // Essays
+    not_started: 'bg-stone-100 text-stone-600',
+    draft: 'bg-blue-100 text-blue-700',
+    review: 'bg-amber-100 text-amber-700',
+    final: 'bg-emerald-100 text-emerald-700',
+    // Scholarships
+    not_applied: 'bg-stone-100 text-stone-600',
+    applied: 'bg-blue-100 text-blue-700',
+    received: 'bg-emerald-100 text-emerald-700',
+    not_eligible: 'bg-red-100 text-red-600',
+};
+
+const STATUS_PILL_LABELS = {
+    not_started: 'Not started',
+    draft: 'Draft',
+    review: 'Review',
+    final: 'Final',
+    not_applied: 'Not applied',
+    applied: 'Applied',
+    received: 'Received',
+    not_eligible: 'Not eligible',
+};
+
+function StatusPill({ value }) {
+    const cls = STATUS_PILL_STYLES[value] || 'bg-stone-100 text-stone-600';
+    const label = STATUS_PILL_LABELS[value] || value;
+    return (
+        <span className={`text-xs px-2 py-0.5 rounded-full whitespace-nowrap ${cls}`}>
+            {label}
+        </span>
     );
 }
 
