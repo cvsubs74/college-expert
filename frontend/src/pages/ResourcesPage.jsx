@@ -4,6 +4,8 @@ import { BookOpenIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { papers } from '../data/resources';
 import PaperCard from '../components/resources/PaperCard';
 import Navigation from '../components/Navigation';
+import MarketingHeader from '../components/MarketingHeader';
+import { useAuth } from '../context/AuthContext';
 
 // /resources hub. Public-readable. Lists every whitepaper as a card.
 //
@@ -12,16 +14,23 @@ import Navigation from '../components/Navigation';
 // what fits on one page.
 
 const ResourcesPage = () => {
+    const { currentUser } = useAuth();
+
     useEffect(() => {
         document.title = 'Resources — Stratia Admissions';
     }, []);
 
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            <Navigation />
+            {/* Logged-out visitors get the marketing-style header so the
+                Landing → Resources transition stays continuous. Signed-in
+                users get the in-app Navigation so Resources feels part of
+                the app. */}
+            {currentUser ? <Navigation /> : <MarketingHeader />}
 
-            {/* Hero */}
-            <section className="relative overflow-hidden border-b border-[#E0DED8]">
+            {/* Hero — pad the top when MarketingHeader is fixed-position so
+                content doesn't slide under the floating nav. */}
+            <section className={`relative overflow-hidden border-b border-[#E0DED8] ${currentUser ? '' : 'pt-16'}`}>
                 <div
                     aria-hidden="true"
                     className="absolute inset-0 opacity-60"

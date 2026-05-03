@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
 import { motion, useInView } from 'framer-motion';
+import MarketingHeader from '../components/MarketingHeader';
 
 // Import demo components
 import OnboardingDemo from '../components/demos/OnboardingDemo';
@@ -118,59 +119,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFCF7]">
-      {/* ============================================
-          NAVIGATION
-          ============================================ */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FDFCF7]/80 backdrop-blur-lg border-b border-[#E0DED8]/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-2 group">
-              {/* Book & Key Logo - matches app */}
-              <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] shadow-md group-hover:shadow-lg transition-shadow">
-                <BookOpenIcon className="w-5 h-5 text-white absolute" style={{ top: '8px', left: '8px' }} />
-                <KeyIcon className="w-4 h-4 text-[#D6E8D5] absolute" style={{ bottom: '6px', right: '6px' }} />
-              </div>
-
-              {/* Brand Text */}
-              <div className="flex items-baseline gap-1">
-                <span className="font-serif text-xl font-semibold text-[#1A4D2E]">Stratia</span>
-                <span className="font-sans text-sm font-medium text-[#4A4A4A]">Admissions</span>
-              </div>
-            </Link>
-
-            <nav className="hidden md:flex items-center gap-8">
-              <Link to="/resources" className="text-[#4A4A4A] hover:text-[#1A4D2E] text-sm font-medium transition-colors">
-                Resources
-              </Link>
-              <Link to="/pricing" className="text-[#4A4A4A] hover:text-[#1A4D2E] text-sm font-medium transition-colors">
-                Pricing
-              </Link>
-              {currentUser ? (
-                <Link
-                  to="/launchpad"
-                  className="px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-[#2D6B45] transition-all"
-                >
-                  Open App
-                </Link>
-              ) : (
-                <button
-                  onClick={handleSignIn}
-                  className="px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-[#2D6B45] transition-all"
-                >
-                  Get Started
-                </button>
-              )}
-            </nav>
-
-            <button
-              onClick={handleGetStarted}
-              className="md:hidden px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg"
-            >
-              Start
-            </button>
-          </div>
-        </div>
-      </header>
+      <MarketingHeader />
 
       {/* ============================================
           HERO SECTION
