@@ -1,0 +1,94 @@
+# Cloud Build CI for college-expert.
+#
+# This file describes the PR-time check that runs on every pull request and
+# every push to main. Trigger creation is documented in docs/cicd-setup.md
+# (one-time `gcloud builds triggers create github` invocations).
+#
+# Pipeline (under 2 minutes from cold cache):
+#   1. Backend unit tests (pytest, ~170 tests in <1s)
+#   2. Bash script syntax check (bash -n on deploy.sh / deploy_frontend.sh)
+#   3. Frontend production build (vite build) — catches type/import errors
+#
+# Integration tests against deployed endpoints are NOT run here — those are
+# in test_*.sh files that hit live URLs. They get run manually after a real
+# deploy. A future Phase 2 will add a post-deploy Cloud Build trigger that
+# runs them automatically.
+
+# Use a small machine — these checks aren't CPU-heavy and burning credits
+# on a higher tier delivers no speedup.
+options:
+  machineType: 'E2_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+# 5-minute cap. The local run is sub-second on tests + ~3s on the build,
+# so this is generous headroom for cold-start install time.
+timeout: '300s'
+
+steps:
+  # 1. Backend unit tests.
+  #
+  # Heavy GCP libs (google-cloud-firestore, google-genai) are stubbed in the
+  # tests' conftest.py, so we only need pytest + requests. Keeps install
+  # fast (~5s vs ~60s for the full per-function requirements.txt).
+  - name: 'python:3.12-slim'
+    id: 'backend-tests'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -euo pipefail
+        echo "::: installing test deps :::"
+        pip install --quiet --disable-pip-version-check -r requirements-test.txt
+        echo "::: running pytest :::"
+        pytest -q
+
+  # 2. Shell-script syntax check. Cheap insurance against typos in deploy
+  #    plumbing — these scripts are only exercised manually post-merge.
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'bash-syntax'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -euo pipefail
+        for f in deploy.sh deploy_frontend.sh; do
+          bash -n "$f"
+          echo "  $f: ok"
+        done
+
+  # 3. Frontend production build. Catches type/import errors that
+  #    `bash -n`-equivalents on JS can't see, and keeps the CI surface
+  #    aware of any vite-level breakage.
+  #
+  #    We use a minimal .env at build time — only the fields vite reads at
+  #    build time matter; runtime URLs are baked in from the real .env on
+  #    deploy. Validation gates in deploy_frontend.sh (VITE_API_URL etc.)
+  #    are not enforced here; this is just a compilation check.
+  - name: 'node:20'
+    id: 'frontend-build'
+    dir: 'frontend'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -euo pipefail
+        echo "::: installing dependencies (npm ci, no audit/no fund for speed) :::"
+        npm ci --no-audit --no-fund --prefer-offline
+        echo "::: vite build :::"
+        # Minimal .env so import.meta.env references don't trip on undefined.
+        # All values are placeholders; nothing gets shipped from CI.
+        cat > .env <<'EOF'
+        VITE_API_URL=https://placeholder
+        VITE_PROFILE_MANAGER_URL=https://placeholder
+        VITE_PROFILE_MANAGER_V2_URL=https://placeholder
+        VITE_KNOWLEDGE_BASE_URL=https://placeholder
+        VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL=https://placeholder
+        VITE_COUNSELOR_AGENT_URL=https://placeholder
+        VITE_FIREBASE_API_KEY=placeholder
+        VITE_FIREBASE_AUTH_DOMAIN=placeholder
+        VITE_FIREBASE_PROJECT_ID=placeholder
+        VITE_FIREBASE_STORAGE_BUCKET=placeholder
+        VITE_FIREBASE_MESSAGING_SENDER_ID=placeholder
+        VITE_FIREBASE_APP_ID=placeholder
+        EOF
+        npm run build
