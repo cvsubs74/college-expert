@@ -8,11 +8,32 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+// Test-mode auth bypass for Playwright E2E. When localStorage contains a
+// JSON-serialized user under this key AND we're not in a production build,
+// AuthContext skips Firebase and treats that value as the signed-in user.
+// The MODE guard means setting this in a real production browser has no
+// effect — Vite bakes MODE=production into the production bundle at build
+// time, so the conditional below is statically eliminated.
+const E2E_USER_KEY = '__E2E_TEST_USER__';
+
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (import.meta.env.MODE !== 'production') {
+      try {
+        const raw = localStorage.getItem(E2E_USER_KEY);
+        if (raw) {
+          setCurrentUser(JSON.parse(raw));
+          setLoading(false);
+          return undefined;
+        }
+      } catch {
+        // Malformed JSON or storage error — fall through to real Firebase auth.
+      }
+    }
+
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       // Always clear session data when auth state changes
       // This ensures fresh start for every login session

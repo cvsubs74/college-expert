@@ -121,10 +121,11 @@ const AddTaskModal = ({ userEmail, isOpen, onClose, onSaved }) => {
 
                 <form onSubmit={handleSubmit} className="px-5 py-4 space-y-4">
                     <div>
-                        <label className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
+                        <label htmlFor="add-task-title-input" className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
                             Title
                         </label>
                         <input
+                            id="add-task-title-input"
                             type="text"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
@@ -139,10 +140,11 @@ const AddTaskModal = ({ userEmail, isOpen, onClose, onSaved }) => {
                     </div>
 
                     <div>
-                        <label className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
+                        <label htmlFor="add-task-due-date" className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
                             Due date <span className="font-normal text-[#9A9A9A] normal-case">(optional)</span>
                         </label>
                         <input
+                            id="add-task-due-date"
                             type="date"
                             value={dueDate}
                             onChange={(e) => setDueDate(e.target.value)}
@@ -152,10 +154,11 @@ const AddTaskModal = ({ userEmail, isOpen, onClose, onSaved }) => {
                     </div>
 
                     <div>
-                        <label className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
+                        <label htmlFor="add-task-school" className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
                             For school <span className="font-normal text-[#9A9A9A] normal-case">(optional)</span>
                         </label>
                         <select
+                            id="add-task-school"
                             value={universityId}
                             onChange={(e) => setUniversityId(e.target.value)}
                             className="w-full text-sm rounded-md border border-[#E0DED8] bg-white px-3 py-2
@@ -171,10 +174,11 @@ const AddTaskModal = ({ userEmail, isOpen, onClose, onSaved }) => {
                     </div>
 
                     <div>
-                        <label className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
+                        <label htmlFor="add-task-notes" className="block text-xs font-medium text-[#4A4A4A] uppercase tracking-wide mb-1">
                             Notes <span className="font-normal text-[#9A9A9A] normal-case">(optional)</span>
                         </label>
                         <textarea
+                            id="add-task-notes"
                             value={notes}
                             onChange={(e) => setNotes(e.target.value)}
                             placeholder="Anything you want to remember about this task"
