@@ -43,14 +43,18 @@ def load_archetypes() -> List[dict]:
     """Read every JSON file in scenarios/ as an archetype.
 
     Each file is a self-contained scenario definition; see scenarios/
-    README for the schema."""
+    README for the schema. Skip non-archetype JSONs (e.g.,
+    colleges_allowlist.json) — anything without a top-level `id` field
+    isn't an archetype."""
     archetypes = []
     if not SCENARIOS_DIR.exists():
         return archetypes
     for path in sorted(SCENARIOS_DIR.glob("*.json")):
         try:
             with path.open() as f:
-                archetypes.append(json.load(f))
+                doc = json.load(f)
+            if isinstance(doc, dict) and "id" in doc and "profile_template" in doc:
+                archetypes.append(doc)
         except Exception as exc:  # noqa: BLE001
             logger.warning("qa_agent: failed to load archetype %s: %s", path.name, exc)
     return archetypes
@@ -150,7 +154,7 @@ def generate_variation(
     archetype: dict,
     *,
     api_key: Optional[str] = None,
-    model: str = "gemini-1.5-flash",
+    model: str = "gemini-2.5-flash",
 ) -> dict:
     """Ask Gemini to produce a variation. On any failure, returns the
     archetype's defaults — i.e., the static fallback. Missing/invalid

@@ -4,6 +4,7 @@ import StepRow from './StepRow';
 import PassFailBadge from './PassFailBadge';
 import ReportBugButton from './ReportBugButton';
 import SuggestCauseModal from './SuggestCauseModal';
+import SynthesizedBadge from './SynthesizedBadge';
 
 // One scenario inside a run. Header shows pass/fail + summary; expand
 // to see steps. Failing scenarios get "Suggest cause" + "Report bug"
@@ -75,6 +76,11 @@ const ScenarioCard = ({ runId, scenario }) => {
                             />
                         </div>
                     )}
+
+                    <SynthesizedBadge
+                        synthesized={scenario.synthesized}
+                        rationale={scenario.synthesis_rationale}
+                    />
 
                     {scenario.tests && scenario.tests.length > 0 && (
                         <div className="bg-[#FBFAF6] border border-[#E0DED8] rounded-lg p-3 mb-2">

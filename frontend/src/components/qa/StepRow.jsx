@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import AssertionDiff from './AssertionDiff';
 
 // Single step inside a scenario detail. Collapsed shows status, name,
 // elapsed; expanded shows assertions + request + response excerpt.
@@ -45,21 +46,9 @@ const StepRow = ({ step }) => {
                             <div className="text-[10px] uppercase tracking-wider font-semibold text-[#8A8A8A] mb-1">
                                 Assertions
                             </div>
-                            <ul className="space-y-1">
+                            <ul className="space-y-1.5">
                                 {step.assertions.map((a, i) => (
-                                    <li key={i} className="flex items-start gap-2">
-                                        <span
-                                            className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${a.passed ? 'bg-emerald-500' : 'bg-rose-500'}`}
-                                        />
-                                        <span className="font-mono text-[11px]">
-                                            <span className={a.passed ? 'text-[#4A4A4A]' : 'text-rose-700'}>
-                                                {a.name}
-                                            </span>
-                                            {a.message && (
-                                                <span className="text-[#8A8A8A] ml-2">— {a.message}</span>
-                                            )}
-                                        </span>
-                                    </li>
+                                    <AssertionDiff key={i} result={a} />
                                 ))}
                             </ul>
                         </div>

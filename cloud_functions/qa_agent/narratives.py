@@ -99,7 +99,7 @@ def _plan_narrative(archetypes, history, rationale, coverage,
     try:
         import google.generativeai as genai
         genai.configure(api_key=gemini_key)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = _plan_prompt(archetypes, history, rationale, coverage)
         resp = model.generate_content(prompt)
         text = (resp.text or "").strip()
@@ -225,7 +225,7 @@ def _outcome_narrative(report, verdict, first_look, *,
     try:
         import google.generativeai as genai
         genai.configure(api_key=gemini_key)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = _outcome_prompt(report, verdict, first_look)
         resp = model.generate_content(prompt)
         text = (resp.text or "").strip()
@@ -397,7 +397,7 @@ def _summary_narrative(runs, rate_7d, rate_30d, trend, surfaces,
     try:
         import google.generativeai as genai
         genai.configure(api_key=gemini_key)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = _summary_prompt(runs, rate_7d, rate_30d, trend, surfaces)
         resp = model.generate_content(prompt)
         text = (resp.text or "").strip()

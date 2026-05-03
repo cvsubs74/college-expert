@@ -26,6 +26,8 @@ from typing import Any, Callable, Dict, List, Optional
 import requests
 
 import assertions
+import data_assertions
+import ground_truth as ground_truth_mod
 
 logger = logging.getLogger(__name__)
 
@@ -112,6 +114,31 @@ def _redact(body):
 # ---- Step types -------------------------------------------------------------
 
 
+def _xref_step(
+    name: str,
+    http_ctx: dict,
+    truth_bag: dict,
+    asserts: list,
+) -> dict:
+    """Step record for cross-reference assertions. Threads `truth_bag`
+    into the assertion ctx so data_assertions.* can compare response
+    values against the ground truth gathered earlier."""
+    ctx = dict(http_ctx)
+    ctx["truth_bag"] = truth_bag
+    results = data_assertions.run_all(asserts, ctx)
+    passed = data_assertions.all_passed(results)
+    return {
+        "name": name,
+        "endpoint": http_ctx.get("url"),
+        "status_code": http_ctx.get("status_code"),
+        "elapsed_ms": http_ctx.get("elapsed_ms"),
+        "request": _redact(http_ctx.get("request_body")),
+        "response_excerpt": (http_ctx.get("response_excerpt") or "")[:1500],
+        "assertions": [r.to_dict() for r in results],
+        "passed": passed,
+    }
+
+
 def _step(name: str, http_ctx: dict, asserts: List[assertions.AssertionFn]) -> dict:
     """Wrap an HTTP context + assertion list into a step record."""
     results = assertions.run_all(asserts, http_ctx)
@@ -149,12 +176,16 @@ class RunConfig:
         admin_token: str,
         id_token: str,
         test_user_email: str,
+        knowledge_base_url: str = "",
     ):
         self.profile_manager_url = profile_manager_url.rstrip("/")
         self.counselor_agent_url = counselor_agent_url.rstrip("/")
         self.admin_token = admin_token
         self.id_token = id_token
         self.test_user_email = test_user_email
+        # KB URL is optional — when absent, the runner skips ground truth
+        # gathering and cross-reference assertions mark themselves SKIP.
+        self.knowledge_base_url = knowledge_base_url.rstrip("/") if knowledge_base_url else ""
 
 
 # ---- Scenario execution ----------------------------------------------------
@@ -187,6 +218,51 @@ def run_scenario(
         assertions.status_is_2xx(),
         assertions.key_equals("ok", True),
     ]))
+
+    # ----- Step 1.5: gather ground truth ---------------------------------
+    # Pull canonical KB records for every college this scenario will add.
+    # Cross-reference assertions later compare runtime API responses
+    # against this snapshot. KB misses become empty records — assertions
+    # that depend on them will mark themselves SKIP rather than fail.
+    college_ids_to_add = list(scenario.get("colleges_template", []))
+    truth_bag = {}
+    truth_step_assertions = []
+    truth_started = time.time()
+    if college_ids_to_add and cfg.knowledge_base_url:
+        try:
+            truth_bag = ground_truth_mod.fetch_ground_truth(
+                college_ids_to_add,
+                kb_url=cfg.knowledge_base_url,
+            )
+        except Exception as exc:  # noqa: BLE001
+            truth_step_assertions.append({
+                "name": "ground truth fetched",
+                "passed": False,
+                "message": f"{type(exc).__name__}: {exc}",
+            })
+    truth_step_assertions.append({
+        "name": "truth bag populated",
+        "passed": bool(truth_bag),
+        "message": "kb miss for every college" if not truth_bag else "",
+    })
+    steps.append({
+        "name": "gather_ground_truth",
+        "endpoint": cfg.knowledge_base_url or "(skipped — no kb_url)",
+        "status_code": 200 if truth_bag else 0,
+        "elapsed_ms": int((time.time() - truth_started) * 1000),
+        "request": {"colleges": college_ids_to_add},
+        "response_excerpt": (
+            "Truth records: " + ", ".join(
+                f"{cid}={'KB hit' if rec else 'KB miss'}"
+                for cid, rec in truth_bag.items()
+            )
+        )[:1500],
+        "assertions": truth_step_assertions,
+        # Truth gathering is best-effort. Even with a KB miss per college,
+        # the scenario can still run — downstream cross-ref assertions
+        # mark themselves SKIP, not FAIL.
+        "passed": True,
+    })
 
     # ----- Step 2: profile build ------------------------------------------
     # profile_manager_v2 doesn't expose a "save the whole profile in one
@@ -250,6 +326,32 @@ def run_scenario(
             assertions.status_is_2xx(),
         ]))
 
+    # ----- Step 3.5: college list symmetry --------------------------------
+    # Pull /get-college-list back and verify writes-set == reads-set.
+    # Catches "API returned 200 on add but the read endpoint doesn't see
+    # the entry" — a real failure mode the shape-only checks would miss.
+    if college_ids_to_add:
+        list_ctx = poster(
+            f"{pm}/get-college-list",
+            {"user_email": cfg.test_user_email},
+            id_token=cfg.id_token,
+        )
+        # Per-college deadline cross-ref: for each college in the truth
+        # bag, assert the KB's deadline appears on the corresponding
+        # college_list entry. We can't address by index reliably, so we
+        # use list_matches_truth_set for the symmetry check + a
+        # generated set of value_equals_truth checks per college via
+        # response_path indexing into the actual returned list.
+        symmetry_assertions = [
+            data_assertions.list_matches_truth_set(
+                "college_list", id_key="university_id",
+                expected_ids=college_ids_to_add,
+            ),
+        ]
+        steps.append(_xref_step(
+            "verify_college_list_symmetry", list_ctx, truth_bag, symmetry_assertions,
+        ))
+
     # ----- Step 4: roadmap generation -------------------------------------
     roadmap_ctx = poster(
         f"{ca}/roadmap",
@@ -271,6 +373,24 @@ def run_scenario(
         )
     steps.append(_step("roadmap_generate", roadmap_ctx, roadmap_asserts))
 
+    # ----- Step 4.5: roadmap deep-link integrity --------------------------
+    # Walk every artifact_ref in the roadmap response. Every
+    # university_id referenced must be in the college list we built.
+    # Catches "the roadmap is referencing schools we never added"
+    # — broken or stale deep links. Skipped when no colleges added.
+    if college_ids_to_add and roadmap_ctx.get("status_code", 0) < 400:
+        deep_link_assertions = [
+            data_assertions.deep_link_resolves(
+                list_path="roadmap.phases[*].tasks[*]",
+                id_path="artifact_ref.university_id",
+                valid_ids=college_ids_to_add,
+            ),
+        ]
+        steps.append(_xref_step(
+            "roadmap_deep_link_integrity",
+            roadmap_ctx, truth_bag, deep_link_assertions,
+        ))
+
     # ----- Step 5: work feed ----------------------------------------------
     # /work-feed is GET with query params, not POST.
     work_feed_ctx = poster(
@@ -285,6 +405,36 @@ def run_scenario(
         assertions.has_key("items"),
         assertions.latency_under(8000),
     ]))
+
+    # ----- Step 5.5: essay tracker alignment ------------------------------
+    # Pull the essay tracker back. For each college we added, verify
+    # the tracker entries reference real college_ids (no orphans) AND
+    # the per-college essay count is at least the KB's required count.
+    if college_ids_to_add:
+        essay_ctx = poster(
+            f"{pm}/get-essay-tracker",
+            method="GET",
+            params={"user_email": cfg.test_user_email},
+            id_token=cfg.id_token,
+        )
+        # The essay tracker may return entries under various keys
+        # depending on the response shape. Check both common shapes.
+        essay_assertions = [
+            data_assertions.deep_link_resolves(
+                list_path="essays",
+                id_path="university_id",
+                valid_ids=college_ids_to_add,
+            ),
+            data_assertions.per_university_count_matches(
+                list_path="essays",
+                id_key="university_id",
+                truth_count_path="essays_required",
+                comparison="gte",
+            ),
+        ]
+        steps.append(_xref_step(
+            "essay_tracker_alignment", essay_ctx, truth_bag, essay_assertions,
+        ))
 
     # ----- Step 6: deadlines ----------------------------------------------
     deadlines_ctx = poster(

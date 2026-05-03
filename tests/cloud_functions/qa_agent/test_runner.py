@@ -47,10 +47,30 @@ def _ok(json_body):
 # call per profile_template field), so a positional canned-list approach
 # is brittle. URL-aware defaults match the real prod responses; tests
 # that need failure injection pass `overrides`.
+# Match order matters: more specific (longer) prefixes go FIRST. The
+# previous order had 'roadmap' before 'roadmap_deep_link_integrity'-style
+# checks, which still works because we match on URL substring not step
+# name. But 'get-college-list' etc. must come before generic shape
+# defaults to ensure they're picked up.
 _URL_DEFAULTS = (
     ('clear-test-data', _ok({'ok': True, 'deleted': {}})),
     ('update-structured-field', _ok({'success': True})),
     ('add-to-list', _ok({'success': True})),
+    # New default for the symmetry-check step. The two scenarios in
+    # _scenario() use ['mit', 'stanford_university'] — return both.
+    ('get-college-list', _ok({
+        'success': True,
+        'college_list': [
+            {'university_id': 'mit', 'name': 'MIT'},
+            {'university_id': 'stanford_university', 'name': 'Stanford University'},
+        ],
+    })),
+    # Essay tracker default — returns 0 essays per college, which
+    # passes the gte assertion (KB miss → SKIP for required count).
+    ('get-essay-tracker', _ok({
+        'success': True,
+        'essays': [],
+    })),
     ('roadmap', _ok({
         'success': True,
         'metadata': {
@@ -123,9 +143,13 @@ def test_runner_happy_path_all_pass():
     result = runner.run_scenario(scenario, cfg, poster=_smart_poster())
     assert result['passed'] is True
     assert result['scenario_id'] == 'demo'
-    # Steps: setup, profile_build (rolled-up), add_college × 2,
-    # roadmap, work_feed, deadlines, final_teardown.
-    assert len(result['steps']) == 8
+    # Steps with the smart-QA upgrades:
+    #   setup, gather_ground_truth, profile_build, add_college × 2,
+    #   verify_college_list_symmetry, roadmap_generate,
+    #   roadmap_deep_link_integrity, work_feed,
+    #   essay_tracker_alignment, deadlines, final_teardown
+    # = 12 steps for the 2-college demo scenario.
+    assert len(result['steps']) == 12
     for step in result['steps']:
         assert step['passed'], f"{step['name']} failed: {step['assertions']}"
 
