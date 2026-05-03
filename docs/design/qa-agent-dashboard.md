@@ -1,6 +1,6 @@
 # Design: QA Agent admin dashboard
 
-Status: Draft (awaiting approval)
+Status: Approved
 Last updated: 2026-05-03
 Related PRD: [docs/prd/qa-agent-dashboard.md](../prd/qa-agent-dashboard.md)
 

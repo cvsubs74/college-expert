@@ -52,6 +52,26 @@ service cloud.firestore {
       }
     }
     
+    // QA agent reports — admin-only read. The qa-agent service account
+    // writes via Admin SDK (which bypasses these rules). Listed
+    // explicitly here so the catch-all deny below doesn't override.
+    //
+    // Allowlist mirrors QA_ADMIN_EMAILS env var on qa-agent. When you
+    // add an admin, update both places.
+    function isQaAdmin() {
+      return isAuthenticated() && request.auth.token.email in [
+        'cvsubs@gmail.com'
+      ];
+    }
+    match /qa_runs/{runId} {
+      allow read: if isQaAdmin();
+      allow write: if false; // qa-agent SA bypasses rules
+    }
+    match /qa_scenarios/{archetypeId} {
+      allow read: if isQaAdmin();
+      allow write: if false;
+    }
+
     // Deny all other access by default
     match /{document=**} {
       allow read, write: if false;

@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation, Ou
 import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon } from '@heroicons/react/24/outline';
 import ResourcesPage from './pages/ResourcesPage';
 import ResourcePaperPage from './pages/ResourcePaperPage';
+import QaRunsListPage from './pages/QaRunsListPage';
+import QaRunDetailPage from './pages/QaRunDetailPage';
+import AdminGate from './components/qa/AdminGate';
 import CreditsBadge from './components/CreditsBadge';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
@@ -160,6 +163,21 @@ function App() {
                     (parents, counselors) can find them without signing in. */}
                 <Route path="/resources" element={<ResourcesPage />} />
                 <Route path="/resources/:slug" element={<ResourcePaperPage />} />
+
+                {/* QA admin dashboard — INTERNAL ONLY. AdminGate renders a
+                    404 (not a 403) for any non-admin or signed-out visitor
+                    so the route is invisible to customers. There is NO nav
+                    entry anywhere in the app pointing here. Access is
+                    via direct URL only. Firestore security rules are the
+                    hard gate at the data layer. */}
+                <Route
+                  path="/qa-runs"
+                  element={<AdminGate><QaRunsListPage /></AdminGate>}
+                />
+                <Route
+                  path="/qa-runs/:runId"
+                  element={<AdminGate><QaRunDetailPage /></AdminGate>}
+                />
 
                 {/* Protected routes */}
                 <Route

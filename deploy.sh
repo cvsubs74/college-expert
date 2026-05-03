@@ -1129,7 +1129,11 @@ deploy_frontend() {
     # Get Counselor Agent URL
     COUNSELOR_AGENT_URL=$(gcloud functions describe $COUNSELOR_AGENT_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
     export VITE_COUNSELOR_AGENT_URL=$COUNSELOR_AGENT_URL
-    
+
+    # Get QA Agent URL — used by the admin /qa-runs dashboard.
+    QA_AGENT_URL=$(gcloud functions describe qa-agent --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    export VITE_QA_AGENT_URL=$QA_AGENT_URL
+
     echo -e "${GREEN}✓ URLs configured:${NC}"
     echo -e "  RAG Agent URL: ${RAG_AGENT_URL}"
     echo -e "  ES Agent URL: ${ES_AGENT_URL}"

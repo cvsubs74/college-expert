@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 // For security, this information should be stored in environment variables
@@ -18,5 +19,8 @@ const app = initializeApp(firebaseConfig);
 // Initialize and export Firebase services
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+// Firestore client used by the QA admin dashboard for direct reads of
+// qa_runs/. Security rules gate access to admin emails.
+export const db = getFirestore(app);
 
 export default app;
