@@ -11,5 +11,11 @@
     },
     "colleges_template": ["university_of_minnesota_twin_cities"],
     "expected_template_used": "junior_spring",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks junior_spring",
+        "Edge case: one-school list adds without multi-school assumptions breaking",
+        "Roadmap renders correctly with a single university_id",
+        "No UC grouping triggered (the school is a state university, not a UC)"
+    ]
 }

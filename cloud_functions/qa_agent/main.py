@@ -42,7 +42,9 @@ from flask import jsonify
 import auth
 import corpus
 import firestore_store
+import narratives
 import runner
+import schedule
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -166,6 +168,15 @@ def qa_agent(request):
     if path == "github-issue" and request.method == "POST":
         return _cors(_handle_github_issue(body, cfg))
 
+    if path == "schedule" and request.method == "GET":
+        return _cors(_handle_get_schedule())
+
+    if path == "schedule" and request.method == "POST":
+        return _cors(_handle_post_schedule(body, actor))
+
+    if path == "summary" and request.method == "GET":
+        return _cors(_handle_summary(cfg))
+
     return _cors({"success": False, "error": f"unknown path: {path}"}, 404)
 
 
@@ -195,6 +206,21 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     scenario_id_filter = body.get("scenario") or request_arg(body, "scenario")
     n = body.get("count") or cfg["DEFAULT_SCENARIO_COUNT"]
     actor = body.get("actor", "anonymous")
+
+    # The hourly Cloud Scheduler poll fires with trigger=schedule_check.
+    # No-op unless the user-configured schedule says NOW is a run time.
+    if trigger == "schedule_check":
+        try:
+            current_schedule = schedule.load_schedule()
+            if not schedule.should_run_now(current_schedule, datetime.now(timezone.utc)):
+                logger.info("qa_agent: schedule_check skipped — not in window")
+                return {"success": True, "skipped": True}
+        except Exception as exc:  # noqa: BLE001
+            # If the schedule check itself errors, log + skip rather
+            # than silently running. A missed run is recoverable; a
+            # schedule-config error firing every hour is not.
+            logger.exception("qa_agent: schedule_check failed; skipping")
+            return {"success": False, "skipped": True, "error": str(exc)}
 
     archetypes = corpus.load_archetypes()
     if not archetypes:
@@ -229,6 +255,11 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         test_user_email=cfg["TEST_USER_EMAIL"],
     )
 
+    # Pre-run: ask the planner for a test_plan narrative + structured
+    # rationale + coverage. Cheap (one Gemini Flash call), gives the
+    # dashboard the "what is this run testing and why" context.
+    test_plan = narratives.build_plan(chosen, history, gemini_key=cfg["GEMINI_API_KEY"])
+
     started = datetime.now(timezone.utc)
     run_id = f"run_{started.strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
 
@@ -237,6 +268,11 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         variation = corpus.generate_variation(archetype, api_key=cfg["GEMINI_API_KEY"])
         materialized = corpus.apply_variation(archetype, variation)
         result = runner.run_scenario(materialized, run_cfg)
+        # Carry the archetype's `tests` bullets + surfaces_covered into
+        # each scenario record so the dashboard can render them and the
+        # /summary endpoint can aggregate by surface.
+        result["tests"] = archetype.get("tests", [])
+        result["surfaces_covered"] = archetype.get("surfaces_covered", [])
         scenarios_results.append(result)
         firestore_store.update_history(
             archetype["id"],
@@ -258,11 +294,56 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         "actor": actor,
         "summary": summary,
         "scenarios": scenarios_results,
+        "test_plan": test_plan,
     }
+
+    # Post-run: ask the planner for an outcome narrative + verdict +
+    # first-look-at pointer. Verdict is computed deterministically from
+    # the report (never LLM-derived).
+    report["outcome"] = narratives.build_outcome(report, gemini_key=cfg["GEMINI_API_KEY"])
+
     firestore_store.write_report(run_id, report)
     logger.info("qa_agent: run %s complete — %d pass / %d fail",
                 run_id, summary["pass"], summary["fail"])
     return {"success": True, "run_id": run_id, "summary": summary}
+
+
+# ---- /schedule -------------------------------------------------------------
+
+
+def _handle_get_schedule() -> dict:
+    try:
+        return {"success": True, "schedule": schedule.load_schedule()}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: load_schedule failed")
+        return {"success": False, "error": str(exc)}
+
+
+def _handle_post_schedule(body: dict, actor: str) -> dict:
+    err = schedule.validate_schedule(body)
+    if err:
+        return {"success": False, "error": err}
+    try:
+        schedule.save_schedule(body, actor=actor or "")
+        return {"success": True}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: save_schedule failed")
+        return {"success": False, "error": str(exc)}
+
+
+# ---- /summary --------------------------------------------------------------
+
+
+def _handle_summary(cfg: dict) -> dict:
+    try:
+        runs = firestore_store.list_recent_runs(limit=60)
+        return {
+            "success": True,
+            "summary": narratives.build_summary(runs, gemini_key=cfg["GEMINI_API_KEY"]),
+        }
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: build_summary failed")
+        return {"success": False, "error": str(exc)}
 
 
 # ---- /suggest-cause --------------------------------------------------------

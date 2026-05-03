@@ -76,6 +76,22 @@ const ScenarioCard = ({ runId, scenario }) => {
                         </div>
                     )}
 
+                    {scenario.tests && scenario.tests.length > 0 && (
+                        <div className="bg-[#FBFAF6] border border-[#E0DED8] rounded-lg p-3 mb-2">
+                            <div className="text-[10px] uppercase tracking-wider text-[#6B6B6B] font-semibold mb-1.5">
+                                What this scenario tests
+                            </div>
+                            <ul className="space-y-1 text-xs text-[#2A2A2A]">
+                                {scenario.tests.map((t, i) => (
+                                    <li key={i} className="flex items-start gap-2">
+                                        <span className="text-[#1A4D2E] mt-0.5">•</span>
+                                        <span>{t}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
                     <div className="space-y-2">
                         {(scenario.steps || []).map((step, i) => (
                             <StepRow key={`${scenario.scenario_id}-${i}-${step.name}`} step={step} />

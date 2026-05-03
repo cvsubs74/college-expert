@@ -18,5 +18,13 @@
         "university_of_washington"
     ],
     "expected_template_used": "senior_fall",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks senior_fall — the densest template",
+        "6 colleges (2 UCs trigger group treatment, 4 individual) added without errors",
+        "Roadmap response carries metadata.template_used == senior_fall",
+        "Per-school RD submission tasks emit artifact_ref pointing at college cards",
+        "UC group task labels all participating UCs",
+        "/work-feed surfaces overdue + soon-due deadlines correctly"
+    ]
 }

@@ -17,5 +17,12 @@
         "carnegie_mellon_university"
     ],
     "expected_template_used": "junior_spring",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks junior_spring template from graduation_year=2027 + spring",
+        "5 colleges added via /add-to-list (3 UCs trigger UC group treatment downstream)",
+        "Roadmap response carries metadata.template_used == junior_spring",
+        "/work-feed surfaces deadlines from all 5 colleges",
+        "Final teardown wipes the test user back to empty"
+    ]
 }

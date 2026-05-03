@@ -16,5 +16,12 @@
         "university_of_california_davis"
     ],
     "expected_template_used": "junior_spring",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks junior_spring",
+        "All 4 UC colleges added via /add-to-list",
+        "UC group task in the roadmap covers all 4 UCs (single combined entry)",
+        "No per-UC submission tasks emitted (group-only)",
+        "Roadmap response is non-empty and well-formed"
+    ]
 }

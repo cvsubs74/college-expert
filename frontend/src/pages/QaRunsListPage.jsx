@@ -4,6 +4,8 @@ import { db } from '../firebase';
 import SparklineByDay from '../components/qa/SparklineByDay';
 import RunNowPanel from '../components/qa/RunNowPanel';
 import RunsTable from '../components/qa/RunsTable';
+import ExecutiveSummary from '../components/qa/ExecutiveSummary';
+import ScheduleEditor from '../components/qa/ScheduleEditor';
 
 // /qa-runs — admin-only list of recent QA runs.
 //
@@ -53,7 +55,9 @@ const QaRunsListPage = () => {
             </header>
 
             <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
+                <ExecutiveSummary />
                 <RunNowPanel onComplete={refresh} />
+                <ScheduleEditor />
 
                 <div>
                     <div className="flex items-center justify-between mb-3">

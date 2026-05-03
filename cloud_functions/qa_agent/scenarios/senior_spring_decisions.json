@@ -17,5 +17,11 @@
         "penn_state_university"
     ],
     "expected_template_used": "senior_spring",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks senior_spring (graduation_year=2026 + spring → late-cycle)",
+        "5 colleges with deadlines in the past added without errors",
+        "Roadmap response carries metadata.template_used == senior_spring",
+        "Past-deadline tasks render with the OVERDUE marker"
+    ]
 }
