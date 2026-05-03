@@ -43,12 +43,24 @@ test.beforeEach(async ({ page }) => {
     // route handlers in reverse-registration order; specific handlers below
     // run first, this one only fires for backend URLs we forgot to mock.
     // Registering this last would silently shadow every specific mock.
-    await page.route(/cloudfunctions\.net|run\.app/, (route) => fulfillJson(route, {
-        success: true,
-    }));
+    //
+    // Match any non-localhost host so this works regardless of what URLs
+    // the bundle was built with (CI uses placeholder hosts; local uses
+    // the real cloudfunctions.net domain).
+    await page.route((url) => !url.host.includes('localhost') && !url.host.includes('127.0.0.1'),
+        (route) => {
+            // Don't intercept asset requests (fonts, images, etc.) — only
+            // intercept what looks like an API call.
+            const u = route.request().url();
+            if (/\.(woff2?|ttf|otf|css|js|png|jpe?g|gif|svg)(\?|$)/.test(u)) {
+                return route.continue();
+            }
+            return fulfillJson(route, { success: true });
+        });
 
-    // counselor_agent endpoints
-    await page.route(/\/counselor-agent\/work-feed/, (route) => fulfillJson(route, {
+    // Specific handlers below — matched by path suffix only since the host
+    // is built-in placeholder in CI vs. the real domain locally.
+    await page.route(/\/work-feed(\?|$)/, (route) => fulfillJson(route, {
         success: true,
         total: 2,
         items: [
@@ -64,50 +76,54 @@ test.beforeEach(async ({ page }) => {
         ],
     }));
 
-    await page.route(/\/counselor-agent\/roadmap/, (route) => fulfillJson(route, {
-        success: true,
-        roadmap: {
-            title: 'Junior Spring',
-            phases: [{
-                id: 'phase_1', name: 'Test Phase', date_range: 'Jan-May',
-                tasks: [{ id: 't1', title: 'Sample task', type: 'core' }],
-            }],
-        },
-        metadata: { template_used: 'junior_spring' },
-    }));
+    await page.route(/\/roadmap(\?|$)/, (route) => {
+        // Only intercept POSTs (the API call); GETs go to the SPA itself.
+        if (route.request().method() !== 'POST') return route.continue();
+        return fulfillJson(route, {
+            success: true,
+            roadmap: {
+                title: 'Junior Spring',
+                phases: [{
+                    id: 'phase_1', name: 'Test Phase', date_range: 'Jan-May',
+                    tasks: [{ id: 't1', title: 'Sample task', type: 'core' }],
+                }],
+            },
+            metadata: { template_used: 'junior_spring' },
+        });
+    });
 
-    await page.route(/\/counselor-agent\/deadlines/, (route) => fulfillJson(route, {
+    await page.route(/\/deadlines(\?|$)/, (route) => fulfillJson(route, {
         success: true, deadlines: [], count: 0,
     }));
 
-    await page.route(/\/counselor-agent\/get-tasks/, (route) => fulfillJson(route, {
+    await page.route(/\/get-tasks(\?|$)/, (route) => fulfillJson(route, {
         success: true, tasks: [], count: 0,
     }));
 
-    await page.route(/\/counselor-agent\/list-chats/, (route) => fulfillJson(route, {
+    await page.route(/\/list-chats(\?|$)/, (route) => fulfillJson(route, {
         success: true, conversations: [],
     }));
 
-    // profile_manager_v2 endpoints
-    await page.route(/\/profile-manager-v2\/get-profile/, (route) => fulfillJson(route, {
+    // profile_manager_v2 endpoints — also matched by path suffix.
+    await page.route(/\/get-profile(\?|$)/, (route) => fulfillJson(route, {
         success: true,
         profile: { grade: '11th Grade', graduation_year: 2027 },
         content: 'profile content',
     }));
 
-    await page.route(/\/profile-manager-v2\/get-college-list/, (route) => fulfillJson(route, {
+    await page.route(/\/get-college-list(\?|$)/, (route) => fulfillJson(route, {
         college_list: [],
     }));
 
-    await page.route(/\/profile-manager-v2\/get-essay-tracker/, (route) => fulfillJson(route, {
+    await page.route(/\/get-essay-tracker(\?|$)/, (route) => fulfillJson(route, {
         essays: [],
     }));
 
-    await page.route(/\/profile-manager-v2\/get-scholarship-tracker/, (route) => fulfillJson(route, {
+    await page.route(/\/get-scholarship-tracker(\?|$)/, (route) => fulfillJson(route, {
         scholarships: [],
     }));
 
-    await page.route(/\/profile-manager-v2\/save-roadmap-task/, (route) => fulfillJson(route, {
+    await page.route(/\/save-roadmap-task(\?|$)/, (route) => fulfillJson(route, {
         success: true, task_id: 'user_task_e2e',
     }));
 });
