@@ -13,10 +13,12 @@ from firestore_db import get_db
 
 logger = logging.getLogger(__name__)
 
-# Knowledge base URL for enriching university data
+# Knowledge base URL for enriching university data. Falls back to the
+# Firestore-backed v2 function — the non-v2 (Elasticsearch-backed) one is
+# offline. Override via KNOWLEDGE_BASE_UNIVERSITIES_URL env var if needed.
 KNOWLEDGE_BASE_UNIVERSITIES_URL = os.getenv(
     "KNOWLEDGE_BASE_UNIVERSITIES_URL",
-    "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+    "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 )
 
 

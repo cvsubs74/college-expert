@@ -39,7 +39,12 @@ PROFILE_MANAGER_FUNCTION="profile-manager"
 PROFILE_MANAGER_ES_FUNCTION="profile-manager-es"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
-KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities"
+KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities-v2"
+# Note: the legacy "knowledge-base-manager-universities" (no -v2 suffix) was
+# Elasticsearch-backed; that ES cluster is offline. The v2 function above is
+# Firestore-backed and is the live one — both the frontend and counselor_agent
+# must point at it. The deploy_knowledge_base_manager_universities target
+# below remains for legacy reference only; do not deploy v1.
 PAYMENT_MANAGER_FUNCTION="payment-manager"
 PAYMENT_MANAGER_V2_FUNCTION="payment-manager-v2"
 UNIVERSITY_COLLECTOR_SERVICE_NAME="university-profile-collector"
@@ -292,7 +297,7 @@ deploy_agent_hybrid() {
     cd agents/college_expert_hybrid
     cat > .env << EOF
 GEMINI_API_KEY=${GEMINI_API_KEY}
-KNOWLEDGE_BASE_UNIVERSITIES_URL=https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app
+KNOWLEDGE_BASE_UNIVERSITIES_URL=https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app
 PROFILE_MANAGER_ES_URL=https://profile-manager-es-pfnwjfp26a-ue.a.run.app
 GOOGLE_GENAI_USE_VERTEXAI=0
 EOF
@@ -408,7 +413,7 @@ REGION: ${REGION}
 GCS_BUCKET_NAME: college-counselling-478115-student-profiles
 GEMINI_API_KEY: ${GEMINI_API_KEY}
 FIRESTORE_DATABASE: "(default)"
-KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 LOG_EXECUTION_ID: "true"
 EOF
     
