@@ -87,6 +87,9 @@ const ContactPage = () => {
                         />
                     </Link>
                     <div className="flex items-center gap-4">
+                        <Link to="/resources" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
+                            Resources
+                        </Link>
                         <Link to="/pricing" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
                             Pricing
                         </Link>
