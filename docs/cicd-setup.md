@@ -35,50 +35,89 @@ Two triggers — one for PRs, one for main pushes. Both run the same pipeline,
 but the pull-request trigger reports status checks back to GitHub so PRs can
 be gated on green.
 
-```bash
-# PR trigger: every PR touching the default branch.
-gcloud builds triggers create github \
-    --account=cvsubs@gmail.com \
-    --project=college-counselling-478115 \
-    --region=global \
-    --name=college-expert-pr \
-    --repo-name=college-expert \
-    --repo-owner=cvsubs74 \
-    --pull-request-pattern='^main$' \
-    --build-config=cloudbuild.yaml \
-    --comment-control=COMMENTS_ENABLED \
-    --description='Run unit tests + frontend build on every PR'
+**Use the Cloud Build console UI for both triggers, not gcloud.** The
+`gcloud builds triggers create github` CLI returns `INVALID_ARGUMENT` for
+1st-gen GitHub-App-connected repos until at least one trigger has been
+created via the console, and even then is unreliable for additional
+trigger creation. The console form is straightforward and only takes a
+minute.
 
-# Main-push trigger: every commit landing on main.
-gcloud builds triggers create github \
+Open: <https://console.cloud.google.com/cloud-build/triggers/add?project=college-counselling-478115>
+
+### PR trigger — `college-expert-pr`
+
+| Field | Value |
+|---|---|
+| Name | `college-expert-pr` |
+| Description | `Run unit tests + frontend build on every PR` |
+| Region | `global` |
+| Event | **Pull request** |
+| Source — Repository generation | **1st gen** |
+| Source — Repository | `cvsubs74/college-expert` |
+| Base branch | `^main$` |
+| Comment control | **Required except for owners and collaborators** |
+| Configuration — Type | **Cloud Build configuration file (yaml or json)** |
+| Configuration — Location | **Repository** → `cloudbuild.yaml` |
+
+### Main-push trigger — `college-expert-main`
+
+Same form, with these differences:
+
+| Field | Value |
+|---|---|
+| Name | `college-expert-main` |
+| Description | `Run unit tests + frontend build on every push to main` |
+| Event | **Push to a branch** |
+| Branch | `^main$` |
+| (Comment control field doesn't apply to push triggers) | — |
+
+### After both triggers exist
+
+Optionally make the PR check required for merge:
+**GitHub repo → Settings → Branches → Branch protection rules → `main` →
+Require status checks → tick `college-expert-pr (college-counselling-478115)`**.
+After that, no PR can be merged without a green build.
+
+You can verify both triggers exist via gcloud:
+
+```bash
+gcloud builds triggers list \
     --account=cvsubs@gmail.com \
     --project=college-counselling-478115 \
-    --region=global \
-    --name=college-expert-main \
-    --repo-name=college-expert \
-    --repo-owner=cvsubs74 \
-    --branch-pattern='^main$' \
-    --build-config=cloudbuild.yaml \
-    --description='Run unit tests + frontend build on every push to main'
+    --format='table(name,github.pullRequest.branch:label=PR_BRANCH,github.push.branch:label=PUSH_BRANCH)'
 ```
 
-After creating the triggers, optionally make them required status checks on
-the default branch in GitHub: **Settings → Branches → Branch protection rules →
-main → Require status checks**, and tick the `college-expert-pr` check.
+Should show both `college-expert-pr` and `college-expert-main`.
 
 ## Verify the trigger fires
 
-Push any branch to GitHub, open a PR. You should see a "Cloud Build / college-expert-pr"
-status appear under the PR Checks tab within a minute. Click "Details" to
-follow the build live.
+Push any branch to GitHub, open a PR. You should see a "college-expert-pr
+(college-counselling-478115)" status appear under the PR Checks tab within
+a minute. Click "Details" to follow the build live.
 
-If the trigger doesn't fire:
+If the PR trigger was created AFTER the PR was opened, the trigger won't
+have seen the original event — push an empty commit to fire a "synchronize"
+event:
+
+```bash
+git commit --allow-empty -m "ci: trigger Cloud Build pipeline"
+git push origin <branch>
+```
+
+If the trigger still doesn't fire:
 
 - `gcloud builds triggers list --account=cvsubs@gmail.com --project=college-counselling-478115`
-  to confirm both triggers exist.
-- Check the GitHub side: **Settings → Integrations → Google Cloud Build** —
-  the app must be installed for the repo.
-- Inspect a manual run: `gcloud builds submit --config=cloudbuild.yaml . --account=cvsubs@gmail.com --project=college-counselling-478115`. This bypasses the trigger entirely and runs the pipeline locally on Cloud Build, useful for diagnosing pipeline issues vs. trigger config issues.
+  to confirm both triggers exist and aren't `disabled`.
+- Check the GitHub side: <https://github.com/settings/installations> — the
+  Google Cloud Build app must be installed and have access to
+  `cvsubs74/college-expert` (it should appear under "Repository access").
+- Inspect a manual run: `gcloud builds submit --config=cloudbuild.yaml .
+  --account=cvsubs@gmail.com --project=college-counselling-478115`. This
+  bypasses the trigger entirely and runs the pipeline locally on Cloud
+  Build, useful for diagnosing pipeline issues vs. trigger config issues.
+- Note: PR triggers can't be invoked via `gcloud builds triggers run` —
+  the API returns "RunTrigger is not supported for GitHub PullRequest
+  Triggers". Push an empty commit instead.
 
 ## Running the suite locally
 
