@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation, Outlet } from 'react-router-dom';
 import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon } from '@heroicons/react/24/outline';
 import CreditsBadge from './components/CreditsBadge';
 import Profile from './pages/Profile';
@@ -7,7 +7,6 @@ import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import UniversityExplorer from './pages/UniversityExplorer';
 import StratiaLaunchpad from './pages/StratiaLaunchpad';
-import ApplicationsPage from './pages/ApplicationsPage';
 import EssayHelpPage from './pages/EssayHelpPage';
 import FitVisualizer from './pages/FitVisualizer';
 import LandingPage from './pages/LandingPage';
@@ -16,10 +15,7 @@ import ContactPage from './pages/ContactPage';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import CounselorPage from './pages/CounselorPage';
-import EssayDashboard from './pages/EssayDashboard';
 import FinancialAidComparison from './pages/FinancialAidComparison';
-import ProgressPage from './pages/ProgressPage';
 import RoadmapPage from './pages/RoadmapPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingModal from './components/OnboardingModal';
@@ -279,15 +275,19 @@ function App() {
                   <Route path="/universities" element={<UniversityExplorer />} />
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
                   <Route path="/roadmap" element={<RoadmapPage />} />
-                  {/* Legacy routes — still resolve for direct URLs / bookmarks.
-                      Replaced by /roadmap?tab=... redirects in M1 PR #7. */}
-                  <Route path="/counselor" element={<CounselorPage />} />
-                  <Route path="/applications" element={<ApplicationsPage />} />
+                  {/* Legacy routes redirect to the corresponding inner tab on
+                      the consolidated /roadmap surface. `replace` on the
+                      Navigate so back-button doesn't bounce between the old
+                      and new URL. Query strings on legacy URLs are dropped
+                      intentionally — there are no callers in the codebase
+                      relying on them. */}
+                  <Route path="/counselor" element={<Navigate to="/roadmap?tab=plan" replace />} />
+                  <Route path="/progress" element={<Navigate to="/roadmap?tab=essays" replace />} />
+                  <Route path="/essays" element={<Navigate to="/roadmap?tab=essays" replace />} />
+                  <Route path="/applications" element={<Navigate to="/roadmap?tab=colleges" replace />} />
                   <Route path="/essay-help/:universityId" element={<EssayHelpPage />} />
                   <Route path="/fit-visualizer" element={<FitVisualizer />} />
                   <Route path="/knowledge-base" element={<KnowledgeBase />} />
-                  <Route path="/progress" element={<ProgressPage />} />
-                  <Route path="/essays" element={<EssayDashboard />} />
                   <Route path="/financial-aid" element={<FinancialAidComparison />} />
                 </Route>
               </Routes>

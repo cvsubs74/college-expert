@@ -1768,12 +1768,21 @@ export const sendWelcomeEmail = async (userEmail) => {
 
 // ============== COUNSELOR AGENT API ==============
 
-export const fetchStudentRoadmap = async (userEmail, gradeLevel) => {
+/**
+ * Fetch the semester roadmap for a user.
+ *
+ * The backend resolver (counselor_agent /roadmap) honors caller-provided
+ * (gradeLevel, semester) when BOTH are passed and resolve cleanly; otherwise
+ * it falls back to inferring from profile.graduation_year + the current month.
+ * Pass either both or neither — passing only one is treated as "neither" by
+ * the resolver and falls back to the profile path.
+ */
+export const fetchStudentRoadmap = async (userEmail, gradeLevel, semester) => {
   try {
-    const response = await axios.post(`${COUNSELOR_AGENT_URL}/roadmap`, {
-      user_email: userEmail,
-      grade_level: gradeLevel
-    });
+    const body = { user_email: userEmail };
+    if (gradeLevel) body.grade_level = gradeLevel;
+    if (semester) body.semester = semester;
+    const response = await axios.post(`${COUNSELOR_AGENT_URL}/roadmap`, body);
     return response.data;
   } catch (error) {
     console.error('[API] Error fetching roadmap:', error);

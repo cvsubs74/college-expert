@@ -8,12 +8,30 @@ import {
     ExclamationTriangleIcon,
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
-import { fetchStudentRoadmap } from '../services/api';
+import { fetchStudentRoadmap, fetchUserProfile } from '../services/api';
+import { useToast } from '../components/Toast';
 import RoadmapView from '../components/counselor/RoadmapView';
 import ThisWeekFocusCard from '../components/roadmap/ThisWeekFocusCard';
 import EssayDashboard from './EssayDashboard';
 import ScholarshipTracker from './ScholarshipTracker';
 import ApplicationsPage from './ApplicationsPage';
+
+// Compute the current academic semester client-side using the same rule
+// the backend resolver uses (planner.py semester_from_date). Both ends
+// must agree on the boundaries so the rendered "Senior Fall" / "Senior
+// Spring" label matches what the user actually gets.
+const computeCurrentSemester = (now = new Date()) => {
+    const m = now.getMonth() + 1; // JS months are 0-indexed
+    if (m >= 8 && m <= 12) return 'fall';
+    if (m >= 1 && m <= 5) return 'spring';
+    return 'summer';
+};
+
+// Default grade hint when the user's profile lacks one. We surface a
+// one-toast nudge (per-session) prompting them to complete their profile;
+// the backend resolver will fall back to graduation_year-based inference
+// regardless, so this default is purely a labeling fallback.
+const DEFAULT_GRADE_LEVEL = '11th Grade';
 
 // Tabs for the consolidated Roadmap surface. Order matches the design doc:
 // Plan / Essays / Scholarships / Colleges. The This Week focus card lands
@@ -96,10 +114,9 @@ const RoadmapPage = () => {
 };
 
 // PlanTab keeps the roadmap-fetch logic colocated so RoadmapPage stays a
-// pure router-of-tabs. The "This Week" focus card slots in above
-// <RoadmapView> in M1 PR #5; until then this is just the existing
-// semester roadmap timeline.
+// pure router-of-tabs.
 const PlanTab = ({ userEmail }) => {
+    const toast = useToast();
     const [roadmap, setRoadmap] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -111,10 +128,41 @@ const PlanTab = ({ userEmail }) => {
         const load = async () => {
             try {
                 setLoading(true);
-                // Note: still passing only the legacy '11th Grade' hint here.
-                // M1 PR #7 wires this to profile.grade_level + computed semester
-                // so the backend's new resolver (PR #3) takes the caller path.
-                const data = await fetchStudentRoadmap(userEmail, '11th Grade');
+
+                // Resolve grade and semester client-side. When BOTH are passed,
+                // the backend resolver (counselor_agent /roadmap, M1 PR #3)
+                // takes the 'caller' path. When grade is missing, we still
+                // pass our computed semester — the resolver treats one-of-two
+                // as "neither" and falls back to profile.graduation_year, so
+                // we don't get a wrong-grade template.
+                const profileResult = await fetchUserProfile(userEmail);
+                if (cancelled) return;
+
+                const profile = profileResult?.profile || {};
+                const grade = (profile.grade || '').trim();
+                const semester = computeCurrentSemester();
+                let gradeLevel = grade || DEFAULT_GRADE_LEVEL;
+
+                // One-shot warning when the profile has no grade. Per-session
+                // flag so we don't badger the user on every Plan-tab visit.
+                if (!grade) {
+                    const warnedKey = `roadmap_grade_warning_${userEmail}`;
+                    if (!sessionStorage.getItem(warnedKey)) {
+                        toast.info(
+                            'Add your grade to your profile',
+                            'Your roadmap is using a default grade. Update your profile so it matches where you actually are.',
+                            8000,
+                        );
+                        sessionStorage.setItem(warnedKey, '1');
+                    }
+                    // We still send a default grade so the request shape is
+                    // consistent; backend will fall back to graduation_year
+                    // since (default_grade + computed_semester) is a hint
+                    // not a guarantee of correctness.
+                    gradeLevel = DEFAULT_GRADE_LEVEL;
+                }
+
+                const data = await fetchStudentRoadmap(userEmail, gradeLevel, semester);
                 if (cancelled) return;
                 if (data.success) {
                     setRoadmap(data.roadmap);
@@ -130,7 +178,7 @@ const PlanTab = ({ userEmail }) => {
         };
         load();
         return () => { cancelled = true; };
-    }, [userEmail]);
+    }, [userEmail, toast]);
 
     return (
         <>
