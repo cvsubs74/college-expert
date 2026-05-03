@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { CheckCircleIcon, CalendarIcon, ExclamationCircleIcon, SparklesIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { useNavigate } from 'react-router-dom';
+import { CheckCircleIcon, CalendarIcon, ExclamationCircleIcon, SparklesIcon, ArrowPathIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleSolidIcon } from '@heroicons/react/24/solid';
 import { useAuth } from '../../context/AuthContext';
 import { markRoadmapTask, getRoadmapTasks, generateRoadmapTasks, updateTaskStatus } from '../../services/api';
@@ -24,6 +25,7 @@ const getUrgencyColor = (daysUntil) => {
 };
 
 const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
+    const navigate = useNavigate();
     const { currentUser: user } = useAuth();
     const [completedTasks, setCompletedTasks] = useState(initialProgress);
     const [savingTask, setSavingTask] = useState(null);
@@ -287,7 +289,7 @@ const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
                                                     <CheckCircleIcon className="h-5 w-5" />
                                                 )}
                                             </button>
-                                            <div className="flex-1">
+                                            <div className="flex-1 min-w-0">
                                                 <p className={`text-sm font-medium ${isCompleted ? 'text-green-700 line-through' : task.type === 'deadline' ? 'text-amber-900' : 'text-stone-700'}`}>
                                                     {task.title}
                                                 </p>
@@ -295,6 +297,21 @@ const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
                                                     <p className="text-xs text-amber-600/80 mt-1 font-medium">Due: {task.due_date}</p>
                                                 )}
                                             </div>
+                                            {task.artifact_ref?.deep_link && (
+                                                <button
+                                                    type="button"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        navigate(task.artifact_ref.deep_link);
+                                                    }}
+                                                    className="flex-shrink-0 inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full
+                                                        text-[#1A4D2E] bg-[#D6E8D5]/40 hover:bg-[#D6E8D5] transition-colors whitespace-nowrap"
+                                                    title={task.artifact_ref.label || 'Open'}
+                                                >
+                                                    <span>{task.artifact_ref.label || 'Open'}</span>
+                                                    <ArrowRightIcon className="w-3 h-3" />
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 );

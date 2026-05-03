@@ -512,6 +512,45 @@ def get_college_context(user_email):
         return {'colleges': [], 'uc_schools': [], 'has_early_decision': False, 'has_early_action': False}
 
 
+# =============================================================================
+# ARTIFACT REFS — cross-link template tasks to the right tab/item
+# =============================================================================
+# Tasks that resolve to a specific college, scholarship, or essay get an
+# `artifact_ref` field. The frontend renders this as a clickable badge that
+# navigates via `deep_link`. Kept additive: tasks without a clear artifact
+# omit the field entirely; existing consumers ignore unknown fields.
+
+def _college_artifact_ref(college):
+    """
+    Build an artifact_ref pointing at the Colleges tab focused on this school.
+    Returns None when the college dict lacks an id (data quality guard).
+    """
+    if not college or not college.get('id'):
+        return None
+    uni_id = college['id']
+    name = college.get('name') or uni_id
+    return {
+        'type': 'college',
+        'university_id': uni_id,
+        'label': f'Open {name}',
+        'deep_link': f'/roadmap?tab=colleges&school={uni_id}',
+    }
+
+
+def _tab_artifact_ref(tab, label):
+    """
+    Build a tab-level artifact_ref (no specific item id). Used when a task
+    relates to a surface but doesn't resolve to a single row — e.g.,
+    "Apply for need-based scholarships" → just the Scholarships tab.
+    """
+    return {
+        'type': 'tab',
+        'tab': tab,
+        'label': label,
+        'deep_link': f'/roadmap?tab={tab}',
+    }
+
+
 def translate_rd_submission(task, context):
     """Translate 'Submit RD Applications' to specific colleges."""
     tasks = []
@@ -520,41 +559,55 @@ def translate_rd_submission(task, context):
     # Group UCs if present
     if context['uc_schools']:
         uc_names = ', '.join(context['uc_schools'])
-        # Find UC deadline
+        # Find UC deadline + a representative UC college to anchor the deep link.
         uc_deadline = None
+        uc_anchor = None
         for college in context['colleges']:
             if college['is_uc']:
-                uc_deadline = college.get('deadline')
-                break
-        
+                uc_deadline = uc_deadline or college.get('deadline')
+                uc_anchor = uc_anchor or college
+                if uc_deadline and uc_anchor:
+                    break
+
         if uc_deadline:
             # Check if overdue
             is_overdue = uc_deadline < current_date
             overdue_marker = "⚠️ OVERDUE - " if is_overdue else ""
-            
-            tasks.append({
+
+            uc_task = {
                 'id': 'task_submit_uc',
                 'title': f"{overdue_marker}Submit UC Application ({uc_names}) - Deadline: {uc_deadline}",
                 'due_date': uc_deadline,
                 'type': 'deadline',
                 'is_overdue': is_overdue
-            })
-    
+            }
+            uc_ref = _college_artifact_ref(uc_anchor)
+            if uc_ref:
+                # Override the label so the badge reads "Open UCs" rather than
+                # the anchor school's full name.
+                uc_ref = {**uc_ref, 'label': f'Open {uc_names}'}
+                uc_task['artifact_ref'] = uc_ref
+            tasks.append(uc_task)
+
     # Individual non-UC colleges
     for college in context['colleges']:
         if not college['is_uc']:
             deadline = college.get('deadline', '')
             is_overdue = deadline and deadline < current_date
             overdue_marker = "⚠️ OVERDUE - " if is_overdue else ""
-            
-            tasks.append({
+
+            college_task = {
                 'id': f"task_submit_{college['id']}",
                 'title': f"{overdue_marker}Submit {college['name']} - Deadline: {deadline}",
                 'due_date': deadline,
                 'type': 'deadline',
                 'is_overdue': is_overdue
-            })
-    
+            }
+            ref = _college_artifact_ref(college)
+            if ref:
+                college_task['artifact_ref'] = ref
+            tasks.append(college_task)
+
     return tasks if tasks else [task]  # Fallback to generic if no colleges
 
 
@@ -562,25 +615,33 @@ def translate_rd_submission(task, context):
 def translate_essay_tasks(task, context):
     """Translate 'Complete Essays/Supplements' to specific prompts."""
     tasks = []
-    
-    # UC PIQs if present
+
+    # UC PIQs: tab-level link only — UCs share 8 prompts and the user picks 4,
+    # so there isn't a single canonical essay row to resolve against.
     if context['uc_schools']:
         uc_names = ', '.join(context['uc_schools'])
         tasks.append({
             'id': 'task_uc_piqs',
             'title': f"Complete 4 of 8 UC PIQs ({uc_names})",
-            'type': 'core'
+            'type': 'core',
+            'artifact_ref': _tab_artifact_ref('essays', 'Open Essays'),
         })
-    
-    # Other colleges' supplements
+
+    # Other colleges' supplements: link to that school's row in the Colleges
+    # tab. Resolving to the specific essay_tracker row is a future PR — for
+    # now the per-school landing is enough to make the task actionable.
     for college in context['colleges']:
         if not college['is_uc']:
-            tasks.append({
+            college_task = {
                 'id': f"task_essays_{college['id']}",
                 'title': f"Complete {college['name']} supplemental essays",
                 'type': 'core'
-            })
-    
+            }
+            ref = _college_artifact_ref(college)
+            if ref:
+                college_task['artifact_ref'] = ref
+            tasks.append(college_task)
+
     return tasks if tasks else [task]
 
 
@@ -588,14 +649,17 @@ def translate_verification(task, context):
     """Translate 'Verify Materials' to specific colleges."""
     if not context['colleges']:
         return [task]
-    
+
     college_names = ', '.join([c['name'] for c in context['colleges'][:5]])  # Max 5 for readability
     count = len(context['colleges'])
-    
+
     return [{
         'id': 'task_verify_materials',
         'title': f"Verify all materials received by {college_names}{' and more' if count > 5 else ''} ({count} colleges)",
-        'type': 'core'
+        'type': 'core',
+        # Verification is a multi-school task; route to the Colleges tab landing
+        # so the user sees per-school cards and can confirm each in turn.
+        'artifact_ref': _tab_artifact_ref('colleges', 'Open Colleges'),
     }]
 
 
