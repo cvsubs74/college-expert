@@ -417,6 +417,9 @@ KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-v2
 LOG_EXECUTION_ID: "true"
 EOF
     
+    # QA_ADMIN_TOKEN is the second gate on /clear-test-data; same secret
+    # the qa-agent function reads. Wired here so a deploy of profile-v2
+    # automatically picks up token rotations.
     gcloud functions deploy profile-manager-v2 \
         --gen2 \
         --runtime=python312 \
@@ -426,6 +429,7 @@ EOF
         --trigger-http \
         --allow-unauthenticated \
         --env-vars-file=env.deploy.yaml \
+        --set-secrets="QA_ADMIN_TOKEN=qa-admin-token:latest" \
         --timeout=540s \
         --memory=1024MB \
         --cpu=1 \
@@ -1069,6 +1073,12 @@ EOF
     # No --min-instances: cold starts are fine for an on-demand /
     # scheduled monitor. Memory bumped a notch above default to give
     # the LLM client + multiple in-flight HTTP calls headroom.
+    # Service account: dedicated qa-agent SA with self-grant for
+    # serviceAccountTokenCreator (mints custom tokens) + secretmanager
+    # accessor + datastore.user. See docs/qa-agent-setup.md.
+    # `--allow-unauthenticated` because the X-Admin-Token gate inside
+    # main.py is the actual auth boundary; opening the function to the
+    # public is fine because requests without the token return 401 fast.
     gcloud functions deploy qa-agent \
         --gen2 \
         --runtime=python312 \
@@ -1076,7 +1086,8 @@ EOF
         --source=. \
         --entry-point=qa_agent \
         --trigger-http \
-        --no-allow-unauthenticated \
+        --allow-unauthenticated \
+        --service-account="qa-agent@${PROJECT_ID}.iam.gserviceaccount.com" \
         --env-vars-file=env.deploy.yaml \
         --set-secrets="QA_ADMIN_TOKEN=qa-admin-token:latest,FIREBASE_WEB_API_KEY=firebase-web-api-key:latest,QA_TEST_USER_UID=qa-test-user-uid:latest" \
         --timeout=540s \
