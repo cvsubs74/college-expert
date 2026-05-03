@@ -20,6 +20,7 @@ import TermsOfService from './pages/TermsOfService';
 import FinancialAidComparison from './pages/FinancialAidComparison';
 import RoadmapPage from './pages/RoadmapPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import Navigation from './components/Navigation';
 import OnboardingModal from './components/OnboardingModal';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ApproachProvider } from './context/ApproachContext';
@@ -31,118 +32,10 @@ import { checkOnboardingStatus, saveOnboardingProfile, fetchUserProfile, sendWel
 import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
-function Navigation() {
-  const location = useLocation();
-  const { currentUser } = useAuth();
-
-  const isActive = (path) => location.pathname === path;
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error('Failed to log out', error);
-    }
-  };
-
-  // Navigation links with Stratia styling.
-  // The single "Roadmap" entry points at the consolidated /roadmap surface
-  // (Plan / Essays / Scholarships / Colleges tabs). The old /counselor and
-  // /progress URLs still resolve for any direct links — redirects land in
-  // M1 PR #7. Removed from nav now to avoid two competing entry points.
-  const navLinks = [
-    { path: '/profile', label: 'Profile', icon: DocumentTextIcon },
-    { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
-    { path: '/launchpad', label: 'Launchpad', icon: RocketLaunchIcon },
-    { path: '/roadmap', label: 'Roadmap', icon: SparklesIcon },
-    { path: '/resources', label: 'Resources', icon: BookOpenIcon },
-  ];
-
-
-  return (
-    <nav className="bg-[#FDFCF7]/95 backdrop-blur-sm border-b border-[#E0DED8] sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-36">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img
-                src="/logo.png"
-                alt="Stratia Admissions"
-                className="h-32 w-auto object-contain object-left mix-blend-multiply"
-              />
-            </Link>
-
-            {/* Nav Links */}
-            <div className="hidden sm:ml-8 sm:flex sm:items-center sm:gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2
-                    ${isActive(link.path)
-                      ? 'bg-[#D6E8D5] text-[#1A4D2E]'
-                      : 'text-[#4A4A4A] hover:bg-[#F8F6F0] hover:text-[#1A4D2E]'
-                    }`}
-                >
-                  <link.icon className="h-4 w-4" />
-                  {link.label}
-                </Link>
-              ))}
-
-              {/* Admin Knowledge Base Link */}
-              {currentUser?.email === 'cvsubs@gmail.com' && (
-                <Link
-                  to="/knowledge-base"
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2
-                    ${isActive('/knowledge-base')
-                      ? 'bg-[#D6E8D5] text-[#1A4D2E]'
-                      : 'text-[#4A4A4A] hover:bg-[#F8F6F0] hover:text-[#1A4D2E]'
-                    }`}
-                >
-                  Knowledge Base
-                </Link>
-              )}
-            </div>
-          </div>
-
-          {/* User Menu */}
-          <div className="flex items-center gap-3">
-            {currentUser && (
-              <>
-                <div className="hidden md:flex items-center gap-2">
-                  {currentUser.photoURL && (
-                    <img
-                      src={currentUser.photoURL}
-                      alt={currentUser.displayName}
-                      className="h-8 w-8 rounded-full ring-2 ring-[#D6E8D5]"
-                    />
-                  )}
-                  <span className="text-sm text-[#4A4A4A] font-medium">
-                    {currentUser.displayName}
-                  </span>
-                </div>
-                <button
-                  onClick={handleLogout}
-                  className="px-3 py-2 text-sm font-medium text-[#4A4A4A] border border-[#E0DED8] rounded-full hover:bg-[#F8F6F0] hover:border-[#1A4D2E] transition-all"
-                >
-                  Sign Out
-                </button>
-                <Link
-                  to="/pricing"
-                  className="hidden sm:inline-flex items-center px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-full hover:bg-[#2D6B45] transition-all shadow-md"
-                >
-                  <StarIcon className="h-4 w-4 mr-1" />
-                  Upgrade
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
+// Navigation lives in components/Navigation.jsx — a single auth-aware
+// component shared by AppLayout (protected pages) and the public Resources
+// routes. Logged-out visitors see only the Resources link + a Try Stratia
+// CTA; signed-in users see the full nav.
 
 // Layout component for protected routes with onboarding
 function AppLayout() {
