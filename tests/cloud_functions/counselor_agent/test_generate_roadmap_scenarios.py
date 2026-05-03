@@ -226,6 +226,34 @@ class TestGradeEdges:
         # sophomore_summer would have been the literal pick, but it falls back.
         assert result['metadata']['template_used'] == 'sophomore_spring'
 
+    def test_senior_summer_falls_back_to_senior_spring(self):
+        # Same fallback for the post-grad summer (Jun-Jul of senior year).
+        # No senior_summer template; user gets senior_spring.
+        with fixed_today(2026, 7, 15), stub_student(profile={'graduation_year': 2026}):
+            result = generate_roadmap(make_request(user_email='x@y.z'))
+        assert result['metadata']['template_used'] == 'senior_spring'
+
+    def test_freshman_summer_falls_back_to_freshman_spring(self):
+        # Pre-9th-grade summer (June after 8th grade, before freshman year).
+        # Resolver picks freshman + summer → freshman_spring (no summer
+        # template). User gets a coherent first-year roadmap to ramp into.
+        with fixed_today(2026, 7, 15), stub_student(profile={'graduation_year': 2030}):
+            result = generate_roadmap(make_request(user_email='x@y.z'))
+        assert result['metadata']['template_used'] == 'freshman_spring'
+
+    def test_just_graduated_in_august_still_renders(self):
+        # Senior in August of their graduation year — technically post-grad but
+        # they're still using the app. Resolver's clamp handles this: they're
+        # treated as a senior. Template falls back to senior_fall (the typical
+        # senior-fall behavior, applied even though they're technically past
+        # senior fall).
+        with fixed_today(2026, 8, 15), stub_student(profile={'graduation_year': 2026}):
+            result = generate_roadmap(make_request(user_email='x@y.z'))
+        # Whatever specific template gets picked, the response should at least
+        # be coherent senior-shaped — we don't crash, we don't return None.
+        assert result['success'] is True
+        assert result['metadata']['grade_used'] == 'senior'
+
 
 # ---------------------------------------------------------------------------
 # Resolver-source coverage (caller / caller-grade-only / default)
@@ -266,6 +294,20 @@ class TestResolverSources:
             result = generate_roadmap(make_request(user_email='x@y.z'))
         assert result['metadata']['template_used'] == 'senior_fall'
         assert result['metadata']['resolution_source'] == 'default'
+
+    def test_profile_present_but_missing_graduation_year_falls_through(self):
+        # Real scenario: user finished onboarding but the grad-year question
+        # was skipped or stored as null. Profile object exists but doesn't
+        # carry the field the resolver needs. Should fall through cleanly to
+        # the default rather than crash.
+        with fixed_today(2026, 9, 1), stub_student(
+            profile={'grade': '11th Grade'},  # has grade text, no grad year
+        ):
+            result = generate_roadmap(make_request(user_email='x@y.z'))
+        # The resolver still gets a usable answer (whether from grade text or
+        # default); the contract is just "doesn't crash, returns success".
+        assert result['success'] is True
+        assert 'template_used' in result['metadata']
 
     def test_only_semester_provided_overrides_computed_semester(self):
         # Asymmetry worth documenting: caller's `semester` IS used even
@@ -436,6 +478,42 @@ class TestCollegeContextTranslation:
         # wasn't corrupted by user A's call.
         assert any('Stanford' in t for t in b_tasks)
         assert not any('MIT' in t for t in b_tasks)
+
+    def test_single_uc_school_still_produces_uc_group_task(self):
+        # A student with exactly one UC on their list. The group-task path
+        # should still kick in (the UC application is one form covering all
+        # UCs, so even a single UC uses the group task).
+        result = self._senior_fall_with_colleges(college_context(
+            {'id': 'university_of_california_berkeley', 'name': 'UC Berkeley',
+             'is_uc': True, 'deadline': '2026-11-30'},
+            uc_schools=['UC Berkeley'],
+        ))
+        all_tasks = [t for phase in result['roadmap']['phases'] for t in phase['tasks']]
+        uc_task = next(
+            (t for t in all_tasks if 'UC Application' in t.get('title', '')),
+            None,
+        )
+        assert uc_task is not None, 'expected a UC group task even with 1 UC'
+        # Label has only the single school, no comma joining.
+        assert uc_task['artifact_ref']['label'] == 'Open UC Berkeley'
+
+    def test_college_with_missing_deadline_does_not_crash(self):
+        # A school whose deadline is missing/null in the KB. translate_rd_submission
+        # has to tolerate this — we should still get a roadmap response, even
+        # if the per-school task is dropped or rendered without the date.
+        result = self._senior_fall_with_colleges({
+            'colleges': [{
+                'id': 'mit', 'name': 'MIT', 'is_uc': False,
+                'deadline': None, 'deadline_type': 'Regular Decision',
+            }],
+            'uc_schools': [],
+            'has_early_decision': False,
+            'has_early_action': False,
+        })
+        # Contract: response is well-formed even with a null deadline.
+        assert result['success'] is True
+        assert isinstance(result['roadmap']['phases'], list)
+        assert len(result['roadmap']['phases']) >= 1
 
     def test_empty_college_list_keeps_template_tasks_generic(self):
         # No colleges → translate_task returns the original template task
