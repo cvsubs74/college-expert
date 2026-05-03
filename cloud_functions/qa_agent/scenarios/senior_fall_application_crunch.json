@@ -1,0 +1,22 @@
+{
+    "id": "senior_fall_application_crunch",
+    "description": "Senior in fall with a 6-school list (T20 reaches, targets, safety). The densest application surface — exercises every translation path including UC group treatment.",
+    "default_student_name": "Taylor Singh",
+    "profile_template": {
+        "grade_level": "12th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.95,
+        "intended_major": "Mechanical Engineering",
+        "interests": ["robotics", "design", "soccer"]
+    },
+    "colleges_template": [
+        "massachusetts_institute_of_technology",
+        "stanford_university",
+        "georgia_institute_of_technology",
+        "university_of_california_berkeley",
+        "university_of_california_san_diego",
+        "university_of_washington"
+    ],
+    "expected_template_used": "senior_fall",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

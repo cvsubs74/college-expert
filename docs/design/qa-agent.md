@@ -1,6 +1,6 @@
 # Design: QA Agent
 
-Status: Draft (awaiting approval)
+Status: Approved
 Last updated: 2026-05-03
 Related PRD: [docs/prd/qa-agent.md](../prd/qa-agent.md)
 

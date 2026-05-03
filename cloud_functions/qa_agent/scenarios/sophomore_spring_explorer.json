@@ -1,0 +1,15 @@
+{
+    "id": "sophomore_spring_explorer",
+    "description": "Sophomore in spring, exploring options. Three diverse colleges on the list.",
+    "default_student_name": "Jordan Patel",
+    "profile_template": {
+        "grade_level": "10th Grade",
+        "graduation_year": 2028,
+        "gpa": 3.8,
+        "intended_major": "Biology",
+        "interests": ["volunteering", "lab research", "debate"]
+    },
+    "colleges_template": ["university_of_michigan", "boston_university", "ucla"],
+    "expected_template_used": "sophomore_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

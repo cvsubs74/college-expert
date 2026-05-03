@@ -1,0 +1,21 @@
+{
+    "id": "junior_spring_5school",
+    "description": "Junior in spring with a 5-school reach-and-target list mixing T20s and UCs.",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming", "music"]
+    },
+    "colleges_template": [
+        "mit",
+        "stanford_university",
+        "university_of_california_berkeley",
+        "university_of_california_los_angeles",
+        "carnegie_mellon_university"
+    ],
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}

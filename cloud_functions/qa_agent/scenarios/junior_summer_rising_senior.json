@@ -1,0 +1,20 @@
+{
+    "id": "junior_summer_rising_senior",
+    "description": "Rising senior over the summer — the critical pre-application phase. Tests the only summer template that exists.",
+    "default_student_name": "Riley Kim",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.9,
+        "intended_major": "Economics",
+        "interests": ["debate", "model un", "internship"]
+    },
+    "colleges_template": [
+        "yale_university",
+        "columbia_university",
+        "new_york_university",
+        "boston_college"
+    ],
+    "expected_template_used": "junior_summer",
+    "surfaces_covered": ["profile", "college_list", "roadmap"]
+}
