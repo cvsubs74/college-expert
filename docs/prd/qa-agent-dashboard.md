@@ -1,6 +1,6 @@
 # PRD: QA Agent admin dashboard (`/qa-runs`)
 
-Status: Draft (awaiting approval)
+Status: Approved
 Owner: Engineering
 Last updated: 2026-05-03
 Parent: [docs/prd/qa-agent.md](./qa-agent.md)

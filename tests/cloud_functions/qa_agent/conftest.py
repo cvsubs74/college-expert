@@ -127,3 +127,46 @@ class _StubModel:
 
 
 _genai.GenerativeModel = _StubModel
+
+
+# --- Stub functions_framework -----------------------------------------------
+# main.py decorates qa_agent with @functions_framework.http; the decorator
+# is a no-op for our test purposes — it just needs to exist at import time.
+_ff = _ensure_module('functions_framework')
+_ff.http = lambda fn: fn
+
+
+# --- Stub flask --------------------------------------------------------------
+# qa_agent/main.py imports `jsonify` from flask. Tests don't need a real
+# Flask response — just something with .status_code, .headers (dict), and
+# .get_data().
+_flask = _ensure_module('flask')
+
+
+class _StubResponse:
+    def __init__(self, payload):
+        import json as _json
+        self._payload = payload
+        self._body = _json.dumps(payload)
+        self.status_code = 200
+        self.headers = {}
+
+    def get_data(self, as_text=False):
+        return self._body if as_text else self._body.encode('utf-8')
+
+
+def _jsonify(payload):
+    return _StubResponse(payload)
+
+
+_flask.jsonify = _jsonify
+
+
+# --- Add a verify_id_token method to firebase_admin.auth --------------------
+# Tests monkeypatch this; default returns no email so the dual-auth gate
+# rejects (which is what we want by default — explicit tests opt in).
+def _verify_id_token(_token):
+    raise ValueError("test stub: verify_id_token not configured")
+
+
+_fa_auth.verify_id_token = _verify_id_token

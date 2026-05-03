@@ -83,6 +83,8 @@ VITE_KNOWLEDGE_BASE_ES_URL=${VITE_KNOWLEDGE_BASE_ES_URL}
 VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL=${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app}
 VITE_KNOWLEDGE_BASE_VERTEXAI_URL=${VITE_KNOWLEDGE_BASE_VERTEXAI_URL:-https://knowledge-base-manager-vertexai-pfnwjfp26a-ue.a.run.app}
 VITE_KNOWLEDGE_BASE_FS_URL=${VITE_KNOWLEDGE_BASE_FS_URL}
+VITE_COUNSELOR_AGENT_URL=${VITE_COUNSELOR_AGENT_URL}
+VITE_QA_AGENT_URL=${VITE_QA_AGENT_URL:-https://qa-agent-pfnwjfp26a-ue.a.run.app}
 
 # Firebase Configuration
 VITE_FIREBASE_API_KEY=${VITE_FIREBASE_API_KEY}
@@ -114,5 +116,9 @@ firebase deploy --only hosting --account "$FIREBASE_ACCOUNT" --project "$FIREBAS
 
 echo ""
 echo -e "${GREEN}✓ Frontend deployed successfully!${NC}"
-echo -e "${GREEN}  URL: https://college-counsellor.web.app${NC}"
+echo -e "${GREEN}  URLs:${NC}"
+echo -e "${GREEN}    https://stratiaadmissions.com   (custom domain)${NC}"
+echo -e "${GREEN}    https://college-strategy.web.app (Firebase default)${NC}"
+echo -e "${GREEN}    https://college-strategy.firebaseapp.com${NC}"
+echo -e "${YELLOW}  Note: college-counsellor.web.app hosts a different app (UniMiner) — don't use it.${NC}"
 echo ""

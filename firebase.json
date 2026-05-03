@@ -1,0 +1,6 @@
+{
+  "_comment": "Top-level Firebase config for non-hosting deploys (Firestore rules). The hosting config lives in frontend/firebase.json so existing deploy_frontend.sh keeps working.",
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

@@ -1,20 +1,29 @@
 """
 QA Agent — Cloud Function entry point.
 
-POST /run                   → run a fresh batch (4-5 scenarios)
-POST /run?scenario=<id>     → run one specific archetype
-GET  /                      → liveness ping
+Endpoints:
+  GET  /                      → liveness ping
+  GET  /health                → liveness ping
+  GET  /scenarios             → list of registered archetypes (id + description)
+  POST /run                   → run a fresh batch
+  POST /run?scenario=<id>     → run one specific archetype
+  POST /suggest-cause         → LLM analysis of a failing scenario
+  POST /github-issue          → build a pre-filled GitHub issue URL
 
 Trigger sources:
-  - Cloud Scheduler (daily) — request body {"trigger":"schedule"}
-  - Admin UI "Run now" button — request body {"trigger":"manual"}
-  - curl from a developer's laptop for ad-hoc runs
+  - Cloud Scheduler (daily) — sends X-Admin-Token
+  - Admin browser dashboard — sends Authorization: Bearer <Firebase ID token>
+  - curl from a developer laptop — sends X-Admin-Token
 
-Auth: every request must carry the QA agent's admin token in the
-X-Admin-Token header (rotated via Secret Manager). The token is the
-single line of defense against accidental triggers from outside; it is
-NOT a substitute for the test user email allowlist enforced inside
-profile_manager_v2's clear-test-data endpoint.
+Auth: dual gate. Either:
+  1. X-Admin-Token: <token>  matches QA_ADMIN_TOKEN secret, OR
+  2. Authorization: Bearer <id_token>  AND the verified email is in
+     QA_ADMIN_EMAILS (default: cvsubs@gmail.com).
+
+Both auth paths are equivalent at the endpoint level. Token check
+happens first; ID-token verification only if token is absent. The
+Firestore security rules are the actual data-side gate, so even an
+auth bypass at this layer can't expose run reports to non-admins.
 """
 
 from __future__ import annotations
@@ -23,6 +32,7 @@ import json
 import logging
 import os
 import secrets
+import urllib.parse
 import uuid
 from datetime import datetime, timezone
 
@@ -47,10 +57,17 @@ def _config():
         "PROFILE_MANAGER_URL": os.getenv("PROFILE_MANAGER_URL"),
         "COUNSELOR_AGENT_URL": os.getenv("COUNSELOR_AGENT_URL"),
         "ADMIN_TOKEN": os.getenv("QA_ADMIN_TOKEN"),
+        "ADMIN_EMAILS": [
+            e.strip().lower() for e in
+            os.getenv("QA_ADMIN_EMAILS", "cvsubs@gmail.com").split(",")
+            if e.strip()
+        ],
         "TEST_USER_EMAIL": os.getenv("QA_TEST_USER_EMAIL", "duser8531@gmail.com"),
         "TEST_USER_UID": os.getenv("QA_TEST_USER_UID", ""),
         "FIREBASE_API_KEY": os.getenv("FIREBASE_WEB_API_KEY"),
+        "GEMINI_API_KEY": os.getenv("GEMINI_API_KEY"),
         "DEFAULT_SCENARIO_COUNT": int(os.getenv("QA_SCENARIO_COUNT", "4")),
+        "GITHUB_REPO": os.getenv("QA_GITHUB_REPO", "cvsubs74/college-expert"),
     }
 
 
@@ -62,17 +79,51 @@ def _cors(payload, status=200):
     resp.status_code = status
     resp.headers["Access-Control-Allow-Origin"] = "*"
     resp.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    resp.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Admin-Token"
+    resp.headers["Access-Control-Allow-Headers"] = (
+        "Content-Type, X-Admin-Token, Authorization"
+    )
     return resp
 
 
-def _check_admin_token(request, expected_token: str) -> bool:
-    """Constant-time check on X-Admin-Token. Empty expected token rejects
-    everything (prevents misconfigured deploys from being open)."""
-    if not expected_token:
-        return False
-    provided = request.headers.get("X-Admin-Token", "")
-    return secrets.compare_digest(provided, expected_token)
+# ---- Auth -------------------------------------------------------------------
+
+
+def _check_auth(request, cfg) -> dict:
+    """Returns {ok: bool, actor: str|None}.
+
+    Two acceptable proofs of admin identity:
+      1. X-Admin-Token matches QA_ADMIN_TOKEN (constant-time compare).
+      2. Authorization: Bearer <Firebase ID token> AND the verified email
+         is in QA_ADMIN_EMAILS.
+    """
+    expected_token = cfg.get("ADMIN_TOKEN")
+    admin_emails = cfg.get("ADMIN_EMAILS", [])
+
+    # Path 1: admin token
+    provided_token = request.headers.get("X-Admin-Token", "")
+    if expected_token and provided_token and secrets.compare_digest(
+        provided_token, expected_token
+    ):
+        return {"ok": True, "actor": "token"}
+
+    # Path 2: Firebase ID token + email allowlist
+    auth_hdr = request.headers.get("Authorization", "")
+    if auth_hdr.startswith("Bearer "):
+        id_token = auth_hdr[len("Bearer "):].strip()
+        try:
+            from firebase_admin import auth as _fa  # lazy import for tests
+            decoded = _fa.verify_id_token(id_token)
+            email = (decoded.get("email") or "").lower()
+            if email and email in admin_emails:
+                return {"ok": True, "actor": email}
+            logger.warning(
+                "qa_agent: ID token verified but email %r not in admin allowlist",
+                email,
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("qa_agent: ID token verify failed: %s", exc)
+
+    return {"ok": False, "actor": None}
 
 
 # ---- Entry point -----------------------------------------------------------
@@ -86,20 +137,57 @@ def qa_agent(request):
     cfg = _config()
     path = request.path.strip("/")
 
+    # Public liveness — no auth.
     if path in ("", "health"):
         return _cors({"status": "ok", "test_user": cfg["TEST_USER_EMAIL"]})
 
-    if path != "run":
-        return _cors({"success": False, "error": f"unknown path: {path}"}, 404)
+    # /scenarios is non-sensitive metadata — exposed without auth so the
+    # admin dashboard's single-scenario picker can populate before the
+    # user signs in. (Even so, the list is dropped on the floor by the
+    # frontend's AdminGate if the user isn't an admin.)
+    if path == "scenarios" and request.method == "GET":
+        return _cors(_handle_scenarios())
 
-    if not _check_admin_token(request, cfg["ADMIN_TOKEN"]):
+    # Every other endpoint requires admin auth.
+    auth_result = _check_auth(request, cfg)
+    if not auth_result["ok"]:
         return _cors({"success": False, "error": "unauthorized"}, 401)
 
     body = request.get_json(silent=True) or {}
-    return _cors(_handle_run(body, cfg))
+    actor = body.get("actor") or auth_result["actor"]
+
+    if path == "run" and request.method == "POST":
+        body.setdefault("actor", actor)
+        return _cors(_handle_run(body, cfg))
+
+    if path == "suggest-cause" and request.method == "POST":
+        return _cors(_handle_suggest_cause(body, cfg))
+
+    if path == "github-issue" and request.method == "POST":
+        return _cors(_handle_github_issue(body, cfg))
+
+    return _cors({"success": False, "error": f"unknown path: {path}"}, 404)
 
 
-# ---- Run handler -----------------------------------------------------------
+# ---- /scenarios ------------------------------------------------------------
+
+
+def _handle_scenarios() -> dict:
+    archetypes = corpus.load_archetypes()
+    return {
+        "success": True,
+        "scenarios": [
+            {
+                "id": a["id"],
+                "description": a.get("description", ""),
+                "surfaces_covered": a.get("surfaces_covered", []),
+            }
+            for a in archetypes
+        ],
+    }
+
+
+# ---- /run ------------------------------------------------------------------
 
 
 def _handle_run(body: dict, cfg: dict) -> dict:
@@ -146,7 +234,7 @@ def _handle_run(body: dict, cfg: dict) -> dict:
 
     scenarios_results = []
     for archetype in chosen:
-        variation = corpus.generate_variation(archetype, api_key=os.getenv("GEMINI_API_KEY"))
+        variation = corpus.generate_variation(archetype, api_key=cfg["GEMINI_API_KEY"])
         materialized = corpus.apply_variation(archetype, variation)
         result = runner.run_scenario(materialized, run_cfg)
         scenarios_results.append(result)
@@ -175,6 +263,230 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     logger.info("qa_agent: run %s complete — %d pass / %d fail",
                 run_id, summary["pass"], summary["fail"])
     return {"success": True, "run_id": run_id, "summary": summary}
+
+
+# ---- /suggest-cause --------------------------------------------------------
+
+
+# In-memory dedup so repeated clicks on "Suggest cause" for the same
+# (run_id, scenario_id) reuse the cached answer rather than re-billing
+# Gemini. Lifetime is the function instance — fine for the use case
+# (admin clicks happen in bursts during a single debugging session).
+_SUGGESTION_CACHE: dict = {}
+
+
+def _handle_suggest_cause(body: dict, cfg: dict) -> dict:
+    run_id = body.get("run_id")
+    scenario_id = body.get("scenario_id")
+    if not run_id or not scenario_id:
+        return {"success": False, "error": "run_id and scenario_id required"}
+
+    cache_key = f"{run_id}::{scenario_id}"
+    if cache_key in _SUGGESTION_CACHE:
+        return {
+            "success": True,
+            "suggestion": _SUGGESTION_CACHE[cache_key],
+            "cached": True,
+        }
+
+    report = firestore_store.read_report(run_id)
+    if not report:
+        return {"success": False, "error": f"run {run_id} not found"}
+
+    scenario = next(
+        (s for s in report.get("scenarios", []) if s.get("scenario_id") == scenario_id),
+        None,
+    )
+    if not scenario:
+        return {
+            "success": False,
+            "error": f"scenario {scenario_id} not in run {run_id}",
+        }
+
+    api_key = cfg.get("GEMINI_API_KEY")
+    suggestion = _gemini_suggest(scenario, api_key)
+    _SUGGESTION_CACHE[cache_key] = suggestion
+    return {"success": True, "suggestion": suggestion, "cached": False}
+
+
+def _gemini_suggest(scenario: dict, api_key: str | None) -> str:
+    """Call Gemini Flash for a 2-3 paragraph analysis of a failing
+    scenario. On any failure (no key, malformed response, etc.) returns
+    a fallback string so the dashboard always renders something."""
+    failing_steps = [s for s in scenario.get("steps", []) if not s.get("passed")]
+    if not failing_steps:
+        return "Every step in this scenario passed; no analysis needed."
+
+    if not api_key:
+        return _heuristic_suggest(failing_steps)
+
+    try:
+        import google.generativeai as genai
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        prompt = _build_suggest_prompt(scenario, failing_steps)
+        resp = model.generate_content(prompt)
+        text = (resp.text or "").strip()
+        return text or _heuristic_suggest(failing_steps)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("qa_agent: Gemini suggest failed (%s); using heuristic", exc)
+        return _heuristic_suggest(failing_steps)
+
+
+def _build_suggest_prompt(scenario: dict, failing_steps: list) -> str:
+    excerpt_lines = []
+    for step in failing_steps[:5]:
+        failed_assertions = [
+            a for a in step.get("assertions", [])
+            if not a.get("passed")
+        ]
+        excerpt_lines.append(
+            f"- step '{step.get('name')}' (status {step.get('status_code')}, "
+            f"{step.get('elapsed_ms')}ms) at {step.get('endpoint')}\n"
+            f"    failed assertions: "
+            f"{[a.get('name') + ': ' + (a.get('message') or '') for a in failed_assertions]}\n"
+            f"    response: {(step.get('response_excerpt') or '')[:500]}"
+        )
+    excerpt = "\n".join(excerpt_lines)
+
+    return f"""You are analyzing a failed test run from a synthetic-monitoring agent that hits production endpoints. Distinguish between an "agent bug" (the test's expectations are wrong) and an "app regression" (production behavior changed). Be concrete and cite specific request/response fields.
+
+Scenario: {scenario.get("description")}
+Variation: {scenario.get("variation")}
+
+Failing steps:
+{excerpt}
+
+In 2-3 short paragraphs:
+1. State whether this is most likely an agent bug or an app regression, with reasoning.
+2. Name the specific change in the response shape, status code, or behavior that's the proximate cause.
+3. Suggest the smallest fix or next investigation step.
+
+Be direct. No preamble. No disclaimers about being an AI."""
+
+
+def _heuristic_suggest(failing_steps: list) -> str:
+    """Fallback when the LLM call fails — string together the failing
+    assertions so the operator at least sees the proximate symptoms."""
+    lines = ["**Heuristic analysis (LLM unavailable)**", ""]
+    for step in failing_steps[:5]:
+        lines.append(
+            f"- `{step.get('name')}` returned status {step.get('status_code')}"
+        )
+        for a in step.get("assertions", []):
+            if not a.get("passed"):
+                lines.append(f"    - failed: {a.get('name')} — {a.get('message')}")
+    lines.append("")
+    lines.append(
+        "Next step: read the failing step's response excerpt to see whether "
+        "the endpoint shape changed (likely an app regression) or the "
+        "assertion is referencing a field that no longer exists (likely "
+        "an agent bug)."
+    )
+    return "\n".join(lines)
+
+
+# ---- /github-issue ---------------------------------------------------------
+
+
+def _handle_github_issue(body: dict, cfg: dict) -> dict:
+    """Build a pre-filled GitHub issue URL for a failing scenario. The
+    browser opens this URL in a new tab and the user reviews + submits
+    manually. We don't create the issue server-side — that would require
+    a stored GH token, which is a heavier ops commitment than this PR
+    needs."""
+    run_id = body.get("run_id")
+    scenario_id = body.get("scenario_id")
+    if not run_id or not scenario_id:
+        return {"success": False, "error": "run_id and scenario_id required"}
+
+    report = firestore_store.read_report(run_id)
+    if not report:
+        return {"success": False, "error": f"run {run_id} not found"}
+
+    scenario = next(
+        (s for s in report.get("scenarios", []) if s.get("scenario_id") == scenario_id),
+        None,
+    )
+    if not scenario:
+        return {
+            "success": False,
+            "error": f"scenario {scenario_id} not in run {run_id}",
+        }
+
+    title = f"[QA] {scenario_id} failed in {run_id}"
+    body_text = _build_issue_body(report, scenario)
+    repo = cfg["GITHUB_REPO"]
+    url = (
+        f"https://github.com/{repo}/issues/new"
+        f"?title={urllib.parse.quote(title)}"
+        f"&body={urllib.parse.quote(body_text)}"
+    )
+    # GitHub's URL prefilling tops out around 8KB. If we're over, return
+    # a title-only URL and signal to the caller; the body becomes
+    # something the user pastes from clipboard.
+    if len(url) > 7800:
+        body_text_truncated = body_text[:5000] + "\n\n*(truncated — see admin dashboard for full detail)*"
+        url = (
+            f"https://github.com/{repo}/issues/new"
+            f"?title={urllib.parse.quote(title)}"
+            f"&body={urllib.parse.quote(body_text_truncated)}"
+        )
+
+    return {
+        "success": True,
+        "issue_url": url,
+        "issue_title": title,
+        "issue_body": body_text,
+    }
+
+
+def _build_issue_body(report: dict, scenario: dict) -> str:
+    failing_steps = [s for s in scenario.get("steps", []) if not s.get("passed")]
+    summary = report.get("summary", {})
+    parts = [
+        f"**QA agent run**: `{report.get('run_id')}`  ",
+        f"**Scenario**: `{scenario.get('scenario_id')}`  ",
+        f"**Status**: FAIL  ",
+        f"**Run summary**: {summary.get('pass')}/{summary.get('total')} scenarios passed  ",
+        f"**Trigger**: {report.get('trigger')} by {report.get('actor')}  ",
+        f"**Started**: {report.get('started_at')}",
+        "",
+        f"### Description",
+        f"{scenario.get('description')}",
+        "",
+        f"### Variation",
+        "```json",
+        json.dumps(scenario.get("variation") or {}, indent=2),
+        "```",
+        "",
+        f"### Failing steps",
+    ]
+    for step in failing_steps[:5]:
+        parts.append(f"#### `{step.get('name')}` — {step.get('status_code')} ({step.get('elapsed_ms')}ms)")
+        parts.append(f"- Endpoint: `{step.get('endpoint')}`")
+        parts.append("- Failed assertions:")
+        for a in step.get("assertions", []):
+            if not a.get("passed"):
+                parts.append(f"  - `{a.get('name')}` — {a.get('message')}")
+        parts.append("")
+        parts.append("- Request:")
+        parts.append("  ```json")
+        parts.append("  " + json.dumps(step.get("request") or {}, indent=2).replace("\n", "\n  "))
+        parts.append("  ```")
+        parts.append("- Response (excerpt):")
+        parts.append("  ```")
+        parts.append("  " + (step.get("response_excerpt") or "").replace("\n", "\n  ")[:1500])
+        parts.append("  ```")
+        parts.append("")
+
+    parts.append("---")
+    parts.append("")
+    parts.append("*Generated by the QA agent dashboard. Please add reproduction context before submitting.*")
+    return "\n".join(parts)
+
+
+# ---- Helpers ---------------------------------------------------------------
 
 
 def request_arg(body, key):
