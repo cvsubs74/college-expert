@@ -1,35 +1,30 @@
 # Cloud Build CI for college-expert.
 #
 # This file describes the PR-time check that runs on every pull request and
-# every push to main. Trigger creation is documented in docs/cicd-setup.md
-# (one-time `gcloud builds triggers create github` invocations).
+# every push to main. Trigger creation is documented in docs/cicd-setup.md.
 #
-# Pipeline (under 2 minutes from cold cache):
-#   1. Backend unit tests (pytest, ~170 tests in <1s)
-#   2. Bash script syntax check (bash -n on deploy.sh / deploy_frontend.sh)
-#   3. Frontend production build (vite build) — catches type/import errors
+# Pipeline (under 5 minutes from cold cache):
+#   1. Backend unit tests        (pytest, ~170 tests in <1s)
+#   2. Bash script syntax check  (bash -n on deploy.sh / deploy_frontend.sh)
+#   3. Frontend unit tests       (vitest, ~40 tests in ~5s)
+#   4. Frontend production build (vite build) — catches type/import errors
+#   5. Frontend E2E              (Playwright, one happy-path against vite preview)
 #
 # Integration tests against deployed endpoints are NOT run here — those are
 # in test_*.sh files that hit live URLs. They get run manually after a real
-# deploy. A future Phase 2 will add a post-deploy Cloud Build trigger that
-# runs them automatically.
+# deploy.
 
-# Use a small machine — these checks aren't CPU-heavy and burning credits
-# on a higher tier delivers no speedup.
 options:
   machineType: 'E2_HIGHCPU_8'
   logging: CLOUD_LOGGING_ONLY
 
-# 5-minute cap. The local run is sub-second on tests + ~3s on the build,
-# so this is generous headroom for cold-start install time.
-timeout: '300s'
+# Generous cap — the suite plus a fresh Playwright Chromium install runs
+# well under 5 minutes; this leaves headroom for npm install on cold cache.
+timeout: '600s'
 
 steps:
-  # 1. Backend unit tests.
-  #
-  # Heavy GCP libs (google-cloud-firestore, google-genai) are stubbed in the
-  # tests' conftest.py, so we only need pytest + requests. Keeps install
-  # fast (~5s vs ~60s for the full per-function requirements.txt).
+  # 1. Backend unit tests. Heavy GCP libs are stubbed in conftest, so install
+  #    is just pytest + requests.
   - name: 'python:3.12-slim'
     id: 'backend-tests'
     entrypoint: 'bash'
@@ -37,13 +32,10 @@ steps:
       - '-c'
       - |
         set -euo pipefail
-        echo "::: installing test deps :::"
         pip install --quiet --disable-pip-version-check -r requirements-test.txt
-        echo "::: running pytest :::"
         pytest -q
 
-  # 2. Shell-script syntax check. Cheap insurance against typos in deploy
-  #    plumbing — these scripts are only exercised manually post-merge.
+  # 2. Shell-script syntax check.
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'bash-syntax'
     entrypoint: 'bash'
@@ -56,27 +48,35 @@ steps:
           echo "  $f: ok"
         done
 
-  # 3. Frontend production build. Catches type/import errors that
-  #    `bash -n`-equivalents on JS can't see, and keeps the CI surface
-  #    aware of any vite-level breakage.
-  #
-  #    We use a minimal .env at build time — only the fields vite reads at
-  #    build time matter; runtime URLs are baked in from the real .env on
-  #    deploy. Validation gates in deploy_frontend.sh (VITE_API_URL etc.)
-  #    are not enforced here; this is just a compilation check.
-  - name: 'node:20'
-    id: 'frontend-build'
+  # 3 + 4 + 5. Frontend pipeline. We run Vitest, build, and Playwright in a
+  #            single step to share the npm install — Playwright's image
+  #            (mcr.microsoft.com/playwright:v1.49.0-jammy) ships with all
+  #            browsers preinstalled, so the cold-start cost is bounded.
+  # The Playwright image version must match the @playwright/test version
+  # in frontend/package.json — they're versioned in lockstep because the
+  # image bundles the browser binaries the package looks for. Bump both
+  # together when upgrading.
+  - name: 'mcr.microsoft.com/playwright:v1.59.1-jammy'
+    id: 'frontend'
     dir: 'frontend'
     entrypoint: 'bash'
     args:
       - '-c'
       - |
         set -euo pipefail
-        echo "::: installing dependencies (npm ci, no audit/no fund for speed) :::"
+
+        echo "::: installing dependencies :::"
         npm ci --no-audit --no-fund --prefer-offline
-        echo "::: vite build :::"
-        # Minimal .env so import.meta.env references don't trip on undefined.
-        # All values are placeholders; nothing gets shipped from CI.
+
+        echo "::: vitest unit tests :::"
+        # Vitest runs jsdom in-process; mocks all backend HTTP via the
+        # tests' own setup. No browser needed, no .env needed.
+        npm run test
+
+        echo "::: writing build-time .env :::"
+        # The Playwright E2E builds in --mode test, but the prod build below
+        # (a separate sanity check) uses these placeholder URLs. Nothing
+        # leaks to production — CI never deploys.
         cat > .env <<'EOF'
         VITE_API_URL=https://placeholder
         VITE_PROFILE_MANAGER_URL=https://placeholder
@@ -91,4 +91,13 @@ steps:
         VITE_FIREBASE_MESSAGING_SENDER_ID=placeholder
         VITE_FIREBASE_APP_ID=placeholder
         EOF
+
+        echo "::: vite production build :::"
         npm run build
+
+        echo "::: Playwright E2E :::"
+        # CI=true switches Playwright config to single-worker + retries=1
+        # and disables `reuseExistingServer`. Playwright's webServer config
+        # rebuilds in --mode test (the auth bypass requires non-production
+        # MODE) and serves with `vite preview`.
+        CI=true npx playwright test
