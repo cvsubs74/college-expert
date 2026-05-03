@@ -34,25 +34,6 @@ def _scenario():
     }
 
 
-def _good_poster(seq):
-    """Returns a poster that hands out the next response in `seq` per call."""
-    seq = list(seq)
-
-    def _poster(url, body, **kwargs):
-        if not seq:
-            raise AssertionError(f'no canned response for {url}')
-        ctx = seq.pop(0)
-        ctx.setdefault('url', url)
-        ctx.setdefault('method', 'POST')
-        ctx.setdefault('request_body', body)
-        ctx.setdefault('elapsed_ms', 50)
-        ctx.setdefault('response_excerpt', '')
-        ctx.setdefault('network_error', None)
-        return ctx
-
-    return _poster
-
-
 def _ok(json_body):
     return {
         'status_code': 200,
@@ -61,78 +42,129 @@ def _ok(json_body):
     }
 
 
+# Default response shapes by URL substring — the runner now makes a
+# variable number of HTTP calls per scenario (profile_build alone is one
+# call per profile_template field), so a positional canned-list approach
+# is brittle. URL-aware defaults match the real prod responses; tests
+# that need failure injection pass `overrides`.
+_URL_DEFAULTS = (
+    ('clear-test-data', _ok({'ok': True, 'deleted': {}})),
+    ('update-structured-field', _ok({'success': True})),
+    ('add-to-list', _ok({'success': True})),
+    ('roadmap', _ok({
+        'success': True,
+        'metadata': {
+            'template_used': 'junior_spring',
+            'resolution_source': 'profile',
+        },
+        'roadmap': {'phases': [{'id': 'p1', 'name': 'Phase 1', 'tasks': []}]},
+    })),
+    ('work-feed', _ok({'success': True, 'items': []})),
+    ('deadlines', _ok({'success': True, 'deadlines': []})),
+)
+
+
+def _smart_poster(overrides=None, capture=None):
+    """A URL-aware fake poster.
+
+    `overrides` is a list of (url_substring, response_dict) — first match
+    wins, used to inject failures.
+
+    `capture`, if provided, is a list the poster appends each call's
+    metadata into for tests that need to assert on call kwargs.
+
+    Mirrors `_post`'s signature so the runner's GET-mode work-feed call
+    works without a TypeError.
+    """
+    overrides = list(overrides or [])
+
+    def _poster(url, body=None, *, method='POST', params=None, **kwargs):
+        if capture is not None:
+            capture.append({'url': url, 'method': method, 'kwargs': kwargs})
+
+        # Pick a response: explicit override first, else URL default.
+        chosen = None
+        for pattern, resp in overrides:
+            if pattern in url:
+                chosen = resp
+                break
+        if chosen is None:
+            for pattern, resp in _URL_DEFAULTS:
+                if pattern in url:
+                    chosen = resp
+                    break
+        if chosen is None:
+            chosen = _ok({'success': True, 'ok': True})
+
+        # Copy because the runner-side `_step` mutates request_body etc.
+        ctx = dict(chosen)
+        ctx.setdefault('url', url)
+        ctx.setdefault('method', method)
+        ctx.setdefault('request_body', body if body is not None else (params or {}))
+        ctx.setdefault('elapsed_ms', 50)
+        ctx.setdefault('response_excerpt', '')
+        ctx.setdefault('network_error', None)
+        return ctx
+
+    return _poster
+
+
 def test_runner_happy_path_all_pass():
-    """Every step returns 2xx + the expected body shape — overall pass."""
+    """Every step returns 2xx + the expected body shape — overall pass.
+
+    URL-aware defaults (in _smart_poster) yield the response shape each
+    endpoint actually produces, so we don't have to hand-curate one
+    canned response per HTTP call (and we don't break when the runner's
+    call count changes — e.g. profile_build now makes one call per
+    profile_template field)."""
     scenario = _scenario()
     cfg = _make_cfg()
 
-    # Sequence: setup, profile, add MIT, add Stanford, roadmap, work-feed,
-    # deadlines, teardown.
-    canned = [
-        _ok({'ok': True, 'deleted': {}}),                    # setup
-        _ok({'success': True}),                              # profile
-        _ok({'success': True}),                              # add mit
-        _ok({'success': True}),                              # add stanford
-        _ok({                                                # roadmap
-            'success': True,
-            'metadata': {
-                'template_used': 'junior_spring',
-                'resolution_source': 'profile',
-            },
-            'roadmap': {'phases': [{'id': 'p1', 'name': 'Phase 1', 'tasks': []}]},
-        }),
-        _ok({'success': True, 'items': []}),                 # work-feed
-        _ok({'success': True, 'deadlines': []}),             # deadlines
-        _ok({'ok': True, 'deleted': {}}),                    # final teardown
-    ]
-
-    result = runner.run_scenario(scenario, cfg, poster=_good_poster(canned))
+    result = runner.run_scenario(scenario, cfg, poster=_smart_poster())
     assert result['passed'] is True
     assert result['scenario_id'] == 'demo'
+    # Steps: setup, profile_build (rolled-up), add_college × 2,
+    # roadmap, work_feed, deadlines, final_teardown.
     assert len(result['steps']) == 8
     for step in result['steps']:
         assert step['passed'], f"{step['name']} failed: {step['assertions']}"
 
 
 def test_runner_records_failures_without_aborting():
-    """A step that returns 500 should fail but the rest of the steps still run."""
+    """A profile call returning 500 should mark profile_build as failed
+    but every subsequent step should still run."""
     scenario = _scenario()
     cfg = _make_cfg()
-    canned = [
-        _ok({'ok': True, 'deleted': {}}),
-        # Profile call fails
-        {'status_code': 500, 'response_json': {'error': 'kaboom'},
-         'response_excerpt': 'kaboom'},
-        _ok({'success': True}),
-        _ok({'success': True}),
-        _ok({  # roadmap still runs
-            'success': True,
-            'metadata': {
-                'template_used': 'junior_spring',
-                'resolution_source': 'profile',
-            },
-            'roadmap': {'phases': [{'id': 'p', 'name': 'p', 'tasks': []}]},
-        }),
-        _ok({'success': True, 'items': []}),
-        _ok({'success': True}),
-        _ok({'ok': True, 'deleted': {}}),
-    ]
 
-    result = runner.run_scenario(scenario, cfg, poster=_good_poster(canned))
+    # Inject a 500 on the per-field profile-update endpoint. Every other
+    # URL falls through to its default success response.
+    overrides = [(
+        'update-structured-field',
+        {
+            'status_code': 500,
+            'response_json': {'error': 'kaboom'},
+            'response_excerpt': 'kaboom',
+        },
+    )]
+    result = runner.run_scenario(
+        scenario, cfg, poster=_smart_poster(overrides=overrides),
+    )
+
     assert result['passed'] is False
     profile_step = next(s for s in result['steps'] if s['name'] == 'profile_build')
     assert profile_step['passed'] is False
-    # Roadmap step still ran
+    # Roadmap step still ran (default success URL response).
     roadmap_step = next(s for s in result['steps'] if s['name'] == 'roadmap_generate')
     assert roadmap_step['passed'] is True
+    # Final teardown still ran (last step).
+    teardown = next(s for s in result['steps'] if s['name'] == 'final_teardown')
+    assert teardown['passed'] is True
 
 
 def test_runner_includes_scenario_id_and_variation():
     scenario = _scenario()
     cfg = _make_cfg()
-    # Fresh dict per call — `[_ok(...)] * 8` would share state via setdefault.
-    canned = [_ok({'ok': True}) for _ in range(8)]
-    result = runner.run_scenario(scenario, cfg, poster=_good_poster(canned))
+    result = runner.run_scenario(scenario, cfg, poster=_smart_poster())
     assert result['variation'] == {'student_name': 'Test User'}
     assert result['scenario_id'] == 'demo'
     assert 'started_at' in result and 'ended_at' in result
@@ -140,16 +172,24 @@ def test_runner_includes_scenario_id_and_variation():
 
 def test_runner_redacts_full_names_in_request_logs():
     """Request bodies in the report should not carry full names from the
-    LLM variation — the test student name is reduced to first initial."""
+    LLM variation — the test student name is reduced to first initial.
+
+    With profile_build now hitting /update-structured-field per-field,
+    the runner only logs `{fields: [...]}` at the step level — but the
+    redaction guard still has to apply to any captured body. Verify by
+    checking that NO step's recorded request leaks 'Sam Adler' verbatim.
+    """
     scenario = _scenario()
     scenario['profile_template']['full_name'] = 'Sam Adler'
     cfg = _make_cfg()
-    canned = [_ok({}) for _ in range(8)]
-    result = runner.run_scenario(scenario, cfg, poster=_good_poster(canned))
-    profile_step = next(s for s in result['steps'] if s['name'] == 'profile_build')
-    # In the redacted request: full_name became 'S.'
-    inner_profile = (profile_step['request'] or {}).get('profile') or {}
-    assert inner_profile.get('full_name') == 'S.'
+
+    result = runner.run_scenario(scenario, cfg, poster=_smart_poster())
+    # No step's serialized request should leak the full name.
+    for step in result['steps']:
+        request_str = str(step.get('request') or {})
+        assert 'Sam Adler' not in request_str, (
+            f"step {step['name']} leaked full name: {request_str}"
+        )
 
 
 def test_runner_passes_admin_token_on_teardown():
@@ -157,8 +197,8 @@ def test_runner_passes_admin_token_on_teardown():
     cfg = _make_cfg()
     captured = []
 
-    def _poster(url, body, **kwargs):
-        captured.append({'url': url, 'kwargs': kwargs})
+    def _poster(url, body=None, *, method='POST', params=None, **kwargs):
+        captured.append({'url': url, 'method': method, 'kwargs': kwargs})
         return {
             'status_code': 200,
             'response_json': {
@@ -173,9 +213,9 @@ def test_runner_passes_admin_token_on_teardown():
             'response_excerpt': '',
             'elapsed_ms': 10,
             'network_error': None,
-            'request_body': body,
+            'request_body': body if body is not None else (params or {}),
             'url': url,
-            'method': 'POST',
+            'method': method,
         }
 
     runner.run_scenario(scenario, cfg, poster=_poster)
@@ -189,16 +229,16 @@ def test_runner_network_error_marks_step_failed():
     scenario = _scenario()
     cfg = _make_cfg()
 
-    def _poster(url, body, **kwargs):
+    def _poster(url, body=None, *, method='POST', params=None, **kwargs):
         return {
             'status_code': 0,
             'response_json': None,
             'response_excerpt': '',
             'elapsed_ms': 0,
             'network_error': 'ConnectionError: refused',
-            'request_body': body,
+            'request_body': body if body is not None else (params or {}),
             'url': url,
-            'method': 'POST',
+            'method': method,
         }
 
     result = runner.run_scenario(scenario, cfg, poster=_poster)
