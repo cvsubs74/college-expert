@@ -717,8 +717,13 @@ def generate_roadmap(request):
             f"profile_grad_year={(profile or {}).get('graduation_year')!r})"
         )
 
-        # Get base template
-        template = TEMPLATES.get(template_key, TEMPLATES['senior_fall']).copy()
+        # Get base template — DEEP-copy because we mutate phase['tasks'] below
+        # when translating template tasks to college-specific ones. A shallow
+        # .copy() would let the mutation leak into the global TEMPLATES dict
+        # and corrupt subsequent /roadmap requests for any user (every user
+        # would see the previous user's translated tasks).
+        import copy as _copy
+        template = _copy.deepcopy(TEMPLATES.get(template_key, TEMPLATES['senior_fall']))
         
         # Get college context and translate tasks to be college-specific
         college_context = None
