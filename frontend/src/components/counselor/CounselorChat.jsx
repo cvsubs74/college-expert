@@ -1,12 +1,16 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { PaperAirplaneIcon, SparklesIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { PaperAirplaneIcon, SparklesIcon, ClockIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../context/AuthContext';
 import { fetchCounselorChat, fetchStudentRoadmap, saveCounselorChat, listCounselorChats, loadCounselorChat } from '../../services/api';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-const CounselorChat = () => {
+// `onClose`, when provided, renders a close button in the header (used when
+// CounselorChat is hosted inside a floating launcher / dismissable panel).
+// When omitted, the component renders without a close button — preserving
+// the original embedded-in-page behavior.
+const CounselorChat = ({ onClose }) => {
     const { currentUser: user } = useAuth();
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
@@ -274,6 +278,16 @@ const CounselorChat = () => {
                                 </div>
                             )}
                         </div>
+                    )}
+                    {onClose && (
+                        <button
+                            onClick={onClose}
+                            aria-label="Close chat"
+                            className="p-2 text-stone-500 hover:text-[#1A4D2E] hover:bg-stone-100 rounded-lg transition-colors"
+                            title="Close"
+                        >
+                            <XMarkIcon className="h-5 w-5" />
+                        </button>
                     )}
                 </div>
             </div>

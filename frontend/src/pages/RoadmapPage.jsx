@@ -12,6 +12,7 @@ import { fetchStudentRoadmap, fetchUserProfile } from '../services/api';
 import { useToast } from '../components/Toast';
 import RoadmapView from '../components/counselor/RoadmapView';
 import ThisWeekFocusCard from '../components/roadmap/ThisWeekFocusCard';
+import FloatingCounselorChat from '../components/roadmap/FloatingCounselorChat';
 import EssayDashboard from './EssayDashboard';
 import ScholarshipTracker from './ScholarshipTracker';
 import ApplicationsPage from './ApplicationsPage';
@@ -109,6 +110,11 @@ const RoadmapPage = () => {
                 {activeTab === 'scholarships' && <ScholarshipTracker embedded />}
                 {activeTab === 'colleges' && <ApplicationsPage embedded />}
             </div>
+
+            {/* Floating counselor chat. Lives at the page level (not inside
+                the tab-content render) so its in-component state survives
+                tab switches. */}
+            <FloatingCounselorChat />
         </div>
     );
 };
