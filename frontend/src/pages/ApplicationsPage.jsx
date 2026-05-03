@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { getCollegeList } from '../services/api';
+import NotesAffordance from '../components/roadmap/NotesAffordance';
 import '../styles/ApplicationsPage.css';
 
 // API URLs
@@ -21,23 +23,41 @@ export default function ApplicationsPage({ embedded = false }) {
 
         try {
             setLoading(true);
-            const response = await fetch(`${COUNSELOR_AGENT_URL}/deadlines`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ user_email: currentUser.email })
-            });
-            const data = await response.json();
 
-            if (data.success) {
-                // Group by university
+            // Fetch deadlines and the user's college_list in parallel.
+            // college_list is the source of the per-school `notes` field that
+            // the NotesAffordance reads/writes; we merge it in below.
+            const [deadlinesResp, listResp] = await Promise.all([
+                fetch(`${COUNSELOR_AGENT_URL}/deadlines`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_email: currentUser.email })
+                }).then(r => r.json()),
+                getCollegeList(currentUser.email).catch(() => ({ college_list: [] })),
+            ]);
+
+            if (deadlinesResp.success) {
+                // Build a lookup of notes per university_id from the college_list.
+                const notesByUniversity = {};
+                const collegeListArr = Array.isArray(listResp?.college_list)
+                    ? listResp.college_list
+                    : [];
+                collegeListArr.forEach((c) => {
+                    if (c?.university_id) {
+                        notesByUniversity[c.university_id] = c.notes || '';
+                    }
+                });
+
+                // Group deadlines by university and seed each school's notes.
                 const schoolMap = {};
-                data.deadlines.forEach(d => {
+                deadlinesResp.deadlines.forEach(d => {
                     if (!schoolMap[d.university_id]) {
                         schoolMap[d.university_id] = {
                             university_id: d.university_id,
                             university_name: d.university_name,
                             deadlines: [],
-                            essay_tips: []
+                            essay_tips: [],
+                            notes: notesByUniversity[d.university_id] || ''
                         };
                     }
                     schoolMap[d.university_id].deadlines.push(d);
@@ -63,7 +83,7 @@ export default function ApplicationsPage({ embedded = false }) {
 
                 setSchools(schoolsWithEssays);
             } else {
-                setError(data.error);
+                setError(deadlinesResp.error);
             }
         } catch (err) {
             setError(err.message);
@@ -143,7 +163,16 @@ export default function ApplicationsPage({ embedded = false }) {
                                 {/* Card Header with Deadline */}
                                 <div className="essay-card-header">
                                     <div className="school-info">
-                                        <h3>{school.university_name}</h3>
+                                        <div className="flex items-start justify-between gap-2">
+                                            <h3>{school.university_name}</h3>
+                                            <NotesAffordance
+                                                userEmail={currentUser?.email}
+                                                collection="college_list"
+                                                itemId={school.university_id}
+                                                initialValue={school.notes}
+                                                emptyLabel="Add notes about this school"
+                                            />
+                                        </div>
                                         {nextDeadline && (
                                             <div className={`deadline-badge ${getUrgencyClass(daysUntil)}`}>
                                                 <span className="deadline-plan">{nextDeadline.deadline_type}</span>

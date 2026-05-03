@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { syncScholarshipTracker, getScholarshipTracker, updateScholarshipStatus } from '../services/api';
+import NotesAffordance from '../components/roadmap/NotesAffordance';
 import {
     BanknotesIcon,
     CheckCircleIcon,
@@ -265,16 +266,25 @@ const ScholarshipTracker = ({ embedded = false }) => {
                                                                 )}
                                                             </div>
 
-                                                            <select
-                                                                value={status}
-                                                                onChange={(e) => handleStatusChange(scholarship.scholarship_id, e.target.value)}
-                                                                className={`text-xs font-medium px-2 py-1 rounded-md border-0 ${statusConfig.bg} ${statusConfig.text} cursor-pointer focus:ring-2 focus:ring-offset-1 flex-shrink-0`}
-                                                            >
-                                                                <option value="not_applied">Not Applied</option>
-                                                                <option value="applied">Applied</option>
-                                                                <option value="received">Received</option>
-                                                                <option value="not_eligible">Not Eligible</option>
-                                                            </select>
+                                                            <div className="flex items-center gap-1 flex-shrink-0">
+                                                                <NotesAffordance
+                                                                    userEmail={user?.email}
+                                                                    collection="scholarship_tracker"
+                                                                    itemId={scholarship.scholarship_id}
+                                                                    initialValue={scholarship.notes}
+                                                                    emptyLabel="Add scholarship notes"
+                                                                />
+                                                                <select
+                                                                    value={status}
+                                                                    onChange={(e) => handleStatusChange(scholarship.scholarship_id, e.target.value)}
+                                                                    className={`text-xs font-medium px-2 py-1 rounded-md border-0 ${statusConfig.bg} ${statusConfig.text} cursor-pointer focus:ring-2 focus:ring-offset-1`}
+                                                                >
+                                                                    <option value="not_applied">Not Applied</option>
+                                                                    <option value="applied">Applied</option>
+                                                                    <option value="received">Received</option>
+                                                                    <option value="not_eligible">Not Eligible</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 );

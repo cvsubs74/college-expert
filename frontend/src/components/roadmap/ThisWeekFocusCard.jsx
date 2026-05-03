@@ -9,6 +9,7 @@ import {
     ClockIcon,
 } from '@heroicons/react/24/outline';
 import { fetchWorkFeed } from '../../services/api';
+import NotesAffordance from './NotesAffordance';
 
 // Source → icon mapping; mirrors the tab strip in RoadmapPage so the user
 // can recognize which surface a focus item belongs to at a glance.
@@ -24,6 +25,15 @@ const SOURCE_LABELS = {
     essay: 'Essay',
     scholarship: 'Scholarship',
     college_deadline: 'Deadline',
+};
+
+// Map a work-feed item's `source` to the Firestore collection that owns
+// its `notes` field. Items sourced from college_deadline are KB-derived
+// (not user-owned), so they don't get a notes affordance.
+const SOURCE_TO_NOTES_COLLECTION = {
+    roadmap_task: 'roadmap_tasks',
+    essay: 'essay_tracker',
+    scholarship: 'scholarship_tracker',
 };
 
 // Urgency → Tailwind color classes. Matches RoadmapView's red/amber/emerald
@@ -103,6 +113,7 @@ const ThisWeekFocusCard = ({ userEmail, limit = 8 }) => {
                         <FocusItemRow
                             key={`${item.source}-${item.id}`}
                             item={item}
+                            userEmail={userEmail}
                             onClick={() => handleItemClick(item)}
                         />
                     ))}
@@ -112,20 +123,34 @@ const ThisWeekFocusCard = ({ userEmail, limit = 8 }) => {
     );
 };
 
-const FocusItemRow = ({ item, onClick }) => {
+const FocusItemRow = ({ item, userEmail, onClick }) => {
     const Icon = SOURCE_ICONS[item.source] || SparklesIcon;
     const dueLabel = formatDueLabel(item);
     const urgencyClass = URGENCY_STYLES[item.urgency] || 'bg-stone-50 text-stone-700 border-stone-200';
     const isClickable = !!item.deep_link;
+    const notesCollection = SOURCE_TO_NOTES_COLLECTION[item.source];
+
+    // The row is a <div> rather than <button> so it can host a separate
+    // NotesAffordance button without invalid nested-button HTML. Keyboard
+    // accessibility is preserved via role+tabIndex+onKeyDown on the row,
+    // and the notes button stops propagation so its clicks don't navigate.
+    const handleRowKeyDown = (e) => {
+        if (!isClickable) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onClick();
+        }
+    };
 
     return (
         <li>
-            <button
-                type="button"
-                onClick={onClick}
-                disabled={!isClickable}
-                className={`w-full text-left flex items-start gap-3 px-5 py-3 transition-colors
-                    ${isClickable ? 'hover:bg-[#F8F6F0] cursor-pointer' : 'cursor-default'}`}
+            <div
+                role={isClickable ? 'button' : undefined}
+                tabIndex={isClickable ? 0 : undefined}
+                onClick={isClickable ? onClick : undefined}
+                onKeyDown={handleRowKeyDown}
+                className={`flex items-start gap-3 px-5 py-3 transition-colors
+                    ${isClickable ? 'hover:bg-[#F8F6F0] cursor-pointer focus:outline-none focus:bg-[#F8F6F0]' : 'cursor-default'}`}
             >
                 <Icon className="w-5 h-5 text-[#1A4D2E] flex-shrink-0 mt-0.5" />
                 <div className="flex-1 min-w-0">
@@ -148,10 +173,20 @@ const FocusItemRow = ({ item, onClick }) => {
                         {dueLabel}
                     </span>
                 )}
+                {notesCollection && item.id && (
+                    <div onClick={(e) => e.stopPropagation()} className="flex-shrink-0">
+                        <NotesAffordance
+                            userEmail={userEmail}
+                            collection={notesCollection}
+                            itemId={item.id}
+                            initialValue={item.notes}
+                        />
+                    </div>
+                )}
                 {isClickable && (
                     <ArrowRightIcon className="w-4 h-4 text-[#9A9A9A] flex-shrink-0 mt-1" />
                 )}
-            </button>
+            </div>
         </li>
     );
 };

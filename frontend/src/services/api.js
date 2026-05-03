@@ -1985,6 +1985,47 @@ export const fetchWorkFeed = async (userEmail, limit = 8) => {
 };
 
 /**
+ * Write the `notes` field on a user-owned Firestore document. Powers the
+ * inline NotesAffordance across the consolidated Roadmap UI.
+ *
+ * `collection` must be one of the whitelisted notes-bearing collections
+ * (server enforces NOTES_COLLECTIONS): roadmap_tasks, essay_tracker,
+ * scholarship_tracker, college_list, aid_packages.
+ *
+ * Empty string clears the notes. Returns the structured response from
+ * the endpoint, or { success: false, error } on transport failure so
+ * callers can show an error toast and revert their optimistic update.
+ */
+export const updateNotes = async (userEmail, collection, itemId, notes) => {
+  try {
+    const response = await axios.post(
+      `${getProfileManagerUrl()}/update-notes`,
+      {
+        user_email: userEmail,
+        collection,
+        item_id: itemId,
+        notes,
+      },
+      {
+        timeout: 10000,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-User-Email': userEmail,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating notes:', error);
+    const serverMessage = error?.response?.data?.error;
+    return {
+      success: false,
+      error: serverMessage || error.message || 'Failed to save notes',
+    };
+  }
+};
+
+/**
  * Update task status
  */
 export const updateTaskStatus = async (userEmail, taskId, status) => {

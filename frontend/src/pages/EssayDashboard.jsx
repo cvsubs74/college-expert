@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { syncEssayTracker, getEssayTracker, updateEssayProgress } from '../services/api';
+import NotesAffordance from '../components/roadmap/NotesAffordance';
 import {
     DocumentTextIcon,
     CheckCircleIcon,
@@ -174,16 +175,25 @@ const EssayDashboard = ({ embedded = false }) => {
                                                 )}
                                             </div>
                                         </div>
-                                        <select
-                                            value={status}
-                                            onChange={(e) => handleStatusChange(essay.essay_id, e.target.value)}
-                                            className={`text-xs font-medium px-2 py-1 rounded-md border-0 ${config.bg} ${config.text} cursor-pointer focus:ring-2 focus:ring-offset-1 flex-shrink-0`}
-                                        >
-                                            <option value="not_started">Not Started</option>
-                                            <option value="draft">Draft</option>
-                                            <option value="review">In Review</option>
-                                            <option value="final">Final</option>
-                                        </select>
+                                        <div className="flex items-center gap-1 flex-shrink-0">
+                                            <NotesAffordance
+                                                userEmail={user?.email}
+                                                collection="essay_tracker"
+                                                itemId={essay.essay_id}
+                                                initialValue={essay.notes}
+                                                emptyLabel="Add essay notes"
+                                            />
+                                            <select
+                                                value={status}
+                                                onChange={(e) => handleStatusChange(essay.essay_id, e.target.value)}
+                                                className={`text-xs font-medium px-2 py-1 rounded-md border-0 ${config.bg} ${config.text} cursor-pointer focus:ring-2 focus:ring-offset-1`}
+                                            >
+                                                <option value="not_started">Not Started</option>
+                                                <option value="draft">Draft</option>
+                                                <option value="review">In Review</option>
+                                                <option value="final">Final</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     {wordLimit > 0 && essay.word_count > 0 && (
