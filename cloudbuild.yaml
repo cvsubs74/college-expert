@@ -52,7 +52,11 @@ steps:
   #            single step to share the npm install — Playwright's image
   #            (mcr.microsoft.com/playwright:v1.49.0-jammy) ships with all
   #            browsers preinstalled, so the cold-start cost is bounded.
-  - name: 'mcr.microsoft.com/playwright:v1.49.0-jammy'
+  # The Playwright image version must match the @playwright/test version
+  # in frontend/package.json — they're versioned in lockstep because the
+  # image bundles the browser binaries the package looks for. Bump both
+  # together when upgrading.
+  - name: 'mcr.microsoft.com/playwright:v1.59.1-jammy'
     id: 'frontend'
     dir: 'frontend'
     entrypoint: 'bash'
