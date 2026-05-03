@@ -80,7 +80,7 @@ VITE_PROFILE_MANAGER_VERTEXAI_URL=${VITE_PROFILE_MANAGER_VERTEXAI_URL:-https://p
 VITE_KNOWLEDGE_BASE_URL=${VITE_KNOWLEDGE_BASE_URL}
 VITE_KNOWLEDGE_BASE_APPROACH=${VITE_KNOWLEDGE_BASE_APPROACH:-"hybrid"}
 VITE_KNOWLEDGE_BASE_ES_URL=${VITE_KNOWLEDGE_BASE_ES_URL}
-VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL=${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app}
+VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL=${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app}
 VITE_KNOWLEDGE_BASE_VERTEXAI_URL=${VITE_KNOWLEDGE_BASE_VERTEXAI_URL:-https://knowledge-base-manager-vertexai-pfnwjfp26a-ue.a.run.app}
 VITE_KNOWLEDGE_BASE_FS_URL=${VITE_KNOWLEDGE_BASE_FS_URL}
 
@@ -100,7 +100,7 @@ echo -e "  Profile Manager URL: ${VITE_PROFILE_MANAGER_URL}"
 echo -e "  Profile Manager ES URL: ${VITE_PROFILE_MANAGER_ES_URL}"
 echo -e "  Knowledge Base URL: ${VITE_KNOWLEDGE_BASE_URL}"
 echo -e "  Knowledge Base ES URL: ${VITE_KNOWLEDGE_BASE_ES_URL}"
-echo -e "  Knowledge Base Universities URL: ${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app}"
+echo -e "  Knowledge Base Universities URL: ${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app}"
 echo -e "  Knowledge Base Approach: ${VITE_KNOWLEDGE_BASE_APPROACH:-hybrid}"
 echo ""
 

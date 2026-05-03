@@ -18,11 +18,12 @@ from firestore_db import get_db  # Use Firestore instead of ES
 
 logger = logging.getLogger(__name__)
 
-# Environment configuration
+# Environment configuration. Universities KB falls back to the Firestore-backed
+# v2 function — the non-v2 (Elasticsearch-backed) one is offline.
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 KNOWLEDGE_BASE_UNIVERSITIES_URL = os.getenv(
     "KNOWLEDGE_BASE_UNIVERSITIES_URL",
-    "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+    "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 )
 
 
