@@ -11,5 +11,11 @@
     },
     "colleges_template": ["university_of_texas_at_austin"],
     "expected_template_used": "freshman_fall",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks freshman_fall from graduation_year=2030 + fall",
+        "Single state-school college added via /add-to-list",
+        "Roadmap response carries metadata.template_used == freshman_fall",
+        "Roadmap is non-empty even for a brand-new freshman with minimal context"
+    ]
 }

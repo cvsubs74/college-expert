@@ -84,3 +84,34 @@ export async function buildIssueUrl({ runId, scenarioId }) {
     });
     return jsonOrThrow(resp);
 }
+
+// GET /summary — executive summary for the dashboard top.
+export async function getSummary() {
+    const resp = await fetch(`${QA_AGENT_URL}/summary`, {
+        headers: await authHeader(),
+    });
+    return jsonOrThrow(resp);
+}
+
+// GET /schedule — current run schedule.
+export async function getSchedule() {
+    const resp = await fetch(`${QA_AGENT_URL}/schedule`, {
+        headers: await authHeader(),
+    });
+    return jsonOrThrow(resp);
+}
+
+// POST /schedule — replace the run schedule. Body shape:
+//   { frequency, times[], days[], timezone }
+export async function saveSchedule(schedule) {
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(await authHeader()),
+    };
+    const resp = await fetch(`${QA_AGENT_URL}/schedule`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(schedule),
+    });
+    return jsonOrThrow(resp);
+}

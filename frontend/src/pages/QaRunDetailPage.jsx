@@ -5,6 +5,8 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { db } from '../firebase';
 import PassFailBadge from '../components/qa/PassFailBadge';
 import ScenarioCard from '../components/qa/ScenarioCard';
+import TestPlanCard from '../components/qa/TestPlanCard';
+import OutcomeCard from '../components/qa/OutcomeCard';
 
 // /qa-runs/:runId — drill-down for a single run.
 
@@ -89,18 +91,23 @@ const QaRunDetailPage = () => {
                         {error}
                     </div>
                 )}
+                {run?.test_plan && <TestPlanCard testPlan={run.test_plan} />}
+
                 {run && run.scenarios?.map((scenario) => (
-                    <ScenarioCard
+                    <div
                         key={scenario.scenario_id}
-                        runId={runId}
-                        scenario={scenario}
-                    />
+                        id={`scenario-${scenario.scenario_id}`}
+                    >
+                        <ScenarioCard runId={runId} scenario={scenario} />
+                    </div>
                 ))}
                 {run && (!run.scenarios || run.scenarios.length === 0) && (
                     <div className="bg-white rounded-xl border border-[#E0DED8] p-6 text-sm text-[#8A8A8A]">
                         No scenarios in this run.
                     </div>
                 )}
+
+                {run?.outcome && <OutcomeCard outcome={run.outcome} />}
             </main>
         </div>
     );

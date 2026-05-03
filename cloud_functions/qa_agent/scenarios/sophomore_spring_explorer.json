@@ -11,5 +11,11 @@
     },
     "colleges_template": ["university_of_michigan", "boston_university", "ucla"],
     "expected_template_used": "sophomore_spring",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks sophomore_spring from graduation_year=2028 + spring",
+        "3 diverse colleges (one UC) added without merge errors",
+        "Roadmap response carries metadata.template_used == sophomore_spring",
+        "Roadmap content is appropriate for mid-cycle exploration (not application crunch)"
+    ]
 }
