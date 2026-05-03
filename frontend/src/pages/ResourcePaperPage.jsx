@@ -6,6 +6,8 @@ import { getPaperBySlug, papers } from '../data/resources';
 import PaperHero from '../components/resources/PaperHero';
 import PaperSection from '../components/resources/PaperSection';
 import Navigation from '../components/Navigation';
+import MarketingHeader from '../components/MarketingHeader';
+import { useAuth } from '../context/AuthContext';
 
 // /resources/<slug> — long-form reading view for a single whitepaper.
 //
@@ -17,6 +19,7 @@ import Navigation from '../components/Navigation';
 const ResourcePaperPage = () => {
     const { slug } = useParams();
     const paper = getPaperBySlug(slug);
+    const { currentUser } = useAuth();
 
     useEffect(() => {
         if (paper) {
@@ -53,8 +56,13 @@ const ResourcePaperPage = () => {
 
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            <Navigation />
-            <PaperHero paper={paper} />
+            {/* Logged-out visitors get the marketing-style header so the
+                Landing → Resources → paper transition stays continuous.
+                Signed-in users get the in-app Navigation. */}
+            {currentUser ? <Navigation /> : <MarketingHeader />}
+            <div className={currentUser ? '' : 'pt-16'}>
+                <PaperHero paper={paper} />
+            </div>
 
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
                 {paper.sections.map((section) => (
