@@ -1,0 +1,8 @@
+# Test-only dependencies for backend pytest. Kept separate from each cloud
+# function's runtime requirements.txt so CI installs a small, fast set.
+#
+# `requests` is used by counselor_tools.py and work_feed.py at module import
+# time (both import the package). The test conftests stub out HTTP calls,
+# but the package still has to be importable.
+pytest>=8,<9
+requests>=2.31,<3
