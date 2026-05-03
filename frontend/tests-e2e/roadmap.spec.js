@@ -128,6 +128,21 @@ test.beforeEach(async ({ page }) => {
     }));
 });
 
+/**
+ * Helper: pin the /roadmap mock to a specific student-onboarding scenario.
+ * Used by tests that assert "a student onboarding at this point in time
+ * with this college list sees this roadmap." The Python scenario tests
+ * cover all 12 grade × semester × college-list permutations exhaustively
+ * — the E2E here is a single representative case to confirm the response
+ * actually flows through to the rendered timeline.
+ */
+const mockRoadmapResponse = (page, scenario) => {
+    return page.route(/\/roadmap(\?|$)/, (route) => {
+        if (route.request().method() !== 'POST') return route.continue();
+        return fulfillJson(route, scenario);
+    });
+};
+
 test('Roadmap happy path: tabs, focus card, chat, add task', async ({ page }) => {
     // 1. Land on /roadmap (default Plan tab)
     await page.goto('/roadmap');
@@ -181,3 +196,66 @@ test('Roadmap happy path: tabs, focus card, chat, add task', async ({ page }) =>
     // Modal closes on success.
     await expect(dialog).toHaveCount(0);
 });
+
+
+test('Junior-spring student with 3 schools sees the right roadmap title + translated tasks', async ({ page }) => {
+    // Pin /roadmap to a "Junior Spring" student response shape. This is the
+    // shape generate_roadmap() produces for grad_year=2027 + April → backend
+    // scenario tests cover the resolver matrix; this test confirms the
+    // response actually renders correctly in the timeline.
+    await mockRoadmapResponse(page, {
+        success: true,
+        roadmap: {
+            title: 'Junior Spring: Building Your Application',
+            phases: [
+                {
+                    id: 'phase_test_prep',
+                    name: 'Test Prep & Activities',
+                    date_range: 'Mar - May',
+                    tasks: [
+                        // Generic template tasks — no artifact_ref.
+                        { id: 'task_take_sat', title: 'Take SAT/ACT (Spring sitting)', type: 'core' },
+                        // Translated per-school task with artifact_ref pointing
+                        // to the Colleges tab. This is the "wow" moment from
+                        // M2 PR #2 — the badge that jumps to a school card.
+                        {
+                            id: 'task_research_mit',
+                            title: 'Research MIT — programs, admissions, fit',
+                            type: 'core',
+                            artifact_ref: {
+                                type: 'college',
+                                university_id: 'mit',
+                                label: 'Open MIT',
+                                deep_link: '/roadmap?tab=colleges&school=mit',
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
+        metadata: {
+            template_used: 'junior_spring',
+            grade_used: 'junior',
+            semester_used: 'spring',
+            resolution_source: 'profile',
+            colleges_count: 3,
+            personalized: true,
+            last_updated: '2026-04-15T12:00:00',
+        },
+    });
+
+    await page.goto('/roadmap');
+
+    // The semester-specific phase title is rendered (proves the right
+    // template flowed through, not a generic fallback).
+    await expect(page.getByText('Junior Spring: Building Your Application')).toBeVisible();
+    await expect(page.getByText('Test Prep & Activities')).toBeVisible();
+
+    // The translated MIT task renders its title.
+    await expect(page.getByText('Research MIT — programs, admissions, fit')).toBeVisible();
+
+    // And the artifact_ref pill appears next to the task. Per RoadmapView.jsx,
+    // it renders as a small green pill with the label + chevron.
+    await expect(page.getByRole('button', { name: /Open MIT/i })).toBeVisible();
+});
+
