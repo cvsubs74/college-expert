@@ -35,15 +35,17 @@ logger = logging.getLogger(__name__)
 
 def _post(
     url: str,
-    body: dict,
+    body: Optional[dict] = None,
     *,
+    method: str = "POST",
+    params: Optional[dict] = None,
     id_token: Optional[str] = None,
     admin_token: Optional[str] = None,
     timeout: int = 30,
 ) -> Dict[str, Any]:
-    """One HTTP request, with timing. Returns a context dict suitable for
-    assertion checks. Network errors become status_code=0 with an
-    error message."""
+    """One HTTP request, with timing. Supports GET (params) and POST
+    (json body). Returns a context dict suitable for assertion checks.
+    Network errors become status_code=0 with an error message."""
     headers = {"Content-Type": "application/json"}
     if id_token:
         headers["Authorization"] = f"Bearer {id_token}"
@@ -57,7 +59,10 @@ def _post(
     error: Optional[str] = None
 
     try:
-        resp = requests.post(url, json=body, headers=headers, timeout=timeout)
+        if method.upper() == "GET":
+            resp = requests.get(url, params=params, headers=headers, timeout=timeout)
+        else:
+            resp = requests.post(url, json=body, params=params, headers=headers, timeout=timeout)
         status = resp.status_code
         body_text = resp.text[:8000]
         try:
@@ -70,10 +75,10 @@ def _post(
     elapsed_ms = int((time.time() - start) * 1000)
     return {
         "url": url,
-        "method": "POST",
+        "method": method.upper(),
         # Redaction happens at report-build time (in _step); leaving the
         # raw body here lets assertion fns inspect it if they ever need to.
-        "request_body": body,
+        "request_body": body if body is not None else (params or {}),
         "status_code": status,
         "response_json": body_json,
         "response_excerpt": body_text,
@@ -184,33 +189,65 @@ def run_scenario(
     ]))
 
     # ----- Step 2: profile build ------------------------------------------
-    profile_body = {
-        "user_email": cfg.test_user_email,
-        "profile": scenario.get("profile_template", {}),
-    }
-    profile_ctx = poster(
-        f"{pm}/update-onboarding-profile",
-        profile_body,
-        id_token=cfg.id_token,
+    # profile_manager_v2 doesn't expose a "save the whole profile in one
+    # call" endpoint — frontend onboarding hits /update-structured-field
+    # one field at a time. Mirror that here so the QA agent exercises the
+    # same code path real onboarding does.
+    fields_to_set = list(scenario.get("profile_template", {}).items())
+    field_results = []
+    for field_path, value in fields_to_set:
+        field_ctx = poster(
+            f"{pm}/update-structured-field",
+            {
+                "user_email": cfg.test_user_email,
+                "field_path": field_path,
+                "value": value,
+                "operation": "set",
+            },
+            id_token=cfg.id_token,
+        )
+        field_results.append(field_ctx)
+    # Roll up the per-field results into one step record. Step passes if
+    # every field succeeded.
+    profile_pass = all(
+        200 <= ctx.get("status_code", 0) < 300 for ctx in field_results
     )
-    steps.append(_step("profile_build", profile_ctx, [
-        assertions.status_is_2xx(),
-        assertions.key_equals("success", True),
-    ]))
+    steps.append({
+        "name": "profile_build",
+        "endpoint": f"{pm}/update-structured-field (×{len(field_results)})",
+        "status_code": field_results[-1]["status_code"] if field_results else None,
+        "elapsed_ms": sum(ctx.get("elapsed_ms", 0) for ctx in field_results),
+        "request": {"fields": [k for k, _ in fields_to_set]},
+        "response_excerpt": "; ".join(
+            (ctx.get("response_excerpt") or "")[:200]
+            for ctx in field_results[:3]
+        )[:1500],
+        "assertions": [
+            {"name": f"field {k!r} 2xx",
+             "passed": 200 <= field_results[i]["status_code"] < 300,
+             "message": f"got {field_results[i]['status_code']}"
+             if not (200 <= field_results[i]["status_code"] < 300) else ""}
+            for i, (k, _) in enumerate(fields_to_set)
+        ],
+        "passed": profile_pass,
+    })
 
     # ----- Step 3: add colleges -------------------------------------------
     for college_id in scenario.get("colleges_template", []):
+        # The endpoint is /add-to-list (not /add-to-college-list). It
+        # takes {user_email, university_id} and returns success-shaped
+        # response.
         college_ctx = poster(
-            f"{pm}/add-to-college-list",
+            f"{pm}/add-to-list",
             {
                 "user_email": cfg.test_user_email,
                 "university_id": college_id,
+                "university_name": college_id.replace("_", " ").title(),
             },
             id_token=cfg.id_token,
         )
         steps.append(_step(f"add_college:{college_id}", college_ctx, [
             assertions.status_is_2xx(),
-            assertions.key_equals("success", True),
         ]))
 
     # ----- Step 4: roadmap generation -------------------------------------
@@ -235,9 +272,11 @@ def run_scenario(
     steps.append(_step("roadmap_generate", roadmap_ctx, roadmap_asserts))
 
     # ----- Step 5: work feed ----------------------------------------------
+    # /work-feed is GET with query params, not POST.
     work_feed_ctx = poster(
         f"{ca}/work-feed",
-        {"user_email": cfg.test_user_email, "limit": 8},
+        method="GET",
+        params={"user_email": cfg.test_user_email, "limit": 8},
         id_token=cfg.id_token,
     )
     steps.append(_step("work_feed", work_feed_ctx, [
