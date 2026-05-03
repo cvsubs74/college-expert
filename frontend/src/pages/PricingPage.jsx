@@ -15,6 +15,7 @@ import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { createCheckoutSession, reactivateSubscription } from '../services/paymentService';
 import CancelSubscriptionModal from '../components/CancelSubscriptionModal';
+import MarketingHeader from '../components/MarketingHeader';
 
 const PricingPage = () => {
     const navigate = useNavigate();
@@ -206,39 +207,22 @@ const PricingPage = () => {
     // Show all plans (no filtering)
     const plans = allPlans;
 
+    // Credits chip rendered between the nav links and the CTA when the
+    // user is signed in. Lets a logged-in shopper see their balance while
+    // browsing plans.
+    const creditsChip = currentUser ? (
+        <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-[#D6E8D5] rounded-full text-sm font-medium text-[#1A4D2E]">
+            <BoltIcon className="h-4 w-4" />
+            {creditsRemaining} credits
+        </div>
+    ) : null;
+
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            {/* Header */}
-            <header className="px-6 py-5 bg-[#FDFCF7]/95 backdrop-blur-sm sticky top-0 z-50 border-b border-[#E0DED8]">
-                <nav className="max-w-7xl mx-auto flex items-center justify-between">
-                    <Link to="/launchpad" className="flex items-center">
-                        <img
-                            src="/logo.png"
-                            alt="Stratia Admissions"
-                            className="h-24 w-auto object-contain mix-blend-multiply"
-                        />
-                    </Link>
-                    <div className="flex items-center gap-4">
-                        <Link to="/resources" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
-                            Resources
-                        </Link>
-                        {currentUser && (
-                            <div className="flex items-center gap-2 px-3 py-1.5 bg-[#D6E8D5] rounded-full text-sm font-medium text-[#1A4D2E]">
-                                <BoltIcon className="h-4 w-4" />
-                                {creditsRemaining} credits
-                            </div>
-                        )}
-                        <Link
-                            to="/launchpad"
-                            className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md"
-                        >
-                            Go to App
-                        </Link>
-                    </div>
-                </nav>
-            </header>
+            <MarketingHeader rightSlot={creditsChip} />
 
-            <main className="px-6 py-16">
+            {/* Pad past the fixed marketing header. */}
+            <main className="px-6 pt-24 pb-16">
                 {/* Hero */}
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#2C2C2C] mb-4">

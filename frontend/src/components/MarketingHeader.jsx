@@ -16,12 +16,16 @@ import { signInWithGoogle } from '../services/authService';
 // off the Google sign-in popup); signed-in visitors see "Open App"
 // (deep-links into the launchpad).
 //
+// `rightSlot` lets a host page inject an extra element between the nav
+// links and the CTA — Pricing uses it for the credits chip when the user
+// is signed in. Optional; everything works without it.
+//
 // The signed-in shell of the actual app is the heavier `Navigation`
 // component — that one's used inside `AppLayout` and on Resources pages
 // for signed-in users. This header is specifically for the
 // brochure-side experience.
 
-const MarketingHeader = () => {
+const MarketingHeader = ({ rightSlot = null }) => {
     const { currentUser } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -97,6 +101,7 @@ const MarketingHeader = () => {
                         >
                             Pricing
                         </Link>
+                        {rightSlot}
                         {currentUser ? (
                             <Link
                                 to="/launchpad"

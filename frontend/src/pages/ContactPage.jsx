@@ -7,6 +7,7 @@ import {
     QuestionMarkCircleIcon,
     ArrowRightIcon
 } from '@heroicons/react/24/outline';
+import MarketingHeader from '../components/MarketingHeader';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -76,34 +77,10 @@ const ContactPage = () => {
 
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            {/* Header */}
-            <header className="px-6 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-[#E0DED8]">
-                <nav className="max-w-7xl mx-auto flex items-center justify-between">
-                    <Link to="/" className="flex items-center">
-                        <img
-                            src="/logo.png"
-                            alt="Stratia Admissions"
-                            className="h-24 w-auto object-contain mix-blend-multiply"
-                        />
-                    </Link>
-                    <div className="flex items-center gap-4">
-                        <Link to="/resources" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
-                            Resources
-                        </Link>
-                        <Link to="/pricing" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
-                            Pricing
-                        </Link>
-                        <Link
-                            to="/"
-                            className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md"
-                        >
-                            Get Started
-                        </Link>
-                    </div>
-                </nav>
-            </header>
+            <MarketingHeader />
 
-            <main className="px-6 py-16">
+            {/* Pad past the fixed marketing header. */}
+            <main className="px-6 pt-24 pb-16">
                 <div className="max-w-5xl mx-auto">
                     {/* Hero */}
                     <div className="text-center mb-16">
