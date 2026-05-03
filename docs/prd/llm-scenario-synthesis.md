@@ -1,9 +1,18 @@
-# PRD: LLM scenario synthesis — the QA agent that thinks
+# PRD: LLM scenario synthesis + deep data validation — the QA agent that thinks
 
-Status: Draft (awaiting approval)
+Status: Approved
 Owner: Engineering
-Last updated: 2026-05-03
+Last updated: 2026-05-04
 Parent: [docs/prd/qa-agent.md](./qa-agent.md), [docs/prd/smart-qa-engineer.md](./smart-qa-engineer.md)
+
+## Two threads, one feature
+
+This PRD covers two related upgrades that ship together because they make the agent *smart*:
+
+1. **Scenario synthesis** — the LLM generates fresh scenarios per run from system knowledge + recent run history. (Original proposal in this doc.)
+2. **Deep data validation** — assertions don't just check `status_is_2xx`; they cross-reference data flow. When the agent adds MIT to the test user's college list, the runner first fetches MIT's data from the knowledge base (essays required, deadlines, deadline type, mascot, financial aid stats), and every downstream endpoint's response is verified against that ground truth. The essay tracker should surface essays that match MIT's required-essay count. The fit response should reference MIT's actual mascot. Every fetched piece of information gets validated for accuracy — not just shape.
+
+Today's tests catch broken endpoints. The upgraded tests catch *broken data flow*: when the API returns 200 but the data doesn't match what the source-of-truth said it should be.
 
 ## Problem
 
@@ -26,6 +35,19 @@ The agent gets *adaptively smarter* over time. Every run feeds back into the nex
 - Fragile combinations (e.g., "low-GPA + reach school") that have flaked before get re-tested with similar shapes.
 
 Static archetypes stay around as a safety net but are no longer the primary source of test scenarios.
+
+## Deep data validation goals
+
+For every scenario (synthesized or static), the runner gathers **ground truth** before executing the test, then validates every response against it:
+
+- **Pre-run ground truth fetch.** Before adding any college, the runner pulls each university's record from `knowledge_base_manager_universities_v2`. Stashes: id, canonical name, application deadline + type, supplemental essay count + prompts, financial aid signals, mascot, location. This is the agent's "what should the system return?" snapshot.
+- **Post-add cross-reference.** After `POST /add-to-list`, fetch the test user's college list back. Validate each entry's `name`, `university_id`, `deadline`, `deadline_type` against the snapshot. The university_id we wrote should be the same one we read; the deadline returned should match the KB's deadline.
+- **Essay tracker alignment.** When the test pulls `/get-essay-tracker`, count essays per university. The count must match what the KB said that university requires (or be a known supplemental-essay subset). University IDs on essay records must match the colleges we added.
+- **Fit analysis cross-reference.** When the test triggers fit analysis on a school, the response must reference that school's actual `university_id`, `name`, and contain at least one fact (mascot, location, programs) that matches the KB record. Hallucinated university references are an automatic fail.
+- **Roadmap deep-link integrity.** Every `artifact_ref.deep_link` in the roadmap response must point at a `university_id` that's actually on the user's college list — no stale or orphaned references.
+- **Symmetry checks.** The set of universities added (write-side) must equal the set returned by `/get-college-list` (read-side). One-off discrepancies between writes and reads count as a failure even if status codes are clean.
+
+The principle: the agent verifies that the *data the user sees* matches the *data the system was told to remember*.
 
 ## Non-goals
 

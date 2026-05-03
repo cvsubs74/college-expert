@@ -1,7 +1,7 @@
-# Design: LLM scenario synthesis
+# Design: LLM scenario synthesis + deep data validation
 
-Status: Draft (awaiting approval)
-Last updated: 2026-05-03
+Status: Approved
+Last updated: 2026-05-04
 Related PRD: [docs/prd/llm-scenario-synthesis.md](../prd/llm-scenario-synthesis.md)
 
 ## Architecture sketch
@@ -203,6 +203,153 @@ Output validation:
 - `expected_template_used` matches `compute_template_key(grade, semester)` deterministically (i.e., the agent isn't making up template names)
 
 Anything that fails validation → discard, log, fall back to static.
+
+## Deep data validation architecture
+
+The runner today does shape checks (`status_is_2xx`, `key_equals('success', True)`). The upgrade adds a **ground truth bag** that's populated before scenarios run, plus a new family of cross-reference assertions.
+
+### New module: `cloud_functions/qa_agent/ground_truth.py`
+
+```python
+def fetch_ground_truth(college_ids, *, kb_url, id_token=None) -> dict:
+    """For each college_id, pull the canonical record from
+    knowledge_base_manager_universities_v2 and return a dict keyed by
+    college_id. The returned record contains fields downstream
+    assertions will check against:
+        {
+            college_id: {
+                'name': str,
+                'university_id': str,
+                'mascot': str | None,
+                'location': str | None,
+                'application_deadline': str | None,  # ISO date
+                'deadline_type': str | None,         # 'Regular Decision' etc.
+                'required_essays': [{'prompt', 'word_limit', 'required'}],
+                'financial_aid': {'avg_package': int|None, 'need_blind': bool},
+            }
+        }
+    Returns an empty dict for any id the KB doesn't recognize — assertions
+    that need a missing id will mark themselves SKIP, not FAIL, so the
+    test isn't penalized for missing-from-KB universities.
+    """
+```
+
+### New runner step type: `gather_ground_truth`
+
+Inserted as the FIRST step of every scenario, immediately after `setup_teardown`:
+
+```
+1. setup_teardown
+2. gather_ground_truth          ← NEW: fetches KB records for each college in the scenario
+3. profile_build (per field)
+4. add_college:<id>             ← per college
+5. verify_college_list_symmetry ← NEW: pulls /get-college-list back, cross-references
+6. roadmap_generate             ← existing, with new deep-link integrity assertions
+7. work_feed                    ← existing
+8. essay_tracker_alignment      ← NEW: pulls /get-essay-tracker, validates per-college counts + ids
+9. fit_cross_reference          ← NEW (when fit endpoint is exercised): validates response references the right schools
+10. final_teardown
+```
+
+The `gather_ground_truth` step record stashes its result on the `RunConfig` so subsequent steps can reach it. Conceptually like a per-scenario context object.
+
+### New module: `cloud_functions/qa_agent/data_assertions.py`
+
+Adds cross-reference assertion functions that work against a *bag of expected values* the runner has populated:
+
+```python
+def value_equals_truth(response_path: str, truth_path: str) -> AssertionFn:
+    """Reads response_json[response_path], reads truth_bag[truth_path],
+    asserts they're equal. Used for cross-referencing returned values
+    against the KB ground truth."""
+
+def list_matches_truth_set(response_path: str, truth_ids: list) -> AssertionFn:
+    """Asserts the list at response_path contains exactly the same IDs
+    (in any order) as truth_ids. Used for college list symmetry."""
+
+def per_university_count_matches(
+    response_path: str,            # path to a list of items keyed by university_id
+    truth_path: str,               # path inside the KB record holding the expected count
+) -> AssertionFn:
+    """For each university in the truth bag, count items in response
+    keyed to that id, compare against truth[id][truth_path]."""
+
+def has_field_referencing_truth(response_path: str, truth_field: str) -> AssertionFn:
+    """For LLM-generated responses (fit analysis): asserts the response
+    text mentions at least one fact from the KB record (mascot,
+    location, etc.) — proves the LLM grounded its output, didn't
+    hallucinate."""
+
+def deep_link_resolves(
+    response_path: str,          # path to a list of items with `artifact_ref.university_id`
+    college_set: list,           # the college list the agent built
+) -> AssertionFn:
+    """Every artifact_ref.university_id in the response must be in the
+    college_set. Catches stale / orphaned deep links."""
+```
+
+### New step assertions per scenario
+
+Verifying `verify_college_list_symmetry`:
+- Status 2xx
+- `list_matches_truth_set('college_list', [college_ids the scenario added])`
+- For each college, `value_equals_truth('college_list[i].deadline', f'<id>.application_deadline')`
+- For each college, `value_equals_truth('college_list[i].name', f'<id>.name')`
+
+Verifying `essay_tracker_alignment`:
+- Status 2xx
+- For each college we added, count tracker entries with that `university_id` — should ≥ KB's required_essays count (some essays may be optional, so ≥, not ==)
+- All `university_id` values on tracker entries must be in the added set (no orphans)
+
+Verifying `roadmap_generate` (extends existing):
+- (existing) status 2xx, `metadata.template_used` matches expected
+- (NEW) `deep_link_resolves('roadmap.phases[*].tasks[*].artifact_ref', added_college_ids)` — no broken references
+- (NEW) For UC group tasks: `artifact_ref.label` must include every UC name in the added list
+
+Verifying `fit_cross_reference` (when scenario triggers fit):
+- Status 2xx
+- `value_equals_truth('university_id', '<id>.university_id')` — fit response references the right school
+- `has_field_referencing_truth('summary', 'mascot' OR 'location' OR 'programs')` — the LLM-generated fit text grounded itself in real KB facts
+
+### Soft skip: when KB doesn't have the data
+
+If `fetch_ground_truth` returns an empty record for a college (KB miss), every assertion that depends on that record records a **SKIP** outcome (not a fail). Skip is still surfaced in the dashboard so the operator can see "we tested X but couldn't verify Y because the KB didn't have data for that university." Distinguishes "test couldn't run" from "test failed."
+
+### Ground truth bag is exposed in the report
+
+```jsonc
+{
+  "scenarios": [{
+    "scenario_id": "...",
+    "ground_truth": {                    // NEW
+      "mit": { "name": "MIT", "deadline": "2027-01-05", ... },
+      "stanford_university": { ... }
+    },
+    "steps": [
+      { "name": "gather_ground_truth", ... },
+      { "name": "verify_college_list_symmetry", "assertions": [
+        { "name": "college_list[0].deadline == truth.mit.application_deadline",
+          "passed": true, "expected": "2027-01-05", "actual": "2027-01-05" }
+      ]},
+      ...
+    ]
+  }]
+}
+```
+
+The `expected` and `actual` fields on cross-reference assertions are NEW — when the assertion fails, the dashboard can display both side-by-side for fast diagnosis. ("We expected deadline `2027-01-05`; the API returned `2027-01-15`.")
+
+### Frontend: assertion-detail upgrades
+
+`StepRow` (existing) gets a new render mode for cross-reference assertions: when an assertion has `expected` + `actual` fields, render them as a small two-column diff:
+
+```
+✗ college_list[0].deadline == truth.mit.application_deadline
+    expected: 2027-01-05   ← from KB
+    actual:   2027-01-15   ← from /get-college-list
+```
+
+This is the "every bit of information validated" surface the user asked for: the reviewer reads "expected X, got Y" and immediately knows where the data flow broke.
 
 ## Wiring into `main.py` (the existing `_handle_run`)
 
