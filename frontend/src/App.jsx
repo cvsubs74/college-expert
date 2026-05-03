@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation, Outlet } from 'react-router-dom';
 import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon } from '@heroicons/react/24/outline';
+import ResourcesPage from './pages/ResourcesPage';
+import ResourcePaperPage from './pages/ResourcePaperPage';
 import CreditsBadge from './components/CreditsBadge';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
@@ -53,6 +55,7 @@ function Navigation() {
     { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
     { path: '/launchpad', label: 'Launchpad', icon: RocketLaunchIcon },
     { path: '/roadmap', label: 'Roadmap', icon: SparklesIcon },
+    { path: '/resources', label: 'Resources', icon: BookOpenIcon },
   ];
 
 
@@ -260,6 +263,10 @@ function App() {
                 <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsOfService />} />
+                {/* Resources & whitepapers — public so prospective users
+                    (parents, counselors) can find them without signing in. */}
+                <Route path="/resources" element={<ResourcesPage />} />
+                <Route path="/resources/:slug" element={<ResourcePaperPage />} />
 
                 {/* Protected routes */}
                 <Route

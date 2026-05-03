@@ -37,6 +37,22 @@ const envMocks = {
 // modules load, so we patch the underlying object.
 Object.assign(import.meta.env, envMocks);
 
+// Polyfill IntersectionObserver. jsdom doesn't ship it, and framer-motion's
+// `whileInView` / `useInView` will throw without it. The polyfill is a no-op
+// stub: the tests don't care about the in-view animation timing, only that
+// rendering doesn't crash. Components that gate content on `inView` will
+// simply render in their initial (pre-animated) state, which is what we
+// want for snapshot/text assertions anyway.
+class MockIntersectionObserver {
+    constructor() {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() { return []; }
+}
+global.IntersectionObserver = MockIntersectionObserver;
+window.IntersectionObserver = MockIntersectionObserver;
+
 // Silence the framer-motion "ReactDOM.findDOMNode" deprecation noise that
 // shows up in jsdom — it's not an issue we can fix and floods the output.
 const origConsoleError = console.error;
