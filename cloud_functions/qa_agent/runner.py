@@ -640,6 +640,54 @@ def run_scenario(
         assertions.key_equals("success", True),
     ]))
 
+    # ----- Step 6.4: tasks lifecycle (optional, mark + read-back) ---------
+    # Gated behind `test_mark_task` on the archetype. Exercises the
+    # POST /mark-task → GET /get-tasks round-trip. Synthetic task ids
+    # (qa_smoke_*) get cleaned up by the final teardown's clear-test-data
+    # call. This catches:
+    #   - /mark-task returning 500 (every "complete" click would silently fail)
+    #   - schema regressions on /get-tasks
+    #   - the mark not actually persisting (integration bug between
+    #     counselor_agent → profile_manager_v2 update-structured-field)
+    if scenario.get("test_mark_task"):
+        smoke_task_id = "qa_smoke_mark_task_1"
+        mark_ctx = poster(
+            f"{ca}/mark-task",
+            {
+                "user_email": cfg.test_user_email,
+                "task_id": smoke_task_id,
+                "completed": True,
+            },
+            id_token=cfg.id_token,
+            timeout=15,
+        )
+        steps.append(_step("mark_task", mark_ctx, [
+            assertions.status_is_2xx(),
+            assertions.key_equals("success", True),
+            assertions.key_equals("task_id", smoke_task_id),
+            assertions.key_equals("completed", True),
+            assertions.latency_under(10000),
+        ]))
+
+        # Read-back: /get-tasks (forwards to profile_manager_v2
+        # /get-roadmap-tasks). Asserts the field is fetchable; doesn't
+        # require the synthetic task to be there (the response shape
+        # is what we care about here — a regression that returned 500
+        # for every roadmap-tab load would be the failure mode).
+        get_tasks_ctx = poster(
+            f"{ca}/get-tasks",
+            method="GET",
+            params={"user_email": cfg.test_user_email},
+            id_token=cfg.id_token,
+            timeout=15,
+        )
+        steps.append(_step("get_tasks", get_tasks_ctx, [
+            assertions.status_is_2xx(),
+            assertions.key_equals("success", True),
+            assertions.has_key("tasks"),
+            assertions.latency_under(8000),
+        ]))
+
     # ----- Step 6.5: counselor chat (optional) ----------------------------
     # Gated behind `chat_question` on the archetype, mirroring the
     # `fit_target_college` pattern. The runner exercises counselor_agent
