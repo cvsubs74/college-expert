@@ -37,6 +37,10 @@ from typing import List
 # 50 items for a heavily-tested journey.
 MAX_SCENARIOS_PER_JOURNEY = 10
 
+# Cap the rendered validated_features list. total_features still
+# reflects the full count.
+MAX_VALIDATED_FEATURES = 20
+
 
 # ---- Public ----------------------------------------------------------------
 
@@ -54,12 +58,26 @@ def build_coverage(runs: List[dict]) -> dict:
     """
     # journey_id → {surfaces, scenarios_by_id, verified_count}
     by_journey: dict = {}
+    # text → count (whitespace-normalized)
+    feature_counts: dict = {}
 
     for run in runs or []:
         run_started_at = run.get("started_at", "")
         for scen in run.get("scenarios") or []:
             if not _is_passed(scen):
                 continue
+
+            # Aggregate the scenario's `tests` bullets into the
+            # validated-features list — the answer to "what specific
+            # behaviors has the QA agent confirmed work today?"
+            for bullet in scen.get("tests") or []:
+                if not isinstance(bullet, str):
+                    continue
+                key = " ".join(bullet.split())  # collapse whitespace
+                if not key:
+                    continue
+                feature_counts[key] = feature_counts.get(key, 0) + 1
+
             surfaces = scen.get("surfaces_covered") or []
             if not surfaces:
                 continue  # legacy / no signal — skip rather than bucket as ""
@@ -104,7 +122,22 @@ def build_coverage(runs: List[dict]) -> dict:
         })
 
     journeys.sort(key=lambda j: j["verified_count"], reverse=True)
-    return {"journeys": journeys, "total_journeys": len(journeys)}
+
+    # Validated features: every distinct test bullet across passing
+    # scenarios, with how many times it's been verified. Sorted by
+    # count desc, capped at MAX_VALIDATED_FEATURES for the UI; the
+    # full count remains in `total_features`.
+    validated_features = sorted(
+        ({"text": text, "count": count} for text, count in feature_counts.items()),
+        key=lambda f: (-f["count"], f["text"]),
+    )
+
+    return {
+        "journeys": journeys,
+        "total_journeys": len(journeys),
+        "validated_features": validated_features[:MAX_VALIDATED_FEATURES],
+        "total_features": len(validated_features),
+    }
 
 
 # ---- Helpers ---------------------------------------------------------------

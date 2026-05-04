@@ -375,3 +375,76 @@ class TestBuildSummaryRecentN:
         assert result["pass_rate_recent"] == 100
         assert result["pass_rate_30d"] is not None
         assert result["pass_rate_30d"] < 75
+
+
+# ---- Narrative tracks recent-N -------------------------------------------
+# User feedback after PR-F shipped: the System Health narrative said
+# "75% over the last 30 days" while the primary pill above it said 100%
+# (last 5 runs). The narrative was reading the wrong window. Fix: lead
+# with the recent-N pass rate; keep 30d as historical context.
+
+
+class TestSummaryNarrativeTracksRecentN:
+    def _runs_recent_all_pass_30d_mixed(self):
+        """20 most-recent runs are 100%; the prior 20 (older) are 50%."""
+        from datetime import datetime, timedelta, timezone
+        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        runs = []
+        for i in range(20):
+            runs.append({
+                "run_id": f"old_{i}",
+                "started_at": (base - timedelta(days=10, minutes=i)).isoformat(),
+                "summary": {"total": 8, "pass": 4, "fail": 4},
+                "scenarios": [],
+            })
+        for i in range(20):
+            runs.append({
+                "run_id": f"new_{i}",
+                "started_at": (base - timedelta(minutes=30 * i)).isoformat(),
+                "summary": {"total": 8, "pass": 8, "fail": 0},
+                "scenarios": [],
+            })
+        runs.sort(key=lambda r: r["started_at"], reverse=True)
+        return runs
+
+    def test_fallback_narrative_leads_with_recent_n_window(self):
+        """Without an LLM key, the deterministic fallback should mention
+        the recent-N window and its rate, not just 7d/30d."""
+        import narratives
+        runs = self._runs_recent_all_pass_30d_mixed()
+        result = narratives.build_summary(runs, recent_n=20, gemini_key=None)
+        narrative = result["narrative"].lower()
+        # Should reference the recent-N window so the headline is clear.
+        assert (
+            "last 20" in narrative
+            or "recent 20" in narrative
+            or "20 runs" in narrative
+        ), f"narrative should reference the recent-N window; got: {narrative}"
+        # And it should mention 100% (the recent-N rate), not the
+        # blended 30-day rate (~75%).
+        assert "100" in narrative
+
+    def test_llm_prompt_includes_recent_n_signal(self, monkeypatch):
+        """When the LLM is available, the prompt must include the
+        recent-N rate + window so the generated narrative leads with it."""
+        import narratives
+        import google.generativeai as genai
+
+        captured = {}
+
+        class _Model:
+            def __init__(self, *_a, **_k):
+                pass
+            def generate_content(self, prompt, *_a, **_k):
+                captured["prompt"] = prompt
+                class R:
+                    text = "ok"
+                return R()
+
+        monkeypatch.setattr(genai, "GenerativeModel", _Model)
+        runs = self._runs_recent_all_pass_30d_mixed()
+        narratives.build_summary(runs, recent_n=20, gemini_key="fake-key")
+        prompt = captured.get("prompt", "")
+        # The prompt should pass the recent-N rate (100) and window (20).
+        assert "100" in prompt
+        assert "20" in prompt

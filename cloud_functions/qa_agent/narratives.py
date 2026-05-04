@@ -330,7 +330,8 @@ def build_summary(runs: Iterable[dict],
     surfaces = _surface_health(runs, now, days=14)
 
     narrative = _summary_narrative(
-        runs, pass_rate_7d, pass_rate_30d, trend, surfaces,
+        runs, pass_rate_recent, recent_n_clamped,
+        pass_rate_7d, pass_rate_30d, trend, surfaces,
         gemini_key=gemini_key,
     )
     return {
@@ -425,30 +426,37 @@ def _surface_health(runs, now, *, days):
     return by_surface
 
 
-def _summary_narrative(runs, rate_7d, rate_30d, trend, surfaces,
+def _summary_narrative(runs, rate_recent, recent_n,
+                       rate_7d, rate_30d, trend, surfaces,
                        *, gemini_key: Optional[str] = None) -> str:
     if not runs:
         return "No QA runs yet. Click Run now to kick off the first batch."
 
     if not gemini_key:
-        return _summary_narrative_fallback(runs, rate_7d, rate_30d, trend, surfaces)
+        return _summary_narrative_fallback(
+            runs, rate_recent, recent_n, rate_7d, rate_30d, trend, surfaces)
 
     try:
         import google.generativeai as genai
         genai.configure(api_key=gemini_key)
         model = genai.GenerativeModel("gemini-2.5-flash")
-        prompt = _summary_prompt(runs, rate_7d, rate_30d, trend, surfaces)
+        prompt = _summary_prompt(
+            runs, rate_recent, recent_n, rate_7d, rate_30d, trend, surfaces)
         resp = model.generate_content(prompt)
         text = (resp.text or "").strip()
         return text or _summary_narrative_fallback(
-            runs, rate_7d, rate_30d, trend, surfaces)
+            runs, rate_recent, recent_n, rate_7d, rate_30d, trend, surfaces)
     except Exception as exc:  # noqa: BLE001
         logger.warning("qa_agent.planner: build_summary LLM failed (%s)", exc)
         return _summary_narrative_fallback(
-            runs, rate_7d, rate_30d, trend, surfaces)
+            runs, rate_recent, recent_n, rate_7d, rate_30d, trend, surfaces)
 
 
-def _summary_prompt(runs, rate_7d, rate_30d, trend, surfaces) -> str:
+def _summary_prompt(runs, rate_recent, recent_n, rate_7d, rate_30d,
+                    trend, surfaces) -> str:
+    """Build the LLM prompt. Leads with the recent-N rate (the dashboard's
+    primary pill) so the generated narrative tracks the same window the
+    user sees up top, then mentions 7d/30d as historical context."""
     surf_lines = "\n".join(
         f"  - {name}: {slot['fails']}/{slot['total']} fails ({slot['status']})"
         for name, slot in surfaces.items()
@@ -456,29 +464,45 @@ def _summary_prompt(runs, rate_7d, rate_30d, trend, surfaces) -> str:
     return f"""You are a senior QA engineer writing a 2-3 sentence executive summary
 of a synthetic-monitoring system's health.
 
-Pass rate (last 7 days): {rate_7d}%
-Pass rate (last 30 days): {rate_30d}%
-Trend: {trend}
+PRIMARY signal (use this as the headline):
+  Pass rate over the last {recent_n} runs: {rate_recent}%
+
+Historical context (mention only if it differs notably from the primary):
+  Pass rate (last 7 days): {rate_7d}%
+  Pass rate (last 30 days): {rate_30d}%
+  Trend: {trend}
+
 Surface health (last 14 days):
 {surf_lines}
 
 In 2-3 sentences:
-1. Give a one-line health verdict in plain English.
-2. Call out any surface that's red or yellow, with a hint at where to look.
-3. If everything is green, say so simply.
+1. Lead with a one-line health verdict using the PRIMARY signal — name
+   the window (e.g., "Last {recent_n} runs are 100% pass") rather than
+   talking about days.
+2. If 7d / 30d differs meaningfully from the primary, briefly note the
+   contrast (e.g., "older runs were lower at 75% but recent runs are
+   green").
+3. Call out any surface that's red or yellow, with a hint at where to
+   look. If everything is green, say so simply.
 
 Be direct. No preamble. No disclaimers."""
 
 
-def _summary_narrative_fallback(runs, rate_7d, rate_30d, trend, surfaces):
+def _summary_narrative_fallback(runs, rate_recent, recent_n,
+                                rate_7d, rate_30d, trend, surfaces):
+    """Deterministic narrative when the LLM is unavailable. Leads with
+    the recent-N pass rate so the narrative tracks the dashboard's
+    primary pill."""
     parts = []
-    if rate_7d is not None:
-        parts.append(f"{rate_7d}% pass over the last 7 days")
-    if rate_30d is not None:
-        parts.append(f"{rate_30d}% over the last 30")
+    if rate_recent is not None:
+        parts.append(f"{rate_recent}% pass over the last {recent_n} runs")
+    if rate_7d is not None and rate_recent is not None and abs(rate_7d - rate_recent) > 5:
+        parts.append(f"{rate_7d}% over the last 7 days")
+    if rate_30d is not None and rate_recent is not None and abs(rate_30d - rate_recent) > 10:
+        parts.append(f"{rate_30d}% over the last 30 days")
     if trend != "steady":
         parts.append(f"trending {trend}")
-    headline = "; ".join(parts) or "system health"
+    headline = "; ".join(parts) or f"system health (last {recent_n} runs)"
 
     flagged = [name for name, slot in surfaces.items()
                if slot.get("status") in ("yellow", "red")]

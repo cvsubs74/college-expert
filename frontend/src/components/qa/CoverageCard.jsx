@@ -1,18 +1,20 @@
 import React from 'react';
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 
-// "What's validated" card — lists the end-to-end user journeys the QA
-// agent has confirmed are working across recent runs. Positive
-// counterpart to the System Health failures.
+// "What's validated" card — surfaces both:
+//   1. End-to-end user journeys (surfaces tuple)
+//   2. The specific feature-level test bullets aggregated across recent
+//      passing scenarios (e.g., "Resolver picks junior_spring template",
+//      "UC group task covers all UCs in single entry").
 //
 // Spec: docs/prd/qa-dashboard-insights.md, docs/design/qa-dashboard-insights.md.
 //
 // Data shape (from /summary):
 //   {
-//     journeys: [
-//       { id, surfaces[], summary, scenarios: [{id, verified_at}], verified_count }
-//     ],
-//     total_journeys: N
+//     journeys: [{id, surfaces[], summary, scenarios, verified_count}],
+//     total_journeys: N,
+//     validated_features: [{text, count}],   // PR-K
+//     total_features: M
 //   }
 
 const fmtRelative = (iso) => {
@@ -36,23 +38,29 @@ const CoverageCard = ({ coverage }) => {
     if (!coverage || !coverage.journeys || coverage.journeys.length === 0) {
         return null;
     }
+    const features = coverage.validated_features || [];
+    const totalFeatures = coverage.total_features || features.length;
 
     return (
         <div className="bg-white border border-[#E0DED8] rounded-xl p-5">
-            <div className="flex items-baseline justify-between mb-3">
+            <div className="flex items-baseline justify-between mb-3 gap-2 flex-wrap">
                 <h2 className="text-sm font-bold uppercase tracking-wider text-[#1A4D2E] flex items-center gap-2">
                     <CheckBadgeIcon className="h-4 w-4" />
                     What's validated
                 </h2>
                 <span className="text-xs text-[#8A8A8A]">
                     {coverage.total_journeys} {coverage.total_journeys === 1 ? 'journey' : 'journeys'}
+                    {totalFeatures > 0 && ` · ${totalFeatures} ${totalFeatures === 1 ? 'feature' : 'features'}`}
                 </span>
             </div>
 
             <p className="text-xs text-[#6B6B6B] mb-3">
-                End-to-end user journeys the QA agent has verified across recent runs.
+                End-to-end user journeys + specific behaviors the QA agent has verified across recent runs.
             </p>
 
+            <div className="text-[10px] uppercase tracking-wider text-[#6B6B6B] font-semibold mb-2">
+                Journeys
+            </div>
             <ul className="space-y-2.5">
                 {coverage.journeys.map((j) => (
                     <li
@@ -98,6 +106,38 @@ const CoverageCard = ({ coverage }) => {
                     </li>
                 ))}
             </ul>
+
+            {features.length > 0 && (
+                <div className="mt-4">
+                    <div className="text-[10px] uppercase tracking-wider text-[#6B6B6B] font-semibold mb-2 flex items-baseline justify-between">
+                        <span>Features verified</span>
+                        {totalFeatures > features.length && (
+                            <span className="text-[10px] normal-case tracking-normal text-[#8A8A8A] italic font-normal">
+                                showing top {features.length} of {totalFeatures}
+                            </span>
+                        )}
+                    </div>
+                    <ul className="space-y-1.5">
+                        {features.map((f, i) => (
+                            <li
+                                key={`${i}-${f.text}`}
+                                className="flex items-start gap-2 text-xs text-[#2A2A2A]"
+                            >
+                                <span
+                                    className="text-emerald-700 font-bold mt-0.5 flex-shrink-0"
+                                    aria-label="verified"
+                                >
+                                    ✓
+                                </span>
+                                <span className="flex-1 min-w-0">{f.text}</span>
+                                <span className="flex-shrink-0 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">
+                                    {f.count}×
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };

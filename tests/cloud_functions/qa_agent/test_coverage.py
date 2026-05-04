@@ -193,3 +193,122 @@ class TestBuildCoverage:
         )
         result = coverage.build_coverage(runs)
         assert result["journeys"][0]["verified_count"] >= result["journeys"][1]["verified_count"]
+
+
+# ---- validated_features ---------------------------------------------------
+#
+# In addition to journey-level grouping, the dashboard wants a
+# feature-level breakdown: every distinct "tests" bullet across recent
+# passing scenarios, with a count of how many times the QA agent has
+# verified that specific behavior.
+#
+# Each scenario carries a `tests` field — 3-5 plain-English bullets like
+# "Resolver picks junior_spring template" or "UC group task covers all
+# UCs". Aggregating these gives "the full list of features verified
+# successfully" the user is asking for.
+
+
+def _scen_with_tests(scenario_id, surfaces, tests, *, passed=True,
+                     verified_at="2026-05-04T04:00Z"):
+    s = _scen(scenario_id, surfaces, passed=passed, verified_at=verified_at)
+    s["tests"] = list(tests)
+    return s
+
+
+class TestValidatedFeatures:
+    def test_top_level_includes_validated_features_key(self):
+        import coverage
+        result = coverage.build_coverage([])
+        assert "validated_features" in result
+        assert "total_features" in result
+        assert isinstance(result["validated_features"], list)
+
+    def test_aggregates_test_bullets_across_passing_scenarios(self):
+        import coverage
+        runs = [
+            _run("r1", [
+                _scen_with_tests("scen_a", ["profile"], [
+                    "Resolver picks junior_spring template",
+                    "5 colleges added cleanly",
+                ]),
+            ]),
+            _run("r2", [
+                _scen_with_tests("scen_b", ["roadmap"], [
+                    "Resolver picks junior_spring template",  # repeat
+                    "UC group task covers all UCs",
+                ]),
+            ]),
+        ]
+        result = coverage.build_coverage(runs)
+        # 3 unique features in total
+        assert result["total_features"] == 3
+        # The repeated bullet has count 2; others count 1.
+        by_text = {f["text"]: f["count"] for f in result["validated_features"]}
+        assert by_text.get("Resolver picks junior_spring template") == 2
+        assert by_text.get("5 colleges added cleanly") == 1
+        assert by_text.get("UC group task covers all UCs") == 1
+
+    def test_excludes_features_from_failing_scenarios(self):
+        """A failing scenario's `tests` bullets aren't validated — leave
+        them out so the dashboard doesn't claim things work that don't."""
+        import coverage
+        runs = [
+            _run("r1", [
+                _scen_with_tests("good", ["profile"], ["A works", "B works"]),
+                _scen_with_tests("bad", ["roadmap"], ["C breaks"], passed=False),
+            ]),
+        ]
+        result = coverage.build_coverage(runs)
+        feature_texts = {f["text"] for f in result["validated_features"]}
+        assert "A works" in feature_texts
+        assert "B works" in feature_texts
+        assert "C breaks" not in feature_texts
+
+    def test_features_sorted_by_count_desc(self):
+        import coverage
+        runs = (
+            [_run(f"r{i}", [_scen_with_tests("a", ["p"], ["heavy_feature"])])
+             for i in range(5)]
+            + [_run("r_x", [_scen_with_tests("b", ["p"], ["light_feature"])])]
+        )
+        result = coverage.build_coverage(runs)
+        first = result["validated_features"][0]
+        assert first["text"] == "heavy_feature"
+        assert first["count"] == 5
+
+    def test_caps_features_for_dashboard_size(self):
+        """A long tail of features shouldn't dump 100 entries — cap at
+        a sensible number for the UI."""
+        import coverage
+        runs = []
+        for i in range(40):
+            runs.append(_run(f"r{i}", [
+                _scen_with_tests(f"s{i}", ["p"], [f"feature_{i}"]),
+            ]))
+        result = coverage.build_coverage(runs)
+        # All 40 are in total_features, but the rendered list is capped.
+        assert result["total_features"] == 40
+        assert len(result["validated_features"]) <= 20
+
+    def test_empty_when_no_passing_scenarios_have_tests(self):
+        import coverage
+        runs = [_run("r1", [_scen("a", ["profile"])])]  # no tests bullets
+        result = coverage.build_coverage(runs)
+        assert result["validated_features"] == []
+        assert result["total_features"] == 0
+
+    def test_normalizes_whitespace_when_aggregating(self):
+        """'Foo bar.' and ' foo bar. ' should count as the same feature
+        — otherwise minor LLM-output inconsistencies fragment the list."""
+        import coverage
+        runs = [
+            _run("r1", [
+                _scen_with_tests("a", ["p"], ["Resolver picks junior_spring"]),
+            ]),
+            _run("r2", [
+                _scen_with_tests("b", ["p"], ["  Resolver picks junior_spring  "]),
+            ]),
+        ]
+        result = coverage.build_coverage(runs)
+        assert result["total_features"] == 1
+        assert result["validated_features"][0]["count"] == 2
