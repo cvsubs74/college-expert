@@ -6,6 +6,7 @@ import RunNowPanel from '../components/qa/RunNowPanel';
 import RunsTable from '../components/qa/RunsTable';
 import ExecutiveSummary from '../components/qa/ExecutiveSummary';
 import ScheduleEditor from '../components/qa/ScheduleEditor';
+import ChatPanel from '../components/qa/ChatPanel';
 
 // /qa-runs — admin-only list of recent QA runs.
 //
@@ -56,6 +57,7 @@ const QaRunsListPage = () => {
 
             <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
                 <ExecutiveSummary />
+                <ChatPanel />
                 <RunNowPanel onComplete={refresh} />
                 <ScheduleEditor />
 
