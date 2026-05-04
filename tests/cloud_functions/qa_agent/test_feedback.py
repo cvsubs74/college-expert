@@ -295,3 +295,106 @@ class TestMarkApplied:
             ["fb_1", "fb_does_not_exist"], run_id="run_abc", db=db,
         )
         assert doc._data["items"][0]["applied_count"] == 1
+
+
+# ---- Recently-dismissed visibility ---------------------------------------
+# Bug repro 2026-05-04: an operator's note hit max_applies=5 and was
+# auto-flipped to "dismissed" — disappeared from the Steer panel even
+# though it had successfully driven 5 runs. Add a dedicated reader so
+# the dashboard can render a "Retired" subsection.
+
+
+class TestRecentlyDismissedItems:
+    def test_returns_dismissed_only(self):
+        import feedback
+        items = [
+            {"id": "fb_a", "text": "active item", "status": "active",
+             "applied_count": 1, "max_applies": 5,
+             "created_at": "2026-05-04T10:00:00+00:00", "created_by": "x"},
+            {"id": "fb_b", "text": "retired item", "status": "dismissed",
+             "applied_count": 5, "max_applies": 5,
+             "last_applied_at": "2026-05-04T13:00:00+00:00",
+             "last_applied_run_id": "run_xyz",
+             "created_at": "2026-05-03T18:00:00+00:00", "created_by": "x"},
+        ]
+        db, _ = _db_with({"items": items})
+        out = feedback.recently_dismissed_items(db=db)
+        ids = [it["id"] for it in out]
+        assert ids == ["fb_b"]
+
+    def test_sorted_by_last_applied_at_desc(self):
+        """The most-recently-retired item shows first so the operator
+        sees the latest retirement at the top."""
+        import feedback
+        items = [
+            {"id": "fb_old", "text": "retired earlier", "status": "dismissed",
+             "applied_count": 5, "max_applies": 5,
+             "last_applied_at": "2026-05-02T12:00:00+00:00",
+             "created_at": "2026-05-01T00:00:00+00:00", "created_by": "x"},
+            {"id": "fb_new", "text": "retired most recently", "status": "dismissed",
+             "applied_count": 5, "max_applies": 5,
+             "last_applied_at": "2026-05-04T13:00:00+00:00",
+             "created_at": "2026-05-03T00:00:00+00:00", "created_by": "x"},
+        ]
+        db, _ = _db_with({"items": items})
+        out = feedback.recently_dismissed_items(db=db)
+        assert [it["id"] for it in out] == ["fb_new", "fb_old"]
+
+    def test_falls_back_to_created_at_when_last_applied_missing(self):
+        """A manually-dismissed item without last_applied_at still
+        sorts deterministically by its created_at."""
+        import feedback
+        items = [
+            {"id": "fb_manual", "text": "manually dismissed",
+             "status": "dismissed",
+             "applied_count": 0, "max_applies": 5,
+             "created_at": "2026-05-04T08:00:00+00:00", "created_by": "x"},
+            {"id": "fb_auto", "text": "auto retired",
+             "status": "dismissed",
+             "applied_count": 5, "max_applies": 5,
+             "last_applied_at": "2026-05-04T12:00:00+00:00",
+             "created_at": "2026-05-03T00:00:00+00:00", "created_by": "x"},
+        ]
+        db, _ = _db_with({"items": items})
+        out = feedback.recently_dismissed_items(db=db)
+        # fb_auto has last_applied_at=12:00; fb_manual falls back to
+        # created_at=08:00 — so fb_auto comes first.
+        assert [it["id"] for it in out] == ["fb_auto", "fb_manual"]
+
+    def test_capped_at_default_limit(self):
+        """A long history shouldn't dump everything onto the panel."""
+        import feedback
+        items = [
+            {"id": f"fb_{i}", "text": f"retired {i}", "status": "dismissed",
+             "applied_count": 5, "max_applies": 5,
+             "last_applied_at": f"2026-04-{i:02d}T12:00:00+00:00",
+             "created_at": f"2026-04-{i:02d}T00:00:00+00:00", "created_by": "x"}
+            for i in range(1, 26)  # 25 retired items
+        ]
+        db, _ = _db_with({"items": items})
+        out = feedback.recently_dismissed_items(db=db)
+        # Default limit is 10.
+        assert len(out) == 10
+
+    def test_respects_explicit_limit(self):
+        import feedback
+        items = [
+            {"id": f"fb_{i}", "text": f"retired {i}", "status": "dismissed",
+             "applied_count": 5, "max_applies": 5,
+             "last_applied_at": f"2026-04-{i:02d}T12:00:00+00:00",
+             "created_at": f"2026-04-{i:02d}T00:00:00+00:00", "created_by": "x"}
+            for i in range(1, 11)
+        ]
+        db, _ = _db_with({"items": items})
+        out = feedback.recently_dismissed_items(limit=3, db=db)
+        assert len(out) == 3
+
+    def test_empty_when_nothing_dismissed(self):
+        import feedback
+        items = [
+            {"id": "fb_a", "text": "active", "status": "active",
+             "applied_count": 0, "max_applies": 5,
+             "created_at": "2026-05-04T10:00:00+00:00", "created_by": "x"},
+        ]
+        db, _ = _db_with({"items": items})
+        assert feedback.recently_dismissed_items(db=db) == []

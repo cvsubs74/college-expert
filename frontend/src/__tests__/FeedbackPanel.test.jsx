@@ -235,4 +235,76 @@ describe('FeedbackPanel', () => {
             expect(link.getAttribute('href')).toContain('run_clickable_xyz');
         });
     });
+
+    // ---- Retired (recently-dismissed) visibility -----------------------
+    // Bug repro 2026-05-04: an operator's note hit max_applies=5 and was
+    // auto-dismissed — disappeared from the panel even though it had
+    // successfully driven 5 runs. The Steer panel now reads
+    // `recently_dismissed` from /feedback and renders a "Retired"
+    // subsection so the operator can see "the loop worked".
+
+    describe('Retired section', () => {
+        it('renders a retired subsection when recently_dismissed has items', async () => {
+            getFeedbackFn.mockResolvedValue({
+                success: true,
+                items: [],
+                recently_dismissed: [{
+                    id: 'fb_retired',
+                    text: 'Make sure to cover every single university',
+                    status: 'dismissed',
+                    applied_count: 5,
+                    max_applies: 5,
+                    last_applied_run_id: 'run_final',
+                    last_applied_at: '2026-05-04T13:00:00+00:00',
+                }],
+            });
+            render(<FeedbackPanel />);
+            await waitFor(() => {
+                expect(
+                    screen.getByText(/Make sure to cover every single university/i)
+                ).toBeInTheDocument();
+            });
+            // A "Retired" section header should be present (the
+            // section uses an h3; the pill below uses lowercase
+            // "retired after" so the heading match is unambiguous).
+            expect(screen.getByRole('heading', { name: /Retired/i })).toBeInTheDocument();
+            // The "✓ retired after N runs" pill labels how many runs
+            // referenced the note before it auto-dismissed.
+            expect(screen.getByText(/retired after 5 runs/i)).toBeInTheDocument();
+            // Last applied run id is a clickable link.
+            const link = screen.getByRole('link', { name: /run_final/i });
+            expect(link.getAttribute('href')).toContain('run_final');
+        });
+
+        it('does NOT render the retired section when recently_dismissed is empty', async () => {
+            getFeedbackFn.mockResolvedValue({
+                success: true,
+                items: [],
+                recently_dismissed: [],
+            });
+            render(<FeedbackPanel />);
+            await waitFor(() => {
+                expect(screen.getByText(/No active feedback/i)).toBeInTheDocument();
+            });
+            expect(
+                screen.queryByRole('heading', { name: /Retired/i })
+            ).toBeNull();
+        });
+
+        it('tolerates legacy responses without the recently_dismissed field', async () => {
+            getFeedbackFn.mockResolvedValue({
+                success: true,
+                items: [],
+                // no recently_dismissed key
+            });
+            render(<FeedbackPanel />);
+            await waitFor(() => {
+                expect(screen.getByText(/No active feedback/i)).toBeInTheDocument();
+            });
+            // No crash, no retired header.
+            expect(
+                screen.queryByRole('heading', { name: /Retired/i })
+            ).toBeNull();
+        });
+    });
 });
