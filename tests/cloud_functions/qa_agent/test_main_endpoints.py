@@ -164,6 +164,54 @@ class TestDualAuth:
         resp = qa_main.qa_agent(req)
         assert resp.status_code == 401
 
+    def test_id_token_path_initializes_firebase_admin_before_verify(
+        self, qa_main, monkeypatch,
+    ):
+        """Regression for the prod bug observed on 2026-05-04:
+
+        `_check_auth` imported `firebase_admin.auth` directly and called
+        `verify_id_token` without first ensuring `firebase_admin.initialize_app()`
+        had run. In production this caused every Bearer-token call to fail
+        with `The default Firebase app does not exist` — admins clicking
+        through stratiaadmissions.com/qa-runs all saw 'unauthorized'.
+
+        The fix routes through `auth._firebase_admin()` (which lazily inits
+        and is shared with the rest of the auth module). This test simulates
+        prod-like state — `_apps` empty until `initialize_app` runs — and
+        asserts the auth path successfully verifies the token.
+        """
+        import firebase_admin
+        from firebase_admin import auth as _fa
+
+        # Clear any state leaked from earlier tests (the conftest stub mutates
+        # this module-level dict whenever lazy init runs).
+        firebase_admin._apps.clear()
+
+        def _verify(_t):
+            if not firebase_admin._apps:
+                raise ValueError(
+                    "The default Firebase app does not exist. "
+                    "Make sure to initialize the SDK by calling initialize_app()."
+                )
+            return {"email": "admin@example.com"}
+
+        monkeypatch.setattr(_fa, "verify_id_token", _verify, raising=False)
+
+        req = _FakeRequest(
+            method="POST",
+            path="/suggest-cause",
+            headers={"Authorization": "Bearer fake-id-token"},
+            body={"run_id": "nope", "scenario_id": "nope"},
+        )
+        resp = qa_main.qa_agent(req)
+        assert resp.status_code != 401, (
+            "_check_auth must call firebase_admin.initialize_app() (via "
+            "auth._firebase_admin()) before verify_id_token, otherwise prod "
+            "Bearer-token auth fails with 'default Firebase app does not exist'"
+        )
+        # Belt-and-braces: confirm initialize_app ran as a side effect.
+        assert firebase_admin._apps, "initialize_app should have been called"
+
 
 # ---- /suggest-cause --------------------------------------------------------
 
