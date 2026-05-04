@@ -347,3 +347,112 @@ class TestTranslateTaskDispatch:
         ctx = make_college_context(colleges=[{'id': 'mit', 'name': 'MIT'}])
         task = {'id': 'x', 'title': 'Maintain Strong Grades', 'type': 'core'}
         assert p.translate_task(task, ctx) == [task]
+
+
+# ---------------------------------------------------------------------------
+# get_college_context — must deduplicate by university_id even when the
+# upstream fetch returns one row per (college × deadline).
+#
+# Prod bug repro: a college with both an Early Action AND a Regular Decision
+# deadline came back from fetch_aggregated_deadlines as TWO rows. The original
+# loop iterated over deadlines and appended one entry to `colleges` per row,
+# so the roadmap saw the same school twice (and `colleges_count` over-reported
+# by N). The QA agent's roadmap_deep_link_integrity check caught it because
+# downstream tasks referenced colleges that weren't in the user's actual list.
+# ---------------------------------------------------------------------------
+
+class TestGetCollegeContextDeduplication:
+    def test_dedupes_when_one_college_has_multiple_deadlines(self, monkeypatch):
+        """Ohio State w/ EA + RD must produce ONE entry, not two."""
+        monkeypatch.setattr(p, 'fetch_aggregated_deadlines', lambda email: [
+            {'university_id': 'ohio_state_university',
+             'university_name': 'Ohio State University',
+             'deadline_type': 'Early Action', 'date': '2026-11-01', 'notes': ''},
+            {'university_id': 'ohio_state_university',
+             'university_name': 'Ohio State University',
+             'deadline_type': 'Regular Decision', 'date': '2027-02-01', 'notes': ''},
+            {'university_id': 'university_of_florida',
+             'university_name': 'University of Florida',
+             'deadline_type': 'Regular Decision', 'date': '2026-11-01', 'notes': ''},
+        ])
+
+        ctx = p.get_college_context('test@example.com')
+        college_ids = [c['id'] for c in ctx['colleges']]
+
+        # The actionable assertion: each unique college appears exactly once.
+        assert college_ids.count('ohio_state_university') == 1, (
+            f"ohio_state_university appeared {college_ids.count('ohio_state_university')} times — "
+            f"get_college_context must dedupe across deadline rows. Got: {college_ids}"
+        )
+        assert sorted(college_ids) == ['ohio_state_university', 'university_of_florida']
+
+    def test_keeps_earliest_deadline_when_deduping(self, monkeypatch):
+        """When a college has EA + RD, the kept entry should carry the earliest
+        deadline so downstream task scheduling targets the binding date."""
+        monkeypatch.setattr(p, 'fetch_aggregated_deadlines', lambda email: [
+            # Note: order matters because fetch_aggregated_deadlines sorts by
+            # date, so EA comes first. We assert the kept deadline is the EA one.
+            {'university_id': 'ohio_state_university',
+             'university_name': 'Ohio State University',
+             'deadline_type': 'Early Action', 'date': '2026-11-01', 'notes': ''},
+            {'university_id': 'ohio_state_university',
+             'university_name': 'Ohio State University',
+             'deadline_type': 'Regular Decision', 'date': '2027-02-01', 'notes': ''},
+        ])
+
+        ctx = p.get_college_context('test@example.com')
+        ohio = next(c for c in ctx['colleges'] if c['id'] == 'ohio_state_university')
+        assert ohio['deadline'] == '2026-11-01'
+        assert ohio['deadline_type'] == 'Early Action'
+
+    def test_has_ed_ea_flags_still_set_when_only_one_row_kept(self, monkeypatch):
+        """Dedup must not drop the has_early_action / has_early_decision flags —
+        they are derived across ALL deadline rows before collapsing."""
+        monkeypatch.setattr(p, 'fetch_aggregated_deadlines', lambda email: [
+            {'university_id': 'penn_state_university',
+             'university_name': 'Penn State University',
+             'deadline_type': 'Early Decision', 'date': '2026-11-01', 'notes': ''},
+            {'university_id': 'penn_state_university',
+             'university_name': 'Penn State University',
+             'deadline_type': 'Regular Decision', 'date': '2027-01-15', 'notes': ''},
+        ])
+        ctx = p.get_college_context('test@example.com')
+        assert ctx['has_early_decision'] is True
+        assert len(ctx['colleges']) == 1
+
+    def test_no_duplicates_when_all_colleges_have_single_deadline(self, monkeypatch):
+        """Sanity: the dedup logic must not collapse legitimately distinct colleges."""
+        monkeypatch.setattr(p, 'fetch_aggregated_deadlines', lambda email: [
+            {'university_id': 'mit', 'university_name': 'MIT',
+             'deadline_type': 'Regular Decision', 'date': '2027-01-01', 'notes': ''},
+            {'university_id': 'stanford_university', 'university_name': 'Stanford',
+             'deadline_type': 'Regular Decision', 'date': '2027-01-05', 'notes': ''},
+            {'university_id': 'harvard_university', 'university_name': 'Harvard',
+             'deadline_type': 'Regular Decision', 'date': '2027-01-01', 'notes': ''},
+        ])
+        ctx = p.get_college_context('test@example.com')
+        assert len(ctx['colleges']) == 3
+        assert {c['id'] for c in ctx['colleges']} == {
+            'mit', 'stanford_university', 'harvard_university',
+        }
+
+    def test_uc_grouping_still_works_after_dedup(self, monkeypatch):
+        """UC schools detection should still uniquify and detect correctly."""
+        monkeypatch.setattr(p, 'fetch_aggregated_deadlines', lambda email: [
+            {'university_id': 'university_of_california_berkeley',
+             'university_name': 'UC Berkeley',
+             'deadline_type': 'Regular Decision', 'date': '2026-11-30', 'notes': ''},
+            # Berkeley appears twice (e.g. weird upstream data); shouldn't break.
+            {'university_id': 'university_of_california_berkeley',
+             'university_name': 'UC Berkeley',
+             'deadline_type': 'Regular Decision', 'date': '2026-11-30', 'notes': ''},
+            {'university_id': 'university_of_california_los_angeles',
+             'university_name': 'UCLA',
+             'deadline_type': 'Regular Decision', 'date': '2026-11-30', 'notes': ''},
+        ])
+        ctx = p.get_college_context('test@example.com')
+        assert sorted([c['id'] for c in ctx['colleges']]) == [
+            'university_of_california_berkeley',
+            'university_of_california_los_angeles',
+        ]
+        assert ctx['uc_schools'] == ['UC Berkeley', 'UCLA']
