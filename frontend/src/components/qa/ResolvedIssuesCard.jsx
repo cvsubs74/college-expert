@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { fmtRelative } from '../../utils/fmtRelative';
 
 // "Issues caught and fixed" card — lists recent FAIL → PASS transitions
 // with the failing-assertion message preserved as evidence of what was
@@ -15,23 +16,6 @@ import { ShieldCheckIcon } from '@heroicons/react/24/outline';
 //     total_fixes: N,
 //     lookback_runs: M
 //   }
-
-const fmtRelative = (iso) => {
-    if (!iso) return '';
-    try {
-        const dt = new Date(iso);
-        const diffMs = Date.now() - dt.getTime();
-        const minutes = Math.floor(diffMs / 60000);
-        if (minutes < 1) return 'just now';
-        if (minutes < 60) return `${minutes}m ago`;
-        const hours = Math.floor(minutes / 60);
-        if (hours < 24) return `${hours}h ago`;
-        const days = Math.floor(hours / 24);
-        return `${days}d ago`;
-    } catch {
-        return '';
-    }
-};
 
 const ResolvedIssuesCard = ({ resolvedIssues }) => {
     if (!resolvedIssues || !resolvedIssues.fixes || resolvedIssues.fixes.length === 0) {
