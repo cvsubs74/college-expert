@@ -342,10 +342,10 @@ class TestUniversitiesTested:
         import coverage
         runs = [
             _run("r1", [
-                _scen_with_colleges("a", ["profile"], ["mit", "stanford"]),
+                _scen_with_colleges("a", ["profile"], ["harvard", "stanford"]),
             ]),
             _run("r2", [
-                _scen_with_colleges("a", ["profile"], ["mit", "stanford"]),
+                _scen_with_colleges("a", ["profile"], ["harvard", "stanford"]),
                 _scen_with_colleges("b", ["roadmap"], ["uc_berkeley"]),
             ]),
         ]
@@ -353,29 +353,29 @@ class TestUniversitiesTested:
         # 3 unique universities
         assert result["total_universities_tested"] == 3
         by_id = {u["id"]: u["count"] for u in result["universities_tested"]}
-        assert by_id == {"mit": 2, "stanford": 2, "uc_berkeley": 1}
+        assert by_id == {"harvard": 2, "stanford": 2, "uc_berkeley": 1}
 
     def test_excludes_failing_scenarios(self):
         import coverage
         runs = [
             _run("r1", [
-                _scen_with_colleges("good", ["profile"], ["mit"]),
+                _scen_with_colleges("good", ["profile"], ["harvard"]),
                 _scen_with_colleges("bad", ["roadmap"], ["yale"], passed=False),
             ]),
         ]
         result = coverage.build_coverage(runs)
         ids = {u["id"] for u in result["universities_tested"]}
-        assert "mit" in ids
+        assert "harvard" in ids
         assert "yale" not in ids
 
     def test_sorts_by_count_desc(self):
         import coverage
         runs = (
-            [_run(f"r{i}", [_scen_with_colleges("a", ["p"], ["mit"])]) for i in range(5)]
+            [_run(f"r{i}", [_scen_with_colleges("a", ["p"], ["harvard"])]) for i in range(5)]
             + [_run("r_x", [_scen_with_colleges("b", ["p"], ["yale"])])]
         )
         result = coverage.build_coverage(runs)
-        assert result["universities_tested"][0]["id"] == "mit"
+        assert result["universities_tested"][0]["id"] == "harvard"
         assert result["universities_tested"][0]["count"] == 5
 
     def test_records_last_tested_at_per_university(self):
@@ -383,21 +383,21 @@ class TestUniversitiesTested:
         dashboard can show 'last tested 5m ago'."""
         import coverage
         runs = [
-            _run("r1", [_scen_with_colleges("a", ["p"], ["mit"])],
+            _run("r1", [_scen_with_colleges("a", ["p"], ["harvard"])],
                  started_at="2026-05-04T04:00:00+00:00"),
-            _run("r2", [_scen_with_colleges("a", ["p"], ["mit"])],
+            _run("r2", [_scen_with_colleges("a", ["p"], ["harvard"])],
                  started_at="2026-05-04T05:00:00+00:00"),
         ]
         result = coverage.build_coverage(runs)
-        mit = next(u for u in result["universities_tested"] if u["id"] == "mit")
+        mit = next(u for u in result["universities_tested"] if u["id"] == "harvard")
         assert "05:00" in mit["last_tested_at"]
 
     def test_universities_untested_when_allowlist_provided(self):
         """The set difference between the allowlist and tested set is
         what the dashboard renders as 'next to test' candidates."""
         import coverage
-        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["mit"])])]
-        allowlist = ["mit", "stanford", "yale", "princeton"]
+        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["harvard"])])]
+        allowlist = ["harvard", "stanford", "yale", "princeton"]
         result = coverage.build_coverage(runs, colleges_allowlist=allowlist)
         assert result["allowlist_size"] == 4
         assert result["total_universities_tested"] == 1
@@ -421,9 +421,75 @@ class TestUniversitiesTested:
         runs = [_run("r1", [
             {"scenario_id": "legacy", "passed": True,
              "surfaces_covered": ["profile"]},  # no colleges_template
-            _scen_with_colleges("modern", ["profile"], ["mit"]),
+            _scen_with_colleges("modern", ["profile"], ["harvard"]),
         ])]
         result = coverage.build_coverage(runs)
         # Only the modern scenario contributes.
         assert result["total_universities_tested"] == 1
-        assert result["universities_tested"][0]["id"] == "mit"
+        assert result["universities_tested"][0]["id"] == "harvard"
+
+
+# ---- University ID canonicalization ---------------------------------------
+# Bug repro: production /summary on 2026-05-04 listed both "mit" AND
+# "massachusetts_institute_of_technology" as separate entries (and "ucla"
+# vs "university_of_california_los_angeles"). Both forms historically
+# lived in the allowlist, so the synthesizer + static scenarios produced
+# either at random — double-counting the same school in the new
+# UniversitiesCard. Fix: fold known aliases to a canonical id at
+# coverage-build time so the dashboard always sees one row per school
+# even with mixed-form historical data still in Firestore.
+
+
+class TestUniversityCanonicalization:
+    def test_alias_mit_folds_to_canonical(self):
+        import coverage
+        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["mit"])])]
+        result = coverage.build_coverage(runs)
+        ids = [u["id"] for u in result["universities_tested"]]
+        assert "mit" not in ids
+        assert "massachusetts_institute_of_technology" in ids
+
+    def test_alias_ucla_folds_to_canonical(self):
+        import coverage
+        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["ucla"])])]
+        result = coverage.build_coverage(runs)
+        ids = [u["id"] for u in result["universities_tested"]]
+        assert "ucla" not in ids
+        assert "university_of_california_los_angeles" in ids
+
+    def test_alias_and_canonical_collapse_to_single_row(self):
+        """If a legacy run uses 'mit' and a modern run uses
+        'massachusetts_institute_of_technology', they must combine into
+        a single tested entry with count=2."""
+        import coverage
+        runs = [
+            _run("r1", [_scen_with_colleges("a", ["p"], ["mit"])]),
+            _run("r2", [_scen_with_colleges("a", ["p"],
+                                            ["massachusetts_institute_of_technology"])]),
+        ]
+        result = coverage.build_coverage(runs)
+        rows = [u for u in result["universities_tested"]
+                if u["id"] == "massachusetts_institute_of_technology"]
+        assert len(rows) == 1
+        assert rows[0]["count"] == 2
+
+    def test_canonical_id_omitted_from_untested_when_alias_was_tested(self):
+        """If the run record uses 'mit' (legacy) but the allowlist only
+        contains the canonical form, the canonical id should NOT show up
+        in universities_untested — coverage is real, just stored under
+        an alias."""
+        import coverage
+        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["mit"])])]
+        allowlist = ["massachusetts_institute_of_technology", "stanford_university"]
+        result = coverage.build_coverage(runs, colleges_allowlist=allowlist)
+        assert "massachusetts_institute_of_technology" not in result["universities_untested"]
+        assert "stanford_university" in result["universities_untested"]
+
+    def test_unknown_id_passes_through_unchanged(self):
+        """Anything not in the alias map stays as-is — the canonicalizer
+        is opt-in by alias, not a strict allowlist."""
+        import coverage
+        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["random_school_xyz"])])]
+        result = coverage.build_coverage(runs)
+        ids = [u["id"] for u in result["universities_tested"]]
+        assert ids == ["random_school_xyz"]
