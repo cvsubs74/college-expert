@@ -1,0 +1,24 @@
+{
+    "id": "fit_selective_band",
+    "description": "Strong senior evaluated against University of Washington (KB acceptance ~39.15%, SELECTIVE per fit_computation.py's tier bucketing — 25-40% band). No floor applies; the ceiling rule says the school CANNOT be REACH or SUPER_REACH (must be SAFETY or TARGET) but allows either above that.",
+    "business_rationale": "SELECTIVE schools are the bread-and-butter target tier for many strong students — flagship publics, mid-T50 privates. Operators rely on the algorithm to distinguish a TARGET (achievable with effort) from a SAFETY (achievable confidently). A regression that misclassified a 39% school as REACH would surface immediately via the ceiling invariant in this archetype.",
+    "default_student_name": "Jordan Patel",
+    "profile_template": {
+        "grade_level": "12th Grade",
+        "graduation_year": 2026,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "math team", "tutoring"]
+    },
+    "colleges_template": ["university_of_washington"],
+    "fit_target_college": "university_of_washington",
+    "expected_template_used": "senior_fall",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "SELECTIVE band (25-40% acceptance): selectivity ceiling forces SAFETY or TARGET; cannot be REACH or SUPER_REACH",
+        "match_percentage in [55, 100] (SAFETY 75-100 or TARGET 55-74)",
+        "All four factors present with bounded scores",
+        "Selectivity factor in {0} per the 25-40% rubric (no penalty, no bonus)",
+        "All 8 advisory blocks present and non-empty"
+    ]
+}

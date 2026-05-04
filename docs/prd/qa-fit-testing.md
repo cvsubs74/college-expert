@@ -102,13 +102,26 @@ real-world misadvisement. Today we have no automated detection.
   is the post-processor's canonicalised view and the right level of
   strictness.
 
-**Phase 2c (deferred — fill remaining tier gaps + profile edge cases):**
-- Add `fit_very_selective` (15-25% band) and `fit_selective` (25-40%
-  band) archetypes once we identify schools in the allowlist with
-  those acceptance rates from KB data.
-- Add a `fit_test_optional` archetype and a `fit_intended_major_mismatch`
-  archetype to probe profile-side edge cases (e.g. CS-intent student
-  vs liberal-arts-only school should produce a low Major Fit score).
+**Phase 2c-1 (DONE — tier-gap fill):**
+- `fit_very_selective_band` — University of Florida (KB acceptance
+  24.2%, lands in the 15-25% VERY_SELECTIVE band). No floor or
+  ceiling applies; invariants verify structure only.
+- `fit_selective_band` — University of Washington (KB acceptance
+  39.15%, lands in the 25-40% SELECTIVE band). The ceiling rule
+  forces SAFETY or TARGET — invariant catches a regression here
+  (e.g., a 39% school misclassified as REACH).
+
+After 2c-1, all 5 selectivity tiers have direct synthetic monitoring:
+ULTRA_SELECTIVE (MIT), HIGHLY_SELECTIVE (UC Berkeley), VERY_SELECTIVE
+(UF), SELECTIVE (UW), ACCESSIBLE (Ohio State).
+
+**Phase 2c-2 (deferred — profile-side edge cases):**
+- `fit_test_optional` archetype: profile WITHOUT SAT/ACT scores. The
+  test_strategy.recommendation should NOT be "Submit" — needs a new
+  fit-assertion to express that contract.
+- `fit_intended_major_mismatch`: CS-intent student vs liberal-arts-
+  only school. The Major Fit factor should score significantly
+  lower than the canonical CS-vs-tech-school baseline.
 
 ### Phase 3 — Synthesizer integration
 
