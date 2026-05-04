@@ -27,6 +27,7 @@ import requests
 
 import assertions
 import data_assertions
+import fit_assertions
 import ground_truth as ground_truth_mod
 
 logger = logging.getLogger(__name__)
@@ -477,6 +478,49 @@ def run_scenario(
             "roadmap_deep_link_integrity",
             roadmap_ctx, truth_bag, deep_link_assertions,
         ))
+
+    # ----- Step 4.7: college fit (optional) -------------------------------
+    # Fit-focused archetypes set `fit_target_college` to a college id;
+    # we POST to profile_manager_v2 /compute-single-fit and run the
+    # invariant assertions from fit_assertions.py against the response.
+    # Spec: docs/prd/qa-fit-testing.md.
+    fit_target = scenario.get("fit_target_college")
+    if fit_target:
+        fit_ctx = poster(
+            f"{pm}/compute-single-fit",
+            {
+                "user_email": cfg.test_user_email,
+                "university_id": fit_target,
+            },
+            admin_token=cfg.admin_token,
+        )
+        fit_asserts: List[assertions.AssertionFn] = [
+            assertions.status_is_2xx(),
+            assertions.key_equals("success", True),
+            # Phase 1 invariants. None require external truth — all
+            # come from the response itself.
+            fit_assertions.category_in_valid_set(),
+            fit_assertions.match_percentage_in_range(),
+            fit_assertions.match_percentage_aligns_with_category(),
+            fit_assertions.selectivity_floor_respected(),
+            fit_assertions.selectivity_ceiling_respected(),
+            fit_assertions.factor_bounds_respected(),
+            fit_assertions.required_advisory_blocks_present(),
+            # The /compute-single-fit endpoint can be slow because it
+            # makes a Gemini call; allow up to 30s before flagging.
+            assertions.latency_under(30000),
+        ]
+        # If the archetype declared an expected category, pin that too —
+        # gives us a tighter signal than the invariants alone for the
+        # canonical "ultra-selective stays SUPER_REACH" scenario.
+        expected_cat = scenario.get("fit_expected_category")
+        if expected_cat:
+            fit_asserts.append(
+                assertions.key_equals(
+                    "fit_analysis.fit_category", expected_cat,
+                )
+            )
+        steps.append(_step(f"compute_fit:{fit_target}", fit_ctx, fit_asserts))
 
     # ----- Step 5: work feed ----------------------------------------------
     # /work-feed is GET with query params, not POST.

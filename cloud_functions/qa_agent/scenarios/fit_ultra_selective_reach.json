@@ -1,0 +1,25 @@
+{
+    "id": "fit_ultra_selective_reach",
+    "description": "Strong junior evaluated against an <8% acceptance school. The selectivity floor in fit_computation.py guarantees the school stays SUPER_REACH for ANY profile, no matter how strong.",
+    "business_rationale": "Catches regressions in the selectivity-floor rule — the strict guarantee that no student profile can elevate an ultra-selective school out of SUPER_REACH. A real-world misadvisement here would tell a strong-but-realistic family that an Ivy is a TARGET, eroding trust in the platform's fit guidance. This is the canonical fit-algorithm invariant worth detecting in synthetic monitoring.",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.95,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming", "research"]
+    },
+    "colleges_template": ["massachusetts_institute_of_technology"],
+    "fit_target_college": "massachusetts_institute_of_technology",
+    "fit_expected_category": "SUPER_REACH",
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "Selectivity floor: an <8%-acceptance school stays SUPER_REACH regardless of profile strength",
+        "match_percentage falls in the SUPER_REACH band [0, 34]",
+        "All four factors {Academic, Holistic, Major Fit, Selectivity} present with bounded scores",
+        "All 8 advisory blocks (essay angles, scholarship matches, test strategy, …) present and non-empty",
+        "fit_category strictly in {SAFETY, TARGET, REACH, SUPER_REACH}"
+    ]
+}
