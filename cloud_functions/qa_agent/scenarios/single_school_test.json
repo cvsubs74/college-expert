@@ -1,6 +1,7 @@
 {
     "id": "single_school_test",
     "description": "Edge case: junior with a one-school list. Exercises the per-school translation in isolation (no UC grouping, no multi-school sort).",
+    "business_rationale": "Catches edge-case regressions for the simplest user — someone exploring just one school. Many production bugs only show up under multi-school assumptions, so this scenario is the canary for code that quietly assumes 'len(colleges) > 1' and breaks for solo users.",
     "default_student_name": "Drew Wilson",
     "profile_template": {
         "grade_level": "11th Grade",

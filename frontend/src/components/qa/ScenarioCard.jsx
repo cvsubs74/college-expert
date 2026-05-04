@@ -82,6 +82,17 @@ const ScenarioCard = ({ runId, scenario }) => {
                         rationale={scenario.synthesis_rationale}
                     />
 
+                    {scenario.business_rationale && (
+                        <div className="bg-emerald-50/50 border border-emerald-200/70 rounded-lg p-3 mb-2">
+                            <div className="text-[10px] uppercase tracking-wider text-emerald-900 font-semibold mb-1.5">
+                                Why this matters
+                            </div>
+                            <p className="text-xs text-[#1A2E1F] leading-relaxed">
+                                {scenario.business_rationale}
+                            </p>
+                        </div>
+                    )}
+
                     {scenario.tests && scenario.tests.length > 0 && (
                         <div className="bg-[#FBFAF6] border border-[#E0DED8] rounded-lg p-3 mb-2">
                             <div className="text-[10px] uppercase tracking-wider text-[#6B6B6B] font-semibold mb-1.5">

@@ -1,6 +1,7 @@
 {
     "id": "sophomore_spring_explorer",
     "description": "Sophomore in spring, exploring options. Three diverse colleges on the list.",
+    "business_rationale": "Validates the mid-funnel experience: sophomores who are no longer brand-new but not yet under application pressure. The roadmap should focus on exploration and academic preparation rather than deadline-driven tasks. Catches regressions where the system treats early-stage users like seniors.",
     "default_student_name": "Jordan Patel",
     "profile_template": {
         "grade_level": "10th Grade",
