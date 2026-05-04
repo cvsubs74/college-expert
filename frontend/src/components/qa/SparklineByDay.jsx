@@ -31,11 +31,24 @@ const SparklineByDay = ({ runs, days = 30 }) => {
     const W = 240, H = 40, gap = 1;
     const colW = (W - gap * (days - 1)) / days;
 
-    const totalRuns = buckets.reduce((s, b) => s + (b?.count || 0), 0);
-    const greenDays = buckets.filter(b => b?.worst === 'pass').length;
-    const redDays = buckets.filter(b => b?.worst === 'fail').length;
-    const passRate = (greenDays + redDays > 0)
-        ? Math.round(100 * greenDays / (greenDays + redDays))
+    // Headline pass rate is RUN-weighted — counting days flagged any
+    // run in a day with a fail as a "red day", which made even a 5-of-6
+    // day read as 100% red and produced misleading "0% green" headlines
+    // on dashboards where most runs actually passed. Count actual runs
+    // instead so this aligns with the per-run pass rate the rest of
+    // the dashboard already shows.
+    let totalRuns = 0;
+    let passedRuns = 0;
+    for (const run of runs || []) {
+        if (!run.started_at) continue;
+        const ts = new Date(run.started_at);
+        const dayOffset = Math.floor((today - ts) / (1000 * 60 * 60 * 24));
+        if (dayOffset < 0 || dayOffset >= days) continue;
+        totalRuns += 1;
+        if ((run.summary?.fail ?? 0) === 0) passedRuns += 1;
+    }
+    const passRate = totalRuns > 0
+        ? Math.round(100 * passedRuns / totalRuns)
         : null;
 
     return (
