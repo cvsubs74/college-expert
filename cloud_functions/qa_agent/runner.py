@@ -640,6 +640,37 @@ def run_scenario(
         assertions.key_equals("success", True),
     ]))
 
+    # ----- Step 6.5: counselor chat (optional) ----------------------------
+    # Gated behind `chat_question` on the archetype, mirroring the
+    # `fit_target_college` pattern. The runner exercises counselor_agent
+    # /chat with the canned question; assertions verify the response
+    # shape + non-empty reply + reasonable latency. Real-world impact:
+    # the chat is the highest-stakes user-facing AI surface — a regression
+    # that broke /chat would silently degrade every user's main
+    # interaction with the counselor.
+    chat_question = scenario.get("chat_question")
+    if chat_question:
+        chat_ctx = poster(
+            f"{ca}/chat",
+            {
+                "user_email": cfg.test_user_email,
+                "message": chat_question,
+                "history": [],
+            },
+            id_token=cfg.id_token,
+            timeout=60,  # LLM call; cold-start headroom
+        )
+        steps.append(_step("counselor_chat", chat_ctx, [
+            assertions.status_is_2xx(),
+            assertions.key_equals("success", True),
+            # Stricter than has_key: catches reply="" / null / whitespace
+            # — a regression where the LLM call succeeds structurally but
+            # the user sees a blank chat bubble.
+            assertions.key_non_empty_string("reply"),
+            assertions.has_key("suggested_actions"),
+            assertions.latency_under(45000),
+        ]))
+
     # ----- Step 7: final teardown -----------------------------------------
     teardown_ctx = poster(
         f"{pm}/clear-test-data",

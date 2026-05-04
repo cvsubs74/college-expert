@@ -1,0 +1,27 @@
+{
+    "id": "counselor_chat_smoke",
+    "description": "Junior with a built profile + 3 schools + roadmap asks the counselor chat 'What should I focus on this week?'. Asserts the response shape, non-empty reply, and reasonable latency. Closes the monitoring gap on the highest-stakes user-facing AI surface.",
+    "business_rationale": "The counselor chat is the main way users interact with the AI advisor. A regression that returned an empty reply or 5xx on every call would degrade every user's experience and we'd hear about it through support tickets, not metrics. Synthetic monitoring of one canonical question gives us a fast-fail signal before real users notice.",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.8,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming"]
+    },
+    "colleges_template": [
+        "massachusetts_institute_of_technology",
+        "university_of_california_berkeley",
+        "ohio_state_university"
+    ],
+    "chat_question": "What should I focus on this week to strengthen my application?",
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "chat"],
+    "tests": [
+        "POST {counselor_agent}/chat returns 200 with success: true",
+        "reply field is a non-empty string (catches the LLM-returns-blank regression)",
+        "suggested_actions field is present (the frontend renders it as buttons)",
+        "Latency under 45s — covers cold-start LLM call comfortably"
+    ]
+}

@@ -94,6 +94,42 @@ def key_equals(path: str, expected: Any) -> AssertionFn:
     return _check
 
 
+def key_non_empty_string(path: str) -> AssertionFn:
+    """Asserts the value at `path` is a non-empty (after .strip()) string.
+
+    Stricter than `has_key` — catches the regression where an endpoint
+    returns the right shape but with an empty/null/whitespace value.
+    Used for AI-generated text fields (e.g., chat replies, narratives)
+    where shape-only checks would let a degraded LLM response pass.
+    """
+    def _check(ctx):
+        body = ctx.get("response_json") or {}
+        present, value = _walk(body, path)
+        if not present:
+            return AssertionResult(
+                name=f"{path} non-empty string",
+                passed=False,
+                message=f"missing key '{path}'",
+            )
+        if not isinstance(value, str):
+            return AssertionResult(
+                name=f"{path} non-empty string",
+                passed=False,
+                message=f"got {type(value).__name__}, expected str",
+            )
+        if not value.strip():
+            return AssertionResult(
+                name=f"{path} non-empty string",
+                passed=False,
+                message="value is empty/whitespace",
+            )
+        return AssertionResult(
+            name=f"{path} non-empty string",
+            passed=True,
+        )
+    return _check
+
+
 def key_in(path: str, allowed: List[Any]) -> AssertionFn:
     def _check(ctx):
         body = ctx.get("response_json") or {}
