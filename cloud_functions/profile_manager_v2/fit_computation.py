@@ -696,9 +696,10 @@ def _build_fallback_fit(acceptance_rate, selectivity_tier, university_data):
     error, quota, etc.).
 
     Returns a fit dict that satisfies all post-processor invariants —
-    same shape as a successful call, with placeholder factor scores
-    and a per-category match_percentage that round-trips through the
-    QA agent's structural assertions.
+    same shape as a successful call, with placeholder factor scores,
+    a per-category match_percentage that round-trips through the
+    QA agent's structural assertions, AND placeholder advisory blocks
+    so the operator-facing dashboard shape stays stable.
     """
     if acceptance_rate < 8:
         fallback_category = "SUPER_REACH"
@@ -708,6 +709,8 @@ def _build_fallback_fit(acceptance_rate, selectivity_tier, university_data):
         fallback_category = "TARGET"
     else:
         fallback_category = "SAFETY"
+
+    placeholder = "Detailed analysis unavailable — please retry."
 
     return {
         "fit_category": fallback_category,
@@ -727,7 +730,50 @@ def _build_fallback_fit(acceptance_rate, selectivity_tier, university_data):
             {"name": "Selectivity", "score":  0, "max":  5,
              "detail": f"{acceptance_rate}% acceptance rate"},
         ],
-        "recommendations": ["Complete profile for accurate analysis"],
+        # Phase 2c-2 follow-up: include placeholder versions of every
+        # advisory block the prompt is supposed to produce. The QA
+        # agent's required_advisory_blocks_present invariant trips
+        # when these are missing — and operators need a stable
+        # response shape regardless of LLM availability.
+        "essay_angles": [{
+            "essay_prompt": "(Detailed analysis unavailable)",
+            "angle": placeholder,
+            "student_hook": placeholder,
+            "school_hook": placeholder,
+        }],
+        "application_timeline": {
+            "recommended_plan": "Regular Decision",
+            "deadline": None,
+            "is_binding": False,
+            "rationale": placeholder,
+            "key_milestones": [],
+        },
+        "scholarship_matches": [{
+            "name": "(Detailed analysis unavailable)",
+            "amount": "—",
+            "deadline": None,
+            "match_reason": placeholder,
+            "application_method": placeholder,
+        }],
+        "test_strategy": {
+            "recommendation": "Don't Submit",  # safe default — see
+                                                # _student_has_no_scores override
+            "rationale": placeholder,
+        },
+        "major_strategy": {
+            "intended_major": "(unknown)",
+            "is_available": None,
+            "strategic_tip": placeholder,
+        },
+        "demonstrated_interest_tips": [placeholder],
+        "red_flags_to_avoid": [placeholder],
+        "recommendations": [{
+            "action": "Complete profile for accurate analysis",
+            "addresses_gap": "Data Unavailable",
+            "school_specific_context": placeholder,
+            "timeline": "before application",
+            "impact": placeholder,
+        }],
         "university_name": (university_data or {}).get(
             "metadata", {}).get("official_name", "University"),
         "calculated_at": datetime.utcnow().isoformat(),

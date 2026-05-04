@@ -173,3 +173,68 @@ class TestStudentHasNoScores:
             "sat_composite": 0,
             "act_composite": "0",
         })
+
+
+# ---- Fallback advisory blocks -------------------------------------------
+# Bug surfaced 2026-05-04 (post-PR-#82): a fallback fit response was
+# missing every advisory block the QA agent's
+# required_advisory_blocks_present invariant requires. Phase 2c-2 fix
+# extended the fallback to include placeholder versions of all 8
+# blocks so response shape stays stable across success/fail paths.
+
+_REQUIRED_BLOCKS = (
+    "explanation", "essay_angles", "application_timeline",
+    "scholarship_matches", "test_strategy", "major_strategy",
+    "demonstrated_interest_tips", "red_flags_to_avoid",
+    "recommendations",
+)
+
+
+class TestFallbackIncludesAllAdvisoryBlocks:
+    @pytest.mark.parametrize("acceptance_rate", [4.0, 10.0, 24.2, 60.6])
+    def test_every_required_block_present_and_non_empty(self, acceptance_rate):
+        """The QA agent's required_advisory_blocks_present invariant
+        checks each block exists AND is non-empty — applies to fallback
+        responses too."""
+        from fit_computation import _build_fallback_fit
+        result = _build_fallback_fit(
+            acceptance_rate=acceptance_rate,
+            selectivity_tier="TEST",
+            university_data={},
+        )
+        for block in _REQUIRED_BLOCKS:
+            assert block in result, (
+                f"acceptance_rate={acceptance_rate}: missing block {block!r}"
+            )
+            v = result[block]
+            assert v not in (None, "", [], {}), (
+                f"acceptance_rate={acceptance_rate}: block {block!r} "
+                f"is empty (would trip required_advisory_blocks_present)"
+            )
+
+    def test_fallback_test_strategy_is_safe_default(self):
+        """The fallback's default test_strategy.recommendation should
+        not be 'Submit' — Phase 2c-2's no-scores override would catch
+        that for scoreless profiles, but the fallback is more
+        conservative and never recommends Submit blindly."""
+        from fit_computation import _build_fallback_fit
+        result = _build_fallback_fit(
+            acceptance_rate=24.2,
+            selectivity_tier="VERY_SELECTIVE",
+            university_data={},
+        )
+        assert result["test_strategy"]["recommendation"] != "Submit"
+
+    def test_fallback_essay_angles_is_a_list_of_dicts(self):
+        """Frontend rendering expects essay_angles to be iterable of
+        dicts — protect that shape."""
+        from fit_computation import _build_fallback_fit
+        result = _build_fallback_fit(
+            acceptance_rate=24.2,
+            selectivity_tier="VERY_SELECTIVE",
+            university_data={},
+        )
+        assert isinstance(result["essay_angles"], list)
+        assert len(result["essay_angles"]) >= 1
+        for angle in result["essay_angles"]:
+            assert isinstance(angle, dict)
