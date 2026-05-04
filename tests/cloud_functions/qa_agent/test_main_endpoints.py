@@ -30,6 +30,10 @@ def qa_main(monkeypatch):
     monkeypatch.setenv("QA_TEST_USER_EMAIL", "duser8531@gmail.com")
     monkeypatch.setenv("QA_TEST_USER_UID", "test-uid")
     monkeypatch.setenv("QA_GITHUB_REPO", "cvsubs74/college-expert")
+    # Placeholder backend URLs so RunConfig construction in /run doesn't
+    # blow up on .rstrip() of None.
+    monkeypatch.setenv("PROFILE_MANAGER_URL", "https://pm.test")
+    monkeypatch.setenv("COUNSELOR_AGENT_URL", "https://ca.test")
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     monkeypatch.delenv("FIREBASE_WEB_API_KEY", raising=False)
 
@@ -355,3 +359,195 @@ class TestGithubIssueEndpoint:
         body = _resp_payload(qa_main.qa_agent(req))[1]
         assert body["success"] is False
         assert "required" in body["error"]
+
+
+# ---- /schedule endpoint ----------------------------------------------------
+
+
+class TestScheduleEndpoint:
+    """GET /schedule returns current config; POST /schedule writes new
+    config. Both gated by admin auth."""
+
+    def test_get_schedule_returns_current(self, qa_main, monkeypatch):
+        import schedule
+        monkeypatch.setattr(schedule, "load_schedule", lambda *_a, **_k: {
+            "frequency": "daily",
+            "times": ["06:00"],
+            "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+            "timezone": "America/Los_Angeles",
+        })
+        req = _FakeRequest(
+            method="GET",
+            path="/schedule",
+            headers={"X-Admin-Token": "test-admin-token"},
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        assert body["success"] is True
+        assert body["schedule"]["frequency"] == "daily"
+        assert "06:00" in body["schedule"]["times"]
+
+    def test_get_schedule_requires_auth(self, qa_main):
+        req = _FakeRequest(method="GET", path="/schedule")
+        resp = qa_main.qa_agent(req)
+        assert resp.status_code == 401
+
+    def test_post_schedule_saves(self, qa_main, monkeypatch):
+        import schedule
+        captured = {}
+
+        def fake_save(new_sched, actor=None, db=None):
+            captured["sched"] = new_sched
+            captured["actor"] = actor
+
+        monkeypatch.setattr(schedule, "save_schedule", fake_save)
+        req = _FakeRequest(
+            method="POST",
+            path="/schedule",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={
+                "frequency": "twice_daily",
+                "times": ["08:00", "16:00"],
+                "days": ["mon", "tue", "wed", "thu", "fri"],
+                "timezone": "America/Los_Angeles",
+            },
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        assert body["success"] is True
+        assert captured["sched"]["frequency"] == "twice_daily"
+
+    def test_post_schedule_validates_frequency(self, qa_main):
+        req = _FakeRequest(
+            method="POST",
+            path="/schedule",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={
+                "frequency": "every_5_seconds",
+                "times": ["00:00"],
+                "days": [],
+                "timezone": "America/Los_Angeles",
+            },
+        )
+        body = _resp_payload(qa_main.qa_agent(req))[1]
+        assert body["success"] is False
+        assert "frequency" in body["error"]
+
+
+# ---- /summary endpoint -----------------------------------------------------
+
+
+class TestSummaryEndpoint:
+    def test_returns_executive_summary(self, qa_main, monkeypatch):
+        import firestore_store
+        import narratives
+
+        def fake_list(limit=30, db=None):
+            from datetime import datetime, timedelta, timezone
+            now = datetime.now(timezone.utc)
+            return [
+                {
+                    "run_id": f"r{i}",
+                    "started_at": (now - timedelta(days=i)).isoformat(),
+                    "summary": {"total": 4, "pass": 4, "fail": 0},
+                    "scenarios": [],
+                }
+                for i in range(5)
+            ]
+
+        monkeypatch.setattr(firestore_store, "list_recent_runs", fake_list)
+        monkeypatch.setattr(narratives, "build_summary", lambda runs, **k: {
+            "narrative": "All systems green for 5 days running.",
+            "pass_rate_7d": 100,
+            "pass_rate_30d": 100,
+            "trend": "steady",
+            "surfaces": {},
+        })
+        req = _FakeRequest(
+            method="GET",
+            path="/summary",
+            headers={"X-Admin-Token": "test-admin-token"},
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        assert body["success"] is True
+        assert "All systems green" in body["summary"]["narrative"]
+        assert body["summary"]["pass_rate_7d"] == 100
+
+    def test_summary_requires_auth(self, qa_main):
+        req = _FakeRequest(method="GET", path="/summary")
+        assert qa_main.qa_agent(req).status_code == 401
+
+
+# ---- trigger=schedule_check ------------------------------------------------
+
+
+class TestScheduleCheckTrigger:
+    """The hourly Cloud Scheduler poll fires /run with
+    trigger=schedule_check. The agent calls schedule.should_run_now(),
+    no-ops if it doesn't match."""
+
+    def test_no_ops_when_schedule_does_not_match(self, qa_main, monkeypatch):
+        import schedule
+        monkeypatch.setattr(schedule, "load_schedule", lambda *_a, **_k: {
+            "frequency": "daily",
+            "times": ["06:00"],
+            "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+            "timezone": "America/Los_Angeles",
+        })
+        monkeypatch.setattr(schedule, "should_run_now", lambda *_a, **_k: False)
+        req = _FakeRequest(
+            method="POST",
+            path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={"trigger": "schedule_check"},
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        assert body.get("skipped") is True
+
+    def test_runs_when_schedule_matches(self, qa_main, monkeypatch):
+        # Stub everything downstream so we can verify the dispatcher
+        # does NOT skip when should_run_now returns True.
+        import schedule, corpus, firestore_store, auth, runner, narratives
+
+        monkeypatch.setattr(schedule, "should_run_now", lambda *_a, **_k: True)
+        monkeypatch.setattr(corpus, "load_archetypes", lambda: [{
+            "id": "test_archetype",
+            "description": "test",
+            "profile_template": {},
+            "colleges_template": [],
+            "tests": [],
+            "surfaces_covered": ["profile"],
+        }])
+        monkeypatch.setattr(corpus, "select_scenarios", lambda *a, **k: a[0])
+        monkeypatch.setattr(corpus, "generate_variation", lambda *a, **k: {
+            "student_name": "Test", "intended_major": "X",
+            "extra_interest": "", "gpa_delta": 0.0,
+        })
+        monkeypatch.setattr(corpus, "apply_variation", lambda a, _v: a)
+        monkeypatch.setattr(firestore_store, "load_history", lambda *a, **k: {})
+        monkeypatch.setattr(firestore_store, "update_history", lambda *a, **k: None)
+        monkeypatch.setattr(firestore_store, "write_report", lambda *a, **k: None)
+        monkeypatch.setattr(auth, "get_id_token", lambda *a, **k: "fake-id-token")
+        monkeypatch.setattr(runner, "run_scenario", lambda *a, **k: {
+            "scenario_id": "test_archetype", "passed": True,
+            "duration_ms": 100, "steps": [],
+        })
+        monkeypatch.setattr(narratives, "build_plan", lambda *a, **k: {
+            "narrative": "plan", "rationale": "rotation", "coverage": {},
+        })
+        monkeypatch.setattr(narratives, "build_outcome", lambda *a, **k: {
+            "narrative": "outcome", "verdict": "all_pass", "first_look_at": [],
+        })
+
+        req = _FakeRequest(
+            method="POST",
+            path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={"trigger": "schedule_check"},
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        assert body.get("skipped") is not True
+        assert body.get("success") is True

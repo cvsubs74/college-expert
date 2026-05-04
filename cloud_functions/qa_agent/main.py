@@ -42,7 +42,10 @@ from flask import jsonify
 import auth
 import corpus
 import firestore_store
+import narratives
 import runner
+import schedule
+import synthesizer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -56,6 +59,12 @@ def _config():
     return {
         "PROFILE_MANAGER_URL": os.getenv("PROFILE_MANAGER_URL"),
         "COUNSELOR_AGENT_URL": os.getenv("COUNSELOR_AGENT_URL"),
+        # Knowledge base URL is needed for ground-truth gathering
+        # (cross-reference assertions). Default to the live v2 URL.
+        "KNOWLEDGE_BASE_URL": os.getenv(
+            "KNOWLEDGE_BASE_UNIVERSITIES_URL",
+            "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app",
+        ),
         "ADMIN_TOKEN": os.getenv("QA_ADMIN_TOKEN"),
         "ADMIN_EMAILS": [
             e.strip().lower() for e in
@@ -67,6 +76,9 @@ def _config():
         "FIREBASE_API_KEY": os.getenv("FIREBASE_WEB_API_KEY"),
         "GEMINI_API_KEY": os.getenv("GEMINI_API_KEY"),
         "DEFAULT_SCENARIO_COUNT": int(os.getenv("QA_SCENARIO_COUNT", "4")),
+        # How many of the per-run scenarios should be LLM-synthesized.
+        # Default 0 — flip to 2 once the prompt is stable in prod.
+        "SYNTHESIS_COUNT": int(os.getenv("QA_SYNTHESIS_COUNT", "0")),
         "GITHUB_REPO": os.getenv("QA_GITHUB_REPO", "cvsubs74/college-expert"),
     }
 
@@ -166,6 +178,15 @@ def qa_agent(request):
     if path == "github-issue" and request.method == "POST":
         return _cors(_handle_github_issue(body, cfg))
 
+    if path == "schedule" and request.method == "GET":
+        return _cors(_handle_get_schedule())
+
+    if path == "schedule" and request.method == "POST":
+        return _cors(_handle_post_schedule(body, actor))
+
+    if path == "summary" and request.method == "GET":
+        return _cors(_handle_summary(cfg))
+
     return _cors({"success": False, "error": f"unknown path: {path}"}, 404)
 
 
@@ -196,6 +217,21 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     n = body.get("count") or cfg["DEFAULT_SCENARIO_COUNT"]
     actor = body.get("actor", "anonymous")
 
+    # The hourly Cloud Scheduler poll fires with trigger=schedule_check.
+    # No-op unless the user-configured schedule says NOW is a run time.
+    if trigger == "schedule_check":
+        try:
+            current_schedule = schedule.load_schedule()
+            if not schedule.should_run_now(current_schedule, datetime.now(timezone.utc)):
+                logger.info("qa_agent: schedule_check skipped — not in window")
+                return {"success": True, "skipped": True}
+        except Exception as exc:  # noqa: BLE001
+            # If the schedule check itself errors, log + skip rather
+            # than silently running. A missed run is recoverable; a
+            # schedule-config error firing every hour is not.
+            logger.exception("qa_agent: schedule_check failed; skipping")
+            return {"success": False, "skipped": True, "error": str(exc)}
+
     archetypes = corpus.load_archetypes()
     if not archetypes:
         return {"success": False, "error": "no archetypes loaded"}
@@ -209,7 +245,40 @@ def _handle_run(body: dict, cfg: dict) -> dict:
             }
 
     history = firestore_store.load_history([a["id"] for a in archetypes])
-    chosen = corpus.select_scenarios(archetypes, history, n=n)
+
+    # Hybrid select: synthesize some scenarios via LLM (when enabled),
+    # fill the rest from the static corpus. The synthesizer reads the
+    # last 20 runs + system_knowledge.md + colleges_allowlist.json to
+    # propose scenarios that target observed gaps. Falls back to all-
+    # static when QA_SYNTHESIS_COUNT=0 or LLM is unavailable.
+    synth_n = 0 if scenario_id_filter else cfg["SYNTHESIS_COUNT"]
+    synthesized = []
+    if synth_n > 0:
+        try:
+            recent_runs = firestore_store.list_recent_runs(limit=20)
+            system_knowledge = _load_system_knowledge()
+            allowlist = _load_colleges_allowlist()
+            synthesized = synthesizer.synthesize_scenarios(
+                n=synth_n,
+                history=recent_runs,
+                system_knowledge=system_knowledge,
+                colleges_allowlist=allowlist,
+                gemini_key=cfg["GEMINI_API_KEY"],
+            )
+            logger.info(
+                "qa_agent: synthesizer produced %d/%d valid scenarios",
+                len(synthesized), synth_n,
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("qa_agent: synthesis failed (%s); using static only", exc)
+            synthesized = []
+
+    # Top up: if the synthesizer produced fewer than requested (LLM
+    # decline / malformed output / all candidates rejected validation),
+    # take the slack from static so we still run `n` scenarios total.
+    static_n = max(1, n - len(synthesized))
+    static_picks = corpus.select_scenarios(archetypes, history, n=static_n)
+    chosen = synthesized + static_picks
 
     # Authenticate as the test user before running scenarios. If the
     # token mint fails, every scenario will fail predictably; we surface
@@ -227,7 +296,13 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         admin_token=cfg["ADMIN_TOKEN"],
         id_token=id_token,
         test_user_email=cfg["TEST_USER_EMAIL"],
+        knowledge_base_url=cfg["KNOWLEDGE_BASE_URL"],
     )
+
+    # Pre-run: ask the planner for a test_plan narrative + structured
+    # rationale + coverage. Cheap (one Gemini Flash call), gives the
+    # dashboard the "what is this run testing and why" context.
+    test_plan = narratives.build_plan(chosen, history, gemini_key=cfg["GEMINI_API_KEY"])
 
     started = datetime.now(timezone.utc)
     run_id = f"run_{started.strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
@@ -237,6 +312,11 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         variation = corpus.generate_variation(archetype, api_key=cfg["GEMINI_API_KEY"])
         materialized = corpus.apply_variation(archetype, variation)
         result = runner.run_scenario(materialized, run_cfg)
+        # Carry the archetype's `tests` bullets + surfaces_covered into
+        # each scenario record so the dashboard can render them and the
+        # /summary endpoint can aggregate by surface.
+        result["tests"] = archetype.get("tests", [])
+        result["surfaces_covered"] = archetype.get("surfaces_covered", [])
         scenarios_results.append(result)
         firestore_store.update_history(
             archetype["id"],
@@ -258,11 +338,56 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         "actor": actor,
         "summary": summary,
         "scenarios": scenarios_results,
+        "test_plan": test_plan,
     }
+
+    # Post-run: ask the planner for an outcome narrative + verdict +
+    # first-look-at pointer. Verdict is computed deterministically from
+    # the report (never LLM-derived).
+    report["outcome"] = narratives.build_outcome(report, gemini_key=cfg["GEMINI_API_KEY"])
+
     firestore_store.write_report(run_id, report)
     logger.info("qa_agent: run %s complete — %d pass / %d fail",
                 run_id, summary["pass"], summary["fail"])
     return {"success": True, "run_id": run_id, "summary": summary}
+
+
+# ---- /schedule -------------------------------------------------------------
+
+
+def _handle_get_schedule() -> dict:
+    try:
+        return {"success": True, "schedule": schedule.load_schedule()}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: load_schedule failed")
+        return {"success": False, "error": str(exc)}
+
+
+def _handle_post_schedule(body: dict, actor: str) -> dict:
+    err = schedule.validate_schedule(body)
+    if err:
+        return {"success": False, "error": err}
+    try:
+        schedule.save_schedule(body, actor=actor or "")
+        return {"success": True}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: save_schedule failed")
+        return {"success": False, "error": str(exc)}
+
+
+# ---- /summary --------------------------------------------------------------
+
+
+def _handle_summary(cfg: dict) -> dict:
+    try:
+        runs = firestore_store.list_recent_runs(limit=60)
+        return {
+            "success": True,
+            "summary": narratives.build_summary(runs, gemini_key=cfg["GEMINI_API_KEY"]),
+        }
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: build_summary failed")
+        return {"success": False, "error": str(exc)}
 
 
 # ---- /suggest-cause --------------------------------------------------------
@@ -323,7 +448,7 @@ def _gemini_suggest(scenario: dict, api_key: str | None) -> str:
     try:
         import google.generativeai as genai
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = _build_suggest_prompt(scenario, failing_steps)
         resp = model.generate_content(prompt)
         text = (resp.text or "").strip()
@@ -496,3 +621,35 @@ def request_arg(body, key):
     if val:
         return val
     return None
+
+
+# ---- Synthesizer support files ---------------------------------------------
+
+
+def _load_system_knowledge() -> str:
+    """Read system_knowledge.md from disk. Returns empty string on error
+    — synthesizer will then produce an empty list, caller uses static
+    fallback."""
+    try:
+        path = os.path.join(os.path.dirname(__file__), "system_knowledge.md")
+        with open(path) as f:
+            return f.read()
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("qa_agent: failed to read system_knowledge.md: %s", exc)
+        return ""
+
+
+def _load_colleges_allowlist() -> list:
+    """Read scenarios/colleges_allowlist.json. Returns empty list on
+    error — synthesizer rejects all candidates if the allowlist is
+    empty, caller uses static fallback."""
+    try:
+        path = os.path.join(
+            os.path.dirname(__file__), "scenarios", "colleges_allowlist.json",
+        )
+        with open(path) as f:
+            data = json.load(f)
+        return data.get("colleges", [])
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("qa_agent: failed to read colleges_allowlist.json: %s", exc)
+        return []

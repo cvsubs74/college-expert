@@ -16,5 +16,11 @@
         "boston_college"
     ],
     "expected_template_used": "junior_summer",
-    "surfaces_covered": ["profile", "college_list", "roadmap"]
+    "surfaces_covered": ["profile", "college_list", "roadmap"],
+    "tests": [
+        "Resolver picks junior_summer (the only summer template that exists)",
+        "4 reach colleges added cleanly",
+        "Roadmap response carries metadata.template_used == junior_summer",
+        "Pre-application phase template emphasizes essay starts and rec-letter outreach"
+    ]
 }
