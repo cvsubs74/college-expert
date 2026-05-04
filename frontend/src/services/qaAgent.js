@@ -183,9 +183,16 @@ export async function sendChatMessage({ question, history = [] }) {
     return jsonOrThrow(resp);
 }
 
-// GET /feedback — list active feedback items the admin has left for
-// the QA agent. Returns { success, items: [{id, text, status,
-// applied_count, max_applies, ...}] }.
+// GET /feedback — list feedback items the admin has left for the QA
+// agent. Returns:
+//   {
+//     success,
+//     items: [{id, text, status, applied_count, max_applies, ...}],
+//     recently_dismissed: [{...}]   // newest 10, dismissed status
+//   }
+// `items` is the active list shown in the Steer panel's input form.
+// `recently_dismissed` is the "Retired" subsection so an operator can
+// see notes that drove runs and auto-retired.
 export async function getFeedback() {
     const resp = await fetch(`${QA_AGENT_URL}/feedback`, {
         headers: await authHeader(),

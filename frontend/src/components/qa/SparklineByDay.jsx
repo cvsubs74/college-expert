@@ -1,74 +1,92 @@
 import React from 'react';
 
-// 30-day pass/fail sparkline. For each day, a column whose colour
-// reflects the worst run of that day:
-//   - all green → green
-//   - any red → red
-//   - no runs → blank
+// Per-run pass/fail sparkline at the top of the dashboard.
+//
+// One bar per run, coloured by that run's `summary.fail`:
+//   - any fail → red
+//   - all pass → green
+// Runs are ordered chronologically (oldest left, newest right) so the
+// rightmost bar is the most recent.
+//
+// Spec: docs/prd/qa-dashboard-visibility-gaps.md +
+//       docs/design/qa-dashboard-visibility-gaps.md.
+//
+// History: this component was originally per-day (each bar = "worst run
+// that day"), which produced empty gray buckets when the agent's
+// schedule left some days without runs. With ~21 runs across 30 days
+// the operator saw "81% green" headline but no green bars. Switching
+// to per-run aligns the visual with the headline.
+//
 // Inline SVG so we don't need a chart library.
 
-const SparklineByDay = ({ runs, days = 30 }) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+const W = 240;
+const H = 40;
+const GAP = 1;
+const MIN_BAR_WIDTH = 4;
+// At MIN_BAR_WIDTH + GAP per slot, ~48 bars fit in W. Cap there to
+// keep the chart readable; older runs fall off the left edge.
+const MAX_VISIBLE_BARS = Math.floor((W + GAP) / (MIN_BAR_WIDTH + GAP));
 
-    const buckets = new Array(days).fill(null);
-    for (const run of runs || []) {
-        if (!run.started_at) continue;
-        const ts = new Date(run.started_at);
-        const dayOffset = Math.floor((today - ts) / (1000 * 60 * 60 * 24));
-        if (dayOffset < 0 || dayOffset >= days) continue;
-        const idx = days - 1 - dayOffset;
-        const fail = run.summary?.fail ?? 0;
-        const cur = buckets[idx];
-        if (!cur) {
-            buckets[idx] = { worst: fail > 0 ? 'fail' : 'pass', count: 1 };
-        } else {
-            cur.count += 1;
-            if (fail > 0) cur.worst = 'fail';
-        }
-    }
+const SparklineByDay = ({ runs }) => {
+    // Filter to runs with a usable timestamp, then sort chronologically.
+    const tsRuns = (runs || [])
+        .filter((r) => Boolean(r?.started_at))
+        .map((r) => ({ run: r, ts: new Date(r.started_at).getTime() }))
+        .filter((r) => Number.isFinite(r.ts))
+        .sort((a, b) => a.ts - b.ts);
 
-    const W = 240, H = 40, gap = 1;
-    const colW = (W - gap * (days - 1)) / days;
-
-    // Headline pass rate is RUN-weighted — counting days flagged any
-    // run in a day with a fail as a "red day", which made even a 5-of-6
-    // day read as 100% red and produced misleading "0% green" headlines
-    // on dashboards where most runs actually passed. Count actual runs
-    // instead so this aligns with the per-run pass rate the rest of
-    // the dashboard already shows.
-    let totalRuns = 0;
-    let passedRuns = 0;
-    for (const run of runs || []) {
-        if (!run.started_at) continue;
-        const ts = new Date(run.started_at);
-        const dayOffset = Math.floor((today - ts) / (1000 * 60 * 60 * 24));
-        if (dayOffset < 0 || dayOffset >= days) continue;
-        totalRuns += 1;
-        if ((run.summary?.fail ?? 0) === 0) passedRuns += 1;
-    }
+    const totalRuns = tsRuns.length;
+    const passedRuns = tsRuns.filter(
+        ({ run }) => (run.summary?.fail ?? 0) === 0,
+    ).length;
     const passRate = totalRuns > 0
-        ? Math.round(100 * passedRuns / totalRuns)
+        ? Math.round((100 * passedRuns) / totalRuns)
         : null;
+
+    // Take the most recent N to render so a year of history doesn't
+    // produce hairline bars.
+    const visible = tsRuns.slice(-MAX_VISIBLE_BARS);
+    const truncated = totalRuns - visible.length;
+
+    const colW = visible.length > 0
+        ? Math.max(MIN_BAR_WIDTH, (W - GAP * (visible.length - 1)) / visible.length)
+        : 0;
 
     return (
         <div className="flex items-center gap-4">
-            <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} className="max-w-[240px]" aria-label="30-day pass/fail by day">
-                {buckets.map((b, i) => {
-                    const x = i * (colW + gap);
-                    const fill = !b
-                        ? '#E5E7EB'
-                        : b.worst === 'pass'
-                            ? '#10B981'
-                            : '#EF4444';
-                    return <rect key={i} x={x} y={2} width={colW} height={H - 4} fill={fill} rx={1} />;
+            <svg
+                viewBox={`0 0 ${W} ${H}`}
+                width="100%"
+                height={H}
+                className="max-w-[240px]"
+                aria-label="Pass/fail per recent run"
+            >
+                {visible.map(({ run }, i) => {
+                    const x = i * (colW + GAP);
+                    const fill = (run.summary?.fail ?? 0) > 0
+                        ? '#EF4444'
+                        : '#10B981';
+                    return (
+                        <rect
+                            key={run.run_id || `${run.started_at}-${i}`}
+                            x={x}
+                            y={2}
+                            width={colW}
+                            height={H - 4}
+                            fill={fill}
+                            rx={1}
+                        />
+                    );
                 })}
             </svg>
             <div className="text-xs text-[#6B6B6B] whitespace-nowrap">
                 <div className="font-semibold text-[#1A4D2E]">
                     {passRate == null ? '—' : `${passRate}% green`}
                 </div>
-                <div>{totalRuns} runs · last {days} days</div>
+                <div>
+                    {totalRuns} runs
+                    {truncated > 0 && ` · showing latest ${visible.length}`}
+                </div>
             </div>
         </div>
     );

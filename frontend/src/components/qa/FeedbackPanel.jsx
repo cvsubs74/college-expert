@@ -19,6 +19,11 @@ const MAX_TEXT = 500;
 
 const FeedbackPanel = () => {
     const [items, setItems] = useState([]);
+    // Most-recent-N retired items so the operator can see "the
+    // feedback I left actually drove runs and auto-retired" — without
+    // this, an item that hits max_applies just disappears from the
+    // panel and the loop looks broken from the outside.
+    const [dismissed, setDismissed] = useState([]);
     const [draft, setDraft] = useState('');
     const [busy, setBusy] = useState(false);
     const [error, setError] = useState(null);
@@ -29,8 +34,12 @@ const FeedbackPanel = () => {
         setError(null);
         try {
             const resp = await getFeedback();
-            if (resp?.success) setItems(resp.items || []);
-            else setError(resp?.error || "couldn't load feedback");
+            if (resp?.success) {
+                setItems(resp.items || []);
+                setDismissed(resp.recently_dismissed || []);
+            } else {
+                setError(resp?.error || "couldn't load feedback");
+            }
         } catch (err) {
             setError(err.message || "couldn't load feedback");
         } finally {
@@ -184,6 +193,58 @@ const FeedbackPanel = () => {
                         </li>
                     ))}
                 </ul>
+            )}
+
+            {dismissed.length > 0 && (
+                <div className="mt-5 pt-4 border-t border-[#E0DED8]">
+                    <div className="flex items-baseline justify-between mb-2">
+                        <h3 className="text-[10px] uppercase tracking-wider text-[#6B6B6B] font-semibold">
+                            Retired
+                        </h3>
+                        <span className="text-[10px] text-[#8A8A8A]">
+                            {dismissed.length} most recent
+                        </span>
+                    </div>
+                    <p className="text-[11px] text-[#6B6B6B] mb-2">
+                        Notes that already drove runs and auto-retired.
+                    </p>
+                    <ul className="space-y-2">
+                        {dismissed.map((it) => (
+                            <li
+                                key={it.id}
+                                className="flex items-start justify-between gap-3 bg-[#FBFAF6] border border-[#E0DED8] rounded-lg p-3 opacity-90"
+                            >
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-start gap-2">
+                                        <p className="text-sm text-[#4A4A4A] flex-1 min-w-0">
+                                            {it.text}
+                                        </p>
+                                        <span
+                                            aria-label="retired"
+                                            className="flex-shrink-0 text-[10px] font-semibold text-[#6B6B6B] bg-[#F1EFE8] border border-[#E0DED8] px-1.5 py-0.5 rounded whitespace-nowrap"
+                                        >
+                                            ✓ retired after {it.applied_count ?? 0} runs
+                                        </span>
+                                    </div>
+                                    <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1 text-[10px] text-[#8A8A8A]">
+                                        <span className="font-mono">{it.id}</span>
+                                        {it.last_applied_run_id && (
+                                            <>
+                                                <span>·</span>
+                                                <Link
+                                                    to={`/qa-runs/${it.last_applied_run_id}`}
+                                                    className="font-mono truncate text-[#1A4D2E] hover:underline"
+                                                >
+                                                    last: {it.last_applied_run_id}
+                                                </Link>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             )}
         </div>
     );

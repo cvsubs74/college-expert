@@ -108,3 +108,105 @@ describe('SparklineByDay headline', () => {
         expect(screen.getByText(/1 runs/)).toBeInTheDocument();
     });
 });
+
+
+// ---- Per-run bar rendering ------------------------------------------------
+//
+// Bug repro 2026-05-04: bars were per-DAY ("worst run that day"), but
+// with 21 runs spread across 30 days, 27 of 30 buckets were empty (gray)
+// and the operator saw "no green bars" while the headline said "81%
+// green". Per-run bars match the headline directly.
+
+describe('SparklineByDay bars (per-run)', () => {
+    it('renders one bar per run', () => {
+        const { container } = render(
+            <SparklineByDay
+                runs={[
+                    { run_id: 'r1', started_at: dayAgo(0), summary: { pass: 4, fail: 0 } },
+                    { run_id: 'r2', started_at: dayAgo(1), summary: { pass: 4, fail: 0 } },
+                    { run_id: 'r3', started_at: dayAgo(2), summary: { pass: 3, fail: 1 } },
+                ]}
+            />
+        );
+        const rects = container.querySelectorAll('rect');
+        expect(rects.length).toBe(3);
+    });
+
+    it("colors each bar by that run's pass/fail (not its day)", () => {
+        const { container } = render(
+            <SparklineByDay
+                runs={[
+                    // Same day: 1 pass + 1 fail. Old per-day logic would
+                    // paint the whole day red. Per-run logic must paint
+                    // one green and one red bar.
+                    { run_id: 'r_pass', started_at: dayAgo(0),
+                      summary: { pass: 4, fail: 0 } },
+                    { run_id: 'r_fail', started_at: dayAgo(0),
+                      summary: { pass: 3, fail: 1 } },
+                ]}
+            />
+        );
+        const fills = Array.from(container.querySelectorAll('rect'))
+            .map((r) => r.getAttribute('fill'));
+        // One emerald, one red — order is chronological so r_pass comes
+        // first if its timestamp is earlier in the array order.
+        expect(fills).toContain('#10B981');
+        expect(fills).toContain('#EF4444');
+    });
+
+    it('orders bars chronologically (oldest left, newest right)', () => {
+        const { container } = render(
+            <SparklineByDay
+                runs={[
+                    // Out of order in the input — expect chronological output.
+                    { run_id: 'r_now', started_at: dayAgo(0),
+                      summary: { pass: 4, fail: 0 } },
+                    { run_id: 'r_oldest', started_at: dayAgo(5),
+                      summary: { pass: 3, fail: 1 } },
+                    { run_id: 'r_mid', started_at: dayAgo(2),
+                      summary: { pass: 4, fail: 0 } },
+                ]}
+            />
+        );
+        const fills = Array.from(container.querySelectorAll('rect'))
+            .map((r) => r.getAttribute('fill'));
+        // Oldest first → red (the failing one is r_oldest), then green, green.
+        expect(fills).toEqual(['#EF4444', '#10B981', '#10B981']);
+    });
+
+    it('caps bars when there are more runs than fit', () => {
+        // Pump 60 runs in. The component should render only the most
+        // recent N (where N is the cap) and not lay out 60 paper-thin
+        // bars that don't read.
+        const runs = Array.from({ length: 60 }, (_, i) => ({
+            run_id: `r${i}`,
+            started_at: new Date(Date.now() - i * 60000).toISOString(),
+            summary: { pass: 4, fail: 0 },
+        }));
+        const { container } = render(<SparklineByDay runs={runs} />);
+        const rects = container.querySelectorAll('rect');
+        // Cap chosen in the component; at minimum we expect <60 bars.
+        expect(rects.length).toBeLessThan(60);
+        expect(rects.length).toBeGreaterThan(0);
+    });
+
+    it('does not produce empty/gray bars when runs are sparse over 30 days', () => {
+        // The original bug: 21 runs over 30 days produced 27 gray
+        // buckets + 3 colored bars. Per-run logic should produce
+        // exactly 21 bars, all colored.
+        const runs = [];
+        for (let i = 0; i < 21; i++) {
+            runs.push({
+                run_id: `r${i}`,
+                started_at: new Date(Date.now() - i * 12 * 60 * 60 * 1000).toISOString(),
+                summary: { pass: 4, fail: 0 },
+            });
+        }
+        const { container } = render(<SparklineByDay runs={runs} />);
+        const fills = Array.from(container.querySelectorAll('rect'))
+            .map((r) => r.getAttribute('fill'));
+        // Every bar is colored — no gray "no runs this day" buckets.
+        expect(fills.every((f) => f === '#10B981' || f === '#EF4444')).toBe(true);
+        expect(fills.length).toBe(21);
+    });
+});

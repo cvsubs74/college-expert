@@ -696,11 +696,21 @@ def _handle_post_dashboard_prefs(body: dict, actor: str) -> dict:
 
 
 def _handle_get_feedback() -> dict:
-    """GET /feedback — list active items + (recently dismissed are
-    omitted in v1; add a query flag if needed later)."""
+    """GET /feedback — list active items + the most recent retirements.
+
+    `items` is the active list (unchanged shape; existing clients
+    keep working). `recently_dismissed` is the new field the Steer
+    panel uses to show "feedback that already drove runs and
+    auto-retired" — fixes the dashboard loop where an operator's
+    note hit max_applies and silently disappeared.
+    """
     try:
         import feedback  # noqa: WPS433
-        return {"success": True, "items": feedback.active_items()}
+        return {
+            "success": True,
+            "items": feedback.active_items(),
+            "recently_dismissed": feedback.recently_dismissed_items(),
+        }
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: load feedback failed")
         return {"success": False, "error": str(exc)}

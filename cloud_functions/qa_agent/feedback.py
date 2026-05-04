@@ -181,3 +181,35 @@ def active_items(db=None) -> List[dict]:
     # Newest first by created_at (string ISO sort works because UTC).
     active.sort(key=lambda it: it.get("created_at", ""), reverse=True)
     return active[:MAX_ACTIVE_ITEMS]
+
+
+# Default cap for the Steer panel's "Retired" section. Operators only
+# care about recent retirements; older history is in Firestore.
+DEFAULT_RECENTLY_DISMISSED_LIMIT = 10
+
+
+def recently_dismissed_items(limit: int = DEFAULT_RECENTLY_DISMISSED_LIMIT,
+                             db=None) -> List[dict]:
+    """Return up to `limit` most-recently-dismissed items, sorted by
+    last_applied_at desc with created_at as fallback.
+
+    Operators rely on this to confirm "the feedback I left actually
+    drove runs and retired" — without it, an item that hits
+    max_applies just disappears from the Steer panel and the loop
+    looks broken from the outside.
+
+    Sort order: prefer last_applied_at (when the auto-dismiss fired);
+    fall back to created_at for items dismissed manually before any
+    run referenced them.
+    """
+    payload = load(db=db)
+    dismissed = [
+        it for it in payload["items"]
+        if it.get("status") == "dismissed"
+    ]
+    # ISO-8601 strings sort lexicographically, which matches
+    # chronological order for UTC.
+    def _sort_key(it):
+        return it.get("last_applied_at") or it.get("created_at", "")
+    dismissed.sort(key=_sort_key, reverse=True)
+    return dismissed[: max(0, int(limit))]
