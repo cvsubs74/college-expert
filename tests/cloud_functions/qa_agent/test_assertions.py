@@ -117,3 +117,60 @@ def test_all_passed_helper():
     r3 = assertions.AssertionResult(name='nope', passed=False, message='x')
     assert assertions.all_passed([r1, r2])
     assert not assertions.all_passed([r1, r2, r3])
+
+
+# ---- key_non_empty_string ----------------------------------------------
+# Stricter than has_key — catches regressions where an endpoint returns
+# the right shape but with an empty/null/whitespace value. Critical for
+# AI-generated text fields like the counselor chat /chat endpoint's
+# `reply` field where shape-only checks would let a degraded LLM
+# response pass.
+
+
+class TestKeyNonEmptyString:
+    def _ctx(self, body):
+        return {"status_code": 200, "response_json": body, "elapsed_ms": 10}
+
+    def test_passes_on_normal_string(self):
+        check = assertions.key_non_empty_string("reply")
+        r = check(self._ctx({"reply": "Hello, here is your roadmap."}))
+        assert r.passed
+
+    def test_fails_on_empty_string(self):
+        """The canonical regression: LLM returns success: true with
+        reply="" — passes status + has_key but is degraded UX."""
+        check = assertions.key_non_empty_string("reply")
+        r = check(self._ctx({"reply": ""}))
+        assert not r.passed
+        assert (
+            "empty" in (r.message or "").lower()
+            or "whitespace" in (r.message or "").lower()
+        )
+
+    def test_fails_on_whitespace_only(self):
+        check = assertions.key_non_empty_string("reply")
+        r = check(self._ctx({"reply": "   \n  "}))
+        assert not r.passed
+
+    def test_fails_on_null(self):
+        check = assertions.key_non_empty_string("reply")
+        r = check(self._ctx({"reply": None}))
+        assert not r.passed
+        assert "str" in (r.message or "")
+
+    def test_fails_on_non_string(self):
+        check = assertions.key_non_empty_string("reply")
+        r = check(self._ctx({"reply": 42}))
+        assert not r.passed
+        assert "int" in (r.message or "")
+
+    def test_fails_on_missing_key(self):
+        check = assertions.key_non_empty_string("reply")
+        r = check(self._ctx({"other_key": "x"}))
+        assert not r.passed
+        assert "missing" in (r.message or "").lower()
+
+    def test_supports_dotted_path(self):
+        check = assertions.key_non_empty_string("data.reply")
+        r = check(self._ctx({"data": {"reply": "Hi there"}}))
+        assert r.passed

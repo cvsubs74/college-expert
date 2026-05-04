@@ -56,6 +56,13 @@ _URL_DEFAULTS = (
     ('clear-test-data', _ok({'ok': True, 'deleted': {}})),
     ('update-structured-field', _ok({'success': True})),
     ('add-to-list', _ok({'success': True})),
+    # Counselor chat default — well-formed reply so the chat step
+    # passes when an archetype declares chat_question.
+    ('chat', _ok({
+        'success': True,
+        'reply': 'Focus on your essays this week.',
+        'suggested_actions': [],
+    })),
     # New default for the symmetry-check step. The two scenarios in
     # _scenario() use ['mit', 'stanford_university'] — return both.
     ('get-college-list', _ok({
@@ -889,3 +896,123 @@ class TestComputeFitMultiTarget:
                 f"Pin should be skipped on multi-target. Step={s['name']}, "
                 f"pinned={pinned}"
             )
+
+
+# ---- counselor_chat step ------------------------------------------------
+# Phase 1 of flow expansion: gated behind a per-archetype `chat_question`
+# field. Catches regressions in the highest-stakes user-facing AI surface
+# (the counselor chat). Currently no other monitoring exercises this
+# endpoint.
+
+
+def _scenario_with_chat_question(question="What should I focus on this week?"):
+    s = _scenario()
+    s['id'] = 'counselor_chat_demo'
+    s['chat_question'] = question
+    return s
+
+
+class TestCounselorChatStep:
+    def test_step_omitted_by_default(self):
+        """Roadmap-only scenarios stay unchanged. Backwards-compat
+        for every existing archetype that doesn't opt in."""
+        cfg = _make_cfg()
+        result = runner.run_scenario(_scenario(), cfg, poster=_smart_poster())
+        step_names = [s['name'] for s in result['steps']]
+        assert 'counselor_chat' not in step_names
+
+    def test_step_added_when_chat_question_set(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_chat_question(), cfg, poster=_smart_poster(),
+        )
+        step_names = [s['name'] for s in result['steps']]
+        assert 'counselor_chat' in step_names
+
+    def test_step_passes_on_well_formed_response(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_chat_question(), cfg, poster=_smart_poster(),
+        )
+        chat_step = next(s for s in result['steps'] if s['name'] == 'counselor_chat')
+        assert chat_step['passed'], (
+            f"Expected pass; got failures: "
+            f"{[a for a in chat_step['assertions'] if not a['passed']]}"
+        )
+
+    def test_step_fails_on_empty_reply(self):
+        """Canonical regression: chat returns success: true but reply=""
+        — the user would see a blank chat bubble. The new
+        key_non_empty_string assertion catches this."""
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_chat_question(), cfg,
+            poster=_smart_poster(overrides=[
+                ('chat', _ok({
+                    'success': True, 'reply': '', 'suggested_actions': [],
+                })),
+            ]),
+        )
+        chat_step = next(s for s in result['steps'] if s['name'] == 'counselor_chat')
+        assert not chat_step['passed']
+        empty_failures = [a for a in chat_step['assertions']
+                          if 'non-empty' in a['name'] and not a['passed']]
+        assert empty_failures
+
+    def test_step_fails_on_whitespace_reply(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_chat_question(), cfg,
+            poster=_smart_poster(overrides=[
+                ('chat', _ok({
+                    'success': True, 'reply': '   \n  ',
+                    'suggested_actions': [],
+                })),
+            ]),
+        )
+        chat_step = next(s for s in result['steps'] if s['name'] == 'counselor_chat')
+        assert not chat_step['passed']
+
+    def test_step_fails_on_success_false(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_chat_question(), cfg,
+            poster=_smart_poster(overrides=[
+                ('chat', _ok({
+                    'success': False, 'error': 'something broke',
+                })),
+            ]),
+        )
+        chat_step = next(s for s in result['steps'] if s['name'] == 'counselor_chat')
+        assert not chat_step['passed']
+
+    def test_step_calls_counselor_agent_chat_endpoint(self):
+        """Confirms the contract: POST to {ca}/chat with
+        {user_email, message, history}."""
+        cfg = _make_cfg()
+        capture = []
+        runner.run_scenario(
+            _scenario_with_chat_question("What's my next step?"),
+            cfg, poster=_smart_poster(capture=capture),
+        )
+        chat_calls = [c for c in capture if c['url'].endswith('/chat')]
+        assert len(chat_calls) == 1
+        # The body shape the endpoint requires.
+        # _smart_poster forwards the body via request_body which we
+        # accumulate in capture['kwargs']; check there.
+        # (The poster signature passes `body` positionally — captured
+        # under no specific kwarg, so we settle for the URL check.)
+        assert chat_calls[0]['url'].startswith('https://ca.test')
+
+    def test_uses_extended_timeout_for_llm(self):
+        """The /chat endpoint hits Gemini; the default 30s poster
+        timeout is too tight on cold starts. The runner step passes
+        timeout=60 to give cold paths headroom."""
+        cfg = _make_cfg()
+        capture = []
+        runner.run_scenario(
+            _scenario_with_chat_question(),
+            cfg, poster=_smart_poster(capture=capture),
+        )
+        chat_calls = [c for c in capture if c['url'].endswith('/chat')]
+        assert chat_calls[0]['kwargs'].get('timeout') == 60
