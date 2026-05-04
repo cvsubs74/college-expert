@@ -486,6 +486,14 @@ def run_scenario(
     # Spec: docs/prd/qa-fit-testing.md.
     fit_target = scenario.get("fit_target_college")
     if fit_target:
+        # /compute-single-fit makes an LLM call AND profile_manager_v2
+        # sometimes cold-starts (it scales to zero). Observed in PR #76
+        # post-deploy verification: a cold-start path took ~40s
+        # end-to-end, blowing the runner's default 30s timeout and
+        # producing a "status 0" assertion failure for an otherwise
+        # healthy endpoint. 90s gives comfortable headroom for the
+        # cold-start case while still being aggressive enough to flag
+        # a real hang.
         fit_ctx = poster(
             f"{pm}/compute-single-fit",
             {
@@ -493,6 +501,7 @@ def run_scenario(
                 "university_id": fit_target,
             },
             admin_token=cfg.admin_token,
+            timeout=90,
         )
         fit_asserts: List[assertions.AssertionFn] = [
             assertions.status_is_2xx(),
@@ -506,9 +515,11 @@ def run_scenario(
             fit_assertions.selectivity_ceiling_respected(),
             fit_assertions.factor_bounds_respected(),
             fit_assertions.required_advisory_blocks_present(),
-            # The /compute-single-fit endpoint can be slow because it
-            # makes a Gemini call; allow up to 30s before flagging.
-            assertions.latency_under(30000),
+            # Mirrors the timeout above: the fit endpoint is allowed
+            # up to 60s before we flag latency-degradation. The
+            # request itself can run up to 90s — gap is intentional
+            # so we surface "slow but OK" before hard-fail.
+            assertions.latency_under(60000),
         ]
         # If the archetype declared an expected category, pin that too —
         # gives us a tighter signal than the invariants alone for the

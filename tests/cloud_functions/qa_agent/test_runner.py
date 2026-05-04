@@ -571,3 +571,26 @@ class TestComputeFitStep:
         fit_calls = [c for c in capture if 'compute-single-fit' in c['url']]
         assert len(fit_calls) == 1
         assert fit_calls[0]['url'].startswith('https://pm.test')
+
+    def test_step_uses_extended_timeout_for_cold_start(self):
+        """The /compute-single-fit endpoint cold-starts and runs an LLM
+        call; the default 30s poster timeout is too tight (verified in
+        PR #76 post-deploy: a cold path took ~40s end-to-end). The fit
+        step must pass timeout=90 to give cold starts headroom."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        capture = []
+        overrides = [(
+            'compute-single-fit',
+            _good_fit_response('massachusetts_institute_of_technology'),
+        )]
+        runner.run_scenario(
+            scenario, cfg,
+            poster=_smart_poster(overrides=overrides, capture=capture),
+        )
+        fit_calls = [c for c in capture if 'compute-single-fit' in c['url']]
+        assert len(fit_calls) == 1
+        assert fit_calls[0]['kwargs'].get('timeout') == 90, (
+            f"Expected timeout=90 on the fit poster call, "
+            f"got kwargs={fit_calls[0]['kwargs']}"
+        )
