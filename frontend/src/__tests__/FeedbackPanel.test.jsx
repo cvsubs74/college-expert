@@ -5,8 +5,12 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render as rtlRender, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
+
+// FeedbackPanel renders <Link> elements that need a Router context.
+const render = (ui, opts) => rtlRender(<MemoryRouter>{ui}</MemoryRouter>, opts);
 
 const getFeedbackFn = vi.fn();
 const addFeedbackFn = vi.fn();
@@ -159,6 +163,76 @@ describe('FeedbackPanel', () => {
         await user.click(screen.getByRole('button', { name: /submit/i }));
         await waitFor(() => {
             expect(screen.getByText(/already have 10 active items/i)).toBeInTheDocument();
+        });
+    });
+
+    // ---- Applied-status visibility -------------------------------------
+    // Bug repro: "Make sure the feedback provided in 'Steer' is being
+    // used to generate scenarios." The loop was correct but invisible —
+    // operators couldn't see whether their feedback had been picked up
+    // by a run. Fix: surface an "✓ applied" pill and a clickable run-id
+    // link when applied_count > 0.
+
+    describe('Applied indicator', () => {
+        it('shows an "applied" pill when applied_count > 0', async () => {
+            getFeedbackFn.mockResolvedValue({
+                success: true,
+                items: [{
+                    id: 'fb_used',
+                    text: 'used at least once',
+                    status: 'active',
+                    applied_count: 1,
+                    max_applies: 5,
+                    last_applied_run_id: 'run_xyz',
+                }],
+            });
+            render(<FeedbackPanel />);
+            await waitFor(() => {
+                expect(screen.getByText(/used at least once/i)).toBeInTheDocument();
+            });
+            // The pill text is short — match on the word "applied" + a
+            // checkmark or similar affirmative.
+            expect(screen.getByLabelText(/applied to a run/i)).toBeInTheDocument();
+        });
+
+        it('does NOT show an "applied" pill when applied_count is 0', async () => {
+            getFeedbackFn.mockResolvedValue({
+                success: true,
+                items: [{
+                    id: 'fb_fresh',
+                    text: 'never applied',
+                    status: 'active',
+                    applied_count: 0,
+                    max_applies: 5,
+                }],
+            });
+            render(<FeedbackPanel />);
+            await waitFor(() => {
+                expect(screen.getByText(/never applied/i)).toBeInTheDocument();
+            });
+            expect(screen.queryByLabelText(/applied to a run/i)).toBeNull();
+        });
+
+        it('renders last_applied_run_id as a clickable link to /qa-runs', async () => {
+            getFeedbackFn.mockResolvedValue({
+                success: true,
+                items: [{
+                    id: 'fb_linked',
+                    text: 'linked to run',
+                    status: 'active',
+                    applied_count: 2,
+                    max_applies: 5,
+                    last_applied_run_id: 'run_clickable_xyz',
+                }],
+            });
+            render(<FeedbackPanel />);
+            await waitFor(() => {
+                expect(screen.getByText(/linked to run/i)).toBeInTheDocument();
+            });
+            const link = screen.getByRole('link', { name: /run_clickable_xyz/i });
+            expect(link).toBeInTheDocument();
+            // Link points at the run-detail page.
+            expect(link.getAttribute('href')).toContain('run_clickable_xyz');
         });
     });
 });

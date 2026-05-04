@@ -268,3 +268,62 @@ class TestChatRouteWiring:
         # The route should have dispatched to handle_chat.
         assert called.get("body", {}).get("question") == "hi"
         assert resp.status_code == 200
+
+
+# ---- Chat context includes per-run universities --------------------------
+# Bug repro: asked "what universities have been covered", chat answered
+# vaguely from the scenario IDs because run records didn't carry
+# colleges_template in the prompt. Fix: format_run_context now adds a
+# "colleges:" line per run.
+
+
+class TestChatContextIncludesColleges:
+    def test_format_run_context_includes_colleges_per_run(self):
+        import chat
+        run = {
+            "run_id": "run_x",
+            "started_at": "2026-05-04T01:00:00+00:00",
+            "trigger": "manual",
+            "summary": {"pass": 2, "fail": 0, "total": 2},
+            "scenarios": [
+                {"scenario_id": "a", "passed": True,
+                 "colleges_template": ["mit", "stanford_university"]},
+                {"scenario_id": "b", "passed": True,
+                 "colleges_template": ["university_of_california_berkeley"]},
+            ],
+        }
+        out = chat._format_run_context([run])
+        assert "mit" in out
+        assert "stanford_university" in out
+        assert "university_of_california_berkeley" in out
+        assert "colleges:" in out.lower() or "universities:" in out.lower()
+
+    def test_dedupes_colleges_within_a_run(self):
+        import chat
+        run = {
+            "run_id": "run_dup",
+            "started_at": "2026-05-04T01:00:00+00:00",
+            "summary": {"pass": 2, "fail": 0, "total": 2},
+            "scenarios": [
+                {"scenario_id": "a", "passed": True,
+                 "colleges_template": ["mit"]},
+                {"scenario_id": "b", "passed": True,
+                 "colleges_template": ["mit", "stanford"]},
+            ],
+        }
+        out = chat._format_run_context([run])
+        # The colleges line should not list mit twice.
+        assert "mit, mit" not in out
+
+    def test_no_colleges_line_when_scenarios_have_none(self):
+        """Legacy runs without colleges_template don't render an empty
+        'colleges:' line."""
+        import chat
+        run = {
+            "run_id": "run_legacy",
+            "started_at": "2026-05-04T01:00:00+00:00",
+            "summary": {"pass": 1, "fail": 0, "total": 1},
+            "scenarios": [{"scenario_id": "a", "passed": True}],
+        }
+        out = chat._format_run_context([run])
+        assert "colleges:" not in out.lower()

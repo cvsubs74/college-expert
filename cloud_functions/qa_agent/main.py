@@ -267,6 +267,7 @@ _PROPAGATED_FIELDS = (
     "synthesized",
     "synthesis_rationale",
     "feedback_id",
+    "colleges_template",
 )
 
 
@@ -282,7 +283,7 @@ def _propagate_archetype_metadata(scenario_result: dict, archetype: dict) -> Non
     scenario_result["tests"] = archetype.get("tests", [])
     scenario_result["surfaces_covered"] = archetype.get("surfaces_covered", [])
     for field in ("business_rationale", "synthesized", "synthesis_rationale",
-                  "feedback_id"):
+                  "feedback_id", "colleges_template"):
         value = archetype.get(field)
         if value:
             scenario_result[field] = value
@@ -388,6 +389,7 @@ def _pending_scenario_stub(archetype: dict) -> dict:
         "synthesized": archetype.get("synthesized", False),
         "synthesis_rationale": archetype.get("synthesis_rationale"),
         "feedback_id": archetype.get("feedback_id"),
+        "colleges_template": archetype.get("colleges_template", []),
         "steps": [],
     }
 
@@ -605,6 +607,13 @@ def _handle_summary(cfg: dict, request=None) -> dict:
                 pass
 
         runs = firestore_store.list_recent_runs(limit=60)
+        # Pass the colleges allowlist into coverage so it can compute
+        # universities_untested (allowlist - tested). Allowlist is
+        # cheap to load (a small JSON), no need to cache.
+        try:
+            colleges_allowlist = _load_colleges_allowlist()
+        except Exception:  # noqa: BLE001
+            colleges_allowlist = []
         return {
             "success": True,
             "summary": narratives.build_summary(
@@ -614,7 +623,9 @@ def _handle_summary(cfg: dict, request=None) -> dict:
             ),
             # End-to-end journeys the QA agent has VERIFIED across recent
             # runs. Ships in /summary so the dashboard fetches once.
-            "coverage": coverage_mod.build_coverage(runs),
+            "coverage": coverage_mod.build_coverage(
+                runs, colleges_allowlist=colleges_allowlist,
+            ),
             # Recent FAIL → PASS transitions, evidence preserved.
             "resolved_issues": resolved_issues_mod.build_resolved_issues(runs),
         }

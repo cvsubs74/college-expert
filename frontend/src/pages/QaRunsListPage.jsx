@@ -14,6 +14,7 @@ import ExecutiveSummary from '../components/qa/ExecutiveSummary';
 import ScheduleEditor from '../components/qa/ScheduleEditor';
 import ChatPanel from '../components/qa/ChatPanel';
 import CoverageCard from '../components/qa/CoverageCard';
+import UniversitiesCard from '../components/qa/UniversitiesCard';
 import ResolvedIssuesCard from '../components/qa/ResolvedIssuesCard';
 import FeedbackPanel from '../components/qa/FeedbackPanel';
 import DashboardHeader from '../components/qa/DashboardHeader';
@@ -110,6 +111,7 @@ const QaRunsListPage = () => {
                         <RunNowPanel onComplete={refresh} />
                         <ExecutiveSummary />
                         <CoverageCard coverage={summaryResp?.coverage} />
+                        <UniversitiesCard universities={summaryResp?.coverage} />
                         <ResolvedIssuesCard
                             resolvedIssues={summaryResp?.resolved_issues}
                         />

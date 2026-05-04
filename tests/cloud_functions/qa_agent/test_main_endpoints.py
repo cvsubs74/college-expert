@@ -676,6 +676,29 @@ class TestPropagateArchetypeMetadata:
         assert result["steps"] == ["step1"]
         assert result["tests"] == ["t1"]
 
+    def test_propagates_colleges_template(self, qa_main):
+        """Universities tested per scenario need to land on the run-time
+        record so the chat backend + universities aggregator can see
+        them. Without this propagation, the chat falls back to guessing
+        from scenario IDs and the dashboard can't show what's covered.
+        See docs/prd/qa-universities-tracking.md."""
+        result = {"scenario_id": "x", "passed": True}
+        archetype = {
+            "colleges_template": ["mit", "stanford_university",
+                                  "university_of_california_berkeley"],
+        }
+        qa_main._propagate_archetype_metadata(result, archetype)
+        assert result["colleges_template"] == [
+            "mit", "stanford_university",
+            "university_of_california_berkeley",
+        ]
+
+    def test_omits_colleges_template_when_archetype_lacks_it(self, qa_main):
+        """No empty/null pollution on legacy archetypes."""
+        result = {"scenario_id": "x", "passed": True}
+        qa_main._propagate_archetype_metadata(result, {})
+        assert "colleges_template" not in result
+
 
 # ---- /run/preview ---------------------------------------------------------
 
