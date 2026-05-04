@@ -23,11 +23,14 @@ describe('UniversitiesCard', () => {
         allowlist_size: 6,
     };
 
-    it('renders one row per tested university with id + count', () => {
+    it('renders one row per tested university with friendly name + count', () => {
         render(<UniversitiesCard universities={sampleCoverage} />);
-        expect(screen.getByText('mit')).toBeInTheDocument();
-        expect(screen.getByText('stanford_university')).toBeInTheDocument();
-        expect(screen.getByText('university_of_california_berkeley')).toBeInTheDocument();
+        // Snake-case ids get prettified by formatUniversityName before
+        // hitting the DOM — see the dedicated "Friendly labels" suite
+        // below for the full spec.
+        expect(screen.getByText('MIT')).toBeInTheDocument();
+        expect(screen.getByText('Stanford University')).toBeInTheDocument();
+        expect(screen.getByText('UC Berkeley')).toBeInTheDocument();
         // Per-row counts.
         expect(screen.getByText(/^8×$/)).toBeInTheDocument();
         expect(screen.getByText(/^3×$/)).toBeInTheDocument();
@@ -38,13 +41,14 @@ describe('UniversitiesCard', () => {
         expect(screen.getByText(/3 of 6 covered/i)).toBeInTheDocument();
     });
 
-    it('lists untested schools', () => {
+    it('lists untested schools (prettified)', () => {
         render(<UniversitiesCard universities={sampleCoverage} />);
         // The untested section calls out how many are left.
         expect(screen.getByText(/Not yet tested \(3\)/i)).toBeInTheDocument();
-        expect(screen.getByText(/princeton/)).toBeInTheDocument();
-        expect(screen.getByText(/yale_university/)).toBeInTheDocument();
-        expect(screen.getByText(/brown_university/)).toBeInTheDocument();
+        // Auto-prettified names (no overrides for these three).
+        expect(screen.getByText(/Princeton/)).toBeInTheDocument();
+        expect(screen.getByText(/Yale University/)).toBeInTheDocument();
+        expect(screen.getByText(/Brown University/)).toBeInTheDocument();
     });
 
     it('renders nothing when universities data is missing', () => {
@@ -104,5 +108,59 @@ describe('UniversitiesCard', () => {
             <UniversitiesCard universities={{ journeys: [] }} />
         );
         expect(container.firstChild).toBeNull();
+    });
+
+    // ---- Friendly label rendering -------------------------------------
+    // Spec: docs/prd/qa-university-friendly-labels.md.
+
+    describe('Friendly labels', () => {
+        const sampleWithCanonicalIds = {
+            universities_tested: [
+                { id: 'massachusetts_institute_of_technology',
+                  count: 3, last_tested_at: '2026-05-04T05:00:00Z' },
+                { id: 'georgia_institute_of_technology',
+                  count: 2, last_tested_at: '2026-05-04T04:42:00Z' },
+                { id: 'tufts_university',
+                  count: 1, last_tested_at: '2026-05-04T03:15:00Z' },
+            ],
+            total_universities_tested: 3,
+            universities_untested: ['boston_college', 'rice_university'],
+            allowlist_size: 5,
+        };
+
+        it('renders the friendly override label instead of the snake_case id', () => {
+            render(<UniversitiesCard universities={sampleWithCanonicalIds} />);
+            expect(screen.getByText('MIT')).toBeInTheDocument();
+            expect(screen.getByText('Georgia Tech')).toBeInTheDocument();
+            // Snake-case form should not appear in the visible body.
+            expect(screen.queryByText(
+                'massachusetts_institute_of_technology'
+            )).toBeNull();
+        });
+
+        it('auto-prettifies an id without an override entry', () => {
+            render(<UniversitiesCard universities={sampleWithCanonicalIds} />);
+            // Tufts has no override; underscore→space + titlecase wins.
+            expect(screen.getByText('Tufts University')).toBeInTheDocument();
+        });
+
+        it('preserves canonical id as a tooltip / aria-label for debugging', () => {
+            render(<UniversitiesCard universities={sampleWithCanonicalIds} />);
+            // The MIT row's title attribute exposes the canonical id so an
+            // operator can copy it for queries / tickets.
+            const mitRow = screen.getByText('MIT').closest('li');
+            expect(mitRow).toHaveAttribute('title',
+                'massachusetts_institute_of_technology');
+        });
+
+        it('prettifies the untested list', () => {
+            render(<UniversitiesCard universities={sampleWithCanonicalIds} />);
+            // The untested chunk should read "Boston College, Rice University"
+            // — not the snake_case form.
+            const node = screen.getByText(/Boston College/);
+            expect(node.textContent).toContain('Boston College');
+            expect(node.textContent).toContain('Rice University');
+            expect(node.textContent).not.toContain('boston_college');
+        });
     });
 });
