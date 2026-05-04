@@ -450,19 +450,28 @@ def get_college_context(user_email):
     """
     try:
         deadlines = fetch_aggregated_deadlines(user_email)
-        
+
         uc_schools = []
         has_ed = False
         has_ea = False
-        
-        colleges = []
+
+        # Dedupe by university_id: a single college with both EA and RD
+        # deadlines comes back as TWO rows from fetch_aggregated_deadlines, but
+        # the roadmap expects ONE entry per school. Without this dedup, the
+        # downstream `colleges_count` over-reports and translate_rd_submission
+        # emits duplicate per-college tasks. The QA agent's
+        # roadmap_deep_link_integrity check caught this in prod.
+        # `fetch_aggregated_deadlines` sorts by date ascending, so the FIRST
+        # row we see for a college is its earliest (most binding) deadline —
+        # which is what downstream task scheduling should target.
+        colleges_by_id = {}
         for d in deadlines:
             uni_id = d['university_id']
             uni_name = d['university_name']
-            
-            # Check if UC school
+
+            # Check if UC school — must run for every row so the uc_schools
+            # list captures EVERY UC even after dedup collapses duplicate rows.
             if 'university_of_california' in uni_id.lower():
-                # Extract short name
                 short_name = uni_name
                 if 'Los Angeles' in uni_name or 'los_angeles' in uni_id:
                     short_name = 'UCLA'
@@ -482,30 +491,35 @@ def get_college_context(user_email):
                     short_name = 'UCR'
                 elif 'Merced' in uni_name:
                     short_name = 'UC Merced'
-                
+
                 if short_name not in uc_schools:
                     uc_schools.append(short_name)
-            
-            # Check deadline types
+
+            # Check deadline types — also runs across ALL rows so we don't
+            # lose ED/EA signal when dedup keeps a different deadline row.
             deadline_type = d.get('deadline_type', '').lower()
             if 'early decision' in deadline_type or 'ed' in deadline_type:
                 has_ed = True
             if 'early action' in deadline_type or 'ea' in deadline_type:
                 has_ea = True
-            
-            colleges.append({
-                'id': uni_id,
-                'name': uni_name,
-                'deadline': d.get('date'),
-                'deadline_type': d.get('deadline_type'),
-                'is_uc': 'university_of_california' in uni_id.lower()
-            })
-        
+
+            # Only the FIRST occurrence of each university_id becomes the
+            # canonical entry. Later rows are absorbed for ED/EA/UC detection
+            # but don't add a duplicate `colleges` entry.
+            if uni_id not in colleges_by_id:
+                colleges_by_id[uni_id] = {
+                    'id': uni_id,
+                    'name': uni_name,
+                    'deadline': d.get('date'),
+                    'deadline_type': d.get('deadline_type'),
+                    'is_uc': 'university_of_california' in uni_id.lower(),
+                }
+
         return {
-            'colleges': colleges,
+            'colleges': list(colleges_by_id.values()),
             'uc_schools': sorted(set(uc_schools)),
             'has_early_decision': has_ed,
-            'has_early_action': has_ea
+            'has_early_action': has_ea,
         }
     except Exception as e:
         logger.error(f"Error getting college context: {e}")
