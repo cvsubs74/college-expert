@@ -9,6 +9,7 @@ import ScheduleEditor from '../components/qa/ScheduleEditor';
 import ChatPanel from '../components/qa/ChatPanel';
 import CoverageCard from '../components/qa/CoverageCard';
 import ResolvedIssuesCard from '../components/qa/ResolvedIssuesCard';
+import FeedbackPanel from '../components/qa/FeedbackPanel';
 import { getSummary } from '../services/qaAgent';
 
 // /qa-runs — admin-only list of recent QA runs.
@@ -69,6 +70,7 @@ const QaRunsListPage = () => {
             <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
                 <ExecutiveSummary />
                 <ChatPanel />
+                <FeedbackPanel />
                 <CoverageCard coverage={summaryResp?.coverage} />
                 <ResolvedIssuesCard resolvedIssues={summaryResp?.resolved_issues} />
                 <RunNowPanel onComplete={refresh} />
