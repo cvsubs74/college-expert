@@ -151,18 +151,18 @@ class TestSynthesizeScenarios:
 
     def test_falls_back_on_malformed_json(self, monkeypatch):
         import synthesizer
-        import google.generativeai as genai
+        from google import genai
 
-        class _Model:
+        class _Client:
             def __init__(self, *_a, **_k):
-                pass
+                class _Models:
+                    def generate_content(self, *_a, **_k):
+                        class R:
+                            text = "totally not json"
+                        return R()
+                self.models = _Models()
 
-            def generate_content(self, *_a, **_k):
-                class R:
-                    text = "totally not json"
-                return R()
-
-        monkeypatch.setattr(genai, "GenerativeModel", _Model)
+        monkeypatch.setattr(genai, "Client", _Client)
         result = synthesizer.synthesize_scenarios(
             n=2,
             history=self._hist(),
@@ -177,7 +177,7 @@ class TestSynthesizeScenarios:
         """LLM returns 2 scenarios, 1 has bad college id — only 1
         scenario returned."""
         import synthesizer
-        import google.generativeai as genai
+        from google import genai
 
         good_scenario = {
             "id": "synth_a",
@@ -203,14 +203,16 @@ class TestSynthesizeScenarios:
 
         payload = json.dumps({"scenarios": [good_scenario, bad_scenario]})
 
-        class _Model:
-            def __init__(self, *_a, **_k): pass
-            def generate_content(self, *_a, **_k):
-                class R:
-                    text = payload
-                return R()
+        class _Client:
+            def __init__(self, *_a, **_k):
+                class _Models:
+                    def generate_content(self, *_a, **_k):
+                        class R:
+                            text = payload
+                        return R()
+                self.models = _Models()
 
-        monkeypatch.setattr(genai, "GenerativeModel", _Model)
+        monkeypatch.setattr(genai, "Client", _Client)
         result = synthesizer.synthesize_scenarios(
             n=2,
             history=self._hist(),

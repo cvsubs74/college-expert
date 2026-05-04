@@ -173,14 +173,13 @@ def generate_variation(
         return fallback
 
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=api_key)
-        gen_model = genai.GenerativeModel(model)
+        from google import genai
+        client = genai.Client(api_key=api_key)
         prompt = _VARIATION_PROMPT.format(
             description=archetype.get("description", ""),
             profile_template=json.dumps(archetype.get("profile_template", {})),
         )
-        resp = gen_model.generate_content(prompt)
+        resp = client.models.generate_content(model=model, contents=prompt)
         raw = (resp.text or "").strip()
         # Strip optional code fences the model sometimes ignores instructions about.
         if raw.startswith("```"):
