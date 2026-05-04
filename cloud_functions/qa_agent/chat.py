@@ -50,10 +50,20 @@ def handle_chat(body: dict, cfg: dict) -> Tuple[dict, int]:
             "error": "no QA runs found yet — trigger a run before chatting",
         }, 400
 
+    feedback_ctx = _load_feedback_context()
+
     system = _system_prompt()
     context_text = _format_run_context(runs)
+    feedback_text = _format_feedback_context(
+        feedback_ctx["active"], feedback_ctx["dismissed"],
+    )
     history_text = _format_history(history)
-    prompt = f"{context_text}\n\n{history_text}\n\nUser: {question}"
+    prompt = (
+        f"{context_text}\n\n"
+        f"{feedback_text}\n\n"
+        f"{history_text}\n\n"
+        f"User: {question}"
+    )
 
     try:
         answer = _call_gemini(system, prompt, cfg.get("GEMINI_API_KEY"))
@@ -79,14 +89,18 @@ _SYSTEM_PROMPT = """You are a QA analyst answering questions about scheduled
 monitoring runs of the Stratia Admissions college-admissions system. You have
 access to summaries of the most recent QA runs (run ID, pass/fail counts,
 trigger, and for failing scenarios the failing step name + a short assertion
-message).
+message), plus a list of admin-authored feedback notes that steer scenario
+synthesis (active and recently retired).
 
 Rules:
 - Ground every answer in the supplied context. If the user asks about
   something not in the context, say so plainly — never invent run IDs,
-  scenario IDs, or assertions.
+  scenario IDs, assertions, or feedback notes.
 - Cite specific run IDs and scenario IDs when possible so the operator can
   drill in.
+- When a question touches operator feedback, join `feedback_id` stamps on
+  scenarios with the corresponding feedback `text` from the feedback
+  section. Quote the operator's actual note text rather than just the id.
 - Keep answers concise (1-3 paragraphs unless the user asks for more detail
   or for a list).
 - If the context shows a clear pattern (the same scenario failing repeatedly,
@@ -216,6 +230,69 @@ def _format_history(history: List[dict]) -> str:
     return "Conversation so far:\n" + "\n".join(parts) if parts else (
         "(no prior conversation in this session)"
     )
+
+
+# ---- Feedback context ------------------------------------------------------
+#
+# So an operator can ask "did my note about UC group treatment drive
+# any runs?" and the LLM can join the feedback_id stamped on scenarios
+# back to the original note text. Without this section, the chat sees
+# `feedback_id: fb_xyz` and has no idea what fb_xyz said.
+
+# Caps so a long-running setup with lots of retired notes doesn't blow
+# the prompt budget. Active items already cap at MAX_ACTIVE_ITEMS=10
+# in feedback.py; we mirror that for symmetry.
+_MAX_FEEDBACK_ITEMS_PER_GROUP = 10
+_FEEDBACK_TEXT_TRUNCATE = 200
+
+
+def _load_feedback_context() -> dict:
+    """Fetch active + recently-dismissed feedback items.
+
+    Returns {"active": [...], "dismissed": [...]} on success and on any
+    failure (a feedback-store outage must NOT take down the chat
+    endpoint — the chat is more useful answering "what's broken" than
+    refusing to answer because feedback storage is down).
+    """
+    try:
+        import feedback  # noqa: WPS433 — lazy import for test stubs
+        return {
+            "active": feedback.active_items() or [],
+            "dismissed": feedback.recently_dismissed_items() or [],
+        }
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("qa_agent: chat could not load feedback (%s)", exc)
+        return {"active": [], "dismissed": []}
+
+
+def _format_feedback_context(active: List[dict], dismissed: List[dict]) -> str:
+    """Render active + retired feedback as a compact prompt section so
+    the LLM can answer 'did my note X drive any runs?' by joining the
+    feedback_id stamps in run records back to the operator's note text.
+    """
+    if not active and not dismissed:
+        return ("Admin feedback (operator notes that steer the synthesizer):\n"
+                "(no operator feedback in scope)")
+
+    lines = ["Admin feedback (operator notes that steer the synthesizer):"]
+    for it in (active or [])[:_MAX_FEEDBACK_ITEMS_PER_GROUP]:
+        lines.append(_format_feedback_item(it, status_label="ACTIVE"))
+    for it in (dismissed or [])[:_MAX_FEEDBACK_ITEMS_PER_GROUP]:
+        lines.append(_format_feedback_item(it, status_label="RETIRED"))
+    return "\n".join(lines)
+
+
+def _format_feedback_item(it: dict, *, status_label: str) -> str:
+    fid = it.get("id", "<unknown>")
+    text = (it.get("text") or "")[:_FEEDBACK_TEXT_TRUNCATE]
+    applied = it.get("applied_count", 0)
+    cap = it.get("max_applies", 5)
+    last_run = it.get("last_applied_run_id")
+    bits = [f"  - {status_label}: {fid} · applied {applied}/{cap}"]
+    if last_run:
+        bits.append(f"last_run={last_run}")
+    bits.append(f'"{text}"')
+    return " · ".join(bits)
 
 
 # ---- Firestore loader ------------------------------------------------------

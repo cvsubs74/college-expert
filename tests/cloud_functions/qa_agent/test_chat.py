@@ -327,3 +327,170 @@ class TestChatContextIncludesColleges:
         }
         out = chat._format_run_context([run])
         assert "colleges:" not in out.lower()
+
+
+# ---- Feedback context grounding ------------------------------------------
+# Spec: docs/prd/qa-chat-feedback-context.md.
+# Bug repro: chat saw `feedback_id: fb_xyz` stamped on synthesized
+# scenarios but had no way to map that ID back to the operator's note
+# text. Adding a feedback section to the prompt closes the loop.
+
+
+class TestFormatFeedbackContext:
+    def test_renders_active_items_with_id_and_text(self):
+        import chat
+        active = [{
+            "id": "fb_active",
+            "text": "Focus on UC group treatment",
+            "status": "active",
+            "applied_count": 2,
+            "max_applies": 5,
+            "last_applied_run_id": "run_xyz",
+        }]
+        out = chat._format_feedback_context(active, [])
+        assert "fb_active" in out
+        assert "Focus on UC group treatment" in out
+        assert "2/5" in out or "applied 2" in out
+        # The header tells the LLM what this section is.
+        assert "feedback" in out.lower()
+
+    def test_renders_retired_items_with_final_count(self):
+        import chat
+        dismissed = [{
+            "id": "fb_retired",
+            "text": "Cover every single university",
+            "status": "dismissed",
+            "applied_count": 5,
+            "max_applies": 5,
+            "last_applied_run_id": "run_final",
+        }]
+        out = chat._format_feedback_context([], dismissed)
+        assert "fb_retired" in out
+        assert "Cover every single university" in out
+        # An LLM reading the prompt should be able to tell active
+        # apart from retired (case-insensitive match on either form).
+        assert "retired" in out.lower() or "dismissed" in out.lower()
+
+    def test_handles_both_active_and_retired_in_one_pass(self):
+        import chat
+        active = [{
+            "id": "fb_a", "text": "active note", "status": "active",
+            "applied_count": 1, "max_applies": 5,
+        }]
+        dismissed = [{
+            "id": "fb_b", "text": "retired note", "status": "dismissed",
+            "applied_count": 5, "max_applies": 5,
+        }]
+        out = chat._format_feedback_context(active, dismissed)
+        assert "fb_a" in out
+        assert "fb_b" in out
+        assert "active note" in out
+        assert "retired note" in out
+
+    def test_returns_explicit_empty_message_when_no_feedback(self):
+        """Caller relies on this being non-empty so the prompt never
+        carries a malformed/empty section."""
+        import chat
+        out = chat._format_feedback_context([], [])
+        assert len(out.strip()) > 0
+        # Plain English "no feedback" fallback so the LLM doesn't
+        # confabulate operator notes.
+        lowered = out.lower()
+        assert "no" in lowered or "none" in lowered or "empty" in lowered
+
+    def test_truncates_to_token_budget(self):
+        """Don't dump 100 retired items into the prompt; cap so chat
+        stays under budget on a long-running setup."""
+        import chat
+        big = [
+            {"id": f"fb_{i}", "text": f"item {i}" * 5, "status": "dismissed",
+             "applied_count": 5, "max_applies": 5}
+            for i in range(50)
+        ]
+        out = chat._format_feedback_context([], big)
+        # Soft cap — under 4000 chars (~1000 tokens) for the feedback
+        # section alone leaves plenty of room for run context.
+        assert len(out) < 4000
+
+
+class TestLoadFeedbackContext:
+    def test_swallows_feedback_load_errors(self, monkeypatch):
+        """A feedback-store outage must not take down the chat
+        endpoint. _load_feedback_context returns empty lists on any
+        exception."""
+        import chat
+        # Stub the feedback module to blow up on load.
+        import sys, types
+        fb_stub = types.ModuleType("feedback")
+
+        def _boom(*_a, **_k):
+            raise RuntimeError("firestore unhealthy")
+
+        fb_stub.active_items = _boom
+        fb_stub.recently_dismissed_items = _boom
+        monkeypatch.setitem(sys.modules, "feedback", fb_stub)
+
+        result = chat._load_feedback_context()
+        assert result == {"active": [], "dismissed": []}
+
+
+class TestHandleChatPassesFeedback:
+    def _runs(self):
+        return [{
+            "run_id": "run_a",
+            "started_at": "2026-05-04T01:00:00+00:00",
+            "trigger": "agent_loop",
+            "summary": {"pass": 8, "fail": 0, "total": 8},
+            "scenarios": [],
+        }]
+
+    def test_prompt_carries_active_feedback_text(self, monkeypatch):
+        import chat
+        monkeypatch.setattr(chat, "_load_recent_run_summaries",
+                            lambda limit=30: self._runs())
+        monkeypatch.setattr(chat, "_load_feedback_context",
+                            lambda: {
+                                "active": [{
+                                    "id": "fb_xyz",
+                                    "text": "Focus on UC group treatment",
+                                    "status": "active",
+                                    "applied_count": 1, "max_applies": 5,
+                                }],
+                                "dismissed": [],
+                            })
+        captured = {}
+        def _spy(system, prompt, key):
+            captured["prompt"] = prompt
+            return "ok"
+        monkeypatch.setattr(chat, "_call_gemini", _spy)
+        chat.handle_chat(
+            {"question": "what's been steering the runs?", "history": []},
+            {"GEMINI_API_KEY": "fake"},
+        )
+        assert "fb_xyz" in captured["prompt"]
+        assert "UC group treatment" in captured["prompt"]
+
+    def test_prompt_carries_retired_feedback(self, monkeypatch):
+        import chat
+        monkeypatch.setattr(chat, "_load_recent_run_summaries",
+                            lambda limit=30: self._runs())
+        monkeypatch.setattr(chat, "_load_feedback_context",
+                            lambda: {
+                                "active": [],
+                                "dismissed": [{
+                                    "id": "fb_done",
+                                    "text": "Cover every single university",
+                                    "status": "dismissed",
+                                    "applied_count": 5, "max_applies": 5,
+                                    "last_applied_run_id": "run_final",
+                                }],
+                            })
+        captured = {}
+        monkeypatch.setattr(chat, "_call_gemini",
+                            lambda s, p, k: captured.setdefault("prompt", p) or "ok")
+        chat.handle_chat(
+            {"question": "did any operator notes drive recent runs?", "history": []},
+            {"GEMINI_API_KEY": "fake"},
+        )
+        assert "fb_done" in captured["prompt"]
+        assert "Cover every single university" in captured["prompt"]
