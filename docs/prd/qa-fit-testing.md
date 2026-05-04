@@ -86,18 +86,29 @@ real-world misadvisement. Today we have no automated detection.
 - `fit_accessible_safety` — Ohio State (>=50%, ACCESSIBLE), pinned
   to `SAFETY`. Catches ceiling regression.
 
-**Phase 2b (deferred):**
+**Phase 2b (DONE — cross-school relative ordering):**
+- Runner now supports `fit_target_colleges` (list). Each entry gets a
+  `compute_fit:<uni>` step running the full Phase 1 invariant set.
+- New cross-step `fit_relative_ordering` assertion walks the
+  collected per-school fit responses and asserts category-rank is
+  monotonically non-decreasing as acceptance_rate increases. The bug
+  class this catches: same student gets a *worse* category at a
+  *less-selective* school — internal inconsistency.
+- New archetype `fit_relative_ordering` exercises 3 schools across 3
+  tiers in one scenario: MIT (ULTRA_SELECTIVE) → UC Berkeley
+  (HIGHLY_SELECTIVE) → Ohio State (ACCESSIBLE).
+- Why category-rank, not raw match_percentage? Within-band match-%
+  drift would generate flaky failures on tied tiers; category-rank
+  is the post-processor's canonicalised view and the right level of
+  strictness.
+
+**Phase 2c (deferred — fill remaining tier gaps + profile edge cases):**
 - Add `fit_very_selective` (15-25% band) and `fit_selective` (25-40%
   band) archetypes once we identify schools in the allowlist with
-  those acceptance rates.
-- A `fit_test_optional` archetype and a `fit_intended_major_mismatch`
-  archetype to probe profile-side edge cases.
-- A *cross-college* scenario (`fit_relative_ordering`) that picks 3
-  colleges at different selectivity tiers in a single run, runs the
-  fit on each, and asserts the *match-% ordering* is monotonic with
-  selectivity. Requires extending the runner to support
-  `fit_target_colleges` (list) and a new cross-step assertion that
-  walks all the compute_fit step contexts.
+  those acceptance rates from KB data.
+- Add a `fit_test_optional` archetype and a `fit_intended_major_mismatch`
+  archetype to probe profile-side edge cases (e.g. CS-intent student
+  vs liberal-arts-only school should produce a low Major Fit score).
 
 ### Phase 3 — Synthesizer integration
 

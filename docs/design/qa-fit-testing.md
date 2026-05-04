@@ -184,6 +184,39 @@ and a stubbed poster that returns a synthetic fit response. Verify
 the `compute_fit` step is added when the field is present and
 omitted otherwise.
 
+## Phase 2b — Cross-school relative ordering
+
+Built on Phase 1's foundation; no breaking changes to existing
+archetypes.
+
+**Runner extension:** the `compute_fit` block now reads
+`fit_target_colleges` (list) in addition to `fit_target_college`
+(string). When the list has 2+ entries, the runner:
+1. Runs a `compute_fit:<uni>` step per school with all 7 Phase 1
+   invariants.
+2. Skips the single-value `fit_expected_category` pin (it can't
+   apply across multiple schools at different tiers).
+3. Appends a synthetic `fit_relative_ordering` step whose assertions
+   come from `fit_assertions.check_category_rank_monotonic_with_selectivity`.
+
+**The cross-school assertion:**
+- Reads `acceptance_rate` and `fit_category` from each collected
+  response.
+- Sorts by `acceptance_rate` ascending (most-selective first).
+- For each consecutive pair, asserts `cur.rank >= prev.rank` where
+  rank is `{SUPER_REACH:0, REACH:1, TARGET:2, SAFETY:3}`.
+- Returns one `AssertionResult` per pair so failures are pinpointable
+  ("ohio_state vs mit: ohio_state at 60% is TARGET but mit at 4% is
+  SAFETY — student should never get a worse fit at a less-selective
+  school").
+
+**The new archetype `fit_relative_ordering`** exercises three schools
+in a single run: MIT (4%) + UC Berkeley (11%) + Ohio State (60%).
+Production data from Phases 1+2a shows the algorithm naturally
+produces the right ordering for these three; this PR makes that an
+explicit, programmatic test so any future drift fails CI rather than
+silently degrading operator experience.
+
 ## Risk
 
 Low for Phase 1:

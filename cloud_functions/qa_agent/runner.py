@@ -479,13 +479,26 @@ def run_scenario(
             roadmap_ctx, truth_bag, deep_link_assertions,
         ))
 
-    # ----- Step 4.7: college fit (optional) -------------------------------
-    # Fit-focused archetypes set `fit_target_college` to a college id;
-    # we POST to profile_manager_v2 /compute-single-fit and run the
-    # invariant assertions from fit_assertions.py against the response.
+    # ----- Step 4.7: college fit (optional, single OR multi) --------------
+    # Fit-focused archetypes set either `fit_target_college` (string)
+    # for single-school scenarios or `fit_target_colleges` (list) for
+    # multi-school scenarios that also exercise cross-school category
+    # ordering. We POST to profile_manager_v2 /compute-single-fit per
+    # target and run the invariant assertions from fit_assertions.py.
     # Spec: docs/prd/qa-fit-testing.md.
-    fit_target = scenario.get("fit_target_college")
-    if fit_target:
+    multi_targets = scenario.get("fit_target_colleges") or []
+    if isinstance(multi_targets, str):  # defensive: scalar in list-typed field
+        multi_targets = [multi_targets]
+    single_target = scenario.get("fit_target_college")
+    fit_targets = list(multi_targets) if multi_targets else (
+        [single_target] if single_target else []
+    )
+
+    # Track each fit response so we can run cross-school assertions
+    # after every per-school step has run.
+    collected_fit_responses: List[tuple] = []
+
+    for fit_target in fit_targets:
         # /compute-single-fit makes an LLM call AND profile_manager_v2
         # sometimes cold-starts (it scales to zero). Observed in PR #76
         # post-deploy verification: a cold-start path took ~40s
@@ -524,14 +537,46 @@ def run_scenario(
         # If the archetype declared an expected category, pin that too —
         # gives us a tighter signal than the invariants alone for the
         # canonical "ultra-selective stays SUPER_REACH" scenario.
+        # Only meaningful for single-target scenarios; the same pin
+        # would be wrong across multiple schools at different tiers.
         expected_cat = scenario.get("fit_expected_category")
-        if expected_cat:
+        if expected_cat and len(fit_targets) == 1:
             fit_asserts.append(
                 assertions.key_equals(
                     "fit_analysis.fit_category", expected_cat,
                 )
             )
         steps.append(_step(f"compute_fit:{fit_target}", fit_ctx, fit_asserts))
+        collected_fit_responses.append((fit_target, fit_ctx))
+
+    # ----- Step 4.8: cross-school category-rank ordering (multi only) -----
+    # When the archetype exercises 2+ schools, walk the collected fit
+    # responses and assert category-rank is monotonically non-decreasing
+    # as acceptance_rate increases. This catches the one bug class that
+    # per-school invariants don't: the algorithm being internally
+    # inconsistent across schools (e.g., the same student getting a
+    # WORSE category at a less-selective school).
+    if len(collected_fit_responses) >= 2:
+        ordering_results = (
+            fit_assertions.check_category_rank_monotonic_with_selectivity(
+                collected_fit_responses,
+            )
+        )
+        steps.append({
+            "name": "fit_relative_ordering",
+            "endpoint": f"{pm}/compute-single-fit (×{len(collected_fit_responses)})",
+            "status_code": 0,  # synthetic step; not an HTTP call of its own
+            "elapsed_ms": 0,
+            "request": {
+                "schools": [u for u, _ in collected_fit_responses],
+            },
+            "response_excerpt": "; ".join(
+                f"{u}={(c.get('response_json') or {}).get('fit_analysis', {}).get('fit_category', '?')}"
+                for u, c in collected_fit_responses
+            )[:1500],
+            "assertions": [r.to_dict() for r in ordering_results],
+            "passed": all(r.passed for r in ordering_results),
+        })
 
     # ----- Step 5: work feed ----------------------------------------------
     # /work-feed is GET with query params, not POST.
