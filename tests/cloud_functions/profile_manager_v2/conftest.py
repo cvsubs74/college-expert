@@ -67,3 +67,36 @@ class _StubFieldFilter:
 
 
 _base_query.FieldFilter = _StubFieldFilter
+
+
+# google.genai — used by fit_computation.py for Gemini calls. Tests
+# that exercise the fallback path don't reach the LLM, but the module
+# import does, so we stub the surface.
+_genai = _ensure_module('google.genai')
+
+
+class _StubGenaiClient:
+    def __init__(self, *args, **kwargs):
+        self.models = self
+
+
+_genai.Client = _StubGenaiClient
+
+# google.genai.types — referenced as `from google.genai import types`.
+_genai_types = _ensure_module('google.genai.types')
+
+
+# google.generativeai — older path also referenced by the codebase.
+_generativeai = _ensure_module('google.generativeai')
+
+
+class _StubGenAIModel:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def generate_content(self, *args, **kwargs):
+        raise RuntimeError("stub — tests should not invoke the real model")
+
+
+_generativeai.GenerativeModel = _StubGenAIModel
+_generativeai.configure = lambda *args, **kwargs: None

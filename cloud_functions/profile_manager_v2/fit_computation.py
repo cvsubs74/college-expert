@@ -617,32 +617,80 @@ You have access to COMPLETE university data. Generate recommendations across ALL
 
     except Exception as e:
         logger.error(f"[FIT_COMP_ERROR] {uni_name if 'uni_name' in dir() else 'Unknown'}: {str(e)}")
-        # Return a sensible fallback based on acceptance rate
-        if acceptance_rate < 8:
-            fallback_category = 'SUPER_REACH'
-        elif acceptance_rate < 15:
-            fallback_category = 'REACH'
-        elif acceptance_rate < 40:
-            fallback_category = 'TARGET'
-        else:
-            fallback_category = 'SAFETY'
-            
-        return {
-            "fit_category": fallback_category,
-            "match_percentage": 50,
-            "explanation": f"Detailed analysis unavailable. Based on {acceptance_rate}% acceptance rate ({selectivity_tier if 'selectivity_tier' in dir() else 'unknown selectivity'}), categorized as {fallback_category}.",
-            "factors": [
-                {"name": "Academic", "score": 20, "max": 40, "detail": "Unable to fully analyze"},
-                {"name": "Holistic", "score": 15, "max": 30, "detail": "Unable to fully analyze"},
-                {"name": "Major Fit", "score": 8, "max": 15, "detail": "Unable to fully analyze"},
-                {"name": "Selectivity", "score": 0, "max": 5, "detail": f"{acceptance_rate}% acceptance rate"}
-            ],
-            "recommendations": ["Complete profile for accurate analysis"],
-            "university_name": university_data.get('metadata', {}).get('official_name', 'University'),
-            "calculated_at": datetime.utcnow().isoformat(),
-            "selectivity_tier": selectivity_tier if 'selectivity_tier' in dir() else "UNKNOWN",
-            "acceptance_rate": acceptance_rate
-        }
+        # Build the fallback through the shared helper so its
+        # match_percentage stays aligned with whichever fallback
+        # category the acceptance rate produces. See _build_fallback_fit
+        # docstring for the bug-surfaced-by-QA story.
+        return _build_fallback_fit(
+            acceptance_rate=acceptance_rate,
+            selectivity_tier=selectivity_tier if 'selectivity_tier' in dir() else None,
+            university_data=university_data,
+        )
+
+
+# Per-category match-% midpoints used by the fallback path.
+#
+# These MUST satisfy the post-processor's range alignment (SAFETY
+# 75-100, TARGET 55-74, REACH 35-54, SUPER_REACH 0-34) so a fallback
+# response doesn't violate the very contract the post-processor
+# enforces for LLM-returned responses.
+#
+# Bug surfaced 2026-05-04 by the QA agent's fit_assertions: the
+# previous implementation hardcoded match_percentage=50 regardless
+# of category. That violated the band for TARGET (55-74), SAFETY
+# (75-100), and SUPER_REACH (0-34) — three of four cases. Only
+# REACH happened to be consistent.
+_FALLBACK_MATCH_PERCENT = {
+    "SUPER_REACH": 17,  # midpoint of 0-34
+    "REACH":       45,  # midpoint of 35-54
+    "TARGET":      65,  # midpoint of 55-74
+    "SAFETY":      87,  # midpoint of 75-100
+}
+
+
+def _build_fallback_fit(acceptance_rate, selectivity_tier, university_data):
+    """Sensible fallback when the LLM call fails (503, JSON parse
+    error, quota, etc.).
+
+    Returns a fit dict that satisfies all post-processor invariants —
+    same shape as a successful call, with placeholder factor scores
+    and a per-category match_percentage that round-trips through the
+    QA agent's structural assertions.
+    """
+    if acceptance_rate < 8:
+        fallback_category = "SUPER_REACH"
+    elif acceptance_rate < 15:
+        fallback_category = "REACH"
+    elif acceptance_rate < 40:
+        fallback_category = "TARGET"
+    else:
+        fallback_category = "SAFETY"
+
+    return {
+        "fit_category": fallback_category,
+        "match_percentage": _FALLBACK_MATCH_PERCENT[fallback_category],
+        "explanation": (
+            f"Detailed analysis unavailable. Based on {acceptance_rate}% "
+            f"acceptance rate ({selectivity_tier or 'UNKNOWN'}), "
+            f"categorized as {fallback_category}."
+        ),
+        "factors": [
+            {"name": "Academic",    "score": 20, "max": 40,
+             "detail": "Unable to fully analyze"},
+            {"name": "Holistic",    "score": 15, "max": 30,
+             "detail": "Unable to fully analyze"},
+            {"name": "Major Fit",   "score":  8, "max": 15,
+             "detail": "Unable to fully analyze"},
+            {"name": "Selectivity", "score":  0, "max":  5,
+             "detail": f"{acceptance_rate}% acceptance rate"},
+        ],
+        "recommendations": ["Complete profile for accurate analysis"],
+        "university_name": (university_data or {}).get(
+            "metadata", {}).get("official_name", "University"),
+        "calculated_at": datetime.utcnow().isoformat(),
+        "selectivity_tier": selectivity_tier or "UNKNOWN",
+        "acceptance_rate": acceptance_rate,
+    }
 
 
 def calculate_fit_for_college(user_id, university_id, intended_major=''):
