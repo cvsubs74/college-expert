@@ -98,4 +98,79 @@ describe('CoverageCard', () => {
         render(<CoverageCard coverage={{ total_journeys: 1, journeys: [heavyJourney] }} />);
         expect(screen.getByText(/\+ 2 more/i)).toBeInTheDocument();
     });
+
+    describe('Features verified section', () => {
+        const sampleWithFeatures = {
+            total_journeys: 1,
+            journeys: [{
+                id: 'j1',
+                surfaces: ['profile'],
+                summary: 'Profile only',
+                scenarios: [{ id: 's1', verified_at: '2026-05-04T05:00:00Z' }],
+                verified_count: 3,
+            }],
+            total_features: 4,
+            validated_features: [
+                { text: 'Resolver picks junior_spring template', count: 12 },
+                { text: 'UC group task covers all UCs in single entry', count: 8 },
+                { text: 'Per-school RD submission tasks emit artifact_ref', count: 5 },
+                { text: 'Roadmap response is non-empty and well-formed', count: 3 },
+            ],
+        };
+
+        it('renders one row per validated feature with text + count', () => {
+            render(<CoverageCard coverage={sampleWithFeatures} />);
+            expect(screen.getByText(/Resolver picks junior_spring template/i)).toBeInTheDocument();
+            expect(screen.getByText(/UC group task covers all UCs/i)).toBeInTheDocument();
+            // Counts shown next to each feature.
+            expect(screen.getByText(/^12×$/)).toBeInTheDocument();
+            expect(screen.getByText(/^8×$/)).toBeInTheDocument();
+        });
+
+        it('mentions feature count in the header pill', () => {
+            render(<CoverageCard coverage={sampleWithFeatures} />);
+            expect(screen.getByText(/4 features/i)).toBeInTheDocument();
+        });
+
+        it('singular "feature" when only one', () => {
+            render(<CoverageCard coverage={{
+                ...sampleWithFeatures,
+                total_features: 1,
+                validated_features: [sampleWithFeatures.validated_features[0]],
+            }} />);
+            expect(screen.getByText(/1 feature\b/i)).toBeInTheDocument();
+        });
+
+        it('shows "showing top N of M" when capped', () => {
+            render(<CoverageCard coverage={{
+                total_journeys: 1,
+                journeys: sampleWithFeatures.journeys,
+                total_features: 50,
+                validated_features: sampleWithFeatures.validated_features,
+            }} />);
+            expect(screen.getByText(/showing top 4 of 50/i)).toBeInTheDocument();
+        });
+
+        it('omits the features section entirely when none are present', () => {
+            render(<CoverageCard coverage={{
+                total_journeys: 1,
+                journeys: sampleWithFeatures.journeys,
+                total_features: 0,
+                validated_features: [],
+            }} />);
+            expect(screen.queryByText(/features verified/i)).toBeNull();
+        });
+
+        it('tolerates legacy /summary responses without the features fields', () => {
+            const { container } = render(
+                <CoverageCard coverage={{
+                    total_journeys: 1,
+                    journeys: sampleWithFeatures.journeys,
+                    // no validated_features / total_features keys
+                }} />
+            );
+            expect(container.firstChild).not.toBeNull();
+            expect(screen.queryByText(/features verified/i)).toBeNull();
+        });
+    });
 });
