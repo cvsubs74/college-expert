@@ -409,3 +409,165 @@ class TestRoadmapAssertionUsesComputedTemplate:
             f"Should skip template_used equality check when helper returns "
             f"None. Found: {template_eq_assertions}"
         )
+
+
+# ---- compute_fit step ----------------------------------------------------
+# Phase 1 of fit testing — runner now adds a `compute_fit:<uni>` step
+# when the scenario carries a `fit_target_college` field, otherwise
+# scenarios stay roadmap-only (today's behaviour). Spec:
+# docs/prd/qa-fit-testing.md.
+
+
+def _good_fit_response(uni_id, *, category='SUPER_REACH',
+                       match_pct=20, acc_rate=4.0):
+    """Synthetic /compute-single-fit response that satisfies every
+    Phase 1 invariant. Tests perturb specific fields to flip individual
+    assertions."""
+    return _ok({
+        'success': True,
+        'fit_analysis': {
+            'fit_category': category,
+            'match_percentage': match_pct,
+            'acceptance_rate': acc_rate,
+            'university_name': uni_id.replace('_', ' ').title(),
+            'university_id': uni_id,
+            'factors': [
+                {'name': 'Academic',    'score': 35, 'max': 40, 'detail': 'x'},
+                {'name': 'Holistic',    'score': 25, 'max': 30, 'detail': 'x'},
+                {'name': 'Major Fit',   'score': 13, 'max': 15, 'detail': 'x'},
+                {'name': 'Selectivity', 'score': -15, 'max': 5, 'detail': 'x'},
+            ],
+            'explanation': 'Five-or-six sentence analysis here.',
+            'essay_angles': [{'essay_prompt': 'Why us', 'angle': 'x'}],
+            'application_timeline': {'recommended_plan': 'RD',
+                                     'deadline': '2027-01-01'},
+            'scholarship_matches': [{'name': 'Merit', 'amount': '$1k'}],
+            'test_strategy': {'recommendation': 'Submit'},
+            'major_strategy': {'intended_major': 'CS', 'is_available': True},
+            'demonstrated_interest_tips': ['visit campus'],
+            'red_flags_to_avoid': ['typos'],
+            'recommendations': [{'action': 'improve essays'}],
+        },
+    })
+
+
+def _scenario_with_fit_target(uni_id='massachusetts_institute_of_technology',
+                              expected='SUPER_REACH'):
+    s = _scenario()
+    s['id'] = 'fit_demo'
+    s['colleges_template'] = [uni_id]
+    s['fit_target_college'] = uni_id
+    s['fit_expected_category'] = expected
+    return s
+
+
+class TestComputeFitStep:
+    def test_omitted_by_default_when_archetype_lacks_fit_target(self):
+        """Roadmap-only scenarios (the historical default) must not
+        sprout a compute_fit step. Backwards compat for every existing
+        archetype that doesn't opt in."""
+        cfg = _make_cfg()
+        scenario = _scenario()  # no fit_target_college
+        result = runner.run_scenario(scenario, cfg, poster=_smart_poster())
+        step_names = [s['name'] for s in result['steps']]
+        assert not any(n.startswith('compute_fit') for n in step_names), (
+            f"compute_fit should be absent. Got steps: {step_names}"
+        )
+
+    def test_step_added_when_fit_target_set(self):
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        overrides = [(
+            'compute-single-fit',
+            _good_fit_response('massachusetts_institute_of_technology'),
+        )]
+        result = runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides),
+        )
+        fit_steps = [s for s in result['steps']
+                     if s['name'].startswith('compute_fit:')]
+        assert len(fit_steps) == 1
+        assert 'massachusetts_institute_of_technology' in fit_steps[0]['name']
+
+    def test_step_passes_on_well_formed_response(self):
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        overrides = [(
+            'compute-single-fit',
+            _good_fit_response('massachusetts_institute_of_technology'),
+        )]
+        result = runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides),
+        )
+        fit_step = next(s for s in result['steps']
+                        if s['name'].startswith('compute_fit:'))
+        assert fit_step['passed'], (
+            f"Expected pass but got assertion failures: "
+            f"{[a for a in fit_step['assertions'] if not a['passed']]}"
+        )
+
+    def test_step_fails_when_selectivity_floor_violated(self):
+        """The canonical regression: a 4%-acceptance school flagged
+        as TARGET. The selectivity-floor assertion catches this."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target(expected='SUPER_REACH')
+        bad = _good_fit_response(
+            'massachusetts_institute_of_technology',
+            category='TARGET',  # ← the bug: 4% school called TARGET
+            match_pct=60,
+            acc_rate=4.0,
+        )
+        overrides = [('compute-single-fit', bad)]
+        result = runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides),
+        )
+        fit_step = next(s for s in result['steps']
+                        if s['name'].startswith('compute_fit:'))
+        assert not fit_step['passed']
+        # The selectivity-floor assertion + the expected-category pin
+        # should both fail with informative messages.
+        floor_failed = [a for a in fit_step['assertions']
+                        if 'floor' in a['name'].lower() and not a['passed']]
+        assert floor_failed, (
+            f"Selectivity-floor assertion should have failed. "
+            f"Got: {fit_step['assertions']}"
+        )
+
+    def test_step_fails_when_match_percentage_outside_band(self):
+        """SUPER_REACH at 50% match — post-processor regression case."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        bad = _good_fit_response(
+            'massachusetts_institute_of_technology',
+            category='SUPER_REACH',
+            match_pct=50,  # SUPER_REACH must be 0-34
+            acc_rate=4.0,
+        )
+        overrides = [('compute-single-fit', bad)]
+        result = runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides),
+        )
+        fit_step = next(s for s in result['steps']
+                        if s['name'].startswith('compute_fit:'))
+        assert not fit_step['passed']
+        band_failed = [a for a in fit_step['assertions']
+                       if 'band' in a['name'].lower() and not a['passed']]
+        assert band_failed
+
+    def test_step_calls_profile_manager_compute_single_fit(self):
+        """The fit step must hit profile_manager_v2's endpoint with
+        {user_email, university_id} — confirms the contract."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        capture = []
+        overrides = [(
+            'compute-single-fit',
+            _good_fit_response('massachusetts_institute_of_technology'),
+        )]
+        runner.run_scenario(
+            scenario, cfg,
+            poster=_smart_poster(overrides=overrides, capture=capture),
+        )
+        fit_calls = [c for c in capture if 'compute-single-fit' in c['url']]
+        assert len(fit_calls) == 1
+        assert fit_calls[0]['url'].startswith('https://pm.test')
