@@ -1,5 +1,6 @@
 import React from 'react';
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
+import { formatUniversityName } from '../../utils/formatUniversityName';
 
 // "Universities tested" card — answers "what schools has the QA agent
 // actually exercised?".
@@ -78,10 +79,11 @@ const UniversitiesCard = ({ universities }) => {
                     {visibleTested.map((u) => (
                         <li
                             key={u.id}
+                            title={u.id}
                             className="flex items-center justify-between gap-2 text-xs text-[#2A2A2A]"
                         >
-                            <span className="font-mono truncate flex-1 min-w-0">
-                                {u.id}
+                            <span className="truncate flex-1 min-w-0">
+                                {formatUniversityName(u.id)}
                             </span>
                             <span className="flex-shrink-0 text-[10px] text-[#8A8A8A]">
                                 {fmtRelative(u.last_tested_at)}
@@ -104,8 +106,11 @@ const UniversitiesCard = ({ universities }) => {
                     <div className="text-[10px] uppercase tracking-wider text-[#6B6B6B] font-semibold mb-1.5">
                         Not yet tested ({untested.length})
                     </div>
-                    <p className="text-[11px] text-[#6B6B6B] font-mono leading-relaxed break-words">
-                        {untested.join(', ')}
+                    <p
+                        className="text-[11px] text-[#6B6B6B] leading-relaxed break-words"
+                        title={untested.join(', ')}
+                    >
+                        {untested.map(formatUniversityName).join(', ')}
                     </p>
                 </div>
             )}
