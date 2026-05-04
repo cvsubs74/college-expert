@@ -546,6 +546,12 @@ def run_scenario(
                     "fit_analysis.fit_category", expected_cat,
                 )
             )
+        # Phase 2c-2: when the archetype declares its profile carries no
+        # SAT/ACT scores, the algorithm must not recommend "Submit".
+        if scenario.get("fit_no_test_scores"):
+            fit_asserts.append(
+                fit_assertions.test_strategy_not_submit_when_no_scores()
+            )
         steps.append(_step(f"compute_fit:{fit_target}", fit_ctx, fit_asserts))
         collected_fit_responses.append((fit_target, fit_ctx))
 

@@ -784,6 +784,61 @@ class TestComputeFitMultiTarget:
         assert not any(s['name'] == 'fit_relative_ordering'
                        for s in result['steps'])
 
+    def test_test_strategy_assertion_appended_when_no_scores_flag_set(self):
+        """Phase 2c-2: when archetype carries fit_no_test_scores=true,
+        the runner must append the test_strategy_not_submit_when_no_scores
+        assertion. Catches regression where the wiring goes stale."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        scenario['fit_no_test_scores'] = True
+        # Force the algorithm response to recommend "Submit" so the new
+        # assertion fires and we can verify it was added.
+        bad = _good_fit_response('massachusetts_institute_of_technology')
+        bad['response_json']['fit_analysis']['test_strategy'] = {
+            'recommendation': 'Submit',
+        }
+        result = runner.run_scenario(
+            scenario, cfg,
+            poster=_smart_poster(overrides=[
+                ('compute-single-fit', bad),
+            ]),
+        )
+        fit_step = next(s for s in result['steps']
+                        if s['name'].startswith('compute_fit:'))
+        # The new assertion should be in the list, and it should fail
+        # because we forced "Submit".
+        no_submit_assertions = [
+            a for a in fit_step['assertions']
+            if 'submit' in a.get('name', '').lower()
+            and 'no scores' in a.get('name', '').lower()
+        ]
+        assert len(no_submit_assertions) == 1, (
+            f"expected the no-scores assertion to be appended; got "
+            f"{[a['name'] for a in fit_step['assertions']]}"
+        )
+        assert not no_submit_assertions[0]['passed']
+
+    def test_test_strategy_assertion_omitted_by_default(self):
+        """Without the fit_no_test_scores flag, the assertion is NOT
+        appended — backwards compat with archetypes that don't declare
+        it."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()  # no fit_no_test_scores
+        result = runner.run_scenario(
+            scenario, cfg,
+            poster=_smart_poster(overrides=[(
+                'compute-single-fit',
+                _good_fit_response('massachusetts_institute_of_technology'),
+            )]),
+        )
+        fit_step = next(s for s in result['steps']
+                        if s['name'].startswith('compute_fit:'))
+        no_submit = [
+            a for a in fit_step['assertions']
+            if 'no scores' in a.get('name', '').lower()
+        ]
+        assert no_submit == []
+
     def test_expected_category_pin_skipped_when_multi_target(self):
         """A single-value fit_expected_category can't apply across
         multiple schools at different tiers; the pin is skipped when

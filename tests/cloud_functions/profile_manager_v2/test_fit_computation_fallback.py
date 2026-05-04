@@ -117,3 +117,59 @@ class TestFallbackMatchPercentageAlignsWithCategory:
         # Doesn't raise; produces a sensible default name.
         assert isinstance(result["university_name"], str)
         assert result["fit_category"] == "TARGET"
+
+
+# ---- _student_has_no_scores ---------------------------------------------
+# Phase 2c-2: the test_strategy override only fires when the student
+# profile genuinely has no SAT/ACT, so this predicate has to be right.
+
+
+class TestStudentHasNoScores:
+    def test_true_for_empty_profile(self):
+        from fit_computation import _student_has_no_scores
+        assert _student_has_no_scores({})
+
+    def test_true_when_score_keys_are_none_or_empty(self):
+        from fit_computation import _student_has_no_scores
+        assert _student_has_no_scores({
+            "sat_composite": None, "sat_total": None,
+            "act_composite": None, "act_score": "",
+            "gpa": 3.85,
+        })
+
+    def test_false_when_sat_composite_present(self):
+        from fit_computation import _student_has_no_scores
+        assert not _student_has_no_scores({"sat_composite": 1450})
+
+    def test_false_when_sat_total_present(self):
+        from fit_computation import _student_has_no_scores
+        assert not _student_has_no_scores({"sat_total": 1500})
+
+    def test_false_when_act_composite_present(self):
+        from fit_computation import _student_has_no_scores
+        assert not _student_has_no_scores({"act_composite": 33})
+
+    def test_false_when_only_one_score_field_set(self):
+        """Even one score is enough to rule out the override."""
+        from fit_computation import _student_has_no_scores
+        assert not _student_has_no_scores({
+            "sat_composite": None,
+            "sat_total": None,
+            "act_composite": 32,  # ← present
+        })
+
+    def test_false_for_non_dict_input(self):
+        """Conservative: when we can't introspect the profile, don't
+        apply the override (let the LLM's recommendation stand)."""
+        from fit_computation import _student_has_no_scores
+        assert not _student_has_no_scores(None)
+        assert not _student_has_no_scores("not a dict")
+        assert not _student_has_no_scores([])
+
+    def test_zero_score_values_treated_as_no_score(self):
+        """0 / "0" mean placeholder, not a real score."""
+        from fit_computation import _student_has_no_scores
+        assert _student_has_no_scores({
+            "sat_composite": 0,
+            "act_composite": "0",
+        })
