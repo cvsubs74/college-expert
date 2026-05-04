@@ -402,10 +402,14 @@ def _handle_post_schedule(body: dict, actor: str) -> dict:
 
 def _handle_summary(cfg: dict, request=None) -> dict:
     try:
+        # Lazy imports keep unrelated requests from paying the import
+        # cost, and avoid pulling firestore at module load time.
+        import dashboard_prefs  # noqa: WPS433
+        import coverage as coverage_mod  # noqa: WPS433
+
         # Resolve recent_n: ?recent_n= query param wins, else stored prefs,
         # else default. The query param is admin-debug only — the saved
         # prefs is the source of truth that powers the dashboard pill.
-        import dashboard_prefs  # noqa: WPS433 — lazy for tests
         prefs = dashboard_prefs.load_prefs()
         recent_n = prefs.get("recent_n", 20)
         if request is not None:
@@ -424,6 +428,9 @@ def _handle_summary(cfg: dict, request=None) -> dict:
                 recent_n=recent_n,
                 gemini_key=cfg["GEMINI_API_KEY"],
             ),
+            # End-to-end journeys the QA agent has VERIFIED across recent
+            # runs. Ships in /summary so the dashboard fetches once.
+            "coverage": coverage_mod.build_coverage(runs),
         }
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: build_summary failed")

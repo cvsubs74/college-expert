@@ -7,6 +7,8 @@ import RunsTable from '../components/qa/RunsTable';
 import ExecutiveSummary from '../components/qa/ExecutiveSummary';
 import ScheduleEditor from '../components/qa/ScheduleEditor';
 import ChatPanel from '../components/qa/ChatPanel';
+import CoverageCard from '../components/qa/CoverageCard';
+import { getSummary } from '../services/qaAgent';
 
 // /qa-runs — admin-only list of recent QA runs.
 //
@@ -18,6 +20,10 @@ const QaRunsListPage = () => {
     const [runs, setRuns] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    // /summary response — shared by ExecutiveSummary + CoverageCard so
+    // both render from a single (Gemini-billable) fetch instead of
+    // two parallel ones.
+    const [summaryResp, setSummaryResp] = useState(null);
 
     const refresh = useCallback(async () => {
         setLoading(true);
@@ -31,6 +37,10 @@ const QaRunsListPage = () => {
             const snap = await getDocs(q);
             const data = snap.docs.map((d) => d.data());
             setRuns(data);
+            // Don't block run-list rendering on the summary fetch.
+            getSummary().then((resp) => {
+                if (resp?.success) setSummaryResp(resp);
+            }).catch(() => {});
         } catch (err) {
             setError(err.message || 'Failed to load runs');
         } finally {
@@ -58,6 +68,7 @@ const QaRunsListPage = () => {
             <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
                 <ExecutiveSummary />
                 <ChatPanel />
+                <CoverageCard coverage={summaryResp?.coverage} />
                 <RunNowPanel onComplete={refresh} />
                 <ScheduleEditor />
 
