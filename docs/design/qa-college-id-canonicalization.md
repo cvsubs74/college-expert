@@ -2,7 +2,7 @@
 
 Spec: docs/prd/qa-college-id-canonicalization.md.
 
-## Three-layer fix
+## Four-layer fix
 
 ### 1. Allowlist cleanup (source of truth)
 
@@ -65,16 +65,58 @@ for uni in scen.get("colleges_template") or []:
 is keyed by canonical id, so the allowlist-difference computation
 already excludes the canonical form when an alias was tested.
 
+### 4. Archetype-write-time normalization (synthesizer)
+
+The first three layers leave one corner case: a static archetype JSON
+file silently reintroducing `"mit"`, or a future code path that bypasses
+the synthesizer's allowlist validation. In those cases the *run record
+itself* would carry an alias even though the dashboard view stays clean.
+
+`cloud_functions/qa_agent/synthesizer.py` adds:
+
+```python
+_CANONICAL_ALIASES = {
+    "mit": "massachusetts_institute_of_technology",
+    "ucla": "university_of_california_los_angeles",
+}
+
+def canonicalize_college_id(uni):
+    if isinstance(uni, str):
+        return _CANONICAL_ALIASES.get(uni, uni)
+    return uni
+
+def canonicalize_archetype(archetype) -> None:
+    """Mutate archetype['colleges_template'] in place: canonicalize each
+    id and dedupe. No-op when the field is missing or wrong shape."""
+    ...
+```
+
+`main.py::_pick_scenarios` calls `canonicalize_archetype(a)` for every
+archetype in `chosen` (synthesized + static) right before the run begins.
+Both copies of the alias map are intentionally kept independent so the
+two layers (write-time + read-time) don't collapse into a single point
+of failure.
+
 ## Tests
 
 `tests/cloud_functions/qa_agent/test_coverage.py::TestUniversityCanonicalization`
-adds five cases:
+covers the read-time layer (5 cases):
 
 - `test_alias_mit_folds_to_canonical`
 - `test_alias_ucla_folds_to_canonical`
 - `test_alias_and_canonical_collapse_to_single_row`
 - `test_canonical_id_omitted_from_untested_when_alias_was_tested`
 - `test_unknown_id_passes_through_unchanged`
+
+`tests/cloud_functions/qa_agent/test_synthesizer.py::TestCanonicalizeCollegeId`
++ `TestCanonicalizeArchetype` cover the write-time layer (13 cases):
+
+- both known aliases (`mit`, `ucla`) fold to canonical
+- already-canonical input passes through
+- unknown ids pass through unchanged
+- non-string input doesn't crash
+- archetype mutation handles dedup, order preservation, idempotency,
+  missing-field, non-string entries inside the list, and non-dict input
 
 Existing `TestUniversitiesTested` tests changed `"mit"` → `"harvard"`
 to keep their semantics independent of the alias map.
@@ -83,6 +125,8 @@ to keep their semantics independent of the alias map.
 
 Negligible:
 - Pure refactor for any new run after the allowlist change.
-- `_canonicalize` is opt-in by entry — unknown ids pass through, so
-  the dashboard never silently swallows valid data.
+- Both `canonicalize_*` helpers are opt-in by entry — unknown ids
+  pass through, so the dashboard never silently swallows valid data.
 - The alias map is small (2 entries today) and additions are explicit.
+- Both layers are independent: a regression in one is caught by the
+  other.

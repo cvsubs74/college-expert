@@ -348,3 +348,141 @@ class TestFeedbackInPrompt:
         assert "ADMIN FEEDBACK" in captured["prompt"]
         assert "fb_xyz" in captured["prompt"]
         assert "essay tracker" in captured["prompt"].lower()
+
+
+# ---- College ID canonicalization at archetype-write time -----------------
+#
+# The synthesizer's allowlist no longer contains "mit" or "ucla" (PR #67),
+# so the LLM can't emit them. But a defense-in-depth layer at archetype-
+# write time means: even if a static scenario JSON file or a future code
+# path reintroduces an alias, the canonical id ends up in the run record.
+# This is the layer requested in the spawned-task chip on 2026-05-04.
+
+
+class TestCanonicalizeCollegeId:
+    def test_mit_alias_folds_to_canonical(self):
+        import synthesizer
+        assert (synthesizer.canonicalize_college_id("mit")
+                == "massachusetts_institute_of_technology")
+
+    def test_ucla_alias_folds_to_canonical(self):
+        import synthesizer
+        assert (synthesizer.canonicalize_college_id("ucla")
+                == "university_of_california_los_angeles")
+
+    def test_already_canonical_passes_through(self):
+        import synthesizer
+        assert (synthesizer.canonicalize_college_id("stanford_university")
+                == "stanford_university")
+        assert (synthesizer.canonicalize_college_id(
+                    "massachusetts_institute_of_technology")
+                == "massachusetts_institute_of_technology")
+
+    def test_unknown_id_passes_through_unchanged(self):
+        """The map is opt-in by entry — a brand-new school id we
+        haven't catalogued yet should not be silently dropped."""
+        import synthesizer
+        assert (synthesizer.canonicalize_college_id("brand_new_school_xyz")
+                == "brand_new_school_xyz")
+
+    def test_non_string_input_returns_unchanged(self):
+        """None / int / dict shouldn't crash the helper."""
+        import synthesizer
+        assert synthesizer.canonicalize_college_id(None) is None
+        assert synthesizer.canonicalize_college_id(42) == 42
+
+
+class TestCanonicalizeArchetype:
+    def test_mit_in_colleges_template_gets_canonicalized(self):
+        import synthesizer
+        archetype = {
+            "id": "x",
+            "colleges_template": ["mit", "stanford_university"],
+        }
+        synthesizer.canonicalize_archetype(archetype)
+        assert archetype["colleges_template"] == [
+            "massachusetts_institute_of_technology",
+            "stanford_university",
+        ]
+
+    def test_ucla_in_colleges_template_gets_canonicalized(self):
+        import synthesizer
+        archetype = {
+            "id": "x",
+            "colleges_template": ["university_of_michigan", "ucla"],
+        }
+        synthesizer.canonicalize_archetype(archetype)
+        assert archetype["colleges_template"] == [
+            "university_of_michigan",
+            "university_of_california_los_angeles",
+        ]
+
+    def test_dedups_when_alias_and_canonical_both_present(self):
+        """If a single archetype contains BOTH "mit" and the canonical
+        form, the result must be one entry, not two — otherwise we just
+        moved the dup from coverage layer to the archetype layer."""
+        import synthesizer
+        archetype = {
+            "colleges_template": [
+                "mit",
+                "massachusetts_institute_of_technology",
+                "stanford_university",
+            ],
+        }
+        synthesizer.canonicalize_archetype(archetype)
+        assert archetype["colleges_template"] == [
+            "massachusetts_institute_of_technology",
+            "stanford_university",
+        ]
+
+    def test_preserves_order_of_first_occurrence(self):
+        import synthesizer
+        archetype = {
+            "colleges_template": ["stanford_university", "mit", "harvard_university"],
+        }
+        synthesizer.canonicalize_archetype(archetype)
+        # Stanford was first; MIT (canonicalized) keeps its position;
+        # Harvard third.
+        assert archetype["colleges_template"] == [
+            "stanford_university",
+            "massachusetts_institute_of_technology",
+            "harvard_university",
+        ]
+
+    def test_idempotent(self):
+        """Calling canonicalize_archetype twice must not change the
+        already-canonical result."""
+        import synthesizer
+        archetype = {"colleges_template": ["mit", "ucla"]}
+        synthesizer.canonicalize_archetype(archetype)
+        first = list(archetype["colleges_template"])
+        synthesizer.canonicalize_archetype(archetype)
+        assert archetype["colleges_template"] == first
+
+    def test_no_op_when_archetype_lacks_colleges_template(self):
+        """Pre-completion stubs or legacy data shouldn't crash."""
+        import synthesizer
+        archetype = {"id": "no_colleges"}
+        synthesizer.canonicalize_archetype(archetype)
+        assert "colleges_template" not in archetype  # untouched
+
+    def test_skips_non_string_entries_silently(self):
+        """Defensive: a malformed colleges_template shouldn't take down
+        the run."""
+        import synthesizer
+        archetype = {
+            "colleges_template": ["mit", None, 42, "stanford_university", ""],
+        }
+        synthesizer.canonicalize_archetype(archetype)
+        assert archetype["colleges_template"] == [
+            "massachusetts_institute_of_technology",
+            "stanford_university",
+        ]
+
+    def test_handles_non_dict_input_gracefully(self):
+        """Caller may pass a partial result; don't raise."""
+        import synthesizer
+        # No raise = pass.
+        synthesizer.canonicalize_archetype(None)
+        synthesizer.canonicalize_archetype("not a dict")
+        synthesizer.canonicalize_archetype(123)

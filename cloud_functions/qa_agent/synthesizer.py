@@ -43,6 +43,65 @@ DEFAULT_VALID_TEMPLATES = {
 }
 
 
+# ---- College ID canonicalization ------------------------------------------
+#
+# Spec: docs/prd/qa-college-id-canonicalization.md +
+#       docs/design/qa-college-id-canonicalization.md.
+#
+# History: PR #67 closed the duplicate-id leak at three layers (allowlist
+# cleanup + static-scenario edits + coverage-time folding). This module
+# adds a 4th, archetype-write-time, layer so the *run record itself* —
+# not just the dashboard view — uses canonical ids regardless of source.
+# The leak we're guarding against:
+#   - someone adds a new static scenario referencing "mit"
+#   - LLM behavior drifts and starts emitting an alias the validator
+#     missed (e.g. via a misspelled allowlist entry)
+#   - a future code path writes a partially-canonicalized archetype
+#
+# coverage.py also keeps its own copy of this map for defense-in-depth
+# at read time. They're intentionally not shared via import to keep the
+# layers independent.
+
+_CANONICAL_ALIASES = {
+    "mit": "massachusetts_institute_of_technology",
+    "ucla": "university_of_california_los_angeles",
+}
+
+
+def canonicalize_college_id(uni):
+    """Return the canonical id for a known alias, or the input
+    unchanged otherwise. Non-strings (None, ints, dicts) pass through
+    untouched so this never crashes on unexpected input."""
+    if isinstance(uni, str):
+        return _CANONICAL_ALIASES.get(uni, uni)
+    return uni
+
+
+def canonicalize_archetype(archetype) -> None:
+    """Mutate archetype['colleges_template'] in place: canonicalize each
+    id and dedupe. No-op when colleges_template is missing or not a list.
+    Silently skips non-string entries.
+
+    Order is first-seen so credit-tracking + UI rendering stay
+    deterministic across calls. Idempotent.
+    """
+    if not isinstance(archetype, dict):
+        return
+    cols = archetype.get("colleges_template")
+    if not isinstance(cols, list):
+        return
+    seen: set = set()
+    out: list = []
+    for c in cols:
+        if not isinstance(c, str) or not c:
+            continue
+        canon = canonicalize_college_id(c)
+        if canon and canon not in seen:
+            seen.add(canon)
+            out.append(canon)
+    archetype["colleges_template"] = out
+
+
 # ---- Validation -----------------------------------------------------------
 
 
