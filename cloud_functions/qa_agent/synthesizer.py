@@ -209,11 +209,10 @@ def synthesize_scenarios(
     history_summary = summarize_history(history)
 
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=gemini_key)
-        gen_model = genai.GenerativeModel(model)
+        from google import genai
+        client = genai.Client(api_key=gemini_key)
         prompt = _build_prompt(n, system_knowledge, history_summary, colleges_allowlist)
-        resp = gen_model.generate_content(prompt)
+        resp = client.models.generate_content(model=model, contents=prompt)
         raw = (resp.text or "").strip()
     except Exception as exc:  # noqa: BLE001
         logger.warning("synthesizer: LLM call failed: %s", exc)

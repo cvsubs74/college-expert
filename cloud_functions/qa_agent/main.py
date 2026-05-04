@@ -455,11 +455,10 @@ def _gemini_suggest(scenario: dict, api_key: str | None) -> str:
         return _heuristic_suggest(failing_steps)
 
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        from google import genai
+        client = genai.Client(api_key=api_key)
         prompt = _build_suggest_prompt(scenario, failing_steps)
-        resp = model.generate_content(prompt)
+        resp = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
         text = (resp.text or "").strip()
         return text or _heuristic_suggest(failing_steps)
     except Exception as exc:  # noqa: BLE001

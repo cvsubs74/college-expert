@@ -8,7 +8,7 @@ workflow rule. They should fail with ImportError until narratives.py
 exists, then with AssertionError until each function behaves as
 specified, then pass.
 
-LLM calls are stubbed at the module level (google.generativeai already
+LLM calls are stubbed at the module level (google.genai already
 stubbed in conftest). Each test exercises the deterministic-fallback
 path AND the happy LLM path where the stub returns a known string.
 """
@@ -151,18 +151,18 @@ class TestBuildPlan:
 
     def test_uses_llm_when_key_provided(self, archetypes, history, monkeypatch):
         import narratives
-        import google.generativeai as genai
+        from google import genai
 
-        class _Model:
+        class _Client:
             def __init__(self, *_a, **_k):
-                pass
+                class _Models:
+                    def generate_content(self, *_a, **_k):
+                        class R:
+                            text = "Run targets the roadmap surface across two scenarios."
+                        return R()
+                self.models = _Models()
 
-            def generate_content(self, *_a, **_k):
-                class R:
-                    text = "Run targets the roadmap surface across two scenarios."
-                return R()
-
-        monkeypatch.setattr(genai, "GenerativeModel", _Model)
+        monkeypatch.setattr(genai, "Client", _Client)
         result = narratives.build_plan(archetypes, history, gemini_key="fake-key")
         assert "roadmap surface" in result["narrative"]
 
@@ -198,18 +198,18 @@ class TestBuildOutcome:
 
     def test_uses_llm_when_key_provided(self, failing_report, monkeypatch):
         import narratives
-        import google.generativeai as genai
+        from google import genai
 
-        class _Model:
+        class _Client:
             def __init__(self, *_a, **_k):
-                pass
+                class _Models:
+                    def generate_content(self, *_a, **_k):
+                        class R:
+                            text = "The roadmap endpoint regressed — response status changed to 500."
+                        return R()
+                self.models = _Models()
 
-            def generate_content(self, *_a, **_k):
-                class R:
-                    text = "The roadmap endpoint regressed — response status changed to 500."
-                return R()
-
-        monkeypatch.setattr(genai, "GenerativeModel", _Model)
+        monkeypatch.setattr(genai, "Client", _Client)
         result = narratives.build_outcome(failing_report, gemini_key="fake-key")
         assert "regressed" in result["narrative"]
 

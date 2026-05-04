@@ -97,11 +97,10 @@ def _plan_narrative(archetypes, history, rationale, coverage,
         return _plan_narrative_fallback(archetypes, history, rationale)
 
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=gemini_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        from google import genai
+        client = genai.Client(api_key=gemini_key)
         prompt = _plan_prompt(archetypes, history, rationale, coverage)
-        resp = model.generate_content(prompt)
+        resp = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
         text = (resp.text or "").strip()
         return text or _plan_narrative_fallback(archetypes, history, rationale)
     except Exception as exc:  # noqa: BLE001
@@ -223,11 +222,10 @@ def _outcome_narrative(report, verdict, first_look, *,
         return _outcome_narrative_fallback(report, verdict, first_look)
 
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=gemini_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        from google import genai
+        client = genai.Client(api_key=gemini_key)
         prompt = _outcome_prompt(report, verdict, first_look)
-        resp = model.generate_content(prompt)
+        resp = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
         text = (resp.text or "").strip()
         return text or _outcome_narrative_fallback(report, verdict, first_look)
     except Exception as exc:  # noqa: BLE001
@@ -395,11 +393,10 @@ def _summary_narrative(runs, rate_7d, rate_30d, trend, surfaces,
         return _summary_narrative_fallback(runs, rate_7d, rate_30d, trend, surfaces)
 
     try:
-        import google.generativeai as genai
-        genai.configure(api_key=gemini_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        from google import genai
+        client = genai.Client(api_key=gemini_key)
         prompt = _summary_prompt(runs, rate_7d, rate_30d, trend, surfaces)
-        resp = model.generate_content(prompt)
+        resp = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
         text = (resp.text or "").strip()
         return text or _summary_narrative_fallback(
             runs, rate_7d, rate_30d, trend, surfaces)

@@ -1,14 +1,14 @@
 """
 Test setup for the QA agent.
 
-Stubs the heavy Google libraries (firestore, firebase-admin, generativeai)
+Stubs the heavy Google libraries (firestore, firebase-admin, genai)
 so the agent's logic can be unit-tested without provisioning credentials,
 network, or actual Cloud SDKs.
 
 The qa_agent module imports its way down through firestore_store →
-google.cloud.firestore, auth → firebase_admin, and corpus →
-google.generativeai. We stub each at the module level before any test
-imports the qa_agent package.
+google.cloud.firestore, auth → firebase_admin, and corpus / synthesizer
+/ narratives / main → google.genai. We stub each at the module level
+before any test imports the qa_agent package.
 """
 
 import sys
@@ -113,20 +113,25 @@ _fa_auth.create_custom_token = _create_custom_token
 _ensure_module('firebase_admin.credentials')
 
 
-# --- Stub google.generativeai -------------------------------------------------
-_genai = _ensure_module('google.generativeai')
-_genai.configure = lambda *_a, **_k: None
+# --- Stub google.genai -------------------------------------------------------
+# We register a fake `google.genai` module in sys.modules without touching
+# the parent `google` namespace — google-cloud-firestore (already installed
+# in test envs) provides the real `google` package, and shadowing it would
+# break `from google.cloud import firestore`.
+_genai = _ensure_module('google.genai')
 
 
-class _StubModel:
-    def __init__(self, *_a, **_k):
-        pass
-
+class _StubModels:
     def generate_content(self, *_a, **_k):
         return types.SimpleNamespace(text='')
 
 
-_genai.GenerativeModel = _StubModel
+class _StubGenaiClient:
+    def __init__(self, *_a, **_k):
+        self.models = _StubModels()
+
+
+_genai.Client = _StubGenaiClient
 
 
 # --- Stub functions_framework -----------------------------------------------

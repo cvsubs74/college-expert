@@ -115,17 +115,18 @@ def test_generate_variation_falls_back_when_no_api_key(monkeypatch):
 
 def test_generate_variation_falls_back_on_invalid_json(monkeypatch):
     monkeypatch.setenv('GEMINI_API_KEY', 'fake')
-    import google.generativeai as genai
+    from google import genai
 
-    class _BadModel:
+    class _Client:
         def __init__(self, *_a, **_k):
-            pass
-        def generate_content(self, *_a, **_k):
-            class R:
-                text = 'not json'
-            return R()
+            class _Models:
+                def generate_content(self, *_a, **_k):
+                    class R:
+                        text = 'not json'
+                    return R()
+            self.models = _Models()
 
-    monkeypatch.setattr(genai, 'GenerativeModel', _BadModel)
+    monkeypatch.setattr(genai, 'Client', _Client)
     archetype = {
         'id': 'x',
         'description': 'd',
@@ -139,22 +140,23 @@ def test_generate_variation_falls_back_on_invalid_json(monkeypatch):
 
 def test_generate_variation_strips_code_fences(monkeypatch):
     monkeypatch.setenv('GEMINI_API_KEY', 'fake')
-    import google.generativeai as genai
+    from google import genai
 
-    class _Model:
+    class _Client:
         def __init__(self, *_a, **_k):
-            pass
-        def generate_content(self, *_a, **_k):
-            class R:
-                text = (
-                    "```json\n"
-                    '{"student_name": "Sam Adler", "intended_major": "CS",'
-                    ' "extra_interest": "music", "gpa_delta": 0.1}\n'
-                    "```"
-                )
-            return R()
+            class _Models:
+                def generate_content(self, *_a, **_k):
+                    class R:
+                        text = (
+                            "```json\n"
+                            '{"student_name": "Sam Adler", "intended_major": "CS",'
+                            ' "extra_interest": "music", "gpa_delta": 0.1}\n'
+                            "```"
+                        )
+                    return R()
+            self.models = _Models()
 
-    monkeypatch.setattr(genai, 'GenerativeModel', _Model)
+    monkeypatch.setattr(genai, 'Client', _Client)
     archetype = {
         'id': 'x',
         'description': 'd',
@@ -170,17 +172,18 @@ def test_generate_variation_strips_code_fences(monkeypatch):
 
 def test_generate_variation_clamps_gpa_delta(monkeypatch):
     monkeypatch.setenv('GEMINI_API_KEY', 'fake')
-    import google.generativeai as genai
+    from google import genai
 
-    class _Model:
+    class _Client:
         def __init__(self, *_a, **_k):
-            pass
-        def generate_content(self, *_a, **_k):
-            class R:
-                text = '{"student_name": "X Y", "intended_major": "M", "extra_interest": "", "gpa_delta": 5.0}'
-            return R()
+            class _Models:
+                def generate_content(self, *_a, **_k):
+                    class R:
+                        text = '{"student_name": "X Y", "intended_major": "M", "extra_interest": "", "gpa_delta": 5.0}'
+                    return R()
+            self.models = _Models()
 
-    monkeypatch.setattr(genai, 'GenerativeModel', _Model)
+    monkeypatch.setattr(genai, 'Client', _Client)
     archetype = {
         'id': 'x',
         'description': 'd',
