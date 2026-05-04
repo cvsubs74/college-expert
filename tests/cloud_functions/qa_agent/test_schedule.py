@@ -208,3 +208,98 @@ class TestSaveSchedule:
         assert saved["times"] == ["07:00"]
         assert saved["updated_by"] == "admin@example.com"
         assert "updated_at" in saved
+
+
+# ---- interval frequency ----------------------------------------------------
+#
+# The "interval" frequency runs every N minutes. It bypasses the time-of-day
+# and day-of-week match — Cloud Scheduler's cron is the gate, and qa-agent
+# always runs when poked by an interval-mode poll.
+#
+# Why a separate frequency rather than a clever times[] list? Because
+# Cloud Scheduler must also be set to fire every N minutes for the runs
+# to actually happen — interval mode makes that contract explicit, and
+# means we don't have to pre-populate 48 entries in `times` for every-30m.
+# ---------------------------------------------------------------------------
+
+
+class TestIntervalFrequency:
+    def test_validate_accepts_interval_with_minutes(self):
+        import schedule
+        err = schedule.validate_schedule({
+            "frequency": "interval",
+            "interval_minutes": 30,
+            "timezone": "America/Los_Angeles",
+        })
+        assert err is None
+
+    def test_validate_rejects_interval_without_minutes(self):
+        import schedule
+        err = schedule.validate_schedule({
+            "frequency": "interval",
+            "timezone": "America/Los_Angeles",
+        })
+        assert err is not None
+        assert "interval_minutes" in err
+
+    @pytest.mark.parametrize("bad_value", [0, -1, 1441, "abc", None, 1.5])
+    def test_validate_rejects_bad_interval_minutes(self, bad_value):
+        import schedule
+        err = schedule.validate_schedule({
+            "frequency": "interval",
+            "interval_minutes": bad_value,
+            "timezone": "America/Los_Angeles",
+        })
+        assert err is not None
+
+    def test_should_run_now_always_true_for_interval(self):
+        import schedule
+        sched = {
+            "frequency": "interval",
+            "interval_minutes": 30,
+            "timezone": "UTC",
+        }
+        # Any time of day / any day of week should trigger.
+        for hour in (0, 6, 13, 23):
+            for minute in (0, 15, 30, 45):
+                now = datetime(2026, 5, 15, hour, minute, tzinfo=timezone.utc)
+                assert schedule.should_run_now(sched, now) is True, (
+                    f"interval mode should always fire; got False at {hour}:{minute:02d}"
+                )
+
+    def test_load_returns_interval_schedule_intact(self):
+        import schedule
+        stored = {
+            "frequency": "interval",
+            "interval_minutes": 30,
+            "timezone": "America/Los_Angeles",
+        }
+        class _Snap:
+            exists = True
+            def to_dict(self):
+                return stored
+        class _Doc:
+            def get(self):
+                return _Snap()
+        class _Coll:
+            def document(self, _id):
+                return _Doc()
+        class _DB:
+            def collection(self, _name):
+                return _Coll()
+
+        result = schedule.load_schedule(db=_DB())
+        assert result["frequency"] == "interval"
+        assert result["interval_minutes"] == 30
+
+    def test_off_still_overrides_interval(self):
+        """Frequency=off must short-circuit even if interval_minutes is set
+        — defensive: a malformed save shouldn't keep firing."""
+        import schedule
+        sched = {
+            "frequency": "off",
+            "interval_minutes": 30,
+            "timezone": "UTC",
+        }
+        now = datetime(2026, 5, 15, 12, 0, tzinfo=timezone.utc)
+        assert schedule.should_run_now(sched, now) is False
