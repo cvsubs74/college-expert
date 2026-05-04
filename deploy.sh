@@ -1146,6 +1146,11 @@ EOF
     # No --min-instances: cold starts are fine for an on-demand /
     # scheduled monitor. Memory bumped a notch above default to give
     # the LLM client + multiple in-flight HTTP calls headroom.
+    # max-instances=5: scheduled /run can take ~1 min and Gen 2 sets
+    # concurrency=1 per instance, so a /summary or /feedback hitting
+    # while a /run is in flight needs a second slot. Logs showed
+    # "no available instance" aborts ~13× per week at the previous
+    # max-instances=2 setting.
     # Service account: dedicated qa-agent SA with self-grant for
     # serviceAccountTokenCreator (mints custom tokens) + secretmanager
     # accessor + datastore.user. See docs/qa-agent-setup.md.
@@ -1165,7 +1170,7 @@ EOF
         --set-secrets="QA_ADMIN_TOKEN=qa-admin-token:latest,FIREBASE_WEB_API_KEY=firebase-web-api-key:latest,QA_TEST_USER_UID=qa-test-user-uid:latest" \
         --timeout=540s \
         --memory=512MB \
-        --max-instances=2
+        --max-instances=5
 
     QA_AGENT_URL=$(gcloud functions describe qa-agent --region=$REGION --gen2 --format='value(serviceConfig.uri)')
     echo -e "${GREEN}✓ QA Agent deployed: ${QA_AGENT_URL}${NC}"
