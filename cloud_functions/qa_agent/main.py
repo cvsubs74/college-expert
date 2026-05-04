@@ -387,6 +387,18 @@ def _pick_scenarios(cfg: dict, n: int, scenario_id_filter):
     static_n = max(1, n - len(synthesized))
     static_picks = corpus.select_scenarios(archetypes, history, n=static_n)
     chosen = synthesized + static_picks
+
+    # Defense-in-depth (PR #67 + this fix): normalize every archetype's
+    # colleges_template to canonical ids *before* the run record is
+    # written. Synthesized archetypes already validated against the
+    # cleaned allowlist (so this is a no-op for them in the happy
+    # path), but static archetypes don't go through validate_archetype
+    # — and a future regression (alias added back to a JSON file, or
+    # to the allowlist) would otherwise silently slip aliases into the
+    # run record. See docs/design/qa-college-id-canonicalization.md.
+    for a in chosen:
+        synthesizer.canonicalize_archetype(a)
+
     return {
         "ok": True,
         "error": None,
