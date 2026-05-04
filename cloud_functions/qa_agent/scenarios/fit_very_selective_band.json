@@ -1,0 +1,24 @@
+{
+    "id": "fit_very_selective_band",
+    "description": "Strong junior evaluated against University of Florida (KB acceptance ~24.2%, VERY_SELECTIVE per fit_computation.py's tier bucketing — 15-25% band). No selectivity floor or ceiling applies in this band, so the LLM has full latitude to land any of the 4 categories. The Phase 1 invariants verify the response is structurally correct without pinning a specific category.",
+    "business_rationale": "VERY_SELECTIVE schools are a real-world challenge for the algorithm: no hard floor or ceiling forces a specific category, so the LLM's judgement does the work. Synthetic monitoring of this band catches drift in the LLM's reasoning that the floor + ceiling rules in PRs #76/#78 wouldn't see — e.g., the model suddenly classifying a 24% school as SAFETY because it weighs profile strength too heavily.",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming", "research"]
+    },
+    "colleges_template": ["university_of_florida"],
+    "fit_target_college": "university_of_florida",
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "VERY_SELECTIVE band (15-25% acceptance): no floor + no ceiling, so any of {SAFETY, TARGET, REACH, SUPER_REACH} is technically valid; invariants verify structure",
+        "match_percentage falls in whichever band the chosen category declares",
+        "All four factors {Academic, Holistic, Major Fit, Selectivity} present with bounded scores",
+        "Selectivity factor in {-5, 0} band (per the rubric's 15-25% adjustment)",
+        "All 8 advisory blocks present and non-empty"
+    ]
+}
