@@ -327,7 +327,11 @@ def build_summary(runs: Iterable[dict],
     pass_rate_7d = _pass_rate_within(runs, now, days=7)
     pass_rate_30d = _pass_rate_within(runs, now, days=30)
     trend = _trend(pass_rate_7d, pass_rate_30d)
-    surfaces = _surface_health(runs, now, days=14)
+    # Surface health tracks the SAME recent-N window as pass_rate_recent
+    # so all dashboard signals are consistent. Previously surfaces used a
+    # 14-day window and showed yellow even when the recent-N runs were
+    # all clean — confusing the operator. Caught in prod 2026-05-04.
+    surfaces = _surface_health_recent(runs, recent_n_clamped)
 
     narrative = _summary_narrative(
         runs, pass_rate_recent, recent_n_clamped,
@@ -398,13 +402,44 @@ def _trend(rate_7d, rate_30d):
     return "steady"
 
 
+def _surface_health_recent(runs, n):
+    """Per-surface health over the most recent N runs (same window as
+    pass_rate_recent). Returns
+    {surface: {"total": int, "fails": int, "status": "green|yellow|red"}}.
+
+    Sorted defensively most-recent-first in case the caller doesn't
+    pre-sort. `total` is the count of scenarios touching that surface
+    in those N runs (NOT the run count — one run can have many
+    scenarios). Status thresholds:
+      - 0 fails  → green
+      - <20% fails → yellow
+      - >=20% fails → red
+    """
+    if not runs or n <= 0:
+        return {}
+    sorted_runs = sorted(
+        (r for r in runs if r.get("started_at")),
+        key=lambda r: r["started_at"],
+        reverse=True,
+    )[:n]
+    return _aggregate_surface_health(sorted_runs)
+
+
 def _surface_health(runs, now, *, days):
-    """Per-surface counts: total runs that touched it, runs that failed.
-    Returns {surface: {"total": int, "fails": int, "status": "green|yellow|red"}}."""
+    """Time-windowed surface health (legacy helper).
+
+    Kept for callers that need a calendar-day window rather than the
+    recent-N window. Use _surface_health_recent for the dashboard
+    signal that should track pass_rate_recent.
+    """
     bucket = _within(runs, now, days=days)
+    return _aggregate_surface_health(bucket)
+
+
+def _aggregate_surface_health(runs):
+    """Shared core: count fails-per-surface across the supplied runs."""
     by_surface: dict = {}
-    for r in bucket:
-        run_failed = (r.get("summary") or {}).get("fail", 0) > 0
+    for r in runs:
         for scenario in r.get("scenarios") or []:
             # Surfaces taken from the archetype, copied into the
             # scenario record at run time. If absent on legacy reports,
