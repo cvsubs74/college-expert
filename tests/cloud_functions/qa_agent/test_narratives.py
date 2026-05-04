@@ -448,3 +448,104 @@ class TestSummaryNarrativeTracksRecentN:
         # The prompt should pass the recent-N rate (100) and window (20).
         assert "100" in prompt
         assert "20" in prompt
+
+
+# ---- Surface health tracks recent-N ---------------------------------------
+# User feedback after the previous narrative fix:
+#   "The summary says ... profile, college_list, and roadmap remain yellow
+#    with 7/70 failures each. Do we have issues with the profile, college
+#    list and roadmap.. I thought everything is clean..?"
+#
+# Bug: pass_rate_recent uses the last N runs (just 5 → 100% pass) but
+# _surface_health was using a 14-day window — so the historical
+# failures were still showing up as yellow even though the recent-N
+# window is clean. The narrative pulled both, contradicting itself.
+# Fix: surface_health should also operate on the recent-N runs so all
+# dashboard signals track the same window.
+
+
+class TestSurfaceHealthTracksRecentN:
+    def _runs(self, *, num_old_failing, num_recent_passing, surface="profile"):
+        """Build a chronological list of runs touching one surface.
+        Most-recent first (matches list_recent_runs)."""
+        from datetime import datetime, timedelta, timezone
+        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        runs = []
+        for i in range(num_recent_passing):
+            runs.append({
+                "run_id": f"new_{i}",
+                "started_at": (base - timedelta(minutes=30 * i)).isoformat(),
+                "summary": {"total": 1, "pass": 1, "fail": 0},
+                "scenarios": [{
+                    "scenario_id": "x", "passed": True,
+                    "surfaces_covered": [surface], "steps": [],
+                }],
+            })
+        for i in range(num_old_failing):
+            runs.append({
+                "run_id": f"old_{i}",
+                "started_at": (base - timedelta(days=5, minutes=i)).isoformat(),
+                "summary": {"total": 1, "pass": 0, "fail": 1},
+                "scenarios": [{
+                    "scenario_id": "x", "passed": False,
+                    "surfaces_covered": [surface], "steps": [],
+                }],
+            })
+        return runs
+
+    def test_recent_clean_surfaces_green_even_when_history_dirty(self):
+        """The exact scenario the user flagged: 5 recent passing runs +
+        7 older failing runs → surfaces should be GREEN, not yellow."""
+        import narratives
+        runs = self._runs(num_old_failing=7, num_recent_passing=5)
+        result = narratives.build_summary(runs, recent_n=5)
+        surface = result["surfaces"]["profile"]
+        assert surface["status"] == "green", (
+            f"Surface should be green when recent N runs are all clean, "
+            f"got status={surface['status']!r} fails={surface['fails']}/{surface['total']}"
+        )
+        assert surface["fails"] == 0
+        assert surface["total"] == 5  # only the 5 recent runs counted
+
+    def test_recent_dirty_surface_shows_correct_color(self):
+        """If the recent N runs include failures, surface reflects that."""
+        import narratives
+        from datetime import datetime, timedelta, timezone
+        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        runs = []
+        # 5 most-recent runs: 4 pass + 1 fail = 20% fails → yellow
+        for i in range(4):
+            runs.append({
+                "run_id": f"pass_{i}",
+                "started_at": (base - timedelta(minutes=30 * i)).isoformat(),
+                "summary": {"total": 1, "pass": 1, "fail": 0},
+                "scenarios": [{
+                    "scenario_id": "x", "passed": True,
+                    "surfaces_covered": ["roadmap"], "steps": [],
+                }],
+            })
+        runs.append({
+            "run_id": "fail_0",
+            "started_at": (base - timedelta(minutes=120)).isoformat(),
+            "summary": {"total": 1, "pass": 0, "fail": 1},
+            "scenarios": [{
+                "scenario_id": "x", "passed": False,
+                "surfaces_covered": ["roadmap"], "steps": [],
+            }],
+        })
+        result = narratives.build_summary(runs, recent_n=5)
+        surface = result["surfaces"]["roadmap"]
+        assert surface["fails"] == 1
+        assert surface["total"] == 5
+        # 1/5 = 20% → boundary; allow yellow OR red. Just check NOT green.
+        assert surface["status"] in ("yellow", "red")
+
+    def test_surfaces_only_count_recent_n_runs(self):
+        """N=10 with 20 historical failing runs → surface 'total' is 10
+        (not 30 from the 14-day window)."""
+        import narratives
+        runs = self._runs(num_old_failing=20, num_recent_passing=10)
+        result = narratives.build_summary(runs, recent_n=10)
+        # The surface should only have counted the 10 recent runs.
+        assert result["surfaces"]["profile"]["total"] == 10
+        assert result["surfaces"]["profile"]["fails"] == 0
