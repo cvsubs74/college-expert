@@ -339,6 +339,74 @@ def factor_bounds_respected(
     return _check
 
 
+# ---- Cross-college category-rank ordering ---------------------------------
+#
+# When a single scenario exercises N >= 2 schools (the runner gets a
+# `fit_target_colleges` list), the same student's category-rank should
+# be monotonically non-decreasing as acceptance_rate increases. Equivalently:
+# a less-selective school can never have a *worse* category than a more-
+# selective one for the same student. We don't police within-band match-%
+# ordering — that's noisy and would generate flaky failures.
+
+_CATEGORY_RANK = {"SUPER_REACH": 0, "REACH": 1, "TARGET": 2, "SAFETY": 3}
+
+
+def check_category_rank_monotonic_with_selectivity(
+    fit_responses: list,
+) -> "list[AssertionResult]":
+    """Walk a list of (uni_id, http_ctx) tuples and check that the
+    fit categories rank monotonically with acceptance_rate.
+
+    Returns a list of AssertionResult — one per consecutive pair —
+    suitable for the runner to splice into a step record. Returns a
+    single skip-shaped pass when there are fewer than 2 valid fits
+    (so the step still has a record but doesn't false-positive).
+    """
+    extracted = []
+    for uni_id, ctx in fit_responses or []:
+        body = (ctx or {}).get("response_json") or {}
+        fa = body.get("fit_analysis") or {}
+        cat = fa.get("fit_category")
+        ar = fa.get("acceptance_rate")
+        if cat not in _CATEGORY_RANK or ar is None:
+            continue
+        try:
+            ar_num = float(ar)
+        except (TypeError, ValueError):
+            continue
+        extracted.append((uni_id, ar_num, cat, _CATEGORY_RANK[cat]))
+
+    if len(extracted) < 2:
+        return [AssertionResult(
+            name="match% monotonic with selectivity",
+            passed=True,
+            message=(
+                "(skipped — fewer than 2 valid fits to compare)"
+            ),
+        )]
+
+    # Sort by acceptance_rate ascending: most-selective first.
+    extracted.sort(key=lambda x: x[1])
+
+    results = []
+    for i in range(1, len(extracted)):
+        prev_uni, prev_ar, prev_cat, prev_rank = extracted[i - 1]
+        cur_uni, cur_ar, cur_cat, cur_rank = extracted[i]
+        ok = cur_rank >= prev_rank
+        msg = "" if ok else (
+            f"{cur_uni} (acc={cur_ar}%) is {cur_cat} but "
+            f"{prev_uni} (acc={prev_ar}%) is {prev_cat}; the same "
+            f"student should never get a WORSE fit category at a "
+            f"less-selective school"
+        )
+        results.append(AssertionResult(
+            name=f"category rank monotonic: {cur_uni} vs {prev_uni}",
+            passed=ok,
+            message=msg,
+        ))
+    return results
+
+
 def required_advisory_blocks_present(
     base_path: str = "fit_analysis",
 ) -> AssertionFn:

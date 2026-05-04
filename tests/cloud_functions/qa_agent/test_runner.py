@@ -594,3 +594,243 @@ class TestComputeFitStep:
             f"Expected timeout=90 on the fit poster call, "
             f"got kwargs={fit_calls[0]['kwargs']}"
         )
+
+
+# ---- compute_fit step (multi-target / cross-school ordering) ------------
+# Phase 2b: when an archetype carries `fit_target_colleges` (a list),
+# the runner runs a compute_fit step per school AND a final
+# fit_relative_ordering step that walks the collected responses and
+# asserts category-rank is monotonically non-decreasing with
+# acceptance_rate.
+
+
+def _scenario_with_fit_targets(unis):
+    s = _scenario()
+    s['id'] = 'fit_multi_demo'
+    s['colleges_template'] = list(unis)
+    s['fit_target_colleges'] = list(unis)
+    return s
+
+
+def _fit_resp_for(uni, *, category, match_pct, acc_rate):
+    return _ok({
+        'success': True,
+        'fit_analysis': {
+            'fit_category': category,
+            'match_percentage': match_pct,
+            'acceptance_rate': acc_rate,
+            'university_id': uni,
+            'university_name': uni.replace('_', ' ').title(),
+            'factors': [
+                {'name': 'Academic',    'score': 30, 'max': 40, 'detail': 'x'},
+                {'name': 'Holistic',    'score': 22, 'max': 30, 'detail': 'x'},
+                {'name': 'Major Fit',   'score': 11, 'max': 15, 'detail': 'x'},
+                {'name': 'Selectivity', 'score': -10, 'max': 5, 'detail': 'x'},
+            ],
+            'explanation': 'x',
+            'essay_angles': [{'essay_prompt': 'why', 'angle': 'x'}],
+            'application_timeline': {'recommended_plan': 'RD',
+                                     'deadline': '2027-01-01'},
+            'scholarship_matches': [{'name': 'Merit', 'amount': '$1k'}],
+            'test_strategy': {'recommendation': 'Submit'},
+            'major_strategy': {'intended_major': 'CS', 'is_available': True},
+            'demonstrated_interest_tips': ['visit'],
+            'red_flags_to_avoid': ['typos'],
+            'recommendations': [{'action': 'x'}],
+        },
+    })
+
+
+class TestComputeFitMultiTarget:
+    def test_one_compute_fit_step_per_target(self):
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_targets([
+            'massachusetts_institute_of_technology',
+            'university_of_california_berkeley',
+            'ohio_state_university',
+        ])
+        # We need a poster that returns a different fit response per
+        # school, so the cross-school ordering check has real data.
+        # _smart_poster picks the FIRST matching override per call;
+        # we use a per-call counter to walk through the responses.
+        fit_responses = {
+            'massachusetts_institute_of_technology': _fit_resp_for(
+                'massachusetts_institute_of_technology',
+                category='SUPER_REACH', match_pct=32, acc_rate=4.6,
+            ),
+            'university_of_california_berkeley': _fit_resp_for(
+                'university_of_california_berkeley',
+                category='REACH', match_pct=54, acc_rate=11.0,
+            ),
+            'ohio_state_university': _fit_resp_for(
+                'ohio_state_university',
+                category='SAFETY', match_pct=78, acc_rate=60.6,
+            ),
+        }
+
+        # Custom poster: pick fit response by university_id in body.
+        def _multi_poster(url, body=None, *, method='POST', params=None, **kw):
+            if 'compute-single-fit' in url and isinstance(body, dict):
+                uni = body.get('university_id')
+                resp = dict(fit_responses.get(uni, _ok({'success': False})))
+                resp.setdefault('url', url)
+                resp.setdefault('method', method)
+                resp.setdefault('request_body', body)
+                resp.setdefault('elapsed_ms', 50)
+                resp.setdefault('response_excerpt', '')
+                resp.setdefault('network_error', None)
+                return resp
+            # Defer to defaults for everything else.
+            return _smart_poster()(url, body, method=method, params=params, **kw)
+
+        result = runner.run_scenario(scenario, cfg, poster=_multi_poster)
+        fit_step_names = [s['name'] for s in result['steps']
+                          if s['name'].startswith('compute_fit:')]
+        assert len(fit_step_names) == 3
+        # All three school-specific steps should be present.
+        for uni in fit_responses:
+            assert any(uni in n for n in fit_step_names), (
+                f"missing compute_fit step for {uni}: {fit_step_names}"
+            )
+
+    def test_appends_relative_ordering_step_when_multi_target(self):
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_targets([
+            'massachusetts_institute_of_technology',
+            'ohio_state_university',
+        ])
+        fit_responses = {
+            'massachusetts_institute_of_technology': _fit_resp_for(
+                'massachusetts_institute_of_technology',
+                category='SUPER_REACH', match_pct=32, acc_rate=4.6,
+            ),
+            'ohio_state_university': _fit_resp_for(
+                'ohio_state_university',
+                category='SAFETY', match_pct=78, acc_rate=60.6,
+            ),
+        }
+
+        def _multi_poster(url, body=None, *, method='POST', params=None, **kw):
+            if 'compute-single-fit' in url and isinstance(body, dict):
+                uni = body.get('university_id')
+                resp = dict(fit_responses.get(uni, _ok({'success': False})))
+                resp.setdefault('url', url)
+                resp.setdefault('method', method)
+                resp.setdefault('request_body', body)
+                resp.setdefault('elapsed_ms', 50)
+                resp.setdefault('response_excerpt', '')
+                resp.setdefault('network_error', None)
+                return resp
+            return _smart_poster()(url, body, method=method, params=params, **kw)
+
+        result = runner.run_scenario(scenario, cfg, poster=_multi_poster)
+        ordering_steps = [s for s in result['steps']
+                          if s['name'] == 'fit_relative_ordering']
+        assert len(ordering_steps) == 1
+        # Correct ordering (SUPER_REACH at 4.6% < SAFETY at 60.6%)
+        # must pass.
+        assert ordering_steps[0]['passed'], ordering_steps[0]['assertions']
+
+    def test_ordering_step_fails_when_categories_inverted(self):
+        """The canonical regression: same student gets SAFETY at MIT
+        but TARGET at Ohio State — a worse category at a less-selective
+        school. The ordering step must catch this."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_targets([
+            'massachusetts_institute_of_technology',
+            'ohio_state_university',
+        ])
+        # WRONG: MIT classified easier than Ohio State.
+        fit_responses = {
+            'massachusetts_institute_of_technology': _fit_resp_for(
+                'massachusetts_institute_of_technology',
+                category='SAFETY', match_pct=80, acc_rate=4.6,
+            ),
+            'ohio_state_university': _fit_resp_for(
+                'ohio_state_university',
+                category='TARGET', match_pct=60, acc_rate=60.6,
+            ),
+        }
+
+        def _multi_poster(url, body=None, *, method='POST', params=None, **kw):
+            if 'compute-single-fit' in url and isinstance(body, dict):
+                uni = body.get('university_id')
+                resp = dict(fit_responses.get(uni, _ok({'success': False})))
+                resp.setdefault('url', url)
+                resp.setdefault('method', method)
+                resp.setdefault('request_body', body)
+                resp.setdefault('elapsed_ms', 50)
+                resp.setdefault('response_excerpt', '')
+                resp.setdefault('network_error', None)
+                return resp
+            return _smart_poster()(url, body, method=method, params=params, **kw)
+
+        result = runner.run_scenario(scenario, cfg, poster=_multi_poster)
+        ordering_step = next(s for s in result['steps']
+                             if s['name'] == 'fit_relative_ordering')
+        assert not ordering_step['passed']
+
+    def test_ordering_step_omitted_when_single_target(self):
+        """Single-target scenarios shouldn't sprout an ordering step."""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()  # uses fit_target_college (single)
+        overrides = [(
+            'compute-single-fit',
+            _good_fit_response('massachusetts_institute_of_technology'),
+        )]
+        result = runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides),
+        )
+        assert not any(s['name'] == 'fit_relative_ordering'
+                       for s in result['steps'])
+
+    def test_expected_category_pin_skipped_when_multi_target(self):
+        """A single-value fit_expected_category can't apply across
+        multiple schools at different tiers; the pin is skipped when
+        multi-target. (Per-school expectations could be added later.)"""
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_targets([
+            'massachusetts_institute_of_technology',
+            'ohio_state_university',
+        ])
+        # Set a pin that would obviously be wrong for one of the two
+        # schools — if the runner respected it, we'd see a key_equals
+        # assertion in one of the steps.
+        scenario['fit_expected_category'] = 'SUPER_REACH'
+        fit_responses = {
+            'massachusetts_institute_of_technology': _fit_resp_for(
+                'massachusetts_institute_of_technology',
+                category='SUPER_REACH', match_pct=32, acc_rate=4.6,
+            ),
+            'ohio_state_university': _fit_resp_for(
+                'ohio_state_university',
+                category='SAFETY', match_pct=78, acc_rate=60.6,
+            ),
+        }
+
+        def _multi_poster(url, body=None, *, method='POST', params=None, **kw):
+            if 'compute-single-fit' in url and isinstance(body, dict):
+                uni = body.get('university_id')
+                resp = dict(fit_responses.get(uni, _ok({'success': False})))
+                resp.setdefault('url', url)
+                resp.setdefault('method', method)
+                resp.setdefault('request_body', body)
+                resp.setdefault('elapsed_ms', 50)
+                resp.setdefault('response_excerpt', '')
+                resp.setdefault('network_error', None)
+                return resp
+            return _smart_poster()(url, body, method=method, params=params, **kw)
+
+        result = runner.run_scenario(scenario, cfg, poster=_multi_poster)
+        # Both school-specific compute_fit steps should pass — neither
+        # should sprout the SUPER_REACH equality pin (Ohio State at
+        # SAFETY would otherwise fail it).
+        fit_steps = [s for s in result['steps']
+                     if s['name'].startswith('compute_fit:')]
+        for s in fit_steps:
+            pinned = [a for a in s['assertions']
+                      if 'fit_category==' in a.get('name', '')]
+            assert pinned == [], (
+                f"Pin should be skipped on multi-target. Step={s['name']}, "
+                f"pinned={pinned}"
+            )

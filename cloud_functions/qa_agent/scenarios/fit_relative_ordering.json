@@ -1,0 +1,30 @@
+{
+    "id": "fit_relative_ordering",
+    "description": "Strong junior evaluated against three schools spanning the selectivity spectrum: MIT (ULTRA_SELECTIVE, ~4%), UC Berkeley (HIGHLY_SELECTIVE, ~11%), and Ohio State (ACCESSIBLE, ~60%). The cross-school assertion verifies that the same student's category-rank is monotonically non-decreasing as acceptance_rate increases — a test of the algorithm's internal consistency that no per-school invariant can catch.",
+    "business_rationale": "An algorithm that gives the same student a worse fit category at a less-selective school is broken in a way operators would notice and lose trust over (e.g., 'Sam is a SAFETY at MIT but TARGET at Ohio State?'). The per-school invariants in Phase 1 catch floor + ceiling violations independently; this cross-school scenario catches the harder bug class — internal inconsistency across tiers. It's our first algorithmic-quality test (vs. structural).",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming", "research"]
+    },
+    "colleges_template": [
+        "massachusetts_institute_of_technology",
+        "university_of_california_berkeley",
+        "ohio_state_university"
+    ],
+    "fit_target_colleges": [
+        "massachusetts_institute_of_technology",
+        "university_of_california_berkeley",
+        "ohio_state_university"
+    ],
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "Each per-school compute_fit step satisfies all 7 invariants (category whitelist, match-% range, floor, ceiling, factor bounds, advisory blocks)",
+        "Cross-school category-rank monotonic with selectivity: MIT (most selective) cannot rank higher than UC Berkeley, which cannot rank higher than Ohio State",
+        "Same student profile evaluated against 3 distinct selectivity tiers — exercises the algorithm's internal consistency"
+    ]
+}

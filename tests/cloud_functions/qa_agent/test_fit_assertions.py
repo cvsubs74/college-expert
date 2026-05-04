@@ -336,3 +336,127 @@ class TestRequiredAdvisoryBlocksPresent:
         r = check(_ctx(bad))
         assert not r.passed
         assert "recommendations" in (r.message or "")
+
+
+# ---- Cross-college category-rank ordering --------------------------------
+# Phase 2b: when the runner exercises N >= 2 schools in one scenario,
+# the same student's category-rank must be monotonically non-decreasing
+# as acceptance_rate increases (i.e. less selective → equal or higher
+# rank). Walks the previously-collected fit responses and returns a
+# list of AssertionResult so the runner can roll them into a step
+# record.
+#
+# Why category-rank, not raw match_percentage? Match-% noise within a
+# single category band would generate flaky failures on tied
+# selectivity tiers. Category-rank is the post-processor's
+# canonicalised view and is the right level of strictness.
+
+
+_CATEGORY_RANK = {"SUPER_REACH": 0, "REACH": 1, "TARGET": 2, "SAFETY": 3}
+
+
+def _fit_response(uni_id, *, category, match_pct, acc_rate):
+    """Helper to build a (uni_id, ctx) tuple shaped like what the
+    runner accumulates from compute_fit steps."""
+    return (uni_id, _ctx({
+        "fit_category": category,
+        "match_percentage": match_pct,
+        "acceptance_rate": acc_rate,
+        "factors": [],
+        "essay_angles": [], "application_timeline": {},
+        "scholarship_matches": [], "test_strategy": {},
+        "major_strategy": {}, "demonstrated_interest_tips": [],
+        "red_flags_to_avoid": [], "recommendations": [],
+        "explanation": "x",
+    }))
+
+
+class TestCategoryRankMonotonicWithSelectivity:
+    def test_passes_on_correct_ordering(self):
+        """MIT (4%, SUPER_REACH) → Berkeley (11%, REACH) → Ohio State
+        (60%, SAFETY) — the canonical "strong student gets safer
+        schools as selectivity drops" shape we observed in production."""
+        import fit_assertions
+        responses = [
+            _fit_response("mit", category="SUPER_REACH",
+                          match_pct=32, acc_rate=4.6),
+            _fit_response("ucb", category="REACH",
+                          match_pct=54, acc_rate=11.0),
+            _fit_response("osu", category="SAFETY",
+                          match_pct=78, acc_rate=60.6),
+        ]
+        results = fit_assertions.check_category_rank_monotonic_with_selectivity(
+            responses,
+        )
+        assert all(r.passed for r in results), [
+            (r.name, r.message) for r in results if not r.passed
+        ]
+
+    def test_fails_when_more_selective_school_ranks_higher(self):
+        """The canonical regression: same student lands SAFETY at
+        MIT (4%) but TARGET at Ohio State (60%). Ordering broken."""
+        import fit_assertions
+        responses = [
+            _fit_response("mit", category="SAFETY",  # ← bug
+                          match_pct=80, acc_rate=4.6),
+            _fit_response("osu", category="TARGET",  # ← bug
+                          match_pct=60, acc_rate=60.6),
+        ]
+        results = fit_assertions.check_category_rank_monotonic_with_selectivity(
+            responses,
+        )
+        assert any(not r.passed for r in results), (
+            f"Expected at least one failure: {[(r.name, r.passed) for r in results]}"
+        )
+
+    def test_passes_on_same_category_across_schools(self):
+        """Two SUPER_REACH schools with different match% within band
+        should still pass (we don't police within-band ordering — too
+        noisy)."""
+        import fit_assertions
+        responses = [
+            _fit_response("mit", category="SUPER_REACH",
+                          match_pct=32, acc_rate=4.6),
+            _fit_response("stanford", category="SUPER_REACH",
+                          match_pct=30, acc_rate=4.0),
+        ]
+        results = fit_assertions.check_category_rank_monotonic_with_selectivity(
+            responses,
+        )
+        assert all(r.passed for r in results)
+
+    def test_returns_skip_when_fewer_than_two_responses(self):
+        """A scenario with one (or zero) fit calls can't be checked
+        for ordering — return a single skip-shaped result so the
+        step still has a record but doesn't fail."""
+        import fit_assertions
+        results = fit_assertions.check_category_rank_monotonic_with_selectivity([])
+        assert len(results) == 1
+        assert results[0].passed
+        assert "skip" in results[0].message.lower() or "fewer" in results[0].message.lower()
+
+        results = fit_assertions.check_category_rank_monotonic_with_selectivity([
+            _fit_response("mit", category="SUPER_REACH",
+                          match_pct=32, acc_rate=4.6),
+        ])
+        assert len(results) == 1
+        assert results[0].passed
+
+    def test_skips_responses_missing_acceptance_rate_or_category(self):
+        """Defensive — if a fit response is malformed, skip that entry
+        rather than crash. The other responses are still checked."""
+        import fit_assertions
+        responses = [
+            _fit_response("mit", category="SUPER_REACH",
+                          match_pct=32, acc_rate=4.6),
+            ("malformed", _ctx({"fit_category": None, "acceptance_rate": None})),
+            _fit_response("osu", category="SAFETY",
+                          match_pct=78, acc_rate=60.6),
+        ]
+        results = fit_assertions.check_category_rank_monotonic_with_selectivity(
+            responses,
+        )
+        # mit (rank 0) and osu (rank 3) should still be compared and pass.
+        assert all(r.passed for r in results)
+        # And there must be at least one comparison made (not all skipped).
+        assert any("monotonic" in r.name.lower() for r in results)
