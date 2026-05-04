@@ -30,7 +30,11 @@ MAX_ACTIVE_ITEMS = 10
 MIN_TEXT_LEN = 5
 MAX_TEXT_LEN = 500
 DEFAULT_MAX_APPLIES = 5
-MAX_APPLIES_BOUND = 20
+# Upper bound on per-item max_applies. The dashboard exposes a "Never"
+# affordance for persistent steers that maps to this number — it's
+# above any realistic operator cycle so the steer effectively stays
+# active until manually dismissed via the X button.
+MAX_APPLIES_BOUND = 99
 
 DOC_PATH = ("qa_config", "feedback")
 
