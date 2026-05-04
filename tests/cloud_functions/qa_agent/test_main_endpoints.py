@@ -675,3 +675,143 @@ class TestPropagateArchetypeMetadata:
         assert result["passed"] is True
         assert result["steps"] == ["step1"]
         assert result["tests"] == ["t1"]
+
+
+# ---- /run/preview ---------------------------------------------------------
+
+
+class TestRunPreviewEndpoint:
+    def test_returns_picked_scenarios_without_running(self, qa_main, monkeypatch):
+        import corpus, firestore_store, runner
+        monkeypatch.setattr(corpus, "load_archetypes", lambda *a, **k: [
+            {"id": "scen_a", "description": "Scenario A",
+             "business_rationale": "Validates A.",
+             "surfaces_covered": ["profile"]},
+            {"id": "scen_b", "description": "Scenario B",
+             "surfaces_covered": ["roadmap"]},
+        ])
+        monkeypatch.setattr(corpus, "select_scenarios",
+                            lambda archetypes, history, n: archetypes[:n])
+        monkeypatch.setattr(firestore_store, "load_history", lambda *a, **k: {})
+
+        # Sentinels — these must NOT be invoked by /run/preview.
+        def _boom(*_a, **_k):
+            raise AssertionError(
+                "/run/preview must not run scenarios or write Firestore"
+            )
+        monkeypatch.setattr(runner, "run_scenario", _boom)
+        monkeypatch.setattr(firestore_store, "write_report", _boom)
+        monkeypatch.setattr(firestore_store, "update_history", _boom)
+
+        req = _FakeRequest(
+            method="POST",
+            path="/run/preview",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={"count": 2},
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        assert body["success"] is True
+        picked = body["picked"]
+        assert len(picked) == 2
+        ids = [p["id"] for p in picked]
+        assert "scen_a" in ids
+        a = next(p for p in picked if p["id"] == "scen_a")
+        assert a["description"] == "Scenario A"
+        assert a["business_rationale"] == "Validates A."
+        assert a["surfaces_covered"] == ["profile"]
+        assert "synth_count" in body
+        assert "static_count" in body
+
+    def test_requires_auth(self, qa_main):
+        req = _FakeRequest(method="POST", path="/run/preview", body={})
+        resp = qa_main.qa_agent(req)
+        assert resp.status_code == 401
+
+
+# ---- /run writes a 'running' Firestore doc at start ----------------------
+
+
+class TestRunHandlerRunningDoc:
+    def _stub_everything(self, qa_main, monkeypatch, captured_writes):
+        import auth, corpus, firestore_store, runner, narratives, synthesizer
+        monkeypatch.setattr(corpus, "load_archetypes", lambda *a, **k: [
+            {"id": "scen_a", "description": "A",
+             "surfaces_covered": ["profile"], "tests": ["t1"]},
+        ])
+        monkeypatch.setattr(corpus, "select_scenarios",
+                            lambda archetypes, history, n: archetypes[:n])
+        monkeypatch.setattr(corpus, "generate_variation", lambda a, **k: {})
+        monkeypatch.setattr(corpus, "apply_variation", lambda a, v: a)
+        monkeypatch.setattr(firestore_store, "load_history", lambda *a, **k: {})
+        monkeypatch.setattr(firestore_store, "list_recent_runs", lambda *a, **k: [])
+        monkeypatch.setattr(firestore_store, "update_history", lambda *a, **k: None)
+        monkeypatch.setattr(firestore_store, "write_report",
+                            lambda run_id, payload: captured_writes.append(
+                                {"run_id": run_id, "payload": payload}))
+        monkeypatch.setattr(synthesizer, "synthesize_scenarios", lambda **k: [])
+        monkeypatch.setattr(auth, "get_id_token", lambda *a, **k: "fake-id-token")
+        monkeypatch.setattr(runner, "run_scenario", lambda *a, **k: {
+            "scenario_id": "scen_a", "passed": True,
+            "duration_ms": 100, "steps": [],
+        })
+        monkeypatch.setattr(narratives, "build_plan", lambda *a, **k: {
+            "narrative": "p", "rationale": "rotation", "coverage": {}})
+        monkeypatch.setattr(narratives, "build_outcome", lambda *a, **k: {
+            "narrative": "o", "verdict": "all_pass", "first_look_at": []})
+
+    def test_writes_running_doc_before_executing(self, qa_main, monkeypatch):
+        captured = []
+        self._stub_everything(qa_main, monkeypatch, captured)
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={"count": 1, "trigger": "manual"},
+        )
+        status, body = _resp_payload(qa_main.qa_agent(req))
+        assert status == 200
+        # Two writes: first the running stub, then the final report.
+        assert len(captured) >= 2, (
+            f"expected >=2 write_report calls (running + complete), "
+            f"got {len(captured)}"
+        )
+        first = captured[0]
+        assert first["payload"]["status"] == "running"
+        scenarios = first["payload"]["scenarios"]
+        assert len(scenarios) == 1
+        assert scenarios[0]["scenario_id"] == "scen_a"
+        assert scenarios[0]["status"] == "pending"
+        assert scenarios[0]["passed"] is None
+
+    def test_final_doc_has_status_complete(self, qa_main, monkeypatch):
+        captured = []
+        self._stub_everything(qa_main, monkeypatch, captured)
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={"count": 1, "trigger": "manual"},
+        )
+        qa_main.qa_agent(req)
+        final = captured[-1]
+        assert final["payload"]["status"] == "complete"
+        assert final["run_id"] == captured[0]["run_id"]
+
+    def test_running_doc_carries_business_rationale(self, qa_main, monkeypatch):
+        captured = []
+        self._stub_everything(qa_main, monkeypatch, captured)
+        import corpus
+        monkeypatch.setattr(corpus, "load_archetypes", lambda *a, **k: [{
+            "id": "scen_a", "description": "A scenario",
+            "surfaces_covered": ["profile"],
+            "tests": ["t1"],
+            "business_rationale": "Why A matters.",
+        }])
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={"count": 1, "trigger": "manual"},
+        )
+        qa_main.qa_agent(req)
+        running = captured[0]["payload"]["scenarios"][0]
+        assert running["business_rationale"] == "Why A matters."
+        assert running["surfaces_covered"] == ["profile"]
