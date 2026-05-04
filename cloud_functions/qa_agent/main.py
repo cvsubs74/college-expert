@@ -289,6 +289,32 @@ def _propagate_archetype_metadata(scenario_result: dict, archetype: dict) -> Non
             scenario_result[field] = value
 
 
+def _collect_feedback_ids(scenarios) -> list:
+    """Flatten scenario.feedback_id values into a deduped list of strings.
+
+    The synthesizer LLM emits `feedback_id` either as a single string or
+    — when one scenario addresses multiple admin-feedback items — as a
+    JSON array of strings. Either form must end up as a flat list of
+    string ids so feedback.mark_applied can credit each one. Non-string
+    entries (None, ints, dicts) are silently skipped rather than crashing
+    the run.
+
+    Order preserves first-seen so the credit log is deterministic.
+    """
+    seen: list = []
+    for scen in scenarios or []:
+        fid = scen.get("feedback_id") if isinstance(scen, dict) else None
+        if isinstance(fid, str):
+            if fid and fid not in seen:
+                seen.append(fid)
+        elif isinstance(fid, list):
+            for entry in fid:
+                if isinstance(entry, str) and entry and entry not in seen:
+                    seen.append(entry)
+        # Anything else (None, int, dict, …) → skip silently.
+    return seen
+
+
 def _pick_scenarios(cfg: dict, n: int, scenario_id_filter):
     """Pick the scenarios for a run without executing them. Shared by
     /run (which then runs them) and /run/preview (which just shows
@@ -544,11 +570,7 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     # Credit feedback items that drove a synthesized scenario, so the
     # dashboard's applied_count reflects which notes the agent has
     # addressed and the auto-dismiss threshold can fire.
-    feedback_ids_used = []
-    for scenario in chosen:
-        fid = scenario.get("feedback_id")
-        if fid and fid not in feedback_ids_used:
-            feedback_ids_used.append(fid)
+    feedback_ids_used = _collect_feedback_ids(chosen)
     if feedback_ids_used:
         try:
             import feedback as feedback_mod  # noqa: WPS433
