@@ -181,6 +181,12 @@ def qa_agent(request):
         body.setdefault("actor", actor)
         return _cors(_handle_run(body, cfg))
 
+    if path == "run/preview" and request.method == "POST":
+        # Picks scenarios the same way /run would, but doesn't execute
+        # them. Lets the dashboard show a confirmation modal before the
+        # user commits 2-3 minutes of test-user state churn.
+        return _cors(_handle_run_preview(body, cfg))
+
     if path == "suggest-cause" and request.method == "POST":
         return _cors(_handle_suggest_cause(body, cfg))
 
@@ -282,56 +288,49 @@ def _propagate_archetype_metadata(scenario_result: dict, archetype: dict) -> Non
             scenario_result[field] = value
 
 
-def _handle_run(body: dict, cfg: dict) -> dict:
-    trigger = body.get("trigger", "manual")
-    scenario_id_filter = body.get("scenario") or request_arg(body, "scenario")
-    n = body.get("count") or cfg["DEFAULT_SCENARIO_COUNT"]
-    actor = body.get("actor", "anonymous")
+def _pick_scenarios(cfg: dict, n: int, scenario_id_filter):
+    """Pick the scenarios for a run without executing them. Shared by
+    /run (which then runs them) and /run/preview (which just shows
+    them to the user before they confirm).
 
-    # The hourly Cloud Scheduler poll fires with trigger=schedule_check.
-    # No-op unless the user-configured schedule says NOW is a run time.
-    if trigger == "schedule_check":
-        try:
-            current_schedule = schedule.load_schedule()
-            if not schedule.should_run_now(current_schedule, datetime.now(timezone.utc)):
-                logger.info("qa_agent: schedule_check skipped — not in window")
-                return {"success": True, "skipped": True}
-        except Exception as exc:  # noqa: BLE001
-            # If the schedule check itself errors, log + skip rather
-            # than silently running. A missed run is recoverable; a
-            # schedule-config error firing every hour is not.
-            logger.exception("qa_agent: schedule_check failed; skipping")
-            return {"success": False, "skipped": True, "error": str(exc)}
-
+    Returns a dict:
+      {
+        "ok": bool,
+        "error": str | None,            # set when ok=False
+        "archetypes": list,             # filtered archetype list
+        "history": dict,                # firestore_store.load_history result
+        "chosen": list,                 # synthesized + static
+        "synthesized": list,            # synth picks only
+        "static_picks": list,           # static picks only
+        "active_feedback": list,
+      }
+    """
     archetypes = corpus.load_archetypes()
     if not archetypes:
-        return {"success": False, "error": "no archetypes loaded"}
+        return {"ok": False, "error": "no archetypes loaded"}
 
     if scenario_id_filter:
         archetypes = [a for a in archetypes if a["id"] == scenario_id_filter]
         if not archetypes:
             return {
-                "success": False,
+                "ok": False,
                 "error": f"scenario not found: {scenario_id_filter}",
             }
 
     history = firestore_store.load_history([a["id"] for a in archetypes])
 
     # Hybrid select: synthesize some scenarios via LLM (when enabled),
-    # fill the rest from the static corpus. The synthesizer reads the
-    # last 20 runs + system_knowledge.md + colleges_allowlist.json to
-    # propose scenarios that target observed gaps. Falls back to all-
-    # static when QA_SYNTHESIS_COUNT=0 or LLM is unavailable.
+    # fill the rest from the static corpus. Falls back to all-static
+    # when QA_SYNTHESIS_COUNT=0 or LLM is unavailable.
     synth_n = 0 if scenario_id_filter else cfg["SYNTHESIS_COUNT"]
-    synthesized = []
+    synthesized: list = []
     # Feedback the admin left on the dashboard — passed into the
     # synthesizer prompt so it can target items the operator cares about.
-    # Loaded once here so we can also `mark_applied` after the run.
     active_feedback: list = []
     try:
         import feedback as feedback_mod  # noqa: WPS433
         active_feedback = feedback_mod.active_items()
-    except Exception as exc:  # noqa: BLE001 — feedback is non-critical
+    except Exception as exc:  # noqa: BLE001 — non-critical
         logger.warning("qa_agent: load feedback failed (%s); proceeding without", exc)
         active_feedback = []
 
@@ -356,12 +355,104 @@ def _handle_run(body: dict, cfg: dict) -> dict:
             logger.warning("qa_agent: synthesis failed (%s); using static only", exc)
             synthesized = []
 
-    # Top up: if the synthesizer produced fewer than requested (LLM
-    # decline / malformed output / all candidates rejected validation),
-    # take the slack from static so we still run `n` scenarios total.
+    # Top up: if the synthesizer produced fewer than requested, take
+    # the slack from static so we still get `n` scenarios total.
     static_n = max(1, n - len(synthesized))
     static_picks = corpus.select_scenarios(archetypes, history, n=static_n)
     chosen = synthesized + static_picks
+    return {
+        "ok": True,
+        "error": None,
+        "archetypes": archetypes,
+        "history": history,
+        "chosen": chosen,
+        "synthesized": synthesized,
+        "static_picks": static_picks,
+        "active_feedback": active_feedback,
+    }
+
+
+def _pending_scenario_stub(archetype: dict) -> dict:
+    """Build the placeholder scenario record written into the
+    status='running' qa_runs doc. Mirrors the final-record shape so
+    the frontend's existing scenario-card rendering mostly Just Works
+    while results are pending."""
+    return {
+        "scenario_id": archetype.get("id"),
+        "status": "pending",
+        "passed": None,
+        "description": archetype.get("description"),
+        "business_rationale": archetype.get("business_rationale"),
+        "surfaces_covered": archetype.get("surfaces_covered", []),
+        "tests": archetype.get("tests", []),
+        "synthesized": archetype.get("synthesized", False),
+        "synthesis_rationale": archetype.get("synthesis_rationale"),
+        "feedback_id": archetype.get("feedback_id"),
+        "steps": [],
+    }
+
+
+def _handle_run_preview(body: dict, cfg: dict) -> dict:
+    """Pick scenarios for a hypothetical /run without executing them.
+
+    Used by the dashboard's "Run now" button to show a confirmation
+    modal — the user sees what's about to be tested before committing
+    2-3 minutes of test-user state churn.
+
+    Spec: docs/prd/qa-run-preview-and-running-state.md.
+    """
+    scenario_id_filter = body.get("scenario") or request_arg(body, "scenario")
+    n = body.get("count") or cfg["DEFAULT_SCENARIO_COUNT"]
+    pick = _pick_scenarios(cfg, n, scenario_id_filter)
+    if not pick["ok"]:
+        return {"success": False, "error": pick["error"]}
+    picked = []
+    for archetype in pick["chosen"]:
+        picked.append({
+            "id": archetype.get("id"),
+            "description": archetype.get("description"),
+            "business_rationale": archetype.get("business_rationale"),
+            "surfaces_covered": archetype.get("surfaces_covered", []),
+            "synthesized": bool(archetype.get("synthesized")),
+            "synthesis_rationale": archetype.get("synthesis_rationale"),
+            "feedback_id": archetype.get("feedback_id"),
+        })
+    return {
+        "success": True,
+        "picked": picked,
+        "synth_count": len(pick["synthesized"]),
+        "static_count": len(pick["static_picks"]),
+    }
+
+
+def _handle_run(body: dict, cfg: dict) -> dict:
+    trigger = body.get("trigger", "manual")
+    scenario_id_filter = body.get("scenario") or request_arg(body, "scenario")
+    n = body.get("count") or cfg["DEFAULT_SCENARIO_COUNT"]
+    actor = body.get("actor", "anonymous")
+
+    # The hourly Cloud Scheduler poll fires with trigger=schedule_check.
+    # No-op unless the user-configured schedule says NOW is a run time.
+    if trigger == "schedule_check":
+        try:
+            current_schedule = schedule.load_schedule()
+            if not schedule.should_run_now(current_schedule, datetime.now(timezone.utc)):
+                logger.info("qa_agent: schedule_check skipped — not in window")
+                return {"success": True, "skipped": True}
+        except Exception as exc:  # noqa: BLE001
+            # If the schedule check itself errors, log + skip rather
+            # than silently running. A missed run is recoverable; a
+            # schedule-config error firing every hour is not.
+            logger.exception("qa_agent: schedule_check failed; skipping")
+            return {"success": False, "skipped": True, "error": str(exc)}
+
+    pick = _pick_scenarios(cfg, n, scenario_id_filter)
+    if not pick["ok"]:
+        return {"success": False, "error": pick["error"]}
+    archetypes = pick["archetypes"]
+    history = pick["history"]
+    chosen = pick["chosen"]
+    active_feedback = pick["active_feedback"]
 
     # Authenticate as the test user before running scenarios. If the
     # token mint fails, every scenario will fail predictably; we surface
@@ -390,6 +481,22 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     started = datetime.now(timezone.utc)
     run_id = f"run_{started.strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
 
+    # Write a status="running" doc with the picked scenarios as pending
+    # stubs BEFORE we start executing. This makes the run show up in
+    # the dashboard's Recent Runs immediately with a "Running" badge,
+    # and survives a page refresh while the run is in flight.
+    # See docs/prd/qa-run-preview-and-running-state.md.
+    firestore_store.write_report(run_id, {
+        "run_id": run_id,
+        "status": "running",
+        "started_at": started.isoformat(),
+        "trigger": trigger,
+        "actor": actor,
+        "summary": {"total": len(chosen), "pass": 0, "fail": 0},
+        "scenarios": [_pending_scenario_stub(a) for a in chosen],
+        "test_plan": test_plan,
+    })
+
     scenarios_results = []
     for archetype in chosen:
         variation = corpus.generate_variation(archetype, api_key=cfg["GEMINI_API_KEY"])
@@ -410,6 +517,9 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     }
     report = {
         "run_id": run_id,
+        # status="complete" flips the dashboard from the "Running"
+        # placeholder to the final pass/fail badge.
+        "status": "complete",
         "started_at": started.isoformat(),
         "ended_at": ended.isoformat(),
         "duration_ms": int((ended - started).total_seconds() * 1000),
