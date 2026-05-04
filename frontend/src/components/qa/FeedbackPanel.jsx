@@ -1,0 +1,176 @@
+import React, { useEffect, useState } from 'react';
+import { ChatBubbleBottomCenterTextIcon, XMarkIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { getFeedback, addFeedback, dismissFeedback } from '../../services/qaAgent';
+
+// Admin-authored notes that steer the next scheduled run's synthesizer.
+//
+// Spec: docs/prd/qa-feedback-loop.md, docs/design/qa-feedback-loop.md.
+//
+// Each item: {id, text, status, applied_count, max_applies,
+//             last_applied_run_id, last_applied_at}
+//
+// Items auto-dismiss after `max_applies` runs reference them. Admin can
+// dismiss any item early via the X button.
+
+const MAX_ACTIVE = 10;
+const MIN_TEXT = 5;
+const MAX_TEXT = 500;
+
+const FeedbackPanel = () => {
+    const [items, setItems] = useState([]);
+    const [draft, setDraft] = useState('');
+    const [busy, setBusy] = useState(false);
+    const [error, setError] = useState(null);
+    const [submitting, setSubmitting] = useState(false);
+
+    const refresh = async () => {
+        setBusy(true);
+        setError(null);
+        try {
+            const resp = await getFeedback();
+            if (resp?.success) setItems(resp.items || []);
+            else setError(resp?.error || "couldn't load feedback");
+        } catch (err) {
+            setError(err.message || "couldn't load feedback");
+        } finally {
+            setBusy(false);
+        }
+    };
+
+    useEffect(() => { refresh(); }, []);
+
+    const submitFeedback = async (e) => {
+        e?.preventDefault?.();
+        const trimmed = draft.trim();
+        if (trimmed.length < MIN_TEXT) {
+            setError(`feedback must be at least ${MIN_TEXT} characters`);
+            return;
+        }
+        setSubmitting(true);
+        setError(null);
+        try {
+            const resp = await addFeedback({ text: trimmed });
+            if (resp?.success) {
+                setDraft('');
+                await refresh();
+            } else {
+                setError(resp?.error || "couldn't save feedback");
+            }
+        } catch (err) {
+            setError(err.message || "couldn't save feedback");
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    const handleDismiss = async (id) => {
+        try {
+            await dismissFeedback(id);
+            await refresh();
+        } catch (err) {
+            setError(err.message || "couldn't dismiss");
+        }
+    };
+
+    const activeCount = items.length;
+    const atCap = activeCount >= MAX_ACTIVE;
+
+    return (
+        <div className="bg-white border border-[#E0DED8] rounded-xl p-5">
+            <div className="flex items-baseline justify-between mb-3 gap-2 flex-wrap">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-[#1A4D2E] flex items-center gap-2">
+                    <ChatBubbleBottomCenterTextIcon className="h-4 w-4" />
+                    Feedback to the QA agent
+                </h2>
+                <span className="text-xs text-[#8A8A8A]">
+                    {activeCount} of {MAX_ACTIVE} active
+                </span>
+            </div>
+
+            <p className="text-xs text-[#6B6B6B] mb-3">
+                Anything you type here gets included in the next scheduled run's
+                scenario design. Items auto-expire after 5 applied runs.
+            </p>
+
+            <form onSubmit={submitFeedback} className="mb-4">
+                <textarea
+                    value={draft}
+                    onChange={(e) => setDraft(e.target.value)}
+                    placeholder='e.g. "Focus on essay tracker after the recent ship."'
+                    disabled={submitting || atCap}
+                    rows={2}
+                    maxLength={MAX_TEXT}
+                    className="w-full border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30 resize-none disabled:opacity-50"
+                />
+                <div className="flex items-center justify-between mt-2 gap-3">
+                    <span className="text-[10px] text-[#8A8A8A]">
+                        {draft.length}/{MAX_TEXT}
+                        {atCap && ' · cap reached, dismiss an item to add more'}
+                    </span>
+                    <button
+                        type="submit"
+                        disabled={submitting || atCap || draft.trim().length < MIN_TEXT}
+                        className="px-4 py-1.5 bg-[#1A4D2E] text-white text-xs font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        {submitting ? 'Saving…' : 'Submit'}
+                    </button>
+                </div>
+            </form>
+
+            {error && (
+                <div className="mb-3 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2">
+                    {error}
+                </div>
+            )}
+
+            {busy && items.length === 0 ? (
+                <div className="text-xs text-[#8A8A8A] flex items-center gap-2">
+                    <ArrowPathIcon className="h-3.5 w-3.5 animate-spin" />
+                    Loading…
+                </div>
+            ) : items.length === 0 ? (
+                <p className="text-xs text-[#8A8A8A] italic">
+                    No active feedback. Add a note above to steer the next run.
+                </p>
+            ) : (
+                <ul className="space-y-2">
+                    {items.map((it) => (
+                        <li
+                            key={it.id}
+                            className="flex items-start justify-between gap-3 bg-[#FBFAF6] border border-[#E0DED8] rounded-lg p-3"
+                        >
+                            <div className="flex-1 min-w-0">
+                                <p className="text-sm text-[#1A2E1F]">{it.text}</p>
+                                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1 text-[10px] text-[#6B6B6B]">
+                                    <span className="font-mono">{it.id}</span>
+                                    <span>·</span>
+                                    <span>
+                                        applied {it.applied_count ?? 0}/{it.max_applies ?? 5}
+                                    </span>
+                                    {it.last_applied_run_id && (
+                                        <>
+                                            <span>·</span>
+                                            <span className="font-mono truncate">
+                                                last: {it.last_applied_run_id}
+                                            </span>
+                                        </>
+                                    )}
+                                </div>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => handleDismiss(it.id)}
+                                aria-label={`Dismiss ${it.id}`}
+                                className="flex-shrink-0 p-1 rounded-full text-[#8A8A8A] hover:text-rose-700 hover:bg-rose-50"
+                            >
+                                <XMarkIcon className="h-4 w-4" />
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+};
+
+export default FeedbackPanel;

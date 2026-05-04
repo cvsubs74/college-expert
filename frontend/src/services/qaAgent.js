@@ -159,3 +159,37 @@ export async function sendChatMessage({ question, history = [] }) {
     });
     return jsonOrThrow(resp);
 }
+
+// GET /feedback — list active feedback items the admin has left for
+// the QA agent. Returns { success, items: [{id, text, status,
+// applied_count, max_applies, ...}] }.
+export async function getFeedback() {
+    const resp = await fetch(`${QA_AGENT_URL}/feedback`, {
+        headers: await authHeader(),
+    });
+    return jsonOrThrow(resp);
+}
+
+// POST /feedback — add a new feedback item that the next scheduled run
+// will see in the synthesizer prompt. Body: { text }.
+export async function addFeedback({ text }) {
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(await authHeader()),
+    };
+    const resp = await fetch(`${QA_AGENT_URL}/feedback`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ text }),
+    });
+    return jsonOrThrow(resp);
+}
+
+// DELETE /feedback/<id> — dismiss the feedback item.
+export async function dismissFeedback(id) {
+    const resp = await fetch(`${QA_AGENT_URL}/feedback/${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+        headers: await authHeader(),
+    });
+    return jsonOrThrow(resp);
+}
