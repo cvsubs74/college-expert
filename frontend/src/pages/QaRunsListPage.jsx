@@ -1,7 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
+import {
+    ChartBarIcon,
+    QueueListIcon,
+    ChatBubbleLeftRightIcon,
+    AdjustmentsHorizontalIcon,
+} from '@heroicons/react/24/outline';
 import { db } from '../firebase';
-import SparklineByDay from '../components/qa/SparklineByDay';
 import RunNowPanel from '../components/qa/RunNowPanel';
 import RunsTable from '../components/qa/RunsTable';
 import ExecutiveSummary from '../components/qa/ExecutiveSummary';
@@ -10,21 +16,32 @@ import ChatPanel from '../components/qa/ChatPanel';
 import CoverageCard from '../components/qa/CoverageCard';
 import ResolvedIssuesCard from '../components/qa/ResolvedIssuesCard';
 import FeedbackPanel from '../components/qa/FeedbackPanel';
+import DashboardHeader from '../components/qa/DashboardHeader';
+import TabBar from '../components/qa/TabBar';
 import { getSummary } from '../services/qaAgent';
 
-// /qa-runs — admin-only list of recent QA runs.
+// /qa-runs — admin-only QA dashboard.
 //
-// Reads directly from Firestore via the Firebase SDK, gated by
-// security rules on qa_runs/. The frontend's AdminGate already 404s
-// non-admins; the rules are the hard gate at the data layer.
+// Reorganized 2026-05-04 into a tabbed layout (docs/prd/
+// qa-dashboard-tabbed-layout.md). Tab state lives in the URL
+// (?tab=overview|runs|ask|steer) so refresh and shared links land on
+// the right tab. Each tab's content is lazy-mounted so non-visible
+// tabs don't fire /summary or /feedback fetches on every page load.
+
+const TAB_IDS = ['overview', 'runs', 'ask', 'steer'];
+const DEFAULT_TAB = 'overview';
 
 const QaRunsListPage = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const rawTab = searchParams.get('tab');
+    const activeTab = TAB_IDS.includes(rawTab) ? rawTab : DEFAULT_TAB;
+
     const [runs, setRuns] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    // /summary response — shared by ExecutiveSummary + CoverageCard so
-    // both render from a single (Gemini-billable) fetch instead of
-    // two parallel ones.
+    // /summary response — shared by ExecutiveSummary, CoverageCard,
+    // ResolvedIssuesCard so all three render from a single Gemini-billable
+    // fetch instead of three parallel ones.
     const [summaryResp, setSummaryResp] = useState(null);
 
     const refresh = useCallback(async () => {
@@ -55,54 +72,107 @@ const QaRunsListPage = () => {
         refresh();
     }, [refresh]);
 
+    const setTab = (tabId) => {
+        // preserveExistingParams in case future query params get added.
+        const next = new URLSearchParams(searchParams);
+        next.set('tab', tabId);
+        setSearchParams(next, { replace: false });
+    };
+
+    const runningCount = runs.filter((r) => r.status === 'running').length;
+
+    const tabs = [
+        { id: 'overview', label: 'Overview', icon: ChartBarIcon },
+        { id: 'runs', label: 'Runs', icon: QueueListIcon, badge: runningCount },
+        { id: 'ask', label: 'Ask', icon: ChatBubbleLeftRightIcon },
+        { id: 'steer', label: 'Steer', icon: AdjustmentsHorizontalIcon },
+    ];
+
     return (
         <div className="min-h-screen bg-[#FDFCF7]">
-            <header className="bg-white border-b border-[#E0DED8] sticky top-0 z-40">
-                <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <div>
-                        <h1 className="text-xl font-bold text-[#1A4D2E]">QA Agent</h1>
-                        <p className="text-xs text-[#8A8A8A]">Internal — synthetic monitoring runs</p>
+            <DashboardHeader runs={runs} />
+            <TabBar tabs={tabs} activeId={activeTab} onChange={setTab} />
+
+            <main className="max-w-6xl mx-auto px-6 py-6">
+                {error && (
+                    <div className="mb-4 text-sm text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2">
+                        {error}
                     </div>
-                    <SparklineByDay runs={runs} />
-                </div>
-            </header>
+                )}
 
-            <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
-                <ExecutiveSummary />
-                <ChatPanel />
-                <FeedbackPanel />
-                <CoverageCard coverage={summaryResp?.coverage} />
-                <ResolvedIssuesCard resolvedIssues={summaryResp?.resolved_issues} />
-                <RunNowPanel onComplete={refresh} />
-                <ScheduleEditor />
-
-                <div>
-                    <div className="flex items-center justify-between mb-3">
-                        <h2 className="text-lg font-semibold text-[#1A2E1F]">Recent runs</h2>
-                        <button
-                            type="button"
-                            onClick={refresh}
-                            className="text-sm font-semibold text-[#1A4D2E] hover:text-[#2D6B45]"
-                            disabled={loading}
-                        >
-                            {loading ? 'Refreshing…' : 'Refresh'}
-                        </button>
+                {activeTab === 'overview' && (
+                    <div
+                        role="tabpanel"
+                        id="tab-panel-overview"
+                        aria-labelledby="tab-overview"
+                        className="space-y-4"
+                    >
+                        <RunNowPanel onComplete={refresh} />
+                        <ExecutiveSummary />
+                        <CoverageCard coverage={summaryResp?.coverage} />
+                        <ResolvedIssuesCard
+                            resolvedIssues={summaryResp?.resolved_issues}
+                        />
                     </div>
+                )}
 
-                    {error && (
-                        <div className="mb-3 text-sm text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2">
-                            {error}
+                {activeTab === 'runs' && (
+                    <div
+                        role="tabpanel"
+                        id="tab-panel-runs"
+                        aria-labelledby="tab-runs"
+                    >
+                        <div className="flex items-center justify-between mb-3">
+                            <h2 className="text-lg font-semibold text-[#1A2E1F]">
+                                Recent runs
+                                {runningCount > 0 && (
+                                    <span className="ml-2 text-xs font-normal text-amber-700">
+                                        ({runningCount} running)
+                                    </span>
+                                )}
+                            </h2>
+                            <button
+                                type="button"
+                                onClick={refresh}
+                                className="text-sm font-semibold text-[#1A4D2E] hover:text-[#2D6B45] disabled:opacity-50"
+                                disabled={loading}
+                            >
+                                {loading ? 'Refreshing…' : 'Refresh'}
+                            </button>
                         </div>
-                    )}
 
-                    {loading && runs.length === 0 ? (
-                        <div className="bg-white rounded-xl border border-[#E0DED8] p-8 text-center text-sm text-[#8A8A8A]">
-                            Loading…
-                        </div>
-                    ) : (
-                        <RunsTable runs={runs} />
-                    )}
-                </div>
+                        {loading && runs.length === 0 ? (
+                            <div className="bg-white rounded-xl border border-[#E0DED8] p-8 text-center text-sm text-[#8A8A8A]">
+                                Loading…
+                            </div>
+                        ) : (
+                            <RunsTable runs={runs} />
+                        )}
+                    </div>
+                )}
+
+                {activeTab === 'ask' && (
+                    <div
+                        role="tabpanel"
+                        id="tab-panel-ask"
+                        aria-labelledby="tab-ask"
+                    >
+                        <ChatPanel />
+                    </div>
+                )}
+
+                {activeTab === 'steer' && (
+                    <div
+                        role="tabpanel"
+                        id="tab-panel-steer"
+                        aria-labelledby="tab-steer"
+                        className="space-y-4"
+                    >
+                        <FeedbackPanel />
+                        <RunNowPanel onComplete={refresh} />
+                        <ScheduleEditor />
+                    </div>
+                )}
             </main>
         </div>
     );
