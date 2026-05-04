@@ -599,3 +599,79 @@ class TestScheduleCheckTrigger:
         assert status == 200
         assert body.get("skipped") is not True
         assert body.get("success") is True
+
+
+# ---- _propagate_archetype_metadata ----------------------------------------
+# Bug repro: business_rationale lives on the scenario JSON archetype but
+# the runner only sees the materialized profile/colleges, so without
+# explicit propagation the field never lands on the run-time scenario
+# record (and the dashboard can't render the "Why this matters" callout).
+# This helper copies the metadata over after each run completes.
+
+
+class TestPropagateArchetypeMetadata:
+    def test_always_sets_tests_and_surfaces_keys(self, qa_main):
+        """Downstream code relies on these keys existing — default to
+        empty containers when archetype omits them."""
+        result = {"scenario_id": "x", "passed": True}
+        qa_main._propagate_archetype_metadata(result, {})
+        assert result["tests"] == []
+        assert result["surfaces_covered"] == []
+
+    def test_propagates_tests_and_surfaces(self, qa_main):
+        result = {"scenario_id": "x", "passed": True}
+        archetype = {
+            "tests": ["a", "b"],
+            "surfaces_covered": ["profile", "roadmap"],
+        }
+        qa_main._propagate_archetype_metadata(result, archetype)
+        assert result["tests"] == ["a", "b"]
+        assert result["surfaces_covered"] == ["profile", "roadmap"]
+
+    def test_propagates_business_rationale_when_present(self, qa_main):
+        result = {"scenario_id": "x", "passed": True}
+        archetype = {
+            "business_rationale": "Validates the most common journey for our highest-engagement users.",
+        }
+        qa_main._propagate_archetype_metadata(result, archetype)
+        assert "business_rationale" in result
+        assert "highest-engagement" in result["business_rationale"]
+
+    def test_omits_business_rationale_when_absent(self, qa_main):
+        """Legacy archetypes without rationale shouldn't litter the
+        scenario record with null/empty fields."""
+        result = {"scenario_id": "x", "passed": True}
+        qa_main._propagate_archetype_metadata(result, {})
+        assert "business_rationale" not in result
+
+    def test_propagates_synthesized_marker_and_rationale(self, qa_main):
+        """LLM-synthesized scenarios carry these so the SynthesizedBadge
+        renders for them on the dashboard."""
+        result = {"scenario_id": "synth_x", "passed": True}
+        archetype = {
+            "synthesized": True,
+            "synthesis_rationale": "Targets an under-tested freshman summer fallback.",
+        }
+        qa_main._propagate_archetype_metadata(result, archetype)
+        assert result["synthesized"] is True
+        assert "freshman summer" in result["synthesis_rationale"]
+
+    def test_does_not_overwrite_runner_assigned_fields(self, qa_main):
+        """The runner already sets scenario_id/passed/duration_ms/etc. —
+        propagation must NOT clobber those even if archetype has the
+        same key (e.g., scenario_id matches archetype['id']). The helper
+        only touches the propagation list, not the runner's outputs."""
+        result = {
+            "scenario_id": "runner_assigned",
+            "passed": True,
+            "steps": ["step1"],
+        }
+        archetype = {
+            "scenario_id": "should_not_win",  # not in propagation list
+            "tests": ["t1"],
+        }
+        qa_main._propagate_archetype_metadata(result, archetype)
+        assert result["scenario_id"] == "runner_assigned"
+        assert result["passed"] is True
+        assert result["steps"] == ["step1"]
+        assert result["tests"] == ["t1"]

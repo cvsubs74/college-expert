@@ -233,6 +233,43 @@ def _handle_scenarios() -> dict:
 # ---- /run ------------------------------------------------------------------
 
 
+# Fields the runner doesn't see (because they live on the archetype, not
+# in the materialized profile/colleges) but the dashboard needs. Copied
+# from archetype → scenario record after each run completes.
+#
+# `tests` and `surfaces_covered`: dashboard renders bullets + uses these
+#   for surface-health aggregation in /summary.
+# `business_rationale` (PR-I): plain-English "why this matters" copy
+#   the dashboard renders in a callout above the test bullets. Optional
+#   — falls back to `description` on legacy data.
+# `synthesized` / `synthesis_rationale`: the LLM-generated marker + its
+#   own rationale, drives the SynthesizedBadge.
+_PROPAGATED_FIELDS = (
+    "tests",
+    "surfaces_covered",
+    "business_rationale",
+    "synthesized",
+    "synthesis_rationale",
+)
+
+
+def _propagate_archetype_metadata(scenario_result: dict, archetype: dict) -> None:
+    """Copy archetype-level fields onto the run-time scenario record.
+
+    Mutates scenario_result in place. Always sets `tests` and
+    `surfaces_covered` (defaulting to empty containers) so downstream
+    code can rely on the keys existing. Other fields are only copied
+    when present so legacy reports without them aren't littered with
+    nulls.
+    """
+    scenario_result["tests"] = archetype.get("tests", [])
+    scenario_result["surfaces_covered"] = archetype.get("surfaces_covered", [])
+    for field in ("business_rationale", "synthesized", "synthesis_rationale"):
+        value = archetype.get(field)
+        if value:
+            scenario_result[field] = value
+
+
 def _handle_run(body: dict, cfg: dict) -> dict:
     trigger = body.get("trigger", "manual")
     scenario_id_filter = body.get("scenario") or request_arg(body, "scenario")
@@ -334,11 +371,7 @@ def _handle_run(body: dict, cfg: dict) -> dict:
         variation = corpus.generate_variation(archetype, api_key=cfg["GEMINI_API_KEY"])
         materialized = corpus.apply_variation(archetype, variation)
         result = runner.run_scenario(materialized, run_cfg)
-        # Carry the archetype's `tests` bullets + surfaces_covered into
-        # each scenario record so the dashboard can render them and the
-        # /summary endpoint can aggregate by surface.
-        result["tests"] = archetype.get("tests", [])
-        result["surfaces_covered"] = archetype.get("surfaces_covered", [])
+        _propagate_archetype_metadata(result, archetype)
         scenarios_results.append(result)
         firestore_store.update_history(
             archetype["id"],
