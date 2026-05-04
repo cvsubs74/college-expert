@@ -115,3 +115,19 @@ export async function saveSchedule(schedule) {
     });
     return jsonOrThrow(resp);
 }
+
+// POST /chat — admin Q&A grounded in last-30-run history.
+// Body shape: { question, history: [{role, content}, ...] }
+// Returns:    { success, answer, model, context_run_count }
+export async function sendChatMessage({ question, history = [] }) {
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(await authHeader()),
+    };
+    const resp = await fetch(`${QA_AGENT_URL}/chat`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ question, history }),
+    });
+    return jsonOrThrow(resp);
+}
