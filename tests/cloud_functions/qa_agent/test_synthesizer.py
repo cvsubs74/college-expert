@@ -486,3 +486,131 @@ class TestCanonicalizeArchetype:
         synthesizer.canonicalize_archetype(None)
         synthesizer.canonicalize_archetype("not a dict")
         synthesizer.canonicalize_archetype(123)
+
+
+# ---- Phase 3: synthesizer can produce fit-focused archetypes ------------
+# The synthesizer LLM can now include fit_target_college (string) or
+# fit_target_colleges (list) on a generated archetype to trigger the
+# runner's compute_fit step. Validation enforces:
+#   - fit_target_college must be a string in the colleges_allowlist
+#   - fit_target_college must also appear in colleges_template
+#   - same rules per entry for fit_target_colleges
+# These checks prevent the LLM from inventing fit targets the runner
+# can't actually exercise.
+
+
+_FIT_ARCHETYPE_BASE = {
+    "id": "synth_fit_x",
+    "synthesized": True,
+    "synthesis_rationale": "Targets a fit-coverage gap.",
+    "description": "Senior, no scores, vs accessible school",
+    "tests": ["fit invariants hold"],
+    "default_student_name": "Test User",
+    "profile_template": {
+        "grade_level": "12th Grade",
+        "graduation_year": 2026,
+        "gpa": 3.8,
+        "intended_major": "Computer Science",
+        "interests": ["robotics"],
+    },
+    "colleges_template": ["mit", "stanford_university"],
+    "expected_template_used": "senior_fall",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+}
+
+
+class TestFitArchetypeValidation:
+    def test_fit_target_college_in_allowlist_passes(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["fit_target_college"] = "mit"
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert ok, err
+
+    def test_fit_target_college_must_be_string(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["fit_target_college"] = ["mit"]  # wrong type
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert not ok
+        assert "fit_target_college" in err
+
+    def test_fit_target_college_not_in_allowlist_fails(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["fit_target_college"] = "school_that_doesnt_exist"
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert not ok
+        assert "school_that_doesnt_exist" in err
+
+    def test_fit_target_college_must_appear_in_colleges_template(self):
+        """The runner adds colleges from colleges_template via
+        /add-to-list before calling /compute-single-fit. If the fit
+        target isn't on that list, the fit call would target a school
+        the test user hasn't added — invalid scenario."""
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["colleges_template"] = ["stanford_university"]  # no mit
+        archetype["fit_target_college"] = "mit"  # not in template
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert not ok
+        assert "colleges_template" in err
+
+    def test_fit_target_colleges_list_passes(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["fit_target_colleges"] = ["mit", "stanford_university"]
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert ok, err
+
+    def test_fit_target_colleges_must_be_a_list(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["fit_target_colleges"] = "mit"  # string, not list
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert not ok
+        assert "fit_target_colleges" in err
+
+    def test_fit_target_colleges_entries_must_be_in_allowlist(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["fit_target_colleges"] = ["mit", "fake_university"]
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert not ok
+        assert "fake_university" in err
+
+    def test_fit_target_colleges_entries_must_be_in_template(self):
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        archetype["colleges_template"] = ["mit"]  # only mit
+        archetype["fit_target_colleges"] = ["mit", "stanford_university"]
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert not ok
+        assert "stanford_university" in err
+
+    def test_archetype_without_any_fit_field_still_passes(self):
+        """Phase 3 is additive — non-fit archetypes are unchanged.
+        This is the existing happy path that must keep working."""
+        import synthesizer
+        archetype = dict(_FIT_ARCHETYPE_BASE)
+        # No fit_target_college, no fit_target_colleges
+        ok, err = synthesizer.validate_archetype(
+            archetype, COLLEGES_ALLOWLIST,
+        )
+        assert ok, err
