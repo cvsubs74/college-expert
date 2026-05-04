@@ -265,7 +265,10 @@ def _build_prompt(n, system_knowledge, history_summary, colleges_allowlist,
     feedback_instruction = (
         "\n7. If a scenario was designed to address an item from the ADMIN FEEDBACK "
         "section above, include the matching `feedback_id` in the scenario JSON "
-        '(e.g., "feedback_id": "fb_abc123") so the dashboard can credit it as applied.'
+        '(e.g., "feedback_id": "fb_abc123") so the dashboard can credit it as applied. '
+        'If a single scenario addresses multiple feedback items, you may pass an '
+        'array of ids instead (e.g., "feedback_id": ["fb_abc123", "fb_def456"]) — '
+        'each will be credited.'
         if feedback_items
         else ""
     )

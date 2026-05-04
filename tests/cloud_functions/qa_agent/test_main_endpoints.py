@@ -838,3 +838,67 @@ class TestRunHandlerRunningDoc:
         running = captured[0]["payload"]["scenarios"][0]
         assert running["business_rationale"] == "Why A matters."
         assert running["surfaces_covered"] == ["profile"]
+
+
+# ---- Feedback id collection -----------------------------------------------
+#
+# Bug repro: synthesizer LLM occasionally emits feedback_id as a JSON
+# array (e.g. ["fb_a", "fb_b"]) when a single scenario addresses multiple
+# admin-feedback items. The previous collection loop appended the raw
+# value, then mark_applied() called set([["fb_a","fb_b"]]) — TypeError
+# (unhashable list) — silently swallowed by the outer except. Net effect:
+# multi-feedback scenarios never got credited.
+
+
+class TestCollectFeedbackIds:
+    def test_collects_single_string_ids(self, qa_main):
+        scenarios = [
+            {"scenario_id": "a", "feedback_id": "fb_1"},
+            {"scenario_id": "b", "feedback_id": "fb_2"},
+        ]
+        assert qa_main._collect_feedback_ids(scenarios) == ["fb_1", "fb_2"]
+
+    def test_flattens_list_form_into_individual_ids(self, qa_main):
+        scenarios = [
+            {"scenario_id": "a", "feedback_id": ["fb_a", "fb_b"]},
+        ]
+        assert qa_main._collect_feedback_ids(scenarios) == ["fb_a", "fb_b"]
+
+    def test_handles_mixed_list_and_string_across_scenarios(self, qa_main):
+        scenarios = [
+            {"scenario_id": "a", "feedback_id": "fb_1"},
+            {"scenario_id": "b", "feedback_id": ["fb_2", "fb_3"]},
+            {"scenario_id": "c", "feedback_id": "fb_4"},
+        ]
+        assert qa_main._collect_feedback_ids(scenarios) == [
+            "fb_1", "fb_2", "fb_3", "fb_4",
+        ]
+
+    def test_dedupes_repeats_across_scenarios(self, qa_main):
+        scenarios = [
+            {"scenario_id": "a", "feedback_id": "fb_1"},
+            {"scenario_id": "b", "feedback_id": ["fb_1", "fb_2"]},
+            {"scenario_id": "c", "feedback_id": "fb_2"},
+        ]
+        assert qa_main._collect_feedback_ids(scenarios) == ["fb_1", "fb_2"]
+
+    def test_skips_missing_and_falsy(self, qa_main):
+        scenarios = [
+            {"scenario_id": "a"},                       # no key
+            {"scenario_id": "b", "feedback_id": None},  # null
+            {"scenario_id": "c", "feedback_id": ""},    # empty string
+            {"scenario_id": "d", "feedback_id": []},    # empty list
+            {"scenario_id": "e", "feedback_id": "fb_real"},
+        ]
+        assert qa_main._collect_feedback_ids(scenarios) == ["fb_real"]
+
+    def test_drops_non_string_entries_inside_lists(self, qa_main):
+        """An LLM occasionally emits {feedback_id: ["fb_a", null, 42]};
+        keep the strings, drop the rest — never raise."""
+        scenarios = [
+            {"scenario_id": "a", "feedback_id": ["fb_a", None, 42, "fb_b", ""]},
+        ]
+        assert qa_main._collect_feedback_ids(scenarios) == ["fb_a", "fb_b"]
+
+    def test_empty_input_returns_empty_list(self, qa_main):
+        assert qa_main._collect_feedback_ids([]) == []
