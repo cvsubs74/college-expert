@@ -299,13 +299,31 @@ def _outcome_narrative_fallback(report, verdict, first_look) -> str:
 
 
 def build_summary(runs: Iterable[dict],
-                  *, gemini_key: Optional[str] = None) -> dict:
-    """Executive summary for the dashboard top. Reads the recent runs
-    and computes pass rates + per-surface health, then optionally
-    decorates with an LLM narrative."""
+                  *,
+                  recent_n: int = 20,
+                  gemini_key: Optional[str] = None) -> dict:
+    """Executive summary for the dashboard top.
+
+    Reads the recent runs and computes:
+      - `pass_rate_recent`: pass rate over the most recent N runs
+        (PRIMARY signal for the dashboard pill — added because the
+        30-day average lags badly after a fix lands).
+      - `pass_rate_7d` / `pass_rate_30d`: time-windowed rates kept as
+        secondary context.
+      - per-surface health.
+      - LLM narrative on top.
+
+    `recent_n` is clamped to [5, 100] — out-of-range values get pulled
+    to the nearest bound rather than silently using the default, so the
+    UI selector can't accidentally show a mismatched number.
+    """
     runs = list(runs or [])
     now = datetime.now(timezone.utc)
 
+    # Clamp recent_n to a sane range.
+    recent_n_clamped = max(5, min(100, int(recent_n)))
+
+    pass_rate_recent = _pass_rate_recent(runs, recent_n_clamped)
     pass_rate_7d = _pass_rate_within(runs, now, days=7)
     pass_rate_30d = _pass_rate_within(runs, now, days=30)
     trend = _trend(pass_rate_7d, pass_rate_30d)
@@ -317,11 +335,32 @@ def build_summary(runs: Iterable[dict],
     )
     return {
         "narrative": narrative,
+        "pass_rate_recent": pass_rate_recent,
+        "recent_n": recent_n_clamped,
         "pass_rate_7d": pass_rate_7d,
         "pass_rate_30d": pass_rate_30d,
         "trend": trend,
         "surfaces": surfaces,
     }
+
+
+def _pass_rate_recent(runs, n):
+    """Pass rate over the N most-recent runs (by started_at). Assumes
+    the input is already sorted most-recent-first (firestore_store
+    .list_recent_runs returns it that way), but sorts defensively."""
+    if not runs:
+        return None
+    # Defensive sort: most recent first. Runs missing started_at sink.
+    sorted_runs = sorted(
+        (r for r in runs if r.get("started_at")),
+        key=lambda r: r["started_at"],
+        reverse=True,
+    )
+    bucket = sorted_runs[:n]
+    if not bucket:
+        return None
+    passes = sum(1 for r in bucket if (r.get("summary") or {}).get("fail", 0) == 0)
+    return round(100 * passes / len(bucket))
 
 
 def _within(runs, now, *, days):

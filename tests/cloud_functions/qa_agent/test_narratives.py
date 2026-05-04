@@ -269,3 +269,109 @@ class TestBuildSummary:
         result = narratives.build_summary([])
         assert result["pass_rate_7d"] is None or result["pass_rate_7d"] == 0
         assert result["narrative"]  # always returns SOMETHING even with no data
+
+
+class TestBuildSummaryRecentN:
+    """Configurable 'last N runs' health window — added because the
+    30-day average lags too long after a fix lands. The dashboard's
+    primary pill should reflect the most recent N runs."""
+
+    def _runs(self, pass_seq, *, base=None):
+        """Build runs from oldest→newest by passing a list of bools."""
+        from datetime import datetime, timedelta, timezone
+        base = base or datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        out = []
+        for i, passed in enumerate(pass_seq):
+            ts = base + timedelta(minutes=i * 30)
+            out.append({
+                "run_id": f"r{i}",
+                "started_at": ts.isoformat(),
+                "summary": {"total": 8, "pass": 8 if passed else 5,
+                            "fail": 0 if passed else 3},
+                "scenarios": [],
+            })
+        # Most-recent first to match what list_recent_runs returns.
+        return list(reversed(out))
+
+    def test_pass_rate_recent_uses_most_recent_n_only(self):
+        """20 most recent runs are 100% pass, but anything before that
+        was failing. pass_rate_recent should be 100, NOT a blended rate."""
+        import narratives
+        # Newest 20 all pass; older 30 all fail.
+        runs = self._runs([False] * 30 + [True] * 20)
+        result = narratives.build_summary(runs, recent_n=20)
+        assert result["pass_rate_recent"] == 100
+        assert result["recent_n"] == 20
+
+    def test_recent_n_with_partial_pass(self):
+        import narratives
+        # 20 most-recent: 15 pass, 5 fail = 75%
+        recent = [False] * 5 + [True] * 15  # before reverse → newest is True
+        runs = self._runs(recent)
+        result = narratives.build_summary(runs, recent_n=20)
+        assert result["pass_rate_recent"] == 75
+        assert result["recent_n"] == 20
+
+    def test_recent_n_smaller_than_run_count(self):
+        """N=5 with only 3 runs returns the rate over those 3, NOT zero."""
+        import narratives
+        runs = self._runs([True, True, False])  # 2/3 pass = 67%
+        result = narratives.build_summary(runs, recent_n=5)
+        assert result["pass_rate_recent"] == 67
+        assert result["recent_n"] == 5
+
+    def test_default_recent_n_is_20(self):
+        """When recent_n omitted, the helper uses a sensible default
+        documented in the design doc."""
+        import narratives
+        runs = self._runs([True] * 25)
+        result = narratives.build_summary(runs)
+        assert result["recent_n"] == 20
+        assert result["pass_rate_recent"] == 100
+
+    def test_recent_n_clamped_to_valid_range(self):
+        """Out-of-bounds N gets clamped (5..100) so the LLM/UI can't
+        accidentally pass nonsense."""
+        import narratives
+        runs = self._runs([True] * 30)
+        result_low = narratives.build_summary(runs, recent_n=2)
+        result_high = narratives.build_summary(runs, recent_n=999)
+        assert result_low["recent_n"] == 5
+        assert result_high["recent_n"] == 100
+
+    def test_pass_rate_recent_is_none_when_no_runs(self):
+        import narratives
+        result = narratives.build_summary([], recent_n=20)
+        assert result["pass_rate_recent"] is None
+        assert result["recent_n"] == 20
+
+    def test_pass_rate_recent_independent_of_30_day_window(self):
+        """A 30-day average can be 50% while the most-recent-20 are 100%
+        (the user-feedback scenario that motivated this PR)."""
+        import narratives
+        from datetime import datetime, timedelta, timezone
+        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        runs = []
+        # 20 old failing runs, 25 days ago each
+        for i in range(20):
+            runs.append({
+                "run_id": f"old_{i}",
+                "started_at": (base - timedelta(days=25, minutes=i)).isoformat(),
+                "summary": {"total": 8, "pass": 4, "fail": 4},
+                "scenarios": [],
+            })
+        # 20 new passing runs, last 12 hours
+        for i in range(20):
+            runs.append({
+                "run_id": f"new_{i}",
+                "started_at": (base - timedelta(minutes=30 * i)).isoformat(),
+                "summary": {"total": 8, "pass": 8, "fail": 0},
+                "scenarios": [],
+            })
+        # most-recent first
+        runs.sort(key=lambda r: r["started_at"], reverse=True)
+        result = narratives.build_summary(runs, recent_n=20)
+        # 30-day rate is blended, ~50%. Recent-20 should be 100%.
+        assert result["pass_rate_recent"] == 100
+        assert result["pass_rate_30d"] is not None
+        assert result["pass_rate_30d"] < 75
