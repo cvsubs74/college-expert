@@ -32,6 +32,87 @@ import ground_truth as ground_truth_mod
 logger = logging.getLogger(__name__)
 
 
+# ---- Date-aware expected template ------------------------------------------
+# Mirrors counselor_agent/planner.py::resolve_template_key (the
+# graduation_year + today path). Used by the runner to derive what
+# template_used the resolver SHOULD return for a given scenario, so
+# the assertion stays correct as the calendar advances.
+#
+# Why duplicate planner.py instead of calling it? Cross-function calls add
+# latency to every scenario run, and this mapping is small + stable
+# (locked in tests/cloud_functions/counselor_agent/test_planner.py).
+# If planner's grade/semester logic ever changes, update this too — the
+# tests in test_runner.py::TestExpectedTemplateForProfile pin the contract.
+
+# Templates that exist in planner.py's TEMPLATES dict. Summer falls back
+# to spring for grades that don't have a dedicated summer template.
+_TEMPLATE_KEYS = {
+    'freshman_fall', 'freshman_spring',
+    'sophomore_fall', 'sophomore_spring',
+    'junior_fall', 'junior_spring', 'junior_summer',
+    'senior_fall', 'senior_spring',
+}
+
+
+def _semester_from_month(month: int) -> str:
+    if 8 <= month <= 12:
+        return 'fall'
+    if 1 <= month <= 5:
+        return 'spring'
+    return 'summer'  # June, July
+
+
+def _grade_from_grad_year(grad_year: int, today: datetime) -> str:
+    """Mirrors planner.grade_name_from_graduation_year exactly.
+
+    Rule: each year out from graduation, the grade steps down by one — but
+    in the fall semester, students are already "in" their next grade level,
+    so fall maps to the higher grade. Caps at senior (no one is past senior
+    in this app).
+    """
+    years_until_grad = grad_year - today.year
+    semester = _semester_from_month(today.month)
+    if years_until_grad <= 0:
+        return 'senior'
+    if years_until_grad == 1:
+        return 'senior' if semester == 'fall' else 'junior'
+    if years_until_grad == 2:
+        return 'junior' if semester == 'fall' else 'sophomore'
+    if years_until_grad == 3:
+        return 'sophomore' if semester == 'fall' else 'freshman'
+    return 'freshman'
+
+
+def _expected_template_for(profile: dict, today: Optional[datetime] = None) -> Optional[str]:
+    """Compute the template the resolver should return for this profile,
+    given the current date. Returns None when graduation_year is missing
+    or unparseable — caller skips the assertion in that case.
+    """
+    if today is None:
+        today = datetime.now(timezone.utc)
+    raw = (profile or {}).get('graduation_year')
+    try:
+        grad_year = int(raw) if raw is not None else None
+    except (TypeError, ValueError):
+        return None
+    if grad_year is None:
+        return None
+
+    grade = _grade_from_grad_year(grad_year, today)
+    semester = _semester_from_month(today.month)
+
+    # Direct match if template exists; else summer falls back to spring
+    # (matches planner._compose_template_key fallback table).
+    candidate = f'{grade}_{semester}'
+    if candidate in _TEMPLATE_KEYS:
+        return candidate
+    if semester == 'summer':
+        spring_fallback = f'{grade}_spring'
+        if spring_fallback in _TEMPLATE_KEYS:
+            return spring_fallback
+    return None
+
+
 # ---- HTTP helper -----------------------------------------------------------
 
 
@@ -358,7 +439,13 @@ def run_scenario(
         {"user_email": cfg.test_user_email},
         id_token=cfg.id_token,
     )
-    expected_template = scenario.get("expected_template_used")
+    # Compute the expected template from (graduation_year, today) instead
+    # of trusting the scenario's static `expected_template_used` field.
+    # The static field is wrong any time the calendar season differs from
+    # what the scenario was originally named for (e.g., a "junior_fall"
+    # scenario run in May correctly resolves to "junior_spring").
+    # See _expected_template_for above + tests/.../test_runner.py.
+    expected_template = _expected_template_for(scenario.get("profile_template", {}))
     roadmap_asserts: List[assertions.AssertionFn] = [
         assertions.status_is_2xx(),
         assertions.key_equals("success", True),

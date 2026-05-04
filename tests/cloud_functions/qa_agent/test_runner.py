@@ -271,3 +271,141 @@ def test_runner_network_error_marks_step_failed():
     setup_step = result['steps'][0]
     assert any('refused' in a['message'] for a in setup_step['assertions']
                if not a['passed'])
+
+
+# ---------------------------------------------------------------------------
+# Date-aware expected-template computation
+#
+# The runner used to compare the resolver's metadata.template_used against
+# whatever the scenario file declared in `expected_template_used`. That
+# made every _fall and _summer scenario fail in spring (and vice versa)
+# because the resolver computes the template from (graduation_year, today).
+#
+# Fix: derive the expected template from (profile_template.graduation_year,
+# today) inside the runner, mirroring planner.resolve_template_key. The
+# scenario's static `expected_template_used` field is now advisory only —
+# kept as a human-readable hint, but not the assertion source.
+#
+# The helper reproduces planner.py's grade/semester mapping. If planner
+# changes, update the helper here too — the duplication is intentional
+# (cross-function call would add latency to every scenario), and these
+# tests pin the contract.
+# ---------------------------------------------------------------------------
+
+import pytest
+from datetime import datetime
+
+
+class TestExpectedTemplateForProfile:
+    @pytest.mark.parametrize('grad_year,today,expected', [
+        # Senior fall (Aug-Dec, graduating next year)
+        (2027, datetime(2026, 9, 15), 'senior_fall'),
+        (2027, datetime(2026, 12, 1), 'senior_fall'),
+        # Senior spring (Jan-May, graduating this year)
+        (2026, datetime(2026, 4, 1), 'senior_spring'),
+        (2026, datetime(2026, 1, 15), 'senior_spring'),
+        # Junior fall
+        (2028, datetime(2026, 9, 1), 'junior_fall'),
+        # Junior spring
+        (2027, datetime(2026, 4, 1), 'junior_spring'),
+        # Junior summer (the only summer template that exists)
+        (2027, datetime(2026, 7, 15), 'junior_summer'),
+        # Sophomore fall
+        (2029, datetime(2026, 9, 1), 'sophomore_fall'),
+        # Sophomore spring
+        (2028, datetime(2026, 3, 1), 'sophomore_spring'),
+        # Sophomore summer → falls back to sophomore_spring
+        (2028, datetime(2026, 7, 15), 'sophomore_spring'),
+        # Freshman fall
+        (2030, datetime(2026, 9, 1), 'freshman_fall'),
+        # Freshman spring
+        (2029, datetime(2026, 3, 1), 'freshman_spring'),
+        # Freshman summer → falls back to freshman_spring
+        (2029, datetime(2026, 7, 15), 'freshman_spring'),
+        # Already graduated → caps at senior_*
+        (2024, datetime(2026, 4, 1), 'senior_spring'),
+        (2024, datetime(2026, 9, 1), 'senior_fall'),
+    ])
+    def test_grad_year_and_today_map_to_template(self, grad_year, today, expected):
+        profile = {'graduation_year': grad_year}
+        assert runner._expected_template_for(profile, today=today) == expected
+
+    def test_returns_none_when_graduation_year_missing(self):
+        # No way to compute → return None so the runner skips the assertion.
+        assert runner._expected_template_for({}, today=datetime(2026, 5, 15)) is None
+        assert runner._expected_template_for(
+            {'graduation_year': None}, today=datetime(2026, 5, 15),
+        ) is None
+
+    def test_returns_none_when_graduation_year_unparseable(self):
+        # Treat a non-int graduation_year as missing — never crash the run.
+        assert runner._expected_template_for(
+            {'graduation_year': 'not a year'}, today=datetime(2026, 5, 15),
+        ) is None
+
+    def test_uses_today_arg_not_real_now(self):
+        # Inject a mid-July date — should pick junior_summer for a 2027 grad.
+        result = runner._expected_template_for(
+            {'graduation_year': 2027}, today=datetime(2026, 7, 15),
+        )
+        assert result == 'junior_summer'
+
+
+class TestRoadmapAssertionUsesComputedTemplate:
+    """Integration: the roadmap_generate step must assert the COMPUTED
+    template (date-aware), not the scenario file's static field. Pre-fix,
+    today=May 2026 + scenario claiming 'junior_fall' would FAIL the
+    assertion even though the resolver was correctly returning
+    'junior_spring'."""
+
+    def test_assertion_uses_computed_template(self, monkeypatch):
+        scenario = _scenario()
+        # Pretend the helper computes 'junior_summer' regardless of the
+        # scenario's static field — the assertion MUST track the helper.
+        monkeypatch.setattr(runner, '_expected_template_for',
+                            lambda profile, today=None: 'junior_summer')
+        cfg = _make_cfg()
+
+        # Roadmap returns junior_summer — should match the helper.
+        overrides = [(
+            'roadmap',
+            _ok({
+                'success': True,
+                'metadata': {
+                    'template_used': 'junior_summer',
+                    'resolution_source': 'profile',
+                },
+                'roadmap': {'phases': [{'id': 'p', 'name': 'p', 'tasks': []}]},
+            }),
+        )]
+        result = runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides),
+        )
+        roadmap_step = next(s for s in result['steps'] if s['name'] == 'roadmap_generate')
+        assert roadmap_step['passed'], (
+            f"roadmap_generate should pass when helper-computed template "
+            f"matches the response. Failures: "
+            f"{[a for a in roadmap_step['assertions'] if not a['passed']]}"
+        )
+
+    def test_assertion_skipped_when_helper_returns_none(self, monkeypatch):
+        """If we can't compute an expected template (no graduation_year),
+        the assertion is skipped — not asserted against the static field."""
+        scenario = _scenario()
+        scenario['profile_template'].pop('graduation_year', None)
+        scenario['expected_template_used'] = 'whatever_fall'  # would fail if used
+        cfg = _make_cfg()
+
+        monkeypatch.setattr(runner, '_expected_template_for',
+                            lambda profile, today=None: None)
+
+        result = runner.run_scenario(scenario, cfg, poster=_smart_poster())
+        roadmap_step = next(s for s in result['steps'] if s['name'] == 'roadmap_generate')
+        template_eq_assertions = [
+            a for a in roadmap_step['assertions']
+            if 'template_used==' in a.get('name', '')
+        ]
+        assert template_eq_assertions == [], (
+            f"Should skip template_used equality check when helper returns "
+            f"None. Found: {template_eq_assertions}"
+        )
