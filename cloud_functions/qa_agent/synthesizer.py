@@ -194,6 +194,7 @@ def synthesize_scenarios(
     history: List[dict],
     system_knowledge: str,
     colleges_allowlist: List[str],
+    feedback_items: Optional[List[dict]] = None,
     valid_templates: Optional[Set[str]] = None,
     max_colleges: int = 8,
     gemini_key: Optional[str] = None,
@@ -202,6 +203,11 @@ def synthesize_scenarios(
     """Returns up to `n` validated synthesized archetypes. Empty list on
     any failure (no key, malformed output, all candidates invalid).
     Caller fills the slack with static archetypes.
+
+    `feedback_items` (PR-N): admin-authored notes that steer scenario
+    design — prioritized in the prompt with their stable IDs so the LLM
+    can stamp generated scenarios with `feedback_id` for credit
+    tracking.
     """
     if not gemini_key or n <= 0:
         return []
@@ -212,7 +218,10 @@ def synthesize_scenarios(
         import google.generativeai as genai
         genai.configure(api_key=gemini_key)
         gen_model = genai.GenerativeModel(model)
-        prompt = _build_prompt(n, system_knowledge, history_summary, colleges_allowlist)
+        prompt = _build_prompt(
+            n, system_knowledge, history_summary, colleges_allowlist,
+            feedback_items=feedback_items,
+        )
         resp = gen_model.generate_content(prompt)
         raw = (resp.text or "").strip()
     except Exception as exc:  # noqa: BLE001
@@ -250,9 +259,18 @@ def synthesize_scenarios(
 # ---- Prompt + parsing -----------------------------------------------------
 
 
-def _build_prompt(n, system_knowledge, history_summary, colleges_allowlist) -> str:
+def _build_prompt(n, system_knowledge, history_summary, colleges_allowlist,
+                  *, feedback_items=None) -> str:
+    feedback_section = _format_feedback_section(feedback_items or [])
+    feedback_instruction = (
+        "\n7. If a scenario was designed to address an item from the ADMIN FEEDBACK "
+        "section above, include the matching `feedback_id` in the scenario JSON "
+        '(e.g., "feedback_id": "fb_abc123") so the dashboard can credit it as applied.'
+        if feedback_items
+        else ""
+    )
     return f"""You are a senior QA engineer planning the next test pass for a college admissions app. Your job is to synthesize {n} test scenarios that target gaps and risks observed in recent test history.
-
+{feedback_section}
 # System you're testing
 {system_knowledge}
 
@@ -279,7 +297,7 @@ Generate exactly {n} test scenarios in JSON. Each scenario MUST:
    Good example: "Confirms that brand-new 9th graders get a useful, age-appropriate roadmap right away — the first impression for our youngest cohort and a common drop-off point if the dashboard feels empty."
    Bad example: "Tests freshman_fall template resolution." (technical, no business framing)
 5. Include a `tests` field — 3-5 plain-English bullets describing what the scenario verifies.
-6. Use a valid `expected_template_used`: one of [freshman_fall, freshman_spring, sophomore_fall, sophomore_spring, junior_fall, junior_spring, junior_summer, senior_fall, senior_spring].
+6. Use a valid `expected_template_used`: one of [freshman_fall, freshman_spring, sophomore_fall, sophomore_spring, junior_fall, junior_spring, junior_summer, senior_fall, senior_spring].{feedback_instruction}
 
 Return STRICT JSON ONLY (no markdown, no commentary):
 {{
@@ -306,6 +324,28 @@ Return STRICT JSON ONLY (no markdown, no commentary):
   ]
 }}
 """
+
+
+def _format_feedback_section(items) -> str:
+    """Render active admin feedback as a prompt section. Returns empty
+    string when there are no items so the prompt looks clean."""
+    if not items:
+        return ""
+    lines = [
+        "",
+        "# ADMIN FEEDBACK (steers scenario design — prioritize addressing these)",
+        "Use the IDs below as `feedback_id` in any scenario you design to address an item.",
+        "",
+    ]
+    for it in items:
+        applied = it.get("applied_count", 0)
+        max_a = it.get("max_applies", 5)
+        lines.append(
+            f"- {it.get('id', '<no-id>')}: {it.get('text', '')} "
+            f"(applied {applied}/{max_a})"
+        )
+    lines.append("")
+    return "\n".join(lines)
 
 
 def _parse_json(raw: str) -> Optional[dict]:

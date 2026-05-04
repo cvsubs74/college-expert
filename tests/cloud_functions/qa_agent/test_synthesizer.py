@@ -271,3 +271,80 @@ class TestHistorySummary:
         ]
         summary = synthesizer.summarize_history(runs)
         assert "broken" in str(summary.get("recent_failures", []))
+
+
+# ---- Feedback in the synthesizer prompt -----------------------------------
+# PR-N: admin-authored notes get formatted into the prompt with their
+# stable IDs so the LLM can stamp generated scenarios with feedback_id.
+
+
+class TestFeedbackInPrompt:
+    def _bare_history(self):
+        return {"runs_in_window": 0, "surface_coverage": {},
+                "scenarios_seen": {}, "recent_failures": [],
+                "gpa_buckets": {}}
+
+    def test_omits_feedback_section_when_no_items(self):
+        import synthesizer
+        prompt = synthesizer._build_prompt(
+            2, "(stub)", self._bare_history(), ["mit"],
+            feedback_items=None,
+        )
+        assert "ADMIN FEEDBACK" not in prompt
+
+    def test_omits_feedback_section_when_empty_list(self):
+        import synthesizer
+        prompt = synthesizer._build_prompt(
+            2, "(stub)", self._bare_history(), ["mit"],
+            feedback_items=[],
+        )
+        assert "ADMIN FEEDBACK" not in prompt
+
+    def test_includes_feedback_section_when_items_present(self):
+        import synthesizer
+        prompt = synthesizer._build_prompt(
+            2, "(stub)", self._bare_history(), ["mit"],
+            feedback_items=[
+                {"id": "fb_abc", "text": "Focus on essay tracker",
+                 "applied_count": 1, "max_applies": 5},
+                {"id": "fb_xyz", "text": "Verify UC group fix",
+                 "applied_count": 0, "max_applies": 5},
+            ],
+        )
+        assert "ADMIN FEEDBACK" in prompt
+        assert "fb_abc" in prompt
+        assert "Focus on essay tracker" in prompt
+        assert "fb_xyz" in prompt
+        # Prompt must instruct the LLM to stamp scenarios with
+        # feedback_id so applied_count can be credited.
+        assert "feedback_id" in prompt
+
+    def test_synthesize_scenarios_passes_feedback_through(self, monkeypatch):
+        """End-to-end: synthesize_scenarios receives feedback_items and
+        the prompt fed to Gemini contains them."""
+        import synthesizer
+        import google.generativeai as genai
+        captured = {}
+
+        class _Model:
+            def __init__(self, *_a, **_k):
+                pass
+            def generate_content(self, prompt, *_a, **_k):
+                captured["prompt"] = prompt
+                class R:
+                    text = '{"scenarios": []}'
+                return R()
+        monkeypatch.setattr(genai, "GenerativeModel", _Model)
+
+        synthesizer.synthesize_scenarios(
+            n=1,
+            history=[],
+            system_knowledge="(stub)",
+            colleges_allowlist=["mit"],
+            feedback_items=[{"id": "fb_xyz", "text": "Test essay tracker",
+                             "applied_count": 0, "max_applies": 5}],
+            gemini_key="fake-key",
+        )
+        assert "ADMIN FEEDBACK" in captured["prompt"]
+        assert "fb_xyz" in captured["prompt"]
+        assert "essay tracker" in captured["prompt"].lower()

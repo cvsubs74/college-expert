@@ -209,6 +209,16 @@ def qa_agent(request):
         result, status = chat.handle_chat(body, cfg)
         return _cors(result, status)
 
+    # /feedback — admin notes that steer the next scheduled run.
+    # Spec: docs/prd/qa-feedback-loop.md + docs/design/qa-feedback-loop.md.
+    if path == "feedback" and request.method == "GET":
+        return _cors(_handle_get_feedback())
+    if path == "feedback" and request.method == "POST":
+        return _cors(_handle_post_feedback(body, actor))
+    if path.startswith("feedback/") and request.method == "DELETE":
+        item_id = path[len("feedback/"):]
+        return _cors(_handle_delete_feedback(item_id))
+
     return _cors({"success": False, "error": f"unknown path: {path}"}, 404)
 
 
@@ -250,6 +260,7 @@ _PROPAGATED_FIELDS = (
     "business_rationale",
     "synthesized",
     "synthesis_rationale",
+    "feedback_id",
 )
 
 
@@ -264,7 +275,8 @@ def _propagate_archetype_metadata(scenario_result: dict, archetype: dict) -> Non
     """
     scenario_result["tests"] = archetype.get("tests", [])
     scenario_result["surfaces_covered"] = archetype.get("surfaces_covered", [])
-    for field in ("business_rationale", "synthesized", "synthesis_rationale"):
+    for field in ("business_rationale", "synthesized", "synthesis_rationale",
+                  "feedback_id"):
         value = archetype.get(field)
         if value:
             scenario_result[field] = value
@@ -312,6 +324,17 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     # static when QA_SYNTHESIS_COUNT=0 or LLM is unavailable.
     synth_n = 0 if scenario_id_filter else cfg["SYNTHESIS_COUNT"]
     synthesized = []
+    # Feedback the admin left on the dashboard — passed into the
+    # synthesizer prompt so it can target items the operator cares about.
+    # Loaded once here so we can also `mark_applied` after the run.
+    active_feedback: list = []
+    try:
+        import feedback as feedback_mod  # noqa: WPS433
+        active_feedback = feedback_mod.active_items()
+    except Exception as exc:  # noqa: BLE001 — feedback is non-critical
+        logger.warning("qa_agent: load feedback failed (%s); proceeding without", exc)
+        active_feedback = []
+
     if synth_n > 0:
         try:
             recent_runs = firestore_store.list_recent_runs(limit=20)
@@ -322,6 +345,7 @@ def _handle_run(body: dict, cfg: dict) -> dict:
                 history=recent_runs,
                 system_knowledge=system_knowledge,
                 colleges_allowlist=allowlist,
+                feedback_items=active_feedback,
                 gemini_key=cfg["GEMINI_API_KEY"],
             )
             logger.info(
@@ -404,6 +428,22 @@ def _handle_run(body: dict, cfg: dict) -> dict:
     firestore_store.write_report(run_id, report)
     logger.info("qa_agent: run %s complete — %d pass / %d fail",
                 run_id, summary["pass"], summary["fail"])
+
+    # Credit feedback items that drove a synthesized scenario, so the
+    # dashboard's applied_count reflects which notes the agent has
+    # addressed and the auto-dismiss threshold can fire.
+    feedback_ids_used = []
+    for scenario in chosen:
+        fid = scenario.get("feedback_id")
+        if fid and fid not in feedback_ids_used:
+            feedback_ids_used.append(fid)
+    if feedback_ids_used:
+        try:
+            import feedback as feedback_mod  # noqa: WPS433
+            feedback_mod.mark_applied(feedback_ids_used, run_id=run_id)
+        except Exception as exc:  # noqa: BLE001 — non-critical
+            logger.warning("qa_agent: mark_applied failed (%s)", exc)
+
     return {"success": True, "run_id": run_id, "summary": summary}
 
 
@@ -494,6 +534,51 @@ def _handle_post_dashboard_prefs(body: dict, actor: str) -> dict:
         return {"success": True}
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: save_prefs failed")
+        return {"success": False, "error": str(exc)}
+
+
+# ---- /feedback -------------------------------------------------------------
+
+
+def _handle_get_feedback() -> dict:
+    """GET /feedback — list active items + (recently dismissed are
+    omitted in v1; add a query flag if needed later)."""
+    try:
+        import feedback  # noqa: WPS433
+        return {"success": True, "items": feedback.active_items()}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: load feedback failed")
+        return {"success": False, "error": str(exc)}
+
+
+def _handle_post_feedback(body: dict, actor: str) -> dict:
+    """POST /feedback — add a new active item."""
+    try:
+        import feedback  # noqa: WPS433
+        text = body.get("text") or ""
+        max_applies = body.get("max_applies", feedback.DEFAULT_MAX_APPLIES)
+        item = feedback.add_item(text, actor=actor, max_applies=max_applies)
+        return {"success": True, "item": item}
+    except ValueError as exc:
+        # Validation error: 400-shaped response. Caller maps to 400 if
+        # we ever refactor; for now we keep the {success: false} shape
+        # consistent with the rest of qa-agent.
+        return {"success": False, "error": str(exc)}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: add feedback failed")
+        return {"success": False, "error": str(exc)}
+
+
+def _handle_delete_feedback(item_id: str) -> dict:
+    """DELETE /feedback/<id> — dismiss the item."""
+    try:
+        import feedback  # noqa: WPS433
+        ok = feedback.dismiss(item_id)
+        if not ok:
+            return {"success": False, "error": f"no feedback item with id {item_id!r}"}
+        return {"success": True}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: dismiss feedback failed")
         return {"success": False, "error": str(exc)}
 
 
