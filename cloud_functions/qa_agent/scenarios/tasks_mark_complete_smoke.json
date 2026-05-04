@@ -1,0 +1,26 @@
+{
+    "id": "tasks_mark_complete_smoke",
+    "description": "Junior with profile + roadmap exercises the mark-task → get-tasks round-trip the user hits every time they tick a checkbox on the roadmap tab. Catches regressions in the high-frequency 'mark complete' user flow.",
+    "business_rationale": "Marking a task complete is the most common interactive moment on the roadmap tab — every user does it dozens of times across the application cycle. A regression in /mark-task or /get-tasks would silently break the entire feedback loop (clicks would do nothing, the checkbox state would flicker back). Synthetic monitoring of the round-trip catches both the integration bug between counselor_agent and profile_manager_v2 and any schema regressions on /get-tasks the frontend depends on.",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.8,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming"]
+    },
+    "colleges_template": [
+        "massachusetts_institute_of_technology",
+        "university_of_california_berkeley"
+    ],
+    "test_mark_task": true,
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "tasks"],
+    "tests": [
+        "POST {counselor_agent}/mark-task with synthetic task_id returns 200 + success: true + echoes task_id and completed",
+        "Latency of /mark-task under 10s — quick interactive endpoint, not LLM",
+        "GET {counselor_agent}/get-tasks returns 200 + success: true + tasks field present (frontend renders it)",
+        "Round-trip catches the integration bug class: counselor_agent calls profile_manager_v2 /update-structured-field internally; if that hop breaks, the test fires"
+    ]
+}

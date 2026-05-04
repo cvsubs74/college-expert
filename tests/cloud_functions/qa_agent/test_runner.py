@@ -63,6 +63,16 @@ _URL_DEFAULTS = (
         'reply': 'Focus on your essays this week.',
         'suggested_actions': [],
     })),
+    # Tasks-lifecycle defaults.
+    ('mark-task', _ok({
+        'success': True,
+        'task_id': 'qa_smoke_mark_task_1',
+        'completed': True,
+    })),
+    ('get-tasks', _ok({
+        'success': True,
+        'tasks': [],
+    })),
     # New default for the symmetry-check step. The two scenarios in
     # _scenario() use ['mit', 'stanford_university'] — return both.
     ('get-college-list', _ok({
@@ -1016,3 +1026,119 @@ class TestCounselorChatStep:
         )
         chat_calls = [c for c in capture if c['url'].endswith('/chat')]
         assert chat_calls[0]['kwargs'].get('timeout') == 60
+
+
+# ---- tasks lifecycle (mark-task + get-tasks) ---------------------------
+# Gated behind test_mark_task=true. Exercises the POST /mark-task →
+# GET /get-tasks round-trip the user hits every time they click a
+# checkbox on the roadmap tab.
+
+
+def _scenario_with_mark_task():
+    s = _scenario()
+    s['id'] = 'tasks_demo'
+    s['test_mark_task'] = True
+    return s
+
+
+class TestTasksLifecycle:
+    def test_steps_omitted_by_default(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(_scenario(), cfg, poster=_smart_poster())
+        names = [s['name'] for s in result['steps']]
+        assert 'mark_task' not in names
+        assert 'get_tasks' not in names
+
+    def test_steps_added_when_flag_set(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_mark_task(), cfg, poster=_smart_poster(),
+        )
+        names = [s['name'] for s in result['steps']]
+        assert 'mark_task' in names
+        assert 'get_tasks' in names
+        # Order: mark before read-back.
+        assert names.index('mark_task') < names.index('get_tasks')
+
+    def test_steps_pass_on_well_formed_responses(self):
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_mark_task(), cfg, poster=_smart_poster(),
+        )
+        for step_name in ('mark_task', 'get_tasks'):
+            step = next(s for s in result['steps'] if s['name'] == step_name)
+            assert step['passed'], (
+                f"{step_name} failed: "
+                f"{[a for a in step['assertions'] if not a['passed']]}"
+            )
+
+    def test_mark_task_fails_on_500(self):
+        """Canonical regression: every 'mark complete' click silently
+        fails — the assertion catches it loudly."""
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_mark_task(), cfg,
+            poster=_smart_poster(overrides=[
+                ('mark-task', {
+                    'status_code': 500,
+                    'response_json': {'error': 'something broke'},
+                    'response_excerpt': '',
+                }),
+            ]),
+        )
+        mark_step = next(s for s in result['steps'] if s['name'] == 'mark_task')
+        assert not mark_step['passed']
+
+    def test_mark_task_fails_when_task_id_not_echoed(self):
+        """The endpoint should echo the task_id we sent. A regression
+        where it returns a different id (or empties it) would be
+        invisible without this assertion."""
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_mark_task(), cfg,
+            poster=_smart_poster(overrides=[
+                ('mark-task', _ok({
+                    'success': True,
+                    'task_id': 'WRONG_ID',
+                    'completed': True,
+                })),
+            ]),
+        )
+        mark_step = next(s for s in result['steps'] if s['name'] == 'mark_task')
+        assert not mark_step['passed']
+
+    def test_get_tasks_fails_when_tasks_field_missing(self):
+        """A regression that drops the tasks field would still appear
+        2xx + success=true but break the frontend's roadmap rendering."""
+        cfg = _make_cfg()
+        result = runner.run_scenario(
+            _scenario_with_mark_task(), cfg,
+            poster=_smart_poster(overrides=[
+                ('get-tasks', _ok({'success': True})),  # no `tasks` key
+            ]),
+        )
+        get_step = next(s for s in result['steps'] if s['name'] == 'get_tasks')
+        assert not get_step['passed']
+
+    def test_mark_task_calls_correct_endpoint_with_body_shape(self):
+        cfg = _make_cfg()
+        capture = []
+        runner.run_scenario(
+            _scenario_with_mark_task(), cfg,
+            poster=_smart_poster(capture=capture),
+        )
+        mark_calls = [c for c in capture if 'mark-task' in c['url']]
+        assert len(mark_calls) == 1
+        assert mark_calls[0]['url'].startswith('https://ca.test')
+
+    def test_get_tasks_uses_get_method(self):
+        """The endpoint takes query params, not a JSON body."""
+        cfg = _make_cfg()
+        capture = []
+        runner.run_scenario(
+            _scenario_with_mark_task(), cfg,
+            poster=_smart_poster(capture=capture),
+        )
+        get_calls = [c for c in capture if 'get-tasks' in c['url']]
+        assert len(get_calls) == 1
+        assert get_calls[0]['method'] == 'GET'
