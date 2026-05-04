@@ -407,6 +407,44 @@ def check_category_rank_monotonic_with_selectivity(
     return results
 
 
+def test_strategy_not_submit_when_no_scores(
+    path: str = "fit_analysis.test_strategy.recommendation",
+) -> AssertionFn:
+    """When the student profile carries no SAT/ACT scores, the
+    algorithm's test_strategy.recommendation must not be "Submit" —
+    there's nothing to submit. Valid recommendations in this case:
+    "Don't Submit" (no scores → don't submit) or "Consider Submitting"
+    (the student should think about taking a test).
+
+    Catches a flaw observed in production 2026-05-04: the LLM
+    defaulted to "Submit" for some schools (MIT, UF) even when the
+    student profile carried no scores. The post-processor in
+    fit_computation.py now overrides "Submit" → "Don't Submit" when
+    student_profile_json indicates no scores; this assertion is the
+    monitoring guarantee that override stays in place.
+    """
+    def _check(ctx):
+        present, value = _get(ctx, path)
+        if not present:
+            return AssertionResult(
+                name="test_strategy not Submit when no scores",
+                passed=False,
+                message=f"missing key '{path}'",
+            )
+        ok = value != "Submit"
+        return AssertionResult(
+            name="test_strategy not Submit when no scores",
+            passed=ok,
+            message=(
+                f"got {value!r} but the student profile has no SAT or "
+                f"ACT scores — the algorithm should recommend "
+                f"\"Don't Submit\" or \"Consider Submitting\""
+                if not ok else ""
+            ),
+        )
+    return _check
+
+
 def required_advisory_blocks_present(
     base_path: str = "fit_analysis",
 ) -> AssertionFn:

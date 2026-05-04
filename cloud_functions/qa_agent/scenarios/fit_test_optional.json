@@ -1,0 +1,25 @@
+{
+    "id": "fit_test_optional",
+    "description": "Senior with no SAT/ACT scores in their profile evaluated against Ohio State (KB acceptance ~60.6%, ACCESSIBLE). The algorithm's test_strategy.recommendation must NOT be 'Submit' — there's nothing to submit. Phase 2c-2 catches the LLM-default-to-Submit bug surfaced in production 2026-05-04.",
+    "business_rationale": "A test-optional admissions strategy is one of the highest-stakes calls the algorithm makes — telling a scoreless student to 'Submit' is operationally nonsense (they have nothing). Probe of saved fits on 2026-05-04 showed MIT and UF both recommending Submit despite the synthetic profile carrying no scores. The post-processor override + this archetype's assertion together prevent the regression from re-shipping.",
+    "default_student_name": "Jordan Patel",
+    "profile_template": {
+        "grade_level": "12th Grade",
+        "graduation_year": 2026,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "math team", "tutoring"]
+    },
+    "colleges_template": ["ohio_state_university"],
+    "fit_target_college": "ohio_state_university",
+    "fit_no_test_scores": true,
+    "fit_expected_category": "SAFETY",
+    "expected_template_used": "senior_fall",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "Profile carries no SAT or ACT scores — the algorithm should recognize test-optional context",
+        "test_strategy.recommendation must NOT be 'Submit' (Don't Submit or Consider Submitting are valid)",
+        "Selectivity ceiling: 60.6% acceptance forces SAFETY (covered by the per-school invariants)",
+        "All 8 advisory blocks present and non-empty"
+    ]
+}

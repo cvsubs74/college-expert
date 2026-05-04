@@ -580,6 +580,25 @@ You have access to COMPLETE university data. Generate recommendations across ALL
                     if original_percentage != result['match_percentage']:
                         logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (SAFETY floor)")
                 
+                # === POST-PROCESSING: TEST_STRATEGY OVERRIDE WHEN NO SCORES ===
+                # Bug surfaced 2026-05-04 by QA agent probe: the LLM
+                # defaulted to "Submit" for several schools (MIT, UF)
+                # even when the student profile carried no SAT/ACT.
+                # There's nothing to submit. Override deterministically
+                # so dashboard advice never tells a scoreless student
+                # to "Submit". "Consider Submitting" stays unchanged
+                # (means "go take a test, then decide").
+                if _student_has_no_scores(student_profile_json):
+                    ts = result.get('test_strategy') or {}
+                    if isinstance(ts, dict) and ts.get('recommendation') == 'Submit':
+                        original = ts['recommendation']
+                        ts['recommendation'] = "Don't Submit"
+                        result['test_strategy'] = ts
+                        logger.info(
+                            f"[FIT_COMP] test_strategy override: "
+                            f"{original} → Don't Submit (student profile has no SAT/ACT)"
+                        )
+
                 # Add metadata
                 result['university_name'] = uni_name
                 result['university_id'] = university_data.get('university_id')
@@ -640,6 +659,30 @@ You have access to COMPLETE university data. Generate recommendations across ALL
 # of category. That violated the band for TARGET (55-74), SAFETY
 # (75-100), and SUPER_REACH (0-34) — three of four cases. Only
 # REACH happened to be consistent.
+# Profile fields the rest of the system uses for SAT/ACT scores. The
+# Firestore profile schema isn't perfectly normalized — the same logical
+# value may live under any of these keys depending on which onboarding
+# path created the doc. Treat "no scores" as ALL of them empty/null.
+_SAT_FIELDS = ("sat_composite", "sat_total", "sat_score")
+_ACT_FIELDS = ("act_composite", "act_score")
+
+
+def _student_has_no_scores(profile_json):
+    """True when the student profile carries no SAT and no ACT scores
+    in any of the recognized field names. Used by the test_strategy
+    post-processor to override "Submit" recommendations that wouldn't
+    make sense without a score."""
+    if not isinstance(profile_json, dict):
+        # If we have no structured profile to inspect, be conservative
+        # and don't apply the override (let the LLM's recommendation stand).
+        return False
+    for field in _SAT_FIELDS + _ACT_FIELDS:
+        v = profile_json.get(field)
+        if v not in (None, "", 0, "0"):
+            return False
+    return True
+
+
 _FALLBACK_MATCH_PERCENT = {
     "SUPER_REACH": 17,  # midpoint of 0-34
     "REACH":       45,  # midpoint of 35-54

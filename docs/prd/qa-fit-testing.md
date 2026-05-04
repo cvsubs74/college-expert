@@ -115,13 +115,32 @@ After 2c-1, all 5 selectivity tiers have direct synthetic monitoring:
 ULTRA_SELECTIVE (MIT), HIGHLY_SELECTIVE (UC Berkeley), VERY_SELECTIVE
 (UF), SELECTIVE (UW), ACCESSIBLE (Ohio State).
 
-**Phase 2c-2 (deferred — profile-side edge cases):**
-- `fit_test_optional` archetype: profile WITHOUT SAT/ACT scores. The
-  test_strategy.recommendation should NOT be "Submit" — needs a new
-  fit-assertion to express that contract.
-- `fit_intended_major_mismatch`: CS-intent student vs liberal-arts-
-  only school. The Major Fit factor should score significantly
-  lower than the canonical CS-vs-tech-school baseline.
+**Phase 2c-2 (DONE — `fit_test_optional` archetype + algorithm fix):**
+
+Probe of saved fit responses on 2026-05-04 surfaced a new flaw:
+the LLM defaulted `test_strategy.recommendation` to "Submit" for
+several schools (MIT, UF) when the student profile carried no
+SAT/ACT scores. Per the contract, "Submit" means "submit your
+scores" — nonsense without scores.
+
+- New `fit_assertion.test_strategy_not_submit_when_no_scores`
+  (assertion + 4 unit tests).
+- New archetype `fit_test_optional` exercises the assertion against
+  Ohio State (60.6%, no scores in profile).
+- Runner gains `fit_no_test_scores` field; when true it appends the
+  new assertion. Backwards-compat preserved for archetypes that
+  don't declare it.
+- Algorithm fix in `fit_computation.py`: a post-processing override
+  flips `Submit → Don't Submit` when `_student_has_no_scores` is
+  true. "Consider Submitting" stays unchanged (means "go take a
+  test, then decide"). 8 unit tests for the predicate covering
+  empty profile, partial scores, zero placeholders, non-dict input.
+
+**Phase 2c-3 (queued — intended-major mismatch):**
+- `fit_intended_major_mismatch`: CS-intent student vs a school
+  where CS is weak/unavailable. The `major_strategy.is_available`
+  field or a low Major Fit score is the signal — needs careful
+  archetype design (most allowlisted schools have CS).
 
 ### Phase 3 — Synthesizer integration
 

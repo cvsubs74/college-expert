@@ -460,3 +460,50 @@ class TestCategoryRankMonotonicWithSelectivity:
         assert all(r.passed for r in results)
         # And there must be at least one comparison made (not all skipped).
         assert any("monotonic" in r.name.lower() for r in results)
+
+
+# ---- test_strategy invariant when student has no scores -----------------
+# Spec: docs/prd/qa-fit-testing.md (Phase 2c-2).
+# Bug surfaced 2026-05-04: probe of saved fit responses showed MIT and
+# UF recommending "Submit" when the student profile carried no SAT/ACT
+# scores. There's nothing to submit. Phase 2c-2 catches this.
+
+
+class TestTestStrategyNotSubmitWhenNoScores:
+    def test_passes_on_dont_submit(self):
+        import fit_assertions
+        check = fit_assertions.test_strategy_not_submit_when_no_scores()
+        fit = _good_fit()
+        fit["test_strategy"] = {"recommendation": "Don't Submit"}
+        r = check(_ctx(fit))
+        assert r.passed
+
+    def test_passes_on_consider_submitting(self):
+        """'Consider Submitting' is also valid — student should think
+        about taking a test."""
+        import fit_assertions
+        check = fit_assertions.test_strategy_not_submit_when_no_scores()
+        fit = _good_fit()
+        fit["test_strategy"] = {"recommendation": "Consider Submitting"}
+        r = check(_ctx(fit))
+        assert r.passed
+
+    def test_fails_on_submit(self):
+        """The canonical regression: profile has no scores but the
+        algorithm still says 'Submit'."""
+        import fit_assertions
+        check = fit_assertions.test_strategy_not_submit_when_no_scores()
+        fit = _good_fit()
+        fit["test_strategy"] = {"recommendation": "Submit"}
+        r = check(_ctx(fit))
+        assert not r.passed
+        assert "Submit" in (r.message or "")
+        assert "no SAT" in (r.message or "") or "no ACT" in (r.message or "")
+
+    def test_fails_when_path_missing(self):
+        import fit_assertions
+        check = fit_assertions.test_strategy_not_submit_when_no_scores()
+        fit = _good_fit()
+        fit["test_strategy"] = {}
+        r = check(_ctx(fit))
+        assert not r.passed
