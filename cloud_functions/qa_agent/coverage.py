@@ -31,7 +31,7 @@ Sort order: most-validated journeys first.
 from __future__ import annotations
 
 import hashlib
-from typing import List
+from typing import List, Optional
 
 # Cap the per-journey scenario list so the dashboard doesn't render
 # 50 items for a heavily-tested journey.
@@ -41,11 +41,17 @@ MAX_SCENARIOS_PER_JOURNEY = 10
 # reflects the full count.
 MAX_VALIDATED_FEATURES = 20
 
+# Cap the rendered universities_untested list — avoid dumping 100+ ids
+# when the allowlist grows. allowlist_size still reflects the real
+# count.
+MAX_UNTESTED_UNIVERSITIES = 25
+
 
 # ---- Public ----------------------------------------------------------------
 
 
-def build_coverage(runs: List[dict]) -> dict:
+def build_coverage(runs: List[dict], *,
+                   colleges_allowlist: Optional[List[str]] = None) -> dict:
     """Aggregate passing scenarios into validated journeys.
 
     A "journey" = the set of `surfaces_covered` a scenario touches.
@@ -60,6 +66,8 @@ def build_coverage(runs: List[dict]) -> dict:
     by_journey: dict = {}
     # text → count (whitespace-normalized)
     feature_counts: dict = {}
+    # university id → {count, last_tested_at}
+    universities: dict = {}
 
     for run in runs or []:
         run_started_at = run.get("started_at", "")
@@ -77,6 +85,22 @@ def build_coverage(runs: List[dict]) -> dict:
                 if not key:
                     continue
                 feature_counts[key] = feature_counts.get(key, 0) + 1
+
+            # Aggregate the scenario's colleges_template into the
+            # universities-tested map — answers "which schools has the
+            # QA agent exercised?". Each appearance counts (one per
+            # passing scenario-instance), and we track the latest
+            # timestamp so the dashboard can render "last tested 5m ago".
+            for uni in scen.get("colleges_template") or []:
+                if not isinstance(uni, str) or not uni:
+                    continue
+                slot = universities.setdefault(uni, {
+                    "id": uni, "count": 0, "last_tested_at": "",
+                })
+                slot["count"] += 1
+                stamp = run_started_at or scen.get("started_at") or ""
+                if stamp > slot["last_tested_at"]:
+                    slot["last_tested_at"] = stamp
 
             surfaces = scen.get("surfaces_covered") or []
             if not surfaces:
@@ -132,11 +156,26 @@ def build_coverage(runs: List[dict]) -> dict:
         key=lambda f: (-f["count"], f["text"]),
     )
 
+    # Universities tested — sorted by count desc, then alpha for stable
+    # rendering when counts tie. Untested = allowlist - tested set;
+    # capped to keep the response compact.
+    universities_tested = sorted(
+        universities.values(),
+        key=lambda u: (-u["count"], u["id"]),
+    )
+    tested_ids = {u["id"] for u in universities_tested}
+    allowlist = list(colleges_allowlist or [])
+    untested = sorted(uid for uid in allowlist if uid not in tested_ids)
+
     return {
         "journeys": journeys,
         "total_journeys": len(journeys),
         "validated_features": validated_features[:MAX_VALIDATED_FEATURES],
         "total_features": len(validated_features),
+        "universities_tested": universities_tested,
+        "total_universities_tested": len(universities_tested),
+        "universities_untested": untested[:MAX_UNTESTED_UNIVERSITIES],
+        "allowlist_size": len(allowlist),
     }
 
 

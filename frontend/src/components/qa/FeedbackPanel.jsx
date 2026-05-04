@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChatBubbleBottomCenterTextIcon, XMarkIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import { getFeedback, addFeedback, dismissFeedback } from '../../services/qaAgent';
 
@@ -140,7 +141,19 @@ const FeedbackPanel = () => {
                             className="flex items-start justify-between gap-3 bg-[#FBFAF6] border border-[#E0DED8] rounded-lg p-3"
                         >
                             <div className="flex-1 min-w-0">
-                                <p className="text-sm text-[#1A2E1F]">{it.text}</p>
+                                <div className="flex items-start gap-2">
+                                    <p className="text-sm text-[#1A2E1F] flex-1 min-w-0">
+                                        {it.text}
+                                    </p>
+                                    {(it.applied_count ?? 0) > 0 && (
+                                        <span
+                                            aria-label="applied to a run"
+                                            className="flex-shrink-0 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded"
+                                        >
+                                            ✓ applied
+                                        </span>
+                                    )}
+                                </div>
                                 <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1 text-[10px] text-[#6B6B6B]">
                                     <span className="font-mono">{it.id}</span>
                                     <span>·</span>
@@ -150,9 +163,12 @@ const FeedbackPanel = () => {
                                     {it.last_applied_run_id && (
                                         <>
                                             <span>·</span>
-                                            <span className="font-mono truncate">
+                                            <Link
+                                                to={`/qa-runs/${it.last_applied_run_id}`}
+                                                className="font-mono truncate text-[#1A4D2E] hover:underline"
+                                            >
                                                 last: {it.last_applied_run_id}
-                                            </span>
+                                            </Link>
                                         </>
                                     )}
                                 </div>

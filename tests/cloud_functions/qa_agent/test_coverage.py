@@ -312,3 +312,118 @@ class TestValidatedFeatures:
         result = coverage.build_coverage(runs)
         assert result["total_features"] == 1
         assert result["validated_features"][0]["count"] == 2
+
+
+# ---- universities_tested + universities_untested -------------------------
+# User feedback: "We should be able to track the exact universities we
+# are using in these scenarios". Aggregation walks every passing
+# scenario's `colleges_template` field so the chat + the new
+# UniversitiesCard can answer "which schools have been tested?".
+
+
+def _scen_with_colleges(scenario_id, surfaces, colleges, *, passed=True,
+                        verified_at="2026-05-04T04:00:00+00:00"):
+    s = _scen(scenario_id, surfaces, passed=passed, verified_at=verified_at)
+    s["colleges_template"] = list(colleges)
+    return s
+
+
+class TestUniversitiesTested:
+    def test_top_level_keys_present(self):
+        import coverage
+        result = coverage.build_coverage([])
+        assert "universities_tested" in result
+        assert "total_universities_tested" in result
+        # universities_untested + allowlist_size are populated when
+        # an allowlist is loadable; on the test path that may be empty.
+        assert "universities_untested" in result
+
+    def test_aggregates_colleges_across_passing_scenarios(self):
+        import coverage
+        runs = [
+            _run("r1", [
+                _scen_with_colleges("a", ["profile"], ["mit", "stanford"]),
+            ]),
+            _run("r2", [
+                _scen_with_colleges("a", ["profile"], ["mit", "stanford"]),
+                _scen_with_colleges("b", ["roadmap"], ["uc_berkeley"]),
+            ]),
+        ]
+        result = coverage.build_coverage(runs)
+        # 3 unique universities
+        assert result["total_universities_tested"] == 3
+        by_id = {u["id"]: u["count"] for u in result["universities_tested"]}
+        assert by_id == {"mit": 2, "stanford": 2, "uc_berkeley": 1}
+
+    def test_excludes_failing_scenarios(self):
+        import coverage
+        runs = [
+            _run("r1", [
+                _scen_with_colleges("good", ["profile"], ["mit"]),
+                _scen_with_colleges("bad", ["roadmap"], ["yale"], passed=False),
+            ]),
+        ]
+        result = coverage.build_coverage(runs)
+        ids = {u["id"] for u in result["universities_tested"]}
+        assert "mit" in ids
+        assert "yale" not in ids
+
+    def test_sorts_by_count_desc(self):
+        import coverage
+        runs = (
+            [_run(f"r{i}", [_scen_with_colleges("a", ["p"], ["mit"])]) for i in range(5)]
+            + [_run("r_x", [_scen_with_colleges("b", ["p"], ["yale"])])]
+        )
+        result = coverage.build_coverage(runs)
+        assert result["universities_tested"][0]["id"] == "mit"
+        assert result["universities_tested"][0]["count"] == 5
+
+    def test_records_last_tested_at_per_university(self):
+        """Most recent test timestamp per university wins so the
+        dashboard can show 'last tested 5m ago'."""
+        import coverage
+        runs = [
+            _run("r1", [_scen_with_colleges("a", ["p"], ["mit"])],
+                 started_at="2026-05-04T04:00:00+00:00"),
+            _run("r2", [_scen_with_colleges("a", ["p"], ["mit"])],
+                 started_at="2026-05-04T05:00:00+00:00"),
+        ]
+        result = coverage.build_coverage(runs)
+        mit = next(u for u in result["universities_tested"] if u["id"] == "mit")
+        assert "05:00" in mit["last_tested_at"]
+
+    def test_universities_untested_when_allowlist_provided(self):
+        """The set difference between the allowlist and tested set is
+        what the dashboard renders as 'next to test' candidates."""
+        import coverage
+        runs = [_run("r1", [_scen_with_colleges("a", ["p"], ["mit"])])]
+        allowlist = ["mit", "stanford", "yale", "princeton"]
+        result = coverage.build_coverage(runs, colleges_allowlist=allowlist)
+        assert result["allowlist_size"] == 4
+        assert result["total_universities_tested"] == 1
+        # untested = allowlist - tested
+        untested = set(result["universities_untested"])
+        assert untested == {"stanford", "yale", "princeton"}
+
+    def test_universities_untested_capped(self):
+        """Don't dump 100 untested ids into the response."""
+        import coverage
+        allowlist = [f"uni_{i}" for i in range(50)]
+        runs = []  # nothing tested
+        result = coverage.build_coverage(runs, colleges_allowlist=allowlist)
+        assert result["allowlist_size"] == 50
+        # Cap the rendered list — total still shows the real count.
+        assert len(result["universities_untested"]) <= 25
+
+    def test_handles_legacy_scenarios_without_colleges_template(self):
+        """Old runs that don't carry colleges_template shouldn't crash."""
+        import coverage
+        runs = [_run("r1", [
+            {"scenario_id": "legacy", "passed": True,
+             "surfaces_covered": ["profile"]},  # no colleges_template
+            _scen_with_colleges("modern", ["profile"], ["mit"]),
+        ])]
+        result = coverage.build_coverage(runs)
+        # Only the modern scenario contributes.
+        assert result["total_universities_tested"] == 1
+        assert result["universities_tested"][0]["id"] == "mit"

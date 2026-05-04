@@ -153,6 +153,21 @@ def _format_one_run(run: dict) -> List[str]:
     header = f"run {run_id} · {pass_n}/{total} pass · {started} · {trigger}"
     out = [header]
 
+    # Distinct colleges exercised in this run — answers "what schools
+    # has the QA agent covered?". Skip the line entirely when no
+    # scenarios carry colleges_template (legacy runs) so we don't
+    # render an empty "colleges:" line.
+    colleges_seen: List[str] = []
+    seen: set = set()
+    for scen in run.get("scenarios") or []:
+        for uni in scen.get("colleges_template") or []:
+            if not isinstance(uni, str) or not uni or uni in seen:
+                continue
+            seen.add(uni)
+            colleges_seen.append(uni)
+    if colleges_seen:
+        out.append(f"    colleges: {', '.join(colleges_seen)}")
+
     # Per-failing-scenario detail (capped).
     failing = [s for s in (run.get("scenarios") or []) if not _is_passed(s)]
     for scen in failing[:_MAX_FAILING_PER_RUN]:
