@@ -1,20 +1,27 @@
 """
 User-configurable run schedule.
 
-The dashboard's ScheduleEditor writes to qa_config/schedule. An hourly
-Cloud Scheduler job pings qa-agent /run with trigger=schedule_check;
-the agent calls should_run_now() to decide whether to actually execute
-or no-op for this hour.
+The dashboard's ScheduleEditor writes to qa_config/schedule. A Cloud
+Scheduler job pings qa-agent /run with trigger=schedule_check; the
+agent calls should_run_now() to decide whether to actually execute or
+no-op for this poll.
 
 Document shape (qa_config/schedule):
     {
-      "frequency": "daily" | "twice_daily" | "weekly" | "off",
+      "frequency": "daily" | "twice_daily" | "weekly" | "interval" | "off",
       "times":     ["06:00", "13:00"],            # HH:MM strings, local TZ
       "days":      ["mon", "tue", ..., "sun"],
+      "interval_minutes": 30,                      # required iff frequency=interval
       "timezone":  "America/Los_Angeles",
       "updated_at": <iso>,
       "updated_by": <email>
     }
+
+The "interval" frequency runs every N minutes regardless of time-of-day
+or day-of-week — Cloud Scheduler's cron is the gate, and qa-agent always
+runs when poked by an interval-mode poll. For this to actually fire every
+N minutes, Cloud Scheduler MUST be set to fire at that cadence
+(e.g., `*/30 * * * *` for every-30-min); the agent itself doesn't poll.
 
 Defaults (no doc): daily at 06:00 PT every day of the week.
 """
@@ -38,7 +45,14 @@ logger = logging.getLogger(__name__)
 WINDOW_MINUTES = 5
 
 # Recognized frequencies.
-VALID_FREQUENCIES = {"daily", "twice_daily", "weekly", "off"}
+VALID_FREQUENCIES = {"daily", "twice_daily", "weekly", "interval", "off"}
+
+# Bounds for interval mode: 1 minute to 24 hours (1440 min). Anything
+# outside is almost certainly a typo (negative, zero, or so large that
+# the user meant something else). Keep the upper bound below the daily
+# breakpoint so users with that intent get steered to frequency=daily.
+INTERVAL_MIN_MINUTES = 1
+INTERVAL_MAX_MINUTES = 1440
 
 # All-week default for daily/twice-daily. Weekly explicitly lists days.
 ALL_DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -89,24 +103,45 @@ def validate_schedule(new_schedule: dict) -> Optional[str]:
     freq = new_schedule.get("frequency")
     if freq not in VALID_FREQUENCIES:
         return f"frequency must be one of {sorted(VALID_FREQUENCIES)}"
-    times = new_schedule.get("times") or []
-    if not isinstance(times, list):
-        return "times must be a list of HH:MM strings"
-    for t in times:
-        if not isinstance(t, str) or len(t) != 5 or t[2] != ":":
-            return f"times entries must be HH:MM strings, got {t!r}"
-        try:
-            h, m = int(t[:2]), int(t[3:])
-            if not (0 <= h < 24 and 0 <= m < 60):
-                return f"times entry out of range: {t!r}"
-        except ValueError:
-            return f"times entry not numeric: {t!r}"
-    days = new_schedule.get("days") or []
-    if not isinstance(days, list):
-        return "days must be a list"
-    for d in days:
-        if d not in ALL_DAYS:
-            return f"day must be one of {ALL_DAYS}, got {d!r}"
+
+    # Interval mode is structurally simpler — only interval_minutes and
+    # timezone are required. We don't reject a stray times[]/days[] in
+    # the payload (UI may send empties) but they're ignored by
+    # should_run_now.
+    if freq == "interval":
+        raw = new_schedule.get("interval_minutes")
+        # Reject bool because bool is a subclass of int but it's never
+        # what the caller meant.
+        if not isinstance(raw, int) or isinstance(raw, bool):
+            return (
+                f"interval_minutes must be an integer in "
+                f"[{INTERVAL_MIN_MINUTES}, {INTERVAL_MAX_MINUTES}], got {raw!r}"
+            )
+        if not (INTERVAL_MIN_MINUTES <= raw <= INTERVAL_MAX_MINUTES):
+            return (
+                f"interval_minutes must be in "
+                f"[{INTERVAL_MIN_MINUTES}, {INTERVAL_MAX_MINUTES}], got {raw}"
+            )
+    else:
+        times = new_schedule.get("times") or []
+        if not isinstance(times, list):
+            return "times must be a list of HH:MM strings"
+        for t in times:
+            if not isinstance(t, str) or len(t) != 5 or t[2] != ":":
+                return f"times entries must be HH:MM strings, got {t!r}"
+            try:
+                h, m = int(t[:2]), int(t[3:])
+                if not (0 <= h < 24 and 0 <= m < 60):
+                    return f"times entry out of range: {t!r}"
+            except ValueError:
+                return f"times entry not numeric: {t!r}"
+        days = new_schedule.get("days") or []
+        if not isinstance(days, list):
+            return "days must be a list"
+        for d in days:
+            if d not in ALL_DAYS:
+                return f"day must be one of {ALL_DAYS}, got {d!r}"
+
     tz = new_schedule.get("timezone")
     if not isinstance(tz, str) or not tz:
         return "timezone is required"
@@ -122,9 +157,18 @@ def validate_schedule(new_schedule: dict) -> Optional[str]:
 
 def should_run_now(schedule: dict, now: datetime) -> bool:
     """Returns True iff `now` falls within ±WINDOW_MINUTES of any
-    schedule time on a matching day in the schedule's timezone."""
-    if schedule.get("frequency") == "off":
+    schedule time on a matching day in the schedule's timezone.
+
+    Special case: frequency="interval" returns True unconditionally —
+    Cloud Scheduler's cron is the gate, the agent always runs when
+    poked in interval mode.
+    """
+    freq = schedule.get("frequency")
+    if freq == "off":
         return False
+    if freq == "interval":
+        # Cloud Scheduler controls the cadence; we trust each ping.
+        return True
     if not schedule.get("times"):
         return False
 

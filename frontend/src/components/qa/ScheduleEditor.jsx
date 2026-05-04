@@ -27,11 +27,15 @@ const TIMEZONE_PRESETS = [
 ];
 
 const FREQUENCIES = [
+    { id: 'interval', label: 'Every N minutes' },
     { id: 'daily', label: 'Daily' },
     { id: 'twice_daily', label: 'Twice daily' },
     { id: 'weekly', label: 'Weekly' },
     { id: 'off', label: 'Off' },
 ];
+
+// Common interval presets. Custom values are also accepted.
+const INTERVAL_PRESETS = [15, 30, 60, 120, 240];
 
 const ScheduleEditor = () => {
     const [loading, setLoading] = useState(true);
@@ -45,6 +49,7 @@ const ScheduleEditor = () => {
     const [times, setTimes] = useState(['06:00']);
     const [days, setDays] = useState(ALL_DAYS.map((d) => d.id));
     const [timezone, setTimezone] = useState('America/Los_Angeles');
+    const [intervalMinutes, setIntervalMinutes] = useState(30);
 
     useEffect(() => {
         let cancelled = false;
@@ -58,6 +63,9 @@ const ScheduleEditor = () => {
                     setTimes(Array.isArray(s.times) && s.times.length ? s.times : ['06:00']);
                     setDays(Array.isArray(s.days) && s.days.length ? s.days : ALL_DAYS.map((d) => d.id));
                     setTimezone(s.timezone || 'America/Los_Angeles');
+                    if (typeof s.interval_minutes === 'number' && s.interval_minutes > 0) {
+                        setIntervalMinutes(s.interval_minutes);
+                    }
                     setUpdatedAt(s.updated_at || null);
                     setUpdatedBy(s.updated_by || null);
                 } else {
@@ -95,7 +103,16 @@ const ScheduleEditor = () => {
         setError(null);
         setSaved(false);
         try {
-            const payload = { frequency, times, days, timezone };
+            // Send only the fields the chosen frequency actually uses,
+            // so the backend doesn't have to ignore stray data and
+            // future readers see the schedule's true shape.
+            const payload = { frequency, timezone };
+            if (frequency === 'interval') {
+                payload.interval_minutes = Number(intervalMinutes);
+            } else if (frequency !== 'off') {
+                payload.times = times;
+                payload.days = days;
+            }
             await saveSchedule(payload);
             setSaved(true);
             // Brief success indicator; clear after a few seconds.
@@ -149,28 +166,60 @@ const ScheduleEditor = () => {
                     </select>
                 </label>
 
-                {/* Times */}
-                <label className="text-xs">
-                    <span className="block text-[10px] uppercase tracking-wider text-[#6B6B6B] mb-1">
-                        Time(s)
-                    </span>
-                    <div className="flex gap-2">
-                        {times.map((t, i) => (
-                            <input
-                                key={i}
-                                type="time"
-                                value={t}
+                {/* Interval picker (interval mode) — replaces Time(s) when active. */}
+                {frequency === 'interval' ? (
+                    <label className="text-xs">
+                        <span className="block text-[10px] uppercase tracking-wider text-[#6B6B6B] mb-1">
+                            Interval (minutes)
+                        </span>
+                        <div className="flex gap-2">
+                            <select
+                                className="flex-1 border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30"
+                                value={INTERVAL_PRESETS.includes(intervalMinutes) ? intervalMinutes : 'custom'}
                                 onChange={(e) => {
-                                    const next = [...times];
-                                    next[i] = e.target.value;
-                                    setTimes(next);
+                                    if (e.target.value !== 'custom') {
+                                        setIntervalMinutes(Number(e.target.value));
+                                    }
                                 }}
-                                disabled={frequency === 'off'}
-                                className="flex-1 border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30 disabled:opacity-50"
+                            >
+                                {INTERVAL_PRESETS.map((m) => (
+                                    <option key={m} value={m}>every {m} min</option>
+                                ))}
+                                <option value="custom">custom…</option>
+                            </select>
+                            <input
+                                type="number"
+                                min="1"
+                                max="1440"
+                                value={intervalMinutes}
+                                onChange={(e) => setIntervalMinutes(Number(e.target.value))}
+                                className="w-20 border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30"
                             />
-                        ))}
-                    </div>
-                </label>
+                        </div>
+                    </label>
+                ) : (
+                    <label className="text-xs">
+                        <span className="block text-[10px] uppercase tracking-wider text-[#6B6B6B] mb-1">
+                            Time(s)
+                        </span>
+                        <div className="flex gap-2">
+                            {times.map((t, i) => (
+                                <input
+                                    key={i}
+                                    type="time"
+                                    value={t}
+                                    onChange={(e) => {
+                                        const next = [...times];
+                                        next[i] = e.target.value;
+                                        setTimes(next);
+                                    }}
+                                    disabled={frequency === 'off'}
+                                    className="flex-1 border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30 disabled:opacity-50"
+                                />
+                            ))}
+                        </div>
+                    </label>
+                )}
 
                 {/* Timezone */}
                 <label className="text-xs">
@@ -189,29 +238,32 @@ const ScheduleEditor = () => {
                 </label>
             </div>
 
-            {/* Days of week (only shown for weekly) */}
-            <div className="mt-3">
-                <span className="block text-[10px] uppercase tracking-wider text-[#6B6B6B] mb-1">
-                    Days {frequency !== 'weekly' && <span className="opacity-50">(applies to weekly)</span>}
-                </span>
-                <div className="flex gap-1.5">
-                    {ALL_DAYS.map((d) => (
-                        <button
-                            key={d.id}
-                            type="button"
-                            onClick={() => toggleDay(d.id)}
-                            disabled={frequency !== 'weekly' && frequency !== 'off'}
-                            className={`w-8 h-8 text-xs font-semibold rounded-full border transition-all ${
-                                days.includes(d.id)
-                                    ? 'bg-[#1A4D2E] text-white border-transparent'
-                                    : 'bg-white text-[#6B6B6B] border-[#E0DED8] hover:border-[#1A4D2E]'
-                            } ${frequency !== 'weekly' && frequency !== 'off' ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            {d.label}
-                        </button>
-                    ))}
+            {/* Days of week (weekly only). Hidden entirely in interval mode
+                — interval ignores both day and time. */}
+            {frequency !== 'interval' && (
+                <div className="mt-3">
+                    <span className="block text-[10px] uppercase tracking-wider text-[#6B6B6B] mb-1">
+                        Days {frequency !== 'weekly' && <span className="opacity-50">(applies to weekly)</span>}
+                    </span>
+                    <div className="flex gap-1.5">
+                        {ALL_DAYS.map((d) => (
+                            <button
+                                key={d.id}
+                                type="button"
+                                onClick={() => toggleDay(d.id)}
+                                disabled={frequency !== 'weekly' && frequency !== 'off'}
+                                className={`w-8 h-8 text-xs font-semibold rounded-full border transition-all ${
+                                    days.includes(d.id)
+                                        ? 'bg-[#1A4D2E] text-white border-transparent'
+                                        : 'bg-white text-[#6B6B6B] border-[#E0DED8] hover:border-[#1A4D2E]'
+                                } ${frequency !== 'weekly' && frequency !== 'off' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            >
+                                {d.label}
+                            </button>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
 
             <div className="mt-4 flex items-center gap-3">
                 <button
@@ -230,7 +282,9 @@ const ScheduleEditor = () => {
             </div>
 
             <p className="mt-3 text-[11px] text-[#8A8A8A] italic">
-                The hourly poll fires at the top of each hour. Changes take effect within 1 hour.
+                {frequency === 'interval'
+                    ? `Cloud Scheduler fires the agent every ${intervalMinutes} min. Changes take effect on the next poll.`
+                    : 'The hourly poll fires at the top of each hour. Changes take effect within 1 hour.'}
             </p>
         </form>
     );

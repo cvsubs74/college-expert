@@ -1,38 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { PlayIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
-import { listScenarios, triggerRun } from '../../services/qaAgent';
+import { triggerRun } from '../../services/qaAgent';
 import { useAuth } from '../../context/AuthContext';
 
-// "Run now" widget. Lets an admin kick off a fresh batch or pick a
-// single archetype. Disabled while a request is in flight (single-flight
-// per tab).
+// "Run now" — kicks off a fresh batch the synthesizer + corpus picks
+// on each call. The previous version had a single-archetype dropdown,
+// but the agent's job is to choose intelligently across past runs and
+// system context; manual selection cut against that goal. Removed
+// 2026-05 — backend still accepts {scenario: <id>} if needed for
+// debugging, but it's no longer surfaced in the UI.
 
 const RunNowPanel = ({ onComplete }) => {
     const { currentUser } = useAuth();
-    const [scenarios, setScenarios] = useState([]);
-    const [scenarioId, setScenarioId] = useState('');
     const [busy, setBusy] = useState(false);
     const [lastResult, setLastResult] = useState(null);
     const [error, setError] = useState(null);
-
-    useEffect(() => {
-        let cancelled = false;
-        listScenarios()
-            .then((data) => {
-                if (!cancelled) setScenarios(data?.scenarios || []);
-            })
-            .catch(() => {
-                /* non-fatal — picker just stays empty */
-            });
-        return () => { cancelled = true; };
-    }, []);
 
     const handleRun = async () => {
         setBusy(true);
         setError(null);
         try {
             const result = await triggerRun({
-                scenarioId: scenarioId || null,
+                scenarioId: null,
                 actor: currentUser?.email || '',
             });
             setLastResult(result);
@@ -46,30 +35,13 @@ const RunNowPanel = ({ onComplete }) => {
 
     return (
         <div className="bg-white rounded-xl border border-[#E0DED8] p-5">
-            <div className="flex items-baseline justify-between mb-3">
-                <h2 className="text-lg font-semibold text-[#1A4D2E]">Run now</h2>
-                <span className="text-xs text-[#8A8A8A]">
-                    {scenarios.length
-                        ? `${scenarios.length} scenarios available`
-                        : 'loading scenarios…'}
-                </span>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
-                <select
-                    className="flex-1 border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30"
-                    value={scenarioId}
-                    onChange={(e) => setScenarioId(e.target.value)}
-                    disabled={busy}
-                >
-                    <option value="">All scenarios (random batch)</option>
-                    {scenarios.map((s) => (
-                        <option key={s.id} value={s.id}>
-                            {s.id} — {s.description.slice(0, 60)}
-                        </option>
-                    ))}
-                </select>
-
+            <div className="flex items-baseline justify-between mb-3 gap-3 flex-wrap">
+                <div>
+                    <h2 className="text-lg font-semibold text-[#1A4D2E]">Run now</h2>
+                    <p className="text-xs text-[#8A8A8A] mt-0.5">
+                        Agent picks scenarios based on recent runs + system context.
+                    </p>
+                </div>
                 <button
                     type="button"
                     onClick={handleRun}
