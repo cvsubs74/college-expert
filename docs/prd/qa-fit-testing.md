@@ -142,13 +142,31 @@ scores" — nonsense without scores.
   field or a low Major Fit score is the signal — needs careful
   archetype design (most allowlisted schools have CS).
 
-### Phase 3 — Synthesizer integration
+### Phase 3 — Synthesizer integration (DONE)
 
-- Extend the synthesizer prompt with a "fit-focused scenario"
-  archetype it can produce (alongside today's roadmap-focused ones).
-- Surface the fit dimension in the Coverage card + chat grounding so
-  operators can ask *"how often did the fit category match the
-  selectivity floor?"*.
+The synthesizer LLM can now produce fit-focused archetypes by
+including `fit_target_college` (string) or `fit_target_colleges`
+(list) on a generated scenario. The runner picks them up and runs
+the same compute_fit step + invariant assertions used by static
+fit archetypes.
+
+Implementation:
+- Synthesizer prompt extended with an "Optional: targeting the fit
+  algorithm" section that documents the two fields, the
+  `fit_no_test_scores` flag, and the `surfaces_covered: ["fit"]`
+  convention.
+- `validate_archetype` enforces:
+  - fit_target_college must be a string in colleges_allowlist
+  - fit_target_college must also appear in colleges_template (the
+    runner can only fit a school the test user has added)
+  - same per-entry rules for fit_target_colleges (list)
+  - non-fit archetypes pass unchanged (additive change)
+- 9 unit tests covering happy + every rejection case + the
+  back-compat path.
+
+Operators can now leave a feedback note like *"focus on fit accuracy
+for highly-selective schools"* and the synthesizer can respond by
+generating an archetype with `fit_target_college: "university_of_..."`.
 
 ### Phase 4 — LLM-as-judge for advisory blocks
 

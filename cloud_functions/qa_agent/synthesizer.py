@@ -167,6 +167,52 @@ def validate_archetype(
         if not isinstance(tests, list) or not all(isinstance(t, str) for t in tests):
             return False, "tests must be a list of strings"
 
+    # Phase 3: synthesizer can produce fit-focused archetypes by including
+    # fit_target_college (string) or fit_target_colleges (list). Both must
+    # reference colleges that the runner has actually added to the test
+    # user's list (via /add-to-list during the profile-build step), so
+    # they MUST be in colleges_template AND in colleges_allowlist.
+    fit_single = archetype.get("fit_target_college")
+    if fit_single is not None:
+        if not isinstance(fit_single, str):
+            return False, (
+                f"fit_target_college must be a string, got "
+                f"{type(fit_single).__name__}"
+            )
+        if fit_single not in colleges_allowlist:
+            return False, (
+                f"fit_target_college {fit_single!r} not in colleges allowlist"
+            )
+        if fit_single not in colleges:
+            return False, (
+                f"fit_target_college {fit_single!r} must also appear in "
+                f"colleges_template (the runner can only fit a school "
+                f"the test user has added)"
+            )
+
+    fit_multi = archetype.get("fit_target_colleges")
+    if fit_multi is not None:
+        if not isinstance(fit_multi, list):
+            return False, (
+                f"fit_target_colleges must be a list, got "
+                f"{type(fit_multi).__name__}"
+            )
+        for fid in fit_multi:
+            if not isinstance(fid, str):
+                return False, (
+                    f"fit_target_colleges entries must be strings, "
+                    f"got {type(fid).__name__}"
+                )
+            if fid not in colleges_allowlist:
+                return False, (
+                    f"fit_target_colleges entry {fid!r} not in allowlist"
+                )
+            if fid not in colleges:
+                return False, (
+                    f"fit_target_colleges entry {fid!r} must also appear "
+                    f"in colleges_template"
+                )
+
     return True, ""
 
 
@@ -359,7 +405,34 @@ Generate exactly {n} test scenarios in JSON. Each scenario MUST:
    Good example: "Confirms that brand-new 9th graders get a useful, age-appropriate roadmap right away — the first impression for our youngest cohort and a common drop-off point if the dashboard feels empty."
    Bad example: "Tests freshman_fall template resolution." (technical, no business framing)
 5. Include a `tests` field — 3-5 plain-English bullets describing what the scenario verifies.
-6. Use a valid `expected_template_used`: one of [freshman_fall, freshman_spring, sophomore_fall, sophomore_spring, junior_fall, junior_spring, junior_summer, senior_fall, senior_spring].{feedback_instruction}
+6. Use a valid `expected_template_used`: one of [freshman_fall, freshman_spring, sophomore_fall, sophomore_spring, junior_fall, junior_spring, junior_summer, senior_fall, senior_spring].
+
+## Optional: targeting the fit algorithm
+
+If the gap you're targeting involves the COLLEGE FIT algorithm (the
+service that turns student-profile + university-profile into
+fit_category + match_percentage + 8 advisory blocks), include either:
+
+  - `fit_target_college` (string) — the runner will compute fit for
+    this single school and assert all 7 invariants (selectivity floor,
+    ceiling, match-% band alignment, factor bounds, advisory-block
+    presence, etc.). MUST be a value already in `colleges_template`
+    so the runner has added it to the test user's list first.
+  - `fit_target_colleges` (list of strings, all in colleges_template)
+    — for cross-school relative-ordering checks. The runner appends
+    a `fit_relative_ordering` step that verifies category-rank is
+    monotonic with acceptance_rate (more selective school cannot
+    have a BETTER category for the same student).
+
+When you generate a fit-focused scenario, also add `"fit"` to the
+`surfaces_covered` array so the dashboard's Coverage card reflects
+that this run exercised the fit dimension.
+
+If a fit-focused scenario tests a profile WITHOUT SAT/ACT scores
+(omit those fields from profile_template), include
+`"fit_no_test_scores": true` so the runner asserts the algorithm's
+test_strategy.recommendation is NOT "Submit" (there's nothing to
+submit).{feedback_instruction}
 
 Return STRICT JSON ONLY (no markdown, no commentary):
 {{
