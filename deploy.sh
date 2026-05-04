@@ -1063,11 +1063,15 @@ deploy_qa_agent() {
     # The QA agent's secrets — admin token, web API key, and the test
     # user UID — must already exist in Secret Manager. See
     # docs/qa-agent-setup.md for the one-time provisioning steps.
+    KB_URL="https://$REGION-$PROJECT_ID.cloudfunctions.net/knowledge-base-manager-universities-v2"
+
     cat > env.deploy.yaml <<EOF
 PROFILE_MANAGER_URL: "${PM_URL}"
 COUNSELOR_AGENT_URL: "${CA_URL}"
+KNOWLEDGE_BASE_UNIVERSITIES_URL: "${KB_URL}"
 QA_TEST_USER_EMAIL: "duser8531@gmail.com"
 GEMINI_API_KEY: "${GEMINI_API_KEY}"
+QA_SYNTHESIS_COUNT: "2"
 EOF
 
     # No --min-instances: cold starts are fine for an on-demand /
