@@ -56,6 +56,29 @@ export async function triggerRun({ scenarioId = null, actor = '' } = {}) {
     return jsonOrThrow(resp);
 }
 
+// POST /run/preview — picks the same scenarios /run would, returns
+// them, doesn't execute. Used by the dashboard's PreviewModal so the
+// admin can see what's about to be tested before committing.
+// Returns { picked: [{id, description, business_rationale,
+// surfaces_covered, synthesized, synthesis_rationale, feedback_id}],
+// synth_count, static_count }.
+export async function getRunPreview({ scenarioId = null, count = null } = {}) {
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(await authHeader()),
+    };
+    const body = {};
+    if (scenarioId) body.scenario = scenarioId;
+    if (count != null) body.count = count;
+
+    const resp = await fetch(`${QA_AGENT_URL}/run/preview`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body),
+    });
+    return jsonOrThrow(resp);
+}
+
 // POST /suggest-cause — LLM analysis of a failing scenario.
 export async function suggestCause({ runId, scenarioId }) {
     const headers = {

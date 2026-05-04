@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ChevronRightIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import PassFailBadge from './PassFailBadge';
 
 // Most-recent-first table of QA runs. Click a row → drill into detail.
+//
+// Runs with status="running" render a spinning "Running" pill instead of
+// pass/fail counts. The pill flips automatically when the qa-agent
+// updates the doc with status="complete" (Firestore listener picks it up).
+
+const RunningBadge = () => (
+    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800">
+        <ArrowPathIcon className="h-3 w-3 animate-spin" />
+        Running
+    </span>
+);
 
 const fmtDate = (iso) => {
     if (!iso) return '—';
@@ -56,7 +67,11 @@ const RunsTable = ({ runs }) => {
                                 {fmtDate(run.started_at)}
                             </td>
                             <td className="px-4 py-3">
-                                <PassFailBadge summary={run.summary} />
+                                {run.status === 'running' ? (
+                                    <RunningBadge />
+                                ) : (
+                                    <PassFailBadge summary={run.summary} />
+                                )}
                             </td>
                             <td className="px-4 py-3 text-[#4A4A4A]">{run.trigger || '—'}</td>
                             <td className="px-4 py-3 text-[#6B6B6B] text-xs truncate max-w-[200px]">
