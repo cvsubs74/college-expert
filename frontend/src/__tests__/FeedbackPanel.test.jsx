@@ -91,8 +91,11 @@ describe('FeedbackPanel', () => {
         await user.click(screen.getByRole('button', { name: /submit/i }));
 
         await waitFor(() => {
+            // Default selector value is 5; submission carries it through
+            // so the operator's chosen retire threshold round-trips.
             expect(addFeedbackFn).toHaveBeenCalledWith({
                 text: 'test essay tracker',
+                max_applies: 5,
             });
         });
         // After refresh, new item shows.
@@ -146,6 +149,108 @@ describe('FeedbackPanel', () => {
         });
         render(<FeedbackPanel />);
         await waitFor(() => expect(screen.getByText(/3 of 10 active/i)).toBeInTheDocument());
+    });
+
+    // ---- Configurable max_applies selector ----------------------------
+    // Spec: docs/prd/qa-feedback-configurable-max-applies.md.
+    // Operator can pick how many runs a feedback note drives before
+    // auto-retiring, including a "Never" affordance for persistent
+    // steers.
+
+    describe('Auto-retire threshold selector', () => {
+        it('renders a selector with default value 5', async () => {
+            const user = userEvent.setup();
+            render(<FeedbackPanel />);
+            await waitFor(() =>
+                screen.getByPlaceholderText(/Focus on essay tracker/i)
+            );
+            const select = screen.getByLabelText(/expires after/i);
+            expect(select).toBeInTheDocument();
+            expect(select).toHaveValue('5');
+            // Make sure the basic options are present.
+            const options = Array.from(select.querySelectorAll('option'))
+                .map((o) => o.value);
+            expect(options).toEqual(
+                expect.arrayContaining(['1', '3', '5', '10', '20', '99'])
+            );
+        });
+
+        it('passes the chosen value to addFeedback', async () => {
+            const user = userEvent.setup();
+            addFeedbackFn.mockResolvedValue({ success: true, item: {} });
+            render(<FeedbackPanel />);
+            await waitFor(() =>
+                screen.getByPlaceholderText(/Focus on essay tracker/i)
+            );
+            await user.type(
+                screen.getByPlaceholderText(/Focus on essay tracker/i),
+                'one-shot tweak'
+            );
+            // Pick "1 run".
+            await user.selectOptions(
+                screen.getByLabelText(/expires after/i),
+                '1'
+            );
+            await user.click(screen.getByRole('button', { name: /submit/i }));
+            await waitFor(() => {
+                expect(addFeedbackFn).toHaveBeenCalledWith({
+                    text: 'one-shot tweak',
+                    max_applies: 1,
+                });
+            });
+        });
+
+        it('"Never" maps to 99 in the submitted body', async () => {
+            const user = userEvent.setup();
+            addFeedbackFn.mockResolvedValue({ success: true, item: {} });
+            render(<FeedbackPanel />);
+            await waitFor(() =>
+                screen.getByPlaceholderText(/Focus on essay tracker/i)
+            );
+            await user.type(
+                screen.getByPlaceholderText(/Focus on essay tracker/i),
+                'persistent steer'
+            );
+            await user.selectOptions(
+                screen.getByLabelText(/expires after/i),
+                '99'
+            );
+            await user.click(screen.getByRole('button', { name: /submit/i }));
+            await waitFor(() => {
+                expect(addFeedbackFn).toHaveBeenCalledWith({
+                    text: 'persistent steer',
+                    max_applies: 99,
+                });
+            });
+        });
+
+        it('resets to 5 after a successful submit', async () => {
+            const user = userEvent.setup();
+            addFeedbackFn.mockResolvedValue({ success: true, item: {} });
+            getFeedbackFn
+                .mockResolvedValueOnce({ success: true, items: [] })
+                .mockResolvedValueOnce({ success: true, items: [] });
+            render(<FeedbackPanel />);
+            await waitFor(() =>
+                screen.getByPlaceholderText(/Focus on essay tracker/i)
+            );
+            await user.type(
+                screen.getByPlaceholderText(/Focus on essay tracker/i),
+                'one-shot tweak'
+            );
+            await user.selectOptions(
+                screen.getByLabelText(/expires after/i),
+                '1'
+            );
+            await user.click(screen.getByRole('button', { name: /submit/i }));
+            await waitFor(() => {
+                expect(addFeedbackFn).toHaveBeenCalled();
+            });
+            // After a successful submit, the selector returns to default.
+            await waitFor(() => {
+                expect(screen.getByLabelText(/expires after/i)).toHaveValue('5');
+            });
+        });
     });
 
     it('renders an error banner when add fails', async () => {

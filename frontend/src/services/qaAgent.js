@@ -201,16 +201,21 @@ export async function getFeedback() {
 }
 
 // POST /feedback — add a new feedback item that the next scheduled run
-// will see in the synthesizer prompt. Body: { text }.
-export async function addFeedback({ text }) {
+// will see in the synthesizer prompt.
+// Body: { text, max_applies? }. The backend clamps max_applies into
+// [1, MAX_APPLIES_BOUND]; the dashboard's "Never" affordance maps to
+// MAX_APPLIES_BOUND (99). Omit to take the backend default (5).
+export async function addFeedback({ text, max_applies }) {
     const headers = {
         'Content-Type': 'application/json',
         ...(await authHeader()),
     };
+    const body = { text };
+    if (max_applies !== undefined) body.max_applies = max_applies;
     const resp = await fetch(`${QA_AGENT_URL}/feedback`, {
         method: 'POST',
         headers,
-        body: JSON.stringify({ text }),
+        body: JSON.stringify(body),
     });
     return jsonOrThrow(resp);
 }

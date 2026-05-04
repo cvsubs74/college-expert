@@ -177,6 +177,53 @@ class TestAddItem:
         # 10th active is still allowed (1 dismissed doesn't count).
         feedback.add_item("new active item", actor="admin@example.com", db=db)
 
+    def test_persists_caller_supplied_max_applies(self):
+        """The dashboard's per-item selector lets the operator pick how
+        many runs an item drives before auto-retiring. The chosen value
+        round-trips into the stored item."""
+        import feedback
+        db, _ = _db_with(None)
+        item = feedback.add_item(
+            "Focus on essay tracker",
+            actor="admin@example.com",
+            max_applies=10,
+            db=db,
+        )
+        assert item["max_applies"] == 10
+
+    def test_clamps_max_applies_to_upper_bound(self):
+        """Out-of-bound values are clamped, not rejected — the dashboard
+        sends "Never" as 99 today, but the bound is the source of truth."""
+        import feedback
+        db, _ = _db_with(None)
+        # Try to set a value above the bound.
+        item = feedback.add_item(
+            "persistent steer",
+            actor="admin@example.com",
+            max_applies=feedback.MAX_APPLIES_BOUND + 50,
+            db=db,
+        )
+        assert item["max_applies"] == feedback.MAX_APPLIES_BOUND
+
+    def test_clamps_max_applies_to_at_least_one(self):
+        """A 0 or negative value would never auto-dismiss — meaningless;
+        clamp to 1."""
+        import feedback
+        db, _ = _db_with(None)
+        item = feedback.add_item(
+            "one-shot steer",
+            actor="admin@example.com",
+            max_applies=0,
+            db=db,
+        )
+        assert item["max_applies"] == 1
+
+    def test_max_applies_bound_at_least_99(self):
+        """The 'Never' affordance in the UI maps to 99; the bound must
+        admit that round-trip without truncating."""
+        import feedback
+        assert feedback.MAX_APPLIES_BOUND >= 99
+
 
 # ---- dismiss --------------------------------------------------------------
 

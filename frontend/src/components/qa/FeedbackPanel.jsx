@@ -16,6 +16,19 @@ import { getFeedback, addFeedback, dismissFeedback } from '../../services/qaAgen
 const MAX_ACTIVE = 10;
 const MIN_TEXT = 5;
 const MAX_TEXT = 500;
+const DEFAULT_MAX_APPLIES = 5;
+// Mirrors backend feedback.MAX_APPLIES_BOUND. The "Never" UI option
+// maps to this value so the operator can author persistent steers
+// that only retire on manual dismiss.
+const NEVER_AUTO_RETIRE = 99;
+const MAX_APPLIES_OPTIONS = [
+    { value: 1, label: '1 run' },
+    { value: 3, label: '3 runs' },
+    { value: 5, label: '5 runs (default)' },
+    { value: 10, label: '10 runs' },
+    { value: 20, label: '20 runs' },
+    { value: NEVER_AUTO_RETIRE, label: 'Never' },
+];
 
 const FeedbackPanel = () => {
     const [items, setItems] = useState([]);
@@ -25,6 +38,9 @@ const FeedbackPanel = () => {
     // panel and the loop looks broken from the outside.
     const [dismissed, setDismissed] = useState([]);
     const [draft, setDraft] = useState('');
+    // Per-item auto-retire threshold the operator picks before
+    // submitting. Default mirrors the backend's DEFAULT_MAX_APPLIES.
+    const [maxApplies, setMaxApplies] = useState(DEFAULT_MAX_APPLIES);
     const [busy, setBusy] = useState(false);
     const [error, setError] = useState(null);
     const [submitting, setSubmitting] = useState(false);
@@ -59,9 +75,13 @@ const FeedbackPanel = () => {
         setSubmitting(true);
         setError(null);
         try {
-            const resp = await addFeedback({ text: trimmed });
+            const resp = await addFeedback({
+                text: trimmed,
+                max_applies: maxApplies,
+            });
             if (resp?.success) {
                 setDraft('');
+                setMaxApplies(DEFAULT_MAX_APPLIES);
                 await refresh();
             } else {
                 setError(resp?.error || "couldn't save feedback");
@@ -99,7 +119,9 @@ const FeedbackPanel = () => {
 
             <p className="text-xs text-[#6B6B6B] mb-3">
                 Anything you type here gets included in the next scheduled run's
-                scenario design. Items auto-expire after 5 applied runs.
+                scenario design. Each item carries its own auto-retire limit
+                (default 5 runs) — pick "Never" for persistent steers and
+                retire manually via the X button when you're done.
             </p>
 
             <form onSubmit={submitFeedback} className="mb-4">
@@ -112,18 +134,36 @@ const FeedbackPanel = () => {
                     maxLength={MAX_TEXT}
                     className="w-full border border-[#E0DED8] rounded-lg px-3 py-2 text-sm bg-[#FBFAF6] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30 resize-none disabled:opacity-50"
                 />
-                <div className="flex items-center justify-between mt-2 gap-3">
+                <div className="flex items-center justify-between mt-2 gap-3 flex-wrap">
                     <span className="text-[10px] text-[#8A8A8A]">
                         {draft.length}/{MAX_TEXT}
                         {atCap && ' · cap reached, dismiss an item to add more'}
                     </span>
-                    <button
-                        type="submit"
-                        disabled={submitting || atCap || draft.trim().length < MIN_TEXT}
-                        className="px-4 py-1.5 bg-[#1A4D2E] text-white text-xs font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                        {submitting ? 'Saving…' : 'Submit'}
-                    </button>
+                    <div className="flex items-center gap-3">
+                        <label className="flex items-center gap-1.5 text-[11px] text-[#6B6B6B]">
+                            <span>Expires after:</span>
+                            <select
+                                aria-label="Expires after"
+                                value={String(maxApplies)}
+                                onChange={(e) => setMaxApplies(Number(e.target.value))}
+                                disabled={submitting || atCap}
+                                className="border border-[#E0DED8] rounded-md bg-[#FBFAF6] px-2 py-1 text-[11px] focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/30 disabled:opacity-50"
+                            >
+                                {MAX_APPLIES_OPTIONS.map((opt) => (
+                                    <option key={opt.value} value={String(opt.value)}>
+                                        {opt.label}
+                                    </option>
+                                ))}
+                            </select>
+                        </label>
+                        <button
+                            type="submit"
+                            disabled={submitting || atCap || draft.trim().length < MIN_TEXT}
+                            className="px-4 py-1.5 bg-[#1A4D2E] text-white text-xs font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            {submitting ? 'Saving…' : 'Submit'}
+                        </button>
+                    </div>
                 </div>
             </form>
 
