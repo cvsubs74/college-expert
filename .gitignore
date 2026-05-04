@@ -108,3 +108,13 @@ yarn-error.log*
 # Playwright test artifacts (transient — generated per CI/local run)
 frontend/test-results/
 frontend/playwright-report/
+
+# Claude Code session state (per-machine; never commit)
+# Includes .claude/worktrees/<id>/ which point to ephemeral session worktrees.
+# A worktree path was previously committed as a gitlink (mode 160000),
+# making `git status` permanently dirty and tripping the deploy.sh guard.
+.claude/
+
+# Local pytest venvs (created on demand for testing cloud functions)
+.venv-test/
+.venv/
