@@ -86,9 +86,37 @@ export async function buildIssueUrl({ runId, scenarioId }) {
 }
 
 // GET /summary — executive summary for the dashboard top.
-export async function getSummary() {
-    const resp = await fetch(`${QA_AGENT_URL}/summary`, {
+// Optional `recentN` overrides the saved dashboard prefs for this fetch.
+export async function getSummary({ recentN } = {}) {
+    const url = new URL(`${QA_AGENT_URL}/summary`);
+    if (recentN != null) {
+        url.searchParams.set('recent_n', String(recentN));
+    }
+    const resp = await fetch(url.toString(), {
         headers: await authHeader(),
+    });
+    return jsonOrThrow(resp);
+}
+
+// GET /dashboard-prefs — current admin-configurable dashboard prefs
+// (today: { recent_n: 20 }; shape extensible).
+export async function getDashboardPrefs() {
+    const resp = await fetch(`${QA_AGENT_URL}/dashboard-prefs`, {
+        headers: await authHeader(),
+    });
+    return jsonOrThrow(resp);
+}
+
+// POST /dashboard-prefs — replace prefs.
+export async function saveDashboardPrefs(prefs) {
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(await authHeader()),
+    };
+    const resp = await fetch(`${QA_AGENT_URL}/dashboard-prefs`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(prefs),
     });
     return jsonOrThrow(resp);
 }

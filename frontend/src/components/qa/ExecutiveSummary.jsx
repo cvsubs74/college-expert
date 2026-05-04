@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { ChartBarIcon, ArrowTrendingUpIcon, ArrowTrendingDownIcon, MinusIcon } from '@heroicons/react/24/outline';
-import { getSummary } from '../../services/qaAgent';
+import { getSummary, getDashboardPrefs, saveDashboardPrefs } from '../../services/qaAgent';
 
 // Top-of-dashboard executive summary. Fetches qa-agent /summary and
-// renders the LLM narrative + 7d/30d pass rates + per-surface health.
+// renders the LLM narrative + the recent-N pass rate (PRIMARY) +
+// 7d/30d pass rates (secondary) + per-surface health.
+//
+// "Recent N" is a configurable window — admin picks how many of the
+// most recent runs to summarize. The 30-day average lags too long
+// after a fix lands, so the recent-N pill is the at-a-glance signal.
+
+const RECENT_N_PRESETS = [5, 10, 20, 50, 100];
 
 const TREND_ICON = {
     improving: ArrowTrendingUpIcon,
@@ -23,11 +30,29 @@ const ExecutiveSummary = () => {
     const [loading, setLoading] = useState(true);
     const [summary, setSummary] = useState(null);
     const [error, setError] = useState(null);
+    const [recentN, setRecentN] = useState(20);
 
+    // Load saved prefs first, then fetch summary with that N.
+    useEffect(() => {
+        let cancelled = false;
+        (async () => {
+            try {
+                const prefsResp = await getDashboardPrefs();
+                if (!cancelled && prefsResp?.success && prefsResp.prefs?.recent_n) {
+                    setRecentN(prefsResp.prefs.recent_n);
+                }
+            } catch {
+                // non-fatal — fall back to default 20
+            }
+        })();
+        return () => { cancelled = true; };
+    }, []);
+
+    // Refetch the summary when recent_n changes.
     useEffect(() => {
         let cancelled = false;
         setLoading(true);
-        getSummary()
+        getSummary({ recentN })
             .then((resp) => {
                 if (cancelled) return;
                 if (resp?.success && resp.summary) {
@@ -43,7 +68,18 @@ const ExecutiveSummary = () => {
                 if (!cancelled) setLoading(false);
             });
         return () => { cancelled = true; };
-    }, []);
+    }, [recentN]);
+
+    const handleNChange = async (newN) => {
+        setRecentN(newN);
+        // Persist so subsequent loads (and the backend default) use it.
+        try {
+            await saveDashboardPrefs({ recent_n: newN });
+        } catch {
+            // non-fatal — the local state still drives the displayed pill;
+            // the user can change it again next session.
+        }
+    };
 
     if (loading) {
         return (
@@ -78,13 +114,36 @@ const ExecutiveSummary = () => {
                         {summary.narrative}
                     </p>
 
-                    {/* Pass-rate row */}
-                    <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1 text-sm">
+                    {/* Pass-rate row — recent-N is primary, 7d/30d are secondary */}
+                    <div className="flex flex-wrap items-end gap-x-5 gap-y-2 text-sm">
+                        <div className="min-w-0">
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-[10px] uppercase tracking-wider text-[#6B6B6B]">
+                                    Last
+                                </span>
+                                <select
+                                    value={summary.recent_n ?? recentN}
+                                    onChange={(e) => handleNChange(Number(e.target.value))}
+                                    aria-label="Number of recent runs to summarize"
+                                    className="text-[11px] border border-[#E0DED8] rounded px-1 py-0.5 bg-white focus:outline-none focus:ring-1 focus:ring-[#1A4D2E]/40"
+                                >
+                                    {RECENT_N_PRESETS.map((n) => (
+                                        <option key={n} value={n}>{n}</option>
+                                    ))}
+                                </select>
+                                <span className="text-[10px] uppercase tracking-wider text-[#6B6B6B]">
+                                    runs
+                                </span>
+                            </div>
+                            <div className="text-3xl font-bold text-[#1A4D2E]">
+                                {fmtRate(summary.pass_rate_recent)}
+                            </div>
+                        </div>
                         <div>
                             <span className="text-[10px] uppercase tracking-wider text-[#6B6B6B]">
                                 Last 7 days
                             </span>
-                            <div className="text-2xl font-bold text-[#1A4D2E]">
+                            <div className="text-lg font-semibold text-[#4A4A4A]">
                                 {fmtRate(summary.pass_rate_7d)}
                             </div>
                         </div>
@@ -92,11 +151,11 @@ const ExecutiveSummary = () => {
                             <span className="text-[10px] uppercase tracking-wider text-[#6B6B6B]">
                                 Last 30 days
                             </span>
-                            <div className="text-2xl font-bold text-[#1A4D2E]">
+                            <div className="text-lg font-semibold text-[#4A4A4A]">
                                 {fmtRate(summary.pass_rate_30d)}
                             </div>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-[#4A4A4A]">
+                        <div className="flex items-center gap-1 text-xs text-[#4A4A4A] mb-1">
                             <TrendIcon className="h-4 w-4" />
                             {summary.trend}
                         </div>

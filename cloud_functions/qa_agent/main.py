@@ -194,7 +194,13 @@ def qa_agent(request):
         return _cors(_handle_post_schedule(body, actor))
 
     if path == "summary" and request.method == "GET":
-        return _cors(_handle_summary(cfg))
+        return _cors(_handle_summary(cfg, request=request))
+
+    if path == "dashboard-prefs" and request.method == "GET":
+        return _cors(_handle_get_dashboard_prefs())
+
+    if path == "dashboard-prefs" and request.method == "POST":
+        return _cors(_handle_post_dashboard_prefs(body, actor))
 
     if path == "chat" and request.method == "POST":
         # Admin Q&A grounded in recent run reports. Spec:
@@ -394,15 +400,57 @@ def _handle_post_schedule(body: dict, actor: str) -> dict:
 # ---- /summary --------------------------------------------------------------
 
 
-def _handle_summary(cfg: dict) -> dict:
+def _handle_summary(cfg: dict, request=None) -> dict:
     try:
+        # Resolve recent_n: ?recent_n= query param wins, else stored prefs,
+        # else default. The query param is admin-debug only — the saved
+        # prefs is the source of truth that powers the dashboard pill.
+        import dashboard_prefs  # noqa: WPS433 — lazy for tests
+        prefs = dashboard_prefs.load_prefs()
+        recent_n = prefs.get("recent_n", 20)
+        if request is not None:
+            try:
+                qp = request.args.get("recent_n")
+                if qp:
+                    recent_n = int(qp)
+            except (TypeError, ValueError):
+                pass
+
         runs = firestore_store.list_recent_runs(limit=60)
         return {
             "success": True,
-            "summary": narratives.build_summary(runs, gemini_key=cfg["GEMINI_API_KEY"]),
+            "summary": narratives.build_summary(
+                runs,
+                recent_n=recent_n,
+                gemini_key=cfg["GEMINI_API_KEY"],
+            ),
         }
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: build_summary failed")
+        return {"success": False, "error": str(exc)}
+
+
+def _handle_get_dashboard_prefs() -> dict:
+    """GET /dashboard-prefs — returns the current prefs (or defaults)."""
+    try:
+        import dashboard_prefs  # noqa: WPS433
+        return {"success": True, "prefs": dashboard_prefs.load_prefs()}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: load_prefs failed")
+        return {"success": False, "error": str(exc)}
+
+
+def _handle_post_dashboard_prefs(body: dict, actor: str) -> dict:
+    """POST /dashboard-prefs — validate + save."""
+    try:
+        import dashboard_prefs  # noqa: WPS433
+        err = dashboard_prefs.validate_prefs(body)
+        if err:
+            return {"success": False, "error": err}
+        dashboard_prefs.save_prefs(body, actor=actor)
+        return {"success": True}
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("qa_agent: save_prefs failed")
         return {"success": False, "error": str(exc)}
 
 
