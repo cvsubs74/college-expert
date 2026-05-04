@@ -1,7 +1,6 @@
 {
-    "_comment": "Allowlist of college IDs the synthesizer is permitted to use. Update when adding new universities to the knowledge base.",
+    "_comment": "Allowlist of college IDs the synthesizer is permitted to use. Update when adding new universities to the knowledge base. Use full canonical names; short aliases (e.g. 'mit', 'ucla') are folded by coverage._CANONICAL_ALIASES at dashboard-build time and must not be added here.",
     "colleges": [
-        "mit",
         "massachusetts_institute_of_technology",
         "stanford_university",
         "harvard_university",
@@ -33,7 +32,6 @@
         "tufts_university",
         "brown_university",
         "cornell_university",
-        "rice_university",
-        "ucla"
+        "rice_university"
     ]
 }

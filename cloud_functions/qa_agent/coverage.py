@@ -47,6 +47,25 @@ MAX_VALIDATED_FEATURES = 20
 MAX_UNTESTED_UNIVERSITIES = 25
 
 
+# Known short-form aliases for universities → canonical (allowlist) id.
+# The synthesizer + static scenarios historically produced both forms,
+# which double-counted the same school in the universities-tested list.
+# Folding at coverage-build time means the dashboard renders one row per
+# school even with mixed-form historical data still in Firestore.
+_CANONICAL_ALIASES = {
+    "mit": "massachusetts_institute_of_technology",
+    "ucla": "university_of_california_los_angeles",
+}
+
+
+def _canonicalize(uni: str) -> str:
+    """Return the canonical id for a university alias, or the input
+    unchanged if no alias is registered. Opt-in by entry — unknown ids
+    pass through so the data stays interpretable even when the alias
+    map lags behind a new school in the allowlist."""
+    return _CANONICAL_ALIASES.get(uni, uni)
+
+
 # ---- Public ----------------------------------------------------------------
 
 
@@ -94,6 +113,7 @@ def build_coverage(runs: List[dict], *,
             for uni in scen.get("colleges_template") or []:
                 if not isinstance(uni, str) or not uni:
                     continue
+                uni = _canonicalize(uni)
                 slot = universities.setdefault(uni, {
                     "id": uni, "count": 0, "last_tested_at": "",
                 })

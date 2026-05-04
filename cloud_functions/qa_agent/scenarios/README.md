@@ -18,7 +18,7 @@ directory at run time, picks a few according to the selection policy in
     "intended_major": "Computer Science",
     "interests": ["coding", "robotics"]
   },
-  "colleges_template": ["mit", "stanford", "..."],
+  "colleges_template": ["massachusetts_institute_of_technology", "stanford_university", "..."],
   "expected_template_used": "junior_spring",
   "surfaces_covered": ["profile", "college_list", "roadmap"]
 }
