@@ -123,7 +123,16 @@ def _check_auth(request, cfg) -> dict:
     if auth_hdr.startswith("Bearer "):
         id_token = auth_hdr[len("Bearer "):].strip()
         try:
-            from firebase_admin import auth as _fa  # lazy import for tests
+            # Route through auth._firebase_admin() instead of importing
+            # firebase_admin.auth directly. The helper does the lazy
+            # `initialize_app()` on first call — without it, every prod
+            # Bearer-token verify fails with "The default Firebase app does
+            # not exist" and admins on stratiaadmissions.com/qa-runs see
+            # 'unauthorized' even though they're correctly logged in.
+            # Caught in prod 2026-05-04; regression test in
+            # tests/cloud_functions/qa_agent/test_main_endpoints.py.
+            import auth as _qa_auth  # noqa: WPS433
+            _fa = _qa_auth._firebase_admin()
             decoded = _fa.verify_id_token(id_token)
             email = (decoded.get("email") or "").lower()
             if email and email in admin_emails:
