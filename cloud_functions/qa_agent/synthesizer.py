@@ -275,8 +275,11 @@ Generate exactly {n} test scenarios in JSON. Each scenario MUST:
    - gpa: float in [0.0, 4.0]
    - colleges_template: 1 to 6 ids, all from the allowlist above
 3. Include a `synthesis_rationale` field of 2-3 sentences explaining what gap or risk this scenario targets and why.
-4. Include a `tests` field — 3-5 plain-English bullets describing what the scenario verifies.
-5. Use a valid `expected_template_used`: one of [freshman_fall, freshman_spring, sophomore_fall, sophomore_spring, junior_fall, junior_spring, junior_summer, senior_fall, senior_spring].
+4. Include a `business_rationale` field — 1-2 sentences in plain language a non-engineer (e.g., a PM or designer) would understand, explaining what user need or business risk this scenario validates. Focus on WHY the test matters, not just WHAT it does.
+   Good example: "Confirms that brand-new 9th graders get a useful, age-appropriate roadmap right away — the first impression for our youngest cohort and a common drop-off point if the dashboard feels empty."
+   Bad example: "Tests freshman_fall template resolution." (technical, no business framing)
+5. Include a `tests` field — 3-5 plain-English bullets describing what the scenario verifies.
+6. Use a valid `expected_template_used`: one of [freshman_fall, freshman_spring, sophomore_fall, sophomore_spring, junior_fall, junior_spring, junior_summer, senior_fall, senior_spring].
 
 Return STRICT JSON ONLY (no markdown, no commentary):
 {{
@@ -286,6 +289,7 @@ Return STRICT JSON ONLY (no markdown, no commentary):
       "synthesized": true,
       "synthesis_rationale": "...",
       "description": "...",
+      "business_rationale": "1-2 sentences a non-engineer would understand, framing the user need or business risk this validates",
       "tests": ["...", "..."],
       "default_student_name": "...",
       "profile_template": {{

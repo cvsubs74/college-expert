@@ -1,6 +1,7 @@
 {
     "id": "senior_spring_decisions",
     "description": "Senior in spring — applications submitted, waiting for decisions. Tests the late-cycle template and overdue-marker behavior on past deadlines.",
+    "business_rationale": "Confirms the post-submission user experience works: when applications are in and seniors are waiting on decisions, the dashboard should pivot to decision-tracking guidance and clearly mark expired deadlines as OVERDUE rather than silently skipping them. Catches regressions where late-cycle students fall off the system's mental model.",
     "default_student_name": "Casey Morgan",
     "profile_template": {
         "grade_level": "12th Grade",

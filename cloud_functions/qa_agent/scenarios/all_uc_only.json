@@ -1,6 +1,7 @@
 {
     "id": "all_uc_only",
     "description": "Junior with an all-UC college list. Stresses the UC group-task translation specifically.",
+    "business_rationale": "Verifies California-focused students get the right experience: instead of separate per-school tasks for each UC, the roadmap should collapse them into one shared UC application bundle. Catches regressions where the UC group treatment breaks and California users see redundant tasks.",
     "default_student_name": "Avery Thompson",
     "profile_template": {
         "grade_level": "11th Grade",
