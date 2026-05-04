@@ -1,0 +1,270 @@
+"""
+Tests for chat.py — admin Q&A over recent QA runs.
+
+Spec: docs/prd/qa-agent-chat.md + docs/design/qa-agent-chat.md.
+
+The handler:
+  1. Validates {question, history}
+  2. Loads N recent run summaries from Firestore
+  3. Builds a prompt grounded in those summaries
+  4. Calls Gemini and returns the answer text
+
+Heavy deps (firestore, google-genai) are stubbed in conftest. These
+tests focus on the input/output contract and the run-context formatting
+that grounds the model in real data.
+"""
+
+from __future__ import annotations
+
+import pytest
+
+
+# ---- Fixtures --------------------------------------------------------------
+
+
+def _run(run_id, summary, scenarios=None, started_at="2026-05-04T01:00:00+00:00",
+         trigger="agent_loop"):
+    return {
+        "run_id": run_id,
+        "started_at": started_at,
+        "trigger": trigger,
+        "summary": summary,
+        "scenarios": scenarios or [],
+    }
+
+
+def _scen(scenario_id, passed, failing_steps=None):
+    s = {"scenario_id": scenario_id, "passed": passed, "steps": []}
+    for step_name, assertion_msg in (failing_steps or []):
+        s["steps"].append({
+            "name": step_name,
+            "passed": False,
+            "assertions": [{"name": "x", "passed": False, "message": assertion_msg}],
+        })
+    return s
+
+
+# ---- _format_run_context ---------------------------------------------------
+
+
+class TestFormatRunContext:
+    def test_includes_run_id_and_summary(self):
+        import chat
+        runs = [_run("run_a", {"pass": 5, "fail": 0, "total": 5})]
+        out = chat._format_run_context(runs)
+        assert "run_a" in out
+        assert "5/5" in out or "5 pass" in out
+
+    def test_lists_failing_scenarios_with_step_name(self):
+        import chat
+        runs = [_run(
+            "run_b",
+            {"pass": 1, "fail": 1, "total": 2},
+            scenarios=[
+                _scen("scen_a", True),
+                _scen("scen_b", False, [
+                    ("roadmap_generate", "metadata.template_used=='junior_fall': got 'junior_spring'")
+                ]),
+            ],
+        )]
+        out = chat._format_run_context(runs)
+        assert "scen_b" in out, "should mention failing scenario"
+        assert "roadmap_generate" in out, "should mention failing step"
+        # Don't require the full assertion message — just enough to ground
+        # the LLM. But the failing assertion summary should appear.
+        assert "junior_fall" in out or "template_used" in out
+
+    def test_passes_scenarios_dont_include_step_breakdown(self):
+        import chat
+        runs = [_run(
+            "run_c",
+            {"pass": 1, "fail": 0, "total": 1},
+            scenarios=[_scen("happy_scen", True)],
+        )]
+        out = chat._format_run_context(runs)
+        # The format budget matters — pass-only scenarios shouldn't dump
+        # all their step names. Absence of "PASS" details is fine.
+        assert "run_c" in out
+        assert "1/1" in out or "1 pass" in out
+
+    def test_empty_runs_returns_explicit_empty_message(self):
+        import chat
+        out = chat._format_run_context([])
+        # Caller relies on this being non-empty so the prompt explains
+        # the situation to the LLM rather than sending blank context.
+        assert len(out.strip()) > 0
+        # Plain English; no JSON braces.
+        assert "no" in out.lower() or "empty" in out.lower() or "0 runs" in out.lower()
+
+    def test_truncates_to_token_budget(self):
+        """A 60-run history shouldn't blow the prompt budget. The
+        formatter must cap output length even if given many runs."""
+        import chat
+        runs = [
+            _run(
+                f"run_{i}",
+                {"pass": 8, "fail": 0, "total": 8},
+                scenarios=[_scen(f"scen_{i}_{j}", True) for j in range(8)],
+            )
+            for i in range(60)
+        ]
+        out = chat._format_run_context(runs)
+        # Soft upper bound: under 30k chars (~7-8k tokens), well within
+        # Gemini Flash's 1M-token window with room for system + history.
+        assert len(out) < 30000, f"context too large: {len(out)} chars"
+
+
+# ---- _system_prompt --------------------------------------------------------
+
+
+class TestSystemPrompt:
+    def test_includes_grounding_rule(self):
+        """The system prompt must instruct the model not to invent runs."""
+        import chat
+        sp = chat._system_prompt()
+        # Grounding rule keywords (case-insensitive); match either of two
+        # standard phrasings so we don't lock in exact wording.
+        sp_lower = sp.lower()
+        assert "ground" in sp_lower or "do not invent" in sp_lower or "never invent" in sp_lower
+        # Should mention the specific data source it has.
+        assert "run" in sp_lower
+
+    def test_non_empty(self):
+        import chat
+        assert chat._system_prompt().strip()
+
+
+# ---- handle_chat -----------------------------------------------------------
+
+
+class TestHandleChat:
+    def _cfg(self):
+        return {"GEMINI_API_KEY": "fake-key"}
+
+    def test_returns_400_on_empty_question(self, monkeypatch):
+        import chat
+        resp, status = chat.handle_chat({"question": ""}, self._cfg())
+        assert status == 400
+        assert resp["success"] is False
+        assert "question" in resp.get("error", "").lower()
+
+    def test_returns_400_on_missing_question_key(self, monkeypatch):
+        import chat
+        resp, status = chat.handle_chat({}, self._cfg())
+        assert status == 400
+
+    def test_returns_400_on_bad_history_type(self, monkeypatch):
+        import chat
+        resp, status = chat.handle_chat(
+            {"question": "ok", "history": "not a list"}, self._cfg(),
+        )
+        assert status == 400
+        assert "history" in resp.get("error", "").lower()
+
+    def test_returns_400_when_no_runs_loaded(self, monkeypatch):
+        import chat
+        monkeypatch.setattr(chat, "_load_recent_run_summaries", lambda limit=30: [])
+        resp, status = chat.handle_chat({"question": "anything"}, self._cfg())
+        assert status == 400
+        assert resp["success"] is False
+        assert "run" in resp.get("error", "").lower()
+
+    def test_happy_path_returns_answer(self, monkeypatch):
+        import chat
+        monkeypatch.setattr(chat, "_load_recent_run_summaries",
+                            lambda limit=30: [_run("run_a", {"pass": 8, "fail": 0, "total": 8})])
+        monkeypatch.setattr(chat, "_call_gemini",
+                            lambda system, prompt, key: "Health is good — 8/8 pass.")
+        resp, status = chat.handle_chat(
+            {"question": "How's health?", "history": []}, self._cfg(),
+        )
+        assert status == 200
+        assert resp["success"] is True
+        assert "8/8" in resp["answer"] or "good" in resp["answer"].lower()
+        assert resp["context_run_count"] == 1
+
+    def test_history_is_passed_to_prompt(self, monkeypatch):
+        """A multi-turn conversation must round-trip prior messages so the
+        model can answer follow-ups (e.g., 'and the one before that?')."""
+        import chat
+        captured_prompts = []
+        monkeypatch.setattr(chat, "_load_recent_run_summaries",
+                            lambda limit=30: [_run("run_a", {"pass": 1, "fail": 0, "total": 1})])
+        def _spy(system, prompt, key):
+            captured_prompts.append(prompt)
+            return "ack"
+        monkeypatch.setattr(chat, "_call_gemini", _spy)
+
+        history = [
+            {"role": "user", "content": "What's the worst scenario?"},
+            {"role": "assistant", "content": "freshman_fall_starter"},
+        ]
+        chat.handle_chat(
+            {"question": "and the one before?", "history": history}, self._cfg(),
+        )
+        assert captured_prompts, "Gemini should have been called"
+        prompt = captured_prompts[0]
+        # The prompt should reference the prior turn so follow-up resolves.
+        assert "What's the worst scenario?" in prompt
+        assert "freshman_fall_starter" in prompt
+
+    def test_gemini_error_falls_back_gracefully(self, monkeypatch):
+        """If Gemini call fails (network, quota, etc.), return a 200-ish
+        response with a friendly error message — don't 500."""
+        import chat
+        monkeypatch.setattr(chat, "_load_recent_run_summaries",
+                            lambda limit=30: [_run("run_a", {"pass": 1, "fail": 0, "total": 1})])
+        def _boom(*_a, **_k):
+            raise RuntimeError("gemini timeout")
+        monkeypatch.setattr(chat, "_call_gemini", _boom)
+
+        resp, status = chat.handle_chat({"question": "anything"}, self._cfg())
+        # Either a structured 503-ish or a 200 with success=False — but
+        # NOT an unhandled 500.
+        assert status in (200, 503)
+        assert resp["success"] is False
+        assert "error" in resp
+
+
+# ---- Integration with main.py /chat route ---------------------------------
+
+
+class TestChatRouteWiring:
+    """Smoke test that main.py dispatches POST /chat to handle_chat with
+    the expected body."""
+
+    def test_chat_route_calls_handle_chat(self, monkeypatch):
+        # Importing main with the qa_main fixture infrastructure is heavy;
+        # this is a lightweight check that the route exists. We import
+        # main fresh and assert the dispatcher recognizes the path.
+        import importlib
+        monkeypatch.setenv("QA_ADMIN_TOKEN", "test-admin-token")
+        monkeypatch.setenv("QA_ADMIN_EMAILS", "admin@example.com")
+        monkeypatch.setenv("QA_TEST_USER_EMAIL", "duser8531@gmail.com")
+        monkeypatch.setenv("PROFILE_MANAGER_URL", "https://pm.test")
+        monkeypatch.setenv("COUNSELOR_AGENT_URL", "https://ca.test")
+        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+        import main as qa_main_mod  # noqa: WPS433
+        importlib.reload(qa_main_mod)
+
+        # Stub the chat handler so we don't actually call the LLM.
+        called = {}
+        import chat
+        def _stub_handle(body, cfg):
+            called["body"] = body
+            return {"success": True, "answer": "stub"}, 200
+        monkeypatch.setattr(chat, "handle_chat", _stub_handle)
+
+        # Build a minimal request stub.
+        class _Req:
+            method = "POST"
+            path = "/chat"
+            headers = {"X-Admin-Token": "test-admin-token"}
+            args = {}
+            def get_json(self, silent=False):
+                return {"question": "hi", "history": []}
+
+        resp = qa_main_mod.qa_agent(_Req())
+        # The route should have dispatched to handle_chat.
+        assert called.get("body", {}).get("question") == "hi"
+        assert resp.status_code == 200

@@ -196,6 +196,13 @@ def qa_agent(request):
     if path == "summary" and request.method == "GET":
         return _cors(_handle_summary(cfg))
 
+    if path == "chat" and request.method == "POST":
+        # Admin Q&A grounded in recent run reports. Spec:
+        # docs/prd/qa-agent-chat.md + docs/design/qa-agent-chat.md.
+        import chat  # noqa: WPS433 — lazy so unrelated requests skip the import
+        result, status = chat.handle_chat(body, cfg)
+        return _cors(result, status)
+
     return _cors({"success": False, "error": f"unknown path: {path}"}, 404)
 
 
