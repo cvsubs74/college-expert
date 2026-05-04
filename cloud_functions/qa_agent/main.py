@@ -406,6 +406,7 @@ def _handle_summary(cfg: dict, request=None) -> dict:
         # cost, and avoid pulling firestore at module load time.
         import dashboard_prefs  # noqa: WPS433
         import coverage as coverage_mod  # noqa: WPS433
+        import resolved_issues as resolved_issues_mod  # noqa: WPS433
 
         # Resolve recent_n: ?recent_n= query param wins, else stored prefs,
         # else default. The query param is admin-debug only — the saved
@@ -431,6 +432,8 @@ def _handle_summary(cfg: dict, request=None) -> dict:
             # End-to-end journeys the QA agent has VERIFIED across recent
             # runs. Ships in /summary so the dashboard fetches once.
             "coverage": coverage_mod.build_coverage(runs),
+            # Recent FAIL → PASS transitions, evidence preserved.
+            "resolved_issues": resolved_issues_mod.build_resolved_issues(runs),
         }
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: build_summary failed")
