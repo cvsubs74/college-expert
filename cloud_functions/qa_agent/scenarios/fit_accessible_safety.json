@@ -1,0 +1,25 @@
+{
+    "id": "fit_accessible_safety",
+    "description": "Strong senior evaluated against Ohio State (accessible flagship, typically >50% acceptance). The selectivity ceiling in fit_computation.py forces SAFETY classification when acceptance_rate >= 50% — the strongest assertion we can pin in fit testing.",
+    "business_rationale": "Accessible flagships are where operators most want to reassure families ('your safety school is genuinely a safety'). A regression that incorrectly classified a 50%+ acceptance school as TARGET or REACH would undermine that confidence. The selectivity-ceiling rule catches this — and pinning fit_expected_category=SAFETY here gives us a fail-loud signal if the post-processor's ceiling logic ever drifts.",
+    "default_student_name": "Jordan Patel",
+    "profile_template": {
+        "grade_level": "12th Grade",
+        "graduation_year": 2026,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "math team", "tutoring"]
+    },
+    "colleges_template": ["ohio_state_university"],
+    "fit_target_college": "ohio_state_university",
+    "fit_expected_category": "SAFETY",
+    "expected_template_used": "senior_fall",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "Selectivity ceiling: school with acceptance_rate >= 50% must classify as SAFETY",
+        "match_percentage in [75, 100] (the SAFETY band) — strong student at an accessible school should rank high",
+        "All four factors {Academic, Holistic, Major Fit, Selectivity} present with bounded scores",
+        "Selectivity factor score = +5 (the maximum positive adjustment for accessible schools)",
+        "All 8 advisory blocks present and non-empty"
+    ]
+}

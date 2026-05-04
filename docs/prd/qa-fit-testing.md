@@ -76,14 +76,28 @@ real-world misadvisement. Today we have no automated detection.
 
 ### Phase 2 — Behavioural coverage
 
-- 4-5 more static archetypes spanning all selectivity tiers + a
-  `fit_test_optional` archetype + a `fit_intended_major_mismatch`
-  archetype.
+**Phase 2a (DONE — covers 3 of 5 tiers):**
+- `fit_ultra_selective_reach` — MIT (<8%, ULTRA_SELECTIVE), pinned
+  to `SUPER_REACH`. Catches floor regression for the strictest tier.
+- `fit_highly_selective_reach` — UC Berkeley (~11-15%,
+  HIGHLY_SELECTIVE), unpinned (must be REACH or SUPER_REACH per the
+  floor invariant; specific landing depends on actual acceptance
+  rate in the KB).
+- `fit_accessible_safety` — Ohio State (>=50%, ACCESSIBLE), pinned
+  to `SAFETY`. Catches ceiling regression.
+
+**Phase 2b (deferred):**
+- Add `fit_very_selective` (15-25% band) and `fit_selective` (25-40%
+  band) archetypes once we identify schools in the allowlist with
+  those acceptance rates.
+- A `fit_test_optional` archetype and a `fit_intended_major_mismatch`
+  archetype to probe profile-side edge cases.
 - A *cross-college* scenario (`fit_relative_ordering`) that picks 3
-  colleges at different selectivity tiers, runs the fit on each, and
-  asserts the *match-% ordering* matches selectivity-tier ordering
-  (a perfect student should not fit a 4% school better than a 50%
-  school).
+  colleges at different selectivity tiers in a single run, runs the
+  fit on each, and asserts the *match-% ordering* is monotonic with
+  selectivity. Requires extending the runner to support
+  `fit_target_colleges` (list) and a new cross-step assertion that
+  walks all the compute_fit step contexts.
 
 ### Phase 3 — Synthesizer integration
 

@@ -1,0 +1,24 @@
+{
+    "id": "fit_highly_selective_reach",
+    "description": "Strong junior evaluated against UC Berkeley (highly selective, ~11-15% acceptance). The selectivity floor in fit_computation.py requires the school to land in REACH or SUPER_REACH — never SAFETY/TARGET — regardless of profile strength.",
+    "business_rationale": "Highly selective public flagships are a high-trust operator surface — many strong students apply expecting realistic guidance. A misadvisement here (e.g. 'UC Berkeley is a TARGET') would erode confidence broadly. This archetype catches floor-rule regression for the 8-15% acceptance band, which today's fit_ultra_selective_reach scenario doesn't exercise (it covers <8%). Together they pin both halves of the selectivity-floor rule.",
+    "default_student_name": "Sam Chen",
+    "profile_template": {
+        "grade_level": "11th Grade",
+        "graduation_year": 2027,
+        "gpa": 3.85,
+        "intended_major": "Computer Science",
+        "interests": ["robotics", "competitive programming", "research"]
+    },
+    "colleges_template": ["university_of_california_berkeley"],
+    "fit_target_college": "university_of_california_berkeley",
+    "expected_template_used": "junior_spring",
+    "surfaces_covered": ["profile", "college_list", "roadmap", "fit"],
+    "tests": [
+        "Selectivity floor (8-15% band): fit_category must be REACH or SUPER_REACH; cannot be SAFETY or TARGET",
+        "match_percentage in the band declared by whichever category lands (REACH 35-54 or SUPER_REACH 0-34)",
+        "All four factors {Academic, Holistic, Major Fit, Selectivity} present with bounded scores",
+        "All 8 advisory blocks present and non-empty",
+        "fit_category strictly in {SAFETY, TARGET, REACH, SUPER_REACH}"
+    ]
+}
