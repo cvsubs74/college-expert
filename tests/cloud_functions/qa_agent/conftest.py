@@ -87,6 +87,41 @@ class _StubDoc:
 _firestore.Client = _StubClient
 
 
+# --- Stub google.cloud.scheduler_v1 -------------------------------------------
+# schedule.sync_to_cloud_scheduler imports scheduler_v1 lazily so most
+# tests don't pay the cost. Tests that exercise the handler indirectly
+# (e.g. test_main_endpoints.py::TestScheduleEndpoint) hit the import path
+# and need the module + a no-op CloudSchedulerClient. Tests that assert
+# on call args pass their own stub via the `client=` kwarg.
+_scheduler = _ensure_module('google.cloud.scheduler_v1')
+
+
+class _StubJob:
+    def __init__(self, *, name="", schedule="", time_zone=""):
+        self.name = name
+        self.schedule = schedule
+        self.time_zone = time_zone
+
+
+class _StubSchedulerClient:
+    """Default Cloud Scheduler client used when tests don't supply one.
+    Records nothing; pause/update/resume are silent no-ops so existing
+    handler tests don't have to know about the new sync call."""
+
+    def update_job(self, *, job, update_mask):
+        pass
+
+    def pause_job(self, *, name):
+        pass
+
+    def resume_job(self, *, name):
+        pass
+
+
+_scheduler.Job = _StubJob
+_scheduler.CloudSchedulerClient = _StubSchedulerClient
+
+
 # --- Stub firebase_admin -----------------------------------------------------
 _fa = _ensure_module('firebase_admin')
 _fa._apps = {}
