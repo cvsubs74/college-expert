@@ -7,10 +7,13 @@ Endpoints:
                                  this file produces a fresh revision via
                                  cloudbuild-main.yaml — see
                                  docs/prd/auto-deploy-on-main.md.
-                                 First successful auto-deploy required two
-                                 follow-up fixes: shallow-clone diff in
-                                 PR #96 + Cloud Build substitution-escape
-                                 in fix/cloudbuild-substitution-escape.)
+                                 First successful auto-deploy required
+                                 three follow-up fixes: shallow-clone diff
+                                 (PR #96), Cloud Build substitution-escape
+                                 (PR #97), and deploy-guard CI bypass
+                                 dropping the BUILD_ID requirement
+                                 (Cloud Build doesn't auto-inject it into
+                                 step containers).)
   GET  /health                → liveness ping
   GET  /scenarios             → list of registered archetypes (id + description)
   POST /run                   → run a fresh batch
