@@ -327,8 +327,8 @@ class TestRequiredAdvisoryBlocksPresent:
         assert "essay" in (r.message or "").lower()
 
     def test_fails_when_block_is_empty_array(self):
-        """Empty arrays mean the LLM produced no recommendations —
-        that's a regression worth catching."""
+        """Empty arrays in the strict tier mean the LLM produced no
+        recommendations — that's a regression worth catching."""
         import fit_assertions
         check = fit_assertions.required_advisory_blocks_present()
         bad = _good_fit()
@@ -336,6 +336,85 @@ class TestRequiredAdvisoryBlocksPresent:
         r = check(_ctx(bad))
         assert not r.passed
         assert "recommendations" in (r.message or "")
+
+    def test_fails_when_essay_angles_is_empty_array(self):
+        """essay_angles is in the strict tier — empty must still fail."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        bad = _good_fit()
+        bad["essay_angles"] = []
+        r = check(_ctx(bad))
+        assert not r.passed
+        assert "essay_angles" in (r.message or "")
+
+    def test_fails_when_explanation_is_empty_string(self):
+        """explanation is strict and a string — empty string fails."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        bad = _good_fit()
+        bad["explanation"] = ""
+        r = check(_ctx(bad))
+        assert not r.passed
+        assert "explanation" in (r.message or "")
+
+    # ---- Soft tier — empty allowed, null/missing not -----------------------
+    # Surfaced 2026-05-05 by run run_20260505T043025Z_5bbe95: synth
+    # archetype "recruited athlete, low GPA" against Duke produced
+    # scholarship_matches=[] because the student doesn't qualify for
+    # any of Duke's merit scholarships. That's a legitimate result,
+    # not an LLM regression — the assertion should not false-fail it.
+
+    def test_passes_when_scholarship_matches_is_empty_list(self):
+        """A profile may legitimately match zero school-listed
+        scholarships (e.g., recruited athlete with low GPA at a
+        school whose scholarships are all merit-based)."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        ok = _good_fit()
+        ok["scholarship_matches"] = []
+        r = check(_ctx(ok))
+        assert r.passed, r.message
+
+    def test_passes_when_red_flags_to_avoid_is_empty_list(self):
+        """An ideal applicant has nothing to avoid — empty is fine."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        ok = _good_fit()
+        ok["red_flags_to_avoid"] = []
+        r = check(_ctx(ok))
+        assert r.passed, r.message
+
+    def test_passes_when_demonstrated_interest_tips_is_empty_list(self):
+        """Schools that don't track demonstrated interest legitimately
+        have no DI tips."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        ok = _good_fit()
+        ok["demonstrated_interest_tips"] = []
+        r = check(_ctx(ok))
+        assert r.passed, r.message
+
+    def test_fails_when_scholarship_matches_is_null(self):
+        """null is not the same as []. A null-valued key is missing
+        data; an empty list is an explicit "no matches" signal."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        bad = _good_fit()
+        bad["scholarship_matches"] = None
+        r = check(_ctx(bad))
+        assert not r.passed
+        assert "scholarship_matches" in (r.message or "")
+
+    def test_fails_when_scholarship_matches_key_is_missing(self):
+        """Missing key is still a hard fail in the soft tier — the
+        response shape contract requires the key to exist."""
+        import fit_assertions
+        check = fit_assertions.required_advisory_blocks_present()
+        bad = _good_fit()
+        del bad["scholarship_matches"]
+        r = check(_ctx(bad))
+        assert not r.passed
+        assert "scholarship_matches" in (r.message or "")
 
 
 # ---- Cross-college category-rank ordering --------------------------------

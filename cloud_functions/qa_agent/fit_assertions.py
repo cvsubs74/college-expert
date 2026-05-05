@@ -50,16 +50,37 @@ _EXPECTED_FACTORS = {
 
 # The 8 advisory blocks the fit prompt requires. Phase 1 just asserts
 # they're present + non-empty; content quality is a Phase 4 concern.
-_REQUIRED_BLOCKS = (
+#
+# Two-tier requirement after run run_20260505T043025Z_5bbe95 caught
+# a synth scenario (recruited athlete, low GPA, vs Duke) where the
+# LLM returned empty scholarship_matches. Duke has 6 scholarships in
+# the KB but a recruited athlete with low GPA legitimately might not
+# match any merit-based ones. Treating empty as a hard fail produces
+# false positives on legitimate edge-case profiles.
+#
+# Strict tier — every fit response MUST have these non-empty. Empty
+# = a real LLM regression (e.g., dropping the field entirely or
+# returning [] when the profile clearly warrants content).
+_REQUIRED_NON_EMPTY_BLOCKS = (
     "explanation",
     "essay_angles",
     "application_timeline",
-    "scholarship_matches",
     "test_strategy",
     "major_strategy",
-    "demonstrated_interest_tips",
-    "red_flags_to_avoid",
     "recommendations",
+)
+
+# Soft tier — must be present (the field exists, is the right type)
+# but may be empty for legitimate edge cases:
+#  - scholarship_matches: profile may genuinely not match any
+#    school-listed scholarship.
+#  - red_flags_to_avoid: ideal applicants may have nothing to avoid.
+#  - demonstrated_interest_tips: schools that explicitly don't track
+#    DI legitimately have no tips.
+_REQUIRED_PRESENT_BLOCKS = (
+    "scholarship_matches",
+    "red_flags_to_avoid",
+    "demonstrated_interest_tips",
 )
 
 
@@ -448,12 +469,19 @@ def test_strategy_not_submit_when_no_scores(
 def required_advisory_blocks_present(
     base_path: str = "fit_analysis",
 ) -> AssertionFn:
-    """All 8 advisory blocks (explanation, essay_angles, …,
-    recommendations) must be present and non-empty.
+    """All 9 advisory blocks must be present (key exists). Most must
+    also be non-empty; a few are allowed to be legitimately empty.
 
-    Phase 1 doesn't judge content quality; just asserts the LLM didn't
-    drop a section. An empty `recommendations` list is treated as a
-    regression — the prompt explicitly asks for 3 entries.
+    Two tiers (see module-level constants):
+      - _REQUIRED_NON_EMPTY_BLOCKS: empty = LLM regression. Catches
+        the case where the model drops the field's content entirely.
+      - _REQUIRED_PRESENT_BLOCKS: empty is a legitimate edge case
+        (no scholarships match this student's profile, perfect
+        applicant has no red flags, school doesn't track DI). Only
+        the missing-key case fails.
+
+    Both tiers fail if the key is missing entirely — the response
+    shape contract is non-negotiable.
     """
     def _check(ctx):
         present, body = _get(ctx, base_path)
@@ -463,7 +491,7 @@ def required_advisory_blocks_present(
                 passed=False,
                 message=f"missing or non-dict '{base_path}'",
             )
-        for block in _REQUIRED_BLOCKS:
+        for block in _REQUIRED_NON_EMPTY_BLOCKS:
             v = body.get(block)
             if v is None:
                 return AssertionResult(
@@ -476,6 +504,23 @@ def required_advisory_blocks_present(
                     name="required advisory blocks present",
                     passed=False,
                     message=f"block {block!r} is empty",
+                )
+        for block in _REQUIRED_PRESENT_BLOCKS:
+            if block not in body:
+                return AssertionResult(
+                    name="required advisory blocks present",
+                    passed=False,
+                    message=f"missing block {block!r}",
+                )
+            v = body.get(block)
+            # Allow empty list/dict/string. Reject only None — a
+            # null-valued key is just a missing key with extra steps
+            # and isn't a meaningful "no matches" signal.
+            if v is None:
+                return AssertionResult(
+                    name="required advisory blocks present",
+                    passed=False,
+                    message=f"block {block!r} is null (use [] for 'no matches')",
                 )
         return AssertionResult(
             name="required advisory blocks present",
