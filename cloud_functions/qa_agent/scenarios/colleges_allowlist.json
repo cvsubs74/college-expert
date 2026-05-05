@@ -1,5 +1,5 @@
 {
-    "_comment": "Allowlist of college IDs the synthesizer is permitted to use. Update when adding new universities to the knowledge base. Use full canonical names; short aliases (e.g. 'mit', 'ucla') are folded by coverage._CANONICAL_ALIASES at dashboard-build time and must not be added here.",
+    "_comment": "Allowlist of college IDs the synthesizer is permitted to use. INVARIANT: every entry MUST be present in the universities knowledge base (knowledge-base-manager-universities-v2/get-university). When adding a school here, first verify the KB has its profile — otherwise the synthesizer can pick it, scenarios will exercise compute_fit on it, and /compute-single-fit will return 404 (real run_20260505T033041Z_92fd32 hit this on university_of_chicago which was in the allowlist but missing from the KB). Use full canonical names; short aliases (e.g. 'mit', 'ucla') are folded by coverage._CANONICAL_ALIASES at dashboard-build time and must not be added here. Run scripts/verify-allowlist-kb.sh periodically to catch orphans.",
     "colleges": [
         "massachusetts_institute_of_technology",
         "stanford_university",
@@ -7,13 +7,11 @@
         "yale_university",
         "princeton_university",
         "columbia_university",
-        "university_of_chicago",
         "northwestern_university",
         "duke_university",
         "vanderbilt_university",
         "carnegie_mellon_university",
         "georgia_institute_of_technology",
-        "university_of_michigan",
         "university_of_washington",
         "university_of_california_berkeley",
         "university_of_california_los_angeles",
@@ -25,7 +23,6 @@
         "university_of_minnesota_twin_cities",
         "university_of_florida",
         "ohio_state_university",
-        "penn_state_university",
         "boston_university",
         "boston_college",
         "new_york_university",
