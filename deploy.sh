@@ -292,34 +292,36 @@ command_exists() {
 }
 
 # Check required tools
+# ---------------------
+# gcloud is needed for every target. The other tools are only needed by
+# specific targets (adk → agent-adk + vertexai targets, npm + firebase →
+# frontend). Hard-failing on a missing optional tool blocks valid deploys
+# from environments that don't ship it (e.g., Cloud Build's gcloud image
+# has no adk/npm/firebase installed but happily deploys qa-agent). So
+# gcloud is required and the others are warnings; the actual deploy
+# command will still fail loudly if it tries to invoke a missing tool.
 echo -e "${YELLOW}Checking required tools...${NC}"
-MISSING_TOOLS=()
-
 if ! command_exists gcloud; then
-    MISSING_TOOLS+=("gcloud (Google Cloud SDK)")
-fi
-
-if ! command_exists adk; then
-    MISSING_TOOLS+=("adk (Google ADK)")
-fi
-
-if ! command_exists npm; then
-    MISSING_TOOLS+=("npm (Node.js)")
-fi
-
-if ! command_exists firebase; then
-    MISSING_TOOLS+=("firebase (Firebase CLI)")
-fi
-
-if [ ${#MISSING_TOOLS[@]} -gt 0 ]; then
-    echo -e "${RED}Missing required tools:${NC}"
-    for tool in "${MISSING_TOOLS[@]}"; do
-        echo -e "  - ${tool}"
-    done
+    echo -e "${RED}Missing required tool: gcloud (Google Cloud SDK)${NC}"
     exit 1
 fi
 
-echo -e "${GREEN}✓ All required tools are installed${NC}"
+OPTIONAL_MISSING=()
+for tool_pair in "adk:Google ADK (agents)" "npm:Node.js (frontend)" "firebase:Firebase CLI (frontend)"; do
+    cmd="${tool_pair%%:*}"
+    label="${tool_pair#*:}"
+    if ! command_exists "$cmd"; then
+        OPTIONAL_MISSING+=("$cmd ($label)")
+    fi
+done
+if [ ${#OPTIONAL_MISSING[@]} -gt 0 ]; then
+    echo -e "${YELLOW}Optional tools not installed (only matter for specific targets):${NC}"
+    for tool in "${OPTIONAL_MISSING[@]}"; do
+        echo -e "  - ${tool}"
+    done
+fi
+
+echo -e "${GREEN}✓ gcloud is installed${NC}"
 echo ""
 
 # Deployment Functions

@@ -213,3 +213,27 @@ owned by `scripts/cicd/detect_changed_targets.py` and unit-tested in
 
 Doc-only and test-only PRs produce empty `targets.txt` and trigger no deploys.
 The build is still green — the deploy stage is a no-op.
+
+## Auto-deploy retro (2026-05-05)
+
+PR #93 shipped the auto-deploy pipeline; the first end-to-end success
+required **six follow-up fixes plus one IAM grant**, all caught by the
+smoke-test PRs themselves. Future CI/CD changes should review this list
+before they land:
+
+| # | Bug | Fix |
+|---|---|---|
+| 1 | Cloud Build's source clone is shallow; `git diff $SHA^..$SHA` failed in `detect-targets` | `git fetch --depth=2 origin "$COMMIT_SHA"` before the diff (PR #96) |
+| 2 | A `$SHA` token inside a bash comment was treated as a substitution by Cloud Build's pre-flight check | Avoid `$UPPERCASE_NAME` in YAML even inside comments (PR #97) |
+| 3 | `deploy.sh`'s CI bypass required both `CI=true` AND `BUILD_ID`, but Cloud Build doesn't auto-inject `BUILD_ID` into step containers | Bypass on `CI=true` alone (PR #98) |
+| 4 | `deploy.sh` refused to proceed without `gcloud auth list` showing the user account, but the build SA isn't a user account | Skip the auth-list assertion in CI; rely on ADC (PR #99) |
+| 5 | `cloudbuild-main.yaml` set `CLOUDSDK_CORE_ACCOUNT=cvsubs@gmail.com`, which forces gcloud away from ADC; every secret/deploy call then failed with "could not fetch" | Drop the env var; defensively `unset` in `deploy.sh`'s CI branch too (PR #101) |
+| 6 | The build SA had `roles/editor` but **not** `roles/secretmanager.secretAccessor` — Editor doesn't include Secret Manager | One-time grant: `gcloud projects add-iam-policy-binding ... --role=roles/secretmanager.secretAccessor` |
+| 7 | `deploy.sh`'s tool-availability check hard-failed on missing `adk`/`npm`/`firebase` even when only deploying `qa-agent` (which uses just `gcloud`) | Hard-fail only on `gcloud`; warn on the rest (PR #102) |
+
+Common themes worth pinning:
+
+- **Cloud Build's substitution engine runs on the entire YAML, not just shell-quoted regions.** Comments are not safe from it. Use `$$` or avoid `$UPPERCASE` entirely.
+- **`roles/editor` does NOT include Secret Manager or Cloud Scheduler.** When wiring a build SA, audit the actual permission list against what `deploy.sh` calls.
+- **CI containers don't inherit user gcloud auth.** Anything that pins `CLOUDSDK_CORE_ACCOUNT` to a user email will block ADC fallback. Pin the project, not the account.
+- **Test-mode bypasses must be defensive.** A hostile env var elsewhere in the chain (or in a future cloudbuild edit) shouldn't be able to re-introduce a "use the user account" path. `unset` is cheaper than untangling who set what.

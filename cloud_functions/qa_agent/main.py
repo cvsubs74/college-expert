@@ -8,12 +8,11 @@ Endpoints:
                                  cloudbuild-main.yaml — see
                                  docs/prd/auto-deploy-on-main.md.
                                  First successful auto-deploy required
-                                 five follow-up fixes: shallow-clone diff,
-                                 Cloud Build substitution-escape, deploy-
-                                 guard CI bypass, gcloud auth-list bypass,
-                                 and dropping CLOUDSDK_CORE_ACCOUNT pinning
-                                 from the cloudbuild env so ADC actually
-                                 takes over in the build container.)
+                                 six follow-up fixes (#96-#101 + this PR)
+                                 plus a Secret Manager IAM grant for the
+                                 build SA. Most fixes were one-liners
+                                 caught by the smoke-test PRs themselves.
+                                 Retro pinned in docs/cicd-setup.md.)
   GET  /health                → liveness ping
   GET  /scenarios             → list of registered archetypes (id + description)
   POST /run                   → run a fresh batch
