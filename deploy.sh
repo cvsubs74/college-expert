@@ -225,9 +225,16 @@ fi
 # which covers every gcloud command this script runs.
 if [ "${CI:-}" = "true" ]; then
     echo -e "${GREEN}CI run — using Application Default Credentials (build service account)${NC}"
-    # Don't pin CLOUDSDK_CORE_ACCOUNT in CI; ADC handles identity.
-    # Project pinning is still meaningful (ensures we deploy to the
-    # college-expert project, not whatever gcloud's default thinks).
+    # Defensive: clear any inherited CLOUDSDK_CORE_ACCOUNT pinning. If the
+    # cloudbuild config (or anything upstream) sets it to a user account
+    # like cvsubs@gmail.com, gcloud will refuse to fall back to ADC and
+    # every secret-manager / functions-deploy call dies with "could not
+    # fetch …" because the user's creds aren't in the build container.
+    # Caught on PR #99's auto-deploy attempt.
+    unset CLOUDSDK_CORE_ACCOUNT
+    unset GCP_ACCOUNT
+    # Project pinning is still meaningful — ensures we deploy to the
+    # college-expert project, not whatever gcloud's default thinks.
     export CLOUDSDK_CORE_PROJECT="$PROJECT_ID"
 else
     if ! gcloud auth list --format="value(account)" 2>/dev/null | grep -qx "$GCP_ACCOUNT"; then

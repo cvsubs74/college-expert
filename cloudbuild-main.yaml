@@ -137,9 +137,13 @@ steps:
     waitFor: ['detect-targets']
     entrypoint: 'bash'
     env:
-      - 'CLOUDSDK_CORE_ACCOUNT=${_DEPLOY_ACCOUNT}'
+      # Pin the project (so we never deploy to the wrong project regardless
+      # of gcloud's defaults) and signal CI mode for deploy.sh's bypass.
+      # Do NOT pin CLOUDSDK_CORE_ACCOUNT or GCP_ACCOUNT — Cloud Build runs
+      # as the build SA, and pinning to cvsubs@gmail.com forces gcloud to
+      # look for that user's credentials (which aren't in the container)
+      # instead of falling back to Application Default Credentials.
       - 'CLOUDSDK_CORE_PROJECT=${_DEPLOY_PROJECT}'
-      - 'GCP_ACCOUNT=${_DEPLOY_ACCOUNT}'
       - 'GCP_PROJECT_ID=${_DEPLOY_PROJECT}'
       - 'CI=true'
     args:
