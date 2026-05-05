@@ -213,3 +213,8 @@ owned by `scripts/cicd/detect_changed_targets.py` and unit-tested in
 
 Doc-only and test-only PRs produce empty `targets.txt` and trigger no deploys.
 The build is still green — the deploy stage is a no-op.
+
+> Smoke-test history: this guarantee was validated on 2026-05-05 by a
+> deliberately doc-only PR that touched only this file. Build went green,
+> the deploy stage exited with `No deploy targets — nothing to do`, and no
+> Cloud Function or Cloud Run revisions changed. See PR for the build log.
