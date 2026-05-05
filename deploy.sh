@@ -215,16 +215,32 @@ fi
 # process and are inherited by every child gcloud invocation, so every
 # secret fetch / function deploy / Cloud Run call below targets the right
 # account+project regardless of the user's active gcloud config.
-if ! gcloud auth list --format="value(account)" 2>/dev/null | grep -qx "$GCP_ACCOUNT"; then
-    echo -e "${RED}Error: gcloud account '${GCP_ACCOUNT}' is not authenticated${NC}"
-    echo -e "${YELLOW}Run: gcloud auth login ${GCP_ACCOUNT}${NC}"
-    echo -e "${YELLOW}(Override the expected account by setting GCP_ACCOUNT=...)${NC}"
-    exit 1
+#
+# CI bypass: Cloud Build runs as a service account
+# (college-counselling-478115@appspot.gserviceaccount.com), not as
+# cvsubs@gmail.com — so `gcloud auth list` won't show the user account
+# and the check would falsely refuse. In CI we trust Application
+# Default Credentials (the build SA) and skip both the auth check and
+# the CLOUDSDK_CORE_ACCOUNT export. The build SA carries roles/editor,
+# which covers every gcloud command this script runs.
+if [ "${CI:-}" = "true" ]; then
+    echo -e "${GREEN}CI run — using Application Default Credentials (build service account)${NC}"
+    # Don't pin CLOUDSDK_CORE_ACCOUNT in CI; ADC handles identity.
+    # Project pinning is still meaningful (ensures we deploy to the
+    # college-expert project, not whatever gcloud's default thinks).
+    export CLOUDSDK_CORE_PROJECT="$PROJECT_ID"
+else
+    if ! gcloud auth list --format="value(account)" 2>/dev/null | grep -qx "$GCP_ACCOUNT"; then
+        echo -e "${RED}Error: gcloud account '${GCP_ACCOUNT}' is not authenticated${NC}"
+        echo -e "${YELLOW}Run: gcloud auth login ${GCP_ACCOUNT}${NC}"
+        echo -e "${YELLOW}(Override the expected account by setting GCP_ACCOUNT=...)${NC}"
+        exit 1
+    fi
+    export CLOUDSDK_CORE_ACCOUNT="$GCP_ACCOUNT"
+    export CLOUDSDK_CORE_PROJECT="$PROJECT_ID"
 fi
-export CLOUDSDK_CORE_ACCOUNT="$GCP_ACCOUNT"
-export CLOUDSDK_CORE_PROJECT="$PROJECT_ID"
 
-echo -e "${GREEN}Using GCP Account: ${GCP_ACCOUNT}${NC}"
+echo -e "${GREEN}Using GCP Account: ${CLOUDSDK_CORE_ACCOUNT:-<ADC / build service account>}${NC}"
 echo -e "${GREEN}Using GCP Project: ${PROJECT_ID}${NC}"
 echo -e "${GREEN}Region: ${REGION}${NC}"
 echo ""
