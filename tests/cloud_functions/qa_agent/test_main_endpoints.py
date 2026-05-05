@@ -902,3 +902,133 @@ class TestCollectFeedbackIds:
 
     def test_empty_input_returns_empty_list(self, qa_main):
         assert qa_main._collect_feedback_ids([]) == []
+
+
+# ---- Concurrent /run mutex ----------------------------------------------
+# Bug surfaced 2026-05-04 by run_20260504T210036Z_ee9985: two /run
+# calls 19s apart on the shared test user produced indeterminate state
+# (verify_college_list_symmetry failed with orphans from the OTHER
+# run's colleges). The mutex blocks the second /run with HTTP 429
+# until the first completes (or goes stale after 10 min).
+
+
+class TestRunInProgressCheck:
+    def _now_minus(self, minutes):
+        from datetime import datetime, timedelta, timezone
+        return (datetime.now(timezone.utc) - timedelta(minutes=minutes)).isoformat()
+
+    def test_returns_none_when_no_runs(self, qa_main, monkeypatch):
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [])
+        assert qa_main._check_run_in_progress() is None
+
+    def test_returns_none_when_only_complete_runs(self, qa_main, monkeypatch):
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [
+            {"run_id": "r1", "status": "complete",
+             "started_at": self._now_minus(2)},
+            {"run_id": "r2", "status": "complete",
+             "started_at": self._now_minus(5)},
+        ])
+        assert qa_main._check_run_in_progress() is None
+
+    def test_returns_run_when_running_and_recent(self, qa_main, monkeypatch):
+        """Canonical busy case — a run started 1 minute ago, still
+        in flight. Mutex must report it."""
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [
+            {"run_id": "in_flight", "status": "running",
+             "started_at": self._now_minus(1)},
+        ])
+        result = qa_main._check_run_in_progress()
+        assert result is not None
+        assert result["run_id"] == "in_flight"
+
+    def test_treats_stale_running_as_not_busy(self, qa_main, monkeypatch):
+        """A 'running' doc older than the stale threshold is presumed
+        dead (cloud function crash, OOM); allow new runs to proceed."""
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [
+            {"run_id": "zombie", "status": "running",
+             "started_at": self._now_minus(15)},  # > 10 min stale threshold
+        ])
+        assert qa_main._check_run_in_progress() is None
+
+    def test_handles_malformed_started_at(self, qa_main, monkeypatch):
+        """Garbage timestamp shouldn't crash; treat as not-busy
+        (fail-open over fail-closed for a non-critical guard)."""
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [
+            {"run_id": "bad_ts", "status": "running",
+             "started_at": "not-a-date"},
+        ])
+        assert qa_main._check_run_in_progress() is None
+
+    def test_handles_missing_started_at(self, qa_main, monkeypatch):
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [
+            {"run_id": "no_ts", "status": "running"},
+        ])
+        assert qa_main._check_run_in_progress() is None
+
+    def test_swallows_firestore_errors(self, qa_main, monkeypatch):
+        """If the lookup itself fails, allow the run rather than
+        block on a transient Firestore hiccup. Fail-open."""
+        def _boom(*_a, **_k):
+            raise RuntimeError("firestore unavailable")
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs", _boom)
+        assert qa_main._check_run_in_progress() is None
+
+
+class TestHandleRunMutex:
+    """Integration: /run returns 429 when another run is active,
+    and runs normally when the path is clear."""
+
+    def _busy_recent_runs(self):
+        from datetime import datetime, timedelta, timezone
+        recent_iso = (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat()
+        return [{
+            "run_id": "currently_running_xyz",
+            "status": "running",
+            "started_at": recent_iso,
+        }]
+
+    def test_returns_429_when_run_in_progress(self, qa_main, monkeypatch):
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: self._busy_recent_runs())
+        # The dispatcher receives a tuple from _handle_run and routes
+        # the status code through _cors. Call the http entry point
+        # directly to verify both layers.
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={},
+        )
+        resp = qa_main.qa_agent(req)
+        status, body = _resp_payload(resp)
+        assert status == 429
+        assert body["success"] is False
+        assert "in flight" in body["error"]
+        assert body.get("in_flight_run_id") == "currently_running_xyz"
+
+    def test_proceeds_when_no_run_in_progress(self, qa_main, monkeypatch):
+        """When the busy check returns None, /run continues into the
+        normal pick + execute path. We stub the heavy bits so the
+        test stays fast — what we're checking is that the mutex
+        DIDN'T block."""
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [])
+        # If _pick_scenarios is called, the mutex didn't block. We
+        # short-circuit there to avoid running real scenarios.
+        called = {"pick": False}
+        def _stub_pick(*a, **kw):
+            called["pick"] = True
+            return {"ok": False, "error": "stubbed early"}
+        monkeypatch.setattr(qa_main, "_pick_scenarios", _stub_pick)
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={},
+        )
+        qa_main.qa_agent(req)
+        assert called["pick"], "mutex must not block when no run is in flight"

@@ -34,7 +34,7 @@ import os
 import secrets
 import urllib.parse
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import functions_framework
 from flask import jsonify
@@ -179,7 +179,13 @@ def qa_agent(request):
 
     if path == "run" and request.method == "POST":
         body.setdefault("actor", actor)
-        return _cors(_handle_run(body, cfg))
+        result = _handle_run(body, cfg)
+        # _handle_run returns either a dict (status implicit 200) or
+        # a (dict, int) tuple for explicit status codes (e.g., 429
+        # when another run is in flight).
+        if isinstance(result, tuple):
+            return _cors(result[0], result[1])
+        return _cors(result)
 
     if path == "run/preview" and request.method == "POST":
         # Picks scenarios the same way /run would, but doesn't execute
@@ -465,7 +471,65 @@ def _handle_run_preview(body: dict, cfg: dict) -> dict:
     }
 
 
-def _handle_run(body: dict, cfg: dict) -> dict:
+# Stale threshold for the in-flight-run mutex check. A run that's
+# been "running" longer than this is presumed dead (cloud function
+# crash, OOM, etc.) and another run can proceed. Generous because
+# a real run can take ~3-4 minutes end-to-end with cold starts.
+_RUN_STALE_AFTER_MINUTES = 10
+
+
+def _check_run_in_progress() -> "Optional[dict]":
+    """Return info about an in-flight run if one is still active,
+    else None. Used to prevent two /run requests from racing on the
+    shared test user.
+
+    Bug surfaced 2026-05-04 by run_20260504T210036Z_ee9985: a run
+    started 19s after another run on the same test user (one was
+    a manual trigger, one was scheduled), and the second run's
+    setup_teardown wiped the first run's state mid-flight, then
+    both runs' add-to-list calls interleaved. The result was a
+    `verify_college_list_symmetry` failure with orphaned colleges
+    from the other run.
+
+    Returns dict with run_id + started_at when busy; None when free.
+    A run is "busy" if status=='running' AND started_at is within
+    _RUN_STALE_AFTER_MINUTES of now.
+    """
+    try:
+        recent = firestore_store.list_recent_runs(limit=10)
+    except Exception as exc:  # noqa: BLE001
+        # If the lookup itself fails, prefer to allow the run rather
+        # than block on a transient Firestore hiccup.
+        logger.warning("qa_agent: in-flight check skipped (%s)", exc)
+        return None
+
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(minutes=_RUN_STALE_AFTER_MINUTES)
+
+    for run in recent:
+        if run.get("status") != "running":
+            continue
+        started_str = run.get("started_at") or ""
+        if not started_str:
+            continue
+        try:
+            started_dt = datetime.fromisoformat(
+                started_str.replace("Z", "+00:00")
+            )
+        except (ValueError, AttributeError):
+            continue
+        if started_dt > cutoff:
+            return {
+                "run_id": run.get("run_id"),
+                "started_at": started_str,
+            }
+    return None
+
+
+def _handle_run(body: dict, cfg: dict):
+    """Execute a QA run. Returns either a dict (HTTP 200 implicit) or
+    a (dict, status_code) tuple when an explicit status is needed
+    (e.g. 429 when another run is in flight)."""
     trigger = body.get("trigger", "manual")
     scenario_id_filter = body.get("scenario") or request_arg(body, "scenario")
     n = body.get("count") or cfg["DEFAULT_SCENARIO_COUNT"]
@@ -485,6 +549,25 @@ def _handle_run(body: dict, cfg: dict) -> dict:
             # schedule-config error firing every hour is not.
             logger.exception("qa_agent: schedule_check failed; skipping")
             return {"success": False, "skipped": True, "error": str(exc)}
+
+    # Mutex: refuse to start a run if another is already in flight on
+    # the same test user. Two runs racing on the shared user produce
+    # indeterminate state (verify_college_list_symmetry fails, etc.).
+    busy = _check_run_in_progress()
+    if busy:
+        logger.info(
+            "qa_agent: refusing concurrent run; %s is in flight (started %s)",
+            busy.get("run_id"), busy.get("started_at"),
+        )
+        return ({
+            "success": False,
+            "skipped": True,
+            "error": (
+                f"another run is in flight: {busy.get('run_id')} "
+                f"(started {busy.get('started_at')}); retry shortly"
+            ),
+            "in_flight_run_id": busy.get("run_id"),
+        }, 429)
 
     pick = _pick_scenarios(cfg, n, scenario_id_filter)
     if not pick["ok"]:
