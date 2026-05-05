@@ -125,12 +125,19 @@ echo ""
 # with a loud warning. Use it only for emergency hotfixes you cannot get
 # through CI in time — and immediately follow up with a real PR.
 #
-# CI bypass: in Cloud Build, the repo is checked out at a detached HEAD
-# pointing at the merged commit, so `git rev-parse --abbrev-ref HEAD`
-# returns "HEAD" rather than "main." That's still a valid main deploy
-# (the trigger only fires on push-to-main), so we accept it as long as
-# HEAD is reachable from origin/main. The dirty-tree check still runs.
-if [ "${CI:-}" = "true" ] && [ -n "${BUILD_ID:-}" ]; then
+# CI bypass: in Cloud Build, the repo is checked out on a local branch
+# named "master" (Cloud Build's clone convention, NOT a detached HEAD as
+# previously assumed) pointing at the merged commit. Either way, the
+# branch-name check would refuse. We accept the bypass as long as
+# (a) `CI=true` is set in the build's env (which cloudbuild-main.yaml
+# sets explicitly for the deploy step), AND (b) HEAD is reachable from
+# origin/main. Together those ensure we're really running from a green
+# main commit, not from a developer's stray local branch.
+#
+# Earlier versions also required BUILD_ID, but Cloud Build does not
+# inject BUILD_ID into step containers automatically (it's a substitution
+# at YAML parse time, not a runtime env var). Caught on PR #97's merge.
+if [ "${CI:-}" = "true" ]; then
     git fetch origin main --quiet 2>/dev/null || true
     HEAD_SHA=$(git rev-parse HEAD 2>/dev/null || echo "")
     if [ -z "$HEAD_SHA" ] || ! git merge-base --is-ancestor "$HEAD_SHA" origin/main 2>/dev/null; then
