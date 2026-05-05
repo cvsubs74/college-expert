@@ -107,10 +107,14 @@ steps:
       - |
         set -euo pipefail
         # Cloud Build clones the source as a *shallow* checkout — only the
-        # merged commit, no parent. `git diff $SHA^..$SHA` therefore fails
-        # with "unknown revision" until we pull the parent down. This
-        # `--depth=2` fetch is enough for the diff (we only need one
-        # ancestor commit). Caught on the first auto-deploy build of PR #94.
+        # merged commit, no parent. `git diff COMMIT_SHA^..COMMIT_SHA`
+        # therefore fails with "unknown revision" until we pull the parent
+        # down. The `--depth=2` fetch is enough for the diff (we only need
+        # one ancestor commit). Caught on the first auto-deploy build of
+        # PR #94; the second build then failed because the comment used
+        # a literal dollar-shorthand that Cloud Build tried to resolve as
+        # a substitution (only `${COMMIT_SHA}` is built-in). Now the
+        # comment avoids the dollar character entirely.
         git fetch --depth=2 origin "${COMMIT_SHA}" 2>/dev/null || \
             git fetch --unshallow 2>/dev/null || true
         # Squash-merge style makes "this commit vs. its parent" equivalent
