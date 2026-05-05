@@ -751,15 +751,47 @@ def _handle_get_schedule() -> dict:
 
 
 def _handle_post_schedule(body: dict, actor: str) -> dict:
+    """Validate → save to Firestore → push the cron to Cloud Scheduler.
+
+    The save and the Cloud Scheduler sync are NOT atomic. If the sync
+    fails after a successful save we surface a clear error to the UI
+    (`success: False`, `schedule_saved: True`, `scheduler_synced: False`)
+    rather than rolling back the Firestore write — the operator's intent
+    is captured durably and the next save retries the sync.
+    """
     err = schedule.validate_schedule(body)
     if err:
         return {"success": False, "error": err}
     try:
         schedule.save_schedule(body, actor=actor or "")
-        return {"success": True}
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: save_schedule failed")
-        return {"success": False, "error": str(exc)}
+        return {
+            "success": False,
+            "error": str(exc),
+            "schedule_saved": False,
+            "scheduler_synced": False,
+        }
+    try:
+        schedule.sync_to_cloud_scheduler(body)
+    except Exception as exc:  # noqa: BLE001
+        logger.exception(
+            "qa_agent: schedule saved to Firestore but Cloud Scheduler "
+            "sync failed; cron may be stale until the next save",
+        )
+        return {
+            "success": False,
+            "error": (
+                f"saved to Firestore but Cloud Scheduler update failed: {exc}"
+            ),
+            "schedule_saved": True,
+            "scheduler_synced": False,
+        }
+    return {
+        "success": True,
+        "schedule_saved": True,
+        "scheduler_synced": True,
+    }
 
 
 # ---- /summary --------------------------------------------------------------

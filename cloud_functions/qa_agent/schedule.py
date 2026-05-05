@@ -29,8 +29,9 @@ Defaults (no doc): daily at 06:00 PT every day of the week.
 from __future__ import annotations
 
 import logging
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Optional
+from typing import Any, Optional
 
 try:
     from zoneinfo import ZoneInfo
@@ -191,3 +192,177 @@ def should_run_now(schedule: dict, now: datetime) -> bool:
         if abs(local - target) <= window:
             return True
     return False
+
+
+# ---- Cloud Scheduler cron sync ---------------------------------------------
+#
+# The schedule editor in the dashboard saves user intent to Firestore, but
+# the actual cadence is governed by the Cloud Scheduler job
+# `qa-agent-hourly-poll`. This pair of helpers translates a saved schedule
+# into the cron string + paused-state the job should hold, and pushes that
+# state to Cloud Scheduler. Without this glue, saving a new interval in the
+# UI is a no-op until someone runs `gcloud scheduler jobs update http ...`.
+#
+# Spec: docs/prd/qa-agent-schedule-cron-sync.md
+#       docs/design/qa-agent-schedule-cron-sync.md
+
+
+# Hard-coded job path. Only one qa-agent monitor exists in this project,
+# and putting the path in code (not env) keeps the IAM blast radius
+# obvious — we know exactly which resource the function can touch.
+SCHEDULER_JOB_NAME = (
+    "projects/college-counselling-478115"
+    "/locations/us-east1"
+    "/jobs/qa-agent-hourly-poll"
+)
+
+# High-frequency poll cron used for time-based modes (daily/twice_daily/
+# weekly) and as a placeholder when the job is paused. The agent's
+# should_run_now does the actual time-of-day filtering for these modes,
+# so the only cost of polling at this cadence is no-op invocations.
+_DEFAULT_POLL_CRON = "*/15 * * * *"
+
+# Interval values that map to a clean `*/N * * * *` cron (N divides 60).
+_VALID_SUB_HOUR_DIVISORS = (1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30)
+
+# Multi-hour intervals that map to `0 */H * * *` (H divides 24).
+_VALID_HOUR_DIVISORS = (1, 2, 3, 4, 6, 8, 12, 24)
+
+
+@dataclass(frozen=True)
+class CronSpec:
+    """Resolved Cloud Scheduler state for a saved schedule.
+
+    Always provide a cron string (Cloud Scheduler requires one even when
+    the job is paused — pausing doesn't clear the schedule field).
+    """
+    cron: str
+    paused: bool
+
+
+def _round_to_nearest_divisor(n: int) -> int:
+    """Round n minutes to the nearest cron-representable interval.
+
+    Returns one of the values in _VALID_SUB_HOUR_DIVISORS (for n <= 60),
+    or 60 * H for some H in _VALID_HOUR_DIVISORS (for n > 60), choosing
+    whichever is closest to n. Ties go to the smaller value (more
+    frequent polling — fail safer).
+    """
+    candidates: list[int] = list(_VALID_SUB_HOUR_DIVISORS)
+    candidates.append(60)  # */60 → "0 * * * *"
+    for h in _VALID_HOUR_DIVISORS[1:]:  # 2, 3, 4, 6, 8, 12, 24
+        candidates.append(h * 60)
+    # Pick min by (distance, value) so ties prefer smaller.
+    return min(candidates, key=lambda c: (abs(c - n), c))
+
+
+def cron_for_schedule(schedule_dict: dict) -> CronSpec:
+    """Derive the Cloud Scheduler cron + paused flag for a saved schedule.
+
+    See the design doc for the full mapping table. Off → paused. Interval
+    with a clean divisor → exact cron. Interval with an awkward value
+    (e.g. 25, 45) → nearest divisor with a WARN log. Time-based modes
+    (daily/twice_daily/weekly) → `*/15 * * * *` and let the agent's
+    should_run_now do the time-of-day gate.
+    """
+    freq = (schedule_dict or {}).get("frequency")
+
+    if freq == "off":
+        return CronSpec(cron=_DEFAULT_POLL_CRON, paused=True)
+
+    if freq == "interval":
+        raw = schedule_dict.get("interval_minutes")
+        try:
+            n = int(raw)
+        except (TypeError, ValueError):
+            logger.warning(
+                "schedule.cron_for_schedule: non-int interval_minutes %r; "
+                "defaulting to %s",
+                raw, _DEFAULT_POLL_CRON,
+            )
+            return CronSpec(cron=_DEFAULT_POLL_CRON, paused=False)
+
+        # Round invalid values to the nearest divisor; log loudly.
+        original = n
+        if n in _VALID_SUB_HOUR_DIVISORS:
+            return CronSpec(cron=f"*/{n} * * * *", paused=False)
+        if n == 60:
+            return CronSpec(cron="0 * * * *", paused=False)
+        # Multi-hour: must be a multiple of 60 AND the hour-count must
+        # divide 24 (so the cron repeats cleanly day to day).
+        if n % 60 == 0 and (n // 60) in _VALID_HOUR_DIVISORS:
+            h = n // 60
+            if h == 24:
+                return CronSpec(cron="0 0 * * *", paused=False)
+            return CronSpec(cron=f"0 */{h} * * *", paused=False)
+
+        # Awkward value — round and warn.
+        rounded = _round_to_nearest_divisor(n)
+        logger.warning(
+            "schedule.cron_for_schedule: interval_minutes=%s does not divide "
+            "60 (or 60*H for valid H); rounding to %s minute(s)",
+            original, rounded,
+        )
+        # Recursive call into a clean value — guaranteed to hit one of
+        # the precise branches above.
+        return cron_for_schedule({
+            "frequency": "interval",
+            "interval_minutes": rounded,
+        })
+
+    # Time-based modes: high-frequency poll, agent filters.
+    return CronSpec(cron=_DEFAULT_POLL_CRON, paused=False)
+
+
+def _scheduler_client():
+    """Lazy import + construct the Cloud Scheduler client. Kept lazy so
+    the import cost only hits requests that actually save a schedule;
+    every other qa-agent endpoint is unaffected."""
+    from google.cloud import scheduler_v1  # noqa: WPS433
+    return scheduler_v1.CloudSchedulerClient()
+
+
+def sync_to_cloud_scheduler(
+    schedule_dict: dict,
+    *,
+    client: Any = None,
+) -> None:
+    """Push the resolved cron + paused state to the Cloud Scheduler job.
+
+    Off → pause_job. Otherwise update_job with the new schedule + UTC
+    time_zone, then resume_job (idempotent if already running).
+
+    Errors propagate; callers convert them into a `success: False`
+    response with `scheduler_synced: False`.
+    """
+    spec = cron_for_schedule(schedule_dict)
+    cli = client or _scheduler_client()
+
+    if spec.paused:
+        cli.pause_job(name=SCHEDULER_JOB_NAME)
+        return
+
+    # Lazy import for the Job dataclass; tests pass a stub that doesn't
+    # need the real lib so the import lives inside the non-paused branch.
+    try:
+        from google.cloud import scheduler_v1  # noqa: WPS433
+        Job = scheduler_v1.Job
+    except ImportError:
+        # Test path: callers can pass a stub client and skip the import.
+        Job = dict  # type: ignore[misc,assignment]
+
+    if Job is dict:
+        job = {
+            "name": SCHEDULER_JOB_NAME,
+            "schedule": spec.cron,
+            "time_zone": "UTC",
+        }
+    else:
+        job = Job(
+            name=SCHEDULER_JOB_NAME,
+            schedule=spec.cron,
+            time_zone="UTC",
+        )
+
+    cli.update_job(job=job, update_mask={"paths": ["schedule", "time_zone"]})
+    cli.resume_job(name=SCHEDULER_JOB_NAME)
