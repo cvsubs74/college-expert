@@ -6,7 +6,10 @@ Endpoints:
                                  for auto-deploy CI: a comment-only edit to
                                  this file produces a fresh revision via
                                  cloudbuild-main.yaml — see
-                                 docs/prd/auto-deploy-on-main.md)
+                                 docs/prd/auto-deploy-on-main.md.
+                                 First successful auto-deploy was the merge
+                                 of fix/cicd-detect-targets-fetch-parent
+                                 once shallow-clone diff worked.)
   GET  /health                → liveness ping
   GET  /scenarios             → list of registered archetypes (id + description)
   POST /run                   → run a fresh batch
