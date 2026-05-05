@@ -793,14 +793,25 @@ class TestRunHandlerRunningDoc:
         )
         status, body = _resp_payload(qa_main.qa_agent(req))
         assert status == 200
-        # Two writes: first the running stub, then the final report.
-        assert len(captured) >= 2, (
-            f"expected >=2 write_report calls (running + complete), "
-            f"got {len(captured)}"
+        # Three writes after PR #89's mutex fix:
+        #   1) lock claim (status=running, scenarios=[]) — written
+        #      EARLY before _pick_scenarios so concurrent /run calls
+        #      see the lock immediately
+        #   2) full running stub (status=running, scenarios=[...]) —
+        #      after pick + planner complete
+        #   3) final report (status=complete)
+        assert len(captured) >= 3, (
+            f"expected >=3 write_report calls (lock + running + "
+            f"complete), got {len(captured)}"
         )
-        first = captured[0]
-        assert first["payload"]["status"] == "running"
-        scenarios = first["payload"]["scenarios"]
+        # Lock claim — empty scenarios.
+        lock = captured[0]
+        assert lock["payload"]["status"] == "running"
+        assert lock["payload"]["scenarios"] == []
+        # Full running stub — scenarios populated.
+        running = captured[1]
+        assert running["payload"]["status"] == "running"
+        scenarios = running["payload"]["scenarios"]
         assert len(scenarios) == 1
         assert scenarios[0]["scenario_id"] == "scen_a"
         assert scenarios[0]["status"] == "pending"
@@ -835,7 +846,9 @@ class TestRunHandlerRunningDoc:
             body={"count": 1, "trigger": "manual"},
         )
         qa_main.qa_agent(req)
-        running = captured[0]["payload"]["scenarios"][0]
+        # captured[0] is the early lock claim (empty scenarios);
+        # captured[1] is the full running stub with scenarios populated.
+        running = captured[1]["payload"]["scenarios"][0]
         assert running["business_rationale"] == "Why A matters."
         assert running["surfaces_covered"] == ["profile"]
 
@@ -1018,6 +1031,8 @@ class TestHandleRunMutex:
         DIDN'T block."""
         monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
                             lambda limit=10: [])
+        monkeypatch.setattr(qa_main.firestore_store, "write_report",
+                            lambda *a, **kw: None)
         # If _pick_scenarios is called, the mutex didn't block. We
         # short-circuit there to avoid running real scenarios.
         called = {"pick": False}
@@ -1032,3 +1047,63 @@ class TestHandleRunMutex:
         )
         qa_main.qa_agent(req)
         assert called["pick"], "mutex must not block when no run is in flight"
+
+    def test_lock_claimed_before_pick_scenarios(self, qa_main, monkeypatch):
+        """Critical for the race fix: the lock doc must be written
+        BEFORE _pick_scenarios runs (which can take several seconds
+        of Gemini calls). Otherwise two near-concurrent /run requests
+        both pass the mutex check and write their stubs in parallel —
+        the original race PR #89 was designed to fix."""
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [])
+        # Capture every write_report call to verify the order.
+        writes = []
+        def _capture_write(run_id, payload):
+            writes.append({"when": "before_pick" if not pick_called[0] else "after_pick",
+                           "status": payload.get("status"),
+                           "scenario_count": len(payload.get("scenarios", []))})
+        monkeypatch.setattr(qa_main.firestore_store, "write_report",
+                            _capture_write)
+        pick_called = [False]
+        def _stub_pick(*a, **kw):
+            pick_called[0] = True
+            return {"ok": False, "error": "stubbed"}
+        monkeypatch.setattr(qa_main, "_pick_scenarios", _stub_pick)
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={},
+        )
+        qa_main.qa_agent(req)
+        # First write must be the running stub, BEFORE _pick_scenarios
+        # ran. Otherwise the race window is open.
+        assert writes, "expected at least one write_report call"
+        assert writes[0]["when"] == "before_pick", (
+            f"Lock must be claimed before _pick_scenarios. Writes: {writes}"
+        )
+        assert writes[0]["status"] == "running"
+
+    def test_releases_lock_when_pick_fails(self, qa_main, monkeypatch):
+        """If _pick_scenarios fails AFTER the lock is claimed, the
+        stale 'running' stub would block all future runs for 10 min.
+        The early-lock path must release the lock by writing a
+        'complete' doc on every error branch."""
+        monkeypatch.setattr(qa_main.firestore_store, "list_recent_runs",
+                            lambda limit=10: [])
+        writes = []
+        monkeypatch.setattr(qa_main.firestore_store, "write_report",
+                            lambda run_id, payload: writes.append(payload))
+        monkeypatch.setattr(qa_main, "_pick_scenarios",
+                            lambda *a, **kw: {"ok": False, "error": "no archetypes"})
+        req = _FakeRequest(
+            method="POST", path="/run",
+            headers={"X-Admin-Token": "test-admin-token"},
+            body={},
+        )
+        qa_main.qa_agent(req)
+        # Two writes expected: 1) lock claim (status=running),
+        # 2) lock release (status=complete with error).
+        assert len(writes) == 2, f"expected lock + release, got {writes}"
+        assert writes[0]["status"] == "running"
+        assert writes[1]["status"] == "complete"
+        assert "no archetypes" in (writes[1].get("error") or "")
