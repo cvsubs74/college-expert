@@ -25,7 +25,15 @@ echo ""
 # Verify the right Firebase account is authenticated. firebase login:list
 # emits both the active account and "Other available accounts" — we accept
 # either, since we always pass --account explicitly to firebase deploy below.
-if ! firebase login:list 2>/dev/null | grep -q "$FIREBASE_ACCOUNT"; then
+#
+# CI bypass: in a Cloud Build environment ($CI=true or $BUILD_ID set) there
+# is no logged-in Firebase user. We rely on Application Default Credentials
+# (the build's service account) instead — firebase-tools picks up ADC
+# automatically when no user is logged in. The build SA carries roles/editor,
+# which covers firebasehosting.sites.update.
+if [ "${CI:-}" = "true" ] || [ -n "${BUILD_ID:-}" ]; then
+    echo -e "${GREEN}CI run — using Application Default Credentials for Firebase.${NC}"
+elif ! firebase login:list 2>/dev/null | grep -q "$FIREBASE_ACCOUNT"; then
     echo -e "${RED}Error: Firebase CLI is not authenticated as '${FIREBASE_ACCOUNT}'${NC}"
     echo -e "${YELLOW}Run: firebase login:add ${FIREBASE_ACCOUNT}${NC}"
     exit 1
@@ -112,7 +120,13 @@ npm run build
 
 # Deploy to Firebase
 echo -e "${YELLOW}Deploying to Firebase...${NC}"
-firebase deploy --only hosting --account "$FIREBASE_ACCOUNT" --project "$FIREBASE_PROJECT"
+if [ "${CI:-}" = "true" ] || [ -n "${BUILD_ID:-}" ]; then
+    # ADC path: no `--account` flag (firebase-tools rejects it when no user
+    # is logged in). The build SA's roles/editor covers hosting deploys.
+    firebase deploy --only hosting --project "$FIREBASE_PROJECT" --non-interactive
+else
+    firebase deploy --only hosting --account "$FIREBASE_ACCOUNT" --project "$FIREBASE_PROJECT"
+fi
 
 echo ""
 echo -e "${GREEN}✓ Frontend deployed successfully!${NC}"

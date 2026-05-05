@@ -124,7 +124,26 @@ echo ""
 # Escape hatch: `DEPLOY_ALLOW_DIRTY=1 ./deploy.sh ...` bypasses both checks
 # with a loud warning. Use it only for emergency hotfixes you cannot get
 # through CI in time — and immediately follow up with a real PR.
-if [ "${DEPLOY_ALLOW_DIRTY:-0}" != "1" ]; then
+#
+# CI bypass: in Cloud Build, the repo is checked out at a detached HEAD
+# pointing at the merged commit, so `git rev-parse --abbrev-ref HEAD`
+# returns "HEAD" rather than "main." That's still a valid main deploy
+# (the trigger only fires on push-to-main), so we accept it as long as
+# HEAD is reachable from origin/main. The dirty-tree check still runs.
+if [ "${CI:-}" = "true" ] && [ -n "${BUILD_ID:-}" ]; then
+    git fetch origin main --quiet 2>/dev/null || true
+    HEAD_SHA=$(git rev-parse HEAD 2>/dev/null || echo "")
+    if [ -z "$HEAD_SHA" ] || ! git merge-base --is-ancestor "$HEAD_SHA" origin/main 2>/dev/null; then
+        echo -e "${RED}║  CI deploy refused: HEAD ($HEAD_SHA) is not on origin/main ║${NC}"
+        exit 1
+    fi
+    if [ -n "$(git status --porcelain -uno 2>/dev/null)" ]; then
+        echo -e "${RED}║  CI deploy refused: working tree has uncommitted changes  ║${NC}"
+        git status --short -uno | head -20
+        exit 1
+    fi
+    echo -e "${GREEN}✓ CI deploy from origin/main @ ${HEAD_SHA:0:8}${NC}"
+elif [ "${DEPLOY_ALLOW_DIRTY:-0}" != "1" ]; then
     CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
     if [ "$CURRENT_BRANCH" != "main" ]; then
         echo -e "${RED}╔════════════════════════════════════════════════════════════╗${NC}"
