@@ -8,12 +8,12 @@ Endpoints:
                                  cloudbuild-main.yaml — see
                                  docs/prd/auto-deploy-on-main.md.
                                  First successful auto-deploy required
-                                 three follow-up fixes: shallow-clone diff
+                                 four follow-up fixes: shallow-clone diff
                                  (PR #96), Cloud Build substitution-escape
-                                 (PR #97), and deploy-guard CI bypass
-                                 dropping the BUILD_ID requirement
-                                 (Cloud Build doesn't auto-inject it into
-                                 step containers).)
+                                 (PR #97), deploy-guard CI bypass dropping
+                                 the BUILD_ID requirement (PR #98), and
+                                 the gcloud auth-list bypass when running
+                                 as a build service account.)
   GET  /health                → liveness ping
   GET  /scenarios             → list of registered archetypes (id + description)
   POST /run                   → run a fresh batch
