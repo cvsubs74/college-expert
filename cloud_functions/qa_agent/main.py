@@ -478,6 +478,32 @@ def _handle_run_preview(body: dict, cfg: dict) -> dict:
 _RUN_STALE_AFTER_MINUTES = 10
 
 
+def _release_run_lock(run_id: str, started, trigger: str, actor: str,
+                      *, error: str) -> None:
+    """Mark an early-claimed lock doc as complete with a failure when
+    the run never actually starts (pick_scenarios bailed, auth failed).
+    Otherwise the stale "running" stub blocks all future runs until the
+    10-minute staleness threshold elapses.
+
+    Best-effort: any exception is logged but doesn't propagate, since
+    the caller is already on an error path."""
+    try:
+        firestore_store.write_report(run_id, {
+            "run_id": run_id,
+            "status": "complete",
+            "started_at": started.isoformat(),
+            "ended_at": datetime.now(timezone.utc).isoformat(),
+            "trigger": trigger,
+            "actor": actor,
+            "summary": {"total": 0, "pass": 0, "fail": 1},
+            "scenarios": [],
+            "error": error,
+        })
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("qa_agent: failed to release run lock %s (%s)",
+                       run_id, exc)
+
+
 def _check_run_in_progress() -> "Optional[dict]":
     """Return info about an in-flight run if one is still active,
     else None. Used to prevent two /run requests from racing on the
@@ -569,8 +595,35 @@ def _handle_run(body: dict, cfg: dict):
             "in_flight_run_id": busy.get("run_id"),
         }, 429)
 
+    # Claim the lock IMMEDIATELY by writing a status="running" stub.
+    # Without this, two concurrent /run requests both pass the mutex
+    # check (since neither has written its stub yet) and the race
+    # repeats. Writing here narrows the window to a single Firestore
+    # write (~tens of ms) instead of the ~5-10s of Gemini calls in
+    # _pick_scenarios + narratives.build_plan that follow.
+    #
+    # The stub is minimal (no scenarios yet — those come from
+    # _pick_scenarios). We update it later with the full scenario
+    # list once we know what the run will actually execute.
+    started = datetime.now(timezone.utc)
+    run_id = f"run_{started.strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
+    firestore_store.write_report(run_id, {
+        "run_id": run_id,
+        "status": "running",
+        "started_at": started.isoformat(),
+        "trigger": trigger,
+        "actor": actor,
+        "summary": {"total": 0, "pass": 0, "fail": 0},
+        "scenarios": [],
+        "test_plan": None,
+    })
+
     pick = _pick_scenarios(cfg, n, scenario_id_filter)
     if not pick["ok"]:
+        # Release the lock — flip the stub to "complete" so the next
+        # /run isn't blocked by a stale running doc that never started.
+        _release_run_lock(run_id, started, trigger, actor,
+                          error=pick["error"])
         return {"success": False, "error": pick["error"]}
     archetypes = pick["archetypes"]
     history = pick["history"]
@@ -585,7 +638,9 @@ def _handle_run(body: dict, cfg: dict):
         id_token = auth.get_id_token(cfg["TEST_USER_UID"], cfg["FIREBASE_API_KEY"])
     except Exception as exc:  # noqa: BLE001
         logger.exception("qa_agent: failed to mint test-user ID token")
-        return {"success": False, "error": f"auth: {type(exc).__name__}: {exc}"}
+        err = f"auth: {type(exc).__name__}: {exc}"
+        _release_run_lock(run_id, started, trigger, actor, error=err)
+        return {"success": False, "error": err}
 
     run_cfg = runner.RunConfig(
         profile_manager_url=cfg["PROFILE_MANAGER_URL"],
@@ -601,13 +656,10 @@ def _handle_run(body: dict, cfg: dict):
     # dashboard the "what is this run testing and why" context.
     test_plan = narratives.build_plan(chosen, history, gemini_key=cfg["GEMINI_API_KEY"])
 
-    started = datetime.now(timezone.utc)
-    run_id = f"run_{started.strftime('%Y%m%dT%H%M%SZ')}_{uuid.uuid4().hex[:6]}"
-
-    # Write a status="running" doc with the picked scenarios as pending
-    # stubs BEFORE we start executing. This makes the run show up in
-    # the dashboard's Recent Runs immediately with a "Running" badge,
-    # and survives a page refresh while the run is in flight.
+    # Update the running stub now that we know what scenarios will
+    # execute. The dashboard's "Running" placeholder gets the full
+    # scenario list + test_plan; lock doc was written earlier (above)
+    # so concurrent /run requests already see this run as in-flight.
     # See docs/prd/qa-run-preview-and-running-state.md.
     firestore_store.write_report(run_id, {
         "run_id": run_id,
