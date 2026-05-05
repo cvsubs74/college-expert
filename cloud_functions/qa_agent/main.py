@@ -2,7 +2,11 @@
 QA Agent — Cloud Function entry point.
 
 Endpoints:
-  GET  /                      → liveness ping
+  GET  /                      → liveness ping (also the smoke-test target
+                                 for auto-deploy CI: a comment-only edit to
+                                 this file produces a fresh revision via
+                                 cloudbuild-main.yaml — see
+                                 docs/prd/auto-deploy-on-main.md)
   GET  /health                → liveness ping
   GET  /scenarios             → list of registered archetypes (id + description)
   POST /run                   → run a fresh batch
