@@ -230,10 +230,11 @@ before they land:
 | 5 | `cloudbuild-main.yaml` set `CLOUDSDK_CORE_ACCOUNT=cvsubs@gmail.com`, which forces gcloud away from ADC; every secret/deploy call then failed with "could not fetch" | Drop the env var; defensively `unset` in `deploy.sh`'s CI branch too (PR #101) |
 | 6 | The build SA had `roles/editor` but **not** `roles/secretmanager.secretAccessor` — Editor doesn't include Secret Manager | One-time grant: `gcloud projects add-iam-policy-binding ... --role=roles/secretmanager.secretAccessor` |
 | 7 | `deploy.sh`'s tool-availability check hard-failed on missing `adk`/`npm`/`firebase` even when only deploying `qa-agent` (which uses just `gcloud`) | Hard-fail only on `gcloud`; warn on the rest (PR #102) |
+| 8 | `gcloud functions deploy` succeeds at deploying the code but then calls `run.services.setIamPolicy` (to make the function public-invokable) and fails with 403 unless the build SA has Cloud Run admin permission. Build status goes red even though the new revision is live | One-time grant: `gcloud projects add-iam-policy-binding ... --role=roles/run.admin` (caught on PR #103's profile-manager-v2 deploy) |
 
 Common themes worth pinning:
 
 - **Cloud Build's substitution engine runs on the entire YAML, not just shell-quoted regions.** Comments are not safe from it. Use `$$` or avoid `$UPPERCASE` entirely.
-- **`roles/editor` does NOT include Secret Manager or Cloud Scheduler.** When wiring a build SA, audit the actual permission list against what `deploy.sh` calls.
+- **`roles/editor` does NOT include Secret Manager, Cloud Scheduler, or the IAM-policy-set permissions on Cloud Run services.** When wiring a build SA, audit the actual permission list against what `deploy.sh` calls. Current minimum grants on the build SA: `roles/editor` + `roles/secretmanager.secretAccessor` + `roles/run.admin`. (Cloud Functions Gen2 deploys go through Cloud Run under the hood, so `roles/run.admin` covers the post-deploy `setIamPolicy` call that makes the function public-invokable.)
 - **CI containers don't inherit user gcloud auth.** Anything that pins `CLOUDSDK_CORE_ACCOUNT` to a user email will block ADC fallback. Pin the project, not the account.
 - **Test-mode bypasses must be defensive.** A hostile env var elsewhere in the chain (or in a future cloudbuild edit) shouldn't be able to re-introduce a "use the user account" path. `unset` is cheaper than untangling who set what.
