@@ -238,3 +238,105 @@ class TestFallbackIncludesAllAdvisoryBlocks:
         assert len(result["essay_angles"]) >= 1
         for angle in result["essay_angles"]:
             assert isinstance(angle, dict)
+
+
+# ---- Factor-bound clamping ------------------------------------------------
+#
+# The LLM is told in the prompt that each factor has bounds (Academic 0-40,
+# Holistic 0-30, Major Fit 0-15, Selectivity -15 to +5), but if it returns
+# something out of range — e.g. Major Fit = 18 — the unclamped value flowed
+# through to the user. Surfaced 2026-05-06 by QA agent runs that hit
+# `factor 'Major Fit' score 18.0 out of bounds [0, 15]`. Hard regression:
+# the post-processor now clamps every factor to the documented bounds.
+
+
+class TestFactorBoundsClamp:
+    def test_clamps_major_fit_above_max(self):
+        """Bug surfaced 2026-05-06: LLM returned Major Fit = 18
+        (max is 15). Clamp must drop it to 15."""
+        from fit_computation import _clamp_factor_bounds
+        factors = [
+            {"name": "Academic",    "score": 30, "max": 40, "detail": "x"},
+            {"name": "Holistic",    "score": 22, "max": 30, "detail": "x"},
+            {"name": "Major Fit",   "score": 18, "max": 15, "detail": "x"},
+            {"name": "Selectivity", "score":  0, "max":  5, "detail": "x"},
+        ]
+        _clamp_factor_bounds(factors)
+        major = next(f for f in factors if f["name"] == "Major Fit")
+        assert major["score"] == 15
+
+    def test_clamps_academic_above_max(self):
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Academic", "score": 50, "max": 40, "detail": "x"}]
+        _clamp_factor_bounds(factors)
+        assert factors[0]["score"] == 40
+
+    def test_clamps_holistic_above_max(self):
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Holistic", "score": 35, "max": 30, "detail": "x"}]
+        _clamp_factor_bounds(factors)
+        assert factors[0]["score"] == 30
+
+    def test_clamps_selectivity_below_min(self):
+        """Selectivity is the only factor that goes negative; floor is -15."""
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Selectivity", "score": -25, "max": 5, "detail": "x"}]
+        _clamp_factor_bounds(factors)
+        assert factors[0]["score"] == -15
+
+    def test_clamps_selectivity_above_max(self):
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Selectivity", "score": 12, "max": 5, "detail": "x"}]
+        _clamp_factor_bounds(factors)
+        assert factors[0]["score"] == 5
+
+    def test_clamps_below_zero_for_non_selectivity(self):
+        """Academic/Holistic/Major Fit are all 0-min. Negative is invalid."""
+        from fit_computation import _clamp_factor_bounds
+        factors = [
+            {"name": "Academic",  "score": -5, "max": 40, "detail": "x"},
+            {"name": "Holistic",  "score": -3, "max": 30, "detail": "x"},
+            {"name": "Major Fit", "score": -1, "max": 15, "detail": "x"},
+        ]
+        _clamp_factor_bounds(factors)
+        for f in factors:
+            assert f["score"] == 0, f"{f['name']} should clamp to 0"
+
+    def test_in_range_values_pass_through_unchanged(self):
+        """Factors already within bounds must not be modified."""
+        from fit_computation import _clamp_factor_bounds
+        factors = [
+            {"name": "Academic",    "score": 25, "max": 40, "detail": "x"},
+            {"name": "Holistic",    "score": 18, "max": 30, "detail": "x"},
+            {"name": "Major Fit",   "score": 10, "max": 15, "detail": "x"},
+            {"name": "Selectivity", "score": -3, "max":  5, "detail": "x"},
+        ]
+        before = [f["score"] for f in factors]
+        _clamp_factor_bounds(factors)
+        after = [f["score"] for f in factors]
+        assert before == after
+
+    def test_unknown_factor_name_passes_through(self):
+        """Defensive: unrecognized factor names are left alone; the QA
+        agent's factor_bounds_respected catches them downstream."""
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Mystery", "score": 999, "max": 100, "detail": "x"}]
+        _clamp_factor_bounds(factors)
+        assert factors[0]["score"] == 999
+
+    def test_handles_non_numeric_score_without_crash(self):
+        """LLM might return a string score by mistake. Leave it alone
+        rather than crash; downstream assertion catches it."""
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Academic", "score": "high", "max": 40, "detail": "x"}]
+        _clamp_factor_bounds(factors)  # must not raise
+        assert factors[0]["score"] == "high"
+
+    def test_handles_missing_score_key_without_crash(self):
+        from fit_computation import _clamp_factor_bounds
+        factors = [{"name": "Academic", "max": 40, "detail": "x"}]
+        _clamp_factor_bounds(factors)  # must not raise
+
+    def test_empty_list_is_safe(self):
+        from fit_computation import _clamp_factor_bounds
+        _clamp_factor_bounds([])  # no error
