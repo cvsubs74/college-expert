@@ -580,6 +580,18 @@ You have access to COMPLETE university data. Generate recommendations across ALL
                     if original_percentage != result['match_percentage']:
                         logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (SAFETY floor)")
                 
+                # === POST-PROCESSING: FACTOR BOUNDS CLAMP ===
+                # The prompt documents per-factor ranges (Academic 0-40,
+                # Holistic 0-30, Major Fit 0-15, Selectivity -15 to +5)
+                # but the LLM occasionally exceeds them — most often
+                # Major Fit. Without this clamp the over-range value
+                # flows to the user AND the QA agent's
+                # factor_bounds_respected assertion (correctly) fails.
+                # Surfaced 2026-05-06 by run_20260506T060001Z.
+                factors_to_clamp = result.get('factors')
+                if isinstance(factors_to_clamp, list):
+                    _clamp_factor_bounds(factors_to_clamp)
+
                 # === POST-PROCESSING: TEST_STRATEGY OVERRIDE WHEN NO SCORES ===
                 # Bug surfaced 2026-05-04 by QA agent probe: the LLM
                 # defaulted to "Submit" for several schools (MIT, UF)
@@ -645,6 +657,54 @@ You have access to COMPLETE university data. Generate recommendations across ALL
             selectivity_tier=selectivity_tier if 'selectivity_tier' in dir() else None,
             university_data=university_data,
         )
+
+
+# Per-factor (min, max) bounds enforced by the post-processor on every
+# LLM-returned fit response. The prompt documents the same ranges in the
+# JSON schema (line ~395), but the LLM occasionally returns out-of-range
+# values — most commonly Major Fit > 15. Without this clamp, the QA
+# agent's `factor_bounds_respected` assertion fails and a user could see
+# nonsensical scores like Major Fit 18/15. Surfaced 2026-05-06.
+_FACTOR_BOUNDS = {
+    "Academic":    (0, 40),
+    "Holistic":    (0, 30),
+    "Major Fit":   (0, 15),
+    "Selectivity": (-15, 5),
+}
+
+
+def _clamp_factor_bounds(factors):
+    """Mutate `factors` in place: clamp each known factor's score to its
+    documented [min, max] range. Unknown factor names + non-numeric
+    scores + missing keys pass through unchanged so this helper never
+    raises and downstream assertions remain visible.
+    """
+    if not factors:
+        return
+    for f in factors:
+        if not isinstance(f, dict):
+            continue
+        name = f.get("name")
+        bounds = _FACTOR_BOUNDS.get(name)
+        if bounds is None:
+            continue
+        score = f.get("score")
+        if not isinstance(score, (int, float)) or isinstance(score, bool):
+            # Non-numeric (or missing) — leave alone; QA assertion catches it.
+            continue
+        lo, hi = bounds
+        if score < lo:
+            logger.info(
+                "[FIT_COMP] factor %r score %s clamped to lower bound %s",
+                name, score, lo,
+            )
+            f["score"] = lo
+        elif score > hi:
+            logger.info(
+                "[FIT_COMP] factor %r score %s clamped to upper bound %s",
+                name, score, hi,
+            )
+            f["score"] = hi
 
 
 # Per-category match-% midpoints used by the fallback path.
