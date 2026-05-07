@@ -1,4 +1,7 @@
 // "How Stratia Builds Your Roadmap" — approach / algorithm whitepaper.
+// Also serves as the smoke-test target for the auto-deploy pipeline's
+// frontend path: a comment-only edit forces detect_changed_targets to
+// emit `frontend` and exercises the deploy_frontend.sh stage end-to-end.
 
 const paper = {
     slug: 'how-stratia-builds-your-roadmap',
