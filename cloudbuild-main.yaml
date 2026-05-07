@@ -178,5 +178,19 @@ steps:
           # of frontend/.env on a deploying engineer's laptop.
           gcloud secrets versions access latest \
               --secret="${_FRONTEND_ENV_SECRET}" > frontend/.env
+          # The cloud-builders/gcloud image ships with neither Node.js nor
+          # firebase-tools — both are needed by deploy_frontend.sh.
+          # Install on the fly. NodeSource is the canonical Debian repo for
+          # current Node; firebase.tools is the standalone-binary installer
+          # that doesn't depend on the node runtime, so it can run before or
+          # after Node is available.
+          # Cold-cache cost ~45s; deploy_frontend.sh's npm install + vite
+          # build dominate the runtime regardless.
+          echo "::: installing Node.js + firebase-tools :::"
+          curl -fsSL https://deb.nodesource.com/setup_20.x | bash - >/dev/null
+          apt-get install -y -qq nodejs
+          curl -sL https://firebase.tools | bash >/dev/null 2>&1
+          echo "  node $(node --version)"
+          echo "  firebase $(firebase --version 2>/dev/null || echo 'install failed')"
           ./deploy_frontend.sh
         fi
