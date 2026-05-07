@@ -101,28 +101,17 @@ Each item gets normalized into a unified shape — title, due date, urgency buck
 Urgency policy lives **once**, on the server. Every client agrees on what "urgent" means because they all read the same field.`,
         },
         {
-            id: 'the-architecture',
-            title: 'The pieces that make it real',
-            body: `The roadmap is generated live, not pre-computed. Every \`/roadmap\` request runs the full resolver + translator + focus-card pipeline. That keeps the plan honest — when the student adds a school, the next page-load reflects it; when a deadline passes, the urgency labels update on their own.
+            id: 'what-this-gets-you',
+            title: 'What this gets you',
+            body: `The algorithm is the means; the outcome is the point. When you sit down to work on your applications, this is what changes:
 
-Three services collaborate:
+- **No more "what should I be doing right now?"** The focus card already pulled the answer from your roadmap, your essays, your scholarships, and every college deadline on your list — and ranked them by what's actually due first. The five-minute decision before you start working becomes one click.
+- **Nothing slips because it was on a different tab.** A scholarship deadline buried in one tracker and an essay supplement buried in another both surface in the same place, with the same urgency labels, before they go red. Missed deadlines were the most expensive bug in this product; the architecture removes the surfaces where they could hide.
+- **The plan stays accurate as your list grows.** Add a school today and tomorrow's plan reflects it — new supplements, new deadlines, the UC application reshuffled. You're never editing a stale checklist or wondering whether yesterday's plan still applies.
+- **Every task points at the work, not at more reading.** "Open MIT ›" lands you on the MIT card with the supplement open. The plan tells you what's next *and* takes you to where that work actually happens, in one click.
+- **Hand a counselor or parent the same screen and the conversation gets easier.** Everyone sees the same deadlines, the same priorities, the same per-school detail. Time you spent re-explaining your situation goes to actually moving things forward.
 
-- **\`counselor_agent\`** is the read-side aggregator. It owns the templates, the resolver, the translator, and the focus-card endpoint. It calls into the other two services for data; it never owns the data itself.
-- **\`profile_manager_v2\`** owns the user's documents — profile, college list, essay tracker, scholarship tracker, roadmap tasks. Every write goes through it. The notes affordance, the manual task creation, the per-school updates all land here.
-- **\`knowledge_base_manager_universities_v2\`** owns the canonical university data — deadlines, supplemental prompts, financial aid stats. Firestore-backed, queried live, single source of truth.
-
-The pattern is **read-side aggregation, write-side ownership**. Reads fan out and compose; writes go straight to the data manager. No service duplicates another's logic.`,
-        },
-        {
-            id: 'whats-not-in-the-algorithm',
-            title: "What's not in the algorithm",
-            body: `Worth being explicit about what Stratia *doesn't* do.
-
-- **No black-box ML.** No "predict the right tasks for this student" model. The reasoning chain from inputs to output is fully visible. If a student's plan looks wrong, an engineer (or a counselor reading the response metadata) can trace exactly why it looks the way it does.
-- **No hidden personalization.** The plan you see is a function of the inputs you (or your profile) provided. There's no shadow profile, no "engagement score" tuning your tasks, no A/B test secretly showing you a different variant.
-- **No automated decision-making.** Stratia tells you which schools have which deadlines, what the supplements ask, when things are due. It doesn't decide where you should apply, what to write, or who you are. Those are human decisions.
-
-That's by design. The product is built to compress the **clerical** work of college applications, not the substantive work. The substantive work — the essays, the conversations, the choices — is yours.`,
+The throughline is simple: **Stratia compresses the clerical part of applying so you can spend your hours on the parts that actually matter** — the essays, the conversations, the choices. Three small inputs, a plan that stays current, and a focus card that always knows what's next. That's the product.`,
         },
     ],
 };
