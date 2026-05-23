@@ -152,7 +152,7 @@ const PlanTab = ({ userEmail }) => {
                 if (cancelled) return;
 
                 const profile = profileResult?.profile || {};
-                const grade = (profile.grade || '').trim();
+                const grade = String(profile.grade ?? '').trim();
                 const semester = computeCurrentSemester();
                 let gradeLevel = grade || DEFAULT_GRADE_LEVEL;
 
