@@ -33,9 +33,14 @@ vi.mock('../pages/ScholarshipTracker', () => ({
 vi.mock('../pages/ApplicationsPage', () => ({
     default: () => <div data-testid="colleges-tab" />,
 }));
-vi.mock('../services/api', () => ({
+const { fetchStudentRoadmap, fetchUserProfile } = vi.hoisted(() => ({
     fetchStudentRoadmap: vi.fn().mockResolvedValue({ success: true, roadmap: { phases: [] } }),
     fetchUserProfile: vi.fn().mockResolvedValue({ profile: { grade: '11th Grade' } }),
+}));
+
+vi.mock('../services/api', () => ({
+    fetchStudentRoadmap,
+    fetchUserProfile,
 }));
 
 import RoadmapPage from '../pages/RoadmapPage';
@@ -116,5 +121,19 @@ describe('RoadmapPage', () => {
         await user.click(addButton);
 
         expect(await screen.findByTestId('add-task-modal')).toBeInTheDocument();
+    });
+
+    // Regression: #123 — grade stored as integer in Firestore (via LLM extraction)
+    // caused `(profile.grade || '').trim()` to throw because `12 || ''` is `12`
+    // (truthy non-string), and calling `.trim()` on a number throws TypeError.
+    // The catch block in load() sets `error` state which renders a "Connection Error"
+    // card. This test asserts that card is absent when grade is numeric.
+    it('Plan tab does not show Connection Error when profile.grade is a number (regression #123)', async () => {
+        fetchUserProfile.mockResolvedValueOnce({ profile: { grade: 12 } });
+        renderAt('/roadmap');
+        // Wait for the async load() to resolve fully.
+        await waitFor(() => expect(fetchStudentRoadmap).toHaveBeenCalled());
+        // Connection Error card must NOT be rendered.
+        expect(screen.queryByText('Connection Error')).not.toBeInTheDocument();
     });
 });
