@@ -109,6 +109,8 @@ yarn-error.log*
 # Playwright test artifacts (transient — generated per CI/local run)
 frontend/test-results/
 frontend/playwright-report/
+# Playwright MCP session cache (snapshots, console logs, network traces from agent browser sessions)
+.playwright-mcp/
 
 # Claude Code: track agent contracts, ignore ephemeral per-machine state.
 # .claude/worktrees/<id>/ are git worktree checkouts — git sees them as
