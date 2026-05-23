@@ -98,6 +98,19 @@ The authoritative split is in `/Users/csubramanian@onetrust.com/.claude/projects
 
 PR #116 removed the dev-agent-only restriction on `in-review` from Hook 2. Any agent who opens a PR (qa-agent, designer-agent, dev-agent, etc.) may now apply `in-review` directly. The workaround of "treat qa-agent PRs without in-review as if they have it" is no longer needed — the gap is permanently closed.
 
+## Best-effort handler pattern: 200-always with success:false body (#139, 2026-05-23)
+
+When a Cloud Function handler wraps a best-effort side-effect (welcome email, analytics ping, notification), the correct HTTP contract is 200-always with a `{success: bool, error?: str}` payload — not 500 on failure. A 500 propagates through axios as a thrown error, causing browser console noise and breaking fire-and-forget callers.
+
+Checklist when reviewing a new best-effort endpoint or a change to an existing one:
+
+1. **Confirm all failure branches return 2xx.** Both the False-return branch and the except branch must return 200 (or 202 for async).
+2. **Confirm the response body still carries `success: false`.** The 200 status is for the transport layer; the boolean tells the caller what actually happened. Removing it entirely would make silent failures undetectable.
+3. **Trace every caller.** For each caller, verify: (a) no retry logic keyed on HTTP status, (b) no error toast keyed on HTTP status, (c) the `.catch` firing on 500 is the ONLY failure signal (if so, 200 correctly silences it).
+4. **Check for scheduler/webhook callers.** A cloud scheduler that fires a best-effort endpoint and expects 500 on failure for alerting would have its alert silenced by a 200. Grep `cloudbuild*.yaml`, `deploy.sh`, and `scripts/` for references before approving the change.
+
+**Simulation-only tests vs. real handler tests:** When a handler test file uses `_simulate_fixed_handler()`-style inline functions rather than calling the real handler, it cannot catch a regression where someone re-introduces the bug in `main.py` without touching the test. This is acceptable when the Flask/functions-framework runtime is not available in the unit test harness, but call it out as a gap in the LGTM comment and suggest a follow-up integration test if the harness is ever extended.
+
 ## Known pre-existing gap: agent env vars point at non-v2 profile managers
 
 `deploy.sh` lines ~196-200, 242-243, 281-282 still point `PROFILE_MANAGER_URL` for `college_expert_hybrid`, `_rag`, and `_es` agents at the old (non-v2) profile manager URLs. This is documented in `docs/ARCHITECTURE.md` constraint #4 and the live-components memory. Do not raise it as a new finding in reviews — it is a known gap.
