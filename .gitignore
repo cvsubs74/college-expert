@@ -10,6 +10,9 @@ env.yaml
 **/env.yaml
 cloud_functions/knowledge_base_manager_ES/env.yaml
 cloud_functions/profile_manager_es/env.yaml
+# deploy.sh writes env.deploy.yaml with plaintext secrets during deploy; never commit it
+env.deploy.yaml
+**/env.deploy.yaml
 
 # API Keys and credentials
 *.key

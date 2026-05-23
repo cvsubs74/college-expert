@@ -4,7 +4,7 @@
 
 ## System overview
 
-College Counselor is a Python 3.11 / Cloud Functions Gen2 backend (us-east1) fronted by a React 19 + Vite SPA on Firebase Hosting. The primary data store is Firestore; `knowledge_base_manager_universities_v2` also reads from a dedicated `universities` Firestore collection populated by offline ingestion scripts. A legacy Elasticsearch cluster (used by the `_rag` and `_es` approaches) is offline — its two cloud functions remain deployed but are seldom exercised. Gemini Flash (via the `google-genai` SDK) is the LLM for all AI-driven features. `counselor_agent` is the read-side BFF: the frontend sends chat, roadmap, and college-fit requests to it, and it aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding. Writes go directly from the frontend to `profile_manager_v2`. Stripe handles subscription billing via `payment_manager_v2`, which receives lifecycle events over webhooks. Cloud Build runs CI on every PR and every push to `main`; deploys are a deliberate operator action via `deploy.sh`. GCP project: `college-counselling-478115`.
+College Counselor is a Python 3.11 / Cloud Functions Gen2 backend (us-east1) fronted by a React 19 + Vite SPA on Firebase Hosting. The primary data store is Firestore; `knowledge_base_manager_universities_v2` also reads from a dedicated `universities` Firestore collection populated by offline ingestion scripts. A legacy Elasticsearch cluster (used by the `_rag` and `_es` approaches) is offline — its two cloud functions remain deployed but are seldom exercised. Gemini Flash (via the `google-genai` SDK) is the LLM for all AI-driven features. `counselor_agent` is the read-side BFF: the frontend sends chat, roadmap, and college-fit requests to it, and it aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding. Writes go directly from the frontend to `profile_manager_v2`. Stripe handles subscription billing via `payment_manager_v2`, which receives lifecycle events over webhooks. Cloud Build runs CI on every PR; on merge to `main` it also auto-deploys backend Cloud Functions — frontend (Firebase Hosting) is still a manual operator action via `./deploy_frontend.sh`. GCP project: `college-counselling-478115`.
 
 ---
 
@@ -157,7 +157,7 @@ Admin Dashboard (React SPA, /qa-runs route)
 git push / PR open
   │
   ▼
-Cloud Build trigger (college-expert-pr or college-expert-main)
+Cloud Build trigger (college-expert-pr)
   │  cloudbuild.yaml
   ├── pytest tests/
   ├── bash -n deploy.sh deploy_frontend.sh
@@ -168,10 +168,22 @@ Cloud Build trigger (college-expert-pr or college-expert-main)
 merge to main
   │
   ▼
-operator runs: ./deploy.sh <target>   (clean-main guard enforced)
-  ├── gcloud functions deploy <function> (Gen2, us-east1)
+Cloud Build trigger (college-expert-main) — auto-deploys backend Cloud Functions
+  │  gcloud functions deploy <function> (Gen2, us-east1)
+  │  Observed: build 7a3fe287 completed before manual deploy.sh ran (PR #131, 2026-05-23)
+  │
+  ▼
+DevOps verifies deploy + runs smoke tests
+  │
+  │  [frontend — MANUAL; not triggered by CI/CD]
+  ▼
+operator runs: ./deploy_frontend.sh   (clean-main guard absent; run after confirming merge)
   └── firebase deploy --only hosting
 ```
+
+> **Backend Cloud Functions** are auto-deployed by Cloud Build (`college-expert-main` trigger) on every merge to `main`. DevOps verifies afterward; `./deploy.sh <target>` can re-deploy a specific function if needed (requires running from the primary repo on the `main` branch — the clean-main guard blocks worktree branches).
+>
+> **Frontend (Firebase Hosting)** is NOT auto-deployed. Merging to `main` does not push a new frontend release — an operator must run `./deploy_frontend.sh` explicitly after merge.
 
 See [`docs/cicd-architecture.md`](cicd-architecture.md) for the full CI/CD reference.
 
@@ -296,4 +308,5 @@ The frontend reads and writes profile fields directly. Schema changes in `profil
 
 | Date | PR | What changed | Why |
 |---|---|---|---|
+| 2026-05-23 | #133 | Document CI/CD backend auto-deploy behavior; correct "deploys are manual" prose | Behavior was already live but doc still described it as manual; DevOps observed the auto-deploy during PR #131 deploy (build ID 7a3fe287) |
 | 2026-05-22 | (this PR) | Initial architecture doc | `CLAUDE.md` required it as cold-start reading but only the template existed |
