@@ -4,17 +4,27 @@ Per-agent scratchpad. Append when you learn something worth keeping; delete when
 
 ---
 
-## bin/merge-pr.sh does not exist
+## bin/merge-pr.sh (merged in #108, 2026-05-23)
 
-As of 2026-05-22, `bin/` contains only `bootstrap-labels.sh` and `init-project.sh`. The SDLC.md and CLAUDE.md both reference `bin/merge-pr.sh` as the required merge path, but it has not been created in this repo. Fall back to `gh pr merge <N> --squash --delete-branch`. If the branch is checked out in a worktree, the local branch deletion will fail — handle with `git worktree remove .worktrees/<name> --force` followed by `git branch -d <branch>`.
+`bin/merge-pr.sh` is now on main and is the REQUIRED merge path per SDLC.md Step 6. Call it as:
+
+```bash
+bin/merge-pr.sh <N> --squash
+```
+
+It resolves headRefName before the merge, calls `gh pr merge <N> --squash --delete-branch`, removes the matching `.worktrees/<id>` worktree (clean first, --force fallback), then deletes the local branch. If no worktree exists it logs "nothing to clean" and exits 0.
+
+**Bootstrap exception (one-time only):** PR #108 itself was merged via direct `gh pr merge 108 --squash --delete-branch` because the script did not yet exist on main. That exception is now closed. Never use direct `gh pr merge` again — always call `bin/merge-pr.sh`.
+
+**One known behavior:** `gh pr merge --delete-branch` only removes the remote ref; local branch deletion is a separate step that `bin/merge-pr.sh` handles. If the branch is checked out in a worktree, the worktree must be removed first (which the script does in the correct order).
 
 ## Worktree for dev-agent: `.worktrees/arch-doc`
 
 Was created for PR #107. Removed on merge (2026-05-22).
 
-## CI flakiness on docs-only PRs
+## CI flakiness on docs-only / tooling PRs
 
-PR #107 (docs-only, adds `docs/ARCHITECTURE.md`) showed CI FAILURE on the Cloud Build PR check despite no code changes. The suite runs pytest, bash -n, vitest, vite build, and Playwright — none affected by a markdown addition. Pre-existing flake. If a docs-only PR shows CI red and the diff has no code, check if the preceding `main` PR passed CI; if it did, the failure is pre-existing and operator can override.
+PRs #107 (docs-only) and #108 (docs + tooling) both showed CI FAILURE on the Cloud Build `college-expert-pr` check despite no Python/frontend/test changes. PRs #105 and #106 (code changes) passed the same check. Pattern: Cloud Build flakes on non-code PRs. Protocol: if a diff has no Python, no frontend, no test files, and the check fails, compare against the last passing main-branch PR — if that passed, the failure is pre-existing flake and operator can override. Do not block a chore/docs/tooling PR on this check alone.
 
 ## No tracking issues in this repo (as of 2026-05-22)
 
