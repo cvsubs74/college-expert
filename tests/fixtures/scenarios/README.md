@@ -23,8 +23,21 @@ outcomes, fixtures referenced, and known edge cases.
 | [`profile_tab_renders_five_tabs`](./profile_tab_renders_five_tabs.md) | §6.1 | Yes (storageState) | `tests/playwright-prod/specs/profile.auth.spec.js` | 2 |
 | [`profile_upload_pdf_processes_to_completion`](./profile_upload_pdf_processes_to_completion.md) | §6.2 | Yes (storageState) | `tests/playwright-prod/specs/profile.auth.spec.js` | 2 |
 | [`profile_upload_unsupported_format_rejects`](./profile_upload_unsupported_format_rejects.md) | §6.9 | Yes (storageState) | `tests/playwright-prod/specs/profile.auth.spec.js` | 2 |
-
-Iteration 3+ scenarios (Discover, Launchpad, Roadmap, Payment) will be added in subsequent iterations.
+| [`discover_page_loads_with_university_grid`](./discover_page_loads_with_university_grid.md) | §5.1 | Yes (storageState) | `tests/playwright-prod/specs/discover.auth.spec.js` | 3 |
+| [`discover_search_filters_by_name`](./discover_search_filters_by_name.md) | §5.2 | Yes (storageState) | `tests/playwright-prod/specs/discover.auth.spec.js` | 3 |
+| [`discover_filter_dropdowns_present`](./discover_filter_dropdowns_present.md) | §5.3 | Yes (storageState) | `tests/playwright-prod/specs/discover.auth.spec.js` | 3 |
+| [`discover_university_detail_six_tabs`](./discover_university_detail_six_tabs.md) | §5.5 | Yes (storageState) | `tests/playwright-prod/specs/discover.auth.spec.js` | 3 |
+| [`launchpad_renders_categorized_list`](./launchpad_renders_categorized_list.md) | §7.1 + §7.2 | Yes (storageState) | `tests/playwright-prod/specs/launchpad.auth.spec.js` | 3 |
+| [`launchpad_fit_modal_opens_with_bounds`](./launchpad_fit_modal_opens_with_bounds.md) | §7.3 | Yes (storageState) | `tests/playwright-prod/specs/launchpad.auth.spec.js` | 3 |
+| [`roadmap_sub_tabs_render`](./roadmap_sub_tabs_render.md) | §8 (tab buttons) | Yes (storageState) | `tests/playwright-prod/specs/roadmap.auth.spec.js` | 3 |
+| [`roadmap_essays_tab_lists_essays`](./roadmap_essays_tab_lists_essays.md) | §8.2 | Yes (storageState) | `tests/playwright-prod/specs/roadmap.auth.spec.js` | 3 |
+| [`roadmap_scholarships_tab_renders`](./roadmap_scholarships_tab_renders.md) | §8.4 | Yes (storageState) | `tests/playwright-prod/specs/roadmap.auth.spec.js` | 3 |
+| [`roadmap_colleges_tab_renders`](./roadmap_colleges_tab_renders.md) | §8.5 | Yes (storageState) | `tests/playwright-prod/specs/roadmap.auth.spec.js` | 3 |
+| [`roadmap_counselor_chat_widget_present`](./roadmap_counselor_chat_widget_present.md) | §8.6 | Yes (storageState) | `tests/playwright-prod/specs/roadmap.auth.spec.js` | 3 |
+| [`roadmap_plan_tab_renders`](./roadmap_plan_tab_renders.md) | §8.1 | Yes (storageState) | `tests/playwright-prod/specs/roadmap.auth.spec.js` | 3 (SKIPPED — #123) |
+| [`cross_cutting_no_console_errors_authenticated_pass`](./cross_cutting_no_console_errors_authenticated_pass.md) | §11.1 | Yes (storageState) | `tests/playwright-prod/specs/cross-cutting.auth.spec.js` | 3 |
+| [`cross_cutting_mobile_viewport_navbar_renders`](./cross_cutting_mobile_viewport_navbar_renders.md) | §11.3 | Yes (storageState) | `tests/playwright-prod/specs/cross-cutting.auth.spec.js` | 3 |
+| [`pricing_page_renders_four_tiers`](./pricing_page_renders_four_tiers.md) | §9.1 | No | `tests/playwright-prod/specs/pricing.no-auth.spec.js` | 3 |
 
 ## When updating a scenario
 

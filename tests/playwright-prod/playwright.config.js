@@ -2,7 +2,9 @@
 // See README.md for setup, credential handling, and auth-state capture instructions.
 //
 // Three projects:
-//   no-auth  — specs/no-auth.spec.js         Public pages; runs unattended. No OAuth required.
+//   no-auth  — specs/no-auth.spec.js + specs/*.no-auth.spec.js
+//              Public pages; runs unattended. No OAuth required.
+//              Iteration 3 adds: specs/pricing.no-auth.spec.js
 //   capture  — specs/capture-auth.spec.js    One-shot interactive OAuth capture. Run HEADED.
 //   auth     — specs/*.auth.spec.js          Auth-gated scenarios. Requires auth-state/storageState.json.
 
@@ -30,8 +32,10 @@ export default defineConfig({
   projects: [
     {
       // no-auth: public pages + unauthenticated redirects. Runs unattended.
+      // Matches both the base no-auth.spec.js and any *.no-auth.spec.js files
+      // (e.g. pricing.no-auth.spec.js added in iteration 3).
       name: 'no-auth',
-      testMatch: /no-auth\.spec\.js$/,
+      testMatch: /(?:^|[./])[\w-]*no-auth\.spec\.js$/,
       use: { ...devices['Desktop Chrome'] },
     },
     {
