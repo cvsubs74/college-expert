@@ -14,13 +14,17 @@ outcomes, fixtures referenced, and known edge cases.
 
 ## Catalog
 
-| Scenario | Test plan section | Auth required? | Spec file |
-|---|---|---|---|
-| [`pre_flight_landing_renders`](./pre_flight_landing_renders.md) | §3 + §4.1 | No | `tests/playwright-prod/specs/no-auth.spec.js` |
-| [`unauthenticated_profile_redirect`](./unauthenticated_profile_redirect.md) | §4.6 | No | `tests/playwright-prod/specs/no-auth.spec.js` |
-| [`public_resources_page_renders`](./public_resources_page_renders.md) | §10 | No | `tests/playwright-prod/specs/no-auth.spec.js` |
+| Scenario | Test plan section | Auth required? | Spec file | Iteration |
+|---|---|---|---|---|
+| [`pre_flight_landing_renders`](./pre_flight_landing_renders.md) | §3 + §4.1 | No | `tests/playwright-prod/specs/no-auth.spec.js` | 1 |
+| [`unauthenticated_profile_redirect`](./unauthenticated_profile_redirect.md) | §4.6 | No | `tests/playwright-prod/specs/no-auth.spec.js` | 1 |
+| [`public_resources_page_renders`](./public_resources_page_renders.md) | §10 | No | `tests/playwright-prod/specs/no-auth.spec.js` | 1 |
+| [`capture_oauth_storage_state`](./capture_oauth_storage_state.md) | §13.2 | Interactive | `tests/playwright-prod/specs/capture-auth.spec.js` | 2 |
+| [`profile_tab_renders_five_tabs`](./profile_tab_renders_five_tabs.md) | §6.1 | Yes (storageState) | `tests/playwright-prod/specs/profile.auth.spec.js` | 2 |
+| [`profile_upload_pdf_processes_to_completion`](./profile_upload_pdf_processes_to_completion.md) | §6.2 | Yes (storageState) | `tests/playwright-prod/specs/profile.auth.spec.js` | 2 |
+| [`profile_upload_unsupported_format_rejects`](./profile_upload_unsupported_format_rejects.md) | §6.9 | Yes (storageState) | `tests/playwright-prod/specs/profile.auth.spec.js` | 2 |
 
-Iteration 2+ scenarios (authenticated paths — Profile upload, Discover, Launchpad, Roadmap, Payment) will be added once the OAuth `storageState` capture infrastructure lands.
+Iteration 3+ scenarios (Discover, Launchpad, Roadmap, Payment) will be added in subsequent iterations.
 
 ## When updating a scenario
 
