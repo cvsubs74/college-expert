@@ -110,11 +110,15 @@ yarn-error.log*
 frontend/test-results/
 frontend/playwright-report/
 
-# Claude Code session state (per-machine; never commit)
-# Includes .claude/worktrees/<id>/ which point to ephemeral session worktrees.
-# A worktree path was previously committed as a gitlink (mode 160000),
-# making `git status` permanently dirty and tripping the deploy.sh guard.
-.claude/
+# Claude Code: track agent contracts, ignore ephemeral per-machine state.
+# .claude/worktrees/<id>/ are git worktree checkouts — git sees them as
+# gitlinks (mode 160000). Committing a gitlink makes `git status` permanently
+# dirty and trips the deploy.sh guard. Keep worktrees/ ignored.
+.claude/worktrees/
+.claude/settings.local.json
+.claude/projects/
+.claude/statsig/
+.claude/*.log
 
 # Local pytest venvs (created on demand for testing cloud functions)
 .venv-test/

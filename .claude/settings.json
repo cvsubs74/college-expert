@@ -1,0 +1,63 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Edit(.claude/**)",
+      "Write(.claude/**)",
+      "Edit(docs/**)",
+      "Write(docs/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/no-direct-push-main.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/pr-merge-requires-in-review.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/pr-body-closes-check.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/restricted-label-ownership.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/pr-merge-requires-delete-branch.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/auto-clean-worktree.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/session-start-doc-check.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
