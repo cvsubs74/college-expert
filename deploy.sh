@@ -535,6 +535,7 @@ GEMINI_API_KEY: ${GEMINI_API_KEY}
 FIRESTORE_DATABASE: "(default)"
 KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 LOG_EXECUTION_ID: "true"
+QA_TEST_USER_EMAIL: "duser8531@gmail.com,stratiaadmissions@gmail.com"
 EOF
     
     # QA_ADMIN_TOKEN is the second gate on /clear-test-data; same secret
@@ -1189,7 +1190,7 @@ deploy_qa_agent() {
 PROFILE_MANAGER_URL: "${PM_URL}"
 COUNSELOR_AGENT_URL: "${CA_URL}"
 KNOWLEDGE_BASE_UNIVERSITIES_URL: "${KB_URL}"
-QA_TEST_USER_EMAIL: "duser8531@gmail.com"
+QA_TEST_USER_EMAIL: "duser8531@gmail.com,stratiaadmissions@gmail.com"
 GEMINI_API_KEY: "${GEMINI_API_KEY}"
 QA_SYNTHESIS_COUNT: "2"
 EOF
