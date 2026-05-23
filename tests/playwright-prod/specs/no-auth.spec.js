@@ -44,13 +44,17 @@ test.describe('public_resources_page_renders', () => {
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/Why and how Stratia works/i);
 
     // Public-only nav: Resources + Pricing + Get Started. NO Profile/Discover/Launchpad/Roadmap.
-    await expect(page.getByRole('link', { name: 'Resources' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Pricing' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Get Started' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Profile' })).toHaveCount(0);
-    await expect(page.getByRole('link', { name: 'Discover' })).toHaveCount(0);
-    await expect(page.getByRole('link', { name: 'Launchpad' })).toHaveCount(0);
-    await expect(page.getByRole('link', { name: 'Roadmap' })).toHaveCount(0);
+    // Scope to the top-bar navigation only — page body may contain incidental
+    // matches (e.g. a whitepaper titled "How Stratia Builds Your Roadmap").
+    const banner = page.getByRole('banner');
+    const nav = banner.getByRole('navigation');
+    await expect(nav.getByRole('link', { name: 'Resources' })).toBeVisible();
+    await expect(nav.getByRole('link', { name: 'Pricing' })).toBeVisible();
+    await expect(banner.getByRole('button', { name: 'Get Started' })).toBeVisible();
+    await expect(nav.getByRole('link', { name: 'Profile' })).toHaveCount(0);
+    await expect(nav.getByRole('link', { name: 'Discover' })).toHaveCount(0);
+    await expect(nav.getByRole('link', { name: 'Launchpad' })).toHaveCount(0);
+    await expect(nav.getByRole('link', { name: 'Roadmap' })).toHaveCount(0);
 
     // At least one whitepaper card present
     await expect(page.getByText(/Hidden Cost of College Research/i)).toBeVisible();
