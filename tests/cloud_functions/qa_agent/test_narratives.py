@@ -221,7 +221,7 @@ class TestBuildSummary:
     def _runs(self, days_ago_pass_pairs):
         """Build a list of run dicts. Each tuple is (days_ago, passed)."""
         from datetime import datetime, timedelta, timezone
-        now = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        now = datetime.now(timezone.utc)
         runs = []
         for i, (days_ago, passed) in enumerate(days_ago_pass_pairs):
             ts = now - timedelta(days=days_ago)
@@ -279,7 +279,7 @@ class TestBuildSummaryRecentN:
     def _runs(self, pass_seq, *, base=None):
         """Build runs from oldest→newest by passing a list of bools."""
         from datetime import datetime, timedelta, timezone
-        base = base or datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        base = base or datetime.now(timezone.utc)
         out = []
         for i, passed in enumerate(pass_seq):
             ts = base + timedelta(minutes=i * 30)
@@ -350,7 +350,7 @@ class TestBuildSummaryRecentN:
         (the user-feedback scenario that motivated this PR)."""
         import narratives
         from datetime import datetime, timedelta, timezone
-        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        base = datetime.now(timezone.utc)
         runs = []
         # 20 old failing runs, 25 days ago each
         for i in range(20):
@@ -388,7 +388,7 @@ class TestSummaryNarrativeTracksRecentN:
     def _runs_recent_all_pass_30d_mixed(self):
         """20 most-recent runs are 100%; the prior 20 (older) are 50%."""
         from datetime import datetime, timedelta, timezone
-        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        base = datetime.now(timezone.utc)
         runs = []
         for i in range(20):
             runs.append({

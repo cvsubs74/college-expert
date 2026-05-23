@@ -227,12 +227,17 @@ class TestSynthesizeScenarios:
 
 
 class TestHistorySummary:
+    def _ts(self, days_ago=1):
+        """Return an ISO timestamp N days ago from now (UTC)."""
+        from datetime import datetime, timedelta, timezone
+        return (datetime.now(timezone.utc) - timedelta(days=days_ago)).isoformat()
+
     def test_includes_surface_coverage(self):
         import synthesizer
         runs = [
             {
                 "run_id": "r1",
-                "started_at": "2026-05-02T06:00:00+00:00",
+                "started_at": self._ts(1),
                 "summary": {"pass": 4, "fail": 0, "total": 4},
                 "scenarios": [
                     {"scenario_id": "a", "passed": True,
@@ -241,7 +246,7 @@ class TestHistorySummary:
             },
             {
                 "run_id": "r2",
-                "started_at": "2026-05-01T06:00:00+00:00",
+                "started_at": self._ts(2),
                 "summary": {"pass": 4, "fail": 0, "total": 4},
                 "scenarios": [
                     {"scenario_id": "b", "passed": True,
@@ -261,7 +266,7 @@ class TestHistorySummary:
         runs = [
             {
                 "run_id": "r1",
-                "started_at": "2026-05-02T06:00:00+00:00",
+                "started_at": self._ts(1),
                 "summary": {"pass": 3, "fail": 1, "total": 4},
                 "scenarios": [
                     {"scenario_id": "broken", "passed": False, "surfaces_covered": []},
