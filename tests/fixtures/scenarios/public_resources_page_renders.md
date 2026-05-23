@@ -17,8 +17,8 @@ Verify that the public Resources page at `/resources` renders without authentica
 1. Navigate to `https://stratiaadmissions.com/resources`
 2. Assert page title matches `/Resources/`
 3. Assert H1 contains `/Why and how Stratia works/i`
-4. Assert public nav links/buttons are visible: `Resources`, `Pricing`, `Get Started`
-5. Assert authenticated-app nav links are NOT present: `Profile`, `Discover`, `Launchpad`, `Roadmap` (each should resolve to 0 matches)
+4. Assert public nav links/buttons are visible **within the top banner navigation**: `Resources`, `Pricing`, `Get Started`. Use a navbar-scoped locator (`page.getByRole('banner').getByRole('navigation')`) — page body may contain incidental matches.
+5. Assert authenticated-app nav links are NOT present **within the top banner navigation**: `Profile`, `Discover`, `Launchpad`, `Roadmap` (each should resolve to 0 matches within the navbar scope). Whole-page matches would false-positive — the body contains a whitepaper titled "How Stratia Builds Your Roadmap" which a page-wide locator would catch.
 6. Assert at least one whitepaper card is visible (`/Hidden Cost of College Research/i`)
 
 ### Part B — Whitepaper deep-link
