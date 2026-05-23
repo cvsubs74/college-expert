@@ -125,3 +125,9 @@ frontend/playwright-report/
 # Local pytest venvs (created on demand for testing cloud functions)
 .venv-test/
 .venv/
+
+# Autonomous QA loop: Playwright-prod runtime artifacts
+tests/playwright-prod/node_modules/
+tests/playwright-prod/auth-state/
+tests/playwright-prod/playwright-report/
+tests/playwright-prod/test-results/
