@@ -2,9 +2,7 @@
 
 This file provides guidance to [Claude Code](https://docs.anthropic.com/en/docs/claude-code) when working with code in this repository.
 
-> Fill in the `{{PLACEHOLDERS}}` for your project. `bin/init-project.sh` does this interactively.
-
-# claude-workflow — Claude Code Agent Team
+# College Counselor — Claude Code Agent Team
 
 ## Required cold-start reading
 
@@ -12,13 +10,13 @@ Before acting on any goal, load:
 
 1. `ETHOS.md` — the three principles that override all other defaults: *Boil the Lake · Search Before Building · User Sovereignty*.
 2. `SDLC.md` — branch naming, PR workflow, label scheme, commit conventions.
-3. `docs/ARCHITECTURE.md` (if present) — system shape + change log.
+3. `docs/ARCHITECTURE.md` — system shape + change log.
 
 If a doc is missing, that is a signal — propose creating it rather than working without it.
 
 ## Operating posture (must-know before any action)
 
-- **Multi-agent team workflow.** This repo is driven by 7 specialist roles (PM, Triage, Dev, QA, Code Reviewer, DevOps, Designer) coordinated by the Team Lead — defined under `.claude/agents/`. Pick the right specialist via the `Agent` tool — don't write code directly when a Dev/QA/CR specialist is appropriate.
+- **Multi-agent team workflow.** This repo is driven by 7 specialist roles (PM, Triage, Dev, QA, Code Reviewer, DevOps, Designer) coordinated by the Team Lead — 8 contracts under `.claude/agents/`. Skills live under `.claude/skills/`; slash commands under `.claude/commands/`. Pick the right specialist via the `Agent` tool — don't write code directly when a Dev/QA/CR specialist is appropriate.
 - **PRD → Design Doc → code.** New user-facing features require `docs/prd/PRD-<topic>.md` then `docs/design/DESIGN-<topic>.md` before implementation. Bug fixes, refactors, chores, and hotfixes skip the gate (see `SDLC.md` Step 0).
 - **No direct commits to the default branch.** Every change goes through a PR; squash-merge after CI green + review.
 - **Architecture doc currency.** Update `docs/ARCHITECTURE.md` + append a Change Log row whenever a change touches module shape, data flow, schema, or constraints.
@@ -57,7 +55,7 @@ Always pass `--account cvsubs@gmail.com --project college-counselling-478115` to
 
 ## Architecture in one paragraph
 
-Python 3.11 Cloud Functions Gen2 (us-east1) form the backend — `counselor_agent` is the read-side BFF that aggregates from `profile_manager_v2`, `knowledge_base_manager`, and the QA agent; writes go directly to data managers. A React 19 + Vite SPA on Firebase Hosting (`frontend/`) talks to those functions; Firestore is the primary store, with Elasticsearch (`*_es` variants) and Vertex AI / Gemini for semantic search and LLM calls. GCP project: `college-counselling-478115`. Authoritative code lives under `cloud_functions/<service>/`; see `APPLICATION_BLUEPRINT.md` for the full system shape and the per-feature docs under `docs/prd/` + `docs/design/`. Only the cloud functions listed in `project_live_components_scope` memory are reachable from the frontend — ignore legacy variants.
+Python 3.11 Cloud Functions Gen2 (us-east1) form the backend — `counselor_agent` is the read-side BFF that aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding to chat/roadmap/college-fit requests; writes go directly from the frontend to `profile_manager_v2`. A React 19 + Vite SPA on Firebase Hosting (`frontend/`) talks to those functions; Firestore is the primary store. The legacy Elasticsearch cluster (`*_es` / `*_rag` variants) is offline — those functions remain deployed but are not exercised. Gemini Flash (via `google-genai` SDK) handles all LLM calls; Stripe + `payment_manager_v2` handles subscriptions. GCP project: `college-counselling-478115`; authoritative code under `cloud_functions/<service>/` and `agents/`. See `docs/ARCHITECTURE.md` for the full system shape, module map, and change log; per-feature docs under `docs/prd/` + `docs/design/`. Only the cloud functions listed in `project_live_components_scope` memory are reachable from the frontend — ignore legacy variants.
 
 ## Reusable tooling
 
@@ -65,6 +63,7 @@ Python 3.11 Cloud Functions Gen2 (us-east1) form the backend — `counselor_agen
 - `run_all_tests.sh`, `comprehensive_integration_test.sh`, `test_*.sh` — backend integration suites against deployed functions.
 - `scripts/` — diagnostic + operational scripts (data fixes, KB ingestion, schema migrations).
 - `cleanup_test_data.sh`, `setup_secrets.sh`, `setup_firebase_env.sh` — environment + cleanup helpers.
+- `bin/merge-pr.sh`, `bin/bootstrap-labels.sh` — PR merge helper and GitHub label bootstrapper.
 
 ## Project skills & agent playbooks
 
