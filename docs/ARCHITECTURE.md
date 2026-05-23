@@ -4,7 +4,7 @@
 
 ## System overview
 
-College Counselor is a Python 3.11 / Cloud Functions Gen2 backend (us-east1) fronted by a React 19 + Vite SPA on Firebase Hosting. The primary data store is Firestore; `knowledge_base_manager_universities_v2` also reads from a dedicated `universities` Firestore collection populated by offline ingestion scripts. A legacy Elasticsearch cluster (used by the `_rag` and `_es` approaches) is offline — its two cloud functions remain deployed but are seldom exercised. Gemini Flash (via the `google-genai` SDK) is the LLM for all AI-driven features. `counselor_agent` is the read-side BFF: the frontend sends chat, roadmap, and college-fit requests to it, and it aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding. Writes go directly from the frontend to `profile_manager_v2`. Stripe handles subscription billing via `payment_manager_v2`, which receives lifecycle events over webhooks. Cloud Build runs CI on every PR and every push to `main`; deploys are a deliberate operator action via `deploy.sh`. GCP project: `college-counselling-478115`.
+College Counselor is a Python 3.11 / Cloud Functions Gen2 backend (us-east1) fronted by a React 19 + Vite SPA on Firebase Hosting. The primary data store is Firestore; `knowledge_base_manager_universities_v2` also reads from a dedicated `universities` Firestore collection populated by offline ingestion scripts. A legacy Elasticsearch cluster (used by the `_rag` and `_es` approaches) is offline — its two cloud functions remain deployed but are seldom exercised. Gemini Flash (via the `google-genai` SDK) is the LLM for all AI-driven features. `counselor_agent` is the read-side BFF: the frontend sends chat, roadmap, and college-fit requests to it, and it aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding. Writes go directly from the frontend to `profile_manager_v2`. Stripe handles subscription billing via `payment_manager_v2`, which receives lifecycle events over webhooks. Cloud Build runs CI on every PR; on merge to `main` it also runs a path-based auto-deploy (`cloudbuild-main.yaml`) — backend Cloud Functions and the frontend (Firebase Hosting) are both auto-deployed when their paths change; a docs/tests/config-only merge deploys nothing. GCP project: `college-counselling-478115`.
 
 ---
 
@@ -154,11 +154,11 @@ Admin Dashboard (React SPA, /qa-runs route)
 ### CI/CD
 
 ```
-git push / PR open
+PR open / push
   │
   ▼
-Cloud Build trigger (college-expert-pr or college-expert-main)
-  │  cloudbuild.yaml
+Cloud Build trigger (college-expert-pr)
+  │  cloudbuild.yaml — test gate only, never deploys
   ├── pytest tests/
   ├── bash -n deploy.sh deploy_frontend.sh
   └── npm ci + vitest + vite build + playwright (against vite preview)
@@ -168,12 +168,25 @@ Cloud Build trigger (college-expert-pr or college-expert-main)
 merge to main
   │
   ▼
-operator runs: ./deploy.sh <target>   (clean-main guard enforced)
-  ├── gcloud functions deploy <function> (Gen2, us-east1)
-  └── firebase deploy --only hosting
+Cloud Build trigger (college-expert-main)
+  │  cloudbuild-main.yaml — same test gate, then path-based auto-deploy
+  ├── [test gate — identical to PR pipeline]
+  ├── detect-targets: scripts/cicd/detect_changed_targets.py
+  │     maps changed path prefixes → deploy.sh targets
+  │     cloud_functions/<svc>/  →  ./deploy.sh <svc-target>
+  │     frontend/               →  ./deploy_frontend.sh
+  │     docs/ tests/ config     →  (no target; step exits 0)
+  └── deploy: runs each target in sequence; frontend last
+  │
+  ▼
+DevOps verifies deploy + runs smoke tests
 ```
 
-See [`docs/cicd-architecture.md`](cicd-architecture.md) for the full CI/CD reference.
+> **Both backend Cloud Functions and frontend (Firebase Hosting) are path-based auto-deployed** by the `college-expert-main` Cloud Build trigger on every merge to `main`. The deploy only fires for the surfaces whose files changed — a docs/tests/config-only merge emits an empty targets list and is a no-op. First observed in production: build `7a3fe287` (PR #131, 2026-05-23).
+>
+> `./deploy.sh <target>` and `./deploy_frontend.sh` remain available for manual re-deploys (e.g. after a config secret change). `deploy.sh` requires running from the primary repo on `main` (clean-main guard); `deploy_frontend.sh` has no such guard.
+
+> ⚠ `docs/cicd-architecture.md` predates the auto-deploy feature and is out of date — §1, §2, and §7 still describe the old "no auto-deploy" model. Cleanup tracked in issue #137. For current behavior, see the diagram above and `cloudbuild-main.yaml` + `scripts/cicd/detect_changed_targets.py`.
 
 ---
 
@@ -296,4 +309,5 @@ The frontend reads and writes profile fields directly. Schema changes in `profil
 
 | Date | PR | What changed | Why |
 |---|---|---|---|
+| 2026-05-23 | #135 | Document CI/CD path-based auto-deploy behavior (both backend + frontend); correct "deploys are manual" prose | Behavior was already live but doc still described it as manual; DevOps observed the auto-deploy during PR #131 deploy (build ID 7a3fe287) |
 | 2026-05-22 | (this PR) | Initial architecture doc | `CLAUDE.md` required it as cold-start reading but only the template existed |
