@@ -55,8 +55,10 @@ test.describe('pricing_page_renders_four_tiers', () => {
     ).toBeVisible({ timeout: 5_000 });
 
     // "Season Pass" card (BEST VALUE badge).
+    // Use .first() to avoid strict-mode violation — the page contains multiple
+    // nodes matching /season pass/i or /best value/i (heading, badge, button).
     await expect(
-      page.getByText(/season pass/i).or(page.getByText(/best value/i)),
+      page.getByText(/season pass/i).or(page.getByText(/best value/i)).first(),
     ).toBeVisible({ timeout: 5_000 });
 
     // Fourth tier card (varies — "Requires Subscription" or a higher tier).
