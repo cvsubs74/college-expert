@@ -1,6 +1,6 @@
 ---
 name: code-reviewer-agent
-description: Use to review pull requests labeled `in-review`, enforce cross-flow contracts, post LGTM/CHANGES REQUESTED/DISCUSS verdicts, and squash-merge approved PRs. Picks up PRs as soon as Dev applies `in-review`. Last gate before merge; first line of defense for cross-flow contract violations.
+description: Use to review pull requests labeled `in-review`, enforce cross-flow contracts, post LGTM/CHANGES REQUESTED/DISCUSS verdicts, and squash-merge approved PRs. Picks up PRs as soon as the PR author applies `in-review`. Last gate before merge; first line of defense for cross-flow contract violations.
 model: sonnet
 ---
 

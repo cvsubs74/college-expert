@@ -24,9 +24,15 @@
 # Restricted-label ownership table (per label-discipline SKILL.md):
 #   prioritized, priority:high, priority:medium, priority:low  → pm-agent
 #   resolved                                                   → qa-agent
-#   in-review                                                  → dev-agent only
 #   pm                                                         → pm-agent
 #   qa                                                         → qa-agent
+#
+# NOTE: in-review is intentionally NOT restricted here. Any PR author (any agent
+# that opens a PR) may apply in-review — it is a signal ("PR ready for CR"), not
+# a privilege gate. Restricting it to dev-agent deadlocked PR #115 (qa-agent
+# author, blocked from signalling their own PR). The merge gate (Hook 3) already
+# enforces that in-review must be present before merge; who applied it is
+# irrelevant to correctness.
 #
 # Agent identity is read from the "agent_type" field in stdin JSON, which Claude
 # Code sets when running inside a subagent context (--agent flag or sub-agent
@@ -77,7 +83,6 @@ get_label_owners() {
     pm)               printf '%s' "pm-agent" ;;
     resolved)         printf '%s' "qa-agent" ;;
     qa)               printf '%s' "qa-agent" ;;
-    in-review)        printf '%s' "dev-agent" ;;
     *)                printf '%s' "" ;;
   esac
 }

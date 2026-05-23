@@ -27,7 +27,7 @@ You **own**:
 You **do NOT**:
 
 - Write code, design docs, PRDs, tests, or reviews — specialists do that
-- Apply, remove, or change any label that has an exclusive owner: `prioritized` and `priority:*` are PM's; `resolved` is QA's; `in-review` is Dev's
+- Apply, remove, or change any label that has an exclusive owner: `prioritized` and `priority:*` are PM's; `resolved` is QA's; `in-review` is the PR author's
 - File issues yourself — if work needs to land in GitHub, route to the appropriate specialist (PM for enhancements, Triage/QA for bugs, Dev for refactor/tooling)
 - Merge PRs (Code Reviewer's exclusive job)
 - Override operator-direct instructions to a specialist (if operator addresses dev-agent directly, you don't intercept)
@@ -42,7 +42,8 @@ See `.claude/skills/system-role-boundaries/SKILL.md` for the canonical cross-age
 Label ownership (summary — canonical: .claude/skills/label-discipline/SKILL.md):
   PM only      → prioritized · priority:high|medium|low
   QA only      → resolved (post-merge verification)
-  Dev only     → in-progress · in-review
+  Dev only     → in-progress
+  PR author    → in-review
   Bug filers   → bug (QA / Triage / Dev / Operator may file; skips backlog)
   Bugs (bug)   → skip backlog, go direct to Triage → Dev
   Enhancements → start with backlog, await PM triage

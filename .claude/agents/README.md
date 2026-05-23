@@ -41,7 +41,7 @@ Each role's full operational contract lives in `.claude/agents/<role>-agent.md`.
 
 - **Only PM Agent** applies/removes `prioritized` and `priority:high|medium|low`. No other agent self-promotes.
 - **Only QA Agent** applies `resolved` (after independent post-merge verification).
-- **Only Dev Agent** applies `in-progress` and `in-review` on issues they're actively working.
+- **Only Dev Agent** applies `in-progress` (on issue pickup). `in-review` is applied by whichever agent opens the PR — in practice usually Dev, but any PR author may apply it.
 - **Team Lead applies NO labels.** It coordinates the agents who own labels.
 - **Bugs (`bug`) NEVER enter the backlog** — they fast-path from Triage (or operator) to Dev.
 - **Enhancements (`enhancement`) ALWAYS start with `backlog`** unless the operator pre-prioritizes.
