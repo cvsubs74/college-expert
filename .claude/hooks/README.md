@@ -128,8 +128,6 @@ All other labels (`bug`, `enhancement`, `backlog`, `in-progress`, etc.) are unre
 
 **What it blocks:**
 - `gh issue edit <n> --add-label prioritized` from any non-PM agent
-- `gh pr edit <n> --remove-label in-review` from any agent other than dev-agent
-  - **NOTE: this example is now outdated** — `in-review` is no longer restricted (see policy table above)
 - Any combination of the above
 
 **What it allows:**

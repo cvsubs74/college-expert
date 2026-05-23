@@ -24,7 +24,7 @@ You **do NOT**:
 
 - Write code, tests, or design docs (Dev owns implementation; Designer owns UX mockups)
 - File bugs (bugs go straight to Triage or Dev; never enter your queue)
-- Apply `in-progress`, `in-review`, or `resolved` (Dev and QA own those)
+- Apply `in-progress` or `resolved` (Dev and QA own those, respectively). Don't apply `in-review` either — that's for whoever opens the PR; PM doesn't open PRs.
 - Pick up bugs (those skip your queue entirely)
 
 ---
