@@ -1346,18 +1346,24 @@ def profile_manager_v2_http_entry(request):
                         'message': 'Welcome email sent successfully'
                     })
                 else:
-                    logger.error(f"[WELCOME_EMAIL] Failed to send to {user_email}")
+                    # Welcome email is best-effort — log a warning, not an error,
+                    # and return 200 so the frontend axios call does not throw.
+                    # Returning 500 here caused issue #136: browser console error
+                    # "[API] Error sending welcome email: pt" for all no-profile users.
+                    logger.warning(f"[WELCOME_EMAIL] Failed to send to {user_email} (best-effort, skipping)")
                     return add_cors_headers({
                         'success': False,
                         'error': 'Failed to send welcome email'
-                    }, 500)
-                    
+                    })
+
             except Exception as e:
-                logger.error(f"[WELCOME_EMAIL ERROR] {str(e)}")
+                # Unexpected exception — still return 200 (graceful skip).
+                # Welcome email must never surface as a server error.
+                logger.warning(f"[WELCOME_EMAIL] Exception sending to {user_email}: {str(e)} (best-effort, skipping)")
                 return add_cors_headers({
                     'success': False,
                     'error': f'Email error: {str(e)}'
-                }, 500)
+                })
         
         # ==================== ESSAY TRACKER ====================
         
