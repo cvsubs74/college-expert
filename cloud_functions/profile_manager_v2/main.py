@@ -1734,9 +1734,11 @@ def profile_manager_v2_http_entry(request):
         # --- CLEAR TEST DATA (QA agent only) ---
         # Wipes every subcollection under users/{email}/ for the dedicated
         # QA test account. Two gates, both required:
-        #   1. The target email must match QA_TEST_USER_EMAIL env var
-        #      (defaults to duser8531@gmail.com — the dedicated test
-        #      account).
+        #   1. The target email must appear in QA_TEST_USER_EMAIL env var
+        #      (comma-separated list; defaults to duser8531@gmail.com).
+        #      Multiple accounts are supported so the autonomous QA loop
+        #      account (stratiaadmissions@gmail.com) can also use this
+        #      endpoint. See issue #128.
         #   2. The X-Admin-Token header must match QA_ADMIN_TOKEN secret.
         # If either gate fails the endpoint refuses without revealing
         # which check failed (avoid leaking which protection is in
@@ -1746,11 +1748,15 @@ def profile_manager_v2_http_entry(request):
             data = request.get_json(silent=True) or {}
             user_email = data.get('user_email', '')
 
-            allowed_email = os.getenv('QA_TEST_USER_EMAIL', 'duser8531@gmail.com')
+            allowed_emails = [
+                e.strip()
+                for e in os.getenv('QA_TEST_USER_EMAIL', 'duser8531@gmail.com').split(',')
+                if e.strip()
+            ]
             expected_token = os.getenv('QA_ADMIN_TOKEN', '')
             provided_token = request.headers.get('X-Admin-Token', '')
 
-            email_ok = bool(user_email) and user_email == allowed_email
+            email_ok = bool(user_email) and user_email in allowed_emails
             token_ok = bool(expected_token) and _secrets.compare_digest(
                 provided_token, expected_token
             )

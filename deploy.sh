@@ -535,6 +535,7 @@ GEMINI_API_KEY: ${GEMINI_API_KEY}
 FIRESTORE_DATABASE: "(default)"
 KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 LOG_EXECUTION_ID: "true"
+QA_TEST_USER_EMAIL: "duser8531@gmail.com,stratiaadmissions@gmail.com"
 EOF
     
     # QA_ADMIN_TOKEN is the second gate on /clear-test-data; same secret
@@ -1193,6 +1194,11 @@ QA_TEST_USER_EMAIL: "duser8531@gmail.com"
 GEMINI_API_KEY: "${GEMINI_API_KEY}"
 QA_SYNTHESIS_COUNT: "2"
 EOF
+    # NOTE: QA_TEST_USER_EMAIL here must remain a single email address.
+    # cloud_functions/qa_agent/main.py reads it as a raw string (no split)
+    # and uses it as the Firebase login account for every runner session.
+    # The profile-manager-v2 /clear-test-data endpoint is the only surface
+    # that supports a comma-separated allow-list (widened in issue #128).
 
     # No --min-instances: cold starts are fine for an on-demand /
     # scheduled monitor. Memory bumped a notch above default to give
