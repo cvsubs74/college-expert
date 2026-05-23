@@ -114,7 +114,7 @@ cross-flow contract touch points>
 Closes #N  (or Refs #N if this is part of a multi-PR effort)
 ```
 
-Apply `in-review` label (Dev's signal; Code Reviewer watches for it). PRs must pass CI (shellcheck, bash syntax, markdown lint) before Code Reviewer merges.
+Apply `in-review` label (the PR author's signal; Code Reviewer watches for it). PRs must pass CI (shellcheck, bash syntax, markdown lint) before Code Reviewer merges.
 
 **Designer gate (convention-only):** For PRs touching frontend paths (UI components, styles, layout), Code Reviewer waits for Designer to post a top-level "Design Approved" comment before squash-merging. No hook enforces this — Code Reviewer is on the honor system. If Designer posts "Design Blocked," Code Reviewer posts `CHANGES REQUESTED` and Dev iterates. (Hook 7 to enforce this mechanically is the documented upgrade path if this repo gains a meaningful UI surface.)
 
@@ -187,7 +187,7 @@ Canonical reference: `.claude/skills/label-discipline/SKILL.md`.
 | `priority:medium` | **PM only** | Clear value, no blocker. Safe default. |
 | `priority:low` | **PM only** | Cleanup, polish. |
 | `in-progress` | **Dev only** | Dev started work. |
-| `in-review` | **Dev only** | PR open, awaiting CR. |
+| `in-review` | **PR author** | PR open, awaiting CR. |
 | `resolved` | **QA only** | QA verified post-merge. Terminal state. |
 | `qa` | QA | QA filed/owns verification. |
 | `pm` | PM | PM filed. |
@@ -197,7 +197,7 @@ Canonical reference: `.claude/skills/label-discipline/SKILL.md`.
 1. Bugs SKIP the backlog.
 2. Only PM applies `prioritized` + `priority:*`.
 3. Only QA applies `resolved`.
-4. Only Dev applies `in-progress` + `in-review`.
+4. Only Dev applies `in-progress`. Any PR author (Dev, QA, or other agent) applies `in-review` on their own PR.
 5. Team Lead owns no labels.
 
 Operator override: any operator can apply any label directly; agents respect operator-set state.

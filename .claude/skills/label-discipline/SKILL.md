@@ -21,7 +21,7 @@ This is a **reference skill** (pure documentation, no allowed-tools). Every role
 | `priority:medium` | Medium priority — clear value, no active blocker. Safe default when uncertain. | **PM only** | PM assigns medium priority at triage | PM changes priority or issue closes |
 | `priority:low` | Low priority — cleanup, polish, nice-to-have. | **PM only** | PM assigns low priority at triage | PM changes priority or issue closes |
 | `in-progress` | Dev Agent has started the fix or feature. | **Dev only** | Dev picks up issue from the queue | PR for the issue merges (or Dev drops the issue) |
-| `in-review` | PR is open, awaiting Code Reviewer Agent. | **Dev only** | Dev opens the PR | PR is merged or closed |
+| `in-review` | PR is open, awaiting Code Reviewer Agent. | **PR author** (any agent who opens the PR) | PR author opens the PR | PR is merged or closed |
 | `resolved` | QA Agent verified the fix post-merge (two consecutive passes). | **QA only** | QA completes post-merge verification and passes | Never removed once applied (terminal state) |
 | `pm` | Sub-classification: PM Agent filed or owns this issue. | PM Agent | PM files a PRD-driven issue | Optional; never removed; provenance only |
 | `qa` | Sub-classification: QA Agent filed or owns post-merge verification. | QA Agent | QA files a bug or enhancement | Never removed once applied; QA owns verification even if issue transfers |
@@ -36,9 +36,8 @@ This is a **reference skill** (pure documentation, no allowed-tools). Every role
 
 3. **Only QA applies `resolved`.** QA Agent applies `resolved` only after two consecutive passing verification runs (the §TWO-PASS rule). No other agent closes an issue as resolved.
 
-4. **Only Dev applies `in-progress` + `in-review`.** These are Dev's status signals. Code Reviewer and PM read them; they do not write them.
-   - **`in-review` is hook-enforced** (Hook 2 / `restricted-label-ownership.sh`): any attempt by a non-Dev agent to apply it is mechanically blocked.
-   - **`in-progress` is convention-only** — no hook protects it. Dev applies it by discipline on issue pickup. If another agent mistakenly sets it, no workflow gate fails; the label is purely informational.
+4. **Only Dev applies `in-progress`.** Dev applies it on issue pickup; Code Reviewer and PM read it; they do not write it. Convention-only — no hook protects it.
+   - **`in-review` is applied by the PR author** — any agent who opens the PR may apply it. Dev applies it in the typical flow; QA, Designer, or other agents may apply it when they author a PR. The merge gate (Hook 3) enforces that `in-review` must be present before merge; who applied it is irrelevant. **Hook 2 no longer restricts `in-review`** — the restriction was removed after PR #115 deadlock (qa-agent author blocked from signalling its own PR).
 
 ---
 

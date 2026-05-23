@@ -121,13 +121,13 @@ The `tests/test_hooks.sh` Hook 1 section uses this pattern so the suite is herme
 | `pm` | `pm-agent` |
 | `resolved` | `qa-agent` |
 | `qa` | `qa-agent` |
-| `in-review` | `dev-agent` |
+
+`in-review` is **unrestricted** — any PR author (any agent) may apply it. See PR #115 post-mortem for why the previous `dev-agent`-only restriction was removed.
 
 All other labels (`bug`, `enhancement`, `backlog`, `in-progress`, etc.) are unrestricted — any agent may apply them.
 
 **What it blocks:**
 - `gh issue edit <n> --add-label prioritized` from any non-PM agent
-- `gh pr edit <n> --remove-label in-review` from any agent other than dev-agent
 - Any combination of the above
 
 **What it allows:**
