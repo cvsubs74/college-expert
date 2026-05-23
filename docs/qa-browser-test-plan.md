@@ -484,6 +484,41 @@ verification table for `leadership_roles`, `special_programs`, or
 - Assert: the page does not crash; the upload zone remains functional after
   the rejection.
 
+### 6.10 Negative: oversize file
+
+**Code grounding:** No explicit `MAX_CONTENT_LENGTH` or byte-count check exists
+anywhere in the upload path. The `profile_manager_v2` upload handler
+(`main.py` lines 134–165) calls `file.read()` without inspecting
+`len(file_content)`. The client-side upload zone (`Profile.jsx` line 1499) only
+applies an `accept=".pdf,.docx,.txt,.doc,.md,.markdown"` MIME filter — no
+JavaScript size validation. The effective hard ceiling is the **Cloud Functions
+Gen2 32 MB HTTP request body limit**, enforced by the GCP runtime
+infrastructure, not by application code.
+
+**Test steps:**
+
+1. Create a file that is over 32 MB (e.g., pad a `.txt` file:
+   `dd if=/dev/urandom of=big.txt bs=1M count=33` on macOS/Linux, then rename
+   to `big.pdf`).
+2. Attempt to upload it via the "Upload Documents" tab.
+3. Assert: the upload fails. Expected behavior — one of two outcomes:
+   a. The GCP runtime returns HTTP 413 before the function processes the
+      request. The frontend catches the network error and displays a generic
+      error banner ("All uploads failed" per `Profile.jsx` line 720–722 error
+      state).
+   b. The browser itself stalls or the upload takes extremely long before
+      timing out.
+4. Assert: the page does not enter a permanently broken state — the upload
+   zone is still functional after the failure.
+5. Assert: NO in-app size error message appears (because none exists in code).
+   If a size-specific message DOES appear, that would indicate new validation
+   was added — update this step accordingly.
+
+**Coverage note:** The absence of an in-app size limit is itself a test finding.
+If a future PR adds explicit size validation, this step should be updated to
+assert the specific error message and byte threshold. File a
+`enhancement,backlog` issue if the 32 MB limit is reached in real usage.
+
 ---
 
 ## 7. Launchpad (`/launchpad`)
