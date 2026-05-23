@@ -2,6 +2,7 @@
   "name": "@stratia/playwright-prod",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Production-mode browser tests against stratiaadmissions.com (autonomous QA loop)",
   "scripts": {
     "test": "playwright test",
