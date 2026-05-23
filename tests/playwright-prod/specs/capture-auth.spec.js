@@ -20,16 +20,17 @@
 // Scenario doc: tests/fixtures/scenarios/capture_oauth_storage_state.md
 
 import { test, expect } from '@playwright/test';
+import fs from 'fs';
 import { getTestPassword } from '../lib/secret-manager.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const AUTH_STATE_PATH = path.resolve(__dirname, '../auth-state/storageState.json');
+import {
+  AUTH_STATE_PATH,
+  FIREBASE_INDEXEDDB_PATH,
+  dumpFirebaseIndexedDB,
+} from '../lib/auth.js';
 
 // How long to wait for the operator to complete 2FA (in ms). Generous because
 // the IPP push round-trip can take 1–3 minutes on a slow connection.
-const TWO_FA_TIMEOUT_MS = 5 * 60 * 1000; // 5 minutes
+const TWO_FA_TIMEOUT_MS = 10 * 60 * 1000; // 10 minutes — generous for 2FA push round-trip
 
 test.describe('capture_oauth_storage_state', () => {
   // tests/fixtures/scenarios/capture_oauth_storage_state.md
@@ -88,18 +89,33 @@ test.describe('capture_oauth_storage_state', () => {
       );
     }
 
-    // Wait for the main page tab to redirect to /universities — that is the
-    // signal that OAuth completed and Firebase ID tokens are in localStorage.
-    console.log('[capture-auth] Waiting for redirect to /universities ...');
-    await page.waitForURL(/\/universities/, { timeout: TWO_FA_TIMEOUT_MS });
+    // Wait for the main page tab to redirect to ANY authenticated route —
+    // /universities is the default landing, but /launchpad or /profile are
+    // also valid post-auth destinations depending on prior session state.
+    // Match any path under stratiaadmissions.com that's not the landing root.
+    console.log('[capture-auth] Waiting for redirect to an authenticated route ...');
+    await page.waitForURL(/stratiaadmissions\.com\/(universities|launchpad|profile|roadmap)/, {
+      timeout: TWO_FA_TIMEOUT_MS,
+    });
 
     // Assert: authenticated state reached.
-    await expect(page).toHaveURL(/\/universities/);
+    await expect(page).toHaveURL(
+      /stratiaadmissions\.com\/(universities|launchpad|profile|roadmap)/,
+    );
     console.log('[capture-auth] OAuth succeeded. Saving storage state...');
 
-    // Save the storage state (Firebase ID tokens, cookies) to the gitignored path.
+    // Save the storage state (cookies + localStorage) to the gitignored path.
     await context.storageState({ path: AUTH_STATE_PATH });
     console.log(`[capture-auth] Storage state saved to:\n  ${AUTH_STATE_PATH}`);
+
+    // Firebase Auth stores ID tokens in IndexedDB (firebaseLocalStorageDb),
+    // which storageState does NOT capture. Dump it separately and save.
+    const fbEntries = await dumpFirebaseIndexedDB(page);
+    fs.mkdirSync(FIREBASE_INDEXEDDB_PATH.replace(/\/[^/]+$/, ''), { recursive: true });
+    fs.writeFileSync(FIREBASE_INDEXEDDB_PATH, JSON.stringify(fbEntries, null, 2));
+    console.log(
+      `[capture-auth] Firebase IndexedDB saved (${fbEntries.length} entries) to:\n  ${FIREBASE_INDEXEDDB_PATH}`,
+    );
     console.log(
       '[capture-auth] IMPORTANT: this file expires in ~25 days. Re-run this spec before it expires.',
     );

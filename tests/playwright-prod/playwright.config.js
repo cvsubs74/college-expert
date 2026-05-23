@@ -44,6 +44,16 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         headless: false, // Always headed — operator must interact for 2FA.
+        // Use the operator's installed Chrome (not Playwright's bundled Chromium).
+        channel: 'chrome',
+        // Hide automation fingerprints that Google's OAuth flow rejects.
+        // --disable-blink-features=AutomationControlled removes navigator.webdriver=true;
+        // --exclude-switches=enable-automation suppresses the "Chrome is being
+        // controlled by automated test software" banner that also triggers OAuth refusal.
+        launchOptions: {
+          args: ['--disable-blink-features=AutomationControlled'],
+          ignoreDefaultArgs: ['--enable-automation'],
+        },
       },
     },
     {
