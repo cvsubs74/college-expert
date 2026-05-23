@@ -39,6 +39,11 @@ test.describe('capture_oauth_storage_state', () => {
     context,
     browser,
   }) => {
+    // The test-level timeout must be longer than TWO_FA_TIMEOUT_MS.
+    // Default Playwright test timeout is 30s which is far too short for the
+    // interactive OAuth + 2FA flow. Set to 12 minutes (10-min 2FA window + margin).
+    test.setTimeout(12 * 60 * 1000);
+
     const autofill = process.env.STRATIA_AUTOFILL_PASSWORD === '1';
 
     // Navigate to the app landing page.

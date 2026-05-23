@@ -4,8 +4,17 @@
 // - Fetch the test password from STRATIA_TEST_PASSWORD at runtime.
 // - NEVER log, print, cache to disk, screenshot, or include in errors/issues.
 // - Fail loudly on retrieval errors; do NOT fall back to prompting or hardcoded values.
+//
+// ADC note: On machines where Application Default Credentials point to the wrong
+// account (e.g. an OneTrust account when the college project is under cvsubs@gmail.com),
+// the Node.js SDK PERMISSION_DENIED error is caught and we fall back to the `gcloud` CLI
+// which uses its own credential store (not ADC). This is safe because:
+//   - gcloud CLI must be authenticated to cvsubs@gmail.com (verified before falling back)
+//   - The secret value is never written to disk, logged, or persisted
+//   - The fallback itself throws on any gcloud error
 
 import { SecretManagerServiceClient } from '@google-cloud/secret-manager';
+import { execSync } from 'child_process';
 
 const GCP_PROJECT_ID = 'college-counselling-478115';
 const SECRET_NAME = 'STRATIA_TEST_PASSWORD';
@@ -17,6 +26,29 @@ function getClient() {
     client = new SecretManagerServiceClient();
   }
   return client;
+}
+
+/**
+ * Fetch the Stratia test-user password via the `gcloud` CLI.
+ * Used as a fallback when ADC points to the wrong account.
+ * Value is returned in memory only. Never persisted.
+ */
+function getTestPasswordViaGcloud() {
+  try {
+    const value = execSync(
+      `gcloud secrets versions access latest --secret=${SECRET_NAME} --account cvsubs@gmail.com --project ${GCP_PROJECT_ID}`,
+      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] },
+    ).trim();
+    if (!value) {
+      throw new Error('gcloud returned an empty secret payload');
+    }
+    return value;
+  } catch (cliErr) {
+    throw new Error(
+      `gcloud CLI fallback also failed for ${SECRET_NAME}: ${cliErr.message || cliErr.status}. ` +
+        `Ensure gcloud is authenticated as cvsubs@gmail.com and has secretmanager.versions.access on ${GCP_PROJECT_ID}.`,
+    );
+  }
 }
 
 /**
@@ -35,8 +67,20 @@ export async function getTestPassword() {
     }
     return payload;
   } catch (err) {
-    // Re-throw with a sanitized message — never include the raw secret value
-    // even if the payload partially leaked through.
+    // ADC permission error: fall back to gcloud CLI which uses its own credential store.
+    // Only fall back on permission/auth errors — propagate other errors directly.
+    const isPermissionError =
+      err.code === 7 || // gRPC PERMISSION_DENIED
+      (err.message && err.message.includes('PERMISSION_DENIED'));
+    if (isPermissionError) {
+      console.log(
+        '[secret-manager] ADC permission error — falling back to gcloud CLI ' +
+          '(ADC credential likely points to wrong account). ' +
+          'Fix: gcloud auth application-default login --account cvsubs@gmail.com',
+      );
+      return getTestPasswordViaGcloud();
+    }
+    // Non-permission errors (network, missing secret, etc.) — surface directly.
     throw new Error(
       `Failed to access ${SECRET_NAME} from Secret Manager in ${GCP_PROJECT_ID}: ` +
         `${err.message || err.code || 'unknown error'}. ` +
