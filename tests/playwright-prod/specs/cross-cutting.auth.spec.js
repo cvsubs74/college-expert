@@ -102,10 +102,10 @@ test.describe('cross_cutting_no_console_errors_authenticated_pass', () => {
       // Only filter if it's a 404 (profile-not-found), not other 4xx/5xx.
       if (text.includes('failed to load resource') && text.includes('404')) return false;
       // Welcome email 500 error: backend throws on accounts with no profile doc.
-      // This is a known backend behavior — the welcome-email endpoint fails when
-      // the profile doesn't exist yet. Filed separately for Dev investigation.
+      // Scope filter tightly to the send-welcome-email endpoint so other 500s
+      // are still caught. TODO: remove once #136 is fixed.
       if (text.includes('error sending welcome email')) return false;
-      if (text.includes('failed to load resource') && text.includes('500')) return false;
+      if (text.includes('failed to load resource') && text.includes('send-welcome-email')) return false;
       return true;
     });
 
