@@ -14,7 +14,7 @@ import corpus
 
 
 def _now():
-    return datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+    return datetime.now(timezone.utc)
 
 
 # ----------------- Archetype loading ----------------------------------------

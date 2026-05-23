@@ -469,7 +469,7 @@ class TestSurfaceHealthTracksRecentN:
         """Build a chronological list of runs touching one surface.
         Most-recent first (matches list_recent_runs)."""
         from datetime import datetime, timedelta, timezone
-        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        base = datetime.now(timezone.utc)
         runs = []
         for i in range(num_recent_passing):
             runs.append({
@@ -511,7 +511,7 @@ class TestSurfaceHealthTracksRecentN:
         """If the recent N runs include failures, surface reflects that."""
         import narratives
         from datetime import datetime, timedelta, timezone
-        base = datetime(2026, 5, 3, 12, 0, 0, tzinfo=timezone.utc)
+        base = datetime.now(timezone.utc)
         runs = []
         # 5 most-recent runs: 4 pass + 1 fail = 20% fails → yellow
         for i in range(4):
