@@ -225,28 +225,31 @@ proceeding.
 - Assert: the `SmartDiscoveryAlert` component renders, displaying a suggestion
   to add schools (confirmed present in `StratiaLaunchpad.jsx` line 576).
 
-### 5.5 University detail panel
+### 5.5 University detail page (full-page route)
 
-- From the `/universities` grid, click any university card to open its detail
-  view (`UniversityDetailPage`).
-- Assert: the detail panel/modal opens without a page crash.
-- Assert: exactly six tabs are present, with these labels:
-  **Overview** | **Academics** | **Admissions** | **Financials** |
-  **Outcomes** | **Campus**
-  (from `UniversityDetailPage.jsx` lines 176–182; note the order:
-  Overview, Academics, Admissions, Financials, Outcomes, Campus).
-- Click each tab in sequence.
-- Assert per tab:
-  - Overview: renders descriptive text or stats (not an empty white box).
-  - Academics: renders at least one data point (GPA range, graduation rate, etc.).
-  - Admissions: renders acceptance rate or "N/A" (not an empty white box).
-  - Financials: renders at least one cost-of-attendance figure.
-  - Outcomes: renders at least one employment or earnings data point.
-  - Campus: renders campus culture or location descriptors.
+- From the `/universities` grid, click the "Explore" button on any university
+  card.
+- Assert: the browser navigates to a full-page detail route
+  (`/universities/<university-id>`) — NOT a dialog or modal overlay.
+- Assert: a "Back to Universities" navigation link is visible.
+- Assert: an `<h1>` heading with the university name is present.
+- Assert: at least one section heading from the scroll-based layout is visible.
+  The production layout uses scroll-anchored sections — not interactive tab
+  controls — with headings such as: **About**, **Campus Life**, **Academics**,
+  **Admissions**, **Financials**, **Outcomes**.
+- Assert: no React error boundary text ("Something went wrong") is visible.
+
+> **Correction (QA iteration 4, 2026-05-23):** Earlier versions of this section
+> described a 6-tab dialog/modal. Production uses a full-page route with a
+> scroll-based section layout. The Playwright spec
+> (`tests/playwright-prod/specs/discover.auth.spec.js` →
+> `discover_university_detail_six_tabs`) and scenario doc
+> (`tests/fixtures/scenarios/discover_university_detail_six_tabs.md`) were
+> updated in iteration 4 to match actual behavior.
 
 ### 5.6 AI University Chat widget
 
-- With a university detail panel open, locate the chat widget
+- With a university detail page open, locate the chat widget
   (`UniversityDetailPage.jsx` renders `UniversityChatWidget`).
 - Send the message: `"What is the average SAT score for admitted students?"`
 - Assert: a response appears within 15 seconds.
@@ -259,7 +262,7 @@ proceeding.
 
 ### 5.7 Add to My Schools
 
-- From the university detail panel, click "Add to My Schools" (or the
+- From the university detail page, click "Add to My Schools" (or the
   equivalent save button on the card).
 - Assert: a success toast or visual confirmation appears.
 - Navigate to `/launchpad`.
