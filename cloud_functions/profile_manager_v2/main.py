@@ -1304,12 +1304,11 @@ def profile_manager_v2_http_entry(request):
                             deleted_counts['fits'] += 1
                 
                 # 4. Optionally delete college list
+                # get_college_list() returns a List[Dict], not a response-envelope dict.
                 if delete_college_list_flag:
-                    list_result = get_college_list(user_id)
-                    if list_result.get('success') and list_result.get('universities'):
-                        for univ in list_result['universities']:
-                            remove_university_from_list(user_id, univ.get('university_id'))
-                            deleted_counts['college_list'] += 1
+                    for univ in get_college_list(user_id):
+                        remove_university_from_list(user_id, univ.get('university_id'))
+                        deleted_counts['college_list'] += 1
                 
                 logger.info(f"[RESET_ALL_PROFILE] Reset complete for {user_id}: {deleted_counts}")
                 
