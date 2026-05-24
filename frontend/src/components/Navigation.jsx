@@ -56,14 +56,14 @@ const Navigation = () => {
     return (
         <nav className="bg-[#FDFCF7]/95 backdrop-blur-sm border-b border-[#E0DED8] sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-36">
+                <div className="flex justify-between items-center h-16 sm:h-36">
                     {/* Logo + nav links */}
                     <div className="flex items-center">
                         <Link to="/" className="flex items-center">
                             <img
                                 src="/logo.png"
                                 alt="Stratia Admissions"
-                                className="h-32 w-auto object-contain object-left mix-blend-multiply"
+                                className="h-10 sm:h-32 w-auto max-w-[120px] sm:max-w-none object-contain object-left mix-blend-multiply"
                             />
                         </Link>
 
