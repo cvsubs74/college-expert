@@ -114,3 +114,44 @@ Checklist when reviewing a new best-effort endpoint or a change to an existing o
 ## Known pre-existing gap: agent env vars point at non-v2 profile managers
 
 `deploy.sh` lines ~196-200, 242-243, 281-282 still point `PROFILE_MANAGER_URL` for `college_expert_hybrid`, `_rag`, and `_es` agents at the old (non-v2) profile manager URLs. This is documented in `docs/ARCHITECTURE.md` constraint #4 and the live-components memory. Do not raise it as a new finding in reviews — it is a known gap.
+
+## QA_TEST_USER_EMAIL: two-tier env-var contract (#128, 2026-05-23)
+
+`QA_TEST_USER_EMAIL` means different things to two different consumers — this is a cross-flow contract trap to watch for in future deploy.sh PRs.
+
+- **`profile_manager_v2`** (`cloud_functions/profile_manager_v2/main.py`): parses the env var as a comma-separated **allow-list** (`.split(',')` + strip + filter). Accepts multiple emails. Widened in #128.
+- **`qa_agent`** (`cloud_functions/qa_agent/main.py` line 84): reads the env var as a **raw single string** — no split — and uses it verbatim as the Firebase login account email for the entire runner session. Passing a comma-separated value here breaks Firebase auth, every profile-manager API call, and the `/health` response.
+
+**Invariant:** the `qa-agent` block in `deploy.sh` must always carry a single email for `QA_TEST_USER_EMAIL`. A 4-line comment immediately after that heredoc (added in #131 commit `07ab1085`) documents this. If a future PR widens the qa-agent block, flag it immediately as a cross-flow contract violation — the fix is to revert that hunk only; the profile-manager-v2 block correctly holds the two-value list.
+
+## Firestore profile schema: grade field type ambiguity (2026-05-23)
+
+`profile_extraction.py` LLM schema emits `grade` as `integer 9-12`. `GuidedInterview` writes it as a string. Any frontend code that reads `profile.grade` and calls string methods on it must coerce via `String(profile.grade ?? '').trim()`, not `(profile.grade || '').trim()`. The `|| ''` guard only catches falsy values; truthy integers (12) bypass it. Follow-up #130 tracks producer-side normalization + Firestore data fix. Until #130 merges, treat `profile.grade` as `string | number | null | undefined` on the consumer side.
+
+Also: the Designer gate (SDLC.md §5) applies to UI/UX visual changes, not to every `.jsx` file. A pure data-coercion bug fix in a `load()` function body with no JSX markup change does not require Designer approval.
+
+## Playwright console-error filters: scope 500 filters narrowly, always add issue link (#138, 2026-05-23)
+
+When `cross-cutting.auth.spec.js` filters console errors, patterns like `text.includes('failed to load resource') && text.includes('500')` suppress ALL 500s, not just the specific endpoint under investigation. A future 500 from a different backend endpoint would be silently swallowed.
+
+**Rule:** Every broad status-code filter (`'500'`, `'404'`) must be paired with a URL substring check specific to the known offender, plus an inline `// TODO: remove once #NNN is fixed` comment. Example:
+
+```js
+// Welcome-email 500 — backend fails when no profile doc exists. Filed as bug #136.
+// TODO: remove once #136 is fixed.
+if (text.includes('welcome-email') && text.includes('500')) return false;
+```
+
+When reviewing future console-filter additions, reject any pattern that is broader than a single URL path unless the author has explicitly argued the broadness is intentional.
+
+## Playwright scenario-doc "update in same commit" rule — roadmap_plan_tab_renders missed (#138)
+
+When a test is unskipped, the corresponding `tests/fixtures/scenarios/<name>.md` must be updated in the same commit to remove any `## Status: BLOCKED` / `SKIPPED` heading and bump the iteration number. PR #138 correctly updated `discover_university_detail_six_tabs.md` but missed `roadmap_plan_tab_renders.md` which still carries `## Status: BLOCKED — pending issue #123` and `Iteration: 3`.
+
+**Checklist for unskip PRs:**
+1. `test.skip(...)` line fully removed (not commented) — YES.
+2. Corresponding scenario doc status updated — check explicitly. QA must fix `roadmap_plan_tab_renders.md` in next iteration.
+
+## cloudbuild-main.yaml is the auto-deploy source of truth (#135, 2026-05-23)
+
+`cloudbuild.yaml` is the PR-only test pipeline — no deploy steps. `cloudbuild-main.yaml` is the push-to-main pipeline that runs the same test gate then adds path-based auto-deploy via `scripts/cicd/detect_changed_targets.py`. Both backend Cloud Functions and frontend (Firebase Hosting) are auto-deployed when their path prefixes change. Docs/tests/config-only merges emit an empty target list — no deploy fires. When reviewing PRs that amend CI/CD docs, always verify against both files, not just the one `cloudbuild.yaml` that appears first in the root listing.
