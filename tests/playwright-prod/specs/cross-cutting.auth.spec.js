@@ -1,7 +1,7 @@
 // cross-cutting.auth.spec.js — Auth-gated cross-cutting checks (§11).
 //
 // Covers:
-//   - §11.1: No console errors across authenticated pages (Plan tab excluded — issue #123)
+//   - §11.1: No console errors across authenticated pages (Plan tab covered by dedicated roadmap spec)
 //   - §11.3: Mobile viewport navbar rendering (iPhone 14, 390×844)
 //
 // A11y deep-dive is NOT covered here — that is Designer Agent's lane (§11.4).
@@ -40,16 +40,14 @@ test.describe('cross_cutting_no_console_errors_authenticated_pass', () => {
   // tests/fixtures/scenarios/cross_cutting_no_console_errors_authenticated_pass.md
   // Test plan: §11.1
   //
-  // Navigates: Profile → Discover → Launchpad → Roadmap Essays (Plan EXCLUDED due
-  // to issue #123 which is a known JS error) → Resources.
+  // Navigates: Profile → Discover → Launchpad → Roadmap Essays → Resources.
+  // Plan tab is covered by the dedicated roadmap_plan_tab_renders spec.
   // Collects console 'error'-level events across all pages.
   // Asserts no unfiltered error events were captured.
   //
   // Known/expected errors that are filtered (not assertion failures):
   //   - Auth-related errors from the Firebase SDK during token refresh (cosmetic,
   //     not user-visible): pattern includes "Firebase" or "auth/network-request-failed".
-  //   - Roadmap Plan tab JS error (issue #123): filtered because the Plan tab is
-  //     excluded from this navigation pass.
   test('no error-level console events across Profile → Discover → Launchpad → Roadmap Essays → Resources', async ({
     page,
   }) => {
@@ -66,12 +64,12 @@ test.describe('cross_cutting_no_console_errors_authenticated_pass', () => {
     });
 
     // Navigate through authenticated surfaces in order.
-    // Plan tab is excluded — its JS error is tracked separately under issue #123.
+    // Plan tab is covered by the dedicated roadmap_plan_tab_renders spec.
     const routes = [
       '/profile',
       '/universities',
       '/launchpad',
-      '/roadmap?tab=essays',    // Essays only — Plan tab excluded
+      '/roadmap?tab=essays',
       '/resources',
     ];
 
@@ -101,11 +99,6 @@ test.describe('cross_cutting_no_console_errors_authenticated_pass', () => {
       // The 404 network error that accompanies the above profile fetch.
       // Only filter if it's a 404 (profile-not-found), not other 4xx/5xx.
       if (text.includes('failed to load resource') && text.includes('404')) return false;
-      // Welcome email 500 error: backend throws on accounts with no profile doc.
-      // Scope filter tightly to the send-welcome-email endpoint so other 500s
-      // are still caught. TODO: remove once #136 is fixed.
-      if (text.includes('error sending welcome email')) return false;
-      if (text.includes('failed to load resource') && text.includes('send-welcome-email')) return false;
       return true;
     });
 

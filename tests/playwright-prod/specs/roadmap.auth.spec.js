@@ -1,11 +1,5 @@
 // roadmap.auth.spec.js — Auth-gated spec covering Section 8 (Roadmap) scenarios.
 //
-// IMPORTANT: The Plan tab content is BLOCKED on issue #123.
-// The Roadmap Plan tab throws a reproducible JavaScript error:
-//   "(((intermediate value)(intermediate value)(intermediate value) || {}).grade || "").trim is not a function"
-// The tab BUTTON renders fine; only the Plan tab CONTENT is broken.
-// roadmap_plan_tab_renders is skipped via test.skip() pending issue #123 fix.
-//
 // Requires auth-state/storageState.json — run capture-auth.spec.js first if missing.
 // See tests/playwright-prod/README.md for full setup instructions.
 //
@@ -15,7 +9,7 @@
 //   tests/fixtures/scenarios/roadmap_scholarships_tab_renders.md
 //   tests/fixtures/scenarios/roadmap_colleges_tab_renders.md
 //   tests/fixtures/scenarios/roadmap_counselor_chat_widget_present.md
-//   tests/fixtures/scenarios/roadmap_plan_tab_renders.md  (BLOCKED — see #123)
+//   tests/fixtures/scenarios/roadmap_plan_tab_renders.md
 
 import { test, expect } from '@playwright/test';
 import {
@@ -47,8 +41,7 @@ test.describe('roadmap_sub_tabs_render', () => {
   // Tab IDs and labels from RoadmapPage.jsx lines 44-47:
   //   plan | essays | scholarships | colleges
   //
-  // NOTE: Plan tab BUTTON is asserted here. Plan tab CONTENT is skipped below
-  // because it renders the Connection Error card (issue #123).
+  // NOTE: Plan tab BUTTON is also asserted independently in roadmap_plan_tab_renders below.
   test('4 sub-tab buttons render and URL transitions to ?tab=<id> on click', async ({
     page,
   }) => {
@@ -204,7 +197,7 @@ test.describe('roadmap_counselor_chat_widget_present', () => {
   //
   // The FloatingCounselorChat component (RoadmapPage.jsx line 119) persists
   // across all Roadmap sub-tabs. We assert it is visible on the non-Plan tabs
-  // (avoiding the Plan tab content which has issue #123).
+  // (Plan tab is covered separately in roadmap_plan_tab_renders).
   test('Ask Counselor button is visible on Essays, Scholarships, and Colleges tabs', async ({
     page,
   }) => {
@@ -229,28 +222,15 @@ test.describe('roadmap_counselor_chat_widget_present', () => {
 });
 
 // ---------------------------------------------------------------------------
-// §8.1 — Plan tab — BLOCKED on issue #123
+// §8.1 — Plan tab
 // ---------------------------------------------------------------------------
 
 test.describe('roadmap_plan_tab_renders', () => {
   // tests/fixtures/scenarios/roadmap_plan_tab_renders.md
   // Test plan: §8.1
   //
-  // BLOCKED: The Roadmap Plan tab throws a reproducible JavaScript error:
-  //   "(((intermediate value)(intermediate value)(intermediate value) || {}).grade || "").trim is not a function"
-  // The user sees a "Connection Error" card instead of the expected Plan content.
-  // Filed as issue #123 (high-priority bug). This scenario is skipped until #123 is fixed.
-  //
-  // When unblocked, the assertion shape is:
-  //   1. Navigate to /roadmap or /roadmap?tab=plan.
-  //   2. Assert the Plan tab button is selected/active.
-  //   3. Assert PlanTab renders:
-  //      - "This Week" focus card visible (not empty or "Nothing urgent right now" alone).
-  //      - Semester boards or task lists visible (if a roadmap plan has been generated).
-  //      - NO "Connection Error" card visible.
-  //   4. Assert the JS error does NOT appear in the browser console.
-  // #123 fix landed in PR #132 (commit bba3c5b3, deployed 2026-05-23T16:11:24Z).
-  // Skip guard removed for post-merge verification per QA §TWO-PASS rule.
+  // Fix history: issue #123 (grade.trim crash → Connection Error card) was resolved
+  // in PR #132 (commit bba3c5b3, deployed 2026-05-23). §TWO-PASS verified 2026-05-23.
   test('Plan tab renders semester boards and This Week focus card; no Connection Error', async ({
     page,
   }) => {
@@ -263,7 +243,7 @@ test.describe('roadmap_plan_tab_renders', () => {
         .or(page.getByRole('button', { name: 'Plan' })),
     ).toBeVisible({ timeout: 10_000 });
 
-    // Assert NO Connection Error card (the symptom of issue #123).
+    // Assert NO Connection Error card.
     await expect(page.getByText(/connection error/i)).toHaveCount(0);
 
     // Assert THIS WEEK heading renders — this is the primary Plan tab structural element.
