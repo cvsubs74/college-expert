@@ -84,15 +84,32 @@ test.describe('discover_search_filters_by_name', () => {
     await page.goto('/universities');
     await expect(page).toHaveURL(/\/universities/);
 
-    // Wait for grid to load before interacting.
+    // Dismiss any blocking overlay (onboarding/welcome modal) that may appear on a
+    // fresh/reset account and intercept pointer events.
+    // This matches the same dismissal block in §5.5 (discover_university_detail_six_tabs).
+    const overlay = page.locator('.fixed.inset-0').filter({ hasNotText: /stratia admissions/i });
+    const overlayVisible = await overlay.first().isVisible().catch(() => false);
+    if (overlayVisible) {
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(500);
+      const skipBtn = page.getByRole('button', { name: /skip|close|dismiss/i }).first();
+      if (await skipBtn.isVisible().catch(() => false)) {
+        await skipBtn.click();
+        await page.waitForTimeout(300);
+      }
+    }
+
+    // Wait for the PAGINATION FOOTER to appear — this confirms the grid has fully loaded
+    // and is showing real results. Do NOT rely on the "150+ universities" description
+    // paragraph (which renders immediately, before the grid, and would cause a false-ready).
+    // The pagination footer format is "Page 1 of N (M universities)".
     await expect(
-      page.getByText(/\d+\s+universities/i).first(),
-    ).toBeVisible({ timeout: 10_000 });
+      page.getByText(/Page 1 of \d+/i).first(),
+    ).toBeVisible({ timeout: 15_000 });
 
     // Locate search input scoped to the main content area.
     // The filter controls live inside the page's <main> region.
-    // Actual placeholder from production: "University name..." (not "Search").
-    // Fallback to searchbox role in case the input has a search role set.
+    // Actual placeholder from production: "University name..."
     const searchInput = page
       .getByRole('main')
       .getByPlaceholder(/university name/i)
@@ -101,25 +118,16 @@ test.describe('discover_search_filters_by_name', () => {
     await searchInput.waitFor({ state: 'visible', timeout: 10_000 });
     await searchInput.fill('Stanford');
 
-    // Debounce: wait ~1 second for the filter to fire.
-    await page.waitForTimeout(1_200);
-
-    // Exactly 1 university card should be visible.
-    // University cards are identified by the presence of a school name heading
-    // within the grid region. We count cards via a shared class or label pattern.
-    // Fallback: count cards containing "Stanford" in their text.
-    const stanfordCards = page.locator('[class*="university-card"], [data-testid*="university-card"]').filter({ hasText: /Stanford/i });
-    const cardCountAlt = stanfordCards;
-
-    // If no data-testid, fall back to counting heading-within-card pattern.
-    // The grid shows university names in headings (h2/h3) — count those that contain Stanford.
+    // Wait for the filtered results: at least 1 heading containing "Stanford" must
+    // appear in the grid. Use a generous timeout to allow for debounce + re-render.
+    // The grid shows university names in h3 headings (confirmed via DOM inspection).
     const stanfordHeadings = page
       .getByRole('main')
-      .getByRole('heading')
+      .getByRole('heading', { level: 3 })
       .filter({ hasText: /Stanford/i });
 
     // At least 1 heading matching Stanford must be visible.
-    await expect(stanfordHeadings.first()).toBeVisible({ timeout: 5_000 });
+    await expect(stanfordHeadings.first()).toBeVisible({ timeout: 8_000 });
 
     // Assert card title text contains "Stanford".
     const titleText = await stanfordHeadings.first().textContent();
