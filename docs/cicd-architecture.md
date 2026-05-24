@@ -3,17 +3,22 @@
 A reusable blueprint for the Cloud-Build-driven CI/CD pattern used in
 this project. Built around a small, opinionated set of choices:
 
-- **No GitHub Actions.** Cloud Build runs the pipeline. One config
-  file (`cloudbuild.yaml`), two triggers, no per-job YAML sprawl.
-- **No auto-deploy.** Merge to `main` runs CI but does **not** push
-  to production. Deploy is a deliberate human action via `deploy.sh`.
+- **No GitHub Actions.** Cloud Build runs the pipeline. Two config
+  files (`cloudbuild.yaml` for PRs, `cloudbuild-main.yaml` for main),
+  two triggers, no per-job YAML sprawl.
+- **Path-based auto-deploy on main.** Merge to `main` runs CI and then
+  automatically deploys only the components whose files changed.
+  A docs/tests/config-only merge deploys nothing.
 - **Clean-main guard in the deploy script.** The script refuses to
-  deploy unless the working tree is on `main`, clean, and up to date.
-- **Same pipeline for PR and main.** PR runs are gated for merge;
-  main runs catch regressions if a PR was merged with stale CI.
+  deploy unless the working tree is on `main`, clean, and up to date
+  (bypassed automatically in CI via the `CI=true` env var).
+- **PR pipeline runs tests only; main pipeline runs tests then deploys.**
+  PR builds gate merges; the main build gates production.
 
 This is a generalised restatement of the system in
 [`cloudbuild.yaml`](../cloudbuild.yaml) +
+[`cloudbuild-main.yaml`](../cloudbuild-main.yaml) +
+[`scripts/cicd/detect_changed_targets.py`](../scripts/cicd/detect_changed_targets.py) +
 [`docs/cicd-setup.md`](cicd-setup.md) +
 [`deploy.sh`](../deploy.sh) +
 [`deploy_frontend.sh`](../deploy_frontend.sh).
@@ -22,28 +27,27 @@ This is a generalised restatement of the system in
 
 ## 1. What & Why
 
-**What it is.** Every PR and every push to `main` runs a single
-~5-minute pipeline that gates merges and catches regressions. Deploys
-are manual via `deploy.sh`, which itself enforces "deploy only from
-clean main, after CI passed."
+**What it is.** Every PR runs a ~5-minute test pipeline that gates
+merges. Every push to `main` runs the same test pipeline and then
+auto-deploys only the components whose paths changed. A merge that
+touches only docs, tests, or config files deploys nothing.
 
 **Why this shape:**
 
-1. **CI gates merges; deploys gate themselves.** Auto-deploy is
-   tempting but couples two unrelated decisions (does the code build?
-   should we ship right now?). Keeping them separate makes it safe to
-   merge speculative work and lets the operator pick the deploy
-   moment.
-2. **One config file = one mental model.** Multi-job GitHub Actions
-   workflows fragment fast (one for tests, one for build, one for
-   security, one for…). A single `cloudbuild.yaml` is easier to keep
-   honest.
+1. **CI gates merges; path detection gates deploys.** Only code that
+   actually changed gets shipped. A docs-only PR never touches
+   production, keeping deploys predictable and CI fast.
+2. **Two config files, two concerns.** `cloudbuild.yaml` runs tests for
+   PRs. `cloudbuild-main.yaml` reuses those test steps and appends the
+   path-detect + deploy steps for main. Each file has one job; there is
+   no drift between PR and main pipelines on the shared test stages.
 3. **Cloud Build co-locates with the rest of the GCP stack.** No
    separate billing, no separate secret management, no third-party
    runner trust boundary.
-4. **The clean-main guard makes "what's deployed?" answerable from
-   git history alone.** Anyone can `git log origin/main` and read the
-   deployed state. No "wait, was this branch deployed?" surprises.
+4. **The clean-main guard + squash-merge style makes "what's deployed?"
+   answerable from git history alone.** `git log origin/main` reflects
+   the deployed state; `cloudbuild-main.yaml` auto-deploys each merged
+   commit, so the history and production stay in sync.
 
 ---
 
@@ -55,13 +59,13 @@ clean main, after CI passed."
                               ▼
                  ┌────────────────────────┐
                  │   Cloud Build trigger   │
-                 │ college-expert-pr      │  ← reports status to GitHub
-                 │   (event: pull_request)│
+                 │  college-expert-pr     │  ← reports status to GitHub
+                 │  (event: pull_request) │
                  └───────────┬────────────┘
-                             │ same cloudbuild.yaml
+                             │ cloudbuild.yaml (tests only)
                              ▼
         ┌──────────────────────────────────────────┐
-        │      pipeline (≤5 min, parallel-ish)      │
+        │      test gate (≤5 min, parallel-ish)     │
         │   1. backend pytest                       │
         │   2. bash -n on deploy scripts            │
         │   3. frontend npm ci + vitest + build +   │
@@ -76,28 +80,43 @@ clean main, after CI passed."
                              │
                              ▼
               ╔══════════════════════════╗
-              ║  push to main            ║
+              ║  squash-merge to main    ║
               ╚══════════════════════════╝
                              │
-                ┌────────────┴────────────┐
-                │                         │
-                ▼                         ▼
-   ┌──────────────────────┐   ┌──────────────────────┐
-   │  college-expert-main │   │  human runs           │
-   │  (event: push to     │   │  ./deploy.sh <target> │
-   │   main)              │   │  from local main      │
-   │  same pipeline       │   │  ↓                    │
-   │  (regression check)  │   │  clean-main guard     │
-   └──────────────────────┘   │  ↓                    │
-                              │  gcloud functions     │
-                              │  deploy / firebase    │
-                              │  hosting deploy / etc │
-                              └──────────────────────┘
+                             ▼
+                 ┌────────────────────────┐
+                 │   Cloud Build trigger   │
+                 │  college-expert-main   │  ← cloudbuild-main.yaml
+                 │  (event: push to main) │
+                 └───────────┬────────────┘
+                             │ same test gate (steps 1-3)
+                             ▼
+        ┌──────────────────────────────────────────┐
+        │   4. detect-targets                       │
+        │      scripts/cicd/detect_changed_targets  │
+        │      .py --rev-range SHA^..SHA            │
+        │      → /workspace/targets.txt             │
+        └────────────────────┬─────────────────────┘
+                             │ targets.txt non-empty?
+                   ┌─────────┴─────────┐
+                   │ yes               │ no (docs/tests/config only)
+                   ▼                   ▼
+        ┌──────────────────┐   ┌──────────────────┐
+        │  5. deploy       │   │  exit 0 (no-op)  │
+        │  ./deploy.sh <t> │   └──────────────────┘
+        │  per backend     │
+        │  target, then    │
+        │  ./deploy_       │
+        │  frontend.sh if  │
+        │  frontend changed│
+        └──────────────────┘
 ```
 
-The two triggers run the **same** `cloudbuild.yaml`. The only
-difference is the trigger event — PR or push. This avoids "drift
-between PR and main pipelines" entirely.
+The PR trigger uses `cloudbuild.yaml` (tests only). The main trigger
+uses `cloudbuild-main.yaml`, which reuses the same test steps (no
+drift) and appends path detection + deploy. A docs/tests/config-only
+merge produces an empty `targets.txt` and the deploy step exits cleanly
+without touching any runtime.
 
 ---
 
@@ -150,11 +169,20 @@ The comment-control setting is important: anyone can open a PR, but
 external contributors need an owner/collaborator to comment "/gcbrun"
 before CI fires. Keeps drive-by attackers from burning your CI quota.
 
-### `<project>-main` — push-to-main regression check
+### `<project>-main` — push-to-main auto-deploy
 
-Same form, but **Push to a branch** with `^main$`. Catches the case
-where main moves (e.g. a force-push, a multi-PR merge race) without a
-fresh PR run.
+| Field | Value |
+|-------|-------|
+| Event | **Push to a branch** (`^main$`) |
+| Source | 1st gen, `<owner>/<repo>` |
+| Configuration | `cloudbuild-main.yaml` |
+
+This trigger runs the same test gate as the PR trigger and then adds
+two more steps: `detect-targets` (runs
+`scripts/cicd/detect_changed_targets.py`) and `deploy` (calls
+`./deploy.sh <target>` for each changed backend component, then
+`./deploy_frontend.sh` if the frontend changed). A docs/tests-only
+merge emits empty `targets.txt` and the deploy step is a no-op.
 
 ### Branch protection (GitHub side)
 
@@ -277,30 +305,29 @@ keeping the cold-cache install under 30 seconds.
 
 ---
 
-## 7. Why No Auto-Deploy?
+## 7. Why Path-Based Auto-Deploy?
 
 This is the most opinionated choice. Here's the reasoning:
 
-1. **CI green ≠ ready to ship.** A PR can be technically green but
-   semantically wrong — incompatible with current production data,
-   missing a config secret, depending on an unmerged frontend
-   change. The human deploy step is the natural pause to think
-   about that.
-2. **Atomic deploys across services need orchestration.** This repo
-   has a frontend, multiple cloud functions, and an admin tool that
-   touch the same Firestore. Auto-deploy each on merge would race;
-   `./deploy.sh all` lets the operator coordinate.
-3. **Cost control.** A redeploy of every cloud function on every PR
-   merge runs up Cloud Build minutes. Manual gating keeps the
-   cadence to "after a meaningful batch lands."
-4. **Rollback story.** `git revert` + `./deploy.sh <target>` is the
-   rollback. With auto-deploy, you have to chase whatever the most
-   recent commit was at deploy time.
-
-The escape hatch: when you DO want auto-deploy for a service that's
-stable enough, add a third Cloud Build trigger on push-to-main with a
-`steps:` block that runs `./deploy.sh <service>`. Per-service
-opt-in. Don't blanket-enable.
+1. **Only ship what changed.** `scripts/cicd/detect_changed_targets.py`
+   maps file paths to `deploy.sh` targets. A PR that only touches docs
+   or tests produces an empty target list — no deploy happens. No
+   wasted Cloud Build minutes, no accidental re-deploys.
+2. **CI green = ready to ship, by convention.** The test gate (steps
+   1–3) must be green before `detect-targets` or `deploy` run. Cloud
+   Build aborts on first failure by default. An untested commit never
+   reaches the deploy step.
+3. **Rollback story is unchanged.** `git revert` creates a new commit
+   that auto-deploys the reverted state via the same pipeline. No
+   manual chasing of "what was deployed when."
+4. **No race on multi-service merges.** Backend targets deploy
+   sequentially first; then the frontend deploys last (so it picks up
+   freshly-deployed backend URLs). The ordering is explicit in
+   `cloudbuild-main.yaml` step 5.
+5. **`./deploy.sh` remains the manual escape hatch.** For emergency
+   hotfixes that can't wait for CI, `DEPLOY_ALLOW_DIRTY=1
+   ./deploy.sh <target>` still works. The auto-deploy path is the
+   default, not a cage.
 
 ---
 
@@ -427,8 +454,15 @@ re-create the triggers if needed. Future operators will thank you.
 
 ## 11. Where to Read Next
 
-- [`cloudbuild.yaml`](../cloudbuild.yaml) — the actual pipeline
-  config, ~100 lines.
+- [`cloudbuild.yaml`](../cloudbuild.yaml) — PR-only test pipeline,
+  ~100 lines.
+- [`cloudbuild-main.yaml`](../cloudbuild-main.yaml) — main-branch
+  pipeline: same test gate + path detection + auto-deploy.
+- [`scripts/cicd/detect_changed_targets.py`](../scripts/cicd/detect_changed_targets.py)
+  — single source of truth for path-prefix → deploy target mapping.
+- [`docs/design/auto-deploy-on-main.md`](design/auto-deploy-on-main.md)
+  — design doc covering the path detection algorithm, IAM setup, and
+  frontend CI considerations.
 - [`docs/cicd-setup.md`](cicd-setup.md) — one-shot setup guide for
   triggers + branch protection.
 - [`deploy.sh`](../deploy.sh) — the deploy script + clean-main guard
