@@ -88,8 +88,8 @@ enhancement #134 tracks the correction.
 
 1. Reset profile: `POST https://profile-manager-v2-pfnwjfp26a-ue.a.run.app/reset-all-profile`
    with `Authorization: Bearer <Firebase ID token>` and `Content-Type: application/json`.
-   Body: `{"user_email": "stratiaadmissions@gmail.com", "confirmation": "DELETE_ALL_PROFILE_DATA"}`.
-   Do NOT pass `"delete_college_list": true` — this triggers bug #148 (500 error).
+   Body: `{"user_email": "stratiaadmissions@gmail.com", "confirmation": "DELETE_ALL_PROFILE_DATA", "delete_college_list": true}`.
+   Bug #148 (500 on delete_college_list=true) is fixed in PR #150 — pass the flag.
    Returns: `{"success": true, "deleted": {...}}`.
 2. Verify profile gone: `GET /get-profile?user_email=stratiaadmissions@gmail.com` → expect 404.
 3. Verify college list empty: `GET /get-college-list?user_email=stratiaadmissions@gmail.com`
@@ -107,10 +107,8 @@ enhancement #134 tracks the correction.
 - **#134** (Test plan §5.5 accuracy — full-page route not dialog): `enhancement,backlog`.
 - **#136** (Welcome email 500 when no profile): `resolved` — fixed PR #139 (500→200), filter removed PR #143.
   §TWO-PASS complete 2026-05-24 (Pass 1+2 of autonomous loop iteration 5).
-- **#148** (reset-all-profile 500 with delete_college_list=true): `bug` — `'list' object has no
-  attribute 'get'` in college-list deletion code path. Profile IS deleted; error is in cleanup
-  path. Filed 2026-05-24. Workaround: omit delete_college_list=true and use separate
-  college-list cleanup.
+- **#148** (reset-all-profile 500 with delete_college_list=true): `resolved` — fixed in PR #150
+  (iterate college_list as list, not dict envelope). Verified working in iter6 §TWO-PASS cleanup.
 
 ## Roadmap Plan tab (§6.1 — after PR #132)
 
@@ -127,14 +125,31 @@ enhancement #134 tracks the correction.
 - To run this scenario, save a school from Discover first, wait for fit analysis
   to compute, then run the spec.
 
-## Scenario count (iteration 5)
+## Scenario count (iteration 6)
 
 - Total executable: 22 scenarios
 - Passing: 21
 - Intentionally skipped: 1 (`launchpad_fit_modal_opens_with_bounds` — no saved schools)
 - EXIT: 0 (full suite passes)
 
-Last real-run: 2026-05-24 by QA Agent (iteration 5 / autonomous loop pass 1+2).
+Last real-run: 2026-05-24 by QA Agent (iteration 6 / §TWO-PASS pass 1+2).
+
+### Overlay dismissal improvements (iteration 6)
+After profile reset, the onboarding overlay ("Let's get started") appears on `/profile`
+and `/roadmap` for fresh accounts. Three compounding bugs were fixed:
+
+1. `profile_upload_pdf_processes_to_completion` / `profile_upload_unsupported_format_rejects`:
+   Overlay intercepted `uploadTab.click()`. Fix: inject CSS
+   `display:none !important; pointer-events:none` on the z-50 fixed overlay BEFORE
+   clicking the tab. CSS injection survives React re-renders (DOM removal does not).
+
+2. `roadmap_sub_tabs_render`: Overlay intercepted sub-tab clicks after the overlay
+   appeared mid-test (after planTab.waitFor). Fix: check for overlay AFTER
+   `planTab.waitFor` (not before), then use `force:true` on tab clicks.
+
+3. `roadmap_sub_tabs_render` strict-mode violation: `getByRole('button', { name: 'Scholarships' })`
+   resolved to 2 elements when scholarships content was loaded (tab button + list item).
+   Fix: `exact: true` + `.first()` on all roadmap sub-tab locators.
 
 ### Discover search test fix (iteration 5)
 `discover_search_filters_by_name` was failing due to two compounding issues:
@@ -143,3 +158,29 @@ Last real-run: 2026-05-24 by QA Agent (iteration 5 / autonomous loop pass 1+2).
    universities" hero text immediately on page load (before grid renders), causing
    search to fire too early. Fixed by waiting for pagination footer `/Page 1 of \d+/i`.
 Both fixes applied in spec + scenario doc. Test now stable (verified passing in Pass 1+2).
+
+## Per-pass reports
+
+Every full pass of the autonomous loop produces a durable report committed under
+`docs/qa-runs/`.
+
+**When:** at the end of every full pass — success, partial, or failure. Cleanup runs first;
+report is the last artifact produced before the PR.
+
+**Where:** `docs/qa-runs/YYYY-MM-DD-iter<N>.md`. If multiple passes land on the same
+calendar day, append `-pass1`, `-pass2`, etc. (e.g. `2026-05-24-iter6-pass1.md`).
+
+**What the report must cover:**
+
+- Scenario table (name + status: PASS / FAIL / SKIP).
+- Pass/fail counts and skip count with reason.
+- §TWO-PASS verification artifacts (run timestamps, durations, environments, bug numbers
+  that went through §TWO-PASS this iteration).
+- Bugs filed this iteration (with # and one-line summary).
+- Cleanup confirmation: reset-all-profile response + college-list empty check.
+- KB integrity note (no shared data touched).
+- DoD assessment: what's met, what's outstanding.
+
+**How committed:** PR-ed alongside any other changes for that iteration (spec fixes, scenario
+doc updates, playbook updates). If no other code changed, the report stands as a standalone PR.
+Title pattern: `qa(loop): iteration N — <brief description> + per-pass report`.

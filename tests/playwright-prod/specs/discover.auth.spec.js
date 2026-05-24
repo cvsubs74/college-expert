@@ -86,17 +86,16 @@ test.describe('discover_search_filters_by_name', () => {
 
     // Dismiss any blocking overlay (onboarding/welcome modal) that may appear on a
     // fresh/reset account and intercept pointer events.
-    // This matches the same dismissal block in §5.5 (discover_university_detail_six_tabs).
-    const overlay = page.locator('.fixed.inset-0').filter({ hasNotText: /stratia admissions/i });
-    const overlayVisible = await overlay.first().isVisible().catch(() => false);
-    if (overlayVisible) {
-      await page.keyboard.press('Escape');
-      await page.waitForTimeout(500);
-      const skipBtn = page.getByRole('button', { name: /skip|close|dismiss/i }).first();
-      if (await skipBtn.isVisible().catch(() => false)) {
-        await skipBtn.click();
-        await page.waitForTimeout(300);
-      }
+    // Use dispatchEvent('click') — bypasses actionability checks, triggers React handlers.
+    const skipBtnLocator = page.getByText(/skip for now/i).first();
+    const skipVisible = await skipBtnLocator.isVisible({ timeout: 2_000 }).catch(() => false);
+    if (skipVisible) {
+      await skipBtnLocator.dispatchEvent('click');
+      await page
+        .locator('[class*="fixed"][class*="inset-0"][class*="z-50"]')
+        .first()
+        .waitFor({ state: 'hidden', timeout: 5_000 })
+        .catch(() => {/* non-fatal */});
     }
 
     // Wait for the PAGINATION FOOTER to appear — this confirms the grid has fully loaded
@@ -213,19 +212,16 @@ test.describe('discover_university_detail_six_tabs', () => {
 
     // Dismiss any blocking overlay (onboarding modal, welcome dialog) that may
     // appear on a fresh/reset account and intercept pointer events.
-    // This is needed when the test runs after a profile reset — the app may
-    // show an onboarding or welcome modal with a fixed z-50 overlay.
-    const overlay = page.locator('.fixed.inset-0').filter({ hasNotText: /stratia admissions/i });
-    const overlayVisible = await overlay.first().isVisible().catch(() => false);
-    if (overlayVisible) {
-      // Try pressing Escape to dismiss, or clicking a Skip/Close button.
-      await page.keyboard.press('Escape');
-      await page.waitForTimeout(500);
-      const skipBtn = page.getByRole('button', { name: /skip|close|dismiss/i }).first();
-      if (await skipBtn.isVisible().catch(() => false)) {
-        await skipBtn.click();
-        await page.waitForTimeout(300);
-      }
+    // Use dispatchEvent('click') — bypasses actionability checks, triggers React handlers.
+    const skipBtnLocatorDetail = page.getByText(/skip for now/i).first();
+    const skipVisibleDetail = await skipBtnLocatorDetail.isVisible({ timeout: 2_000 }).catch(() => false);
+    if (skipVisibleDetail) {
+      await skipBtnLocatorDetail.dispatchEvent('click');
+      await page
+        .locator('[class*="fixed"][class*="inset-0"][class*="z-50"]')
+        .first()
+        .waitFor({ state: 'hidden', timeout: 5_000 })
+        .catch(() => {/* non-fatal */});
     }
 
     // Click the first "Explore" button in the grid.
