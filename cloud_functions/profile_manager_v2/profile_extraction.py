@@ -132,7 +132,7 @@ REQUIRED JSON SCHEMA (FLAT structure - all fields at top level):
   "name": "student's full name or null",
   "school": "high school name or null",
   "location": "city, state or null",
-  "grade": integer 9-12 or null,
+  "grade": "string like '9', '10', '11', or '12', or null",
   "graduation_year": integer or null,
   "intended_major": "primary intended major or null",
   
@@ -220,7 +220,15 @@ Return ONLY the JSON object."""
                 response_text = response_text[4:].strip()
         
         profile = json.loads(response_text)
-        
+
+        # Normalize grade to string at extraction time (issue #130).
+        # The LLM schema previously said "integer 9-12", so some stored profiles
+        # have grade as an int.  Coerce to string here so every write path is
+        # consistent; None stays None.
+        raw_grade = profile.get('grade')
+        if raw_grade is not None:
+            profile['grade'] = str(raw_grade)
+
         # Ensure arrays exist (flattened structure)
         array_keys = ['courses', 'extracurriculars', 'leadership_roles', 'special_programs', 'awards', 'work_experience', 'ap_exams']
         for key in array_keys:
