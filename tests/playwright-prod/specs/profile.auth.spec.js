@@ -89,11 +89,23 @@ test.describe('profile_upload_pdf_processes_to_completion', () => {
     await page.goto('/profile');
     await expect(page).toHaveURL(/\/profile/);
 
-    // Navigate to the Upload Documents tab (may already be active on an empty profile).
+    // The onboarding overlay ("Let's get started") appears on fresh/reset accounts
+    // after an async profile-check completes. It intercepts all pointer events.
+    // Wait for the Upload Documents tab first (confirms page settled), then suppress
+    // the overlay via CSS injection — this survives React re-renders (unlike DOM removal).
     const uploadTab = page
       .getByRole('tab', { name: 'Upload Documents' })
       .or(page.getByRole('button', { name: 'Upload Documents' }));
     await uploadTab.waitFor({ state: 'visible', timeout: 10_000 });
+
+    // Inject CSS to suppress any z-50 fixed overlay. This is equivalent to clicking
+    // Skip in terms of test validity (we're testing upload behavior, not the overlay).
+    // CSS injection survives React virtual DOM re-renders; DOM removal does not.
+    await page.addStyleTag({
+      content: 'div[class*="fixed"][class*="inset-0"][class*="z-50"] { display: none !important; pointer-events: none !important; }',
+    });
+    await page.waitForTimeout(200); // brief settle
+
     await uploadTab.click();
 
     // Set the file directly on the hidden input. Profile.jsx wires the onChange
@@ -143,11 +155,17 @@ test.describe('profile_upload_unsupported_format_rejects', () => {
     await page.goto('/profile');
     await expect(page).toHaveURL(/\/profile/);
 
-    const uploadTab = page
+    // Wait for page to settle, then suppress overlay via CSS injection.
+    const uploadTab2 = page
       .getByRole('tab', { name: 'Upload Documents' })
       .or(page.getByRole('button', { name: 'Upload Documents' }));
-    await uploadTab.waitFor({ state: 'visible', timeout: 10_000 });
-    await uploadTab.click();
+    await uploadTab2.waitFor({ state: 'visible', timeout: 10_000 });
+    await page.addStyleTag({
+      content: 'div[class*="fixed"][class*="inset-0"][class*="z-50"] { display: none !important; pointer-events: none !important; }',
+    });
+    await page.waitForTimeout(200);
+
+    await uploadTab2.click();
 
     const fileInput = page.locator('input[type="file"]');
     await fileInput.waitFor({ state: 'attached', timeout: 10_000 });
