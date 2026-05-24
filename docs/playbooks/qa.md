@@ -14,6 +14,20 @@ Append when you learn something; delete when it goes stale.
 - Expiry threshold: 25 days. If `assertAuthStateValid()` throws, re-run
   `capture-auth.spec.js` headed with `HEADED=1 STRATIA_AUTOFILL_PASSWORD=1`.
 - Session file is for `stratiaadmissions@gmail.com` only. Never commit it.
+- **Auth-state is ephemeral and machine-local.** It is NOT preserved between
+  Claude Code agent sessions. Every new QA agent session that needs auth-gated
+  specs must either (a) find valid `auth-state/storageState.json` on disk from
+  a previous capture, or (b) re-run `capture-auth.spec.js` interactively.
+- **2FA is not skippable in unattended mode.** The `STRATIA_AUTOFILL_PASSWORD=1`
+  autofill confirms: password fill works automatically. But Google sends a
+  2FA push to the operator's phone regardless. The capture spec has a 10-minute
+  window (`TWO_FA_TIMEOUT_MS`). The operator must approve the push on their
+  phone during that window or the capture times out.
+- **Pass 2 §TWO-PASS sessions require pre-captured auth state.** If the operator
+  wants a QA agent to run Pass 2 verification unattended, they must ensure
+  `auth-state/storageState.json` and `auth-state/firebase-indexeddb.json`
+  are present on disk before spawning the agent (i.e., they ran capture
+  interactively in a prior session on the same machine).
 
 ## Secret Manager / ADC mismatch on this machine
 
@@ -86,7 +100,14 @@ enhancement #134 tracks the correction.
 ## Known bugs (tracked in GitHub)
 
 - **#123** (Plan tab Connection Error): fixed in PR #132 (deployed 2026-05-23). Pass 1
-  of §TWO-PASS complete. Pass 2 needed before `resolved` label.
+  of §TWO-PASS complete (iteration 4 session, 2026-05-23). Pass 2 attempted in
+  a separate session (2026-05-23) but **blocked on missing auth-state**. The
+  capture-auth autofill confirmed the password fills correctly; the blocker is
+  Google 2FA requiring operator phone approval during the capture window.
+  `resolved` label NOT yet applied. To complete: operator must run
+  `STRATIA_AUTOFILL_PASSWORD=1 HEADED=1 npx playwright test --project=capture --headed`
+  from `tests/playwright-prod/`, approve the 2FA push, then spawn a QA agent
+  for Pass 2 (auth-state will then be on disk).
 - **#133** (Mobile 50px overflow on /profile): `enhancement,backlog`.
 - **#134** (Test plan §5.5 accuracy — full-page route not dialog): `enhancement,backlog`.
 - **#136** (Welcome email 500 when no profile): `bug` — backend fails on accounts with
