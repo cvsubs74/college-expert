@@ -309,5 +309,6 @@ The frontend reads and writes profile fields directly. Schema changes in `profil
 
 | Date | PR | What changed | Why |
 |---|---|---|---|
+| 2026-05-23 | #143 | `profile_extraction.py` LLM schema prompt changed: `grade` now described as string `'9'-'12'` (not `integer 9-12`); post-extraction coercion added; `scripts/fix_grade_field_type.py` one-shot migration backfills existing integer grades in Firestore | Closes the schema inconsistency (#130) that survived the #123 hotfix — any new consumer that assumed `grade` is a string would re-introduce a crash without this change |
 | 2026-05-23 | #135 | Document CI/CD path-based auto-deploy behavior (both backend + frontend); correct "deploys are manual" prose | Behavior was already live but doc still described it as manual; DevOps observed the auto-deploy during PR #131 deploy (build ID 7a3fe287) |
 | 2026-05-22 | (this PR) | Initial architecture doc | `CLAUDE.md` required it as cold-start reading but only the template existed |
