@@ -4,7 +4,7 @@
 **Auth required:** Yes (storageState)  
 **Spec file:** `tests/playwright-prod/specs/profile.auth.spec.js`  
 **Fixture:** `tests/fixtures/profile-samples/sample-junior-comprehensive.pdf`  
-**Iteration:** 2
+**Iteration:** 7 (updated)
 
 ## Objective
 
@@ -27,7 +27,7 @@ Verify that uploading a supported PDF profile fixture completes successfully: th
 
 ## Expected outcomes
 
-- A success message appears: "Successfully uploaded 1 file(s)" or similar text matching `/successfully uploaded/i`, `/complete/i`, or `/upload.*success/i`.
+- A success message appears: "Successfully uploaded 1 file(s)" or similar text matching `/successfully uploaded/i` or `/upload.*success/i`. Note: the `/complete/i` fallback was removed in iteration 7 because it false-positively matched "Complete transcript with courses, grades, and course levels" — a static UI label present before the upload completes.
 - No error banner is visible: text matching `/all uploads failed/i` or `/upload.*error/i` is absent.
 - The page does not crash.
 
