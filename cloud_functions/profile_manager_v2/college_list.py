@@ -48,24 +48,27 @@ def add_university_to_list(user_id: str, university_id: str, university_data: di
         }
         
         success = db.add_to_college_list(user_id, university_id, list_item)
-        
+
         if success:
             logger.info(f"[COLLEGE_LIST] Added {university_id} for {user_id}")
             return {
                 "success": True,
-                "message": "University added to list"
+                "message": "University added to list",
+                "college_list": get_college_list(user_id)
             }
         else:
             return {
                 "success": False,
-                "error": "Failed to add university"
+                "error": "Failed to add university",
+                "college_list": []
             }
         
     except Exception as e:
         logger.error(f"[COLLEGE_LIST] Add failed: {e}")
         return {
             "success": False,
-            "error": str(e)
+            "error": str(e),
+            "college_list": []
         }
 
 
@@ -88,19 +91,22 @@ def remove_university_from_list(user_id: str, university_id: str) -> dict:
             logger.info(f"[COLLEGE_LIST] Removed {university_id} for {user_id}")
             return {
                 "success": True,
-                "message": "University removed from list"
+                "message": "University removed from list",
+                "college_list": get_college_list(user_id)
             }
         else:
             return {
                 "success": False,
-                "error": "Failed to remove university"
+                "error": "Failed to remove university",
+                "college_list": []
             }
         
     except Exception as e:
         logger.error(f"[COLLEGE_LIST] Remove failed: {e}")
         return {
             "success": False,
-            "error": str(e)
+            "error": str(e),
+            "college_list": []
         }
 
 
