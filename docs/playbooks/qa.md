@@ -28,6 +28,14 @@ Append when you learn something; delete when it goes stale.
   `auth-state/storageState.json` and `auth-state/firebase-indexeddb.json`
   are present on disk before spawning the agent (i.e., they ran capture
   interactively in a prior session on the same machine).
+- **Worktrees do NOT inherit auth-state.** The `auth-state/` dir is gitignored.
+  When running in `.worktrees/qa-loop-iter<N>/`, copy the files manually before
+  running auth tests:
+  ```
+  mkdir -p .worktrees/qa-loop-iter<N>/tests/playwright-prod/auth-state
+  cp tests/playwright-prod/auth-state/storageState.json .worktrees/qa-loop-iter<N>/tests/playwright-prod/auth-state/
+  cp tests/playwright-prod/auth-state/firebase-indexeddb.json .worktrees/qa-loop-iter<N>/tests/playwright-prod/auth-state/
+  ```
 
 ## Secret Manager / ADC mismatch on this machine
 
@@ -125,14 +133,30 @@ enhancement #134 tracks the correction.
 - To run this scenario, save a school from Discover first, wait for fit analysis
   to compute, then run the spec.
 
-## Scenario count (iteration 6)
+## profile_upload_pdf_processes_to_completion — false positive (fixed iteration 7)
+
+Prior to iteration 7, the success assertion in `profile_upload_pdf_processes_to_completion`
+included `or(page.getByText(/complete/i))`. This caused a false positive: the locator
+matched "Complete transcript with courses, grades, and course levels" — a static tab label
+already present on the Profile page BEFORE upload — causing the test to pass in ~2s
+without waiting for actual upload completion.
+
+Fix (iteration 7): removed the `/complete/i` fallback. Kept only `/successfully uploaded/i`
+and `/upload.*success/i`. Also added `.first()` to suppress strict-mode violation
+(success text matched both the container `<div>` and the inner `<p>`).
+
+When running the fixed spec: expect 3–10s (upload button click + upload API + "Successfully
+uploaded" text render). If the spec still passes in <2s, check whether profile was reset
+before the run (fresh account needed for the upload path to trigger the upload button).
+
+## Scenario count (iteration 7)
 
 - Total executable: 22 scenarios
 - Passing: 21
 - Intentionally skipped: 1 (`launchpad_fit_modal_opens_with_bounds` — no saved schools)
-- EXIT: 0 (full suite passes)
+- EXIT: 0 (full suite passes, both Pass 1 and Pass 2)
 
-Last real-run: 2026-05-24 by QA Agent (iteration 6 / §TWO-PASS pass 1+2).
+Last real-run: 2026-05-25 by QA Agent (iteration 7 / §TWO-PASS pass 1+2).
 
 ### Overlay dismissal improvements (iteration 6)
 After profile reset, the onboarding overlay ("Let's get started") appears on `/profile`

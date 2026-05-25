@@ -127,11 +127,20 @@ test.describe('profile_upload_pdf_processes_to_completion', () => {
     // Wait for the processing to complete (Gemini extraction can take 15-30s).
     // Assert a success status message appears.
     // Profile.jsx line 720-722 shows success: "Successfully uploaded X file(s)"
+    //
+    // NOTE (iteration 7): The /complete/i fallback was removed because it matched
+    // "Complete transcript with courses, grades, and course levels" — a UI label
+    // already present on the Profile page BEFORE the upload completes. That caused
+    // a false-positive where the test passed in ~2s without waiting for actual upload
+    // success. The assertion is now strictly scoped to upload-success messages only.
+    // Use .first() to avoid strict-mode violation — the success message text may
+    // match both the <p> element and its container div. The <p> is the canonical
+    // success indicator from Profile.jsx line 720-722.
     await expect(
       page
         .getByText(/successfully uploaded/i)
-        .or(page.getByText(/complete/i))
-        .or(page.getByText(/upload.*success/i)),
+        .or(page.getByText(/upload.*success/i))
+        .first(),
     ).toBeVisible({ timeout: 60_000 });
 
     // Assert no error banner is present.
