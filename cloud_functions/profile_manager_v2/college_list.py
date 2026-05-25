@@ -67,7 +67,8 @@ def add_university_to_list(user_id: str, university_id: str, university_data: di
         logger.error(f"[COLLEGE_LIST] Add failed: {e}")
         return {
             "success": False,
-            "error": str(e)
+            "error": str(e),
+            "college_list": []
         }
 
 
@@ -104,7 +105,8 @@ def remove_university_from_list(user_id: str, university_id: str) -> dict:
         logger.error(f"[COLLEGE_LIST] Remove failed: {e}")
         return {
             "success": False,
-            "error": str(e)
+            "error": str(e),
+            "college_list": []
         }
 
 

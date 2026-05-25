@@ -235,3 +235,38 @@ class TestUpdateCollegeListResponseFixed:
         assert result['success'] is False
         # On failure college_list should be [] (not absent)
         assert result.get('college_list', []) == []
+
+    def test_add_exception_path_returns_college_list_empty(self):
+        """
+        CR catch: the except block must also return college_list: [] so all
+        three return paths (success / else / except) honour the contract.
+        Patch get_db to raise so we exercise the except branch.
+        """
+        _stub_requests_no_kb()
+
+        with patch('college_list.get_db', side_effect=Exception("Firestore unavailable")):
+            from college_list import add_university_to_list
+            result = add_university_to_list(
+                'user@test.com',
+                'princeton',
+                {'university_name': 'Princeton', 'category': 'reach'}
+            )
+
+        assert result['success'] is False
+        assert 'college_list' in result, "except path must include college_list key"
+        assert result['college_list'] == []
+
+    def test_remove_exception_path_returns_college_list_empty(self):
+        """
+        CR catch: the except block of remove_university_from_list must also
+        return college_list: [].
+        """
+        _stub_requests_no_kb()
+
+        with patch('college_list.get_db', side_effect=Exception("Firestore unavailable")):
+            from college_list import remove_university_from_list
+            result = remove_university_from_list('user@test.com', 'mit')
+
+        assert result['success'] is False
+        assert 'college_list' in result, "except path must include college_list key"
+        assert result['college_list'] == []
