@@ -1,29 +1,44 @@
 ---
-description: Merge a PR back into main and clean up — runs from the issue branch or its worktree
+description: Merge a PR back into main and clean up. Mode-aware — auto-closes the GitHub issue (github mode) or flips the task to Status: done (local mode).
 allowed-tools: Bash, Read, Edit
 ---
 
 # /ship
 
-Squash-merge the PR for the current issue into `main`, confirm the issue auto-closes, move the project card to Done, and remove the worktree if applicable.
+Squash-merge the PR for the current branch into `main`, confirm the work item is closed, move the project card to Done (github mode), and remove the worktree if applicable.
+
+## Mode detection
+
+```bash
+MODE=$(jq -r '.mode // "github"' .claude/harness-mode.json 2>/dev/null || echo "github")
+```
 
 ## Preconditions
 
-You are on a branch named `issue-<n>-*` (either in the main repo or in its worktree).
+You are on a branch named `issue-<n>-*` (github mode) or `task-T-NNN-*` (local mode), either in the main repo path or in its worktree.
 
 The PR for this branch is OPEN, CI is GREEN, and the reviewer has APPROVED (or the harness is solo and you're self-approving — branch protection still requires CI).
 
 ## Steps
 
-### 1. Extract issue number from branch
+### 1. Extract id from branch
 
 ```bash
 BRANCH=$(git symbolic-ref --short HEAD)
 case "$BRANCH" in
-  issue-*) ;;
-  *) echo "error: not on an issue-* branch ($BRANCH)" >&2; exit 1 ;;
+  issue-*)
+    [ "$MODE" = "github" ] || { echo "error: on issue-* branch but mode is $MODE" >&2; exit 1; }
+    N=$(echo "$BRANCH" | sed -E 's/^issue-([0-9]+).*/\1/')
+    ;;
+  task-T-*)
+    [ "$MODE" = "local" ] || { echo "error: on task-* branch but mode is $MODE" >&2; exit 1; }
+    TID=$(echo "$BRANCH" | sed -E 's/^task-(T-[0-9]+).*/\1/')
+    ;;
+  *)
+    echo "error: not on an issue-* or task-* branch ($BRANCH)" >&2
+    exit 1
+    ;;
 esac
-N=$(echo "$BRANCH" | sed -E 's/^issue-([0-9]+).*/\1/')
 ```
 
 ### 2. Verify locally
@@ -33,12 +48,12 @@ git status                  # clean
 bash harness/verify.sh      # exit 0
 ```
 
-### 3. Push any final commits and confirm PR state
+### 3. Push any final commits and confirm PR state (both modes)
 
 ```bash
 git push
 PR=$(gh pr list --head "$BRANCH" --json number,state,mergeable --jq '.[0]')
-[ -n "$PR" ] || { echo "error: no PR for $BRANCH — run scripts/merge-worktree.sh first or open one manually" >&2; exit 1; }
+[ -n "$PR" ] || { echo "error: no PR for $BRANCH — open one manually or via scripts/merge-worktree.sh" >&2; exit 1; }
 echo "$PR" | jq -e '.state == "OPEN" and .mergeable == "MERGEABLE"' >/dev/null \
   || { echo "error: PR not mergeable. State: $PR"; exit 1; }
 ```
@@ -60,18 +75,25 @@ If checks aren't green, stop. Branch protection will block the merge anyway — 
 gh pr merge "$PR_NUM" --squash --delete-branch
 ```
 
-This:
-- Squash-merges into `main`.
-- Closes issue `#$N` via the `Closes #$N` in the PR body.
-- Deletes the remote branch.
+This squash-merges into `main` and deletes the remote branch.
 
-### 6. Update the project board
+**(github mode)** The PR body's `Closes #$N` auto-closes the issue.
+
+**(local mode)** The PR body's `Refs $TID` does NOT auto-close anything on GitHub — step 6 flips the task block in `harness/backlog.md`.
+
+### 6. Update the tracking surface
+
+**(github mode)**
 
 ```bash
 bash scripts/gh-project.sh set-status "$N" "Done"
 ```
 
-### 7. Clean up the local branch and worktree
+**(local mode)**
+
+Edit `harness/backlog.md`: in the task block for `$TID`, change `- Status: in-review` (or whatever status) to `- Status: done`. Optionally append a `- Shipped: <YYYY-MM-DD>` line just below `- Status:`.
+
+### 7. Clean up the local branch and worktree (both modes)
 
 If we're in a worktree:
 
@@ -97,16 +119,17 @@ git branch -D "$BRANCH" 2>/dev/null || true
 On `main`:
 
 ```
-## <YYYY-MM-DD HH:MM> — shipped #<N>
+## <YYYY-MM-DD HH:MM> — shipped <#N or T-NNN>
 - PR #<pr-num>, squash-merged, branch deleted
-- Issue closed, project card → Done
+- Tracking: <issue closed | task → Status: done>
 ```
 
 Commit + push:
 
 ```bash
 git add harness/progress.md
-git commit -m "log(ship): #$N shipped"
+[ "$MODE" = "local" ] && git add harness/backlog.md
+git commit -m "log(ship): <#N|T-NNN> shipped"
 git push
 ```
 
@@ -115,10 +138,10 @@ git push
 Print:
 
 ```
-✓ Shipped #<N>.
-  PR:     <url>
-  Issue:  closed
-  Board:  Done
+✓ Shipped <#N or T-NNN>.
+  PR:        <url>
+  Tracking:  <issue closed | task → done>
+  Board:     Done (github mode)
 Recent log:
   <git log --oneline -5>
 ```
