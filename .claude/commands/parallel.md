@@ -78,9 +78,7 @@ Creates `../<repo>-wt-issue-$N` on branch `issue-$N-<slug>` and posts a comment 
 bash scripts/new-worktree.sh task "$TID"
 ```
 
-Creates `../<repo>-wt-task-$TID` on branch `task-$TID-<slug>` and updates the task block in `harness/backlog.md` — the `- Worktree: -` line becomes `- Worktree: ../<repo>-wt-task-$TID`.
-
-*(Note: `scripts/new-worktree.sh` needs a `task <TID>` invocation path. If the script doesn't have it yet, devops needs to add it — track as a follow-up.)*
+Creates `../<repo>-wt-task-$TID` on branch `task-$TID-<slug>` and updates the task block in `harness/backlog.md` — the `- Worktree: -` line becomes `- Worktree: ../<repo>-wt-task-$TID`. The script leaves the `backlog.md` edit uncommitted in the primary repo and prints the commit command for you to run.
 
 ### 4. Print instructions
 
