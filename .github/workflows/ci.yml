@@ -12,11 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
       - name: Make harness scripts executable
         run: chmod +x harness/*.sh scripts/*.sh .claude/hooks/*.sh
-
-      # The devops agent extends this job during /kickoff with stack-specific
-      # setup (setup-node, setup-python, etc.) and dep caching.
 
       - name: init
         run: bash harness/init.sh

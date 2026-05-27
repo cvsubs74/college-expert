@@ -111,7 +111,12 @@ ensure_simple_field() {
 
 ensure_single_select "Status" "Todo,In progress,In review,Done"
 ensure_simple_field "Estimate" "NUMBER"
-ensure_simple_field "Iteration" "ITERATION"
+# Iteration: gh project field-create does not accept --data-type ITERATION
+# (Projects v2 Iteration fields need GraphQL with an iterations[] config).
+# Skip with a warning; users can add manually in the project UI if desired.
+if ! echo "$FIELD_NAMES" | grep -qxF "Iteration"; then
+  echo "  (skip) Iteration field — create manually in the Projects v2 UI; gh CLI does not expose ITERATION data-type." >&2
+fi
 ensure_simple_field "Worktree" "TEXT"
 
 # ---------- write project config ----------
