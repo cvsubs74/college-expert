@@ -1,127 +1,130 @@
 ---
-description: Sync, run tests, push, open a PR. Manual fallback for the Dev → CR loop.
+description: Merge a PR back into main and clean up — runs from the issue branch or its worktree
+allowed-tools: Bash, Read, Edit
 ---
 
-# Ship
+# /ship
 
-Adapted from [garrytan/gstack](https://github.com/garrytan/gstack)'s `/ship` — used and credited under MIT license.
+Squash-merge the PR for the current issue into `main`, confirm the issue auto-closes, move the project card to Done, and remove the worktree if applicable.
 
-End-to-end push-to-PR flow. Use when you're working solo (no Dev Agent in the loop) or when you want to package up the current worktree's changes into a reviewable PR without spawning the agent team.
+## Preconditions
 
-## Pre-flight
+You are on a branch named `issue-<n>-*` (either in the main repo or in its worktree).
 
-1. **Confirm you're in a worktree** (not the primary repo path). If you're in the primary path, abort:
+The PR for this branch is OPEN, CI is GREEN, and the reviewer has APPROVED (or the harness is solo and you're self-approving — branch protection still requires CI).
 
-   ```bash
-   pwd | grep -q ".worktrees/" || echo "ERROR: not in a worktree — run git worktree add first"
-   ```
+## Steps
 
-2. **Confirm you're on the right branch:**
+### 1. Extract issue number from branch
 
-   ```bash
-   git branch --show-current
-   ```
-
-   Expected pattern: `<type>/<issue-num>-<slug>` per `SDLC.md`. If wrong, fix before proceeding.
-
-3. **Sync with origin:**
-
-   ```bash
-   git fetch origin
-   git rebase origin/<default-branch>
-   ```
-
-   If rebase has conflicts: stop, resolve, continue. Do not force-push to shared branches.
-
-## Build + verify
-
-4. **Run the test suite.** Use the project's test command from `CLAUDE.md` (Common commands section).
-
-   ```bash
-   <test-command>
-   ```
-
-   If tests fail: stop. Don't push broken tests.
-
-5. **Run lint / format / type check** if the project has them:
-
-   ```bash
-   <lint-command>
-   <typecheck-command>
-   ```
-
-6. **For UI changes:** start the dev server, exercise the feature in a browser. Capture a screenshot if it's visual.
-
-## Coverage audit
-
-7. **Check for missing tests** on the diff:
-
-   ```bash
-   git diff origin/<default-branch>..HEAD --stat
-   ```
-
-   For each changed source file, is there a corresponding test file? If you added a new code path without a test, write the test now (Boil the Lake — tests are the cheapest lake to boil).
-
-## Commit + push
-
-8. **Verify commit messages** follow `<type>(<scope>): <summary>` per SDLC. Re-message if needed (`git commit --amend` for the last commit; interactive rebase only for unpushed commits).
-
-9. **Push:**
-
-   ```bash
-   git push -u origin <branch-name>
-   ```
-
-## Open the PR
-
-10. **Draft the PR body** with the test plan:
-
-    ```bash
-    gh pr create --title "<type>(<scope>): <summary>" --body "$(cat <<'EOF'
-## Summary
-<1-3 bullets — what changed and why>
-
-## Test plan
-- [ ] <how reviewer can verify this works>
-- [ ] <edge case 1>
-- [ ] <edge case 2>
-
-## Notes / risks
-<anything reviewer should pay extra attention to; flag any cross-flow contract touch points>
-
-Closes #<N>
-EOF
-)"
-    ```
-
-11. **Apply `in-review` label:**
-
-    ```bash
-    gh pr edit <PR-N> --add-label in-review
-    ```
-
-12. **If your project uses a Code Reviewer Agent:** the `in-review` label is the trigger. Otherwise, request review from a human reviewer.
-
-## Report
-
-13. **Print a one-line summary** of what shipped + the PR URL.
-
-```
-Shipped: <type>(<scope>): <summary>
-PR: <URL>
-Test plan: <N> items, all checked
+```bash
+BRANCH=$(git symbolic-ref --short HEAD)
+case "$BRANCH" in
+  issue-*) ;;
+  *) echo "error: not on an issue-* branch ($BRANCH)" >&2; exit 1 ;;
+esac
+N=$(echo "$BRANCH" | sed -E 's/^issue-([0-9]+).*/\1/')
 ```
 
-## When ship fails
+### 2. Verify locally
 
-- **Tests fail:** debug locally, push the fix, retry from step 4. Don't push red tests.
-- **Lint fails:** auto-fix if the tool supports it; otherwise hand-fix. Don't skip.
-- **Rebase conflicts:** resolve them; don't `--theirs` or `--ours` your way out without understanding what you're discarding.
-- **Push rejected (branch protection):** read the branch protection rules; usually means CI needs to pass first, or you need a reviewer assigned.
+```bash
+git status                  # clean
+bash harness/verify.sh      # exit 0
+```
 
-## Anti-patterns
+### 3. Push any final commits and confirm PR state
 
-- **Pushing without running tests.** "CI will catch it" — except CI catches what CI tests for, and reviewer time is valuable.
-- **Force-pushing to a shared branch.** Only force-push to your own feature branches, and only when nobody else is reviewing.
-- **PR body without a test plan.** That's the reviewer's checklist; without it they re-derive the test plan from scratch.
-- **`Closes #N` on a slice.** If this PR is one of several for issue #N, use `Refs #N`. Only the final slice uses `Closes`.
+```bash
+git push
+PR=$(gh pr list --head "$BRANCH" --json number,state,mergeable --jq '.[0]')
+[ -n "$PR" ] || { echo "error: no PR for $BRANCH — run scripts/merge-worktree.sh first or open one manually" >&2; exit 1; }
+echo "$PR" | jq -e '.state == "OPEN" and .mergeable == "MERGEABLE"' >/dev/null \
+  || { echo "error: PR not mergeable. State: $PR"; exit 1; }
+```
+
+### 4. Confirm CI is green and review is approved
+
+```bash
+PR_NUM=$(echo "$PR" | jq -r .number)
+gh pr checks "$PR_NUM" --required   # exits non-zero if any required check is failing/pending
+gh pr view "$PR_NUM" --json reviewDecision --jq '.reviewDecision' \
+  | grep -qE '^(APPROVED|null)$'    # APPROVED, or null if no protection enforced reviews
+```
+
+If checks aren't green, stop. Branch protection will block the merge anyway — surface the failing check to the user.
+
+### 5. Merge
+
+```bash
+gh pr merge "$PR_NUM" --squash --delete-branch
+```
+
+This:
+- Squash-merges into `main`.
+- Closes issue `#$N` via the `Closes #$N` in the PR body.
+- Deletes the remote branch.
+
+### 6. Update the project board
+
+```bash
+bash scripts/gh-project.sh set-status "$N" "Done"
+```
+
+### 7. Clean up the local branch and worktree
+
+If we're in a worktree:
+
+```bash
+WT_ROOT=$(git rev-parse --show-toplevel)
+MAIN_ROOT=$(git worktree list --porcelain | awk '$1=="worktree"{p=$2} $1=="branch" && $2 ~ /^refs\/heads\/main$/ {print p; exit}')
+cd "$MAIN_ROOT"
+git fetch --prune
+git worktree remove "$WT_ROOT"
+git branch -D "$BRANCH" 2>/dev/null || true
+```
+
+If we're in the main repo:
+
+```bash
+git checkout main
+git pull --ff-only
+git branch -D "$BRANCH" 2>/dev/null || true
+```
+
+### 8. Append progress.md entry
+
+On `main`:
+
+```
+## <YYYY-MM-DD HH:MM> — shipped #<N>
+- PR #<pr-num>, squash-merged, branch deleted
+- Issue closed, project card → Done
+```
+
+Commit + push:
+
+```bash
+git add harness/progress.md
+git commit -m "log(ship): #$N shipped"
+git push
+```
+
+### 9. Report
+
+Print:
+
+```
+✓ Shipped #<N>.
+  PR:     <url>
+  Issue:  closed
+  Board:  Done
+Recent log:
+  <git log --oneline -5>
+```
+
+## Failure handling
+
+- **Required check failing:** surface which check, link to its run, stop. Don't override.
+- **Merge conflict:** `gh pr merge` will report it. Tell the user to rebase locally on `main`, push, and re-run `/ship`. Don't auto-resolve.
+- **Worktree remove fails:** typically means uncommitted state. Surface, ask the user.
