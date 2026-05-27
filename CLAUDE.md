@@ -1,48 +1,180 @@
-# CLAUDE.md
+# Harness contract for this project
 
-This file provides guidance to [Claude Code](https://docs.anthropic.com/en/docs/claude-code) when working with code in this repository.
+You are working inside a repository that uses the **engineering-workflow** harness. **GitHub Issues are the single source of truth** for what work exists, what's in flight, and what's done. The harness drives that state via `gh`.
 
-# College Counselor — Claude Code Agent Team
+This file is the contract every Claude session in this repo must follow.
 
-## Required cold-start reading
+## The protocol (every session, every time)
 
-Before acting on any goal, load:
+1. Run `pwd` and confirm you are at the project root.
+2. Read the last 5 commits: `git log --oneline -5`.
+3. Run `harness/init.sh` to bring up the dev environment.
+4. Run `harness/verify.sh` to confirm a green baseline. If it fails, **stop and fix the baseline before anything else.**
+5. Check GitHub state:
+   - `gh issue list --assignee @me --state open` — work you've already claimed
+   - `gh pr list --state open` — open PRs (yours and others)
+6. Read `harness/progress.md` (the personal session log — informational, not authoritative).
+7. Pick **exactly one** open GitHub Issue with `priority:P0`/`P1`/`P2` label, no assignee, no `type:epic` label.
+8. Build that issue using the agent pipeline below.
+9. Open a PR with `Closes #<n>` in the body.
+10. Append a dated entry to `harness/progress.md`. Push.
 
-1. `ETHOS.md` — the three principles that override all other defaults: *Boil the Lake · Search Before Building · User Sovereignty*.
-2. `SDLC.md` — branch naming, PR workflow, label scheme, commit conventions.
-3. `docs/ARCHITECTURE.md` — system shape + change log.
+## Agent pipeline for one issue
 
-If a doc is missing, that is a signal — propose creating it rather than working without it.
+For each issue, dispatch agents in this order. Each agent is under `.claude/agents/`.
 
-## Operating posture (must-know before any action)
+1. **product-manager** — re-read the issue body. If acceptance criteria are ambiguous, refine them in the issue body *only after* the user confirms (or, in auto mode, choose the most reasonable interpretation and document it in `harness/decisions/`). Canonicalize body schema if a human re-edited the issue.
+2. **architect** — invoked only if the issue crosses module boundaries or introduces new dependencies. Updates `docs/architecture.md` if needed, files a closed `type:spike` issue for the ADR.
+3. **implementer** — writes the code. Touches application code, not the harness. Commit messages use `<type>(<area>): <subject> (#<n>)`.
+4. **tester** — runs `harness/verify.sh` plus an end-to-end check matching the acceptance criteria. Posts evidence as a comment on the issue. Ticks `### Acceptance criteria` checkboxes via `gh issue edit` only with evidence.
+5. **reviewer** — reads the PR diff via `gh pr diff`. Approves via `gh pr review --approve` or blocks via `--request-changes`. Blocks only on real issues (correctness, security, obvious smell).
 
-- **Multi-agent team workflow.** This repo is driven by 7 specialist roles (PM, Triage, Dev, QA, Code Reviewer, DevOps, Designer) coordinated by the Team Lead — 8 contracts under `.claude/agents/`. Skills live under `.claude/skills/`; slash commands under `.claude/commands/`. Pick the right specialist via the `Agent` tool — don't write code directly when a Dev/QA/CR specialist is appropriate.
-- **PRD → Design Doc → code.** New user-facing features require `docs/prd/PRD-<topic>.md` then `docs/design/DESIGN-<topic>.md` before implementation. Bug fixes, refactors, chores, and hotfixes skip the gate (see `SDLC.md` Step 0).
-- **No direct commits to the default branch.** Every change goes through a PR; squash-merge after CI green + review.
-- **Architecture doc currency.** Update `docs/ARCHITECTURE.md` + append a Change Log row whenever a change touches module shape, data flow, schema, or constraints.
-- **Worktree hygiene.** Each specialist session creates its own `git worktree add` (e.g. `.worktrees/<task-id>`) off `origin/main`. Never reuse another session's worktree, and never edit inside the primary repo path — it's on whoever's branch.
+After PR is open, CI green, and reviewer approves: `/ship` merges. The PR's `Closes #<n>` auto-closes the issue.
 
-## Coding discipline
+## Hard rules
 
-Behavioral guidelines for code changes — bias toward caution over speed (use judgment on trivial tasks). Adapted from [karpathy/CLAUDE.md](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md).
+- **Do not edit `### Acceptance criteria`** to make a check pass. The harness exists to prevent this. If acceptance is wrong, surface to user.
+- **One issue per session.** Even if you have time. Long sessions on multiple issues lead to merge pain and bad handoffs.
+- **GitHub Issues are the source of truth** for what is and isn't done. Chat memory, `progress.md`, and local files are not.
+- **Append, never rewrite** `harness/progress.md`. It's a personal session log, not authoritative — but history is still load-bearing for retros.
+- **Never `--no-verify` a commit.** If a hook fails, fix the cause.
+- **Worktrees only via `/parallel <issue-#>`.** Don't hand-roll `git worktree add` — the script ensures the branch name and issue comment stay consistent.
+- **Commit messages reference the issue number**: `<type>(<area>): <subject> (#<n>)`.
 
-- **Think before coding.** State assumptions explicitly. If multiple interpretations exist, surface them — don't pick silently. If something is unclear, stop and name what's confusing rather than guessing. Push back when a simpler approach exists.
-- **Simplicity first.** Minimum code that solves the problem. No features beyond what was asked, no abstractions for single-use code, no "flexibility" that wasn't requested, no error handling for impossible scenarios. If 200 lines could be 50, rewrite it. Ask: "would a senior engineer say this is overcomplicated?"
-- **Surgical changes.** Touch only what the task requires. Don't "improve" adjacent code, comments, or formatting; don't refactor what isn't broken; match existing style even if you'd do it differently. Remove imports/variables your changes orphaned — leave pre-existing dead code alone (mention it, don't delete it). Every changed line should trace directly to the user's request.
-- **Goal-driven execution.** Transform vague asks into verifiable success criteria before coding ("add validation" → "write tests for invalid inputs, then make them pass"; "fix the bug" → "write a test that reproduces it, then make it pass"). For multi-step work, state a brief plan with explicit verify-checks per step.
-- **Boil the Lake.** AI-assisted coding makes the marginal cost of completeness near-zero. When the complete implementation costs minutes more than the shortcut — do the complete thing. See `ETHOS.md` for the full principle.
+## Picking the next issue
+
+When `/next` is invoked:
+
+1. `bash scripts/gh-next-issue.sh` prints the next issue number (open, no assignee, not an epic, ordered priority P0→P1→P2 then by issue number).
+2. `gh issue edit <n> --add-assignee @me` to claim it.
+3. `bash scripts/gh-project.sh set-status <n> "In progress"` to move the project card.
+4. Create a branch off `main`: `issue-<n>-<slug>`. The slug derives from the issue title (see `scripts/new-worktree.sh` for the canonical recipe).
+
+## Parallel issue work
+
+`/parallel <issue-#>` runs `scripts/new-worktree.sh <n>` which:
+
+1. Validates the issue is OPEN, unassigned, and not an epic.
+2. Creates `../<repo>-wt-issue-<n>` on branch `issue-<n>-<slug>`.
+3. Posts a comment on the issue announcing the worktree path.
+
+Open a new `claude` session inside the worktree. *That* session executes the protocol above. When the PR is reviewed and CI is green, run `/ship` from the worktree — it merges via `gh pr merge --squash --delete-branch` and tears down the worktree.
+
+## When you are blocked
+
+- Missing acceptance detail → ask the user once; if no answer and auto mode, pick the simplest interpretation, edit the issue body to reflect it, and write an ADR under `harness/decisions/`.
+- Verify failing for unrelated reasons → fix the baseline first, commit that as its own change on `main` (it's not branch-protection-bypassable for non-trivial changes; if branch protection blocks, surface to user).
+- Stack not initialized (`init.sh` / `verify.sh` are still templates) → invoke the **devops** agent to fill them in.
+- `gh auth` missing scopes (typically `project` for board mutations) → run `gh auth refresh -s project,read:org` and re-try.
+
+## What lives where
+
+| Concern | Where |
+|---|---|
+| Product vision and requirements | `docs/spec.md` |
+| Cross-cutting technical design | `docs/architecture.md` (legacy: `docs/ARCHITECTURE.md`) |
+| Operational runbook | `docs/runbook.md` |
+| **Backlog (source of truth)** | **GitHub Issues** (`gh issue list`) |
+| **Epic → story hierarchy** | **GitHub sub-issues** (via REST `/sub_issues`) |
+| **Status (Todo/In progress/In review/Done)** | **Projects v2 custom field** |
+| **Priority, area, type** | **GitHub labels** (`priority:P0`, `area:auth`, `type:story`) |
+| **Releases** | **GitHub Milestones** (`v0.1`, `v0.2`, …) |
+| **Decisions and tradeoffs** | `harness/decisions/NNNN-<topic>.md` + closed `type:spike` issue |
+| **Personal session log** | `harness/progress.md` (informational only) |
+| Bring up dev environment | `harness/init.sh` |
+| End-to-end smoke test | `harness/verify.sh` |
+| Slash commands | `.claude/commands/` |
+| Specialized agents | `.claude/agents/` |
+| Hooks | `.claude/hooks/` |
+| GitHub provisioning | `scripts/gh-bootstrap.sh` + `.github/labels.json` |
+
+## Canonical issue body schema
+
+Every story issue body MUST use this exact structure. The PM agent re-canonicalizes any human edits back to this form. Tester parses positionally.
+
+```
+### Parent epic
+#<n>   (or "standalone")
+
+### Priority
+P0   (with rationale)
+
+### Area
+<one-word>
+
+### Summary
+<1-3 sentences>
+
+### Acceptance criteria
+- [ ] <testable bullet 1>
+- [ ] <testable bullet 2>
+
+### Non-goals
+- <optional>
+
+### Notes
+<optional>
+```
+
+Headings are `### ` (h3) to match what GitHub issue forms render.
+
+## Entry points
+
+| Command | When to use |
+|---|---|
+| `/start` | First session after cloning. Wizard that drafts `docs/spec.md`, creates a GitHub repo, bootstraps labels/milestone/project board, then runs `/kickoff`. |
+| `/kickoff` | Power-user alternative: you already wrote `docs/spec.md` by hand and have a GitHub repo. Seeds issues, architecture, init/verify, enables branch protection. |
+| `/next` | Every subsequent session. Builds the next top-priority issue. |
+| `/parallel <issue-#>` | Spin off concurrent work in a git worktree. |
+| `/status` | See backlog (gh issue counts) + open PRs + project board URL. |
+| `/verify` | Read-only sanity check of the dev environment. |
+| `/retro <issue-#>` | Post-issue reflection appended to `progress.md` AND posted as a comment on the closed issue. |
+| `/ship` | Squash-merge the PR for the current issue branch, close the issue, move the card to Done. |
+
+## Session-end checklist
+
+Before stopping, confirm:
+
+- [ ] `harness/verify.sh` exits 0.
+- [ ] If a PR is open on this branch, it's pushed to `origin`.
+- [ ] If you ticked acceptance boxes, the evidence comment is posted on the issue.
+- [ ] `harness/progress.md` has a new entry for this session (warning, not blocker).
+- [ ] `git status` is clean.
+
+The `stop.sh` hook blocks termination only on hard inconsistencies (issue branch with red verify, or uncommitted changes on an issue branch with no open PR). Soft warnings are printed but don't block.
+
+---
+
+# Project-specific context (College Counselor)
+
+The harness contract above is the workflow. This section is the **project knowledge** every session needs.
+
+## Product
+
+A college counseling web app: students get personalized college fit recommendations, application roadmaps, essay help, and chat with a Gemini-backed counselor. PRD-style detail in `docs/spec.md`; full system shape in `docs/ARCHITECTURE.md`.
+
+## Stack
+
+- **Backend** — Python 3.11 Cloud Functions Gen2 in `us-east1`, GCP project `college-counselling-478115`. Authoritative code lives under `cloud_functions/<service>/` and `agents/`.
+- **Frontend** — React 19 + Vite SPA in `frontend/`, deployed to Firebase Hosting.
+- **Data** — Firestore is the primary store. Elasticsearch `*_es` / `*_rag` cloud functions remain deployed but are **offline** — ignore them.
+- **LLM** — Gemini Flash via the `google-genai` SDK.
+- **Payments** — Stripe + `payment_manager_v2`.
+
+`counselor_agent` is the read-side BFF: it aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding to chat/roadmap/college-fit requests. Writes go directly from the frontend to `profile_manager_v2`. Only the cloud functions enumerated in the auto-memory `project_live_components_scope` are reachable from the frontend — treat the rest as legacy.
+
+## Account / project pin
+
+Always pass `--account cvsubs@gmail.com --project college-counselling-478115` to raw `gcloud` / `firebase` invocations. The active default account on this machine is OneTrust — without the pin you'll act on the wrong account.
 
 ## Common commands
 
 ```bash
-# Tests (pytest + bash integration suites)
+# Tests
 ./run_all_tests.sh
 pytest tests/
 
-# Lint / type check
-# (no project-wide lint configured — CI runs shellcheck/markdown sanity)
-
-# Dev server
+# Dev
 ./start_local.sh                 # local Cloud Functions + frontend
 cd frontend && npm run dev       # frontend only (Vite)
 
@@ -51,37 +183,15 @@ cd frontend && npm run dev       # frontend only (Vite)
 ./deploy_frontend.sh             # Firebase Hosting
 ```
 
-Always pass `--account cvsubs@gmail.com --project college-counselling-478115` to any raw `gcloud`/`firebase` invocation — the active default account on this machine is OneTrust.
+`harness/init.sh` and `harness/verify.sh` are still placeholder templates from the boilerplate — the **devops** agent should fill them in on first `/kickoff` (or first time we run `/next`). Until then, treat them as no-ops and run the project-specific commands above directly.
 
-## Architecture in one paragraph
+## Relationship to other docs in this repo
 
-Python 3.11 Cloud Functions Gen2 (us-east1) form the backend — `counselor_agent` is the read-side BFF that aggregates from `profile_manager_v2` and `knowledge_base_manager_universities_v2` before responding to chat/roadmap/college-fit requests; writes go directly from the frontend to `profile_manager_v2`. A React 19 + Vite SPA on Firebase Hosting (`frontend/`) talks to those functions; Firestore is the primary store. The legacy Elasticsearch cluster (`*_es` / `*_rag` variants) is offline — those functions remain deployed but are not exercised. Gemini Flash (via `google-genai` SDK) handles all LLM calls; Stripe + `payment_manager_v2` handles subscriptions. GCP project: `college-counselling-478115`; authoritative code under `cloud_functions/<service>/` and `agents/`. See `docs/ARCHITECTURE.md` for the full system shape, module map, and change log; per-feature docs under `docs/prd/` + `docs/design/`. Only the cloud functions listed in `project_live_components_scope` memory are reachable from the frontend — ignore legacy variants.
+- **`ETHOS.md`** — three principles (Boil the Lake · Search Before Building · User Sovereignty). Still authoritative; principles, not workflow.
+- **`SDLC.md`** — describes the **previous** 8-agent workflow (PM/Triage/Dev/QA/CR/DevOps/Designer + Team Lead, custom label scheme `bug`/`enhancement`/`backlog`/`prioritized`/`priority:high|medium|low`/etc.). Superseded by the harness contract above for all new work. Kept for reference and for any in-flight PRs still mid-flight under the old scheme.
+- **`docs/ARCHITECTURE.md`** — current, detailed system map with change log. Authoritative; the new harness's `docs/architecture.md` (lowercase) is the boilerplate placeholder — fold into ARCHITECTURE.md or replace, but don't fork.
+- **`docs/playbooks/`** — per-agent scratchpad from the previous workflow. Re-evaluate per-agent when each is touched under the new agent set.
 
-## Reusable tooling
+## Pre-existing GitHub repo
 
-- `deploy.sh` / `deploy_frontend.sh` — canonical deploy paths (with account/project pinning).
-- `run_all_tests.sh`, `comprehensive_integration_test.sh`, `test_*.sh` — backend integration suites against deployed functions.
-- `scripts/` — diagnostic + operational scripts (data fixes, KB ingestion, schema migrations).
-- `cleanup_test_data.sh`, `setup_secrets.sh`, `setup_firebase_env.sh` — environment + cleanup helpers.
-- `bin/merge-pr.sh`, `bin/bootstrap-labels.sh` — PR merge helper and GitHub label bootstrapper.
-
-## Project skills & agent playbooks
-
-Two surfaces for capturing what an agent learns on this project — used differently.
-
-- **Agent playbooks** (`docs/playbooks/<agent>.md`) — lightweight per-agent scratchpad. Gotchas, env quirks, "last time I tried X it broke Y." Append freely, delete when stale. Read only by that agent.
-- **Project skills** (`.claude/skills/<skill-name>/SKILL.md`) — a codifiable procedure with a checklist, shared across agents or invoked often enough that drift would hurt. Claude Code auto-discovers anything under `.claude/skills/`; follow the `SKILL.md` frontmatter pattern already used by `label-discipline`, `file-bug-issue`, `worktree-management`.
-
-**Promote-to-skill rule.** If the same multi-step procedure shows up in 2+ playbooks, or one agent has performed it 3+ times the same way, lift it out into `.claude/skills/<name>/SKILL.md`. Until then, leave it in the playbook — skills cost more to author and clutter the available-skills list when overused. The `skill-maintenance` shared skill covers the authoring pattern (frontmatter, line cap, the agent-doc-PR pattern).
-
-## Slash commands
-
-Run these from the Claude Code prompt:
-
-- `/onboard-team` — spawn the 8-agent team with the Team Lead in the driver's seat.
-- `/office-hours` — six forcing questions before writing code; surfaces the real problem behind the framing.
-- `/plan-review` — run CEO / engineering / design review lenses on a plan or design doc.
-- `/investigate` — systematic root-cause debugging. No fixes without an investigation.
-- `/ship` — sync, run tests, push, open a PR (manual fallback for the Dev/CR loop).
-- `/retro` — weekly retro summarizing shipping streaks, test health, growth opportunities.
-- `/heartbeat` — live SDLC dry-run: ship a canary change through PM → Dev → CR, verify four exit-state criteria, report PASS / PARTIAL / FAIL.
+This repo already exists on GitHub with its own label scheme, open issues, and PR history under the previous workflow. **Do not run `bash scripts/gh-bootstrap.sh` blindly** — it will reshape labels in ways that conflict with existing issues. Migrate labels and existing issues deliberately; see the open ADR `harness/decisions/0001-label-and-issue-migration.md` (file when you start) before bootstrapping.
