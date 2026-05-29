@@ -50,3 +50,12 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Reviewer (harness) approved via comment (author can't self-approve; branch protection requires only the `verify` check).
 - NOT deployed — needs `./deploy.sh profile-v2` so the live revision picks up `pypdf`.
 - Follow-ups (in #185 / noted): silent `success:true` on empty extraction; rotate hardcoded `GEMINI_API_KEY` in `env.deploy.yaml`; `gh-project.sh` set-status fails with >100 records (pagination bug).
+
+## 2026-05-28 23:09 — shipped #187
+- Bug: Roadmap "Upcoming Deadlines" showed scholarship rows as "132d/5687d overdue" and "NaN days left" for a junior.
+- Root cause: planner.py scholarship branch copied raw KB `deadline` into `due_date` verbatim (no parse/skip-past/roll), unlike the application-deadline branch; frontend `getDaysUntil` had no Invalid-Date guard.
+- Fix: `_normalize_scholarship_deadline()` rolls past annual deadlines forward to next occurrence + drops free-text/unparseable; frontend date helpers extracted to `utils/roadmapDeadlines.js` with NaN guard + "Date TBD" label.
+- PR #188 squash-merged (46009e27), branch deleted, #187 auto-closed. Both CI surfaces green; harness reviewer approved (via comment).
+- Deploy: counselor_agent auto-deploys via path-based cloudbuild-main on merge to main.
+- Note: existing saved roadmap_tasks keep old due_dates until user hits "Refresh Tasks"; stale rows render "Date TBD" via the frontend guard.
+- Follow-up surfaced by reviewer: `ApplicationsPage.jsx` has its own duplicate `getDaysUntil` (same latent NaN/TZ behavior) — candidate for consolidation onto `utils/roadmapDeadlines.js`.
