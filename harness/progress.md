@@ -41,3 +41,12 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
   - Existing OLD label scheme (`bug`, `enhancement`, `backlog`, `prioritized`, `priority:high|medium|low`, `in-progress`, `in-review`, `resolved`, `qa`, `pm`) coexists with the new EW labels. No open issues use them, so no cleanup is urgent — delete via `gh label delete` when comfortable.
   - Projects v2 `Iteration` custom field — add via UI when iteration planning starts.
   - `cloudbuild-main.yaml` path-based auto-deploy still active alongside the new GitHub Actions `verify` workflow. Two CI surfaces. Decide whether to consolidate or keep both (Cloud Build for deploy, Actions for fast verify) in a follow-up ADR.
+
+## 2026-05-28 22:22 — shipped #185
+- Bug: profile upload succeeded but saved profile had all fields empty. Root cause: PyMuPDF (fitz) raises `code=7: cycle in resources` on a readable PDF (reproduces on latest PyMuPDF) → no text → LLM returns nulls → falsy `if profile_data:` drops every field while upload reports success.
+- Fix: pypdf fallback in `file_processing._extract_pdf_text`; replaced retired `gemini-2.0-flash-exp` (404) with `gemini-2.5-flash-lite` in markdown + change-eval. Added `pypdf` to function requirements + `requirements-test.txt`.
+- Diagnosis was evidence-driven: prod logs, local PyMuPDF-vs-pypdf repro, and live Gemini calls proving the structured model works with real text (model 404 was a red herring for the empty-profile symptom).
+- PR #186 squash-merged (37e1a9c4), branch deleted, #185 auto-closed. Both CI surfaces green (caught + fixed a Cloud Build break where the new test needed pypdf in requirements-test.txt).
+- Reviewer (harness) approved via comment (author can't self-approve; branch protection requires only the `verify` check).
+- NOT deployed — needs `./deploy.sh profile-v2` so the live revision picks up `pypdf`.
+- Follow-ups (in #185 / noted): silent `success:true` on empty extraction; rotate hardcoded `GEMINI_API_KEY` in `env.deploy.yaml`; `gh-project.sh` set-status fails with >100 records (pagination bug).
