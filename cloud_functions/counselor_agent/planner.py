@@ -786,6 +786,50 @@ def generate_roadmap(request):
         return {'success': False, 'error': str(e)}
 
 
+# Free-text deadline values the KB uses for "no fixed date" scholarships. These
+# have no date to schedule against and must never reach the frontend (they were
+# rendering as "NaN days left"). See issue #187.
+_NON_DATE_DEADLINES = frozenset({
+    'automatic', 'auto', 'n/a', 'na', 'varies', 'rolling', 'tbd', 'none',
+})
+
+
+def _normalize_scholarship_deadline(deadline_str, now=None):
+    """Normalize a KB scholarship deadline into an upcoming ISO date.
+
+    Scholarship deadlines recur annually, but the KB often stores a fixed date
+    from a past cycle (or free text like "Varies"/"Rolling"). To keep the
+    Roadmap honest for, say, a junior:
+
+      - free-text / unparseable / "automatic" values return None (the caller
+        drops the task rather than showing a bogus or NaN date), and
+      - a parseable date is rolled forward to its next on-or-after-today
+        occurrence, so a past cycle reads as the upcoming one instead of
+        "N days overdue".
+
+    Returns an ISO 'YYYY-MM-DD' string, or None when there is no usable date.
+    """
+    if not isinstance(deadline_str, str):
+        return None
+    s = deadline_str.strip()
+    if len(s) < 10 or s.lower() in _NON_DATE_DEADLINES:
+        return None
+    try:
+        d = datetime.strptime(s[:10], '%Y-%m-%d')
+    except ValueError:
+        return None
+
+    today = now or datetime.now()
+    # Roll the annual deadline forward to the next occurrence on/after today.
+    while d.date() < today.date():
+        try:
+            d = d.replace(year=d.year + 1)
+        except ValueError:
+            # Feb 29 in a non-leap target year → fall back to Feb 28.
+            d = d.replace(month=2, day=28, year=d.year + 1)
+    return d.strftime('%Y-%m-%d')
+
+
 def generate_personalized_tasks(user_email):
     """
     Generate personalized roadmap tasks based on user's college list.
@@ -893,8 +937,12 @@ def generate_personalized_tasks(user_email):
             # Add scholarship tasks for schools with separate applications
             for scholarship in scholarships:
                 if scholarship.get('application_method') and 'separate' in scholarship.get('application_method', '').lower():
-                    scholarship_deadline = scholarship.get('deadline')
-                    if scholarship_deadline and scholarship_deadline not in ['Automatic', 'Auto', 'N/A']:
+                    # Roll past annual deadlines forward; drop free-text/unparseable
+                    # ones so they don't render as "overdue" or "NaN days left" (#187).
+                    scholarship_deadline = _normalize_scholarship_deadline(
+                        scholarship.get('deadline'), current_date
+                    )
+                    if scholarship_deadline:
                         tasks.append({
                             'task_id': f"scholarship_{uni_id}_{scholarship.get('name', 'general').lower().replace(' ', '_')}",
                             'university_id': uni_id,

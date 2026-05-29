@@ -5,24 +5,7 @@ import { CheckCircleIcon, CalendarIcon, ExclamationCircleIcon, SparklesIcon, Arr
 import { CheckCircleIcon as CheckCircleSolidIcon } from '@heroicons/react/24/solid';
 import { useAuth } from '../../context/AuthContext';
 import { markRoadmapTask, getRoadmapTasks, generateRoadmapTasks, updateTaskStatus } from '../../services/api';
-
-// Helper to calculate days until due and urgency color
-const getDaysUntil = (dateStr) => {
-    if (!dateStr) return null;
-    const dueDate = new Date(dateStr);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    dueDate.setHours(0, 0, 0, 0);
-    return Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
-};
-
-const getUrgencyColor = (daysUntil) => {
-    if (daysUntil === null) return 'stone';
-    if (daysUntil < 0) return 'red'; // Overdue
-    if (daysUntil <= 3) return 'red';
-    if (daysUntil <= 7) return 'amber';
-    return 'emerald';
-};
+import { getDaysUntil, getUrgencyColor, deadlineLabel } from '../../utils/roadmapDeadlines';
 
 const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
     const navigate = useNavigate();
@@ -224,10 +207,7 @@ const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
                                                     ${urgency === 'red' ? 'bg-red-100 text-red-700' :
                                                         urgency === 'amber' ? 'bg-amber-100 text-amber-700' :
                                                             'bg-emerald-100 text-emerald-700'}`}>
-                                                    {daysUntil < 0 ? `${Math.abs(daysUntil)}d overdue` :
-                                                        daysUntil === 0 ? 'Due today' :
-                                                            daysUntil === 1 ? 'Due tomorrow' :
-                                                                `${daysUntil} days left`}
+                                                    {deadlineLabel(daysUntil)}
                                                 </span>
                                                 {task.university_name && (
                                                     <span className="text-xs text-stone-500 truncate">{task.university_name}</span>
