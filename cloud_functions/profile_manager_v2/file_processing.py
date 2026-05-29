@@ -6,6 +6,7 @@ Handles PDF, DOCX, and text file extraction and cleaning.
 import io
 import logging
 import fitz  # PyMuPDF
+from pypdf import PdfReader
 from docx import Document
 
 logger = logging.getLogger(__name__)
@@ -42,30 +43,71 @@ def extract_text_from_file_content(file_content, filename):
 
 
 def _extract_pdf_text(file_content, filename):
-    """Extract text from PDF using PyMuPDF."""
+    """Extract text from a PDF.
+
+    PyMuPDF (fitz) is tried first for its high-quality layout extraction, but
+    it raises on some otherwise-readable PDFs (e.g. 'code=7: cycle in
+    resources', reproducible even on the latest PyMuPDF). When PyMuPDF fails or
+    yields no text we fall back to pypdf, which parses those files cleanly.
+    See issue #185.
+    """
+    text = _extract_pdf_text_pymupdf(file_content, filename)
+    if text and text.strip():
+        return text
+
+    logger.warning(
+        f"[PDF_EXTRACTION] PyMuPDF produced no text for {filename}; "
+        f"falling back to pypdf"
+    )
+    return _extract_pdf_text_pypdf(file_content, filename)
+
+
+def _extract_pdf_text_pymupdf(file_content, filename):
+    """Extract text from PDF using PyMuPDF. Returns None on failure."""
     try:
         pdf_doc = fitz.open(stream=file_content, filetype="pdf")
         text_parts = []
-        
+
         for page_num, page in enumerate(pdf_doc):
             # Extract text with proper layout preservation
             page_text = page.get_text("text")  # "text" mode preserves paragraphs
             if page_text.strip():
                 text_parts.append(page_text)
-        
+
         pdf_doc.close()
-        
+
         # Join pages with double newlines for clear separation
         text = "\n\n".join(text_parts)
-        
+
         # Clean up any remaining word-per-line formatting issues
         text = clean_extracted_text(text)
-        
-        logger.info(f"[PDF_EXTRACTION] Extracted {len(text)} chars from {filename}")
+
+        logger.info(f"[PDF_EXTRACTION] PyMuPDF extracted {len(text)} chars from {filename}")
         return text
-        
+
     except Exception as e:
-        logger.error(f"[PDF_EXTRACTION] Failed: {e}")
+        logger.error(f"[PDF_EXTRACTION] PyMuPDF failed for {filename}: {e}")
+        return None
+
+
+def _extract_pdf_text_pypdf(file_content, filename):
+    """Fallback PDF extractor using pypdf. Returns None on failure."""
+    try:
+        reader = PdfReader(io.BytesIO(file_content))
+        text_parts = []
+
+        for page in reader.pages:
+            page_text = page.extract_text() or ""
+            if page_text.strip():
+                text_parts.append(page_text)
+
+        text = clean_extracted_text("\n\n".join(text_parts))
+
+        logger.info(f"[PDF_EXTRACTION] pypdf extracted {len(text)} chars from {filename}")
+        return text
+
+    except Exception as e:
+        logger.error(f"[PDF_EXTRACTION] pypdf failed for {filename}: {e}")
         return None
 
 

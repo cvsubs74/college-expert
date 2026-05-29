@@ -88,7 +88,7 @@ Content to format:
 Return ONLY the formatted Markdown, no explanation."""
 
         response = client.models.generate_content(
-            model='gemini-2.0-flash-exp',
+            model='gemini-2.5-flash-lite',
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.1,
@@ -302,7 +302,7 @@ NEW PROFILE:
 Return JSON: {{"should_recompute": true/false, "reason": "brief explanation"}}"""
 
         response = client.models.generate_content(
-            model='gemini-2.0-flash-exp',
+            model='gemini-2.5-flash-lite',
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.1,

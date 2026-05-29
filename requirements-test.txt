@@ -6,3 +6,6 @@
 # but the package still has to be importable.
 pytest>=8,<9
 requests>=2.31,<3
+# pypdf is imported at module top by profile_manager_v2/file_processing.py and
+# exercised for real by test_pdf_extraction.py (fitz/docx are stubbed there).
+pypdf>=4.0.0
