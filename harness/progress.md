@@ -59,3 +59,10 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Deploy: counselor_agent auto-deploys via path-based cloudbuild-main on merge to main.
 - Note: existing saved roadmap_tasks keep old due_dates until user hits "Refresh Tasks"; stale rows render "Date TBD" via the frontend guard.
 - Follow-up surfaced by reviewer: `ApplicationsPage.jsx` has its own duplicate `getDaysUntil` (same latent NaN/TZ behavior) — candidate for consolidation onto `utils/roadmapDeadlines.js`.
+
+## 2026-05-29 14:28 — shipped #189
+- Cleanup (follow-up to #187): ApplicationsPage had its own unguarded `getDaysUntil` duplicate → NaN rendered as "Passed" / "Invalid Date".
+- Fix: import shared guarded `getDaysUntil`; lift badge presentation into exported pure `deadlineUrgencyClass` / `deadlineDaysLabel` that handle null ("Date TBD" / neutral class); guard the formatted date span.
+- PR #190 squash-merged (78c99931), branch deleted, #189 auto-closed. Both CI surfaces green; harness reviewer approved (via comment).
+- Deploy: frontend auto-deploys via cloudbuild-main (`./deploy_frontend.sh` when frontend changed) → Firebase Hosting.
+- Note: checkout had switched to `main` during the long CI gap; PR/commit were unaffected (changes lived on the pushed branch).
