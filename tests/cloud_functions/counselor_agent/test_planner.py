@@ -456,3 +456,44 @@ class TestGetCollegeContextDeduplication:
             'university_of_california_los_angeles',
         ]
         assert ctx['uc_schools'] == ['UC Berkeley', 'UCLA']
+
+
+# ---------------------------------------------------------------------------
+# _normalize_scholarship_deadline — scholarship deadlines recur annually, so a
+# past-cycle KB date must roll forward to its next occurrence (a junior should
+# never see "overdue"), and free-text / unparseable values must be dropped
+# (they were rendering as "NaN days left"). See issue #187.
+# ---------------------------------------------------------------------------
+
+class TestNormalizeScholarshipDeadline:
+    NOW = datetime(2026, 5, 28)
+
+    def test_past_annual_date_rolls_to_next_occurrence(self):
+        # Jan 16 already passed in 2026 → next occurrence is Jan 16, 2027.
+        assert p._normalize_scholarship_deadline('2026-01-16', self.NOW) == '2027-01-16'
+
+    def test_very_old_date_rolls_to_next_future_occurrence(self):
+        # The "5687d overdue" case: a stale ~2010 date → next upcoming Oct 21.
+        assert p._normalize_scholarship_deadline('2010-10-21', self.NOW) == '2026-10-21'
+
+    def test_future_date_is_unchanged(self):
+        assert p._normalize_scholarship_deadline('2026-11-01', self.NOW) == '2026-11-01'
+
+    def test_today_is_kept(self):
+        assert p._normalize_scholarship_deadline('2026-05-28', self.NOW) == '2026-05-28'
+
+    def test_iso_datetime_prefix_is_accepted(self):
+        assert p._normalize_scholarship_deadline('2026-01-16T00:00:00', self.NOW) == '2027-01-16'
+
+    @pytest.mark.parametrize('value', [
+        'Varies', 'Rolling', 'Automatic', 'Auto', 'N/A', 'TBD', '', '   ',
+        '2026', 'December', None, 12345, ['2026-01-16'],
+    ])
+    def test_unparseable_or_freetext_returns_none(self, value):
+        assert p._normalize_scholarship_deadline(value, self.NOW) is None
+
+    def test_leap_day_does_not_crash_and_returns_future(self):
+        out = p._normalize_scholarship_deadline('2024-02-29', self.NOW)
+        assert out is not None
+        rolled = datetime.strptime(out, '%Y-%m-%d')
+        assert rolled.date() >= self.NOW.date()
