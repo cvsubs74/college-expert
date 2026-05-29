@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
 import { getCollegeList, getEssayTracker, getScholarshipTracker } from '../services/api';
+import { getDaysUntil } from '../utils/roadmapDeadlines';
 import NotesAffordance from '../components/roadmap/NotesAffordance';
 import '../styles/ApplicationsPage.css';
 
@@ -11,6 +12,23 @@ import '../styles/ApplicationsPage.css';
 // that owns this logic). profile_manager_v2 does not expose /get-deadlines.
 const COUNSELOR_AGENT_URL = import.meta.env.VITE_COUNSELOR_AGENT_URL || 'https://us-east1-college-counselling-478115.cloudfunctions.net/counselor-agent';
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
+
+// Deadline-badge presentation. getDaysUntil (shared, in utils/roadmapDeadlines)
+// returns null for an unparseable date, so both helpers handle null instead of
+// falling through to "Passed" / "urgent". See issue #189.
+export const deadlineUrgencyClass = (days) => {
+    if (days === null) return 'later';
+    if (days <= 7) return 'urgent';
+    if (days <= 30) return 'soon';
+    return 'later';
+};
+
+export const deadlineDaysLabel = (days) => {
+    if (days === null) return 'Date TBD';
+    if (days > 0) return `${days} days`;
+    if (days === 0) return 'Today!';
+    return 'Passed';
+};
 
 export default function ApplicationsPage({ embedded = false }) {
     const navigate = useNavigate();
@@ -141,19 +159,6 @@ export default function ApplicationsPage({ embedded = false }) {
         return sorted[0];
     };
 
-    const getDaysUntil = (dateStr) => {
-        const date = new Date(dateStr);
-        const now = new Date();
-        const diff = Math.ceil((date - now) / (1000 * 60 * 60 * 24));
-        return diff;
-    };
-
-    const getUrgencyClass = (days) => {
-        if (days <= 7) return 'urgent';
-        if (days <= 30) return 'soon';
-        return 'later';
-    };
-
     if (loading) {
         return (
             <div className={embedded ? '' : 'essay-page'}>
@@ -213,17 +218,19 @@ export default function ApplicationsPage({ embedded = false }) {
                                             />
                                         </div>
                                         {nextDeadline && (
-                                            <div className={`deadline-badge ${getUrgencyClass(daysUntil)}`}>
+                                            <div className={`deadline-badge ${deadlineUrgencyClass(daysUntil)}`}>
                                                 <span className="deadline-plan">{nextDeadline.deadline_type}</span>
                                                 <span className="deadline-date">
-                                                    {new Date(nextDeadline.date).toLocaleDateString('en-US', {
-                                                        month: 'short',
-                                                        day: 'numeric',
-                                                        year: 'numeric'
-                                                    })}
+                                                    {daysUntil === null
+                                                        ? nextDeadline.date
+                                                        : new Date(nextDeadline.date).toLocaleDateString('en-US', {
+                                                            month: 'short',
+                                                            day: 'numeric',
+                                                            year: 'numeric'
+                                                        })}
                                                 </span>
                                                 <span className="deadline-days">
-                                                    {daysUntil > 0 ? `${daysUntil} days` : daysUntil === 0 ? 'Today!' : 'Passed'}
+                                                    {deadlineDaysLabel(daysUntil)}
                                                 </span>
                                             </div>
                                         )}
