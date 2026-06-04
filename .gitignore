@@ -114,6 +114,10 @@ frontend/test-results/
 frontend/playwright-report/
 # Playwright MCP session cache (snapshots, console logs, network traces from agent browser sessions)
 .playwright-mcp/
+# Root-level screenshots / scratch images (manual captures + agent browser screenshots)
+/*.png
+# Local git worktrees created at repo root
+/.worktrees/
 
 # Claude Code: track agent contracts, ignore ephemeral per-machine state.
 # .claude/worktrees/<id>/ are git worktree checkouts — git sees them as
