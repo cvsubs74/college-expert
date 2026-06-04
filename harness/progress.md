@@ -66,3 +66,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - PR #190 squash-merged (78c99931), branch deleted, #189 auto-closed. Both CI surfaces green; harness reviewer approved (via comment).
 - Deploy: frontend auto-deploys via cloudbuild-main (`./deploy_frontend.sh` when frontend changed) → Firebase Hosting.
 - Note: checkout had switched to `main` during the long CI gap; PR/commit were unaffected (changes lived on the pushed branch).
+
+## 2026-06-03 — KB deadline pilot (#191) + KB capture automation design (#193)
+- #191 (deadline_date pilot): PRD + design written (`docs/prd|design/kb-deadline-date.md`); draft PR #192 open. Implementation pending spec review. NOT yet built.
+- Live browser test (stratiaadmissions, wiped to clean slate) verified #185 (profile upload builds full profile), #187 (roadmap deadlines: no overdue/NaN), #189 (applications badges). Surfaced that KB scholarship deadlines are free-text → roadmap drops them; app deadlines are stale 2025 → all "Passed". Drove the #191 + #193 work.
+- #193 (epic): deep analysis of the ADK university_profile_collector (40 models/~220 fields; ~2k lines of fix_*.py repair; non-idempotent; no source registry consumed; overwrite-on-ingest with NO versioning). Design doc `docs/design/university-kb-capture-automation.md` — source registry + schema-constrained capture + yearly versioned store + Claude-workflow orchestration (hybrid). Draft PR for review. Phased rollout (versioned store first).
+- Open: cycle key convention, retention policy, confirm hybrid orchestration + Phase-1 start (versioned store).
