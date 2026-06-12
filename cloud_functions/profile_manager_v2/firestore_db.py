@@ -354,6 +354,41 @@ class FirestoreDB:
         except Exception as e:
             logger.error(f"[Firestore] Error deleting fit: {e}")
             return False
+
+    def archive_college_fit(self, user_id: str, university_id: str,
+                            fit_data: Dict, history_key: str) -> bool:
+        """Archive a fit under college_fits/{id}/history/{key}.
+
+        Mirrors the KB's universities/{id}/versions/{year} pattern — a
+        recompute never destroys what the student previously saw.
+        """
+        try:
+            ref = (self.db.collection('users').document(user_id)
+                   .collection('college_fits').document(university_id)
+                   .collection('history').document(history_key))
+            ref.set(fit_data)
+            logger.info(f"[Firestore] Archived fit history {university_id}/{history_key}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error archiving fit history: {e}")
+            return False
+
+    def get_college_fit_history(self, user_id: str, university_id: str) -> List[Dict]:
+        """All archived fits for a university, newest history key first."""
+        try:
+            ref = (self.db.collection('users').document(user_id)
+                   .collection('college_fits').document(university_id)
+                   .collection('history'))
+            entries = []
+            for doc in ref.stream():
+                data = doc.to_dict() or {}
+                data['history_key'] = doc.id
+                entries.append(data)
+            entries.sort(key=lambda e: str(e.get('history_key')), reverse=True)
+            return entries
+        except Exception as e:
+            logger.error(f"[Firestore] Error reading fit history: {e}")
+            return []
     
     # ==================== CHAT CONVERSATIONS ====================
     

@@ -26,11 +26,20 @@ def save_fit_analysis(user_id: str, university_id: str, fit_data: dict) -> dict:
     """
     try:
         db = get_db()
-        
+
+        # Archive the fit being replaced (design §3d — a recompute never
+        # destroys what the student saw). Keyed by the KB cycle year the
+        # old fit was computed against, mirroring the KB's own
+        # versions/{year} layout; pre-provenance fits key as 'pre-versioning'.
+        existing = db.get_college_fit(user_id, university_id)
+        if existing and existing.get('fit_category'):
+            history_key = str(existing.get('kb_data_year') or 'pre-versioning')
+            db.archive_college_fit(user_id, university_id, existing, history_key)
+
         # Add computed timestamp
         fit_data['computed_at'] = datetime.utcnow().isoformat()
         fit_data['university_id'] = university_id
-        
+
         success = db.save_college_fit(user_id, university_id, fit_data)
         
         if success:
@@ -107,6 +116,16 @@ def get_all_fits(user_id: str) -> List[Dict]:
         return fits
     except Exception as e:
         logger.error(f"[FIT_ANALYSIS] Get all fits failed: {e}")
+        return []
+
+
+def get_fit_history(user_id: str, university_id: str) -> List[Dict]:
+    """Archived prior fits for a university (newest first)."""
+    try:
+        db = get_db()
+        return db.get_college_fit_history(user_id, university_id)
+    except Exception as e:
+        logger.error(f"[FIT_ANALYSIS] Get fit history failed: {e}")
         return []
 
 
