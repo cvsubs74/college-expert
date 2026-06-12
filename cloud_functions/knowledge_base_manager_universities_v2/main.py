@@ -833,7 +833,9 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                 return add_cors_headers(result)
             
             # Ingest request — optional 'year' files the snapshot under that
-            # admission cycle (defaults to the current cycle, ADR 0002)
+            # admission cycle (defaults to the current cycle, ADR 0002).
+            # 'year' is an envelope field: a bare-profile POST (no 'profile'
+            # wrapper) can't carry one and gets the current cycle.
             elif 'profile' in data or '_id' in data:
                 profile = data.get('profile', data)
                 try:
@@ -841,7 +843,12 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                 except ValueError as e:
                     return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
                 result = ingest_university(profile, year=year)
-                status = 200 if result.get("success") else 400
+                if result.get("success"):
+                    status = 200
+                elif result.get("validation_errors"):
+                    status = 400  # caller sent a bad profile
+                else:
+                    status = 500  # storage failure — not the caller's fault
                 return add_cors_headers(result, status)
             
             # Chat request
