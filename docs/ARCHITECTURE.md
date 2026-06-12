@@ -212,7 +212,16 @@ All user data lives under `users/{user_email}/` subcollections. Owned by `profil
 
 ### Firestore — `universities` collection
 
-University profiles. Owned by `knowledge_base_manager_universities_v2`. Populated by offline ingestion via `scripts/` + `agents/university_profile_collector`. Schema defined in `cloud_functions/knowledge_base_manager_universities_v2/firestore_db.py`.
+University profiles, **versioned by admission cycle year** (ADR `harness/decisions/0002-university-kb-year-versioning.md`). Owned by `knowledge_base_manager_universities_v2`. Populated by offline ingestion: `agents/university_profile_collector` (ADK agent) produces `research/<id>.json`, then `scripts/ingest_universities.py --year N` POSTs each profile to the function.
+
+```
+universities/{id}                    ← CURRENT serving doc (latest cycle year)
+    data_year: int                   ← cycle year of this doc's data
+    available_years: [int]           ← which version snapshots exist
+universities/{id}/versions/{year}    ← full per-year snapshot, same shape
+```
+
+Cycle year N = applications due fall N / winter N+1. Ingest always writes the `versions/{year}` snapshot; the main doc is overwritten only when the year is ≥ the current `data_year`, so historical re-ingest never clobbers current data and yearly refreshes never destroy prior years. Reads: `GET /?id=X` (current, unchanged contract), `GET /?id=X&year=2025` (snapshot), `GET /?id=X&action=versions` (list). Search/list/batch operate on current docs only. Ingest is validated at the boundary (`versioning.validate_profile`): structural errors reject with 400; data-quality issues (unparseable or out-of-cycle deadlines, missing acceptance rate) are returned as warnings. Schema in `cloud_functions/knowledge_base_manager_universities_v2/firestore_db.py` + `versioning.py`.
 
 ### Firestore — QA collections
 
@@ -309,6 +318,7 @@ The frontend reads and writes profile fields directly. Schema changes in `profil
 
 | Date | PR | What changed | Why |
 |---|---|---|---|
+| 2026-06-12 | (this PR) | `universities` KB is year-versioned: per-cycle snapshots under `universities/{id}/versions/{year}`, main doc serves the latest year (`data_year`, `available_years` added); ingest takes optional `year` + validation gate; `GET ?year=` / `?action=versions` read APIs; `DELETE` accepts `year`; new canonical CLI `scripts/ingest_universities.py` | Yearly KB refresh used to `.set()`-overwrite each university, destroying prior cycle's data; no validation at the ingest boundary (ADR 0002) |
 | 2026-05-25 | #154 | `profile_manager_v2` — `add_university_to_list` and `remove_university_from_list` in `college_list.py` now return `college_list` (the updated list after the operation) in the success response; failure path returns `college_list: []`. Response contract: `{success, message, college_list}` | Fixes #153 — frontend `handleToggleCollegeList` was calling `setMyCollegeList(result.college_list \|\| [])` but the old response had no `college_list` field, resetting state to empty after every save. The `college_list_agent` in the hybrid agents already expected this field (defaulting to `[]`). |
 | 2026-05-23 | #143 | `profile_extraction.py` LLM schema prompt changed: `grade` now described as string `'9'-'12'` (not `integer 9-12`); post-extraction coercion added; `scripts/fix_grade_field_type.py` one-shot migration backfills existing integer grades in Firestore | Closes the schema inconsistency (#130) that survived the #123 hotfix — any new consumer that assumed `grade` is a string would re-introduce a crash without this change |
 | 2026-05-23 | #135 | Document CI/CD path-based auto-deploy behavior (both backend + frontend); correct "deploys are manual" prose | Behavior was already live but doc still described it as manual; DevOps observed the auto-deploy during PR #131 deploy (build ID 7a3fe287) |

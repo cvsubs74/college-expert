@@ -357,6 +357,30 @@ def start_research(api_key: str, prompt: str, verbose: bool = False) -> str:
     return interaction_id
 
 
+def extract_output_text(result: dict) -> str:
+    """Pull the final answer text out of a completed interaction.
+
+    The Interactions API originally returned `outputs: [{text}]`; newer
+    versions return `steps: [{type: model_output, content: [{text}]}]`.
+    Support both so the CLI survives the preview API evolving.
+    """
+    outputs = result.get("outputs", [])
+    if outputs:
+        return outputs[-1].get("text", "")
+
+    texts = [
+        c.get("text", "")
+        for step in result.get("steps", [])
+        if step.get("type") == "model_output"
+        for c in (step.get("content") or [])
+        if isinstance(c, dict) and c.get("text")
+    ]
+    if texts:
+        return texts[-1]
+
+    raise ValueError("No outputs in completed interaction")
+
+
 def poll_research(api_key: str, interaction_id: str, verbose: bool = False) -> dict:
     """Poll for research results until complete."""
     headers = {
@@ -381,13 +405,7 @@ def poll_research(api_key: str, interaction_id: str, verbose: bool = False) -> d
             elapsed = time.time() - start_time
             if verbose:
                 print(f"\n✅ Research completed in {elapsed:.1f} seconds")
-            
-            # Extract text from outputs
-            outputs = result.get("outputs", [])
-            if outputs:
-                return outputs[-1].get("text", "")
-            else:
-                raise ValueError("No outputs in completed interaction")
+            return extract_output_text(result)
                 
         elif status == "failed":
             error_msg = result.get("error", "Unknown error")

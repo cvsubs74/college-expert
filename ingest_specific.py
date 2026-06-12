@@ -1,47 +1,30 @@
 #!/usr/bin/env python3
-"""Ingest only specific university files."""
-import json
-import requests
+"""DEPRECATED — use scripts/ingest_universities.py.
+
+This script predates KB year-versioning (ADR 0002) and pointed at the
+retired v1 Elasticsearch-backed function. It now forwards to the canonical
+CLI so existing muscle memory keeps working:
+
+    python ingest_specific.py file1.json file2.json
+        ≡ python scripts/ingest_universities.py --file file1.json (per file)
+
+For directories, --year, --dry-run, see scripts/ingest_universities.py.
+"""
+import subprocess
 import sys
-import os
 from pathlib import Path
-
-CLOUD_FUNCTION_URL = "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
-
-def ingest_file(filepath: str) -> bool:
-    """Ingest a single university profile."""
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            profile = json.load(f)
-        
-        response = requests.post(
-            CLOUD_FUNCTION_URL,
-            json={"profile": profile},
-            headers={"Content-Type": "application/json"},
-            timeout=120
-        )
-        response.raise_for_status()
-        result = response.json()
-        
-        if result.get('success'):
-            print(f"✅ {Path(filepath).stem}")
-            return True
-        else:
-            print(f"❌ {Path(filepath).stem}: {result.get('error')}")
-            return False
-    except Exception as e:
-        print(f"❌ {Path(filepath).stem}: {e}")
-        return False
 
 if __name__ == "__main__":
     files = sys.argv[1:]
     if not files:
         print("Usage: python ingest_specific.py file1.json file2.json ...")
+        print("(deprecated — prefer scripts/ingest_universities.py)")
         sys.exit(1)
-    
-    success = 0
+
+    print("ingest_specific.py is deprecated; forwarding to scripts/ingest_universities.py\n")
+    script = Path(__file__).parent / 'scripts' / 'ingest_universities.py'
+    failed = 0
     for f in files:
-        if ingest_file(f):
-            success += 1
-    
-    print(f"\nIngested: {success}/{len(files)}")
+        rc = subprocess.call([sys.executable, str(script), '--file', f])
+        failed += 1 if rc else 0
+    sys.exit(1 if failed else 0)

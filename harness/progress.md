@@ -66,3 +66,18 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - PR #190 squash-merged (78c99931), branch deleted, #189 auto-closed. Both CI surfaces green; harness reviewer approved (via comment).
 - Deploy: frontend auto-deploys via cloudbuild-main (`./deploy_frontend.sh` when frontend changed) → Firebase Hosting.
 - Note: checkout had switched to `main` during the long CI gap; PR/commit were unaffected (changes lived on the pushed branch).
+
+## 2026-06-12 10:45 — year-versioned university KB (feat-kb-year-versioning, PR pending gh auth)
+- Goal session: full-codebase sweep + design/implement year-versioned university knowledgebase (ADR harness/decisions/0002-university-kb-year-versioning.md).
+- KB versioning: `universities/{id}/versions/{year}` snapshots; main doc serves latest year (back-compat proven — deployed old code reads refreshed docs fine). Ingest takes `year` + validation gate (errors 400 / quality warnings); GET `?year=` / `?action=versions`; DELETE year promotes latest remaining. New CLI `scripts/ingest_universities.py` (--dir/--file/--year/--dry-run/--only/--merge-with-current); `ingest_specific.py` deprecated to a shim (was pointing at retired v1 ES function).
+- Accuracy: `merge_cycle_refresh` overlays cycle-sensitive sections onto the rich current profile (fresh single-pass is ~3x thinner than original multi-agent collection); trends unioned by year.
+- Tests: 59 KB unit tests vs in-memory Firestore fake (kbv2_* module aliasing avoids sys.modules collision with profile_manager_v2's firestore_db) + 7 merge tests. Suite: 861 backend + 190 frontend green. Real-Firestore e2e (10 checks, sentinel id, cleaned up) passed.
+- Live demo: princeton_university archived as 2025 snapshot; merged 2026 profile promoted (acceptance 4.4→4.62, RD deadline corrected Jan 15→Jan 1, rich sections kept). Deployed function serves it correctly.
+- Bugs fixed along the way:
+  - tests/qa_agent/test_runner.py date-dependent mock (broke in June: junior_spring→junior_summer) — branch fix-qa-runner-date-dependent-test, cherry-picked here too.
+  - qa-agent-hourly-poll scheduler attemptDeadline 180s < run duration (106-237s) → false URL_TIMEOUT errors every long run; raised to 540s (gcloud, prod config).
+  - Secret Manager GEMINI_API_KEY was EXPIRED; synced new version (v2) from the working counselor-agent env var. (Key still needs proper rotation — old follow-up stands.)
+  - deep_research_cli.py broke on new Interactions API shape (outputs[] → steps[].content[]); fixed with both-shapes extractor.
+- Reviewer (subagent) approved the diff; SHOULD-FIX applied (storage failures now 500, not 400).
+- BLOCKED on user: `gh auth login` (gh was not installed; brew-installed now, unauthenticated) → then open PRs for both branches. KB function deploys via path-based cloudbuild on merge.
+- Operational follow-up (user's call, costs Gemini quota + hours): full 179-university refresh via deep_research_cli per university + `scripts/ingest_universities.py --dir ... --year 2026 --merge-with-current` after merge+deploy. Runbook: docs/university-kb-yearly-refresh.md.

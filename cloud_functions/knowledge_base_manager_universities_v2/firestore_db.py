@@ -11,28 +11,55 @@ logger = logging.getLogger(__name__)
 
 # Collection name
 COLLECTION_NAME = "universities"
+# Per-year snapshots live under universities/{id}/versions/{year}.
+# The main doc always serves the latest ingested cycle year (ADR 0002).
+VERSIONS_SUBCOLLECTION = "versions"
 
 
 class FirestoreDB:
     """Firestore database client for university profiles."""
-    
+
     def __init__(self):
         self.db = firestore.Client()
         self.collection = self.db.collection(COLLECTION_NAME)
         logger.info(f"[Firestore] Client initialized for collection: {COLLECTION_NAME}")
-    
-    def get_university(self, university_id: str) -> Optional[Dict]:
-        """Get a specific university by ID."""
+
+    def _versions(self, university_id: str):
+        return self.collection.document(university_id).collection(VERSIONS_SUBCOLLECTION)
+
+    def get_university(self, university_id: str, year: Optional[int] = None) -> Optional[Dict]:
+        """Get a university by ID — the current doc, or a specific cycle year."""
         try:
-            doc = self.collection.document(university_id).get()
+            if year is not None:
+                doc = self._versions(university_id).document(str(year)).get()
+            else:
+                doc = self.collection.document(university_id).get()
             if doc.exists:
                 data = doc.to_dict()
-                data['university_id'] = doc.id
+                data['university_id'] = university_id
                 return data
             return None
         except Exception as e:
             logger.error(f"Get university failed: {e}")
             return None
+
+    def list_university_versions(self, university_id: str) -> List[Dict]:
+        """List stored cycle-year snapshots for a university, newest first."""
+        try:
+            versions = []
+            for doc in self._versions(university_id).stream():
+                data = doc.to_dict() or {}
+                versions.append({
+                    "year": data.get('data_year') or int(doc.id),
+                    "official_name": data.get('official_name'),
+                    "indexed_at": data.get('indexed_at'),
+                    "last_updated": data.get('last_updated'),
+                })
+            versions.sort(key=lambda v: v['year'], reverse=True)
+            return versions
+        except Exception as e:
+            logger.error(f"List versions failed: {e}")
+            return []
     
     def list_universities(
         self, 
@@ -172,22 +199,84 @@ class FirestoreDB:
         }
         return state_map.get(state, state.upper() if state else None)
     
-    def save_university(self, university_id: str, data: Dict) -> bool:
-        """Save or update a university profile."""
+    def save_university(self, university_id: str, data: Dict, year: int) -> Dict:
+        """Save a university snapshot for `year` and promote it to the main
+        doc when it is the newest cycle (ADR 0002).
+
+        The snapshot under versions/{year} is always written (idempotent
+        per-year refresh). The main doc is overwritten only when
+        year >= the main doc's data_year; a legacy main doc without
+        data_year is treated as older than any versioned ingest.
+
+        Returns {"saved": bool, "promoted": bool, "available_years": [int]}.
+        """
         try:
             data['last_updated'] = datetime.now(timezone.utc).isoformat()
-            self.collection.document(university_id).set(data)
-            logger.info(f"Saved university: {university_id}")
-            return True
+            data['data_year'] = year
+
+            self._versions(university_id).document(str(year)).set(data)
+
+            main_ref = self.collection.document(university_id)
+            main_doc = main_ref.get()
+            current_year = (main_doc.to_dict() or {}).get('data_year') if main_doc.exists else None
+            promoted = current_year is None or year >= current_year
+
+            years = {v['year'] for v in self.list_university_versions(university_id)}
+            years.add(year)
+            available_years = sorted(years)
+
+            if promoted:
+                main_data = dict(data)
+                main_data['available_years'] = available_years
+                main_ref.set(main_data)
+            else:
+                main_ref.update({'available_years': available_years})
+
+            logger.info(
+                f"Saved university {university_id} year={year} "
+                f"promoted={promoted} years={available_years}"
+            )
+            return {"saved": True, "promoted": promoted, "available_years": available_years}
         except Exception as e:
             logger.error(f"Save university failed: {e}")
-            return False
-    
-    def delete_university(self, university_id: str) -> bool:
-        """Delete a university profile."""
+            return {"saved": False, "promoted": False, "available_years": []}
+
+    def delete_university(self, university_id: str, year: Optional[int] = None) -> bool:
+        """Delete a university, or one cycle-year snapshot.
+
+        Whole-university delete removes every version snapshot plus the main
+        doc. Deleting the year currently serving the main doc promotes the
+        latest remaining version; if none remain, the main doc goes too.
+        """
         try:
-            self.collection.document(university_id).delete()
-            logger.info(f"Deleted university: {university_id}")
+            main_ref = self.collection.document(university_id)
+
+            if year is None:
+                for doc in self._versions(university_id).stream():
+                    doc.reference.delete()
+                main_ref.delete()
+                logger.info(f"Deleted university: {university_id} (all versions)")
+                return True
+
+            self._versions(university_id).document(str(year)).delete()
+
+            main_doc = main_ref.get()
+            current_year = (main_doc.to_dict() or {}).get('data_year') if main_doc.exists else None
+            remaining = self.list_university_versions(university_id)
+            available_years = sorted(v['year'] for v in remaining)
+
+            if current_year == year:
+                if remaining:
+                    latest = self.get_university(university_id, year=remaining[0]['year'])
+                    latest.pop('university_id', None)
+                    latest['available_years'] = available_years
+                    main_ref.set(latest)
+                else:
+                    main_ref.delete()
+            elif main_doc.exists:
+                main_ref.update({'available_years': available_years})
+
+            logger.info(f"Deleted university {university_id} year={year}")
             return True
         except Exception as e:
             logger.error(f"Delete university failed: {e}")
