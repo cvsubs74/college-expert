@@ -15,15 +15,17 @@ export default function KbRefreshBanner({ kbUpdates, onReview }) {
   const year = material[0]?.current_kb_year;
   const storageKey = `kb_refresh_banner_dismissed_${year}`;
 
-  const [dismissed, setDismissed] = useState(() => {
-    try {
-      return year != null && localStorage.getItem(storageKey) === '1';
-    } catch {
-      return false;
-    }
-  });
+  const [dismissedNow, setDismissedNow] = useState(false);
 
-  if (!material.length || dismissed) return null;
+  // Read the stored flag at render time, not in a lazy useState init —
+  // kbUpdates often arrives after mount (parallel fetch), and a
+  // mount-time read with year=undefined would forget prior dismissals.
+  let storedDismissal = false;
+  try {
+    storedDismissal = year != null && localStorage.getItem(storageKey) === '1';
+  } catch { /* private mode — banner just reappears next session */ }
+
+  if (!material.length || dismissedNow || storedDismissal) return null;
 
   const label = cycleLabel(year);
   const n = material.length;
@@ -32,7 +34,7 @@ export default function KbRefreshBanner({ kbUpdates, onReview }) {
     try {
       if (year != null) localStorage.setItem(storageKey, '1');
     } catch { /* private mode — banner just reappears next session */ }
-    setDismissed(true);
+    setDismissedNow(true);
   };
 
   return (

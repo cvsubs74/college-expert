@@ -34,6 +34,8 @@ def save_fit_analysis(user_id: str, university_id: str, fit_data: dict) -> dict:
         existing = db.get_college_fit(user_id, university_id)
         if existing and existing.get('fit_category'):
             history_key = str(existing.get('kb_data_year') or 'pre-versioning')
+            # Best-effort: an archive failure shouldn't block the save the
+            # student asked for (failure is logged inside the db layer).
             db.archive_college_fit(user_id, university_id, existing, history_key)
 
         # Add computed timestamp

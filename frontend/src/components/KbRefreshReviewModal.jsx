@@ -103,7 +103,7 @@ export default function KbRefreshReviewModal({
                     </ul>
                     {u.projected_category_shift && (
                       <p className="mt-2 text-sm font-medium text-[#C05838]">
-                        Projected fit: {u.projected_category_shift.replace('→', '→')}
+                        Projected fit: {u.projected_category_shift}
                       </p>
                     )}
                   </div>

@@ -49,6 +49,16 @@ describe('KbRefreshBanner', () => {
     expect(onReview).toHaveBeenCalledOnce();
   });
 
+  it('remembers dismissal even when kbUpdates arrives after mount', () => {
+    // Real pages mount the banner with [] and the fetch fills it in later;
+    // the stored flag must be honored when `year` becomes known.
+    localStorage.setItem('kb_refresh_banner_dismissed_2026', '1');
+    const { rerender } = render(<KbRefreshBanner kbUpdates={[]} onReview={() => {}} />);
+    expect(screen.queryByTestId('kb-refresh-banner')).toBeNull();
+    rerender(<KbRefreshBanner kbUpdates={[MATERIAL]} onReview={() => {}} />);
+    expect(screen.queryByTestId('kb-refresh-banner')).toBeNull();
+  });
+
   it('dismissal hides the banner and is remembered per cycle year', () => {
     const { unmount } = render(<KbRefreshBanner kbUpdates={[MATERIAL]} onReview={() => {}} />);
     fireEvent.click(screen.getByText('Later'));

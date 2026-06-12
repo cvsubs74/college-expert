@@ -478,7 +478,7 @@ const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCatego
                                                 <div className="flex items-center justify-between">
                                                     <span className="text-sm font-semibold text-gray-700">{label}</span>
                                                     <span className="text-sm text-gray-600">
-                                                        {h.fit_category} · {h.match_percentage}% match
+                                                        {h.fit_category} · {h.match_percentage ?? h.match_score ?? '—'}% match
                                                     </span>
                                                 </div>
                                                 {changed && (
