@@ -88,3 +88,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Ingest: scripts/ingest_universities.py --year 2026 --merge-with-current in waves; final pass 191 ok / 0 failed.
 - Incident caught mid-run: wave 1 (43 unis) promoted over legacy docs with no archive → 2025 snapshots backfilled (148 legacy archived from prod state, 39 from research/ sources; arizona_state/colorado_state/duquesne have no 2025 snapshot — history only via trends union). Root cause fixed server-side in #199 (auto-archive legacy doc under year-1 before takeover).
 - Verification: 191/191 serving data_year=2026; 188/191 with 2025 archive; 0 bad acceptance rates; 1 deadline-less (wichita, rolling-only, warned at ingest). QA synthetic runs during+after refresh: all scenarios pass.
+
+## 2026-06-12 14:10 — #204 Fit provenance stamping + KB-staleness detection (phase 1)
+- Implementer: new fit_staleness.py — provenance stamped in calculate_fit_for_college (kb_data_year/kb_last_updated/input_snapshot); deterministic classify_kb_changes with material/minor/unknown severity; new check-fit-recomputation route returning kb_updates[]; KB batch endpoint now exposes data_year/last_updated (additive).
+- Tester evidence: posted on #204 (18 unit tests; suite 889; verify.sh PASS); acceptance boxes ticked.
+- PR: #209
+- Reviewer: approved (comment review); raise_for_status + test-name notes applied.
+- Discovered: /compute-all-fits never existed in v2 (frontend call no-ops) → filed #208.
+- Note: gh token lacks 'project' scope → board status not moved; run `gh auth refresh -s project,read:org` when convenient.

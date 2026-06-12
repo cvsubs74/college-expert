@@ -13,6 +13,7 @@ from google import genai
 from google.genai import types
 from firestore_db import get_db
 from essay_copilot import fetch_university_profile
+from fit_staleness import build_kb_provenance
 
 logger = logging.getLogger(__name__)
 
@@ -900,9 +901,13 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
         # Calculate comprehensive fit using PURE LLM reasoning
         # Pass BOTH the text content AND the full profile JSON
         fit_analysis = calculate_fit_with_llm(profile_content, university_data, intended_major, profile_data_clean)
-        
+
+        # Stamp which KB vintage produced this fit (+ its load-bearing
+        # inputs) so staleness is detectable after yearly KB refreshes.
+        fit_analysis.update(build_kb_provenance(university_data))
+
         logger.info(f"[FIT_COMP] Calculated fit for {user_id} -> {university_id}: {fit_analysis['fit_category']} ({fit_analysis['match_percentage']}%)")
-        
+
         return fit_analysis
         
     except Exception as e:

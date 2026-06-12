@@ -888,6 +888,8 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                             "summary": u.get('summary'),
                             "media": u.get('media'),
                             "profile": u.get('profile'),
+                            "data_year": u.get('data_year'),
+                            "last_updated": u.get('last_updated'),
                             "logo_url": u.get('logo_url') or (u.get('profile', {}).get('logo_url') if u.get('profile') else None)
                         })
                     
