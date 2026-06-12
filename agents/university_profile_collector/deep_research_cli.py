@@ -244,47 +244,51 @@ def create_slug(university_name: str) -> str:
     return slug
 
 
+def _looks_like_profile(obj) -> bool:
+    """A real university profile, not a stray JSON fragment (e.g. a lone
+    analyst_takeaway object) — the response prose can contain several JSON
+    blocks and grabbing the first one corrupted 5/191 files in the 2026 run."""
+    return isinstance(obj, dict) and 'metadata' in obj and '_id' in obj
+
+
 def extract_json_from_response(text: str, output_path: Path = None) -> dict:
-    """Extract JSON from response text, handling markdown code blocks.
-    
-    If extraction fails, saves raw response to a debug file.
+    """Extract the university-profile JSON from response text.
+
+    Collects every parseable JSON candidate (direct parse, markdown code
+    blocks, brace-matched objects) and returns the first profile-shaped one;
+    falls back to the largest candidate when none look like a profile.
+    If extraction fails entirely, saves the raw response to a debug file.
     """
-    # Try direct JSON parse first
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
-    
-    # Try to extract from markdown code block (```json)
-    if "```json" in text:
-        start = text.find("```json") + 7
-        end = text.find("```", start)
-        if end > start:
-            json_text = text[start:end].strip()
-            try:
-                return json.loads(json_text)
-            except json.JSONDecodeError:
-                pass
-    
-    # Try to find all code blocks and check each for JSON
+    candidates = []
+
+    def consider(json_text):
+        try:
+            obj = json.loads(json_text)
+        except json.JSONDecodeError:
+            return
+        if isinstance(obj, dict):
+            candidates.append(obj)
+
+    # Direct parse
+    consider(text)
+
+    # Markdown code blocks
     import re
-    code_blocks = re.findall(r'```(?:\w*)\n?(.*?)```', text, re.DOTALL)
-    for block in code_blocks:
+    for block in re.findall(r'```(?:\w*)\n?(.*?)```', text, re.DOTALL):
         block = block.strip()
         if block.startswith('{'):
-            try:
-                return json.loads(block)
-            except json.JSONDecodeError:
-                continue
-    
-    # Try to find JSON object in text (find matching braces)
-    start = text.find("{")
-    if start >= 0:
-        # Find matching closing brace
+            consider(block)
+
+    # Every top-level brace-matched object in the text
+    pos = 0
+    while True:
+        start = text.find("{", pos)
+        if start < 0:
+            break
         brace_count = 0
         in_string = False
         escape_next = False
-        
+        end_index = -1
         for i, char in enumerate(text[start:], start):
             if escape_next:
                 escape_next = False
@@ -292,7 +296,7 @@ def extract_json_from_response(text: str, output_path: Path = None) -> dict:
             if char == '\\':
                 escape_next = True
                 continue
-            if char == '"' and not escape_next:
+            if char == '"':
                 in_string = not in_string
             if not in_string:
                 if char == '{':
@@ -300,20 +304,23 @@ def extract_json_from_response(text: str, output_path: Path = None) -> dict:
                 elif char == '}':
                     brace_count -= 1
                     if brace_count == 0:
-                        json_text = text[start:i+1]
-                        try:
-                            return json.loads(json_text)
-                        except json.JSONDecodeError:
-                            break
-    
-    # Last resort: try rfind for simple case
-    end = text.rfind("}") + 1
-    if start >= 0 and end > start:
-        try:
-            return json.loads(text[start:end])
-        except json.JSONDecodeError:
-            pass
-    
+                        end_index = i
+                        break
+        if end_index < 0:
+            break
+        consider(text[start:end_index + 1])
+        pos = end_index + 1
+
+    # Prefer a profile-shaped candidate; otherwise the largest one.
+    for obj in candidates:
+        if _looks_like_profile(obj):
+            return obj
+    if candidates:
+        biggest = max(candidates, key=lambda o: len(json.dumps(o)))
+        print(f"\n⚠️  No profile-shaped JSON found; returning largest candidate "
+              f"({len(json.dumps(biggest))} chars, keys: {sorted(biggest)[:6]})")
+        return biggest
+
     # Save raw response for debugging
     if output_path:
         raw_path = output_path.with_suffix('.raw.txt')
@@ -322,7 +329,7 @@ def extract_json_from_response(text: str, output_path: Path = None) -> dict:
         print(f"\n⚠️  Raw response saved to: {raw_path}")
         print(f"   Response length: {len(text)} characters")
         print(f"   First 500 chars: {text[:500]}...")
-    
+
     raise ValueError("Could not extract valid JSON from response. Check the .raw.txt file.")
 
 

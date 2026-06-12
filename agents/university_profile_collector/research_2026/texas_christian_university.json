@@ -1,6 +1,480 @@
 {
-  "social_environment": "Upbeat, energetic, and heavily influenced by Greek life and Division I Big 12 athletics. Football games are central to fall social life. The student body is generally described as welcoming, spirited, and relatively politically conservative compared to coastal peers.",
-  "transportation_impact": "Located in a suburban setting about 4 miles from downtown Fort Worth, the 302-acre campus is highly walkable. Fort Worth provides a booming job market and excellent internships in the DFW metroplex.",
-  "research_impact": "Classified as an R2: Doctoral University with High Research Activity, TCU spent approximately $24 million on research in 2023. Undergraduates frequently secure research opportunities early, especially in the College of Science & Engineering.",
-  "_id": "texas_christian_university"
+  "_id": "texas_christian_university",
+  "metadata": {
+    "official_name": "Texas Christian University",
+    "location": {
+      "city": "Fort Worth",
+      "state": "Texas",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Texas Christian University (TCU) is a prominent private research university located in a vibrant suburban setting of Fort Worth. It balances a strong liberal arts foundation with highly-ranked pre-professional programs, particularly in business and nursing, surrounded by intense school spirit and Division I Big 12 athletics.",
+    "market_position": "Mid-sized Elite Private Research University (R2)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 105,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Early Decision acceptance rates (69%) are significantly higher than Regular Decision (44.5%).",
+        "implication": "Applicants confident that TCU is their first choice should absolutely apply ED to maximize their chances of admission."
+      },
+      {
+        "category": "Culture",
+        "insight": "Greek life and athletics are dominant social forces, with Greek participation at 40-50%.",
+        "implication": "Students seeking a traditional, spirited 'southern' college experience will thrive, while those looking for a quiet, indie environment may need to seek out specific sub-communities."
+      },
+      {
+        "category": "Academic",
+        "insight": "Demonstrated interest is actively tracked and factored into admissions decisions.",
+        "implication": "Applicants must engage with the university (tours, college fairs, email interactions) to ensure their application receives the maximum possible boost."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Highly spirited and animated, deeply intertwined with Big 12 tailgating and a large Greek system. Students report a strong sense of community and 'southern hospitality.'",
+      "transportation_impact": "The 302-acre campus is highly walkable and nestled in a tree-lined residential neighborhood, located just 4 miles from downtown Fort Worth, providing easy access to city internships and amenities.",
+      "research_impact": "Classified as an R2 Doctoral University with high research activity. Undergraduates have ample opportunities to engage in faculty-led research, backed by $24 million in NSF R&D funding."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 44.5,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 81.1,
+      "admits_class_size": 2488,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for undergraduate admission through 2027. If submitted, scores are superscored.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 69.0,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 22307,
+        "admits_total": 9925,
+        "enrolled_total": 2453,
+        "acceptance_rate_overall": 44.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3707,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 753,
+          "waitlist_admit_rate": 20.3,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate saw a massive surge to 20.3% in 2024."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 20517,
+        "admits_total": 8740,
+        "enrolled_total": 2488,
+        "acceptance_rate_overall": 42.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 28.5,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3183,
+          "accepted_spots": 974,
+          "admitted_from_waitlist": 273,
+          "waitlist_admit_rate": 8.6,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.78,
+        "notes": "Average unweighted GPA for admitted students is approximately 3.78."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1150-1340",
+        "sat_reading_middle_50": "580-680",
+        "sat_math_middle_50": "560-670",
+        "act_composite_middle_50": "26-31",
+        "submission_rate": 22.0,
+        "policy_note": "SAT submission rate is 22%; ACT submission rate is 21%."
+      },
+      "demographics": {
+        "first_gen_percentage": 19.0,
+        "legacy_percentage": null,
+        "international_percentage": 5.0,
+        "geographic_breakdown": [
+          {
+            "region": "Texas",
+            "percentage": 48.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 47.0
+          },
+          {
+            "region": "International",
+            "percentage": 5.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8910,
+            "admits": 3660,
+            "acceptance_rate": 41.0
+          },
+          "women": {
+            "applicants": 13397,
+            "admits": 6265,
+            "acceptance_rate": 46.7
+          }
+        },
+        "racial_breakdown": {
+          "white": null,
+          "black_african_american": null,
+          "hispanic_latino": null,
+          "asian": null,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": "Christian Church (Disciples of Christ)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Neeley School of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants should have a strong math background and leadership extracurriculars. Transfers require high GPAs.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Ambitious, networking-oriented, corporate-driven leaders.",
+        "majors": [
+          {
+            "name": "Business",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 10803",
+              "ECON 10223",
+              "ECON 10233",
+              "MATH 10283"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Must demonstrate computer skills competency by achieving Microsoft Specialist Certification in PowerPoint and Excel.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission to upper-division major courses requires completion of lower-division gateways with at least a 2.75 GPA."
+          }
+        ]
+      },
+      {
+        "name": "Harris College of Nursing & Health Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Nursing applicants must declare on their initial application due to strict clinical capacity limits.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Compassionate, academically rigorous students aiming for frontline healthcare.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Strict CPR and clinical background checks required before clinicals.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer to Nursing is extremely difficult/not guaranteed due to clinical space limitations."
+          }
+        ]
+      },
+      {
+        "name": "Bob Schieffer College of Communication",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing advertising, PR, or media with an interest in hands-on agency experience (e.g., Roxo student agency).",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Creative, outgoing, and media-savvy communicators.",
+        "majors": [
+          {
+            "name": "Strategic Communication",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "STCO 23113",
+              "STCO 23123",
+              "MATH 10043"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Must earn a C or higher in each gateway course and maintain a combined 2.5 GPA in gateways to continue.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular major (one of the top 3 on campus)."
+          }
+        ]
+      },
+      {
+        "name": "College of Science and Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Pre-med students face rigorous coursework; excellent fit for students ready for high-intensity science tracks.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Analytical, premed-focused, and highly disciplined.",
+        "majors": [
+          {
+            "name": "Biology (Pre-Med)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Introductory STEM classes"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Introductory science courses are frequently described by students as rigorous 'weed-out' classes."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "ApplyTexas",
+      "TCU Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Early Decision 1"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires one 300-500 word essay chosen from 4 prompts (Mission Statement/Ethical Leadership, Inclusivity/Diversity, Significant Person/Experience, or Overcoming Failure). An optional 'Freedom of Expression' creative upload is also available."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of Secondary School Record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Character/Personal Qualities",
+        "Extracurricular Activities",
+        "First Generation",
+        "Volunteer Work",
+        "Demonstrated Interest"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "TCU values 'fit' heavily, searching for students who embody their mission of ethical leadership and global citizenship."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "If planning to pursue Nursing, apply directly to the major; internal transfers are nearly impossible due to clinical space constraints.",
+      "Liberal Arts and Humanities majors generally have slightly less competitive entry metrics than the Neeley School of Business.",
+      "Leverage the optional 'Freedom of Expression' upload to showcase unique talents (art, poetry, business portfolios) to differentiate your application."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "TCU does NOT allow you to be admitted into an alternate major via application; students are admitted into the university overall, though access to certain impacted programs (like Business/Nursing) is evaluated immediately."
+  },
+  "financials": {
+    "tuition_model": "Flat rate tuition for 12-18 credit hours",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 61740.0,
+        "total_coa": 83662.0,
+        "housing": 16700.0
+      },
+      "out_of_state": {
+        "tuition": 61740.0,
+        "total_coa": 83662.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Blind for Domestic; Need-Aware for International",
+    "average_need_based_aid": 34975.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 81.0,
+    "scholarships": [
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Full tuition; Requires an application to the John V. Roach Honors College for consideration.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Tuition reduction.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Faculty Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Tuition reduction.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Fine Arts Performance-Based Scholarships",
+        "type": "Merit",
+        "amount": "$2,000 - $6,000",
+        "deadline": "",
+        "benefits": "Financial aid for Fine Arts majors in return for production work/portfolio review.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 3, 4, or 5 depending on the exam.",
+      "exceptions": [],
+      "usage": "Can be used to satisfy specific, general, or elective degree requirements. Maximum of 66 transfer credits allowed."
+    },
+    "ib_policy": {
+      "general_rule": "Awards 9 to 24 credits for Higher Level (HL) exams with scores of 4-7.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TCU Transfer Equivalency Guide",
+        "TCU Transfer Credit Calculator"
+      ],
+      "restrictions": "No credit for courses with a grade lower than C-. Maximum of 66 hours accepted from a 4-year institution."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school curriculum (5+ AP/IB courses typical for successful applicants).",
+      "Authentic essays demonstrating a commitment to ethical leadership.",
+      "Consistent demonstrated interest (visiting campus, attending virtual sessions, opening emails).",
+      "Strong character references and evidence of community service/volunteerism."
+    ],
+    "common_activities": [
+      "Heavy participation in Greek life (fraternities/sororities).",
+      "Division I Big 12 Athletics tailgating and school spirit events.",
+      "Intramural sports (ranked #1 nationally by Princeton Review).",
+      "Community service and faith-based volunteer organizations."
+    ],
+    "essay_tips": [
+      "Use the 'Inclusive Environment' prompt to define your specific community and tell a story about fostering belonging.",
+      "Avoid clich\u00e9s if writing about the 'Overcoming Failure' prompt; focus heavily on the learning outcome.",
+      "Take advantage of the optional 'Freedom of Expression' upload to provide a tangible example of your passions (e.g., an art portfolio or business link)."
+    ],
+    "red_flags": [
+      "Applying without demonstrating any prior interest (stealth applications).",
+      "Applying for internal transfer into competitive majors (like Business) without stellar grades in prerequisite gateway courses."
+    ],
+    "insights": [
+      "Students highly praise the accessible faculty and personalized attention, a rarity for a school with Division I athletics.",
+      "The administration is strict on campus rules in residence halls, reflecting its values-centered foundation."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 76188,
+    "employment_rate_2yr": 81.0,
+    "grad_school_rate": 24.0,
+    "top_employers": [
+      "Amazon",
+      "Accenture",
+      "Deloitte",
+      "Bell Helicopter",
+      "CAF Capital",
+      "Dallas Stars"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.3,
+    "graduation_rate_4_year": 74.0,
+    "graduation_rate_6_year": 85.6
+  }
 }

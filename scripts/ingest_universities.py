@@ -89,6 +89,16 @@ def main():
         if fixed:
             print(f"  norm  {path.name}: {fixed} fraction-style percent fields → percents")
 
+        # Validate the FRESH collection before any merge: a fragment file
+        # (broken extraction) merged onto the rich base looks like a
+        # successful ingest but silently delivers no refresh at all.
+        fresh_errors, _ = validate_profile(profile, year)
+        if fresh_errors:
+            print(f"  FAIL  {path.name}: fresh collection invalid (re-collect): "
+                  f"{'; '.join(fresh_errors)}")
+            failed += 1
+            continue
+
         if args.merge_with_current:
             try:
                 resp = requests.get(args.url, params={"id": profile.get('_id')}, timeout=60)

@@ -1,6 +1,584 @@
 {
-  "category": "Culture",
-  "insight": "LMU emphasizes Jesuit and Marymount traditions, focusing heavily on social justice, community service, and ethical leadership.",
-  "implication": "Successful applicants highlight community service, ethics, and a clear alignment with the mission of being 'men and women for and with others' in their supplemental essays.",
-  "_id": "loyola_marymount_university"
+  "_id": "loyola_marymount_university",
+  "metadata": {
+    "official_name": "Loyola Marymount University",
+    "location": {
+      "city": "Los Angeles",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Loyola Marymount University (LMU) is a premier private Catholic university rooted in the Jesuit and Marymount traditions, located in the Silicon Beach hub of Los Angeles. It is highly regarded for its robust programs in film, business, and engineering, and distinguishes itself through a strong institutional commitment to ethical leadership, social justice, and holistic, whole-person education.",
+    "market_position": "Elite Private / Jesuit",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 91,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Early Action and Early Decision offer significant admissions advantages.",
+        "implication": "Students serious about attending LMU should utilize the ED or EA rounds, as the ED acceptance rate (62%) and EA rate (52%) historically far exceed the overall 40-45% acceptance rate."
+      },
+      {
+        "category": "Academic",
+        "insight": "Highly impacted programs, particularly Film and Television Production, are virtually impossible to transfer into internally.",
+        "implication": "Applicants desiring to study Film Production must apply directly to the School of Film and Television as incoming freshmen."
+      },
+      {
+        "category": "Culture",
+        "insight": "Strong emphasis on service and social justice.",
+        "implication": "Prospective students should highlight community service, ethical leadership, and alignment with Jesuit values in their supplemental essays."
+      },
+      {
+        "category": "Financial",
+        "insight": "LMU does not meet 100% of demonstrated financial need, averaging around 73% of need met.",
+        "implication": "Lower-income students may face a significant gap in affordability despite the availability of merit and need-based aid."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant campus life heavily reliant on student-run clubs, Greek life, and organizations to foster connections. A strong community feel rooted in inclusivity and social justice is present, though some note isolation outside of organizational involvement.",
+      "transportation_impact": "Located on a bluff in Westchester, West Los Angeles overlooking the Pacific Ocean and situated close to the Silicon Beach tech hub, providing unparalleled access to internships in tech, film, and entertainment.",
+      "research_impact": "Strong undergraduate research culture facilitated by initiatives like the Summer Undergraduate Research Program (SURP), allowing students to conduct faculty-led research over six weeks."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.451,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.479,
+      "admits_class_size": 1541,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional. There is no minimum GPA or test score required, but submitted scores are reviewed holistically along with writing ability, extracurriculars, and recommendations.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.62,
+          "class_fill_percentage": 0.2
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.52,
+          "class_fill_percentage": 0.44
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 23089,
+        "admits_total": 10409,
+        "enrolled_total": 1541,
+        "acceptance_rate_overall": 0.451,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.148,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 6802,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 222,
+          "waitlist_admit_rate": 0.033,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist dynamics show extreme volatility year-over-year depending on yield."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 23361,
+        "admits_total": 9413,
+        "enrolled_total": 1535,
+        "acceptance_rate_overall": 0.403,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.163,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 8398,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 404,
+          "waitlist_admit_rate": 0.048,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.97,
+        "notes": "Average unweighted GPA of admitted students is approximately 3.92."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1300-1460",
+        "sat_reading_middle_50": "650-720",
+        "sat_math_middle_50": "650-740",
+        "act_composite_middle_50": "29-32",
+        "submission_rate": 0.31,
+        "policy_note": "20% submitted SAT scores, 11% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.16,
+        "legacy_percentage": null,
+        "international_percentage": 0.0869,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (California)",
+            "percentage": 0.66
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.34
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9307,
+            "admits": 4505,
+            "acceptance_rate": 0.484
+          },
+          "women": {
+            "applicants": 13782,
+            "admits": 5904,
+            "acceptance_rate": 0.428
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.3818,
+          "black_african_american": 0.0732,
+          "hispanic_latino": 0.2538,
+          "asian": 0.1127,
+          "native_american_alaskan": 0.0001,
+          "pacific_islander": 0.0011,
+          "two_or_more_races": 0.0896,
+          "unknown": 0.0007,
+          "non_resident_alien": 0.0869
+        },
+        "religious_affiliation": "Catholic"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Bellarmine College of Liberal Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students passionate about the humanities, social sciences, and social justice.",
+        "housing_profile": "Access to First-Gen Forever LLC and numerous theme housing options.",
+        "student_archetype": "Civically engaged scholars, future educators, and policy advocates.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.44,
+            "prerequisite_courses": [
+              "PSYC 1000 General Psychology"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Must declare by the end of first sophomore semester. Internal transfers must earn a minimum grade of C in PSYC 1000 and maintain a 3.0 cumulative GPA.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "Statistical Methods for Psychology",
+                "Research Methods",
+                "Brain and Behavior",
+                "Critical Thinking"
+              ],
+              "electives": [
+                "Cognitive Neuroscience",
+                "Social Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Business Administration",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Perfect for entrepreneurial students looking to leverage LA's Silicon Beach for internships.",
+        "housing_profile": "Standard undergraduate housing, business-themed LLC availability varies.",
+        "student_archetype": "Innovative, ethically-minded future corporate leaders and startup founders.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BCOR 3510 Marketing and Business Communications",
+                "MRKT 3512 Customer Insights",
+                "MRKT 3513 Rethinking the Marketplace"
+              ],
+              "electives": [
+                "MRKT 4574 Entertainment Marketing",
+                "MRKT 4573 Sports Marketing",
+                "MRKT 4531 Creative Brand Management",
+                "MRKT 4521 Adaptive Media and Analytics"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Marketing major includes specific pathways like A-LIST, COIN, and M-School."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A minimum grade of C (2.0) must be earned in core foundational courses. Maximum of two attempts allowed for core finance courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "FNCE 1401 Planning for a Career in Finance",
+                "FNCE 3400 Fundamentals of Corporate Finance",
+                "FNCE 3415 Valuation and Financial Modeling",
+                "FNCE 3420 Investments"
+              ],
+              "electives": [
+                "FNCE 3440 Mergers and Acquisitions",
+                "FNCE 3456 Entertainment Finance",
+                "FNCE 4430 Capital Markets",
+                "FNCE 4491 Student Investment Fund: Security Analysis"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "School of Film and Television",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.1,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For elite, highly creative students fully committed to the entertainment industry.",
+        "housing_profile": "Access to specific creative and film-oriented communities.",
+        "student_archetype": "Future directors, producers, and screenwriters seeking hands-on, Los Angeles-based industry exposure.",
+        "majors": [
+          {
+            "name": "Film and Television Production",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": "10%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Extremely competitive. Requires portfolio/audition submission.",
+            "admissions_pathway": "Direct Admit Only",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PROD 1010 Production Bootcamp",
+                "SCWR 120 Storytelling for the Screen",
+                "FTVS 1010 Art of Cinema",
+                "RECA 367 Sound for Filmmakers"
+              ],
+              "electives": [
+                "PROD 380 Music Video Production",
+                "PROD 381 Production Design",
+                "PROD 464 Visual Effects"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The Film and Television Production major DOES NOT accept internal transfer applications due to unprecedented enrollment levels."
+          }
+        ]
+      },
+      {
+        "name": "College of Communication & Fine Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students targeting careers in PR, communications, fine arts, and performance.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Communicators, artists, and performers.",
+        "majors": [
+          {
+            "name": "Theatre Arts",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers require a video audition, 2 letters of recommendation from LMU faculty, and a personal statement.",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "THEA 120 Basic Stagecraft",
+                "THEA 124 Costume Craft",
+                "THEA 126 Lighting and Sound Craft",
+                "THEA 370 Directing for the Theatre",
+                "THEA 490 Senior Thesis Project"
+              ],
+              "electives": [
+                "THEA 210 Scene Study",
+                "THEA 113 Voice and Speech"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Recommended GPA for internal transfer is 3.5, absolute minimum is 3.0."
+          }
+        ]
+      },
+      {
+        "name": "Frank R. Seaver College of Science and Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "STEM-focused students looking for smaller class sizes and personalized faculty research opportunities.",
+        "housing_profile": "Seaver College Living Learning Community (SC-LLC) for first-year STEM majors.",
+        "student_archetype": "Analytical, research-oriented problem solvers.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Early Decision 1"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action"
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-08",
+        "is_binding": true,
+        "notes": "Early Decision 2"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "School of Film and Television",
+        "requirement_type": "Portfolio / Audition",
+        "deadline": "",
+        "details": "Required for Film and Television Production, Screenwriting, and Animation majors."
+      },
+      {
+        "target_program": "Theatre Arts",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Required for admission to the Theatre Arts program."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Record",
+        "Rigor of secondary school record",
+        "Writing ability / Essay"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Recommendations",
+        "Character/personal qualities",
+        "Volunteer work / Service"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Strong emphasis on applicants who demonstrate alignment with Jesuit values, ethics, and a commitment to serving others."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action (EA) to non-bindingly increase acceptance chances (historical 52% EA vs overall 40-45% rate).",
+      "If 100% committed, apply Early Decision (ED) for a massive statistical boost (62% acceptance rate).",
+      "Avoid applying to Film and Television Production as a 'backdoor'\u2014it is heavily impacted and does not accept internal transfers."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "LMU considers alternate majors if space is unavailable in the primary major choice. Choosing an alternate major outside the highly impacted School of Film and Television or specific engineering disciplines provides a safety net during holistic review."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 61867.0,
+        "total_coa": 89401.0,
+        "housing": 22026.0
+      },
+      "out_of_state": {
+        "tuition": 61867.0,
+        "total_coa": 89401.0,
+        "housing": 22026.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Aware (Meets partial need)",
+    "average_need_based_aid": 41796.0,
+    "average_merit_aid": 10762.0,
+    "percent_receiving_aid": 0.4407,
+    "scholarships": [
+      {
+        "name": "Arrupe Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2025-01-15",
+        "benefits": "Tuition assistance for incoming freshmen based on academic merit.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "LMU Achievement Awards",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2025-01-15",
+        "benefits": "Tuition reduction.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Jesuit Community Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2025-01-15",
+        "benefits": "For graduates of Jesuit high schools.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Grants credit for scores of 4 or 5 on approved AP exams.",
+      "exceptions": [
+        "A maximum of 2 AP exams can be used to fulfill Core Exploration requirements."
+      ],
+      "usage": "Advanced standing, prerequisite clearing, and core fulfillment."
+    },
+    "ib_policy": {
+      "general_rule": "Awards up to 6 semester hours (8 for lab sciences) for scores of 5 or higher on Higher Level (HL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST (for California Community Colleges)",
+        "Transfer Agreements on Registrar site"
+      ],
+      "restrictions": "Open-learning courses only transfer as elective credit. No credit for remedial or non-regionally accredited courses. Maximum of two applicable courses of approved graduate credit allowed for graduate transfer."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school curriculum with strong grades (3.9+ GPA).",
+      "Demonstrated passion for service and social justice (alignment with Jesuit values).",
+      "Exceptional creative portfolios for SFTV or CCFA applicants."
+    ],
+    "common_activities": [
+      "Community service and volunteerism",
+      "Campus ministry or religious involvement",
+      "Arts, theater, or film production",
+      "Student government",
+      "Part-time work or internships"
+    ],
+    "essay_tips": [
+      "Highlight commitment to the 'Education of the Whole Person' (Cura Personalis).",
+      "Discuss specific examples of service, ethics, and desire to impact the global community.",
+      "Connect your personal narrative to the unique opportunities in Silicon Beach or the Los Angeles area."
+    ],
+    "red_flags": [
+      "Lack of demonstrated interest in community or service.",
+      "Inconsistent grades without explanation.",
+      "Applying to highly impacted majors (like Film) without a strong, polished portfolio."
+    ],
+    "insights": [
+      "LMU students heavily emphasize that the university's location near Silicon Beach provides unparalleled internship opportunities, especially in tech, marketing, and entertainment.",
+      "The 'weeder' culture exists in early STEM and pre-med tracks, though overall the academic environment is described as collaborative rather than cutthroat."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78039,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 0.23,
+    "top_employers": [
+      "Apple",
+      "Bank of America",
+      "Ernst & Young",
+      "Google",
+      "Lionsgate",
+      "Marriott International",
+      "NBC Universal",
+      "Salesforce",
+      "Walt Disney Company"
+    ],
+    "loan_default_rate": 0.018
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.8885,
+    "graduation_rate_4_year": 0.66,
+    "graduation_rate_6_year": 0.79
+  }
 }

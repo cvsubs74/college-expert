@@ -1,6 +1,486 @@
 {
-  "category": "Culture",
-  "insight": "While it severed official ties with the Tennessee Baptist Convention in 2007, Belmont remains a self-described 'Christ-centered' community.",
-  "implication": "Students seeking a vibrant, creative environment within a religiously affiliated context will find a strong cultural fit, while those averse to faith-based foundations should visit before committing.",
-  "_id": "belmont_university"
+  "_id": "belmont_university",
+  "metadata": {
+    "official_name": "Belmont University",
+    "location": {
+      "city": "Nashville",
+      "state": "Tennessee",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Belmont University is a private, mid-sized Christian institution in Nashville, Tennessee, renowned for its strong ties to the entertainment, music, and healthcare industries [cite: 1, 2]. Leveraging its 'Music City' location on Music Row, Belmont offers unparalleled access and experiential learning opportunities for students pursuing careers in music business and audio engineering [cite: 2].",
+    "market_position": "Industry-Focused Private University (Entertainment & Healthcare)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 213,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While the overall acceptance rate is high (95.3%), admission into specific programs like the Mike Curb College of Entertainment & Music Business or Top Merit Scholarships is highly competitive [cite: 3, 4].",
+        "implication": "Applicants should view Belmont as an accessible target academically, but must prepare rigorous portfolios or apply Early Action I to compete for top spots and aid."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus environment is deeply integrated with the Nashville music scene and places a strong emphasis on Christian values and whole-person formation [cite: 1, 2, 5].",
+        "implication": "Ideal for students seeking a tight-knit, creatively driven community with a faith-based foundation and direct industry networking."
+      },
+      {
+        "category": "Financial",
+        "insight": "Belmont has a high sticker price ($64,800 COA) but provides financial aid to 93% of its students, with an average institutional grant of around $22,922 [cite: 1, 6].",
+        "implication": "Families should look beyond the sticker price and focus on Early Action deadlines to maximize merit scholarship consideration."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A vibrant, creative community where students are heavily involved in music, arts, and over 160 student organizations, strongly influenced by the proximity to downtown Nashville [cite: 1, 7].",
+      "transportation_impact": "Situated on 75 to 84 acres just two miles southwest of downtown Nashville, virtually all traffic is rerouted around the campus to maintain a tranquil learning environment [cite: 8, 9].",
+      "research_impact": "Research and experiential learning are highly pragmatic and industry-oriented, featuring state-of-the-art facilities like Dolby Atmos mixing rooms, student-run record labels, and clinical simulation centers [cite: 2, 10, 11]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.953,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.923,
+      "admits_class_size": 1852,
+      "is_test_optional": true,
+      "test_policy_details": "Belmont is test-optional. Students may choose whether to submit SAT or ACT scores, and applications are reviewed holistically without penalty for opting out [cite: 12, 13].",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 9165,
+        "admits_total": 8732,
+        "enrolled_total": 1852,
+        "acceptance_rate_overall": 0.953,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.212,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Yield calculated from 1,852 enrolled out of 8,732 admitted [cite: 14]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 8950,
+        "admits_total": 8624,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.963,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 33,
+          "accepted_spots": 26,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.787,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data highly limited; only 33 offered spots [cite: 3]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.962,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Acceptance rate from historic aggregator [cite: 3]."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.88,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.832,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.83,
+        "notes": "Average high school GPA is 3.76 unweighted or 3.83 reported [cite: 3, 13, 15]. 44% of enrolled freshmen had a 4.00+ [cite: 14]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1160-1350",
+        "sat_reading_middle_50": "600-690",
+        "sat_math_middle_50": "560-660",
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 0.55,
+        "policy_note": "18% submitted SAT, 37% submitted ACT [cite: 16]."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.08,
+        "legacy_percentage": null,
+        "international_percentage": 0.01,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 2829,
+            "admits": 2677,
+            "acceptance_rate": 0.946
+          },
+          "women": {
+            "applicants": 6336,
+            "admits": 6055,
+            "acceptance_rate": 0.955
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.766,
+          "black_african_american": 0.056,
+          "hispanic_latino": 0.081,
+          "asian": 0.029,
+          "native_american_alaskan": 0.002,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.041,
+          "unknown": 0.014,
+          "non_resident_alien": 0.01
+        },
+        "religious_affiliation": "Christian (Nondenominational)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Mike Curb College of Entertainment & Music Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students aspiring to work in the global music industry, sound engineering, or entertainment management. Highly competitive.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Creative, industry-driven, entrepreneurial.",
+        "majors": [
+          {
+            "name": "Music Management / Music Business",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolios may be required for specific music-related tracks.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major at Belmont with 263 degrees awarded recently [cite: 17, 18]."
+          },
+          {
+            "name": "Audio Engineering Technology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "DAW / Protools Class",
+              "Audio Recording II"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AET 1050 Foundations of Audio Production",
+                "AET 1380 Survey of Audio Engineering Technology",
+                "AET 2300 Audio Signal Flow",
+                "AET 2410 Audio Processing Techniques",
+                "AET 4230 Auditory Perception, and Hearing Science",
+                "AET 4380 Business & Audio"
+              ],
+              "electives": [
+                "AET 2090 Audio Recording I",
+                "AET 2560 Sound Reinforcement I",
+                "AET 3610 Game Audio Design and Implementation"
+              ],
+              "total_units": 120,
+              "major_units": 50
+            },
+            "notable_professors": [
+              "Leslie Richter (Audio Engineering)",
+              "Dr. Wesley Bulla (Graduate Audio Engineering)",
+              "Eric Tarr (Audio Engineering Technology)",
+              "Michael Janas (Audio Engineering Technology)"
+            ],
+            "notes": "World's only ABET-accredited audio engineering technology degree program [cite: 19, 20]."
+          }
+        ]
+      },
+      {
+        "name": "Gordon E. Inman College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students committed to healthcare and patient advocacy.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Compassionate, scientifically minded.",
+        "majors": [
+          {
+            "name": "Registered Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular and highly regarded programs at the university, producing 179 graduates recently [cite: 17, 21]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application",
+      "Belmont Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Early Action I. Priority deadline for top merit scholarships like Archer Presidential [cite: 4, 12]."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Early Action II. Deadline for departmental scholarships [cite: 12]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Regular Decision. Priority deposit deadline for admitted students to claim room type [cite: 12]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One optional 500-word essay: 'What else, if anything, would you wish the Admissions Committee to know about your candidacy?' [cite: 22]."
+      },
+      {
+        "target_program": "Global Honors Program",
+        "requirement_type": "Essays",
+        "deadline": "2025-11-01",
+        "details": "Requires one supplemental essay (500-750 words) choosing between three prompts demonstrating curiosity and global perspective [cite: 22]."
+      },
+      {
+        "target_program": "College of Music and Performing Arts / Watkins College of Art",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "2025-12-01",
+        "details": "Requires audition or portfolio submission. Applicants are first admitted to the university, then to the college [cite: 12]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Record",
+        "High School GPA"
+      ],
+      "secondary_factors": [
+        "Demonstrated Interest",
+        "Extracurricular Activities",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Belmont strongly evaluates 'Demonstrated Interest' through campus visits, virtual events, and college fairs [cite: 12, 23]. Interviews are only required for top merit scholarship finalists [cite: 4, 24]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply during Early Action I (Nov 1) to maximize chances for full-ride scholarships and competitive arts/music business programs [cite: 4, 12].",
+      "Engage heavily with admissions counselors and take campus tours; demonstrated interest is officially tracked and considered [cite: 12]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants who are academically admissible to Belmont but fail the audition/portfolio review for the College of Music and Performing Arts or Watkins College of Art may still enroll at Belmont in a different major outside those colleges [cite: 12]."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate (Same for In-State and Out-of-State)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 42540.0,
+        "total_coa": 64800.0,
+        "housing": 15010.0
+      },
+      "out_of_state": {
+        "tuition": 42540.0,
+        "total_coa": 64800.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware / Merit-Heavy",
+    "average_need_based_aid": 22922.0,
+    "average_merit_aid": 22922.0,
+    "percent_receiving_aid": 0.93,
+    "scholarships": [
+      {
+        "name": "Archer Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full COA",
+        "deadline": "2025-11-01",
+        "benefits": "Covers full tuition, room, board, books, and fees for four years. Highly competitive (top 2% of applicants).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "William Randolph Hearst Endowed Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full COA",
+        "deadline": "2025-11-01",
+        "benefits": "Covers cost of attendance for a student from a diverse background.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "General Academic Merit Scholarships",
+        "type": "Merit",
+        "amount": "$3,000 - $10,000",
+        "deadline": "Rolling",
+        "benefits": "Tuition discount based on academic profile.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict Maximums",
+    "ap_policy": {
+      "general_rule": "Awards credit for qualifying scores, but strictly caps total alternative credit.",
+      "exceptions": [],
+      "usage": "A maximum of 24 credit hours combined may be earned through AP, IB, and CLEP exams [cite: 25, 26]."
+    },
+    "ib_policy": {
+      "general_rule": "Awards individual course credits for HL exams based on departmental matrix.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Tennessee Community Colleges Equivalency Tool"
+      ],
+      "restrictions": "Maximum of 64 semester hours accepted from community/junior colleges. Outside exams (AP/IB) must be sent directly from testing agencies, not high school transcripts. D+ or lower grades do not transfer [cite: 26, 27]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong unweighted GPA (average is 3.83) [cite: 15].",
+      "Demonstrated interest via visits or counselor connections [cite: 12].",
+      "For arts/music: Outstanding portfolios or auditions [cite: 12]."
+    ],
+    "common_activities": [
+      "Music production/performance",
+      "Songwriting",
+      "Church/religious youth group involvement",
+      "Healthcare volunteering"
+    ],
+    "essay_tips": [
+      "Use the optional essay to address any academic discrepancies or highlight specific reasons for choosing Belmont's unique industry-focused programs [cite: 22].",
+      "If applying to Global Honors, showcase intellectual curiosity and a desire for interdisciplinary learning [cite: 22]."
+    ],
+    "red_flags": [
+      "Lack of demonstrated interest.",
+      "Applying after Nov 1 if you require significant financial aid."
+    ],
+    "insights": [
+      "Belmont is often considered the best pipeline to the Nashville music industry. Audio Engineering students note that the program is highly practical but has distinct 'weed out' courses late in the curriculum [cite: 28]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 56202,
+    "employment_rate_2yr": 0.97,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Vanderbilt University Medical Center",
+      "HCA Healthcare",
+      "The Walt Disney Company",
+      "Ascension",
+      "Universal Music Group"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.84,
+    "graduation_rate_4_year": 0.61,
+    "graduation_rate_6_year": 0.72
+  }
 }

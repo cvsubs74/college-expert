@@ -1,58 +1,479 @@
 {
-  "platforms": [
-    "Common App",
-    "Coalition App",
-    "QuestBridge"
-  ],
-  "application_deadlines": [
-    {
-      "plan_type": "ED",
-      "date": "2025-11-01",
-      "is_binding": true,
-      "notes": "Decisions released in mid-December."
+  "_id": "university_of_pennsylvania",
+  "metadata": {
+    "official_name": "University of Pennsylvania",
+    "location": {
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "type": "Private"
     },
-    {
-      "plan_type": "RD",
-      "date": "2026-01-05",
-      "is_binding": false,
-      "notes": "Decisions released in late March / early April."
-    }
-  ],
-  "supplemental_requirements": [
-    {
-      "target_program": "All",
-      "requirement_type": "Essays",
-      "deadline": "",
-      "details": "Three short essays: A 'Thank You' note to someone you haven't thanked (150-200 words), a 'Community' exploration essay (150-200 words), and a 'School-specific' academic interest essay (150-200 words)."
-    },
-    {
-      "target_program": "Dual-Degree Programs",
-      "requirement_type": "Essays",
-      "deadline": "",
-      "details": "Additional program-specific essay (400-650 words) addressing interdisciplinary knowledge, vision, and plans."
-    }
-  ],
-  "holistic_factors": {
-    "primary_factors": [
-      "Course rigor",
-      "GPA",
-      "Standardized test scores",
-      "Application essay",
-      "Recommendations",
-      "Character/Personal qualities"
-    ],
-    "secondary_factors": [
-      "Class rank",
-      "Interview",
-      "Extracurricular activities",
-      "Talent/Ability"
-    ],
-    "essay_importance": "Critical",
-    "demonstrated_interest": "Not Considered",
-    "interview_policy": "Recommended",
-    "legacy_consideration": "Strong",
-    "first_gen_boost": "Moderate",
-    "specific_differentiators": "Penn highly values its Early Decision round for yield protection (accounting for over 50% of the class). Legacy students make up ~13.6-14% of the admitted pool."
+    "last_updated": "2024-06-17",
+    "report_source_files": []
   },
-  "_id": "university_of_pennsylvania"
+  "strategic_profile": {
+    "executive_summary": "The University of Pennsylvania is a prestigious Ivy League research university known for integrating a robust liberal arts curriculum with world-class pre-professional programs. Anchored by the renowned Wharton School and the School of Engineering, Penn emphasizes interdisciplinary learning and collaborative innovation.",
+    "market_position": "Elite Private / Ivy League",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 7,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Early Decision provides a massive structural advantage, historically yielding an acceptance rate of ~14% compared to a Regular Decision rate of ~4%.",
+        "implication": "Applicants confident in Penn as their top choice should apply ED, as the university fills roughly half its incoming class through this round."
+      },
+      {
+        "category": "Academic",
+        "insight": "Internal transfers between UPenn's four undergraduate schools are highly restricted and competitive, particularly for the Wharton School.",
+        "implication": "Applicants should apply directly to the school that best aligns with their high school transcript and extracurricular narrative, rather than attempting a 'backdoor' major strategy."
+      },
+      {
+        "category": "Financial",
+        "insight": "Penn meets 100% of demonstrated need with no-loan packages, and average grant awards exceed $66,000.",
+        "implication": "Despite a sticker price exceeding $92,000, UPenn is highly affordable for low- and middle-income students."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, pre-professional, and collaborative urban campus deeply integrated with the city of Philadelphia.",
+      "transportation_impact": "Located in West Philadelphia's University City, offering excellent access to urban amenities and public transit.",
+      "research_impact": "Classified as an R1 institution with $2.17 billion in research expenditures, offering extensive undergraduate research opportunities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.0487,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.0321,
+      "admits_class_size": 2400,
+      "is_test_optional": false,
+      "test_policy_details": "Standardized testing is required beginning with the 2025-2026 admissions cycle. A waiver process is available for applicants facing significant testing hardships.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 8683,
+          "admits": 1235,
+          "acceptance_rate": 0.1422,
+          "class_fill_percentage": 0.51
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 72544,
+        "admits_total": 3570,
+        "enrolled_total": 2395,
+        "acceptance_rate_overall": 0.0487,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.68,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 2958,
+          "accepted_spots": 2288,
+          "admitted_from_waitlist": 66,
+          "waitlist_admit_rate": 0.0288,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 65235,
+        "admits_total": 3508,
+        "enrolled_total": 2400,
+        "acceptance_rate_overall": 0.054,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3010,
+          "accepted_spots": 2250,
+          "admitted_from_waitlist": 40,
+          "waitlist_admit_rate": 0.018,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record low acceptance rate at the time. Early Decision acceptance rate was 14.22%."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 59465,
+        "admits_total": 3474,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.058,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3351,
+          "accepted_spots": 2500,
+          "admitted_from_waitlist": 147,
+          "waitlist_admit_rate": 0.059,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 54588,
+        "admits_total": 3549,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.065,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3205,
+          "accepted_spots": 2300,
+          "admitted_from_waitlist": 391,
+          "waitlist_admit_rate": 0.17,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.9,
+        "notes": "59% of enrolled Class of 2028 students possessed a perfect 4.0 GPA; 91% ranked in the top 10% of their graduating class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1560",
+        "sat_reading_middle_50": "740-770",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-36",
+        "submission_rate": null,
+        "policy_note": "Penn superscores the SAT across multiple test dates."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.21,
+        "legacy_percentage": 0.136,
+        "international_percentage": 0.13,
+        "geographic_breakdown": [
+          {
+            "region": "Pennsylvania",
+            "percentage": 0.145
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": null,
+          "black_african_american": null,
+          "hispanic_latino": null,
+          "asian": null,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.04,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education with opportunities to take courses across Penn's professional schools.",
+        "housing_profile": "Required on-campus living for first two years in the College Houses.",
+        "student_archetype": "Intellectually curious students with interdisciplinary academic passions.",
+        "majors": []
+      },
+      {
+        "name": "The Wharton School",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.04,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students with exceptional quantitative skills and demonstrated leadership or entrepreneurial experience.",
+        "housing_profile": "Required on-campus living for first two years in the College Houses.",
+        "student_archetype": "Pre-professional, highly ambitious students focused on business, economics, or public policy.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S. in Economics",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1400",
+              "ECON 0100"
+            ],
+            "minimum_gpa_to_declare": 3.4,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers must apply after their first year or middle of second year, taking 4 CUs per semester.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "curriculum": {
+              "core_courses": [
+                "FNCE 1000",
+                "FNCE 1010"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Itay Goldstein (Finance/Economics)",
+              "Dr. Winston Wei Dou (Asset Pricing/Capital Markets)",
+              "Dr. Wendy De La Rosa (Behavioral Science/Finance)",
+              "Dr. Jeremy Siegel (Finance/Macroeconomics)",
+              "Dr. Daniel G. Garrett (Public Finance)"
+            ],
+            "notes": "Wharton internal transfer restricts applicants to only those with a minimum 3.4 GPA and no pass/fail grades on required coursework."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering and Applied Science (SEAS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.03,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students with advanced math and physics backgrounds pursuing technical innovation.",
+        "housing_profile": "Required on-campus living for first two years in the College Houses.",
+        "student_archetype": "Innovators and problem solvers strong in STEM.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CIS 1100",
+                "CIS 1200",
+                "CIS 1210",
+                "CIS 1600",
+                "CIS 2400",
+                "CIS 2610",
+                "CIS 2620",
+                "CIS 3200",
+                "CIS 4480",
+                "CIS 4710",
+                "MATH 1400",
+                "MATH 1410"
+              ],
+              "electives": [],
+              "total_units": 37,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.06,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students dedicated to clinical healthcare, nursing research, and public health policy.",
+        "housing_profile": "Required on-campus living for first two years in the College Houses.",
+        "student_archetype": "Empathetic, science-oriented students committed to patient care.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Clinical experiences begin in the spring of the sophomore year.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 1010",
+                "NURS 1590",
+                "NURS 3340"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Decisions released mid-December."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-05",
+        "is_binding": false,
+        "notes": "Decisions released in late March / early April."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires a thank-you note written to someone in the applicant's life, alongside school-specific prompts."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course rigor",
+        "GPA",
+        "Standardized test scores",
+        "Essays",
+        "Recommendations",
+        "Character qualities"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Class rank",
+        "Interview"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Strong",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Penn looks heavily for interdisciplinary interest and a collaborative ethos."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to the school that best matches your high school curriculum, as internal transfers are heavily restricted."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to the College of Arts and Sciences as a 'backdoor' to the Wharton School is not recommended. Wharton requires specific prerequisites (like MATH 1400) and a minimum 3.4 GPA for internal transfers, and allows students to transfer only once."
+  },
+  "financials": {
+    "tuition_model": "Private",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 60920,
+        "total_coa": 92288,
+        "housing": 12640
+      },
+      "out_of_state": {
+        "tuition": 60920,
+        "total_coa": 92288,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 66764,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "William J. Levy Endowed Scholarship",
+        "type": "Need",
+        "amount": null,
+        "deadline": "",
+        "benefits": "Provides need-based support.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Awards credit or advanced course standing for specific AP exams (often requiring a score of 5).",
+      "exceptions": [],
+      "usage": "AP credits cannot be used to fulfill General Education Requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit based on departmental review of official IB scores.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "No credit awarded for college-level coursework completed while enrolled in high school."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Near-perfect unweighted GPA with ultimate course rigor.",
+      "High standardized test scores (1510+ SAT).",
+      "Demonstrated interdisciplinary intellectual curiosity and leadership."
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Express a highly collaborative mindset, fitting the 'Penn ethos'.",
+      "Tailor school-specific essays tightly to the intended undergraduate college."
+    ],
+    "red_flags": [],
+    "insights": [
+      "The Wharton School and pre-professionalism heavily influence campus culture.",
+      "Internal transferring between schools is difficult; students must pick their primary fit initially."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 124586,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Apple",
+      "Atlassian",
+      "Google",
+      "Microsoft"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": null,
+    "graduation_rate_4_year": 0.87,
+    "graduation_rate_6_year": 0.968
+  }
 }

@@ -1,6 +1,471 @@
 {
-  "category": "Selectivity",
-  "insight": "Diverging in-state and out-of-state acceptance rates, alongside an increasingly active waitlist (admitting 500 students for the Class of 2029 compared to just 15 the year prior).",
-  "implication": "Out-of-state applicants face a significantly stiffer statistical disadvantage (~54% acceptance) compared to in-state residents (~76%), and the university is actively utilizing its waitlist to manage yield amidst record application numbers (>52,000).",
-  "_id": "university-of-south-carolina"
+  "_id": "university-of-south-carolina",
+  "metadata": {
+    "official_name": "University of South Carolina",
+    "location": {
+      "city": "Columbia",
+      "state": "SC",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of South Carolina is a flagship, R1 public research university known for its elite #1-ranked International Business program and highly praised first-year student experience. It offers a vibrant urban campus life with strong Greek presence and robust research funding.",
+    "market_position": "State Flagship / Major Public Research University",
+    "admissions_philosophy": "Holistic with a strong emphasis on core GPA, academic rigor, and capacity limits of intended majors.",
+    "us_news_rank": 121,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates have dropped from nearly 69% in 2019 to 60.2% in 2024, reflecting an increasingly competitive applicant pool.",
+        "implication": "USC is transitioning from a reliable safety school to a solid target/reach for out-of-state students, especially in competitive majors."
+      },
+      {
+        "category": "Academic",
+        "insight": "Internal transfer to the Darla Moore School of Business requires a 3.25 GPA and Calculus, while Nursing requires a 3.50 GPA and allows only one grade below C in science courses.",
+        "implication": "Students applying undeclared or attempting to switch into impacted majors face significant academic hurdles and 'weeder' courses."
+      },
+      {
+        "category": "Financial",
+        "insight": "High-achieving out-of-state students can receive Stamps, McNair, or Horseshoe Scholars awards, which reduce tuition to the in-state rate and offer up to $225,000 in 4-year value.",
+        "implication": "USC offers tremendous ROI for elite out-of-state applicants willing to compete for its top scholar programs."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and spirited environment heavily influenced by SEC athletics and a prominent Greek Village system.",
+      "transportation_impact": "Urban campus supported by the 'Carolina Cab' program, offering free student rides within a 5-mile radius.",
+      "research_impact": "Classified as an R1 institution, generating over $309 million in annual sponsored research awards."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.602,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.661,
+      "admits_class_size": 7829,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional. Standardized test scores are considered if submitted, but primary emphasis is placed on GPA and rigor of secondary school record.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 52703,
+        "admits_total": 31701,
+        "enrolled_total": 7829,
+        "acceptance_rate_overall": 0.602,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.23,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 7332,
+          "accepted_spots": 2915,
+          "admitted_from_waitlist": 500,
+          "waitlist_admit_rate": 0.068,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admission saw a notable spike in 2024 compared to previous virtually zero-admit years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 46682,
+        "admits_total": 28706,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.615,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 7233,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 15,
+          "waitlist_admit_rate": 0.0021,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Highly volatile waitlist cycle with only 15 students admitted."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.69,
+        "notes": "GPA represents average high school core GPA of enrolled students."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1360",
+        "sat_reading_middle_50": "600-690",
+        "sat_math_middle_50": "580-680",
+        "act_composite_middle_50": "26-32",
+        "submission_rate": 0.33,
+        "policy_note": "33% of students submitted SAT scores; roughly 17% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.2,
+        "legacy_percentage": null,
+        "international_percentage": 0.01,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.54
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.45
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 20662,
+            "admits": 11377,
+            "acceptance_rate": 0.551
+          },
+          "women": {
+            "applicants": 32041,
+            "admits": 20324,
+            "acceptance_rate": 0.634
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.689,
+          "black_african_american": 0.104,
+          "hispanic_latino": 0.0629,
+          "asian": 0.0406,
+          "native_american_alaskan": 0.00148,
+          "pacific_islander": 0.000623,
+          "two_or_more_races": 0.0411,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Darla Moore School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for high-achieving applicants seeking top-tier supply chain or international business programs.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Pre-professional, ambitious, and globally minded.",
+        "majors": [
+          {
+            "name": "International Business",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGL 101",
+              "ENGL 102",
+              "MATH 122",
+              "MATH 141",
+              "STAT 206",
+              "ACCT 225",
+              "MGSC 290"
+            ],
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": [
+              "MATH 122",
+              "MATH 141"
+            ],
+            "special_requirements": "Internal transfers must have 15+ credits, a 3.25 GPA, and a C or better in Calculus.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25,
+            "curriculum": {
+              "core_courses": [
+                "MATH 122",
+                "STAT 206",
+                "ACCT 225",
+                "MGSC 290"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Joao Albino-Pimentel (International Business)",
+              "Marc van Essen (International Business)",
+              "Beth Renninger (Marketing)",
+              "Mark Ferguson (Management Science)",
+              "Leslie Hendrix (Statistics/Management Science)"
+            ],
+            "notes": "Ranked #1 undergraduate International Business program for 27 consecutive years."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For highly dedicated pre-health students; extreme competition for upper-division clinical placement.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Clinical, science-oriented, disciplined.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.7,
+            "prerequisite_courses": [
+              "BIOL 243",
+              "BIOL 244",
+              "BIOL 250",
+              "CHEM 102"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [
+              "BIOL 243",
+              "BIOL 244",
+              "BIOL 250",
+              "CHEM 102",
+              "NURS 112",
+              "NURS 216"
+            ],
+            "special_requirements": "Requires interview for upper-division progression. Only one grade below C allowed in science/nursing courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 243",
+                "BIOL 244",
+                "BIOL 250",
+                "CHEM 102",
+                "NURS 112",
+                "NURS 216"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Upper division admits only 270-300 students per cycle. Average competitive progression GPA is 3.6 - 3.8."
+          }
+        ]
+      },
+      {
+        "name": "McCausland College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Good for undecided applicants or those pursuing liberal arts, sciences, or seeking a gateway into the university.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Broad academic interests.",
+        "majors": [
+          {
+            "name": "Undeclared",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students have an Undeclared Academic Advisor and pay a $250/semester enrichment fee.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Undeclared students lose Academic Common Market (ACM) tuition benefits while without a major."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "USC Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-10-15",
+        "is_binding": false,
+        "notes": "Recommended deadline to ensure consideration for general university merit-based scholarships."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Final regular decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "South Carolina Honors College / Top Scholars",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-15",
+        "details": "A separate Honors College application supplement must be completed."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Class Rank",
+        "Rigor of Secondary School Record",
+        "Standardized Test Scores"
+      ],
+      "secondary_factors": [
+        "Choice of Major"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "South Carolina residents graduating in the top 10% of their high school class are guaranteed admission."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "If applicants are borderline for highly selective programs like Business or Nursing, applying 'Undeclared' in the College of Arts & Sciences serves as an entry point.",
+      "List a less impacted second-choice major, as USC reviews applications for alternate majors if space in the first choice is full."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "USC formally considers an applicant's second-choice major if they are not admitted to their primary major. Admissions explicitly advises students to utilize this option for maximum consideration."
+  },
+  "financials": {
+    "tuition_model": "In-State vs Out-of-State flat rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 12688,
+        "total_coa": 32190,
+        "housing": 13534
+      },
+      "out_of_state": {
+        "tuition": 36298,
+        "total_coa": 55800,
+        "supplemental_tuition": 23610
+      }
+    },
+    "aid_philosophy": "Significant Merit-Based Aid Available",
+    "average_need_based_aid": 7193,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.8,
+    "scholarships": [
+      {
+        "name": "Stamps Scholars Award",
+        "type": "Merit",
+        "amount": "$24,700/year + in-state tuition rate",
+        "deadline": "2024-11-15",
+        "benefits": "Includes an additional $15,000 enrichment fund. Estimated four-year value of $225,000.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "McNair Scholars Award",
+        "type": "Merit",
+        "amount": "$22,000/year + in-state tuition rate",
+        "deadline": "2024-11-15",
+        "benefits": "Includes a $12,000 enrichment fund. Estimated four-year value of over $198,000.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Horseshoe Scholars Award",
+        "type": "Merit",
+        "amount": "$11,000/year + in-state tuition rate",
+        "deadline": "2024-11-15",
+        "benefits": "Estimated four-year value of more than $142,000.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Alumni Scholars Award",
+        "type": "Merit",
+        "amount": "Significant Tuition Reduction",
+        "deadline": "2024-11-15",
+        "benefits": "Four-year value over $130,000. Requires Honors College application.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or higher generally receive credit.",
+      "exceptions": [
+        "Some STEM and foreign language tests may require a 4 or 5 for optimal placement."
+      ],
+      "usage": "Used for course credit and advanced standing."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4-7 on Higher Level (HL) exams receive credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "SC TRAC",
+        "Course equivalency transfer table"
+      ],
+      "restrictions": "A maximum of 30 semester hours of non-traditional credit may be applied. The last 25% of degree requirements must be completed in residence."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school curriculum without a significant drop in senior year grades.",
+      "Strong standardized test scores (if applying test-optional, a highly competitive GPA is required).",
+      "Strategic major alignment to balance ambition with college capacity limits."
+    ],
+    "common_activities": [
+      "Greek Life",
+      "SEC Athletics Fandom / Tailgating",
+      "Honors College Seminars"
+    ],
+    "essay_tips": [],
+    "red_flags": [
+      "Applying to Darla Moore or Nursing without top-tier STEM/Calculus readiness."
+    ],
+    "insights": [
+      "Students praise the 'University 101' program as a cornerstone of adapting to college.",
+      "The Honors College is highly acclaimed for offering elite liberal arts intimacy within a massive state school."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 67741,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Prisma Health",
+      "Medical University of South Carolina",
+      "Atrium Health",
+      "Lexington Medical Center",
+      "BlueCross BlueShield",
+      "US Army",
+      "Wells Fargo"
+    ],
+    "loan_default_rate": 0.033,
+    "student_retention": {
+      "freshman_retention_rate": 0.9,
+      "graduation_rate_4_year": null,
+      "graduation_rate_6_year": 0.77
+    }
+  }
 }

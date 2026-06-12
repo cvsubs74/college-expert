@@ -1,6 +1,442 @@
 {
-  "category": "Culture",
-  "insight": "There is no Greek life; the social scene revolves around intramural sports, community service (Setons, Campus Kids), the outdoors, and Gonzaga basketball.",
-  "implication": "Students seeking traditional fraternity/sorority life may not find it a fit, but those looking for a cohesive, service-oriented community will thrive.",
-  "_id": "gonzaga_university"
+  "_id": "gonzaga_university",
+  "metadata": {
+    "official_name": "Gonzaga University",
+    "location": {
+      "city": "Spokane",
+      "state": "Washington",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Gonzaga University is a private, mid-sized Jesuit institution known for its strong community, high retention rate (93%), and competitive direct-admit nursing program. Emphasizing a holistic, mission-driven education, the university boasts excellent post-graduate outcomes with alumni securing median 10-year earnings of $80,896.",
+    "market_position": "Elite Private Catholic/Jesuit",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 98,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Nursing is heavily impacted and requires Direct Admission.",
+        "implication": "Applicants interested in healthcare must commit to the November 15 Early Action deadline, as internal transfers into nursing are prohibited."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "The waitlist admit rate hovers between 24% and 27%.",
+        "implication": "Unlike Ivy League institutions, waitlisted applicants at Gonzaga have a statistically viable chance of eventual admission if they opt-in and show continued interest."
+      },
+      {
+        "category": "Culture",
+        "insight": "78% of students participate in research or internships, and the campus has a massive intramural and varsity sports culture.",
+        "implication": "Students looking for a balance of collaborative academics, strong athletics (Pac-12 bound), and outdoor recreation will fit the institutional archetype."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A collaborative, tight-knit campus deeply rooted in Jesuit traditions of service. Strong emphasis on intramural sports, outdoor activities (hiking, skiing), and Division I basketball (the 'Kennel').",
+      "transportation_impact": "Located a half-mile from downtown Spokane with access to an international airport and rideshares, though out-of-state students may find the inland Northwest winters and distance from coastal cities isolating.",
+      "research_impact": "Despite a primarily undergraduate focus, 78% of students engage in academic research, real-world projects, or internships."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.817,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.708,
+      "admits_class_size": 1251,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional indefinitely. Homeschooled students with fewer than 30 college credits and international students requiring English proficiency must submit SAT or ACT scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 8759,
+        "admits_total": 7155,
+        "enrolled_total": 1246,
+        "acceptance_rate_overall": 0.817,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.174,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 615,
+          "accepted_spots": 243,
+          "admitted_from_waitlist": 59,
+          "waitlist_admit_rate": 0.243,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist admit rate calculated based on the number of students who accepted their spot on the waitlist."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 9530,
+        "admits_total": 7239,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.76,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": 241,
+          "admitted_from_waitlist": 66,
+          "waitlist_admit_rate": 0.274,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.76,
+        "notes": "3.76 is the reported median GPA for the enrolled Fall 2024 freshman class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1200-1385",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "27-31",
+        "submission_rate": 0.22,
+        "policy_note": "Test-optional policy artificially inflates reported score averages, as only competitive scorers submit."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.26,
+        "legacy_percentage": null,
+        "international_percentage": 0.049,
+        "geographic_breakdown": [
+          {
+            "region": "Washington",
+            "percentage": 0.464
+          },
+          {
+            "region": "California",
+            "percentage": 0.201
+          },
+          {
+            "region": "Oregon",
+            "percentage": 0.096
+          },
+          {
+            "region": "Colorado",
+            "percentage": 0.055
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.691,
+          "black_african_american": 0.013,
+          "hispanic_latino": 0.136,
+          "asian": 0.07,
+          "native_american_alaskan": 0.005,
+          "pacific_islander": 0.003,
+          "two_or_more_races": 0.081,
+          "unknown": 0.065,
+          "non_resident_alien": 0.049
+        },
+        "religious_affiliation": "Roman Catholic (Jesuit)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.12,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students highly committed to a four-year nursing track who possess rigorous high school science and math backgrounds.",
+        "housing_profile": null,
+        "student_archetype": "Driven, clinically-focused, and service-oriented.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": "~12%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 years of high school Mathematics",
+              "4 years of high school Natural/Physical Laboratory Science"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires an additional 800-word supplemental essay on motivations for nursing.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Direct admission only. Students may not switch into the nursing program from another major once enrolled at the university."
+          }
+        ]
+      },
+      {
+        "name": "School of Business Administration",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a blend of Jesuit ethical education and practical, globally-focused corporate training.",
+        "housing_profile": null,
+        "student_archetype": "Collaborative, networking-focused future leaders.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 260 Principles of Accounting I",
+                "ACCT 261 Principles of Accounting II",
+                "BUSN 230 Statistics",
+                "BMIS 235 Management Information Systems",
+                "ECON 201 Microeconomics",
+                "ECON 202 Macroeconomics"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Requires a minimum 2.0 GPA across the six lower-division business core courses to progress."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in a broad liberal arts foundation integrated with undergraduate research.",
+        "housing_profile": null,
+        "student_archetype": null,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYC 206 Scientific Principles of Psychology"
+            ],
+            "special_requirements": "Must earn a B- or better in PSYC 206 to complete the major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 101 General Psychology",
+                "PSYC 202 Statistics for Psychology",
+                "PSYC 206 Scientific Principles of Psychology"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Gonzaga Transfer Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Mandatory deadline for direct-admit Nursing."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires one primary short-answer essay (300 words) focusing on community impact or Jesuit values."
+      },
+      {
+        "target_program": "Nursing",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-15",
+        "details": "Requires an additional 800-word essay explaining the applicant's choice to pursue nursing."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA and Grade Trends",
+        "Character and Community Involvement"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Interviews are highly recommended for any student applying with an unweighted GPA below 3.2 or an SAT below 1150."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action for Nursing, as it is the only pathway into the program.",
+      "If undecided but interested in STEM, apply to Engineering; internal transfers into Engineering later can delay graduation.",
+      "Use the interview to add context to a lower GPA, as the university explicitly flags sub-3.2 applicants as prime interview candidates."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Gonzaga allows alternate majors, but direct-admit Nursing strictly denies internal transfer requests. Students interested in healthcare but lacking a highly competitive profile may consider applying to Biology or Health Sciences as an alternate."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 55480,
+        "total_coa": 76693,
+        "housing": 15730
+      },
+      "out_of_state": {
+        "tuition": 55480,
+        "total_coa": 76693,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 39876,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.99,
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2024-11-15",
+        "benefits": "High-value merit scholarship recognizing elite academic achievement.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Trustees Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2024-11-15",
+        "benefits": "Merit aid based on GPA and course rigor.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 are required to earn course credit.",
+      "exceptions": [],
+      "usage": "A 4 grants introductory credit, while a 5 may fulfill specific major requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 5 or higher on Higher Level exams yield credit.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Students transferring with approved Associate degrees (AA/AS) can waive significant portions of the University Core."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A demonstrated commitment to social justice and community service.",
+      "Strong academic rigor, specifically math and science for STEM/Nursing.",
+      "A desire for a collaborative rather than cutthroat academic environment."
+    ],
+    "common_activities": [
+      "Volunteerism (Moment of Magic, Campus Kids)",
+      "Intramural Sports",
+      "Outdoor recreation (Skiing at Mt. Spokane, hiking)",
+      "Zags Men's Basketball attendance"
+    ],
+    "essay_tips": [
+      "Highlight genuine, long-term commitments to community service.",
+      "Showcase an understanding of 'Cura Personalis' (care for the whole person)."
+    ],
+    "red_flags": [
+      "A purely transactional approach to academics without community involvement."
+    ],
+    "insights": [
+      "Spokane's location offers great outdoor life but can feel isolating for students seeking major metropolitan internships without traveling."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 80896,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 0.197,
+    "top_employers": [
+      "Providence Health & Services/Swedish",
+      "The Boeing Company",
+      "Deloitte",
+      "Gonzaga University",
+      "United States Armed Forces",
+      "Seattle Children's Hospital",
+      "Moss Adams"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.93,
+    "graduation_rate_4_year": 0.77,
+    "graduation_rate_6_year": 0.86
+  }
 }

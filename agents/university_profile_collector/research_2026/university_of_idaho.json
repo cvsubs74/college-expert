@@ -1,6 +1,518 @@
 {
-  "category": "Academic",
-  "insight": "U of I is an R1 research institution where 70% to 75% of undergraduates participate in research, heavily supported by external grants and unique facilities like the Taylor Wilderness Research Station.",
-  "implication": "Applicants interested in STEM, natural resources, and agricultural sciences have unparalleled access to well-funded, hands-on field research early in their academic careers [cite: 2, 3, 7, 8].",
-  "_id": "university_of_idaho"
+  "_id": "university_of_idaho",
+  "metadata": {
+    "official_name": "University of Idaho",
+    "location": {
+      "city": "Moscow",
+      "state": "Idaho",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Founded in 1889, the University of Idaho is the state's premier land-grant, national research university [cite: 1, 2]. Located in the rural college town of Moscow, it is an R1 research institution offering over 140 degree programs with a strong emphasis on engineering, agriculture, and undergraduate research [cite: 2, 3]. The university is recognized for its affordability, social mobility, and strong Greek life presence, making it a highly accessible yet academically rigorous public flagship [cite: 1, 4].",
+    "market_position": "Public Flagship / Land-Grant R1 Research University",
+    "admissions_philosophy": "Numbers-focused and highly accessible (test-optional)",
+    "us_news_rank": 183,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "U of I achieved the prestigious Carnegie R1 classification (Very High Research Activity), placing it in the top 4% of universities nationwide [cite: 4].",
+        "implication": "Undergraduates have exceptional access to funded research opportunities, with over 70% of undergrads participating in research [cite: 5], a rate usually seen only at smaller liberal arts colleges."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university consistently ranks as a Top Value Public University, offering automatic merit scholarships like Go Idaho! and the Western Undergraduate Exchange (WUE) [cite: 6, 7].",
+        "implication": "Out-of-state students from the western U.S. and in-state residents can secure an R1 education at a fraction of typical flagship costs, graduating with lower average debt [cite: 8]."
+      },
+      {
+        "category": "Culture",
+        "insight": "Greek life is a dominant social force, with over 20% of the student body and 44% of on-campus residents participating in 35 fraternities and sororities [cite: 1].",
+        "implication": "Students seeking a traditional, spirited campus life will find it here, but independent students may need to actively seek out alternative communities through outdoor and academic clubs [cite: 9, 10]."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Recent state budget cuts have forced the university to cap enrollment and limit course sections in high-cost, high-demand programs like Engineering [cite: 11, 12].",
+        "implication": "While general admission to the university remains accessible (75.5% acceptance), gaining entry to and completing degrees in impacted STEM majors may become increasingly competitive and structured [cite: 12]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "U of I features a rural, traditional residential campus with a strong Greek system and high involvement in outdoor recreation due to its proximity to Moscow Mountain and regional trails [cite: 1, 13]. While the local town is small, the student population makes it a culturally vibrant 'college town' [cite: 13, 14].",
+      "transportation_impact": "Moscow is relatively isolated; the closest major city is Spokane, nearly 2 hours away. The campus and town are easy to navigate without a car, but travel home for out-of-state students requires planning [cite: 14].",
+      "research_impact": "Research is heavily integrated into the undergraduate experience. The Office of Undergraduate Research (OUR) funds extensive summer fellowships (SURF) and semester grants, allowing students to work directly with R1 faculty in state-of-the-art labs [cite: 15, 16, 17]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 75.53,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 66.27,
+      "admits_class_size": 2025,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional. SAT and ACT scores are not required but are considered if submitted to bolster the academic profile [cite: 18, 19].",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 13443,
+        "admits_total": 10154,
+        "enrolled_total": 2025,
+        "acceptance_rate_overall": 75.53,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 19.94,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is not publicly disclosed; historical trends suggest U of I rarely uses a waitlist for general undergraduate admission [cite: 20, 21]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 12222,
+        "admits_total": 9666,
+        "enrolled_total": 2421,
+        "acceptance_rate_overall": 79.09,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Overall enrollment spiked, logging one of the largest freshman classes in history [cite: 17, 21]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 13393,
+        "admits_total": 9891,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 73.85,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.47,
+        "notes": "Average high school GPA is reported generally around 3.44 to 3.48 [cite: 5, 21, 22]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "990-1230",
+        "sat_reading_middle_50": "500-630",
+        "sat_math_middle_50": "490-600",
+        "act_composite_middle_50": "20-26",
+        "submission_rate": 53.0,
+        "policy_note": "53% of admitted applicants submitted SAT scores, while only 4% submitted ACT scores [cite: 23]."
+      },
+      "demographics": {
+        "first_gen_percentage": 60.0,
+        "legacy_percentage": null,
+        "international_percentage": 5.5,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Idaho)",
+            "percentage": 71.7
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 6739,
+            "admits": 4823,
+            "acceptance_rate": 71.5
+          },
+          "women": {
+            "applicants": 6704,
+            "admits": 5331,
+            "acceptance_rate": 79.5
+          }
+        },
+        "racial_breakdown": {
+          "white": 71.2,
+          "black_african_american": 1.29,
+          "hispanic_latino": 8.2,
+          "asian": 1.46,
+          "native_american_alaskan": 1.32,
+          "pacific_islander": 0.23,
+          "two_or_more_races": 4.71,
+          "unknown": null,
+          "non_resident_alien": 5.5
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major / Capped",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for strong math/science students aiming for careers in cybersecurity, robotics, and aerospace. Apply early as the program faces enrollment caps due to recent budget cuts [cite: 11, 12].",
+        "housing_profile": "Standard undergraduate housing or Greek life.",
+        "student_archetype": "Technically minded, problem-solvers interested in hands-on application and industry sponsorships from companies like SEL and Micron [cite: 24].",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 1120 Computer Science I",
+                "CS 3383 Software Engineering"
+              ],
+              "electives": [
+                "CS 3551 Introduction to Robotics",
+                "CS 5380 Network Security"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Steve Wang (Department Chair)",
+              "Dr. Daniel Conte de Leon (Cybersecurity/Defense)",
+              "Dr. Robert Rinker",
+              "Dr. Jim Alves-Foss",
+              "Dr. Min Xian"
+            ],
+            "notes": "Highly integrated with Idaho cybersecurity initiatives and regional tech partners [cite: 25, 26, 27]."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Eric Wolbrecht (Rehabilitation Robotics/Control)",
+              "Dr. Gianluca Blois",
+              "Dr. Dan Cordon",
+              "Dr. Vibhav Durgesh",
+              "Dr. Tao Xing (3D Imaging/Printing)"
+            ],
+            "notes": "Offers specialized certificates in aerospace, robotics, and thermal energy system design [cite: 28, 29, 30]."
+          }
+        ]
+      },
+      {
+        "name": "College of Letters, Arts and Social Sciences (CLASS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great fit for students interested in humanities, public policy, and social sciences who want close faculty mentorship and interdisciplinary flexibility [cite: 31].",
+        "housing_profile": "Standard undergraduate housing or Greek life.",
+        "student_archetype": "Civic-minded communicators and critical thinkers aiming for law, psychology, or public service.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Benjamin Barton (Human Workload/Stress)",
+              "Dr. Rajal Cohen",
+              "Dr. Traci Craig",
+              "Dr. Kenneth Locke (Clinical)"
+            ],
+            "notes": "The highest ranked and most popular major at the university, producing the most graduates annually [cite: 32, 33, 34, 35]."
+          },
+          {
+            "name": "Criminology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Kristine Levan (Violent Crime/Prison Culture)",
+              "Dr. Joseph De Angelis (Policing/Corrections)",
+              "Dr. Omi Hodwitz"
+            ],
+            "notes": "Highly popular social science major offering immersive international experiences like Criminology Abroad [cite: 31, 32, 36, 37]."
+          }
+        ]
+      },
+      {
+        "name": "College of Business and Economics",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for entrepreneurial students seeking high ROI. The college offers access to the Barker Trading Program and strong regional industry connections [cite: 38].",
+        "housing_profile": "Standard undergraduate housing or Greek life.",
+        "student_archetype": "Future corporate leaders, marketers, and analysts looking for hands-on, practical business education.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Michael McCollough (Services Marketing/Retail)",
+              "Dr. Mark Groza (Sales/Corporate Social Responsibility)",
+              "Dr. Sanjay Sisodiya",
+              "Dr. Berna Devezer"
+            ],
+            "notes": "One of the most frequently pursued majors on campus [cite: 32, 33, 38, 39]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University of Idaho Application",
+      "Apply Idaho (for in-state)"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2026-06-30",
+        "is_binding": false,
+        "notes": "Operates on rolling admissions. Applications open in September. Priority for housing and scholarships typically falls in early Spring (Feb/March) [cite: 40, 41]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "The university does not consider personal statements or essays for general undergraduate admission [cite: 18]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "High School Transcript/Record",
+        "English Proficiency"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Not Considered",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Admissions are highly numbers-driven (GPA-centric). Essays, recommendations, and legacy status are explicitly not considered in the general evaluation [cite: 5, 18]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply early for Engineering: Recent state budget cuts have placed enrollment caps and course limits on high-cost programs like Engineering. Applying early secures a spot [cite: 11, 12].",
+      "Leverage the rolling admissions advantage: Submitting your application as soon as it opens in September maximizes access to housing priority (fills up fast by February) and merit aid [cite: 40].",
+      "Utilize the Apply Idaho portal: In-state residents should use the free, fast Apply Idaho initiative to apply seamlessly [cite: 42]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "If denied or waitlisted for capped STEM programs, consider applying for foundational science or humanities majors within CLASS, which have higher capacity, and attempting to transfer internally once core prerequisites are completed [cite: 12, 43]."
+  },
+  "financials": {
+    "tuition_model": "Public, differential tuition based on residency (In-State, Out-of-State, and WUE tier).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 9084.0,
+        "total_coa": 26883.0,
+        "housing": 11243.0
+      },
+      "out_of_state": {
+        "tuition": 28320.0,
+        "total_coa": 46119.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Significant merit-based aid orientation with robust automatic tuition waivers for regional out-of-state students.",
+    "average_need_based_aid": null,
+    "average_merit_aid": 12286.0,
+    "percent_receiving_aid": 71.0,
+    "scholarships": [
+      {
+        "name": "Western Undergraduate Exchange (WUE)",
+        "type": "Merit",
+        "amount": "Discounted Tuition",
+        "deadline": "Rolling",
+        "benefits": "Reduces out-of-state tuition to 150% of in-state tuition for residents of 16 western states/territories [cite: 7, 44].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Go Idaho! Program",
+        "type": "Merit",
+        "amount": "Variable",
+        "deadline": "Rolling",
+        "benefits": "Guaranteed automatic scholarship levels for Idaho high school residents based on their academic GPA [cite: 7].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Invitation to Idaho",
+        "type": "Merit",
+        "amount": "Discounted Tuition",
+        "deadline": "Rolling",
+        "benefits": "Automatic tuition waiver for highly qualified out-of-state applicants [cite: 7].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Vandal Promise Scholarship",
+        "type": "Need",
+        "amount": "$5,000",
+        "deadline": "FAFSA priority",
+        "benefits": "Bridges the gap for low-income, Pell-eligible Idaho residents after other grants and scholarships are applied [cite: 45, 46].",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants credit for Advanced Placement (AP) exams that meet minimum score requirements [cite: 47, 48].",
+      "exceptions": [],
+      "usage": "Credits are applied toward degree completion and general education requirements [cite: 47]."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts credit on a subject-by-subject basis based on scores from Higher Level (HL) and Standard Level (SL) exams [cite: 49].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Pathways (e.g., North Idaho College to U of I degree maps)"
+      ],
+      "restrictions": "Transfer pathways require strict adherence to catalog year prerequisites to guarantee successful transition [cite: 50]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid high school GPA (around a 3.4+) ensures comfortable admission [cite: 21].",
+      "Taking college prep courses, particularly in math and science, if intending to declare capped Engineering majors [cite: 12, 51]."
+    ],
+    "common_activities": [
+      "Greek Life (extremely prominent, over 35 organizations) [cite: 1].",
+      "Undergraduate Research (SURF program, semester grants) [cite: 15].",
+      "Outdoor recreation (hiking on Moscow Mountain, biking on Palouse Trails) [cite: 13].",
+      "Attending Vandal athletics at the Kibbie Dome [cite: 19, 22]."
+    ],
+    "essay_tips": [
+      "Essays are not evaluated for general admission. Time should be spent ensuring high school transcripts are robust [cite: 18]."
+    ],
+    "red_flags": [
+      "Delaying housing applications (priority deadline in February) can lead to unfavorable living arrangements [cite: 40].",
+      "Applying too late in the cycle and missing out on competitive, capped STEM programs or top merit aid tiers [cite: 11]."
+    ],
+    "insights": [
+      "U of I provides a 'private school experience at a public school price' thanks to its R1 status combined with high accessibility and massive tuition discounts for Western-state residents [cite: 6, 42]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 60330,
+    "employment_rate_2yr": 83.0,
+    "grad_school_rate": 16.0,
+    "top_employers": [
+      "Micron",
+      "Idaho National Laboratory (INL)",
+      "Schweitzer Engineering Laboratories (SEL)",
+      "Gritman Medical Center",
+      "Bennett Lumber Products"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 75.0,
+    "graduation_rate_4_year": 41.0,
+    "graduation_rate_6_year": 61.0
+  }
 }

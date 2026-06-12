@@ -1,6 +1,420 @@
 {
-  "category": "Culture",
-  "insight": "The campus social dynamic is heavily driven by its location; outdoor recreation, skiing, and hiking are central to student life alongside a prominent Greek system.",
-  "implication": "Students looking for a vibrant, highly social, and active environment will thrive, though students must be self-motivated to balance academics with the strong local 'party' and outdoor culture.",
-  "_id": "university_of_colorado_boulder"
+  "_id": "university_of_colorado_boulder",
+  "metadata": {
+    "official_name": "University of Colorado Boulder",
+    "location": {
+      "city": "Boulder",
+      "state": "Colorado",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-20",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Colorado Boulder is a flagship public research institution and AAU member, highly regarded for its programs in aerospace engineering, environmental science, and business. It offers a vibrant campus life in a premier college town setting while navigating an increasingly competitive admissions landscape, particularly for out-of-state students and impacted majors.",
+    "market_position": "Public Ivy / Flagship State University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 98,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates dropped to roughly 76%-78% for the Fall 2024 entering class due to record application volumes exceeding 67,000.",
+        "implication": "CU Boulder is shifting from a reliable safety school for out-of-state students to a more competitive target, particularly for its specialized colleges."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university heavily utilizes the Program in Exploratory Studies to admit students who do not meet the direct-admit criteria for impacted programs like Engineering or Business.",
+        "implication": "Applicants must be prepared for the intra-university transfer (IUT) process if they are placed in exploratory studies rather than their first-choice major."
+      },
+      {
+        "category": "Financial",
+        "insight": "Out-of-state cost of attendance exceeds $65,000 annually, though median alumni earnings 10 years post-entry are strong at $76,850.",
+        "implication": "Out-of-state applicants should weigh the high sticker price against the potential ROI, particularly in high-earning fields like Engineering and Computer Science."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "CU Boulder features a highly active, outdoors-oriented social scene deeply integrated with the city of Boulder. It boasts strong Greek life, Division I Big 12 athletics, and a robust culture of skiing, hiking, and wellness.",
+      "transportation_impact": "Students receive an ECO Pass for extensive free local and regional bus access. The campus is spread out, with upperclassmen often living off-campus and a subset of freshmen residing in the Williams Village complex, which is connected by a university shuttle.",
+      "research_impact": "As a Tier 1 (R1) research university and AAU member, CU Boulder is a powerhouse in aerospace, quantum physics, and environmental sciences, receiving massive federal funding (e.g., NASA) and featuring numerous Nobel laureate faculty."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.781,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.723,
+      "admits_class_size": 7432,
+      "is_test_optional": true,
+      "test_policy_details": "CU Boulder is test-optional for first-year applicants. Standardized test scores (SAT/ACT) are not required, and applications are reviewed holistically without them. Writing and Science sections of the ACT are not considered.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 67286,
+        "admits_total": 52539,
+        "enrolled_total": 7432,
+        "acceptance_rate_overall": 0.781,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.141,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 5740,
+          "accepted_spots": 1158,
+          "admitted_from_waitlist": 1007,
+          "waitlist_admit_rate": 0.87,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record application volume pushed overall acceptance rates lower. Extremely high waitlist admit rate (87%) indicates the waitlist is heavily utilized for late-cycle yield management."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.76,
+        "notes": "Average admitted high school GPA is 3.76 on a 4.0 scale."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1390",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "27-32",
+        "submission_rate": 0.18,
+        "policy_note": "Only 18% of enrolled first-time students submitted SAT scores in the recent cycle."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.14,
+        "legacy_percentage": null,
+        "international_percentage": 0.0225,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 33451,
+            "admits": 24316,
+            "acceptance_rate": 0.727
+          },
+          "women": {
+            "applicants": 33805,
+            "admits": 28201,
+            "acceptance_rate": 0.834
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.647,
+          "black_african_american": 0.0185,
+          "hispanic_latino": 0.13,
+          "asian": 0.0612,
+          "native_american_alaskan": 0.0022,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.0651,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing humanities, social sciences, or natural sciences. Offers 'Open Option' for undecided students.",
+        "housing_profile": "Varied across campus.",
+        "student_archetype": "Interdisciplinary thinkers, pre-meds, and undecided students.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors in the college."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Applied Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.4,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive; applicants should have rigorous math and science backgrounds in high school (Calculus and Physics preferred).",
+        "housing_profile": "Engineering Quad/Specific RAPs available.",
+        "student_archetype": "Project-focused, collaborative STEM students.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus 1",
+              "Calculus 2",
+              "Calculus-based Physics or Chemistry"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers (IUT) must complete specific core prerequisites with a grade of B or better and maintain a 3.0 cumulative GPA.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 1300",
+                "CSCI 2270",
+                "MAT 2410",
+                "MAT 2420",
+                "PHY 2111"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "AP/IB credit does not count towards math/computer science prerequisites for intra-university transfer into this major."
+          }
+        ]
+      },
+      {
+        "name": "Leeds School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.25,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive; applicants are strongly encouraged to apply Early Action (Nov 15) for best consideration.",
+        "housing_profile": "Business specific RAPs.",
+        "student_archetype": "Entrepreneurial, globally-minded students.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfer requires a 3.2 cumulative GPA and completion of specific courses with a B or higher.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most popular major at the university."
+          }
+        ]
+      },
+      {
+        "name": "Program in Exploratory Studies",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For undecided students or those who did not meet direct-admit criteria for Business or Engineering but are otherwise strong fits for the university.",
+        "housing_profile": "Varied.",
+        "student_archetype": "Students exploring different academic pathways before transferring into a degree-granting college via IUT.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Non-binding Early Action. Highly recommended for Engineering and Business applicants."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One essay and two short answer questions required via the Common App."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic achievement",
+        "Core academic courses",
+        "Course rigor",
+        "GPA"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Essays",
+        "Letters of recommendation",
+        "Volunteer work",
+        "First-generation status"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": null,
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The Program in Exploratory Studies serves as an alternate entry point for students with strong overall profiles but who may fall slightly short of the specific metrics required for impacted majors."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action (Nov 15) for competitive programs like the Leeds School of Business and College of Engineering.",
+      "Select an alternate major in the College of Arts and Sciences if applying to an impacted program."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "If rejected from Engineering or Business, applicants are frequently offered admission to the Program in Exploratory Studies. From there, they can complete required core courses (e.g., Calculus, Physics) and apply for an Intra-University Transfer (IUT) after maintaining a specific GPA (3.0 for Engineering, 3.2 for Business)."
+  },
+  "financials": {
+    "tuition_model": "State-subsidized for residents, significantly higher for non-residents.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 15214,
+        "total_coa": 38004,
+        "housing": 18468
+      },
+      "out_of_state": {
+        "tuition": 42970,
+        "total_coa": 65760,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10838,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.66,
+    "scholarships": [
+      {
+        "name": "Esteemed Scholars Program",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "For top Colorado resident students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Chancellor's Achievement Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "For high-achieving non-resident students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "For high-achieving non-resident students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Arts & Humanities Merit Scholarship",
+        "type": "Merit",
+        "amount": "$4,000/yr",
+        "deadline": "",
+        "benefits": "For students admitted with a declared A&H major.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 4 or 5, and sometimes 3 for elective credit.",
+      "exceptions": [
+        "AP credit does not count toward math/computer science prerequisites for internal transfer to Computer Science."
+      ],
+      "usage": "Course placement and degree credit. Deans determine specific applicability."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level scores of 4 or better.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Colorado Community College System (CCCS) articulation agreements"
+      ],
+      "restrictions": "Must complete 45 credit hours in residence at CU Boulder for A&S degrees."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic rigor and GPA",
+      "Applying Early Action for competitive majors"
+    ],
+    "common_activities": [
+      "Outdoor recreation (skiing, hiking)",
+      "Greek Life",
+      "Intramural sports"
+    ],
+    "essay_tips": [
+      "Explain unique fit for CU Boulder",
+      "Address specific program interests"
+    ],
+    "red_flags": [
+      "Low grades in core STEM classes if applying to Engineering"
+    ],
+    "insights": [
+      "The campus is beautiful but out-of-state tuition is very expensive.",
+      "Many students use the Exploratory Studies program as a backdoor into Business or Engineering, but the required college GPA must be strictly maintained."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 76850,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "Lockheed-Martin",
+      "IBM",
+      "Arrow Electronics",
+      "Charles Schwab"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.912,
+    "graduation_rate_4_year": 0.621,
+    "graduation_rate_6_year": 0.743
+  }
 }

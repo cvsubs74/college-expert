@@ -1,6 +1,477 @@
 {
-  "social_environment": "Laid-back, active Southern California vibe with a strong beach culture. Greek life exists but does not dominate the campus, as there is no official Greek housing. Weekends often involve exploring San Diego, surfing, or beach bonfires.",
-  "transportation_impact": "While the campus is an oasis, many students frequently venture out to Mission Beach, Pacific Beach, and downtown San Diego for weekend activities, making access to a car or rideshare highly beneficial.",
-  "research_impact": "Strong focus on undergraduate research across disciplines, supported by programs like PURE, BURST, and STAR, which offer stipends and housing for summer research. The 13:1 student-to-faculty ratio facilitates deep faculty mentorship.",
-  "_id": "university_of_san_diego"
+  "_id": "university_of_san_diego",
+  "metadata": {
+    "official_name": "University of San Diego",
+    "location": {
+      "city": "San Diego",
+      "state": "CA",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of San Diego (USD) is a mid-sized, private Catholic R2 research university celebrated for its 'Changemaker' identity and breathtaking coastal campus [cite: 1, 2]. With a firm commitment to public service, study abroad (ranking #2 nationally for participation), and holistic development, USD attracts students seeking rigorous academics blended with a laid-back Southern California lifestyle [cite: 3, 4].",
+    "market_position": "Elite Private Catholic University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 98,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "USD experienced a dramatic spike in its waitlist admission rate, leaping from 1.2% in 2022 to 37.1% in 2024, indicating extreme variability in yield predictability [cite: 5].",
+        "implication": "Applicants placed on the waitlist should remain highly engaged and submit a Letter of Continued Interest (LOCI), as deep waitlist movement is highly possible depending on the cycle."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university operates under a strict 'test-free' admissions policy through at least Fall 2028 [cite: 6].",
+        "implication": "Standardized tests are completely ignored. Admissions weigh heavily on high school GPA, course rigor, essays, and extracurricular alignment with USD's Catholic and social justice mission."
+      },
+      {
+        "category": "Culture",
+        "insight": "There are no Greek houses on campus, and the social scene is heavily influenced by local access to beaches, outdoor recreation, and community service [cite: 7, 8].",
+        "implication": "Students looking for a traditional, dominant 'Greek row' experience may find USD lacking, but those seeking a balanced, outdoor-oriented, and service-driven lifestyle will thrive."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A close-knit, vibrant, but laid-back community. Weekends often involve beach bonfires, exploring downtown San Diego, and participating in over 100 student organizations [cite: 7, 8].",
+      "transportation_impact": "Situated on a mesa overlooking Mission Bay and the Pacific Ocean, students frequently commute to the beach or city centers, making off-campus mobility a notable aspect of student life [cite: 4, 8].",
+      "research_impact": "As an R2 institution, USD provides robust undergraduate research opportunities, especially in the sciences and engineering, supported by expanding facilities like the upcoming Shiley STEM Initiative [cite: 3, 7]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 52.4,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 66.5,
+      "admits_class_size": 1104,
+      "is_test_optional": true,
+      "test_policy_details": "Test-Free / Test-Blind. USD will not view or consider SAT/ACT scores in the admission process through Fall 2028 [cite: 6].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 17010,
+        "admits_total": 8909,
+        "enrolled_total": 1104,
+        "acceptance_rate_overall": 52.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 12.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3885,
+          "accepted_spots": 1986,
+          "admitted_from_waitlist": 1441,
+          "waitlist_admit_rate": 37.1,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist saw a significant and uncharacteristic spike in admit rate in 2024 [cite: 5, 9, 10]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 15921,
+        "admits_total": 7452,
+        "enrolled_total": 1245,
+        "acceptance_rate_overall": 46.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.7,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3617,
+          "accepted_spots": 2095,
+          "admitted_from_waitlist": 102,
+          "waitlist_admit_rate": 2.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "[cite: 11, 12, 13]"
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 14334,
+        "admits_total": 7541,
+        "enrolled_total": 1234,
+        "acceptance_rate_overall": 52.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.3,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 1.2,
+          "is_waitlist_ranked": null
+        },
+        "notes": "[cite: 5, 12, 14]"
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.75-4.19",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.02,
+        "notes": "Admitted students display high academic rigor with an average GPA hovering around 3.9-4.02 [cite: 15, 16]."
+      },
+      "testing": {
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": 0.0,
+        "policy_note": "USD is strictly test-free for admissions. Test scores are not evaluated [cite: 6]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 6.0,
+        "geographic_breakdown": [
+          {
+            "region": "Out of State",
+            "percentage": 40.0
+          },
+          {
+            "region": "In State (California)",
+            "percentage": 60.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 49.86
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 52.98
+          }
+        },
+        "racial_breakdown": {
+          "white": 44.8,
+          "black_african_american": 4.8,
+          "hispanic_latino": 23.4,
+          "asian": 9.1,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.2,
+          "two_or_more_races": 6.2,
+          "unknown": 4.5,
+          "non_resident_alien": 6.8
+        },
+        "religious_affiliation": "Catholic (Roman Catholic)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Knauss School of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking an ethical, global approach to business with the ultimate creative freedom in projects and direct mentorship.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Socially responsible and globally-minded business leader.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most popular major at USD [cite: 17, 18]."
+          },
+          {
+            "name": "Real Estate",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly ranked program nationally (#1 in Best Real Estate Colleges by College Factual) [cite: 2]."
+          },
+          {
+            "name": "Business Administration",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students can change business majors at any time without restrictions [cite: 19]."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "[cite: 18]"
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for students desiring a foundational liberal arts education with personalized faculty-led advising.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Intellectually curious and interdisciplinary thinker.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the top 5 most popular degrees awarded at USD [cite: 18]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Early Action deadline. Wait, [cite: 1] says Nov 1, but [cite: 20] says Nov 15. Verify on official admissions portal."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline [cite: 1, 20]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-15",
+        "details": "Compelling essays detailing Changemaker qualities, faith commitments, or community service are highly emphasized in the test-free review [cite: 6, 20]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor (AP/IB/Honors)",
+        "Cumulative GPA",
+        "Application Essays",
+        "Extracurricular Activities",
+        "Letters of Recommendation"
+      ],
+      "secondary_factors": [
+        "Commitment to social justice / community engagement",
+        "Alumni relations (Legacy)"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "As a 'test-free' institution, USD places massive weight on the applicant's 'Changemaker' alignment\u2014demonstrated leadership in community service, social justice, or faith-based initiatives [cite: 6, 20]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Undeclared: Students are not admitted directly to a major and can switch freely, relieving pressure on major selection at the application stage [cite: 19, 21]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Not strictly necessary for admission probability, as USD allows students to change majors freely without restrictions, especially within the Business and Arts & Sciences schools [cite: 19, 21]."
+  },
+  "financials": {
+    "tuition_model": "Flat-rate block tuition for full-time students taking 12-18 units [cite: 22].",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 59486.0,
+        "total_coa": 84912.0,
+        "housing": 19918.0
+      },
+      "out_of_state": {
+        "tuition": 59486.0,
+        "total_coa": 84912.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 35976.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 98.0,
+    "scholarships": [
+      {
+        "name": "Alcala Scholarship",
+        "type": "Merit",
+        "amount": "$18,000 - $28,000",
+        "deadline": "2024-12-15",
+        "benefits": "Renewable for 4 years, applied to tuition [cite: 23].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$18,000 - $28,000",
+        "deadline": "2024-12-15",
+        "benefits": "Renewable for 4 years [cite: 23].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Catholic Education Scholarship",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "2024-12-15",
+        "benefits": "Automatically awarded to students who graduate from a Catholic high school [cite: 24].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Music Scholarships",
+        "type": "Merit",
+        "amount": "$500 - $15,000",
+        "deadline": "2025-02-01",
+        "benefits": "Awarded to incoming students involved in music programs [cite: 25].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Athletic Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Available for all NCAA Division I sports except football and men's crew [cite: 24].",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "College credit may be granted for scores of 3, 4, or 5 depending on the exam [cite: 26].",
+      "exceptions": [
+        "AP Biology requires a 3, but AP U.S. History requires a 5 to receive credit [cite: 27]."
+      ],
+      "usage": "Can be used to fulfill introductory Core requirements or place into advanced classes."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts certain IB Higher Level exams with qualifying scores [cite: 28].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "CLEP exams are accepted pending official review [cite: 28]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school academic record to match the ~3.98 average unweighted GPA [cite: 20].",
+      "Evidence of 'Changemaker' traits: community service, leadership, and positive community impact [cite: 6, 20].",
+      "Strong application essays and letters of recommendation to compensate for the test-free policy [cite: 6, 20]."
+    ],
+    "common_activities": [
+      "Surfing and beach bonfires at Mission Beach [cite: 7].",
+      "Studying abroad (USD ranks #2 nationally for study abroad participation) [cite: 1, 3].",
+      "Participating in intramural sports or NCAA Division I athletics [cite: 8].",
+      "Undergraduate research, particularly in the sciences and engineering [cite: 7]."
+    ],
+    "essay_tips": [
+      "Front-load your passion for community service and align it with USD's Catholic Vincentian values of service [cite: 20].",
+      "Highlight leadership roles and commitment to social justice [cite: 6].",
+      "Focus on an accomplishment you are proud of that shows engagement with your community [cite: 15]."
+    ],
+    "red_flags": [
+      "Lack of demonstrated involvement in community service or leadership [cite: 20].",
+      "Dropping academic rigor in senior year, as transcript strength is paramount without test scores [cite: 15]."
+    ],
+    "insights": [
+      "The campus is routinely ranked as one of the 'Most Beautiful' in the country (Princeton Review) [cite: 1].",
+      "Greek life exists but does not dominate the social scene, as there are no Greek houses on campus [cite: 7].",
+      "Students appreciate the small class sizes (capped at 35 in the Business School) and direct access to professors [cite: 19]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 85309,
+    "employment_rate_2yr": 66.0,
+    "grad_school_rate": 22.5,
+    "top_employers": [
+      "EY",
+      "PwC",
+      "Deloitte",
+      "KPMG",
+      "Matthews Real Estate Investment Services",
+      "RSM",
+      "CBRE"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.0,
+    "graduation_rate_4_year": 70.0,
+    "graduation_rate_6_year": 84.0
+  }
 }
