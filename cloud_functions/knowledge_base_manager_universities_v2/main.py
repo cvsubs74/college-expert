@@ -13,6 +13,7 @@ from google import genai
 from google.genai import types
 
 from firestore_db import get_db
+from versioning import coerce_year, validate_profile
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -246,23 +247,29 @@ def extract_keywords(profile: dict) -> list:
 
 
 # --- Ingest University Profile ---
-def ingest_university(profile: dict) -> dict:
-    """Ingest a university profile into Firestore."""
-    
-    def safe_get(d, *keys, default=None):
-        """Safely get nested dictionary values."""
-        for key in keys:
-            if d is None or not isinstance(d, dict):
-                return default
-            d = d.get(key)
-        return d if d is not None else default
-    
+def ingest_university(profile: dict, year: int = None) -> dict:
+    """Ingest a university profile into Firestore as a cycle-year snapshot.
+
+    `year` is the admission cycle year (ADR 0002); when omitted it defaults
+    to the current cycle. The snapshot always lands in versions/{year}; the
+    main serving doc is overwritten only when this is the newest year.
+    """
     try:
         db = get_db()
-        
+
+        year = coerce_year(year)
+        errors, warnings = validate_profile(profile, year)
+        if errors:
+            return {
+                "success": False,
+                "error": "Profile failed validation: " + "; ".join(errors),
+                "validation_errors": errors,
+                "validation_warnings": warnings,
+            }
+        for w in warnings:
+            logger.warning(f"[ingest:{profile.get('_id')}] {w}")
+
         university_id = profile.get('_id')
-        if not university_id:
-            raise ValueError("Profile must have an '_id' field")
         
         metadata = profile.get('metadata') or {}
         official_name = metadata.get('official_name', university_id) if isinstance(metadata, dict) else university_id
@@ -341,17 +348,26 @@ def ingest_university(profile: dict) -> dict:
             "indexed_at": datetime.now(timezone.utc).isoformat(),
             "last_updated": datetime.now(timezone.utc).isoformat()
         }
-        
-        db.save_university(university_id, doc)
-        logger.info(f"Indexed university: {official_name}")
-        
+
+        save_result = db.save_university(university_id, doc, year=year)
+        if not save_result.get("saved"):
+            return {
+                "success": False,
+                "error": f"Failed to save {official_name} (year {year})",
+            }
+        logger.info(f"Indexed university: {official_name} (year {year})")
+
         return {
             "success": True,
             "university_id": university_id,
             "official_name": official_name,
-            "message": f"Successfully indexed {official_name}"
+            "year": year,
+            "promoted_to_current": save_result.get("promoted", False),
+            "available_years": save_result.get("available_years", []),
+            "validation_warnings": warnings,
+            "message": f"Successfully indexed {official_name} for cycle {year}"
         }
-        
+
     except Exception as e:
         logger.error(f"Ingest failed: {e}", exc_info=True)
         raise
@@ -496,15 +512,20 @@ def list_universities(
 
 
 # --- Get University ---
-def get_university(university_id: str) -> dict:
-    """Get a specific university profile by ID."""
+def get_university(university_id: str, year: int = None) -> dict:
+    """Get a university profile by ID — current data, or a specific cycle year."""
     try:
         db = get_db()
-        data = db.get_university(university_id)
-        
+        data = db.get_university(university_id, year=year)
+
         if not data:
+            if year is not None:
+                return {
+                    "success": False,
+                    "error": f"University {university_id} has no data for cycle year {year}"
+                }
             return {"success": False, "error": f"University {university_id} not found"}
-        
+
         return {
             "success": True,
             "university": {
@@ -514,13 +535,33 @@ def get_university(university_id: str) -> dict:
                 "acceptance_rate": data.get('acceptance_rate'),
                 "market_position": data.get('market_position'),
                 "profile": data.get('profile'),
+                "data_year": data.get('data_year'),
+                "available_years": data.get('available_years'),
                 "indexed_at": data.get('indexed_at'),
                 "last_updated": data.get('last_updated')
             }
         }
-        
+
     except Exception as e:
         logger.error(f"Get university failed: {e}")
+        return {"success": False, "error": str(e)}
+
+
+# --- List University Versions ---
+def list_university_versions(university_id: str) -> dict:
+    """List the cycle-year snapshots stored for a university."""
+    try:
+        db = get_db()
+        versions = db.list_university_versions(university_id)
+        if not versions and not db.get_university(university_id):
+            return {"success": False, "error": f"University {university_id} not found"}
+        return {
+            "success": True,
+            "university_id": university_id,
+            "versions": versions,
+        }
+    except Exception as e:
+        logger.error(f"List versions failed: {e}")
         return {"success": False, "error": str(e)}
 
 
@@ -670,24 +711,25 @@ The suggested_questions should be 3 relevant follow-up questions the user might 
 
 
 # --- Delete University ---
-def delete_university(university_id: str) -> dict:
-    """Delete a university from the collection."""
+def delete_university(university_id: str, year: int = None) -> dict:
+    """Delete a university (all years), or a single cycle-year snapshot."""
     try:
         db = get_db()
-        success = db.delete_university(university_id)
-        
+        success = db.delete_university(university_id, year=year)
+
+        scope = f"{university_id} (cycle {year})" if year is not None else university_id
         if success:
-            logger.info(f"Deleted university: {university_id}")
+            logger.info(f"Deleted university: {scope}")
             return {
                 "success": True,
-                "message": f"Successfully deleted {university_id}"
+                "message": f"Successfully deleted {scope}"
             }
         else:
             return {
                 "success": False,
-                "error": f"Failed to delete {university_id}"
+                "error": f"Failed to delete {scope}"
             }
-        
+
     except Exception as e:
         logger.error(f"Delete failed: {e}")
         raise
@@ -727,11 +769,22 @@ def knowledge_base_manager_universities_v2_http_entry(req):
             result = health_check()
             return add_cors_headers(result)
         
-        # GET - List or get specific university
+        # GET - List or get specific university (optionally a cycle-year
+        # snapshot via ?year=, or the stored years via ?action=versions)
         if req.method == 'GET':
             university_id = req.args.get('id') or req.args.get('university_id')
             if university_id:
-                result = get_university(university_id)
+                if req.args.get('action') == 'versions':
+                    result = list_university_versions(university_id)
+                else:
+                    raw_year = req.args.get('year')
+                    year = None
+                    if raw_year:
+                        try:
+                            year = coerce_year(raw_year)
+                        except ValueError as e:
+                            return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
+                    result = get_university(university_id, year=year)
             else:
                 # Parse pagination and search parameters
                 limit = int(req.args.get('limit', 30))
@@ -779,11 +832,17 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                 result = search_universities(query, limit, filters, search_type, exclude_ids, sort_by)
                 return add_cors_headers(result)
             
-            # Ingest request
+            # Ingest request — optional 'year' files the snapshot under that
+            # admission cycle (defaults to the current cycle, ADR 0002)
             elif 'profile' in data or '_id' in data:
                 profile = data.get('profile', data)
-                result = ingest_university(profile)
-                return add_cors_headers(result)
+                try:
+                    year = coerce_year(data.get('year')) if 'profile' in data else coerce_year(None)
+                except ValueError as e:
+                    return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
+                result = ingest_university(profile, year=year)
+                status = 200 if result.get("success") else 400
+                return add_cors_headers(result, status)
             
             # Chat request
             elif 'action' in data and data['action'] == 'chat':
@@ -830,15 +889,23 @@ def knowledge_base_manager_universities_v2_http_entry(req):
             else:
                 return add_cors_headers({"error": "Invalid request. Provide 'query' for search or 'profile' for ingest."}, 400)
         
-        # DELETE - Delete university
+        # DELETE - Delete university (all years) or one cycle-year snapshot
         elif req.method == 'DELETE':
             data = req.get_json() if req.is_json else {}
             university_id = data.get('id') or data.get('university_id') or req.args.get('id')
-            
+
             if not university_id:
                 return add_cors_headers({"error": "University ID required"}, 400)
-            
-            result = delete_university(university_id)
+
+            raw_year = data.get('year') or req.args.get('year')
+            year = None
+            if raw_year:
+                try:
+                    year = coerce_year(raw_year)
+                except ValueError as e:
+                    return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
+
+            result = delete_university(university_id, year=year)
             return add_cors_headers(result)
         
         else:
