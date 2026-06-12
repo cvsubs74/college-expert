@@ -1,0 +1,583 @@
+{
+  "_id": "georgetown_university",
+  "metadata": {
+    "official_name": "Georgetown University",
+    "location": {
+      "city": "Washington",
+      "state": "DC",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Georgetown University is an elite private Jesuit research university situated in Washington, D.C. [cite: 1]. Renowned for its proximity to national politics and global affairs, the institution is highly selective, boasting a 12.9% overall acceptance rate and prominent programs in international relations, political science, and business [cite: 2, 3].",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 24,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Georgetown's Early Action round (11.1% acceptance) confers no statistical advantage over Regular Decision (12.3% acceptance) [cite: 4, 5].",
+        "implication": "Applicants should not rush an early application unless their profile is exceptionally strong by the end of junior year, as deferred EA candidates are reconsidered in the RD pool [cite: 6, 7]."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university strictly requires SAT or ACT scores and does not participate in Score Choice, demanding an applicant's complete testing record [cite: 8, 9].",
+        "implication": "Applicants cannot rely on test-optional policies to mask lower standardized test scores, underscoring Georgetown's heavy emphasis on quantitative academic metrics [cite: 8, 10]."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university lacks a Greek life system and emphasizes the Jesuit ideal of 'cura personalis' and a commitment to public service [cite: 11, 12].",
+        "implication": "Applicants must demonstrate a genuine commitment to social justice, ethics, and community involvement in their essays and alumni interviews [cite: 12]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, politically engaged, and heavily service-oriented community without a Greek system, fostering an inclusive environment [cite: 11, 13]. However, there is a pronounced pre-professional culture, especially for consulting and finance [cite: 13].",
+      "transportation_impact": "Located steps from the nation's political center, providing exceptional access to internships on Capitol Hill, NGOs, and global institutions [cite: 13, 14].",
+      "research_impact": "An R1 Doctoral University with very high research activity, prioritizing religion, ethics, science, public policy, and cancer medicine [cite: 1]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.1291,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.0593,
+      "admits_class_size": 1575,
+      "is_test_optional": false,
+      "test_policy_details": "SAT or ACT required. Georgetown does not participate in Score Choice and requires submission of all test scores. The university superscores both the SAT and ACT [cite: 9, 15].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 8254,
+          "admits": 917,
+          "acceptance_rate": 0.1111,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 26131,
+        "admits_total": 3374,
+        "enrolled_total": 1575,
+        "acceptance_rate_overall": 0.129,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.467,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data for 2025 not yet published."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 25485,
+        "admits_total": 3334,
+        "enrolled_total": 1599,
+        "acceptance_rate_overall": 0.1308,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.479,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2690,
+          "accepted_spots": 2023,
+          "admitted_from_waitlist": 163,
+          "waitlist_admit_rate": 0.0806,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Yield rate approaches 79% when adjusting for summer melt; exceptionally high yield limits waitlist movement [cite: 4]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 26638,
+        "admits_total": 3257,
+        "enrolled_total": 1578,
+        "acceptance_rate_overall": 0.1223,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.484,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": 1611,
+          "admitted_from_waitlist": 93,
+          "waitlist_admit_rate": 0.058,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 27629,
+        "admits_total": 3311,
+        "enrolled_total": 1585,
+        "acceptance_rate_overall": 0.1198,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.479,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": 1804,
+          "admitted_from_waitlist": 40,
+          "waitlist_admit_rate": 0.022,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 21190,
+        "admits_total": 3561,
+        "enrolled_total": 1592,
+        "acceptance_rate_overall": 0.1681,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.447,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": 2543,
+          "admitted_from_waitlist": 29,
+          "waitlist_admit_rate": 0.0114,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Pandemic influenced applications."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Georgetown does not report average GPA, but 85% of enrolled students ranked in the top 10% of their high school class [cite: 16]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1400-1540",
+        "sat_reading_middle_50": "700-770",
+        "sat_math_middle_50": "690-780",
+        "act_composite_middle_50": "31-35",
+        "submission_rate": 0.78,
+        "policy_note": "SAT submission rate is 78%, ACT submission rate is 30%. Required for all applicants [cite: 16]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": 0.09,
+        "international_percentage": 0.07,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.477,
+          "black_african_american": 0.055,
+          "hispanic_latino": 0.038,
+          "asian": 0.175,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": 0.089,
+          "unknown": 0.095,
+          "non_resident_alien": 0.07
+        },
+        "religious_affiliation": "Catholic (Jesuit)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Georgetown College of Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.119,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "A strong fit for students interested in humanities, natural sciences, or those who are undecided, as it offers the broadest curriculum [cite: 12].",
+        "housing_profile": "100% of first-year students live in college-owned housing [cite: 16].",
+        "student_archetype": "Intellectually curious liberal arts and sciences students.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "At least six courses must be taken in the Economics department at Georgetown [cite: 17, 18].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1001 Principles of Microeconomics",
+                "ECON 1002 Principles of Macroeconomics",
+                "ECON 1357 Mathematics for Economics",
+                "ECON 2101 Intermediate Microeconomics",
+                "ECON 2102 Intermediate Macroeconomics",
+                "ECON 2110 Economic Statistics",
+                "ECON 2120 Introduction to Econometrics"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students matriculating in Fall 2024 or after must take ECON 1357, while earlier cohorts were exempt [cite: 17, 18]."
+          },
+          {
+            "name": "Government",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires ten courses: four foundational and six electives [cite: 19, 20].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "GOVT 1200 U.S. Political Systems",
+                "GOVT 1400 Comparative Political Systems",
+                "GOVT 1600 International Relations",
+                "GOVT 1800 Elements of Political Theory"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Andrew Bennett"
+            ],
+            "notes": "Students who earned a 4 or 5 on the AP exam in US Government and Politics may substitute a sequential course for GOVT 1200 [cite: 20]."
+          }
+        ]
+      },
+      {
+        "name": "Walsh School of Foreign Service (SFS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.148,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students highly committed to diplomacy, global policy, and international affairs [cite: 12].",
+        "housing_profile": "100% of first-year students live in college-owned housing [cite: 16].",
+        "student_archetype": "Future diplomats, policymakers, and global researchers.",
+        "majors": [
+          {
+            "name": "International Politics",
+            "degree_type": "B.S.F.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students must concentrate in International Law, Institutions, and Ethics; International Security; Foreign Policy and Policy Processes; or a Self-Defined area [cite: 21, 22].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "GOVT 1600 Introduction to International Relations",
+                "GOVT 1400 Comparative Political Systems"
+              ],
+              "electives": [
+                "GOVT 2603 International Law",
+                "GOVT 2602 International Organizations",
+                "GOVT 4660 Ethical Issues in International Relations",
+                "GOVT 2604 Contemporary U.S. Foreign Policy"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Includes an intensive integrated writing requirement built heavily on analytical texts [cite: 23]."
+          }
+        ]
+      },
+      {
+        "name": "McDonough School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.113,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students certain about pursuing business careers, offering extremely strong placement into top consulting and finance firms [cite: 12].",
+        "housing_profile": "100% of first-year students live in college-owned housing [cite: 16].",
+        "student_archetype": "Ambitious, pre-professional students aiming for Wall Street or Management Consulting.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 15 credits in Finance above the standard business core [cite: 24].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "FINC 3101 Corporate Valuation",
+                "FINC 3102 Quantitative Investment Strategies",
+                "FINC 3103 Machine Learning for Finance",
+                "FINC 3104 Investments",
+                "FINC 3105 Global Financial Institutions",
+                "FINC 3106 Derivatives"
+              ],
+              "electives": [
+                "FINC 3220 Real Estate Finance",
+                "FINC 3225 Investment Banking",
+                "FINC 3226 Hedge Fund Investing"
+              ],
+              "total_units": 120,
+              "major_units": 15
+            },
+            "notable_professors": [],
+            "notes": "Internal transfers to MSB are competitive and require accounting/business preparatory courses [cite: 25]."
+          }
+        ]
+      },
+      {
+        "name": "School of Health",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.122,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students committed early to healthcare management and health sciences [cite: 12].",
+        "housing_profile": "100% of first-year students live in college-owned housing [cite: 16].",
+        "student_archetype": "Future healthcare professionals and public health advocates.",
+        "majors": []
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.148,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students fully dedicated to nursing pathways [cite: 12].",
+        "housing_profile": "100% of first-year students live in college-owned housing [cite: 16].",
+        "student_archetype": "Future clinical nurses.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Georgetown Application",
+      "Common App (Pilot starting Fall 2027)"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Restrictive Early Action; applicants cannot apply binding Early Decision elsewhere [cite: 5, 6]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-10",
+        "is_binding": false,
+        "notes": "Regular Decision deadline [cite: 2, 26]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires a personal/creative essay and a specific essay demonstrating fit for the distinct undergraduate school to which the student is applying [cite: 3, 12]."
+      },
+      {
+        "target_program": "Art, Music, Theatre, Dance",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Optional supplemental portfolio to the respective departments [cite: 27]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Interview",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Required",
+      "legacy_consideration": "Strong",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Georgetown places immense weight on the required alumni interview and looks closely at alignment with Jesuit values such as 'cura personalis' (care of the whole person) and community service [cite: 10, 11, 12, 27]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Georgetown College is historically more lenient for internal transfers, making it a strategic entry point for undecided students [cite: 12, 25].",
+      "Do not apply to an 'easier' school if your extracurricular profile contradicts it; admissions readers easily spot applicants lacking genuine interest [cite: 12, 28].",
+      "If planning an internal transfer to the McDonough School of Business later, ensure you take required introductory business and accounting courses beforehand to be competitive [cite: 25]."
+    ],
+    "college_ranking_tactics": [
+      "The School of Foreign Service is widely perceived as the most rigorous and specialized, requiring deep, demonstrated interest in international affairs [cite: 12]."
+    ],
+    "alternate_major_strategy": "Internal transfers are allowed but require Dean's approval and a written essay. While Georgetown College is flexible, specialty schools like MSB and Nursing have strict prerequisites and GPA minimums (e.g., 3.0 for MSB) [cite: 25]."
+  },
+  "financials": {
+    "tuition_model": "Private",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67824.0,
+        "total_coa": 92635.0,
+        "housing": 20596.0
+      },
+      "out_of_state": {
+        "tuition": 67824.0,
+        "total_coa": 92635.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met/Need-Blind",
+    "average_need_based_aid": 46087.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.34,
+    "scholarships": [
+      {
+        "name": "1789 Scholarships",
+        "type": "Need",
+        "amount": "$3,000 per year loan relief + need-based aid",
+        "deadline": "",
+        "benefits": "Admission to the Georgetown Scholarship Program (GSP) for top applicants.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Bellarmine Scholarships",
+        "type": "Need",
+        "amount": "Meets 100% need",
+        "deadline": "",
+        "benefits": "Awarded to valedictorians from Jesuit high schools.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Ignatian Scholarships",
+        "type": "Need",
+        "amount": "Meets 100% need",
+        "deadline": "",
+        "benefits": "Awarded to students in the top 5% of their Jesuit high school class who represent Ignatian ideals.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Baker Trust Scholarship Program",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Supports liberal arts students in Georgetown College preparing for business careers.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit and/or course exemptions for qualifying AP scores (typically 4 or 5) [cite: 17, 29].",
+      "exceptions": [
+        "If a student has both AP and IB scores for the same subject, they may only apply credit from one [cite: 29].",
+        "SOH and SON students may not receive credit for more than one History course [cite: 29]."
+      ],
+      "usage": "Can be used to place out of introductory courses (e.g., Microeconomics and Macroeconomics for AP scores of 5) [cite: 17]."
+    },
+    "ib_policy": {
+      "general_rule": "Credit is exclusively awarded for Higher Level (HL) exams with a score of 6 or 7. No credit is awarded for Standard Level (SL) exams [cite: 29].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer students cannot bring in more than 60 total credits and must complete their remaining coursework at Georgetown [cite: 30]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Exceptional academic metrics, particularly SAT/ACT scores, as Georgetown does not use a test-optional safety net [cite: 8, 10].",
+      "A demonstrated and authentic commitment to the Jesuit ideal of serving others (cura personalis) [cite: 11, 12].",
+      "A highly articulate alumni interview, which is a required and heavily weighted component [cite: 10, 27]."
+    ],
+    "common_activities": [
+      "Political campaigns and local government internships",
+      "Model United Nations and Debate",
+      "Community service and advocacy work",
+      "Global engagement and cultural immersion programs"
+    ],
+    "essay_tips": [
+      "Explicitly address why the specific undergraduate school (e.g., SFS vs. Georgetown College) is the perfect fit for your academic goals [cite: 12].",
+      "Weave in personal values regarding ethics and community impact to align with Jesuit traditions [cite: 11, 12].",
+      "Do not copy and paste a Common App essay; tailor responses to the unique, standalone Georgetown prompts [cite: 12]."
+    ],
+    "red_flags": [
+      "Applying to the School of Foreign Service without any prior history of international or political engagement [cite: 28].",
+      "Bad-mouthing a prior institution in a transfer application [cite: 30].",
+      "Failing to articulate a clear reason for choosing a specific undergraduate college [cite: 12, 25]."
+    ],
+    "insights": [
+      "Georgetown's D.C. location heavily dictates its culture, with many students holding prestigious internships concurrently with classes [cite: 13, 14].",
+      "The business and foreign service programs cultivate an intense, pre-professional atmosphere that some students view as highly competitive [cite: 13].",
+      "The university's lack of Greek life fosters alternative social structures deeply tied to clubs and organizations [cite: 11, 13]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 119773,
+    "employment_rate_2yr": 0.94,
+    "grad_school_rate": 0.16,
+    "top_employers": [
+      "Deloitte",
+      "Oracle",
+      "PwC",
+      "Bain & Company",
+      "Boston Consulting Group",
+      "McKinsey",
+      "Goldman Sachs"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.97,
+    "graduation_rate_4_year": 0.872,
+    "graduation_rate_6_year": 0.95
+  }
+}

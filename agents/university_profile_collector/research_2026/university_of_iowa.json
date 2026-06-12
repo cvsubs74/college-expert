@@ -1,0 +1,389 @@
+{
+  "_id": "university_of_iowa",
+  "metadata": {
+    "official_name": "The University of Iowa",
+    "location": {
+      "city": "Iowa City",
+      "state": "Iowa",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Iowa is a flagship public research university and AAU member renowned for its writing, health sciences, and business programs. It balances immense Big Ten athletic spirit with a highly accessible academic environment.",
+    "market_position": "Flagship Public Research University",
+    "admissions_philosophy": "Holistic and Formulaic (Regent Admission Index) with a No Harm Test-Optional policy",
+    "us_news_rank": 102,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Microscopic and volatile waitlist admission rates (0.09% in 2024).",
+        "implication": "Applicants cannot rely on waitlist movement as a viable backdoor for entry."
+      },
+      {
+        "category": "Academic",
+        "insight": "No Harm Test-Optional Policy.",
+        "implication": "Applicants should submit scores freely; the admissions committee will ignore them if they do not raise the applicant's profile."
+      },
+      {
+        "category": "Culture",
+        "insight": "Downtown pedestrian integration with the campus.",
+        "implication": "Students enjoy a vibrant, highly walkable college town environment."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A lively Big Ten atmosphere known for passionate athletics, robust Greek life, and deep community integration with downtown Iowa City.",
+      "transportation_impact": "Highly pedestrian-friendly; the campus footprint meshes seamlessly with downtown Iowa City, reducing the need for vehicles.",
+      "research_impact": "Classified as an R1 Doctoral University with $511 million in annual R&D expenditures, offering immense undergraduate laboratory opportunities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 83.6,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 68.6,
+      "admits_class_size": 5561,
+      "is_test_optional": true,
+      "test_policy_details": "No harm test-optional policy; ACT/SAT scores are only used if they benefit the applicant for admission or scholarships.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 27770,
+        "admits_total": 23222,
+        "enrolled_total": 5561,
+        "acceptance_rate_overall": 83.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 22.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 13969,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 13,
+          "waitlist_admit_rate": 0.09,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is highly volatile; 2024 saw a near 0% admit rate."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 22434,
+        "admits_total": 19340,
+        "enrolled_total": 4521,
+        "acceptance_rate_overall": 86.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 23.4,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 252,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 62,
+          "waitlist_admit_rate": 24.6,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.86,
+        "notes": "Average high school GPA of the incoming 2024 class was 3.86."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1330",
+        "sat_reading_middle_50": "570-670",
+        "sat_math_middle_50": "560-660",
+        "act_composite_middle_50": "21-28",
+        "submission_rate": 76.0,
+        "policy_note": "57% submitted ACT and 19% submitted SAT."
+      },
+      "demographics": {
+        "first_gen_percentage": 19.0,
+        "legacy_percentage": null,
+        "international_percentage": 1.1,
+        "geographic_breakdown": [
+          {
+            "region": "Rural",
+            "percentage": 23.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 11808,
+            "admits": 9537,
+            "acceptance_rate": 80.7
+          },
+          "women": {
+            "applicants": 15897,
+            "admits": 13638,
+            "acceptance_rate": 85.7
+          }
+        },
+        "racial_breakdown": {
+          "white": 74.1,
+          "black_african_american": 2.7,
+          "hispanic_latino": 8.7,
+          "asian": 4.2,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 3.9,
+          "unknown": 4.8,
+          "non_resident_alien": 1.1
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 83.6,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in the humanities, social sciences, or those utilizing the Open Major to explore interests before committing.",
+        "housing_profile": "Standard residence halls with Living Learning Communities available.",
+        "student_archetype": "Explorers and future writers taking advantage of the Iowa Writers' Workshop resources.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS:1210",
+              "CS:2210",
+              "CS:2230",
+              "MATH:1850",
+              "MATH:1860"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CS:1210",
+                "CS:2210",
+                "CS:2230",
+                "MATH:1850"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 62
+            },
+            "notable_professors": [],
+            "notes": "Students can earn a BA or BS, with the BS requiring additional math and science cognates."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly driven students confident in their medical career path, willing to engage with the intense curriculum.",
+        "housing_profile": "Often housed in West Campus close to UIHC.",
+        "student_archetype": "Clinical-focused pre-healthcare professionals.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires strong science background for direct admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Ranked #8 nationally among public undergraduate nursing programs."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-03",
+        "is_binding": false,
+        "notes": "Early Action deadline for fall semester."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-02",
+        "is_binding": false,
+        "notes": "Regular decision deadline to be considered for automatic merit scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Personal Statement required focusing on authentic personal growth and self-reflection."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores (if beneficial)"
+      ],
+      "secondary_factors": [
+        "Application essay",
+        "Extracurricular activities",
+        "First generation"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The Regent Admission Index (RAI) dominates the initial screening for in-state students."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply as an 'Open Major' to defer major declaration until up to 72 credits are earned while taking prerequisites.",
+      "Transfer applicants should utilize Iowa community college AA degree pipelines to bypass general education requirements."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "The Interdepartmental Studies program allows students to build custom degree tracks across disciplines if they fail to secure entry into an impacted primary major."
+  },
+  "financials": {
+    "tuition_model": "Fixed per academic year based on residency",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11283,
+        "total_coa": 29219,
+        "housing": 12920
+      },
+      "out_of_state": {
+        "tuition": 33371,
+        "total_coa": 51307,
+        "supplemental_tuition": 22088
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10070,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 69.0,
+    "scholarships": [
+      {
+        "name": "National Scholars Award",
+        "type": "Merit",
+        "amount": "$2,000-$15,000",
+        "deadline": "2025-02-02",
+        "benefits": "Renewable for up to four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Provost Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "2025-02-02",
+        "benefits": "For National Merit Finalists designating Iowa as their first choice.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Iowa Need-Based Academic Award",
+        "type": "Need",
+        "amount": "$100-$3,000",
+        "deadline": "FAFSA Deadline",
+        "benefits": "Per semester award based on FAFSA SAI and academic merit.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3, 4, or 5 grant 3-8 semester hours depending on the subject.",
+      "exceptions": [],
+      "usage": "Up to 30 semester hours of credit can be applied toward the degree."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exams with a score of 5-7, as well as SL Math.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Online Transfer Equivalency Guide"
+      ],
+      "restrictions": "Transfer grades below D are not accepted; coursework from two-year colleges covers a maximum of half the bachelor's degree credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong transcript emphasizing rigorous coursework in a student's desired field.",
+      "An authentic personal statement that focuses on self-reflection rather than simply summarizing an applicant's resume."
+    ],
+    "common_activities": [
+      "Dance Marathon",
+      "Intramural Athletics",
+      "Greek Life",
+      "Undergraduate Research"
+    ],
+    "essay_tips": [
+      "Avoid absolutes like 'always' and 'never'.",
+      "Do not pander with overt statements about 'why I want to be a Hawkeye'.",
+      "Focus deeply on personal growth rather than overly dramatic trauma narratives."
+    ],
+    "red_flags": [
+      "Reusing generic essays without adapting the reflection points.",
+      "Submitting an essay significantly under the 750-word maximum without addressing the prompt properly."
+    ],
+    "insights": [
+      "The campus heavily blends the academic atmosphere with the pedestrian-friendly downtown Iowa City, making it a unique social ecosystem."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 69866,
+    "employment_rate_2yr": 96.0,
+    "grad_school_rate": 30.0,
+    "top_employers": [
+      "University of Iowa",
+      "University of Iowa Hospitals & Clinics",
+      "UnityPoint Health",
+      "Iowa City Community School District",
+      "Collins Aerospace",
+      "PricewaterhouseCoopers",
+      "Northwestern Mutual"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.9,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 75.8
+  }
+}

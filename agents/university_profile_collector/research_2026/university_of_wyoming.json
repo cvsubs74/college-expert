@@ -1,0 +1,444 @@
+{
+  "_id": "university_of_wyoming",
+  "metadata": {
+    "official_name": "University of Wyoming",
+    "location": {
+      "city": "Laramie",
+      "state": "Wyoming",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Wyoming is a public land-grant flagship and R1 research university located in Laramie. It is known for its highly accessible rolling admissions, exceptional affordability, and strong emphasis on STEM, energy, and environmental sciences.",
+    "market_position": "Public Flagship / Land-Grant",
+    "admissions_philosophy": "Numbers-focused holistic review (High School Success Curriculum completion and GPA/Test Score grid)",
+    "us_news_rank": 222,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "With a 96.9% acceptance rate, general admission is non-selective, but specific programs like Nursing are strictly capped.",
+        "implication": "Applicants should focus less on gaining general admission and more on meeting the specific prerequisite and direct-admit criteria for their intended majors."
+      },
+      {
+        "category": "Financial",
+        "insight": "UW offers robust, automatic merit aid grids (Trustees' Scholars for in-state, Brown and Gold for out-of-state).",
+        "implication": "Even without need-based aid, high-achieving out-of-state students can access highly competitive tuition rates compared to their home-state public institutions."
+      },
+      {
+        "category": "Academic",
+        "insight": "Designated as an R1 research institution, UW handles over $167 million in research expenditures.",
+        "implication": "Undergraduates have unusually high access to well-funded research projects, particularly in mechanical engineering, biodiversity, and computational sciences."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A close-knit, outdoor-focused community in 'Laradise' (Laramie, elevation 7,200 ft). The campus features an active Greek life and strong athletics culture, though it requires adapting to long, harsh winters [cite: 10, 14].",
+      "transportation_impact": "Laramie is somewhat isolated, with the nearest major metropolitan area (Denver) approximately 130 miles away. Limited public transit makes on-campus or near-campus housing highly recommended for freshmen [cite: 10, 15].",
+      "research_impact": "World-class facilities such as the NCAR Wyoming Supercomputing Center and the School of Energy Resources provide undergraduates with immediate, hands-on research pipelines [cite: 5, 13]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.969,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.965,
+      "transfer_acceptance_rate": 0.958,
+      "admits_class_size": 1444,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for general admission, but official SAT/ACT scores are heavily recommended as they are required for placement into top merit scholarship tiers (e.g., Brown and Gold Commitment). Self-reporting is not allowed [cite: 1, 16].",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 6217,
+        "admits_total": 6023,
+        "enrolled_total": 1479,
+        "acceptance_rate_overall": 0.969,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.238,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 2]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 5644,
+        "admits_total": 5498,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.974,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 2]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.29-3.90",
+        "average_weighted": null,
+        "notes": "Average unweighted GPA is 3.55 [cite: 16]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1040-1265",
+        "sat_reading_middle_50": "520-650",
+        "sat_math_middle_50": "510-620",
+        "act_composite_middle_50": "20-27",
+        "submission_rate": 0.33,
+        "policy_note": "33% of enrolled first-time students submitted SAT scores; 68% submitted ACT scores [cite: 16, 17]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.043,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 2920,
+            "admits": 2819,
+            "acceptance_rate": 0.965
+          },
+          "women": {
+            "applicants": 3173,
+            "admits": 3085,
+            "acceptance_rate": 0.972
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.728,
+          "black_african_american": 0.01,
+          "hispanic_latino": 0.097,
+          "asian": 0.013,
+          "native_american_alaskan": 0.006,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.038,
+          "unknown": 0.056,
+          "non_resident_alien": 0.045
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering and Physical Sciences",
+        "admissions_model": "Pre-Major / Success Curriculum Progression",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for hands-on, research-oriented students targeting energy systems, solid mechanics, or civil infrastructure.",
+        "housing_profile": "Traditional residence halls with optional living-learning communities.",
+        "student_archetype": "Analytical problem-solvers looking for high-ROI degrees in the energy or manufacturing sectors.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 2200",
+              "MATH 2205",
+              "MATH 2210",
+              "ES 1060",
+              "ES 2110",
+              "ES 2120",
+              "ES 2210",
+              "ES 2310",
+              "ES 2330",
+              "ES 2410"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MATH 2200 Calculus I",
+              "ES 2110 Statics",
+              "ES 2120 Dynamics"
+            ],
+            "special_requirements": "Must complete the ME/ESE Success Curriculum with a 3.0 GPA before enrolling in any upper-division ME courses [cite: 11].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ME 3010",
+                "ME 3020",
+                "ME 3040",
+                "ME 3170",
+                "ME 3360",
+                "ME 3450"
+              ],
+              "electives": [],
+              "total_units": 131,
+              "major_units": 42
+            },
+            "notable_professors": [],
+            "notes": "Six core ME courses must be taken in residence and cannot be transferred [cite: 11]."
+          }
+        ]
+      },
+      {
+        "name": "Fay W. Whitney School of Nursing (College of Health Sciences)",
+        "admissions_model": "Direct Admit (Freshman) / Competitive Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Driven students certain of a nursing career who want small, intimate clinical cohorts and top-tier simulation labs.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Compassionate, highly disciplined individuals prepared for immediate clinical placements.",
+        "majors": [
+          {
+            "name": "Nursing (Basic BSN)",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Strictly caps admission at 48 students per year. Travel to Laramie and Cheyenne clinical sites is required [cite: 7, 18].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Includes three semesters of pre-clinical coursework and six semesters of clinical coursework [cite: 7]."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a broad liberal arts foundation, research in social sciences, or pre-med tracking.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Versatile learners looking for interdisciplinary flexibility.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a C or better in all major courses. Courses taken 15+ years ago do not count [cite: 19, 20].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 1000 General Psychology",
+                "PSYC 2000 Research Methods",
+                "PSYC 2210 Drugs and Behavior",
+                "PSYC 2300 Developmental Psychology",
+                "PSYC 2340 Abnormal Psychology",
+                "PSYC 2380 Social Psychology",
+                "PSYC 3120 Cognitive Psychology"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [],
+            "notes": "Internal transfers or double majors adding Psychology must hold at least a 2.500 UW GPA [cite: 20]."
+          }
+        ]
+      },
+      {
+        "name": "School of Computing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Tech-forward students looking to apply AI, data science, and software engineering to domains like energy, environment, or digital humanities.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Innovative, interdisciplinary technologists.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Gabrielle Allen (Computing)",
+              "Dr. Ellen Aikens (Computing/Machine Learning)",
+              "Dr. Sean Field (Computing/Anthropology)",
+              "Dr. Meridith Joyce (Computing)",
+              "Dr. Benjamin Koger (Computing)",
+              "Dr. Stefan Rahimi (Computing)",
+              "Dr. Dane Taylor (Computing)"
+            ],
+            "notes": "Newly established (2023) interdisciplinary school providing access to the Derecho supercomputer [cite: 12, 13]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "University of Wyoming Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Rolling",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Undergraduates are admitted on a rolling basis. Applying by early fall is recommended to maximize scholarship and housing availability [cite: 21]."
+      }
+    ],
+    "supplemental_requirements": [],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Completion of High School Success Curriculum (4 English, 4 Math, 4 Science, 3 Social Science, 4 Additional)"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (for specific scholarship tier placement)"
+      ],
+      "essay_importance": "Minimal",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Assured admission for cumulative unweighted GPA of 3.0-4.0. GPAs of 2.5-2.99 are 'admitted with support' [cite: 1]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Due to the strict 48-student cap, students intending to pursue the Basic BSN must apply directly as incoming freshmen immediately post-high school to secure pacing [cite: 7]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students unsure of their path can apply to 'Exploratory Studies' across six broad tracks instead of remaining completely undeclared, ensuring they stay on track for graduation while discovering their optimal fit [cite: 22]."
+  },
+  "financials": {
+    "tuition_model": "Block tuition rate (12-18 credit hours per semester) [cite: 23].",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 7768.0,
+        "total_coa": 26478.0,
+        "housing": 13710.0
+      },
+      "out_of_state": {
+        "tuition": 24178.0,
+        "total_coa": 42888.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Heavy Merit / Not Need-Blind strictly defined (strong state-subsidized grants for residents)",
+    "average_need_based_aid": null,
+    "average_merit_aid": 9533.0,
+    "percent_receiving_aid": 0.74,
+    "scholarships": [
+      {
+        "name": "Trustees' Scholars Award",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2025-12-01",
+        "benefits": "Covers tuition for up to 18 hours per semester, mandatory fees, and a standard double room and board. Highly competitive (average 3.97 GPA / 32 ACT) [cite: 24, 25].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Brown and Gold Commitment",
+        "type": "Merit",
+        "amount": "Up to $12,000",
+        "deadline": "Rolling",
+        "benefits": "Tiers of $12,000, $8,000, $5,000, or $3,000 annually for non-residents based on GPA and test scores [cite: 3].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Hathaway Scholarship",
+        "type": "Merit/Need",
+        "amount": "Up to $1,680",
+        "deadline": "Rolling",
+        "benefits": "Available to Wyoming residents based on academic performance and high school curriculum [cite: 26].",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credits awarded for scores of 3 or higher on most AP exams [cite: 27].",
+      "exceptions": [
+        "AP Chemistry requires a 4 for CHEM 1020 & 1030 [cite: 28].",
+        "AP Biology requires a 4 for LIFE 1010 [cite: 28]."
+      ],
+      "usage": "Can be used to bypass prerequisites like MATH 2200 (Calculus I) or general University Studies Program (USP) requirements [cite: 27]."
+    },
+    "ib_policy": {
+      "general_rule": "Credits awarded for scores of 4 or higher on Higher Level (HL) and Standard Level (SL) exams [cite: 27].",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "A minimum 2.0 cumulative GPA is required for transfer admission. Transfer students with fewer than 11 credits must also submit high school transcripts [cite: 29]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid high school GPA (3.0+) and completion of the required Success Curriculum.",
+      "Resilience and an appreciation for rural, high-altitude living."
+    ],
+    "common_activities": [
+      "Outdoor recreation (skiing, hiking in the Medicine Bow National Forest) [cite: 30]",
+      "Greek Life [cite: 31]",
+      "Undergraduate research (especially in environmental and energy sectors) [cite: 5]"
+    ],
+    "essay_tips": [],
+    "red_flags": [
+      "Failing to submit official standardized test scores, which disqualifies applicants from top automatic merit scholarships [cite: 3]."
+    ],
+    "insights": [
+      "UW offers incredible ROI for engineering and nursing students, but the remote location and harsh winters can be isolating for those unprepared for 'Laradise' [cite: 10]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 61749,
+    "employment_rate_2yr": 0.887,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.794,
+    "graduation_rate_4_year": 0.4,
+    "graduation_rate_6_year": 0.6
+  }
+}

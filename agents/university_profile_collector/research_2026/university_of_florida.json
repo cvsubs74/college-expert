@@ -1,0 +1,475 @@
+{
+  "_id": "university_of_florida",
+  "metadata": {
+    "official_name": "University of Florida",
+    "location": {
+      "city": "Gainesville",
+      "state": "Florida",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-20",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Florida (UF) is a premier public land-grant research university and the flagship institution of the State University System of Florida. Renowned for its exceptional return on investment, massive alumni network (the 'Gator Nation'), and highly spirited SEC athletic culture, UF has increasingly solidified its status as a highly selective academic powerhouse.",
+    "market_position": "Public Ivy / Top-Tier Public Flagship",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 30,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "UF has seen a massive surge in applications, driving its overall acceptance rate down to 24.2% for the Class of 2028. There is a stark disparity between in-state admit rates (~52.6%) and out-of-state admit rates (~14.3%).",
+        "implication": "Out-of-state applicants must recognize UF as a reach school that prioritizes Florida residents, demanding exceptional academic metrics and distinct extracurricular profiles."
+      },
+      {
+        "category": "Financial",
+        "insight": "UF offers one of the lowest in-state tuitions in the nation ($6,381) and relatively low out-of-state tuition ($28,659), while graduates enjoy a median 10-year earnings of $77,321.",
+        "implication": "UF represents an extraordinary return on investment (ROI), making it highly competitive not just academically, but as an economic choice for top-tier students."
+      },
+      {
+        "category": "Academic",
+        "insight": "UF's Pathway to Campus Enrollment (PaCE) and Innovation Academy programs offer alternate entry routes to students who might otherwise be denied traditional fall admission.",
+        "implication": "Applicants should carefully review and consider indicating interest in alternate pathways, as this can increase the likelihood of gaining a spot in the UF ecosystem."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "UF boasts an electric, spirited campus culture heavily anchored by SEC athletics (the Florida Gators), a vibrant Greek life, and over 1,000 student organizations. Social life is active, inclusive, and closely tied to the classic college town atmosphere of Gainesville.",
+      "transportation_impact": "Gainesville is heavily oriented around the university, with robust campus bus systems (RTS) and widespread scooter/bicycle usage. Transportation is highly integrated with the student schedule.",
+      "research_impact": "As an R1 institution with over $1 billion in research expenditures, undergraduate research is heavily emphasized. Programs like the University Scholars Program and CURBS (Center for Undergraduate Research Board of Students) make it easy for students to access high-level lab and field research."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.242,
+      "in_state_acceptance_rate": 0.526,
+      "out_of_state_acceptance_rate": 0.143,
+      "international_acceptance_rate": 0.196,
+      "transfer_acceptance_rate": 0.448,
+      "admits_class_size": 7500,
+      "is_test_optional": false,
+      "test_policy_details": "UF mandates standardized test scores (SAT or ACT) for all first-year applicants. Florida public universities are legally required to collect test scores and do not operate under test-optional policies.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 50000,
+          "admits": 10510,
+          "acceptance_rate": 0.21,
+          "class_fill_percentage": 0.58
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 73557,
+        "admits_total": 17804,
+        "enrolled_total": 7513,
+        "acceptance_rate_overall": 0.242,
+        "acceptance_rate_in_state": 0.526,
+        "acceptance_rate_out_of_state": 0.143,
+        "yield_rate": 0.422,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed in CDS, but crowdsourced insights indicate essentially zero waitlist movement in its inaugural year."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 65375,
+        "admits_total": 15707,
+        "enrolled_total": 6612,
+        "acceptance_rate_overall": 0.24,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.431,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "UF did not formally use a waitlist prior to the Class of 2028."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 64473,
+        "admits_total": 15054,
+        "enrolled_total": 6500,
+        "acceptance_rate_overall": 0.234,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.43,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 51207,
+        "admits_total": 15431,
+        "enrolled_total": 6300,
+        "acceptance_rate_overall": 0.301,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.408,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.40-4.60",
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": 4.5,
+        "notes": "Average unweighted GPA for enrolled students is 3.92; 53% of enrolled students had a 4.0 unweighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1330-1470",
+        "sat_reading_middle_50": "660-730",
+        "sat_math_middle_50": "660-750",
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 1.0,
+        "policy_note": "Test-required. Approximately 80% submitted SAT scores and 40% submitted ACT scores (some submitted both)."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.2,
+        "legacy_percentage": null,
+        "international_percentage": 0.091,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Florida)",
+            "percentage": 0.85
+          },
+          {
+            "region": "Out-of-State / International",
+            "percentage": 0.15
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 32729,
+            "admits": 8260,
+            "acceptance_rate": 0.252
+          },
+          "women": {
+            "applicants": 40826,
+            "admits": 9542,
+            "acceptance_rate": 0.233
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.474,
+          "black_african_american": 0.0525,
+          "hispanic_latino": 0.214,
+          "asian": 0.103,
+          "native_american_alaskan": 0.0008,
+          "pacific_islander": 0.0005,
+          "two_or_more_races": 0.0442,
+          "unknown": 0.0224,
+          "non_resident_alien": 0.091
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Fisher School of Accounting",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students interested in corporate finance, CPA tracks, and competitive business environments.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Driven, numerically inclined, focused on immediate post-grad employment in Big Four firms.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.Ac.",
+            "is_impacted": true,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACG 2021",
+              "ACG 2071"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires a grade of B or better in ACG 2021 and ACG 2071 (max two attempts).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Transfer students admitted to other UF majors after Spring 2014 may not reclassify into the BSAc program."
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for pre-med, pre-law, humanities, and foundational science students.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Exploratory, intellectually curious, and research-oriented.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ochem",
+              "calc"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Premed path is notorious for its rigorous 'weeder courses' in chemistry and calculus to manage high enrollment volumes."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Priority deadline for full scholarship consideration and Honors program."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Space-available basis; significantly lower acceptance odds than EA."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-01",
+        "details": "A personal statement (via Common App) and specific UF supplemental questions detailing activities, community impact, and personal background."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Volunteer work",
+        "First-generation status"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "UF places massive weight on course rigor (AICE, AP, IB, Dual Enrollment) and recalculates GPA giving extra weight to these courses. UF officially does not consider alumni legacy."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply during Early Action. Nearly 60% of the class is filled via EA, and applying RD severely limits your chances.",
+      "Highlight community service; 90% of admitted cohorts report significant community service involvement.",
+      "Showcase 'Gator Pride' and connections to the state of Florida in your essays, even if applying from out-of-state."
+    ],
+    "college_ranking_tactics": [
+      "If interested in a heavily over-enrolled STEM field, emphasize a unique humanities cross-interest to stand out, though UF admits to the university rather than the specific major."
+    ],
+    "alternate_major_strategy": "UF generally admits to the university, not the major. However, students should consider being open to the PaCE (Pathway to Campus Enrollment) program or the Innovation Academy. Indicating a willingness to start in the Summer term or through PaCE (online to start, then transition to campus) drastically increases admission vectors for borderline applicants."
+  },
+  "financials": {
+    "tuition_model": "Flat-rate per credit for online, standard block for on-campus",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 6381.0,
+        "total_coa": 23521.0,
+        "housing": 12120.0
+      },
+      "out_of_state": {
+        "tuition": 28659.0,
+        "total_coa": 45799.0,
+        "supplemental_tuition": 22278.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10123.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.84,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$5,000",
+        "deadline": "2024-11-01",
+        "benefits": "Awarded at $5,000 per year ($20k over 4 years) for in-state students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Gold Scholarship",
+        "type": "Merit",
+        "amount": "$8,000",
+        "deadline": "2024-11-01",
+        "benefits": "Awarded at $8,000 per year ($32k over 4 years) for in-state students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Platinum Scholarship",
+        "type": "Merit",
+        "amount": "$10,000",
+        "deadline": "2024-11-01",
+        "benefits": "Awarded at $10,000 per year ($40k over 4 years) for in-state students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Gator Nation Scholarship",
+        "type": "Merit",
+        "amount": "$20,000",
+        "deadline": "2024-11-01",
+        "benefits": "Reduces out-of-state tuition by $20,000 per year ($80k over 4 years).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Sunshine Scholarship",
+        "type": "Merit",
+        "amount": "$16,000",
+        "deadline": "2024-11-01",
+        "benefits": "Reduces out-of-state tuition by $16,000 per year ($64k over 4 years).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Alumni Scholarship",
+        "type": "Merit",
+        "amount": "$8,000",
+        "deadline": "2024-11-01",
+        "benefits": "Reduces out-of-state tuition by $8,000 per year ($32k over 4 years).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "John V. Lombardi Scholarship",
+        "type": "Merit",
+        "amount": "$0",
+        "deadline": "2024-11-01",
+        "benefits": "Four-year scholarship plus four fully funded summer enrichment experiences (study abroad and leadership retreats).",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or higher on approved AP exams earn UF credit.",
+      "exceptions": [],
+      "usage": "A maximum of 45 semester credits may be granted by combining AICE, AP, CLEP, and IB credit. Exempts students from General Education and Writing Requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4 or higher on both higher-level (HL) and standard-level (SL) examinations earn credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "NJ Transfer (Out-of-State Context)",
+        "Florida Statewide Course Numbering System"
+      ],
+      "restrictions": "Transfer credits take precedence over exam credits if duplicate. A maximum of 60 credits can be transferred via dual enrollment."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous academic load featuring AP, IB, AICE, or Dual Enrollment",
+      "High standardized test scores (SAT 1330+ / ACT 29+)",
+      "Strong community service record (90%+ of admits have this)",
+      "Applying Early Action (Nov 1)"
+    ],
+    "common_activities": [
+      "Community service and sustained volunteerism",
+      "Leadership in student government or clubs",
+      "Athletics (varsity or high-level club)",
+      "Research or academic internships",
+      "Part-time employment"
+    ],
+    "essay_tips": [
+      "Demonstrate a clear sense of 'Gator Pride' or strong cultural fit for the UF community.",
+      "Highlight overcoming adversity or first-generation challenges if applicable.",
+      "Focus on specific, tangible impacts you've made in your local community."
+    ],
+    "red_flags": [
+      "Applying Regular Decision as an out-of-state student with average test scores.",
+      "Lacking AP/IB/AICE course rigor when the high school offers it.",
+      "Writing a generic essay that doesn't articulate intellectual vitality or community impact."
+    ],
+    "insights": [
+      "UF is incredibly protective of its yield and its Florida resident base; out-of-state applicants face an admission rate under 15%.",
+      "The university uses a holistic review process that genuinely weighs essays and community service heavily against raw GPA.",
+      "Students placed in the PaCE program should view it as a legitimate back-door entry to UF, as it guarantees on-campus enrollment after 60 credits."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 77321,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Lockheed Martin",
+      "Northrop Grumman",
+      "Pratt & Whitney",
+      "Boeing",
+      "Blue Origin",
+      "NASA",
+      "Walmart",
+      "JPMorgan Chase"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.97,
+    "graduation_rate_4_year": 0.78,
+    "graduation_rate_6_year": 0.91
+  }
+}

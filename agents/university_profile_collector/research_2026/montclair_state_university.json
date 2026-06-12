@@ -1,0 +1,472 @@
+{
+  "_id": "montclair_state_university",
+  "metadata": {
+    "official_name": "Montclair State University",
+    "location": {
+      "city": "Montclair",
+      "state": "New Jersey",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Montclair State University is a large public research institution (R2) and Hispanic-Serving Institution located just 12 miles from New York City. Known for its remarkable social mobility metrics and diverse student body, the university offers over 300 programs and combines the resources of a major state university with a supportive, accessible academic environment.",
+    "market_position": "Large Public Research University (R2) / Hispanic-Serving Institution",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While overall admissions are highly accessible (88% acceptance), specific majors like Nursing and Computer Science enforce strict GPA minimums and filtering prerequisites.",
+        "implication": "Applicants must carefully review direct-admit guidelines for STEM and healthcare fields, as internal transferring requires maintaining high collegiate GPAs."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university heavily targets low-to-middle income families, with 45% of students identifying as Pell Grant recipients and over $40 million granted in institutional aid.",
+        "implication": "Montclair represents one of the strongest ROI options in the Northeast, particularly for in-state residents."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus balances a massive commuter population with a core residential group of 5,300 students.",
+        "implication": "Students seeking a traditional, purely residential college experience must be proactive in joining Greek life and campus organizations to build community."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly diverse, anchored by over 120 clubs, active Greek life, and robust performing arts programs at the Kasser Theater. The campus empties out slightly on weekends due to the commuter base.",
+      "transportation_impact": "Located exactly 12 miles from New York City with two on-campus train stations, offering unparalleled access to metropolitan internships, though campus parking is notoriously difficult.",
+      "research_impact": "Classified as an R2 doctoral university with high research activity, generating over $21.6 million in external grants and offering deep undergraduate research integration in the sciences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.879,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.826,
+      "admits_class_size": 4192,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional since 2015. Standardized test scores are not required for general admission, and only about 8-9% of applicants submit them.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 12031,
+          "admits": 10880,
+          "acceptance_rate": 0.904,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 26257,
+        "admits_total": 23076,
+        "enrolled_total": 4192,
+        "acceptance_rate_overall": 0.879,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.182,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2549,
+          "accepted_spots": 2549,
+          "admitted_from_waitlist": 2227,
+          "waitlist_admit_rate": 0.874,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist saw a massive anomaly in 2024 with an 87.4% admission rate compared to historical averages below 35%."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 23599,
+        "admits_total": 20629,
+        "enrolled_total": 4039,
+        "acceptance_rate_overall": 0.874,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.196,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1915,
+          "accepted_spots": 1915,
+          "admitted_from_waitlist": 505,
+          "waitlist_admit_rate": 0.264,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.33,
+        "notes": "Average incoming high school GPA is approximately 3.33 to 3.35."
+      },
+      "testing": {
+        "sat_composite_middle_50": "910-1210",
+        "sat_reading_middle_50": "480-620",
+        "sat_math_middle_50": "430-590",
+        "act_composite_middle_50": null,
+        "submission_rate": 0.082,
+        "policy_note": "Test-optional policy heavily utilized; tests are deemphasized in holistic review."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.016,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (NJ)",
+            "percentage": 0.93
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10368,
+            "admits": 8886,
+            "acceptance_rate": 0.857
+          },
+          "women": {
+            "applicants": 15889,
+            "admits": 14190,
+            "acceptance_rate": 0.893
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.321,
+          "black_african_american": 0.134,
+          "hispanic_latino": 0.413,
+          "asian": 0.062,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.025,
+          "unknown": 0.043,
+          "non_resident_alien": 0.016
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Science and Mathematics",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for heavily quantitative students seeking careers in tech and life sciences.",
+        "housing_profile": "Integrated residential campus life.",
+        "student_archetype": "Analytical and research-focused.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSIT 104",
+              "CSIT 111",
+              "MATH 111"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "CSIT 104",
+              "CSIT 111",
+              "MATH 111"
+            ],
+            "special_requirements": "Must pass CSIT 104, CSIT 111, and MATH 111 with a C- or higher by the end of the second semester in the major.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Strict retention policy based on foundational coursework grades."
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit Only",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly driven students strictly committed to healthcare and licensure.",
+        "housing_profile": "Integrated residential.",
+        "student_archetype": "Clinical and care-oriented.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Must achieve a minimum score of 58.7 on the TEAS entrance exam; science courses must be completed within 5 years with a C or better.",
+            "admissions_pathway": "Direct Admit Only",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "100% NCLEX pass rate. Standard BSN is direct-admit for freshmen only; transfers are restricted to the RN-BSN program."
+          }
+        ]
+      },
+      {
+        "name": "Feliciano School of Business",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students interested in corporate careers, management, and entrepreneurship.",
+        "housing_profile": "Integrated residential.",
+        "student_archetype": "Pre-professional and networking-focused.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers require a 3.0 overall GPA and specific major GPAs depending on concentration (e.g., 2.70 for Accounting, 2.50 for Finance).",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major on campus, producing over 650 graduates annually."
+          }
+        ]
+      },
+      {
+        "name": "College of Humanities and Social Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking flexible liberal arts education or pathways to education certification.",
+        "housing_profile": "Integrated residential.",
+        "student_archetype": "Research and community-focused.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "If combining with Early Childhood/Elementary Education certification, a 3.0 major GPA is strictly required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Second most popular major, conferring around 471 degrees annually."
+          }
+        ]
+      },
+      {
+        "name": "College of the Arts",
+        "admissions_model": "Portfolio/Audition",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Creatives with established portfolios or performance history.",
+        "housing_profile": "Integrated residential.",
+        "student_archetype": "Artistic and creative.",
+        "majors": [
+          {
+            "name": "Fashion Design and Merchandising",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Cannot declare via standard portal; requires direct contact with program coordinator.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Montclair State Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "YYYY-12-01",
+        "is_binding": false,
+        "notes": "Early Action Notification by December 23."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-03-01",
+        "is_binding": false,
+        "notes": "Rolling admission begins after March 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Education Certification Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Required if the applicant's GPA is within 0.25 points below the required major GPA floor."
+      },
+      {
+        "target_program": "College of the Arts",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "",
+        "details": "Audition and portfolio reviews are critically important for performing/visual arts majors."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High school GPA",
+        "Curriculum rigor"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Supplemental essays"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "The university's mission heavily prioritizes social mobility and minority access, giving strong holistic consideration to first-generation and Pell-eligible students."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply via University College (Undeclared) to bypass major-specific GPA floors upon initial admission.",
+      "Avoid direct application to Nursing unless TEAS scores and science grades are exceptional."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Apply for a non-impacted major within the desired college (e.g., General Biology instead of Computer Science), complete the strict prerequisite courses (like MATH 111), and maintain a 3.0 GPA to request an internal change of major."
+  },
+  "financials": {
+    "tuition_model": "Flat-rate per semester for full-time students.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 15912.0,
+        "total_coa": 37452.0,
+        "housing": 16730.0
+      },
+      "out_of_state": {
+        "tuition": 26022.0,
+        "total_coa": 47562.0,
+        "supplemental_tuition": 10110.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12283.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.85,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$34,000",
+        "deadline": "Upon Application",
+        "benefits": "Provides significant tuition offset over four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Red Hawk Advantage",
+        "type": "Need/Merit",
+        "amount": "Varies",
+        "deadline": "Upon Application",
+        "benefits": "Reduces total cost of attendance for eligible first-years.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 3 or higher.",
+      "exceptions": [
+        "Some rigorous STEM exams require a 4 or 5."
+      ],
+      "usage": "Can bypass major prerequisites; no limit on total AP credits accepted."
+    },
+    "ib_policy": {
+      "general_rule": "Accepted based on specific higher-level exam score requirements.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "NJ Transfer",
+        "2+2 Agreements with Brookdale Community College"
+      ],
+      "restrictions": "Maximum 90 credits from a 4-year or 60 credits from a 2-year institution. Must hold C- or higher."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Consistent high school academic performance.",
+      "Proactive engagement with administrative departments."
+    ],
+    "common_activities": [
+      "Greek Life",
+      "Campus Media (The Montclarion, Radio/TV)",
+      "NCAA DIII Athletics"
+    ],
+    "essay_tips": [
+      "Use the supplemental essay to clearly explain any GPA anomalies, as it acts as an appeal mechanism for strict programs."
+    ],
+    "red_flags": [
+      "Commuter-heavy campus culture can lead to a 'suitcase school' feel on weekends.",
+      "Campus parking is frequently cited as extremely difficult."
+    ],
+    "insights": [
+      "The campus is celebrated for its aesthetics and extreme diversity, closely reflecting the demographics of the NYC metro area."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 61351,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "ABC News",
+      "AT&T",
+      "KPMG",
+      "Prudential Financial",
+      "PSEG",
+      "Quest Diagnostics",
+      "Valley National Bank"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.78,
+    "graduation_rate_4_year": 0.49,
+    "graduation_rate_6_year": 0.67
+  }
+}

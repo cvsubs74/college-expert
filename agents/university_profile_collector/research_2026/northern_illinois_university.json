@@ -1,0 +1,444 @@
+{
+  "_id": "northern_illinois_university",
+  "metadata": {
+    "official_name": "Northern Illinois University",
+    "location": {
+      "city": "DeKalb",
+      "state": "Illinois",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-20",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Northern Illinois University (NIU) is a public research university located in DeKalb, Illinois, recognized for its commitment to accessibility, social mobility, and test-blind admissions. NIU offers over 100 majors and robust pre-professional programs, particularly in business, nursing, and computer science, supported by an engaged faculty and R2 research classification. While the university provides an affordable education\u2014eliminating out-of-state tuition premiums\u2014it faces challenges with lower-than-average retention and graduation rates.",
+    "market_position": "Mid-sized Public Research University (R2)",
+    "admissions_philosophy": "Holistic/Test-Blind",
+    "us_news_rank": 269,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "NIU guarantees admission to any high school applicant with a cumulative GPA of 3.0 or higher on a 4.0 scale.",
+        "implication": "Students with solid, but not exceptional, high school academic records have a highly predictable path to admission and automatic merit scholarship consideration."
+      },
+      {
+        "category": "Academic",
+        "insight": "The 4-year graduation rate is 27% and the 6-year graduation rate hovers around 49-51%.",
+        "implication": "Prospective students must be highly proactive, seek out academic advising early, and build a strong personal support system to ensure they complete their degree on time."
+      },
+      {
+        "category": "Financial",
+        "insight": "NIU eliminated its out-of-state tuition rate for domestic U.S. students and offers a 'Truth-in-Tuition' policy that locks in tuition for four years.",
+        "implication": "NIU is an incredibly cost-effective option for both Illinois residents and out-of-state students seeking a large public university experience without the out-of-state premium."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus hosts a diverse student body with high Pell Grant eligibility, but is often described as a 'suitcase school' or commuter-heavy.",
+        "implication": "Campus social life is what you make of it; joining Greek life, major-specific clubs, or attending Division I athletic events is critical for building a community, especially on weekends."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Diverse and welcoming with a significant commuter population. Greek life and Division I athletics (Huskies) drive school spirit, though the campus can feel quiet on weekends as many students travel home.",
+      "transportation_impact": "The Huskie Bus Line provides reliable transit around the sprawling campus and town, but having a car is frequently recommended for accessing off-campus social activities and regional travel.",
+      "research_impact": "As an R2 institution, NIU offers robust undergraduate research opportunities, notably through strategic partnerships with nearby Argonne National Laboratory and Fermilab for STEM majors."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.704,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.85,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 2202,
+      "is_test_optional": true,
+      "test_policy_details": "Test-blind. NIU does not consider ACT or SAT scores for general admission, admission to the University Honors Program, or merit scholarships.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 24177,
+        "admits_total": 17033,
+        "enrolled_total": 2202,
+        "acceptance_rate_overall": 0.704,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.129,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data is not publicly disclosed for recent years."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 25961,
+        "admits_total": 18348,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.7065,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Acceptance rate peaked slightly this cycle."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.4,
+        "notes": "Guaranteed admission is offered to any student with a 3.0+ cumulative high school GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": null,
+        "policy_note": "NIU is completely test-blind. Standardized test scores are not used for admission or merit aid."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.067,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10235,
+            "admits": 6791,
+            "acceptance_rate": 0.66
+          },
+          "women": {
+            "applicants": 13402,
+            "admits": 9707,
+            "acceptance_rate": 0.72
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.443,
+          "black_african_american": 0.178,
+          "hispanic_latino": 0.221,
+          "asian": 0.0598,
+          "native_american_alaskan": 0.00415,
+          "pacific_islander": 0.000843,
+          "two_or_more_races": 0.0174,
+          "unknown": 0.00247,
+          "non_resident_alien": 0.067
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Health and Human Sciences",
+        "admissions_model": "Pre-Major/Limited Admission for specific tracks",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking highly practical, licensure-track healthcare professions such as nursing, communicative disorders, and public health.",
+        "housing_profile": "Standard undergraduate housing; Grant and Stevenson are popular among STEM and healthcare students.",
+        "student_archetype": "Compassionate, academically rigorous, and clinical-focused.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOS 103",
+              "BIOS 105",
+              "BIOS 213",
+              "BIOS 357",
+              "CHEM 110",
+              "CHEM 111",
+              "ENGL 203",
+              "HDFS 280",
+              "NUTR 201",
+              "PSYC 102",
+              "STAT 100"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Nursing is a Limited Admission program; students must meet specific clinical standards, background checks, and prerequisite course GPA benchmarks before formally advancing to the clinical sequence.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 302",
+                "NURS 303",
+                "NURS 304",
+                "NURS 305",
+                "NURS 308",
+                "NURS 312",
+                "NURS 316",
+                "NURS 419"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 92
+            },
+            "notable_professors": [],
+            "notes": "Program carries a differential tuition rate and boasts strong regional hospital placement."
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students seeking broad liberal arts exposure or pursuing foundational STEM subjects like Computer Science, Biology, and Physics. Strong ties to Argonne and Fermilab.",
+        "housing_profile": "Many opt for Patterson or Neptune halls.",
+        "student_archetype": "Intellectually curious, research-oriented, and flexible.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 229",
+              "MATH 230"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSCI 340"
+            ],
+            "special_requirements": "Students must choose one of three emphases: Software Development, Enterprise Software, or Computational Software.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 240",
+                "CSCI 241",
+                "CSCI 330",
+                "CSCI 340",
+                "CSCI 360",
+                "CSCI 463",
+                "CSCI 466",
+                "CSCI 467",
+                "CSCI 480"
+              ],
+              "electives": [
+                "CSCI 465"
+              ],
+              "total_units": 120,
+              "major_units": 79
+            },
+            "notable_professors": [],
+            "notes": "CS carries a differential tuition rate. Highly regarded for regional job placement in software engineering and database administration."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "December 1 is the priority deadline for Fall admission and full consideration for merit-based scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Holistic Review Questionnaire",
+        "deadline": "",
+        "details": "Only required for students with a high school GPA below 3.0. Involves answering holistic review questions and optionally submitting an interview or 7th-semester grades."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Motivation",
+        "Resilience",
+        "Resourcefulness",
+        "Extracurricular activities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The admissions process is highly stratified: above a 3.0 GPA is an automatic guarantee. Below 3.0 triggers a holistic review where qualitative factors like resilience, character, and personal circumstances heavily dictate the decision."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply undecided if unsure, as transfer into most Liberal Arts programs is seamless.",
+      "For Nursing, apply as a Pre-Nursing major early, as the clinical progression limits the number of students who can be accommodated."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students failing to meet limited-admission criteria for competitive programs like Nursing are typically offered admission to the university as undeclared or in an alternate major."
+  },
+  "financials": {
+    "tuition_model": "Truth-in-Tuition (Fixed for four continuous years for domestic students). No out-of-state premium for U.S. residents.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 14400.0,
+        "total_coa": 29446.0,
+        "housing": 15046.0
+      },
+      "out_of_state": {
+        "tuition": 14400.0,
+        "total_coa": 29446.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-aware, robust automatic merit aid",
+    "average_need_based_aid": 13565.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.86,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, fees, room and board",
+        "deadline": "December 1",
+        "benefits": "Covers full COA, admission to University Honors Program, priority registration.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "NIU Scholars Award",
+        "type": "Merit",
+        "amount": "$7,000",
+        "deadline": "December 1",
+        "benefits": "Renewable per year based on GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Huskie Excellence Scholarship",
+        "type": "Merit",
+        "amount": "$5,000",
+        "deadline": "December 1",
+        "benefits": "Renewable.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Northern Academic Scholarship",
+        "type": "Merit",
+        "amount": "$4,000",
+        "deadline": "December 1",
+        "benefits": "Renewable.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Centennial Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "December 1",
+        "benefits": "Renewable.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Huskie Legacy Award",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "December 1",
+        "benefits": "Available to children of NIU alumni; can be stacked with other merit awards.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 3 or higher on AP exams.",
+      "exceptions": [],
+      "usage": "Credit is posted on the student record with the symbol CR (no specific grade attached) by the 15th day of the student's first enrollment."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts Higher Level (HL) exams with scores of 4 or higher.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "State Seal of Biliteracy credit system",
+        "CLEP/DSST accepted"
+      ],
+      "restrictions": "Transfer credits subject to major applicability; limited admission programs like Nursing may restrict transferability of specific clinical prerequisites."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A 3.0+ high school GPA is the golden ticket for guaranteed admission.",
+      "Ability to handle independence; NIU requires self-advocacy to succeed and graduate on time.",
+      "A proactive approach to social life to avoid the 'suitcase school' weekend drain."
+    ],
+    "common_activities": [
+      "Greek Life (Fraternities and Sororities)",
+      "Attending MAC Division I Football Games at Huskie Stadium",
+      "Major-specific academic clubs and honor societies",
+      "Intramural sports"
+    ],
+    "essay_tips": [
+      "If your GPA is below 3.0, use the holistic review questionnaire to directly address the circumstances that affected your academic performance.",
+      "Highlight resilience, resourcefulness, and a clear motivation for your chosen field of study."
+    ],
+    "red_flags": [
+      "Expecting a booming, isolated college town social scene on the weekends; a large portion of the student body commutes or travels home.",
+      "Assuming high school habits will easily translate to college without utilizing tutoring and advising, given the low overall graduation rates."
+    ],
+    "insights": [
+      "Students praise the diversity and the engaged faculty members who have real-world experience.",
+      "Housing quality varies drastically: Patterson and Northern View are highly desired, while older dorms like Neptune lack AC.",
+      "The affordability is consistently praised, but the bureaucratic processes and outdated infrastructure in some buildings are common student complaints."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 49800,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Abbott",
+      "AbbVie",
+      "Allstate",
+      "Amazon",
+      "AT&T",
+      "Caterpillar Inc.",
+      "Chicago Public Schools",
+      "Discover Financial Services",
+      "JP Morgan Chase & Company",
+      "Northwestern Medicine"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.7,
+    "graduation_rate_4_year": 0.27,
+    "graduation_rate_6_year": 0.49
+  }
+}

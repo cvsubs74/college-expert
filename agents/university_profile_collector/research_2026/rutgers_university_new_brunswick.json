@@ -1,0 +1,432 @@
+{
+  "_id": "rutgers_university_new_brunswick",
+  "metadata": {
+    "official_name": "Rutgers, The State University of New Jersey, New Brunswick",
+    "location": {
+      "city": "New Brunswick/Piscataway",
+      "state": "New Jersey",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-26",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Rutgers University-New Brunswick is a massive, highly diverse R1 public research university and the flagship of the New Jersey state system. Offering over 120 majors across five distinct campuses, it balances wide accessibility for in-state residents with intense competitiveness for its specialized schools of Engineering, Business, and Pharmacy [cite: 2, 5, 15].",
+    "market_position": "Leading Public Flagship / Research Powerhouse",
+    "admissions_philosophy": "Holistic review with a strong emphasis on quantitative metrics; evaluates unweighted GPA, course rigor, and extracurriculars, though impacted professional programs lean heavily on STEM preparedness and test scores [cite: 5, 8].",
+    "us_news_rank": 41,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The overall acceptance rate plummeted to 58.15% in 2024 following a massive 58.3% spike in applications (from 43,347 to 68,614) [cite: 2, 6].",
+        "implication": "Rutgers is rapidly transitioning from a regional 'safety' to a primary target, meaning in-state and out-of-state applicants can no longer rely on admission without highly competitive credentials."
+      },
+      {
+        "category": "Academic",
+        "insight": "Admission rates vary drastically by the specific college applied to; while the School of Arts and Sciences is broader, Engineering and Business sit at roughly 40%, and Pharmacy is in the single digits [cite: 5].",
+        "implication": "Strategic selection of the primary and alternate major/college is the most critical decision an applicant will make. Applying 'Undeclared' to Arts and Sciences is significantly easier than direct admission to professional schools."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university provides an excellent return on investment with a median 10-year earning of $74,479, far above the national average, supported by close proximity to NYC and Philadelphia job markets [cite: 12, 13, 15].",
+        "implication": "Despite a high out-of-state cost of attendance ($59,031), the long-term ROI is strong, particularly for students in Computer Science, Finance, and Engineering."
+      },
+      {
+        "category": "Culture",
+        "insight": "The New Brunswick location operates as a 'melting pot' across five distinct campuses (Busch, Livingston, College Ave, Cook, Douglass) relying on a complex bus system [cite: 3, 4, 16].",
+        "implication": "Students must be proactive, independent, and resilient to navigate the large bureaucracy, overcrowded buses, and massive class sizes, but they are rewarded with unparalleled diversity and resources [cite: 17]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly diverse, functioning as a 'melting pot' with students from over 130 countries and 60% identifying as people of color [cite: 16]. The environment features a mix of urban energy (College Ave), quiet academic focus (Busch/Livingston), and artistic/agricultural niches (Cook/Douglass) supported by over 750 student organizations [cite: 4, 15].",
+      "transportation_impact": "The university is divided by the Raritan River into five smaller campuses. Students rely heavily on a free intercampus bus system that is frequently cited as overcrowded and a major logistical hurdle requiring careful schedule planning [cite: 4, 17].",
+      "research_impact": "As an R1 institution producing nearly $970 million in annual research grants, Rutgers provides immense undergraduate research opportunities, notably through the Aresty Research Center where undergrads co-author papers and work in cutting-edge labs like WINLAB [cite: 1, 18]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.5815,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.5757,
+      "admits_class_size": 8191,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional and test-blind policies are extended through 2027. Students who do not submit scores face no disadvantage, but submitted scores are reviewed as an additional supporting credential [cite: 9, 19].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 68614,
+        "admits_total": 39899,
+        "enrolled_total": 8191,
+        "acceptance_rate_overall": 0.5815,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.2053,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed. Application volume surged by nearly 60% after joining the Common Application [cite: 2, 6, 20]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 43347,
+        "admits_total": 28326,
+        "enrolled_total": 7681,
+        "acceptance_rate_overall": 0.6535,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.2711,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 6, 8, 10, 11]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 41654,
+        "admits_total": 27612,
+        "enrolled_total": 7780,
+        "acceptance_rate_overall": 0.6629,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.2817,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 6, 21]."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 43161,
+        "admits_total": 29419,
+        "enrolled_total": 7105,
+        "acceptance_rate_overall": 0.6816,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.2415,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 6, 22]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.60-3.90",
+        "average_weighted": null,
+        "notes": "Middle 50% averages mask major variance; Engineering and Business typically admit at the higher end of the 3.6-3.9 scale [cite: 5]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1310-1500",
+        "sat_reading_middle_50": "630-720",
+        "sat_math_middle_50": "640-760",
+        "act_composite_middle_50": "28-33",
+        "submission_rate": 0.5,
+        "policy_note": "SAT data from 2023/2024 averages. Specific colleges possess varying sub-ranges (e.g., Engineering SAT Math is highly skewed to 700+) [cite: 2, 8, 20, 23]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.07,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (New Jersey)",
+            "percentage": 0.75
+          },
+          {
+            "region": "Out-of-State/International",
+            "percentage": 0.25
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 32652,
+            "admits": 18574,
+            "acceptance_rate": 0.5688
+          },
+          "women": {
+            "applicants": 35948,
+            "admits": 21314,
+            "acceptance_rate": 0.5929
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.316,
+          "black_african_american": 0.08,
+          "hispanic_latino": 0.152,
+          "asian": 0.29,
+          "native_american_alaskan": 0.00065,
+          "pacific_islander": 0.00057,
+          "two_or_more_races": 0.0339,
+          "unknown": 0.02,
+          "non_resident_alien": 0.07
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Arts and Sciences (SAS)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking traditional liberal arts, natural sciences, or those utilizing the 'alternate major' strategy for tech/business as it is less selective than the professional schools [cite: 24]."
+      },
+      {
+        "name": "Rutgers Business School-New Brunswick (RBS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.4,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Designed for highly competitive applicants with top-tier math scores. Target unweighted GPAs should sit firmly above a 3.8. Offers highly reputed Supply Chain and Finance tracks [cite: 5, 24]."
+      },
+      {
+        "name": "School of Engineering (SOE)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.4,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly rigorous programs requiring exceptional math and physics backgrounds. Middle 50% SAT scores are generally 1340-1510. Direct admission is very competitive [cite: 5, 24]."
+      },
+      {
+        "name": "Ernest Mario School of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.09,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely selective 6-year PharmD direct-entry program. Requires top 1% standardized test scores (1370-1510) and impeccable high school science grades [cite: 5, 24]."
+      },
+      {
+        "name": "School of Environmental and Biological Sciences (SEBS)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students interested in agriculture, marine sciences, ecology, and biological research, located predominantly on the Cook Campus [cite: 25]."
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Rutgers Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding Early Action. Decisions released by January 31 [cite: 26, 27]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Regular decision for first-year applicants [cite: 28]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One short original essay (3,800 characters on Rutgers App, or up to 650 words via Common App). Honors College applicants must submit an additional ~500-word essay about their diverse experiences and contributions [cite: 9, 29]."
+      },
+      {
+        "target_program": "Mason Gross School of the Arts",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "",
+        "details": "Requires a talent assessment (audition, interview, or portfolio) which overrides standard holistic review processes [cite: 30, 31]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores (if submitted)",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Rutgers applies differing levels of rigor depending on the specific campus and school indicated as the first choice [cite: 8]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Leverage the Alternate Major option: Rutgers explicitly allows students to select secondary choices on their application. Putting a highly competitive school (like Engineering) as first choice and a broader school (Arts & Sciences) as a second choice protects downside risk [cite: 32, 33].",
+      "Understand Campus Disparities: While New Brunswick is the competitive flagship, applying simultaneously to Rutgers-Newark or Rutgers-Camden offers a high-probability safety net, as those campuses utilize more lenient holistic reviews (GPA ranges 3.2-3.6) [cite: 5].",
+      "Avoid 'Double-Rejection' in impacted fields: If a student's quantitative metrics are below the 75th percentile for Business or Pharmacy, selecting 'Undeclared' in SAS can facilitate easier initial entry, followed by an internal school-to-school transfer [cite: 5, 34]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Rutgers allows applicants to list multiple choices of schools/majors. Because admissions are compartmentalized by school, an applicant denied by the School of Engineering or Business will automatically fall back to evaluation by the School of Arts and Sciences if listed as an alternate [cite: 5, 32]."
+  },
+  "financials": {
+    "tuition_model": "Public/State Supported",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 17929.0,
+        "total_coa": 39519.0,
+        "housing": 15714.0
+      },
+      "out_of_state": {
+        "tuition": 37441.0,
+        "total_coa": 59031.0,
+        "supplemental_tuition": 19512.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 14869.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.57,
+    "scholarships": [
+      {
+        "name": "Rutgers James Dickson Carr Scholarship",
+        "type": "Merit",
+        "amount": "$10,000",
+        "deadline": "December 1",
+        "benefits": "Renewable for four years totaling $40,000.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarships/College-Sponsored Merit Award",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "",
+        "benefits": "Renewable per year for 4 years with a 3.0 GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "BA/MD Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Given to students accepted into the highly rigorous 7-year BA/MD joint degree program. Requires 3.4 GPA renewal.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Phi Theta Kappa Honor Society Scholarship",
+        "type": "Merit",
+        "amount": "$8,000",
+        "deadline": "February 1",
+        "benefits": "Exclusively for transfer students; awarded for two years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "International Student Scholarships",
+        "type": "Merit",
+        "amount": "$5,000 - $16,000",
+        "deadline": "December 1",
+        "benefits": "Awarded for a total of four years of undergraduate education, requiring a 3.25 GPA for renewal.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous but highly structured, barring course duplication.",
+    "ap_policy": {
+      "general_rule": "Degree credit is awarded for Advanced Placement examination scores of 4 and 5.",
+      "exceptions": [
+        "School of Engineering does not grant credits for AP exams taken after high school graduation [cite: 35]."
+      ],
+      "usage": "AP credits cannot be duplicated; if a student accepts AP credit but then takes the equivalent introductory course at Rutgers, the AP credit is wiped/waived [cite: 36, 37]."
+    },
+    "ib_policy": {
+      "general_rule": "Credits awarded for high-level exam success similar to AP protocol; A-levels receive credit for A, B, C, or D grades.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "njtransfer.org"
+      ],
+      "restrictions": "Transfer credits from outside institutions must have a grade of C (2.0) or higher to be evaluated [cite: 36]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High unweighted GPA (3.6-3.9+) with strong rigor in core subjects [cite: 5].",
+      "Strategic targeting of specific Rutgers campuses and schools based on the student's authentic quantitative footprint.",
+      "For engineering and business, high calculus and STEM achievement to bypass severe 'weeder' environments [cite: 5]."
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Focus intensely on the essay as it operates as the primary holistic separator. Reviews indicate the essay 'is what really helps you get into your program' [cite: 26].",
+      "For the Honors College, heavily emphasize interdisciplinary thinking and willingness to engage in a residential learning community [cite: 29].",
+      "Avoid cliches about large schools; showcase resilience and proactive networking capability required to survive in a 50,000-student bureaucracy."
+    ],
+    "red_flags": [
+      "Applying to Engineering without strong Physics/Calculus backgrounds.",
+      "Missing the critical November 1st (EA) and December 1st (RD) deadlines for scholarship consideration [cite: 26].",
+      "Assuming Rutgers-New Brunswick is an automatic 'safety' school for New Jersey residents; over-confident applicants with 3.5 GPAs are routinely rejected from prime schools [cite: 5]."
+    ],
+    "insights": [
+      "Students often feel the need to aggressively self-advocate due to administrative hurdles ('the RU Screw') and overcrowded infrastructure, particularly the inter-campus bus system [cite: 17].",
+      "Excellent employment pipeline exists with firms like JPMorgan Chase and Amazon actively recruiting on campus [cite: 14]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 74479,
+    "employment_rate_2yr": 0.86,
+    "grad_school_rate": null,
+    "top_employers": [
+      "JPMorgan Chase",
+      "Amazon",
+      "Target",
+      "NBC"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.93,
+    "graduation_rate_4_year": 0.69,
+    "graduation_rate_6_year": 0.84
+  }
+}

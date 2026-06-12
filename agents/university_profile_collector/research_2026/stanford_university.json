@@ -1,0 +1,455 @@
+{
+  "_id": "stanford_university",
+  "metadata": {
+    "official_name": "Leland Stanford Junior University",
+    "location": {
+      "city": "Stanford",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Stanford University is an elite private research institution located in Silicon Valley. Known for its entrepreneurial ecosystem and rigorous academics, the university boasts one of the most selective admissions processes in the world.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 4,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Stanford maintains an overall acceptance rate of ~3.6%, rejecting thousands of valedictorians annually.",
+        "implication": "Grades and test scores are merely a floor for consideration; admission requires exceptional 'Intellectual Vitality' and extracurricular impact [cite: 4]."
+      },
+      {
+        "category": "Financial",
+        "insight": "Families earning below $100,000 pay no tuition, room, or board; those under $150,000 pay no tuition [cite: 5].",
+        "implication": "Despite a sticker price exceeding $92,000, Stanford is highly affordable for low- and middle-income students, resulting in 88% graduating debt-free [cite: 77]."
+      },
+      {
+        "category": "Academic",
+        "insight": "Stanford uses a single applicant pool and has no impacted majors [cite: 9].",
+        "implication": "Students have unparalleled freedom to explore and declare any major, negating the utility of 'backdoor' major application strategies [cite: 10]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A vibrant, pre-professional environment marked by a strong dorm culture (93% live on campus) and deep-rooted traditions. However, the fast-paced 10-week quarter system can induce high stress, often masked by the 'Stanford Duck Syndrome' [cite: 12, 23, 24, 25].",
+      "transportation_impact": "The sprawling 8,180-acre campus is highly bike-friendly (13,000+ bikes) and served by the free Marguerite shuttle system, connecting students to Palo Alto and regional transit [cite: 14].",
+      "research_impact": "Massive institutional support for undergraduate research through VPUE, offering summer stipends ($7,500+) across all disciplines via programs like REU and SURGE [cite: 26, 27, 28]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.0361,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.0158,
+      "admits_class_size": 1693,
+      "is_test_optional": false,
+      "test_policy_details": "Test-optional for Fall 2024/2025 entry, but mandatory SAT/ACT reinstated for Fall 2026 entry (Class of 2030) [cite: 7, 32].",
+      "early_admission_stats": [
+        {
+          "plan_type": "REA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 57326,
+        "admits_total": 2067,
+        "enrolled_total": 1693,
+        "acceptance_rate_overall": 0.0361,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.819,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 483,
+          "accepted_spots": 414,
+          "admitted_from_waitlist": 25,
+          "waitlist_admit_rate": 0.0604,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist is unranked. REA data is historically suppressed by the university to reduce stress."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 60646,
+        "admits_total": 2302,
+        "enrolled_total": 1839,
+        "acceptance_rate_overall": 0.038,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.8,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 668,
+          "accepted_spots": 573,
+          "admitted_from_waitlist": 57,
+          "waitlist_admit_rate": 0.0994,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 53733,
+        "admits_total": 2099,
+        "enrolled_total": 1699,
+        "acceptance_rate_overall": 0.0391,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.809,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 632,
+          "accepted_spots": 527,
+          "admitted_from_waitlist": 21,
+          "waitlist_admit_rate": 0.0398,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 56378,
+        "admits_total": 2075,
+        "enrolled_total": 1736,
+        "acceptance_rate_overall": 0.0368,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.837,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": 590,
+          "admitted_from_waitlist": 11,
+          "waitlist_admit_rate": 0.0186,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 55471,
+        "admits_total": 2190,
+        "enrolled_total": 1757,
+        "acceptance_rate_overall": 0.0395,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.802,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for this cycle."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Stanford does not report average GPAs on the CDS. However, 73.3% of enrolled students had a 4.0 GPA, and 92.8% had a 3.75+ GPA [cite: 40]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1570",
+        "sat_reading_middle_50": "740-780",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 0.693,
+        "policy_note": "Submission rate reflects Class of 2028 (50.3% SAT, 19.0% ACT) during test-optional period [cite: 41]."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.21,
+        "legacy_percentage": null,
+        "international_percentage": 0.14,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.236,
+          "black_african_american": 0.065,
+          "hispanic_latino": 0.157,
+          "asian": 0.304,
+          "native_american_alaskan": 0.007,
+          "pacific_islander": 0.002,
+          "two_or_more_races": 0.089,
+          "unknown": 0.006,
+          "non_resident_alien": 0.131
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.0361,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in high-tech, computer science, and engineering who want the flexibility to double major or pivot without administrative hurdles.",
+        "housing_profile": "All undergraduates are part of the broader residential neighborhood system; housing is not restricted by college.",
+        "student_archetype": "Innovative, mathematically rigorous problem-solvers looking to leverage Silicon Valley resources.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "3.61%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CS 107 Computer Organization and Systems"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 103 Mathematical Foundations of Computing",
+                "CS 106B Programming Abstractions",
+                "CS 107 Computer Organization and Systems",
+                "CS 109 Introduction to Probability for Computer Scientists",
+                "CS 111 Operating Systems Principles",
+                "CS 161 Design and Analysis of Algorithms"
+              ],
+              "electives": [],
+              "total_units": 180,
+              "major_units": 96
+            },
+            "notable_professors": [
+              "Fei-Fei Li (Artificial Intelligence)",
+              "Christopher D. Manning (Artificial Intelligence)",
+              "Jure Leskovec (Artificial Intelligence)",
+              "Dan Boneh (Cryptography)",
+              "Clark Barrett (Architecture)"
+            ],
+            "notes": "CS is open to all students; no competitive application is required to declare."
+          }
+        ]
+      },
+      {
+        "name": "School of Humanities and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.0361,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing liberal arts, natural sciences, or social sciences such as Economics and Human Biology.",
+        "housing_profile": "Integrated neighborhood system.",
+        "student_archetype": "Intellectually curious students eager to conduct interdisciplinary research.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "3.61%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 20 Calculus"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or better required in all core courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1 Principles of Economics",
+                "ECON 50 Economic Analysis I",
+                "ECON 51 Economic Analysis II",
+                "ECON 52 Economic Analysis III",
+                "ECON 102A Introduction to Statistical Methods",
+                "ECON 102B Applied Econometrics"
+              ],
+              "electives": [],
+              "total_units": 180,
+              "major_units": 80
+            },
+            "notable_professors": [
+              "Paul Milgrom (Game Theory/Auctions)",
+              "Nicholas Bloom (Management Practices)"
+            ],
+            "notes": "Stanford also offers a B.S. in Economics that requires a higher level of math (e.g., MATH 115)."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "REA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Restrictive Early Action prohibits applying early to other private universities."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Includes multiple short-answer questions and longer supplemental essays assessing Intellectual Vitality."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Talent/ability"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "The 'Intellectual Vitality' metric is a unique, dedicated score admissions officers assign to assess a student's pure love for learning beyond grades."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Do not attempt an 'alternate major' gaming strategy. Stanford reviews applications contextually for the entire university, and incongruent major selections appear inauthentic [cite: 10]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Ineffective. Stanford admits students to the university, not to specific majors or schools. All students enter undeclared [cite: 9]."
+  },
+  "financials": {
+    "tuition_model": "Flat rate per quarter",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 65127,
+        "total_coa": 92892,
+        "housing": 21315
+      },
+      "out_of_state": {
+        "tuition": 65127,
+        "total_coa": 92892,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 70000,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.5,
+    "scholarships": [
+      {
+        "name": "Stanford University Need-Based Grant",
+        "type": "Need",
+        "amount": "Varies (up to full COA)",
+        "deadline": "",
+        "benefits": "Covers 100% of tuition, room, and board for incomes under $100k; covers 100% of tuition for incomes under $150k.",
+        "application_method": "Automatic via CSS Profile/FAFSA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Maximum of 45 quarter units allowed. Typically requires a 4 or 5.",
+      "exceptions": [
+        "Language AP scores of 4 satisfy the requirement but award no units. A 5 awards 10 units."
+      ],
+      "usage": "Used for course placement and credit, provided the student does not take the equivalent course at Stanford."
+    },
+    "ib_policy": {
+      "general_rule": "Higher Level (HL) exams with a score of 5+ only. No Standard Level (SL) credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "External Test Credit Equivalency Chart"
+      ],
+      "restrictions": "Transfer students may bring in a maximum of 90 quarter units. All students must complete at least two years of full-time enrollment at Stanford to earn a degree [cite: 69]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Perfect or near-perfect unweighted GPAs with maximum course rigor.",
+      "A deep 'spike' in an extracurricular area showing tangible community impact.",
+      "High 'Intellectual Vitality' demonstrated through independent research or projects."
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Ensure an authentic teenage voice; avoid sounding like a '50-year-old philosopher'.",
+      "Connect your specific intellectual interests to concrete resources at Stanford."
+    ],
+    "red_flags": [
+      "Letters of recommendation from 'famous' people who do not know the student personally.",
+      "Exaggerated commitments or 'stunt' volunteerism (e.g., brief, expensive trips abroad)."
+    ],
+    "insights": [
+      "The 'Duck Syndrome' is a real cultural phenomenon where students project effortless perfection while working incredibly hard behind the scenes."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 124080,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Google",
+      "Apple",
+      "Meta",
+      "Amazon",
+      "McKinsey & Company",
+      "Bain & Company",
+      "Goldman Sachs"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.982,
+    "graduation_rate_4_year": 0.73,
+    "graduation_rate_6_year": 0.95
+  }
+}

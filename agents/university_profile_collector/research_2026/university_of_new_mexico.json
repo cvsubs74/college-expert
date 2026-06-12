@@ -1,0 +1,371 @@
+{
+  "_id": "university_of_new_mexico",
+  "metadata": {
+    "official_name": "University of New Mexico",
+    "location": {
+      "city": "Albuquerque",
+      "state": "New Mexico",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of New Mexico is a flagship public research university and designated Hispanic-Serving Institution (HSI). It pairs a highly accessible, numbers-driven general admissions process with elite, R1-level research opportunities, particularly in engineering, medicine, and the sciences.",
+    "market_position": "Flagship Public / R1 Research Institution",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 236,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "General admission is exceptionally accessible, operating on a transparent GPA and core-unit threshold rather than competitive holistic review.",
+        "implication": "Students meeting the 2.5 GPA and 16-unit requirement are virtually guaranteed entry, making it an excellent safety or strategic financial target."
+      },
+      {
+        "category": "Academic",
+        "insight": "UNM holds Carnegie R1 status and maintains deep partnerships with Sandia and Los Alamos National Laboratories.",
+        "implication": "Undergraduates in STEM have uncommon access to world-class equipment, national lab internships, and high-level faculty research."
+      },
+      {
+        "category": "Financial",
+        "insight": "Top in-state applicants can compete for the Regents' Scholarship, which covers full tuition, fees, and housing.",
+        "implication": "High-achieving local students can secure an elite-level education with zero debt."
+      },
+      {
+        "category": "Culture",
+        "insight": "As a federally designated Hispanic-Serving Institution, nearly half the undergraduate body identifies as Hispanic or Latino.",
+        "implication": "The campus offers a richly diverse, inclusive environment reflective of the American Southwest."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Diverse, culturally rich, and welcoming. Features a large commuter and part-time population, though on-campus life is active. Some student concerns exist regarding safety and crime in the surrounding city area.",
+      "transportation_impact": "Located along historic Route 66 in central Albuquerque; heavily car-dependent with frequent student complaints regarding parking availability.",
+      "research_impact": "Extremely high. Over $243 million in annual research expenditures with cutting-edge facilities like the Center for High Technology Materials and the Comprehensive Cancer Center."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.952,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 11678,
+      "is_test_optional": true,
+      "test_policy_details": "Standardized test scores (SAT/ACT) are not required for general admission but are considered if submitted. They may be used for course placement or specific merit scholarships.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 12269,
+        "admits_total": 11678,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.952,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.312,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data for general undergraduate admission is not publicly disclosed. The School of Medicine maintains a ranked Alternate List."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.38,
+        "notes": "Minimum required cumulative GPA for automatic consideration is 2.50."
+      },
+      "testing": {
+        "sat_composite_middle_50": "900-1160",
+        "sat_reading_middle_50": "460-600",
+        "sat_math_middle_50": "430-570",
+        "act_composite_middle_50": "19-26",
+        "submission_rate": 0.48,
+        "policy_note": "ACT submission rate is 8%. Test-optional policy heavily utilized."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.0158,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.3,
+          "black_african_american": 0.0298,
+          "hispanic_latino": 0.467,
+          "asian": 0.0419,
+          "native_american_alaskan": 0.053,
+          "pacific_islander": 0.0016,
+          "two_or_more_races": 0.0404,
+          "unknown": 0.0136,
+          "non_resident_alien": 0.0158
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in natural sciences, humanities, or those beginning as 'Undeclared'.",
+        "housing_profile": "Traditional on-campus housing available.",
+        "student_archetype": "Broad academic explorers and pre-professional students.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the largest and most popular undergraduate degree concentrations at the university."
+          }
+        ]
+      },
+      {
+        "name": "Anderson School of Management",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students aiming for corporate, accounting, or entrepreneurial careers in the Southwest.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Future business leaders and managers.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular undergraduate degree at UNM, with 447 bachelor's degrees awarded in 2024."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly driven pre-health students with strong science backgrounds.",
+        "housing_profile": "General university housing, close proximity to North Campus/Medical facilities.",
+        "student_archetype": "Clinical care and public health focused.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires holistic admissions review for clinical placement.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly competitive. Nursing is the third most popular major at UNM overall."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Institutional Application",
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "YYYY-06-01",
+        "is_binding": false,
+        "notes": "Fall term priority application date. Rolling admissions apply."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-12-13",
+        "is_binding": false,
+        "notes": "Spring term priority application date."
+      }
+    ],
+    "supplemental_requirements": [],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Completion of 16 specific college preparatory units"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "General admissions is formulaic (minimum 2.5 GPA and core unit completion). Essays and portfolios are explicitly not required for general admission."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying to University College as 'Undeclared' is highly normalized, with ~14% of freshmen starting without a declared major."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students aiming for highly competitive clinical or engineering programs typically enter in 'pre-major' status and must clear specific departmental GPA and prerequisite thresholds to officially declare."
+  },
+  "financials": {
+    "tuition_model": "Flat base rate with some differential tuition for specialized programs (e.g., Engineering, Nursing).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11585.0,
+        "total_coa": 31223.0,
+        "housing": 12471.0
+      },
+      "out_of_state": {
+        "tuition": 34734.0,
+        "total_coa": 54372.0,
+        "supplemental_tuition": 23149.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 14837.0,
+    "average_merit_aid": 11962.0,
+    "percent_receiving_aid": 0.88,
+    "scholarships": [
+      {
+        "name": "Regents' Scholarship",
+        "type": "Merit",
+        "amount": "$15,500",
+        "deadline": "YYYY-12-01",
+        "benefits": "Covers base tuition, fees, and housing. Renewable for 4 years.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$6,000",
+        "deadline": "YYYY-12-01",
+        "benefits": "Renewable for 4 years.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Amigo Scholarship",
+        "type": "Merit",
+        "amount": "Out-of-state waiver",
+        "deadline": "YYYY-12-01",
+        "benefits": "Waives out-of-state tuition, granting in-state rates to non-residents.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Transfer Scholarship",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "",
+        "benefits": "Renewable for 2 years for transfer students.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants credit for scores of 3 or higher on most AP exams.",
+      "exceptions": [],
+      "usage": "Credits can be applied toward General Education core requirements or major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for Higher Level and Standard Level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "A minimum of 15 credit hours must be earned in residence at UNM to receive a degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Minimum 2.5 High School GPA",
+      "Completion of 16 specific college preparatory units",
+      "Early application (by December 1) for priority merit scholarship consideration"
+    ],
+    "common_activities": [],
+    "essay_tips": [],
+    "red_flags": [
+      "Failing to complete required high school core units",
+      "Missing the December 1st scholarship priority deadline"
+    ],
+    "insights": [
+      "UNM provides top-tier research access for undergrads due to close ties with Sandia and Los Alamos National Labs.",
+      "In-state students view UNM as a massive financial bargain, particularly with the Lottery and Regents scholarships.",
+      "Students occasionally express safety concerns regarding the surrounding neighborhoods in Albuquerque.",
+      "Parking constraints and administrative bureaucracy are frequent points of frustration among the student body."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 59818,
+    "employment_rate_2yr": 0.93,
+    "grad_school_rate": null,
+    "top_employers": [
+      "University of New Mexico",
+      "Presbyterian Healthcare Services",
+      "Intel",
+      "Sandia National Laboratories",
+      "Los Alamos National Laboratory",
+      "Albuquerque Public Schools"
+    ],
+    "loan_default_rate": 0.000549
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.76,
+    "graduation_rate_4_year": 0.36,
+    "graduation_rate_6_year": 0.541
+  }
+}

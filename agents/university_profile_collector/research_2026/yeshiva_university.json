@@ -1,0 +1,546 @@
+{
+  "_id": "yeshiva_university",
+  "metadata": {
+    "official_name": "Yeshiva University",
+    "location": {
+      "city": "New York",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Yeshiva University is a premier Modern Orthodox Jewish institution in New York City that offers a rigorous dual curriculum, blending traditional Torah study (Torah Umadda) with comprehensive liberal arts, sciences, and pre-professional programs. With distinct undergraduate campuses for men (Yeshiva College/Sy Syms) and women (Stern College for Women/Sy Syms), it provides an immersive academic and religious experience. The university is known for its strong community, high professional placement rates, and robust graduate programs in law, medicine, and psychology.",
+    "market_position": "Elite Private Religious University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 98,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Students are required to engage in a dual curriculum integrating secular degrees and intensive Jewish studies.",
+        "implication": "Applicants must be prepared for a highly rigorous, time-intensive academic schedule that functions as the equivalent of two full undergraduate programs."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "The overall acceptance rate fell from 63.7% in 2023 to 55.6% in 2024, accompanied by a 53% surge in transfer applications during the spring of 2024.",
+        "implication": "Yeshiva University is becoming more competitive, functioning as a top safe-haven choice for Jewish students transferring from secular institutions amidst rising campus tensions nationwide."
+      },
+      {
+        "category": "Culture",
+        "insight": "Practically 100% of the undergraduate student body identifies as Jewish, heavily concentrated in the Modern Orthodox tradition.",
+        "implication": "The campus environment revolves deeply around Jewish observance, kosher dining, and religious scheduling, making it a highly tailored cultural fit."
+      },
+      {
+        "category": "Financial",
+        "insight": "Despite a high total Cost of Attendance (over $74,000), 87% of students receive aid with an average grant of approximately $31,000.",
+        "implication": "The sticker price is rarely the actual cost paid by families, as the university aggressively discounts tuition through institutional need-based and merit aid."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Deeply tight-knit, values-centered community spanning four campuses in Manhattan and the Bronx. Extensive religious programming, 150+ student clubs, and NCAA Division III athletics (Maccabees) shape the student experience.",
+      "transportation_impact": "Urban campuses are integrated into New York City, serviced by public transportation and a university shuttle system operating between the uptown Wilf campus and midtown Beren campus.",
+      "research_impact": "Robust undergraduate research opportunities, particularly in pre-medical and health sciences fields, with strong ties to the Albert Einstein College of Medicine and the Katz School of Science and Health."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.556,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 1.0,
+      "admits_class_size": 566,
+      "is_test_optional": true,
+      "test_policy_details": "Standardized tests are generally optional, but SAT/ACT scores are highly recommended for Honors programs and explicitly required for Early Admission candidates (High School Juniors).",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.632,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 1665,
+        "admits_total": 926,
+        "enrolled_total": 566,
+        "acceptance_rate_overall": 0.556,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.611,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed. University officials reported the 'longest waitlist we've ever had' in May 2024 due to unprecedented transfer demand."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 1713,
+        "admits_total": 1092,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.637,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Transfer acceptance rate hit 100% (55/55 applicants) for the Class of 2027."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 1615,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.63,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 1410,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.63,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.67,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.5,
+        "notes": "Applicants generally need to be at or above average in their high school class. High School Average equivalent requirement is at least an 85."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1340-1500",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 0.19,
+        "policy_note": "A minimum SAT score of 1340 or ACT of 29 is required for high school juniors applying for Early Admission."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": null,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 858,
+            "admits": 478,
+            "acceptance_rate": 0.557
+          },
+          "women": {
+            "applicants": 807,
+            "admits": 448,
+            "acceptance_rate": 0.555
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.503,
+          "black_african_american": 0.0307,
+          "hispanic_latino": 0.0523,
+          "asian": 0.0204,
+          "native_american_alaskan": 0.0008,
+          "pacific_islander": 0.0001,
+          "two_or_more_races": 0.0086,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": "Modern Orthodox Jewish"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Yeshiva College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Male undergraduate students pursuing a liberal arts and sciences education alongside intensive Torah study.",
+        "housing_profile": "Located at the Wilf Campus in Washington Heights, Manhattan.",
+        "student_archetype": "Pre-med, Humanities, and Sciences track men.",
+        "majors": [
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Logic 1100",
+                "Philosophy of Language 1220",
+                "Theories of the Mind 1320",
+                "Theory of Knowledge 1360",
+                "Philosophy of Science 1400",
+                "Metaphysics 1550",
+                "Ancient & Medieval Philosophy 2170",
+                "Modern Philosophy 2420",
+                "Ethics 1600"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 21
+            },
+            "notable_professors": [],
+            "notes": "Highly rigorous philosophical program frequently engaging directly with Jewish textual interpretation."
+          },
+          {
+            "name": "Biology / Biological Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A leading pre-medical major on campus; Yeshiva boasts a 92% medical school acceptance rate over recent years."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most widely pursued undergraduate major by sheer volume of graduates."
+          }
+        ]
+      },
+      {
+        "name": "Stern College for Women",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Female undergraduate students pursuing arts, sciences, and pre-professional fields alongside Torah study.",
+        "housing_profile": "Located at the Beren Campus in Midtown Manhattan.",
+        "student_archetype": "Driven female scholars interested in humanities, education, and pre-health.",
+        "majors": []
+      },
+      {
+        "name": "Sy Syms School of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing high-finance, accounting, and business analytics in New York City.",
+        "housing_profile": "Operates classes at both the Wilf and Beren Campuses.",
+        "student_archetype": "Future Wall Street professionals, entrepreneurs, and accountants.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Extremely strong pipeline to bulge-bracket investment banks in New York City."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly recruited major by Big 4 accounting firms (Deloitte, PwC, EY)."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Yeshiva University Online Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "YYYY-11-01",
+        "is_binding": true,
+        "notes": "Early Decision applicants agree to attend if accepted."
+      },
+      {
+        "plan_type": "EA",
+        "date": "YYYY-11-02",
+        "is_binding": false,
+        "notes": "Early Decision Honors deadline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-02-01",
+        "is_binding": false,
+        "notes": "Applications received after this are considered on a space-available rolling basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "At time of application",
+        "details": "Upload response as a PDF. Option 1: Hakarat Hatov - Write a thank you letter to someone in your life. Option 2: Here's how I intend to change the world..."
+      },
+      {
+        "target_program": "Honors Program",
+        "requirement_type": "GPA / Testing",
+        "deadline": "At time of application",
+        "details": "Must have an unweighted high school average of 95 and standardized test scores (Avg: 1450 SAT / 32 ACT)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of high school academic record",
+        "GPA",
+        "Standardized test scores (if submitted)",
+        "Interview"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Essays",
+        "Character and potential",
+        "Contributions to school and community life"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Required",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "The required interview is highly weighted. Admissions officers utilize it heavily to gauge an applicant's readiness for the taxing dual curriculum and their fit within the orthodox Jewish community culture."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": ""
+  },
+  "financials": {
+    "tuition_model": "Flat rate per academic year",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 51800.0,
+        "total_coa": 74200.0,
+        "housing": 15750.0
+      },
+      "out_of_state": {
+        "tuition": 51800.0,
+        "total_coa": 74200.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware / Meets Partial Need",
+    "average_need_based_aid": 31510.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.87,
+    "scholarships": [
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "$10,000",
+        "deadline": "At time of admission",
+        "benefits": "Renewable for up to four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Anne Scheiber Scholarship",
+        "type": "Merit/Need",
+        "amount": "$25,000",
+        "deadline": "At time of admission",
+        "benefits": "Awarded to women at Stern College planning to study medicine/sciences. Requires minimum 3.25 GPA.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "NYS Scholarships for Academic Excellence",
+        "type": "Merit",
+        "amount": "$1,500",
+        "deadline": "Varies by NY high school",
+        "benefits": "Renewable for four years. Based on Regents exam scores.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Milken Scholars Scholarship",
+        "type": "Merit/Need",
+        "amount": "$2,000",
+        "deadline": "Counselor nomination",
+        "benefits": "Access to mentoring and professional development. Requires minimum 3.6 GPA and 1350 SAT / 29 ACT.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "A score of 4 or 5 earns credit and/or exemption for the equivalent course.",
+      "exceptions": [
+        "Computer Science A requires a 5.",
+        "Physics C requires a 5.",
+        "No credit is given for AP English Literature.",
+        "Advanced Computer Science credit requires passing an internal Python 3 exam at the 80% level."
+      ],
+      "usage": "Can be used to fulfill major and general education requirements, but a maximum residency requirement of 6 semesters on campus still applies."
+    },
+    "ib_policy": {
+      "general_rule": "Not explicitly standardized, reviewed on a case-by-case basis alongside AP.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Registrar's transfer equivalence portal"
+      ],
+      "restrictions": "Transfer students must complete a minimum of 60 credits and 4 semesters on campus. Sixty percent of the major/minor must be completed at the university."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Ability to handle a highly rigorous dual curriculum (secular studies + intensive religious texts).",
+      "A successful alumni interview that demonstrates maturity, strong character, and religious alignment.",
+      "Demonstrated excellence in high school with strong standardized test scores, heavily offsetting any transcript weaknesses."
+    ],
+    "common_activities": [
+      "Torah study and intensive yeshiva/seminary gap years in Israel",
+      "Jewish Communal Service and activism",
+      "NCAA Division III Athletics (The Maccabees)",
+      "High finance and pre-medical internships",
+      "Student government and Honors Leadership Society"
+    ],
+    "essay_tips": [
+      "Lean into authenticity and gratitude for the 'Hakarat Hatov' prompt; avoid clich\u00e9 thank-you notes and focus on genuine personal growth.",
+      "For the 'change the world' prompt, emphasize community betterment, leadership, and actionable values rather than vague idealism."
+    ],
+    "red_flags": [
+      "Lack of enthusiasm or inability to articulate why you want a dual secular/religious curriculum during the interview.",
+      "Subpar performance in pre-requisite religious studies if attending a Jewish day school prior."
+    ],
+    "insights": [
+      "Athletics scheduling is uniquely intense due to the dual curriculum\u2014practices routinely occur extremely late at night (e.g., 11:00 PM) or early morning (6:00 AM).",
+      "The university maintains an extremely loyal and tight-knit alumni network across major NYC law, accounting, and finance firms.",
+      "There is a massive emphasis on a gap year in Israel; many students study abroad in Israel for their first year through the S. Daniel Abraham Israel Program before arriving on the NYC campuses."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 93796,
+    "employment_rate_2yr": 0.955,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Bloomberg",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "Bank of America",
+      "Deloitte",
+      "PwC",
+      "Ernst & Young"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.92,
+    "graduation_rate_4_year": 0.79,
+    "graduation_rate_6_year": 0.85
+  }
+}

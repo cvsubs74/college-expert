@@ -1,0 +1,473 @@
+{
+  "_id": "virginia_tech",
+  "metadata": {
+    "official_name": "Virginia Polytechnic Institute and State University",
+    "location": {
+      "city": "Blacksburg",
+      "state": "Virginia",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "1",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "24",
+      "36",
+      "37",
+      "38",
+      "40",
+      "41",
+      "47",
+      "52",
+      "55",
+      "57",
+      "58",
+      "61",
+      "62",
+      "72",
+      "73",
+      "76",
+      "82",
+      "90",
+      "93",
+      "99",
+      "110",
+      "112"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Virginia Tech is a premier public land-grant research university known for its robust STEM, engineering, and business programs. Guided by the motto 'Ut Prosim' (That I May Serve), the university emphasizes rigorous academics, experiential learning, and community impact, employing a highly holistic, major-specific admissions process.",
+    "market_position": "Top-Tier Public Flagship / R1 Research University",
+    "admissions_philosophy": "Holistic, major-specific review prioritizing rigorous academic preparation, the 'Ut Prosim' values, and geographical residency, having recently eliminated early decision and legacy preferences.",
+    "us_news_rank": 51,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Out-of-state acceptance rates (59%) are unexpectedly higher than in-state rates (48%).",
+        "implication": "While intuitively out-of-state admissions might seem harder, Virginia Tech admits a higher percentage of non-residents to manage yield and budgetary constraints, although the academic threshold for out-of-state applicants often remains higher."
+      },
+      {
+        "category": "Academic",
+        "insight": "Engineering admissions no longer offer a secondary major fallback option.",
+        "implication": "Applicants to the College of Engineering face an 'all-or-nothing' scenario and cannot easily default to University Studies (undecided) if rejected from the highly competitive General Engineering pool."
+      },
+      {
+        "category": "Culture",
+        "insight": "Essays carry 'Very Important' weight and are strictly centered on the 'Ut Prosim' motto.",
+        "implication": "Students must explicitly align their personal narratives, community service, and leadership experiences with the university's ethos of serving others."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A spirited, tight-knit campus culture dominated by ACC athletics (Hokie football), extensive Greek life, and the tradition-rich Corps of Cadets within a quintessential college town.",
+      "transportation_impact": "Located in rural Blacksburg, students heavily rely on the campus bus system; some advanced professional programs are distributed to the Alexandria/DC area.",
+      "research_impact": "R1 university with massive R&D expenditures, offering immense undergraduate research opportunities through specialized hubs like the Ware Lab for engineering projects."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.55,
+      "in_state_acceptance_rate": 0.48,
+      "out_of_state_acceptance_rate": 0.59,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.6,
+      "admits_class_size": 7289,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for all first-year applicants entering through the Fall 2028 admissions cycle.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 34500,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 52296,
+        "admits_total": 28758,
+        "enrolled_total": 7289,
+        "acceptance_rate_overall": 0.55,
+        "acceptance_rate_in_state": 0.48,
+        "acceptance_rate_out_of_state": 0.59,
+        "yield_rate": 0.253,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 17659,
+          "accepted_spots": 11067,
+          "admitted_from_waitlist": 1524,
+          "waitlist_admit_rate": 0.1377,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits can vary wildly; 0 were admitted in 2023."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 47207,
+        "admits_total": 26923,
+        "enrolled_total": 7196,
+        "acceptance_rate_overall": 0.57,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.267,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Unable to offer any applicants from the waitlist."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 45321,
+        "admits_total": 25825,
+        "enrolled_total": 7166,
+        "acceptance_rate_overall": 0.57,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.277,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 13311,
+          "accepted_spots": 7587,
+          "admitted_from_waitlist": 2458,
+          "waitlist_admit_rate": 0.3239,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.09,
+        "notes": "67% of enrolled students possessed a 4.0 unweighted GPA. Engineering applicants typically require a 4.16+ weighted average."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1280-1450",
+        "sat_reading_middle_50": "620-700",
+        "sat_math_middle_50": "620-720",
+        "act_composite_middle_50": "28-32",
+        "submission_rate": 0.41,
+        "policy_note": "Test-optional policy has decreased submission rates; however, submitting scores above the 75th percentile is strongly recommended for impacted majors like Engineering."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.13,
+        "legacy_percentage": null,
+        "international_percentage": 0.045,
+        "geographic_breakdown": [
+          {
+            "region": "Virginia (In-State)",
+            "percentage": 0.6
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 0.517
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 0.589
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.581,
+          "black_african_american": 0.062,
+          "hispanic_latino": 0.103,
+          "asian": 0.128,
+          "native_american_alaskan": 0.0,
+          "pacific_islander": null,
+          "two_or_more_races": 0.0,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive STEM applicants with rigorous math backgrounds (Calculus required) and strong test scores.",
+        "housing_profile": "Access to Engineering Living-Learning Communities (LLCs) such as Galileo (men) and Hypatia (women).",
+        "student_archetype": "Technically minded, hands-on innovators driven by research and development.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 4.16,
+            "prerequisite_courses": [
+              "ENGE 1024",
+              "ENGE 1104",
+              "MATH 1114",
+              "MATH 1224",
+              "PHYS 2305"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "CS 1114",
+              "CS 2114",
+              "MATH 1224"
+            ],
+            "special_requirements": "All students must enter as 'General Engineering' and complete prerequisite foundational courses before declaring Computer Science.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CS 1014 Introduction to Computational Thinking",
+                "CS 1044 Introduction to Programming in C",
+                "CS 1054 Introduction to Programming in Java",
+                "CS 1064 Introduction to Programming in Python",
+                "CS 1114 Introduction to Software Design",
+                "CS 2114 Software Design and Data Structures",
+                "CS 2104 Introduction to Problem Solving in Computer Science"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Must maintain a 3.0 GPA in General Engineering to guarantee placement into Computer Science."
+          }
+        ]
+      },
+      {
+        "name": "Pamplin College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong math skills (statistics/calculus) seeking careers in finance, analytics, or hospitality.",
+        "housing_profile": "General university housing with access to business-specific LLCs.",
+        "student_archetype": "Driven leaders and future corporate analysts.",
+        "majors": []
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in natural sciences, mathematics, or data analytics who want a slightly less impacted pathway than the College of Engineering.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Analytical problem solvers.",
+        "majors": [
+          {
+            "name": "Computational Modeling and Data Analytics (CMDA)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A highly recommended alternative major for students interested in Data Science and Programming without the extreme selectivity of Computer Science."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "Strongly recommended for all applicants, especially those seeking merit scholarships or applying to impacted majors."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Admissions are highly competitive by this round; many spots are filled during EA."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "At time of application",
+        "details": "Four short-answer essays collectively known as the 'Ut Prosim Profile', focusing heavily on community service, resilience, and leadership."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "First generation",
+        "State residency",
+        "Geographical residence"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Extracurricular Activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Virginia Tech utilizes a Self-Reported Academic Record (SRAR) and strictly evaluates applicants based on their chosen major."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to 'Computational Modeling and Data Analytics (CMDA)' in the College of Science instead of Computer Science for a less impacted route into the tech industry.",
+      "Apply as 'Business Undecided' to gain entry into the Pamplin College of Business with slightly lower individual program thresholds."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Virginia Tech recently removed the 2nd-choice major option for College of Engineering applicants. Students applying for Engineering face an 'all-or-nothing' scenario and cannot rely on University Studies (undecided) as an automatic fallback."
+  },
+  "financials": {
+    "tuition_model": "Public University Residency-Based Pricing",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 15948.0,
+        "total_coa": 39670.0,
+        "housing": 16550.0
+      },
+      "out_of_state": {
+        "tuition": 37764.0,
+        "total_coa": 61486.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 10993.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.66,
+    "scholarships": [
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full COA",
+        "deadline": "2026-01-07",
+        "benefits": "Covers tuition, fees, room, and board for four years; requires EA application.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Pamplin Leadership Award",
+        "type": "Merit",
+        "amount": "$5,000",
+        "deadline": "",
+        "benefits": "One-year scholarship available to high school seniors applying to Virginia Tech from Virginia public high schools.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Eleanor Davenport Leadership Scholarship",
+        "type": "Merit",
+        "amount": "Full COA",
+        "deadline": "",
+        "benefits": "Full tuition, fees, room, and board for incoming freshman majoring in the College of Engineering with a preference for Virginia residents.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 3, 4, or 5 depending on the subject. Scores must be sent directly from College Board (School Code 5859).",
+      "exceptions": [],
+      "usage": "A maximum of 38 credit hours may be awarded through AP/IB/CLEP exams combined."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for high-level IB exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "VCCS Course Equivalency Guide",
+        "Transfer Equivalency Database"
+      ],
+      "restrictions": "Grades equivalent to a C or better are required for transfer. Max 38 hours of prior learning/exam credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous math preparation (Calculus heavily preferred for STEM).",
+      "Explicit demonstration of the 'Ut Prosim' (That I May Serve) ethos.",
+      "Sustained commitment in a few activities rather than superficial involvement in many."
+    ],
+    "common_activities": [
+      "Significant community service or volunteering",
+      "Leadership in technical or academic clubs",
+      "Part-time work or family responsibilities"
+    ],
+    "essay_tips": [
+      "Quantify your service impact (hours, people helped, funds raised).",
+      "Connect engineering or technical interests to societal betterment or ethical solutions.",
+      "Highlight leadership that focuses on mentorship and lifting others up."
+    ],
+    "red_flags": [
+      "Weak math grades in high school (especially detrimental for Pamplin and Engineering).",
+      "Generic personal statements that ignore the specific 'Ut Prosim' prompts."
+    ],
+    "insights": [
+      "Admissions officers do not read the main Common App essay; they only evaluate the four short Ut Prosim supplemental questions.",
+      "In-state applicants possess a substantial advantage in both admissions and financial aid, but out-of-state applicants shouldn't be deterred as VT heavily relies on them for revenue."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 67100,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "EY",
+      "Deloitte",
+      "The Boeing Company",
+      "Lockheed Martin",
+      "Northrop Grumman Corporation",
+      "Capital One",
+      "KPMG LLP"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.92,
+    "graduation_rate_4_year": 0.68,
+    "graduation_rate_6_year": 0.86
+  }
+}

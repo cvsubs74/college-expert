@@ -1,0 +1,598 @@
+{
+  "_id": "university_of_rhode_island",
+  "metadata": {
+    "official_name": "University of Rhode Island",
+    "location": {
+      "city": "Kingston",
+      "state": "Rhode Island",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-25",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Rhode Island is the state's flagship public R1 research university, offering over 90 undergraduate majors. Known for exceptional programs in Nursing, Pharmacy, Marine Biology, and Ocean Engineering, URI provides a robust academic environment paired with a highly active, Greek-dominated campus life.",
+    "market_position": "Public Flagship / R1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Highly bifurcated admissions difficulty.",
+        "implication": "While general admission has a 72-76% acceptance rate, direct admission into the College of Nursing, College of Engineering, and the 0-6 Pharm.D. programs are highly competitive and require specific STEM prerequisites."
+      },
+      {
+        "category": "Financial",
+        "insight": "Strong regional value with generous merit aid.",
+        "implication": "URI offers significant merit scholarships automatically upon application, making it an attractive option for both in-state residents and out-of-state applicants (who now make up 54% of the undergraduate body)."
+      },
+      {
+        "category": "Academic",
+        "insight": "Pre-professional pathways serve as safety nets.",
+        "implication": "URI offers a 'Pre-Engineering' pathway for students who do not meet direct-admit criteria, allowing them to take foundational courses and transition into the major upon earning a minimum GPA."
+      },
+      {
+        "category": "Culture",
+        "insight": "Greek life shapes the social landscape.",
+        "implication": "With roughly 20-25% of students in fraternities and sororities and strict no-alcohol policies in on-campus dorms, social life heavily revolves around Greek organizations and off-campus housing in nearby Narragansett."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Social life is heavily influenced by Greek life and off-campus parties. Freshmen primarily live on campus, but upperclassmen frequently move to off-campus coastal housing in Narragansett. The campus has strict dry-dorm policies.",
+      "transportation_impact": "Kingston is somewhat rural, meaning having a car is highly beneficial for upperclassmen to access beaches, Providence, and off-campus housing, though shuttles are available.",
+      "research_impact": "As an R1 institution, URI offers robust undergraduate research opportunities. The university provides grants up to $1,000 for undergraduate projects, with strong emphasis on oceanography, biotechnology, and coastal environmental sciences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 72.17,
+      "in_state_acceptance_rate": 80.0,
+      "out_of_state_acceptance_rate": 74.0,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 64.3,
+      "admits_class_size": 2995,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for admission and merit scholarships. If submitted, URI superscores both the SAT and ACT. Does not require the writing section.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 26987,
+        "admits_total": 19475,
+        "enrolled_total": 2995,
+        "acceptance_rate_overall": 72.17,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.38,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2459,
+          "accepted_spots": 795,
+          "admitted_from_waitlist": 474,
+          "waitlist_admit_rate": 19.27,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist admit rate improved significantly in 2024 compared to previous zero-admit years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 25391,
+        "admits_total": 19566,
+        "enrolled_total": 3244,
+        "acceptance_rate_overall": 77.06,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.58,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1983,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 333,
+          "waitlist_admit_rate": 16.79,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.39,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 850,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": null
+        },
+        "notes": "No students admitted from the waitlist in 2022."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.41,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 2248,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 14,
+          "waitlist_admit_rate": 0.62,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 72.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 2188,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": null
+        },
+        "notes": "No students admitted from the waitlist in 2020."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.64,
+        "notes": "67% of admitted students come from the top 25% of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1030-1270",
+        "sat_reading_middle_50": "520-650",
+        "sat_math_middle_50": "500-630",
+        "act_composite_middle_50": "26-31",
+        "submission_rate": 24.0,
+        "policy_note": "22% submitted SAT; 2% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 2.9,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 54.0
+          },
+          {
+            "region": "In-State (Rhode Island)",
+            "percentage": 46.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9498,
+            "admits": 6672,
+            "acceptance_rate": 70.24
+          },
+          "women": {
+            "applicants": 16968,
+            "admits": 12776,
+            "acceptance_rate": 75.29
+          }
+        },
+        "racial_breakdown": {
+          "white": 69.4,
+          "black_african_american": 5.1,
+          "hispanic_latino": 10.5,
+          "asian": 3.6,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.0,
+          "unknown": 5.2,
+          "non_resident_alien": 2.9
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong math and science backgrounds (Biology, Chemistry) aiming for rigorous clinical rotations starting sophomore year. Requires an additional supplemental essay.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Driven, compassionate, and clinically focused students.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Biology",
+              "Chemistry"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires a 250-word supplemental statement explaining choice of major.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly competitive. Features the state-of-the-art Rhode Island Nursing Education Center in Providence for junior and senior clinicals."
+          }
+        ]
+      },
+      {
+        "name": "College of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 45.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students committed to a 6-year doctoral path (0-to-6 Pharm.D. program). Requires 4 years of math through pre-calculus or calculus, plus biology and chemistry.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Research and healthcare-oriented students seeking an accelerated clinical degree.",
+        "majors": [
+          {
+            "name": "Pharmacy",
+            "degree_type": "Pharm.D.",
+            "is_impacted": true,
+            "acceptance_rate": "40-50%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Pre-calculus or Calculus",
+              "Biology",
+              "Chemistry"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Supplemental essay required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Brian Quilliam",
+              "Dr. David Rowley"
+            ],
+            "notes": "If not admitted directly to Pharm.D., students may be offered admission to the B.S. in Pharmaceutical Sciences."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major / Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with 4 units of math (including pre-calculus/calculus) and 3 units of physical science (including physics).",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Analytically minded innovators looking for global experiences (e.g., International Engineering Program).",
+        "majors": [
+          {
+            "name": "Engineering (General)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MTH 141 (Calculus I)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students who do not meet direct admit criteria can enter the 'Pre-Engineering Pathway' and matriculate into the major after passing required math/science courses with a C- or better and maintaining a 2.0 GPA."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 85.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in psychology, communications, and liberal arts with a strong foundation looking for a flexible curriculum.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Communicators, researchers, and interdisciplinary thinkers.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular undergraduate major by volume of graduates."
+          },
+          {
+            "name": "Speech Communication and Rhetoric",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Another of the most heavily populated majors at URI."
+          }
+        ]
+      },
+      {
+        "name": "College of the Environment and Life Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in marine biology, environmental science, and animal science, seeking hands-on fieldwork near the Atlantic coast.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Field researchers and environmental advocates.",
+        "majors": [
+          {
+            "name": "Marine Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Robert Ballard (Oceanography)"
+            ],
+            "notes": "A globally renowned program utilizing the Narragansett Bay Campus and research vessel Endeavor."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding Early Decision."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Early Action. Strongly encouraged for Nursing and Music Therapy applicants."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Nursing",
+        "requirement_type": "Essays",
+        "deadline": "2024-12-01",
+        "details": "250-word statement explaining the applicant's choice of the nursing major."
+      },
+      {
+        "target_program": "Pharmacy",
+        "requirement_type": "Essays",
+        "deadline": "2024-12-01",
+        "details": "Supplemental prompt addressing motivation to study pharmacology at URI."
+      },
+      {
+        "target_program": "Talent Development Program",
+        "requirement_type": "Essays",
+        "deadline": "2024-12-01",
+        "details": "Up to 500-word statement beginning with: 'I believe I am eligible for the Talent Development Program because...'"
+      },
+      {
+        "target_program": "Music / Music Therapy",
+        "requirement_type": "Audition",
+        "deadline": "2024-12-01",
+        "details": "Requires a formal audition."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (if submitted)",
+        "Application Essay",
+        "Extracurricular activities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "URI uses an unranked waitlist and tracks demonstrated interest. Legacy status (parents/siblings) provides a slight boost to admissions odds (5-10%)."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action for competitive majors like Nursing, Pharmacy, and Engineering to maximize chances of space availability.",
+      "List a less impacted second-choice major, as URI actively reviews students for alternative pathways if denied their primary choice.",
+      "If STEM grades are slightly below average, rely on the 'Pre-Engineering' pathway which provides a bridge to declaring an engineering major."
+    ],
+    "college_ranking_tactics": [
+      "Submit test scores only if above the 50th percentile (1150 SAT / 28 ACT), as the university is test-optional and superscores."
+    ],
+    "alternate_major_strategy": "URI explicitly considers applicants for an alternate major on a space-available basis if they are denied from highly impacted programs like Nursing or Engineering. Students rejected from Pharm.D. may be offered admission to the B.S. in Pharmaceutical Sciences."
+  },
+  "financials": {
+    "tuition_model": "Public In-State / Out-of-State / Regional",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 14630.0,
+        "total_coa": 36477.0,
+        "housing": 15080.0
+      },
+      "out_of_state": {
+        "tuition": 34834.0,
+        "total_coa": 56681.0,
+        "supplemental_tuition": 20204.0
+      }
+    },
+    "aid_philosophy": "Merit and Need-Based",
+    "average_need_based_aid": 13817.0,
+    "average_merit_aid": 12803.0,
+    "percent_receiving_aid": 99.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$17,000",
+        "deadline": "2024-12-01",
+        "benefits": "Reduces out-of-state tuition burden significantly.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "URI Foundation Scholars Award",
+        "type": "Merit",
+        "amount": "$16,000",
+        "deadline": "2024-12-01",
+        "benefits": "Rewards high GPA applicants.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "International Merit Scholarship",
+        "type": "Merit",
+        "amount": "$8,750 - $15,000",
+        "deadline": "2024-12-01",
+        "benefits": "Partial tuition waiver for high-achieving international applicants.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants credit for AP exam scores of 3, 4, or 5.",
+      "exceptions": [
+        "Some departments require a minimum score of 4 (e.g., AP Networking for CSF 2XX credit requires a 4)."
+      ],
+      "usage": "Credits count toward graduation total but do not substitute for specific added curricular requirements unless approved."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exams with scores of 5, 6, or 7. No credit for Standard Level (SL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Evaluation System (TES)",
+        "Transferology database"
+      ],
+      "restrictions": "Grades below 'C' typically do not transfer. Requires official transcripts directly from examination boards or accredited colleges."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school coursework, particularly in math and sciences for STEM majors.",
+      "Demonstrated interest via early application or campus visits.",
+      "Strong supplemental essay execution for impacted programs."
+    ],
+    "common_activities": [
+      "Greek Life (Fraternities & Sororities)",
+      "Intramural Sports",
+      "Marine/Coastal Research Projects",
+      "Off-campus living in Narragansett"
+    ],
+    "essay_tips": [
+      "For the Nursing/Pharmacy supplements, avoid generic praise of the program's prestige. Instead, focus on personal stories that illustrate a genuine commitment to healthcare.",
+      "Demonstrate resilience and perseverance in the Talent Development Program essay."
+    ],
+    "red_flags": [
+      "Underage drinking in dormitories (campus enforces strict dry-dorm policies even for students 21+).",
+      "Campus housing shortages and outdated dorm conditions (e.g., lack of AC, forced triples) leading to a highly competitive off-campus housing market."
+    ],
+    "insights": [
+      "The campus is divided between heavily involved Greek-life students and those who are not, with the latter sometimes feeling isolated.",
+      "Having a car is highly desirable for accessing Providence and local beaches."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 73243,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 57.0,
+    "graduation_rate_6_year": 70.0
+  }
+}

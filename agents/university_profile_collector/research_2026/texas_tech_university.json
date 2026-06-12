@@ -1,0 +1,401 @@
+{
+  "_id": "texas_tech_university",
+  "metadata": {
+    "official_name": "Texas Tech University",
+    "location": {
+      "city": "Lubbock",
+      "state": "Texas",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-14",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Texas Tech University is a large, public, Carnegie R1 research institution located in Lubbock, Texas. Known for strong programs in engineering, agriculture, and business, it offers a traditional, spirited campus life with a holistic admissions philosophy for students who do not meet initial assured admission criteria.",
+    "market_position": "Flagship Public Research University / Hispanic-Serving Institution (HSI)",
+    "admissions_philosophy": "Holistic for non-assured admits; Assured admission based on class rank and test scores",
+    "us_news_rank": 198,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Engineering and Nursing are significantly more competitive than other majors, with Engineering admitting around 55% of applicants compared to the overall 67% rate.",
+        "implication": "Applicants to the Whitacre College of Engineering should prepare for higher academic scrutiny and possess strong math/science fundamentals."
+      },
+      {
+        "category": "Academic",
+        "insight": "Introductory Biology and First-Year Architecture function as heavily enforced weed-out courses, with strict grading curves.",
+        "implication": "Pre-med and architecture students must employ rigorous time management immediately upon enrollment to survive initial attrition rates."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university is widely recognized for its high-spirited athletic culture, vibrant Greek life (15% participation), and strong rural/agricultural ties.",
+        "implication": "The environment strongly favors students seeking a traditional, socially active large-state-school experience, though the remote location requires adjustment."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly social, heavily centered around Big 12 athletics, Greek life, and over 450 student organizations. Described affectionately by some students as a 'drinking town with a college problem,' prioritizing a balanced approach to social and academic life is essential.",
+      "transportation_impact": "Located in a relatively isolated region of West Texas. While the campus itself is large but navigable, students often rely on cars to travel outside Lubbock. A commuter-friendly campus for upperclassmen.",
+      "research_impact": "As a Carnegie Tier One (R1) institution, undergraduate research is accessible, particularly in agriculture, wind energy, and biosciences, with faculty open to taking on driven undergraduates."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 67.9,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 82.0,
+      "admits_class_size": 7200,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for admissions and most merit scholarships. Students lacking test scores or not meeting assured admission thresholds are evaluated holistically.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 36858,
+        "admits_total": 24629,
+        "enrolled_total": 5548,
+        "acceptance_rate_overall": 67.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 22.5,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Texas Tech University does not publicly utilize an admissions waitlist."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.56,
+        "notes": "Average admitted unweighted GPA is approximately 3.56."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1110-1270",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "22-27",
+        "submission_rate": 59.0,
+        "policy_note": "59% of enrolled students submitted SAT scores and 40% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": null,
+        "international_percentage": 8.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 53.6,
+          "black_african_american": 5.1,
+          "hispanic_latino": 33.2,
+          "asian": 2.7,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": null,
+          "two_or_more_races": 3.6,
+          "unknown": 0.2,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Edward E. Whitacre Jr. College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 55.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong standardized test scores and rigorous high school math/science backgrounds. Transfer and non-assured admits enter the eXplore STEM program.",
+        "housing_profile": "Traditional residence halls with some Living Learning Communities (LLCs) for engineering students.",
+        "student_archetype": "Driven, STEM-focused, capable of handling intense early coursework and strict grading curves.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1451"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers must have 12 hours completed at TTU, a 3.0 GPA, and a C or better in Calculus I.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students who do not meet the initial 3.0 admission standard are placed in eXplore STEM until prerequisites are met."
+          }
+        ]
+      },
+      {
+        "name": "Jerry S. Rawls College of Business",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students seeking comprehensive business training with strong networking and corporate placement opportunities.",
+        "housing_profile": "Standard on-campus housing.",
+        "student_archetype": "Career-oriented, highly social, and active in extracurricular networking.",
+        "majors": []
+      },
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for pre-health, humanities, and general science students.",
+        "housing_profile": "Standard on-campus housing.",
+        "student_archetype": "Pre-med hopefuls, life-science researchers, and liberal arts students.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 1403",
+              "BIOL 1404",
+              "CHEM 1307",
+              "CHEM 1107"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Dini (Introductory Biology)",
+              "Dr. Randall Jeter (Bacterial Genetics)"
+            ],
+            "notes": "BIOL 1403 and 1404 are heavily known as pre-med weed-out courses with large lecture sizes and stringent grading."
+          }
+        ]
+      },
+      {
+        "name": "Huckabee College of Architecture",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Dedicated, hard-working students prepared for intense studio hours and high attrition rates.",
+        "housing_profile": "Standard on-campus housing.",
+        "student_archetype": "Creative, highly dedicated students willing to endure long nights in the studio.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "First year architecture studio"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "First-year architecture is explicitly designed to weed out students; only a small percentage advance to the second year."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "ApplyTexas",
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Priority",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Priority deadline for fall freshman admissions and scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-08-01",
+        "is_binding": false,
+        "notes": "Final regular decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors College / UMSI Program",
+        "requirement_type": "Essays and Letters of Recommendation",
+        "deadline": "",
+        "details": "Requires a separate Honors College Application and specific ACT/SAT thresholds (1360+ SAT or 30+ ACT) along with 3 letters of evaluation for the pre-med track."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Class rank",
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Standardized test scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Volunteer work",
+        "Essays"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Legacy status and alumni relations are expressly ignored in the holistic admissions review process at Texas Tech, creating a purely merit and context-driven evaluation."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to non-impacted majors (e.g., General Studies) if your stats fall below the 50th percentile, as programs like Nursing and Engineering are significantly more selective.",
+      "If interested in restricted majors but lacking the assured admission criteria, expect to be placed in the 'eXplore' program to complete foundational coursework before transferring."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants rejected from their restricted first-choice major (like Engineering or Business) are automatically placed into the eXplore STEM or University Undeclared program. Students can then internally transfer after maintaining a 2.75 - 3.0 TTU GPA and passing early prerequisite courses."
+  },
+  "financials": {
+    "tuition_model": "Per credit hour with flat-rate options; differential tuition charged per college (e.g., Engineering charges an extra $90/SCH).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11852.0,
+        "total_coa": 28525.0,
+        "housing": 10742.0
+      },
+      "out_of_state": {
+        "tuition": 24157.0,
+        "total_coa": 40830.0,
+        "housing": 10742.0,
+        "supplemental_tuition": 12305.0
+      }
+    },
+    "aid_philosophy": "Merit-focused, does not meet 100% of demonstrated need",
+    "average_need_based_aid": 10263.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 86.0,
+    "scholarships": [
+      {
+        "name": "Presidential Merit Scholarship",
+        "type": "Merit",
+        "amount": "$6,000 annually",
+        "deadline": "December 1",
+        "benefits": "Awarded to top 10% graduates with 1400+ SAT. Non-residents receiving this scholarship qualify for in-state tuition waivers.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Proven Achievers Scholarship for Transfers",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "July 31",
+        "benefits": "Qualifies out-of-state transfer students for an in-state tuition waiver.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "IB Honors Scholarship",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "",
+        "benefits": "Provides an extra scholarship to entering First-year students who complete the IB Diploma.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Texas Tech broadly accepts AP scores of 3 or higher for college credit in introductory courses.",
+      "exceptions": [
+        "Biology requires a score of 5 to receive credit for BIOL 1403/1404.",
+        "AP World History requires a 3 to earn credit for HIST 2322.",
+        "AP Art History requires a 3 to earn credit for ARTH 2302."
+      ],
+      "usage": "Credits can bypass heavy weed-out courses and satisfy foundational core requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for IB exams; requirements vary by department.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TCCNS (Texas Common Course Numbering System)"
+      ],
+      "restrictions": "Transfer credits must be from accredited institutions; non-traditional or vocational credits are generally not accepted."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong time-management skills to balance intense academics with a highly active social and Greek life.",
+      "Mental resilience to push through heavily curved, large-lecture weed-out courses in the first year."
+    ],
+    "common_activities": [
+      "Attending Big 12 football and basketball games",
+      "Participating in Greek Life (Fraternities/Sororities)",
+      "Intramural sports"
+    ],
+    "essay_tips": [],
+    "red_flags": [
+      "Over-indulging in the 'party culture' during freshman year, which frequently leads to academic probation or failing out of STEM programs.",
+      "Failing to utilize office hours and TA review sessions for notoriously difficult foundational courses like Intro Biology and Chemistry."
+    ],
+    "insights": [
+      "Lubbock's geographic isolation means the university heavily drives the town's culture. Students must be proactive in finding community, as the physical scale of the campus can be isolating initially.",
+      "Students placed into the eXplore program should not view it as a rejection, but must treat their first-year GPA with extreme seriousness to declare into their desired restricted major."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62454,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Texas A&M University",
+      "Capital Farm Credit",
+      "Bayer",
+      "Cargill",
+      "BASF",
+      "H-E-B",
+      "Amazon"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 85.0,
+    "graduation_rate_4_year": 44.0,
+    "graduation_rate_6_year": 64.0
+  }
+}

@@ -1,0 +1,641 @@
+{
+  "_id": "northwestern_university",
+  "metadata": {
+    "official_name": "Northwestern University",
+    "location": {
+      "city": "Evanston",
+      "state": "Illinois",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-18",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Northwestern University is an elite, private research university located in Evanston, Illinois, known for its rigorous quarter system, pre-professional culture, and deep commitment to interdisciplinary study. With an acceptance rate hovering near 7%, Northwestern seeks high-achieving 'students who do'\u2014applicants who demonstrate not just intellectual curiosity, but a track record of applying their interests in practical, impactful ways. The university uniquely balances the intensive academic environment of a top-10 national institution with the vibrant school spirit of a Big Ten athletics member, all set against a stunning lakeside campus just miles from downtown Chicago.",
+    "market_position": "Elite Private Research University (R1)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 7,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Northwestern fills approximately 50-55% of its incoming class through binding Early Decision, where the acceptance rate is approximately 20-23% compared to the Regular Decision rate of around 5-6%.",
+        "implication": "Applicants for whom Northwestern is a clear first choice must strongly consider applying Early Decision, as the mathematical advantage is highly significant."
+      },
+      {
+        "category": "Academic",
+        "insight": "Northwestern students apply directly to one of six undergraduate schools, but the university has a flexible Inter-School Transfer (IST) policy, and roughly 50% of students change their major or add multiple areas of study.",
+        "implication": "Students should apply to the school that best aligns with their high school transcript and stated narrative, knowing they have the flexibility to pivot or add double majors across different schools once enrolled."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university is strictly need-blind for US citizens and permanent residents, meeting 100% of demonstrated financial need with a 'no-loan' policy, but it offers virtually zero non-need-based merit scholarships (less than 1% of students without need receive merit aid).",
+        "implication": "Families should rely entirely on need-based aid calculators (like the Net Price Calculator) to estimate costs, as 'gaming' the system for merit aid at Northwestern is not a viable strategy."
+      },
+      {
+        "category": "Culture",
+        "insight": "The 10-week quarter system is notoriously fast-paced and intense, requiring students to take up to 4 or 5 classes per term, resulting in a heavier annual course load than semester-based peers.",
+        "implication": "Admissions officers actively look for students who have taken the most rigorous course loads available in high school to ensure they can survive the rapid pace of the quarter system."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Northwestern offers a 'work hard, play hard' environment where students are heavily involved in extracurriculars, pre-professional clubs, and Greek life. The culture is highly collaborative yet academically demanding, with the quarter system dictating a fast and sometimes stressful pace.",
+      "transportation_impact": "Located on a 240-acre campus along Lake Michigan in Evanston, the university is just 12 miles north of downtown Chicago. Students frequently utilize the free intercampus shuttle and public transit (the 'L' train) to access the city's vast cultural and professional resources.",
+      "research_impact": "As an AAU member with over $1 billion in annual sponsored research, Northwestern provides immense undergraduate research opportunities. The university houses hundreds of accessible labs, and students from all majors are encouraged to pursue self-directed research and apply for undergraduate research grants."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 7.0,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 12.7,
+      "admits_class_size": 2100,
+      "is_test_optional": true,
+      "test_policy_details": "Northwestern is test-optional for the 2025-2026 admissions cycle. Students may choose whether to submit SAT or ACT scores. For those who submit, the university superscores both the SAT and ACT.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 5985,
+          "admits": 1200,
+          "acceptance_rate": 20.0,
+          "class_fill_percentage": 55.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 53000,
+        "admits_total": 3710,
+        "enrolled_total": 2100,
+        "acceptance_rate_overall": 7.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 56.6,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 2500,
+          "accepted_spots": 1800,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Class of 2029 waitlist admit data is pending completion of the cycle."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 50018,
+        "admits_total": 3806,
+        "enrolled_total": 2100,
+        "acceptance_rate_overall": 7.69,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 55,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist total spots offered/accepted not publicly disclosed for this year."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 51261,
+        "admits_total": 3695,
+        "enrolled_total": 2069,
+        "acceptance_rate_overall": 7.21,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 56.0,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 83,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 47636,
+        "admits_total": 3321,
+        "enrolled_total": 1980,
+        "acceptance_rate_overall": 6.97,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 59.6,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 69,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 39263,
+        "admits_total": 3654,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 9.31,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 108,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.17,
+        "notes": "Northwestern does not officially report middle 50% GPA in its CDS, but 94-95% of enrolled first-year students placed in the top 10% of their high school graduating class. The estimated unweighted average is ~3.95."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1500-1560",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "33-35",
+        "submission_rate": 69.0,
+        "policy_note": "For the Class of 2029, 46% submitted SAT scores and 23% submitted ACT scores, demonstrating that a strong majority of competitive applicants still view test scores as an advantage."
+      },
+      "demographics": {
+        "first_gen_percentage": 15.0,
+        "legacy_percentage": 10.0,
+        "international_percentage": 12.0,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 78.0
+          },
+          {
+            "region": "In-State (Illinois)",
+            "percentage": 22.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 32.9,
+          "black_african_american": 6.47,
+          "hispanic_latino": 10.6,
+          "asian": 16.0,
+          "native_american_alaskan": 0.12,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 4.93,
+          "unknown": 5.0,
+          "non_resident_alien": 12.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Weinberg College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts foundation, pre-med track, or undecided applicants. It is the largest undergraduate school and offers immense flexibility.",
+        "housing_profile": "Students live across various residence halls and residential colleges on the Evanston campus.",
+        "student_archetype": "Intellectually curious, interdisciplinary thinkers often pursuing double majors or integrating humanities with quantitative sciences.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 220-1",
+              "STAT 210-0"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All core, field, and related courses must be taken for a letter grade and passed with a grade of C- or higher.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 201",
+                "ECON 202",
+                "ECON 281",
+                "ECON 310-1",
+                "ECON 310-2",
+                "ECON 311"
+              ],
+              "electives": [],
+              "total_units": 45,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Half of all Northwestern students enroll in ECON 201 at some point. It is the most popular major on campus."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires taking gateway courses from at least two different subfields (American, Comparative, International, Theory).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "POLI_SCI 201",
+                "POLI_SCI 210",
+                "POLI_SCI 220",
+                "POLI_SCI 230",
+                "POLI_SCI 240",
+                "POLI_SCI 250",
+                "POLI_SCI 395"
+              ],
+              "electives": [],
+              "total_units": 45,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Students must complete 3 gateway courses, 1 methodology course, the Political Research Seminar (395), and 7 additional 300-level courses."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must take 2 courses in personality/clinical/social, 2 in cognitive/neuroscience, 1 cross-cutting, and 1 upper-level research.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYCH 110-0",
+                "PSYCH 201-0",
+                "PSYCH 301-0"
+              ],
+              "electives": [],
+              "total_units": 45,
+              "major_units": 11
+            },
+            "notable_professors": [],
+            "notes": "PSYCH 201 can be substituted with an approved equivalent statistics course."
+          }
+        ]
+      },
+      {
+        "name": "Medill School of Journalism, Media, Integrated Marketing Communications",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students with a heavily demonstrated background in reporting, writing, editing, or multimedia storytelling. Medill expects to see evidence of journalism action, not just interest.",
+        "housing_profile": "Integrated into general undergraduate housing.",
+        "student_archetype": "Inquisitive, deadline-driven storytellers and media strategists with a track record in high school publications or local media.",
+        "majors": [
+          {
+            "name": "Journalism",
+            "degree_type": "B.S.J.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion of the Journalism Residency (a one-quarter full-time professional internship) and a concentration of courses outside of Medill.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "JOUR 201-1",
+                "JOUR 201-2",
+                "JOUR 202-0",
+                "JOUR 301-0",
+                "JOUR 370-0"
+              ],
+              "electives": [],
+              "total_units": 45,
+              "major_units": 14
+            },
+            "notable_professors": [
+              "Charles Whitaker (Magazine Journalism)",
+              "Debbie Cenziper (Investigative Journalism)",
+              "Alex Kotlowitz (Nonfiction Storytelling)",
+              "Rich Gordon (Digital Innovation)",
+              "Steven Thrasher (Social Justice in Reporting)"
+            ],
+            "notes": "Before starting the Journalism Residency, students must earn a C+ or better in the core journalism classes."
+          }
+        ]
+      },
+      {
+        "name": "School of Communication",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Best for students targeting theatre, film, radio, or human communication studies. Performance programs (like theatre) are highly selective and may cap enrollment.",
+        "housing_profile": "Integrated into general undergraduate housing.",
+        "student_archetype": "Creative, expressive students who blend analytical thinking with artistic or communication-focused execution.",
+        "majors": [
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students must complete at least one area of study consisting of 4 courses. The B.A. track requires foreign language proficiency; the B.S. requires a research methods course.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMM_ST 101-1",
+                "COMM_ST 101-2",
+                "COMM_ST 102-0"
+              ],
+              "electives": [],
+              "total_units": 42,
+              "major_units": 12
+            },
+            "notable_professors": [],
+            "notes": "Often cited by students as offering a flexible course load, making it easier to double major or balance intensive extracurriculars."
+          }
+        ]
+      },
+      {
+        "name": "McCormick School of Engineering and Applied Science",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students with exceptional math and science backgrounds (4 years English, 3+ years lab science like Chem/Physics). Appeals to students valuing 'whole-brain' engineering with a design-thinking core.",
+        "housing_profile": "General undergraduate housing.",
+        "student_archetype": "Innovative problem solvers with elite quantitative skills who also want the flexibility to take humanities or dual-degree programs.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Can be taken through McCormick (B.S.) or Weinberg (B.A.). Both share the exact same CS core classes.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Transferring into CS internally is highly accessible. Students note that upper-level CS electives can fill up quickly."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      {
+        "name": "Integrated Marketing Communications (IMC) Certificate",
+        "type": "Certificate",
+        "notes": "A highly popular certificate offered by Medill that focuses on data-driven, customer-centric marketing, open to all Northwestern undergrads."
+      }
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application",
+      "QuestBridge"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Decisions released in mid-December. Fills over 50% of the class."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-02",
+        "is_binding": false,
+        "notes": "Decisions released in late March."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "At time of application",
+        "details": "For 2024-2025, Northwestern made the Common App personal essay optional and replaced the generic 'Why Northwestern' prompt with a required 300-word prompt: 'What aspects of your background (identity, school setting, community, household) have most shaped how you see yourself engaging in Northwestern's community?'"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Application essay",
+        "Recommendations",
+        "Extracurricular Activities",
+        "Talent/Ability",
+        "Character/Personal Qualities"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores",
+        "First generation status",
+        "Alumni/ae relation (Legacy)",
+        "Geographical residence",
+        "Volunteer work",
+        "Level of applicant's interest"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Northwestern intensely evaluates a student's 'context'. Because they reject thousands of 4.0 GPAs, they look for 'students who do'\u2014those with a tangible history of acting on their intellectual curiosities. The shift in essay prompts reflects a desire to see exactly how a student will fit into the campus community."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to the school that best aligns with your high school transcript and your primary intended major, as admissions criteria are uniformly strict but look for 'fit'.",
+      "Do not apply to one school purely to 'game' the system intending to transfer immediately; essays must strongly match the school you initially apply to.",
+      "If interested in Medill, ensure you have a robust portfolio of journalism or media-related extracurriculars, as they evaluate for practical application of media skills."
+    ],
+    "college_ranking_tactics": [
+      "If Northwestern is your absolute top choice, apply Early Decision. The ED acceptance rate is roughly 4x the Regular Decision rate, and it is the ultimate form of demonstrated interest."
+    ],
+    "alternate_major_strategy": "Because Northwestern does not admit by specific major (only by School), and because roughly 50% of students change their major, the 'alternate major' strategy is less relevant. However, applying to a less intensely impacted school (like SESP or SoC) instead of McCormick might seem advantageous to some, provided their extracurriculars align perfectly with that school's mission. Internal inter-school transfers are widely permitted once enrolled."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment (3 to 5.5 units per quarter)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67158.0,
+        "total_coa": 94878.0,
+        "housing": 21126.0
+      },
+      "out_of_state": {
+        "tuition": 67158.0,
+        "total_coa": 94878.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 64065.0,
+    "average_merit_aid": 20625.0,
+    "percent_receiving_aid": 60.0,
+    "scholarships": [
+      {
+        "name": "Northwestern University Scholarship",
+        "type": "Need",
+        "amount": "Varies (Meets 100% of remaining need)",
+        "deadline": "At time of financial aid application (CSS/FAFSA)",
+        "benefits": "Provides loan-free grant packages to cover all demonstrated institutional financial need.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Chicago Star Scholarship",
+        "type": "Need",
+        "amount": "Varies based on need",
+        "deadline": "Transfer admission deadline",
+        "benefits": "Supports students transferring to Northwestern after completing studies at City Colleges of Chicago.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "National Merit Corporation deadlines",
+        "benefits": "Sponsored by Northwestern for finalists in the National Merit Scholarship Program who designate the university as their first choice.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "QuestBridge National College Match Scholarship",
+        "type": "Need",
+        "amount": "Full Ride",
+        "deadline": "QuestBridge match deadlines",
+        "benefits": "Covers full cost of attendance with no parent contribution and no loans for matched students.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Northwestern generally requires a score of 5 on AP exams to award credit. In some rare cases, a 3 or 4 may be accepted depending on the department.",
+      "exceptions": [
+        "AP English credit will not exempt students from first-year seminar or foundational writing requirements.",
+        "If a student earns AP credit for a specific course (e.g., ECON 201) and then takes that exact course at Northwestern, the AP credit is forfeited and reduced to 0 units."
+      ],
+      "usage": "Credits can be applied toward the 45 units required to graduate and can fulfill up to two foundational discipline requirements. However, AP credits DO NOT count toward the Undergraduate Registration Requirement (URR), meaning students must still complete at least 9 quarters and 32 units in residence at Northwestern."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for sufficiently high scores (typically 6 or 7) on Higher Level (HL) exams only. No credit is granted for Subsidiary Level (SL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Registrar's test credit webpage",
+        "Inter-School Transfer (IST) application for internal transfers"
+      ],
+      "restrictions": "Transfer students must complete a minimum of 21 of their 42/45 units at Northwestern."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school course load (AP/IB heavy) with near-perfect grades (top 10% of class).",
+      "Demonstrating 'intellectual risk-taking'\u2014showing that you act on your passions rather than just collecting grades.",
+      "A strategic Early Decision application if Northwestern is the top choice, given the massive acceptance rate differential.",
+      "Specific, deeply researched alignment with Northwestern's unique offerings (e.g., quarter system, specific labs, Medill residency) articulated in the required supplement."
+    ],
+    "common_activities": [
+      "High-level journalism/student publication leadership (especially for Medill applicants)",
+      "Significant independent research or science fair success",
+      "Pre-professional internships or business/consulting club leadership",
+      "Theatre, debate, or competitive speech (especially for SoC applicants)"
+    ],
+    "essay_tips": [
+      "Do not recycle a generic 'Why Us' essay. Focus on the new prompt regarding how your specific background and context will shape your engagement at Northwestern.",
+      "Highlight the intersection of your interests (e.g., Journalism and Computer Science, or Engineering and Music) to show you belong in Northwestern's interdisciplinary culture.",
+      "Provide concrete evidence of your 'doing'\u2014tell stories of projects executed, rather than theories learned."
+    ],
+    "red_flags": [
+      "Applying to a specific school (like McCormick) without the requisite math/science background (calculus, physics, chemistry).",
+      "Applying Regular Decision while demonstrating low interest (not opening emails, not doing optional interviews if available)."
+    ],
+    "insights": [
+      "The quarter system is a major shock for many freshmen. With 10-week terms, midterms often start in week 3 or 4 and barely stop until finals.",
+      "Greek life holds a significant presence on campus and heavily influences the social scene, which can be polarizing for students.",
+      "Internal transfer between schools is remarkably easy compared to peer institutions, drastically reducing the stress of picking the 'wrong' major as a high school senior."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 109275,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 22.0,
+    "top_employers": [
+      "McKinsey & Company",
+      "Bain & Company",
+      "Boston Consulting Group",
+      "J.P. Morgan Chase",
+      "Deloitte Consulting",
+      "PwC Strategy&",
+      "Accenture"
+    ],
+    "loan_default_rate": 1.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 98.0,
+    "graduation_rate_4_year": 86.0,
+    "graduation_rate_6_year": 96.0
+  }
+}

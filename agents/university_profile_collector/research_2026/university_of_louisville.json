@@ -1,0 +1,394 @@
+{
+  "_id": "university_of_louisville",
+  "metadata": {
+    "official_name": "University of Louisville",
+    "location": {
+      "city": "Louisville",
+      "state": "Kentucky",
+      "type": "Public"
+    },
+    "last_updated": "2023-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Louisville is a preeminent public metropolitan research university located in Kentucky. Known for its accessible admissions, massive first-generation student population, and deep integration with regional corporate giants like UPS, UofL serves as a primary driver of economic mobility and R1 medical innovation in the state.",
+    "market_position": "Public Research University (R1)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 158,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "High emphasis on pre-professional and STEM pathways.",
+        "implication": "Engineering and Nursing are highly impacted and require strict prerequisites, whereas general admission to Arts & Sciences is highly accessible."
+      },
+      {
+        "category": "Financial",
+        "insight": "Unique corporate partnerships offer massive tuition subsidies.",
+        "implication": "Programs like UPS Metropolitan College allow students to graduate debt-free by working night shifts, though this contributes to lower 4-year graduation rates."
+      },
+      {
+        "category": "Culture",
+        "insight": "Urban campus deeply intertwined with ACC Athletics.",
+        "implication": "Students experience a traditional 'big state school' sports culture while benefiting from urban internship access."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and diverse student body heavily engaged in Greek life, over 300 student organizations, and ACC sports tailgating. Strong sense of community despite being a large urban commuter-friendly campus.",
+      "transportation_impact": "Urban setting allows for extensive local transit options and immediate access to downtown Louisville internships.",
+      "research_impact": "Classified as an R1 institution, UofL boasts world-class medical research facilities, having pioneered innovations like the first self-contained artificial heart transplant."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.81,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 12442,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for all majors. Applicants without test scores undergo a comprehensive transcript review. Direct admission to Nursing or Engineering without scores requires high grades in advanced math and science.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 15668,
+        "admits_total": 12442,
+        "enrolled_total": 2797,
+        "acceptance_rate_overall": 0.82,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.22,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Undergraduate waitlist data not publicly disclosed. Yield rate calculated based on historical Peterson's dataset estimates."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.6,
+        "notes": "Average incoming high school GPA is approximately 3.60."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1040-1270",
+        "sat_reading_middle_50": "530-640",
+        "sat_math_middle_50": "510-630",
+        "act_composite_middle_50": "19-27",
+        "submission_rate": 0.85,
+        "policy_note": "ACT submission rate is approximately 85-88%; SAT submission rate is 13-18%."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.38,
+        "legacy_percentage": null,
+        "international_percentage": 0.01,
+        "geographic_breakdown": [
+          {
+            "region": "Kentucky",
+            "percentage": 0.695
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.6,
+          "black_african_american": 0.153,
+          "hispanic_latino": 0.0809,
+          "asian": 0.0603,
+          "native_american_alaskan": 0.0012,
+          "pacific_islander": 0.0009,
+          "two_or_more_races": 0.0557,
+          "unknown": 0.0012,
+          "non_resident_alien": 0.01
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "J.B. Speed School of Engineering",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Applicants must demonstrate strong proficiency in quantitative sciences. Those without test scores must have B- or higher in Pre-Calculus and Chemistry.",
+        "housing_profile": "Traditional on-campus residence halls and specific Living-Learning Communities for engineers.",
+        "student_archetype": "Career-focused, technically proficient students.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111",
+              "CHEM 101"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers require B- or higher in Pre-Calculus.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "CSE 101",
+                "CSE 120",
+                "CSE 110",
+                "CSE 130",
+                "CSE 220",
+                "CSE 235",
+                "CSE 298",
+                "CSE 299",
+                "CSE 302",
+                "CSE 310",
+                "CSE 335",
+                "CSE 350",
+                "CSE 399",
+                "CSE 419",
+                "CSE 420",
+                "CSE 496",
+                "CSE 532",
+                "CSE 546"
+              ],
+              "electives": [
+                "CSE 504",
+                "CSE 516",
+                "CSE 522",
+                "CSE 528",
+                "CSE 530",
+                "CSE 538",
+                "CSE 545",
+                "CSE 547",
+                "CSE 551",
+                "CSE 555",
+                "CSE 564",
+                "CSE 565",
+                "CSE 566",
+                "CSE 568",
+                "CSE 570"
+              ],
+              "total_units": 121,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Program allows computer science study without the strict physical science requirements of a B.S., requiring 30 hours in another area of study."
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students dedicated to healthcare who can maintain high academic standards in initial prerequisite sciences.",
+        "housing_profile": "Access to Health Sciences Center resources.",
+        "student_archetype": "Compassionate, highly disciplined pre-healthcare students.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [],
+            "special_requirements": "Two-step admission process. Must apply to upper division after 3-4 semesters with no more than two NUR course failures.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Requires rigorous lower-division math and science performance."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Take Flight Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Admission operates on a rolling basis; priority deadlines exist in the fall for competitive merit scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Guaranteed Entrance to Medical School (GEMS)",
+        "requirement_type": "Essays",
+        "deadline": "December 1",
+        "details": "Requires a 400-word essay on career goals, two letters of recommendation, and a resume."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (if submitted)"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "General admission is metrics-driven, but holistic review (essays/resume) is invoked for borderline applicants or those applying test-optional to competitive tracks."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to non-impacted Arts & Sciences programs if test scores do not meet Engineering minimums.",
+      "Utilize the Exploratory track to fulfill foundational math/chemistry requirements before initiating an internal transfer."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to a BA in Computer Science or a generic exploratory BA allows entry to the university; after earning a 2.8 GPA and a B- in MATH 111, students can successfully transfer into the Speed School."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 13136.0,
+        "total_coa": 35114.0,
+        "housing": 11690.0
+      },
+      "out_of_state": {
+        "tuition": 29482.0,
+        "total_coa": 51460.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 11189.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 86.0,
+    "scholarships": [
+      {
+        "name": "Out-of-State Base Grant",
+        "type": "Merit",
+        "amount": "$16,000",
+        "deadline": "Rolling",
+        "benefits": "Effectively brings out-of-state tuition to the in-state equivalent level.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Grawemeyer Competitive Scholarship",
+        "type": "Merit",
+        "amount": "$28,000",
+        "deadline": "Varies",
+        "benefits": "Funds undergraduate research and civic engagement.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Breonna Taylor Legacy Scholarship",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "Varies",
+        "benefits": "Provides undergraduate funding with preference for African-American Kentucky residents.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "UPS Earn & Learn (Metropolitan College)",
+        "type": "Merit/Work",
+        "amount": "Full Tuition",
+        "deadline": "Rolling",
+        "benefits": "100% in-state tuition coverage for students working the third shift at UPS Worldport.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 3, 4, or 5.",
+      "exceptions": [
+        "School of Medicine pre-med prerequisites will not accept AP Biology credit."
+      ],
+      "usage": "Used for course equivalents and elective credits."
+    },
+    "ib_policy": {
+      "general_rule": "Credit accepted for higher-level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "KCTCS Transfer Pathways"
+      ],
+      "restrictions": "Engineering requires minimum 'C-' grades on all transferred courses."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Ability to balance work and school, especially for those in UPS Metroversity.",
+      "Strong academic foundations in math for STEM prospects.",
+      "Active engagement in local internships."
+    ],
+    "common_activities": [
+      "Louisville Cardinals Football Tailgating",
+      "Greek Life",
+      "Intramural Sports",
+      "Undergraduate Research"
+    ],
+    "essay_tips": [
+      "Highlight resilience and community service.",
+      "Demonstrate a clear connection to the state of Kentucky for specialized scholarships."
+    ],
+    "red_flags": [
+      "Poor performance in high school math (instant rejection for direct engineering admits)."
+    ],
+    "insights": [
+      "Campus feels integrated with the city but requires situational awareness regarding urban safety.",
+      "Flipped classrooms are highly common in the science and engineering departments."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 67853,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "UPS (Worldport)",
+      "UofL Health",
+      "Norton Healthcare",
+      "Ford Motor Company"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.81,
+    "graduation_rate_4_year": 0.43,
+    "graduation_rate_6_year": 0.61
+  }
+}

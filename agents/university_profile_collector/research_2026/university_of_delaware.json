@@ -1,0 +1,421 @@
+{
+  "_id": "university_of_delaware",
+  "metadata": {
+    "official_name": "University of Delaware",
+    "location": {
+      "city": "Newark",
+      "state": "Delaware",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-16",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Delaware is an R1 public research university known for its strong STEM, business, and health science programs. It offers a classic collegiate campus experience with robust study abroad programs and active Greek life.",
+    "market_position": "Public Flagship / Public Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 88,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Highly restrictive internal transfer policies for majors like Nursing and Mechanical Engineering.",
+        "implication": "Applicants should apply directly to their intended major if interested in impacted fields."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Test-optional policy extended through 2025, with only 2.8% of admitted students submitting ACT scores.",
+        "implication": "Standardized tests are truly optional; lack of scores does not penalize applicants."
+      },
+      {
+        "category": "Financial",
+        "insight": "In-state students benefit heavily from programs like First State Promise, while OOS students face a steep price differential.",
+        "implication": "OOS applicants must weigh the $57,000+ COA against the university's strong 10-year ROI."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly social, dominated by Greek life, Division I sports, and the adjacent Main Street commercial district.",
+      "transportation_impact": "Strategically located between Philadelphia and Baltimore, providing excellent regional transit access for internships.",
+      "research_impact": "Extensive undergraduate research opportunities supported by $221M+ in R&D expenditures."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 69.23,
+      "in_state_acceptance_rate": 70.12,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 56.93,
+      "admits_class_size": 4075,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for all applicants through the 2025 admissions cycle. Superscoring and self-reporting are permitted.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2029",
+        "applications_total": 39742,
+        "admits_total": 27517,
+        "enrolled_total": 4075,
+        "acceptance_rate_overall": 69.23,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3417,
+          "accepted_spots": 2087,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit data not publicly disclosed for 2024."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.98,
+        "notes": "50% of enrolled students held a 4.0 weighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1220-1370",
+        "sat_reading_middle_50": "610-700",
+        "sat_math_middle_50": "590-690",
+        "act_composite_middle_50": "28-32",
+        "submission_rate": 2.8,
+        "policy_note": "Submission rate reflects ACT submissions only."
+      },
+      "demographics": {
+        "first_gen_percentage": 17.0,
+        "legacy_percentage": null,
+        "international_percentage": 3.25,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 15747,
+            "admits": 10155,
+            "acceptance_rate": 64.5
+          },
+          "women": {
+            "applicants": 23994,
+            "admits": 17361,
+            "acceptance_rate": 72.3
+          }
+        },
+        "racial_breakdown": {
+          "white": 67.63,
+          "black_african_american": 5.57,
+          "hispanic_latino": 10.24,
+          "asian": 6.14,
+          "native_american_alaskan": 0.08,
+          "pacific_islander": 0.01,
+          "two_or_more_races": 5.21,
+          "unknown": 1.87,
+          "non_resident_alien": 3.25
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Alfred Lerner College of Business and Economics",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking analytical and quantitative careers in finance or management.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Pre-professional, analytical, and highly driven.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 101",
+              "MATH 221"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers require a minimum 3.0 cumulative GPA and 12 credits at UD.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "FINC 311",
+                "FINC 312",
+                "FINC 314",
+                "FINC 413"
+              ],
+              "electives": [
+                "FINC 412",
+                "FINC 415",
+                "FINC 416",
+                "FINC 417"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Program integrates 75% of CFA exam material."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Best suited for mathematically inclined students seeking rigorous technical training.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Quantitative, innovative, and research-focused.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CISC 106",
+              "MATH 241"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires minimum 2.5 GPA and specific math/science coursework to transfer internally.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CISC 108",
+                "CISC 181",
+                "CISC 210",
+                "CISC 220",
+                "CISC 260"
+              ],
+              "electives": [],
+              "total_units": 124,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Sandra Carberry (Computer Science)",
+              "Dr. Weisong Shi (Edge Computing)",
+              "Dr. Guang Gao (Computer Microarchitecture)",
+              "Dr. Xi Peng (Computer Science)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students pursuing clinical careers in nursing, physical therapy, or related fields.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Compassionate, clinical, and academically disciplined.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Highly restricted due to clinical placement caps. C- minimum required in all NURS courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 120",
+                "NURS 233",
+                "NURS 243",
+                "NURS 263"
+              ],
+              "electives": [],
+              "total_units": 122,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding Early Action."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision priority deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One optional essay to address unusually low grades or academic discrepancies. Honors College requires three mandatory supplemental essays."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of Secondary School Record"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Extracurricular Activities",
+        "Recommendations"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": ""
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to restricted majors if qualified, as internal transfer can be exceedingly difficult due to capacity limitations."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "UD actively considers applicants for a second-choice major if they are not competitive for their highly restrictive first choice."
+  },
+  "financials": {
+    "tuition_model": "Differential tuition for in-state vs. out-of-state. Specific colleges (e.g., Engineering, Business, Nursing) may assess differential fees.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 14600.0,
+        "total_coa": 33718.0,
+        "housing": 14838.0
+      },
+      "out_of_state": {
+        "tuition": 39190.0,
+        "total_coa": 57358.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind for admissions. Does not guarantee 100% need met.",
+    "average_need_based_aid": 15929.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Blue Hen Success Grant",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "",
+        "benefits": "Institutional grant money toward tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "First State Promise",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers tuition for Delaware residents with family income under $75,000.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for most AP scores of 3, 4, or 5.",
+      "exceptions": [
+        "Cannot receive AP credit and dual-enrollment transfer credit for the same course."
+      ],
+      "usage": "Course equivalency or elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exams with scores of 4 or higher.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UD Transfer Credit Matrix"
+      ],
+      "restrictions": "Grades of C- or higher required for transfer."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school curriculum",
+      "High GPA",
+      "Demonstrated interest via visits or interaction"
+    ],
+    "common_activities": [
+      "Greek Life",
+      "Division I Athletics support",
+      "Over 400 student organizations"
+    ],
+    "essay_tips": [
+      "Focus on explaining any academic anomalies neutrally.",
+      "For Honors, detail exact contributions to diversity and solutions to societal challenges."
+    ],
+    "red_flags": [
+      "Applying as undeclared when intending to transfer into Nursing or Engineering later."
+    ],
+    "insights": [
+      "The campus combines rigorous STEM academics with a highly active social life.",
+      "Proximity to major Mid-Atlantic cities offers massive internship leverage."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 72950,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "ChristianaCare",
+      "JPMorgan Chase & Co.",
+      "University of Delaware",
+      "Bank of America",
+      "EY"
+    ],
+    "loan_default_rate": 2.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 92.0,
+    "graduation_rate_4_year": 81.0,
+    "graduation_rate_6_year": 79.0
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "_id": "university_of_dayton",
+  "metadata": {
+    "official_name": "University of Dayton",
+    "location": {
+      "city": "Dayton",
+      "state": "OH",
+      "type": "Private"
+    },
+    "last_updated": "2023-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Dayton is a top-tier private Catholic research university rooted in the Marianist tradition. It is renowned for its experiential learning opportunities, particularly in engineering and business, and its strong sense of community and social responsibility.",
+    "market_position": "Mid-sized Elite Catholic Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 136,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate dropped from ~81% in 2020 to 61.8% in 2023, indicating increasing selectivity.",
+        "implication": "Applicants should not treat UD as a guaranteed safety school; strong GPAs (averaging 3.79) are expected."
+      },
+      {
+        "category": "Financial",
+        "insight": "UD employs a fixed net tuition plan for four years and provides aid to ~97% of students.",
+        "implication": "The sticker price of ~$69,965 is rarely what families actually pay, making it a highly transparent and predictable financial investment."
+      },
+      {
+        "category": "Academic",
+        "insight": "Top Catholic university for engineering R&D with mandatory high-impact experiential learning.",
+        "implication": "Students looking for hands-on internships, co-ops, and undergraduate research will find extensive institutional support."
+      },
+      {
+        "category": "Culture",
+        "insight": "Ranked highly for 'Happiest Students' and 'Best College Food' with a robust Division I sports culture.",
+        "implication": "Best fit for students seeking a traditional, spirited campus environment with strong residential and community bonds."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A highly residential, welcoming community with a strong emphasis on service, leadership, and school spirit (especially surrounding Flyer basketball).",
+      "transportation_impact": "Located on 388 acres near downtown Dayton, offering easy access to regional aerospace and manufacturing hubs for internships.",
+      "research_impact": "Classified as a high research activity institution with specialized strengths in aerospace, autonomous systems, and manufacturing."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.618,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.308,
+      "admits_class_size": 1934,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for most applicants. Test scores are considered if submitted and will not negatively impact scholarship eligibility if withheld.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 22485,
+        "admits_total": 13903,
+        "enrolled_total": 1934,
+        "acceptance_rate_overall": 0.618,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.139,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 18864,
+        "admits_total": 13969,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.74,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.806,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.811,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2019,
+        "cycle_name": "Class of 2023",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.72,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2019,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.60-4.10",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.79,
+        "notes": "A mix of A's and B's is expected; rigor (AP/IB) is highly factored into the holistic review."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1350",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 0.49,
+        "policy_note": "12% submitted SAT; 37% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.1,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-state",
+            "percentage": 0.43
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.683,
+          "black_african_american": 0.057,
+          "hispanic_latino": 0.057,
+          "asian": 0.018,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.029,
+          "unknown": 0.02,
+          "non_resident_alien": 0.134
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strong mathematics background is required. Ideal for students seeking early hands-on design and co-op/internship experiences.",
+        "housing_profile": "Traditional dormitories with strong community bonding.",
+        "student_archetype": "Innovative, practical problem-solvers.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EGR 102",
+                "EGR 103",
+                "EGR 200",
+                "EGM 201",
+                "EGM 202",
+                "EGM 303",
+                "MEE 104L",
+                "MEE 105L",
+                "MEE 114L",
+                "MEE 202",
+                "MEE 214"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly regarded regional placement in aerospace and automotive industries."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a strong liberal arts foundation intertwined with specialized majors like Computer Science.",
+        "housing_profile": "Residential living.",
+        "student_archetype": "Intellectually curious and interdisciplinary.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must attain grades of C- or better in CPS 150, CPS 151, and CPS 350 to proceed.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CPS 149",
+                "CPS 150",
+                "CPS 151",
+                "CPS 350"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Includes concentrations in AI and Data Science, Cyber Defense, or Software Engineering."
+          }
+        ]
+      },
+      {
+        "name": "School of Business Administration",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in corporate leadership, finance, and entrepreneurship.",
+        "housing_profile": "Residential living.",
+        "student_archetype": "Driven, networking-oriented servant leaders.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must earn at least a C+ in FIN 301.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FIN 301",
+                "FIN 360",
+                "FIN 401",
+                "FIN 460"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Jon Fulkerson"
+            ],
+            "notes": "Excellent preparation for the CFA exams and corporate financial management."
+          },
+          {
+            "name": "Business Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must earn a C or better in ECO 203 and ECO 204.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECO 203",
+                "ECO 204",
+                "ECO 340",
+                "ECO 346",
+                "ECO 410",
+                "ECO 441",
+                "ECO 490"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Jon Fulkerson",
+              "Dr. Beauchamp",
+              "Dr. Collier",
+              "Dr. Ruggiero"
+            ],
+            "notes": "Combines economic theory with applied business practice."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "UD Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding. Yields a faster decision and potentially better merit scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "The University of Dayton does not require any supplemental essays; only the main Common App essay is evaluated."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Extracurricular activities",
+        "Recommendations (optional but considered)"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "UD tracks demonstrated interest; visiting campus, attending virtual events, and interacting with admission counselors can give applicants an edge."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply undeclared (Discover Arts & Sciences) if unsure, as UD provides strong advising and does not heavily penalize undeclared status.",
+      "Select EA (November 1) for significantly improved odds, taking advantage of historical patterns where EA acceptance is robust."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "If aiming for highly competitive tracks like Engineering, ensure sufficient math and physics rigor is shown on the transcript."
+  },
+  "financials": {
+    "tuition_model": "Fixed Net Tuition Plan (Locks in net tuition for four years)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 49140,
+        "total_coa": 69965,
+        "housing": 16800
+      },
+      "out_of_state": {
+        "tuition": 49140,
+        "total_coa": 69965,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "Generous Merit & Need-Based",
+    "average_need_based_aid": 33450,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.93,
+    "scholarships": [
+      {
+        "name": "First-year Merit Scholarships (Father Chaminade, Deans', President's, Trustees')",
+        "type": "Merit",
+        "amount": "Up to $30,000/year",
+        "deadline": "2024-11-01",
+        "benefits": "Renewable for 4 years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Textbook Scholarship",
+        "type": "Merit",
+        "amount": "$4,000 over 4 years",
+        "deadline": "",
+        "benefits": "Assists with the cost of books and supplies.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credits are awarded for AP scores of 3, 4, or 5 depending on the subject.",
+      "exceptions": [],
+      "usage": "Score of 5 yields 1-2 terms of advanced standing; score of 4 yields 1 term; score of 3 yields 1 term in specific areas."
+    },
+    "ib_policy": {
+      "general_rule": "Transfer credit awarded for Higher Level (HL) exams with a score of 4 or better.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "In general, college courses with a grade of 'C-' (1.7) or higher from regionally accredited institutions will transfer."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong transcript showing rigorous coursework.",
+      "A demonstrated commitment to service and community aligning with Marianist values.",
+      "Demonstrated interest via campus visits or interactions."
+    ],
+    "common_activities": [
+      "Community service and volunteering",
+      "Campus ministry or religious groups",
+      "Division I athletics fandom (especially basketball)",
+      "Intramural sports and club activities"
+    ],
+    "essay_tips": [
+      "Showcase how you want to be a servant-leader.",
+      "Highlight teamwork, empathy, and ethical considerations.",
+      "Connect your career goals to making a positive global or community impact."
+    ],
+    "red_flags": [
+      "Lack of demonstrated interest",
+      "Poor performance in foundational math/science classes if applying for engineering"
+    ],
+    "insights": [
+      "UD is known for having incredibly 'Happy Students' with a welcoming and spirited culture.",
+      "The lack of supplemental essays makes applying very straightforward.",
+      "Experiential learning and co-ops are strongly emphasized and supported by the institution."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78870,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Apple",
+      "Google",
+      "Microsoft",
+      "GE Aerospace",
+      "Wright-Patterson Air Force Base",
+      "LexisNexis",
+      "CareSource"
+    ],
+    "loan_default_rate": 0.021
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.89,
+    "graduation_rate_4_year": 0.66,
+    "graduation_rate_6_year": 0.816
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "_id": "seattle_university",
+  "metadata": {
+    "official_name": "Seattle University",
+    "location": {
+      "city": "Seattle",
+      "state": "Washington",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Seattle University is a private Jesuit Catholic university located on a 50-acre campus in the Capitol Hill neighborhood of Seattle, offering a holistic and socially conscious educational environment [cite: 1, 2]. Known for its small class sizes and strong ties to Seattle's tech and healthcare hubs, the university excels in nursing, business, and computer science programs while promoting a progressive, community-oriented campus culture [cite: 2, 3].",
+    "market_position": "Selective Private Jesuit University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While the overall acceptance rate is around 76.9%, specific programs like Nursing, Computer Science, and Diagnostic Ultrasound are heavily impacted and highly competitive [cite: 4, 5, 6].",
+        "implication": "Applicants to STEM and healthcare fields face a much steeper admissions hurdle than those applying to the College of Arts and Sciences."
+      },
+      {
+        "category": "Academic",
+        "insight": "Operating on the quarter system, classes are fast-paced 'sprints'. STEM majors face rigorous foundational courses, specifically General Chemistry and Biology, which act as de facto weed-out classes [cite: 7].",
+        "implication": "Students must be prepared for a highly accelerated academic schedule and proactive in seeking academic support during their first two years."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus culture heavily emphasizes the Jesuit ideal of educating the 'holistic person,' fostering a progressive-minded, inclusive environment without a heavy party or Division I athletic-centric social scene [cite: 7, 8].",
+        "implication": "It is an ideal fit for socially conscious students seeking close-knit community engagement over traditional large-state-school social dynamics."
+      },
+      {
+        "category": "Financial",
+        "insight": "Tuition exceeds $55,000 annually, and while the university offers merit scholarships and the full-ride Sullivan Leadership Award for select Catholic/Jesuit high school students, it does not guarantee to meet 100% of demonstrated financial need [cite: 4, 9, 10].",
+        "implication": "Cost of attendance may be a significant barrier for lower-income students who do not secure substantial merit or specialized institutional aid."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Intimate, socially conscious, and community-service oriented. The student body is diverse and the campus lacks a dominant Greek life or party scene, catering more to students looking for authentic friendships and civic engagement [cite: 2, 8].",
+      "transportation_impact": "Situated in the dynamic Capitol Hill neighborhood and just 1.5 miles from the South Lake Union campus, students have exceptional access to urban amenities and networking opportunities at major tech employers like Amazon and Microsoft [cite: 1, 3].",
+      "research_impact": "The Office of Sponsored Projects supports undergraduate research, with recent average growth in funding. While primarily teaching-focused, students have access to high-quality labs and independent research opportunities if they proactively seek them out [cite: 7, 11]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.769,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 888,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for all first-year applicants. Standardized test scores (SAT/ACT) are not required, but if submitted, the university uses the highest sub-scores (superscoring) for admission and course placement [cite: 12, 13].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.907,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 8468,
+        "admits_total": 6514,
+        "enrolled_total": 888,
+        "acceptance_rate_overall": 0.769,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.136,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 133,
+          "accepted_spots": 67,
+          "admitted_from_waitlist": 40,
+          "waitlist_admit_rate": 0.597,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Data sourced from 2024 admissions cycle and waitlist statistics [cite: 4, 14, 15]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 8976,
+        "admits_total": 6826,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.76,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed for 2023 [cite: 16, 17]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.851,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 16, 17]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.67,
+        "notes": "Admitted students exhibit strong academic histories with an average GPA of 3.67 [cite: 16]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1350",
+        "sat_reading_middle_50": "580-720",
+        "sat_math_middle_50": "620-720",
+        "act_composite_middle_50": "23-30",
+        "submission_rate": 0.08,
+        "policy_note": "Test-optional policy allows students to withhold scores without disadvantage [cite: 4, 12, 14, 18]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.09,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 3124,
+            "admits": 2473,
+            "acceptance_rate": 0.791
+          },
+          "women": {
+            "applicants": 5330,
+            "admits": 4027,
+            "acceptance_rate": 0.755
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.384,
+          "black_african_american": 0.056,
+          "hispanic_latino": 0.126,
+          "asian": 0.202,
+          "native_american_alaskan": 0.003,
+          "pacific_islander": 0.007,
+          "two_or_more_races": 0.079,
+          "unknown": 0.02,
+          "non_resident_alien": 0.123
+        },
+        "religious_affiliation": "Catholic Church (Jesuit)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive applicants with substantial healthcare exposure and top-tier STEM grades.",
+        "housing_profile": "Standard university housing policies apply; all freshmen and sophomores are required to live on campus [cite: 7].",
+        "student_archetype": "Driven, clinically-focused students prepared for heavy courseloads and immediate clinical placement pathways.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Gen Chem",
+              "Bio"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Nursing is notoriously the most competitive major at SU. While internal transfer is possible, it is extremely difficult due to capacity caps [cite: 5, 6, 7]."
+          },
+          {
+            "name": "Diagnostic Ultrasound (DIUS)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Very small cohort size makes DIUS exceptionally selective. Internal transfers attempt to switch during freshman year but success is rare [cite: 5]."
+          }
+        ]
+      },
+      {
+        "name": "College of Science and Engineering",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students seeking to leverage Seattle's tech ecosystem. Must have strong math/science backgrounds.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Tech-focused, academically rigorous students seeking a balance of liberal arts and hard sciences.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Four years of college preparatory mathematics, including pre-calculus, are required for direct entrance into Science and Engineering programs [cite: 19].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly impacted major; benefits from strong connections to Amazon and Microsoft in the region [cite: 3, 5, 6]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "Early Action deadline [cite: 12]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline [cite: 12]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires Common Application essay and SU writing supplements [cite: 12, 19]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Transcripts",
+        "Coursework Rigor",
+        "Grade Trend",
+        "Teacher Recommendation",
+        "Counselor Recommendation"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Personal Essays",
+        "Standardized Test Scores (Optional)"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "None",
+      "specific_differentiators": "The admissions office gives additional consideration to students showing upward academic trends, coming from highly competitive secondary schools, and those displaying alignment with Jesuit values of social justice and community service [cite: 3, 19]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Avoid declaring highly impacted majors like Nursing, Diagnostic Ultrasound, or Computer Science as a first choice if STEM grades are borderline [cite: 5].",
+      "Leverage the holistic review by highlighting community service, leadership, and alignment with Jesuit values to offset lower test scores [cite: 3, 19].",
+      "Apply Early Action to maximize chances for both admission and merit scholarship considerations."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to a less competitive major with similar first-year prerequisites (e.g., Biology or Chemistry instead of Nursing/CS) is a common strategy, allowing students to attempt an internal transfer later. However, students should be cautioned that transferring into impacted majors like Nursing or DIUS at SU is highly restricted and not guaranteed [cite: 5]."
+  },
+  "financials": {
+    "tuition_model": "Flat Tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 55620.0,
+        "total_coa": 73613.0,
+        "housing": 9756.0
+      },
+      "out_of_state": {
+        "tuition": 55620.0,
+        "total_coa": 73613.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 31727.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Sullivan Leadership Award",
+        "type": "Merit",
+        "amount": "Full tuition, housing, and food",
+        "deadline": "January 15",
+        "benefits": "Covers tuition, room, and board for four years. Includes entry into the University Honors Program and Matteo Ricci Institute.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Seattle University Merit Scholarships",
+        "type": "Merit",
+        "amount": "$8,000+",
+        "deadline": "November 15 / January 15",
+        "benefits": "Renewable for up to 4 years for first-year students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Fostering Scholars",
+        "type": "Need",
+        "amount": "Full Scholarship",
+        "deadline": "",
+        "benefits": "Comprehensive financial, academic, and personal support for students currently in or aged out of the foster care system.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Seattle Promise Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Guaranteed admission and full tuition for eligible Seattle Promise transfer students from Washington State with a 3.0+ GPA.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts AP credits",
+      "exceptions": [],
+      "usage": "Can be used to fulfill course requirements or grant advanced standing, though specific score requirements vary by department [cite: 14]."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts IB credits",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer students must submit official college transcripts. Seattle Promise students with a Direct Transfer Agreement (DTA) or AS-T and a 3.0+ GPA are guaranteed admission [cite: 10, 12]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A holistic alignment with the university's mission of social justice and community engagement.",
+      "Resilience to handle the accelerated 10-week quarter system.",
+      "For STEM/Nursing: Excellent performance in high school math and laboratory sciences."
+    ],
+    "common_activities": [
+      "Volunteering at local non-profits and shelters",
+      "Participating in sustainability and environmental justice initiatives",
+      "Engaging in the local Capitol Hill arts and food scene"
+    ],
+    "essay_tips": [
+      "Highlight specific instances of community service and leadership.",
+      "Connect personal values to the Jesuit mission of educating the whole person.",
+      "If applying to impacted majors, clearly articulate your commitment and background in the field."
+    ],
+    "red_flags": [
+      "Treating Seattle University as a 'party school' or expecting a massive sports culture.",
+      "Applying to highly technical/impacted majors without the prerequisite math/science rigor."
+    ],
+    "insights": [
+      "Students appreciate the small class sizes where professors know them by name, but warn that the quarter system feels like a sprint.",
+      "The campus is a 'green haven' in the middle of a bustling city, making it ideal for those who want an urban experience without losing a traditional campus feel.",
+      "The lack of a vibrant party scene means students must be proactive in forming close-knit social circles."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 79426,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.84,
+    "graduation_rate_4_year": 0.66,
+    "graduation_rate_6_year": 0.755
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "_id": "university_of_oregon",
+  "metadata": {
+    "official_name": "University of Oregon",
+    "location": {
+      "city": "Eugene",
+      "state": "Oregon",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Oregon is a Tier 1 public research institution known for its collaborative campus culture, robust Division I athletic spirit, and prominent programs in business, journalism, and environmental sciences. As a test-optional institution, UO utilizes a holistic admissions process, offering accessible entry to the university at large while maintaining competitive, direct-admit pathways for specific programs like Architecture and Business.",
+    "market_position": "State Flagship / Tier 1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 98,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Overall admission is highly accessible with an ~88% acceptance rate, but specialized programs like Architecture and Business operate as highly selective 'direct-admit' or 'pre-major' silos.",
+        "implication": "Applicants should not fear rejection from the university if they apply to a competitive major, as they will still be admitted as 'exploring' (undeclared) if they meet general university standards."
+      },
+      {
+        "category": "Financial",
+        "insight": "Non-resident tuition and fees are steep ($44,598), resulting in an out-of-state COA exceeding $63,000, though strong automatic merit scholarships like the UO Excellence ($20k/yr) help offset costs.",
+        "implication": "Out-of-state applicants with strong academic records (3.90+ GPA) can expect significant automatic tuition discounts."
+      },
+      {
+        "category": "Academic",
+        "insight": "The Clark Honors College offers a liberal arts college experience within a massive research university, complete with small seminar classes and a thesis requirement.",
+        "implication": "High-achieving students seeking close faculty mentorship should apply to the Honors College to bypass the large lecture sizes typical of lower-division classes."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and outdoors-oriented; heavy emphasis on Big Ten Division I sports (Oregon Ducks), over 250 student organizations, a bustling Greek life presence, and an active campus recreation culture.",
+      "transportation_impact": "Highly bike-friendly campus located within an urban setting in Eugene, with reliable local bus transit (Lane Transit District) accessible to students.",
+      "research_impact": "Classified as R1 (Very High Research Activity). Over 73% of undergraduates engage in research, supported by prominent facilities like the Phil and Penny Knight Campus for Accelerating Scientific Impact."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.8831,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.6341,
+      "admits_class_size": 5057,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional since Fall 2021. SAT/ACT scores are not required for admission or most merit scholarships. They are considered equally if submitted but play little to no role in the primary holistic review.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 40021,
+        "admits_total": 35337,
+        "enrolled_total": 5087,
+        "acceptance_rate_overall": 0.8831,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.144,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1598,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 631,
+          "waitlist_admit_rate": 0.3949,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Yield rate has been steadily declining over a 10-year period, reaching 14.4% in 2024."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 39400,
+        "admits_total": 33532,
+        "enrolled_total": 5057,
+        "acceptance_rate_overall": 0.8512,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1111,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 234,
+          "waitlist_admit_rate": 0.211,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 37154,
+        "admits_total": 32061,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.8628,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 1111,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 235,
+          "waitlist_admit_rate": 0.2115,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 31558,
+        "admits_total": 29483,
+        "enrolled_total": 4589,
+        "acceptance_rate_overall": 0.9342,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.156,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 868,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 305,
+          "waitlist_admit_rate": 0.3515,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.73,
+        "notes": "GPA reflects high school cumulative averages. 54% of enrolled students had a 3.75+ GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1360",
+        "sat_reading_middle_50": "580-690",
+        "sat_math_middle_50": "550-670",
+        "act_composite_middle_50": "23-30",
+        "submission_rate": 0.05,
+        "policy_note": "Test-optional since 2021; very few applicants submit scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.4,
+        "legacy_percentage": null,
+        "international_percentage": 0.014,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 16602,
+            "admits": 14336,
+            "acceptance_rate": 0.8635
+          },
+          "women": {
+            "applicants": 23350,
+            "admits": 20951,
+            "acceptance_rate": 0.8973
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.608,
+          "black_african_american": 0.03,
+          "hispanic_latino": 0.168,
+          "asian": 0.07,
+          "native_american_alaskan": 0.005,
+          "pacific_islander": 0.004,
+          "two_or_more_races": 0.097,
+          "unknown": 0.01,
+          "non_resident_alien": 0.014
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Lundquist College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students interested in sports product management, finance, and entrepreneurship. Apply as 'pre-business' and maintain a 3.0 GPA to guarantee major declaration.",
+        "housing_profile": "Academic Residential Communities (ARCs) are available to integrate living and major-specific learning.",
+        "student_archetype": "Driven, collaborative, and career-focused.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BA 101Z",
+              "BA 211Z",
+              "BA 213Z",
+              "EC 201Z",
+              "EC 202Z"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "BA 211Z",
+              "BA 213Z"
+            ],
+            "special_requirements": "Requires 75 credits and a 3.0 cumulative GPA, plus a 3.0 in lower-division core for guaranteed admission.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "BA 101Z Introduction to Business",
+                "BA 211Z Principles of Financial Accounting",
+                "BA 213Z Principles of Managerial Accounting",
+                "EC 201Z Principles of Microeconomics",
+                "EC 202Z Principles of Macroeconomics",
+                "BA 169Z Data Analysis Using Microsoft Excel"
+              ],
+              "electives": [
+                "BA 365 Cross-Cultural Negotiation",
+                "BA 453 Business Strategy and Planning"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Direct admission is offered to select high-achieving high school seniors. All others must enter as Pre-Business and pass holistic or guaranteed review."
+          }
+        ]
+      },
+      {
+        "name": "College of Design (School of Architecture and Environment)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking rigorous, studio-based architectural training focused on sustainability and healthy built environments.",
+        "housing_profile": "Design-oriented living spaces.",
+        "student_archetype": "Creative, technically proficient, and environmentally conscious.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "B.Arch",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ARCH 283"
+            ],
+            "special_requirements": "Requires a creative portfolio and two essay statements. Departmental application review is separate from the university review.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ARCH 283 Architectural Design I",
+                "ARCH 284 Architectural Design II",
+                "ARCH 383 Architectural Design III",
+                "ARCH 384 Architectural Design IV",
+                "ARCH 202 Design Skills",
+                "ARCH 222 Introduction to Architectural Computer Graphics"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": 144
+            },
+            "notable_professors": [],
+            "notes": "If a student is denied the Architecture major, they are still admitted to UO as 'exploring' (undeclared)."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for students pursuing STEM, humanities, or social sciences. Allows exploration before committing to a major.",
+        "housing_profile": "Standard residence halls with various Academic Residential Communities.",
+        "student_archetype": "Curious, interdisciplinary, and research-focused.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 201Z",
+              "PSY 202Z"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 302",
+              "PSY 303"
+            ],
+            "special_requirements": "Must receive a mid-C or better in PSY 201Z and PSY 202Z to count toward major.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 201Z Introduction to Psychology I",
+                "PSY 202Z Introduction to Psychology II",
+                "WR 121Z Composition I",
+                "STAT 243Z Elementary Statistics",
+                "PSY 301 Research Methods/Foundations",
+                "PSY 302 Statistical Methods in Psychology",
+                "PSY 303 Research Methods in Psychology"
+              ],
+              "electives": [
+                "PSY 304 Biopsychology",
+                "PSY 305 Cognition",
+                "PSY 420 Psychology and Law",
+                "PSY 433 Learning and Memory"
+              ],
+              "total_units": 120,
+              "major_units": 68
+            },
+            "notable_professors": [],
+            "notes": "Requires 16 upper-division credits to be taken in residence at UO."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CS 210",
+              "CS 211",
+              "CS 212"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 210",
+                "CS 211",
+                "CS 212"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Intro sequences transition from Python (CS 210/211) to C (CS 212)."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Computer Information Technology",
+      "Entrepreneurship",
+      "Sports Business",
+      "Sustainable Business",
+      "Global Business Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Oregon Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding Early Action. Decisions released by December 15."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular decision deadline. Decisions released by April 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Architecture",
+        "requirement_type": "Portfolio and Essays",
+        "deadline": "2024-11-01",
+        "details": "Requires a creative portfolio and two departmental essay statements."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Requires audition and musicianship placement examinations."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Optional Essay",
+        "deadline": "2025-01-15",
+        "details": "A special circumstances statement is optional but encouraged to explain any academic hindrances."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of Secondary School Record",
+        "Academic Transcript"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Application Essay",
+        "Letters of Recommendation"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The UO uses a test-optional approach where SAT/ACT scores genuinely play little to no role if omitted."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to selective majors (Business, Architecture) without fear of general rejection. Denied students are simply placed in an 'exploring' (undeclared) or 'pre-major' track.",
+      "If denied direct admission to Business, apply as Pre-Business and follow the guaranteed admission track (maintain a 3.0 cumulative and core GPA).",
+      "Submit applications Early Action to secure priority consideration for merit scholarships like the Summit and Apex awards."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "The University of Oregon allows applicants to be considered for their second/alternate major if they are not admitted to a highly selective first-choice major. Furthermore, missing a direct admit spots places you in the Pre-Major track for standard internal progression."
+  },
+  "financials": {
+    "tuition_model": "Public",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16137.0,
+        "total_coa": 36275.0,
+        "housing": 18183.0
+      },
+      "out_of_state": {
+        "tuition": 44598.0,
+        "total_coa": 63471.0,
+        "supplemental_tuition": 28461.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12074.0,
+    "average_merit_aid": 6701.0,
+    "percent_receiving_aid": 0.4217,
+    "scholarships": [
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "$125,000-$185,000",
+        "deadline": "2024-11-12",
+        "benefits": "Covers full tuition, fees, room, and board for in-state; out-of-state receives tuition and fees. Includes $12,000 in enrichment funds and automatic admission to the Honors College.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$9,000",
+        "deadline": "2025-02-02",
+        "benefits": "Awards $36,000 over four years to top Oregon residents with a 3.85+ GPA.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "UO Excellence Scholarship",
+        "type": "Merit",
+        "amount": "$20,000",
+        "deadline": "2025-01-15",
+        "benefits": "Awards $80,000 over four years to top non-resident applicants.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Summit Scholarship",
+        "type": "Merit",
+        "amount": "$5,000-$12,500",
+        "deadline": "2025-01-15",
+        "benefits": "Automatic award for students with a 3.90+ GPA. $12,500/year for non-residents; $5,000/year for residents.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Apex Scholarship",
+        "type": "Merit",
+        "amount": "$2,000-$10,000",
+        "deadline": "2025-01-15",
+        "benefits": "Automatic award based on academic performance for residents and non-residents.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "PathwayOregon",
+        "type": "Need",
+        "amount": "Full Tuition & Fees",
+        "deadline": "2025-01-15",
+        "benefits": "Ensures full tuition and fees are covered for Pell Grant-eligible Oregon residents.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "AP credits are awarded P* marks (no letter grade) for scores of 3, 4, or 5 depending on the exam.",
+      "exceptions": [],
+      "usage": "Counts toward the 168 hours degree requirement and may satisfy major prerequisites or Honors College requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 5+ on recognized Higher Level (HL) exams grant credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TES Public View",
+        "EAB Academic Planning tool"
+      ],
+      "restrictions": "A maximum of 124 transfer credits from a community college can be applied to a bachelor's degree. Students must complete 16 upper-division credits in residence for certain majors."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong high school GPA (3.7+) with rigorous college prep courses.",
+      "Applying Early Action to maximize chances for automatic merit scholarships.",
+      "Direct applications to competitive majors like Architecture or Business."
+    ],
+    "common_activities": [
+      "Greek Life (Sororities/Fraternities)",
+      "Club and Intramural Sports",
+      "Outdoor activities (hiking, skiing, going to the coast)",
+      "Attending Oregon Ducks D1 athletic events"
+    ],
+    "essay_tips": [
+      "Explain any academic drops or hindrances in the optional special circumstances essay.",
+      "Highlight leadership, perseverance, and service to compete for top scholarships like the Stamps."
+    ],
+    "red_flags": [
+      "Missing the November 1 Early Action deadline if out-of-state, severely limiting merit aid.",
+      "Attempting to bypass pre-major requirements with poor performance in filter/weeder classes."
+    ],
+    "insights": [
+      "Students appreciate the high quality of campus dining and dorms.",
+      "The 'Reverse Transfer' program allows students to earn their associate's degree using credits earned at UO after transferring from a community college.",
+      "The college town environment of Eugene is heavily praised for accessibility, public transit, and natural beauty."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62174,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "PricewaterhouseCoopers (PwC)",
+      "KPMG LLP",
+      "Deloitte LLP",
+      "Moss Adams LLP",
+      "EY LLP",
+      "Baker Tilly",
+      "Fisher Investments"
+    ],
+    "loan_default_rate": 0.04
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.86,
+    "graduation_rate_4_year": 0.5,
+    "graduation_rate_6_year": 0.74
+  }
+}

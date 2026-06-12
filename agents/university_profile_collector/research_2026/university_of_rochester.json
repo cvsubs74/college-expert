@@ -1,0 +1,414 @@
+{
+  "_id": "university_of_rochester",
+  "metadata": {
+    "official_name": "University of Rochester",
+    "location": {
+      "city": "Rochester",
+      "state": "NY",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Rochester is a highly selective private R1 research university known for its open curriculum and the 'Meliora' (Ever Better) ethos. It offers unparalleled undergraduate research access, particularly in STEM and medicine, but features a socially quieter campus heavily influenced by rigorous academics and harsh winter weather [cite: 9, 10].",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 46,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Rochester features an open curriculum with no core requirements aside from one writing course; students fulfill distribution requirements through self-selected three-course 'clusters' [cite: 3, 4].",
+        "implication": "Applicants who clearly articulate a desire for interdisciplinary study and self-directed learning in their essays will stand out."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "The overall acceptance rate has stabilized around 40%, but the waitlist admit rate varies wildly, dropping as low as 1.3% in 2022 to 13.2% of accepted spots in 2024 [cite: 7].",
+        "implication": "Rochester is heavily utilizing Early Decision to fill its class (42% of the class), making RD highly unpredictable due to yield protection [cite: 11, 12]."
+      },
+      {
+        "category": "Culture",
+        "insight": "77% of undergraduates participate in research, and the university places a high value on collaborative academic environments over cutthroat competition [cite: 10, 13].",
+        "implication": "Highlighting teamwork, intellectual curiosity, and an eagerness to engage in undergraduate research is critical for a successful application."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Collaborative and academically focused with a strong emphasis on niche clubs and Greek life (12-13% participation). The social scene can feel quiet or isolating to some, exacerbated by intense winter weather [cite: 9, 10, 14].",
+      "transportation_impact": "Primarily a residential campus with 76% living on-site. Off-campus housing can be significantly cheaper, but requires navigating the city of Rochester [cite: 11, 15].",
+      "research_impact": "Tier-1 (R1) research institution with massive medical and engineering infrastructure. The Goergen Institute for Data Science and the Laboratory for Laser Energetics provide elite undergraduate opportunities [cite: 1, 16]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 40.1,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 38.6,
+      "admits_class_size": 1179,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional policy allows students to decide if scores accurately represent their ability. Self-reported scores are accepted for the application phase [cite: 5, 17].",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 1385,
+          "admits": 527,
+          "acceptance_rate": 38.0,
+          "class_fill_percentage": 42.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 21384,
+        "admits_total": 8570,
+        "enrolled_total": 1179,
+        "acceptance_rate_overall": 40.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1696,
+          "accepted_spots": 934,
+          "admitted_from_waitlist": 123,
+          "waitlist_admit_rate": 13.2,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Yield dropped slightly to 15.4%; Waitlist admit rate calculated based on accepted spots [cite: 6, 7, 18]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 21680,
+        "admits_total": 7773,
+        "enrolled_total": 1317,
+        "acceptance_rate_overall": 35.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.9,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2202,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 220,
+          "waitlist_admit_rate": 9.9,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate calculated based on offered spots as accepted spots were not fully reported [cite: 7, 19]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 19933,
+        "admits_total": 7750,
+        "enrolled_total": 1625,
+        "acceptance_rate_overall": 38.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 21.0,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 2229,
+          "accepted_spots": 2086,
+          "admitted_from_waitlist": 29,
+          "waitlist_admit_rate": 1.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Highly competitive waitlist year with only 29 admits [cite: 7, 20]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.72,
+        "notes": "55% of enrolled students earned a GPA over 3.75; 71% hailed from the top 10% of their class [cite: 12]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1420-1500",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "32-34",
+        "submission_rate": 36.0,
+        "policy_note": "Only 36% of enrolled students for the Class of 2028 elected to submit test results [cite: 12]."
+      },
+      "demographics": {
+        "first_gen_percentage": 21.0,
+        "legacy_percentage": null,
+        "international_percentage": 24.0,
+        "geographic_breakdown": [
+          {
+            "region": "New York State",
+            "percentage": 31.0
+          },
+          {
+            "region": "Out of State",
+            "percentage": 61.8
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 37.6
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 42.5
+          }
+        },
+        "racial_breakdown": {
+          "white": 37.4,
+          "black_african_american": 5.1,
+          "hispanic_latino": 6.8,
+          "asian": 13.2,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.3,
+          "unknown": 3.8,
+          "non_resident_alien": 24.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts, Sciences and Engineering (ASE)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 40.1,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for self-directed students who want an interdisciplinary education without strict core requirements. Great for those blending STEM with humanities [cite: 1, 3].",
+        "housing_profile": "Traditional campus dorms; 76% of students live on campus all four years [cite: 3, 11].",
+        "student_archetype": "Collaborative, research-oriented problem solver.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSC 171 Intro to Computer Science",
+              "MATH 150 Discrete Mathematics",
+              "CSC 172 Data Structures and Algorithms",
+              "MATH 14x/16x/17x Calculus"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires a grade of C- or better to progress from CSC 171 to CSC 172 [cite: 21].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CSC 173 Computation and Formal Systems",
+                "CSC 242 Intro to Artificial Intelligence",
+                "CSC 252 Computer Organization",
+                "CSC 254 Programming Language Design and Implementation",
+                "CSC 280 Computer Models and Limitations",
+                "CSC 282 Design and Analysis of Efficient Algorithms"
+              ],
+              "electives": [
+                "CSC 273W Writing in Computer Science",
+                "CSC 299W Social Implications of Computing"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Monika Polak (Data Mining)"
+            ],
+            "notes": "BS students can concentrate in AI, HCI, systems, or theory. No caps on the number of CS majors [cite: 22, 23]."
+          }
+        ]
+      },
+      {
+        "name": "Eastman School of Music",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 39.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For elite, conservatory-bound musicians seeking rigorous performance and theory training [cite: 1, 8].",
+        "housing_profile": "Located in Downtown Rochester, separate from the River Campus [cite: 1].",
+        "student_archetype": "Dedicated performer/composer.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED1",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Notified mid-December [cite: 24]."
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-05",
+        "is_binding": true,
+        "notes": "Notified early February [cite: 24]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": "Notified April 1 [cite: 24]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-05",
+        "details": "One required 250-word essay about leveraging curricular flexibility for community impact, plus optional creative or research uploads [cite: 25]."
+      },
+      {
+        "target_program": "Combined Degree Programs",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-05",
+        "details": "Additional 250-word essay required to explain interest and ambitions specific to the program [cite: 26]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Extracurricular Activities",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "Interview",
+        "Talent/ability",
+        "Application Essay",
+        "Recommendation(s)",
+        "Level of applicant's interest"
+      ],
+      "essay_importance": "Important",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The Admissions committee heavily seeks 'doers and disruptors' emphasizing the university's Meliora values (Equity, Leadership, Integrity, Openness, Respect, Accountability) [cite: 5, 12]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to engineering if interested, as internal transfer can be delayed by long pre-requisite course sequences [cite: 27].",
+      "Highlight interdisciplinary interests in essays since the open curriculum makes double majoring exceptionally common and accessible [cite: 4, 28]."
+    ],
+    "college_ranking_tactics": [
+      "Applying Early Decision (ED) significantly boosts chances, as 40-42% of the incoming class is filled through ED rounds [cite: 11, 12].",
+      "Completing the strongly recommended interview is a crucial tactic for demonstrating interest and increasing merit scholarship chances [cite: 8, 29]."
+    ],
+    "alternate_major_strategy": "Applying undeclared is generally safe for Arts & Sciences due to the flexible pre-major system, but less advisable for highly sequenced STEM fields like engineering."
+  },
+  "financials": {
+    "tuition_model": "Flat rate per semester for full-time undergraduates [cite: 24].",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67080.0,
+        "total_coa": 89562.0,
+        "housing": 19792.0
+      },
+      "out_of_state": {
+        "tuition": 67080.0,
+        "total_coa": 89562.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met/Need-Blind",
+    "average_need_based_aid": 42046.0,
+    "average_merit_aid": 14000.0,
+    "percent_receiving_aid": 75.0,
+    "scholarships": [
+      {
+        "name": "Alan and Jane Handler Scholarship",
+        "type": "Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Complete financial support including tuition, housing, and fees for high-achieving students with high financial need [cite: 24].",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Maximum of 16 credits total allowed from AP/IB and pre-matriculation college courses combined [cite: 30].",
+      "exceptions": [
+        "Cannot be used to fulfill the primary writing requirement or College clusters [cite: 30, 31]."
+      ],
+      "usage": "Can be used for placement, general electives, or major prerequisites depending on the department (e.g., AP Chem 4 or 5 yields credit for CHEM 131) [cite: 31, 32]."
+    },
+    "ib_policy": {
+      "general_rule": "Subject to the 16-credit maximum; granted for Higher Level (HL) exams with scores of 5 or 6+ only [cite: 32].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Maximum of 64 credit hours can be transferred from a two-year institution [cite: 33]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Genuine intellectual curiosity and a strong academic record, particularly in rigorous coursework [cite: 8, 12].",
+      "Demonstrated alignment with the university's motto 'Meliora' through concrete community impact and leadership [cite: 5].",
+      "Active demonstrated interest, especially through the completion of an admissions interview [cite: 8, 29]."
+    ],
+    "common_activities": [
+      "Undergraduate Research (77% participation) [cite: 13]",
+      "Student Organizations (90% participation) [cite: 13]",
+      "Internships (95% participation) [cite: 13]",
+      "Music ensembles (connected to Eastman School) [cite: 3]",
+      "Division III Athletics [cite: 11]"
+    ],
+    "essay_tips": [
+      "Detail specific, tangible contributions to your community and outline clear future plans [cite: 25, 26].",
+      "Connect your past efforts directly to how you will utilize Rochester's flexible open curriculum to create change [cite: 25, 34].",
+      "Be specific about interdisciplinary goals, mentioning exact programs, research labs, or clusters [cite: 34]."
+    ],
+    "red_flags": [
+      "Lack of demonstrated interest, as yield protection is common for applicants treating UR as a 'safety' school [cite: 12].",
+      "Inability to handle harsh, prolonged winter weather, which strongly impacts the social environment [cite: 9, 10, 15].",
+      "Expecting a booming, traditional 'state-school' party scene, as the campus can feel isolated [cite: 9, 10]."
+    ],
+    "insights": [
+      "The 'Cluster' system is widely loved, allowing deep dives into Humanities, Social Sciences, and Natural Sciences without tedious gen-eds [cite: 3, 4].",
+      "Students highly recommend moving off-campus to save money, as on-campus housing is notoriously expensive [cite: 15]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 87197,
+    "employment_rate_2yr": 93.0,
+    "grad_school_rate": 41.0,
+    "top_employers": [
+      "University of Rochester Medical Center",
+      "Strong Memorial Hospital",
+      "Amazon",
+      "Apple",
+      "Microsoft",
+      "Pfizer",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.7,
+    "graduation_rate_4_year": 71.1,
+    "graduation_rate_6_year": 85.4
+  }
+}

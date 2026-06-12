@@ -1,0 +1,426 @@
+{
+  "_id": "ohio_university",
+  "metadata": {
+    "official_name": "Ohio University",
+    "location": {
+      "city": "Athens",
+      "state": "Ohio",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Ohio University is a large, public, R1 research institution known for its picturesque campus in the quintessential college town of Athens. It balances accessible, holistic general admissions with highly selective academic pockets like the Honors Tutorial College. The university is recognized for its value proposition, anchored by the OHIO Guarantee+ program which locks in tuition rates for four years.",
+    "market_position": "Public Flagship-Tier / Best Value Public",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 179,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "General admission is highly accessible with an 85% acceptance rate, but direct admission to the Honors Tutorial College, Nursing, and Fine Arts programs is highly competitive.",
+        "implication": "Applicants should view OHIO as a safety/target for general admission, but must treat specific elite programs as reach categories requiring tailored essays and interviews."
+      },
+      {
+        "category": "Financial",
+        "insight": "The OHIO Guarantee+ locks tuition, room, and board rates for 12 consecutive semesters.",
+        "implication": "Provides immense financial predictability for families, protecting against annual tuition inflation common at other state institutions."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university retains a vibrant social and Greek life scene but has successfully shed its exclusive 'party school' moniker in favor of a balanced academic environment.",
+        "implication": "Appeals to students seeking a traditional, spirited college town experience without sacrificing academic rigor or research opportunities."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, traditional residential college town atmosphere. Highly walkable with brick streets, a strong local arts and music scene, and a prominent but non-mandatory Greek life. The student body leans liberal.",
+      "transportation_impact": "The campus is highly walkable but notoriously hilly, which can make traversing the campus physically demanding. Cars are generally unnecessary for daily life.",
+      "research_impact": "As an R1 institution, undergraduates have vast opportunities to engage in funded research through initiatives like the Discover and Explore Awards."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 84.96,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 68.0,
+      "admits_class_size": 4516,
+      "is_test_optional": true,
+      "test_policy_details": "Permanently test-optional for freshman applicants to the Athens campus. Students not submitting scores remain fully eligible for merit scholarships and honors programs.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 22000,
+        "admits_total": 19245,
+        "enrolled_total": 3364,
+        "acceptance_rate_overall": 88.56,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 17.48,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 25385,
+        "admits_total": 21567,
+        "enrolled_total": 4516,
+        "acceptance_rate_overall": 84.96,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 20.93,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.65,
+        "notes": "GPA is evaluated based on strength and rigor of college prep curriculum."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1100-1280",
+        "sat_reading_middle_50": "",
+        "sat_math_middle_50": "",
+        "act_composite_middle_50": "22-28",
+        "submission_rate": null,
+        "policy_note": "Test-optional pathway guarantees no negative impact on admission or scholarship consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": null,
+        "international_percentage": 3.8,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Ohio)",
+            "percentage": 86.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 83.3,
+          "black_african_american": 6.2,
+          "hispanic_latino": 4.7,
+          "asian": 1.8,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.8,
+          "unknown": 2.0,
+          "non_resident_alien": 3.8
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Applicants with strong quantitative backgrounds and demonstrated leadership. Supplemental essays detailing business prep are highly recommended.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Driven, networking-oriented students seeking immediate corporate placement.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Supplemental essay recommended.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular majors in the College of Business."
+          }
+        ]
+      },
+      {
+        "name": "College of Health Sciences and Professions",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students committed to healthcare fields, comfortable with rigorous science prerequisites.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Compassionate, scientifically minded students.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Highly selective admission guidelines apply.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major at the university."
+          }
+        ]
+      },
+      {
+        "name": "Honors Tutorial College",
+        "admissions_model": "Direct Admit Only",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Top-tier scholars seeking an Oxford-style tutorial education with extensive faculty mentorship.",
+        "housing_profile": "Standard campus housing with honors community options.",
+        "student_archetype": "Highly independent, intellectually curious researchers.",
+        "majors": [
+          {
+            "name": "Various Tutorial Majors",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Two specific HTC essays and a mandatory interview required.",
+            "admissions_pathway": "Direct Admit Only",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students are exempt from standard general education requirements and must complete a senior thesis."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Ohio University Alternative Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-15",
+        "is_binding": false,
+        "notes": "Priority deadline for merit scholarships, honors programs, and selective majors."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-02-01",
+        "is_binding": false,
+        "notes": "Rolling admission deadline. Applications accepted on a space-available basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors Tutorial College",
+        "requirement_type": "Essays",
+        "deadline": "2025-11-15",
+        "details": "Two specific essay responses required."
+      },
+      {
+        "target_program": "Honors Tutorial College",
+        "requirement_type": "Interview",
+        "deadline": "",
+        "details": "Interviews conducted in January and February for selected finalists."
+      },
+      {
+        "target_program": "College of Fine Arts",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "2026-02-16",
+        "details": "Required for selective majors within the college."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Extracurricular activities",
+        "Essays (for selective programs)",
+        "Letters of recommendation"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Required for Honors Tutorial College; Not Offered for general admission",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The holistic review places significant emphasis on junior year grade trends."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply early (Nov 15) for business, nursing, or engineering to maximize chances in impacted programs.",
+      "Consider applying to a 'Meta-Major' (Humanities or Social Sciences) if undecided, which provides a structured exploratory pathway up to 60 credit hours.",
+      "For biology-focused students unsure of readiness, the Biology Relocation Pathway at a regional campus offers a guaranteed route to the Athens campus."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "The application allows students to list a second, alternate major. If a student is not admitted to a highly selective first-choice major, they will be evaluated for admission to their alternate choice."
+  },
+  "financials": {
+    "tuition_model": "Fixed cohort-based tuition (OHIO Guarantee+)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 14582.0,
+        "total_coa": 32204.0,
+        "housing": 8678.0
+      },
+      "out_of_state": {
+        "tuition": 25796.0,
+        "total_coa": 42884.0,
+        "supplemental_tuition": 11214.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 97.0,
+    "scholarships": [
+      {
+        "name": "OHIO Excellence Awards",
+        "type": "Merit",
+        "amount": "$2,000+",
+        "deadline": "2025-11-15",
+        "benefits": "Renewable merit aid based on high school GPA and curriculum rigor.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Manasseh Cutler Scholars Program",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2025-11-15",
+        "benefits": "Four-year merit scholarship plus annual stipends for travel, research, and internships.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Legacy Scholarship",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "",
+        "benefits": "Awarded annually to children/grandchildren of alumni with a minimum 3.7 GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Next Generation Award",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Covers the non-resident surcharge for out-of-state students who are children of alumni.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for AP exam scores of 3 or higher.",
+      "exceptions": [],
+      "usage": "Satisfies general education (BRICKS) and specific major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Awards up to 9 semester hours for Higher Level (HL) exams scoring 5 or above.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "Ohio Guaranteed Transfer Pathways (OGTP)"
+      ],
+      "restrictions": "In general, credit is granted for non-remedial courses from regionally accredited institutions where a grade of D- or better is earned."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Consistent academic performance, especially showing upward grade trends in junior year.",
+      "A strong college-preparatory curriculum.",
+      "Demonstrated alignment with specific programs if applying to selective majors (e.g., Business, Fine Arts)."
+    ],
+    "common_activities": [
+      "Marching 110 (highly acclaimed marching band)",
+      "Student media (Athens Video Works, WOUB, The Post)",
+      "Greek life (fraternities and sororities)",
+      "Intramural sports"
+    ],
+    "essay_tips": [
+      "For Business/Journalism: Clearly outline career objectives and how OHIO's specific resources will aid those goals.",
+      "For Honors Tutorial College: Showcase intellectual curiosity, independent research capacity, and a desire for intensive faculty mentorship."
+    ],
+    "red_flags": [
+      "Downward grade trends in junior and senior years.",
+      "Lack of rigorous coursework (e.g., avoiding advanced math or foreign languages)."
+    ],
+    "insights": [
+      "The campus is incredibly beautiful and walkable but famously hilly, which can be a physical adjustment.",
+      "The 'party school' reputation exists (especially around specific local fests) but is highly avoidable; the academic environment is very supportive.",
+      "Athens is a true college town\u2014somewhat isolated, creating a tight-knit 'bubble' atmosphere that students love."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 70528,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Sherwin-Williams Company",
+      "Nationwide",
+      "Huntington National Bank",
+      "PNC Financial Services",
+      "Honda",
+      "EY LLP",
+      "Cintas Corporation"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.7,
+    "graduation_rate_4_year": 53.0,
+    "graduation_rate_6_year": 66.0
+  }
+}

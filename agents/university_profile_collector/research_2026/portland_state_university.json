@@ -1,0 +1,404 @@
+{
+  "_id": "portland_state_university",
+  "metadata": {
+    "official_name": "Portland State University",
+    "location": {
+      "city": "Portland",
+      "state": "Oregon",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "Common Data Set 2023-2024",
+      "College Scorecard",
+      "IPEDS Data"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Portland State University (PSU) is a public research university located in downtown Portland, Oregon, known for its deep integration with the city and its motto, 'Let knowledge serve the city.' As an inclusive, non-selective institution and an Asian American and Native American Pacific Islander-Serving Institution (AANAPISI), it caters heavily to commuter, non-traditional, and first-generation students. The university emphasizes social mobility, applied urban research, and sustainability.",
+    "market_position": "Regional Public Research University",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 259,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "With an acceptance rate exceeding 90%, PSU is highly accessible and relies primarily on GPA for admission decisions.",
+        "implication": "Students with a 2.5+ GPA have a very high likelihood of admission, making it a reliable safety school."
+      },
+      {
+        "category": "Culture",
+        "insight": "48% of students are first-generation, and the campus has a high percentage of commuter and non-traditional students.",
+        "implication": "The social environment is deeply integrated into Portland rather than focused on traditional, insular campus life."
+      },
+      {
+        "category": "Academic",
+        "insight": "100% of students must complete a community-based capstone project before graduation.",
+        "implication": "Provides strong hands-on, civic-minded learning opportunities that connect students with local employers."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Urban and progressive, lacking a traditional insular campus bubble. Highly commuter-driven with active student engagement in local activism, social justice, and environmental sustainability.",
+      "transportation_impact": "Excellent public transit connectivity (light rail, streetcar, and bus networks) mitigates the lack of abundant campus parking and supports the heavy commuter population.",
+      "research_impact": "Carnegie R2 (High Research Activity) institution with significant applied research in urban planning, public affairs, and sustainability."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.909,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 1580,
+      "is_test_optional": true,
+      "test_policy_details": "Test scores are not considered for admission, even if submitted. Optional but not required.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 9077,
+        "admits_total": 8248,
+        "enrolled_total": 1502,
+        "acceptance_rate_overall": 0.909,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.182,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Portland State University does not have a policy of placing students on a waiting list."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 8877,
+        "admits_total": 8070,
+        "enrolled_total": 1580,
+        "acceptance_rate_overall": 0.909,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.196,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from 2023-2024 Common Data Set."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.36,
+        "notes": "Average high school GPA is 3.36. 19.9% had a GPA between 3.75 and 3.99."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1100-1290",
+        "sat_reading_middle_50": "560-660",
+        "sat_math_middle_50": "530-670",
+        "act_composite_middle_50": "19-27.5",
+        "submission_rate": 0.0215,
+        "policy_note": "Test-blind for admissions. 2.15% submitted SAT scores and 2.97% submitted ACT scores, though they were not used for admission."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.48,
+        "legacy_percentage": null,
+        "international_percentage": 0.06,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Oregon)",
+            "percentage": 0.775
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 3296,
+            "admits": 2958,
+            "acceptance_rate": 0.897
+          },
+          "women": {
+            "applicants": 5591,
+            "admits": 5115,
+            "acceptance_rate": 0.914
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.373,
+          "black_african_american": 0.078,
+          "hispanic_latino": 0.315,
+          "asian": 0.099,
+          "native_american_alaskan": 0.012,
+          "pacific_islander": 0.013,
+          "two_or_more_races": 0.075,
+          "unknown": 0.017,
+          "non_resident_alien": 0.015
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Maseeh College of Engineering and Computer Science",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking career-focused tech programs with strong connections to local employers like Intel and a flexible path to declaring.",
+        "housing_profile": "Primarily urban commuter with optional university housing.",
+        "student_archetype": "Pragmatic, career-oriented STEM student.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 161",
+              "MTH"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Must submit an 'Opt-In' form before week 8 to take upper-division courses, conditional upon completing lower-division prerequisites with a C or better.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CS 161",
+                "CS 358",
+                "CS 469",
+                "CS 470"
+              ],
+              "electives": [
+                "CS 410P",
+                "CS 465P",
+                "CS 494P",
+                "CS 491",
+                "CS 495",
+                "CS 496"
+              ],
+              "total_units": 180,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Upon entering upper-division courses, differential tuition rates apply."
+          }
+        ]
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students focused on urban community engagement, social justice, and systemic support roles.",
+        "housing_profile": "Urban commuter with optional housing.",
+        "student_archetype": "Civic-minded, activist-oriented student.",
+        "majors": [
+          {
+            "name": "Social Work",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Introductory PSY",
+              "Introductory SOC",
+              "Human Development"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must apply to the BSW program by March 1 of sophomore year for fall term upper-division admission.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The program accepts around 90 students per academic year."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Portland State University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-08-01",
+        "is_binding": false,
+        "notes": "Rolling admissions process for general admission; August 1 is the deadline for fall term."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "University Honors College",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-01",
+        "details": "General admission does not require essays, but Honors College applicants must complete supplemental essays. Awards and admission are based primarily on these essays."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Recommendation"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Considered",
+      "legacy_consideration": "Not Considered",
+      "first_gen_boost": "Not Considered",
+      "specific_differentiators": "Admission is heavily numerical. High school GPAs over 2.50 generally ensure admission; holistic review comes into play mainly for students with a GPA of 2.49 or lower, or those applying to the Honors College."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply undeclared or pre-major without penalty, as programs like Computer Science require internal 'opt-in' processes regardless of initial admission.",
+      "Focus on passing prerequisite filters rather than stressing initial major declaration.",
+      "Aim for the Honors College using strong essays if looking for a more traditional, highly engaged academic cohort."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "General admission is not major-dependent. However, alternate plans are essential for upper-division entry into impacted programs like Nursing or Social Work."
+  },
+  "financials": {
+    "tuition_model": "Per credit hour",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11118.0,
+        "total_coa": 27828.0,
+        "housing": 13728.0
+      },
+      "out_of_state": {
+        "tuition": 29136.0,
+        "total_coa": 45846.0,
+        "supplemental_tuition": 18018.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10442.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.78,
+    "scholarships": [
+      {
+        "name": "The Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": null,
+        "benefits": "Covers full cost of tuition and fees. Highly competitive.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Four Years Free",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": null,
+        "benefits": "Covers tuition for eligible Pell Grant-qualifying Oregon residents with a 3.4+ GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Honors Laurels Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "2025-01-01",
+        "benefits": "Tuition remission based on application essays for the Honors College.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Western Undergraduate Exchange (WUE)",
+        "type": "Merit",
+        "amount": "Tuition Discount",
+        "deadline": null,
+        "benefits": "Reduces out-of-state tuition to 150% of the resident rate for students from participating Western states.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards college credit for scores of 3, 4, or 5 depending on the subject.",
+      "exceptions": [
+        "Specific course equivalencies apply based on admission year and departmental charts."
+      ],
+      "usage": "Used for course credit and placement."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for creditable scores on IB exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Oregon Transfer Compass",
+        "Core Transfer Maps (CTM)"
+      ],
+      "restrictions": "Maximum 124 credits accepted from junior/community colleges. Maximum 12 credits for vocational/technical courses."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Maintain a 2.50+ high school GPA.",
+      "Complete 15 units of required college preparatory coursework.",
+      "Test scores and essays are virtually irrelevant for standard admission."
+    ],
+    "common_activities": [
+      "Urban activism and social justice programs",
+      "Sustainability and environmental initiatives",
+      "Off-campus internships and full-time or part-time employment",
+      "Community-based capstone projects"
+    ],
+    "essay_tips": [
+      "Only required for Honors College.",
+      "Focus on civic engagement, overcoming adversity, and alignment with the 'Let knowledge serve the city' ethos."
+    ],
+    "red_flags": [
+      "Dropping below a 2.5 GPA will trigger manual review.",
+      "Failing to submit required high school transcripts."
+    ],
+    "insights": [
+      "Many students are non-traditional or transfer students (community college transfers), giving the campus an older, more mature demographic."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62060,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Intel",
+      "Nike",
+      "OHSU",
+      "Google",
+      "Amazon",
+      "Kaiser Permanente",
+      "Moss Adams",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.747,
+    "graduation_rate_4_year": 0.35,
+    "graduation_rate_6_year": 0.531
+  }
+}

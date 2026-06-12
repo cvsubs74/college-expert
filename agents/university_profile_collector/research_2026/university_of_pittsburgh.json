@@ -1,0 +1,574 @@
+{
+  "_id": "university_of_pittsburgh",
+  "metadata": {
+    "official_name": "University of Pittsburgh",
+    "location": {
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Pittsburgh (Pitt) is a preeminent state-related public research institution renowned for its health sciences, engineering, and robust undergraduate research opportunities. Closely integrated with the University of Pittsburgh Medical Center (UPMC) and the urban fabric of Pittsburgh, the university offers a dynamic, resource-rich environment characterized by rolling admissions and a highly collaborative academic culture.",
+    "market_position": "Public Ivy / Elite Public Research University (R1)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 69,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Pitt's admissions rely heavily on Rolling Admissions, making early application (August/September) a significant strategic advantage.",
+        "implication": "Applicants should not treat Pitt as a late-cycle safety school; programs can fill up and scholarship funds deplete quickly."
+      },
+      {
+        "category": "Academic",
+        "insight": "Test-optional policy extended through Fall 2028, with the admissions committee placing 'Very Important' weight on academic GPA, secondary school record rigor, and the application essay.",
+        "implication": "Without test scores, applicants must demonstrate exceptional course rigor (AP/IB/Honors) and craft highly compelling personal statements."
+      },
+      {
+        "category": "Financial",
+        "insight": "Out-of-state COA approaches $60,000, but Pitt offers highly competitive full-ride diversity and merit scholarships, including the Rees-Chancellor's Scholarship.",
+        "implication": "While the sticker price is high for non-residents, top-tier applicants who apply before December 1 have access to substantial merit aid."
+      },
+      {
+        "category": "Culture",
+        "insight": "Urban campus deeply integrated with the city; students receive free transit via PRT buses and have profound access to UPMC hospitals.",
+        "implication": "Ideal for students seeking an urban setting with D1 sports (ACC) and immense pre-med/healthcare clinical opportunities."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and spirited, balancing a large D1 sports culture (ACC) with a diverse array of over 700 student organizations, Greek life, and a strong sense of community within the city.",
+      "transportation_impact": "Free access to Pittsburgh Regional Transit (PRT) buses allows students to easily navigate off-campus neighborhoods like Shadyside, Squirrel Hill, and Downtown.",
+      "research_impact": "A top-tier R1 institution ranking in the top 10 for NIH funding. Undergraduates have extensive early access to cutting-edge research, especially in health sciences, bioengineering, and psychology."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.581,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.451,
+      "admits_class_size": 4596,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through Fall 2028 for all first-year, transfer, international, and scholarship applicants. Once an application is under review, the test-optional status cannot be changed.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 60898,
+        "admits_total": 35372,
+        "enrolled_total": 4596,
+        "acceptance_rate_overall": 0.581,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.13,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 9657,
+          "accepted_spots": 4338,
+          "admitted_from_waitlist": 3754,
+          "waitlist_admit_rate": 0.8654,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist activity was highly anomalous this cycle due to a yield drop, resulting in an 86.5% admit rate for those who opted into the waitlist."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 58416,
+        "admits_total": 29034,
+        "enrolled_total": 4548,
+        "acceptance_rate_overall": 0.497,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.157,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 8248,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 768,
+          "waitlist_admit_rate": 0.093,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 53062,
+        "admits_total": 26077,
+        "enrolled_total": 4399,
+        "acceptance_rate_overall": 0.491,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.168,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 6905,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 1666,
+          "waitlist_admit_rate": 0.241,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.666,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 2434,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 16,
+          "waitlist_admit_rate": 0.006,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits dropped to near zero during this cycle."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 32549,
+        "admits_total": 20791,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.639,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 2207,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 193,
+          "waitlist_admit_rate": 0.087,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.80-4.00",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.08,
+        "notes": "81% of admitted students possess a 3.75+ GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1280-1460",
+        "sat_reading_middle_50": "640-720",
+        "sat_math_middle_50": "640-740",
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 0.5,
+        "policy_note": "40% submitted SAT, 10% submitted ACT in the most recent cycle."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.21,
+        "legacy_percentage": null,
+        "international_percentage": 0.09,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 26607,
+            "admits": 14766,
+            "acceptance_rate": 0.555
+          },
+          "women": {
+            "applicants": 34291,
+            "admits": 20606,
+            "acceptance_rate": 0.601
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.6,
+          "black_african_american": 0.05,
+          "hispanic_latino": 0.06,
+          "asian": 0.12,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": 0.09
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Kenneth P. Dietrich School of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in humanities, natural sciences, and social sciences. Acts as the gateway for undecided students and provides a flexible curriculum.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Exploratory learners, pre-med hopefuls, and liberal arts enthusiasts.",
+        "majors": [
+          {
+            "name": "Research and Experimental Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major by graduation volume at Pitt."
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For highly competitive students fully committed to a BSN. Strongly research-oriented and requires rigorous high school science background.",
+        "housing_profile": "Access to the Nursing Living Learning Community (LLC).",
+        "student_archetype": "High-achieving, focused future nurses with strong science skills and clinical ambitions.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [
+              "Organic Chemistry"
+            ],
+            "special_requirements": "Requires 3 units of high school lab science (including Chemistry) and 4 units of math.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer is contingent upon vacancies in the first-year class; requires 12-24 credits including sciences with B or higher."
+          }
+        ]
+      },
+      {
+        "name": "Swanson School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students with advanced high school math (Calculus) and physics. Very structured curriculum requiring immediate commitment to foundational courses.",
+        "housing_profile": "Engineering LLC available.",
+        "student_archetype": "Analytically-minded students focused on rigorous technical problem-solving and co-op opportunities.",
+        "majors": [
+          {
+            "name": "Bioengineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 0220",
+              "MATH 0230",
+              "PHYS 0174",
+              "PHYS 0175",
+              "CHEM 0110",
+              "CHEM 0120",
+              "ENGR 0015",
+              "ENGR 0016"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly competitive internal transfer compared to other engineering disciplines."
+          }
+        ]
+      },
+      {
+        "name": "College of Business Administration",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students seeking immediate integration of business curriculum and experience-based learning in a city setting.",
+        "housing_profile": "Standard undergraduate housing with LLC options.",
+        "student_archetype": "Future corporate leaders, entrepreneurs, and finance professionals.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 0100",
+              "ECON 0110",
+              "MATH 0120"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer requires a 3.0 average specifically across ECON 0100, ECON 0110, and Business Calculus."
+          }
+        ]
+      },
+      {
+        "name": "School of Computing and Information",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students passionate about tech, AI, and information systems in a rapidly growing digital landscape.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Tech-savvy innovators and programmers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CMPINF 0401"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Requires quantitative math/stats requirements and programming course completion for internal transfer."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Pitt Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Rolling",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Pitt uses Rolling Admissions. Applying by September/October is highly recommended. December 1 is the deadline to be considered for guaranteed scholarships."
+      },
+      {
+        "plan_type": "RD",
+        "date": "July 30",
+        "is_binding": false,
+        "notes": "Final closing date for Regular Decision, though seats and aid are usually gone much earlier."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Personal Statement / Short Answer essays are highly recommended and are required to be considered for merit scholarships and test-optional evaluation."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Character/Personal Qualities",
+        "Demonstrated Interest",
+        "Talent/Ability",
+        "Volunteer Work",
+        "Work Experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Under rolling admissions, time of application acts as an implicit holistic factor. Applying early demonstrates interest and accesses the largest pool of spots and scholarship funds."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply as early as August or September when the cycle opens; Rolling Admissions means spots and merit aid are depleted chronologically.",
+      "If undecided, applying directly to the Dietrich School of Arts & Sciences provides the most flexibility and generally has the highest initial admission capacity.",
+      "Apply directly to Business, Engineering, or Nursing if certain, as internal transfers into these schools later require maintaining strict, high college GPAs in difficult prerequisite courses."
+    ],
+    "college_ranking_tactics": [
+      "Indicate willingness to attend a regional branch campus (e.g., Greensburg, Johnstown, Bradford) as a backup if not admitted to the Pittsburgh main campus."
+    ],
+    "alternate_major_strategy": "Pitt typically admits students to specific schools rather than specific majors. If denied from a highly selective school (like Nursing), Pitt often reroutes applicants to one of its regional branch campuses rather than an alternate school on the main campus."
+  },
+  "financials": {
+    "tuition_model": "Public, differentiating in-state vs out-of-state",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 21926.0,
+        "total_coa": 39156.0,
+        "housing": 13620.0
+      },
+      "out_of_state": {
+        "tuition": 41430.0,
+        "total_coa": 58660.0,
+        "supplemental_tuition": 19504.0
+      }
+    },
+    "aid_philosophy": "Need-Aware / Merit-Heavy",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.84,
+    "scholarships": [
+      {
+        "name": "Rees-Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room, board, and fees",
+        "deadline": "December 1",
+        "benefits": "Guaranteed Frederick Honors College housing, mentorship, and funding for experiential learning.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Nordenberg Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "November 15",
+        "benefits": "Awarded to Pennsylvania high school seniors demonstrating excellent leadership, innovative thinking, and community involvement.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Helen Faison Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room, and board",
+        "deadline": "December 1",
+        "benefits": "For traditionally underrepresented students enrolled in the Dietrich School of Arts and Sciences.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Donald M. Henderson Engineering Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room, and board",
+        "deadline": "December 1",
+        "benefits": "For academically excellent, underrepresented students admitted to the Swanson School of Engineering.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Robert R. Lavelle Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room, and board",
+        "deadline": "December 1",
+        "benefits": "For outstanding students from underrepresented backgrounds entering the College of Business Administration.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Adena Johnson Davis Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition, room, and board",
+        "deadline": "December 1",
+        "benefits": "Awarded to a high-achieving, underrepresented freshman in the School of Nursing.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 4 or 5 on most AP exams.",
+      "exceptions": [
+        "In the Swanson School of Engineering, no more than two humanities or social science elective requirements may be satisfied via AP/IB credit.",
+        "Repeating a course at Pitt for which AP credit was granted forfeits the AP credit for subsequent courses in the sequence."
+      ],
+      "usage": "Used for course equivalency, foundational sequence placement (e.g., Math), and elective fulfillment."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exams only, with scores of 5, 6, or 7. No Standard Level (SL) scores are accepted.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Pitt Transfer Tool",
+        "Transfer Course Equivalency Database"
+      ],
+      "restrictions": "Grades of C or better required. Maximum of 60 credits from a 2-year college, or 90 credits from a 4-year college. The final 30 credits must be taken in residence at Pitt."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Applying early in the rolling admissions cycle (by October).",
+      "Demonstrating consistent rigor in high school (AP/IB/Dual Enrollment), particularly in STEM courses if applying to Nursing or Engineering.",
+      "Crafting an engaging personal statement that highlights individual fit and leadership, especially if applying test-optional."
+    ],
+    "common_activities": [
+      "Attending Pitt Panthers D1 football and volleyball games.",
+      "Exploring Schenley Park and the adjacent Carnegie Museums.",
+      "Participating in Greek Life.",
+      "Engaging in undergraduate research at UPMC facilities."
+    ],
+    "essay_tips": [
+      "Use the essay to explain aspects of your profile that aren't visible in your transcript or activities list.",
+      "Connect your specific interests directly to Pitt's offerings (e.g., specific research labs, UPMC, or urban integration).",
+      "Show resilience, leadership, and a clear rationale for your major."
+    ],
+    "red_flags": [
+      "Applying late in the cycle (e.g., January or later) when spots and aid are largely exhausted.",
+      "Lack of demonstrated interest or failing to submit the optional personal statement.",
+      "Poor performance in foundational math/science classes for Engineering and Nursing applicants."
+    ],
+    "insights": [
+      "The 'urban campus' feel is a major draw; students love the integration with Pittsburgh but note that housing can feel cramped due to over-enrollment.",
+      "Introductory STEM classes (Chemistry, Bio) are notoriously difficult and act as massive 'weeder' courses.",
+      "Waitlist movement is highly unpredictable year-to-year; in 2024 it had massive movement, while in 2021 it saw almost zero."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 73701,
+    "employment_rate_2yr": 0.963,
+    "grad_school_rate": null,
+    "top_employers": [
+      "UPMC (University of Pittsburgh Medical Center)",
+      "PNC Financial Services Group",
+      "PPG",
+      "Highmark",
+      "The Kraft Heinz Company",
+      "American Eagle Outfitters",
+      "Giant Eagle"
+    ],
+    "loan_default_rate": 0.000165
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.92,
+    "graduation_rate_4_year": 0.71,
+    "graduation_rate_6_year": 0.84
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "_id": "rowan_university",
+  "metadata": {
+    "official_name": "Rowan University",
+    "location": {
+      "city": "Glassboro",
+      "state": "New Jersey",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Rowan University is a rapidly growing public research institution (R2) located in Glassboro, New Jersey. Known for its strong focus on engineering, business, and medical sciences, it is one of the few universities in the country to offer both M.D. and D.O. degree programs, along with a newly added veterinary school.",
+    "market_position": "Public Research University (R2)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 169,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Rowan maintains a highly accessible 74.3% acceptance rate while simultaneously expanding its applicant pool to nearly 20,000.",
+        "implication": "The university acts as a strong target/safety school for students with a B+/A- average, particularly those looking to leverage a test-optional policy."
+      },
+      {
+        "category": "Financial",
+        "insight": "Maximum merit scholarships for incoming freshmen have been capped at $10,000 per year to distribute aid to a wider pool of students.",
+        "implication": "Applicants should not expect full-ride merit packages and must plan for out-of-pocket costs, though out-of-state students can stack the Brown & Gold scholarship."
+      },
+      {
+        "category": "Academic",
+        "insight": "Transfer pathways are exceptionally strong, with an 81.5% transfer acceptance rate and robust 3+1 community college partnerships.",
+        "implication": "Students looking to minimize student debt can easily transfer into Rowan after completing associate degrees at partner institutions like RCSJ and RCBC."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Described as a vibrant, large suburban campus that is 'always buzzing with events,' featuring over 200 student clubs and a thriving Greek life scene.",
+      "transportation_impact": "Located just 20 miles from Philadelphia, offering significant access to urban professional networks, internships, and entertainment.",
+      "research_impact": "High research activity (R2) with significant investments in practical research at the intersection of health care, engineering, science, and business."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 74.3,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 81.5,
+      "admits_class_size": 3489,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for most undergraduate programs. Standardized test scores are strictly required for accelerated dual-degree medical programs (3+4 BS/MD, 3+4 BS/DO, and 3+2 PA).",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 19768,
+        "admits_total": 14696,
+        "enrolled_total": 3489,
+        "acceptance_rate_overall": 74.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 23.7,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.48,
+        "notes": "Average HS GPA reported is unweighted 3.48."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1100-1300",
+        "sat_reading_middle_50": "560-660",
+        "sat_math_middle_50": "530-640",
+        "act_composite_middle_50": "23-30",
+        "submission_rate": 27.3,
+        "policy_note": "Only 1.6% of applicants submit ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 2.6,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 60.5,
+          "black_african_american": 11.9,
+          "hispanic_latino": 16.1,
+          "asian": 6.4,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 4.0,
+          "unknown": 0.9,
+          "non_resident_alien": 2.6
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Ric Edelman College of Communication, Humanities & Social Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking flexible liberal arts degrees or popular majors like Psychology and Communication.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Liberal arts and social science focus",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "PSY 01107 Essentials of Psychology",
+                "PSY 01301 Psychology of Scientific Thinking",
+                "PSY 07301 Statistics in Psychology",
+                "PSY 07303 Research Methods in Psychology"
+              ],
+              "electives": [
+                "PSY 08220 Personnel Psychology",
+                "PSY 05310 Psychology of Human Sexuality"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Most popular major at the university granting over 500 degrees annually."
+          }
+        ]
+      },
+      {
+        "name": "Henry M. Rowan College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students with strong quantitative backgrounds seeking hands-on, project-based engineering education.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "STEM focused, practical builders",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 01.210 Linear Algebra",
+                "MATH 01.231 Ordinary Differential Equations",
+                "ENGR 01.101 First-Year Engineering Clinic",
+                "ENGR 01.403 Senior Engineering Clinic"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Engineering Clinics are a hallmark of the curriculum, required every semester."
+          }
+        ]
+      },
+      {
+        "name": "College of Science & Mathematics",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing computing, hard sciences, or pre-med tracks.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Analytical and research-oriented",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 04103 Computer Science and Programming",
+                "CS 04225 Principles of Data Structures",
+                "CMS 04205 Public Speaking"
+              ],
+              "electives": [
+                "CS 02516 Big Data Tools and Techniques",
+                "CS 07450 Artificial Intelligence"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "School of Earth & Environment",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in geology, paleontology, and environmental sciences.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Field-research oriented",
+        "majors": [
+          {
+            "name": "Geology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Kenneth J. Lacovara (Paleontology)",
+              "Dr. Aaron M. Barth (Paleoclimatology)",
+              "Dr. Zachary M. Boles (Vertebrate Paleontology)"
+            ],
+            "notes": "Benefits from direct access to the Jean and Ric Edelman Fossil Park."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Rowan University Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-07-15",
+        "is_binding": false,
+        "notes": "Regular decision deadline for Fall entrance."
+      },
+      {
+        "plan_type": "Priority",
+        "date": "2025-01-31",
+        "is_binding": false,
+        "notes": "Deadline to be considered for automatic merit scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Fine and Performing Arts",
+        "requirement_type": "Audition/Portfolio",
+        "deadline": "",
+        "details": "Requires a portfolio review, audition, or departmental interview."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of secondary school record",
+        "Academic transcripts"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Application Essay",
+        "Recommendation(s)",
+        "Standardized test scores (if submitted)"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Rowan takes a distinctly holistic approach to evaluation when students apply test-optional, placing heavy emphasis on curriculum rigor and leadership."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply prior to January 31st to ensure automatic consideration for merit scholarships.",
+      "Utilize the test-optional policy if your GPA is strong (3.4+) but your SAT scores fall below the 25th percentile (1100).",
+      "Consider starting in the Exploratory Studies Program if undecided, as internal transfers are generally accessible."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students can easily transfer into most majors internally provided they meet the minimum GPA requirements (e.g., 2.0 for Psychology and specific business certificates)."
+  },
+  "financials": {
+    "tuition_model": "Flat rate tuition for 12-17 credits.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16574.0,
+        "total_coa": 40459.0,
+        "housing": 16928.0
+      },
+      "out_of_state": {
+        "tuition": 26932.0,
+        "total_coa": 50817.0,
+        "supplemental_tuition": 10358.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12419.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 78.0,
+    "scholarships": [
+      {
+        "name": "Rowan University Scholars Program",
+        "type": "Merit",
+        "amount": "Up to $10,000",
+        "deadline": "2025-01-31",
+        "benefits": "Renewable annually for four years provided the student maintains a 2.5 GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Brown & Gold Scholarship",
+        "type": "Merit",
+        "amount": "Up to $8,500",
+        "deadline": "2025-01-31",
+        "benefits": "Specifically targets out-of-state students to bridge the gap between in-state and out-of-state tuition; can be stacked with other merit aid.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Rowan grants credit or advanced placement for qualifying AP scores (typically 3, 4, or 5 depending on the subject).",
+      "exceptions": [],
+      "usage": "Credits can be applied toward Rowan Core requirements or free electives."
+    },
+    "ib_policy": {
+      "general_rule": null,
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "3+1 Partnership Programs with RCSJ and RCBC"
+      ],
+      "restrictions": "Transfer students may transfer a maximum of 90 credit hours from other institutions and must complete a minimum of 30 credit hours at Rowan to earn a degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [],
+    "common_activities": [],
+    "essay_tips": [],
+    "red_flags": [
+      "Falling victim to phishing or direct deposit cyber scams targeted at student accounts via university emails.",
+      "Failing to check the student portal or email within 24 hours when offered a course off the waitlist, resulting in forfeiture of the seat."
+    ],
+    "insights": [
+      "The campus is known for a highly supportive faculty and a vibrant social scene with deep Greek life integration."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 59988,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 7.3,
+    "top_employers": [
+      "Lockheed Martin",
+      "TD",
+      "Amazon",
+      "Holman"
+    ],
+    "loan_default_rate": 5.6
+  },
+  "student_retention": {
+    "freshman_retention_rate": 82.4,
+    "graduation_rate_4_year": 50.1,
+    "graduation_rate_6_year": 67.3
+  }
+}

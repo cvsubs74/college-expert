@@ -1,0 +1,373 @@
+{
+  "_id": "university_of_alabama",
+  "metadata": {
+    "official_name": "The University of Alabama",
+    "location": {
+      "city": "Tuscaloosa",
+      "state": "Alabama",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Alabama is a prominent public flagship and R1 research university known for its spirited SEC culture, expansive Greek life, and highly aggressive merit scholarships. It serves as a major destination for high-achieving out-of-state students seeking a traditional college experience backed by generous financial incentives.",
+    "market_position": "Public Flagship / R1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 169,
+    "analyst_takeaways": [
+      {
+        "category": "Financial",
+        "insight": "UA offers some of the most lucrative automatic merit scholarships in the country for out-of-state students with high standardized test scores.",
+        "implication": "Applicants with a 32+ ACT or 1420+ SAT can automatically offset the vast majority of out-of-state tuition."
+      },
+      {
+        "category": "Culture",
+        "insight": "Greek life and SEC football dominate the social environment.",
+        "implication": "Students seeking a vibrant, highly spirited, traditional campus culture will thrive, whereas those looking for a quiet, intimate liberal arts environment may find it overwhelming."
+      },
+      {
+        "category": "Academic",
+        "insight": "The Culverhouse College of Business and the Capstone College of Nursing are premier destinations with exceptional job placement and licensure pass rates.",
+        "implication": "Applicants looking for strong ROI in business and healthcare are well-served, though nursing remains highly competitive."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and heavily influenced by SEC athletics (Crimson Tide) and a dominant Greek life system. Strong community support and numerous outdoor activities.",
+      "transportation_impact": "Located on a large 1,970-acre campus in Tuscaloosa with adequate campus transit; highly residential.",
+      "research_impact": "R1 institution with significant investments in research, highlighted by the new High Performance Computing and Data Center and the Shelby Institute."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.7665,
+      "in_state_acceptance_rate": 0.85,
+      "out_of_state_acceptance_rate": 0.72,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.5114,
+      "admits_class_size": 8032,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through Fall 2025; standard testing requirements are being reinstated for lower GPA brackets and completely reinstated for the Class of 2028.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 56795,
+        "admits_total": 43531,
+        "enrolled_total": 8032,
+        "acceptance_rate_overall": 0.7665,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.1845,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist is rarely utilized for undergraduate admissions; reported at 0% admitted."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.47-4.16",
+        "average_weighted": null,
+        "notes": "Average unweighted GPA is approximately 3.71."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1170-1400",
+        "sat_reading_middle_50": "590-690",
+        "sat_math_middle_50": "580-710",
+        "act_composite_middle_50": "24-31",
+        "submission_rate": 0.58,
+        "policy_note": "SAT submission rate 15%; ACT submission rate 43%."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.25,
+        "legacy_percentage": null,
+        "international_percentage": null,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 23104,
+            "admits": 17506,
+            "acceptance_rate": 0.7577
+          },
+          "women": {
+            "applicants": 33691,
+            "admits": 26025,
+            "acceptance_rate": 0.7724
+          }
+        },
+        "racial_breakdown": {
+          "white": null,
+          "black_african_american": null,
+          "hispanic_latino": null,
+          "asian": null,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking R1 research opportunities and robust co-op programs.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Technically minded, career-focused.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 125 Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR 103"
+            ],
+            "special_requirements": "Computing proficiency required for passing core classes.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 403 Programming Languages",
+                "CS 470 Computer Algorithms",
+                "CS 495 Capstone Computing",
+                "ECE 380 Digital Logic",
+                "ECE 383 Microcomputers"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 58
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Culverhouse College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students targeting corporate, accounting, and finance roles across the Southeast.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Driven, networking-oriented.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Intro to Managerial Accounting",
+              "Intro to Taxation"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly recruited by Big 4 accounting firms."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Priority deadline for holistic admissions and competitive scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors College / Competitive Scholarships",
+        "requirement_type": "Essays",
+        "deadline": "2025-12-05",
+        "details": "Select-A-Prompt short responses regarding leadership, extracurriculars, and adversity."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Volunteer work"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Strong emphasis on test scores for automatic merit scholarships."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply early (before January 15) regardless of major to secure housing priorities and scholarship money."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying undeclared carries no admissions penalty, though certain programs like Nursing are competitive and best applied to directly."
+  },
+  "financials": {
+    "tuition_model": "Flat rate per semester up to 16 credits; additional fees apply for overload.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 12180.0,
+        "total_coa": 33924.0,
+        "housing": 15016.0
+      },
+      "out_of_state": {
+        "tuition": 34172.0,
+        "total_coa": 55916.0,
+        "supplemental_tuition": 21992.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": 15925.0,
+    "percent_receiving_aid": 0.69,
+    "scholarships": [
+      {
+        "name": "Presidential Scholar",
+        "type": "Merit",
+        "amount": "$28,000",
+        "deadline": "2025-01-15",
+        "benefits": "Awards $28,000 per year towards out-of-state tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "UA Scholar",
+        "type": "Merit",
+        "amount": "$24,000",
+        "deadline": "2025-01-15",
+        "benefits": "Awards $24,000 per year towards out-of-state tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Foundation in Excellence",
+        "type": "Merit",
+        "amount": "$15,000",
+        "deadline": "2025-01-15",
+        "benefits": "Awards $15,000 per year towards out-of-state tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Elite",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2025-01-15",
+        "benefits": "Value of tuition for 4 years, first year of on-campus housing, $1,500 supplemental per year, $2,000 research allowance.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "UA Competitive Achievement Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2025-12-05",
+        "benefits": "Holistic award based on leadership and extracurricular excellence.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credit is awarded for scores of 3, 4, or 5 on most exams.",
+      "exceptions": [
+        "AP Art History requires a 4."
+      ],
+      "usage": "Credits can be used towards core requirements but may not exceed 50% of the bachelor's degree requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded for grades of 5 or higher on Higher Level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Maximum of 50% of the degree can be fulfilled by non-institutional credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A competitive GPA above 3.5",
+      "Early application submission for housing and scholarships",
+      "High standardized test scores (if aiming for lucrative out-of-state merit aid)"
+    ],
+    "common_activities": [
+      "Greek Life (Fraternities/Sororities)",
+      "Intramural Sports",
+      "Football tailgating/attendance"
+    ],
+    "essay_tips": [
+      "Detail specific leadership roles using the Select-A-Prompt options.",
+      "Quantify accomplishments and responsibilities in your activity descriptions."
+    ],
+    "red_flags": [
+      "Applying late (missing the priority scholarship deadlines).",
+      "Poor math grades if applying to engineering or computer science."
+    ],
+    "insights": [
+      "Out-of-state students heavily populate the campus, making for a diverse geographic mix despite the Southern culture.",
+      "The Honors College is highly accessible for those who meet the academic thresholds and provides significant registration and housing perks."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 70439,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Ernst & Young",
+      "PricewaterhouseCoopers",
+      "Regions Bank",
+      "Boeing",
+      "Lockheed Martin",
+      "Schlumberger"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.89,
+    "graduation_rate_4_year": 0.58,
+    "graduation_rate_6_year": 0.73
+  }
+}

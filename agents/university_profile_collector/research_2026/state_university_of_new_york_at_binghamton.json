@@ -1,0 +1,383 @@
+{
+  "_id": "state_university_of_new_york_at_binghamton",
+  "metadata": {
+    "official_name": "State University of New York at Binghamton",
+    "location": {
+      "city": "Vestal",
+      "state": "New York",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Binghamton University is a premier public research university (R1) in the SUNY system, consistently recognized as a 'Public Ivy'. It offers highly rigorous academics, vibrant residential communities, and exceptional return on investment through robust career placement in the NYC metro area.",
+    "market_position": "Public Ivy / Premier Public University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 73,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Out-of-state applicants have a 79% acceptance rate compared to a 31% in-state rate.",
+        "implication": "OOS students should aggressively target Binghamton as a high-value safety or target school."
+      },
+      {
+        "category": "Academic",
+        "insight": "Internal transfers (IUT) to Computer Science or the School of Management require a strict 3.5-3.7+ collegiate GPA.",
+        "implication": "Applicants must apply directly to their intended competitive major rather than trying to use Harpur College as a backdoor."
+      },
+      {
+        "category": "Financial",
+        "insight": "Median 10-year alumni earnings hit $80,304 against an in-state tuition of $7,070.",
+        "implication": "The university provides elite-level ROI, particularly for Business, Economics, and Engineering majors."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Collaborative but academically intense. Features an Oxford-style residential community model and heavy participation in intramurals and 450+ clubs.",
+      "transportation_impact": "Suburban campus set on 930 acres in Vestal, NY, requiring a short drive or bus ride to downtown Binghamton nightlife and amenities.",
+      "research_impact": "Exceptional undergraduate research access via the Freshman Research Immersion (FRI) and Summer Research Immersion (SRI) programs."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 38.6,
+      "in_state_acceptance_rate": 31.0,
+      "out_of_state_acceptance_rate": 79.0,
+      "international_acceptance_rate": 65.0,
+      "transfer_acceptance_rate": 45.2,
+      "admits_class_size": 20464,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the 2025-2026 admissions cycle.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 28444,
+          "admits": 14214,
+          "acceptance_rate": 50.0,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 53007,
+        "admits_total": 20464,
+        "enrolled_total": 3248,
+        "acceptance_rate_overall": 38.6,
+        "acceptance_rate_in_state": 31.0,
+        "acceptance_rate_out_of_state": 79.0,
+        "yield_rate": 15.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 13341,
+          "accepted_spots": 8842,
+          "admitted_from_waitlist": 842,
+          "waitlist_admit_rate": 6.3,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.70-3.90",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.88,
+        "notes": "Middle 50% reported as 93-98 on a 100-point scale."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1360-1480",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "29-33",
+        "submission_rate": null,
+        "policy_note": "Test-optional."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 3.0,
+        "geographic_breakdown": [
+          {
+            "region": "New York State",
+            "percentage": 82.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 14.6
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 51.3,
+          "black_african_american": 4.82,
+          "hispanic_latino": 13.5,
+          "asian": 15.8,
+          "native_american_alaskan": 0.03,
+          "pacific_islander": 0.03,
+          "two_or_more_races": 4.32,
+          "unknown": 2.92,
+          "non_resident_alien": 4.04
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Thomas J. Watson College of Engineering and Applied Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly quantitative students with strong backgrounds in calculus and physics seeking direct pipelines to defense and tech giants.",
+        "housing_profile": "Integrated across all 6 residential communities.",
+        "student_archetype": "Driven, tech-focused, intensive studiers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 224",
+              "MATH 225",
+              "MATH 226",
+              "MATH 227",
+              "PHYS 131",
+              "CHEM 104",
+              "CHEM 105",
+              "CHEM 106"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "CS 101 Prof Skills Ethics & CS Trends",
+                "CS 120 Prog & Hardware Fundamentals",
+                "CS 210 Prog with Obj & Data",
+                "CS 220 Arch from a Prog Perspective",
+                "CS 310 Data Struct & Algorithms",
+                "CS 320 Advanced Computer Architecture",
+                "CS 350 Operating Systems",
+                "CS 373 Automata Theory & Formal Lg",
+                "CS 375 Design & Analysis of Algorithm",
+                "CS 471 Programming Languages"
+              ],
+              "electives": [
+                "CS 428 Computer Networks",
+                "CS 436 Intro to Machine Learning",
+                "CS 445 Software Engineering",
+                "CS 453 Software Security"
+              ],
+              "total_units": 126,
+              "major_units": 52
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer is strictly space-limited. Requires introductory CS course and writing composition course alongside math/science prereqs."
+          }
+        ]
+      },
+      {
+        "name": "School of Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ambitious pre-business students aiming for Big 4 accounting firms or Wall Street finance roles.",
+        "housing_profile": "Integrated.",
+        "student_archetype": "Pre-professional, networking-oriented, competitive.",
+        "majors": []
+      },
+      {
+        "name": "Harpur College of Arts and Sciences",
+        "admissions_model": "Pre-Major/Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a broad liberal arts foundation or those undecided on their major. Good for pre-med/pre-law.",
+        "housing_profile": "Integrated.",
+        "student_archetype": "Curious, interdisciplinary, broad learners.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "SUNY Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "YYYY-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-04-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires completion of the Common App personal statement and SUNY Binghamton specific short answers."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Class Rank",
+        "Extracurricular Activities",
+        "Standardized Test Scores"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": ""
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to impacted programs like CS and Management rather than attempting internal transfers.",
+      "Leverage the out-of-state application pool, which accepts applicants at more than double the rate of the in-state pool."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to Harpur College is the easiest pathway into the university, but students must be comfortable graduating with a liberal arts degree, as transferring to Watson or SOM later is never guaranteed."
+  },
+  "financials": {
+    "tuition_model": "Differential by state residency",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 7070.0,
+        "total_coa": 31172.0,
+        "housing": 18809.0
+      },
+      "out_of_state": {
+        "tuition": 26950.0,
+        "total_coa": 51252.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 57.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Offset tuition costs.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Excelsior Scholarship",
+        "type": "Need/Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers base tuition for NY residents earning under $125k.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "New York State merit award.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3, 4, or 5 receive credit. No credit for 1 or 2.",
+      "exceptions": [],
+      "usage": "Can fulfill major prerequisites, General Education requirements, or count as elective credits. Max 32 exam credits total."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded only for Higher Level (HL) exams with scores of 4-7.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "SUNY Seamless Transfer",
+        "Binghamton Equivalency Tables"
+      ],
+      "restrictions": "Students must complete at least 44 credits in residence at Harpur College (or 30 at Watson/40 at SOM) to earn a degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous transcript with multiple AP/IB courses.",
+      "High unweighted GPA near 3.8-3.9.",
+      "Strong demonstrated leadership and extracurricular involvement."
+    ],
+    "common_activities": [
+      "Pre-professional clubs",
+      "Intramural sports",
+      "Greek Life",
+      "Undergraduate Research (FRI/SRI)"
+    ],
+    "essay_tips": [],
+    "red_flags": [
+      "Low GPA disguised by a heavy, unmanageable course load.",
+      "Assuming an easy internal transfer into CS or Business."
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 80304,
+    "employment_rate_2yr": 88.2,
+    "grad_school_rate": 92.6,
+    "top_employers": [
+      "PricewaterhouseCoopers (PwC)",
+      "Ernst & Young (EY)",
+      "Amazon",
+      "Google",
+      "Goldman Sachs",
+      "JPMorgan Chase",
+      "Lockheed Martin"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.1,
+    "graduation_rate_4_year": 77.1,
+    "graduation_rate_6_year": 83.7
+  }
+}

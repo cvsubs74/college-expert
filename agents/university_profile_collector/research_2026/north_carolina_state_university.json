@@ -1,0 +1,543 @@
+{
+  "_id": "north_carolina_state_university",
+  "metadata": {
+    "official_name": "North Carolina State University",
+    "location": {
+      "city": "Raleigh",
+      "state": "North Carolina",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "CDS_2024-25.v3.pdf",
+      "CDS_2023-24.v2.pdf",
+      "CDS_2022-23.v2.pdf"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "North Carolina State University (NC State) is a premier public land-grant research university and the flagship STEM campus of the UNC System. Located in Raleigh as an anchor of the Research Triangle, it is renowned for its powerhouse programs in engineering, agriculture, veterinary medicine, and life sciences. The university embodies a 'Think and Do' ethos, prioritizing experiential learning, robust industry partnerships, and entrepreneurial innovation.",
+    "market_position": "Top-Tier Public Research University",
+    "admissions_philosophy": "Holistic Review (Heavily numbers-focused for competitive STEM/Engineering programs)",
+    "us_news_rank": 58,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "NC State is moderately selective overall (41.7% acceptance rate), but admission is significantly more competitive for out-of-state students (~35%) due to UNC System caps limiting out-of-state enrollment to 18%.",
+        "implication": "Out-of-state applicants face a steeper uphill battle and must present highly competitive academic profiles, especially for STEM majors."
+      },
+      {
+        "category": "Academic",
+        "insight": "Admissions are major-dependent. Engineering and Computer Science applicants face intense competition, and students are admitted to a 'First Year' exploratory program (e.g., Engineering First Year) before using the Change of Degree Application (CODA) to officially declare their specific major.",
+        "implication": "Applicants must be strategic about their major selection. Alternate major choices are considered, but highly competitive programs like Engineering cannot be listed as a second choice."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university offers exceptional value, particularly for in-state students, with tuition and fees around $9,028 and a strong 10-year median alumni earning of $68,758.",
+        "implication": "NC State represents a high-ROI destination, especially with full-ride opportunities like the Park Scholarships and Goodnight Scholars Program available for top-tier candidates."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A bustling, spirited campus of over 28,000 undergraduates with deep-rooted traditions, intense ACC athletic pride (the 'Wolfpack'), and a down-to-earth, collaborative student body that values practical problem-solving.",
+      "transportation_impact": "Situated in the urban setting of Raleigh, the campus is vast and split into Main Campus and Centennial Campus. The Wolfline bus system is essential for navigating between classes, labs, and off-campus housing.",
+      "research_impact": "As an R1 Doctoral University closely tied to Research Triangle Park, NC State offers unparalleled undergraduate research, co-op, and internship opportunities, particularly on its cutting-edge Centennial Campus which houses corporate and government partner labs."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.417,
+      "in_state_acceptance_rate": 0.49,
+      "out_of_state_acceptance_rate": 0.35,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 5723,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for applicants with a weighted GPA of 2.8 or higher through the current cycles. However, approximately 65% of enrolled students still submit scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.48,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 44109,
+        "admits_total": 18382,
+        "enrolled_total": 5723,
+        "acceptance_rate_overall": 0.417,
+        "acceptance_rate_in_state": 0.49,
+        "acceptance_rate_out_of_state": 0.35,
+        "yield_rate": 0.311,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 9704,
+          "accepted_spots": 4194,
+          "admitted_from_waitlist": 261,
+          "waitlist_admit_rate": 0.062,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high applications. Waitlist admission rate plummeted to 6.2%."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 35420,
+        "admits_total": 16651,
+        "enrolled_total": 5539,
+        "acceptance_rate_overall": 0.47,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.332,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 7439,
+          "accepted_spots": 2689,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admitted from waitlist not publicly disclosed in CDS 2022-2023."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 32907,
+        "admits_total": 15598,
+        "enrolled_total": 5030,
+        "acceptance_rate_overall": 0.474,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.322,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data missing/not fully reported."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.17-4.48",
+        "unweighted_middle_50": "3.79-3.97",
+        "average_weighted": 4.31,
+        "notes": "Average incoming unweighted GPA is 3.83. 94% ranked in the top quarter of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1290-1440",
+        "sat_reading_middle_50": "640-720",
+        "sat_math_middle_50": "640-740",
+        "act_composite_middle_50": "25-32",
+        "submission_rate": 0.65,
+        "policy_note": "Test-optional but highly recommended for STEM applicants. Submitting scores is advised if SAT >= 1290 or ACT >= 28."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.17,
+        "legacy_percentage": null,
+        "international_percentage": 0.022,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.82
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.18
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 21295,
+            "admits": 7977,
+            "acceptance_rate": 0.374
+          },
+          "women": {
+            "applicants": 22814,
+            "admits": 10405,
+            "acceptance_rate": 0.456
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.637,
+          "black_african_american": 0.057,
+          "hispanic_latino": 0.091,
+          "asian": 0.094,
+          "native_american_alaskan": 0.003,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.049,
+          "unknown": 0.009,
+          "non_resident_alien": 0.022
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major (Engineering First Year)",
+        "acceptance_rate_estimate": 0.41,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants must present AP Calculus BC, Physics, and Chemistry. Ideal for ambitious, analytical tinkerers.",
+        "housing_profile": "Often heavily integrated with Centennial Campus for advanced lab access.",
+        "student_archetype": "Driven, tech-focused, hands-on builders.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "Highly Selective",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MA 141",
+              "MA 241",
+              "CH 101",
+              "PY 205"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "Calculus",
+              "Physics"
+            ],
+            "special_requirements": "Requires Change of Degree Application (CODA) after First Year. While 2.0 is the minimum to apply, competitive CODA GPAs hover around 3.35+.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.35,
+            "curriculum": {
+              "core_courses": [
+                "CSC 110",
+                "CSC 116"
+              ],
+              "electives": [
+                "Cloud computing",
+                "Artificial intelligence",
+                "Cryptography",
+                "Computer graphics"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers recognized undergraduate concentrations in AI, Cybersecurity, and Game Development."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "Selective",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MA 141",
+              "MA 241",
+              "CH 101",
+              "PY 205"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires CODA process.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Tarek Echekki (Thermal Fluid Sciences)"
+            ],
+            "notes": "Curriculum heavily emphasizes hands-on learning and thermal fluid sciences."
+          }
+        ]
+      },
+      {
+        "name": "Poole College of Management",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": 0.3,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for ambitious students interested in entrepreneurship, analytics, and global supply chain.",
+        "housing_profile": "General campus housing.",
+        "student_archetype": "Future corporate leaders, aspiring entrepreneurs, and analytical thinkers.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "Selective",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACC 210",
+                "BUS 340",
+                "MIE 201",
+                "BUS 360",
+                "MIE 480"
+              ],
+              "electives": [
+                "BUS 473",
+                "BUS 474",
+                "MIE 410"
+              ],
+              "total_units": 120,
+              "major_units": 46
+            },
+            "notable_professors": [],
+            "notes": "Concentrations available in IT, Finance, Marketing, Supply Chain, and Entrepreneurship."
+          }
+        ]
+      },
+      {
+        "name": "College of Agriculture and Life Sciences",
+        "admissions_model": "Pre-Major (Life Sciences First Year)",
+        "acceptance_rate_estimate": 0.37,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for pre-vet, biological researchers, and students interested in environmental/agricultural sciences.",
+        "housing_profile": "General campus housing.",
+        "student_archetype": "Pre-vet candidates, researchers, life science enthusiasts.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "Moderate",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Enters through Life Sciences First Year (LSFY) program.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIO 181",
+                "BIO 183"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers concentrations in Molecular/Cellular, Integrative Physiology, Human Biology, and Ecology/Evolution."
+          },
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "Moderate",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ANS 540",
+                "ANS 553"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly popular for pre-vet track students given NC State's top-tier veterinary program."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action deadline is mandatory to be considered for priority scholarships and University Honors."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Required essay explaining why the student selected their first-choice academic program and why they are interested in studying it at NC State (250 words max)."
+      },
+      {
+        "target_program": "University Honors Program",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-01",
+        "details": "Additional essay: Describe a time when your curiosity led you to not just learn, but to act (600 words)."
+      },
+      {
+        "target_program": "Studio-based design majors",
+        "requirement_type": "Portfolio",
+        "deadline": "2024-11-01",
+        "details": "Portfolio required by Nov 1; studio majors are fall entry only."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Application essays",
+        "Recommendations",
+        "Talent/Ability"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Admissions are strictly evaluated within the context of the requested major. In-state vs. Out-of-state residency plays a massive role."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Always apply Early Action (Nov 1) to maximize chances for admission, housing, and highly competitive merit scholarships.",
+      "Because NC State reviews applicants by specific college/major, applying to less saturated colleges (e.g., Textiles with 52% acceptance, Education with 45%) is easier than Engineering (41%) or Management (30%).",
+      "If you are undecided, applying to 'Exploratory Studies' in University College (60% acceptance rate) provides a gentler entry pathway."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants can and should list a second-choice major. However, highly impacted programs (Engineering, Applied Math, Physics, Statistics, and Studio Design) CANNOT be listed as an alternate/second-choice major. If rejected from a first-choice engineering major, the applicant is reviewed entirely independently for the second-choice program."
+  },
+  "financials": {
+    "tuition_model": "Differential tuition based on residency.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 9028.0,
+        "total_coa": 27481.0,
+        "housing": 8335.0
+      },
+      "out_of_state": {
+        "tuition": 33993.0,
+        "total_coa": 53004.0,
+        "supplemental_tuition": 24965.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 14720.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.68,
+    "scholarships": [
+      {
+        "name": "Park Scholarships",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2024-11-01",
+        "benefits": "Covers tuition, fees, room, board, books, supplies, travel, and a computer stipend.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Goodnight Scholars Program",
+        "type": "Merit/Need",
+        "amount": "$23,000",
+        "deadline": "2024-11-01",
+        "benefits": "Renewable full tuition/fees for up to four years.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 3, 4, or 5 depending on the subject.",
+      "exceptions": [
+        "AP Biology requires a 4 for 8 credits (BIO 181 & 183); a 3 grants elective credit (BIO 105/106).",
+        "AP Chemistry requires a 4 for 8 credits (CH 101/102 & 201/202).",
+        "AP Calculus AB grants MA 141 (4 credits) with a 4, and MA 121 (3 credits) with a 3."
+      ],
+      "usage": "Credits are used to bypass prerequisites, but AP scores do not factor into the high school GPA calculation for Veterinary School admissions."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for Higher Level (HL) exams with qualifying scores. Standard Level (SL) exams do not yield credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "NC Community College Comprehensive Articulation Agreement"
+      ],
+      "restrictions": "Requires minimum 30 transferable credits; engineering programs usually demand a much higher transfer GPA than the 2.5 baseline."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous math and science sequence (AP Calculus BC and Calculus-based Physics are highly desired for Engineering).",
+      "Genuine 'Think and Do' mindset highlighted in essays\u2014practical, community-based problem solving.",
+      "Strong weighted GPA (3.8+ minimum, 4.2+ for Engineering)."
+    ],
+    "common_activities": [
+      "Robotics/STEM competitions",
+      "4-H/Agricultural involvement",
+      "Hands-on community service projects",
+      "Part-time jobs or internships in tech/research"
+    ],
+    "essay_tips": [
+      "Clearly articulate a direct connection between your goals and NC State's specific curriculum or unique resources (e.g., Centennial Campus).",
+      "Focus on the 'Why Major' essay by demonstrating past action or projects related to the field.",
+      "Mention a unique NC State tradition or facility (e.g., Hunt Library, Free Expression Tunnel) to implicitly show interest."
+    ],
+    "red_flags": [
+      "Applying to Engineering without advanced Calculus or Physics.",
+      "Listing a highly impacted major as a second choice."
+    ],
+    "insights": [
+      "In-state students have a massive statistical advantage.",
+      "Waitlist conversion is extremely low (<6%), so applicants should not bank on getting off it."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 68758,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Cisco Systems",
+      "IBM",
+      "SAS Institute",
+      "Bank of America",
+      "NetApp",
+      "PwC"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.94,
+    "graduation_rate_4_year": 0.68,
+    "graduation_rate_6_year": 0.85
+  }
+}

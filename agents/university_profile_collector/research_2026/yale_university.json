@@ -1,0 +1,498 @@
+{
+  "_id": "yale_university",
+  "metadata": {
+    "official_name": "Yale University",
+    "location": {
+      "city": "New Haven",
+      "state": "Connecticut",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Yale University is a private Ivy League research university founded in 1701, known for its exceptional undergraduate liberal arts curriculum, robust residential college system, and outsized placement into top-tier graduate programs and elite industries. Admissions are extraordinarily competitive, with an institutional focus on intellectual curiosity, interdisciplinary thinking, and students' demonstrated ability to maximize their available resources.",
+    "market_position": "Elite Private / Ivy League",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 5,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Yale's acceptance rate fluctuates strictly based on application volume and yield, resting below 5%, with transfer and waitlist acceptance rates sitting below 2% and 5% respectively.",
+        "implication": "Applicants must rely on a distinctive 'hook' or niche narrative to stand out, as virtually all applicants are academically qualified."
+      },
+      {
+        "category": "Academic",
+        "insight": "Yale College uniquely admits students undeclared rather than to specific majors, promoting a liberal arts approach that encourages exploration across disciplines.",
+        "implication": "Applicants shouldn't stress about choosing 'easier' majors for admission, as intended majors don't cap acceptance probabilities, but cohesive academic narratives matter."
+      },
+      {
+        "category": "Financial",
+        "insight": "Despite a high sticker price exceeding $90,000, Yale meets 100% of demonstrated need without loans, leading to a median debt of just $12,975 and strong ROI.",
+        "implication": "For lower- and middle-income families, Yale can be highly affordable, though no merit scholarships are offered."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Yale's social life revolves heavily around its 14 residential colleges, which provide a tight-knit community feel within a large research university, alongside secret societies and cultural associations.",
+      "transportation_impact": "Situated in a midsize city, the campus is walkable with robust university transit, integrating deeply with the urban environment of New Haven.",
+      "research_impact": "The university heavily funds undergraduate research, underscored by major infrastructure investments like the 600,000 square foot Upper Science Hill Development for STEM students."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 3.87,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 1.46,
+      "admits_class_size": 1554,
+      "is_test_optional": false,
+      "test_policy_details": "Test-flexible starting Fall 2024: Requires standardized test scores but allows students to submit AP or IB scores in lieu of the SAT or ACT.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 7140,
+          "admits": 779,
+          "acceptance_rate": 10.91,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 57517,
+        "admits_total": 2227,
+        "enrolled_total": 1554,
+        "acceptance_rate_overall": 3.87,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 69.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 738,
+          "accepted_spots": 565,
+          "admitted_from_waitlist": 23,
+          "waitlist_admit_rate": 4.07,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist fluctuations are extreme based on yield."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 51803,
+        "admits_total": 2332,
+        "enrolled_total": 1641,
+        "acceptance_rate_overall": 4.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 70.3,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1145,
+          "accepted_spots": 899,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 50060,
+        "admits_total": 2289,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 4.57,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": 774,
+          "admitted_from_waitlist": 4,
+          "waitlist_admit_rate": 0.5,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "96% of admitted students were in the top 10% of their graduating high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1480-1560",
+        "sat_reading_middle_50": "730-780",
+        "sat_math_middle_50": "740-790",
+        "act_composite_middle_50": "33-35",
+        "submission_rate": 61.0,
+        "policy_note": "For the Class of 2028, 61% submitted SAT and 25% submitted ACT. Moving forward, Yale operates under a test-flexible policy."
+      },
+      "demographics": {
+        "first_gen_percentage": 21.0,
+        "legacy_percentage": 11.0,
+        "international_percentage": 10.9,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 22003,
+            "admits": 1127,
+            "acceptance_rate": 5.12
+          },
+          "women": {
+            "applicants": 29799,
+            "admits": 1205,
+            "acceptance_rate": 4.04
+          }
+        },
+        "racial_breakdown": {
+          "white": 29.8,
+          "black_african_american": 9.6,
+          "hispanic_latino": 18.6,
+          "asian": 20.6,
+          "native_american_alaskan": 0.5,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 6.4,
+          "unknown": 3.5,
+          "non_resident_alien": 10.9
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Yale College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 3.87,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a strong liberal arts foundation with interdisciplinary flexibility. All incoming undergrads are admitted generally into Yale College.",
+        "housing_profile": "Students are assigned to one of 14 residential colleges upon admission, forming their primary social and residential community for four years.",
+        "student_archetype": "Intellectually curious, community-driven, and highly analytical.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1120 or MATH 1150 or MATH 1180"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 121 Intermediate Microeconomics",
+                "ECON 122 Intermediate Macroeconomics",
+                "ECON 117 Econometrics"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Philipp Strack (Microeconomic Theory)"
+            ],
+            "notes": "The most popular major at Yale. Highly quantitative; many students aim for Wall Street or top consulting firms."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CPSC 201 Introduction to Computer Science",
+                "CPSC 202 Mathematical Tools for Computer Science",
+                "CPSC 223 Data Structures",
+                "CPSC 323 Introduction to Systems Programming and Computer Architecture",
+                "CPSC 365 Design and Analysis of Algorithms"
+              ],
+              "electives": [
+                "CPSC 470 Artificial Intelligence"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Can be combined with Mathematics, Psychology, Economics, or Electrical Engineering as joint majors."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Interpretations Seminars",
+                "Modernities Seminars",
+                "Traditions Lectures"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly diverse and exceptionally well-regarded major known to act as a powerful pre-law track."
+          },
+          {
+            "name": "Ethics, Politics, and Economics (EP&E)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHIL 1175",
+              "ECON 1108 or 1110",
+              "ECON 1111 or 1116",
+              "PLSC 1113 or 1413"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires core concentration development culminating in a senior essay.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EP&E 3212 Classics of EP&E",
+                "ECON 2121 Intermediate Microeconomics"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "An interdisciplinary powerhouse program tailored for students interested in public policy, law, and international affairs."
+          },
+          {
+            "name": "Computing and Linguistics",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "S&DS 1000",
+              "1 introductory programming course",
+              "1 1000-level LING course"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 2440 or LING 2249",
+                "MATH 2220 or MATH 2250",
+                "CPSC 2010",
+                "CPSC 2230"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Simon Charlow (Linguistics)"
+            ],
+            "notes": "Multidisciplinary program connecting AI, computer science, and human language."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "QuestBridge"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Single-Choice Early Action (Restrictive Early Action)"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-02",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Yale requires specific short answer responses and supplemental essays designed to reveal intellectual curiosity and character."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendations",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "First generation",
+        "Alumni/ae relation (legacy)",
+        "Geographical residence",
+        "Interview"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Considered",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "Yale employs a 'context-based review', strongly favoring applicants who have maximized the specific opportunities available within their high school's unique context."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Yale does not admit by major; intended major does not mechanically cap acceptance chances.",
+      "Developing a 'spiky' profile or niche narrative around interdisciplinary fields (e.g., Computer Science and Psychology) may help applicants stand out from traditional single-discipline applicants."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying with a highly specialized narrative that links a less common humanities or social science field with extracurricular proof can be more advantageous than simply selecting an 'easier' major, since major switching is entirely unrestricted once enrolled."
+  },
+  "financials": {
+    "tuition_model": "Flat rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67250.0,
+        "total_coa": 91950.0,
+        "housing": 11300.0
+      },
+      "out_of_state": {
+        "tuition": 67250.0,
+        "total_coa": 91950.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met/Need-Blind",
+    "average_need_based_aid": 62236.0,
+    "average_merit_aid": 0.0,
+    "percent_receiving_aid": 57.0,
+    "scholarships": [
+      {
+        "name": "Yale Need-Based Financial Aid",
+        "type": "Need",
+        "amount": "$62,236",
+        "deadline": "",
+        "benefits": "Covers 100% of demonstrated need without requiring student loans.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Yale does not award standard course credits toward the 36 units required for graduation. Instead, AP scores of 5 are used for placement into advanced courses or earning 'Acceleration Credit' for early graduation.",
+      "exceptions": [
+        "AP Calculus BC accepts a score of 4 or 5 for acceleration credit."
+      ],
+      "usage": "Placement, Acceleration Credit"
+    },
+    "ib_policy": {
+      "general_rule": "Higher-Level IB exams with scores of 6 or 7 can be used similarly to AP exams for acceleration credit and advanced placement.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer credits do not count toward distribution requirements unless explicitly approved by the Director of Undergraduate Studies. All transfer students must complete at least 18 course credits at Yale."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Top 10% class rank with maximum available course rigor",
+      "Exceptional essays showcasing intellectual vitality and personal character",
+      "A distinctive 'hook' or niche within extracurricular activities",
+      "Demonstrated ability to maximize limited resources"
+    ],
+    "common_activities": [
+      "High-level academic research",
+      "National or international competition placements",
+      "Significant community leadership and impact",
+      "Interdisciplinary passion projects"
+    ],
+    "essay_tips": [
+      "Write openly and honestly; avoid templated responses.",
+      "Showcase your ability to think deeply and synthetically across disciplines.",
+      "Focus on the 'why' behind your interests rather than just recounting achievements."
+    ],
+    "red_flags": [
+      "Lacking authenticity or presenting a purely resume-driven persona.",
+      "Demonstrating a lack of intellectual curiosity beyond grades."
+    ],
+    "insights": [
+      "Do not try to game the system by picking an 'easy' major; admissions officers evaluate the cohesiveness of your narrative, not the major listed.",
+      "Yield rate is incredibly high; demonstrated interest holds zero weight in admissions."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 100533,
+    "employment_rate_2yr": 95.0,
+    "grad_school_rate": 18.0,
+    "top_employers": [
+      "Yale University",
+      "McKinsey & Company",
+      "Bain & Company",
+      "Boston Consulting Group",
+      "Goldman Sachs Group",
+      "Google LLC",
+      "Microsoft Corporation"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 99.0,
+    "graduation_rate_4_year": 96.0,
+    "graduation_rate_6_year": 96.0
+  }
+}

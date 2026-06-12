@@ -1,0 +1,58 @@
+{
+  "platforms": [
+    "Common App",
+    "Coalition App",
+    "QuestBridge"
+  ],
+  "application_deadlines": [
+    {
+      "plan_type": "ED",
+      "date": "2025-11-01",
+      "is_binding": true,
+      "notes": "Decisions released in mid-December."
+    },
+    {
+      "plan_type": "RD",
+      "date": "2026-01-05",
+      "is_binding": false,
+      "notes": "Decisions released in late March / early April."
+    }
+  ],
+  "supplemental_requirements": [
+    {
+      "target_program": "All",
+      "requirement_type": "Essays",
+      "deadline": "",
+      "details": "Three short essays: A 'Thank You' note to someone you haven't thanked (150-200 words), a 'Community' exploration essay (150-200 words), and a 'School-specific' academic interest essay (150-200 words)."
+    },
+    {
+      "target_program": "Dual-Degree Programs",
+      "requirement_type": "Essays",
+      "deadline": "",
+      "details": "Additional program-specific essay (400-650 words) addressing interdisciplinary knowledge, vision, and plans."
+    }
+  ],
+  "holistic_factors": {
+    "primary_factors": [
+      "Course rigor",
+      "GPA",
+      "Standardized test scores",
+      "Application essay",
+      "Recommendations",
+      "Character/Personal qualities"
+    ],
+    "secondary_factors": [
+      "Class rank",
+      "Interview",
+      "Extracurricular activities",
+      "Talent/Ability"
+    ],
+    "essay_importance": "Critical",
+    "demonstrated_interest": "Not Considered",
+    "interview_policy": "Recommended",
+    "legacy_consideration": "Strong",
+    "first_gen_boost": "Moderate",
+    "specific_differentiators": "Penn highly values its Early Decision round for yield protection (accounting for over 50% of the class). Legacy students make up ~13.6-14% of the admitted pool."
+  },
+  "_id": "university_of_pennsylvania"
+}

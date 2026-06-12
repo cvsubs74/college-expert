@@ -1,0 +1,578 @@
+{
+  "_id": "university_of_southern_california",
+  "metadata": {
+    "official_name": "University of Southern California",
+    "location": {
+      "city": "Los Angeles",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Southern California (USC) is a premier private research university located in the heart of Los Angeles. Known for its strong academic programs, massive research expenditures, and the fiercely loyal 'Trojan Family' alumni network, USC offers a vibrant, dynamic campus life intertwined with pre-professional success.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 27,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "USC's acceptance rate has plummeted from 16.1% in 2021 to hovering around 9-11% for recent classes, indicating a massive surge in selectivity.",
+        "implication": "USC is now as competitive as lower-tier Ivies and elite private institutions, requiring exceptional academics and extracurriculars."
+      },
+      {
+        "category": "Financial",
+        "insight": "With a total Cost of Attendance (COA) approaching $95,000, USC is one of the most expensive universities in the country.",
+        "implication": "Applicants must heavily rely on USC's 100% need-met financial aid policies or target the highly competitive early-action merit scholarships."
+      },
+      {
+        "category": "Academic",
+        "insight": "USC recently introduced an Early Action (EA) round that is highly incentivized because it is the only pathway to be considered for top merit scholarships.",
+        "implication": "Top-tier applicants should uniformly apply by the November 1 EA deadline to maximize financial aid opportunities."
+      },
+      {
+        "category": "Culture",
+        "insight": "USC places high value on cultural fit, school spirit, and community engagement, maintaining a 'work hard, play hard' reputation.",
+        "implication": "Essays and extracurricular profiles should demonstrate leadership, social engagement, and a collaborative mindset, fitting the 'Trojan' archetype."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "USC boasts an extremely vibrant campus life characterized by high school spirit, highly attended D1 football games, and a prominent Greek life scene.",
+      "transportation_impact": "Located in central Los Angeles, students benefit from urban resources, though safety in the surrounding neighborhoods is occasionally a concern. Trams and local transit integrate the campus with the city.",
+      "research_impact": "As an AAU member with over $890M in research funding, USC provides substantial undergraduate research opportunities, especially in engineering, health sciences, and media."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 11.19,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 27.05,
+      "admits_class_size": 3759,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional policy in effect; however, about 44-48% of enrolled students still submit test scores. Scores are highly considered if submitted.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 42119,
+          "admits": 3524,
+          "acceptance_rate": 8.37,
+          "class_fill_percentage": 25.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 59712,
+        "admits_total": 9618,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 16.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "USC does not maintain a waitlist for first-year admission."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 71031,
+        "admits_total": 8884,
+        "enrolled_total": 3420,
+        "acceptance_rate_overall": 12.51,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 41.2,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "USC does not maintain a waitlist for first-year admission."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 69062,
+        "admits_total": 8304,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 12.02,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "USC does not maintain a waitlist for first-year admission."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 82027,
+        "admits_total": 8050,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 9.81,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 43.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "USC does not maintain a waitlist for first-year admission."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 83500,
+        "admits_total": 9345,
+        "enrolled_total": 3759,
+        "acceptance_rate_overall": 11.19,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 40.3,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "USC does not maintain a waitlist for first-year admission."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.79-4.00",
+        "average_weighted": null,
+        "notes": "Most admitted students are in the top 10% of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1470-1540",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "32-35",
+        "submission_rate": 44.0,
+        "policy_note": "Test-optional, but highly competitive SAT/ACT scores are typical for admitted students."
+      },
+      "demographics": {
+        "first_gen_percentage": 21.0,
+        "legacy_percentage": 14.0,
+        "international_percentage": 26.1,
+        "geographic_breakdown": [
+          {
+            "region": "California",
+            "percentage": 38.0
+          },
+          {
+            "region": "Out-of-State (Domestic)",
+            "percentage": 44.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 21.9,
+          "black_african_american": 6.06,
+          "hispanic_latino": 17.1,
+          "asian": 19.8,
+          "native_american_alaskan": 0.16,
+          "pacific_islander": 0.18,
+          "two_or_more_races": 4.25,
+          "unknown": 4.8,
+          "non_resident_alien": 26.9
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "USC Dana and David Dornsife College of Letters, Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in natural sciences, humanities, and social sciences who want a broad liberal arts foundation.",
+        "housing_profile": "Standard USC residential colleges.",
+        "student_archetype": "Interdisciplinary scholars.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "USC states that none of its majors are officially impacted, though competitiveness varies significantly."
+          }
+        ]
+      },
+      {
+        "name": "USC Marshall School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Highly competitive; ideal for ambitious students seeking elite networking, consulting, and finance placement.",
+        "housing_profile": "Standard USC residential colleges.",
+        "student_archetype": "Entrepreneurial, networking-focused, future corporate leaders.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Features highly exclusive tracks like the World Bachelor in Business program."
+          }
+        ]
+      },
+      {
+        "name": "USC Viterbi School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students with high quantitative scores and rigorous high school math/science backgrounds.",
+        "housing_profile": "Standard USC residential colleges.",
+        "student_archetype": "Tech-innovators and rigorous problem solvers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Consistently places graduates in top tech companies like Apple, Amazon, and Microsoft."
+          }
+        ]
+      },
+      {
+        "name": "USC School of Cinematic Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 3.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Top-tier film program meant for highly creative students with exceptional portfolios.",
+        "housing_profile": "Standard USC residential colleges.",
+        "student_archetype": "Visionary creatives and future entertainment leaders.",
+        "majors": [
+          {
+            "name": "Cinematic Arts",
+            "degree_type": "B.A./B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": "3%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Extensive portfolio and creative supplements required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Widely regarded as the top film school in the United States."
+          }
+        ]
+      },
+      {
+        "name": "USC Annenberg School for Communication and Journalism",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing media, public relations, or journalism with strong writing skills.",
+        "housing_profile": "Standard USC residential colleges.",
+        "student_archetype": "Communicators and media strategists.",
+        "majors": [
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly ranked media and communications programs globally."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Required deadline to be considered for USC Merit Scholarships."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Regular Decision deadline for majors requiring a portfolio or audition."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Standard Regular Decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "USC requires multiple short-answer and essay questions addressing academic fit and personal characteristics."
+      },
+      {
+        "target_program": "Arts and Architecture",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "2024-12-01",
+        "details": "Specific portfolio or audition requirements for Architecture, Art and Design, Cinematic Arts, Dance, Dramatic Arts, or Music."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First generation status",
+        "Alumni/ae relation (Legacy)",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "USC heavily prioritizes 'fit' and alignment with the Trojan Family ethos. Demonstrated interest is strictly not evaluated."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying Early Action is crucial, as it is the only way to be considered for substantial merit scholarships.",
+      "Although USC does not track demonstrated interest, applying for niche or interdisciplinary majors that align perfectly with an applicant's resume is heavily advised.",
+      "Portfolio-heavy majors like Cinematic Arts have their own highly intensive admissions standards; academics alone will not guarantee entry."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants can list a second choice major. If not admitted to a highly selective first-choice program, USC may admit students to their alternate major or offer admission to Dornsife College (Undeclared)."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time students",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 69904.0,
+        "total_coa": 94784.0,
+        "housing": 19930.0
+      },
+      "out_of_state": {
+        "tuition": 69904.0,
+        "total_coa": 94784.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met/Need-Blind",
+    "average_need_based_aid": 48649.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 69.0,
+    "scholarships": [
+      {
+        "name": "Trustee Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2024-11-01",
+        "benefits": "Covers full undergraduate tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Half Tuition",
+        "deadline": "2024-11-01",
+        "benefits": "Covers half undergraduate tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Deans Scholarship",
+        "type": "Merit",
+        "amount": "Quarter Tuition",
+        "deadline": "2024-11-01",
+        "benefits": "Covers one-quarter undergraduate tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Mork Family Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition + Stipend",
+        "deadline": "2024-11-01",
+        "benefits": "Full tuition plus a living stipend.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition + Enrichment Fund",
+        "deadline": "2024-11-01",
+        "benefits": "Full tuition plus multi-year enrichment funds.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards 4 semester units of elective credit for AP examinations with a score of 4 or 5.",
+      "exceptions": [
+        "No credit given for projected scores, partial scores or subscores.",
+        "AP scores do not earn USC course equivalence."
+      ],
+      "usage": "Can satisfy certain General Education categories or foreign language requirements, or waive prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "20 units of credit for IB Diploma with a score of 30+, or 6 units per HL exam with score of 5, 6, or 7 (max 4 exams).",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "USC Articulation Agreements",
+        "Transfer Planning Guide"
+      ],
+      "restrictions": "Max 32 combined elective units for college courses taken before high school graduation and AP/IB exams."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous coursework matching the top 10% of high school classes",
+      "Clear articulation of how the student will leverage USC's interdisciplinary resources",
+      "Demonstrated alignment with the 'Trojan' ethos of community and impact"
+    ],
+    "common_activities": [
+      "Community service and local involvement",
+      "Leadership in student organizations",
+      "Arts and performance involvement (especially for creative majors)",
+      "High-level athletics (given USC's massive sports culture)"
+    ],
+    "essay_tips": [
+      "Do not recycle generic 'Why Us' essays; focus on specific, hyper-local USC programs and interdisciplinary models.",
+      "Express how your academic ambitions intersect with your personal identity.",
+      "Focus on depth over breadth in describing extracurricular impact."
+    ],
+    "red_flags": [
+      "Applying test-optional with an otherwise unexceptional academic profile.",
+      "Generic reasons for applying that only mention 'LA weather' or 'the beach'."
+    ],
+    "insights": [
+      "USC does not track demonstrated interest, freeing applicants to spend more time perfecting essays.",
+      "The 'Trojan Network' is highly cited by students as one of the best ROI factors post-graduation.",
+      "Greek life and sports dominate the weekend social scene."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 95739,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 16.4,
+    "top_employers": [
+      "EY",
+      "Deloitte",
+      "PwC",
+      "KPMG",
+      "Amazon",
+      "Oracle",
+      "Microsoft"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 96.0,
+    "graduation_rate_4_year": 77.0,
+    "graduation_rate_6_year": 92.0
+  }
+}

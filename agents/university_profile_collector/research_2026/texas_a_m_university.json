@@ -1,0 +1,516 @@
+{
+  "_id": "texas_a_m_university",
+  "metadata": {
+    "official_name": "Texas A&M University",
+    "location": {
+      "city": "College Station",
+      "state": "Texas",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Texas A&M University is a premier public land-grant research institution boasting the largest student body in the United States. Known for its world-class engineering, agriculture, and business programs, the university blends rigorous academics with deep-rooted traditions and an exceptionally loyal alumni network (the 'Aggie Network').",
+    "market_position": "Flagship Public Research University",
+    "admissions_philosophy": "Holistic review for non-automatic admits, heavily emphasizing academic rigor, class rank, and major selection.",
+    "us_news_rank": 51,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Increasingly competitive for out-of-state and non-top 10% in-state applicants due to the state mandate capping auto-admits and an explosive rise in applications (over 54,000 for recent cycles).",
+        "implication": "Applicants not qualifying for the Texas Top 10% automatic admission must present highly competitive holistic profiles, especially for impacted majors like Engineering and Business."
+      },
+      {
+        "category": "Academic",
+        "insight": "Engineering students must undergo the Entry to a Major (ETAM) process after their freshman year, requiring a 3.75 GPA for guaranteed placement in their first-choice major.",
+        "implication": "Getting accepted into the College of Engineering does not guarantee your specific major (e.g., Computer Science or Mechanical Engineering); students must perform exceptionally well in rigorous first-year 'weeder' courses."
+      },
+      {
+        "category": "Culture",
+        "insight": "Texas A&M features an intense, tradition-rich culture with a high retention rate (94%) and a strong emphasis on community via programs like Fish Camp and the Corps of Cadets.",
+        "implication": "Students looking for a spirited, highly unified, and somewhat conservative campus environment will thrive, while those seeking a small, intimate, or highly individualized liberal arts setting may feel overwhelmed."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A highly spirited, tradition-bound campus famously known as 'Aggieland'. Greek life, over 1,000 student organizations, and the Corps of Cadets dominate social life, anchored by massive school spirit surrounding SEC sports.",
+      "transportation_impact": "The College Station campus is massive (over 5,200 acres). The university operates an extensive shuttle and bus system, and Easterwood Airport provides close connections to Dallas and Houston.",
+      "research_impact": "Classified as an R1 Doctoral University with very high research activity, heavily funded in engineering, agriculture, and biomedical sciences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.573,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.489,
+      "admits_class_size": 31472,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for Fall 2025; however, returning to test-required for the Fall 2026 application cycle. The university superscores both the SAT and ACT.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 54905,
+        "admits_total": 31472,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.573,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 51108,
+        "admits_total": 27203,
+        "enrolled_total": 12490,
+        "acceptance_rate_overall": 0.631,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.459,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.626,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.641,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Texas A&M University does not officially publish average GPA data."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1160-1390",
+        "sat_reading_middle_50": "570-690",
+        "sat_math_middle_50": "570-710",
+        "act_composite_middle_50": "25-31",
+        "submission_rate": null,
+        "policy_note": "Superscores both exams. Strong test scores are highly recommended for impacted programs like Engineering."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.0094,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 27258,
+            "admits": 15537,
+            "acceptance_rate": 0.57
+          },
+          "women": {
+            "applicants": 27411,
+            "admits": 15898,
+            "acceptance_rate": 0.58
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.5023,
+          "black_african_american": 0.0256,
+          "hispanic_latino": 0.2627,
+          "asian": 0.1475,
+          "native_american_alaskan": 0.0025,
+          "pacific_islander": 0.0006,
+          "two_or_more_races": 0.0391,
+          "unknown": 0.0104,
+          "non_resident_alien": 0.0094
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High-achieving students with deep math/science backgrounds (especially Calculus and Physics).",
+        "housing_profile": "Often heavily integrated into Living Learning Communities or STEM-specific housing.",
+        "student_archetype": "Driven, highly competitive STEM student aiming to survive the ETAM process.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 102",
+              "MATH 151",
+              "MATH 152",
+              "PHYS 206",
+              "PHYS 207"
+            ],
+            "minimum_gpa_to_declare": 3.75,
+            "weeder_courses": [
+              "ENGR 102",
+              "MATH 151",
+              "MATH 152",
+              "PHYS 206",
+              "PHYS 207"
+            ],
+            "special_requirements": "Entry to a Major (ETAM) process required after first year. Requires 3.75 cumulative GPA for automatic admission into the major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Computer Science is considered the most competitive ETAM placement. Students failing to meet the 3.75 auto-admit threshold face a brutal holistic review process where spots are extremely limited."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENGR 102",
+              "MATH 151",
+              "MATH 152",
+              "PHYS 206",
+              "PHYS 207",
+              "CHEM 107",
+              "CHEM 117"
+            ],
+            "minimum_gpa_to_declare": 3.75,
+            "weeder_courses": [
+              "MATH 151",
+              "MATH 152",
+              "PHYS 206",
+              "PHYS 207"
+            ],
+            "special_requirements": "Entry to a Major (ETAM) process. Requires 3.75 cumulative GPA for automatic admission.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.75,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 119",
+                "CHEM 120",
+                "MATH 151",
+                "MATH 152",
+                "PHYS 206",
+                "PHYS 207"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly sought after. Same ETAM rigor as Computer Science."
+          }
+        ]
+      },
+      {
+        "name": "Mays Business School",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.33,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong leadership, communication, and quantitative skills. Very early application is critical as it fills quickly.",
+        "housing_profile": "Traditional dorms and off-campus luxury student living.",
+        "student_archetype": "Future corporate leaders, aspiring consultants, and entrepreneurs.",
+        "majors": [
+          {
+            "name": "Business Administration / Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Mays Business School operates on strict capacity limits. Apply as early as August.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly competitive. 33% acceptance rate generally for the business school."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing natural sciences, humanities, and social sciences.",
+        "housing_profile": "General campus housing.",
+        "student_archetype": "Pre-med, research-focused, or traditional liberal arts students.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 111",
+                "BIOL 112",
+                "BIOL 213",
+                "BIOL 214"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "ApplyTexas",
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Rolling admissions, but early application (August/September) is critical for impacted majors."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2025-10-15",
+        "is_binding": false,
+        "notes": "Engineering deadline highly recommended for Early Action."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Engineering",
+        "requirement_type": "Essays",
+        "deadline": "2025-12-01",
+        "details": "Required Engineering Essay explaining interest in the field and how the student has explored it."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of Secondary School Record",
+        "Class Rank",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Application Essay",
+        "Standardized Test Scores",
+        "Volunteer Work"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The Texas Top 10% rule dominates the incoming class. Non-auto admits face a holistic review where rigorous math/science coursework and strong essays are pivotal."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply extremely early (August) because TAMU reviews applications on a rolling basis, and capped majors (Business, Engineering) fill up before the December 1 deadline.",
+      "List a less competitive major as your second choice. If your first choice is full, you are evaluated for the second choice."
+    ],
+    "college_ranking_tactics": [
+      "Ensure you are designated in the top 10% of your Texas high school to guarantee general university admission, though this does not guarantee placement in Engineering or Business."
+    ],
+    "alternate_major_strategy": "Select an unimpacted major (e.g., within Arts and Sciences or Agriculture) as a second choice to ensure acceptance to the university, with the potential to internal transfer later (though internal transfer to Business/CS is notoriously difficult)."
+  },
+  "financials": {
+    "tuition_model": "In-State vs Out-of-State",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 13000.0,
+        "total_coa": 29684.0,
+        "housing": 13008.0
+      },
+      "out_of_state": {
+        "tuition": 40000.0,
+        "total_coa": 60846.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Aware / Tuition Guarantees",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.72,
+    "scholarships": [
+      {
+        "name": "Regents' Scholarship",
+        "type": "Need",
+        "amount": "$6,000",
+        "deadline": "2025-02-15",
+        "benefits": "Provides up to $6,000 per year for up to four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "President's Endowed Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "2025-12-01",
+        "benefits": "Merit-based award for high-achieving freshmen plus a study abroad stipend.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Aggie Assurance",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "2025-02-15",
+        "benefits": "Covers tuition (and fees beginning Fall 2023) for students whose family income is $60,000 or less.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 3, 4, or 5 for college credit in many subject areas.",
+      "exceptions": [
+        "Engineering students are warned against accepting AP credit for core math/science classes to ensure a strong GPA for ETAM."
+      ],
+      "usage": "Can fulfill core prerequisites and degree requirements depending on the major."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts higher-level IB exam scores for credit.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Information Articulation System (TIAS)",
+        "Transfer Course Equivalency website"
+      ],
+      "restrictions": "Transfer credits must be evaluated by the Office of Admissions; grades of C or better are typically required."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Top 10% class rank (for Texas residents) for automatic admission.",
+      "Applying as early as August for impacted programs like Business and Engineering.",
+      "Demonstrating strong math and science preparedness (Calculus/Physics) for Engineering applicants."
+    ],
+    "common_activities": [
+      "Varsity Sports",
+      "FFA/Agriculture Clubs",
+      "Robotics and STEM programs",
+      "Community Service/Volunteering"
+    ],
+    "essay_tips": [
+      "Highlight traditional Aggie core values: Excellence, Integrity, Leadership, Loyalty, Respect, and Selfless Service.",
+      "For Engineering, specifically write about how hands-on exploration drove your interest."
+    ],
+    "red_flags": [
+      "Applying near the December 1st deadline for Engineering or Business.",
+      "Weak math grades for STEM majors."
+    ],
+    "insights": [
+      "Freshman engineering students commonly refer to the ETAM (Entry to a Major) process as grueling, actively avoiding taking AP credit for math/science to pad their GPAs with easier 'A's to hit the 3.75 auto-admit threshold."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 76234,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Chevron",
+      "Dell Technologies",
+      "Deloitte",
+      "Amazon",
+      "Lockheed Martin",
+      "PwC",
+      "JPMorgan Chase"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.94,
+    "graduation_rate_4_year": 0.59,
+    "graduation_rate_6_year": 0.82
+  }
+}

@@ -1,0 +1,493 @@
+{
+  "_id": "howard_university",
+  "metadata": {
+    "official_name": "Howard University",
+    "location": {
+      "city": "Washington",
+      "state": "DC",
+      "type": "Private"
+    },
+    "last_updated": "2023-10-25",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Howard University is a premier, private, historically Black research university (R1) located in Washington, D.C. It is renowned for its rigorous academic programs, commitment to social justice, and production of influential Black leaders across medicine, law, business, and the arts.",
+    "market_position": "Elite HBCU / Private R1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 86,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The university waitlisted nearly 5,000 applicants in 2024 but admitted zero, yielding a 0% waitlist admit rate.",
+        "implication": "Applicants must secure admission outright in the early or regular rounds, as the waitlist functions effectively as a soft rejection."
+      },
+      {
+        "category": "Academic",
+        "insight": "Howard holds an R1 Carnegie Classification, making it the only HBCU with 'Very High Research Activity'.",
+        "implication": "Undergraduates have significant access to high-level research, particularly in STEM and health disparities."
+      },
+      {
+        "category": "Culture",
+        "insight": "Over 95% of the student body originates from out-of-state, drawn by Howard's legacy as 'The Mecca' of Black excellence.",
+        "implication": "The campus offers a highly diverse geographic mix but demands strong alignment with the university's mission of truth and service."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant campus culture rich in cultural pride and Black excellence, featuring prominent Greek life (founding site of NPHC) and over 200 student organizations.",
+      "transportation_impact": "Its urban location in the heart of Washington, D.C., provides unparalleled access to federal agencies, global NGOs, and Fortune 500 internships.",
+      "research_impact": "R1 research environment focusing on health disparities, cyber security, and social sciences, heavily supported by federal grants."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 41.3,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 2738,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional for the 2025-2026 and 2026-2027 admissions cycles. Non-submitters are not disadvantaged, except for specific joint degree programs like BS/MD.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 348,
+          "admits": 172,
+          "acceptance_rate": 49.4,
+          "class_fill_percentage": 6.2
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 34211,
+        "admits_total": 14144,
+        "enrolled_total": 2738,
+        "acceptance_rate_overall": 41.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 19.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 4972,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 30328,
+        "admits_total": 10584,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 34.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions totals derived from reported 12.8% application growth and 34.9% acceptance rate."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 2931,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Official GPA ranges are not explicitly published, but general incoming brackets reflect the vast majority of students entering with unweighted GPAs above 3.50."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1090-1320",
+        "sat_reading_middle_50": "560-670",
+        "sat_math_middle_50": "530-650",
+        "act_composite_middle_50": "22-28",
+        "submission_rate": 32.0,
+        "policy_note": "Submission rate reflects 23% SAT and 9% ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 3.9,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 95.1
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.2,
+          "black_african_american": 80.4,
+          "hispanic_latino": 7.2,
+          "asian": 1.5,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 5.6,
+          "unknown": 4.9,
+          "non_resident_alien": 3.9
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a liberal arts foundation, pre-med pathways, or flexible exploration.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Intellectually curious students with strong community service backgrounds.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Organic Chemistry",
+              "Biology"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly rigorous pre-med track requiring intense foundational science proficiency."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Architecture",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For mathematically inclined students interested in ABET-accredited programs and high-tech career placements.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Analytical problem solvers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Computer Organization I",
+              "Computer Organization II"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Data Structures and Algorithms",
+                "Computer Organization and Architecture",
+                "Software Engineering",
+                "Database Management Systems",
+                "Operating Systems"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Moses Garuba (Information security)",
+              "Dr. Jiang Li (Computer networking)",
+              "Dr. Gloria Washington (Human-Computer Interaction)",
+              "Dr. Chunmei Liu (Bioinformatics)",
+              "Dr. Reginald Hobbs (Software engineering)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Targeted towards aspiring corporate leaders and finance professionals.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Career-oriented, ambitious leaders.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 201 Accounting Principles I",
+                "ACCT 202 Accounting Principles II",
+                "FINA 312 Business Finance",
+                "FINA 313 Financial Management",
+                "FINA 330 Principles of Investments",
+                "FINA 363 Financial Modeling & Analysis",
+                "FINA 380 Business Fin Policy & Dec Making"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Program holds the legacy of graduating the largest number of African American professionals on Wall Street."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Early Decision"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One optional supplemental essay on the Common App."
+      },
+      {
+        "target_program": "Fine Arts",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "",
+        "details": "Audition or portfolio required for admission to the Chadwick A. Boseman College of Fine Arts."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Volunteer work",
+        "Talent/ability",
+        "First generation",
+        "Alumni relation"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Considered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Howard specifically seeks applicants who align closely with its mission of 'Excellence in Truth and Service', looking for leadership and commitment to underrepresented communities."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying to the College of Arts & Sciences offers a broad entry point compared to specialized programs."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying as 'Undecided' within the College of Arts and Sciences is a viable strategy, allowing students to declare a major post-enrollment once prerequisite courses are completed."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment (12-18 credits).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 35810.0,
+        "total_coa": 58032.0,
+        "housing": 17322.0
+      },
+      "out_of_state": {
+        "tuition": 35810.0,
+        "total_coa": 58032.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Meets 100% of need for students awarded need-based aid",
+    "average_need_based_aid": 21995.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 87.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 to Full Ride",
+        "deadline": "",
+        "benefits": "Covers tuition, required fees, and room and board.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "$14,000 to Full Tuition",
+        "deadline": "",
+        "benefits": "Covers tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Genesis I Scholarship",
+        "type": "Merit",
+        "amount": "$7,000",
+        "deadline": "",
+        "benefits": "Applied toward tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Genesis II Scholarship",
+        "type": "Merit",
+        "amount": "$4,000",
+        "deadline": "",
+        "benefits": "Applied toward tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Karsh STEM Scholars Program",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2026-01-31",
+        "benefits": "Covers full tuition, fees, room, and board for STEM majors pursuing a Ph.D.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous but strict on exam level.",
+    "ap_policy": {
+      "general_rule": "A minimum score of 4 is generally required.",
+      "exceptions": [
+        "Some subjects may accept a score of 3 for exemption purposes."
+      ],
+      "usage": "Course credit."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4, 5, 6, or 7 on Higher Level (HL) exams are awarded credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "A maximum of 60 transfer credits may be applied toward a degree. Courses must have been passed with a 'C' or better."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Alignment with Howard's mission of Truth and Service.",
+      "Strong history of community service and leadership.",
+      "Resilience and academic capability to handle rigorous, independent learning environments."
+    ],
+    "common_activities": [
+      "Student Government Association",
+      "Debate and Mock Trial",
+      "NAACP Chapter engagement",
+      "Community Service organizations",
+      "Greek Life (NPHC)"
+    ],
+    "essay_tips": [
+      "Explicitly connect personal goals to Howard's legacy of Black excellence and social justice.",
+      "Demonstrate reflection on past leadership and how it translates to future service."
+    ],
+    "red_flags": [
+      "Lack of community service or extracurricular engagement.",
+      "Failure to understand or articulate respect for the HBCU mission and legacy."
+    ],
+    "insights": [
+      "Howard students emphasize that success requires proactivity due to the massive size and occasional administrative hurdles of the institution (the 'Howard runaround')."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 51800,
+    "employment_rate_2yr": 71.0,
+    "grad_school_rate": 31.0,
+    "top_employers": [
+      "Teach for America",
+      "Goldman Sachs",
+      "Capital One",
+      "Unilever",
+      "Accenture"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 60.0,
+    "graduation_rate_6_year": 70.0
+  }
+}

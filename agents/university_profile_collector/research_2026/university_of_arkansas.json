@@ -1,0 +1,479 @@
+{
+  "_id": "university_of_arkansas",
+  "metadata": {
+    "official_name": "University of Arkansas",
+    "location": {
+      "city": "Fayetteville",
+      "state": "Arkansas",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Arkansas is a public land-grant research university and the flagship campus of the University of Arkansas System [cite: 1]. Recognized as an R1 institution, it is highly regarded for its Sam M. Walton College of Business, strong supply chain management programs, and robust Honors College [cite: 2, 3]. The university offers a vibrant SEC campus life heavily influenced by Greek organizations and benefits from deep ties to regional corporate giants like Walmart and Tyson Foods [cite: 4, 5].",
+    "market_position": "Flagship Public Research University",
+    "admissions_philosophy": "Holistic review for test-optional or borderline applicants, but largely numbers-focused for students meeting automatic admission thresholds [cite: 6, 7]",
+    "us_news_rank": 189,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While overall acceptance remains high (74.3%), out-of-state competition is increasing due to aggressive regional tuition discount programs [cite: 8, 9].",
+        "implication": "Applicants from bordering states view UArk as a highly viable alternative to their own more expensive or hyper-competitive in-state flagships (e.g., Texas) [cite: 9]."
+      },
+      {
+        "category": "Financial",
+        "insight": "The New Arkansan Non-Resident Tuition Award (NRTA) automatically grants heavily discounted tuition (paying 80-90% of the difference) to students from neighboring states with a 3.2+ GPA [cite: 10, 11].",
+        "implication": "It is an extremely cost-effective option for students in Texas, Louisiana, Missouri, and Oklahoma, making it functionally similar to in-state tuition for high achievers [cite: 9, 11]."
+      },
+      {
+        "category": "Culture",
+        "insight": "Greek life and SEC sports (Razorback football) dominate the social scene, which can feel alienating to students not involved in those ecosystems [cite: 4].",
+        "implication": "Students seeking a traditional, spirited Southern collegiate experience will thrive, but those looking for smaller, independent social scenes must actively seek out niches [cite: 4]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A large, spirited campus characterized by strong Greek life, pervasive SEC sports culture, and an outdoorsy vibe given its location in the Ozark Mountains [cite: 4].",
+      "transportation_impact": "Located in Fayetteville with excellent access to outdoor recreation, though on-campus parking shortages are a frequently cited concern among students [cite: 12, 13].",
+      "research_impact": "An R1 institution with over $184 million in research expenditures, offering significant undergraduate research opportunities, particularly through the heavily endowed Honors College [cite: 14, 15]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 74.3,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 54.54,
+      "admits_class_size": 6616,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for applicants with a 3.20+ high school GPA. Test scores are still required for most merit-based scholarships, state aid, and enrollment/placement purposes [cite: 6, 16].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 80.5,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 30555,
+        "admits_total": 22703,
+        "enrolled_total": 6618,
+        "acceptance_rate_overall": 74.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 29.15,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1289,
+          "accepted_spots": 1227,
+          "admitted_from_waitlist": 1170,
+          "waitlist_admit_rate": 95.3,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist acceptance surged dramatically in 2024 compared to previous cycles [cite: 17, 18]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 28186,
+        "admits_total": 20202,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 71.64,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2010,
+          "accepted_spots": 1185,
+          "admitted_from_waitlist": 1185,
+          "waitlist_admit_rate": 58.96,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Acceptance rate from Clastify historical data [cite: 17, 19]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.79,
+        "notes": "GPA is recalculated on a 4.0 scale weighting only AP, IB, and dual enrollment courses [cite: 6, 14]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1030-1220",
+        "sat_reading_middle_50": "520-620",
+        "sat_math_middle_50": "510-600",
+        "act_composite_middle_50": "21-28",
+        "submission_rate": 73.0,
+        "policy_note": "Submission rate reflects ACT submissions; SAT submission rate is approximately 31% [cite: 8, 20]."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.4,
+        "legacy_percentage": null,
+        "international_percentage": 4.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 12589,
+            "admits": 8894,
+            "acceptance_rate": 70.6
+          },
+          "women": {
+            "applicants": 17957,
+            "admits": 13804,
+            "acceptance_rate": 76.8
+          }
+        },
+        "racial_breakdown": {
+          "white": 71.2,
+          "black_african_american": 3.91,
+          "hispanic_latino": 11.2,
+          "asian": 2.87,
+          "native_american_alaskan": 0.851,
+          "pacific_islander": 0.146,
+          "two_or_more_races": 4.7,
+          "unknown": 1.6,
+          "non_resident_alien": 4.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Sam M. Walton College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking high ROI in Supply Chain Management or Retail, leveraging proximity to Walmart and Tyson Foods [cite: 5, 21].",
+        "housing_profile": "General university housing",
+        "student_archetype": "Career-focused, corporate-minded",
+        "majors": [
+          {
+            "name": "Business Administration, Management and Operations",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students in Business face a differential tuition rate ($365.15/credit vs standard $269.75) [cite: 22].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major at the university by graduate volume [cite: 23]."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Second most popular major [cite: 23]."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Third most popular major [cite: 23]."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in heavily-recruited technical fields. In-state students seeking top-tier regional engineering education [cite: 21].",
+        "housing_profile": "General university housing",
+        "student_archetype": "Analytical, technically proficient",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 24004"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "B.S. requires a two-semester capstone project [cite: 24].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCE 20004 Programming Foundations I",
+                "CSCE 20104 Programming Foundations II",
+                "CSCE 22104 Computer Organization",
+                "CSCE 36103 Operating Systems"
+              ],
+              "electives": [
+                "CSCE 50603 Machine Learning",
+                "CSCE 40403 RFID Information Systems Security"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Jia Di (Asynchronous integrated circuit design, Hardware security)"
+            ],
+            "notes": "Students without prior coding knowledge can succeed, though supplemental projects are heavily recommended to match elite school employment outcomes [cite: 25, 26]."
+          }
+        ]
+      },
+      {
+        "name": "College of Education and Health Professions",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students pursuing nursing or health education [cite: 2].",
+        "housing_profile": "General university housing",
+        "student_archetype": "Service-oriented, healthcare-focused",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Nursing is a capped program requiring specific secondary applications or alternate major designation [cite: 27].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most competitive programs on campus [cite: 27]."
+          }
+        ]
+      },
+      {
+        "name": "Fay Jones School of Architecture and Design",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students highly dedicated to architecture; undeclared status is not an option here [cite: 28].",
+        "housing_profile": "General university housing",
+        "student_archetype": "Creative, intensive design focus",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Priority admissions deadline. Scholarship priority deadline is Nov 15 [cite: 29]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-08-01",
+        "is_binding": false,
+        "notes": "Final regular application deadline [cite: 30]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors College / Fellowships",
+        "requirement_type": "Essays",
+        "deadline": "2025-02-01",
+        "details": "High-value fellowships (Bodenhamer, Sturgis) require extensive supplemental applications and essays emphasizing public service, leadership, and intellectual curiosity [cite: 31, 32]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of secondary school record"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (for non-test-optional)",
+        "State residency (for specific scholarships)"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Admissions are highly metric-driven. Essays and interviews are not part of general admissions but are critical for competitive fellowships [cite: 31, 33]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Priority (Nov 1) as capacity for popular programs can fill quickly and waitlists are utilized heavily late in the cycle [cite: 6, 34].",
+      "Apply directly to the major if interested in Architecture or Nursing, as these are capped/impacted [cite: 27]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "The university considers alternate majors if a student is rejected from capped majors like Nursing or Architecture [cite: 27]. Choosing an undeclared major is permitted for Arts/Sciences and Business, but not for Architecture [cite: 28]."
+  },
+  "financials": {
+    "tuition_model": "Public, with massive regional discounting via the NRTA",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 10500.5,
+        "total_coa": 31826.5,
+        "housing": 14244.0
+      },
+      "out_of_state": {
+        "tuition": 31553.9,
+        "total_coa": 52879.9,
+        "supplemental_tuition": 21053.4
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 8804.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 77.0,
+    "scholarships": [
+      {
+        "name": "New Arkansan Non-Resident Tuition Award (NRTA)",
+        "type": "Merit",
+        "amount": "80-90% of out-of-state tuition difference",
+        "deadline": "2025-08-01",
+        "benefits": "Massively reduces out-of-state tuition for students from TX, LA, MS, TN, MO, KS, and OK with a 3.2+ GPA [cite: 10, 11].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Bodenhamer Fellowship",
+        "type": "Merit",
+        "amount": "$20,000",
+        "deadline": "2025-02-01",
+        "benefits": "Provides $80,000 over 4 years; covers tuition, room, board, and funds study abroad/research. Requires 32 ACT / 1430 SAT and 3.9 GPA [cite: 31, 35].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Honors College Fellowship",
+        "type": "Merit",
+        "amount": "$20,000",
+        "deadline": "2025-02-01",
+        "benefits": "Provides $80,000 over 4 years. Given to 70-80 students per year. Requires 32 ACT / 1430 SAT and 3.9 GPA [cite: 31, 35].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Chancellor's Merit Scholarship",
+        "type": "Merit",
+        "amount": "$12,000",
+        "deadline": "2025-02-01",
+        "benefits": "Awarded to National Merit Finalists naming UArk as their first choice. Grants out-of-state students in-state tuition [cite: 36].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Alumni Legacy Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2025-08-01",
+        "benefits": "For qualified non-resident undergraduate students who have a legacy connection that is a current member of the Alumni Association [cite: 37].",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Score directly determines credit, unless an exemption is given or department review is needed for borderline scores [cite: 38].",
+      "exceptions": [],
+      "usage": "Credits are entered as 'CR' and can be used to skip prerequisites, but do not satisfy minimum residency requirements [cite: 39]."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for specific IB exam scores. All IB exams, online or onsite, are accepted [cite: 39, 40].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Course Equivalency Guide"
+      ],
+      "restrictions": "Students must complete a minimum of 30 upper-level hours at the Fayetteville campus to earn a degree [cite: 41]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Minimum 3.2 GPA for test-optional consideration [cite: 6].",
+      "ACT scores above 24 required for most meaningful merit aid [cite: 11].",
+      "Top 1-2% of applicants (3.9+ GPA, 32+ ACT) needed for elite fellowships [cite: 35]."
+    ],
+    "common_activities": [
+      "Greek Life (fraternities/sororities)",
+      "SEC Athletics Tailgating (Razorbacks)",
+      "Outdoor recreation (hiking/biking in the Ozarks)"
+    ],
+    "essay_tips": [
+      "General admissions do not require essays [cite: 42].",
+      "For fellowships: Show yourself in action, keep writing succinct, and use specific numbers/sources [cite: 32]."
+    ],
+    "red_flags": [
+      "Applying after the Nov 1 priority deadline if expecting housing and top scholarships [cite: 6]."
+    ],
+    "insights": [
+      "The campus is seen as a major draw for Texas students looking to escape the hyper-competitive admissions at UT/A&M while paying functionally identical tuition [cite: 9].",
+      "Parking is notoriously difficult and heavily cited in negative reviews [cite: 12, 13].",
+      "Computer Science is strong but requires extensive self-directed projects/internships to match elite school outcomes [cite: 25]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 68890,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Walmart",
+      "Tyson Foods",
+      "J.B. Hunt",
+      "University of Arkansas"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86.0,
+    "graduation_rate_4_year": 55.4,
+    "graduation_rate_6_year": 70.9
+  }
+}

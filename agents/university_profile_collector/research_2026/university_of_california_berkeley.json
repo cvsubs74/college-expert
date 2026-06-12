@@ -1,0 +1,494 @@
+{
+  "_id": "university_of_california_berkeley",
+  "metadata": {
+    "official_name": "University of California, Berkeley",
+    "location": {
+      "city": "Berkeley",
+      "state": "California",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of California, Berkeley is a world-renowned public land-grant research university and the flagship institution of the UC system. Known for its intense academic rigor, history of student activism, and proximity to Silicon Valley, it offers unparalleled opportunities in engineering, computer science, business, and the liberal arts. The university operates on a highly selective, holistic admissions process and remains a top producer of elite talent for global technology and business sectors.",
+    "market_position": "Public Ivy / Elite Flagship Public",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 15,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Berkeley's overall acceptance rate sits at roughly 11.4%, but admission into specific direct-admit programs like the Spieker Undergraduate Business Program or Computer Science drops below 5-7%.",
+        "implication": "Applicants must strategically choose their major on the UC application, as 'backdoor' pathways into high-demand programs have been virtually eliminated."
+      },
+      {
+        "category": "Academic",
+        "insight": "The creation of the College of Computing, Data Science, and Society (CDSS) has centralized tech-focused majors and ended the practice of entering the College of Letters & Science undeclared to easily claim a CS major.",
+        "implication": "Prospective CS, Data Science, and Statistics students must apply directly to CDSS; internal transfers face a highly restrictive comprehensive review."
+      },
+      {
+        "category": "Financial",
+        "insight": "Out-of-state total cost of attendance now exceeds $82,000 annually, while in-state students pay closer to $48,000.",
+        "implication": "While the ROI remains exceptional (median 10-year earnings of $96,018), out-of-state applicants face elite private-school pricing with less access to institutional need-based aid compared to California residents."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, politically active, and fiercely competitive. The student body is deeply driven, diverse, and heavily involved in social justice, innovation, and entrepreneurship.",
+      "transportation_impact": "Urban campus situated in the San Francisco Bay Area with robust public transit (BART), making a car unnecessary and parking highly limited.",
+      "research_impact": "A top-tier R1 research institution managing major Department of Energy labs (Lawrence Berkeley National Laboratory) with massive undergraduate research participation through programs like URAP."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 11.4,
+      "in_state_acceptance_rate": 13.55,
+      "out_of_state_acceptance_rate": 10.33,
+      "international_acceptance_rate": 5.8,
+      "transfer_acceptance_rate": 24.18,
+      "admits_class_size": 6726,
+      "is_test_optional": true,
+      "test_policy_details": "Test-Free/Test-Blind. UC Berkeley does not consider SAT or ACT scores for admission decisions or scholarship awarding. Scores may only be submitted for course placement or to fulfill minimum requirements after enrollment.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 126836,
+        "admits_total": 14451,
+        "enrolled_total": 6726,
+        "acceptance_rate_overall": 11.4,
+        "acceptance_rate_in_state": 13.55,
+        "acceptance_rate_out_of_state": 10.33,
+        "yield_rate": 45.99,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 6500,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 26,
+          "waitlist_admit_rate": 0.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits fluctuate wildly based on yield models; one recent cycle admitted over 1,100, while another admitted 0-26."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 125917,
+        "admits_total": 14715,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 11.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 44.05,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 1191,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Over-admit year from the waitlist."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.15-4.29",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.23,
+        "notes": "Berkeley utilizes fully uncapped weighted UC GPAs in its holistic review. Unweighted GPAs for admits typically average around 3.90."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1310-1530",
+        "sat_reading_middle_50": "650-740",
+        "sat_math_middle_50": "660-790",
+        "act_composite_middle_50": "30-35",
+        "submission_rate": null,
+        "policy_note": "Test scores represent historical/placement submission ranges; they are completely disregarded for admissions evaluations per the UC system test-blind mandate."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": 0.0,
+        "international_percentage": 9.0,
+        "geographic_breakdown": [
+          {
+            "region": "California Residents",
+            "percentage": 84.0
+          },
+          {
+            "region": "Domestic Non-Residents",
+            "percentage": 10.0
+          },
+          {
+            "region": "International",
+            "percentage": 6.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 57337,
+            "admits": 5058,
+            "acceptance_rate": 8.8
+          },
+          "women": {
+            "applicants": 60324,
+            "admits": 7788,
+            "acceptance_rate": 12.9
+          }
+        },
+        "racial_breakdown": {
+          "white": 30.0,
+          "black_african_american": 3.0,
+          "hispanic_latino": 12.0,
+          "asian": 37.0,
+          "native_american_alaskan": 1.0,
+          "pacific_islander": null,
+          "two_or_more_races": 3.0,
+          "unknown": null,
+          "non_resident_alien": 9.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Computing, Data Science, and Society (CDSS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 4.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High-achieving applicants heavily focused on computing, AI, statistics, and data analytics. Must apply direct-to-major as internal transfers face grueling comprehensive reviews.",
+        "housing_profile": "Traditional undergraduate residence halls.",
+        "student_archetype": "Technically gifted, quantitative problem solvers aiming for Silicon Valley.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": "2.8%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 61A",
+              "CS 61B",
+              "CS 70"
+            ],
+            "minimum_gpa_to_declare": 3.3,
+            "weeder_courses": [
+              "CS 61A",
+              "CS 61B",
+              "CS 70"
+            ],
+            "special_requirements": "Requires direct admission on the UC application. Students admitted undeclared must undergo comprehensive review to switch in.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "CS 61A Structure and Interpretation of Computer Programs",
+                "CS 61B Data Structures",
+                "CS 70 Discrete Mathematics and Probability Theory"
+              ],
+              "electives": [
+                "CS 189 Machine Learning",
+                "CS 162 Operating Systems",
+                "CS 170 Algorithms"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Rao (Discrete Math & Probability)"
+            ],
+            "notes": "Historical minimum GPA of 3.3 across CS61A/B and 70 was the sole hurdle for L&S admits; under the new CDSS structure, it is comprehensively reviewed for non-direct admits."
+          }
+        ]
+      },
+      {
+        "name": "Haas School of Business",
+        "admissions_model": "Direct Admit/Internal Transfer",
+        "acceptance_rate_estimate": 4.5,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Aspiring entrepreneurs and financial leaders. High school seniors should apply to the Spieker 4-year program.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Driven, socially conscious innovators.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "4.5%",
+            "average_gpa_admitted": 3.9,
+            "prerequisite_courses": [
+              "UGBA 10"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "UGBA 10"
+            ],
+            "special_requirements": "Spieker Program admits first-years directly. Continuing students can still apply in sophomore year, but slots are heavily reduced.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Haas acceptance rate historically ~33% for internal juniors, but direct-admit Spieker program operates at <7% acceptance."
+          }
+        ]
+      },
+      {
+        "name": "College of Letters & Science (L&S)",
+        "admissions_model": "Pre-Major (Mostly Undeclared)",
+        "acceptance_rate_estimate": 15.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in humanities, social sciences, or non-impacted STEM. Must be willing to clear prereqs to declare.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Intellectually curious, interdisciplinary thinkers.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Recently removed from the High-Demand major list, making it easier to declare once prereqs are met.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          },
+          {
+            "name": "Molecular and Cell Biology (MCB)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Bio 1A/1B",
+              "Chem 1A",
+              "Chem 3A",
+              "Chem 3B",
+              "Physics 7A",
+              "Physics 7B"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Chem 1A",
+              "Chem 3A",
+              "Chem 3B"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Randy Schekman (Medicine/Biology)"
+            ],
+            "notes": "Chemistry series heavily acts as a weed-out for pre-med students."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 7.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with top-tier math/physics credentials seeking intense technical training.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Analytical, rigorous, mathematically gifted.",
+        "majors": [
+          {
+            "name": "Electrical Engineering and Computer Sciences (EECS)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "7.6%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EE 126"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. George Smoot (Physics/Astrophysics)"
+            ],
+            "notes": "EECS students are admitted directly. Transferring internally from other colleges is nearly impossible."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "UC Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-11-30",
+        "is_binding": false,
+        "notes": "The UC application period is strictly October 1 - November 30. There is no Early Decision or Early Action."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-30",
+        "details": "Applicants must respond to 4 out of 8 Personal Insight Questions (PIQs), max 350 words each."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essays (PIQs)",
+        "Extracurricular activities",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "Volunteer work",
+        "Work experience",
+        "First-generation status",
+        "State residency (for public mission)"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UC Berkeley employs a highly holistic review process heavily contextualized by the applicant's high school and local environment. Test-blind policy elevates the importance of course rigor and PIQ execution."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Do not attempt the 'backdoor' entry into Computer Science via the College of Letters & Science; this loophole is closed via the CDSS Comprehensive Review policy.",
+      "If targeting Haas, apply directly to the Spieker 4-year program as a high school senior rather than gambling on the highly restricted sophomore internal transfer.",
+      "Select an alternate major in a different, less impacted college to maximize chances if denied from a hyper-competitive primary major like EECS."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "UC Berkeley does evaluate alternate majors if you are rejected from your primary major, particularly if the alternate is in an un-capped program in the College of Letters & Science. However, you cannot use an alternate major to backdoor into high-demand capped majors."
+  },
+  "financials": {
+    "tuition_model": "Public University",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16347.0,
+        "total_coa": 48259.0,
+        "housing": 23750.0
+      },
+      "out_of_state": {
+        "tuition": 50547.0,
+        "total_coa": 82459.0,
+        "supplemental_tuition": 34200.0
+      }
+    },
+    "aid_philosophy": "Need-Based Focus",
+    "average_need_based_aid": 25091.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 61.0,
+    "scholarships": [
+      {
+        "name": "Regents' and Chancellor's Scholarship",
+        "type": "Merit/Need",
+        "amount": "$2,500 minimum; up to full demonstrated need",
+        "deadline": "2024-11-30",
+        "benefits": "Priority class enrollment, guaranteed housing, faculty mentorship, financial literacy counseling.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Berkeley Undergraduate Scholarship",
+        "type": "Merit/Need",
+        "amount": "$1,000 to $20,000",
+        "deadline": "2024-11-30",
+        "benefits": "Need-based award for high-achieving students.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous for overall units, but Strict for satisfying specific major prerequisites.",
+    "ap_policy": {
+      "general_rule": "Credits awarded for scores of 3, 4, or 5 to satisfy unit requirements.",
+      "exceptions": [
+        "Haas and Pre-Med tracks strictly limit AP credit for core prerequisites. For example, AP Macro/Micro require 4 or 5 on BOTH exams to fulfill Economics prereqs."
+      ],
+      "usage": "Can be applied to graduation unit ceilings or basic breadth, but often strongly discouraged as substitutes for foundational major classes."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exams with scores of 5, 6, or 7. No credit for Standard Level (SL).",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "California Community College (CCC) transfers are vastly prioritized. Out-of-state and 4-year transfers have lower articulation guarantees."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Nearly perfect unweighted GPA with maxed-out AP/IB/Dual Enrollment rigor.",
+      "Deeply developed 'spike' in extracurriculars showing sustained impact, leadership, or innovation.",
+      "Authentic, narrative-driven Personal Insight Questions (PIQs) that map directly to the UC value system."
+    ],
+    "common_activities": [
+      "Extensive undergraduate research (URAP) and lab internships.",
+      "Tech start-ups, hackathons, and rigorous engineering project teams.",
+      "High-level community organizing and social activism.",
+      "Business and consulting clubs targeting Silicon Valley."
+    ],
+    "essay_tips": [
+      "Avoid flowery, overly poetic language; treat PIQs like a behavioral interview.",
+      "Focus heavily on the 'So what?' - articulate tangible impact and quantifiable achievements.",
+      "Address systemic barriers or unique life contexts clearly and without complaining."
+    ],
+    "red_flags": [
+      "Applying to High-Demand majors simply to game the system without the prerequisite rigor.",
+      "Low grades in critical pathway classes (e.g., math for Engineering/CS)."
+    ],
+    "insights": [
+      "Grade deflation and strict curve grading in weeder courses (like CS 61A) heavily dictate student trajectories in early years.",
+      "Housing is immensely expensive and incredibly scarce, forcing many into high-rent off-campus apartments early on."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 96018,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Google",
+      "Apple",
+      "Amazon",
+      "Microsoft",
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 97.0,
+    "graduation_rate_4_year": 80.8,
+    "graduation_rate_6_year": 93.0
+  }
+}

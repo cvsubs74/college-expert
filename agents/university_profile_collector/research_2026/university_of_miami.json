@@ -1,0 +1,612 @@
+{
+  "_id": "university_of_miami",
+  "metadata": {
+    "official_name": "University of Miami",
+    "location": {
+      "city": "Coral Gables",
+      "state": "Florida",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Miami is a vibrant, private R1 research university located in Coral Gables, Florida, renowned for its diverse student body, intense school spirit, and strong programs in marine science, business, and health sciences. Known affectionately as 'The U,' it combines rigorous academics with a dynamic social environment heavily influenced by its proximity to Miami. The university is highly selective, recently reinstating standardized testing requirements and meeting 100% of demonstrated financial need for admitted students.",
+    "market_position": "Elite Private / Tier 1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 64,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate has plummeted from nearly 40% a decade ago to around 18% for the Class of 2029, making it Florida's most selective college.",
+        "implication": "Applicants must present highly competitive profiles; applying Early Decision offers a massive statistical advantage (44% ED vs. 18% overall)."
+      },
+      {
+        "category": "Financial",
+        "insight": "UM is need-aware in admissions but commits to meeting 100% of demonstrated financial need for admitted students.",
+        "implication": "While the sticker price is high (approaching $98,000 for 2025-2026), students with high financial need who gain admission will have the gap fully covered."
+      },
+      {
+        "category": "Academic",
+        "insight": "UM is reinstating its standardized testing requirement for Fall 2026 applicants.",
+        "implication": "Students targeting Fall 2026 and beyond can no longer rely on test-optional policies (unless applying to specific exempt programs like Music or BFA) and must submit competitive SAT/ACT scores."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus boasts incredible diversity (46% students of color, 8% international) and a strong 'Canes Care for Canes' community ethos.",
+        "implication": "Supplemental essays should strongly emphasize a student's ability to engage with, contribute to, and thrive in a culturally vibrant and inclusive community."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Energetic and bustling with visible affluence; Greek life is popular (about 26% participation) but does not entirely dominate the social scene, as many upperclassmen venture into Miami neighborhoods like Coconut Grove and South Beach for nightlife.",
+      "transportation_impact": "Located in suburban Coral Gables, about 7 miles from downtown Miami. Having a car or using rideshares is common for accessing Miami's broader offerings.",
+      "research_impact": "Classified as an R1 Doctoral University with very high research activity, boasting $520 million in annual research expenditures, heavily driven by the Miller School of Medicine and the Rosenstiel School of Marine, Atmospheric, and Earth Science."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 18.0,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 53.39,
+      "admits_class_size": 2965,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through Spring 2026. Standardized test scores (SAT/ACT) will be REQUIRED beginning with the Fall 2026 application cycle. Exemptions remain for Frost School of Music, BFA programs, Architecture, non-US high school graduates, and transfers with 24+ credits.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 2395,
+          "admits": 1062,
+          "acceptance_rate": 44.3,
+          "class_fill_percentage": 39.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 58139,
+        "admits_total": 10205,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 17.55,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "10% of the Regular Decision enrolled students were admitted from the waitlist."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 53954,
+        "admits_total": 10195,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 18.89,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 24.0,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 18078,
+          "accepted_spots": 7364,
+          "admitted_from_waitlist": 681,
+          "waitlist_admit_rate": 9.2,
+          "is_waitlist_ranked": false
+        },
+        "notes": "ED acceptance rate was 47%."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 48286,
+        "admits_total": 8940,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 18.52,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.98,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate reported exceptionally low at less than 1%."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 49167,
+        "admits_total": 9311,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 18.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.56,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 42244,
+        "admits_total": 12306,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 29.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.09,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions rate spiked due to pandemic-era test-optional implementation."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Average unweighted GPA for admitted students is 3.89 on a 4.0 scale (Class of 2029) and 3.8 for the Class of 2028."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1360-1480",
+        "sat_reading_middle_50": "660-730",
+        "sat_math_middle_50": "660-750",
+        "act_composite_middle_50": "30-34",
+        "submission_rate": 33.0,
+        "policy_note": "Data based on admitted students who elected to submit scores under the test-optional policy (Class of 2029)."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 8.0,
+        "geographic_breakdown": [
+          {
+            "region": "Florida",
+            "percentage": 32.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 60.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 40.8,
+          "black_african_american": 8.9,
+          "hispanic_latino": 25.6,
+          "asian": 4.5,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.5,
+          "unknown": 4.4,
+          "non_resident_alien": 12.1
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Miami Herbert Business School",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for quantitatively capable students seeking robust experiential learning in real estate, finance, and marketing.",
+        "housing_profile": "Traditional on-campus residential colleges (e.g., Centennial Village, Mahoney, Pearson).",
+        "student_archetype": "Driven, networking-oriented, entrepreneurial.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAS 110 or MTH 161",
+              "ACC 211"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "FIN 302"
+            ],
+            "special_requirements": "Must earn a grade of 'B' or higher in FIN 302 to qualify for the major. A 'B-' does not qualify.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ACC 211 Principles of Financial Accounting",
+                "ACC 212 Managerial Accounting",
+                "BSL 212 Introduction to Business Law and Ethics",
+                "FIN 302 Fundamentals of Finance",
+                "FIN 303 Intermediate Financial Management",
+                "FIN 320 Investment and Security Markets",
+                "MAS 110 Quantitative Applications in Business",
+                "MTH 161 Calculus I"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Indraneel Chakraborty (Corporate Finance)",
+              "Dr. Vidhi Chhaochharia (Finance)",
+              "Dr. George Korniotis (Behavioral Finance/Household Finance)",
+              "Dr. Alok Kumar (Behavioral Finance)",
+              "Dr. Andrea J Heuson (Real Estate Finance)"
+            ],
+            "notes": "Internal transfer to Herbert Business School requires a 3.0 cumulative GPA, completion of MTH 161 with a 'B' or better, and the final 45 credits must be completed in residency at Herbert."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in broad liberal arts, natural sciences, psychology, or pre-med tracks.",
+        "housing_profile": "Traditional on-campus residential colleges.",
+        "student_archetype": "Curious, research-focused, pre-professional.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIL 150 General Biology",
+                "BIL 151 General Biology Laboratory",
+                "BIL 160 Evolution and Biodiversity",
+                "BIL 161 Evolution and Biodiversity Laboratory",
+                "BIL 250 Genetics",
+                "BIL 255 Cellular and Molecular Biology"
+              ],
+              "electives": [
+                "BIL 374 Seminars in Biology",
+                "BIL 375 Seminars in Biology",
+                "BIL 402 Seminars in Biology"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "BS track is recommended for pre-med and research. Requires completion of a minor in a STEM field (e.g., Chemistry, Physics, Math) unless double majoring."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. / B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum 2.8 combined GPA to declare. Must earn C- or higher in all PSY major courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "PSY 110 Introduction to Psychology",
+                "PSY 290 Introduction to Research Methods",
+                "PSY 291 Introduction to Biobehavioral Statistics",
+                "PSY 390 Intermediate Research Methods and Biobehavioral Statistics",
+                "PSY 490 Advanced Research Methods"
+              ],
+              "electives": [
+                "PSY 426 Health Psychology",
+                "PSY 430 Psychology of Infancy",
+                "PSY 580 Senior Honors in Psychology I"
+              ],
+              "total_units": 120,
+              "major_units": 33
+            },
+            "notable_professors": [
+              "Dr. Philip M. McCabe (Neurobiology of Emotional Behavior)",
+              "Dr. Jill Ehrenreich-May (Child Anxiety Disorders)",
+              "Dr. Michael Alessandri (Autism & Related Disabilities)",
+              "Dr. Amanda Jensen-Doss (Youth Mental Health)",
+              "Dr. Annette M. La Greca (Risk and Resilience/Pediatrics)",
+              "Dr. Kiara R Timpano (Anxiety, Stress, and OCD)"
+            ],
+            "notes": "B.S. track requires a minor in a recognized STEM field."
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing and Health Studies",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students committed to a clinical healthcare career looking for high NCLEX pass rates and hospital integration.",
+        "housing_profile": "Traditional on-campus residential colleges.",
+        "student_archetype": "Compassionate, scientifically-minded, resilient.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Rigorous clinical rotation requirements; high NCLEX pass rate program (97.42% in 2024).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Cynthia L Foronda (Simulation/Educational Technology)",
+              "Dr. Anne E. Norris",
+              "Dr. Hudson Santos (Social Determinants of Health/Maternal)",
+              "Dr. Beatriz Valdes (Simulation-based Learning/Psychiatric Nursing)",
+              "Dr. Guillermo (Willy) Prado (Health Disparities)"
+            ],
+            "notes": "Exact core course codes not fully detailed in general catalog excerpts, but curriculum relies heavily on anatomy, physiology, pharmacology, and clinical rotations."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED 1",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED 2",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": "Deadline date inferred around early January based on RD timeline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One required 250-word essay reflecting on a community or experience that has influenced the applicant, how they contributed to it, and how they will enrich the distinctive, diverse University of Miami campus."
+      },
+      {
+        "target_program": "Frost School of Music",
+        "requirement_type": "Audition/Portfolio",
+        "deadline": "",
+        "details": "Requires a supplemental application, prescreening, and an audition."
+      },
+      {
+        "target_program": "School of Architecture & BFA Programs",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Applicants who do not submit ACT/SAT scores are required to submit a portfolio via the Applicant Portal."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Extracurricular activities"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (Returning as primary for Fall 2026)",
+        "Application essay",
+        "Recommendations",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The admissions office emphasizes 'affinity' over mere demonstrated interest; they want to see why the applicant is a unique fit for Miami's diverse, dynamic environment. The 'community' essay is heavily weighted."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to non-impacted majors in the College of Arts & Sciences if STEM or Business profiles are slightly below average, as transferring internally is possible.",
+      "Avoid applying directly to Miami Herbert Business School unless possessing a highly rigorous math background (Calculus strongly preferred)."
+    ],
+    "college_ranking_tactics": [
+      "Leverage the Early Decision (ED) rounds. The ED acceptance rate is roughly 44-47%, while the RD acceptance rate plummets to ~18%. The university fills roughly 39% of its class through ED."
+    ],
+    "alternate_major_strategy": "The University of Miami officially considers applicants for their second-choice/alternate major if they are not admitted to their first-choice major. Listing a less impacted alternate major (e.g., in the College of Arts and Sciences rather than Business or Engineering) is a highly recommended strategy."
+  },
+  "financials": {
+    "tuition_model": "Flat rate private tuition.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 63452.0,
+        "total_coa": 97774.0,
+        "housing": 24742.0
+      },
+      "out_of_state": {
+        "tuition": 63452.0,
+        "total_coa": 97774.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 81.0,
+    "scholarships": [
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2024-11-01",
+        "benefits": "Full tuition, fees, room and board, textbooks, computer allowance, and up to $12,000 in enrichment funds.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "George W. Jenkins Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Full tuition, fees, room and board, university health insurance, and laptop allowance.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition+",
+        "deadline": "",
+        "benefits": "Full tuition, $4,000 annual stipend, and a $2,000 travel grant.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "University Merit Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2024-11-01",
+        "benefits": "Full tuition.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 are generally required to receive credit. Must be submitted by the end of the first semester.",
+      "exceptions": [
+        "AP Calculus BC requires a score of 5 to place out of Calculus and receive credit for MTH 161."
+      ],
+      "usage": "Can be used to fulfill General Education proficiency requirements (like Quantitative Skills) or count as elective credit, but cannot be used for the 'Writing About Literature' core without departmental review."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 6 or 7 on Higher Level (HL) exams are generally required for credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Miami Academic Transfer Evaluation System (MATES)"
+      ],
+      "restrictions": "Students must complete at least 50% of the credit hours required for their major/minor in residence. The final 45 credits must be completed exclusively at UM. Courses with grades below 'C' are not accepted. Concurrent enrollment at another institution is strictly prohibited."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school curriculum with AP/IB classes.",
+      "A high unweighted GPA (average admitted is around 3.89).",
+      "Demonstrating genuine 'affinity' and fit for the university's diverse, community-oriented culture.",
+      "Applying Early Decision (ED) for a significantly higher chance of acceptance."
+    ],
+    "common_activities": [
+      "Significant community service and philanthropy (tied to the 'Canes Care for Canes' motto)",
+      "Leadership in diverse or multicultural organizations",
+      "Athletics or club sports",
+      "Undergraduate research"
+    ],
+    "essay_tips": [
+      "Focus heavily on the concept of 'community' and inclusivity.",
+      "Showcase a specific instance where you contributed to a group or overcame a challenge.",
+      "Connect your past experiences directly to how you will engage with Miami's unique, multicultural environment."
+    ],
+    "red_flags": [
+      "Writing a generic essay about diversity without connecting it to personal growth or specific skills acquired.",
+      "Failing to demonstrate a clear academic narrative or depth in extracurriculars."
+    ],
+    "insights": [
+      "The campus culture is highly social and vibrant, with significant visible affluence among the student body.",
+      "While Greek life is present, it does not dominate the social scene due to the abundance of off-campus nightlife in Miami.",
+      "Professors are generally viewed as approachable and invested in student success, despite the university's high research output."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 85019,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 26.0,
+    "top_employers": [
+      "University of Miami",
+      "Citi",
+      "Bank of America",
+      "Baptist Health South",
+      "Deloitte",
+      "UBS",
+      "Amazon",
+      "EY"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 70.0,
+    "graduation_rate_6_year": 82.0
+  }
+}

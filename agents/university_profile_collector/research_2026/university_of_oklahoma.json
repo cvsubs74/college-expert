@@ -1,0 +1,490 @@
+{
+  "_id": "university_of_oklahoma",
+  "metadata": {
+    "official_name": "University of Oklahoma",
+    "location": {
+      "city": "Norman",
+      "state": "Oklahoma",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": [
+      "OU Common Data Set 2024-2025",
+      "OU Common Data Set 2023-2024",
+      "OU Common Data Set 2022-2023",
+      "College Scorecard",
+      "U.S. News & World Report 2025/2026 Rankings",
+      "OU Career Center Annual Report 2022-2023"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Oklahoma (OU) is a major public Research I university located in Norman, Oklahoma. Known for its strong sense of community, spirited SEC athletic culture, and outstanding programs in fields like Meteorology, Petroleum Engineering, and Business, OU offers a quintessential 'large flagship' experience. Admissions are currently test-optional and utilize a holistic review process, while a robust merit scholarship program aggressively rewards high GPAs and academic rigor.",
+    "market_position": "Public Flagship / Research I University",
+    "admissions_philosophy": "Holistic review with a strong emphasis on academic rigor, GPA, and course selection (comprising approximately 70% of the decision weight), supplemented by essays, leadership, and community involvement.",
+    "us_news_rank": 110,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "OU houses the National Weather Center and offers one of the top undergraduate meteorology programs in the nation.",
+        "implication": "Students interested in atmospheric sciences have unparalleled access to federal weather organizations and research opportunities directly on campus."
+      },
+      {
+        "category": "Financial",
+        "insight": "OU utilizes a flat-rate tuition model allowing full-time students to take up to 21 credit hours per semester for a single base price.",
+        "implication": "Highly motivated students can easily double major or graduate early without incurring extra base tuition costs."
+      },
+      {
+        "category": "Culture",
+        "insight": "Approximately 30% of the student body participates in Greek life, which heavily influences the social scene alongside SEC football.",
+        "implication": "Students seeking a vibrant, highly spirited traditional college town experience will thrive, though independent social avenues and over 400 student organizations are also well-supported."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A classic college-town feel with a deep sense of community affectionately known as 'the OU family'. Campus life is highly spirited, driven by SEC athletics, strong Greek life, and widespread participation in campus traditions and volunteering.",
+      "transportation_impact": "Located about 30 minutes from Oklahoma City, the Norman campus is walkable and mostly centralized, making it easy to navigate between classes without heavy reliance on vehicles.",
+      "research_impact": "As a Carnegie R1 institution with over $416 million in research expenditures, OU provides undergraduates with research opportunities early on, particularly in STEM, energy, and defense fields."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 76.6,
+      "in_state_acceptance_rate": 75.6,
+      "out_of_state_acceptance_rate": 80.3,
+      "international_acceptance_rate": 36.0,
+      "transfer_acceptance_rate": 62.6,
+      "admits_class_size": 5593,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through at least the 2025 admission cycle. Students can apply without scores and receive holistic review for both admission and automatic merit scholarships.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2029",
+        "applications_total": 24893,
+        "admits_total": 19069,
+        "enrolled_total": 5593,
+        "acceptance_rate_overall": 76.6,
+        "acceptance_rate_in_state": 75.6,
+        "acceptance_rate_out_of_state": 80.3,
+        "yield_rate": 29.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2342,
+          "accepted_spots": 1560,
+          "admitted_from_waitlist": 81,
+          "waitlist_admit_rate": 5.19,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate is very low (approx 5.2%), indicating the waitlist is rarely a reliable backdoor for admission."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2028",
+        "applications_total": 22157,
+        "admits_total": 17097,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 77.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2074,
+          "accepted_spots": 1436,
+          "admitted_from_waitlist": 94,
+          "waitlist_admit_rate": 6.55,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2027",
+        "applications_total": 21548,
+        "admits_total": 15712,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 72.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 2965,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 191,
+          "waitlist_admit_rate": 6.44,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.63,
+        "notes": "Approximately 40% of admitted students have GPAs between 3.75 and 4.00."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1140-1340",
+        "sat_reading_middle_50": "570-660",
+        "sat_math_middle_50": "570-650",
+        "act_composite_middle_50": "23-29",
+        "submission_rate": null,
+        "policy_note": "In recent cycles reporting test submission (pre-2023 full shift), roughly 34% of submitters provided SAT and 66% provided ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 2.46,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 50.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 50.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10432,
+            "admits": 7562,
+            "acceptance_rate": 72.48
+          },
+          "women": {
+            "applicants": 14461,
+            "admits": 11507,
+            "acceptance_rate": 79.57
+          }
+        },
+        "racial_breakdown": {
+          "white": 54.07,
+          "black_african_american": 5.27,
+          "hispanic_latino": 15.37,
+          "asian": 7.05,
+          "native_american_alaskan": 3.39,
+          "pacific_islander": 0.11,
+          "two_or_more_races": 9.81,
+          "unknown": null,
+          "non_resident_alien": 2.46
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Gallogly College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in rigorous STEM fields who want access to high-level research and excellent career placement in aerospace, defense, and tech.",
+        "housing_profile": "Standard freshman housing applies; living-learning communities available.",
+        "student_archetype": "Analytical, career-driven problem solvers looking for hands-on, experiential learning.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "A grade of C or better is required in each course in the curriculum, including all prerequisite courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 1323 Introduction to Computer Programming for Programmers",
+                "CS 2334 Programming Structures and Abstractions",
+                "CS 2413 Data Structures",
+                "CS 2614 Computer Organization",
+                "CS 3113 Introduction to Operating Systems",
+                "CS 3203 Software Engineering",
+                "CS 3823 Theory of Computation",
+                "CS 4273 Capstone Design Project"
+              ],
+              "electives": [
+                "CS 4013 Artificial Intelligence",
+                "CS 4033 Machine Learning Fundamentals",
+                "CS 4173 Computer Security"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Michael F. Price College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for ambitious students looking to enter finance, marketing, or tech consulting. High job placement rates and networking focus.",
+        "housing_profile": "Standard freshman housing.",
+        "student_archetype": "Driven, network-oriented students aiming for corporate or entrepreneurial careers.",
+        "majors": [
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly ranked program (Top 20 nationally per U.S. News) with exceptional placement at top consulting and tech firms."
+          }
+        ]
+      },
+      {
+        "name": "College of Atmospheric and Geographic Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students passionate about severe weather forecasting, climate adaptation, and geosciences.",
+        "housing_profile": "Standard freshman housing.",
+        "student_archetype": "Science-minded environmentalists and weather enthusiasts.",
+        "majors": [
+          {
+            "name": "Atmospheric Sciences and Meteorology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Renowned globally; students have access to the National Weather Center directly on campus."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "OU Application",
+      "Apply Coalition with Scoir"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Provides priority consideration for merit scholarships, honors college, and housing."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Final admission deadline. (Note: December 15 is the final scholarship consideration deadline)."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-12-15",
+        "details": "Optional but highly recommended for scholarship consideration. Includes prompts regarding leadership experiences, cultural/community service contributions to the 'OU Family', and career goals (up to 650 words each)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First generation",
+        "Alumni/ae relation",
+        "Volunteer work",
+        "Work experience",
+        "Level of applicant's interest"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "While admission is holistically test-optional, test scores historically trigger automated tier placements for out-of-state and in-state merit scholarships."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to your intended major, as OU operates primarily on a direct-admission model.",
+      "Apply by the November 1 Early Action deadline to ensure priority access to housing selection times and maximum merit scholarship consideration."
+    ],
+    "college_ranking_tactics": [
+      "If you are a National Merit Semifinalist/Finalist, naming OU as your top choice by April 30 triggers one of the most generous automatic full-ride packages in the nation."
+    ],
+    "alternate_major_strategy": "OU evaluates applicants for admission to the university rather than restricting them by individual major capacity limits. Admitted students can easily request major changes through the OU Bound portal prior to May 1."
+  },
+  "financials": {
+    "tuition_model": "Flat-rate tuition model allowing undergraduate students to take 15 to 21 credit hours per semester for a single base price, encouraging on-time or early graduation.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 15135.0,
+        "total_coa": 38999.0,
+        "housing": 15798.0
+      },
+      "out_of_state": {
+        "tuition": 30780.0,
+        "total_coa": 48796.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind / Merit-Heavy; offers extensive automated scholarship tiers based on academic metrics.",
+    "average_need_based_aid": 5627.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 75.0,
+    "scholarships": [
+      {
+        "name": "National Merit Finalist Scholarship",
+        "type": "Merit",
+        "amount": "$146,850",
+        "deadline": "2025-04-30",
+        "benefits": "Effectively a full ride covering tuition, fees, room, board, and stipends over 4 years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Award of Excellence",
+        "type": "Merit",
+        "amount": "$16,000",
+        "deadline": "2024-12-15",
+        "benefits": "$4,000 per year for 4 years (Requires 31 ACT/1390 SAT and 3.5 GPA).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Distinguished Scholar",
+        "type": "Merit",
+        "amount": "$12,000",
+        "deadline": "2024-12-15",
+        "benefits": "$3,000 per year for 4 years (Requires 29-30 ACT/1330-1380 SAT and 3.5 GPA).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "University Scholarship",
+        "type": "Merit",
+        "amount": "$10,000",
+        "deadline": "2024-12-15",
+        "benefits": "$2,500 per year for 4 years (Requires 28 ACT/1300-1320 SAT and 3.5 GPA).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Academic Achievement",
+        "type": "Merit",
+        "amount": "$8,000",
+        "deadline": "2024-12-15",
+        "benefits": "$2,000 per year for 4 years (Requires 24-27 ACT/1160-1290 SAT and 3.25 GPA).",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credit awarded for score of 3 or higher on most AP examinations, mandated by Oklahoma state law (HB 2750).",
+      "exceptions": [],
+      "usage": "Used to fulfill general education requirements, core curriculum, or elective credits depending on department approval."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded for scores of 4 or higher on Higher Level (HL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Database (TED)",
+        "Transferology"
+      ],
+      "restrictions": "A minimum of 60 semester hours must be earned at a senior (4-year) college to receive a baccalaureate degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A high GPA (preferably 3.63 or higher) showing strong academic rigor in core subjects.",
+      "Early application submission (before November 1) to maximize admissions, housing, and scholarship odds.",
+      "Well-crafted supplemental essays that align personal values with the inclusive and spirited 'OU Family' culture."
+    ],
+    "common_activities": [
+      "Greek Life (approx. 30% of the student body participates)",
+      "Attending highly spirited SEC football game days",
+      "Campus Activities Council (CAC) events",
+      "Soonerthon (annual dance marathon for charity)",
+      "Local volunteering in Norman and Oklahoma City"
+    ],
+    "essay_tips": [
+      "Focus intensely on the optional supplemental essays if you are seeking top merit scholarships.",
+      "Highlight specific leadership roles and their tangible impacts on your community.",
+      "Connect your personal community service experiences to the vibrant 'OU Family' ethos."
+    ],
+    "red_flags": [
+      "Applying after December 15, which completely misses the window for university-centralized freshman scholarships.",
+      "A transcript lacking academic rigor or missing core preparatory courses."
+    ],
+    "insights": [
+      "The campus provides a quintessential, spirited college-town vibe with an electric SEC sports culture.",
+      "Despite its large size, average class sizes remain remarkably small (average is 32), and professors are noted for being approachable.",
+      "Research opportunities are abundant and accessible across disciplines, even for freshmen."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 73280,
+    "employment_rate_2yr": 74.0,
+    "grad_school_rate": 21.0,
+    "top_employers": [
+      "Deloitte",
+      "Boeing",
+      "Paycom",
+      "EY",
+      "KPMG",
+      "U.S. Air Force",
+      "Norman Public Schools"
+    ],
+    "loan_default_rate": 1.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.0,
+    "graduation_rate_4_year": 58.0,
+    "graduation_rate_6_year": 76.0
+  }
+}

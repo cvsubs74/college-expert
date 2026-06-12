@@ -1,0 +1,550 @@
+{
+  "_id": "kent_state_university",
+  "metadata": {
+    "official_name": "Kent State University",
+    "location": {
+      "city": "Kent",
+      "state": "Ohio",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": [
+      "Common Data Set 2023-2024",
+      "IPEDS Data 2024",
+      "U.S. News & World Report 2025/2026",
+      "Kent State University Academic Catalog 2025-2026",
+      "College Scorecard"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Kent State University is a very large, public R1 research university located in suburban Northeast Ohio. Operating an expansive eight-campus regional system, the university provides a highly accessible, holistic, and test-optional admissions pathway while offering globally recognized programs in fashion, aeronautics, nursing, architecture, and business. With a strong commitment to first-generation students, affordability, and robust undergraduate research, Kent State balances the vast resources of a major research institution with a welcoming, community-focused 'Midwest charm'.",
+    "market_position": "Large Public R1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 232,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "With an overall acceptance rate of approximately 86.3% and a high transfer acceptance rate of 82%, Kent State prioritizes broad educational access over hyper-selectivity.",
+        "implication": "Students with solid B-averages and standard college preparatory coursework have a very high likelihood of admission, making it a strong foundational safety or target school for many applicants."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university operates on a Tuition Guarantee cohort model and offers the 'Flashes Go Further' scholarship to bridge tuition gaps for Pell-eligible Ohio residents.",
+        "implication": "In-state students can expect highly predictable, capped costs for four years, with exceptional financial support available for low-income Ohioans."
+      },
+      {
+        "category": "Academic",
+        "insight": "Despite broad overall admission, direct entry into specific programs like the B.S.N. in Nursing requires higher minimum benchmarks (2.75 GPA, specific science prerequisites).",
+        "implication": "Applicants must carefully review major-specific requirements, as general university admission does not guarantee entry into competitive, capped, or impacted professional programs."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus boasts 350+ student organizations, active Greek life, and a highly walkable campus seamlessly integrated with the vibrant downtown area of Kent (Acorn Alley).",
+        "implication": "Students looking for a traditional, spirited, large-scale American college experience with active social avenues and Division I athletics will find a strong fit here."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Kent State features a lively, diverse student body with a traditional campus feel. The environment is described as welcoming and collaborative, heavily integrated with downtown Kent's vibrant college-town atmosphere (restaurants, cafes, live music, and art galleries). Active Greek life, Division I MAC athletics, and extensive arts programming anchor the social calendar.",
+      "transportation_impact": "The main campus is sprawling but highly walkable and features extensive green spaces. Parking is notoriously competitive; student permits are sold on a first-come, first-served basis by class standing, and strict waitlists are enforced for popular lots. The campus is connected by shuttle services and offers easy access to the nearby metropolitan centers of Akron and Cleveland.",
+      "research_impact": "As a Carnegie R1 top-tier research university, Kent State offers deep undergraduate research opportunities through specialized hubs such as the Brain Health Research Institute, the Advanced Materials and Liquid Crystal Institute, and the Environmental Science and Design Research Institute."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 86.3,
+      "in_state_acceptance_rate": 85.43,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 82.09,
+      "admits_class_size": 4313,
+      "is_test_optional": true,
+      "test_policy_details": "Kent State is fully test-optional for first-year and transfer admissions. If a student chooses to submit scores, the highest composite ACT or highest SAT reading and math sections from a single test date are used. Test scores are not required for merit scholarship consideration.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 24611,
+        "admits_total": 21248,
+        "enrolled_total": 4313,
+        "acceptance_rate_overall": 86.3,
+        "acceptance_rate_in_state": 85.43,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 20.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 22366,
+        "admits_total": 19380,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 86.6,
+        "acceptance_rate_in_state": 86.27,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 88.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.61,
+        "notes": "Admissions focuses holistically on cumulative GPA, the rigor of high school curriculum, and long-term grade trends."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1020-1230",
+        "sat_reading_middle_50": "510-630",
+        "sat_math_middle_50": "500-610",
+        "act_composite_middle_50": "18-25",
+        "submission_rate": 17.0,
+        "policy_note": "17% of students submit SAT scores and 43% submit ACT scores. Submission is purely optional and the lack of scores will not negatively impact admission or scholarship consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 33.1,
+        "legacy_percentage": null,
+        "international_percentage": 9.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10017,
+            "admits": 8497,
+            "acceptance_rate": 84.8
+          },
+          "women": {
+            "applicants": 14594,
+            "admits": 12751,
+            "acceptance_rate": 87.3
+          }
+        },
+        "racial_breakdown": {
+          "white": 70.2,
+          "black_african_american": 8.75,
+          "hispanic_latino": 4.52,
+          "asian": 2.51,
+          "native_american_alaskan": 0.136,
+          "pacific_islander": 0.0493,
+          "two_or_more_races": 3.89,
+          "unknown": null,
+          "non_resident_alien": 5.6
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students with strong math and science backgrounds who meet strict high school GPA and testing minimums, ready to commit to a rigorous clinical pathway.",
+        "housing_profile": "Traditional campus residence halls, with specific living-learning communities available.",
+        "student_archetype": "Driven, clinically-focused, community-oriented future healthcare professionals.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSCI 21010",
+              "BSCI 21020",
+              "BSCI 20021",
+              "CHEM 10050",
+              "NURS 20950"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Must attain CNA certification and complete a State Tested Nurse Aide program prior to starting the Professional Nursing Sequence. Requires minimum C grades in all science and math courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "NURS 40010",
+                "NURS 40020",
+                "NURS 40030",
+                "NURS 40045",
+                "NURS 40075",
+                "NURS 41000",
+                "NURS 42000",
+                "NURS 43001"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Loretta Aller (Nursing Practice)",
+              "Dr. Jeremy M. Jarzembak (Nursing)",
+              "Dr. Lisa M. Onesko (DNP Program)",
+              "Dr. Versie Johnson-Mallard (Dean, Nursing Research)",
+              "Dr. Cindy Wilk (Clinical Nurse Specialist)"
+            ],
+            "notes": "Progression in the major strictly requires maintaining a minimum 2.0 GPA each semester and earning a minimum 'C' in all clinical and science sequence courses."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students interested in core humanities, life sciences, physical sciences, or computational sciences who desire a broad liberal arts foundation mixed with strong research opportunities.",
+        "housing_profile": "General undergraduate housing, heavily integrated into the main Kent campus.",
+        "student_archetype": "Curious, research-oriented, analytically minded students.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Minimum C grade required in CS 13001 and CS 23001 to progress in the major.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 13001",
+                "CS 23022",
+                "CS 23001",
+                "CS 35101",
+                "CS 33211",
+                "CS 35201",
+                "CS 33901",
+                "CS 33007",
+                "CS 33101",
+                "CS 46101",
+                "CS 49901"
+              ],
+              "electives": [
+                "CS 33192",
+                "CS 39995",
+                "CS 49996"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Javed I. Khan (Network Architecture / Cyber Infrastructure)",
+              "Dr. Arvind K. Bansal (Computer Science)",
+              "Dr. Feodor F. Dragan (Computer Science)",
+              "Dr. Angela Guercio (Computer Science)",
+              "Dr. Ruoming Jin (Computer Science)",
+              "Dr. Hassan Peyravi (Communication Networks / Cybersecurity)"
+            ],
+            "notes": "ABET-accredited program offering specialized concentrations in Cybersecurity, Data Engineering, Game Programming, and Robotics & Embedded Systems."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion of foreign language proficiency (Elementary I & II plus intermediate options).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 11762",
+                "PSYC 21621",
+                "PSYC 31574",
+                "PSYC 31282",
+                "PSYC 41980"
+              ],
+              "electives": [
+                "PSYC 30111",
+                "PSYC 30651",
+                "PSYC 40112",
+                "PSYC 41364",
+                "PSYC 41581"
+              ],
+              "total_units": 120,
+              "major_units": 39
+            },
+            "notable_professors": [
+              "Dr. John A. Updegraff (Psychological Sciences)",
+              "Dr. Christopher Was (Psychological Sciences)",
+              "Dr. Jeffrey Ciesla (Applied Psychology)",
+              "Dr. Karin G. Coifman (Brain Health Research)",
+              "Dr. Douglas L. Delahanty (Trauma and Stress)",
+              "Dr. Christopher Flessner (Clinical Training)"
+            ],
+            "notes": "Optional concentrations available in Child Psychology and Counseling Careers."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Kent State Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Priority deadline for fall admission and automatic maximum scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Secondary priority deadline for full admission and scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-08-01",
+        "is_binding": false,
+        "notes": "Final regular rolling admission deadline for fall."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Optional 'Additional Info Short Response' to explain any dips in academic performance or personal challenges."
+      },
+      {
+        "target_program": "Honors College",
+        "requirement_type": "Essays",
+        "deadline": "2026-01-15",
+        "details": "Requires a structured personal statement focusing on intellectual curiosity and goals."
+      },
+      {
+        "target_program": "College of the Arts (Architecture, Fashion, Music, Theatre)",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "",
+        "details": "Specific portfolio submissions or live auditions required for B.F.A. and specialized B.A./B.S. degrees."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Strength of Curriculum",
+        "Grade Trends"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)",
+        "Application Essays (optional)",
+        "Letters of Recommendation (optional)",
+        "Special Talents"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Kent State explicitly marks Demonstrated Interest as 'Very Important' in its Common Data Set. The university highly values the 'I AM FIRST' initiative, providing strong structural and community support to first-generation students, which factors positively into holistic contextual review."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply prior to November 1 to secure automatic consideration for the highest tiers of merit scholarships.",
+      "Omit test scores if your ACT is below 18 or your SAT is below 1020, as the university is fully test-optional without penalizing scholarship reviews.",
+      "Actively demonstrate interest through campus visits, opening emails, attending college fairs, and connecting with regional admissions counselors, as KSU marks demonstrated interest as Very Important."
+    ],
+    "college_ranking_tactics": [
+      "Direct entry into Nursing requires specific math and science units from high school, plus either a 2.7 GPA with a 22 ACT/1100 SAT, or a 3.0+ GPA without test scores.",
+      "The Ambassador Crawford College of Business and Entrepreneurship and the Fashion School are highly ranked nationally and may naturally draw more competitive applicant pools."
+    ],
+    "alternate_major_strategy": "Applicants who do not meet the academic standards for the main Kent Campus are routinely offered administrative referral to one of the seven open-enrollment regional campuses. Students can easily transition to the main campus after completing initial core requirements and earning a minimum 2.0 college GPA."
+  },
+  "financials": {
+    "tuition_model": "Tuition Guarantee Cohort Model (Locks in tuition, room, and board rates for four years)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 12920.0,
+        "total_coa": 32304.0,
+        "housing": 13794.0
+      },
+      "out_of_state": {
+        "tuition": 21575.0,
+        "total_coa": 40959.0,
+        "supplemental_tuition": 8655.0
+      }
+    },
+    "aid_philosophy": "Affordability-focused public university; not universally need-blind or 100% need-met, but aggressively closes gaps for in-state students via the Flashes Go Further initiative.",
+    "average_need_based_aid": null,
+    "average_merit_aid": 9894.0,
+    "percent_receiving_aid": 93.0,
+    "scholarships": [
+      {
+        "name": "Academic Achievement Award",
+        "type": "Merit",
+        "amount": "$2,000 - $7,000",
+        "deadline": "2025-08-01",
+        "benefits": "Renewable annual tuition discount for Ohio residents based on high school GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "President's Achievement Award",
+        "type": "Merit",
+        "amount": "$7,500 - $13,000",
+        "deadline": "2025-08-01",
+        "benefits": "Renewable annual tuition discount for out-of-state domestic students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Honors Distinction Award",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "2026-01-15",
+        "benefits": "Stacked on top of core achievement awards for students admitted to and participating in the Honors College.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Flashes Go Further Scholarship",
+        "type": "Need",
+        "amount": "Variable (Tuition Gap Coverage)",
+        "deadline": "",
+        "benefits": "Covers the remaining gap between a student's federal/state grants and the full cost of instructional tuition for eligible Ohio residents.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "CCI Dean's Scholarship",
+        "type": "Need",
+        "amount": "Variable",
+        "deadline": "",
+        "benefits": "Need-based award for students in the College of Communication and Information.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Academic Transfer Award",
+        "type": "Merit",
+        "amount": "Variable",
+        "deadline": "",
+        "benefits": "Automatic award for Ohio resident transfer students possessing a minimum 24 transfer credit hours and a 2.50+ cumulative college GPA.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards college credit for Advanced Placement exam scores of 3, 4, or 5.",
+      "exceptions": [
+        "Specific major sequence courses (especially in STEM/highly dependent sequences) strongly recommend consulting advisors before bypassing foundational courses.",
+        "Official score reports must come directly from the College Board; AP credits printed on high school transcripts are not accepted."
+      ],
+      "usage": "Credits are applied to fulfill the Kent Core (general education) requirements or act as free/major electives."
+    },
+    "ib_policy": {
+      "general_rule": "Awards college credit for International Baccalaureate Higher Level (HL) exams with a score of 5 or higher.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Kent State Transfer Credit Guide",
+        "Ohio Guaranteed Transfer Credit (Statewide Articulation)"
+      ],
+      "restrictions": "Requires a minimum 2.0 GPA for general university transfer consideration. Developmental/remedial courses do not transfer for degree credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Consistent high school performance (average admitted GPA is ~3.6).",
+      "Demonstrated interest via official communication channels, campus visits, or college fair attendance.",
+      "Early application submission to maximize available space and financial aid."
+    ],
+    "common_activities": [
+      "Fraternity and Sorority Life",
+      "Marching Band (Marching Golden Flashes)",
+      "Student Government",
+      "Intramural and Club Sports",
+      "Undergraduate Research Symposiums",
+      "Fashion/Arts Showcases"
+    ],
+    "essay_tips": [
+      "If utilizing the optional Additional Information essay, strictly focus on explaining academic blips with a theme of resilience, growth, and specific corrective actions taken.",
+      "For the Honors College personal statement, vividly articulate intellectual curiosity and how the Honors framework aligns with long-term career goals."
+    ],
+    "red_flags": [
+      "Unexplained downward grade trends in junior or senior year.",
+      "Failing to disclose required student conduct or criminal history information."
+    ],
+    "insights": [
+      "The campus is known for its beautiful, walkable layout and immense green spaces, though winter weather requires preparation.",
+      "Downtown Kent (especially Acorn Alley) is heavily integrated into the student experience, providing a true 'college town' feel.",
+      "First-generation students will find massive structural support here; the university aggressively celebrates and supports first-gen success."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": null,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 53.19,
+    "top_employers": [
+      "Cleveland Clinic",
+      "Goodyear",
+      "Sherwin-Williams",
+      "Aetna",
+      "Bridgestone Americas",
+      "Progressive",
+      "Huntington National Bank"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 81.6,
+    "graduation_rate_4_year": 47.0,
+    "graduation_rate_6_year": 63.7
+  }
+}

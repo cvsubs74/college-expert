@@ -1,0 +1,41 @@
+{
+  "name": "Zanvyl Krieger School of Arts and Sciences",
+  "admissions_model": "Pre-Major",
+  "acceptance_rate_estimate": null,
+  "is_restricted_or_capped": false,
+  "strategic_fit_advice": "Ideal for pre-med, humanities, natural sciences, and social sciences students. Very flexible, allowing students to design their own pathways or double-major easily.",
+  "housing_profile": "Traditional undergraduate residential campus (Homewood).",
+  "student_archetype": "Intellectually curious, interdisciplinary thinker, strong writer and researcher.",
+  "majors": [
+    {
+      "name": "Neuroscience",
+      "degree_type": "B.S.",
+      "is_impacted": false,
+      "acceptance_rate": null,
+      "average_gpa_admitted": null,
+      "prerequisite_courses": [],
+      "minimum_gpa_to_declare": null,
+      "weeder_courses": [],
+      "special_requirements": "",
+      "admissions_pathway": "Pre-Major",
+      "internal_transfer_allowed": true,
+      "direct_admit_only": false,
+      "internal_transfer_gpa": null,
+      "curriculum": {
+        "core_courses": [
+          "AS.200.141 Foundations of Brain, Behavior and Cognition",
+          "AS.080.305 Neuroscience: Cellular and Systems I",
+          "AS.080.306 Neuroscience: Cellular and Systems II",
+          "AS.080.250 Neuroscience Laboratory",
+          "AS.020.306 Cell Biology"
+        ],
+        "electives": [],
+        "total_units": null,
+        "major_units": null
+      },
+      "notable_professors": [],
+      "notes": "One of the most popular pre-med majors at JHU. Students select a focus area: cellular/molecular, cognitive, computational, or systems neuroscience."
+    }
+  ],
+  "_id": "johns_hopkins_university"
+}

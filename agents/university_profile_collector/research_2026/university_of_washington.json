@@ -1,0 +1,412 @@
+{
+  "_id": "university_of_washington",
+  "metadata": {
+    "official_name": "University of Washington",
+    "location": {
+      "city": "Seattle",
+      "state": "Washington",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Washington (UW) is a premier public research university located in Seattle, known for its top-tier STEM programs, particularly in Computer Science and Engineering. It employs a holistic admissions process that heavily favors in-state residents, while admission to 'capacity-constrained' majors is exceptionally competitive for all applicants.",
+    "market_position": "Public Flagship / Top-Tier Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 42,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Out-of-state acceptance into the Allen School of Computer Science & Engineering is historically around 2%.",
+        "implication": "Non-resident applicants aiming for CS must consider UW a 'reach' school and should utilize alternate major strategies carefully, as internal transfers into CS are nearly impossible."
+      },
+      {
+        "category": "Academic",
+        "insight": "UW utilizes a 'capacity-constrained' major system where being admitted to the university does not guarantee admission to popular majors.",
+        "implication": "Applicants must apply 'Direct to Major' or 'Direct to College' for Engineering, CS, and Business to avoid getting stuck in a pre-major with no clear path to their desired degree."
+      },
+      {
+        "category": "Financial",
+        "insight": "The Husky Promise guarantees full tuition coverage for eligible lower-income in-state students.",
+        "implication": "UW represents an exceptional ROI for Washington residents, but out-of-state students will face a steep cost of attendance with limited institutional need-based aid."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Large, vibrant urban campus in the University District with a strong Greek life, competitive Pac-12 (moving to Big Ten) athletics, and diverse student organizations.",
+      "transportation_impact": "Highly integrated into Seattle's urban transit network, providing students with easy access to downtown and the broader tech/medical hubs.",
+      "research_impact": "R1 research institution with massive funding, heavily partnered with local giants like Amazon, Microsoft, and Fred Hutchinson Cancer Center for undergraduate research and pipelines."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.391,
+      "in_state_acceptance_rate": 0.478,
+      "out_of_state_acceptance_rate": 0.362,
+      "international_acceptance_rate": 0.388,
+      "transfer_acceptance_rate": 0.46,
+      "admits_class_size": 7300,
+      "is_test_optional": true,
+      "test_policy_details": "Permanently test-optional/test-blind. Scores are not required for admission and are generally only considered if high (1400+/31+) for applicants who may otherwise not be admitted.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 77400,
+        "admits_total": null,
+        "enrolled_total": 7300,
+        "acceptance_rate_overall": null,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 15741,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 3032,
+          "waitlist_admit_rate": 0.192,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist spots and admits based on preliminary release data."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 69166,
+        "admits_total": 27076,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.391,
+        "acceptance_rate_in_state": 0.48,
+        "acceptance_rate_out_of_state": 0.36,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 8232,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 1845,
+          "waitlist_admit_rate": 0.224,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 62428,
+        "admits_total": 26552,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.42,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 4122,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 2985,
+          "waitlist_admit_rate": 0.724,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 52448,
+        "admits_total": 24942,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.48,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.076,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.75-3.98",
+        "average_weighted": 3.83,
+        "notes": "UW primarily considers unweighted GPA and course rigor."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1333-1500",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "28-33",
+        "submission_rate": 0.2,
+        "policy_note": "Less than 20% of enrolled students submitted test scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.153,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.334,
+          "black_african_american": 0.034,
+          "hispanic_latino": 0.082,
+          "asian": 0.208,
+          "native_american_alaskan": 0.004,
+          "pacific_islander": 0.002,
+          "two_or_more_races": 0.061,
+          "unknown": 0.122,
+          "non_resident_alien": 0.153
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Allen School of Computer Science & Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.09,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Only for top-tier STEM students with extensive programming/math backgrounds. Must select as first-choice major.",
+        "housing_profile": "Integrated with main campus housing.",
+        "student_archetype": "Tech-driven innovators targeting Big Tech roles.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "30% In-State / 2% Out-of-State",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must list as first-choice major on application to be considered for Direct to Major admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSE 311",
+                "CSE 312",
+                "CSE 331",
+                "CSE 332",
+                "CSE 351",
+                "CSE 421",
+                "CSE 444",
+                "CSE 446",
+                "CSE 442"
+              ],
+              "electives": [
+                "CSE 427",
+                "CSE 455",
+                "CSE 484",
+                "CSE 447"
+              ],
+              "total_units": 180,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer is exceptionally difficult and space is extremely limited."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct to College",
+        "acceptance_rate_estimate": 0.43,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students certain they want to study engineering. Placed into a 'pre-major' pool and must place into specific engineering majors later.",
+        "housing_profile": "Integrated with main campus housing.",
+        "student_archetype": "Analytical problem solvers.",
+        "majors": [
+          {
+            "name": "Engineering (Pre-Major)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "43% In-State / 37% Out-of-State",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct to College",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students admitted Direct to College explore engineering disciplines before being placed into a specific major."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Decisions released March 1-15. UW does not offer Early Decision or Early Action for the Seattle campus."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-15",
+        "details": "Requires a primary personal statement and a short response regarding community/diversity."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic rigor",
+        "Unweighted GPA",
+        "Course preparation (CADRs)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities (depth over volume)",
+        "Leadership and community service",
+        "Overcoming adversity",
+        "Washington state residency"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Residency is heavily weighted. In-state students have a significant statistical advantage."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to capacity-constrained majors (CS, Engineering) as a first-choice if interested; doing otherwise severely hinders chances.",
+      "List a less constrained or 'open' major as a second choice, but ensure genuine interest.",
+      "Use the personal statement to explain your backup plan if not admitted to your first-choice major."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "UW considers alternate majors if space allows, but applying to highly selective alternate majors (like CS as a backup) will not work. Choose open or minimum-requirement majors as a secondary option to secure general admission."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment per term/year.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11869,
+        "total_coa": 31000,
+        "housing": null
+      },
+      "out_of_state": {
+        "tuition": 42554,
+        "total_coa": 63906,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": 4000,
+    "percent_receiving_aid": 55.0,
+    "scholarships": [
+      {
+        "name": "Purple and Gold Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2024-11-15",
+        "benefits": "Renewable over four years for out-of-state students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Husky Promise",
+        "type": "Need",
+        "amount": "Full tuition and standard fees",
+        "deadline": "2025-02-28",
+        "benefits": "Guarantees full tuition for eligible lower-income Washington state residents.",
+        "application_method": "Automatic via FAFSA/WASFA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or higher are generally considered for college credit or placement.",
+      "exceptions": [
+        "Chemistry and Biology majors may require specific higher scores or recommend taking honors versions despite AP credit."
+      ],
+      "usage": "Used for graduation credit and prerequisite clearing, but cannot waive admission requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 5, 6, or 7 generally receive credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Students duplicate subject content with AP/IB and a college course will only be awarded credit for one."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Extremely strong unweighted GPA (3.8+)",
+      "Maximum course rigor available at your high school",
+      "Demonstrated depth in a few extracurriculars rather than a long, shallow list"
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Address your second-choice major and backup plans in the essay",
+      "Focus on explaining how experiences shaped your thinking",
+      "Highlight resilience and meaningful community involvement"
+    ],
+    "red_flags": [
+      "Applying to a capacity-constrained major as a second choice",
+      "Relying on legacy status (it is not considered)"
+    ],
+    "insights": [
+      "UW is essentially two different universities in terms of admissions: one for Washington residents and one for out-of-state students.",
+      "The CS program acts as an ultra-elite mini-college within a larger public university."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 82515,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Microsoft",
+      "The Boeing Company",
+      "Google",
+      "University of Washington",
+      "Deloitte",
+      "Meta Platforms, Inc."
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.95,
+    "graduation_rate_4_year": 0.71,
+    "graduation_rate_6_year": 0.84
+  }
+}

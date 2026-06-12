@@ -1,0 +1,430 @@
+{
+  "_id": "university_of_new_hampshire",
+  "metadata": {
+    "official_name": "University of New Hampshire",
+    "location": {
+      "city": "Durham",
+      "state": "NH",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of New Hampshire is a public land-grant, R1 research university known for its experiential learning, accessibility, and high career placement rates. Serving as the flagship institution of the state, it offers a traditional New England campus experience with deep ties to the regional Boston workforce.",
+    "market_position": "Public Flagship / R1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 109,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "High overall acceptance rate masks strict internal selectivity for restricted majors like Nursing and Exercise Science.",
+        "implication": "Applicants to health sciences must apply directly from high school with elite credentials, while general admits have an accessible entry path."
+      },
+      {
+        "category": "Financial",
+        "insight": "The Granite Guarantee covers full tuition for Pell-eligible in-state residents, but out-of-state COA approaches $60,000.",
+        "implication": "UNH is an unparalleled value for lower-income NH residents, but out-of-state students must aggressively pursue merit aid to optimize ROI."
+      },
+      {
+        "category": "Academic",
+        "insight": "Designation as an R1 institution provides rare access to high-level research for undergraduates.",
+        "implication": "Students in STEM and Business (via the FIRE program) can build highly competitive, experience-based resumes prior to graduation."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A traditional, outdoors-oriented New England college town setting located 15 minutes from the coast and an hour from the White Mountains, featuring Division I sports and over 200 student clubs.",
+      "transportation_impact": "The Amtrak Downeaster train stops directly on campus, providing seamless and vital connectivity to Boston and Portland for internships and travel.",
+      "research_impact": "Over 1,800 undergraduates participate in the annual Undergraduate Research Conference, benefiting directly from UNH's partnerships with NASA and NIH."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.88,
+      "in_state_acceptance_rate": 0.9,
+      "out_of_state_acceptance_rate": 0.85,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.876,
+      "admits_class_size": 2605,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional. Standardized test scores are considered if submitted, but not required for admission or most scholarships.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 11201,
+          "admits": 10164,
+          "acceptance_rate": 0.907,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 21175,
+        "admits_total": 18667,
+        "enrolled_total": 2604,
+        "acceptance_rate_overall": 0.88,
+        "acceptance_rate_in_state": 0.9,
+        "acceptance_rate_out_of_state": 0.85,
+        "yield_rate": 0.139,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed in recent Common Data Sets."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.63,
+        "notes": "GPA is recalculated by admissions using academic core courses on a 4.0 scale."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1090-1330",
+        "sat_reading_middle_50": "550-670",
+        "sat_math_middle_50": "540-660",
+        "act_composite_middle_50": "26-30",
+        "submission_rate": 0.25,
+        "policy_note": "23% submitted SAT; 2% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.49,
+        "legacy_percentage": null,
+        "international_percentage": 0.032,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.807,
+          "black_african_american": 0.012,
+          "hispanic_latino": 0.039,
+          "asian": 0.027,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.023,
+          "unknown": 0.059,
+          "non_resident_alien": 0.032
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Health and Human Services (CHHS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with top-tier STEM grades seeking clinical healthcare careers.",
+        "housing_profile": null,
+        "student_archetype": "Pre-health professional",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Anatomy and Physiology"
+            ],
+            "minimum_gpa_to_declare": 3.7,
+            "weeder_courses": [],
+            "special_requirements": "Strict clinical capacity limits; must maintain a cumulative 2.5 GPA throughout the program.",
+            "admissions_pathway": "Direct Admit Only",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": 3.7,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer is effectively closed or extremely rare due to cohort size limits."
+          },
+          {
+            "name": "Occupational Therapy",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Kept small to meet accreditation requirements for student:faculty ratios.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly restricted; internal transfers admitted only as space allows."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Physical Sciences (CEPS)",
+        "admissions_model": "Pre-Major / Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Analytically minded students seeking robust research and lab opportunities.",
+        "housing_profile": null,
+        "student_archetype": "STEM/Tech innovator",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CS 415",
+              "CS 416",
+              "CS 420",
+              "CS 515",
+              "CS 520",
+              "IT 403"
+            ],
+            "special_requirements": "Must achieve C- or better in core CS courses to remain in the major. Only two repeats of core courses are allowed before dismissal.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CS 415",
+                "CS 416",
+                "CS 420",
+                "CS 515",
+                "CS 520",
+                "IT 403"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 69
+            },
+            "notable_professors": [],
+            "notes": "B.A. option also available for students looking to double major."
+          }
+        ]
+      },
+      {
+        "name": "Peter T. Paul College of Business and Economics",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Aspiring corporate leaders and entrepreneurs wanting experiential learning.",
+        "housing_profile": null,
+        "student_archetype": "Business professional",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Must declare an option by the second semester of sophomore year.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "ADMN 401W",
+                "ADMN 403",
+                "ADMN 410",
+                "ADMN 502",
+                "ADMN 700"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Features the FIRE (First-Year Innovation and Research Experience) program."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "NH Transfer Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "YYYY-11-15",
+        "is_binding": false,
+        "notes": "Priority consideration for merit scholarships."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-02-01",
+        "is_binding": false,
+        "notes": "Regular decision."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "No supplemental essays or writing prompts are required other than the standard Common Application personal statement."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic record",
+        "GPA",
+        "Course rigor"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Talent/ability"
+      ],
+      "essay_importance": "Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "UNH utilizes an 'Alternative Major' pathway, offering admission to a secondary major or an undeclared program if an applicant does not meet the criteria for a competitive first-choice major."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to impacted majors (Nursing, OT, Exercise Science) directly out of high school, as internal transfer spaces are highly limited or closed.",
+      "Utilize 'COLA Undeclared' or 'CHHS Undeclared' as a safety net if your STEM grades are borderline for competitive majors.",
+      "Leverage the Early Action deadline for a massive statistical advantage (historical ~90% admit rate) and scholarship priority."
+    ],
+    "college_ranking_tactics": [
+      "Capitalize on UNH's test-optional policy by withholding sub-1090 SAT scores to allow the holistic review to focus entirely on transcript trends."
+    ],
+    "alternate_major_strategy": "UNH frequently admits students who miss the mark for competitive majors into their second-choice major or into an undeclared track. Internal transfer is possible post-enrollment by achieving high foundational course grades."
+  },
+  "financials": {
+    "tuition_model": "Public In-State/Out-of-State",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 19202,
+        "total_coa": 38440,
+        "housing": 14142
+      },
+      "out_of_state": {
+        "tuition": 39852,
+        "total_coa": 59090,
+        "supplemental_tuition": 20650
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 13856,
+    "average_merit_aid": 12400,
+    "percent_receiving_aid": 0.96,
+    "scholarships": [
+      {
+        "name": "Granite Guarantee",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers the absolute full cost of tuition for any Pell Grant-eligible New Hampshire resident.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$9,000",
+        "deadline": "YYYY-11-15",
+        "benefits": "Annual tuition offset for high-achieving resident and non-resident students.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credits generally awarded for scores of 3, 4, or 5 depending on the department.",
+      "exceptions": [],
+      "usage": "Used to bypass introductory courses or fulfill Discovery Program general education requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for higher-level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "NH Transfer System"
+      ],
+      "restrictions": "Most general education requirements are waived for NH community college students arriving with an Associate's degree, provided they earned a C- or better in their courses."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A weighted GPA around 3.63, with a transcript reflecting mostly A's and B's.",
+      "Completion of core subjects (English, Math, Science, Social Studies, World Language) all four years.",
+      "For health majors, high grades in preparatory sciences like Anatomy and Physiology."
+    ],
+    "common_activities": [
+      "Division I Athletics (Football, Ice Hockey)",
+      "Outdoor recreation (Skiing, Hiking)",
+      "Greek Life (approx. 15% participation)",
+      "Undergraduate Research Conference participation"
+    ],
+    "essay_tips": [
+      "Since there are no supplemental essays, your Common App personal statement must carry the full weight of demonstrating your character and community fit."
+    ],
+    "red_flags": [
+      "Downward academic trends during junior or senior year.",
+      "Applying to Health Sciences without foundational science courses on the transcript.",
+      "GPA below 2.8 overall, or below 3.0 for competitive business/science majors."
+    ],
+    "insights": [
+      "Students praise the picturesque setting and proximity to the ocean and mountains, as well as the Amtrak Downeaster providing an easy escape to Boston.",
+      "The Career and Professional Success (CaPS) office is highly engaged, driving a 94%+ employment/grad school placement rate."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71253,
+    "employment_rate_2yr": 0.95,
+    "grad_school_rate": 0.205,
+    "top_employers": [
+      "Fidelity Investments",
+      "Liberty Mutual",
+      "Oracle",
+      "Dell Technologies",
+      "Medicus Healthcare Solutions",
+      "Boston Children's Hospital"
+    ],
+    "loan_default_rate": 0.021
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.86,
+    "graduation_rate_4_year": 0.69,
+    "graduation_rate_6_year": 0.77
+  }
+}

@@ -1,0 +1,515 @@
+{
+  "_id": "pace_university",
+  "metadata": {
+    "official_name": "Pace University",
+    "location": {
+      "city": "New York",
+      "state": "NY",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Pace University is a private, comprehensive university with main campuses in lower Manhattan and Westchester County. Known for its 'Opportunitas' motto, the university blends a liberal arts education with rigorous professional preparation, offering robust experiential learning and internship opportunities driven by its proximity to Wall Street and major NYC industries. Standout programs include Business, Performing Arts, Health Professions, and Environmental Law.",
+    "market_position": "Professions-focused Private University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 266,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Pace emphasizes experiential learning, with students completing over 9,000 internships, practicums, and clinicals annually.",
+        "implication": "Students who proactively seek career development and hands-on professional experiences will thrive and benefit highly from the university's corporate connections."
+      },
+      {
+        "category": "Financial",
+        "insight": "Out-of-state students pay the same tuition as in-state residents, and 96% of students receive some form of financial aid.",
+        "implication": "Despite a high sticker price associated with NYC living, strong merit and need-based institutional aid makes Pace financially accessible for many applicants."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Pace has an overall acceptance rate of approximately 76%, indicating moderately accessible admissions for average to above-average applicants.",
+        "implication": "Pace serves as a strong target or safety school for students looking for an NYC-based college experience, though specific programs like Performing Arts and direct-entry Nursing are more competitive."
+      },
+      {
+        "category": "Culture",
+        "insight": "The dual-campus system offers two distinct environments: an ultra-urban, fast-paced setting in downtown Manhattan and a traditional, suburban campus in Pleasantville, Westchester.",
+        "implication": "Applicants must carefully consider which campus environment best fits their personal and academic lifestyle, as the social dynamics differ significantly."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and eclectic urban environment in the NYC campus heavily integrated with city life, while the Westchester campus offers a traditional suburban college experience with D-II athletics and nature access.",
+      "transportation_impact": "The university provides a shuttle service connecting the NYC and Westchester campuses. NYC students rely heavily on public transit (subways/CitiBike) to navigate their 'city as a campus'.",
+      "research_impact": "Undergraduates have access to research in specialized centers and institutes, particularly within environmental sciences, cybersecurity, and data science, often presenting at the Global Asset Management Education Forum or collaborating in the business incubators."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.7592,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.557,
+      "admits_class_size": 1850,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for most programs. SAT/ACT scores are not required but are considered if submitted. Standardized test scores may be required for specific programs like the direct-entry Nursing program.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 30030,
+        "admits_total": 22798,
+        "enrolled_total": 1850,
+        "acceptance_rate_overall": 0.7592,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.0811,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 297,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 77,
+          "waitlist_admit_rate": 0.259,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate improved significantly in 2024 compared to 2023."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 28469,
+        "admits_total": 21961,
+        "enrolled_total": 1949,
+        "acceptance_rate_overall": 0.7714,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.089,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1085,
+          "accepted_spots": 560,
+          "admitted_from_waitlist": 55,
+          "waitlist_admit_rate": 0.051,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.3,
+        "notes": "Average high school GPA for incoming freshmen generally hovers around 3.3 to 3.4 on a 4.0 scale."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1150-1310",
+        "sat_reading_middle_50": "540-630",
+        "sat_math_middle_50": "520-610",
+        "act_composite_middle_50": "25-30",
+        "submission_rate": 0.18,
+        "policy_note": "18% submitted SAT and 4% submitted ACT in recent cycles. A score of 1310+ is generally considered highly competitive."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.25,
+        "legacy_percentage": 0.02,
+        "international_percentage": 0.14,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9696,
+            "admits": 7015,
+            "acceptance_rate": 0.723
+          },
+          "women": {
+            "applicants": 20312,
+            "admits": 15771,
+            "acceptance_rate": 0.776
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.376,
+          "black_african_american": 0.0997,
+          "hispanic_latino": 0.193,
+          "asian": 0.07,
+          "native_american_alaskan": 0.00117,
+          "pacific_islander": 0.00066,
+          "two_or_more_races": 0.0358,
+          "unknown": 0.032,
+          "non_resident_alien": 0.21
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Health Professions",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking a fast-tracked, direct-entry professional healthcare path, especially in nursing or health sciences.",
+        "housing_profile": "Available across university housing properties; nursing students often cluster together due to rigorous clinical schedules.",
+        "student_archetype": "Driven, clinically-focused, and ready for hands-on patient care.",
+        "majors": [
+          {
+            "name": "Nursing (RN4)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 152",
+              "BIO 153",
+              "BIO 254",
+              "CHE 113"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires standard test scores for direct entry; passing grade of B- minimum for nursing and prerequisite science courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "ENG 110",
+                "ENG 120",
+                "ENG 201",
+                "COM 200",
+                "MAT 134",
+                "CIS 101"
+              ],
+              "electives": [],
+              "total_units": 122,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Direct entry program requires rigorous maintenance of GPA and health compliance (clinical eligibility)."
+          }
+        ]
+      },
+      {
+        "name": "Lubin School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Excellent fit for aspiring financial analysts, accountants, and marketers looking to leverage Pace's Wall Street connections.",
+        "housing_profile": "NYC campus housing is highly preferred by Lubin students for networking and internship proximity.",
+        "student_archetype": "Ambitious, networking-oriented, corporate-minded.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers access to Bloomberg terminals and the Student Managed Investment Portfolio (SMIP)."
+          }
+        ]
+      },
+      {
+        "name": "Seidenberg School of Computer Science and Information Systems",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Tech-focused students interested in AI, cybersecurity, and immediate hands-on coding experience.",
+        "housing_profile": "Integrated across standard residence halls.",
+        "student_archetype": "Innovative, problem-solving, and tech-savvy.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "BA requires completion of a minor.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MAT 131",
+                "CS 121"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 41
+            },
+            "notable_professors": [],
+            "notes": "University Core Requirements constitute 44-55 credits. B.A. pathway emphasizes interdisciplinary study."
+          }
+        ]
+      },
+      {
+        "name": "Sands College of Performing Arts",
+        "admissions_model": "Pre-Major/Audition",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive program for acting, directing, and commercial dance candidates. Functions similarly to an elite conservatory.",
+        "housing_profile": "Often cluster in downtown Manhattan halls.",
+        "student_archetype": "Highly creative, resilient, conservatory-level performers.",
+        "majors": []
+      },
+      {
+        "name": "Dyson College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in communications, psychology, or a traditional liberal arts education with a professional edge.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Broad thinkers, communicators, and researchers.",
+        "majors": []
+      },
+      {
+        "name": "School of Education",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Aspiring teachers who want classroom exposure as early as sophomore year.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Community-oriented, patient, and pedagogical.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Pace Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Requires Early Decision Agreement form."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Early Action I."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Early Action II. Also the deadline for Performing Arts applicants."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": "Regular Decision and Nursing deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One primary personal statement/essay. Some specific programs or the Pforzheimer Honors College require an additional supplemental essay or list of activities."
+      },
+      {
+        "target_program": "Sands College of Performing Arts",
+        "requirement_type": "Audition",
+        "deadline": "2024-12-01",
+        "details": "Requires auditions/portfolios. Not eligible for Early Action."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic record",
+        "Personal statement",
+        "Letters of recommendation"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Standardized test scores (if submitted)"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Pace states explicitly that they do not give special consideration for legacy during admissions, though legacy admits qualify for a specific scholarship."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Nursing candidates must apply directly to the RN4 program, as internal transfer can be highly restrictive and competitive.",
+      "Performing arts applicants must adhere to strict earlier deadlines (Dec 1) and prepare for rigorous conservatory-style auditions.",
+      "Apply Early Action to maximize chances for maximum merit scholarship funding, which is awarded on a rolling basis."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to less impacted liberal arts majors in Dyson may offer a slightly more accessible entry point, though internal transfers to Nursing and Performing Arts remain severely restricted."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for in-state and out-of-state",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 51382,
+        "total_coa": 80671,
+        "housing": 23300
+      },
+      "out_of_state": {
+        "tuition": 51382,
+        "total_coa": 80671,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 35373,
+    "average_merit_aid": 15000,
+    "percent_receiving_aid": 0.96,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$25,000",
+        "deadline": "Rolling with admission",
+        "benefits": "Renewable for four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "$15,000 - $20,000",
+        "deadline": "Rolling with admission",
+        "benefits": "Renewable for four years based on academic standing.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Legacy Scholarship",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "Rolling with admission",
+        "benefits": "Annual award for students whose parent graduated from Pace.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Sibling Award",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "Rolling with admission",
+        "benefits": "Annual award for students who currently have a sibling enrolled at Pace.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Pace Grant",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "2024-11-15",
+        "benefits": "Need-based institutional grant to bridge the gap in affordability.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 generally receive college credit.",
+      "exceptions": [
+        "AP Computer Science A requires a score of 3 or higher."
+      ],
+      "usage": "Can be used to fulfill core requirements or electives. Maximum of 30 credits from AP/IB/CLEP."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4, 5, 6, or 7 on Higher Level (HL) exams are awarded credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Pace University Transfer Credit Evaluation"
+      ],
+      "restrictions": "Maximum 68 credits transferred from a 2-year institution. Maximum 96 credits transferred from a 4-year institution. Minimum grade of C required."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid high school GPA (around a 3.3 to 3.4 unweighted) showcasing consistency.",
+      "A proactive attitude toward experiential learning and career development, aligning with the university's corporate-integrated ethos.",
+      "A personal statement that clearly articulates ambition and why a dual-campus NYC/Westchester environment appeals to the applicant."
+    ],
+    "common_activities": [
+      "Part-time employment or practical internships",
+      "Community service and civic engagement",
+      "Creative arts and performing arts involvement (for Sands applicants)"
+    ],
+    "essay_tips": [
+      "Highlight real-world aspirations and how an NYC location supports those career goals.",
+      "Demonstrate resilience and independent problem-solving skills.",
+      "If applying to the Honors College, heavily emphasize academic rigor and community leadership."
+    ],
+    "red_flags": [
+      "Declining GPA trends, particularly in core requirements for intended majors like Nursing.",
+      "Lack of clear purpose in the personal statement."
+    ],
+    "insights": [
+      "Pace's location is its biggest asset; students leverage the Manhattan campus for high-profile internships at Wall Street and Fortune 500 companies.",
+      "Food and dining costs in NYC can be a shock; many students rely on off-campus city options.",
+      "While the NYC campus provides unmatched professional networking, some students report it lacks a traditional cohesive 'college town' feel\u2014which the Westchester campus provides."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 52184,
+    "employment_rate_2yr": 0.93,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Deloitte",
+      "EY",
+      "KPMG",
+      "JPMorgan Chase",
+      "Citi",
+      "NYC Department of Education",
+      "Regeneron Pharmaceuticals"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.77,
+    "graduation_rate_4_year": 0.49,
+    "graduation_rate_6_year": 0.61
+  }
+}

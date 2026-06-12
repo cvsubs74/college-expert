@@ -1,0 +1,413 @@
+{
+  "_id": "vanderbilt_university",
+  "metadata": {
+    "official_name": "Vanderbilt University",
+    "location": {
+      "city": "Nashville",
+      "state": "Tennessee",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Vanderbilt University is an elite private R1 research university located in Nashville, Tennessee. Known for its 'work hard, play hard' culture, the university combines intense academic rigor with a collaborative environment and SEC Division I athletics.",
+    "market_position": "Elite Private / Southern Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 18,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Vanderbilt's acceptance rate has plummeted to roughly 5.1-5.8%, driven by a massive increase in yield rates.",
+        "implication": "Applicants must demonstrate exceptional academic capability and should utilize Early Decision if Vanderbilt is their top choice."
+      },
+      {
+        "category": "Financial",
+        "insight": "Opportunity Vanderbilt meets 100% of demonstrated need with no loans, guaranteeing full tuition for families earning under $150,000.",
+        "implication": "Despite a sticker price exceeding $94,000, Vanderbilt is highly affordable for low- and middle-income families."
+      },
+      {
+        "category": "Academic",
+        "insight": "Intra-University Transfers are generally accessible after freshman year, but demand for Computer Science has created capacity issues.",
+        "implication": "Students looking to study CS should ideally apply directly to that track to secure their place."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and collaborative, with a heavy emphasis on residential colleges (Ingram Commons), SEC sports, and a prominent Greek life.",
+      "transportation_impact": "Located 1.5 miles from downtown Nashville, offering immediate access to a booming healthcare and tech economy.",
+      "research_impact": "An R1 institution generating over $1 billion in annual research expenditures, with over 60% of undergraduates participating."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.0586,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.218,
+      "admits_class_size": 1630,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the Fall 2027 admissions cycle (Class of 2031).",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 5363,
+          "admits": null,
+          "acceptance_rate": 0.154,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 45409,
+        "admits_total": 2662,
+        "enrolled_total": 1630,
+        "acceptance_rate_overall": 0.0586,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.612,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for Class of 2028."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.89,
+        "notes": "35.9% of enrolled students had a perfect 4.0 GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1560",
+        "sat_reading_middle_50": "730-770",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 0.274,
+        "policy_note": "Submission rate reflects SAT (27.4%); ACT submission was 24.6%."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.18,
+        "legacy_percentage": null,
+        "international_percentage": 0.112,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.39,
+          "black_african_american": 0.092,
+          "hispanic_latino": 0.114,
+          "asian": 0.185,
+          "native_american_alaskan": 0.0039,
+          "pacific_islander": 0.0026,
+          "two_or_more_races": 0.057,
+          "unknown": 0.044,
+          "non_resident_alien": 0.112
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Science",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing traditional liberal arts, pre-med (MHS/Neuroscience), or Economics.",
+        "housing_profile": "All first-years live on The Martha Rivers Ingram Commons.",
+        "student_archetype": "Curious, collaborative, balanced.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1201 or 1301"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1010",
+                "ECON 1020",
+                "ECON 1500",
+                "ECON 3012",
+                "ECON 3022",
+                "ECON 3032"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Rupi Saggi (Economics)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for STEM-focused students; shares a common first-year curriculum.",
+        "housing_profile": "All first-years live on The Martha Rivers Ingram Commons.",
+        "student_archetype": "Analytical, rigorous, team-oriented.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1300",
+              "MATH 1301",
+              "MATH 2810"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 1101",
+                "CS 2201",
+                "CS 2212",
+                "CS 3250",
+                "CS 3251",
+                "CS 3270",
+                "CS 3281"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Jules White (Computer Science)"
+            ],
+            "notes": "Program is migrating to the newly formed College of Connected Computing starting Fall 2027."
+          }
+        ]
+      },
+      {
+        "name": "Peabody College of Education and Human Development",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students specifically focused on education, public policy, or corporate leadership.",
+        "housing_profile": "All first-years live on The Martha Rivers Ingram Commons.",
+        "student_archetype": "Pre-professional, civic-minded.",
+        "majors": []
+      },
+      {
+        "name": "Blair School of Music",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for highly skilled musicians seeking conservatory-style training within a liberal arts university.",
+        "housing_profile": "All first-years live on The Martha Rivers Ingram Commons.",
+        "student_archetype": "Dedicated performer.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application",
+      "QuestBridge Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2023-11-01",
+        "is_binding": true,
+        "notes": "Early Decision I"
+      },
+      {
+        "plan_type": "ED",
+        "date": "2024-01-01",
+        "is_binding": true,
+        "notes": "Early Decision II"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2024-01-01",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One approximately 250-word essay reflecting on the motto 'Crescere aude' (Dare to grow)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic rigor",
+        "GPA",
+        "Essays",
+        "Test scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Letters of recommendation",
+        "Character/Personal qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Vanderbilt admits directly into its four undergraduate colleges, so narrative fit for the selected college is imperative."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to the specific college where your extracurricular profile shows the strongest narrative fit.",
+      "Avoid applying to Peabody for HOD simply because it is perceived as 'easy'; it is highly demanded and competitive.",
+      "Consider applying undecided to the College of Arts & Science if lacking a heavily focused resume."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Intra-University Transfers are accessible after freshman year, but internal transfers into Computer Science are becoming capacity-constrained."
+  },
+  "financials": {
+    "tuition_model": "Same tuition for in-state and out-of-state.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67498.0,
+        "total_coa": 94142.0,
+        "housing": 14124.0
+      },
+      "out_of_state": {
+        "tuition": 67498.0,
+        "total_coa": 94142.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.65,
+    "scholarships": [
+      {
+        "name": "Ingram Scholars Program",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2023-12-01",
+        "benefits": "Full tuition plus stipends for summer projects.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Cornelius Vanderbilt Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2023-12-01",
+        "benefits": "Full tuition plus stipends for summer projects.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2023-12-01",
+        "benefits": "Full tuition plus stipends for summer projects.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Requires a 4 or 5.",
+      "exceptions": [
+        "A&S students capped at 18 total AP/IB credits."
+      ],
+      "usage": "Used for placement and elective credit; cannot fulfill AXLE core requirements in A&S."
+    },
+    "ib_policy": {
+      "general_rule": "Requires a 6 or 7 on Higher Level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "YES Transfer Credit Search"
+      ],
+      "restrictions": "Pre-matriculation dual-enrollment requires strict faculty review."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Exceptional academic rigor in high school.",
+      "Sustained leadership and community impact.",
+      "Willingness to step outside comfort zones (Dare to Grow)."
+    ],
+    "common_activities": [
+      "Greek Life (20-27%)",
+      "Undergraduate Research (61%)",
+      "Immersion Vanderbilt projects"
+    ],
+    "essay_tips": [
+      "Focus on the 'dare' aspect of the prompt; highlight a risk taken or a consequence faced.",
+      "Explicitly connect personal growth to specific Vanderbilt campus organizations."
+    ],
+    "red_flags": [
+      "Lack of demonstrated fit for the specific undergraduate college applied to.",
+      "Viewing Peabody's HOD major as a backdoor to admission."
+    ],
+    "insights": [
+      "Vanderbilt students prize the 'work hard, play hard' balance, utilizing the urban Nashville location and SEC sports atmosphere to offset intense academic pressure."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 101204,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.96,
+    "graduation_rate_4_year": 0.8876,
+    "graduation_rate_6_year": 0.9338
+  }
+}

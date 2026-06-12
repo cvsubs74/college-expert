@@ -1,0 +1,473 @@
+{
+  "_id": "chapman_university",
+  "metadata": {
+    "official_name": "Chapman University",
+    "location": {
+      "city": "Orange",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Chapman University is a mid-sized, highly-ranked private research institution known for its personalized education and tight-knit community. It blends robust liberal arts offerings with elite pre-professional programs, particularly excelling in film and business.",
+    "market_position": "Elite Private / R2 Doctoral University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 110,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "High reliance on test-optional holistic review, heavily prioritizing high school rigor and creative portfolios for specialized schools.",
+        "implication": "Applicants to flagship programs like Dodge College must rely on exceptional creative supplements rather than standard metrics."
+      },
+      {
+        "category": "Financial",
+        "insight": "High sticker price is frequently offset by substantial merit scholarships and need-based institutional grants.",
+        "implication": "Students with strong academic profiles are highly likely to receive awards such as the Presidential or Dean's scholarships, making COA competitive."
+      },
+      {
+        "category": "Culture",
+        "insight": "Suburban, Mediterranean-style campus with close proximity to LA and the beach.",
+        "implication": "Ideal for students seeking a small-town collegiate feel with immediate access to major industry hubs in Southern California."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Tight-knit community centered around 'The Orange Circle', with a prominent but non-mandatory Greek life.",
+      "transportation_impact": "Highly commutable to Los Angeles, fostering strong entertainment and business internship pipelines.",
+      "research_impact": "High research activity (R2) featuring dedicated centers like the Center for Targeted Drug Delivery."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.654,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.607,
+      "admits_class_size": 1631,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional policy in effect; less than 15% of enrolled students submit SAT/ACT scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED/EA",
+          "applications": 282,
+          "admits": 145,
+          "acceptance_rate": 0.514,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 15634,
+        "admits_total": 10230,
+        "enrolled_total": 1631,
+        "acceptance_rate_overall": 0.654,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.159,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1900,
+          "accepted_spots": 1144,
+          "admitted_from_waitlist": 523,
+          "waitlist_admit_rate": 0.4572,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist saw unusually high movement in 2024 compared to previous cycles."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 15914,
+        "admits_total": 8849,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.5561,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2847,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 208,
+          "waitlist_admit_rate": 0.073,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 15098,
+        "admits_total": 9115,
+        "enrolled_total": 1658,
+        "acceptance_rate_overall": 0.6037,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.1819,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 3191,
+          "accepted_spots": 1645,
+          "admitted_from_waitlist": 13,
+          "waitlist_admit_rate": 0.0079,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate reported divergently as 23% by secondary sources, but CDS math indicates <1%."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.78,
+        "notes": "3.78 is average unweighted GPA based on secondary analysis."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1280-1410",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "28-31",
+        "submission_rate": 0.1448,
+        "policy_note": "Test optional. English proficiency required for non-native speakers unless waived."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.05,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 5556,
+            "admits": 3191,
+            "acceptance_rate": 0.574
+          },
+          "women": {
+            "applicants": 9542,
+            "admits": 5924,
+            "acceptance_rate": 0.62
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.52,
+          "black_african_american": 0.024,
+          "hispanic_latino": 0.189,
+          "asian": 0.17,
+          "native_american_alaskan": 0.002,
+          "pacific_islander": 0.003,
+          "two_or_more_races": 0.093,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Dodge College of Film and Media Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong creative portfolios looking to immediately enter the entertainment industry.",
+        "housing_profile": "Traditional residence halls.",
+        "student_archetype": "Creative, driven, industry-focused.",
+        "majors": [
+          {
+            "name": "Film Production",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Creative supplement portfolio required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "FP 115",
+                "AVE 120",
+                "FTV 130A",
+                "FP 133",
+                "FTV 140",
+                "SW 227",
+                "CRPR 234"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer is subject to strict capacity limits and portfolio review."
+          }
+        ]
+      },
+      {
+        "name": "Argyros College of Business and Economics",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Entrepreneurial and corporate-minded students looking for strong local placements.",
+        "housing_profile": "Traditional residence halls.",
+        "student_archetype": "Driven, professional, networking-oriented.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 109",
+              "ECON 200",
+              "ECON 201",
+              "ACTG 210"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Must attain at least a 2.5 GPA in prerequisite lower-division courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "MKTG 406",
+                "FIN 410",
+                "ECON 411",
+                "MGMT 470",
+                "BUS 475"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Fowler School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in software development and engineering within a liberal arts environment.",
+        "housing_profile": "Traditional residence halls.",
+        "student_archetype": "Analytical, innovative.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 101",
+                "MATH 215",
+                "CPSC 230",
+                "CPSC 231",
+                "MATH 250",
+                "CPSC 330",
+                "CPSC 350",
+                "CPSC 351",
+                "CPSC 353",
+                "CPSC 354",
+                "CPSC 380"
+              ],
+              "electives": [
+                "CPSC 285",
+                "ENGR 300",
+                "CPSC 355"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Also Early Decision I deadline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Also Early Decision II deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Dodge College of Film and Media Arts",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Creative supplement required; acts as the primary differentiator for admission."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Application Essay",
+        "Character/Personal Qualities"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Rigor of secondary school record"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Creative supplement is the single most important factor for Dodge College applicants."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to non-impacted colleges (like Schmid or Wilkinson) if academic stats are borderline for Business or Film."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Chapman allows students to list a second alternative major. If denied from the first-choice program, applicants are reviewed for their secondary choice, providing a safety net for those applying to highly competitive majors like Film Production."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for 12-18 credits.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 64984,
+        "total_coa": 87730,
+        "housing": 17814
+      },
+      "out_of_state": {
+        "tuition": 64984,
+        "total_coa": 87730,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": 29786,
+    "percent_receiving_aid": 0.91,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$32,000 - $42,000",
+        "deadline": "",
+        "benefits": "Highest tier merit scholarship.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "$16,000 - $20,000",
+        "deadline": "",
+        "benefits": "Substantial tuition offset.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Hesperian Scholarship",
+        "type": "Merit",
+        "amount": "$10,000",
+        "deadline": "",
+        "benefits": "Base tier merit award.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants credit for scores of 4 or 5 on approved AP exams.",
+      "exceptions": [],
+      "usage": "Can fulfill GE requirements or elective credits; up to 32 max credits combined with IB/dual enrollment."
+    },
+    "ib_policy": {
+      "general_rule": "Accepted",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "TES"
+      ],
+      "restrictions": "Maximum of 70 semester credits can be transferred from community colleges. Max 24 credits post-matriculation."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High GPA with an upward trend across high school.",
+      "A standout creative portfolio (Dodge College).",
+      "Strong application essays showing character and fit."
+    ],
+    "common_activities": [
+      "Film and Media Arts Clubs",
+      "Greek Life",
+      "Business and Economics Clubs"
+    ],
+    "essay_tips": [
+      "Highlight creativity, interdisciplinary interests, and community engagement."
+    ],
+    "red_flags": [
+      "Applying to Dodge College without a highly polished creative supplement.",
+      "Downward grade trends in 11th and 12th grade."
+    ],
+    "insights": [
+      "Beautiful campus with a very close-knit, friendly community.",
+      "High tuition costs and limited dining hours are common complaints.",
+      "STEM majors report feeling underfunded compared to arts and business programs."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 73336,
+    "employment_rate_2yr": 0.889,
+    "grad_school_rate": null,
+    "top_employers": [
+      "The Walt Disney Company",
+      "Deloitte",
+      "NBCUniversal",
+      "Warner Bros. Discovery",
+      "Goldman Sachs",
+      "CBRE",
+      "Target"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.9,
+    "graduation_rate_4_year": 0.707,
+    "graduation_rate_6_year": 0.804
+  }
+}
