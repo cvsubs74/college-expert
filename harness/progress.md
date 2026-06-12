@@ -81,3 +81,10 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Reviewer (subagent) approved the diff; SHOULD-FIX applied (storage failures now 500, not 400).
 - BLOCKED on user: `gh auth login` (gh was not installed; brew-installed now, unauthenticated) → then open PRs for both branches. KB function deploys via path-based cloudbuild on merge.
 - Operational follow-up (user's call, costs Gemini quota + hours): full 179-university refresh via deep_research_cli per university + `scripts/ingest_universities.py --dir ... --year 2026 --merge-with-current` after merge+deploy. Runbook: docs/university-kb-yearly-refresh.md.
+
+## 2026-06-12 13:35 — full 2026 KB refresh executed (191/191)
+- PRs shipped: #196 (date-fix), #197 (year-versioned KB), #199 (legacy auto-archive), #200 (research_2026 snapshot). KB function auto-deployed; versioned APIs live.
+- Collection: deep_research_cli via 8-way concurrent driver, 191/191 universities, 0 failures, ~2.4h, ~100M tokens (mostly tool-use).
+- Ingest: scripts/ingest_universities.py --year 2026 --merge-with-current in waves; final pass 191 ok / 0 failed.
+- Incident caught mid-run: wave 1 (43 unis) promoted over legacy docs with no archive → 2025 snapshots backfilled (148 legacy archived from prod state, 39 from research/ sources; arizona_state/colorado_state/duquesne have no 2025 snapshot — history only via trends union). Root cause fixed server-side in #199 (auto-archive legacy doc under year-1 before takeover).
+- Verification: 191/191 serving data_year=2026; 188/191 with 2025 archive; 0 bad acceptance rates; 1 deadline-less (wichita, rolling-only, warned at ingest). QA synthetic runs during+after refresh: all scenarios pass.
