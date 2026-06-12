@@ -42,6 +42,19 @@ def _ok(json_body):
     }
 
 
+def _expected_template():
+    """Template the runner will derive for _scenario()'s profile TODAY.
+
+    The runner asserts metadata.template_used against a date-aware
+    computation (see runner._expected_template_for), so a hardcoded
+    template in the mock goes stale as the calendar advances — e.g.
+    'junior_spring' passed in May and failed in June ('junior_summer').
+    The date math itself is pinned with fixed dates in
+    TestExpectedTemplateForProfile; here we only exercise step plumbing.
+    """
+    return runner._expected_template_for(_scenario()['profile_template'])
+
+
 # Default response shapes by URL substring — the runner now makes a
 # variable number of HTTP calls per scenario (profile_build alone is one
 # call per profile_template field), so a positional canned-list approach
@@ -91,7 +104,7 @@ _URL_DEFAULTS = (
     ('roadmap', _ok({
         'success': True,
         'metadata': {
-            'template_used': 'junior_spring',
+            'template_used': _expected_template(),
             'resolution_source': 'profile',
         },
         'roadmap': {'phases': [{'id': 'p1', 'name': 'Phase 1', 'tasks': []}]},
