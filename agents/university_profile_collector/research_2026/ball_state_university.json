@@ -1,0 +1,435 @@
+{
+  "_id": "ball_state_university",
+  "metadata": {
+    "official_name": "Ball State University",
+    "location": {
+      "city": "Muncie",
+      "state": "Indiana",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Ball State University is a large public research university (R2) in Muncie, Indiana, recognized for its commitment to immersive learning, educational innovation, and social mobility. Earning a dual Carnegie Classification as a Research 2 and Opportunity College, the university balances high research activity with strong accessibility and community impact.",
+    "market_position": "Public Research University (R2)",
+    "admissions_philosophy": "Holistic but highly accessible, test-optional review process with an emphasis on core academic achievement and regional access.",
+    "us_news_rank": 204,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Ball State emphasizes 'immersive learning,' requiring students to participate in research, capstones, or community-based projects.",
+        "implication": "Students graduate with practical, hands-on experience, enhancing employability and professional readiness."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "The overall acceptance rate has climbed to 85.4%, demonstrating a highly accessible admissions model for general applicants.",
+        "implication": "While general admission is accessible, specific programs like Nursing and Architecture remain rigorous and competitive."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university offers strong regional tuition savings for Ohio and Kentucky residents, effectively providing near in-state rates.",
+        "implication": "It is a highly cost-effective option for students in the Midwest seeking a large university experience."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A vibrant 1,140-acre campus with over 400 student organizations, 31 fraternities and sororities, and NCAA Division I-FBS athletics (MAC).",
+      "transportation_impact": "Situated in a mid-sized suburban city with regional access to Indianapolis, providing a traditional, self-contained residential college experience.",
+      "research_impact": "Classified as an R2 Doctoral University with High Research Activity, offering robust undergraduate research opportunities integrated into the core curriculum."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 85.4,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 100.0,
+      "transfer_acceptance_rate": 88.5,
+      "admits_class_size": 3686,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for admission and merit scholarships. Test scores are required only for homeschooled students.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 21093,
+        "admits_total": 18034,
+        "enrolled_total": 3686,
+        "acceptance_rate_overall": 85.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 20.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed or utilized effectively in recent years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 28668,
+        "admits_total": 20500,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 71.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 22193,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 68.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.58,
+        "notes": "Average unweighted GPA reported as 3.56."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1080-1240",
+        "sat_reading_middle_50": "550-640",
+        "sat_math_middle_50": "530-620",
+        "act_composite_middle_50": "20-24",
+        "submission_rate": 37.0,
+        "policy_note": "ACT submission rate is extremely low (approx. 1%)."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 1.0,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Indiana)",
+            "percentage": 90.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 10.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7961,
+            "admits": 6705,
+            "acceptance_rate": 84.0
+          },
+          "women": {
+            "applicants": 13132,
+            "admits": 11329,
+            "acceptance_rate": 86.0
+          }
+        },
+        "racial_breakdown": {
+          "white": 72.7,
+          "black_african_american": 10.9,
+          "hispanic_latino": 8.1,
+          "asian": 1.8,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 4.8,
+          "unknown": 0.4,
+          "non_resident_alien": 1.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Sciences and Humanities",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in a liberal arts foundation, STEM fields, and social sciences with a desire to engage in undergraduate research.",
+        "housing_profile": "Standard undergraduate residence halls.",
+        "student_archetype": "Researchers and analytical thinkers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires owning a laptop that meets specific departmental specifications.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 120 Computer Science 1: Programming Fundamentals",
+                "CS 121 Computer Science 2: Data Structures and Objects",
+                "CS 222 Advanced Programming",
+                "CS 224 Design and Analysis of Algorithms",
+                "CS 230 Computer Organization and Architecture"
+              ],
+              "electives": [
+                "CS 380 Theory of Computation 1",
+                "CS 416 Computer Networks",
+                "CS 418 Database Design",
+                "CS 419 Operating Systems",
+                "CS 431 Programming Languages"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [],
+            "notes": "Offers concentrations in General Computer Science, Cybersecurity & Secure Software Design, Artificial Intelligence & Data Analytics, Game Design & Development, and Web & Mobile App Development."
+          }
+        ]
+      },
+      {
+        "name": "College of Health (School of Nursing)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Best for strong science students who are prepared to maintain a high GPA in early prerequisites.",
+        "housing_profile": "Standard undergraduate residence halls.",
+        "student_archetype": "Diligent, resilient caregivers.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANAT 201",
+              "BIO 113",
+              "CHEM 101",
+              "COMM 210",
+              "EDPS 270",
+              "NUTR 340",
+              "HSC 180",
+              "PHYS 215",
+              "PSYS 100",
+              "SOC 100"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Admission to clinicals based 30% on pre-nursing GPA in core sciences, 35% cumulative GPA, and 35% assessment scores. Must pass criminal background check.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 87
+            },
+            "notable_professors": [],
+            "notes": "Exceptionly high NCLEX-RN pass rate (94-100%). Students declare nursing fully as early as sophomore year after 30 credits."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-03-01",
+        "is_binding": false,
+        "notes": "Fall priority deadline. Applications accepted on a rolling basis until early August."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Transfer Students",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires a 500-word maximum essay."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of Secondary School Record"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)",
+        "Extracurricular Activities",
+        "State Residency"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Homeschooled students are strictly required to submit SAT/ACT scores."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to desired majors early, but understand that Nursing and Architecture have stricter internal progression requirements.",
+      "If planning to pursue Nursing, ensure extremely high performance in first-year science courses as clinical spots are heavily gated by college GPA."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Pre-nursing students should maintain a viable alternate science major track (like Biology or Public Health) due to the strict 3.0 GPA cutoff and competitive ranking for clinical spots."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for 12-18 credits, per-credit charge above 18.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11082.0,
+        "total_coa": 27442.0,
+        "housing": 12334.0
+      },
+      "out_of_state": {
+        "tuition": 29630.0,
+        "total_coa": 45990.0,
+        "supplemental_tuition": 18548.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12049.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 90.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$5,500/yr (In-State) | $16,000/yr (Out-of-State)",
+        "deadline": "Upon Admission",
+        "benefits": "Pays institutional charges for tuition, fees, and room/board.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Distinction Scholarship",
+        "type": "Merit",
+        "amount": "$12,000/yr",
+        "deadline": "Upon Admission",
+        "benefits": "For out-of-state outstanding high school seniors.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Ball State Scholars Award",
+        "type": "Merit",
+        "amount": "$4,000/yr (In-State) | $14,000/yr (Out-of-State)",
+        "deadline": "Upon Admission",
+        "benefits": "Merit funding for tuition and board.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Regional Tuition Savings",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Upon Admission",
+        "benefits": "Ohio and Kentucky residents receive tuition capped at 150% of the in-state rate.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Emens Leadership Scholarship",
+        "type": "Merit",
+        "amount": "$4,650",
+        "deadline": "Varies",
+        "benefits": "Can be combined with Presidential Scholarship to approximate full in-state tuition. Awarded to 15 incoming freshmen.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credit generally awarded for AP scores of 3 or higher.",
+      "exceptions": [
+        "AP Biology requires a 4 for BIO 111 and 5 for BIO 111 & 112",
+        "AP Calculus AB requires a 4 for MATH 165 (3 grants MATH 161)"
+      ],
+      "usage": "Can fulfill University Core Curriculum and major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded for Higher Level exams with a score of 5 or better.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Self-Service (TESS)"
+      ],
+      "restrictions": "Transfer courses require a grade of C or higher. Minimum 2.0 GPA required on previous coursework."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid high school GPA (around 3.5) with standard college prep coursework.",
+      "No strictly defined ACT/SAT requirement unless homeschooled.",
+      "Maintenance of strong academics in prerequisite courses (especially for health sciences)."
+    ],
+    "common_activities": [
+      "Division I Athletics support/fandom",
+      "Greek Life (120th in Niche for Greek Life)",
+      "Immersive learning capstone projects",
+      "Intramural sports and recreation"
+    ],
+    "essay_tips": [
+      "Highlight leadership roles, particularly if applying for the Emens Leadership Scholarship.",
+      "Showcase community involvement or an inclination towards 'Beneficence' (the school's motto)."
+    ],
+    "red_flags": [
+      "Any pending criminal charges or felonies (strictly prohibits clinical/nursing placement).",
+      "Failing core science courses in the first year (will derail competitive major placements)."
+    ],
+    "insights": [
+      "The university maintains an excellent party scene combined with highly practical academics.",
+      "Students appreciate the 'immersive learning' approach where they tackle real-world client projects."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 57619,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 77.7,
+    "graduation_rate_4_year": 51.0,
+    "graduation_rate_6_year": 63.0
+  }
+}

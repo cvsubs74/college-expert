@@ -218,7 +218,23 @@ class FirestoreDB:
 
             main_ref = self.collection.document(university_id)
             main_doc = main_ref.get()
-            current_year = (main_doc.to_dict() or {}).get('data_year') if main_doc.exists else None
+            existing = main_doc.to_dict() if main_doc.exists else None
+            current_year = (existing or {}).get('data_year')
+
+            # A legacy (pre-versioning) main doc is about to be taken over —
+            # snapshot it first so its data isn't lost. Its true vintage is
+            # unknown; year-1 is the best guess and keeps it readable.
+            if existing is not None and current_year is None:
+                legacy_year = year - 1
+                legacy_ref = self._versions(university_id).document(str(legacy_year))
+                if not legacy_ref.get().exists:
+                    legacy_snapshot = dict(existing)
+                    legacy_snapshot['data_year'] = legacy_year
+                    legacy_ref.set(legacy_snapshot)
+                    logger.info(
+                        f"Auto-archived legacy doc {university_id} as year {legacy_year}"
+                    )
+
             promoted = current_year is None or year >= current_year
 
             years = {v['year'] for v in self.list_university_versions(university_id)}

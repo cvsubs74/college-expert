@@ -1,0 +1,586 @@
+{
+  "_id": "george_washington_university",
+  "metadata": {
+    "official_name": "The George Washington University",
+    "location": {
+      "city": "Washington",
+      "state": "D.C.",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The George Washington University (GWU) is a private, federally chartered R1 research university located in the heart of Washington, D.C. [cite: 1]. Known for capitalizing on its proximity to the White House, government agencies, and international organizations, GWU offers unparalleled access to internships and career opportunities in public policy, international affairs, business, and health [cite: 2, 3]. The university maintains a selective, test-optional admissions process and attracts a highly politically active and geographically diverse student body [cite: 4, 5].",
+    "market_position": "Elite Private Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 59,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "GWU admits a significant portion of its incoming class through Early Decision rounds, boasting a 66% ED acceptance rate compared to a 47% overall acceptance rate [cite: 6, 7].",
+        "implication": "Applicants who consider GWU their top choice should strongly consider applying Early Decision to maximize their admission chances."
+      },
+      {
+        "category": "Financial",
+        "insight": "GWU historically practiced need-aware admissions, meaning financial need could impact admission for marginal applicants [cite: 8, 9]. However, the new 'Revolutionary Promise' guarantees free tuition for domestic students from families earning under $100,000 [cite: 10].",
+        "implication": "While the university meets 100% of demonstrated need for domestic students, applicants requiring significant aid may still face a slightly more competitive regular decision admissions environment, though the new policies vastly improve affordability for admitted low-income students."
+      },
+      {
+        "category": "Academic",
+        "insight": "GWU's most acclaimed programs are intrinsically tied to its location, including International Relations, Political Science, and Public Health, which boast high early-career median salaries and placement rates [cite: 11, 12].",
+        "implication": "Students targeting careers in government, NGOs, lobbying, or international affairs will find significant ROI and networking advantages."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and intensely urban. GWU has no traditional enclosed campus; rather, its buildings are integrated into the Foggy Bottom neighborhood. Greek life is active (roughly 30% participation), and students are highly engaged in over 450 clubs, particularly political and service-oriented organizations [cite: 5, 13].",
+      "transportation_impact": "Highly walkable and transit-oriented. Students have direct access to the Foggy Bottom-GWU Metro station, and tuition includes a U-Pass for unlimited Metrorail and Metrobus rides [cite: 14].",
+      "research_impact": "Classified as an R1 institution with $227 million in externally funded research [cite: 1]. Undergraduates can engage in high-level research as early as sophomore year through programs like the Harlan Undergraduate Research Fellowship [cite: 15, 16]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 47.09,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 61.87,
+      "admits_class_size": 2459,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional since 2015. GW superscores both the SAT and ACT. Test scores are required for accelerated BA/MD applicants, homeschooled students, and students from high schools that provide narrative evaluations instead of grades [cite: 4, 17].",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 1139,
+          "admits": 755,
+          "acceptance_rate": 66.28,
+          "class_fill_percentage": 30.7
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 27006,
+        "admits_total": 12718,
+        "enrolled_total": 2459,
+        "acceptance_rate_overall": 47.09,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 19.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 6517,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 1188,
+          "waitlist_admit_rate": 18.23,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admitted count is estimated based on the 18.23% admit rate applied to the offered spots [cite: 18]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 27094,
+        "admits_total": 11798,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 43.54,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 5689,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 14,
+          "waitlist_admit_rate": 0.25,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist activity was extremely low this year compared to historical norms [cite: 18]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 27266,
+        "admits_total": 13354,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 48.98,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 6187,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 163,
+          "waitlist_admit_rate": 2.63,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 26405,
+        "admits_total": 11366,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 43.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Some sources report an acceptance rate of 49.72% for the 2021 cycle depending on how early decision transfers are calculated [cite: 18, 19]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.81,
+        "notes": "GWU does not officially release the middle 50% GPA data, but external aggregators estimate the average unweighted GPA of admitted students to be around 3.81 [cite: 19, 20]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1350-1500",
+        "sat_reading_middle_50": "680-750",
+        "sat_math_middle_50": "670-750",
+        "act_composite_middle_50": "31-34",
+        "submission_rate": 37.0,
+        "policy_note": "26% of enrolled students submitted SAT scores and 11% submitted ACT scores [cite: 21]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 7.19,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 99.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9735,
+            "admits": 4432,
+            "acceptance_rate": 45.5
+          },
+          "women": {
+            "applicants": 17271,
+            "admits": 8286,
+            "acceptance_rate": 48.0
+          }
+        },
+        "racial_breakdown": {
+          "white": 55.4,
+          "black_african_american": 9.1,
+          "hispanic_latino": 14.5,
+          "asian": 15.1,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 5.7,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Columbian College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in a broad liberal arts foundation, natural sciences, or humanities. It is the largest and oldest college at GWU [cite: 22].",
+        "housing_profile": "Traditional residence halls on Foggy Bottom and Mount Vernon campuses.",
+        "student_archetype": "Generalists, researchers, and arts/humanities focused students.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 1011",
+                "ECON 1012"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly popular major with 72% of graduates seeking a Master's degree and strong placements in management consulting and accounting [cite: 23]."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering and Applied Science (SEAS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Targeted at students with a strong STEM background. High emphasis on undergraduate research opportunities, such as the SUPER program [cite: 24].",
+        "housing_profile": "Integrated residential experience across Foggy Bottom.",
+        "student_archetype": "Technically minded, research-oriented innovators.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSCI 1111",
+              "CSCI 1112",
+              "MATH 1220",
+              "MATH 1221"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 1111",
+                "CSCI 1112",
+                "CSCI 1311",
+                "CSCI 2113"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer requires a minimum GPA of 3.0 and B- or better in requisite Math and CS intro courses. Students must apply by their 5th semester [cite: 25]."
+          }
+        ]
+      },
+      {
+        "name": "Elliott School of International Affairs",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students passionate about global politics, international business, and diplomacy. Extremely popular and highly ranked [cite: 26].",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Future diplomats, policy analysts, and international NGO workers.",
+        "majors": [
+          {
+            "name": "International Affairs",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1011",
+              "ECON 1012",
+              "HIST 1011",
+              "PSC 1001",
+              "PSC 1003"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion or waiver of the first year of a modern foreign language for internal transfer [cite: 27].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "IAFF 1005",
+                "ECON 1011",
+                "ECON 1012",
+                "HIST 1011",
+                "PSC 1001"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Internal transfer requires at least 24 credits at GWU, a 3.0 GPA, and completion of four specific introductory courses [cite: 27]."
+          }
+        ]
+      },
+      {
+        "name": "Milken Institute School of Public Health",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students interested in health policy, epidemiology, and healthcare administration. It is the only public health school in D.C. [cite: 22].",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Public health advocates, future healthcare administrators, and policy makers.",
+        "majors": [
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers are subject to blackout periods in November and March/April [cite: 28].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students must earn a C- or higher in all core courses and prerequisite requirements [cite: 28]."
+          }
+        ]
+      },
+      {
+        "name": "School of Media and Public Affairs (SMPA)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Best for aspiring journalists, political communication specialists, and media analysts [cite: 21, 29].",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Journalists, campaign managers, and public relations specialists.",
+        "majors": [
+          {
+            "name": "Political Communication / Journalism",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SMPA 2110"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfer requires a Statement of Purpose, letter of recommendation, published work portfolio, and B or better in SMPA 2110 [cite: 29].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Applicants must have completed between 30 and 75 credits to apply as an internal transfer [cite: 29]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "GW Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "YYYY-11-01",
+        "is_binding": true,
+        "notes": "Early Decision 1 [cite: 30]."
+      },
+      {
+        "plan_type": "ED2",
+        "date": "YYYY-01-05",
+        "is_binding": true,
+        "notes": "Early Decision 2 [cite: 30]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-01-05",
+        "is_binding": false,
+        "notes": "Regular Decision [cite: 30]."
+      },
+      {
+        "plan_type": "BS/MD",
+        "date": "YYYY-11-15",
+        "is_binding": false,
+        "notes": "Seven-Year B.A./M.D. program deadline [cite: 30]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Seven-Year B.A./M.D.",
+        "requirement_type": "Essays",
+        "deadline": "YYYY-11-15",
+        "details": "Requires an additional essay explaining motivation for medicine and interest in GW. Selected applicants must also interview in late winter [cite: 31]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Recommendations",
+        "Talent/Ability",
+        "Extracurricular Activities",
+        "Volunteer Work",
+        "Demonstrated Interest"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "As a test-optional institution, the admissions committee heavily relies on high school transcript rigor and performance. Extracurriculars related to political science, global affairs, and community service are exceptionally valued [cite: 4, 6]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Select an alternate school/college on the application to maximize admission chances [cite: 6].",
+      "Apply Early Decision if GWU is a top choice, as the ED acceptance rate (66%) provides a substantial numerical advantage over RD [cite: 6].",
+      "Demonstrate robust interest via campus visits or virtual engagement, as GWU explicitly considers Demonstrated Interest [cite: 6]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants are encouraged to select a primary and an alternate GW school or college on their application. Internal transfers are generally permitted after completing requisite courses and maintaining a specific GPA (usually 2.5 or 3.0 depending on the school) [cite: 6, 28, 32]."
+  },
+  "financials": {
+    "tuition_model": "Flat-rate historically for continuing students, but the fixed-tuition cohort model was discontinued starting with students entering after Spring 2020 [cite: 14].",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67420.0,
+        "total_coa": 87780.0,
+        "housing": 16920.0
+      },
+      "out_of_state": {
+        "tuition": 67420.0,
+        "total_coa": 87780.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 37813.0,
+    "average_merit_aid": 27065.0,
+    "percent_receiving_aid": 67.0,
+    "scholarships": [
+      {
+        "name": "Presidential Academic Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Tuition assistance, renewable for up to 10 consecutive semesters.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Cisneros Scholars",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Includes an innovative leadership development program throughout the undergraduate career.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Stephen Joel Trachtenberg (SJT) Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Covers tuition, room, board, books, and fees for D.C. high school students.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Scottish Rite Scholarship",
+        "type": "Merit",
+        "amount": "Up to half tuition",
+        "deadline": "YYYY-02-01",
+        "benefits": "Tuition support for students with a relative affiliated with the Scottish Rite Foundation.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Revolutionary Promise",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers full tuition for domestic students from families earning under $100,000, and 50% tuition for those earning up to $150,000.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 4 or 5 on approved AP exams [cite: 33].",
+      "exceptions": [],
+      "usage": "A maximum of 24 credits combined from AP, IB, and A-Level examinations can be applied toward degree requirements [cite: 34, 35]."
+    },
+    "ib_policy": {
+      "general_rule": "Awards 6 to 8 credits for scores of 6 or 7 on Higher Level (HL) examinations only [cite: 34].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Credit Equivalency Tool"
+      ],
+      "restrictions": "Students must complete at least 60 credits of their degree at or through GWU. A grade of C- or higher is required for domestic transfer credits [cite: 36, 37]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school coursework, specifically excelling in AP/IB classes related to your intended major [cite: 6, 19].",
+      "A demonstrated passion for public service, international affairs, or leadership, often shown through Model UN, debate, or activism [cite: 38].",
+      "Clear articulation of why GWU's D.C. location is critical to your academic and professional goals [cite: 5, 13]."
+    ],
+    "common_activities": [
+      "Model UN",
+      "Student Government",
+      "Political Campaigns/Activism",
+      "Community Service",
+      "Debate/Mock Trial"
+    ],
+    "essay_tips": [
+      "Highlight how you will utilize the Washington, D.C. environment to further your education through internships or research [cite: 5].",
+      "Demonstrate civil discourse: share a time you engaged in meaningful dialogue around an important issue [cite: 6].",
+      "Showcase global perspective and a desire to make an impact on policy or community [cite: 6]."
+    ],
+    "red_flags": [
+      "Applying to highly selective programs (like SMPA) without a demonstrated portfolio or background in the field [cite: 29].",
+      "Expecting a traditional, enclosed campus environment with large green spaces, which GWU lacks [cite: 13]."
+    ],
+    "insights": [
+      "Internship culture is massive; students often work part-time on Capitol Hill or at federal agencies while taking classes [cite: 2, 3].",
+      "Greek life is popular but not overwhelmingly dominant [cite: 5].",
+      "Administrative bureaucracy, sometimes referred to by students as 'GW Gelman' or financial aid office inefficiencies, can be a frustration [cite: 21]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 95967,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 21.0,
+    "top_employers": [
+      "Deloitte",
+      "Booz Allen Hamilton",
+      "Capital One",
+      "Bloomberg",
+      "George Washington University",
+      "IBM",
+      "The World Bank"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 76.0,
+    "graduation_rate_6_year": 84.0
+  }
+}

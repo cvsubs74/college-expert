@@ -81,6 +81,31 @@ class TestSaveUniversity:
         assert main['data_year'] == 2026
         assert main['summary'] == 'data from 2026'
 
+    def test_legacy_main_doc_is_auto_archived_before_takeover(self, db):
+        """A pre-versioning doc must not be lost on the first versioned
+        ingest — it gets snapshotted under year-1 (vintage unknown)."""
+        db.collection.document('testu').set(_doc(year_marker='legacy'))
+        result = db.save_university('testu', _doc(year_marker='2026'), year=2026)
+
+        legacy = db.get_university('testu', year=2025)
+        assert legacy is not None
+        assert legacy['summary'] == 'data from legacy'
+        assert legacy['data_year'] == 2025
+        assert sorted(result['available_years']) == [2025, 2026]
+
+    def test_auto_archive_never_overwrites_existing_snapshot(self, db):
+        """If versions/{year-1} already exists (operator archived properly),
+        the legacy doc must not clobber it."""
+        db.save_university('testu', _doc(year_marker='real 2025'), year=2025)
+        # Simulate the main doc losing data_year (legacy state).
+        main_raw = db.collection.document('testu').get().to_dict()
+        main_raw.pop('data_year')
+        main_raw['summary'] = 'data from drifted legacy'
+        db.collection.document('testu').set(main_raw)
+
+        db.save_university('testu', _doc(year_marker='2026'), year=2026)
+        assert db.get_university('testu', year=2025)['summary'] == 'data from real 2025'
+
 
 class TestGetUniversity:
     def test_get_missing_returns_none(self, db):

@@ -1,0 +1,446 @@
+{
+  "_id": "dartmouth_college",
+  "metadata": {
+    "official_name": "Dartmouth College",
+    "location": {
+      "city": "Hanover",
+      "state": "New Hampshire",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-01",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Dartmouth College is a private Ivy League research university known for its rigorous liberal arts curriculum, intimate undergraduate focus, and unique D-Plan quarter system. Set in rural New Hampshire, it fosters a tight-knit community with a strong emphasis on collaborative leadership, outdoor exploration, and global engagement.",
+    "market_position": "Elite Private / Ivy League",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 12,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Dartmouth recently reported a record-low 5.3% acceptance rate, heavily favoring Early Decision applicants who fill nearly half the class.",
+        "implication": "Applicants should apply ED if Dartmouth is their top choice, but must have competitive standardized test scores as testing requirements have been reinstated."
+      },
+      {
+        "category": "Financial",
+        "insight": "Dartmouth meets 100% of demonstrated need without loans and requires zero parent contribution for families earning under $125,000.",
+        "implication": "Despite a sticker price approaching $100,000, Dartmouth is highly affordable and actively accessible for low- and middle-income students."
+      },
+      {
+        "category": "Academic",
+        "insight": "The D-Plan academic calendar requires sophomore summer enrollment but allows immense flexibility for off-cycle internships.",
+        "implication": "Students have a competitive advantage in securing highly sought-after internships during the fall or winter terms when students from other universities are taking traditional classes."
+      },
+      {
+        "category": "Culture",
+        "insight": "Campus life is heavily centered around Greek life (60% participation) and the Dartmouth Outing Club, shaped by its rural setting.",
+        "implication": "Students looking for a vibrant urban center may not be a good fit, whereas those seeking a deeply bonded, outdoor-oriented community will thrive."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, 'work hard, play hard' culture with heavy participation in Greek life and outdoor activities.",
+      "transportation_impact": "Isolated rural setting; the Appalachian trail runs through campus, making outdoor recreation highly accessible but limiting immediate urban access.",
+      "research_impact": "R1 research institution where undergraduates face minimal competition from graduate students, leading to extremely high undergraduate research participation."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.054,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.0665,
+      "admits_class_size": 1710,
+      "is_test_optional": false,
+      "test_policy_details": "Standardized testing (SAT or ACT) is mandatory for the Class of 2029 and beyond. Scores are evaluated contextually based on the applicant's high school.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 3550,
+          "admits": 606,
+          "acceptance_rate": 0.1707,
+          "class_fill_percentage": 0.49
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 31656,
+        "admits_total": 1710,
+        "enrolled_total": 1182,
+        "acceptance_rate_overall": 0.054,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.691,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2589,
+          "accepted_spots": 2189,
+          "admitted_from_waitlist": 29,
+          "waitlist_admit_rate": 0.0132,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data derived from the 2024-2025 Common Data Set."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Dartmouth does not officially report average GPA in the Common Data Set, though 95% of admits are in the top 10% of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1480-1560",
+        "sat_reading_middle_50": "710-770",
+        "sat_math_middle_50": "730-790",
+        "act_composite_middle_50": "32-35",
+        "submission_rate": null,
+        "policy_note": "Reinstated mandatory testing for Class of 2029 and beyond."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.17,
+        "legacy_percentage": 0.11,
+        "international_percentage": 0.145,
+        "geographic_breakdown": [
+          {
+            "region": "Mid-Atlantic",
+            "percentage": 0.2
+          },
+          {
+            "region": "South",
+            "percentage": 0.19
+          },
+          {
+            "region": "West",
+            "percentage": 0.19
+          },
+          {
+            "region": "New England",
+            "percentage": 0.18
+          },
+          {
+            "region": "Mid-West",
+            "percentage": 0.09
+          },
+          {
+            "region": "International",
+            "percentage": 0.15
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 15153,
+            "admits": 893,
+            "acceptance_rate": 0.058
+          },
+          "women": {
+            "applicants": 15812,
+            "admits": 795,
+            "acceptance_rate": 0.05
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.428,
+          "black_african_american": 0.0529,
+          "hispanic_latino": 0.0866,
+          "asian": 0.122,
+          "native_american_alaskan": 0.0081,
+          "pacific_islander": 0.0003,
+          "two_or_more_races": 0.0607,
+          "unknown": 0.016,
+          "non_resident_alien": 0.144
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Dartmouth College (Undergraduate)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.054,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "All undergraduate applicants apply generally to the college and declare their major in their sophomore year.",
+        "housing_profile": "Residential college system with tight-knit communities.",
+        "student_archetype": "Intellectually curious, collaborative, outdoorsy, and socially engaged.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 3",
+              "ECON 1",
+              "ECON 10"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 20",
+                "ECON 21",
+                "ECON 22"
+              ],
+              "electives": [
+                "ECON 62",
+                "ECON 64",
+                "ECON 66"
+              ],
+              "total_units": 35,
+              "major_units": 9
+            },
+            "notable_professors": [],
+            "notes": "Units represent Dartmouth's course count system (35 total courses required for graduation)."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COSC 1",
+              "COSC 10"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COSC 30",
+                "COSC 31",
+                "COSC 50",
+                "COSC 70"
+              ],
+              "electives": [],
+              "total_units": 35,
+              "major_units": 11
+            },
+            "notable_professors": [],
+            "notes": ""
+          },
+          {
+            "name": "Engineering Sciences",
+            "degree_type": "B.A./B.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 3",
+              "MATH 8",
+              "MATH 13",
+              "PHYS 13",
+              "PHYS 14",
+              "CHEM 5"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ES 61"
+            ],
+            "special_requirements": "B.E. requires an additional year (or intense scheduling) beyond the standard B.A.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGS 21",
+                "ENGS 22",
+                "ENGS 23"
+              ],
+              "electives": [],
+              "total_units": 35,
+              "major_units": 9
+            },
+            "notable_professors": [],
+            "notes": "Administered by the Thayer School of Engineering."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Organic Chemistry"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Heavy pre-med population."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Historically November 1."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-02",
+        "is_binding": false,
+        "notes": "Historically January 2."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires one 100-word response (Why Dartmouth) and two 250-word responses chosen from distinct prompt lists exploring personal identity, curiosity, and societal impact."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor",
+        "Standardized Test Scores",
+        "GPA",
+        "Extracurricular Activities",
+        "Character/Personal Qualities",
+        "Essays"
+      ],
+      "secondary_factors": [
+        "Recommendations",
+        "First-Generation Status",
+        "Geographic Origin"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Dartmouth heavily values collaborative, non-cutthroat students and gives structural advantages to rural/small-town applicants."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Select smaller, non-impacted humanities or pure sciences to stand out.",
+      "Math is noted as a smaller but highly respected department that can differentiate STEM applicants.",
+      "Avoid claiming intended majors just for admission if the application profile does not support authentic interest."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Dartmouth does not admit by major. All students are admitted undeclared and can freely choose any major during their sophomore year."
+  },
+  "financials": {
+    "tuition_model": "Flat rate per year",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 71697.0,
+        "total_coa": 98946.0,
+        "housing": 13032.0
+      },
+      "out_of_state": {
+        "tuition": 71697.0,
+        "total_coa": 98946.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 69152.0,
+    "average_merit_aid": 0.0,
+    "percent_receiving_aid": 0.47,
+    "scholarships": [
+      {
+        "name": "Dartmouth Need-Based Scholarship",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "With application",
+        "benefits": "Meets 100% of demonstrated need with $0 parent contribution for families under $125k.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "AP scores of 4 or 5 grant placement or exemption from introductory courses, but do NOT yield graduation credit.",
+      "exceptions": [],
+      "usage": "Exemption and Placement only."
+    },
+    "ib_policy": {
+      "general_rule": "High level IB scores grant placement/exemption, but no graduation credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Maximum of 17 credits can be transferred. Must be letter grade C or higher. Online courses are not accepted."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Top 10% class rank and rigorous courseload.",
+      "Authentic passion for community and collaboration.",
+      "Strong standardized test scores."
+    ],
+    "common_activities": [
+      "Dartmouth Outing Club",
+      "Greek Life",
+      "Varsity Athletics",
+      "Undergraduate Research"
+    ],
+    "essay_tips": [
+      "Showcase your authentic self, avoiding overly polished arrogance.",
+      "Highlight instances where you learned from failure or engaged with opposing viewpoints.",
+      "Demonstrate why the rural, close-knit environment fits your personality."
+    ],
+    "red_flags": [
+      "Gunner/hyper-competitive mentality.",
+      "Lack of interest in community or outdoor environments."
+    ],
+    "insights": [
+      "The D-Plan makes social life fragmented but highly dynamic, as students are frequently coming and going from campus."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 111883,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Bain & Company",
+      "McKinsey & Company",
+      "Boston Consulting Group (BCG)",
+      "Goldman Sachs",
+      "Teach For America",
+      "Microsoft"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.98,
+    "graduation_rate_4_year": 0.84,
+    "graduation_rate_6_year": 0.96
+  }
+}

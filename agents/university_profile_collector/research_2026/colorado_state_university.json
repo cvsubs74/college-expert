@@ -1,0 +1,401 @@
+{
+  "_id": "colorado_state_university",
+  "metadata": {
+    "official_name": "Colorado State University",
+    "location": {
+      "city": "Fort Collins",
+      "state": "Colorado",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Colorado State University (CSU) is a public land-grant research university known for its strong programs in veterinary medicine, engineering, agricultural sciences, and business. Designated as an R1 research institution, CSU emphasizes hands-on experiential learning, sustainability, and community engagement within a vibrant, outdoorsy setting.",
+    "market_position": "Public Flagship / Land-Grant / R1 Research University",
+    "admissions_philosophy": "Holistic Review",
+    "us_news_rank": 148,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Overall acceptance rate is high (~89%), but admission to specific colleges like Engineering, Business, and Biomedical Sciences is highly competitive and impacted.",
+        "implication": "Applicants should apply early and leverage the alternate major/Exploratory Studies strategy if targeting competitive programs."
+      },
+      {
+        "category": "Financial",
+        "insight": "CSU is highly ranked for affordability, offering strong merit aid to out-of-state students through the Green and Gold Scholarship and substantial support for first-generation students.",
+        "implication": "Out-of-state applicants with a 3.2+ GPA can secure up to $16,000 annually, making it a viable financial safety."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university is deeply rooted in sustainability and outdoor recreation, heavily influencing both social life and academic offerings.",
+        "implication": "Students interested in environmental sciences, natural resources, and outdoor lifestyles will find a strong cultural fit."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and inclusive campus culture with over 500 clubs and organizations. Fort Collins provides a highly-rated college town experience with immediate access to Rocky Mountain recreation.",
+      "transportation_impact": "The 586-acre campus is highly bicycle and pedestrian-friendly. Students receive free access to the Transfort bus system and Max Rapid Transit.",
+      "research_impact": "R1 university with significant research activity and expenditures, particularly strong in atmospheric sciences, infectious diseases, and clean energy technologies through facilities like the Energy Institute."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.886,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.6359,
+      "admits_class_size": 5429,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional. Standardized test scores are considered if submitted but are not required for admission or merit scholarships.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 38520,
+        "admits_total": 34118,
+        "enrolled_total": 5429,
+        "acceptance_rate_overall": 0.886,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.159,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed. Common Data Set (CDS) indicates CSU does not utilize a traditional waitlist for general admissions, though housing and specific competitive majors may use internal waitlists."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.69,
+        "notes": "47.9% of admitted students had a GPA of 3.75 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1060-1280",
+        "sat_reading_middle_50": "550-650",
+        "sat_math_middle_50": "530-640",
+        "act_composite_middle_50": "22-29",
+        "submission_rate": 0.43,
+        "policy_note": "43% submitted SAT scores; 15% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.25,
+        "legacy_percentage": null,
+        "international_percentage": null,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 16833,
+            "admits": 14562,
+            "acceptance_rate": 0.865
+          },
+          "women": {
+            "applicants": 21687,
+            "admits": 19556,
+            "acceptance_rate": 0.901
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.68,
+          "black_african_american": 0.0253,
+          "hispanic_latino": 0.144,
+          "asian": 0.0308,
+          "native_american_alaskan": 0.00496,
+          "pacific_islander": 0.00149,
+          "two_or_more_races": 0.0468,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students targeting corporate leadership, entrepreneurship, or finance. High GPA and early application highly recommended due to impaction.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Future executives, entrepreneurs, and analysts.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires Junior/Senior status and completion of All-University Core Curriculum to take upper-division business courses if transferring internally.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly impacted. Advisable to apply direct-admit out of high school rather than attempting an internal transfer, as internal requirements are stringent."
+          }
+        ]
+      },
+      {
+        "name": "Walter Scott, Jr. College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly quantitative students with strong high school calculus and physics foundations.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Problem solvers, technologists, and innovators.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 162",
+              "CS 163",
+              "CS 164"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly impacted major requiring strong math credentials."
+          }
+        ]
+      },
+      {
+        "name": "College of Veterinary Medicine and Biomedical Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Pre-med and pre-vet students with excellent biological science grades.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Future medical professionals and researchers.",
+        "majors": [
+          {
+            "name": "Biomedical Sciences (Anatomy & Physiology Concentration)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 111",
+              "LIFE 102"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "First-year applicants need a 3.3+ high school GPA. Internal transfers need a 3.0 cumulative CSU GPA on a minimum of 15 graded credits.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The Anatomy & Physiology concentration is strictly capped and fills quickly."
+          }
+        ]
+      },
+      {
+        "name": "College of Health and Human Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in public health, design, and construction.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Applied science and management students.",
+        "majors": [
+          {
+            "name": "Construction Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CON 101",
+              "CON 131",
+              "CON 151",
+              "CO 130",
+              "CO 150"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Must begin as a Pre-Construction Management major. Requires a 2.75 GPA in pre-CM classes and a 2.50 cumulative CSU GPA.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "All students must start in the pre-major track and earn their way in."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "CSU Online App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Early Action deadline. Recommended for impacted majors."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline. Also deadline for non-resident scholarship consideration."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-15",
+        "details": "Personal statement required."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of secondary school record"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "First-generation status"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "CSU heavily prioritizes academic rigor and GPA. Impacted majors undergo a secondary review layer where specific math/science requirements must be met."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action for impacted majors (Engineering, Business, CS) to maximize chances before capacity is reached.",
+      "List a less competitive alternate major on your application to ensure general admission to the university.",
+      "If interested in highly capped programs like Anatomy & Physiology, consider applying to broader majors like Biology or Microbiology first."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "CSU guarantees that if a student is not admitted to their competitive first-choice major, they will automatically be considered for their stated alternate major. Alternatively, students may be placed into an Exploratory Studies advising track specifically designed to help them complete internal prerequisites and transfer into the competitive major later."
+  },
+  "financials": {
+    "tuition_model": "Base tuition with differential tuition assessments for upper-level students, graduate students, and specific majors (e.g., Business, Engineering).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 13373,
+        "total_coa": 34684,
+        "housing": 16817
+      },
+      "out_of_state": {
+        "tuition": 35061,
+        "total_coa": 56372,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Significant investment in affordability, particularly for first-generation and low-income students. Large volume of merit scholarships awarded automatically based on the admission application.",
+    "average_need_based_aid": null,
+    "average_merit_aid": 11675,
+    "percent_receiving_aid": 0.78,
+    "scholarships": [
+      {
+        "name": "Green and Gold Scholarship for Nonresidents",
+        "type": "Merit",
+        "amount": "$4,000 to $16,000",
+        "deadline": "2025-01-15",
+        "benefits": "Renewable for up to four years ($64,000 total). Amount scales with GPA tiers (e.g., 4.0+ yields $16k/yr).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "First Generation Award",
+        "type": "Need",
+        "amount": "$5,000",
+        "deadline": "2025-02-01",
+        "benefits": "Renewable for up to 5 years. Recipients are also eligible for an additional $3,000 Partnership Award through the Community for Excellence.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "College credit is awarded for AP exam scores of 3 or higher.",
+      "exceptions": [],
+      "usage": "Guaranteed to transfer and apply to GT Pathways general education requirements within the state of Colorado."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) and some Standard Level (SL) examinations with qualifying scores.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Direct entry to Engineering is guaranteed for students who have completed an Associate of Engineering (AES) from a Colorado community college with a 2.0+ GPA."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid unweighted GPA (ideally 3.5+) combined with a rigorous high school transcript.",
+      "For STEM/Business majors, specific high school math and science preparation (e.g., Calculus and Physics).",
+      "Applying Early Action to secure spots in fast-filling impacted programs."
+    ],
+    "common_activities": [
+      "Outdoor recreation and environmental volunteering",
+      "Agricultural or 4-H club involvement",
+      "Student government and community service"
+    ],
+    "essay_tips": [
+      "Highlight alignment with CSU's core values: sustainability, community engagement, and inclusivity.",
+      "Explain personal challenges or first-generation status clearly, as CSU highly values diversity and resilience.",
+      "For competitive majors, demonstrate specific preparation and long-term career goals."
+    ],
+    "red_flags": [
+      "Applying late to impacted majors.",
+      "Lack of math/science rigor when applying to Engineering or Biomedical Sciences."
+    ],
+    "insights": [
+      "Internal transfers into Business and Biomedical Sciences are notoriously difficult; students are heavily advised to apply as direct admits from high school.",
+      "The administration's communication regarding housing and waitlists can sometimes frustrate students, so securing housing early is essential."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 67911,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.86,
+    "graduation_rate_4_year": 0.67,
+    "graduation_rate_6_year": 0.69
+  }
+}

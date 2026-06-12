@@ -1,0 +1,508 @@
+{
+  "_id": "emory_university",
+  "metadata": {
+    "official_name": "Emory University",
+    "location": {
+      "city": "Atlanta",
+      "state": "Georgia",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": [
+      "Emory University Common Data Set 2024-2025",
+      "Emory University Common Data Set 2023-2024",
+      "U.S. Department of Education College Scorecard",
+      "IPEDS Data 2024",
+      "Emory Career and Professional Development Outcomes"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Emory University is a highly selective, mid-sized private research university renowned for its strong liberal arts foundation intertwined with world-class professional schools and an expansive healthcare system. Operating on a unique dual-campus model, students can begin their journey at either the traditional, bustling Emory College in Atlanta or the smaller, intimately focused Oxford College, before converging in Atlanta to complete their degrees. Emory is highly regarded for its pre-medical, nursing, and business programs, fueled by its proximity to and partnerships with the CDC and Emory Healthcare.",
+    "market_position": "Elite Private / Southern Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 24,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Emory is utilizing Early Decision (I and II) to fill upwards of 50-60% of its incoming class.",
+        "implication": "Applicants treating Emory as a backup in Regular Decision are at a severe statistical disadvantage. True demonstrated commitment through ED is the most powerful admissions lever."
+      },
+      {
+        "category": "Financial",
+        "insight": "The introduction of the 'Emory Advantage Plus' program guarantees free tuition for domestic students from families earning $200,000 or less.",
+        "implication": "Emory is aggressively positioning itself to attract top-tier middle- and upper-middle-class talent that might otherwise be deterred by elite private university sticker prices, significantly increasing application volume."
+      },
+      {
+        "category": "Academic",
+        "insight": "The dual-campus entry system (Emory College and Oxford College) provides a strategic 'backdoor' or alternative pathway.",
+        "implication": "Students willing to spend their first two years in a smaller, rural, liberal-arts environment at Oxford College face a slightly more favorable acceptance rate while ultimately earning the exact same Emory University degree."
+      },
+      {
+        "category": "Culture",
+        "insight": "Emory heavily prioritizes pre-professional outcomes, particularly in health and business, but roots its curriculum in a mandatory liberal arts core.",
+        "implication": "Applicants must demonstrate intellectual curiosity across disciplines, not just a narrow pre-professional focus. A purely STEM-focused applicant without humanities interests may not align with Emory's institutional values."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The social environment is vibrant, driven, and distinctly pre-professional. With roughly 30% participating in Greek life, it plays a role but does not dominate. The student body is described as collaborative rather than cutthroat, highly diverse, and engaged in hundreds of clubs ranging from service-oriented groups like Volunteer Emory to pre-health organizations. The campus boasts a 'Southern California' aesthetic with modern buildings and white marble, fostering an active, well-groomed, and friendly atmosphere.",
+      "transportation_impact": "Located in the Druid Hills neighborhood, about 15 minutes from downtown Atlanta, the campus offers a suburban oasis within a major metropolitan area. While the campus itself is highly walkable and features expansive green spaces like Lullwater Park, accessing the broader Atlanta city life, internships, and entertainment typically requires a car or reliance on university shuttles and rideshares, as public transit right to the campus gates is limited.",
+      "research_impact": "Research is a cornerstone of the Emory experience, heavily influenced by the immediate adjacency of the U.S. Centers for Disease Control and Prevention (CDC) and Emory Healthcare. Undergraduates have exceptional access to R1-level research via programs like the Summer Undergraduate Research Experience (SURE) and the Scholarly Inquiry and Research Experience (SIRE), particularly in biomedical sciences, public health, and quantitative sciences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.1029,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.162,
+      "admits_class_size": 1438,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional for applicants through the Fall 2026 entry cycle. If submitted, scores are superscored and used as one component of the holistic review to assess academic preparation. Students not submitting scores will not be penalized.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 4193,
+          "admits": 974,
+          "acceptance_rate": 0.232,
+          "class_fill_percentage": 0.55
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 34614,
+        "admits_total": 3562,
+        "enrolled_total": 1438,
+        "acceptance_rate_overall": 0.1029,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.403,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 6098,
+          "accepted_spots": 3355,
+          "admitted_from_waitlist": 109,
+          "waitlist_admit_rate": 0.0325,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data specific to Emory College. Oxford College statistics are calculated separately but students frequently apply to both."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 33255,
+        "admits_total": 3543,
+        "enrolled_total": 1426,
+        "acceptance_rate_overall": 0.1065,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.402,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 5875,
+          "accepted_spots": 3372,
+          "admitted_from_waitlist": 123,
+          "waitlist_admit_rate": 0.0365,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 33179,
+        "admits_total": 3767,
+        "enrolled_total": 1400,
+        "acceptance_rate_overall": 0.1135,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.371,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 6448,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.0165,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.84,
+        "notes": "17.4% of admitted students had a perfect 4.0 GPA. 58.4% had a GPA between 3.75 and 3.99."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1480-1540",
+        "sat_reading_middle_50": "720-760",
+        "sat_math_middle_50": "750-790",
+        "act_composite_middle_50": "32-35",
+        "submission_rate": 0.63,
+        "policy_note": "43% submitted SAT scores; 20% submitted ACT scores. Test-optional through Fall 2026."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.12,
+        "legacy_percentage": null,
+        "international_percentage": 0.166,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 13792,
+            "admits": 1558,
+            "acceptance_rate": 0.113
+          },
+          "women": {
+            "applicants": 20814,
+            "admits": 2004,
+            "acceptance_rate": 0.096
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.326,
+          "black_african_american": 0.142,
+          "hispanic_latino": 0.0953,
+          "asian": 0.189,
+          "native_american_alaskan": 0.0008,
+          "pacific_islander": 0.0006,
+          "two_or_more_races": 0.0376,
+          "unknown": 0.056,
+          "non_resident_alien": 0.166
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Emory College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.103,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a traditional 4-year undergraduate experience at a major research university in a bustling urban environment. Best for those deeply interested in rigorous pre-med, quantitative sciences, or liberal arts integration.",
+        "housing_profile": "First-year and sophomore students are required to live on campus in Atlanta, forming close-knit residential communities before frequently moving to nearby off-campus apartments or the Clairmont campus.",
+        "student_archetype": "Driven, pre-professional overachiever with a strong service ethos and intellectual curiosity.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 170",
+              "CS 171",
+              "Math 111",
+              "Math 112",
+              "Math 221"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 170",
+                "CS 171",
+                "CS 224",
+                "CS 253",
+                "CS 255",
+                "CS 326",
+                "CS 350"
+              ],
+              "electives": [
+                "CS 325",
+                "CS 329",
+                "CS 334",
+                "CS 377"
+              ],
+              "total_units": 120,
+              "major_units": 56
+            },
+            "notable_professors": [
+              "Yana Bromberg (Computational Biology)",
+              "Carl Yang (Data Mining and Deep Learning)",
+              "Eugene Agichtein (Information Retrieval and Search)",
+              "Joyce Ho (Healthcare Informatics)",
+              "Liang Zhao (Data Mining)"
+            ],
+            "notes": "Emory's CS program is rapidly expanding, with deep integration into bio-health informatics, AI, and economics."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular and rigorous pre-med tracks at Emory, heavily integrated with research at the CDC and Emory Healthcare."
+          }
+        ]
+      },
+      {
+        "name": "Oxford College",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.13,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking an intimate, liberal-arts college feel with small class sizes and closer faculty interaction for their first two years, before transitioning to the larger Atlanta campus.",
+        "housing_profile": "A highly insular, close-knit residential campus located 38 miles east of Atlanta. Students live in dorms for two years before moving to the main campus.",
+        "student_archetype": "Community-focused, liberal-arts inclined student who thrives in small, discussion-based settings.",
+        "majors": []
+      },
+      {
+        "name": "Goizueta Business School",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 0.93,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Targeted at highly driven aspiring consultants, investment bankers, and marketers who want direct access to Fortune 500 networks in Atlanta.",
+        "housing_profile": "Students typically live on the main Atlanta campus or nearby apartments.",
+        "student_archetype": "Ambitious, networking-oriented pre-professional.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": "93%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 101"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students must complete pre-requisites at Emory College or Oxford College before applying for internal transfer during their sophomore year.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Transfer students from outside Emory are rarely accepted directly into Goizueta (only about 20 per year); standard path is through Emory College or Oxford."
+          }
+        ]
+      },
+      {
+        "name": "Nell Hodgson Woodruff School of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students fully committed to a clinical nursing career, leveraging one of the highest-ranked undergraduate nursing programs in the country.",
+        "housing_profile": "Students reside on or near the Atlanta campus.",
+        "student_archetype": "Compassionate, clinical-focused future healthcare professional.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.4,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Automatic acceptance into the nursing school for the third year provided all pre-requisite courses are completed with satisfactory performance.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students spend their first two years in Emory College or Oxford College completing liberal arts and science prerequisites before matriculating to the nursing school."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "QuestBridge"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Early Decision 1"
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2026-01-01",
+        "is_binding": true,
+        "notes": "Early Decision 2"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-01",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "At time of application",
+        "details": "1. What academic areas are you interested in exploring at Emory University and why? (200 words). 2. Choose one of four options (150 words): a) Creative work that seems made for you; b) Experience intentionally expanding cultural awareness; c) Community you helped shape; d) How you might personally contribute to Emory's mission of service to humanity."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Application Essays"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores",
+        "Extracurricular Activities",
+        "Recommendations",
+        "Character/Personal Qualities",
+        "First generation status"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Emory heavily scrutinizes transcripts for context. They look for students who take the hardest courses available at their specific high school. Essays must reflect genuine intellectual curiosity rather than prestige-seeking; 'Why Emory' essays that sound like consultant-generated templates are red flags."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Do not attempt to 'game' the major selection process. Emory does not admit by major; all students are admitted generally to the College of Arts and Sciences or Oxford College. Claiming a less popular major provides no statistical advantage.",
+      "Align your selected major strictly with your demonstrated extracurriculars. Because Emory values authenticity, declaring an obscure major that has zero alignment with your transcript or activities will be seen as an immediate red flag.",
+      "If interested in business or nursing, note that you cannot apply to those schools directly from high school. You must apply to Emory College or Oxford College first."
+    ],
+    "college_ranking_tactics": [
+      "Apply to both Emory College and Oxford College on the same application. Checking both boxes costs nothing extra and gives you two distinct chances for admission. Students rejected from Emory College are frequently admitted to Oxford College."
+    ],
+    "alternate_major_strategy": "Because Emory admits all incoming first-year students as undeclared to the broader liberal arts college, an alternate major strategy is neither required nor effective. Major selection occurs naturally during the sophomore year."
+  },
+  "financials": {
+    "tuition_model": "Flat rate tuition for full-time enrollment.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 63400.0,
+        "total_coa": 88414.0,
+        "housing": 11810.0
+      },
+      "out_of_state": {
+        "tuition": 63400.0,
+        "total_coa": 88414.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 51937.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.52,
+    "scholarships": [
+      {
+        "name": "Emory Advantage Plus",
+        "type": "Need",
+        "amount": "$63,400",
+        "deadline": "Regular aid deadlines",
+        "benefits": "Covers 100% of tuition costs without need-based loans.",
+        "application_method": "Automatic for domestic students from families earning $200,000 or less (with typical assets) who file the FAFSA and CSS Profile."
+      },
+      {
+        "name": "Emory Scholars Program (Woodruff Scholars)",
+        "type": "Merit",
+        "amount": "Full ride",
+        "deadline": "November 1",
+        "benefits": "Covers full tuition, room, and board, plus specific cohort programming, priority registration, and faculty mentorship.",
+        "application_method": "Separate application required by November 1, regardless of admission plan (ED or RD)."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Awards 3 semester hours of credit for acceptable AP scores (typically 4 or 5). Maximum of 12 credit hours total can be accrued from AP and IB exams combined.",
+      "exceptions": [
+        "AP scores cannot be used to fulfill General Education Requirements (GER), except for First-Year Writing and one Intercultural Communication course.",
+        "Where two exams are offered in one field (e.g., English Literature and English Language), credit is only awarded for one."
+      ],
+      "usage": "Can be used to place into more advanced courses, serve as prerequisites, and accrue up to 12 total elective credit hours."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for scores of 5, 6, or 7 on Higher Level (HL) exams only. Standard Level (SL) exams are not accepted.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Internal credit evaluation portal post-admission"
+      ],
+      "restrictions": "Transfer students may only transfer up to 62 semester hours. At least 28 credit hours must be completed or in progress before applying. AP/IB credits do not count toward the 28 minimum requirement for transfer eligibility."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Extraordinary transcript rigor: Emory evaluates applicants in the context of their high schools. If your school offers 20 APs and you took 6, it may hurt you; if it offers 5 and you took 4, it shows immense initiative.",
+      "A deeply authentic narrative: Admissions officers actively look for intellectual fit and distinct voices. They easily spot and reject highly polished, consultant-crafted templates.",
+      "Commitment: Applying Early Decision (I or II) is statistically crucial. With 50% to 60% of the class filled via ED, the Regular Decision round operates at a single-digit acceptance rate."
+    ],
+    "common_activities": [
+      "Significant hospital or clinical shadowing (pre-med archetype)",
+      "High-level research internships, often resulting in co-authored papers",
+      "Meaningful community service initiatives demonstrating 'service to humanity'",
+      "Debate, Model UN, or other intensive intellectual competitions",
+      "Business and DECA leadership roles"
+    ],
+    "essay_tips": [
+      "In the 'Why Emory' (academic interests) essay, name specific higher-level courses (300/400 level) and professors to prove deep, unmanufactured research into the university.",
+      "For the short 150-word prompts, skip the introduction and get straight to the story. A hyper-focused micro-narrative is much more effective than broad, sweeping philosophical statements.",
+      "Connect your extracurriculars to Emory's core values, specifically its mission regarding 'service to humanity'."
+    ],
+    "red_flags": [
+      "Inconsistencies across the application (e.g., essays claim deep passion for biology, but transcript shows no advanced science classes and no related extracurriculars).",
+      "Arrogant or generic prestige-seeking tone in essays; treating Emory as an Ivy League 'backup' instead of demonstrating specific institutional fit.",
+      "Unexplained dips in grades (C's or F's) without an addendum or counselor context explaining a valid hardship."
+    ],
+    "insights": [
+      "Oxford College is not just a campus; it is the ultimate backdoor strategy for Emory. Many applicants dismiss it due to its rural location, but it grants the exact same degree with smaller introductory class sizes and a friendlier admit rate.",
+      "Emory's grade inflation is perceived to be present in certain humanities departments, but STEM weed-out courses (especially intro bio and chemistry) are notoriously difficult.",
+      "The pre-med culture is dominant. While collaborative, the sheer volume of students pursuing pre-health tracks makes securing local clinical placements highly competitive."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 90139,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 0.41,
+    "top_employers": [
+      "Emory Healthcare",
+      "National Institutes of Health (NIH)",
+      "Deloitte",
+      "Amazon",
+      "Capital One",
+      "McKinsey & Company",
+      "Teach for America"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.96,
+    "graduation_rate_4_year": 0.82,
+    "graduation_rate_6_year": 0.911
+  }
+}
