@@ -34,6 +34,7 @@ from fit_analysis import (
     save_fit_analysis,
     get_fit_analysis,
     get_all_fits,
+    get_fit_history,
     delete_fit_analysis
 )
 from credits import (
@@ -63,7 +64,7 @@ from essay_copilot import (
     generate_essay_outline
 )
 from fit_computation import calculate_fit_for_college
-from fit_staleness import get_kb_updates
+from fit_staleness import get_kb_updates, mark_suppressed
 from email_service import send_signup_welcome_email
 
 # Configure logging
@@ -450,6 +451,12 @@ def profile_manager_v2_http_entry(request):
             fits = get_all_fits(user_email)
             kb_updates = get_kb_updates(fits)
 
+            # Application-clock guardrail (design §3f, #206): colleges the
+            # student has already applied to (or heard back from) get no
+            # refresh nudges — re-litigating a submitted list helps no one.
+            # Their staleness still surfaces passively via the vintage chip.
+            mark_suppressed(kb_updates, get_college_list(user_email))
+
             return add_cors_headers({
                 'success': True,
                 # Existing profile-driven signal (what the frontend reads
@@ -462,6 +469,25 @@ def profile_manager_v2_http_entry(request):
                 # New KB-driven signal (design §2, #204): one entry per
                 # saved fit whose KB inputs are stale.
                 'kb_updates': kb_updates,
+            })
+
+        # --- FIT HISTORY (archived prior-cycle analyses, design §3d) ---
+        elif resource_type == 'get-fit-history' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+                university_id = data.get('university_id')
+            else:
+                user_email = request.args.get('user_email')
+                university_id = request.args.get('university_id')
+
+            if not user_email or not university_id:
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+
+            return add_cors_headers({
+                'success': True,
+                'university_id': university_id,
+                'history': get_fit_history(user_email, university_id),
             })
 
         # --- COMPUTE SINGLE FIT ---

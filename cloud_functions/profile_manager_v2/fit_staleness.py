@@ -219,6 +219,28 @@ def classify_kb_changes(fit_doc: Dict, university_data: Dict) -> Optional[Dict]:
     return entry
 
 
+# College-list statuses that mean the application clock has run out for
+# nudging purposes (design §3f) — the student applied or has a decision.
+SETTLED_STATUSES = ('applied', 'accepted', 'rejected')
+
+
+def mark_suppressed(kb_updates: List[Dict], college_list: List[Dict]) -> List[Dict]:
+    """Flag kb_updates for colleges the student already applied to.
+
+    Suppressed entries still carry their staleness data (the vintage chip
+    renders from it) — the flag only gates banners/nudges. Mutates and
+    returns kb_updates.
+    """
+    settled = {
+        item.get('university_id')
+        for item in (college_list or [])
+        if item.get('status') in SETTLED_STATUSES
+    }
+    for update in kb_updates:
+        update['nudge_suppressed'] = update.get('university_id') in settled
+    return kb_updates
+
+
 def _batch_fetch_universities(university_ids: List[str]) -> Dict[str, Dict]:
     """One KB batch call → {university_id: university_doc}."""
     if not university_ids:
