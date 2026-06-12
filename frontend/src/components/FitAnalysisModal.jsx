@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     XMarkIcon,
     PrinterIcon,
@@ -17,9 +17,34 @@ import {
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useNavigate } from 'react-router-dom';
+import FitVintageChip from './FitVintageChip';
+import { cycleLabel } from '../utils/kbVintage';
+import { getFitHistory } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 
-const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCategory }) => {
+const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCategory, kbUpdate, userEmail, universityId }) => {
     const navigate = useNavigate();
+    const { currentUser } = useAuth();
+
+    // Self-sufficient identity: callers don't need new props for the
+    // history section to work — the fit doc carries its university_id.
+    const email = userEmail || currentUser?.email;
+    const uid = universityId || fitAnalysis?.university_id;
+
+    // Archived prior-cycle analyses (design §3d) — lazy-loaded on open.
+    const [fitHistory, setFitHistory] = useState([]);
+    const [showHistory, setShowHistory] = useState(false);
+    useEffect(() => {
+        let cancelled = false;
+        setFitHistory([]);
+        setShowHistory(false);
+        if (isOpen && email && uid) {
+            getFitHistory(email, uid).then((history) => {
+                if (!cancelled) setFitHistory(history || []);
+            });
+        }
+        return () => { cancelled = true; };
+    }, [isOpen, email, uid]);
 
     if (!isOpen) return null;
 
@@ -113,6 +138,7 @@ const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCatego
                         <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
                             <span className="text-3xl">✨</span>
                             Fit Analysis Report
+                            <FitVintageChip fit={fitAnalysis} kbUpdate={kbUpdate} />
                         </h2>
                         <p className="text-gray-500 mt-1">Strategic insights for <span className="font-semibold text-gray-800">{uniName}</span></p>
                     </div>
@@ -419,6 +445,53 @@ const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCatego
                                     </div>
                                 ))}
                             </div>
+                        </div>
+                    )}
+
+                    {/* 9. Previous cycle analyses (design §3d) — nothing the
+                        student saw is ever destroyed; show the delta plainly. */}
+                    {fitHistory.length > 0 && (
+                        <div className="border border-gray-200 rounded-xl p-5" data-testid="fit-history-section">
+                            <button
+                                onClick={() => setShowHistory((s) => !s)}
+                                className="w-full flex items-center justify-between text-left"
+                            >
+                                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                                    🗓️ Previous analyses
+                                    <span className="text-sm font-normal text-gray-500">
+                                        ({fitHistory.length})
+                                    </span>
+                                </h3>
+                                <span className="text-sm text-[#1A4D2E] font-medium">
+                                    {showHistory ? 'Hide' : 'View'}
+                                </span>
+                            </button>
+                            {showHistory && (
+                                <div className="mt-4 space-y-3">
+                                    {fitHistory.map((h) => {
+                                        const label = cycleLabel(h.kb_data_year) ||
+                                            (h.history_key === 'pre-versioning' ? 'Before data versioning' : h.history_key);
+                                        const changed = h.fit_category && fitAnalysis.fit_category &&
+                                            h.fit_category !== fitAnalysis.fit_category;
+                                        return (
+                                            <div key={h.history_key} className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                                                <div className="flex items-center justify-between">
+                                                    <span className="text-sm font-semibold text-gray-700">{label}</span>
+                                                    <span className="text-sm text-gray-600">
+                                                        {h.fit_category} · {h.match_percentage ?? h.match_score ?? '—'}% match
+                                                    </span>
+                                                </div>
+                                                {changed && (
+                                                    <p className="text-xs text-gray-500 mt-1">
+                                                        This cycle: {h.fit_category} → {fitAnalysis.fit_category} — university
+                                                        data changed, not your profile.
+                                                    </p>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
                         </div>
                     )}
 

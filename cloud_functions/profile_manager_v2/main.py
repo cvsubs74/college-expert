@@ -455,7 +455,9 @@ def profile_manager_v2_http_entry(request):
             # student has already applied to (or heard back from) get no
             # refresh nudges — re-litigating a submitted list helps no one.
             # Their staleness still surfaces passively via the vintage chip.
-            mark_suppressed(kb_updates, get_college_list(user_email))
+            # Raw db list (not the KB-enriched get_college_list) — this route
+            # is on every page load and only needs the status field.
+            mark_suppressed(kb_updates, get_db().get_college_list(user_email))
 
             return add_cors_headers({
                 'success': True,

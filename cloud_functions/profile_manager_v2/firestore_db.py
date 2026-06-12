@@ -384,7 +384,13 @@ class FirestoreDB:
                 data = doc.to_dict() or {}
                 data['history_key'] = doc.id
                 entries.append(data)
-            entries.sort(key=lambda e: str(e.get('history_key')), reverse=True)
+            # Newest year first; non-numeric keys ('pre-versioning') are the
+            # oldest data and sink to the end.
+            entries.sort(
+                key=lambda e: (str(e.get('history_key')).isdigit(),
+                               str(e.get('history_key'))),
+                reverse=True,
+            )
             return entries
         except Exception as e:
             logger.error(f"[Firestore] Error reading fit history: {e}")

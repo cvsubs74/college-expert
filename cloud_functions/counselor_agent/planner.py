@@ -992,9 +992,13 @@ def generate_personalized_tasks(user_email):
         
         # Sort by due_date
         tasks.sort(key=lambda x: x.get('due_date', '9999-99-99'))
-        
+
+        # When a KB refresh moved a deadline, show the move on the task
+        # instead of silently swapping the date (design §3f, #206).
+        annotate_deadline_changes(tasks, _fetch_saved_tasks(user_email))
+
         logger.info(f"[PLANNER] Generated {len(tasks)} personalized tasks for {user_email}")
-        
+
         return {
             'success': True,
             'tasks': tasks,
@@ -1004,6 +1008,48 @@ def generate_personalized_tasks(user_email):
     except Exception as e:
         logger.error(f"Error generating personalized tasks: {e}")
         return {'success': False, 'error': str(e)}
+
+
+def _fetch_saved_tasks(user_email):
+    """The user's currently saved roadmap tasks (empty list on any failure)."""
+    import requests
+    import os
+
+    PROFILE_MANAGER_URL = os.getenv('PROFILE_MANAGER_URL', 'http://localhost:8080')
+    try:
+        resp = requests.get(
+            f"{PROFILE_MANAGER_URL}/get-roadmap-tasks",
+            params={'user_email': user_email},
+            timeout=10,
+        )
+        if resp.status_code == 200:
+            return resp.json().get('tasks', []) or []
+    except Exception as e:
+        logger.warning(f"[PLANNER] Could not fetch saved tasks for diffing: {e}")
+    return []
+
+
+def annotate_deadline_changes(tasks, saved_tasks):
+    """Mark regenerated tasks whose due date moved since the last save.
+
+    Yearly KB refreshes can move application deadlines; the roadmap must
+    show 'deadline updated Nov 1 → Oct 15' on the task rather than
+    silently swapping the date (design §3f). task_ids are deterministic
+    per university + plan type, so the diff is a direct lookup. Mutates
+    and returns `tasks`.
+    """
+    old_dates = {
+        t.get('task_id'): t.get('due_date')
+        for t in (saved_tasks or [])
+        if t.get('task_id') and t.get('due_date')
+    }
+    for task in tasks:
+        old = old_dates.get(task.get('task_id'))
+        new = task.get('due_date')
+        if old and new and old != new:
+            task['previous_due_date'] = old
+            task['deadline_change_note'] = f"Deadline updated: {old} → {new}"
+    return tasks
 
 
 def save_personalized_tasks(user_email, tasks):

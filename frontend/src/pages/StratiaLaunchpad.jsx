@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit, checkFitRecomputationNeeded } from '../services/api';
+import KbRefreshBanner from '../components/KbRefreshBanner';
+import KbRefreshReviewModal from '../components/KbRefreshReviewModal';
+import { kbUpdateFor } from '../utils/kbVintage';
 import {
     BackgroundBlobs,
     HeroSection,
@@ -45,6 +48,9 @@ const StratiaLaunchpad = () => {
     const [error, setError] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState('ALL');
     const [searchQuery, setSearchQuery] = useState('');
+    // KB-staleness entries (design §2) — refresh banner + vintage chips
+    const [kbUpdates, setKbUpdates] = useState([]);
+    const [kbReviewOpen, setKbReviewOpen] = useState(false);
 
     // Modal states
     const [fitModalCollege, setFitModalCollege] = useState(null);
@@ -74,11 +80,13 @@ const StratiaLaunchpad = () => {
 
         setLoading(true);
         try {
-            // Fetch both college list and precomputed fits in parallel
-            const [listResponse, fitsResult] = await Promise.all([
+            // Fetch college list, precomputed fits, and KB-staleness in parallel
+            const [listResponse, fitsResult, recomputeStatus] = await Promise.all([
                 fetch(`${import.meta.env.VITE_PROFILE_MANAGER_V2_URL}/get-college-list?user_email=${encodeURIComponent(currentUser.email)}`),
-                getPrecomputedFits(currentUser.email, {}, 200)
+                getPrecomputedFits(currentUser.email, {}, 200),
+                checkFitRecomputationNeeded(currentUser.email)
             ]);
+            setKbUpdates(recomputeStatus.kb_updates || []);
 
             const listData = await listResponse.json();
             console.log('[StratiaLaunchpad] College list result:', listData);
@@ -109,7 +117,10 @@ const StratiaLaunchpad = () => {
                             test_strategy: fit.test_strategy || {},
                             major_strategy: fit.major_strategy || {},
                             infographic_url: fit.infographic_url,
-                            logo_url: fit.logo_url
+                            logo_url: fit.logo_url,
+                            // KB provenance (design §1) — drives vintage chips
+                            kb_data_year: fit.kb_data_year,
+                            university_id: fit.university_id
                         };
                     });
 
@@ -220,6 +231,22 @@ const StratiaLaunchpad = () => {
 
         return colleges;
     }, [collegeList, categorizedColleges, selectedCategory, searchQuery]);
+
+    // Recompute one fit from the KB-refresh review modal (design §3b/c).
+    // The replaced analysis is archived server-side before overwrite.
+    const handleKbUpdateFit = async (universityId) => {
+        const result = await computeSingleFit(currentUser.email, universityId);
+        if (!result?.success) {
+            throw new Error(result?.error || 'Fit update failed');
+        }
+        const fresh = result.fit_analysis || {};
+        setCollegeList(prev => prev.map(college =>
+            college.university_id === universityId
+                ? { ...college, fit_analysis: { ...college.fit_analysis, ...fresh, match_score: fresh.match_percentage ?? college.fit_analysis?.match_score } }
+                : college
+        ));
+        setKbUpdates(prev => prev.filter(u => u.university_id !== universityId));
+    };
 
     // Handlers
     const handleViewAnalysis = (college) => {
@@ -579,6 +606,18 @@ const StratiaLaunchpad = () => {
                 onFindSchools={() => handleOpenDiscovery('SAFETY')}
             />
 
+            {/* Yearly KB refresh moment (design §3a) */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                <KbRefreshBanner kbUpdates={kbUpdates} onReview={() => setKbReviewOpen(true)} />
+            </div>
+            <KbRefreshReviewModal
+                isOpen={kbReviewOpen}
+                onClose={() => setKbReviewOpen(false)}
+                kbUpdates={kbUpdates}
+                onUpdateFit={handleKbUpdateFit}
+                onAllUpdated={() => setKbReviewOpen(false)}
+            />
+
             {/* Main Content */}
             <section className="py-6">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -705,7 +744,10 @@ const StratiaLaunchpad = () => {
                                             selected_major: college.selected_major,
                                             available_majors: college.available_majors || [],
                                             // Application status
-                                            application_status: college.application_status || null
+                                            application_status: college.application_status || null,
+                                            // KB vintage (design §3e)
+                                            kb_data_year: college.fit_analysis?.kb_data_year,
+                                            kb_update: kbUpdateFor(kbUpdates, college.university_id)
                                         }}
                                         onViewAnalysis={handleViewAnalysis}
                                         onOpenChat={handleOpenChat}

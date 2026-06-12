@@ -40,6 +40,10 @@ import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { useToast } from '../components/Toast';
 import FitAnalysisModal from '../components/FitAnalysisModal';
+import FitVintageChip from '../components/FitVintageChip';
+import KbRefreshBanner from '../components/KbRefreshBanner';
+import KbRefreshReviewModal from '../components/KbRefreshReviewModal';
+import { kbUpdateFor } from '../utils/kbVintage';
 import UniversityProfilePage from '../components/UniversityProfilePage';
 import {
     TabOverview, TabAcademics, TabAdmissions,
@@ -209,7 +213,7 @@ const transformUniversityData = (apiData) => {
 };
 
 // --- University Card Component ---
-const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat, isFreeTier }) => {
+const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat, isFreeTier, kbUpdate }) => {
     // Fit category ribbon styling
     const fitConfig = {
         SAFETY: { gradient: 'from-[#1A4D2E] to-[#2D6B45]', label: 'Safety', icon: '🛡️' },
@@ -314,6 +318,8 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
 
                 {/* Stats Row */}
                 <div className="flex flex-wrap gap-2 mb-3">
+                    {/* Fit vintage — which cycle's data the saved fit was computed on */}
+                    {fitAnalysis && <FitVintageChip fit={fitAnalysis} kbUpdate={kbUpdate} />}
                     <div className="flex items-center gap-1.5 bg-[#D6E8D5] px-3 py-1.5 rounded-lg">
                         <ChartBarIcon className="h-4 w-4 text-[#1A4D2E]" />
                         <span className="text-xs font-medium text-[#1A4D2E]">
@@ -781,6 +787,13 @@ const UniversityExplorer = () => {
     // Pre-computed fits for ALL universities (from college_fits field)
     const [precomputedFits, setPrecomputedFits] = useState({});
     const [fitsLoading, setFitsLoading] = useState(false);
+    // Was referenced but never declared — crashed the silent profile-driven
+    // recompute path with a ReferenceError, aborting the whole fits load.
+    const [recomputingFits, setRecomputingFits] = useState(false);
+    // KB-staleness entries from check-fit-recomputation (design §2):
+    // drives the refresh banner, review modal, and vintage chips.
+    const [kbUpdates, setKbUpdates] = useState([]);
+    const [kbReviewOpen, setKbReviewOpen] = useState(false);
 
     // Chat widget state
     const [chatUniversity, setChatUniversity] = useState(null);
@@ -822,6 +835,7 @@ const UniversityExplorer = () => {
 
                 // First, check if recomputation is needed
                 const recomputeStatus = await checkFitRecomputationNeeded(currentUser.email);
+                setKbUpdates(recomputeStatus.kb_updates || []);
                 if (recomputeStatus.needs_recomputation) {
                     console.log('[Pre-computed Fits] Recomputation needed:', recomputeStatus.reason);
                     setRecomputingFits(true);
@@ -840,6 +854,7 @@ const UniversityExplorer = () => {
                     result.fits.forEach(fit => {
                         /* fit mapping updated */
                         fitsMap[fit.university_id] = {
+                            university_id: fit.university_id,
                             fit_category: fit.fit_category,
                             match_percentage: fit.match_percentage || fit.match_score,
                             university_name: fit.university_name,
@@ -861,7 +876,10 @@ const UniversityExplorer = () => {
                             location: fit.location,
                             acceptance_rate: fit.acceptance_rate,
                             market_position: fit.market_position,
-                            infographic_url: fit.infographic_url
+                            infographic_url: fit.infographic_url,
+                            // KB provenance (design §1) — drives vintage chips
+                            kb_data_year: fit.kb_data_year,
+                            kb_last_updated: fit.kb_last_updated
                         };
                     });
                     setPrecomputedFits(fitsMap);
@@ -890,6 +908,22 @@ const UniversityExplorer = () => {
         step: '', // 'fit', 'infographic', 'complete'
         progress: 0
     });
+
+    // Recompute one fit from the KB-refresh review modal (design §3b/c).
+    // The replaced analysis is archived server-side before overwrite.
+    const handleKbUpdateFit = async (universityId) => {
+        const result = await computeSingleFit(currentUser.email, universityId);
+        if (!result?.success) {
+            throw new Error(result?.error || 'Fit update failed');
+        }
+        const fresh = result.fit_analysis || {};
+        setPrecomputedFits(prev => ({
+            ...prev,
+            [universityId]: { ...prev[universityId], ...fresh }
+        }));
+        // This college is now current — stop flagging it.
+        setKbUpdates(prev => prev.filter(u => u.university_id !== universityId));
+    };
 
     const handleToggleCollegeList = async (university) => {
         if (!currentUser?.email) {
@@ -1558,6 +1592,16 @@ const UniversityExplorer = () => {
             {/* Main List/Favorites View */}
             {activeView !== 'detail' && (
                 <>
+                    {/* Yearly KB refresh moment (design §3a) */}
+                    <KbRefreshBanner kbUpdates={kbUpdates} onReview={() => setKbReviewOpen(true)} />
+                    <KbRefreshReviewModal
+                        isOpen={kbReviewOpen}
+                        onClose={() => setKbReviewOpen(false)}
+                        kbUpdates={kbUpdates}
+                        onUpdateFit={handleKbUpdateFit}
+                        onAllUpdated={() => setKbReviewOpen(false)}
+                    />
+
                     {/* Hero Header - Like Profile Page */}
                     <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#E0DED8] mb-6">
                         <div className="flex items-start gap-5">
@@ -1745,6 +1789,7 @@ const UniversityExplorer = () => {
                                                         isInList={isInCollegeList(uni.id)}
                                                         onToggleList={handleToggleCollegeList}
                                                         fitAnalysis={getCollegeFitAnalysis(uni.id)}
+                                                        kbUpdate={kbUpdateFor(kbUpdates, uni.id)}
                                                         onAnalyzeFit={handleAnalyzeFit}
                                                         isAnalyzing={analyzingFit === uni.id}
                                                         onShowFitDetails={(fit) => {
