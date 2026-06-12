@@ -104,3 +104,8 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Reviewer caught a real one: banner dismissal memory broke when kbUpdates arrived after mount (lazy useState init with year=undefined) — fixed + regression test.
 - Suites at merge: backend 904, frontend 218, builds green. Auto-deploy on merge covers profile-v2, counselor-agent, KB v2, frontend.
 - Note: #211 needed a merge of main after #210's squash landed (-X ours; branch was a strict superset).
+
+## 2026-06-12 16:55 — consolidated scenario suite built, executed, shipped (#213)
+- docs/scenarios/system-scenarios.md (13 executable scenarios) + scripts/run_scenarios.py (--skip-live for unit-only) + SCENARIO-RUN-2026-06-12.md: **13/13 PASS** (unit suites, live KB lifecycle incl. legacy auto-archive, versioned read APIs, validation gates, 191-doc 2026 integrity, deployed fit staleness/suppression/history via sentinel user, roadmap annotation, QA monitoring, health).
+- Executing the suite caught a real defect: 19/191 collector files were JSON fragments (extractor grabbed first parseable block; merge mode masked it — ingest 'succeeded' with zero refresh). Fixed extractor (prefer profile-shaped candidate) + ingest CLI now validates fresh pre-merge (fragments fail loudly). 17/19 re-collected + re-ingested with real 2026 data; georgia_tech + michigan_state truncate on program catalogs (3 attempts each) — documented exceptions, KB docs uncorrupted, re-collect manually next cycle.
+- Run the suite after every yearly refresh (noted in scenarios doc).
