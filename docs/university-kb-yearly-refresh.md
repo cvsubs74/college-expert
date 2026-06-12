@@ -19,8 +19,18 @@ python scripts/ingest_universities.py \
 
 # 3. Ingest for the cycle (year defaults to the current cycle; pass it explicitly for clarity)
 python scripts/ingest_universities.py \
-    --dir agents/university_profile_collector/research --year 2026
+    --dir agents/university_profile_collector/research --year 2026 --merge-with-current
 ```
+
+**Use `--merge-with-current` for yearly refreshes.** A single fresh research
+pass is usually much thinner than the original multi-agent collection
+(observed: Princeton fresh pass had 272 leaf fields vs 741 in the KB).
+Merge mode overlays only the cycle-sensitive sections — current admissions
+status, application deadlines, US News rank/rankings, cost of attendance —
+onto the KB's current rich profile, and unions `longitudinal_trends` by
+year. Durable sections (majors, strategy advice, student insights,
+scholarships) are kept from the richer base. Omit the flag only when the
+fresh collection is a full-depth profile you want verbatim.
 
 That's it. Each university gets a `versions/{2026}` snapshot in Firestore and
 becomes the serving "current" doc. Last cycle's data stays readable at
@@ -68,6 +78,11 @@ curl -X DELETE "$KB_URL" -H 'Content-Type: application/json' \
 `KB_URL=https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app`
 
 ## Gotchas
+
+- **Deploy before ingesting with `--year`.** The CLI aborts if the deployed
+  function predates versioning (it detects the missing `year` field in the
+  response) — otherwise the old code would overwrite main docs with no
+  snapshot.
 
 - **Don't re-ingest stale collector JSONs under a new year.** The cycle
   window warning catches it, but the right fix is re-running the collector

@@ -33,7 +33,7 @@ import requests
 # exactly what the server will enforce.
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / 'cloud_functions' / 'knowledge_base_manager_universities_v2'))
-from versioning import coerce_year, validate_profile  # noqa: E402
+from versioning import coerce_year, merge_cycle_refresh, validate_profile  # noqa: E402
 
 DEFAULT_URL = "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 
@@ -65,6 +65,11 @@ def main():
     parser.add_argument('--url', default=DEFAULT_URL, help='KB v2 function URL')
     parser.add_argument('--only', help='Comma-separated university _ids to include')
     parser.add_argument('--dry-run', action='store_true', help='Validate only; write nothing')
+    parser.add_argument('--merge-with-current', action='store_true',
+                        help='Yearly-refresh mode: overlay cycle-sensitive sections '
+                             '(current admissions status, deadlines, rank, costs) from '
+                             'the fresh JSON onto the KB\'s current rich profile, so a '
+                             'thinner fresh collection never degrades durable data')
     args = parser.parse_args()
 
     year = coerce_year(args.year)
@@ -77,6 +82,18 @@ def main():
             print(f"  FAIL  {path.name}: {read_error}")
             failed += 1
             continue
+
+        if args.merge_with_current:
+            try:
+                resp = requests.get(args.url, params={"id": profile.get('_id')}, timeout=60)
+                current = (resp.json().get('university') or {}).get('profile') if resp.ok else None
+            except (requests.RequestException, ValueError):
+                current = None
+            if current:
+                profile = merge_cycle_refresh(current, profile)
+                print(f"  merge {path.name}: cycle-sensitive sections refreshed onto current profile")
+            else:
+                print(f"  merge {path.name}: no current profile in KB — ingesting fresh as-is")
 
         errors, warnings = validate_profile(profile, year)
         if errors:
@@ -100,6 +117,13 @@ def main():
             continue
 
         if resp.status_code == 200 and body.get('success'):
+            if 'year' not in body:
+                # Old pre-versioning function deployed: it just overwrote the
+                # main doc with no snapshot. Stop before doing more damage.
+                print(f"  FAIL  {path.name}: server doesn't support versioning yet "
+                      f"(deploy knowledge-universities-v2 first) — aborting")
+                failed += 1
+                break
             promo = "current" if body.get('promoted_to_current') else "archived"
             print(f"  ok    {path.name} → year {body.get('year')} [{promo}] "
                   f"years={body.get('available_years')}")

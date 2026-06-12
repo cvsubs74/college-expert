@@ -37,6 +37,83 @@ def coerce_year(raw, default: Optional[int] = None) -> int:
     return year
 
 
+# Sections replaced wholesale from the fresh collection on a yearly refresh.
+# Everything else is durable knowledge (majors, strategy, insights) that a
+# single fresh research pass tends to cover more thinly than the original
+# multi-agent collection — keep the richer base for those.
+_CYCLE_SENSITIVE_PATHS = (
+    ('admissions_data', 'current_status'),
+    ('application_process', 'application_deadlines'),
+    ('financials', 'cost_of_attendance_breakdown'),
+    ('strategic_profile', 'us_news_rank'),
+    ('strategic_profile', 'rankings'),
+    ('metadata', 'last_updated'),
+)
+
+
+def merge_cycle_refresh(base: Dict, fresh: Dict) -> Dict:
+    """Merge a fresh yearly collection onto the current rich profile.
+
+    - Cycle-sensitive sections come from `fresh` when present (the point of
+      the refresh).
+    - `admissions_data.longitudinal_trends` is unioned by year, fresh wins
+      on collision (a new cycle adds a row instead of dropping history).
+    - Everything else: `base` wins; keys only in `fresh` are added.
+
+    Returns a new dict; neither input is mutated.
+    """
+    import copy
+
+    merged = copy.deepcopy(base)
+
+    def _ensure(d, key):
+        if not isinstance(d.get(key), dict):
+            d[key] = {}
+        return d[key]
+
+    # Add fresh-only top-level keys / fill gaps without overwriting base.
+    def _fill_missing(dst, src):
+        for k, v in src.items():
+            if k not in dst or dst[k] in (None, '', [], {}):
+                dst[k] = copy.deepcopy(v)
+            elif isinstance(dst[k], dict) and isinstance(v, dict):
+                _fill_missing(dst[k], v)
+
+    _fill_missing(merged, fresh)
+
+    # Cycle-sensitive sections: fresh replaces base when fresh has a value.
+    for path in _CYCLE_SENSITIVE_PATHS:
+        src = fresh
+        for key in path:
+            src = src.get(key) if isinstance(src, dict) else None
+            if src is None:
+                break
+        if src in (None, '', [], {}):
+            continue
+        dst = merged
+        for key in path[:-1]:
+            dst = _ensure(dst, key)
+        dst[path[-1]] = copy.deepcopy(src)
+
+    # Longitudinal trends: union by year, fresh wins on collision.
+    base_trends = ((base.get('admissions_data') or {}).get('longitudinal_trends') or [])
+    fresh_trends = ((fresh.get('admissions_data') or {}).get('longitudinal_trends') or [])
+    if base_trends or fresh_trends:
+        by_year = {t.get('year'): t for t in base_trends if isinstance(t, dict)}
+        for t in fresh_trends:
+            if isinstance(t, dict):
+                by_year[t.get('year')] = t
+        # Newest year first; entries without a year sink to the end.
+        trends = sorted(
+            by_year.values(),
+            key=lambda t: (t.get('year') is not None, t.get('year') or 0),
+            reverse=True,
+        )
+        _ensure(merged, 'admissions_data')['longitudinal_trends'] = copy.deepcopy(trends)
+
+    return merged
+
+
 def _parse_date(value) -> Optional[datetime]:
     if not isinstance(value, str):
         return None
