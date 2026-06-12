@@ -1,6 +1,500 @@
 {
-  "category": "Culture",
-  "insight": "The campus is characterized by a relaxed, friendly, and non-cutthroat environment with a prominent biking culture.",
-  "implication": "Students seeking a high-tier academic experience without the toxic competitiveness often found at other elite institutions will thrive here.",
-  "_id": "university_of_california_davis"
+  "_id": "university_of_california_davis",
+  "metadata": {
+    "official_name": "University of California, Davis",
+    "location": {
+      "city": "Davis",
+      "state": "California",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "UC Davis is a top-tier public land-grant research university renowned globally for its world-class veterinary medicine, agriculture, and biological sciences programs [cite: 1, 2, 3]. It offers rigorous academics within a highly collaborative, friendly, and quintessential bike-friendly college town environment [cite: 4, 5].",
+    "market_position": "Public Ivy / Elite Public Research University",
+    "admissions_philosophy": "Holistic review prioritizing academic rigor, capped weighted GPA, and personal context, operating under a strict test-blind policy [cite: 6, 7, 8].",
+    "us_news_rank": 33,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "UC Davis holds the global #1 position in Veterinary Medicine and Agriculture, making related undergraduate programs exceptionally strong but demanding [cite: 1, 5].",
+        "implication": "Students aiming for animal science, agriculture, or biological sciences will find unparalleled research facilities but must survive rigorous early-level STEM courses."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "The campus admits heavily off the waitlist, with waitlist admit rates occasionally exceeding 40% [cite: 8].",
+        "implication": "Waitlisted students have a realistic chance of admission if they opt-in promptly, mitigating the sting of initial deferrals."
+      },
+      {
+        "category": "Culture",
+        "insight": "Reviewers consistently praise the non-cutthroat, supportive atmosphere and extreme bike-friendliness of the campus [cite: 4, 9].",
+        "implication": "Excellent fit for high-achieving students seeking a balanced, community-focused college experience over an intense urban pressure-cooker."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A laid-back, welcoming college town vibe with over 700 student clubs. The community is highly supportive and lacks the hyper-competitive edge found at some sister UC campuses [cite: 4, 5, 10].",
+      "transportation_impact": "Exceptionally bike-friendly; the campus core is closed to vehicles, and biking is the primary mode of transit [cite: 3, 4].",
+      "research_impact": "As an R1 institution, it offers immense undergraduate research opportunities, particularly in environmental, life, and agricultural sciences [cite: 5, 11, 12]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 41.83,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 50.53,
+      "transfer_acceptance_rate": 58.8,
+      "admits_class_size": 6804,
+      "is_test_optional": false,
+      "test_policy_details": "UC Davis is entirely test-blind. SAT and ACT scores are not considered for admission or scholarships, even if submitted [cite: 7, 13].",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 98864,
+        "admits_total": 41353,
+        "enrolled_total": 6804,
+        "acceptance_rate_overall": 41.83,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.36,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 17166,
+          "accepted_spots": 9609,
+          "admitted_from_waitlist": 4309,
+          "waitlist_admit_rate": 44.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate is calculated based on students who accepted their spot on the waitlist [cite: 8, 14]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 94627,
+        "admits_total": 39399,
+        "enrolled_total": 6581,
+        "acceptance_rate_overall": 41.64,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.7,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 19446,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 4387,
+          "waitlist_admit_rate": 22.56,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate calculated based on total offered spots due to missing accepted spots data [cite: 15, 16]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.86-4.26",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.04,
+        "notes": "GPA is heavily weighted in the absence of standardized testing. Most successful applicants have near perfect unweighted GPAs [cite: 17, 18]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1160-1400",
+        "sat_reading_middle_50": "570-670",
+        "sat_math_middle_50": "590-730",
+        "act_composite_middle_50": "25-33",
+        "submission_rate": null,
+        "policy_note": "Test-blind institution. These scores reflect the academic profile of enrolled students who submitted scores for course placement, but were not used in admissions decisions [cite: 7, 19]."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 15.6,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 43348,
+            "admits": 17217,
+            "acceptance_rate": 39.72
+          },
+          "women": {
+            "applicants": 52516,
+            "admits": 24136,
+            "acceptance_rate": 45.96
+          }
+        },
+        "racial_breakdown": {
+          "white": 23.7,
+          "black_african_american": 2.1,
+          "hispanic_latino": 22.2,
+          "asian": 27.9,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.3,
+          "two_or_more_races": 5.9,
+          "unknown": 2.1,
+          "non_resident_alien": 15.6
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Agricultural and Environmental Sciences",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students passionate about sustainability, animal welfare, and agricultural sciences. Offers a slightly less impacted admissions pathway compared to Engineering [cite: 6, 20].",
+        "housing_profile": null,
+        "student_archetype": "Hands-on, environmentally conscious researchers.",
+        "majors": [
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANS 001",
+              "BIS 002A",
+              "CHE 002A"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHE 002A"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ANS 001",
+                "ANS 002",
+                "BIS 002A",
+                "CHE 002B"
+              ],
+              "electives": [
+                "ANS 104",
+                "ANS 041"
+              ],
+              "total_units": 116,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Anne Todgham (Chairperson)"
+            ],
+            "notes": "Highly regarded globally. Many students use this major as a rigorous springboard for veterinary school [cite: 21, 22, 23]."
+          }
+        ]
+      },
+      {
+        "name": "College of Letters and Science",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students wanting curricular flexibility, humanities, or theoretical sciences.",
+        "housing_profile": null,
+        "student_archetype": "Intellectually curious and interdisciplinary thinkers.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSC 001",
+              "PSC 041"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHE 002A"
+            ],
+            "special_requirements": "Must achieve a 2.50 GPA combined in PSC 001 and PSC 041 to formally declare [cite: 24].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "PSC 001",
+                "PSC 041",
+                "STA 013",
+                "BIS 002A",
+                "CHE 002A"
+              ],
+              "electives": [
+                "PSC 107",
+                "PSC 103A"
+              ],
+              "total_units": 100,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The B.S. track requires rigorous STEM foundations in chemistry and biology compared to the A.B. track [cite: 24, 25]."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly selective; applicants must have elite math and physics grades and clear alignment with engineering in their PIQs.",
+        "housing_profile": null,
+        "student_archetype": "Technically gifted problem-solvers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAT 021A",
+              "MAT 021B"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MAT 21A",
+              "MAT 21B",
+              "ECS 150",
+              "CHE 002A"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MAT 021A",
+                "MAT 021B",
+                "ECS 150",
+                "ECS 132"
+              ],
+              "electives": [
+                "ECS 192",
+                "ECS 199"
+              ],
+              "total_units": 103,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Zhaojun Bai (Mathematics)",
+              "Raissa M. D'Souza (Mechanical and Aerospace Engineering)",
+              "Matt Bishop (Security)"
+            ],
+            "notes": "CS at UCD is heavily theoretical and math-intensive, preparing students exceptionally well for graduate study [cite: 26, 27, 28]."
+          }
+        ]
+      },
+      {
+        "name": "College of Biological Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Perfect for pre-meds and aspiring life-science researchers. Highly impacted across all majors.",
+        "housing_profile": null,
+        "student_archetype": "Future healthcare professionals and biological researchers.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIS 002A",
+              "CHE 002A",
+              "MAT 017A"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHE 002A"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIS 002A",
+                "CHE 002A",
+                "MAT 017A",
+                "PHY 007A"
+              ],
+              "electives": [
+                "BIS 104",
+                "BIS 122"
+              ],
+              "total_units": 180,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Jodi Nunnari (Molecular and Cellular Biology)",
+              "Jonathan Eisen (Evolution and Ecology)",
+              "Walter Leal (Molecular and Cellular Biology)"
+            ],
+            "notes": "Features renowned faculty, including National Academy of Sciences members [cite: 29, 30, 31, 32, 33]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "UC Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-11-30",
+        "is_binding": false,
+        "notes": "Applies for Fall 2025 admission [cite: 17]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-30",
+        "details": "Applicants must choose 4 out of 8 Personal Insight Questions (PIQs). Each response is limited to 350 words [cite: 34, 35]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Application essay (PIQs)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Volunteer work",
+        "First generation college student status",
+        "State residency"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "With the test-blind policy, UC Davis places immense weight on course rigor (AP/IB/Honors) taken in the 10th and 11th grades, paired with leadership demonstrated through PIQs [cite: 6, 7]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to non-impacted majors within the College of Agricultural and Environmental Sciences to statistically improve admission odds [cite: 6, 36].",
+      "If intending to study Computer Science, consider applying to Applied Mathematics or Statistics, though internally transferring to CS later is notoriously difficult [cite: 28, 37]."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "UC Davis considers applicants for their alternate major if the primary major is full. It is highly advised to select an unimpacted alternate major [cite: 6, 37]."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan: Systemwide tuition and fees remain flat for up to six years beyond a student's first enrolled term [cite: 38].",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 14436.0,
+        "total_coa": 44202.0,
+        "housing": 19426.0
+      },
+      "out_of_state": {
+        "tuition": 14436.0,
+        "total_coa": 78402.0,
+        "supplemental_tuition": 34200.0
+      }
+    },
+    "aid_philosophy": "Need-based and Merit-based available",
+    "average_need_based_aid": 19877.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 59.0,
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "$7,500",
+        "deadline": "2024-11-30",
+        "benefits": "Highly prestigious four-year award. Often includes a stipend for demonstrated financial need, plus priority registration [cite: 39, 40].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Provost Award",
+        "type": "Merit",
+        "amount": "$3,000-$5,000",
+        "deadline": "2024-11-30",
+        "benefits": "Granted to high-achieving out-of-state students to assist with supplemental tuition costs [cite: 39, 41].",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3, 4, or 5 yield 2, 4, or 8 quarter units toward graduation [cite: 42].",
+      "exceptions": [
+        "Maximum of 8 quarter units total for Calculus AB and BC combined [cite: 42]."
+      ],
+      "usage": "Degree credit and lower-division prerequisite clearance [cite: 42]."
+    },
+    "ib_policy": {
+      "general_rule": "Higher Level (HL) exams with scores of 5, 6, or 7 receive 8 quarter units [cite: 43].",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST"
+      ],
+      "restrictions": "Transfer applicants must complete all major preparatory course requirements by the end of the spring term prior to fall enrollment [cite: 44, 45]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous UC-approved A-G course load with maximum AP/Honors classes [cite: 36].",
+      "High capped weighted GPA (averaging around 4.04) [cite: 17].",
+      "Compelling PIQs that demonstrate leadership, intellectual vitality, and community impact [cite: 34, 35]."
+    ],
+    "common_activities": [
+      "Participating in research laboratories or assisting faculty [cite: 10].",
+      "Leadership in over 700 available student organizations [cite: 4, 10].",
+      "Internships in the nearby Sacramento area or in agricultural/environmental sectors [cite: 46]."
+    ],
+    "essay_tips": [
+      "Ensure responses are self-contained and do not repeat themes across multiple PIQs [cite: 35].",
+      "Provide concrete examples of overcoming educational barriers or expanding upon an academic subject that inspires you [cite: 34, 35]."
+    ],
+    "red_flags": [
+      "Dropping core A-G classes during senior year [cite: 36].",
+      "Earning grades below a C in any selective major prerequisite coursework [cite: 44, 45]."
+    ],
+    "insights": [
+      "Students widely celebrate the friendly, non-competitive culture, which provides a stark contrast to the intense cutthroat environments at other elite UC campuses [cite: 9]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 73086,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Tesla",
+      "Google",
+      "Microsoft",
+      "UC Davis Health",
+      "Amazon"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 93.0,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 86.0
+  }
 }

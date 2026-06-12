@@ -1,47 +1,483 @@
 {
-  "name": "Kate Gleason College of Engineering",
-  "admissions_model": "Direct Admit",
-  "acceptance_rate_estimate": null,
-  "is_restricted_or_capped": true,
-  "strategic_fit_advice": "For mathematically and scientifically rigorous students aiming for applied engineering roles in automotive, aerospace, or manufacturing.",
-  "housing_profile": "Standard undergraduate dormitories.",
-  "student_archetype": "The Applied Builder / Systems Thinker",
-  "majors": [
-    {
-      "name": "Mechanical Engineering",
-      "degree_type": "B.S.",
-      "is_impacted": true,
-      "acceptance_rate": null,
-      "average_gpa_admitted": null,
-      "prerequisite_courses": [
-        "Calculus",
-        "Physics"
-      ],
-      "minimum_gpa_to_declare": null,
-      "weeder_courses": [],
-      "special_requirements": "",
-      "admissions_pathway": "Direct Admit",
-      "internal_transfer_allowed": true,
-      "direct_admit_only": false,
-      "internal_transfer_gpa": 3.0,
-      "curriculum": {
-        "core_courses": [
-          "Engineering Science",
-          "Systems Analysis",
-          "MATH-251 Probability and Statistics"
-        ],
-        "electives": [
-          "Aerospace Engineering",
-          "Automotive Engineering",
-          "Bioengineering",
-          "Energy and the Environment"
-        ],
-        "total_units": 120,
-        "major_units": null
+  "_id": "rochester_institute_of_technology",
+  "metadata": {
+    "official_name": "Rochester Institute of Technology",
+    "location": {
+      "city": "Rochester",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Rochester Institute of Technology (RIT) is a highly innovative, career-focused private research university renowned for its mandatory cooperative education program and seamless integration of technology, art, and design. With a sprawling suburban campus and global presence, RIT acts as a major pipeline to top tech and engineering firms.",
+    "market_position": "Elite Tech/Design Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 88,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Applying Early Decision yields a massive statistical advantage, with historical ED admit rates exceeding 72%.",
+        "implication": "Students highly committed to RIT should utilize the ED1 or ED2 rounds to bypass the unpredictable Regular Decision and waitlist cycles."
       },
-      "notable_professors": [],
-      "notes": "Requires four blocks of co-op (nearly a year of full-time paid work experience). Transfer pathway from outside institutions typically requires a 3.0 GPA minimum."
+      {
+        "category": "Academic",
+        "insight": "RIT's 4-year graduation rate is artificially depressed (28-31%) due to the required co-op blocks that extend most degrees to 5 years.",
+        "implication": "Prospective students must budget their time and finances for a 5-year undergraduate tenure, offset by significant earnings acquired during co-op blocks."
+      },
+      {
+        "category": "Financial",
+        "insight": "Automatic merit scholarships are generous, ranging from $14,000 to $27,000 annually.",
+        "implication": "The sticker price of $78,152 is rarely paid in full by strong applicants; students should expect substantial institutional aid."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Suburban, heavily academic, and career-oriented. A vibrant 'nerd culture' thrives alongside traditional Greek life and over 300 student clubs.",
+      "transportation_impact": "Located in Henrietta, NY, about six miles from downtown Rochester. While on-campus amenities are strong, a car or public transit is required to access the broader city.",
+      "research_impact": "Classified as an R2 Doctoral University with High Research Activity, with heavy emphasis on applied computing, cybersecurity, and imaging science."
     }
-  ],
-  "_id": "rochester_institute_of_technology"
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.67,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.71,
+      "transfer_acceptance_rate": 0.41,
+      "admits_class_size": 2932,
+      "is_test_optional": true,
+      "test_policy_details": "RIT is test-optional for all undergraduate programs. STEM applicants opting to submit ACT scores are recommended to include the Science section.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 1822,
+          "admits": 1326,
+          "acceptance_rate": 0.73,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 27892,
+        "admits_total": 18682,
+        "enrolled_total": 2932,
+        "acceptance_rate_overall": 0.6698,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.156,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2556,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 100,
+          "waitlist_admit_rate": 0.0391,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist acceptance rate plummeted in 2024 compared to previous cycles."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 24269,
+        "admits_total": 17123,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.711,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1583,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 363,
+          "waitlist_admit_rate": 0.2293,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.7,
+        "notes": ""
+      },
+      "testing": {
+        "sat_composite_middle_50": "1300-1460",
+        "sat_reading_middle_50": "640-720",
+        "sat_math_middle_50": "640-740",
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 0.4,
+        "policy_note": "Score submission has been heavily declining; test-optional framework strictly honored."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.26,
+        "legacy_percentage": null,
+        "international_percentage": 0.108,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 16374,
+            "admits": 10916,
+            "acceptance_rate": 0.67
+          },
+          "women": {
+            "applicants": 11507,
+            "admits": 7742,
+            "acceptance_rate": 0.67
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.49,
+          "black_african_american": 0.041,
+          "hispanic_latino": 0.071,
+          "asian": 0.09,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": null,
+          "two_or_more_races": 0.038,
+          "unknown": 0.161,
+          "non_resident_alien": 0.108
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Golisano College of Computing and Information Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly quantitative students with strong backgrounds in programming and discrete mathematics.",
+        "housing_profile": "Standard dormitories; extensive living-learning communities available.",
+        "student_archetype": "Tech-innovator and future software developer.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSCI 141",
+              "CSCI 142"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 141",
+                "CSCI 142"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Renowned for its co-op pipeline; students often secure placements at FAANG companies."
+          }
+        ]
+      },
+      {
+        "name": "Kate Gleason College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students dedicated to applied physics, hardware, and traditional engineering disciplines.",
+        "housing_profile": "Standard dormitories.",
+        "student_archetype": "Builder and hardware problem-solver.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Extremely difficult internal transfer threshold."
+          }
+        ]
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing lab sciences, pre-med, or applied mathematics.",
+        "housing_profile": "Standard dormitories.",
+        "student_archetype": "Traditional scientist and researcher.",
+        "majors": [
+          {
+            "name": "Applied Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 200",
+              "MATH 221",
+              "MATH 231",
+              "MATH 251"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires B- or better in Calculus sequence to transfer internally.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          },
+          {
+            "name": "Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHMG 141",
+              "CHMG 145",
+              "CHMG 142",
+              "CHMG 146"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "RIT Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "ED 1 Deadline"
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": "ED 2 Deadline"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action Deadline"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision Deadline"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Original essay on a topic outlined in Common App or RIT Application."
+      },
+      {
+        "target_program": "College of Art and Design",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Portfolio required for design and art-based majors."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor",
+        "GPA"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Recommendations",
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Considered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Emphasis placed on left-brain/right-brain integration and readiness for experiential learning (co-ops)."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Select an alternate major closely aligned with core interests in case denied from a hyper-competitive primary choice like Computer Science."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "RIT actively reviews alternate majors indicated on the application. Applicants desiring to attend RIT regardless of their primary major should select a less-impacted alternate major, though subsequent internal transfers back to impacted programs (e.g., Mechanical Engineering) will require extremely high GPAs."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 58324.0,
+        "total_coa": 78152.0,
+        "housing": 16142.0
+      },
+      "out_of_state": {
+        "tuition": 58324.0,
+        "total_coa": 78152.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 29523.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.98,
+    "scholarships": [
+      {
+        "name": "RIT First-Year Merit Scholarship",
+        "type": "Merit",
+        "amount": "$14,000 - $27,000",
+        "deadline": "At Admissions Application",
+        "benefits": "Reduces direct tuition costs annually.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "RIT/FIRST Scholarship",
+        "type": "Merit",
+        "amount": "$14,000",
+        "deadline": "January 15",
+        "benefits": "Recognizes participation in FIRST Robotics.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "RIT Project Lead the Way Scholarship",
+        "type": "Merit",
+        "amount": "$14,000",
+        "deadline": "January 15",
+        "benefits": "Recognizes completion of PLTW courses.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "RIT National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "At Admissions Application",
+        "benefits": "Stackable with other merit aid.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Achievement and Investment in Merit Scholarship",
+        "type": "Merit",
+        "amount": "$500",
+        "deadline": "Varies",
+        "benefits": "State-specific aid supplement.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous for General Ed, Strict for Major Requirements",
+    "ap_policy": {
+      "general_rule": "Scores of 3 accepted for Liberal Arts; scores of 4 or 5 generally required for STEM credit.",
+      "exceptions": [
+        "Students in Physics BS receive no AP credit for Physics C.",
+        "Biology majors receive no credit for Biology AP."
+      ],
+      "usage": "Used for course replacement or general elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded for Higher Level (HL) exams based on score thresholds.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "RIT Transfer Equivalency Database"
+      ],
+      "restrictions": "Transfer credit requires a grade of 'C' or higher."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Demonstrated passion for technology, design, or the intersection of both.",
+      "A pragmatic, career-focused mindset ready for the co-op structure.",
+      "Strong math and science foundations, particularly for GCCIS and KGCOE applicants."
+    ],
+    "common_activities": [
+      "FIRST Robotics",
+      "Coding clubs / Hackathons",
+      "Game development or design portfolios",
+      "Mathletes / Science Olympiad"
+    ],
+    "essay_tips": [
+      "Highlight hands-on projects and 'builder' mentalities.",
+      "Discuss specific RIT co-op goals and career readiness.",
+      "Showcase interdisciplinary interests blending tech and art."
+    ],
+    "red_flags": [
+      "Lack of advanced math/science for engineering applicants.",
+      "Failure to demonstrate interest in the application process."
+    ],
+    "insights": [
+      "The mandatory co-op program heavily dictates the campus rhythm, as friends rotate in and out of the workforce.",
+      "The location in Henrietta is suburban and sprawling; a car is highly advantageous for off-campus life.",
+      "Campus culture embraces 'geek/nerd' passions openly."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 84133,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Accenture",
+      "Adobe",
+      "Apple",
+      "Amazon",
+      "Cornell University",
+      "Deloitte",
+      "Google",
+      "Honda"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.88,
+    "graduation_rate_4_year": 0.28,
+    "graduation_rate_6_year": 0.73
+  }
 }

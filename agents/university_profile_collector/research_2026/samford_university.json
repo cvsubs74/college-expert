@@ -1,6 +1,419 @@
 {
-  "category": "Culture",
-  "insight": "The university is deeply rooted in Christian traditions (governed by a Baptist-affiliated board), requiring core biblical foundation courses and maintaining a conservative, dry-campus environment.",
-  "implication": "It is an ideal fit for students seeking a faith-integrated college experience, but may not be suitable for students looking for a secular or progressive college atmosphere.",
-  "_id": "samford_university"
+  "_id": "samford_university",
+  "metadata": {
+    "official_name": "Samford University",
+    "location": {
+      "city": "Homewood",
+      "state": "Alabama",
+      "type": "Private"
+    },
+    "last_updated": "2023-10-25",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Samford University is a highly ranked, private Christian university in suburban Birmingham, known for its conservative values, rigorous pre-professional programs, and deep community integration. The institution boasts exceptional student engagement, heavily influenced by a dominant Greek life presence and a commitment to faith-based liberal arts education.",
+    "market_position": "Elite Regional Private / Christian Liberal Arts",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 171,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "High acceptance rate (82%) paired with high retention (93%) indicates a self-selecting applicant pool that fits the institutional culture perfectly.",
+        "implication": "Applicants who align with Samford's Christian mission and conservative values are highly likely to be admitted and thrive."
+      },
+      {
+        "category": "Academic",
+        "insight": "Nursing and Pharmacy are highly structured, competitive programs boasting near-perfect board pass rates.",
+        "implication": "Pre-health students receive exceptional clinical exposure due to Samford's proximity to the Birmingham medical hub."
+      },
+      {
+        "category": "Culture",
+        "insight": "57% of undergraduates participate in Greek life on a dry, faith-centered campus.",
+        "implication": "Social life is largely dictated by sororities, fraternities, and campus ministries; students seeking secular or non-traditional college experiences may feel isolated."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Deeply conservative, community-focused, and largely revolving around Greek life and Christian ministries. The campus strictly enforces a no-alcohol policy.",
+      "transportation_impact": "Located in the affluent suburb of Homewood, students have easy access to downtown Birmingham's corporate and healthcare networks for clinicals and internships.",
+      "research_impact": "Undergraduate research is actively encouraged, particularly in the sciences and humanities, supported by accessible faculty mentorship rather than massive R1 infrastructure."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.823,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.738,
+      "admits_class_size": 1087,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for most majors. Test scores are required for homeschooled students without grades, early graduates, Nursing, Fast Track PT/SLP, and University Fellows.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 4559,
+        "admits_total": 3755,
+        "enrolled_total": 1087,
+        "acceptance_rate_overall": 0.823,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.289,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 132,
+          "accepted_spots": 71,
+          "admitted_from_waitlist": 25,
+          "waitlist_admit_rate": 0.352,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 4541,
+        "admits_total": 3734,
+        "enrolled_total": 1080,
+        "acceptance_rate_overall": 0.822,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.289,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 97,
+          "accepted_spots": 40,
+          "admitted_from_waitlist": 5,
+          "waitlist_admit_rate": 0.125,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.48-4.10",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.88,
+        "notes": ""
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1350",
+        "sat_reading_middle_50": "550-640",
+        "sat_math_middle_50": "520-610",
+        "act_composite_middle_50": "23-29",
+        "submission_rate": 0.25,
+        "policy_note": "ACT submission rate is 66%; SAT submission rate is 25%."
+      },
+      "demographics": {
+        "first_gen_percentage": 14.0,
+        "legacy_percentage": null,
+        "international_percentage": 1.0,
+        "geographic_breakdown": [
+          {
+            "region": "Out of State",
+            "percentage": 72.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 1596,
+            "admits": 1256,
+            "acceptance_rate": 0.786
+          },
+          "women": {
+            "applicants": 2963,
+            "admits": 2499,
+            "acceptance_rate": 0.843
+          }
+        },
+        "racial_breakdown": {
+          "white": 79.5,
+          "black_african_american": 9.3,
+          "hispanic_latino": 4.0,
+          "asian": 1.9,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 1.9,
+          "unknown": 2.3,
+          "non_resident_alien": 0.8
+        },
+        "religious_affiliation": "Christian (Baptist heritage)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Moffett & Sanders School of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly driven pre-health students seeking high NCLEX pass rates and clinical rotations in Birmingham's medical hub.",
+        "housing_profile": "Traditional on-campus dormitories.",
+        "student_archetype": "Compassionate, academically rigorous, community-oriented.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 units English",
+              "2 units Math",
+              "2 units Lab Science"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "Organic Chemistry 1"
+            ],
+            "special_requirements": "Minimum ACT of 21 (SAT 1060). C or better in all science prereqs.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Howard College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in the humanities, social sciences, or STEM fields desiring small class sizes and faculty mentorship.",
+        "housing_profile": "Traditional on-campus dormitories.",
+        "student_archetype": "Curious, well-rounded, interdisciplinary.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COSC 110 Introduction to Programming I",
+                "COSC 210 Data Structures/Algorithms",
+                "COSC 305 Computer Architecture"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Brian Toone (Computer Architecture)"
+            ],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Samford Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Strongly recommended for maximum scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-05-01",
+        "is_binding": false,
+        "notes": "Rolling admissions process."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Minimum 250-word personal essay. One academic letter of recommendation required."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Application Essay",
+        "Character/personal qualities",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Extracurricular activities",
+        "Volunteer work",
+        "Religious affiliation/commitment"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "As a Christian institution, Samford heavily values applicants who display moral character, service, and alignment with the university's faith-based mission."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying undecided does not penalize students due to Samford's heavy emphasis on the liberal arts core."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students aiming for highly competitive tracks like Nursing or Fast-Track PT should select an alternate health sciences major as a backup in the Howard College of Arts and Sciences."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for 12-18 credit hours",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 40760.0,
+        "total_coa": 64958.0,
+        "housing": 9150.0
+      },
+      "out_of_state": {
+        "tuition": 40760.0,
+        "total_coa": 64958.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 22680.0,
+    "average_merit_aid": 23220.0,
+    "percent_receiving_aid": 100.0,
+    "scholarships": [
+      {
+        "name": "Crosland Scholarship",
+        "type": "Merit",
+        "amount": "$17,500",
+        "deadline": "December 1",
+        "benefits": "Renewable tuition offset",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Marion Scholarship",
+        "type": "Merit",
+        "amount": "$13,000",
+        "deadline": "December 1",
+        "benefits": "Renewable tuition offset",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Davis Scholarship",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "December 1",
+        "benefits": "Reward for exceptional community service",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Marvin Mann Legacy Scholarship",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "",
+        "benefits": "For students with family alumni",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Phi Theta Kappa Scholarship",
+        "type": "Merit",
+        "amount": "$2,500",
+        "deadline": "",
+        "benefits": "For transfer students",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 generally receive course credit.",
+      "exceptions": [
+        "A score of 3 is accepted for Biology, Macroeconomics, Microeconomics, and French/German languages."
+      ],
+      "usage": "Credits are applied with a grade of 'P' (Pass) and do not factor into the GPA."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 5 or higher on Higher Level (HL) and Standard Level (SL) exams receive credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Samford Transfer Equivalency System"
+      ],
+      "restrictions": "Maximum 64 credits accepted from two-year institutions."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic transcript prioritizing rigor over perfect grades.",
+      "Alignment with Christian values and ethics.",
+      "Clear indicators of community service or church involvement."
+    ],
+    "common_activities": [
+      "Church ministries",
+      "Community service/volunteering",
+      "Greek Life (Fraternities/Sororities)",
+      "Intramural sports"
+    ],
+    "essay_tips": [
+      "Highlight personal faith and how it drives your academic/career goals.",
+      "Discuss specific community service initiatives."
+    ],
+    "red_flags": [
+      "Seeking a secular, party-school environment.",
+      "Lack of demonstrated interest or community involvement."
+    ],
+    "insights": [
+      "Greek life dominates the social scene, though it retains a uniquely wholesome, philanthropy-focused vibe compared to secular state schools.",
+      "The campus is strictly 'dry', meaning alcohol policies are strictly enforced."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 66567,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "UAB Medicine",
+      "Enterprise Holdings",
+      "Ernst & Young",
+      "Farmers Insurance",
+      "Hobby Lobby",
+      "IBM",
+      "Shawnee Public Schools"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 93.0,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 77.0
+  }
 }

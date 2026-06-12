@@ -1,43 +1,474 @@
 {
-  "name": "Computer Science",
-  "degree_type": "B.S.C.S.",
-  "is_impacted": true,
-  "acceptance_rate": null,
-  "average_gpa_admitted": null,
-  "prerequisite_courses": [],
-  "minimum_gpa_to_declare": 2.0,
-  "weeder_courses": [
-    "Networking",
-    "Calculus"
-  ],
-  "special_requirements": "Must complete all computer science courses in the curriculum with a grade-point average of at least 2.0.",
-  "admissions_pathway": "Pre-Major",
-  "internal_transfer_allowed": true,
-  "direct_admit_only": false,
-  "internal_transfer_gpa": 2.0,
-  "curriculum": {
-    "core_courses": [
-      "CS 1001 Introduction to Computer Science",
-      "CS 1043 Introduction to Programming and Problem-solving",
-      "CS 2001 Computer and Engineering Ethics",
-      "CS 2003 Fundamentals of Algorithm and Computer Applications",
-      "CS 2033 Computer Architecture, Organization and Assembler",
-      "CS 2123 Data Structures",
-      "CS 3003 Comparative Programming Languages",
-      "CS 3013 Discrete Mathematics",
-      "CS 3053 Operating Systems",
-      "CS 3513 Software Engineering",
-      "CS 4163 Database Systems",
-      "CS 4513 Senior Software Projects II"
-    ],
-    "electives": [
-      "CS 4013 Compiler Construction",
-      "CS 4333 Computer Networks"
-    ],
-    "total_units": 124,
-    "major_units": 99
+  "_id": "university_of_tulsa",
+  "metadata": {
+    "official_name": "The University of Tulsa",
+    "location": {
+      "city": "Tulsa",
+      "state": "Oklahoma",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
   },
-  "notable_professors": [],
-  "notes": "Designated a Center of Excellence in Information Assurance by the NSA.",
-  "_id": "university_of_tulsa"
+  "strategic_profile": {
+    "executive_summary": "The University of Tulsa is a private, STEM-focused research institution with a strong liberal arts foundation. Known particularly for its world-class petroleum engineering and computer science programs, it offers a small-school environment (9:1 student-to-faculty ratio) with large research opportunities like the Tulsa Undergraduate Research Challenge (TURC). The university boasts exceptional retention and graduation outcomes, bolstered by robust financial aid packages where 100% of incoming freshmen receive assistance.",
+    "market_position": "Elite Private STEM and Energy Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 179,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Highest concentration of National Merit Scholars per capita in the nation.",
+        "implication": "The student body is extremely high-achieving academically, and merit aid is heavily utilized to attract top-tier students."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Test-optional policy applies to all programs except the highly selective Early Careers in Medicine (ECM) program.",
+        "implication": "Students with strong GPAs but weaker test scores are not penalized in general admissions, but those aiming for the medical pathway must submit top-tier scores."
+      },
+      {
+        "category": "Financial",
+        "insight": "100% of first-year students receive some form of financial aid, with average grant aid around $39,719.",
+        "implication": "Despite a high sticker price (~$69K COA), the university heavily discounts tuition, making it accessible to a broader demographic."
+      },
+      {
+        "category": "Culture",
+        "insight": "Active Division I athletic presence (Golden Hurricane) paired with a tight-knit, collaborative academic environment.",
+        "implication": "Students experience the school spirit typical of large state universities while benefiting from the personalized attention of a small private college."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and inclusive campus featuring more than 150 student organizations, Greek life, and deep community engagement. Traditions include the Toilet Bowl flag football game and ringing the cupola bell.",
+      "transportation_impact": "Located in an urban setting just off Route 66 in Tulsa, providing students with easy access to internships and a prominent local energy and business industry.",
+      "research_impact": "Highly research-active for undergraduates (TURC program). STEM students benefit from specialized facilities, including a full-scale drilling rig and a 2,000-foot well for petroleum engineering."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.615,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 722,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for all undergraduate programs except Early Careers in Medicine (ECM). Self-reported scores are accepted for admission but official scores are required upon enrollment. Superscoring is permitted.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 5121,
+        "admits_total": 3150,
+        "enrolled_total": 722,
+        "acceptance_rate_overall": 0.615,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.229,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 6632,
+        "admits_total": 4612,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.696,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.40-3.90",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.66,
+        "notes": "No strict minimum GPA, but strong emphasis on rigorous course loads."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1150-1490",
+        "sat_reading_middle_50": "590-740",
+        "sat_math_middle_50": "560-750",
+        "act_composite_middle_50": "24-33",
+        "submission_rate": 0.8,
+        "policy_note": "26% submitted SAT; 54% submitted ACT. Superscoring is allowed."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.14,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.58
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.42
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 2224,
+            "admits": 1562,
+            "acceptance_rate": 0.702
+          },
+          "women": {
+            "applicants": 2863,
+            "admits": 1576,
+            "acceptance_rate": 0.55
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.513,
+          "black_african_american": 0.07,
+          "hispanic_latino": 0.107,
+          "asian": 0.056,
+          "native_american_alaskan": 0.03,
+          "pacific_islander": 0.002,
+          "two_or_more_races": 0.085,
+          "unknown": 0.043,
+          "non_resident_alien": 0.094
+        },
+        "religious_affiliation": "Nondenominational (historically Presbyterian Church USA)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Engineering and Computer Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for top STEM students looking for deep research opportunities, small cohorts, and direct access to heavy-industry connections in energy and computing.",
+        "housing_profile": "Standard campus housing; high participation in living-learning communities.",
+        "student_archetype": "Analytically driven, highly involved in undergraduate research.",
+        "majors": [
+          {
+            "name": "Petroleum Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Program consistently ranked Top 5 nationally among private universities. Features access to a full-scale drilling rig."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Strong focus on cyber security; designated a Center of Excellence in Information Assurance by the NSA."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Kendall College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Suited for students desiring a classic liberal arts education with the resources of a larger research university.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Intellectually curious, community-oriented.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular for pre-med students tracking into the ECM program."
+          }
+        ]
+      },
+      {
+        "name": "Oxley College of Health and Natural Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for pre-med, nursing, and exercise science students.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Pre-professional health sciences focus.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Collins College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great fit for those looking to leverage Tulsa's local energy/corporate economy for internships.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Entrepreneurial, career-focused.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University of Tulsa Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Rolling admission continues after the priority deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Early Careers in Medicine (ECM)",
+        "requirement_type": "Additional Application & Letter",
+        "deadline": "2025-02-01",
+        "details": "Requires submission of an ECM-specific application and a unique letter of recommendation emphasizing service and learning."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (if submitted)",
+        "Extracurricular activities",
+        "Recommendations",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The admissions committee values high demonstrated interest. Opening emails, attending virtual/local events, and scheduling an interview heavily supplement a student's profile."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to the intended major, as UTulsa operates primarily on a direct-admit model.",
+      "Utilize the test-optional policy strategically unless applying to the Early Careers in Medicine program, which mandates test scores."
+    ],
+    "college_ranking_tactics": [
+      "Showcase research experience or deep interest in STEM research to align with the Tulsa Undergraduate Research Challenge (TURC).",
+      "Demonstrate interest actively by visiting campus, attending webinars, and communicating with regional admissions officers."
+    ],
+    "alternate_major_strategy": "Because the university encourages cross-disciplinary study and double-majoring across colleges, indicating a secondary major in a distinct college (e.g., Engineering and Arts) signals intellectual breadth."
+  },
+  "financials": {
+    "tuition_model": "Flat rate full-time tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 48340.0,
+        "total_coa": 69664.0,
+        "housing": 15544.0
+      },
+      "out_of_state": {
+        "tuition": 48340.0,
+        "total_coa": 69664.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 39719.0,
+    "average_merit_aid": 34166.0,
+    "percent_receiving_aid": 1.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2025-01-15",
+        "benefits": "Covers full tuition for four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "IB Merit Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "",
+        "benefits": "$3,000 per year for up to 8 semesters.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Substantial funding for Finalists who designate UTulsa as their first choice.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit primarily for AP scores of 4 or 5.",
+      "exceptions": [],
+      "usage": "Credits can fulfill Tulsa Curriculum (General Education) requirements or serve as electives. Maximum of 36 exam credits allowed."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 5+ on HL/SL exams earn credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Credit Guide"
+      ],
+      "restrictions": "No more than one-half of degree hours can be transferred from two-year colleges. The last 45 semester hours must be completed at UTulsa. Maximum of 36 credit hours granted by exam."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High academic rigor (strong GPA in college-prep courses).",
+      "Demonstrated interest (campus visits, opened emails, interview).",
+      "Strong extracurricular involvement highlighting leadership and service."
+    ],
+    "common_activities": [
+      "Undergraduate research (TURC)",
+      "Greek life",
+      "Intramural sports",
+      "Community service"
+    ],
+    "essay_tips": [
+      "Highlight specific academic interests, especially relating to unique UTulsa offerings like cyber security, petroleum engineering, or TURC.",
+      "Connect personal values to the university's inclusive, small-school environment."
+    ],
+    "red_flags": [
+      "Lack of demonstrated interest.",
+      "Applying to ECM without submitting top-tier test scores."
+    ],
+    "insights": [
+      "Students praise the 9:1 student-to-faculty ratio which allows for close mentorship and easy access to undergraduate research.",
+      "The campus merges the intense school spirit of a Division I athletic program with the rigorous, personalized academics of a private college."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 79396,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.92,
+    "graduation_rate_4_year": 0.62,
+    "graduation_rate_6_year": 0.73
+  }
 }

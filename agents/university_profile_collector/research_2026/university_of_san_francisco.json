@@ -1,6 +1,514 @@
 {
-  "category": "Selectivity",
-  "insight": "Test-optional policy allows strategic omissions.",
-  "implication": "Over 84% of admitted nursing students submitted no test scores, proving that a strong GPA and course rigor are prioritized heavily over standardized testing.",
-  "_id": "university_of_san_francisco"
+  "_id": "university_of_san_francisco",
+  "metadata": {
+    "official_name": "University of San Francisco",
+    "location": {
+      "city": "San Francisco",
+      "state": "CA",
+      "type": "Private"
+    },
+    "last_updated": "2024-11-01",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of San Francisco (USF) is a private Jesuit university known for its deep integration into the city of San Francisco and its strong commitment to social justice and diversity. With its motto 'Change the World from Here,' USF provides a holistic liberal arts and sciences education heavily focused on community engagement, offering highly competitive pathways in Nursing and well-regarded programs in Business and Computer Science.",
+    "market_position": "Mid-Tier Private Jesuit University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 110,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While overall acceptance rates sit around 61%, direct admission into the BSN Nursing program is severely restricted and highly competitive.",
+        "implication": "Applicants to impacted programs like Nursing must possess exceptionally strong science GPAs and clear alignment with Jesuit values."
+      },
+      {
+        "category": "Financial",
+        "insight": "Despite a high total cost of attendance exceeding $84,000, 95% of students receive some form of financial aid, with an average net price around $45,000.",
+        "implication": "Prospective students should not be entirely deterred by the sticker price, as generous merit and need-based aid are widely distributed."
+      },
+      {
+        "category": "Culture",
+        "insight": "USF heavily emphasizes 'cura personalis' (care for the whole person) and social justice initiatives.",
+        "implication": "Applicants should highlight their community service, advocacy work, and understanding of ethical leadership in their supplemental essays."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A highly diverse, urban campus with a low Greek life presence (3-4%). Students are deeply involved in social justice, local volunteering, and exploring the cultural offerings of San Francisco.",
+      "transportation_impact": "USF students receive a Muni pass integrated into their tuition, allowing unlimited rides on San Francisco's buses and streetcars. The campus is well-connected to BART and Caltrain for broader Bay Area transit.",
+      "research_impact": "Undergraduates have access to research and community-engaged learning, largely facilitated by the Leo T. McCarthy Center for Public Service and the Common Good, as well as specific STEM departmental research."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 61.7,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 70.0,
+      "transfer_acceptance_rate": 55.1,
+      "admits_class_size": 920,
+      "is_test_optional": true,
+      "test_policy_details": "USF is test-optional. Only 12% of enrolled students submit SAT scores and 3% submit ACT scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 85,
+          "admits": 42,
+          "acceptance_rate": 49.4,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 47.5,
+          "class_fill_percentage": 5.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 24888,
+        "admits_total": 15358,
+        "enrolled_total": 920,
+        "acceptance_rate_overall": 61.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 5.99,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1327,
+          "accepted_spots": 768,
+          "admitted_from_waitlist": 364,
+          "waitlist_admit_rate": 27.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 25709,
+        "admits_total": 13052,
+        "enrolled_total": 1124,
+        "acceptance_rate_overall": 50.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 8.6,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3239,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 403,
+          "waitlist_admit_rate": 12.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 23103,
+        "admits_total": 16444,
+        "enrolled_total": 1555,
+        "acceptance_rate_overall": 71.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 9.46,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 1863,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 68,
+          "waitlist_admit_rate": 3.7,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 22372,
+        "admits_total": 15884,
+        "enrolled_total": 1430,
+        "acceptance_rate_overall": 71.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 9.0,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 1741,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 126,
+          "waitlist_admit_rate": 7.2,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.62,
+        "notes": "USF evaluates a capped core academic GPA in the admission process."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1200-1380",
+        "sat_reading_middle_50": "610-700",
+        "sat_math_middle_50": "580-690",
+        "act_composite_middle_50": "25-30",
+        "submission_rate": 12.0,
+        "policy_note": "Submission rates are low (12% SAT, 3% ACT). Standardized tests are considered if submitted but are not required for most programs."
+      },
+      "demographics": {
+        "first_gen_percentage": 33.3,
+        "legacy_percentage": null,
+        "international_percentage": 10.0,
+        "geographic_breakdown": [
+          {
+            "region": "In State",
+            "percentage": 58.0
+          },
+          {
+            "region": "Out of State",
+            "percentage": 32.0
+          },
+          {
+            "region": "Foreign",
+            "percentage": 10.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8588,
+            "admits": 5098,
+            "acceptance_rate": 59.3
+          },
+          "women": {
+            "applicants": 15958,
+            "admits": 9993,
+            "acceptance_rate": 62.6
+          }
+        },
+        "racial_breakdown": {
+          "white": 25.6,
+          "black_african_american": 7.49,
+          "hispanic_latino": 22.2,
+          "asian": 22.5,
+          "native_american_alaskan": 0.18,
+          "pacific_islander": 0.29,
+          "two_or_more_races": 8.83,
+          "unknown": 1.3,
+          "non_resident_alien": 13.7
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Nursing and Health Professions",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Applicants must display strong science academics and deep alignment with Jesuit healthcare values ('cura personalis'). The supplemental essay explaining the desire to be a Jesuit-educated BSN nurse is critical.",
+        "housing_profile": "First-year students are guaranteed housing, but spaces for continuing students are limited.",
+        "student_archetype": "Compassionate, socially conscious healthcare leaders committed to community service.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 113",
+              "BIOL 114",
+              "BIOL 115",
+              "BIOL 116",
+              "BIOL 134",
+              "BIOL 135",
+              "MATH 101",
+              "PSYC 101"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "C or better required in all basic sciences and communication courses to progress.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 120",
+                "NURS 170",
+                "NURS 220",
+                "NURS 221",
+                "NURS 222",
+                "NURS 270",
+                "NURS 271",
+                "NURS 272"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Admissions are capped at around 100 students per semester; highly selective."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts core embedded within a major urban center.",
+        "housing_profile": "First-year students are guaranteed housing. Limited for upperclassmen.",
+        "student_archetype": "Intellectually curious individuals drawn to social justice, humanities, or leveraging San Francisco's tech ecosystem for STEM.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Grade of C or better required in MATH 201, MATH 202, and all major courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 111 Foundations of Program Design",
+                "CS 112 OOP and Data Structure",
+                "CS 220 Intro to Parallel Computing",
+                "CS 221 C and Systems Programming",
+                "CS 245 Int. Data Structures and Algs",
+                "CS 272 Software Development",
+                "MATH 109 Calculus & Analytic Geom I",
+                "MATH 201 Discrete Mathematics",
+                "MATH 202 Linear Algebra & Probability"
+              ],
+              "electives": [
+                "CS 333 Intro to Database Systems",
+                "CS 336 Computer Networks",
+                "CS 462 Intro to AI",
+                "CS 463 Machine Learning",
+                "CS 419 Computer Graphics"
+              ],
+              "total_units": 120,
+              "major_units": 52
+            },
+            "notable_professors": [],
+            "notes": "USF offers a 4+1 accelerated BS/MS pathway for Computer Science."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "USF Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-15",
+        "is_binding": true,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Nursing (BSN)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "What will be your responsibility to others as a Jesuit-educated, BSN professional registered nurse? (Max 200 words)"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Course Rigor"
+      ],
+      "secondary_factors": [
+        "Demonstrated Interest",
+        "Extracurricular Activities",
+        "Recommendations",
+        "Alumni Relations/Legacy"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Fit with the university's Jesuit mission, community service history, and social justice orientation heavily influence decisions."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to non-impacted majors in the College of Arts & Sciences to improve admission odds, rather than the highly selective Nursing program.",
+      "If undecided, utilize the undeclared path, as changing majors within colleges (outside of Nursing) is accessible."
+    ],
+    "college_ranking_tactics": [
+      "Highlight community service, advocacy, and social justice initiatives in your application to align perfectly with USF\u2019s Jesuit identity."
+    ],
+    "alternate_major_strategy": "Applicants can use an alternate major strategy to secure admission if rejected from a capped program; however, internal transfer into Nursing is generally restricted."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 59950.0,
+        "total_coa": 84814.0,
+        "housing": 17300.0
+      },
+      "out_of_state": {
+        "tuition": 59950.0,
+        "total_coa": 84814.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 34723.0,
+    "average_merit_aid": 14000.0,
+    "percent_receiving_aid": 95.0,
+    "scholarships": [
+      {
+        "name": "Dean's Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Tuition reduction for students with exceptional academic and professional achievements.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Ignatius Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Awarded to incoming freshmen with a minimum GPA of 3.51.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Dons Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Awarded to incoming freshmen with a minimum GPA of 3.31.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "International Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Merit aid designed to support diverse international students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Civil Servant Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Awarded to students with a background in city, state, or federal civil service.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credits awarded for most exams scoring 3 or better. A score of 4 or better is required for English Language, Calculus, Biology, Chemistry, and History exams.",
+      "exceptions": [
+        "Students scoring a 5 in AP Biology must petition the chair to replace BIOL 105/106.",
+        "History department limits AP history credits to 8 units toward the major."
+      ],
+      "usage": "Credits are typically applied to general education requirements, electives, or major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Credit is awarded for qualifying scores on Higher Level (HL) IB exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Credit Evaluator"
+      ],
+      "restrictions": "Students must complete at least 44 semester units in residence at USF to satisfy degree requirements."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Demonstrated commitment to the community and social justice",
+      "Strong academic rigor and a solid unweighted GPA (3.6+)",
+      "Alignment with the motto 'Change the World from Here'"
+    ],
+    "common_activities": [
+      "Community service and advocacy",
+      "Internships in the Bay Area (tech, non-profits, healthcare)",
+      "Campus ministry or values-based leadership"
+    ],
+    "essay_tips": [
+      "Explicitly connect personal goals to USF's Jesuit mission",
+      "Use terms like 'cura personalis' (care for the whole person) naturally",
+      "For nursing applicants, focus on the vocation of nursing centered on ethics, empathy, and dignity"
+    ],
+    "red_flags": [
+      "Applying to Nursing with weak science grades or no healthcare experience",
+      "Showing apathy toward diversity, equity, or community engagement"
+    ],
+    "insights": [
+      "USF uses its location in the heart of San Francisco as an extension of the classroom.",
+      "The university maintains an intimate feel with a low 11:1 student-to-faculty ratio, meaning no large lecture halls run by TAs."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 91483,
+    "employment_rate_2yr": 88.0,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Salesforce",
+      "Tesla",
+      "Genentech",
+      "Kaiser Permanente",
+      "Apple",
+      "Cisco",
+      "Google"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 64.0,
+    "graduation_rate_6_year": 71.0
+  }
 }

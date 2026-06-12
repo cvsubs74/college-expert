@@ -1,30 +1,640 @@
 {
-  "name": "Frances Payne Bolton School of Nursing",
-  "admissions_model": "Direct Admit",
-  "acceptance_rate_estimate": null,
-  "is_restricted_or_capped": true,
-  "strategic_fit_advice": "For committed pre-nursing students seeking intensive, early clinical exposure.",
-  "housing_profile": "Standard undergraduate housing.",
-  "student_archetype": "Compassionate, highly dedicated pre-healthcare students.",
-  "majors": [
-    {
-      "name": "Nursing",
-      "degree_type": "B.S.N.",
-      "is_impacted": true,
-      "acceptance_rate": null,
-      "average_gpa_admitted": null,
-      "prerequisite_courses": [],
-      "minimum_gpa_to_declare": null,
-      "weeder_courses": [],
-      "special_requirements": "Requires a four-year commitment due to intensive clinical hour requirements.",
-      "admissions_pathway": "Direct Admit Only",
-      "internal_transfer_allowed": false,
-      "direct_admit_only": true,
-      "internal_transfer_gpa": null,
-      "curriculum": null,
-      "notable_professors": [],
-      "notes": "The only major at CWRU that does not fall strictly under the fluid 'single-door' policy. Switching into nursing after matriculation essentially requires starting over as a freshman."
+  "_id": "case_western_reserve_university",
+  "metadata": {
+    "official_name": "Case Western Reserve University",
+    "location": {
+      "city": "Cleveland",
+      "state": "OH",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-26",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Case Western Reserve University (CWRU) is a premier mid-sized private research institution located in Cleveland's vibrant University Circle. Renowned for its rigorous STEM, nursing, and engineering programs, CWRU offers a unique 'single-door admission' policy that allows students complete flexibility to explore over 100 undergraduate majors without restricted enrollment. With an exceptional 86% undergraduate research participation rate, the university provides a highly collaborative, resource-rich environment for future innovators and healthcare leaders.",
+    "market_position": "Elite Private Research University",
+    "admissions_philosophy": "Holistic review with a strong emphasis on academic rigor and demonstrated interest",
+    "us_news_rank": 51,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "CWRU heavily tracks demonstrated interest (DI) as a yield protection measure.",
+        "implication": "Highly qualified applicants who fail to show interest (e.g., visits, email opens, ED) may be waitlisted to protect the university's yield rate."
+      },
+      {
+        "category": "Academic",
+        "insight": "The 'single-door admission' policy applies universally to all incoming first-years.",
+        "implication": "Students do not need to apply to specific colleges or impacted majors, removing the strategic need to apply to an 'easier' major just to get accepted."
+      },
+      {
+        "category": "Financial",
+        "insight": "CWRU meets 100% of demonstrated financial need while maintaining a high sticker price.",
+        "implication": "Generous need-based aid makes it accessible for lower-income students, while substantial merit aid (average $29,108) helps offset costs for middle- and high-income applicants."
+      },
+      {
+        "category": "Culture",
+        "insight": "High pre-professional success rates, including a 74% medical school acceptance rate.",
+        "implication": "The university is an exceptional launchpad for pre-med and healthcare students, largely due to proximity to the Cleveland Clinic and University Hospitals."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A collaborative, academically intense, and somewhat 'nerdy/quirky' environment. Greek life exists but does not dominate. Students are highly engaged in research and pre-professional clubs.",
+      "transportation_impact": "Situated in University Circle, the campus integrates seamlessly with Cleveland's top cultural and medical institutions. Public transit provides access to downtown.",
+      "research_impact": "Massive emphasis on experiential learning. 86% of undergraduates participate in research, supported by state-of-the-art facilities like the massive 7-story Sears think[box] makerspace."
     }
-  ],
-  "_id": "case_western_reserve_university"
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.38,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.24,
+      "admits_class_size": 1659,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional. Writing sections optional.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 804,
+          "admits": 298,
+          "acceptance_rate": 0.37,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 37082,
+        "admits_total": 14010,
+        "enrolled_total": 1659,
+        "acceptance_rate_overall": 0.378,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.118,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 9805,
+          "accepted_spots": 4478,
+          "admitted_from_waitlist": 1282,
+          "waitlist_admit_rate": 0.286,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 39039,
+        "admits_total": 11193,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.287,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 11841,
+          "accepted_spots": 7940,
+          "admitted_from_waitlist": 1141,
+          "waitlist_admit_rate": 0.144,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 38701,
+        "admits_total": 10607,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.274,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 11620,
+          "accepted_spots": 6056,
+          "admitted_from_waitlist": 436,
+          "waitlist_admit_rate": 0.072,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 33232,
+        "admits_total": 10049,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.302,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 11494,
+          "accepted_spots": 4992,
+          "admitted_from_waitlist": 364,
+          "waitlist_admit_rate": 0.073,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.0,
+        "notes": "GPA details generally reflect a highly selective pool with 74% in the top tenth of their graduating class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1450-1530",
+        "sat_reading_middle_50": "700-760",
+        "sat_math_middle_50": "740-790",
+        "act_composite_middle_50": "32-35",
+        "submission_rate": null,
+        "policy_note": "Test-optional policy in effect; submitted scores are heavily clustered in the 99th percentile."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.13,
+        "legacy_percentage": 0.1,
+        "international_percentage": 0.114,
+        "geographic_breakdown": [
+          {
+            "region": "Middle Atlantic",
+            "percentage": 0.26
+          },
+          {
+            "region": "West",
+            "percentage": 0.15
+          },
+          {
+            "region": "Ohio",
+            "percentage": 0.13
+          },
+          {
+            "region": "Midwest (excl. OH)",
+            "percentage": 0.13
+          },
+          {
+            "region": "South",
+            "percentage": 0.08
+          },
+          {
+            "region": "New England",
+            "percentage": 0.07
+          },
+          {
+            "region": "Southwest",
+            "percentage": 0.06
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.337,
+          "black_african_american": 0.062,
+          "hispanic_latino": 0.115,
+          "asian": 0.301,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.0003,
+          "two_or_more_races": 0.052,
+          "unknown": 0.016,
+          "non_resident_alien": 0.114
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Case School of Engineering",
+        "admissions_model": "Single-Door Admission",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students who want top-tier engineering with the flexibility to easily double major in humanities or arts.",
+        "housing_profile": "All first-year students live in residential colleges clustered together in the North Residential Village.",
+        "student_archetype": "Driven, innovative, highly collaborative STEM-focused students.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit via Single-Door",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSDS 132",
+                "CSDS 233",
+                "CSDS 281",
+                "CSDS 314",
+                "CSDS 317",
+                "CSDS 393"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": 63
+            },
+            "notable_professors": [],
+            "notes": "Curriculum follows ACM/IEEE guidelines. Students must also complete a secure computing requirement."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit via Single-Door",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EBME 105",
+                "EBME 202",
+                "EBME 308",
+                "EBME 309",
+                "EBME 310"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Xiong (Bill) Yu (Biomedical Sensing/Imaging)"
+            ],
+            "notes": "One of the pioneering BME programs globally, highly integrated with the School of Medicine and local hospitals."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit via Single-Door",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EMAE 160",
+                "EMAE 181",
+                "EMAE 250",
+                "EMAE 251",
+                "EMAE 252"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers a dual major option with Materials Science or Biomedical Engineering."
+          }
+        ]
+      },
+      {
+        "name": "Frances Payne Bolton School of Nursing",
+        "admissions_model": "Single-Door Admission",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for pre-nursing students seeking immediate clinical exposure, as clinicals begin in the first semester.",
+        "housing_profile": "Integrated with standard first-year residential colleges.",
+        "student_archetype": "Compassionate, high-achieving healthcare aspirants.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit via Single-Door",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 115",
+                "NURS 122",
+                "NURS 211",
+                "NURS 212",
+                "NURS 230",
+                "NURS 240",
+                "NURS 343",
+                "NURS 405"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students begin clinicals in their very first semester and accumulate over 1000 clinical hours prior to graduation."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Single-Door Admission",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for pre-meds and biological sciences students looking to leverage local healthcare networks for research.",
+        "housing_profile": "Integrated with standard first-year residential colleges.",
+        "student_archetype": "Intellectually curious researchers and pre-professional students.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit via Single-Door",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 214",
+                "BIOL 215",
+                "BIOL 216",
+                "BIOL 326"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "BS requires two semesters of undergraduate research; BA is more flexible."
+          }
+        ]
+      },
+      {
+        "name": "Weatherhead School of Management",
+        "admissions_model": "Single-Door Admission",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for students wanting quantitative business skills integrated with technology and engineering crossovers.",
+        "housing_profile": "Integrated with standard first-year residential colleges.",
+        "student_archetype": "Analytically-minded future managers and entrepreneurs.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "Pre-Professional Programs",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Deadline for Pre-Professional Scholars Program (PPSP) in Medicine/Dental."
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-15",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Pre-Professional Scholars Program",
+        "requirement_type": "Essays",
+        "deadline": "2024-12-01",
+        "details": "250-500 words indicating why you are interested in your chosen profession, how you are suited for it, and what experiences led you to this choice."
+      },
+      {
+        "target_program": "All/Special",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Optional essay (up to 750 words) detailing an event, achievement, or experience you are proud of that does not appear elsewhere on your application/resume."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Recommendations",
+        "Interview",
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Demonstrated Interest"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "CWRU openly prioritizes 'demonstrated interest'. Interacting with emails, visiting campus, interviewing, and applying Early Decision are highly beneficial."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "No advantage to gaming the major choice. CWRU's single-door admission policy means all students are evaluated together and can declare any major once enrolled."
+    ],
+    "college_ranking_tactics": [
+      "Applying Early Decision (ED1 or ED2) provides a massive statistical advantage (37% admit rate vs. lower overall rate), signaling maximum demonstrated interest."
+    ],
+    "alternate_major_strategy": "Not applicable due to the single-door admission policy; all academic pathways are open upon matriculation."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 68660.0,
+        "total_coa": 88570.0,
+        "housing": 19514.0
+      },
+      "out_of_state": {
+        "tuition": 68660.0,
+        "total_coa": 88570.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Meets 100% Need",
+    "average_need_based_aid": 58416.0,
+    "average_merit_aid": 29108.0,
+    "percent_receiving_aid": 0.84,
+    "scholarships": [
+      {
+        "name": "QuestBridge Scholarship",
+        "type": "Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Covers four years of tuition, room, and board for matched students.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Andrew and Eleanor Squire Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2025-03-01",
+        "benefits": "Full tuition for students in arts, humanities, natural, social/behavioral sciences, or management.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Alexander A. Treuhaft Memorial Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Full tuition for applicants in science and engineering.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Louis Stokes Congressional Black Caucus Foundation Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Tuition + $2,500 grant",
+        "deadline": "",
+        "benefits": "Covers full tuition (up to 5 years), provides a $2,500 computer/book grant, and helps secure paid summer internships.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "FIRST Robotics Scholarship",
+        "type": "Merit",
+        "amount": "$10,000",
+        "deadline": "",
+        "benefits": "Renewable for up to $40,000 over four years for participants in FIRST Robotics/Tech Challenge.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 - $2,000",
+        "deadline": "",
+        "benefits": "Awarded to finalists who declare CWRU as their first choice.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credits typically awarded for scores of 4 or 5.",
+      "exceptions": [
+        "AP Biology requires a 5 to exempt BIOL 214; a 4 only grants elective BIOL 114 credit.",
+        "No credit given for AP Seminar, AP Research, or AP Precalculus.",
+        "English credit requires subsequent completion of a 300-level ENGL course with a 'C' or better."
+      ],
+      "usage": "Can satisfy major requirements, prerequisites, or elective credits depending on department."
+    },
+    "ib_policy": {
+      "general_rule": "Course credit awarded for Higher Level (HL) exam scores of 5, 6, or 7.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Students must complete at least half of their major requirements at CWRU. Pre-matriculation college credits must be approved via a 'College Credit Eligibility' form."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Exceptional academic record with heavy STEM preparation.",
+      "Demonstrating significant interest through campus visits, interviews, and early applications (yield protection is a major hurdle for over-qualified candidates).",
+      "Clear alignment with CWRU's culture of research and hands-on technical learning."
+    ],
+    "common_activities": [
+      "Undergraduate research (86% participation)",
+      "Pre-med and clinical shadowing at neighboring world-class hospitals",
+      "Hands-on engineering projects at the Sears think[box]"
+    ],
+    "essay_tips": [
+      "Be authentic in the optional 'unrecognized achievement' essay; use it to highlight quirky passions, resilience, or unique hobbies that don't fit the standard resume format.",
+      "Pre-med PPSP applicants must articulate a mature, deeply researched reasoning for entering medicine."
+    ],
+    "red_flags": [
+      "Treating the school as a safe backup without showing demonstrated interest (likely to result in a waitlist).",
+      "Weak math/science rigor in high school for engineering or pre-med applicants."
+    ],
+    "insights": [
+      "Waitlist movement can be minimal in some years (7% admit rate in 2022) to moderately generous (28% in 2024).",
+      "The 'Single-Door' policy relieves stress during application but means the general applicant pool is highly competitive across the board."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 84700,
+    "employment_rate_2yr": 0.48,
+    "grad_school_rate": 0.42,
+    "top_employers": [
+      "Cleveland Clinic",
+      "Case Western Reserve University",
+      "University Hospitals",
+      "Epic",
+      "Amazon",
+      "Deloitte",
+      "EY"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.92,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 0.87
+  }
 }

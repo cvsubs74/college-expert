@@ -1,71 +1,503 @@
 {
-  "platforms": [
-    "Common Application",
-    "Coalition Application"
-  ],
-  "application_deadlines": [
-    {
-      "plan_type": "ED1",
-      "date": "YYYY-11-01",
-      "is_binding": true,
-      "notes": "Clark meets 100% of demonstrated need for Early Decision applicants."
+  "_id": "clark_university",
+  "metadata": {
+    "official_name": "Clark University",
+    "location": {
+      "city": "Worcester",
+      "state": "MA",
+      "type": "Private"
     },
-    {
-      "plan_type": "EA",
-      "date": "YYYY-11-01",
-      "is_binding": false,
-      "notes": ""
-    },
-    {
-      "plan_type": "ED2",
-      "date": "YYYY-01-15",
-      "is_binding": true,
-      "notes": "Clark meets 100% of demonstrated need for Early Decision applicants."
-    },
-    {
-      "plan_type": "RD",
-      "date": "YYYY-01-15",
-      "is_binding": false,
-      "notes": ""
-    }
-  ],
-  "supplemental_requirements": [
-    {
-      "target_program": "All",
-      "requirement_type": "Essays",
-      "deadline": "",
-      "details": "One optional 250-word essay. Applicants choose between two prompts focusing on either community impact or working with others to drive positive change."
-    },
-    {
-      "target_program": "Honors Program",
-      "requirement_type": "Essays",
-      "deadline": "",
-      "details": "One required 200-350 word essay about a piece of media that captivates the applicant and how they have pursued that interest."
-    },
-    {
-      "target_program": "Presidential Scholarship",
-      "requirement_type": "Essays",
-      "deadline": "YYYY-11-01",
-      "details": "Requires checking a box on the Common App, which unlocks two additional short essays."
-    }
-  ],
-  "holistic_factors": {
-    "primary_factors": [
-      "Academic rigor",
-      "High school GPA",
-      "Recommendations"
-    ],
-    "secondary_factors": [
-      "Extracurricular activities",
-      "Essays",
-      "Character/personal qualities"
-    ],
-    "essay_importance": "High",
-    "demonstrated_interest": "Considered",
-    "interview_policy": "Recommended",
-    "legacy_consideration": "Moderate",
-    "first_gen_boost": "Moderate",
-    "specific_differentiators": "Clark values students who show an interest in global change, interdisciplinary learning, and making a social impact."
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "Common Data Set 2024-2025",
+      "College Scorecard",
+      "IPEDS"
+    ]
   },
-  "_id": "clark_university"
+  "strategic_profile": {
+    "executive_summary": "Clark University is a small, private liberal arts and research university (R2) in Worcester, Massachusetts, renowned for its 'Challenge Convention. Change Our World' motto. It is highly regarded for integrating robust undergraduate research with hands-on learning, specifically in psychology, geography, and game design.",
+    "market_position": "Private Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 132,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "High undergraduate research participation and the option for a tuition-free fifth-year master's degree.",
+        "implication": "Students looking for accelerated graduate paths and hands-on research will find significant ROI here."
+      },
+      {
+        "category": "Culture",
+        "insight": "Activism-heavy, collaborative social environment without Greek life.",
+        "implication": "Attracts progressive, socially conscious students who prefer a close-knit, laid-back campus vibe."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Admissions are moderately selective (around 40-42%), but test-optional policies are heavily utilized.",
+        "implication": "Applicants with strong academic GPAs (average 3.68+) can gain admission even without submitting standardized test scores."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Close-knit and progressive, with a strong culture of advocacy, activism, and social justice. No Greek life is present; social events are heavily club and community-driven.",
+      "transportation_impact": "Located in Worcester, the second-largest city in New England. It offers public transportation access to Boston (about an hour away), though students have mixed feelings about the immediate neighborhood's safety.",
+      "research_impact": "As an R2 institution, Clark heavily emphasizes undergraduate research opportunities across all disciplines, particularly in its biology, psychology, and geography labs."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 41.66,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 30.07,
+      "admits_class_size": 705,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional since 2012. Applicants can choose whether to include SAT/ACT scores as part of their holistic review.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 73.0,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 10730,
+        "admits_total": 4471,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 41.66,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1612,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 101,
+          "waitlist_admit_rate": 6.26,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist stats reported from 2023 cycle."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 730,
+          "accepted_spots": 309,
+          "admitted_from_waitlist": 57,
+          "waitlist_admit_rate": 18.45,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Data sourced from 2024 waitlist tracking reports."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.68,
+        "notes": "Average high school GPA represents enrolled first-year students."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1300-1450",
+        "sat_reading_middle_50": "660-740",
+        "sat_math_middle_50": "630-720",
+        "act_composite_middle_50": "30-33",
+        "submission_rate": 21.0,
+        "policy_note": "16% submitted SAT, 5% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": 19.0,
+        "legacy_percentage": null,
+        "international_percentage": 6.0,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 60.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 62.0,
+          "black_african_american": 6.0,
+          "hispanic_latino": 12.0,
+          "asian": 7.0,
+          "native_american_alaskan": 0.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 3.0,
+          "unknown": 0.0,
+          "non_resident_alien": 6.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in traditional liberal arts, natural sciences, and social sciences, especially Psychology and Geography.",
+        "housing_profile": "Standard undergraduate housing, guaranteed for first-years.",
+        "student_archetype": "Curious, socially active, and research-oriented.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Michael Addis (Clinical Psychology)",
+              "Jeffrey Arnett (Developmental Psychology)",
+              "Michael Bamberg (Psychology)"
+            ],
+            "notes": "The most popular major at Clark, known for historic roots dating back to G. Stanley Hall and Sigmund Freud."
+          },
+          {
+            "name": "Geography",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Anthony Bebbington (Geography)",
+              "Abby Frazier (Geography)",
+              "Florencia Sangermano (Geography)"
+            ],
+            "notes": "Highly ranked globally; Clark is renowned for its Graduate School of Geography, which heavily incorporates undergraduates into research."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 102 Introduction to Biology II"
+              ],
+              "electives": [],
+              "total_units": 32,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Neva Meyer (Biology)",
+              "Kaitlyn Mathis (Biology)",
+              "Justin Thackeray (Biology)"
+            ],
+            "notes": "Strong pre-med track attachment."
+          }
+        ]
+      },
+      {
+        "name": "Becker School of Design and Technology",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students pursuing interactive media, game design, and esports management.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Creative, tech-savvy, and design-oriented.",
+        "majors": [
+          {
+            "name": "Interactive Media Design",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Paul Cotnoir (Game Design)"
+            ],
+            "notes": "Consistently ranked in the top 10 globally for Game Design by The Princeton Review."
+          }
+        ]
+      },
+      {
+        "name": "School of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students wanting a business education grounded in liberal arts and social responsibility.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Entrepreneurial, analytical, and community-minded.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "John Dobson (School of Business)",
+              "Thomas Murphy (School of Business)"
+            ],
+            "notes": "AACSB-accredited."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "ED2 is available with a January 15 deadline."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Presidential LEEP Scholarship",
+        "requirement_type": "Essays",
+        "deadline": "February 1",
+        "details": "Requires two additional scholarship essays for consideration."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor",
+        "GPA",
+        "Extracurricular Activities",
+        "Essays"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)",
+        "Demonstrated Interest",
+        "Interview"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Clark explicitly tracks and considers demonstrated interest. An optional interview is highly recommended to stand out in the holistic review process."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying undecided is common and fully supported by the Pre-Major advising structure.",
+      "Highlight interdisciplinary interests, as Clark students often double major or create unique academic pathways."
+    ],
+    "college_ranking_tactics": [
+      "Submitting a test score is beneficial if it aligns with the middle 50% (1300+ SAT, 30+ ACT), given the low submission rates (16% SAT, 5% ACT).",
+      "Schedule an interview and physically or virtually engage with admissions to maximize Demonstrated Interest metrics."
+    ],
+    "alternate_major_strategy": "Because Clark does not have heavily impacted direct-admit majors for undergrads, switching majors internally is generally flexible."
+  },
+  "financials": {
+    "tuition_model": "Flat rate private tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 58467.0,
+        "total_coa": 72917.0,
+        "housing": 12500.0
+      },
+      "out_of_state": {
+        "tuition": 58467.0,
+        "total_coa": 72917.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware generally, but Meets 100% Need for Early Decision applicants",
+    "average_need_based_aid": 41033.0,
+    "average_merit_aid": 33077.0,
+    "percent_receiving_aid": 84.0,
+    "scholarships": [
+      {
+        "name": "Presidential LEEP Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition, Room, and Board",
+        "deadline": "February 1",
+        "benefits": "Covers full tuition, on-campus room, and board for all four years.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Richard Traina Scholarship",
+        "type": "Merit",
+        "amount": "$20,000/year",
+        "deadline": "January 15",
+        "benefits": "$80,000 total over four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Robert Goddard Scholarship",
+        "type": "Merit",
+        "amount": "$17,000/year",
+        "deadline": "January 15",
+        "benefits": "$68,000 total over four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Jonas Clark Scholarship",
+        "type": "Merit",
+        "amount": "$14,000/year",
+        "deadline": "January 15",
+        "benefits": "$56,000 total over four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Making a Difference Scholarship",
+        "type": "Merit",
+        "amount": "$10,000/year",
+        "deadline": "January 15",
+        "benefits": "$40,000 total over four years.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous up to a cap",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 4 or 5 for 1 unit (4 credits) each.",
+      "exceptions": [
+        "A score of 5 on AP English Lit/Comp waives the Written Expression (WE) requirement.",
+        "Maximum of 8 units (32 credits) can be awarded from AP exams."
+      ],
+      "usage": "Credit, placement, and core requirement waivers (max 3 core waivers)."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts Higher Level scores of 5 or higher for 1 unit each.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Verto Direct Transfer Pathway"
+      ],
+      "restrictions": "Maximum of 16 units (50% of the degree) may be transferred. Courses must be a C grade or higher."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong commitment to community service and social justice.",
+      "A holistic application showing authentic intellectual curiosity over sheer statistics.",
+      "Demonstrated interest through an optional interview."
+    ],
+    "common_activities": [
+      "Undergraduate research",
+      "Model United Nations (ranked top 10 globally)",
+      "Activism and social advocacy groups",
+      "Game development / interactive media clubs"
+    ],
+    "essay_tips": [
+      "Emphasize personal growth and how your values align with Clark's motto: 'Challenge Convention. Change Our World.'",
+      "Showcase interdisciplinary interests and out-of-the-box thinking."
+    ],
+    "red_flags": [
+      "Apathy towards global or social issues.",
+      "Lack of demonstrated interest or engagement with the university prior to applying."
+    ],
+    "insights": [
+      "Clark is known for its 'Fifth-Year Free' program, allowing students with a 3.4+ GPA to earn a Master's degree tuition-free.",
+      "Worcester is a college-heavy town, but students advise being mindful of off-campus safety."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 63965,
+    "employment_rate_2yr": 97.0,
+    "grad_school_rate": null,
+    "top_employers": [
+      "AIG",
+      "Deloitte",
+      "KPMG",
+      "Johnson & Johnson",
+      "IBM",
+      "Hanover Theatre"
+    ],
+    "loan_default_rate": 2.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 88.0,
+    "graduation_rate_4_year": 70.0,
+    "graduation_rate_6_year": 77.0
+  }
 }

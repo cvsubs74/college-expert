@@ -1,41 +1,424 @@
 {
-  "name": "Zanvyl Krieger School of Arts and Sciences",
-  "admissions_model": "Pre-Major",
-  "acceptance_rate_estimate": null,
-  "is_restricted_or_capped": false,
-  "strategic_fit_advice": "Ideal for pre-med, humanities, natural sciences, and social sciences students. Very flexible, allowing students to design their own pathways or double-major easily.",
-  "housing_profile": "Traditional undergraduate residential campus (Homewood).",
-  "student_archetype": "Intellectually curious, interdisciplinary thinker, strong writer and researcher.",
-  "majors": [
-    {
-      "name": "Neuroscience",
-      "degree_type": "B.S.",
-      "is_impacted": false,
-      "acceptance_rate": null,
-      "average_gpa_admitted": null,
-      "prerequisite_courses": [],
-      "minimum_gpa_to_declare": null,
-      "weeder_courses": [],
-      "special_requirements": "",
-      "admissions_pathway": "Pre-Major",
-      "internal_transfer_allowed": true,
-      "direct_admit_only": false,
-      "internal_transfer_gpa": null,
-      "curriculum": {
-        "core_courses": [
-          "AS.200.141 Foundations of Brain, Behavior and Cognition",
-          "AS.080.305 Neuroscience: Cellular and Systems I",
-          "AS.080.306 Neuroscience: Cellular and Systems II",
-          "AS.080.250 Neuroscience Laboratory",
-          "AS.020.306 Cell Biology"
-        ],
-        "electives": [],
-        "total_units": null,
-        "major_units": null
+  "_id": "johns_hopkins_university",
+  "metadata": {
+    "official_name": "Johns Hopkins University",
+    "location": {
+      "city": "Baltimore",
+      "state": "Maryland",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Founded in 1876 as America's first research university, Johns Hopkins University is a globally elite private institution renowned for its STEM, pre-med, and public health pipelines. The university operates on a flexible curriculum model that strongly encourages undergraduate research, with over 90% of students participating. Backed by massive endowments, JHU recently eliminated loans and offers free tuition for most families earning under $200k.",
+    "market_position": "Elite Private / Ivy-Equivalent",
+    "admissions_philosophy": "Holistic but highly academically rigorous; focuses on intellectual curiosity, research drive, and clear impact.",
+    "us_news_rank": 6,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "JHU's overall acceptance rate has plummeted to roughly 5.14% for the Class of 2029, placing it squarely alongside the most competitive Ivy League schools.",
+        "implication": "Regular decision applicants face an uphill battle; Early Decision (10-11% admit rate) is the most viable strategy for highly qualified candidates."
       },
-      "notable_professors": [],
-      "notes": "One of the most popular pre-med majors at JHU. Students select a focus area: cellular/molecular, cognitive, computational, or systems neuroscience."
+      {
+        "category": "Academic",
+        "insight": "With the exception of Biomedical Engineering (BME), JHU does not admit by major.",
+        "implication": "Applicants cannot 'game' the system by applying to less competitive majors, as all non-BME students are evaluated in the same general pool."
+      },
+      {
+        "category": "Financial",
+        "insight": "JHU meets 100% of demonstrated need without loans, and offers free tuition to families earning under $200,000.",
+        "implication": "High yield stability; the university rarely needs to use its waitlist because accepted students are highly incentivized to enroll."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Intensely academic and career-driven with a collaborative but rigorous culture; strong focus on pre-professional tracks (especially medicine).",
+      "transportation_impact": "Urban campus in Baltimore (Homewood); utilizes shuttles to connect to the East Baltimore medical campus and Peabody Institute.",
+      "research_impact": "Unmatched undergraduate research access; JHU leads all US universities in federal research funding, and over 90% of undergrads participate in research."
     }
-  ],
-  "_id": "johns_hopkins_university"
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.0514,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.053,
+      "admits_class_size": 1389,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for recent cycles, though high submit rates exist. Students with scores in the middle 50% are strongly encouraged to submit.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 7563,
+          "admits": 793,
+          "acceptance_rate": 0.1049,
+          "class_fill_percentage": 0.5
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 49112,
+        "admits_total": 2525,
+        "enrolled_total": 1389,
+        "acceptance_rate_overall": 0.0514,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.55,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 2347,
+          "accepted_spots": 1614,
+          "admitted_from_waitlist": 30,
+          "waitlist_admit_rate": 0.0186,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate is extremely low due to high yield and large ED classes."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 45895,
+        "admits_total": 2954,
+        "enrolled_total": 1389,
+        "acceptance_rate_overall": 0.0644,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.4702,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2478,
+          "accepted_spots": 1748,
+          "admitted_from_waitlist": 71,
+          "waitlist_admit_rate": 0.04,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.93,
+        "notes": "99% of admitted students were in the top 10% of their graduating class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1500-1550",
+        "sat_reading_middle_50": "720-760",
+        "sat_math_middle_50": "750-800",
+        "act_composite_middle_50": "34-36",
+        "submission_rate": 0.61,
+        "policy_note": "61% of admits submitted SAT scores, 36% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.18,
+        "legacy_percentage": 0.0,
+        "international_percentage": 0.15,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 18454,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": 19756,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.341,
+          "black_african_american": 0.057,
+          "hispanic_latino": 0.107,
+          "asian": 0.46,
+          "native_american_alaskan": 0.007,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": 0.15
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Krieger School of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing pre-med, natural sciences, public health, and humanities who desire research flexibility.",
+        "housing_profile": "Located on the Homewood campus.",
+        "student_archetype": "Pre-med hopefuls and intense researchers.",
+        "majors": [
+          {
+            "name": "Public Health Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "AS.280.101 Introduction to Public Health",
+                "AS.280.240 Research Methods in Public Health",
+                "AS.280.335 The Environment and Your Health",
+                "AS.280.340 Fundamentals of Health Policy and Management",
+                "AS.280.345 Public Health Biostatistics",
+                "AS.280.350 Fundamentals of Epidemiology"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly popular major allowing students to take senior courses at the Bloomberg School of Public Health."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Greg Ball (Psychological and Brain Sciences/Neuroscience)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Whiting School of Engineering",
+        "admissions_model": "Pre-Major (except BME)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students seeking rigorous engineering programs with heavy medical and biological overlaps.",
+        "housing_profile": "Located on the Homewood campus.",
+        "student_archetype": "Innovators, builders, and computational researchers.",
+        "majors": [
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires specific selection on the admissions application.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The only major at JHU where students are admitted directly into the program; extraordinarily competitive."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Offers both BA and BS tracks depending on humanities focus."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "YYYY-11-01",
+        "is_binding": true,
+        "notes": "Early Decision I"
+      },
+      {
+        "plan_type": "ED",
+        "date": "YYYY-01-03",
+        "is_binding": true,
+        "notes": "Early Decision II"
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-01-03",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Supplemental essays focusing on intellectual curiosity, community impact, and research alignment."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor",
+        "GPA",
+        "Standardized Test Scores",
+        "Extracurricular Activities",
+        "Intellectual Curiosity"
+      ],
+      "secondary_factors": [
+        "Letters of Recommendation",
+        "Essays"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "JHU eliminated legacy admissions completely over a decade ago. Waitlist candidates MUST submit a strong Letter of Continued Interest (LOCI) within 7-10 days to have any chance."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Do not try to game the system by picking an 'easier' major; JHU admits to the university as a whole, not by major (except for BME).",
+      "If intending to study BME, you must indicate it on the application, as internal transfers into BME are not permitted."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to an alternate major instead of BME will not allow you to transfer into BME later. However, if BME is too competitive, applying for Cellular Biology or general Engineering is a safer route for admission, though you will be locked out of the BME degree."
+  },
+  "financials": {
+    "tuition_model": "Flat rate tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 64730.0,
+        "total_coa": 88476.0,
+        "housing": 20150.0
+      },
+      "out_of_state": {
+        "tuition": 64730.0,
+        "total_coa": 88476.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 50356.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Hodson Trust Scholarship",
+        "type": "Merit",
+        "amount": "~2/3 Tuition",
+        "deadline": "",
+        "benefits": "Mentorship, alumni network, student advisory board access.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Charles R. Westgate Scholarship in Engineering",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers 4 years of engineering undergraduate study.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 are often required to receive credit or skip introductory classes.",
+      "exceptions": [],
+      "usage": "Can be used to fulfill quantitative/natural science prerequisites, such as Calculus and Biology for Public Health Studies."
+    },
+    "ib_policy": {
+      "general_rule": "High-level exams typically require a 6 or 7.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Stringent evaluation by specific departments for course equivalency."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Straight As in the most rigorous courses available (average GPA 3.93).",
+      "Exceptional standardized test scores (ACT 34+ or SAT 1500+).",
+      "Demonstrated history of high-level leadership and independent research."
+    ],
+    "common_activities": [
+      "Laboratory research",
+      "Clinical volunteering",
+      "Academic publications",
+      "Science fairs"
+    ],
+    "essay_tips": [
+      "Write from the heart and demonstrate genuine passion.",
+      "Emphasize specific JHU resources (labs, professors, centers) that align with your past experiences.",
+      "Demonstrate how you 'approach problems fearlessly.'"
+    ],
+    "red_flags": [
+      "Lack of rigorous STEM coursework for pre-med/engineering applicants.",
+      "Generic 'Why JHU' essays that fail to mention specific research goals."
+    ],
+    "insights": [
+      "JHU has no core curriculum; instead, it uses a flexible distribution system (Humanities, Natural Sciences, Quantitative, etc.).",
+      "Social life revolves heavily around academic clubs, pre-professional fraternities, and the nearby Baltimore neighborhoods."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 117419,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Johns Hopkins Hospital",
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "McKinsey",
+      "Goldman Sachs",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.979,
+    "graduation_rate_4_year": 0.87,
+    "graduation_rate_6_year": 0.946
+  }
 }
