@@ -32,6 +32,18 @@ class TestIngestUniversity:
         assert any('Rolling' in w for w in result['validation_warnings'])
         assert kb.db.get_university('testu') is not None
 
+    def test_fraction_style_rate_normalized_and_categorized_correctly(self, kb, make_profile):
+        """0.459 means 45.9% (SAFETY-ish), not 0.459% (SUPER_REACH) —
+        regression for the 2026 refresh where 98/191 universities came
+        back fraction-style and got miscategorized."""
+        result = kb.main.ingest_university(make_profile(acceptance_rate=0.459), year=2026)
+        assert result['success'] is True
+        doc = kb.db.get_university('testu')
+        assert doc['acceptance_rate'] == 45.9
+        assert doc['soft_fit_category'] == 'TARGET'  # 25-50% band
+        assert (doc['profile']['admissions_data']['current_status']
+                ['overall_acceptance_rate']) == 45.9
+
     def test_yearly_refresh_preserves_prior_year(self, kb, make_profile):
         """The headline use case: refresh the KB every cycle without
         destroying last cycle's data."""

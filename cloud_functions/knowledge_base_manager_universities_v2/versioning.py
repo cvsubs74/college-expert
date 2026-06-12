@@ -37,6 +37,41 @@ def coerce_year(raw, default: Optional[int] = None) -> int:
     return year
 
 
+# Percent-like fields that research passes sometimes return as fractions
+# (0.459 for 45.9%). No US university has a sub-1% value for any of these
+# (lowest real acceptance rate ≈ 3%), so 0 < v < 1 unambiguously means a
+# fraction. loan_default_rate is excluded — real values below 1% exist.
+_PERCENT_KEY_SUFFIXES = ('_rate', '_percentage')
+_PERCENT_KEY_EXACT = {'percentage', 'percent_receiving_aid', 'class_fill_percentage'}
+_PERCENT_KEY_EXCLUDE = {'loan_default_rate'}
+
+
+def normalize_percentages(obj):
+    """Recursively convert fraction-style percent fields to percents, in place.
+
+    Returns the number of fields converted.
+    """
+    converted = 0
+    if isinstance(obj, dict):
+        for key, value in obj.items():
+            if isinstance(value, (dict, list)):
+                converted += normalize_percentages(value)
+                continue
+            is_pct_key = (
+                key not in _PERCENT_KEY_EXCLUDE
+                and (key.endswith(_PERCENT_KEY_SUFFIXES)
+                     or '_rate_' in key  # acceptance_rate_overall, graduation_rate_4_year
+                     or key in _PERCENT_KEY_EXACT)
+            )
+            if is_pct_key and isinstance(value, float) and 0 < value < 1:
+                obj[key] = round(value * 100, 2)
+                converted += 1
+    elif isinstance(obj, list):
+        for item in obj:
+            converted += normalize_percentages(item)
+    return converted
+
+
 # Sections replaced wholesale from the fresh collection on a yearly refresh.
 # Everything else is durable knowledge (majors, strategy, insights) that a
 # single fresh research pass tends to cover more thinly than the original
