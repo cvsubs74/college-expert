@@ -1,0 +1,464 @@
+{
+  "_id": "temple_university",
+  "metadata": {
+    "official_name": "Temple University",
+    "location": {
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-20",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Temple University is a large, public, R1 research institution in Philadelphia known for its diverse student body, robust pre-professional programs, and rich urban campus life. A pioneer in test-optional admissions, the university utilizes a holistic review process that deeply values high school academic rigor, resilience, and extracurricular engagement.",
+    "market_position": "State-Related Public Research University (R1)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 102,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "With an 80.5% acceptance rate, Temple is accessible, but Early Action provides a 10-15% admission advantage for competitive programs.",
+        "implication": "Applicants should apply by November 1 to maximize both admission odds and automatic merit scholarship consideration."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus is deeply integrated into Philadelphia, offering unmatched internship access alongside a famous food truck culture, though urban safety requires situational awareness.",
+        "implication": "Students must be comfortable navigating a major metropolitan environment."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, highly diverse, and energetic with over 400 clubs, strong Greek life, and a unified school spirit centered around Division I athletics.",
+      "transportation_impact": "Directly accessible via the Broad Street Line, allowing seamless transit throughout Philadelphia for internships and social activities.",
+      "research_impact": "As an R1 institution, Temple spends over $300 million annually on research, providing undergraduates extensive opportunities for laboratory and field research."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.805,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.76,
+      "admits_class_size": 4664,
+      "is_test_optional": true,
+      "test_policy_details": "Temple is permanently test-optional ('The Temple Option'). Standardized tests are not required for admission, honors, or merit scholarships.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 40817,
+        "admits_total": 32838,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.805,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2030,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 0.058,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 39500,
+        "admits_total": 31600,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 782,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 43,
+          "waitlist_admit_rate": 0.055,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.719,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.181,
+        "waitlist_stats": null,
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.42,
+        "notes": "GPA is generally reported as unweighted. Averages sit between 3.42 and 3.46."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1358",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "28-32",
+        "submission_rate": 0.196,
+        "policy_note": "17.7% submit SAT, 1.9% submit ACT. Over 75% of incoming freshmen apply test-optional."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.02,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.65
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.33
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.406,
+          "black_african_american": 0.178,
+          "hispanic_latino": 0.0996,
+          "asian": 0.147,
+          "native_american_alaskan": 0.00165,
+          "pacific_islander": 0.00077,
+          "two_or_more_races": 0.0403,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Fox School of Business and Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for ambitious business students seeking deep corporate networking, consulting, and finance pipelines in the Mid-Atlantic.",
+        "housing_profile": null,
+        "student_archetype": "Driven, professionally focused, pragmatic.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Steven Balsam (Accounting)",
+              "Sudipta Basu (Accounting)",
+              "Detmar William Straub (Management Information Systems)",
+              "Vinod Venkatraman (Marketing)"
+            ],
+            "notes": "One of the most popular and prominent majors in the business school."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Crystal Reeck (Marketing)",
+              "Monica Wadhwa (Marketing)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Excellent for students seeking a traditional liberal arts education with the research backing of an R1 university.",
+        "housing_profile": null,
+        "student_archetype": "Intellectually curious, socially engaged.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "IH 0851 Intellectual Heritage I: The Good Life",
+                "IH 0852 Intellectual Heritage II: The Common Good"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The single most popular undergraduate degree by graduate volume."
+          }
+        ]
+      },
+      {
+        "name": "College of Science and Technology",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for pre-med and research-oriented STEM students.",
+        "housing_profile": null,
+        "student_archetype": "Analytical, pre-professional healthcare.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "A massive feeder program into Temple's medical, dental, and pharmacy graduate schools."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Temple University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Boosts admission odds and grants priority scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Self-Reported Academic Record (STARS)",
+        "deadline": "",
+        "details": "High school grades must be self-reported using the STARS system."
+      },
+      {
+        "target_program": "Tyler School of Art / Boyer College of Music",
+        "requirement_type": "Portfolio / Audition",
+        "deadline": "",
+        "details": "Specialized artistic evaluation required."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Unweighted GPA",
+        "Course Rigor"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Essays",
+        "Letters of Recommendation (Optional)"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Test-optional applicants should lean heavily into their supplemental essay and community impact profile."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action to secure spots in highly desired programs before capacity limits are hit.",
+      "List a less competitive alternate major if applying to the Fox School of Business or competitive pre-health tracks."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Temple permits an alternate major selection on the application. Undecided students can apply to 'University Studies' and explore courses for up to 60 credits before formally declaring."
+  },
+  "financials": {
+    "tuition_model": "Differential tuition based on school/college.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 19608.0,
+        "total_coa": 46500.0,
+        "housing": null
+      },
+      "out_of_state": {
+        "tuition": 35232.0,
+        "total_coa": 62300.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "President's Scholarship",
+        "type": "Merit",
+        "amount": "$5,000-$10,000/yr",
+        "deadline": "November 1",
+        "benefits": "Targeted at the top 10-15% of the applicant pool with strong leadership.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Provost's Scholarship",
+        "type": "Merit",
+        "amount": "Half to Full Tuition",
+        "deadline": "November 1",
+        "benefits": "Awarded to exceptional academic achievers.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Broad Street Finish Line Scholarship",
+        "type": "Need",
+        "amount": "$500-$5,000/yr",
+        "deadline": "Rolling",
+        "benefits": "Targets first-generation undergraduates.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards academic credit for qualifying AP scores.",
+      "exceptions": [],
+      "usage": "Can be used to bypass prerequisite requirements or provide elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "Awards academic credit for qualifying IB scores.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Tool"
+      ],
+      "restrictions": "Grades of C or better are required. At least 45 of the last 60 credits must be taken at Temple to earn a degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Consistent academic record (3.4+ unweighted GPA)",
+      "Desire for an energetic, urban environment",
+      "Strong first-generation or local community involvement"
+    ],
+    "common_activities": [
+      "Greek Life",
+      "Division I Athletics (Attending)",
+      "Exploring Philadelphia via Broad Street Line",
+      "Clubs and Student Professional Organizations (SPOs)"
+    ],
+    "essay_tips": [
+      "Highlight specific, localized interests and community impact.",
+      "Explain non-cognitive strengths if applying test-optional."
+    ],
+    "red_flags": [
+      "Not prioritizing situational awareness; off-campus safety in North Philadelphia requires vigilance.",
+      "Expecting a traditional, enclosed, 'bubble' campus experience."
+    ],
+    "insights": [
+      "The food truck scene on campus (Liacouras Walk) is legendary.",
+      "The student body is intensely diverse and hardworking, fostering a collaborative rather than cutthroat academic culture."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 67232,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "School District of Philadelphia",
+      "Vanguard",
+      "SEI",
+      "Amazon",
+      "Lockheed Martin",
+      "CVS Health",
+      "Comcast",
+      "Penn Medicine",
+      "Children's Hospital of Philadelphia"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 59.0,
+    "graduation_rate_6_year": 76.0
+  }
+}

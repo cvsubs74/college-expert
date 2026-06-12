@@ -1,0 +1,607 @@
+{
+  "_id": "university_of_maryland_baltimore_county",
+  "metadata": {
+    "official_name": "University of Maryland, Baltimore County",
+    "location": {
+      "city": "Catonsville",
+      "state": "MD",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-26",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Maryland, Baltimore County (UMBC) is a moderately selective, public R1 research university located in suburban Catonsville, MD. Renowned nationally for its commitment to inclusive excellence and undergraduate teaching, UMBC is a powerhouse in STEM education, anchored by its highly successful Meyerhoff Scholars Program [cite: 1, 2]. The institution integrates high-level research opportunities with a supportive community, effectively bridging the gap between an elite liberal arts environment and a tier-one research university [cite: 9, 10].",
+    "market_position": "Public R1 Research University / Honors University",
+    "admissions_philosophy": "Holistic Review",
+    "us_news_rank": 166,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "UMBC's overall acceptance rate is 72.4%, positioning it as moderately selective. However, the waitlist admit rate has dropped sharply from 87.5% in 2022 to 40.5% in 2024, indicating increasing competitiveness for borderline applicants [cite: 3, 11].",
+        "implication": "Applicants should apply Early Action (November 1) to maximize chances for admission and to receive priority consideration for highly competitive merit scholarships [cite: 12]."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university is categorized as an R1 institution (Very High Research Activity) and is recognized globally for its high-impact research in cybersecurity, artificial intelligence, and environmental science [cite: 1, 13].",
+        "implication": "Undergraduates have exceptional opportunities to engage in high-level research early in their academic careers, significantly boosting graduate school and employment prospects [cite: 9]."
+      },
+      {
+        "category": "Culture",
+        "insight": "While known for its rigorous academic environment and diverse student body, UMBC is heavily commuter-based, with many students traveling from the surrounding Baltimore-Washington metro area [cite: 7, 10].",
+        "implication": "The social scene requires proactive engagement; students looking for a traditional, heavily Greek-life or party-centric campus may find it too quiet on weekends unless they actively join clubs [cite: 7]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Diverse and academically focused, prioritizing inclusivity. With over 270 student groups, intramural sports, and active cultural clubs, students can find niche communities easily. However, a large commuter population means the campus is often described as quiet on weekends [cite: 7, 14].",
+      "transportation_impact": "Located in suburban Catonsville, Maryland, the campus is less than an hour from Washington D.C. and minutes from downtown Baltimore. This strategic location provides tremendous access to internships and job opportunities with federal agencies (like NSA and NIH) and major tech companies [cite: 6, 15].",
+      "research_impact": "As a Carnegie R1 institution, UMBC provides abundant research opportunities. The presence of the bwtech@UMBC research park on campus actively fosters entrepreneurship and connects students directly with start-ups and tech firms [cite: 9, 13]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.724,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.768,
+      "admits_class_size": 2241,
+      "is_test_optional": true,
+      "test_policy_details": "UMBC is test-optional. However, submitting strong scores (e.g., SAT 1240+) is recommended to bolster the application, especially for competitive STEM programs and merit scholarship consideration [cite: 12, 16].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 14325,
+        "admits_total": 10375,
+        "enrolled_total": 2241,
+        "acceptance_rate_overall": 0.724,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.216,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1592,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 645,
+          "waitlist_admit_rate": 0.405,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Declining overall and waitlist acceptance rates indicate increasing selectivity [cite: 3, 11]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 14189,
+        "admits_total": 10773,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.742,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.222,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 654,
+          "waitlist_admit_rate": 0.503,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Application volume continues an upward trend post-pandemic [cite: 11, 12]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.81,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.875,
+          "is_waitlist_ranked": false
+        },
+        "notes": "High waitlist admit rate during pandemic recovery cycle [cite: 11]."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.812,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.726,
+          "is_waitlist_ranked": false
+        },
+        "notes": "[cite: 11]"
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.66,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "[cite: 12]"
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.66-4.20",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.97,
+        "notes": "Average GPA indicates strong academic preparation, with many admitted students achieving near-perfect unweighted GPAs in high school [cite: 12, 17]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1240-1420",
+        "sat_reading_middle_50": "630-700",
+        "sat_math_middle_50": "610-720",
+        "act_composite_middle_50": "25-31",
+        "submission_rate": 0.3,
+        "policy_note": "27% of admitted applicants submitted SAT scores and 3% submitted ACT scores [cite: 16]."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.28,
+        "legacy_percentage": null,
+        "international_percentage": 0.05,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.8
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 6776,
+            "admits": 4838,
+            "acceptance_rate": 0.714
+          },
+          "women": {
+            "applicants": 7156,
+            "admits": 5250,
+            "acceptance_rate": 0.733
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.27,
+          "black_african_american": 0.22,
+          "hispanic_latino": 0.11,
+          "asian": 0.2,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering and Information Technology (COEIT)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking rigorous technical training with abundant research and internship opportunities in cybersecurity, computing, and engineering [cite: 18, 19].",
+        "housing_profile": "Offers Living-Learning Communities, including the Center for Women in Technology (CWIT) floor [cite: 20].",
+        "student_archetype": "Analytically driven, research-focused, and career-oriented.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CMSC 203",
+              "CMSC 204",
+              "CMSC 207"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CMSC 203",
+              "CMSC 204"
+            ],
+            "special_requirements": "Cannot have more than two attempts in any gateway course (a withdrawal counts as an attempt). Must earn B or higher in CMSC 203 and 204, and C or higher in CMSC 207 [cite: 21].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CMSC 203",
+                "CMSC 204",
+                "CMSC 207"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Incoming freshmen and transfer students are admitted as 'Pre-Computer Science' and only transition to the full major after successfully passing all gateway requirements [cite: 18]."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Gateway requirements and course repeat policies are strictly enforced [cite: 22].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students are placed in Pre-Major status until their engineering gateway courses are successfully completed [cite: 19, 22]."
+          },
+          {
+            "name": "Information Systems",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students must adhere to gateway and course repeat policies to remain eligible for the major [cite: 23].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Unlike Computer Science, Information Systems admits students directly into the major, though progress is monitored via gateway performance [cite: 23]."
+          }
+        ]
+      },
+      {
+        "name": "College of Natural and Mathematical Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Excellent for aspiring researchers, pre-med students, and those targeting doctoral programs in the natural sciences [cite: 4, 24].",
+        "housing_profile": "Strong representation in the Meyerhoff Scholars Program communities [cite: 25].",
+        "student_archetype": "High-achieving, research-oriented, collaborative.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular major, heavily populated by pre-med students and undergraduates pursuing the research track [cite: 5, 8]."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 120",
+                "CHEM 302",
+                "CHEM 351"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers tracks for biochemistry, physical chemistry, and chemistry education [cite: 26]."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts, Humanities, and Social Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for students interested in public policy, social work, psychology, and the arts [cite: 24].",
+        "housing_profile": "General housing and Humanities Scholars floor.",
+        "student_archetype": "Civically engaged, creative, analytical.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "STAT 121"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Completion of a Statistics course is a strict prerequisite for PSYC 311, a required core course [cite: 27].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 311"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Offers tailored tracks and specialties preparing for graduate studies and clinical work [cite: 27]."
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PBHL 100",
+                "BIOL 101",
+                "PBHL 200",
+                "PBHL 202",
+                "PBHL 280",
+                "PBHL 300"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The program track system is being phased out for a more unified core curriculum for incoming students [cite: 28]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "11-01",
+        "is_binding": false,
+        "notes": "Priority deadline for merit scholarships and Honors College consideration [cite: 12]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "02-01",
+        "is_binding": false,
+        "notes": "Regular Decision [cite: 12, 29]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Meyerhoff Scholars Program",
+        "requirement_type": "Essays & Nomination",
+        "deadline": "01-15",
+        "details": "Requires a nomination, an updated resume highlighting STEM activities, a list of high school STEM courses, and an optional recommendation from a STEM professional [cite: 4, 30]."
+      },
+      {
+        "target_program": "CWIT Scholars Program",
+        "requirement_type": "Application",
+        "deadline": "01-15",
+        "details": "Merit-based scholarship program application for women and underrepresented groups in IT/Engineering [cite: 20]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Course Rigor (AP/IB/Honors)"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores",
+        "Essays",
+        "Extracurricular Activities",
+        "Recommendations"
+      ],
+      "essay_importance": "Important",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UMBC highly values a student's commitment to diversity, community building, and research. Applicants showing alignment with inclusive excellence and sustained interest in STEM research stand out [cite: 12, 31]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action to maximize chances for highly competitive merit scholarships and distinct Scholars programs [cite: 12].",
+      "Highlight any undergraduate research, job shadowing, or independent STEM projects in the application to align with UMBC's R1 identity [cite: 30].",
+      "Ensure a highly competitive math/science GPA (3.8+ unweighted) if applying to STEM fields, as gateway course prerequisites are strictly enforced [cite: 12, 32]."
+    ],
+    "college_ranking_tactics": [
+      "Students with strong STEM backgrounds but slightly lower metrics than UMD College Park often find UMBC to be an exceptional alternative with smaller classes, targeted honors programs, and similar prestige in regional tech sectors [cite: 5, 12]."
+    ],
+    "alternate_major_strategy": "For highly impacted programs (like Computer Science and Mechanical Engineering), students are universally placed into 'Pre-Major' status. Admittance to the university is the primary hurdle; students officially declare the major only after successfully passing the requisite gateway courses internally [cite: 18, 19]."
+  },
+  "financials": {
+    "tuition_model": "Public In-State / Out-of-State",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 13256.0,
+        "total_coa": 33766.0,
+        "housing": 14200.0
+      },
+      "out_of_state": {
+        "tuition": 31225.0,
+        "total_coa": 51735.0,
+        "supplemental_tuition": 17969.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10203.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.93,
+    "scholarships": [
+      {
+        "name": "Meyerhoff Scholars Program",
+        "type": "Merit",
+        "amount": "$5,000 - $22,000",
+        "deadline": "01-15",
+        "benefits": "Financial aid, mandatory Summer Bridge program, study groups, intensive advising, and significant research opportunities [cite: 4, 25].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Center for Women in Technology (CWIT) Scholars",
+        "type": "Merit",
+        "amount": "$5,000 - $22,000",
+        "deadline": "01-15",
+        "benefits": "Financial support, mentoring, special courses, and community support for women and underrepresented groups in engineering and IT [cite: 20].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Academic Achievement Award for Transfers (AAT)",
+        "type": "Merit",
+        "amount": "$2,500",
+        "deadline": "03-01",
+        "benefits": "Renewable award for community college transfers who have completed 35 or more college-level credits [cite: 33].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Phi Theta Kappa (PTK) Scholarship",
+        "type": "Merit",
+        "amount": "$2,500",
+        "deadline": "03-01",
+        "benefits": "For community college transfers holding active PTK membership [cite: 33].",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit and/or placement for qualifying AP scores (typically 3, 4, or 5 depending on the department) [cite: 34].",
+      "exceptions": [],
+      "usage": "Can be used to fulfill General Education Program (GEP) requirements or place out of introductory gateway courses [cite: 35]."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for qualifying IB exam scores [cite: 35].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ARTSYS for Maryland Community Colleges"
+      ],
+      "restrictions": "Maximum 70 credits from two-year colleges; maximum 90 total transfer credits including prior learning exams [cite: 35]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong academic foundation, especially in math and science, to survive strict gateway courses [cite: 12, 21].",
+      "A commitment to research, intellectual curiosity, and community service [cite: 4, 30].",
+      "Resilience to handle rigorous filter courses without violating the two-attempt repeat policies [cite: 18, 32]."
+    ],
+    "common_activities": [
+      "Undergraduate Research (often heavily subsidized by grants or programs like Meyerhoff) [cite: 31, 36]",
+      "Intramural and Club Sports at the Retriever Activities Center (RAC) [cite: 15, 37]",
+      "Cultural and Identity-based Organizations [cite: 7, 37]",
+      "Academic and Professional Societies (e.g., HackUMBC, CWIT community events) [cite: 20]"
+    ],
+    "essay_tips": [
+      "Highlight specific research interests and how they align with UMBC's focus as an R1 institution [cite: 9, 12].",
+      "Emphasize a commitment to diversity, community, and inclusive excellence [cite: 30].",
+      "Discuss personal growth, resilience, and problem-solving skills [cite: 12]."
+    ],
+    "red_flags": [
+      "Viewing the school merely as a 'backup' to UMD College Park without showing genuine interest in UMBC's unique culture [cite: 12, 38].",
+      "Lack of rigorous math/science coursework for STEM applicants [cite: 4, 12]."
+    ],
+    "insights": [
+      "The campus is highly diverse and welcoming, with a notable 'nerdy' but proud culture famously summarized by the motto 'It's cool to be smart' [cite: 39].",
+      "Weekend social life can be quiet due to the large commuter population; active participation in clubs or living-learning communities is essential to building a strong social network [cite: 7].",
+      "The Meyerhoff and CWIT Scholars Programs significantly elevate the academic profile, diversity, and research output of the undergraduate student body, acting as national models for inclusive excellence [cite: 20, 40]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 74396,
+    "employment_rate_2yr": 0.94,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Cisco",
+      "General Electric",
+      "Johns Hopkins Hospital",
+      "Microsoft",
+      "Northrop Grumman",
+      "MITRE"
+    ],
+    "loan_default_rate": 0.000518
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.85,
+    "graduation_rate_4_year": 0.45,
+    "graduation_rate_6_year": 0.7
+  }
+}

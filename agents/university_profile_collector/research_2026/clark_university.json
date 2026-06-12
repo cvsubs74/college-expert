@@ -1,0 +1,71 @@
+{
+  "platforms": [
+    "Common Application",
+    "Coalition Application"
+  ],
+  "application_deadlines": [
+    {
+      "plan_type": "ED1",
+      "date": "YYYY-11-01",
+      "is_binding": true,
+      "notes": "Clark meets 100% of demonstrated need for Early Decision applicants."
+    },
+    {
+      "plan_type": "EA",
+      "date": "YYYY-11-01",
+      "is_binding": false,
+      "notes": ""
+    },
+    {
+      "plan_type": "ED2",
+      "date": "YYYY-01-15",
+      "is_binding": true,
+      "notes": "Clark meets 100% of demonstrated need for Early Decision applicants."
+    },
+    {
+      "plan_type": "RD",
+      "date": "YYYY-01-15",
+      "is_binding": false,
+      "notes": ""
+    }
+  ],
+  "supplemental_requirements": [
+    {
+      "target_program": "All",
+      "requirement_type": "Essays",
+      "deadline": "",
+      "details": "One optional 250-word essay. Applicants choose between two prompts focusing on either community impact or working with others to drive positive change."
+    },
+    {
+      "target_program": "Honors Program",
+      "requirement_type": "Essays",
+      "deadline": "",
+      "details": "One required 200-350 word essay about a piece of media that captivates the applicant and how they have pursued that interest."
+    },
+    {
+      "target_program": "Presidential Scholarship",
+      "requirement_type": "Essays",
+      "deadline": "YYYY-11-01",
+      "details": "Requires checking a box on the Common App, which unlocks two additional short essays."
+    }
+  ],
+  "holistic_factors": {
+    "primary_factors": [
+      "Academic rigor",
+      "High school GPA",
+      "Recommendations"
+    ],
+    "secondary_factors": [
+      "Extracurricular activities",
+      "Essays",
+      "Character/personal qualities"
+    ],
+    "essay_importance": "High",
+    "demonstrated_interest": "Considered",
+    "interview_policy": "Recommended",
+    "legacy_consideration": "Moderate",
+    "first_gen_boost": "Moderate",
+    "specific_differentiators": "Clark values students who show an interest in global change, interdisciplinary learning, and making a social impact."
+  },
+  "_id": "clark_university"
+}

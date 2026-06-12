@@ -1,0 +1,491 @@
+{
+  "_id": "university_of_north_texas",
+  "metadata": {
+    "official_name": "University of North Texas",
+    "location": {
+      "city": "Denton",
+      "state": "TX",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-27",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of North Texas (UNT) is a massive, Tier 1 public research university located in Denton, Texas. Known for its world-class College of Music and strong social mobility impact, UNT serves a highly diverse, heavily commuter-based student body. The institution balances accessible assured admissions with rigorous, impacted programs in fields like Computer Science and Music.",
+    "market_position": "Public Tier 1 (R1) Research University",
+    "admissions_philosophy": "Holistic Review for applicants not meeting Assured Admission criteria",
+    "us_news_rank": 208,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "Recognized globally for its College of Music, featuring the nation's first jazz studies program, and highly regarded logistics and supply chain programs.",
+        "implication": "Excellent destination for fine arts and business students seeking high value."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rate has dropped from ~84% to 72.2% over five years as applications surged from 21k to over 38k.",
+        "implication": "While accessible, the university is becoming increasingly competitive, relying heavily on a massive waitlist system to manage yield."
+      },
+      {
+        "category": "Culture",
+        "insight": "Unpretentious and diverse, with 42% first-generation students, but primarily a commuter campus.",
+        "implication": "Students must actively engage in the 300+ clubs to build community; parking is a common pain point."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Diverse, laid-back, and unpretentious environment with over 300 student organizations. Strong arts and music culture.",
+      "transportation_impact": "Heavily commuter-focused campus; students frequently cite parking availability as a significant daily challenge.",
+      "research_impact": "Carnegie R1 institution providing significant undergraduate research opportunities, particularly in sciences and engineering, supported by strong regional industry ties."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.724,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.81,
+      "transfer_acceptance_rate": 0.72,
+      "admits_class_size": 6730,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional. Assured admission is granted based on class rank percentiles and corresponding minimum SAT/ACT scores. Scores are required if submitting for assured admission outside the top 10%.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 21514,
+        "admits_total": 18067,
+        "enrolled_total": 5291,
+        "acceptance_rate_overall": 0.839,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.292,
+        "waitlist_stats": null,
+        "notes": "Application and admit numbers derived from historical enrollment trend data."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 24858,
+        "admits_total": 20135,
+        "enrolled_total": 5436,
+        "acceptance_rate_overall": 0.809,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.269,
+        "waitlist_stats": null,
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 32016,
+        "admits_total": 25335,
+        "enrolled_total": 6624,
+        "acceptance_rate_overall": 0.791,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.261,
+        "waitlist_stats": null,
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 36807,
+        "admits_total": 26671,
+        "enrolled_total": 6926,
+        "acceptance_rate_overall": 0.724,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.259,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 34181,
+          "accepted_spots": 24992,
+          "admitted_from_waitlist": 6080,
+          "waitlist_admit_rate": 0.243,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data sourced from 2024-2025 Common Data Set Section C2."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 38477,
+        "admits_total": 27793,
+        "enrolled_total": 6730,
+        "acceptance_rate_overall": 0.722,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.242,
+        "waitlist_stats": null,
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "UNT does not officially publish average GPA in the CDS (reports 0.00). Estimates place average unweighted GPA at 3.46."
+      },
+      "testing": {
+        "sat_composite_middle_50": "990-1220",
+        "sat_reading_middle_50": "500-630",
+        "sat_math_middle_50": "480-600",
+        "act_composite_middle_50": "19-27",
+        "submission_rate": 0.53,
+        "policy_note": "Test optional. Approximately 43% submit SAT and 10% submit ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.42,
+        "legacy_percentage": null,
+        "international_percentage": 0.171,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 17360,
+            "admits": 11966,
+            "acceptance_rate": 0.689
+          },
+          "women": {
+            "applicants": 21117,
+            "admits": 15827,
+            "acceptance_rate": 0.749
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.347,
+          "black_african_american": 0.127,
+          "hispanic_latino": 0.234,
+          "asian": 0.068,
+          "native_american_alaskan": 0.002,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.038,
+          "unknown": 0.012,
+          "non_resident_alien": 0.171
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking high-value STEM education in the DFW metroplex.",
+        "housing_profile": "Often houses students at Discovery Park (off main campus).",
+        "student_archetype": "Tech-focused, career-driven",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Program is highly impacted; transferring internally can be competitive."
+          }
+        ]
+      },
+      {
+        "name": "College of Music",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Designed for elite musicians, particularly those interested in jazz, performance, or music education.",
+        "housing_profile": null,
+        "student_archetype": "Dedicated artist",
+        "majors": [
+          {
+            "name": "Music",
+            "degree_type": "B.A./B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires live or recorded audition.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most competitive music programs in the nation."
+          }
+        ]
+      },
+      {
+        "name": "G. Brint Ryan College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Excellent for students seeking corporate placements in the Dallas-Fort Worth metroplex.",
+        "housing_profile": null,
+        "student_archetype": "Pragmatic, corporate-minded",
+        "majors": [
+          {
+            "name": "General Business",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular major feeding into Dallas-area Fortune 500 companies."
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts and Social Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for humanities and social science students.",
+        "housing_profile": null,
+        "student_archetype": "Curious, multidisciplinary",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Produces the highest number of graduates per the College Scorecard."
+          }
+        ]
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Suited for pre-med and core science researchers.",
+        "housing_profile": null,
+        "student_archetype": "Analytical, pre-professional",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular pre-med pathway."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "ApplyTexas",
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-03-01",
+        "is_binding": false,
+        "notes": "March 1 is the priority deadline for admission and UNT Excellence Scholarship consideration. Rolling admission continues thereafter."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Required/Highly Recommended for students who do not meet assured admission standards to trigger a holistic review."
+      },
+      {
+        "target_program": "College of Music",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Live or recorded audition required for music programs."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Class Rank",
+        "Standardized Test Scores (if submitted)",
+        "GPA"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Community Service",
+        "First-Generation Status",
+        "Essays"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Automatic admission guarantees entry for top 10% or top 25% with qualifying test scores. Holistic review heavily relies on essays to explain academic discrepancies."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Avoid applying to recently phased-out majors like Linguistics or specific ethnic studies minors.",
+      "Apply early for impacted programs like Computer Science or Music."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students failing to gain entry to impacted CS or Engineering programs may start undeclared in the College of Liberal Arts and attempt an internal transfer after fulfilling baseline requirements."
+  },
+  "financials": {
+    "tuition_model": "Save and Soar Tuition Plan available to lock in rates.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11309.0,
+        "total_coa": 27711.0,
+        "housing": 11164.0
+      },
+      "out_of_state": {
+        "tuition": 21149.0,
+        "total_coa": 37551.0,
+        "supplemental_tuition": 9840.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": 9744.0,
+    "percent_receiving_aid": 0.71,
+    "scholarships": [
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$128,000",
+        "deadline": "May",
+        "benefits": "Full ride covering tuition, fees, housing, meal plan, books, and stipend for Texas residents ($177k for out of state).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "UNT Excellence Scholarships",
+        "type": "Merit",
+        "amount": "$1,000+",
+        "deadline": "2025-03-01",
+        "benefits": "Tiered merit awards based on high school rank and GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Terry Foundation Scholarship",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Comprehensive scholarship for Texas residents demonstrating leadership and need.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants credit for scores of 3 or higher on most AP exams.",
+      "exceptions": [],
+      "usage": "Credits can satisfy core curriculum and specific major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts IB higher-level exam scores.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UNT Transfer Guides",
+        "Texas Common Course Numbering System (TCCNS)"
+      ],
+      "restrictions": "Transfer credits must map to degree applicability; max credit transfers exist for last 30 hours in residency."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Top 25% class rank combined with a 950+ SAT guarantees entry.",
+      "Top 50% class rank requires a 1050+ SAT.",
+      "Those applying holistically need a compelling essay emphasizing personal growth."
+    ],
+    "common_activities": [
+      "Band/Music Programs",
+      "Community Service",
+      "Part-time Employment"
+    ],
+    "essay_tips": [
+      "Address academic blips directly in the Statement of Purpose.",
+      "Showcase resilience and self-awareness.",
+      "Tie specific UNT resources to your career goals."
+    ],
+    "red_flags": [
+      "Low GPA without an explanatory essay.",
+      "Applying to phased-out programs."
+    ],
+    "insights": [
+      "UNT is known for its welcoming, diverse, and artsy vibe.",
+      "Parking is notoriously difficult for commuters.",
+      "Discovery Park (Engineering) is off the main campus, requiring a bus ride."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 58743,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Fidelity Investments",
+      "Lockheed Martin",
+      "PepsiCo",
+      "Texas Instruments",
+      "Toyota",
+      "Amazon",
+      "AT&T"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.77,
+    "graduation_rate_4_year": 0.43,
+    "graduation_rate_6_year": 0.61
+  }
+}

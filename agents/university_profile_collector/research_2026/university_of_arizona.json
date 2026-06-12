@@ -1,0 +1,431 @@
+{
+  "_id": "university_of_arizona",
+  "metadata": {
+    "official_name": "University of Arizona",
+    "location": {
+      "city": "Tucson",
+      "state": "Arizona",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Arizona is a premier public land-grant R1 research institution globally recognized for its aerospace, optical sciences, and business programs. It offers a highly spirited, classic college campus experience with accessible general admissions, contrasted by fiercely competitive direct-admit tracks in Nursing and Management.",
+    "market_position": "Public Flagship / R1 Research University",
+    "admissions_philosophy": "Numbers-focused with holistic elements for selective programs",
+    "us_news_rank": 109,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "General university acceptance sits at 86%, but specific colleges like Nursing and Eller Business are highly capped and fiercely competitive.",
+        "implication": "Applicants must not rely on the high overall acceptance rate if applying to STEM or healthcare fields; exceptional GPAs are required for these specific pathways."
+      },
+      {
+        "category": "Financial",
+        "insight": "The Guaranteed Tuition model locks in base tuition and fees for eight consecutive semesters.",
+        "implication": "Provides families with outstanding financial predictability and protection against annual tuition hikes."
+      },
+      {
+        "category": "Academic",
+        "insight": "The Management Information Systems (MIS) program ranks #1 among public universities.",
+        "implication": "Offers elite, Ivy-level academic pedigree and high earning potential at a public university price point."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A vibrant, sports-centric environment anchored by Big 12 athletics, strong Greek life, and over 400 student organizations in a sunny desert setting.",
+      "transportation_impact": "While the 380-acre urban campus is walkable, its integration into Tucson makes off-campus transportation and parking a logistical challenge for some commuters.",
+      "research_impact": "Generates over $1 Billion in annual research expenditures, providing undergraduates with unparalleled access to NASA-funded space missions and advanced medical research."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 86.1,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 64.5,
+      "admits_class_size": 9314,
+      "is_test_optional": true,
+      "test_policy_details": "Permanently test-optional. Scores are not required for admission or merit aid, but if submitted, they are 'Do No Harm' and are used exclusively to boost the application or fulfill course placement requirements.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 58339,
+        "admits_total": 50252,
+        "enrolled_total": 9314,
+        "acceptance_rate_overall": 86.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 18.5,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed. Undergraduate application volume hit a record high, reflecting a 12% increase since 2022."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.48,
+        "notes": "Reported average is 3.48 unweighted on a 4.0 scale."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1340",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "21-30",
+        "submission_rate": 11.0,
+        "policy_note": "Only 11% of enrolled students submitted SAT scores; roughly 22% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 27.8,
+        "legacy_percentage": null,
+        "international_percentage": 3.3,
+        "geographic_breakdown": [
+          {
+            "region": "Arizona Residents",
+            "percentage": 52.7
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 44.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 25635,
+            "admits": 21436,
+            "acceptance_rate": 84.0
+          },
+          "women": {
+            "applicants": 32704,
+            "admits": 28816,
+            "acceptance_rate": 88.0
+          }
+        },
+        "racial_breakdown": {
+          "white": 43.3,
+          "black_african_american": 4.11,
+          "hispanic_latino": 25.2,
+          "asian": 4.99,
+          "native_american_alaskan": 1.46,
+          "pacific_islander": 0.195,
+          "two_or_more_races": 4.78,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High-achieving applicants committed to becoming an RN who want to bypass the stress of internal sophomore-year program applications.",
+        "housing_profile": null,
+        "student_archetype": "Driven, resilient healthcare professionals who excel in high-pressure clinical and scientific coursework.",
+        "majors": [
+          {
+            "name": "Nursing (BSN Direct Admit)",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Chemistry",
+              "Anatomy",
+              "Microbiology",
+              "Biology",
+              "Nutrition"
+            ],
+            "minimum_gpa_to_declare": 3.6,
+            "weeder_courses": [],
+            "special_requirements": "Requires an Advanced Standing Conference and maintaining a 3.0 GPA in foundational coursework. Non-direct admits transferring internally face a steep 3.6 GPA requirement.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.6,
+            "curriculum": {
+              "core_courses": [
+                "NURS 470 Acute & Chronic Illness Management II",
+                "NURS 471 Mental Health Nursing",
+                "NURS 473 Population Health & Community Nursing",
+                "NURS 478 Nursing Leadership & Management in Health Systems",
+                "NURS 479 Transition to the Professional Nursing Role"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 59
+            },
+            "notable_professors": [],
+            "notes": "Newly transitioned to a Direct Admit format for high school seniors to guarantee the 4-year clinical pathway."
+          }
+        ]
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": 87.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students looking for strong foundational theory blended with practical programming and research opportunities.",
+        "housing_profile": null,
+        "student_archetype": "Analytically minded problem solvers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "87%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 122 A/B or 125 Calculus I"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "CSC 110 Introduction to Computer Programming I",
+                "CSC 120 Introduction to Computer Programming II",
+                "CSC 144 Discrete Mathematics for Computer Science I",
+                "CSC 252 Computer Organization",
+                "CSC 345 Analysis of Discrete Structures",
+                "CSC 352 Systems Programming & UNIX"
+              ],
+              "electives": [
+                "CSC 337 Web Programming",
+                "CSC 346 Cloud Computing",
+                "CSC 433 Computer Graphics",
+                "CSC 444 Data Visualization",
+                "CSC 460 Database Systems"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly accessible computer science degree compared to national averages, but internal transfer requires completion of Calculus I with a 'C' or better."
+          }
+        ]
+      },
+      {
+        "name": "Eller College of Management",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students eager to blend business acumen with technical prowess, preparing for corporate leadership or tech consulting.",
+        "housing_profile": null,
+        "student_archetype": "Driven, networking-focused corporate leaders.",
+        "majors": [
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": "77.1%",
+            "average_gpa_admitted": 3.73,
+            "prerequisite_courses": [
+              "Calculus",
+              "Accounting",
+              "Economics",
+              "Business Statistics",
+              "Business Communications"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires passing the 'Professional Admissions' interview process during sophomore year to advance into upper-division courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "MIS 515 Information Security in Public and Private Sectors",
+                "MIS 516 Information Security Risk Management",
+                "MIS 531 Enterprise Data Management",
+                "MIS 541 Information Systems Analysis and Design",
+                "MIS 545 Data Mining for Business Intelligence"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Undergraduate MIS is ranked #1 among public universities. Acceptance rate and GPA noted are for internal admission to the professional phase of Eller College overall."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University-Specific App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2026-06-01",
+        "is_binding": false,
+        "notes": "Rolling admissions process with a final fall deadline of June 1. Priority deadlines for merit scholarships typically fall in May."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Optional but strongly recommended 500-word personal statement addressing 'Why U of A'."
+      },
+      {
+        "target_program": "W.A. Franke Honors College",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Required essay connecting the applicant's goals to one of the five core values of the Honors College."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essays",
+        "Extracurricular Activities",
+        "First generation status"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The university strictly tracks Demonstrated Interest. High engagement via campus tours, email opens, and regional events provides a tangible boost, particularly for borderline candidates."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to competitive programs (BSN, Architecture, Engineering) as a high school senior rather than attempting internal transfers, which impose severe GPA bottlenecks.",
+      "Utilize 'The A Center' if undecided. This dedicated undeclared track offers robust advising and major-exploration courses like SERP 197P to protect GPA while deciding."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants should aggressively utilize the second-choice major option. Students denied from severely capped programs like Nursing are automatically reviewed for their alternate major, ensuring they can still secure a spot at the university."
+  },
+  "financials": {
+    "tuition_model": "Guaranteed Tuition for 8 consecutive semesters.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 12168.0,
+        "total_coa": 31073.0,
+        "housing": null
+      },
+      "out_of_state": {
+        "tuition": 39600.0,
+        "total_coa": 61699.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 16511.0,
+    "average_merit_aid": 13200.0,
+    "percent_receiving_aid": 94.0,
+    "scholarships": [
+      {
+        "name": "Arizona Excellence Award",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "May 1",
+        "benefits": "Substantial tuition reduction for high-achieving non-resident students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Wildcat Award",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "May 1",
+        "benefits": "Tuition reduction for high-achieving resident students.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts Advanced Placement scores for college credit and advanced standing.",
+      "exceptions": [
+        "High scores in AP English grant elective credit and placement into ENGL 109H, but do not waive the ENGL 102 composition requirement entirely."
+      ],
+      "usage": "Used for credit fulfillment and course placement."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts International Baccalaureate scores for credit.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Arizona Community College Transfer Guides",
+        "Credit for Prior Learning (PLA)"
+      ],
+      "restrictions": "Transfer students must maintain strict minimum GPAs for program admission, e.g., 2.50 for Engineering and 3.60 for Nursing."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Completion of the 16 core competency courses with strong grades.",
+      "Demonstrated interest via physical or digital interaction.",
+      "For elite majors, a near-perfect unweighted GPA."
+    ],
+    "common_activities": [
+      "Greek Life (#32 nationally)",
+      "Intramural Sports",
+      "ZonaZoo (Athletic Student Section)",
+      "Undergraduate Research Initiatives"
+    ],
+    "essay_tips": [
+      "Express a clear and genuine 'Why U of A' narrative in the optional personal statement.",
+      "Align personal goals directly with the five core values if applying to the Franke Honors College."
+    ],
+    "red_flags": [
+      "Deficiencies in foundational math/science courses when applying for STEM.",
+      "Ignoring email communications, which signals a lack of demonstrated interest."
+    ],
+    "insights": [
+      "The university operates almost as a city within Tucson; the weather is a massive draw, but the sheer scale of the campus can be overwhelming.",
+      "While it has a reputation as a lively party school, the academic rigor within specific colleges (Eller, Science, Nursing) is incredibly intense."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 67420,
+    "employment_rate_2yr": 89.0,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Raytheon",
+      "University of Arizona",
+      "Banner Health"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 82.8,
+    "graduation_rate_4_year": 52.7,
+    "graduation_rate_6_year": 67.5
+  }
+}

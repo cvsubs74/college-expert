@@ -1,0 +1,599 @@
+{
+  "_id": "university_of_minnesota_twin_cities",
+  "metadata": {
+    "official_name": "University of Minnesota Twin Cities",
+    "location": {
+      "city": "Minneapolis",
+      "state": "MN",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Minnesota Twin Cities is a public land-grant research university and the flagship institution of the University of Minnesota System. Located across Minneapolis and St. Paul, it offers over 150 undergraduate majors and is classified as an R1 doctoral university with very high research activity.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 54,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While the overall acceptance rate is around 77%, international and out-of-state applicants are admitted at similar or slightly higher rates than in-state students. However, acceptance rates for impacted colleges like CSE and CSOM are significantly lower.",
+        "implication": "Applicants should focus heavily on STEM coursework if applying to CSE, and consider alternate majors in CLA if their quantitative profile is borderline."
+      },
+      {
+        "category": "Financial",
+        "insight": "UMTC graduates have average student debt $1,545 below the national average, and 48% of undergraduates systemwide graduate with no debt.",
+        "implication": "The university presents a massive ROI and value proposition, especially for Minnesota residents taking advantage of in-state tuition and reciprocity agreements."
+      },
+      {
+        "category": "Culture",
+        "insight": "With over 50,000 total students and a sprawling campus, self-advocacy is required. However, students have unparalleled access to R1 research and Fortune 500 internships.",
+        "implication": "Students who are independent and proactive will thrive, whereas those needing intense hand-holding may find the environment overwhelming."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A large, energetic Big Ten environment with deep school spirit, robust Greek life, and over 1,000 student organizations. The campus spans an urban setting in Minneapolis and a quieter, traditional setting in St. Paul.",
+      "transportation_impact": "Highly connected via the Metro Transit light rail (Green Line) and free campus shuttles, making it easy to navigate between the East Bank, West Bank, and St. Paul campuses without a car.",
+      "research_impact": "As an R1 institution, undergraduates are heavily encouraged to participate in the Undergraduate Research Opportunities Program (UROP), offering hands-on experiences across all disciplines."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.7703,
+      "in_state_acceptance_rate": 0.75,
+      "out_of_state_acceptance_rate": 0.84,
+      "international_acceptance_rate": 0.82,
+      "transfer_acceptance_rate": 0.5388,
+      "admits_class_size": 7391,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the Fall 2027 enrollment cycle. Nearly 50% of admitted students chose not to submit a test score for Fall 2025.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 41496,
+        "admits_total": 33091,
+        "enrolled_total": 7391,
+        "acceptance_rate_overall": 0.797,
+        "acceptance_rate_in_state": 0.75,
+        "acceptance_rate_out_of_state": 0.84,
+        "yield_rate": 0.223,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 34699,
+        "admits_total": 26880,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.77,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 38050,
+        "admits_total": 28504,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.75,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.50-3.95",
+        "average_weighted": null,
+        "notes": "Middle 50% high school rank percentile is between 74 and 95."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1350-1490",
+        "sat_reading_middle_50": "600-730",
+        "sat_math_middle_50": "620-720",
+        "act_composite_middle_50": "27-33",
+        "submission_rate": 0.5,
+        "policy_note": "Test-optional through Fall 2027. The ranges represent those who chose to submit scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.0478,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 20012,
+            "admits": 15827,
+            "acceptance_rate": 0.7908
+          },
+          "women": {
+            "applicants": 21345,
+            "admits": 17170,
+            "acceptance_rate": 0.8044
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.438,
+          "black_african_american": 0.076,
+          "hispanic_latino": 0.05,
+          "asian": 0.103,
+          "native_american_alaskan": 0.0028,
+          "pacific_islander": 0.0003,
+          "two_or_more_races": 0.039,
+          "unknown": 0.012,
+          "non_resident_alien": 0.0478
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Science and Engineering (CSE)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 0.55,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Best for applicants with rigorous math/science backgrounds (AP/IB Calc, Physics, Chemistry).",
+        "housing_profile": "Often housed in specialized Living Learning Communities related to STEM.",
+        "student_archetype": "Analytical, research-driven, and focused on tech or engineering industries.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSCI 1133",
+              "CSCI 1933",
+              "CSCI 2011",
+              "MATH 1371",
+              "MATH 1372"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSCI 4041",
+              "CSCI 2021"
+            ],
+            "special_requirements": "Admission to the major is competitive and based on an unbracketed technical GPA from UMTC courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 1133",
+                "CSCI 1933",
+                "CSCI 2011",
+                "CSCI 2021",
+                "CSCI 2033",
+                "CSCI 2041",
+                "CSCI 3081W",
+                "CSCI 4041"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Chad L. Myers (Bioinformatics)",
+              "Maria Gini (Artificial Intelligence)",
+              "Yousef Saad (Numerical Linear Algebra)"
+            ],
+            "notes": "B.S. requires 23 credits of upper-division technical electives."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 1301W",
+              "PHYS 1302W",
+              "CHEM 1061",
+              "MATH 1371",
+              "MATH 1372",
+              "MATH 2374",
+              "AEM 2021"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ME 3331",
+              "AEM 3031"
+            ],
+            "special_requirements": "All prerequisite courses must be completed with a grade of C- or higher to apply to the major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ME 3331",
+                "ME 3332",
+                "ME 3333",
+                "ME 3221",
+                "ME 3222",
+                "ME 3281",
+                "ME 4031W"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "William Northrop (Engine Emissions)",
+              "Steven Girshick (Plasmas)",
+              "David Kittelson (Pollutants)",
+              "Jane Davidson (Heat Transfer)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts (CLA)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts education, humanities, social sciences, or those looking to declare an easier pathway into CS (B.A. route).",
+        "housing_profile": "Diverse options, mostly located on the East and West Bank.",
+        "student_archetype": "Versatile, interdisciplinary, and communication-focused.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 1001"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "For the B.S. major, 18 credits from disciplines outside of Psychology (Math, Computer Science, Biology, Physical Sciences) are required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSY 1001",
+                "PSY 2021",
+                "PSY 3021",
+                "PSY 3111",
+                "PSY 3611",
+                "PSY 3901W",
+                "PSY 5993"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Juhong Jiang (Cognitive Psychology)",
+              "Kathleen Vohs (Consumer Psychology)",
+              "Cheryl A. Olman (Sensation and Perception)",
+              "Monica Luciana (Clinical Science)"
+            ],
+            "notes": "One of the most popular majors at the university."
+          }
+        ]
+      },
+      {
+        "name": "Carlson School of Management (CSOM)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Best for driven business students with demonstrated leadership and quantitative skills.",
+        "housing_profile": "Many opt for business-oriented Living Learning Communities.",
+        "student_archetype": "Entrepreneurial, networking-focused, and career-driven.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1101",
+              "ECON 1102",
+              "MATH 1142",
+              "ACCT 2050",
+              "SCO 2550"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Transfer students must complete the five-tool courses before continuing with major requirements.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FINA 3001",
+                "ACCT 5101",
+                "FINA 4121",
+                "FINA 4221"
+              ],
+              "electives": [
+                "FINA 4122",
+                "FINA 4325",
+                "FINA 4622"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Andrew Winton (Corporate Finance)",
+              "Jacelly Cespedes (Household Finance)",
+              "Yilin (David) Yang (Macrofinance)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Biological Sciences (CBS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for pre-med students or those focused heavily on natural sciences and research.",
+        "housing_profile": "St. Paul campus housing is popular for CBS students due to proximity to labs.",
+        "student_archetype": "Pre-health, research-oriented, and highly analytical.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1009",
+              "CHEM 1061"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Includes extensive lab requirements.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 1009"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Daniel F Voytas (Precision Plant Genomics)",
+              "Douglas Mashek (Biochemistry)",
+              "Jennifer Powers (Tropical Forest Ecology)",
+              "Daniel Stanton (Ecophysiology)"
+            ],
+            "notes": "Provides a strong foundation from molecules to ecosystems with heavy lab components."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Golden Gopher Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action I. Mandatory deadline for School of Nursing applicants."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Early Action II."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-01",
+        "is_binding": false,
+        "notes": "Regular Decision."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Optional 150-word essay: 'Please share a few words about what you'd like to study in college, career paths that interest you, or your favorite subjects in school.'"
+      },
+      {
+        "target_program": "Nursing",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-01",
+        "details": "Three additional 250-word essays explaining the applicant's choice to pursue nursing, their preparation, and why UMN is the best fit."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First-generation status",
+        "Alumni/ae relation"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "Primary emphasis is placed on academic metrics and unweighted core GPA. The holistic review uses context factors to assess applicants without hard cut-offs."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply with a clearly identified second-choice major/college, as UMN automatically evaluates denied applicants for other colleges within the university.",
+      "Utilize the optional 150-word essay to explicitly connect past academic experiences with the intended major.",
+      "If STEM stats are lower, consider applying to the College of Liberal Arts (CLA) rather than CSE, but be mindful of prerequisites needed to transfer internally."
+    ],
+    "college_ranking_tactics": [
+      "Applicants must rank their colleges of interest on the application. They are considered in the exact order listed."
+    ],
+    "alternate_major_strategy": "Applicants are considered for admission to the colleges listed in their application, in the order listed. If space is unavailable, they are automatically considered for other freshman-admitting colleges that align with their academic preparation."
+  },
+  "financials": {
+    "tuition_model": "Differentiated tuition for in-state, out-of-state, and reciprocity agreements.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16488,
+        "total_coa": 32866,
+        "housing": 13028
+      },
+      "out_of_state": {
+        "tuition": 37802,
+        "total_coa": 57392,
+        "supplemental_tuition": 21314
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 11807,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.51,
+    "scholarships": [
+      {
+        "name": "Bentson Family Scholarship",
+        "type": "Merit/Need",
+        "amount": "$24,000 over four years",
+        "deadline": "",
+        "benefits": "Financial support for 4 years based on holistic review.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Gold Scholar Award",
+        "type": "Merit",
+        "amount": "Up to $10,000 each year for four years",
+        "deadline": "",
+        "benefits": "Preference given to National Merit Finalists listing UMN as first choice.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards University credit for specific AP tests with scores of 3 or higher.",
+      "exceptions": [
+        "Does not transfer credit awarded on the basis of AP policy at another institution."
+      ],
+      "usage": "Can fulfill liberal education requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Credits are awarded based on the student's first term of enrollment in a degree-seeking program.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "ASSIST"
+      ],
+      "restrictions": "Transfer courses must generally be completed with a C- or higher."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school coursework matching the selected college's profile.",
+      "Demonstrating strong fit for the intended major in the optional essay.",
+      "Ability to thrive in a large, independent environment without hand-holding."
+    ],
+    "common_activities": [
+      "Undergraduate Research Opportunities Program (UROP)",
+      "Intramural sports",
+      "Greek life",
+      "Student government and 1,000+ campus organizations"
+    ],
+    "essay_tips": [
+      "Use the 150-word optional essay to be highly specific about academic and career goals.",
+      "Mention specific UMN resources, labs, or professors.",
+      "Connect personal experiences or extracurriculars to the chosen major."
+    ],
+    "red_flags": [
+      "Applying to CSE without strong math/science grades or Calculus.",
+      "Failing to write the optional essay, which signals low interest."
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71941,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Essentia Health",
+      "Mayo Clinic",
+      "Target Corp",
+      "Epic Systems Corp",
+      "3M",
+      "Medtronic",
+      "Microsoft Corp"
+    ],
+    "loan_default_rate": 0.022
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.9113,
+    "graduation_rate_4_year": 0.75,
+    "graduation_rate_6_year": 0.85
+  }
+}

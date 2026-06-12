@@ -1,0 +1,512 @@
+{
+  "_id": "University_of_Chicago",
+  "metadata": {
+    "official_name": "The University of Chicago",
+    "location": {
+      "city": "Chicago",
+      "state": "Illinois",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Chicago is an elite, private research university renowned for its rigorous intellectual environment, distinctive Core Curriculum, and heavy emphasis on academic inquiry. With an acceptance rate routinely below 5% and a yield rate near 88%, it operates one of the most selective and highly protective admissions processes in the country. The university pairs its demanding academic culture with comprehensive financial aid, notably meeting 100% of demonstrated need without loans.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 6,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "UChicago has an extraordinarily high yield rate of around 88%, driven by a heavy reliance on binding Early Decision (ED I and ED II) rounds.",
+        "implication": "Applicants looking to maximize their chances of admission must apply Early Decision, as Regular Decision admit rates are estimated to be as low as 1-2%."
+      },
+      {
+        "category": "Academic",
+        "insight": "Students apply to 'The College' as a whole rather than to specific majors, with no restrictive quotas on specific disciplines.",
+        "implication": "Applicants cannot 'game' the system by applying to less popular majors; intellectual vitality and fit for the broader Core Curriculum are prioritized over specific major alignment."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university values profound intellectual curiosity, historically embodied by its quirky, highly analytical supplemental essay prompts.",
+        "implication": "Standard, polished 'Ivy League' essays often fall flat here; admissions officers favor authentic, risk-taking, and deeply intellectual writing."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Historically known as 'where fun goes to die,' the campus culture is deeply academic and intellectual, structured around a House System that mandates on-campus living for the first two years.",
+      "transportation_impact": "Located in the Hyde Park neighborhood on the South Side of Chicago, offering a traditional campus feel within a major urban center with robust transit access.",
+      "research_impact": "Exceptional undergraduate research integration; approximately 80% of students engage in research with faculty, often beginning in their first year."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 4.48,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 5.0,
+      "transfer_acceptance_rate": 9.3,
+      "admits_class_size": 1726,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional with a unique 'No Harm' policy; submitted SAT or ACT scores are only considered if they positively affect the applicant's chance of admission.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED/EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 43612,
+        "admits_total": 1955,
+        "enrolled_total": 1726,
+        "acceptance_rate_overall": 4.48,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 88.2,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed. UChicago intentionally leaves CDS waitlist sections blank."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 38631,
+        "admits_total": 1849,
+        "enrolled_total": 1626,
+        "acceptance_rate_overall": 4.78,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 87.9,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 37522,
+        "admits_total": 2039,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 5.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 37958,
+        "admits_total": 2460,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 6.48,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.33,
+        "notes": "63% of admitted students have a GPA of 4.0 or above. Class rank falls under 'considered' rather than 'important'."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1560",
+        "sat_reading_middle_50": "740-780",
+        "sat_math_middle_50": "760-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 76.0,
+        "policy_note": "49% submitted SAT and 27% submitted ACT in recent cycles. Despite test-optional policy, submission rates remain high."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": 10.0,
+        "international_percentage": 18.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 17373,
+            "admits": 994,
+            "acceptance_rate": 5.7
+          },
+          "women": {
+            "applicants": 21249,
+            "admits": 855,
+            "acceptance_rate": 4.0
+          }
+        },
+        "racial_breakdown": {
+          "white": 31.0,
+          "black_african_american": 7.0,
+          "hispanic_latino": 17.0,
+          "asian": 20.0,
+          "native_american_alaskan": 1.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 7.0,
+          "unknown": 1.0,
+          "non_resident_alien": 16.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "The College",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 4.48,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students who are deeply intellectually curious, value theoretical and interdisciplinary discourse, and are eager to engage with the rigorous Core Curriculum.",
+        "housing_profile": "Required on-campus living for the first two years in one of 48 tight-knit residential houses, fostering strong community bonds.",
+        "student_archetype": "The quirky, academically driven intellectual who views learning as an end in itself.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most popular major; historically famous program producing over 30 Nobel Laureates."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CMSC 14100 Introduction to Computer Science I"
+              ],
+              "electives": [],
+              "total_units": 4200,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Rapidly growing in popularity, now rivaling Economics as the top major choice."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 16100 Honors Calculus I"
+              ],
+              "electives": [],
+              "total_units": 4200,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Early Decision I"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action"
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-06",
+        "is_binding": true,
+        "notes": "Early Decision II"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-06",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires the famous 'Uncommon Essay' (choose from quirky past prompts or create your own) and a 'Why UChicago?' essay."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Video",
+        "deadline": "",
+        "details": "Optional 2-minute video introduction in lieu of an interview."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Essay",
+        "Recommendations",
+        "Character/personal qualities",
+        "Extracurricular activities",
+        "Talent/ability"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "GPA",
+        "Test scores",
+        "First generation",
+        "Alumni/ae relation",
+        "Geographical residence",
+        "State residency",
+        "Religious affiliation",
+        "Racial/ethnic status",
+        "Volunteer work",
+        "Work experience",
+        "Level of applicant interest"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "The application essay is heavily scrutinized as a measure of 'intellectual vitality.' UChicago no longer offers alumni or on-campus interviews, strongly recommending the 2-minute video introduction instead."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Avoid trying to game admissions by applying to less popular majors; UChicago admits students to 'The College' broadly, and everyone is free to change majors."
+    ],
+    "college_ranking_tactics": [
+      "Not applicable. All applicants apply directly to the singular undergraduate College."
+    ],
+    "alternate_major_strategy": "Applying as 'undecided' carries absolutely no stigma at UChicago, as the institution values intellectual breadth and does not restrict internal transfers between disciplines."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67446.0,
+        "total_coa": 94971.0,
+        "housing": 20109.0
+      },
+      "out_of_state": {
+        "tuition": 67446.0,
+        "total_coa": 94971.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 58877.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 53.0,
+    "scholarships": [
+      {
+        "name": "Odyssey Scholarship",
+        "type": "Need",
+        "amount": "Full Tuition or Full COA",
+        "deadline": "",
+        "benefits": "Loan-free financial aid package covering full tuition, room, and board for families earning under $60k; full tuition for families earning under $125k.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full COA + $12,000",
+        "deadline": "",
+        "benefits": "Covers full tuition, room, and board, plus a $12,000 enrichment stipend.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Police and Fire Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Tuition",
+        "deadline": "January 2",
+        "benefits": "Waives undergraduate tuition for dependents of U.S. active-duty, disabled, or fallen firefighters and law enforcement officers.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Generally requires a score of 5 on Advanced Placement (AP) exams to receive credit or advanced placement.",
+      "exceptions": [
+        "AP Physics 1",
+        "AP Physics 2",
+        "AP Precalculus",
+        "AP Psychology",
+        "AP Research",
+        "AP Seminar",
+        "AP Computer Science Principles"
+      ],
+      "usage": "At least 3800 of the 4200 units required for graduation must be completed via course enrollment, capping exam credit usage at a maximum of approximately 4 courses."
+    },
+    "ib_policy": {
+      "general_rule": "Score of 7 on Higher Level (HL) exams required for full equivalent credit; a 6 is treated as an AP 4.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer credit is heavily restricted; 3800 units must be taken in residence, and credits are evaluated on a strict course-by-course basis upon enrollment."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Extraordinarily high academic performance (near perfect GPAs and top 1% standardized test scores, even if applying test-optional).",
+      "Authentic, unpolished intellectual passion demonstrated through the Uncommon Essay.",
+      "Applying Early Decision, which UChicago relies on to fill the vast majority of its class and protect its yield."
+    ],
+    "common_activities": [
+      "Community Service (85%)",
+      "Varsity Athletics (69%)",
+      "Music (54%)",
+      "Student Government (38%)",
+      "Theater (24%)",
+      "Editorial Involvement (23%)"
+    ],
+    "essay_tips": [
+      "Take genuine creative risks with the Uncommon Essay prompt; do not give standard, polished answers.",
+      "Let the admissions committee see how your mind works, not just what you have accomplished.",
+      "Use the 'Why UChicago' essay to prove that your intellectual curiosity aligns perfectly with the Core Curriculum."
+    ],
+    "red_flags": [
+      "Recycling 'Why This College' essays from other elite institutions.",
+      "A lack of intellectual depth or curiosity in writing.",
+      "Applying Regular Decision without hooks."
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 127757,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "McKinsey & Company",
+      "Boston Consulting Group",
+      "Amazon",
+      "Bain & Company",
+      "Goldman Sachs",
+      "JPMorgan Chase & Co.",
+      "Google"
+    ],
+    "loan_default_rate": 1.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 99.4,
+    "graduation_rate_4_year": 86.4,
+    "graduation_rate_6_year": 94.9
+  }
+}

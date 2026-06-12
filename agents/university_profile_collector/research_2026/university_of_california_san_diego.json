@@ -1,0 +1,524 @@
+{
+  "_id": "university_of_california_san_diego",
+  "metadata": {
+    "official_name": "University of California, San Diego",
+    "location": {
+      "city": "La Jolla",
+      "state": "CA",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "UC San Diego is a top-tier public research university known for its rigorous STEM, biological science, and oceanography programs. It features a unique eight-college system that provides smaller residential communities within a large R1 research institution.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 29,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate has stabilized around 26-28%, with in-state admission becoming slightly more restrictive (24.6% in 2025).",
+        "implication": "Applicants must present exceptionally high GPAs (middle 50% 4.11-4.28) and strong essays to be competitive."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university employs a highly restrictive 'Selective Major' points system for internal transfers into high-demand fields like Computer Science.",
+        "implication": "Prospective STEM students must apply directly to their preferred major and select a non-capped alternate major."
+      },
+      {
+        "category": "Culture",
+        "insight": "The 'UC Socially Dead' moniker persists due to the sprawling, decentralized campus layout and rigorous academic focus.",
+        "implication": "Students must be proactive in seeking out social opportunities through clubs, co-ops, and Greek life to build a community."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A relatively quiet campus where social life is decentralized. Much of the interaction is driven by student organizations, co-ops like Groundwork Books, and events hosted by the individual residential colleges.",
+      "transportation_impact": "The 2,000+ acre campus is expansive, making walking between classes time-consuming. Students heavily rely on campus shuttles, bicycles, and the UC San Diego Central Campus trolley station.",
+      "research_impact": "As a billion-dollar research enterprise, UCSD offers massive opportunities for undergraduates to participate in cutting-edge lab work, particularly in health, engineering, and environmental sciences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.267,
+      "in_state_acceptance_rate": 0.246,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.546,
+      "admits_class_size": 35917,
+      "is_test_optional": true,
+      "test_policy_details": "Test-blind/Test-free. SAT/ACT scores are not used in admissions decisions but may be used for course placement after enrollment.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 134450,
+        "admits_total": 35917,
+        "enrolled_total": 7330,
+        "acceptance_rate_overall": 0.267,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.204,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 27521,
+          "accepted_spots": 19156,
+          "admitted_from_waitlist": 4539,
+          "waitlist_admit_rate": 0.237,
+          "is_waitlist_ranked": true
+        },
+        "notes": "Waitlist ranked according to CDS, though admissions office states it is unranked."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 130835,
+        "admits_total": 32061,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.245,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 29087,
+          "accepted_spots": 19373,
+          "admitted_from_waitlist": 2261,
+          "waitlist_admit_rate": 0.116,
+          "is_waitlist_ranked": true
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 131245,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.238,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 51369,
+          "accepted_spots": 36113,
+          "admitted_from_waitlist": 2400,
+          "waitlist_admit_rate": 0.066,
+          "is_waitlist_ranked": true
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.11-4.28",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.26,
+        "notes": "Based on UC-capped weighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": null,
+        "policy_note": "UC San Diego is test-blind. Standardized test scores are ignored during the admissions review."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": 0.0,
+        "international_percentage": 0.204,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 63349,
+            "admits": 14570,
+            "acceptance_rate": 0.23
+          },
+          "women": {
+            "applicants": 71101,
+            "admits": 21330,
+            "acceptance_rate": 0.3
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.195,
+          "black_african_american": 0.017,
+          "hispanic_latino": 0.208,
+          "asian": 0.299,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.054,
+          "unknown": 0.021,
+          "non_resident_alien": 0.204
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Revelle College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a highly structured, rigorous classical liberal arts and sciences foundation.",
+        "housing_profile": "Traditional residential halls located on the southwest side of campus.",
+        "student_archetype": "Renaissance scholar",
+        "majors": []
+      },
+      {
+        "name": "John Muir College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students desiring maximum flexibility in their general education requirements.",
+        "housing_profile": "Located near the center of campus, offering a mix of residence halls and apartments.",
+        "student_archetype": "Independent and self-directed",
+        "majors": []
+      },
+      {
+        "name": "Thurgood Marshall College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students passionate about social justice, public service, and diversity.",
+        "housing_profile": "Ocean-view residential facilities located on the west side of campus.",
+        "student_archetype": "Socially responsible citizen",
+        "majors": []
+      },
+      {
+        "name": "Earl Warren College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for engineering and STEM students, as it is located near the engineering buildings and encourages non-major exploration.",
+        "housing_profile": "Situated near Geisel Library and the Jacobs School of Engineering.",
+        "student_archetype": "Balanced and multi-disciplinary",
+        "majors": []
+      },
+      {
+        "name": "Eleanor Roosevelt College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in global studies, international relations, and foreign languages.",
+        "housing_profile": "Located in the northwest corner with a strong international community feel.",
+        "student_archetype": "Global citizen",
+        "majors": []
+      },
+      {
+        "name": "Sixth College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Appeals to students interested in the intersection of culture, art, and modern technology.",
+        "housing_profile": "Housed in the newer North Torrey Pines Living and Learning Neighborhood.",
+        "student_archetype": "Innovative and creative",
+        "majors": []
+      },
+      {
+        "name": "Seventh College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students focused on interdisciplinary approaches to global environmental and societal shifts.",
+        "housing_profile": "Transfer and upper-division focused, located near the Village.",
+        "student_archetype": "Interdisciplinary problem-solver",
+        "majors": []
+      },
+      {
+        "name": "Eighth College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students committed to anti-racism, community engagement, and social justice.",
+        "housing_profile": "Located in the state-of-the-art Theatre District Living and Learning Neighborhood.",
+        "student_archetype": "Community-engaged activist",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSE 8B or 11",
+              "CSE 12",
+              "CSE 29",
+              "CSE 20",
+              "CSE 21",
+              "CSE 30",
+              "CSE 100",
+              "CSE 101"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers are governed by a Selective Major points system prioritizing GPA, California residency, Pell eligibility, and first-generation status.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CSE 8B",
+                "CSE 11",
+                "CSE 12",
+                "CSE 29",
+                "CSE 15L",
+                "CSE 20",
+                "CSE 21",
+                "CSE 30",
+                "CSE 100",
+                "CSE 101"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Direct admission from high school is fiercely competitive. Internal transfer is extremely difficult and relies on point-based lotteries after completing screening courses."
+          },
+          {
+            "name": "Cognitive Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Marta Kutas",
+              "Bradley Voytek",
+              "Jim Hollan",
+              "Scott Klemmer",
+              "Philip Guo"
+            ],
+            "notes": "Highly regarded internationally; integrates closely with the UCSD Design Lab."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "As of Spring 2025, Biological Sciences majors are no longer classified as selective for internal continuing students."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires screening courses and competitive internal transfer application if not admitted directly.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "UC Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-11-30",
+        "is_binding": false,
+        "notes": "The UC application submission window opens October 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-30",
+        "details": "Applicants must choose 4 out of 8 Personal Insight Questions (PIQs), max 350 words each."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Application essays (PIQs)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "First-generation status",
+        "State residency"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Internal transfer to Selective Majors utilizes a point system that awards extra points for Pell eligibility, California residency, and first-generation college status."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Always select a non-capped major as your alternate choice to avoid outright rejection if denied from a selective program.",
+      "Avoid listing two capped majors on the application; UCSD will only evaluate the alternate if it is uncapped.",
+      "Apply directly to selective engineering or computer science fields as a high school senior, as internal transfers are incredibly restricted."
+    ],
+    "college_ranking_tactics": [
+      "Rank the 8 residential colleges based on how well their General Education (GE) requirements overlap with your intended major's prerequisites.",
+      "Consider the college's philosophy and location on campus (e.g., Warren for Engineering proximity, Muir for flexibility)."
+    ],
+    "alternate_major_strategy": "UCSD admits students to the university first, then places them into majors. If a student applies to a capped major and isn't selected, they are guaranteed placement into their alternate major provided it is uncapped."
+  },
+  "financials": {
+    "tuition_model": "Public In-State/Out-of-State",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 15788.0,
+        "total_coa": 41932.0,
+        "housing": 24858.0
+      },
+      "out_of_state": {
+        "tuition": 47676.0,
+        "total_coa": 73820.0,
+        "supplemental_tuition": 31888.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 23806.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.59,
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "$5,000",
+        "deadline": "2024-11-30",
+        "benefits": "Priority enrollment, guaranteed housing, faculty mentorship, and research program placement.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Undergraduate Research Scholarship (URS)",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Supports undergraduate students leading independent research projects.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Grants elective or GE credit for AP scores of 3, 4, or 5.",
+      "exceptions": [
+        "Maximum of 8 units awarded for passing both AP English Language and AP English Literature."
+      ],
+      "usage": "Used primarily to fulfill minor/major prerequisites, elective units, or college-specific GE requirements, rather than full course exemptions in advanced STEM sequences."
+    },
+    "ib_policy": {
+      "general_rule": "Grants 8 quarter units for Higher Level (HL) exams with a score of 5, 6, or 7. Standard Level (SL) exams yield no unit credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "Pass/No Pass courses do not fulfill selective major transfer requirements. Courses must be completed with a C- or better."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous A-G course load with maximum AP/IB/Honors classes.",
+      "A weighted UC GPA frequently exceeding 4.20.",
+      "Deep, sustained engagement in impactful extracurricular activities rather than superficial participation."
+    ],
+    "common_activities": [
+      "Scientific research and lab internships.",
+      "Founding tech or coding clubs.",
+      "Social justice advocacy and community service initiatives."
+    ],
+    "essay_tips": [
+      "Use the PIQs to demonstrate resilience and personal growth.",
+      "Clearly articulate how your background aligns with your chosen major.",
+      "Focus on specific, quantifiable impacts made in leadership roles."
+    ],
+    "red_flags": [
+      "Applying to two capped majors without selecting an uncapped alternate.",
+      "Lack of authentic voice or failing to directly answer the PIQ prompts."
+    ],
+    "insights": [
+      "Your college ranking significantly alters your academic path; research their distinct General Education requirements deeply.",
+      "The 'UC Socially Dead' stereotype is avoidable if you actively join clubs like Tritons Roll Out or student co-ops.",
+      "The campus is huge; walking from residential colleges to central hubs like Geisel Library can take up to 20 minutes."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 83130,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "United States Navy",
+      "University of California San Diego",
+      "Sharp HealthCare",
+      "Qualcomm",
+      "Scripps Health"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.94,
+    "graduation_rate_4_year": 0.75,
+    "graduation_rate_6_year": 0.86
+  }
+}

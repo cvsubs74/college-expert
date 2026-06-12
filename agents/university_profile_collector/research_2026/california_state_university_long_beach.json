@@ -1,0 +1,377 @@
+{
+  "_id": "california_state_university_long_beach",
+  "metadata": {
+    "official_name": "California State University, Long Beach",
+    "location": {
+      "city": "Long Beach",
+      "state": "California",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "CSULB Common Data Set 2024-2025",
+      "College Scorecard",
+      "IPEDS",
+      "US News & World Report"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "California State University, Long Beach (CSULB) is a highly competitive, diverse public university known for its affordability and commitment to social mobility. As one of the most applied-to campuses in the CSU system, it operates as a commuter-heavy institution with strong programs in nursing, business, and engineering.",
+    "market_position": "Regional Public University",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 109,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "CSULB utilizes a strict, index-based admission process without holistic review for general applicants.",
+        "implication": "Grades and local geographic preference dominate admission decisions; essays and extracurriculars are not considered."
+      },
+      {
+        "category": "Financial",
+        "insight": "Consistently ranked highly for social mobility and low cost.",
+        "implication": "Provides exceptionally high return on investment, particularly for in-state residents and Pell Grant recipients."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant campus with over 300 clubs and organizations, though heavily influenced by a large commuter population.",
+      "transportation_impact": "Primarily a commuter campus, which can lead to parking challenges and a quieter campus on weekends.",
+      "research_impact": "Classified as an R2: Doctoral University with High Research Activity, providing strong undergraduate research opportunities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.463,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.38,
+      "admits_class_size": 38854,
+      "is_test_optional": true,
+      "test_policy_details": "Test-blind. SAT and ACT scores are neither required nor considered for admission.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 83951,
+        "admits_total": 38854,
+        "enrolled_total": 6483,
+        "acceptance_rate_overall": 0.463,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.167,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.93,
+        "notes": "CSULB heavily weighs GPA based on the CSU eligibility index."
+      },
+      "testing": {
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": 0.0,
+        "policy_note": "CSULB is test-blind."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.5,
+        "legacy_percentage": null,
+        "international_percentage": 0.016,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.969
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.015
+          },
+          {
+            "region": "International",
+            "percentage": 0.016
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 34090,
+            "admits": 14440,
+            "acceptance_rate": 0.423
+          },
+          "women": {
+            "applicants": 49634,
+            "admits": 24321,
+            "acceptance_rate": 0.49
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.161,
+          "black_african_american": 0.037,
+          "hispanic_latino": 0.484,
+          "asian": 0.204,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.002,
+          "two_or_more_races": 0.043,
+          "unknown": 0.025,
+          "non_resident_alien": 0.043
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students looking for affordable, highly-ranked business education in Southern California.",
+        "housing_profile": "Most students commute.",
+        "student_archetype": "Career-oriented, practical learners.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 202",
+              "ACCT 320",
+              "FIN 300",
+              "MGMT 300",
+              "MKTG 300",
+              "IS 301"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MGMT 425 Business Strategy and Policy"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly popular major with multiple concentrations."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong math/science students seeking hands-on technical training.",
+        "housing_profile": "Commuter and on-campus mix.",
+        "student_archetype": "Analytical and research-focused.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CECS 100 Critical Thinking in the Digital Information Age",
+                "CECS 105 Introduction to Computer Engineering and Computer Science",
+                "CECS 174 Introduction to Programming and Problem Solving"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "ABET accredited program."
+          }
+        ]
+      },
+      {
+        "name": "College of Health & Human Services",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students pursuing healthcare and nursing careers.",
+        "housing_profile": "Commuter.",
+        "student_archetype": "Compassionate and driven.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "11-13%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most competitive nursing programs in California."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Cal State Apply"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-11-30",
+        "is_binding": false,
+        "notes": "CSU Application deadline"
+      }
+    ],
+    "supplemental_requirements": [],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record"
+      ],
+      "secondary_factors": [
+        "Geographical residence"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Local area applicants receive a GPA bump in the eligibility index."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to an alternate major if your primary is highly impacted.",
+      "Leverage local preference if you attend a high school in the CSULB local service area."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Selecting a less impacted alternate major can increase chances of general admission, though transferring into highly impacted programs like Nursing or Computer Science later is very difficult."
+  },
+  "financials": {
+    "tuition_model": "State-subsidized public tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 7008,
+        "total_coa": 28416,
+        "housing": 15612
+      },
+      "out_of_state": {
+        "tuition": 18888,
+        "total_coa": 40296,
+        "supplemental_tuition": 11880
+      }
+    },
+    "aid_philosophy": "Need-aware",
+    "average_need_based_aid": 11795,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.82,
+    "scholarships": [
+      {
+        "name": "President's Scholars Program",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "December 1",
+        "benefits": "Covers full tuition for four years, priority registration.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants up to 6 units of credit for scores of 3 or higher.",
+      "exceptions": [
+        "Maximum of 6 units per exam"
+      ],
+      "usage": "Course equivalence and GE requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Grants up to 12 units of credit for Higher Level scores of 4 or higher.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST"
+      ],
+      "restrictions": "Transfer credits evaluated for equivalency; limits apply to upper-division credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Near perfect GPA (average 3.93)",
+      "Fulfilling A-G requirements comprehensively",
+      "Local geographic status helps significantly"
+    ],
+    "common_activities": [
+      "Cultural and diversity clubs",
+      "Intramural sports",
+      "Greek Life"
+    ],
+    "essay_tips": [],
+    "red_flags": [
+      "Applying to Nursing without perfect grades",
+      "Lacking A-G requirement completion"
+    ],
+    "insights": [
+      "CSULB is a massive commuter school, so students need to actively seek out clubs to build a social life.",
+      "Parking is a universal challenge."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 63140,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Boeing",
+      "Northrop Grumman",
+      "The Walt Disney Company",
+      "Wells Fargo",
+      "Amazon"
+    ],
+    "loan_default_rate": 0.02
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.868,
+    "graduation_rate_4_year": 0.38,
+    "graduation_rate_6_year": 0.69
+  }
+}

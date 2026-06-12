@@ -1,0 +1,516 @@
+{
+  "_id": "university_of_kentucky",
+  "metadata": {
+    "official_name": "University of Kentucky",
+    "location": {
+      "city": "Lexington",
+      "state": "KY",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-18",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Kentucky is a large, public, land-grant research university and the flagship institution of the state. It offers extensive academic programs across 16 colleges on a single contiguous campus, combining strong SEC athletic school spirit with R1 research capabilities.",
+    "market_position": "Flagship Public Research University (R1)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 152,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Overall admission is highly accessible at ~93%, but severe internal stratification exists for impacted majors like Nursing and Engineering.",
+        "implication": "Applicants to STEM or healthcare programs must treat UKY as a target/reach rather than a safety, ensuring they meet pre-major mathematical and GPA thresholds."
+      },
+      {
+        "category": "Financial",
+        "insight": "Offers highly lucrative, full-ride and full-tuition merit scholarships (Singletary, Presidential) strictly tied to GPA and standardized test scores.",
+        "implication": "High-achieving out-of-state students can utilize UKY as an affordable, high-merit alternative to expensive private institutions."
+      },
+      {
+        "category": "Culture",
+        "insight": "Campus life is heavily influenced by SEC sports and Greek life.",
+        "implication": "Students seeking a vibrant, spirited, traditional large-state-school experience will thrive, while those seeking a quiet, intimate environment may feel overwhelmed."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and spirited, anchored by 'Big Blue Nation' SEC athletics, pervasive Greek life, and over 500 student organizations.",
+      "transportation_impact": "Parking on the large, spreading campus is notoriously difficult and restricted, heavily impacting commuters.",
+      "research_impact": "High research output ($476.5M annually) with robust opportunities for undergraduates to participate in lab and clinical research across the contiguous medical, engineering, and agricultural colleges."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.9296,
+      "in_state_acceptance_rate": 0.9296,
+      "out_of_state_acceptance_rate": 0.9296,
+      "international_acceptance_rate": 0.9338,
+      "transfer_acceptance_rate": 0.849,
+      "admits_class_size": 29293,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for general admission and most scholarships through the 2028-2029 academic year, though scores are recommended for direct entry to selective majors.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 31517,
+        "admits_total": 29293,
+        "enrolled_total": 6513,
+        "acceptance_rate_overall": 0.9296,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.222,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed for 2024."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 28233,
+        "admits_total": 26083,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.9238,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 727,
+          "accepted_spots": 727,
+          "admitted_from_waitlist": 418,
+          "waitlist_admit_rate": 0.575,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.9489,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.9401,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.9636,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.58,
+        "notes": "GPA distribution is skewed heavily above 3.5."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1070-1270",
+        "sat_reading_middle_50": "540-650",
+        "sat_math_middle_50": "530-640",
+        "act_composite_middle_50": "21-28",
+        "submission_rate": 0.57,
+        "policy_note": "ACT submission rate is 50%, SAT submission rate is 7%."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.0129,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 12769,
+            "admits": 11655,
+            "acceptance_rate": 0.91
+          },
+          "women": {
+            "applicants": 18485,
+            "admits": 17396,
+            "acceptance_rate": 0.94
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.7622,
+          "black_african_american": 0.0678,
+          "hispanic_latino": 0.0629,
+          "asian": 0.0367,
+          "native_american_alaskan": 0.0017,
+          "pacific_islander": null,
+          "two_or_more_races": 0.0447,
+          "unknown": 0.0102,
+          "non_resident_alien": 0.0129
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High-achieving applicants committed to healthcare who are prepared to maintain rigorous science GPAs during their freshman year.",
+        "housing_profile": "Traditional campus dorms available.",
+        "student_archetype": "Driven, clinical-focused care provider.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 139",
+              "CHE 130",
+              "BIO 112",
+              "BIO 137",
+              "PSY 110",
+              "ENG 101"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Must apply to upper division by March 1st of fourth semester.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Gatton College of Business and Economics",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students interested in corporate strategy, finance, and networking who meet the minimum ACT/SAT requirements for direct pre-major entry.",
+        "housing_profile": "Traditional campus dorms available.",
+        "student_archetype": "Ambitious, networking-oriented corporate leader.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Must achieve a 3.0 in pre-major coursework to reach upper-division status.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Chris Clifford (Banking)",
+              "Dr. Kristine Hankins (Corporate Finance)",
+              "Dr. Will Gerken (Real Estate)"
+            ],
+            "notes": ""
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Must achieve a 3.0 in pre-major coursework to reach upper-division status.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Walter Ferrier (Corporate Strategy)",
+              "Dr. Steve Borgatti (Social Networks)",
+              "Dr. Ajay Mehra (Social Networks)",
+              "Dr. Bryan Stroube (Entrepreneurship)",
+              "Dr. Susan Zhu (Human Resource Management)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Pigman College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong mathematical aptitude seeking rigorous technical training.",
+        "housing_profile": "Traditional campus dorms available.",
+        "student_archetype": "Analytical problem-solver.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires an ACT Math score of 25 or SAT Math of 590 for freshman admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 505 Databases",
+                "CS 515 Algorithms",
+                "CS 541 Compilers",
+                "CS 570 Systems",
+                "CS 571 Networks",
+                "CS 575 Theory"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Core course examples sourced from cross-listed upper-division/MS requirements."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Priority deadline for honors and scholarships."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": "Regular decision."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-02-15",
+        "details": "Personal statement required."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of Secondary School Record",
+        "Academic GPA",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Class Rank",
+        "Standardized Test Scores",
+        "Recommendations",
+        "Extracurricular Activities",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The essay is heavily relied upon to assess personal character, resilience, and fit for the university community."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply early (by Dec 1) to maximize chances for competitive full-ride merit scholarships.",
+      "If undecided on a specific engineering field, apply to 'Exploratory Studies in Engineering' to bypass strict direct-admit cutoffs."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants to selective colleges (Engineering, Business, Nursing) should list a less restrictive alternate major. If denied from their first choice, they will automatically be considered for their alternate major without needing to submit a new application."
+  },
+  "financials": {
+    "tuition_model": "Flat rate differentiated by residency.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 13502.0,
+        "total_coa": 36558.0,
+        "housing": 16016.0
+      },
+      "out_of_state": {
+        "tuition": 34140.0,
+        "total_coa": 57196.0,
+        "supplemental_tuition": 20638.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12898.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.88,
+    "scholarships": [
+      {
+        "name": "Otis A. Singletary Scholarship",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2024-12-01",
+        "benefits": "Covers full tuition, room and board, plus a $1,500 yearly stipend and an iPad.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2024-12-01",
+        "benefits": "Covers 100% of tuition costs.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Patterson Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition + Housing",
+        "deadline": "2024-12-01",
+        "benefits": "Awarded to National Merit Finalists.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Provost Award",
+        "type": "Merit",
+        "amount": "$20,000",
+        "deadline": "2024-12-01",
+        "benefits": "Reduces out-of-state tuition burden.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 3 or higher for college credit in most departments.",
+      "exceptions": [],
+      "usage": "Can be used to bypass prerequisites or fulfill UK Core requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for scores of 5, 6, or 7 on Standard Level (SL) or Higher Level (HL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UK Transfer Equivalency System"
+      ],
+      "restrictions": "Maximum of 67 credits transferred from 2-year institutions; 90 credits from 4-year institutions."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Solid B+/A- unweighted GPA.",
+      "Strong application essay demonstrating character.",
+      "Completion of core high school prerequisites."
+    ],
+    "common_activities": [
+      "Attending SEC sporting events (Basketball/Football)",
+      "Greek Life recruitment",
+      "DanceBlue philanthropic dance marathon",
+      "Intramural sports"
+    ],
+    "essay_tips": [
+      "Focus on reflection and personal growth rather than generic accomplishments.",
+      "Demonstrate resilience and values aligned with community service."
+    ],
+    "red_flags": [
+      "Declining grade trends in junior/senior year.",
+      "Generic, unreflective personal statements."
+    ],
+    "insights": [
+      "Parking is a major issue on campus, heavily impacting those who live off-campus or rely on driving.",
+      "The 'Big Blue Nation' school spirit is highly pervasive and creates a strong sense of community.",
+      "Out-of-state tuition has risen significantly, making merit scholarships highly sought after."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 65922,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.87,
+    "graduation_rate_4_year": 0.56,
+    "graduation_rate_6_year": 0.71
+  }
+}

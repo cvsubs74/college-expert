@@ -1,0 +1,500 @@
+{
+  "_id": "university_of_wisconsin-madison",
+  "metadata": {
+    "official_name": "University of Wisconsin-Madison",
+    "location": {
+      "city": "Madison",
+      "state": "Wisconsin",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Wisconsin-Madison is a top-tier public land-grant research university and the flagship campus of the University of Wisconsin System. Guided by the 'Wisconsin Idea'\u2014the principle that education should influence people's lives beyond the classroom\u2014UW-Madison pairs rigorous academic and research programs with a vibrant, spirited campus life.",
+    "market_position": "Public Flagship / Public Ivy",
+    "admissions_philosophy": "Holistic Review",
+    "us_news_rank": 35,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "UW-Madison is moderately selective overall (45.2% acceptance rate), but is highly protective of its in-state resident pipeline. Out-of-state and international acceptance rates are significantly lower and have become increasingly competitive over the last five years.",
+        "implication": "Out-of-state applicants should treat UW-Madison as a target/reach rather than a safety, recognizing that direct admit programs (like Engineering and Business) are highly competitive."
+      },
+      {
+        "category": "Academic",
+        "insight": "Unlike many peer institutions, Computer Sciences at UW-Madison is housed in the College of Letters & Science and is not a direct-admit, impacted major. Students can declare CS simply by maintaining a 2.25 GPA across foundational prerequisite courses.",
+        "implication": "UW-Madison represents a highly accessible, elite pathway for Computer Science hopefuls who might be shut out of impacted programs at other universities."
+      },
+      {
+        "category": "Financial",
+        "insight": "In-state tuition is exceptionally affordable ($11,603), while out-of-state tuition ($42,103) brings the total Cost of Attendance above $60,000.",
+        "implication": "Non-residents must weigh the ROI, though strong post-graduate median earnings ($78,974) and top-tier placement at midwestern tech and healthcare hubs (like Epic Systems) justify the investment."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university consistently ranks among the top college towns in the nation, balancing intensive Tier 1 research ($1B+ annual expenditures) with a legendary 'work hard, play hard' social and athletics scene.",
+        "implication": "Applicants should demonstrate an appreciation for school spirit, community involvement, and collaborative, hands-on environments."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A quintessential, vibrant college town environment situated on an isthmus between Lake Mendota and Lake Monona. The campus features a strong Division I Big Ten sports culture (Bucky Badger), robust Greek life, and a lively social scene centered around State Street and the Memorial Union.",
+      "transportation_impact": "The 933-acre campus is highly walkable and bike-friendly, deeply integrated into the city of Madison with excellent local bus systems and extensive bike paths.",
+      "research_impact": "UW-Madison is an R1 powerhouse, ranking 6th nationally in research expenditures among US universities, deeply engaging undergraduates in agriculture, biotechnology, computer sciences, and healthcare."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 45.2,
+      "in_state_acceptance_rate": 56.39,
+      "out_of_state_acceptance_rate": 40.33,
+      "international_acceptance_rate": 31.6,
+      "transfer_acceptance_rate": 55.5,
+      "admits_class_size": 8514,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the spring 2028 term. ACT/SAT scores are not required, and applicants will not be disadvantaged in the holistic review process if they choose to omit them.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 65894,
+        "admits_total": 29782,
+        "enrolled_total": 8514,
+        "acceptance_rate_overall": 45.2,
+        "acceptance_rate_in_state": 56.39,
+        "acceptance_rate_out_of_state": 40.33,
+        "yield_rate": 28.59,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 12584,
+          "accepted_spots": 7644,
+          "admitted_from_waitlist": 493,
+          "waitlist_admit_rate": 0.0645,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate plummeted to 6.45% after a highly unusual 2023 cycle. Waitlist closed by late July."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 63505,
+        "admits_total": 27529,
+        "enrolled_total": 7964,
+        "acceptance_rate_overall": 43.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 28.9,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 13364,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 4436,
+          "waitlist_admit_rate": 0.332,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Highly irregular cycle where UW-Madison utilized the waitlist heavily, accepting over 4,000 waitlisted applicants."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 60214,
+        "admits_total": 29539,
+        "enrolled_total": 8628,
+        "acceptance_rate_overall": 49.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 29.2,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 11,
+          "waitlist_admit_rate": 0.0017,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits plummeted to a mere 11 students (0.17% rate)."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.80-4.00",
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": 3.88,
+        "notes": "Middle 50% GPA is typically reported on an unweighted 4.0 scale."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1370-1490",
+        "sat_reading_middle_50": "660-730",
+        "sat_math_middle_50": "690-780",
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 54.0,
+        "policy_note": "Test-optional. Standardized test scores are considered if submitted, but do not negatively impact applicants who omit them."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 9.77,
+        "geographic_breakdown": [
+          {
+            "region": "Wisconsin",
+            "percentage": 48.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 43.0
+          },
+          {
+            "region": "Minnesota Reciprocity",
+            "percentage": 9.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 32837,
+            "admits": 13832,
+            "acceptance_rate": 42.1
+          },
+          "women": {
+            "applicants": 33037,
+            "admits": 15941,
+            "acceptance_rate": 48.2
+          }
+        },
+        "racial_breakdown": {
+          "white": 58.3,
+          "black_african_american": 2.78,
+          "hispanic_latino": 9.22,
+          "asian": 11.16,
+          "native_american_alaskan": 0.21,
+          "pacific_islander": 0.06,
+          "two_or_more_races": 4.84,
+          "unknown": 3.65,
+          "non_resident_alien": 9.77
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Letters & Science",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 45.2,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in humanities, natural sciences, and notably Computer Sciences. All students enter as pre-majors and must declare after completing prerequisites.",
+        "housing_profile": "Traditional residence halls.",
+        "student_archetype": "Curious, interdisciplinary learners.",
+        "majors": [
+          {
+            "name": "Computer Sciences",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COMP SCI 300",
+              "MATH 222",
+              "MATH 276"
+            ],
+            "minimum_gpa_to_declare": 2.25,
+            "weeder_courses": [
+              "COMP SCI 300"
+            ],
+            "special_requirements": "Must achieve a grade of BC or higher in COMP SCI 300.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.25,
+            "curriculum": null,
+            "notable_professors": [
+              "Patrick McDaniel (Security and Privacy)",
+              "Remzi Arpaci-Dusseau (Operating Systems)",
+              "AnHai Doan (Databases)"
+            ],
+            "notes": "Unlike peer institutions, CS at UW-Madison is highly accessible. If a student achieves a 2.25 GPA in the prerequisite math and introductory CS courses, they are guaranteed entry into the major."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants should list an engineering major as their first choice and present top-tier math/science rigor.",
+        "housing_profile": "Engineering affinity communities available.",
+        "student_archetype": "Driven, analytical students with exceptional calculus and physics grades.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Direct-admit freshmen must meet progression requirements (typically 3.2 technical GPA and 3.0 overall GPA) after their first year to remain in the major.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer is highly restricted and competitive."
+          }
+        ]
+      },
+      {
+        "name": "Wisconsin School of Business",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students confident in pursuing business should list it as their first choice. Approximately 50% of the class is admitted directly from high school.",
+        "housing_profile": "Traditional residence halls and business learning communities.",
+        "student_archetype": "Future leaders, entrepreneurs, and quantitative analysts.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "BBA",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Min-Seok Pang (Information Systems and Analytics)",
+              "Ishita Chakraborty (Marketing)"
+            ],
+            "notes": "Students not admitted directly enter L&S as pre-business and can apply through the competitive upper-level admission process."
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For healthcare-driven students. Admission is holistic and requires an interview and prerequisites.",
+        "housing_profile": "Traditional",
+        "student_archetype": "Empathetic, rigorous, science-focused.",
+        "majors": [
+          {
+            "name": "Traditional BSN",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.5,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Requires holistic review including healthcare experience, diverse background, interview, and a minimum 2.75 prerequisite GPA.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Average cumulative GPA of admitted class is 3.5 despite 2.75 minimum."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Universities of Wisconsin Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action is non-restrictive. Decisions typically released by the end of January."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision. Decisions typically released by the end of March."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One required 650-word essay: 'Tell us why you would like to attend the University of Wisconsin\u2013Madison. In addition, please include why you are interested in studying the major(s) you have selected...'"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Recommendations",
+        "Extracurricular activities",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Geographic residence (in-state vs. out-of-state) is highly considered to fulfill the mandate of enrolling primarily Wisconsin residents."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Select an Engineering or Business major as your first choice to be automatically considered for Direct Admit.",
+      "If targeting Computer Sciences, do not stress about impacted admission rates; simply apply to the College of Letters & Science where you can easily declare CS later by meeting the 2.25 GPA prerequisite.",
+      "Apply Undeclared within the College of Letters & Science if unsure. Admission to the university does not guarantee admission to capped programs later, but provides a footprint on campus to explore."
+    ],
+    "college_ranking_tactics": [
+      "For Engineering applicants, you must list a non-engineering alternate major to be reviewed for general admission if denied direct entry."
+    ],
+    "alternate_major_strategy": "Listing an alternate major outside of capped programs (like Engineering) is critical. Many applicants are admitted to the College of Letters & Science as their secondary choice if they fail to secure direct entry."
+  },
+  "financials": {
+    "tuition_model": "Resident & Non-Resident Pricing with Minnesota Reciprocity",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11603.0,
+        "total_coa": 30005.0,
+        "housing": 14124.0
+      },
+      "out_of_state": {
+        "tuition": 42103.0,
+        "total_coa": 60505.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 15223.0,
+    "average_merit_aid": 8260.0,
+    "percent_receiving_aid": 43.0,
+    "scholarships": [
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Tuition + $400 book stipend",
+        "deadline": "November 1 (EA Deadline)",
+        "benefits": "Renewable for four years. Aimed at socioeconomically disadvantaged and historically underrepresented students.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Powers-Knapp Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full tuition (in-state/MN) or tuition remission (OOS)",
+        "deadline": "",
+        "benefits": "Renewable for four years.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "King-Morgridge Scholars Program",
+        "type": "Merit/Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Covers 100% of demonstrated need for four years. Geared toward high-achieving, first-generation international students.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Wisconsin School of Business First-Generation Excellence Award",
+        "type": "Merit",
+        "amount": "$5,000-$15,000",
+        "deadline": "",
+        "benefits": "Financial support for first-generation undergraduate business students.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards college credit (elective) for scores of 3, and direct course equivalency for scores of 4 or 5.",
+      "exceptions": [],
+      "usage": "Can be applied to general education, degree requirements, or elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "Awards degree credit for successful completion of Higher Level (HL) exams.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "UW System Transfer Portal"
+      ],
+      "restrictions": "Credits earned via AP/IB must be sent directly from testing agencies and cannot be transferred off a previous college transcript."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous course selection in high school, especially in math and sciences for STEM applicants.",
+      "A deep, demonstrated alignment with the 'Wisconsin Idea'\u2014using education to positively impact the community.",
+      "Strong writing skills in the supplemental essay that clearly link past experiences with specific UW-Madison academic offerings."
+    ],
+    "common_activities": [
+      "Community service and volunteer work",
+      "Leadership in student government or organizations",
+      "Athletics",
+      "Part-time work experience"
+    ],
+    "essay_tips": [
+      "Tell your 'academic origin story'\u2014how you discovered your intended major.",
+      "Name 1-2 upper-level, specific courses at UW-Madison you want to take. Avoid mentioning generic intro courses.",
+      "Mention a specific professor or research lab whose work aligns with your high school projects.",
+      "Discuss how you plan to engage with the campus culture beyond academics (e.g., Wisconsin Hoofers, Student Orgs)."
+    ],
+    "red_flags": [
+      "Focusing the essay entirely on football, Greek life, or the city of Madison without tying it back to academics.",
+      "Dropping rigor in senior year, which UW-Madison explicitly tracks."
+    ],
+    "insights": [
+      "UW-Madison students value a 'work hard, play hard' balance. The environment is highly collaborative but demands self-starting academic discipline.",
+      "The waitlist has been a volatile 'black box.' In 2023, they admitted over 4,400 students off the waitlist, while in 2022 they admitted 11, and in 2024 they admitted 493. Students should not rely on it as a sure backup."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78974,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 30.0,
+    "top_employers": [
+      "Epic Systems",
+      "UW Health",
+      "American Family Insurance",
+      "State of Wisconsin",
+      "Amazon",
+      "Exact Sciences",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 96.3,
+    "graduation_rate_4_year": 78.0,
+    "graduation_rate_6_year": 89.7
+  }
+}

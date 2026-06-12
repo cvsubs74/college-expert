@@ -1,0 +1,332 @@
+{
+  "_id": "iowa_state_university",
+  "metadata": {
+    "official_name": "Iowa State University of Science and Technology",
+    "location": {
+      "city": "Ames",
+      "state": "Iowa",
+      "type": "Public"
+    },
+    "last_updated": "2023-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Iowa State University is a massive public land-grant research university known for its excellence in engineering, agriculture, and applied sciences. Operating under the motto 'Science with Practice,' it offers highly accessible admissions while maintaining rigorous STEM-focused academic standards.",
+    "market_position": "Large Public Land-Grant R1 Research University",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 121,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Admissions are highly deterministic, utilizing a mathematical formula (RAI) rather than holistic essay reviews.",
+        "implication": "Applicants with strong GPAs and test scores are guaranteed admission, removing the unpredictability found at other institutions."
+      },
+      {
+        "category": "Academic",
+        "insight": "Unlike many large state schools, ISU does not broadly employ impacted or capped majors for incoming freshmen.",
+        "implication": "Students can safely declare competitive majors like engineering or computer science without fear of immediate rejection based on major capacity."
+      },
+      {
+        "category": "Financial",
+        "insight": "High ROI, particularly for engineering and business graduates, with median 10-year earnings far exceeding national averages.",
+        "implication": "Offers a highly lucrative investment, especially for in-state students paying lower tuition."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A quintessential, spirited college town characterized by 'Iowa Nice' culture, dominated by Big 12 Cyclone athletics and a sprawling 800+ club network.",
+      "transportation_impact": "Centrally located in Ames with robust local transit and easy access to Des Moines; considered a safe and contained campus environment.",
+      "research_impact": "An R1 institution spending over $420 million annually on R&D, offering undergraduates immediate access to agricultural robotics, biorenewables, and engineering labs."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 88.66,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 68.3,
+      "transfer_acceptance_rate": 80.0,
+      "admits_class_size": 5906,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for first-year applicants. Non-submitters are evaluated primarily on high school GPA and core course completion.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 23095,
+        "admits_total": 20475,
+        "enrolled_total": 5906,
+        "acceptance_rate_overall": 88.66,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 28.84,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed due to rolling admissions structure."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.76,
+        "notes": "59% of admitted students possess a GPA of 3.75 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1350",
+        "sat_reading_middle_50": "560-670",
+        "sat_math_middle_50": "560-690",
+        "act_composite_middle_50": "21-28",
+        "submission_rate": 59.0,
+        "policy_note": "13% submitted SAT; 46% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": 21.0,
+        "legacy_percentage": null,
+        "international_percentage": 9.0,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 52.5
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 11855,
+            "admits": 10534,
+            "acceptance_rate": 88.85
+          },
+          "women": {
+            "applicants": 11240,
+            "admits": 9941,
+            "acceptance_rate": 88.44
+          }
+        },
+        "racial_breakdown": {
+          "white": 69.5,
+          "black_african_american": 2.37,
+          "hispanic_latino": 6.56,
+          "asian": 4.09,
+          "native_american_alaskan": 0.13,
+          "pacific_islander": 0.05,
+          "two_or_more_races": 2.92,
+          "unknown": null,
+          "non_resident_alien": 8.7
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking hands-on, highly ranked mechanical, aerospace, or agricultural engineering programs.",
+        "housing_profile": null,
+        "student_archetype": "Analytically driven problem-solvers",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "ISU's most popular major with exceptional graduate starting salaries."
+          }
+        ]
+      },
+      {
+        "name": "College of Agriculture and Life Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students interested in biosystems, agronomy, and animal science.",
+        "housing_profile": null,
+        "student_archetype": "Environmentally and agriculturally minded researchers",
+        "majors": [
+          {
+            "name": "Animal Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly integrated with ISU's renowned College of Veterinary Medicine."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Iowa State University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Applications open July 1st. Decisions are often returned within days."
+      }
+    ],
+    "supplemental_requirements": [],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Standardized Test Scores (if submitted)",
+        "Rigor of secondary school record (Core Courses)"
+      ],
+      "secondary_factors": [],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "Admission is formulaic, driven by the Regent Admission Index (RAI) rather than soft factors."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying to a specific major does not restrict admission, as students are admitted to the university rather than competitive departments."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Not required, as primary admission grants access to the university as a whole."
+  },
+  "financials": {
+    "tuition_model": "Flat rate with differentials for upper-division specific programs (like engineering/business).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 10787.0,
+        "total_coa": 24695.0,
+        "housing": 10808.0
+      },
+      "out_of_state": {
+        "tuition": 28881.0,
+        "total_coa": 42789.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10270.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 73.0,
+    "scholarships": [
+      {
+        "name": "National Merit Full Tuition Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers full tuition for 8 semesters for Iowa residents named National Merit Scholars.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Loyal Scholar",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "",
+        "benefits": "$3k per year for 4 years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Transfer Expedition Award",
+        "type": "Merit",
+        "amount": "$6,000",
+        "deadline": "",
+        "benefits": "Automatic award for non-resident transfer students from select states.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or better generally accepted, depending on departmental review.",
+      "exceptions": [
+        "Some engineering/science departments strictly require a 4 or 5."
+      ],
+      "usage": "Course credit and advanced placement."
+    },
+    "ib_policy": {
+      "general_rule": "Scores evaluated upon receipt.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TRANSIT"
+      ],
+      "restrictions": "Maximum 65 credits from 2-year colleges; final 32 credits must be completed in-residence."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid GPA and core course load to meet the RAI threshold.",
+      "A passion for practical, hands-on learning (Science with Practice)."
+    ],
+    "common_activities": [
+      "Greek Life",
+      "Intramural Sports",
+      "Engineering and Agricultural clubs (e.g., Ames Flyers, Rodeo Club)"
+    ],
+    "essay_tips": [],
+    "red_flags": [
+      "Failing to complete required high school core courses (math, science, English)."
+    ],
+    "insights": [
+      "The 'Iowa Nice' culture is highly prevalent.",
+      "The university maintains an incredible 800+ student organizations.",
+      "Ames is routinely rated as a quintessential, supportive college town."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 68277,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Principal Financial Group",
+      "Kingland",
+      "Hy-Vee, Inc.",
+      "Farm Bureau Financial Services",
+      "Iowa Department of Transportation",
+      "Casey's General Stores"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.2,
+    "graduation_rate_4_year": 59.4,
+    "graduation_rate_6_year": 76.6
+  }
+}

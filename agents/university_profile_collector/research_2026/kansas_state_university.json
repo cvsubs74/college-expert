@@ -1,0 +1,558 @@
+{
+  "_id": "kansas_state_university",
+  "metadata": {
+    "official_name": "Kansas State University",
+    "location": {
+      "city": "Manhattan",
+      "state": "Kansas",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Kansas State University (K-State) is a public land-grant research university and the first public institution of higher learning in Kansas. Known for its strong community ethos dubbed the 'Wildcat Way', the university offers over 250 undergraduate majors and boasts high research activity (R1).",
+    "market_position": "Flagship-level Public Land-Grant / R1 Research University",
+    "admissions_philosophy": "Numbers-focused with Holistic alternatives",
+    "us_news_rank": 158,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "K-State operates on an accessible admissions model. Applicants who meet the automatic threshold of a 3.25 GPA or an ACT 21/SAT 1060 are guaranteed admission.",
+        "implication": "Students with solid high school performance can view K-State as a reliable safety or target school with a highly transparent admissions process."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university is exceptionally strong in Agriculture, Engineering, and Veterinary Medicine, fueled by its historical roots as a land-grant agricultural college.",
+        "implication": "STEM and agriculture-focused students gain access to significant research funding and elite facilities."
+      },
+      {
+        "category": "Culture",
+        "insight": "Student reviews heavily highlight a warm, familial campus atmosphere and intense school spirit centered around Big 12 athletics.",
+        "implication": "Ideal for students seeking a quintessential, spirited 'college town' experience in a supportive environment."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and familial campus life anchored by Big 12 sports (especially football), extensive student clubs, Greek life (~15% participation), and proximity to Aggieville, the local college town hub.",
+      "transportation_impact": "The university and the City of Manhattan offer a shuttle bus service, and cars are permitted on campus, though students frequently note that parking can be challenging to find.",
+      "research_impact": "As an R1 doctoral university with Very High Research Activity, undergraduates have access to specialized facilities like the Beef Cattle Research Center and summer Research Experiences for Undergraduates (REU) in fields like Physics."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.817,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 3482,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for university admission. Admission is guaranteed for applicants achieving either a 3.25 cumulative GPA OR an ACT composite of 21/SAT ERW+M of 1060. Standardized test scores may still be required for specific competitive scholarships.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 15509,
+        "admits_total": 12669,
+        "enrolled_total": 3482,
+        "acceptance_rate_overall": 0.817,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.275,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "K-State does not utilize a waitlist system for general undergraduate admissions; students meeting thresholds are offered direct admission."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 13373,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.794,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 9703,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.951,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.40-3.80",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.81,
+        "notes": "The 3.81 average GPA is representative of recent incoming classes based on secondary source data."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1060-1260",
+        "sat_reading_middle_50": "550-640",
+        "sat_math_middle_50": "510-620",
+        "act_composite_middle_50": "20-27",
+        "submission_rate": 0.81,
+        "policy_note": "81% of students submit ACT scores, while only 6% submit SAT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.018,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7247,
+            "admits": 5796,
+            "acceptance_rate": 0.8
+          },
+          "women": {
+            "applicants": 8258,
+            "admits": 6872,
+            "acceptance_rate": 0.832
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.756,
+          "black_african_american": 0.0313,
+          "hispanic_latino": 0.0917,
+          "asian": 0.0224,
+          "native_american_alaskan": 0.00389,
+          "pacific_islander": 0.00113,
+          "two_or_more_races": 0.0363,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agriculture",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in agronomy, animal science, and food science.",
+        "housing_profile": null,
+        "student_archetype": "Hands-on researchers and rural-background students.",
+        "majors": [
+          {
+            "name": "Animal Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ASI 102 Principles of Animal Science",
+                "ASI 105 Animal Science Lab",
+                "ASI 106 Dairy Lab",
+                "ASI 202 Animal Nutrition",
+                "ASI 400 Farm Animal Reproduction",
+                "ASI 500 Genetics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Dale Blasi (Ruminant Nutrition/Beef)",
+              "Dr. Mike Brouk (Ruminant Nutrition/Dairy)",
+              "Dr. Jaymelynn Farney (Ruminant Nutrition/Beef)"
+            ],
+            "notes": "The most popular major at the university."
+          }
+        ]
+      },
+      {
+        "name": "Carl R. Ice College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For students aiming to enter competitive engineering industries.",
+        "housing_profile": null,
+        "student_archetype": "Analytical problem-solvers.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "To graduate with a Bachelors in Mechanical Engineering, students must have a >= 2.200 GPA in all ME/NE classes >= 400 level taken for undergraduate credit.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 220 Analytic Geometry and Calculus I",
+                "MATH 221 Analytic Geometry and Calculus II",
+                "PHYS 211 University Physics: Mechanics"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Domestic freshman or transfer admission is selective based on academic performance and space availability."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CIS 115 Introduction to Computing Science",
+              "CIS 116 Introduction to Programming",
+              "CIS 200 Programming Fundamentals",
+              "MATH 220 Analytic Geometry and Calculus I",
+              "MATH 221 Analytic Geometry and Calculus II"
+            ],
+            "minimum_gpa_to_declare": 2.3,
+            "weeder_courses": [],
+            "special_requirements": "Students must complete specified pre-professional courses with a C or better to advance to the professional program.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.3,
+            "curriculum": {
+              "core_courses": [
+                "CIS 115 Introduction to Computing Science",
+                "CIS 116 Introduction to Programming",
+                "CIS 200 Programming Fundamentals"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "A resident cumulative GPA of 2.3 or better is required for a change of major from any Engineering program to the pre-professional program Computer Science."
+          }
+        ]
+      },
+      {
+        "name": "College of Business Administration",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students seeking careers in sales, analytics, and marketing.",
+        "housing_profile": null,
+        "student_archetype": "Future business leaders and entrepreneurs.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "Consumer Behavior",
+                "Marketing Strategy"
+              ],
+              "electives": [
+                "Sports Marketing",
+                "International Marketing",
+                "Business to Business Marketing",
+                "Digital Marketing Applications",
+                "Marketing Analytics Fundamentals"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Transfer students to the College of Business Administration must have a cumulative college/university GPA of 2.5 or higher."
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students committed to teaching and learning.",
+        "housing_profile": null,
+        "student_archetype": "Future PK-12 educators.",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EDEL 200 Teaching as a Career",
+                "EDEL 310 Foundations of Education",
+                "EDEL 411 Science of Reading I",
+                "EDEL 461 Science of Reading II",
+                "EDEL 410 Block B Practicum: K-6",
+                "EDEL 460 Block C Practicum: K-6"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 51
+            },
+            "notable_professors": [],
+            "notes": "Program prepares educators for licensure in grades P-6."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "K-State Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Priority application date is December 1. Competitive scholarship deadline is December 15."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "University Honors Program",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires a 300-500 word essay describing what motivates the application to the Honors Program."
+      },
+      {
+        "target_program": "Holistic Review (if lacking automatic admission stats)",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A series of short answer essay questions addressing past academic performance, future plans, and personal growth."
+      },
+      {
+        "target_program": "Music and Music Education",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Enrollment in specific studios requires an audition."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of secondary school record",
+        "Standardized test scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Required",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "K-State relies on automatic admission thresholds (3.25 GPA or 21 ACT) for most applicants. Holistic review (including essays and academic references) is reserved for students who do not meet these initial criteria or those applying for elite competitive scholarships like the Presidential Scholarship."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to intended major as most programs offer direct admission if general university thresholds are met.",
+      "For highly competitive areas like Engineering, applying early (before Dec 1 priority date) maximizes chances of securing a spot and scholarships."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students unsure of their major can apply to the Pre-Professional and Exploratory Advising Center (Open Option). K-State reports that 65-75% of students change their major at least once, and Exploratory Studies provides a structured way to discover the right path without delaying graduation."
+  },
+  "financials": {
+    "tuition_model": "Flat-rate per credit hour structure varying by residency status",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11221.0,
+        "total_coa": 28141.0,
+        "housing": 12830.0
+      },
+      "out_of_state": {
+        "tuition": 28568.0,
+        "total_coa": 45488.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.78,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$20,000/yr",
+        "deadline": "December 15",
+        "benefits": "Renewable for four years, plus a one-time $2,000 study abroad stipend. Highly competitive (two awarded per year).",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Royal Purple Scholarship",
+        "type": "Merit",
+        "amount": "$4,000/yr",
+        "deadline": "December 1",
+        "benefits": "Renewable. Requires 3.70-3.84 GPA and 25-28 ACT (for in-state).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Wildcat Traditions Scholarship",
+        "type": "Merit",
+        "amount": "$2,500/yr",
+        "deadline": "December 1",
+        "benefits": "Renewable. Requires 3.50-3.69 GPA and 22-24 ACT (for in-state).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Limestone Award",
+        "type": "Merit",
+        "amount": "$1,500/yr",
+        "deadline": "December 1",
+        "benefits": "Renewable. Requires 3.50+ GPA (if test optional/score <21).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "1863 Landmark Award",
+        "type": "Merit",
+        "amount": "$1,000/yr",
+        "deadline": "December 1",
+        "benefits": "Renewable. Requires 3.25-3.29 GPA.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3, 4, or 5 are granted credit for most exams.",
+      "exceptions": [
+        "A score of 4 is required for AP English Literature & Composition and English Language & Composition."
+      ],
+      "usage": "Credits do not become part of the student's K-State GPA and cannot exceed 25% of the total degree credits."
+    },
+    "ib_policy": {
+      "general_rule": "Score of 4 or higher at the Standard Level or Higher Level is awarded credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Tool",
+        "Transfer Pathways",
+        "Transferology"
+      ],
+      "restrictions": "Vocational, technical, remedial, and personal-interest courses generally do not transfer. English language proficiency courses from international schools are not accepted."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A high school GPA of 3.25 or an ACT of 21 guarantees admission.",
+      "If missing automatic admission, a strong holistic application including an academic reference showing preparedness for college-level work is essential.",
+      "To obtain elite merit scholarships, high test scores (32+ ACT) and excellent GPAs (3.85+) combined with demonstrated leadership are necessary."
+    ],
+    "common_activities": [
+      "Attending Big 12 football games at Bill Snyder Family Stadium",
+      "Participating in Greek Life (15% of students)",
+      "Socializing and pub crawls in the Aggieville district",
+      "Intramural sports at the Peters Recreation Complex"
+    ],
+    "essay_tips": [
+      "For the Honors Program, focus on showing, not telling, how the program aligns with your goals.",
+      "Include vivid imagery, specific details, and personal experiences in supplemental writing.",
+      "Demonstrate concrete reasons for wanting to attend K-State if applying through the holistic review process."
+    ],
+    "red_flags": [
+      "Failing to demonstrate academic preparedness in the holistic review if you do not meet automatic admission requirements.",
+      "Lacking an academic reference (using a coach instead of a teacher) during the holistic review."
+    ],
+    "insights": [
+      "The 'Wildcat Way' is a real phenomenon; the university is known for an incredibly supportive and familial community.",
+      "While agriculture and engineering are the marquee programs, there is a wide diversity of over 250 majors.",
+      "Parking on the main campus in Manhattan is frequently cited as a pain point."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 64711,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Burns & McDonnell",
+      "Garmin",
+      "Koch Industries",
+      "Shamrock Trading Corporation",
+      "Textron",
+      "U.S. Army",
+      "Manhattan-Ogden USD 383"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.86,
+    "graduation_rate_4_year": 0.49,
+    "graduation_rate_6_year": 0.7
+  }
+}

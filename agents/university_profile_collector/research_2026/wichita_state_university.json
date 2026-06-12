@@ -1,0 +1,503 @@
+{
+  "_id": "wichita_state_university",
+  "metadata": {
+    "official_name": "Wichita State University",
+    "location": {
+      "city": "Wichita",
+      "state": "Kansas",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Wichita State University (WSU) is Kansas's only urban public research university, holding an R2 classification for high research activity. Located in the 'Air Capital of the World,' WSU is uniquely defined by its 120-acre Innovation Campus, which integrates academic spaces directly with corporate partners like Airbus, Spirit AeroSystems, and Textron Aviation. This structure facilitates an unparalleled applied learning model, allowing students to earn millions annually through highly relevant paid internships and co-ops while completing their degrees.",
+    "market_position": "Regional Public Research University (R2) / Innovation & Aerospace Hub",
+    "admissions_philosophy": "Numbers-focused (Assured Admissions based on GPA/Test thresholds)",
+    "us_news_rank": 296,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "WSU operates on an assured admission model, guaranteeing entry to students with a 2.25 unweighted GPA or a 21 ACT / 1060 SAT. This results in a highly accessible 93.9% acceptance rate.",
+        "implication": "WSU is a highly reliable safety school for general admissions, though specific programs like Nursing, Dental Hygiene, and Musical Theatre are fiercely competitive and require secondary holistic reviews."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university ranks in the top 20 nationally for aerospace engineering R&D funding, fueled by heavy integration with the local aviation industry.",
+        "implication": "Engineering and computer science students receive elite, hands-on training and direct talent pipelines to major aerospace and defense contractors, offering an exceptional ROI."
+      },
+      {
+        "category": "Financial",
+        "insight": "WSU is ranked as one of the most affordable research universities in the region, with in-state tuition under $10,000 and extensive out-of-state discount programs (e.g., Shocker City Partnership, Midwest Student Exchange).",
+        "implication": "Combined with the $39.2 million students earned through applied learning internships in 2025, the total net cost of attendance is drastically reduced, leading to lower-than-average student debt."
+      },
+      {
+        "category": "Culture",
+        "insight": "Over 40% of the student body are first-generation college students, and the campus has the most racially and ethnically diverse population of any college in Kansas.",
+        "implication": "The environment is highly supportive of non-traditional and first-generation students, offering extensive wraparound services, though the heavy commuter population can lead to a quieter weekend social scene."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "WSU balances a traditional campus feel with a heavy commuter presence. The 330-acre campus hosts over 200 student organizations, 20+ Greek chapters, and vibrant Division I athletics (the Shockers). Despite modern residential additions like Shocker Hall and The Flats, a large portion of students commute, making weekday events and intramurals the core of social life rather than weekend campus parties.",
+      "transportation_impact": "As an urban campus, navigating Wichita relies heavily on personal vehicles, though students receive free access to the City of Wichita bus system. On-campus parking availability is a frequently cited complaint among the student body.",
+      "research_impact": "Research is deeply embedded into the undergraduate experience, particularly on the Innovation Campus. Undergraduates frequently work alongside professionals in state-of-the-art facilities like the National Institute for Aviation Research (NIAR), engaging in projects involving autonomous robots, drones, and aerospace manufacturing."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 93.9,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 82.6,
+      "transfer_acceptance_rate": 88.76,
+      "admits_class_size": 1870,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for general admission. Students are guaranteed admission if they meet either the GPA requirement (2.25 unweighted) OR the test score requirement (21 ACT / 1060 SAT).",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 9916,
+        "admits_total": 9316,
+        "enrolled_total": 1870,
+        "acceptance_rate_overall": 93.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 20.08,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for general admissions. Waitlists are primarily used for highly selective internal programs like Musical Theatre and Physician Assistant."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 8438,
+        "admits_total": 7900,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 94.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "average_unweighted": 3.45,
+        "notes": "Average incoming freshman GPA is 3.45. Minimum to be guaranteed admission is 2.25 unweighted."
+      },
+      "testing": {
+        "sat_composite_middle_50": "913-1240",
+        "sat_reading_middle_50": "470-610",
+        "sat_math_middle_50": "430-630",
+        "act_composite_middle_50": "18-25",
+        "submission_rate": 69.0,
+        "policy_note": "69% submitted ACT scores, while only 6% submitted SAT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 40.0,
+        "legacy_percentage": null,
+        "international_percentage": 15.7,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 23.0
+          },
+          {
+            "region": "In-State",
+            "percentage": 77.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 4075,
+            "admits": 3830,
+            "acceptance_rate": 93.9
+          },
+          "women": {
+            "applicants": 5841,
+            "admits": 5486,
+            "acceptance_rate": 93.9
+          }
+        },
+        "racial_breakdown": {
+          "white": 54.2,
+          "black_african_american": 5.4,
+          "hispanic_latino": 11.9,
+          "asian": 5.5,
+          "native_american_alaskan": 0.6,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 4.1,
+          "unknown": 2.5,
+          "non_resident_alien": 15.7
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking immediate, paid, hands-on experience in aerospace, mechanical, or computer engineering. Applicants should leverage the Innovation Campus pipeline.",
+        "housing_profile": "Offers specific Living Learning Communities (LLCs) where engineering students live together, access dedicated tutoring, and network with industry professionals.",
+        "student_archetype": "Pragmatic, career-driven innovators and makers who want to build their resumes while studying.",
+        "majors": [
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Benefits heavily from WSU's National Institute for Aviation Research (NIAR) and proximity to Spirit AeroSystems."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Health Professions",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Best for students with strong high school science backgrounds. Admissions to upper-division professional phases are highly competitive and GPA-dependent.",
+        "housing_profile": "Standard residential communities; heavy emphasis on clinical rotations later in the program.",
+        "student_archetype": "Detail-oriented, resilient students prepared for rigorous clinical standards.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Chemistry",
+              "Anatomy and Physiology",
+              "Microbiology",
+              "Biology"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "Chemistry",
+              "Microbiology"
+            ],
+            "special_requirements": "Minimum cumulative GPA of 3.00 in required science courses. Volunteer hours and healthcare experience highly recommended for points in the application matrix.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Program entry points in Fall and Spring. Application ratio is typically 1:2. Requires completion of a competitive secondary application."
+          },
+          {
+            "name": "Dental Hygiene",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Chemistry",
+              "Human Anatomy & Physiology",
+              "Microbiology",
+              "Nutrition"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Requires observation hours, an interview, and a handwritten observation form.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students practice in the Delta Dental of Kansas Foundation Dental Hygiene Clinic, the largest in the state."
+          }
+        ]
+      },
+      {
+        "name": "School of Performing Arts (College of Fine Arts)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Designed for highly dedicated performers willing to undergo intense audition processes.",
+        "housing_profile": "Integrated across campus.",
+        "student_archetype": "Creative, highly trained vocalists and actors.",
+        "majors": [
+          {
+            "name": "Musical Theatre",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires a video submission, a live dance audition taught on the spot, and program acceptance.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly selective; caps at accepting exactly 20 prospective students per cycle and utilizes a strict waitlist."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "WSU Online Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-07-01",
+        "is_binding": false,
+        "notes": "Fall Priority Deadline"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-08-04",
+        "is_binding": false,
+        "notes": "Fall Final Deadline. Late applications are automatically denied."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Priority deadline to be eligible for the Distinguished Scholarship Invitational (Harry Gore Memorial Scholarship)."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Priority Deadline for general Freshman Merit Scholarships."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Harry Gore Memorial Scholarship (DSI)",
+        "requirement_type": "Competition / Essays",
+        "deadline": "2025-11-10",
+        "details": "Requires submission of scholarship materials by Nov 10 and mandatory in-person participation in the competition on Nov 22."
+      },
+      {
+        "target_program": "Musical Theatre B.F.A.",
+        "requirement_type": "Audition",
+        "deadline": "February",
+        "details": "Requires video submissions and a dance audition taught on the spot."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Standardized Test Scores"
+      ],
+      "secondary_factors": [
+        "Class Rank"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Required",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "General admissions are purely metric-driven. Meeting the 2.25 GPA or 21 ACT threshold guarantees admission. Holistic factors (interviews, essays, leadership) are strictly reserved for prestigious scholarship competitions and capped majors (Nursing, Dental Hygiene, Performing Arts)."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "For students with lower GPAs (between 2.25 and 2.75), apply for undeclared or general liberal arts majors, as Health Professions pre-majors strict require a minimum 2.75 to 3.0 GPA."
+    ],
+    "college_ranking_tactics": [
+      "Apply by November 1st to qualify for the Distinguished Scholarship Invitational. Competing gives students a chance at the $64,000 Harry Gore Memorial Scholarship and ensures priority consideration for other stackable merit awards."
+    ],
+    "alternate_major_strategy": "Students aiming for highly competitive B.S.N. or Dental Hygiene programs should enter as 'Health Professions Undecided' to complete prerequisites on campus and establish a high WSU institutional GPA (minimum 2.0 required, 3.0+ competitive) before applying to the professional clinical phase in their junior year."
+  },
+  "financials": {
+    "tuition_model": "Per credit hour with extensive regional discounts based on state of residency.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 9684.0,
+        "total_coa": 26914.0,
+        "housing": 12420.0
+      },
+      "out_of_state": {
+        "tuition": 19869.0,
+        "total_coa": 37099.0,
+        "supplemental_tuition": 10185.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 7110.0,
+    "average_merit_aid": 4000.0,
+    "percent_receiving_aid": 89.0,
+    "scholarships": [
+      {
+        "name": "Harry Gore Memorial Scholarship",
+        "type": "Merit",
+        "amount": "$64,000",
+        "deadline": "2025-11-01",
+        "benefits": "Covers significant tuition and housing costs over four years; includes entry into a prestigious cohort of student leaders.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Freshman Merit Scholarships",
+        "type": "Merit",
+        "amount": "$4,000 - $24,000",
+        "deadline": "2025-12-01",
+        "benefits": "Renewable over four years based on maintaining eligibility.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Shocker Promise Scholarship",
+        "type": "Need",
+        "amount": "Varies (Last-Dollar)",
+        "deadline": "2025-12-01",
+        "benefits": "Provides last-dollar funding to cover any remaining tuition/fee gaps for limited-income students from Kansas.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Transfer Merit Scholarships",
+        "type": "Merit",
+        "amount": "Up to $2,000/yr",
+        "deadline": "2025-12-01",
+        "benefits": "Awarded automatically to transfer students with strong cumulative transfer GPAs.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Honors College Merit Scholarship",
+        "type": "Merit",
+        "amount": "$1,000",
+        "deadline": "2025-12-01",
+        "benefits": "Stackable with Freshman Merit Scholarships for students fully admitted to the Cohen Honors College.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credit is generally awarded for AP scores of 3 or higher.",
+      "exceptions": [
+        "Biology requires a score of 4 for the full 8 credit hours.",
+        "Chemistry requires a score of 4 for the full 10 credit hours.",
+        "French/German requires a score of 5 for 6 credit hours."
+      ],
+      "usage": "Can be used to fulfill both general education requirements and major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "IB credit is evaluated via transcript and generally accepted seamlessly from Kansas Regent's Universities.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "WSU Transfer Equivalency Tool",
+        "Transfer Gateway"
+      ],
+      "restrictions": "Transfer students must maintain a 2.0 cumulative GPA to be eligible for general admission. Major-specific GPA requirements apply."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A minimum 2.25 unweighted high school GPA or a 21 ACT score guarantees admission to the university.",
+      "A 2.75 to 3.0+ college GPA is required to transition from pre-major status into capped Health Professions programs.",
+      "For elite merit scholarships, applying before November 1st and possessing a 3.5+ GPA or 27+ ACT is essential."
+    ],
+    "common_activities": [
+      "Clash of the Colleges (Freshman Tradition)",
+      "Greek Life (Over 20 organizations)",
+      "Intramural Sports (Flag Football, Softball)",
+      "Shocker Career Accelerator Internships",
+      "Living Learning Communities (LLCs)"
+    ],
+    "essay_tips": [
+      "Essays are largely ignored for general admission but are critical for the Distinguished Scholarship Invitational.",
+      "Scholarship essays should focus heavily on community service, leadership potential, and the desire to impact the Kansas economy.",
+      "Clinical program applicants (Nursing/Dental) must clearly articulate hands-on patient experience and resilience in their supplementary forms."
+    ],
+    "red_flags": [
+      "Applying after the December 1st priority deadline, which drastically reduces access to merit aid.",
+      "Earning below a 'C' in high school science courses if aiming for a pre-med or nursing track.",
+      "Waiting too long to apply for housing, as single room options fill up fast and require joining a Pre-Move-In Waitlist."
+    ],
+    "insights": [
+      "WSU is recognized for its incredible ROI related to applied learning; students earned nearly $40 million in 2025 working paid jobs directly related to their majors.",
+      "The campus culture leans heavily toward commuter students, making weeknight events robust but leaving the campus quieter on weekends.",
+      "Parking shortages and dining hall quality are the most frequently cited complaints among the student body."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 59707,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Spirit AeroSystems",
+      "Textron Aviation",
+      "Ascension Via Christi Health",
+      "Wichita Public Schools USD 259",
+      "Koch Industries",
+      "Bombardier",
+      "Airbus"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 69.0,
+    "graduation_rate_4_year": 31.0,
+    "graduation_rate_6_year": 51.0
+  }
+}

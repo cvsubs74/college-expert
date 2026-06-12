@@ -1,0 +1,530 @@
+{
+  "_id": "villanova_university",
+  "metadata": {
+    "official_name": "Villanova University",
+    "location": {
+      "city": "Villanova",
+      "state": "Pennsylvania",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-20",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Villanova University is a premier Catholic research institution (R2) in the Augustinian tradition, located on the historic Main Line outside Philadelphia. It is renowned for its strong undergraduate teaching, robust Villanova School of Business, and a deep commitment to community service and student outcomes. The university balances rigorous academics with a vibrant campus life, bolstered by high school spirit and successful Division I athletics.",
+    "market_position": "Elite Private / National Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 58,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Villanova's acceptance rate has settled into the mid-20% range, but applying Early Decision (ED) offers a massive statistical advantage, historically pushing acceptance rates closer to 50%.",
+        "implication": "Applicants confident in Villanova as their top choice must utilize the ED I or ED II pathways to maximize their chances of admission."
+      },
+      {
+        "category": "Academic",
+        "insight": "Internal transfer to the Villanova School of Business (VSB) is extraordinarily competitive, requiring a near-perfect Villanova GPA (3.9+) and specific prerequisite courses.",
+        "implication": "Prospective business students should apply directly to VSB as first-years rather than attempting to transfer internally later."
+      },
+      {
+        "category": "Culture",
+        "insight": "The admissions committee highly values applicants who demonstrate a commitment to community service, mirroring the university's Augustinian ideals of Veritas, Unitas, and Caritas.",
+        "implication": "Essays and activity lists should heavily emphasize volunteer work, leadership, and a desire to contribute positively to the campus community."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A strong, unified campus culture with a heavy emphasis on community service, Catholic values, and school spirit driven by Villanova Wildcats basketball. Greek life is present and somewhat prominent.",
+      "transportation_impact": "Situated 12 miles west of Center City Philadelphia, the campus offers excellent access to the city via commuter train, trolley, and bus, facilitating internships and social life.",
+      "research_impact": "Classified as an R2 Doctoral University with High Research Activity, Villanova provides increasing undergraduate research opportunities and is a top producer of Fulbright Scholars."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.2698,
+      "in_state_acceptance_rate": 0.2737,
+      "out_of_state_acceptance_rate": 0.2738,
+      "international_acceptance_rate": 0.17,
+      "transfer_acceptance_rate": 0.433,
+      "admits_class_size": 1740,
+      "is_test_optional": true,
+      "test_policy_details": "Villanova remains test-optional through the 2026-2027 admission campaign (Class of 2031). Applicants may self-report scores via the Applicant Status Page, with official scores required only upon enrollment.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 1696,
+          "admits": 920,
+          "acceptance_rate": 0.5425,
+          "class_fill_percentage": 0.5287
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 23256,
+        "admits_total": 6274,
+        "enrolled_total": 1740,
+        "acceptance_rate_overall": 0.2698,
+        "acceptance_rate_in_state": 0.2737,
+        "acceptance_rate_out_of_state": 0.2738,
+        "yield_rate": 0.2773,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 4026,
+          "accepted_spots": 1938,
+          "admitted_from_waitlist": 563,
+          "waitlist_admit_rate": 0.2905,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits heavily utilized this cycle."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 23127,
+        "admits_total": 5810,
+        "enrolled_total": 1740,
+        "acceptance_rate_overall": 0.2512,
+        "acceptance_rate_in_state": 0.2566,
+        "acceptance_rate_out_of_state": 0.258,
+        "yield_rate": 0.2995,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3788,
+          "accepted_spots": 1808,
+          "admitted_from_waitlist": 873,
+          "waitlist_admit_rate": 0.4828,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high waitlist utilization."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 23835,
+        "admits_total": 5576,
+        "enrolled_total": 1779,
+        "acceptance_rate_overall": 0.2339,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.319,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3355,
+          "accepted_spots": 1795,
+          "admitted_from_waitlist": 36,
+          "waitlist_admit_rate": 0.0201,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Highly selective waitlist year."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 24410,
+        "admits_total": 6162,
+        "enrolled_total": 1772,
+        "acceptance_rate_overall": 0.2524,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.2876,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 4337,
+          "accepted_spots": 2073,
+          "admitted_from_waitlist": 56,
+          "waitlist_admit_rate": 0.027,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Large application pool, low waitlist admit rate."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.93,
+        "notes": "Average submitted GPA is 3.93 on a 4.0 scale (unweighted); 87% rank in the top 10% of their graduating class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1410-1490",
+        "sat_reading_middle_50": "685-740",
+        "sat_math_middle_50": "710-770",
+        "act_composite_middle_50": "32-34",
+        "submission_rate": 0.28,
+        "policy_note": "Test-optional through 2026-27. SAT submission rate was 19%, ACT was 9%."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.13,
+        "legacy_percentage": 0.255,
+        "international_percentage": 0.02,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-State",
+            "percentage": 0.79
+          },
+          {
+            "region": "In-State",
+            "percentage": 0.21
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10207,
+            "admits": 2823,
+            "acceptance_rate": 0.2766
+          },
+          "women": {
+            "applicants": 13046,
+            "admits": 3450,
+            "acceptance_rate": 0.2644
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.6768,
+          "black_african_american": 0.0648,
+          "hispanic_latino": 0.1127,
+          "asian": 0.0669,
+          "native_american_alaskan": 0.0003,
+          "pacific_islander": 0.0011,
+          "two_or_more_races": 0.0402,
+          "unknown": 0.0185,
+          "non_resident_alien": 0.0185
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in humanities or sciences. Undecided students should apply to 'Exploratory Arts' or 'Exploratory Science'.",
+        "housing_profile": "Traditional on-campus residence halls.",
+        "student_archetype": "Intellectually curious, service-minded individuals seeking a broad liberal arts foundation.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.33,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most popular science major in the college."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.33,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular liberal arts major."
+          }
+        ]
+      },
+      {
+        "name": "Villanova School of Business (VSB)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive program; applicants must have a strong math profile, including at least one year of high school Calculus.",
+        "housing_profile": "Standard on-campus housing.",
+        "student_archetype": "Driven, analytically strong students looking for top-tier corporate placement in finance, consulting, and accounting.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires strong quantitative background for initial admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.9,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer to VSB is extremely competitive, historically admitting less than 25% of applicants, requiring a 3.9+ GPA and an A- or better in specific quantitative courses."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Applicants are required to have high school Physics and Pre-Calculus; Calculus is strongly encouraged.",
+        "housing_profile": "Standard on-campus housing.",
+        "student_archetype": "Analytically minded problem-solvers interested in practical, research-based engineering.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Physics",
+              "Pre-Calculus"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfers are subject to space availability at the end of the first year."
+          }
+        ]
+      },
+      {
+        "name": "M. Louise Fitzpatrick College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Applicants must have successfully completed at least one year of Biology and Chemistry during high school.",
+        "housing_profile": "Standard on-campus housing.",
+        "student_archetype": "Compassionate, academically strong students dedicated to healthcare and clinical excellence.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Biology",
+              "Chemistry"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The College of Nursing no longer considers external transfer applications."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "YYYY-11-01",
+        "is_binding": false,
+        "notes": "Non-restrictive."
+      },
+      {
+        "plan_type": "ED1",
+        "date": "YYYY-11-01",
+        "is_binding": true,
+        "notes": "Strongly increases acceptance rate."
+      },
+      {
+        "plan_type": "ED2",
+        "date": "YYYY-01-15",
+        "is_binding": true,
+        "notes": "Secondary binding option."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-01-15",
+        "is_binding": false,
+        "notes": "Regular decision."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Writing supplements required through Common/Coalition App."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "GPA"
+      ],
+      "secondary_factors": [
+        "Essays",
+        "Recommendations",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "Volunteer work"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Strong",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Villanova places heavy emphasis on community service, alignment with Augustinian Catholic values, and legacy status (legacies and alumni affiliates represent a substantial portion of enrolled students)."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Undecided applicants should apply to 'Exploratory Arts' or 'Exploratory Sciences' in the College of Liberal Arts and Sciences.",
+      "Ensure prerequisite alignment before applying to restricted programs: VSB requires Calculus; Engineering requires Physics and Pre-Calculus; Nursing requires Biology and Chemistry.",
+      "Avoid applying to VSB without exceptional quantitative metrics due to high selectivity."
+    ],
+    "college_ranking_tactics": [
+      "Utilize Early Decision: With overall admit rates dropping below 30%, ED provides a substantial statistical boost, often admitting over 50% of applicants."
+    ],
+    "alternate_major_strategy": "If waitlisted, Villanova occasionally allows applicants to select up to two alternate majors (e.g., Exploratory Arts or Sciences) for consideration off the Active Waiting List, bypassing impacted original choices."
+  },
+  "financials": {
+    "tuition_model": "Flat rate per academic year",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67776.0,
+        "total_coa": 88480.0,
+        "housing": 17694.0
+      },
+      "out_of_state": {
+        "tuition": 67776.0,
+        "total_coa": 88480.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 43855.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.53,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition, Room & Board",
+        "deadline": "YYYY-01-15",
+        "benefits": "Covers tuition, on-campus housing, 21-meal plan, general fee, and book fee for 8 semesters.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "St. Martin de Porres Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers full tuition and general fee. Designed for students committed to advocacy and social justice.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Villanova National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$500-$2,000",
+        "deadline": "",
+        "benefits": "Awarded to top students designated as finalists by the National Merit Scholarship Corporation who name Villanova as their top choice.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous but restricted to non-core requirements.",
+    "ap_policy": {
+      "general_rule": "AP credits are granted based on qualifying scores but must be processed before the completion of two semesters at Villanova.",
+      "exceptions": [
+        "AP credit may NOT be used to fulfill Core Curriculum requirements."
+      ],
+      "usage": "Can be used to fulfill requirements for majors, minors, concentrations, and free electives."
+    },
+    "ib_policy": {
+      "general_rule": "Credit is awarded for Higher Level (HL) exams with a score of 5, 6, or 7.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Maximum of 60 transfer credits accepted. The M. Louise Fitzpatrick College of Nursing no longer considers external transfer applications."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous secondary school record (AP/IB coursework)",
+      "High GPA (majority of class in top 10%)",
+      "Significant community service and commitment to social justice"
+    ],
+    "common_activities": [
+      "Community Service/Volunteering",
+      "Part-time Employment",
+      "Athletics",
+      "Arts and Performance"
+    ],
+    "essay_tips": [
+      "Demonstrate a clear alignment with Augustinian Catholic values (truth, unity, love).",
+      "Highlight concrete experiences of leadership in service.",
+      "Express a genuine desire to become an active member of a tight-knit community."
+    ],
+    "red_flags": [
+      "Lack of demonstrated community service.",
+      "Applying to restricted majors (Business, Engineering, Nursing) without fulfilling explicit high school prerequisites."
+    ],
+    "insights": [
+      "Greek life is present and somewhat influential in the social scene, alongside highly popular athletics.",
+      "The campus environment is often described as a tight-knit 'bubble' with strong alumni networking.",
+      "Significant portion of the student body are legacy or alumni-affiliated, shaping the campus culture."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 104228,
+    "employment_rate_2yr": 0.665,
+    "grad_school_rate": 0.212,
+    "top_employers": [
+      "Accenture",
+      "Amazon",
+      "BlackRock",
+      "Deloitte",
+      "JPMorgan Chase",
+      "Johnson & Johnson",
+      "Morgan Stanley"
+    ],
+    "loan_default_rate": 0.014
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.95,
+    "graduation_rate_4_year": 0.87,
+    "graduation_rate_6_year": 0.91
+  }
+}

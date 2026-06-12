@@ -1,0 +1,534 @@
+{
+  "_id": "boston_university",
+  "metadata": {
+    "official_name": "Boston University",
+    "location": {
+      "city": "Boston",
+      "state": "Massachusetts",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Boston University is an elite, private R1 research institution located in the heart of Boston. Known for its rigorous academics and robust interdisciplinary approach, BU offers over 300 programs of study across 17 schools and colleges, fostering a highly global and pre-professional student body.",
+    "market_position": "Elite Private Research University",
+    "admissions_philosophy": "Holistic review with a heavy emphasis on academic rigor and GPA.",
+    "us_news_rank": 41,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "BU's acceptance rate has dropped drastically to around 11%, with nearly 60% of the class filled through binding Early Decision rounds.",
+        "implication": "Regular Decision is exceptionally competitive. Applying Early Decision provides a massive strategic advantage for those who are certain BU is their top choice."
+      },
+      {
+        "category": "Financial",
+        "insight": "Through the affordableBU initiative, the university now meets 100% of demonstrated financial need for admitted domestic first-year students.",
+        "implication": "Despite a high sticker price exceeding $90,000, BU is significantly more accessible to lower- and middle-income domestic applicants."
+      },
+      {
+        "category": "Academic",
+        "insight": "The BU Hub acts as a university-wide general education curriculum, requiring students to take courses across various disciplines regardless of their specific college or major.",
+        "implication": "Students must be prepared for a broad liberal arts foundation and interdisciplinary learning, even in highly technical or pre-professional majors."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A vibrant, urban environment deeply integrated into the city of Boston, featuring over 450 student groups, diverse cultural organizations, and a strong Division I hockey culture.",
+      "transportation_impact": "The campus stretches along the Charles River, with the MBTA Green Line ('B' branch) running directly through it, providing seamless access to the rest of the city.",
+      "research_impact": "An AAU member and R1 institution with over $400 million in federal research funding, offering extensive undergraduate research opportunities through initiatives like UROP."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 11.1,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 34.5,
+      "admits_class_size": 3450,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for students applying for admission through fall 2025 and spring 2026 for all undergraduate schools and scholarship programs.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 6854,
+          "admits": 1936,
+          "acceptance_rate": 28.2,
+          "class_fill_percentage": 59.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 78769,
+        "admits_total": 8749,
+        "enrolled_total": 3318,
+        "acceptance_rate_overall": 11.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 37.9,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 15339,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 18,
+          "waitlist_admit_rate": 0.1,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 80490,
+        "admits_total": 8733,
+        "enrolled_total": 3145,
+        "acceptance_rate_overall": 10.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 36.0,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 15033,
+          "accepted_spots": 8907,
+          "admitted_from_waitlist": 34,
+          "waitlist_admit_rate": 0.22,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 80796,
+        "admits_total": 11607,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 14.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 0.1,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 75778,
+        "admits_total": 14129,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 18.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.70-4.00",
+        "average_weighted": 3.87,
+        "notes": "86% of enrolled students ranked in the top 10% of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1430-1510",
+        "sat_reading_middle_50": "690-750",
+        "sat_math_middle_50": "730-780",
+        "act_composite_middle_50": "32-34",
+        "submission_rate": 45.0,
+        "policy_note": "Test-optional through the Fall 2025 admission cycle."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": 4.0,
+        "international_percentage": 21.0,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-state",
+            "percentage": 87.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 32176,
+            "admits": 3906,
+            "acceptance_rate": 12.1
+          },
+          "women": {
+            "applicants": 48314,
+            "admits": 4827,
+            "acceptance_rate": 10.0
+          }
+        },
+        "racial_breakdown": {
+          "white": 43.0,
+          "black_african_american": 4.0,
+          "hispanic_latino": 11.0,
+          "asian": 14.0,
+          "native_american_alaskan": 0.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 4.0,
+          "unknown": 5.0,
+          "non_resident_alien": 20.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students looking for a broad liberal arts foundation, natural and computational sciences, or social sciences. The largest college at BU.",
+        "housing_profile": "Guaranteed on-campus housing for four years.",
+        "student_archetype": "Intellectually curious and interdisciplinary learners.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 15 major courses divided into Groups A, B, C, and D, all completed with a grade of C or higher.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CAS CS 111 Introduction to Computer Science 1",
+                "CAS CS 112 Introduction to Computer Science 2",
+                "CAS CS 131 Combinatoric Structures",
+                "CAS CS 210 Computer Systems",
+                "CAS CS 330 Introduction to the Analysis of Algorithms"
+              ],
+              "electives": [
+                "CAS CS 320 Concepts of Programming Languages",
+                "CAS CS 332 Elements in the Theory of Computation",
+                "CAS CS 350 Fundamentals of Computing Systems"
+              ],
+              "total_units": 128,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Azer Bestavros (Networking and distributed systems)",
+              "John Byers (Internet platforms and computer networking)"
+            ],
+            "notes": "The BA in Computer Science is heavily theory-based as the program grew out of the mathematics department."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CAS PS 101 General Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must obtain a grade of C or higher in all principal and required related courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CAS PS 211 Experimental Design in Psychology",
+                "CAS PS 231 Physiological Psychology"
+              ],
+              "electives": [
+                "CAS PS 222 Perception and Behavior",
+                "CAS PS 241 Developmental Psychology",
+                "CAS PS 261 Social Psychology",
+                "CAS PS 370 Psychology of the Family"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Requires courses selected from distinct content groups (Group A and Group B) and specific experimental courses."
+          }
+        ]
+      },
+      {
+        "name": "Questrom School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a focused, pre-professional business administration degree with an emphasis on collaboration and analytical skills.",
+        "housing_profile": "Guaranteed on-campus housing for four years.",
+        "student_archetype": "Driven, career-oriented, and highly collaborative future business leaders.",
+        "majors": [
+          {
+            "name": "Business Administration and Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Gateway Requirement: Must successfully earn a minimum grade of C in SM 131, AC 221, EC 101, and MA 121/123 to advance into 300-level Questrom courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "QST SM 131 Business, Markets, & Society",
+                "QST AC 221 Financial Accounting",
+                "QST BA 221 Introduction to Data and Business Analytics",
+                "QST FE 223 Introduction to Financial Management",
+                "QST MK 223 Marketing: Concepts to Consumers",
+                "QST MO 221 Leading People & Teams"
+              ],
+              "electives": [
+                "QST AC 814 Financial Statement Analysis",
+                "QST FE 823 Investments"
+              ],
+              "total_units": 132,
+              "major_units": 52
+            },
+            "notable_professors": [
+              "Peter Wysocki (Accounting)",
+              "Susan Fournier (Marketing)",
+              "Evan Apfelbaum (Management & Organizations)"
+            ],
+            "notes": "All Questrom students major in Business Administration and Management but can choose from 13 specific concentrations. The older CORE project is being replaced with 'XP 298: Innovation project'."
+          }
+        ]
+      },
+      {
+        "name": "Faculty of Computing & Data Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in interdisciplinary approaches to artificial intelligence, data engineering, and tech ethics.",
+        "housing_profile": "Guaranteed on-campus housing for four years.",
+        "student_archetype": "Innovative, data-driven problem solvers.",
+        "majors": [
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Intra-University Transfer into CDS requires a cumulative GPA of 2.0 or greater and a grade of B- or better in any non-CDS courses to be counted toward the major."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "QuestBridge"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Early Decision 1"
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-06",
+        "is_binding": true,
+        "notes": "Early Decision 2"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-06",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires one 300-word supplemental essay. Applicants choose between reflecting on a social/community issue that resonates with them OR explaining what excites them about BU and how they hope to contribute to the campus community."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Recommendations",
+        "Extracurricular activities",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "BU places the highest emphasis on GPA and academic rigor. Demonstrated interest is tracked (opening emails, visits, virtual sessions) and is considered during the process. BU no longer considers legacy status."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider applying to the College of General Studies (CGS), which acts as a two-year liberal arts foundation and may have a slightly higher acceptance rate.",
+      "Understand that applying to talent-based programs (College of Fine Arts) or Engineering (ENG) will face different, highly rigorous evaluations.",
+      "Intra-University Transfer (IUT) is generally accessible after enrollment, meaning students can start in a less impacted college and transfer to their desired program later if they maintain a strong GPA."
+    ],
+    "college_ranking_tactics": [
+      "Applying to a less competitive school internally and transferring later."
+    ],
+    "alternate_major_strategy": "BU applicants must choose a specific school or college. If an applicant is not admitted to their first-choice program, BU may offer them an alternate admission to the College of General Studies (CGS), which entails a gap semester in the fall and a summer term in London."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 66670.0,
+        "total_coa": 90207.0,
+        "housing": 19020.0
+      },
+      "out_of_state": {
+        "tuition": 66670.0,
+        "total_coa": 90207.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Trustee Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "December 1",
+        "benefits": "Covers full undergraduate tuition and mandatory fees, renewable for four years.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Half Tuition",
+        "deadline": "December 1",
+        "benefits": "Covers half of tuition, renewable for four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Financial award for recognized National Merit Finalists.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Most programs award credit for AP exam scores of 4 or 5.",
+      "exceptions": [
+        "Music Theory requires a score of 3.",
+        "Students accepted into Accelerated Medical and Dental programs cannot receive advanced credit."
+      ],
+      "usage": "Can be used to fulfill degree requirements, pursue a dual degree, or accelerate graduation."
+    },
+    "ib_policy": {
+      "general_rule": "Awards 8 credits for test scores of 5, 6, or 7 on Higher Level (HL) examinations.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Course Equivalency Database"
+      ],
+      "restrictions": "Students must earn a grade of C or better from a regionally accredited institution. A maximum of 60 external credits can be applied for first-year entrants (68 for transfer students). No credit is given for physical education or ROTC."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous coursework in high school (AP/IB).",
+      "A high unweighted GPA (average around 3.87+).",
+      "A clear narrative that connects personal passion to specific BU offerings."
+    ],
+    "common_activities": [
+      "Community service",
+      "Activism and social justice",
+      "Research",
+      "Student government",
+      "Academic clubs"
+    ],
+    "essay_tips": [
+      "Focus heavily on the concept of 'community'\u2014either your past contributions to your local community or how you plan to contribute to BU's campus.",
+      "Use highly specific examples of BU courses, professors, and clubs to demonstrate genuine interest and fit.",
+      "Structure your essay like a story with a definitive beginning, middle, and end."
+    ],
+    "red_flags": [
+      "Applying with zero demonstrated interest.",
+      "Using generic reasons in the supplemental essay rather than identifying specific BU resources.",
+      "Writing about overly controversial topics without connecting them to tangible community action."
+    ],
+    "insights": [
+      "Grade deflation is a known reputational issue, particularly in STEM and Questrom.",
+      "The campus is highly integrated into the city, which offers incredible internship access but lacks a traditional 'enclosed' campus feel.",
+      "The academic environment can be highly competitive and rigorous, leading to stress for some students."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 83615,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Boston University",
+      "Technology and Internet Companies",
+      "Higher Education Institutions",
+      "Advertising Agencies"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.0,
+    "graduation_rate_4_year": 84.0,
+    "graduation_rate_6_year": 89.0
+  }
+}

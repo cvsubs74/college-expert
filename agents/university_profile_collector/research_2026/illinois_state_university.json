@@ -1,0 +1,472 @@
+{
+  "_id": "illinois_state_university",
+  "metadata": {
+    "official_name": "Illinois State University",
+    "location": {
+      "city": "Normal",
+      "state": "Illinois",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-14",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Illinois State University (ISU) is a comprehensive public research university founded in 1857, making it the oldest public university in Illinois. Known for its strong roots in teacher education and robust programs in business and nursing, ISU offers a 'big school with a small town feel' experience, highly valuing a holistic admissions approach and student community engagement.",
+    "market_position": "Large Public R2 Research University",
+    "admissions_philosophy": "Holistic Review",
+    "us_news_rank": 222,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "High overall acceptance rate (88.2%) but highly selective in specific programs like Nursing (40-50% acceptance for BSN).",
+        "implication": "Applicants should apply by the November 1 priority deadline to secure spots in impacted majors and guarantee merit scholarship consideration."
+      },
+      {
+        "category": "Financial",
+        "insight": "ISU locks in the tuition rate for an incoming student's consecutive four years.",
+        "implication": "Provides families with predictable cost planning, significantly mitigating the financial risk of tuition hikes during a student's degree timeline."
+      },
+      {
+        "category": "Academic",
+        "insight": "Maintains an R2 designation with 65% of students graduating within 6 years, significantly above the national public average.",
+        "implication": "ISU delivers strong academic support and research opportunities without the ultra-competitive bottleneck of R1 flagship universities."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and inclusive with over 400 registered student organizations, a prominent Greek life, and NCAA Division I athletics (Redbirds). The campus features a beautiful Quad designated as a Tree Campus USA.",
+      "transportation_impact": "Located in the twin cities of Bloomington-Normal, accessible via Amtrak and major highways, providing a safe, student-friendly college town atmosphere easily connected to Chicago.",
+      "research_impact": "Classified as an R2 Doctoral University with high research activity, offering undergraduates substantial opportunities for independent research and presentation showcases."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.882,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.913,
+      "admits_class_size": 4285,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional. Submission of SAT or ACT scores is optional but will be considered if provided.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 21573,
+        "admits_total": 19017,
+        "enrolled_total": 4285,
+        "acceptance_rate_overall": 0.882,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.225,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Illinois State University explicitly states in the Common Data Set that it does not have a waitlist policy for first-time, first-year applicants."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 20884,
+        "admits_total": 18589,
+        "enrolled_total": 4147,
+        "acceptance_rate_overall": 0.89,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.22,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "No waitlist policy in effect."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.28-4.02",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.62,
+        "notes": "Students need a mix of A's and B's, generally leaning towards A's, especially in rigorous AP/IB courses."
+      },
+      "testing": {
+        "sat_composite_middle_50": "990-1210",
+        "sat_reading_middle_50": "500-620",
+        "sat_math_middle_50": "490-590",
+        "act_composite_middle_50": "21-27",
+        "submission_rate": 0.44,
+        "policy_note": "While 44% submit SAT scores, standardized testing is not strictly required."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.33,
+        "legacy_percentage": null,
+        "international_percentage": 0.01,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8709,
+            "admits": 7477,
+            "acceptance_rate": 0.858
+          },
+          "women": {
+            "applicants": 12175,
+            "admits": 11112,
+            "acceptance_rate": 0.912
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.693,
+          "black_african_american": 0.108,
+          "hispanic_latino": 0.131,
+          "asian": 0.027,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 0.039,
+          "unknown": null,
+          "non_resident_alien": 0.01
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Mennonite College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.45,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants should have a GPA well above a 3.6 and robust prerequisite science foundations.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Future healthcare professionals deeply engaged in clinical and practical care settings.",
+        "majors": [
+          {
+            "name": "Registered Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": "40-50%",
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Biology",
+              "Chemistry"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Strong TEAS scores (average 80%+) are highly recommended. Volunteer healthcare hours boost acceptance odds.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BSC 196",
+                "BSC 197",
+                "CHE 140"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Janet Krejci (Nursing Administration)"
+            ],
+            "notes": "One of the most competitive and highest yielding degree programs at ISU with initial salaries averaging $62,500."
+          }
+        ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": 0.75,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students targeting corporate careers, marketing, accounting, and finance. High placement with corporate partners like State Farm.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Driven, networking-oriented students seeking internships right away.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "75%",
+            "average_gpa_admitted": 3.39,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MAT 145"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Marketing is the 2nd most popular major at the university."
+          }
+        ]
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.88,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students committed to teaching and primary/secondary education. ISU is a top 10 producer of teachers nationally.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Future educators looking to leverage ISU's historical roots as a Normal School.",
+        "majors": [
+          {
+            "name": "Elementary Education and Teaching",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "88%",
+            "average_gpa_admitted": 3.5,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENG 101"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The most popular major at Illinois State University."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.88,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking rigorous liberal arts, physical sciences, and social sciences.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Researchers and academics.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": "88%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Alycia Hund (Psychology)"
+            ],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "ISU Application Portal"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Priority RD",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Highly recommended to apply by Nov 1 for priority admission to major of choice and automatic consideration for merit scholarships."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-04-01",
+        "is_binding": false,
+        "notes": "Rolling admissions, admitted as space allows."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Optional personal statement can be submitted to provide context to the holistic review process."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Standardized Test Scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Class rank",
+        "Talent/ability",
+        "Volunteer work",
+        "Extracurricular activities",
+        "Recommendation letters",
+        "Work experience"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Considered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Applying by November 1 guarantees scholarship consideration for 3.25+ GPAs."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Targeting 'Priority Deadlines' is functionally a pseudo-early action strategy due to scholarship advantages and space limits in popular majors like Nursing.",
+      "If interested in highly selective majors like Nursing, apply by the priority deadline and emphasize extensive health-related volunteer experience.",
+      "Ensure rigor is established by taking AP/IB courses if available, as ISU values 'Rigor of secondary school record' as very important."
+    ],
+    "college_ranking_tactics": [
+      "Utilize the State Seal of Biliteracy for up to 8 credit hours to demonstrate advanced placement ability."
+    ],
+    "alternate_major_strategy": "Applying into an alternate major or Undeclared is an option for general college admittance, but students must be aware that transferring internally to impacted programs like Nursing requires high requisite GPAs and is highly competitive."
+  },
+  "financials": {
+    "tuition_model": "Tuition Guarantee: Rate for tuition is locked in for four years as an incoming freshman or transfer student.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16212.0,
+        "total_coa": 35818.0,
+        "housing": 12902.0
+      },
+      "out_of_state": {
+        "tuition": 28278.0,
+        "total_coa": 47884.0,
+        "supplemental_tuition": 12066.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 18996.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.78,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition & Fees",
+        "deadline": "2024-11-01",
+        "benefits": "Covers full tuition and mandatory fees for up to 4 years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "AIM HIGH Scholarships",
+        "type": "Need/Merit",
+        "amount": "Varies",
+        "deadline": "2024-11-01",
+        "benefits": "Substantial financial assistance packages up to full tuition for academically strong in-state students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Redbird Academic Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2024-11-01",
+        "benefits": "Merit award based on high school GPA (guaranteed for 3.25+ if applied early).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Transfer Student Scholarship",
+        "type": "Merit",
+        "amount": "$1,500 - $2,500",
+        "deadline": "2025-01-15",
+        "benefits": "Given to high achieving transfer students with 3.0+ transfer GPAs.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards course exemption or credit for AP scores of 3, 4, or 5.",
+      "exceptions": [
+        "Biology requires a 4 or 5 for BSC 196 and 197 (8 hours); a 3 grants BSC 101 (3 hours).",
+        "Calculus BC requires a 4 or 5 for MAT 145 and 146 (8 hours); a 3 grants MAT 145 (4 hours)."
+      ],
+      "usage": "Credits count towards general education requirements or specific major prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Appropriate scores on the International Baccalaureate Diploma Programme award proficiency and specific course credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "My.IllinoisState.edu Transfer Credit evaluation",
+        "State of Illinois Reverse Transfer of Credit Initiative"
+      ],
+      "restrictions": "Transfer credit from community colleges is limited to 70 semester hours; from four-year colleges, it is limited to 90 semester hours."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Maintain a strong high school GPA (average admitted is 3.62 weighted).",
+      "Demonstrate interest and apply by the November 1 Priority Deadline.",
+      "Exhibit strong involvement in extracurriculars, leadership, or volunteer roles."
+    ],
+    "common_activities": [
+      "Volunteer work and community service",
+      "High school sports or club activities",
+      "Involvement in fine arts or theater programs"
+    ],
+    "essay_tips": [
+      "Use the optional personal statement to provide context on academic dips or personal growth.",
+      "Highlight leadership experiences and how you plan to contribute to the ISU community."
+    ],
+    "red_flags": [
+      "Applying late in the rolling admissions cycle (missing the November 1 priority deadline).",
+      "Dropping academic rigor during senior year."
+    ],
+    "insights": [
+      "The campus is noted for its 'big school/small town' feel.",
+      "A significant portion of students are first-generation (approx 33%), and ISU has extensive support programs like TRIO to assist them."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62507,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "State Farm",
+      "Caterpillar Inc.",
+      "Bromenn Medical Center",
+      "Country Financial",
+      "Illinois State University"
+    ],
+    "loan_default_rate": 0.033
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.814,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 0.65
+  }
+}

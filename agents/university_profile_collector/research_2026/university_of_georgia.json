@@ -1,0 +1,437 @@
+{
+  "_id": "university_of_georgia",
+  "metadata": {
+    "official_name": "University of Georgia",
+    "location": {
+      "city": "Athens",
+      "state": "Georgia",
+      "type": "Public"
+    },
+    "last_updated": "2025-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Georgia (UGA) is the state's flagship public land-grant and sea-grant research university. It is known for its rigorous academic programs, vibrant college town environment in Athens, and highly selective admissions process, particularly for out-of-state students [cite: 1, 9].",
+    "market_position": "Public Flagship / Top 20 Public University",
+    "admissions_philosophy": "Academics-First Holistic Review",
+    "us_news_rank": 46,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Overall acceptance rates have dropped to 33%, with a sharp divide between in-state (~50%) and out-of-state (~28%) acceptance rates, driven by a mandate to keep the incoming class at 80% Georgia residents [cite: 3, 12].",
+        "implication": "Out-of-state applicants face a significantly higher barrier to entry and must present exceptional academic profiles to be competitive."
+      },
+      {
+        "category": "Academic",
+        "insight": "Course rigor is the most critical factor in UGA's review process. The average admitted student has taken 10 or more AP, IB, or Dual Enrollment courses and boasts a recalculated core GPA over 4.15 [cite: 7, 13].",
+        "implication": "Students avoiding challenging coursework to protect their GPA are at a distinct disadvantage compared to those taking the most rigorous courses available at their high schools [cite: 12]."
+      },
+      {
+        "category": "Culture",
+        "insight": "UGA offers a classic college town environment with heavily integrated Greek life, over 800 student organizations, and major SEC D-I athletics [cite: 1, 10].",
+        "implication": "The campus appeals strongly to students seeking a traditional, spirited, and highly active collegiate experience."
+      },
+      {
+        "category": "Financial",
+        "insight": "UGA provides excellent value, especially for in-state students eligible for the HOPE or Zell Miller scholarships, resulting in a low net cost of attendance relative to post-graduate earnings [cite: 8, 14].",
+        "implication": "It is an exceptionally high-ROI option for Georgia residents, though out-of-state students face much steeper tuition costs."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "UGA is situated in Athens, famously known as one of America's best college towns, featuring a vibrant music scene, prominent Greek life, and massive school spirit centered around SEC football [cite: 10, 12, 15].",
+      "transportation_impact": "The main campus spans 762 acres with 465 buildings, making campus transit essential for navigating between classes, residence halls, and downtown Athens [cite: 9].",
+      "research_impact": "As an R1 institution with over $500 million in annual research expenditures, UGA offers extensive undergraduate research opportunities, notably through the Center for Undergraduate Research Opportunities (CURO) and its active-learning initiatives [cite: 7, 14]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 33.0,
+      "in_state_acceptance_rate": 50.0,
+      "out_of_state_acceptance_rate": 28.0,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 73.92,
+      "admits_class_size": 6200,
+      "is_test_optional": false,
+      "test_policy_details": "Standardized test scores (SAT or ACT) are strictly required for admission per the University System of Georgia Board of Regents. UGA superscores both exams [cite: 4, 5, 16].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 30490,
+          "admits": 9500,
+          "acceptance_rate": 31.6,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 43000,
+        "admits_total": 15900,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 37.0,
+        "acceptance_rate_in_state": 50.0,
+        "acceptance_rate_out_of_state": 28.0,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3620,
+          "accepted_spots": 1871,
+          "admitted_from_waitlist": 157,
+          "waitlist_admit_rate": 8.39,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data pulled from historical tracking; admitted numbers drop significantly based on yield [cite: 12, 17, 18]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 43416,
+        "admits_total": 16148,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 37.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3842,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 739,
+          "waitlist_admit_rate": 19.23,
+          "is_waitlist_ranked": false
+        },
+        "notes": "[cite: 12, 19]"
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 39354,
+        "admits_total": 16730,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 43.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3022,
+          "accepted_spots": 1543,
+          "admitted_from_waitlist": 34,
+          "waitlist_admit_rate": 1.13,
+          "is_waitlist_ranked": false
+        },
+        "notes": "[cite: 12, 19, 20]"
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 39090,
+        "admits_total": 15689,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 40.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 1893,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 277,
+          "waitlist_admit_rate": 14.63,
+          "is_waitlist_ranked": false
+        },
+        "notes": "[cite: 12, 19]"
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.05-4.33",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.19,
+        "notes": "UGA recalculates GPA based exclusively on core academic courses (English, math, science, social science, foreign language) and adds 0.5 points for AP/IB courses if not already weighted by the high school [cite: 13, 21]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1280-1470",
+        "sat_reading_middle_50": "640-720",
+        "sat_math_middle_50": "630-730",
+        "act_composite_middle_50": "29-34",
+        "submission_rate": 100.0,
+        "policy_note": "Submission rate is effectively 100% as UGA is not test-optional and strictly requires SAT or ACT scores [cite: 4, 13, 22]."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": null,
+        "international_percentage": null,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 80.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 20.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 17793,
+            "admits": 6275,
+            "acceptance_rate": 35.0
+          },
+          "women": {
+            "applicants": 24933,
+            "admits": 9833,
+            "acceptance_rate": 39.0
+          }
+        },
+        "racial_breakdown": {
+          "white": null,
+          "black_african_american": null,
+          "hispanic_latino": null,
+          "asian": null,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Terry College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students should transfer into or declare as intended-business majors as early as possible. Admission to a Terry major is competitive and evaluated based on specific selection criteria, not guaranteed merely by meeting minimums [cite: 11, 23, 24].",
+        "housing_profile": "Traditional undergraduate residence halls.",
+        "student_archetype": "Driven, career-oriented students targeting elite finance, accounting, or risk management roles.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1113",
+              "ACCT 2101",
+              "BUSN 3000"
+            ],
+            "minimum_gpa_to_declare": 2.6,
+            "weeder_courses": [],
+            "special_requirements": "Must have an overall GPA of 2.6+ and a UGA GPA of 2.0+, and complete the Terry Accounting Exam [cite: 23, 24, 25].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.6,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Finance is a high-demand major. Students not admitted to their first choice will be evaluated for their second choice within the college [cite: 24]."
+          },
+          {
+            "name": "Risk Management and Insurance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1113",
+              "ACCT 2101",
+              "BUSN 3000"
+            ],
+            "minimum_gpa_to_declare": 2.6,
+            "weeder_courses": [],
+            "special_requirements": "Consistent with Terry College B.B.A. requirements [cite: 23, 25].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.6,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Consistently ranked #1 in the nation among all institutions [cite: 25, 26]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-10-15",
+        "is_binding": false,
+        "notes": "Materials due October 29. Decisions typically released in late November for in-state and mid-December for out-of-state [cite: 27, 28]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-01",
+        "is_binding": false,
+        "notes": "Materials due January 15. Decisions typically released in mid-March [cite: 28, 29]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Short supplemental essays required as part of the holistic review [cite: 12, 28]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of high school course load",
+        "Academic GPA",
+        "Standardized test scores"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience",
+        "Essays"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UGA utilizes a 'whole-student review' model but is unabashedly academics-first. The rigor of high school coursework over four years is heavily scrutinized. UGA explicitly does NOT consider demonstrated interest or legacy status [cite: 4, 12, 28]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "UGA admits students to the university as a whole, not to specific majors. Intended major selection does not cap or restrict initial freshman admission [cite: 30, 31]."
+    ],
+    "college_ranking_tactics": [
+      "Applying Early Action (EA) signals strong preference and carries significantly higher acceptance rates, especially for in-state students (42% EA in-state vs. 23% EA out-of-state) [cite: 7, 22]."
+    ],
+    "alternate_major_strategy": "Since UGA admits to the university rather than by major, an alternate major strategy is not highly relevant for first-year admissions. However, students intending to enter high-demand fields like Business must pass internal transfer requirements later [cite: 23, 31]."
+  },
+  "financials": {
+    "tuition_model": "Flat rate / Public",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11450.0,
+        "total_coa": 28872.0,
+        "housing": 11672.0
+      },
+      "out_of_state": {
+        "tuition": 31688.0,
+        "total_coa": 49110.0,
+        "supplemental_tuition": 20238.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 11131.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 86.0,
+    "scholarships": [
+      {
+        "name": "Foundation Fellowship",
+        "type": "Merit",
+        "amount": "$15,050 - $28,800 + Tuition Waivers",
+        "deadline": "November",
+        "benefits": "Effectively a full ride; includes stipends that approximate the annual cost of attendance plus full tuition waivers [cite: 32].",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Classic Scholars Award / Waiver",
+        "type": "Merit",
+        "amount": "$22,800",
+        "deadline": "",
+        "benefits": "Significantly reduces out-of-state tuition burden [cite: 33, 34].",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "May 1",
+        "benefits": "Provides $500 per academic year for National Merit Finalists who select UGA as their first choice school [cite: 35].",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants credit for 3s, 4s, and 5s depending on the specific exam.",
+      "exceptions": [
+        "AP Calculus AB/BC requires a 3 or higher to exempt MATH 1113, though taking the math placement exam is still strongly recommended.",
+        "AP English Language/Literature requires a 3 or 4 for ENGL 1101 credit, and a 5 for ENGL 1102 credit."
+      ],
+      "usage": "Satisfies core curriculum and degree requirements. UGA adds 0.5 to recalculated admissions GPA for AP classes [cite: 21, 36, 37]."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded for Higher Level (HL) and Standard Level (SL) scores, generally requiring a 4+ for HL and 5+ for SL [cite: 37].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UGA Transfer Equivalency System"
+      ],
+      "restrictions": "Requires 30-59 completed hours with a 3.5+ transfer GPA, or 60+ hours with a 3.2+ transfer GPA for straightforward admission. Secondary review is triggered for lower GPAs [cite: 13, 23]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Taking the most rigorous courses available at your high school (average admitted student has 10+ AP/IB/DE courses) [cite: 13].",
+      "Earning predominantly A's in core classes (UGA core GPA average is 4.19) [cite: 13].",
+      "High SAT/ACT scores (mid-50% SAT 1280-1470) [cite: 13]."
+    ],
+    "common_activities": [
+      "Leadership in clubs",
+      "Community service",
+      "Athletics",
+      "Part-time work",
+      "Intellectual pursuits and creative endeavors"
+    ],
+    "essay_tips": [
+      "Address any academic hardships or grade drops in the additional information section [cite: 15].",
+      "Highlight intellectual curiosity, community impact, and personal maturity [cite: 28]."
+    ],
+    "red_flags": [
+      "Avoiding challenging courses to protect GPA (UGA prefers a slightly lower GPA with maximum rigor) [cite: 12].",
+      "Applying out-of-state without exceptional statistics, given the 80% in-state mandate [cite: 7]."
+    ],
+    "insights": [
+      "UGA does not care about demonstrated interest or legacy status [cite: 4].",
+      "In-state students have a massive advantage; the university strictly manages yield to ensure an 80% resident class [cite: 3, 38]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 57565,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "The Vanguard Group",
+      "The Walt Disney World Resort",
+      "Turner Broadcasting System",
+      "United Parcel Service",
+      "United States Air Force",
+      "United States Army",
+      "Walgreens",
+      "Walmart",
+      "Wells Fargo & Company"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.3,
+    "graduation_rate_4_year": 76.0,
+    "graduation_rate_6_year": 90.0
+  }
+}

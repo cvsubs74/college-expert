@@ -1,0 +1,411 @@
+{
+  "_id": "university_of_connecticut",
+  "metadata": {
+    "official_name": "University of Connecticut",
+    "location": {
+      "city": "Storrs",
+      "state": "Connecticut",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Connecticut (UConn) is a top-tier public land-grant research university (R1) located in Storrs. Known for a spirited campus culture anchored by dominant Big East athletics, UConn offers more than 115 undergraduate majors across 14 schools and colleges, emphasizing holistic admissions and robust STEM and healthcare programs.",
+    "market_position": "Public Ivy / State Flagship",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 70,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Overall acceptance rates have declined slightly to ~52.4% as applications surged past 55,000 for the Fall 2024 cycle. Waitlist admission varies wildly by year (from >50% admit rate down to 4%).",
+        "implication": "Applicants should not treat UConn as a guaranteed safety school, particularly for out-of-state students or those applying to impacted programs like Computer Science or Nursing."
+      },
+      {
+        "category": "Academic",
+        "insight": "UConn extended its test-optional policy through Fall 2026, leading to only 36% of enrolled students submitting SAT scores.",
+        "implication": "Students with SAT scores below the 25th percentile (1210) should safely withhold scores without penalty, as the admissions committee weighs transcript rigor and extracurriculars heavily."
+      },
+      {
+        "category": "Culture",
+        "insight": "UConn pairs an isolated, rural campus setting with an intensely spirited, large-scale state school environment driven by basketball.",
+        "implication": "Best fit for students seeking massive school spirit, robust undergraduate research, and a self-contained campus community, though commuters may feel isolated."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly spirited social scene largely revolving around Greek life, student clubs, and NCAA Division I Big East basketball. The rural 'fringe town' location means campus life is self-contained.",
+      "transportation_impact": "The Storrs campus is somewhat geographically isolated. Having a car is highly advantageous for upperclassmen, and commuters report some social isolation compared to on-campus residents. Housing capacity has been strained recently due to over-enrollment.",
+      "research_impact": "As an R1 institution, UConn offers massive undergraduate research opportunities, especially in Biomedical Sciences, Engineering, and Materials Science, supported by extensive funding and specific research centers."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 52.39,
+      "in_state_acceptance_rate": 51.0,
+      "out_of_state_acceptance_rate": 55.0,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 66.23,
+      "admits_class_size": 4469,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the Fall 2026 entry term. Only 36% of admitted students submit SAT scores. Does not require the essay component or subject tests.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 55479,
+        "admits_total": 29065,
+        "enrolled_total": 4469,
+        "acceptance_rate_overall": 52.39,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.37,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2438,
+          "accepted_spots": 642,
+          "admitted_from_waitlist": 28,
+          "waitlist_admit_rate": 4.36,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate calculated as Admits / Accepted Spots. Total offered waitlist spots generated a 1.15% overall pull rate."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 46645,
+        "admits_total": 25164,
+        "enrolled_total": 4178,
+        "acceptance_rate_overall": 53.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.6,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2253,
+          "accepted_spots": 979,
+          "admitted_from_waitlist": 550,
+          "waitlist_admit_rate": 56.17,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Massive waitlist movement this cycle compared to 2024."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 40880,
+        "admits_total": 22288,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 54.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data for 2022 not publicly disclosed in standard formats."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "UConn evaluates rigor of secondary school record primarily. Transfer average GPA is 3.77."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1210-1440",
+        "sat_reading_middle_50": "610-710",
+        "sat_math_middle_50": "600-730",
+        "act_composite_middle_50": "28-33",
+        "submission_rate": 36.0,
+        "policy_note": "Test-optional pilot running through Fall 2026. Only 4-5% submit ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 10.5,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Connecticut)",
+            "percentage": 75.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 25.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 23683,
+            "admits": 11403,
+            "acceptance_rate": 48.14
+          },
+          "women": {
+            "applicants": 31770,
+            "admits": 17652,
+            "acceptance_rate": 55.56
+          }
+        },
+        "racial_breakdown": {
+          "white": 49.8,
+          "black_african_american": 6.9,
+          "hispanic_latino": 14.0,
+          "asian": 11.5,
+          "native_american_alaskan": 0.08,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 4.08,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants must show rigorous math and science background (Calculus and Lab Sciences).",
+        "housing_profile": "Traditional undergraduate dorms, standard university assignment.",
+        "student_archetype": "Technically minded students seeking rigorous coursework and immediate hands-on design project experience.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1131Q",
+              "CHEM 1127Q or PHYS 1501Q",
+              "CSE 2050"
+            ],
+            "minimum_gpa_to_declare": 3.6,
+            "weeder_courses": [],
+            "special_requirements": "Requires completion of specific foundational engineering courses with strong grades.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.6,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfer is highly restricted and competitive. Anecdotal data points to needing a 3.6 to 3.7 GPA in foundational STEM and CSE courses to successfully transfer in."
+          }
+        ]
+      },
+      {
+        "name": "Elisabeth DeLuca School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely competitive with very limited seats. Best for students completely certain of a nursing career.",
+        "housing_profile": "Standard undergraduate housing.",
+        "student_archetype": "Compassionate, high-achieving STEM-focused students.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "No internal transfer guarantees. Transfers face steep competition for clinical spaces.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most competitive restricted programs at UConn."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Priority Application Deadline for Merit & Honors Consideration, as well as Special Programs in Medicine/Dental Medicine/Law."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline for the Storrs Campus. Decisions released in early March."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-15",
+        "details": "Requires a strong personal essay reflective of leadership, resilience, and intellectual curiosity."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of Secondary School Record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Personal Essay",
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UConn heavily values academic rigor (AP, IB, Honors) over raw, unweighted GPA. While test-optional, robust test scores can be a significant differentiating factor for out-of-state applicants."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to non-impacted majors in the College of Liberal Arts and Sciences to increase baseline admission chances if scores/GPA are borderline.",
+      "For highly restrictive programs like Nursing or Computer Science, apply Direct Admit; transferring in later is notoriously difficult and statistically improbable."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants choosing an impacted major as their primary choice should carefully select a secondary/alternate major with lower entry barriers (e.g., Mathematics instead of Computer Science) as UConn will review for alternate program fits if denied from the first choice."
+  },
+  "financials": {
+    "tuition_model": "Public University Model (In-State vs. Out-of-State differentiation)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 21044.0,
+        "total_coa": 40744.0,
+        "housing": 14380.0
+      },
+      "out_of_state": {
+        "tuition": 43712.0,
+        "total_coa": 63412.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 83.0,
+    "scholarships": [
+      {
+        "name": "Nutmeg Scholarship",
+        "type": "Merit",
+        "amount": "Full Ride (Tuition, Room, Board)",
+        "deadline": "2024-11-08",
+        "benefits": "Provides full tuition, room, board, and fees. Highly competitive.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Day of Pride Scholarship",
+        "type": "Need/Merit",
+        "amount": "Full Ride",
+        "deadline": "2024-11-08",
+        "benefits": "Awarded to outstanding CT high school seniors from disadvantaged backgrounds.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "2024-11-08",
+        "benefits": "Covers full cost of attendance and an enrichment fund. Derived from the Nutmeg/Day of Pride applicant pool.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for most AP scores of 4 or 5.",
+      "exceptions": [
+        "Online/asynchronous laboratory sciences do NOT transfer.",
+        "Online/asynchronous foreign language courses are generally denied."
+      ],
+      "usage": "Can fulfill major prerequisites, satisfy general education requirements, or serve as free electives."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) IB exams with scores of 5 or higher.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UConn Transfer Credit Equivalency Website"
+      ],
+      "restrictions": "Grades from previous institutions do not transfer into the UConn GPA calculation. Students must earn a 'C' or higher for the credit to transfer."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Consistent academic rigor through all four years of high school.",
+      "Strong personal essays highlighting leadership and community impact.",
+      "Submission by the Dec 1 Priority deadline for optimal scholarship and honors college consideration."
+    ],
+    "common_activities": [
+      "Varsity Athletics/Club Sports",
+      "Community Service/Volunteer Work",
+      "Greek Life Participation"
+    ],
+    "essay_tips": [
+      "Highlight specific academic connections to UConn's specific colleges or research centers.",
+      "Showcase resilience and personal growth."
+    ],
+    "red_flags": [
+      "Dropping core subjects in senior year.",
+      "Applying to restricted programs (Nursing/CS) with low math/science grades."
+    ],
+    "insights": [
+      "Campus housing has been over-capacity recently; apply for housing strictly by deadlines.",
+      "While a massive basketball school, the rural location can feel isolating to those without a car or those commuting."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78925,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 25.0,
+    "top_employers": [
+      "General Dynamics Electric Boat",
+      "Travelers",
+      "PwC",
+      "The Hartford Financial Services Group",
+      "RTX",
+      "Hartford Hospital",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 92.0,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 83.0
+  }
+}

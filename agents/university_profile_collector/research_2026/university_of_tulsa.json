@@ -1,0 +1,43 @@
+{
+  "name": "Computer Science",
+  "degree_type": "B.S.C.S.",
+  "is_impacted": true,
+  "acceptance_rate": null,
+  "average_gpa_admitted": null,
+  "prerequisite_courses": [],
+  "minimum_gpa_to_declare": 2.0,
+  "weeder_courses": [
+    "Networking",
+    "Calculus"
+  ],
+  "special_requirements": "Must complete all computer science courses in the curriculum with a grade-point average of at least 2.0.",
+  "admissions_pathway": "Pre-Major",
+  "internal_transfer_allowed": true,
+  "direct_admit_only": false,
+  "internal_transfer_gpa": 2.0,
+  "curriculum": {
+    "core_courses": [
+      "CS 1001 Introduction to Computer Science",
+      "CS 1043 Introduction to Programming and Problem-solving",
+      "CS 2001 Computer and Engineering Ethics",
+      "CS 2003 Fundamentals of Algorithm and Computer Applications",
+      "CS 2033 Computer Architecture, Organization and Assembler",
+      "CS 2123 Data Structures",
+      "CS 3003 Comparative Programming Languages",
+      "CS 3013 Discrete Mathematics",
+      "CS 3053 Operating Systems",
+      "CS 3513 Software Engineering",
+      "CS 4163 Database Systems",
+      "CS 4513 Senior Software Projects II"
+    ],
+    "electives": [
+      "CS 4013 Compiler Construction",
+      "CS 4333 Computer Networks"
+    ],
+    "total_units": 124,
+    "major_units": 99
+  },
+  "notable_professors": [],
+  "notes": "Designated a Center of Excellence in Information Assurance by the NSA.",
+  "_id": "university_of_tulsa"
+}

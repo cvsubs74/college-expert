@@ -1,0 +1,512 @@
+{
+  "_id": "california_institute_of_technology",
+  "metadata": {
+    "official_name": "California Institute of Technology",
+    "location": {
+      "city": "Pasadena",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-18",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The California Institute of Technology (Caltech) is a world-renowned, fiercely competitive science and engineering research institution. Characterized by its tiny undergraduate population, rigorous core curriculum, and deep ties to NASA's Jet Propulsion Laboratory, Caltech caters exclusively to students with an exceptional aptitude for proof-based mathematics and STEM research.",
+    "market_position": "Elite Private Research University",
+    "admissions_philosophy": "Numbers-focused and intensely STEM-oriented, utilizing holistic review but heavily prioritizing proof-based math readiness and demonstrated research potential.",
+    "us_news_rank": 11,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Caltech is arguably the most selective institution in the U.S. by acceptance rate (under 4%), rejecting over 96% of highly qualified STEM applicants.",
+        "implication": "Applicants must demonstrate world-class mathematical and scientific ability; even perfect test scores are treated merely as a baseline."
+      },
+      {
+        "category": "Academic",
+        "insight": "All freshmen enroll undeclared and must pass the 'Integrated Core,' which includes rigorous calculus, classical mechanics, electromagnetism, and chemistry.",
+        "implication": "Students cannot 'game' admissions by applying to less popular majors; everyone must survive the same grueling STEM foundation."
+      },
+      {
+        "category": "Culture",
+        "insight": "The social fabric revolves around a collaborative, Harry Potter-esque 'House System' and a strictly enforced Honor Code.",
+        "implication": "The environment is a pressure-cooker but relies on extreme peer collaboration (take-home exams, group problem sets) rather than cutthroat competition."
+      },
+      {
+        "category": "Financial",
+        "insight": "Caltech provides a 'no-loan' financial aid package for families earning under $90,000 but offers exactly zero merit-based scholarships.",
+        "implication": "The institution is highly affordable for low-to-middle-income families, but wealthy families will pay full sticker price regardless of the student's brilliance."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Driven by an 8-house residential system with rich traditions, inter-house competitions, and pranks. The vibe is decidedly quirky, intense, and deeply collaborative.",
+      "transportation_impact": "Located in a suburban setting within walking distance to Old Town Pasadena, with easy access to the greater Los Angeles metropolitan area.",
+      "research_impact": "Unparalleled. With a 3:1 student-to-faculty ratio and management of NASA's Jet Propulsion Laboratory (JPL), undergrads enjoy immense access to cutting-edge research, most notably through the paid SURF (Summer Undergraduate Research Fellowships) program."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 2.57,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 6.18,
+      "admits_class_size": 235,
+      "is_test_optional": false,
+      "test_policy_details": "Standardized testing (SAT or ACT) is REQUIRED starting for Fall 2025 applicants. There is no preference between the two, no cutoff scores, and students may self-report scores on the application.",
+      "early_admission_stats": [
+        {
+          "plan_type": "REA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 4.0,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 11285,
+        "admits_total": 427,
+        "enrolled_total": 230,
+        "acceptance_rate_overall": 3.78,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 53.8,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Testing requirement officially reinstated."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 13863,
+        "admits_total": 356,
+        "enrolled_total": 218,
+        "acceptance_rate_overall": 2.57,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 61.24,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": 171,
+          "admitted_from_waitlist": 41,
+          "waitlist_admit_rate": 23.97,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits were an extraordinary anomaly due to an intentional under-enrollment strategy to prevent housing crunches."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 13136,
+        "admits_total": 412,
+        "enrolled_total": 235,
+        "acceptance_rate_overall": 3.14,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 57.0,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 213,
+          "accepted_spots": 199,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Zero students admitted from waitlist."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 16626,
+        "admits_total": 448,
+        "enrolled_total": 240,
+        "acceptance_rate_overall": 2.69,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 53.5,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 195,
+          "accepted_spots": 167,
+          "admitted_from_waitlist": 15,
+          "waitlist_admit_rate": 8.98,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high applications."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 13026,
+        "admits_total": 510,
+        "enrolled_total": 235,
+        "acceptance_rate_overall": 3.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 46.0,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 268,
+          "accepted_spots": 213,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Zero students admitted from waitlist."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Caltech does not officially report average GPAs due to the varied weighting systems of high schools, but essentially all admitted students are at the very top of their class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1530-1580",
+        "sat_reading_middle_50": "740-780",
+        "sat_math_middle_50": "790-800",
+        "act_composite_middle_50": "35-36",
+        "submission_rate": null,
+        "policy_note": "Test scores were fully blind for several years but are required starting with the Fall 2025 class."
+      },
+      "demographics": {
+        "first_gen_percentage": 15.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 14.08,
+        "geographic_breakdown": [
+          {
+            "region": "Out-of-state",
+            "percentage": 64.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9401,
+            "admits": 166,
+            "acceptance_rate": 1.76
+          },
+          "women": {
+            "applicants": 4446,
+            "admits": 190,
+            "acceptance_rate": 4.27
+          }
+        },
+        "racial_breakdown": {
+          "white": 18.74,
+          "black_african_american": 4.66,
+          "hispanic_latino": 17.42,
+          "asian": 35.86,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 8.91,
+          "unknown": 0.1,
+          "non_resident_alien": 14.08
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Divisions",
+    "colleges": [
+      {
+        "name": "Division of Computing & Mathematical Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students with extraordinary aptitude in discrete mathematics, algorithmic theory, and systems.",
+        "housing_profile": "All freshmen are sorted into one of eight Houses (e.g., Page, Dabney) during 'Rotation', serving as both their residence and primary social group.",
+        "student_archetype": "Theoretical thinkers who prefer building mathematical proofs of algorithmic efficiency over just writing code.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 1"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CS 1",
+              "CS 2",
+              "CS 21",
+              "CS 38"
+            ],
+            "special_requirements": "All students must complete the Caltech Core.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 1",
+                "CS 2",
+                "CS 21",
+                "CS 38",
+                "CS 121"
+              ],
+              "electives": [
+                "CS 141",
+                "CS 156ab"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Leonard Schulman (Algorithms and Coding Theory)"
+            ],
+            "notes": "CS is highly theoretical. Students take 'options' (majors) at the end of their freshman year."
+          }
+        ]
+      },
+      {
+        "name": "Division of Physics, Mathematics and Astronomy",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Intensely driven, highly theoretical students who wish to engage in fundamental physics research and utilize facilities like LIGO or Keck Observatories.",
+        "housing_profile": "Integrated into the 8-house system.",
+        "student_archetype": "Future Nobel laureates and PhD candidates.",
+        "majors": [
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Ph 1abc",
+              "Ph 12abc",
+              "Ma 1abc"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Ph 1abc",
+                "Ph 12abc",
+                "Ph 3"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Gil Refael (Theoretical Physics and Quantum Dynamics)"
+            ],
+            "notes": "Physics is deeply integrated into the freshman core curriculum, making the major exceptionally rigorous from day one."
+          }
+        ]
+      },
+      {
+        "name": "Division of Chemistry and Chemical Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students passionate about lab work, chemical synthesis, and structural bioenergetics.",
+        "housing_profile": "Integrated into the 8-house system.",
+        "student_archetype": "Lab-oriented researchers aiming for elite medical or PhD programs.",
+        "majors": [
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Ch 1ab",
+              "Ch 3a",
+              "Organic Chemistry"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Ch 1ab",
+                "Ch 3a"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Douglas Rees (Structural Bioenergetics and Nitrogenase)",
+              "Dr. Sarah Reisman (Organic Chemistry)"
+            ],
+            "notes": "Organic Chemistry is noted specifically as a deeply challenging gatekeeper course, taught at a highly accelerated pace."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "QuestBridge"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "REA",
+        "date": "YYYY-11-01",
+        "is_binding": false,
+        "notes": "Restrictive Early Action. You may not apply Early Decision or Early Action to other private universities."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-01-05",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Requires answering multiple highly specific short essays, including discussing a chosen STEM area, 'nerding out' on a STEM rabbit hole (150 words), detailing an initial STEM passion (200 words), discussing an innovative/creator experience (250 words), and an essay on cultivating respect for diversity (200 words)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Standardized test scores",
+        "Application Essays",
+        "Recommendations",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "First generation status"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Extremely strict requirements for STEM course preparation (calculus, physics, chemistry). If not offered by the student's high school, they MUST provide proof via AP 5, IB 6/7, or Schoolhouse.world certification."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying to a 'less popular' major provides zero admissions advantage, as all students are admitted undeclared and must survive the same universal Core."
+    ],
+    "college_ranking_tactics": [
+      "REA at Caltech does not provide a statistical advantage (both rates are under 5%). Apply REA only if it is unequivocally your first choice, as it restricts applications to other private schools."
+    ],
+    "alternate_major_strategy": "Not applicable; students declare their 'option' at the end of their first year."
+  },
+  "financials": {
+    "tuition_model": "Private",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 63402.0,
+        "total_coa": 90822.0,
+        "housing": 11697.0
+      },
+      "out_of_state": {
+        "tuition": 63402.0,
+        "total_coa": 90822.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 73000.0,
+    "average_merit_aid": 0.0,
+    "percent_receiving_aid": 50.0,
+    "scholarships": [
+      {
+        "name": "No-Loan Package",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Covers tuition, housing, and food without loans for families earning under $90,000.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "AP/IB scores are NOT automatically granted for college credit. They are used to fulfill admission prerequisites if courses were unavailable in high school.",
+      "exceptions": [],
+      "usage": "Actual college credit or placement into accelerated sequences requires passing departmental placement exams during New Student Orientation."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 6 or 7 on HL Math, Physics, or Chem can fulfill admissions prerequisites. No automatic college credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer admissions are incredibly limited (often accepting fewer than 15 students annually). Very strict criteria."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Unparalleled mathematical capability, specifically with proof-based math.",
+      "Extensive, self-driven research experience (e.g., publishing papers or major independent projects).",
+      "Deeply collaborative mindset aligned with Caltech's Honor Code."
+    ],
+    "common_activities": [
+      "High-level STEM Olympiads (USAMO, USAPhO).",
+      "Independent research projects / maker portfolios.",
+      "Varsity or club sports (approx 80% participate in D3 or club athletics).",
+      "Musical instruments (over 65% play an instrument)."
+    ],
+    "essay_tips": [
+      "Nerd out authentically. Don't write what you think they want to hear; dive deep into the very specific STEM niche that keeps you up at night.",
+      "Emphasize collaboration. Caltech students survive via intense group work on problem sets, not cutthroat competition.",
+      "Reflect an appreciation for the humanities, as the core curriculum requires significant coursework outside of STEM."
+    ],
+    "red_flags": [
+      "Applying to look 'well-rounded' without a massive, specific spike in a STEM discipline.",
+      "Arrogance or a hyper-competitive attitude that clashes with the Honor Code.",
+      "Treating the optional essays as actually optional (you must answer them)."
+    ],
+    "insights": [
+      "Caltech's academic pace ('drinking from a firehose') is notoriously grueling. Students take 5-6 highly intense classes per trimester.",
+      "The Honor Code allows for unproctored, take-home exams and 24/7 access to buildings, placing immense trust in the student body."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 152843,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 40.0,
+    "top_employers": [
+      "NASA JPL",
+      "Meta",
+      "SpaceX",
+      "Google"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 97.4,
+    "graduation_rate_4_year": 81.0,
+    "graduation_rate_6_year": 94.0
+  }
+}

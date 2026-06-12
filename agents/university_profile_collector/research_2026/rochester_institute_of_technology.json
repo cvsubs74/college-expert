@@ -1,0 +1,47 @@
+{
+  "name": "Kate Gleason College of Engineering",
+  "admissions_model": "Direct Admit",
+  "acceptance_rate_estimate": null,
+  "is_restricted_or_capped": true,
+  "strategic_fit_advice": "For mathematically and scientifically rigorous students aiming for applied engineering roles in automotive, aerospace, or manufacturing.",
+  "housing_profile": "Standard undergraduate dormitories.",
+  "student_archetype": "The Applied Builder / Systems Thinker",
+  "majors": [
+    {
+      "name": "Mechanical Engineering",
+      "degree_type": "B.S.",
+      "is_impacted": true,
+      "acceptance_rate": null,
+      "average_gpa_admitted": null,
+      "prerequisite_courses": [
+        "Calculus",
+        "Physics"
+      ],
+      "minimum_gpa_to_declare": null,
+      "weeder_courses": [],
+      "special_requirements": "",
+      "admissions_pathway": "Direct Admit",
+      "internal_transfer_allowed": true,
+      "direct_admit_only": false,
+      "internal_transfer_gpa": 3.0,
+      "curriculum": {
+        "core_courses": [
+          "Engineering Science",
+          "Systems Analysis",
+          "MATH-251 Probability and Statistics"
+        ],
+        "electives": [
+          "Aerospace Engineering",
+          "Automotive Engineering",
+          "Bioengineering",
+          "Energy and the Environment"
+        ],
+        "total_units": 120,
+        "major_units": null
+      },
+      "notable_professors": [],
+      "notes": "Requires four blocks of co-op (nearly a year of full-time paid work experience). Transfer pathway from outside institutions typically requires a 3.0 GPA minimum."
+    }
+  ],
+  "_id": "rochester_institute_of_technology"
+}

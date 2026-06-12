@@ -1,0 +1,569 @@
+{
+  "_id": "university_of_cincinnati",
+  "metadata": {
+    "official_name": "University of Cincinnati",
+    "location": {
+      "city": "Cincinnati",
+      "state": "Ohio",
+      "type": "Public"
+    },
+    "last_updated": "2023-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Cincinnati (UC) is a premier public R1 research university globally renowned for inventing the cooperative education (co-op) model. With an urban campus and over 53,000 students, UC blends rigorous academic programs with built-in, paid professional work experiences. The university utilizes a direct-admit model for its highly ranked colleges of engineering, business, and nursing.",
+    "market_position": "Large Public Tier 1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 158,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "UC is the global founder of co-op education, ranking #4 nationally for co-ops/internships. 100% of students engage in experiential learning.",
+        "implication": "Students graduate with significantly more professional experience than peers at other institutions, often securing full-time job offers from their co-op employers prior to graduation."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "While the overall acceptance rate is high (85.3%), UC admits students directly into specific majors. Programs in CEAS (Engineering), Lindner (Business), and Nursing are capped and significantly more competitive.",
+        "implication": "Applicants must carefully select their major and articulate a clear 'Why this major' narrative, as transferring into impacted programs later can be exceptionally difficult."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university utilizes the Cincinnati Tuition Guarantee, locking in tuition, mandatory fees, and room/board rates for an incoming cohort for up to five years.",
+        "implication": "Provides families with absolute cost predictability and protects against annual tuition inflation during the student's undergraduate tenure."
+      },
+      {
+        "category": "Culture",
+        "insight": "Students report a vibrant, spirited campus with strong D1 athletics (Big 12 Conference), but consistently flag housing shortages and neighborhood safety as significant concerns.",
+        "implication": "Prospective students should apply for housing as early as possible and carefully research off-campus living options and safety protocols."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, diverse, and energetic urban campus with robust Greek life (45 chapters), strong school spirit centered around Big 12 'Bearcats' athletics, and easy access to Cincinnati's downtown, Over-the-Rhine, and cultural festivals.",
+      "transportation_impact": "Highly walkable campus integrated into the city. A crowded environment with noted parking and resource shortages. Students heavily rely on campus shuttles and public transit to navigate the urban setting.",
+      "research_impact": "Classified as an R1 institution with over $480 million in annual research spending. Home to historic breakthroughs like the oral polio vaccine, offering robust undergraduate research opportunities across its medical and engineering campuses."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 85.3,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 47.9,
+      "admits_class_size": 6584,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for most programs. Test scores are REQUIRED for the University Honors Program, College of Nursing Direct-Admit BSN, and Early Childhood Education.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 34285,
+        "admits_total": 29242,
+        "enrolled_total": 6584,
+        "acceptance_rate_overall": 85.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 22.5,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed for undergraduate admissions."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 33165,
+        "admits_total": 29077,
+        "enrolled_total": 6922,
+        "acceptance_rate_overall": 87.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 23.8,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 29025,
+        "admits_total": 25024,
+        "enrolled_total": 6369,
+        "acceptance_rate_overall": 86.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 25.4,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 25775,
+        "admits_total": 21909,
+        "enrolled_total": 5477,
+        "acceptance_rate_overall": 85.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 25.0,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 23960,
+        "admits_total": 18306,
+        "enrolled_total": 5242,
+        "acceptance_rate_overall": 76.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 28.6,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.40-4.00",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.7,
+        "notes": "GPA data reflects students who chose to submit."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1160-1350",
+        "sat_reading_middle_50": "570-670",
+        "sat_math_middle_50": "570-690",
+        "act_composite_middle_50": "24-29",
+        "submission_rate": null,
+        "policy_note": "11% of enrollees submitted SAT scores; 36% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 10.6,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 81.6
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 78.4
+          }
+        },
+        "racial_breakdown": {
+          "white": 65.4,
+          "black_african_american": 8.1,
+          "hispanic_latino": 4.5,
+          "asian": 5.4,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.9,
+          "unknown": 1.9,
+          "non_resident_alien": 10.6
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering and Applied Science (CEAS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong math/science backgrounds seeking immediate, mandatory, paid co-op experience integrated into their degree.",
+        "housing_profile": null,
+        "student_archetype": "Career-focused, hands-on builders and programmers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "4 years math including Algebra II",
+              "3 years science including Chemistry and Physics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Mandatory co-op participation.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Algorithms and Data Structures",
+                "Computer Organization and Architecture",
+                "Operating Systems",
+                "Database Systems",
+                "Computer Networks",
+                "Software Engineering"
+              ],
+              "electives": [
+                "Artificial Intelligence and Machine Learning",
+                "Big Data Analytics",
+                "Cloud Computing",
+                "Computer Vision",
+                "Cryptography and Network Security"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Sunnie Chung (AI/Data)",
+              "Dr. Sathish Kumar (AI)",
+              "Dr. Raj Bhatnagar (Biomedical Informatics)"
+            ],
+            "notes": "Highly capped and competitive direct admission."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Mandatory co-op.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the most popular engineering majors at UC."
+          }
+        ]
+      },
+      {
+        "name": "Carl H. Lindner College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students wanting to leverage Cincinnati's Fortune 500 network (Kroger, P&G) with required co-ops.",
+        "housing_profile": null,
+        "student_archetype": "Driven, corporate-ready networkers.",
+        "majors": [
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Minimum of two co-ops required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Consumer Behavior",
+                "Market Research",
+                "Digital Marketing"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "The most popular major at the University of Cincinnati."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Minimum of two co-ops required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "High job placement rate with strong links to Western & Southern Financial Group."
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High-achieving applicants absolutely certain they want to be nurses, as this is a highly competitive direct-entry program.",
+        "housing_profile": null,
+        "student_archetype": "Compassionate, academically rigorous students with high standardized test scores.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Test scores (ACT/SAT) are strictly REQUIRED. Direct-admit only.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Biostatistics for Evidence-Based Practice",
+                "Advanced Health Assessment",
+                "Health Care Policy",
+                "Theoretical Basis for Clinical Reasoning",
+                "Pharmacology for Advanced Nursing Practice"
+              ],
+              "electives": [
+                "Health Issues of Vulnerable and Marginalized Populations",
+                "Focus on Community"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Rebecca Lee (Community Health/Vulnerable Populations)"
+            ],
+            "notes": "Partners with UC Academic Health Center (Level I trauma center, Level III obstetric unit, top pediatric hospital)."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "YYYY-12-01",
+        "is_binding": false,
+        "notes": "Early Action deadline is highly recommended. Applying by Dec 1 guarantees consideration for the Cincinnatus Scholarship Program and the Honors Program."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-03-01",
+        "is_binding": false,
+        "notes": "Regular Decision deadline. Applications received after Dec 1 are reviewed on a rolling basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Direct Admit Programs (e.g., Lindner College of Business)",
+        "requirement_type": "Essays",
+        "deadline": "YYYY-12-01",
+        "details": "Major-specific essay explaining why the applicant wants to study their chosen field at UC (e.g., 'Why do you want to study business at UC?')."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (if submitted)",
+        "Extracurricular activities",
+        "Application essays"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Direct admission into specific majors makes the 'Why Major' narrative and specific high school course prerequisites (like Physics for Engineering) extremely critical."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to your intended major, as UC utilizes direct admission and internal transfers to impacted programs (Engineering, Nursing, DAAP) can be nearly impossible later.",
+      "Submit test scores if applying to Nursing or the Honors Program, as they are mandatory.",
+      "Apply by the December 1 Early Action deadline to secure consideration for the Cincinnatus Scholarship, which can range from $1,500 to a full ride."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "For highly competitive programs like Computer Science or Nursing, consider applying with an alternate, less-impacted major within the same college if allowed, but be aware that internal transfer rules for capped majors are stringent."
+  },
+  "financials": {
+    "tuition_model": "Cincinnati Tuition Guarantee (Cohort-based flat rate for tuition, fees, and room/board for 4-5 years)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 13363.0,
+        "total_coa": 35151.0,
+        "housing": 13564.0
+      },
+      "out_of_state": {
+        "tuition": 28697.0,
+        "total_coa": 50485.0,
+        "supplemental_tuition": 15334.0
+      }
+    },
+    "aid_philosophy": "Not Need-Blind / Does Not Meet 100% Need",
+    "average_need_based_aid": 8195.0,
+    "average_merit_aid": 7878.0,
+    "percent_receiving_aid": 63.0,
+    "scholarships": [
+      {
+        "name": "Cincinnatus Scholarship Program",
+        "type": "Merit",
+        "amount": "$1,500 - Full Ride",
+        "deadline": "YYYY-12-01",
+        "benefits": "Renewable. Top tier (Presidential) covers full tuition, fees, room, board, and book allowance ($30,000/year).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Outreach Award",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "YYYY-12-01",
+        "benefits": "Reduces out-of-state tuition surcharge for students from targeted geographic areas.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Alumni Legacy and Network Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "YYYY-12-01",
+        "benefits": "For lineal descendants of UC graduates who are Loyal Bearcat donors.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Cincinnatus Out-of-State Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "YYYY-12-01",
+        "benefits": "Added to awards for out-of-state students not receiving metro rates or national outreach awards.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credit granted for scores of 3 or higher on most AP exams.",
+      "exceptions": [
+        "In STEM fields with highly dependent sequences, a 3 may not provide the necessary foundation, and advising staff strongly recommend conferring before skipping introductory courses."
+      ],
+      "usage": "Satisfies general education requirements or serves as elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts IB Higher Level (HL) exams for credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Database",
+        "Credit by Certification"
+      ],
+      "restrictions": "Credits must be verified via official transcripts. Dual credit grades listed only on high school transcripts are not accepted."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Applying Early Action (Dec 1) is virtually mandatory for serious applicants due to scholarship and honors consideration.",
+      "A clear career focus. The co-op model favors students who already have a strong sense of their professional goals.",
+      "Strong math and science fundamentals, particularly for the impacted CEAS direct-admit programs."
+    ],
+    "common_activities": [
+      "Greek Life (45 chapters)",
+      "Intramural and club sports",
+      "Attending Bearcats (Big 12) athletic events",
+      "Exploring Cincinnati's Over-the-Rhine district and local festivals"
+    ],
+    "essay_tips": [
+      "Be exceptionally specific about your major. If applying to Lindner or CEAS, name drop specific co-op partners you wish to work with.",
+      "Highlight your readiness for experiential, hands-on learning.",
+      "If you faced academic challenges, UC's holistic review values stories of overcoming adversity."
+    ],
+    "red_flags": [
+      "Applying Undecided if you ultimately want Engineering, DAAP, or Nursing. Internal transfers are extremely difficult.",
+      "Missing the December 1 Early Action deadline."
+    ],
+    "insights": [
+      "Co-op is the defining feature of a UC education. Students alternate semesters of study with full-time paid work, resulting in an average of $10,000-$12,000 earned per semester.",
+      "Housing can be a significant pain point; rapid enrollment growth has strained on-campus housing capacity.",
+      "Campus is deeply embedded in the urban fabric of Cincinnati, providing immense professional networking opportunities but requiring standard urban safety awareness."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 72188,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Procter & Gamble",
+      "Kroger",
+      "GE Aerospace",
+      "Nestl\u00e9",
+      "Western & Southern Financial Group",
+      "Amazon",
+      "JPMorgan Chase"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 85.0,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 72.0
+  }
+}

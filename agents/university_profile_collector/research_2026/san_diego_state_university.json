@@ -1,0 +1,404 @@
+{
+  "_id": "san_diego_state_university",
+  "metadata": {
+    "official_name": "San Diego State University",
+    "location": {
+      "city": "San Diego",
+      "state": "CA",
+      "type": "Public"
+    },
+    "last_updated": "2023-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "San Diego State University (SDSU) is a highly selective, R1 public research university located in Southern California. As the flagship-equivalent of the CSU system, it offers a vibrant, sports-oriented campus culture paired with rigorous, impacted academic programs.",
+    "market_position": "Top-Tier Public / Public Ivy-lite",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 105,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Out-of-state applicants are accepted at an 87% rate compared to 31% for in-state residents.",
+        "implication": "Geographic arbitrage is a massive factor; non-residents have a significant statistical advantage due to institutional financial incentives."
+      },
+      {
+        "category": "Academic",
+        "insight": "100% of majors and pre-majors are classified as 'impacted'.",
+        "implication": "Admission to the university does not guarantee admission to your desired degree; students must clear strict internal GPA hurdles to graduate."
+      },
+      {
+        "category": "Culture",
+        "insight": "Ranked #22 for Top Party Schools with heavy Greek and D1 sports participation.",
+        "implication": "The environment is highly social and extroverted, suited for students seeking a traditional, spirited college experience."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, highly social campus heavily influenced by Division I athletics (Snapdragon Stadium), a massive Greek system, and proximity to beaches and downtown.",
+      "transportation_impact": "Highly accessible; an on-campus MTS trolley station allows for car-free transit to downtown San Diego, beaches, and the international border.",
+      "research_impact": "Recently designated as an R1 institution (Very High Research Activity) by the Carnegie Classification, indicating massive growth in federal funding and undergraduate research opportunities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.359,
+      "in_state_acceptance_rate": 0.308,
+      "out_of_state_acceptance_rate": 0.87,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.534,
+      "admits_class_size": 32561,
+      "is_test_optional": false,
+      "test_policy_details": "Strictly Test-Blind. SAT/ACT scores are not considered for admissions, only for post-enrollment course placement.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 90509,
+        "admits_total": 32561,
+        "enrolled_total": 6629,
+        "acceptance_rate_overall": 0.359,
+        "acceptance_rate_in_state": 0.308,
+        "acceptance_rate_out_of_state": 0.87,
+        "yield_rate": 0.203,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 10520,
+          "accepted_spots": 4802,
+          "admitted_from_waitlist": 1804,
+          "waitlist_admit_rate": 0.375,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist activity rebounded massively in 2024 compared to previous zero-admit years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 83190,
+        "admits_total": 28433,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.341,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 8646,
+          "accepted_spots": 8646,
+          "admitted_from_waitlist": 869,
+          "waitlist_admit_rate": 0.1,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 77250,
+        "admits_total": 30331,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.392,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "No students were admitted from the waitlist in 2022."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.75-4.00",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.84,
+        "notes": "CSU calculates GPA based only on A-G coursework taken in 10th and 11th grades."
+      },
+      "testing": {
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": 0.0,
+        "policy_note": "Test-blind institution."
+      },
+      "demographics": {
+        "first_gen_percentage": 22.9,
+        "legacy_percentage": null,
+        "international_percentage": 2.0,
+        "geographic_breakdown": [
+          {
+            "region": "Los Angeles",
+            "percentage": 21.0
+          },
+          {
+            "region": "Orange County",
+            "percentage": 10.9
+          },
+          {
+            "region": "Out of State",
+            "percentage": 22.6
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 37665,
+            "admits": 12773,
+            "acceptance_rate": 0.34
+          },
+          "women": {
+            "applicants": 52645,
+            "admits": 19726,
+            "acceptance_rate": 0.37
+          }
+        },
+        "racial_breakdown": {
+          "white": 33.1,
+          "black_african_american": 3.45,
+          "hispanic_latino": 36.4,
+          "asian": 12.9,
+          "native_american_alaskan": 0.17,
+          "pacific_islander": 0.24,
+          "two_or_more_races": 7.12,
+          "unknown": 4.2,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "University-Wide",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students applying should be prepared to perform well in prerequisite courses during their freshman and sophomore years, as access to upper-division courses requires clearing impaction.",
+        "housing_profile": "First-year students from outside the local area are required to live on campus for two years.",
+        "student_archetype": "Driven, socially active students who can balance rigorous impaction hurdles with a heavy distraction environment.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major on campus."
+          },
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must earn a B or better in high school intermediate algebra, biology, and chemistry with labs.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly restricted and arguably the most competitive major at the university."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Preference given to applicants with strong grades in high school science and math.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Cal State Apply"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-11-30",
+        "is_binding": false,
+        "notes": "CSU Application period opens October 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Dance, Music, Theatre Arts",
+        "requirement_type": "Audition/Portfolio",
+        "deadline": "",
+        "details": "Applicants must successfully pass an audition or portfolio review."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "First-generation status",
+        "Geographic residence (Local Admission Area)",
+        "Overcoming life obstacles"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Local San Diego county residents receive massive priority in the admissions formula."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Select an alternate major on the application, as SDSU will occasionally admit to the alternate if the primary choice is full.",
+      "Ensure A-G requirements are not just met, but heavily exceeded with honors/AP courses."
+    ],
+    "college_ranking_tactics": [
+      "If utilizing the community college transfer route, attend a San Diego area community college (e.g., Mesa College) to receive local priority."
+    ],
+    "alternate_major_strategy": "List a slightly less impacted major as an alternate to secure general university admission, though internal transfer later can be difficult."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for in-state; per-unit surcharge for out-of-state.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 8728.0,
+        "total_coa": 36090.0,
+        "housing": 23030.0
+      },
+      "out_of_state": {
+        "tuition": 21328.0,
+        "total_coa": 48690.0,
+        "supplemental_tuition": 12600.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 5459.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 95.0,
+    "scholarships": [
+      {
+        "name": "SDSU Merit Scholarship",
+        "type": "Merit",
+        "amount": "$7,500 - $10,000",
+        "deadline": "February 13",
+        "benefits": "Financial stipend and prestigious scholar designation.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "SDSU High-Achieving Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 - $9,000",
+        "deadline": "",
+        "benefits": "Variable aid.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "SDSU Advantage Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Targeted at highly qualified out-of-state and international students.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or higher grant college credit.",
+      "exceptions": [],
+      "usage": "Can be used to bypass general education requirements (e.g., AP English waives RWS 100/200)."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4 to 7 on Higher Level exams grant credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "Maximum of 70 units from community college transfer coursework will apply toward the bachelor's degree unit total."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A weighted CSU GPA approaching 4.0 or higher.",
+      "Graduating from a local San Diego high school is the biggest advantage.",
+      "Exceptional grades in math and science for STEM applicants."
+    ],
+    "common_activities": [
+      "Greek Life",
+      "Intramural Sports",
+      "Surfing / Beach outings",
+      "Attending Aztec Nights",
+      "Division I Football/Basketball games"
+    ],
+    "essay_tips": [
+      "Do not write one; the CSU application does not accept essays or personal statements."
+    ],
+    "red_flags": [
+      "Applying to Nursing or Business as an out-of-state student with a low GPA.",
+      "Having any D or F grades in A-G coursework."
+    ],
+    "insights": [
+      "SDSU's shift to test-blind means your transcript is your entire application.",
+      "Impaction is real; do not assume you can easily switch into Computer Science or Nursing once enrolled."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 68268,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Meta",
+      "Google",
+      "Microsoft",
+      "Salesforce",
+      "Qualcomm",
+      "ServiceNow",
+      "City of San Diego"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.91,
+    "graduation_rate_4_year": 0.57,
+    "graduation_rate_6_year": 0.78
+  }
+}

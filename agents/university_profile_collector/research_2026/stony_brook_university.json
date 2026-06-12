@@ -1,0 +1,540 @@
+{
+  "_id": "stony_brook_university",
+  "metadata": {
+    "official_name": "State University of New York at Stony Brook",
+    "location": {
+      "city": "Stony Brook",
+      "state": "New York",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "Stony Brook University Common Data Set 2024-2025",
+      "US News & World Report 2025",
+      "Stony Brook University Undergraduate Bulletin"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Stony Brook University is a flagship public research institution in the SUNY system, recognized globally for its elite STEM, medical, and computer science programs. Situated on Long Island, it offers a highly diverse, research-intensive environment with a growing reputation that has driven application volumes to record highs. While overall acceptance rates remain around 49%, admission into its impacted programs like Computer Science is intensely competitive.",
+    "market_position": "Public Flagship / STEM-Focused Public Ivy",
+    "admissions_philosophy": "Holistic with heavy emphasis on academic rigor, particularly in math and sciences.",
+    "us_news_rank": 58,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Waitlist admission plummeted to 0.2% in 2024 (down from 43% the prior year), indicating extreme yield protection and over-enrollment management.",
+        "implication": "Applicants should treat a waitlist offer as a soft rejection and secure other options immediately."
+      },
+      {
+        "category": "Academic",
+        "insight": "Out-of-state and international acceptance rates (61.6% and 73% respectively) are significantly higher than the in-state acceptance rate (41.5%).",
+        "implication": "Stony Brook leverages non-resident enrollment to subsidize state funding deficits, offering an admissions advantage to full-pay out-of-state and international applicants."
+      },
+      {
+        "category": "Academic",
+        "insight": "CS majors not directly admitted are placed in an 'Area of Interest' (AOI) requiring a 3.2+ GPA across heavily rigorous filter courses (CSE 114, 214, 215).",
+        "implication": "Applying undeclared to bypass CS competition is highly risky; failing to meet the strict AOI GPA cutoff prevents declaration of the major."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Heavily diverse with a large commuter population (nearly 25-48% commute). The social scene is quieter on weekends, driven more by academic intensity and specialized student organizations than traditional Greek life.",
+      "transportation_impact": "Located 60 miles from NYC with an on-campus LIRR train station, allowing direct access to the city for internships and social outings, though a car is beneficial for local Long Island travel.",
+      "research_impact": "Co-manager of Brookhaven National Laboratory, offering undergraduates exceptionally high-level research opportunities in physics, medicine, and applied sciences."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 49.05,
+      "in_state_acceptance_rate": 41.57,
+      "out_of_state_acceptance_rate": 61.68,
+      "international_acceptance_rate": 73.08,
+      "transfer_acceptance_rate": 49.36,
+      "admits_class_size": 4042,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through at least the 2024-2025 cycle. Scores are recommended for restricted majors and honors programs.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 55880,
+        "admits_total": 27406,
+        "enrolled_total": 4042,
+        "acceptance_rate_overall": 49.05,
+        "acceptance_rate_in_state": 41.57,
+        "acceptance_rate_out_of_state": 61.68,
+        "yield_rate": 14.7,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 5907,
+          "accepted_spots": 2894,
+          "admitted_from_waitlist": 12,
+          "waitlist_admit_rate": 0.41,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high application volume. Waitlist admit rate dropped drastically from 43% to under 1%."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 50341,
+        "admits_total": 24670,
+        "enrolled_total": 3569,
+        "acceptance_rate_overall": 49.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.5,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3647,
+          "accepted_spots": 3647,
+          "admitted_from_waitlist": 1577,
+          "waitlist_admit_rate": 43.25,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Massive waitlist movement this cycle, atypical for the institution."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 40500,
+        "admits_total": 19901,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 49.14,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 24.17,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "91.0-97.0",
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": null,
+        "notes": "53% of the entering class earned a high school GPA of 95 or above."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1340-1480",
+        "sat_reading_middle_50": "650-730",
+        "sat_math_middle_50": "680-770",
+        "act_composite_middle_50": "29-34",
+        "submission_rate": 37.0,
+        "policy_note": "34% submitted SAT, 3% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 10.1,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 85.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 25499,
+            "admits": 12091,
+            "acceptance_rate": 47.4
+          },
+          "women": {
+            "applicants": 30344,
+            "admits": 15295,
+            "acceptance_rate": 50.4
+          }
+        },
+        "racial_breakdown": {
+          "white": 24.8,
+          "black_african_american": 6.0,
+          "hispanic_latino": 15.6,
+          "asian": 35.5,
+          "native_american_alaskan": 0.08,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 3.1,
+          "unknown": 4.5,
+          "non_resident_alien": 10.1
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Engineering and Applied Sciences",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants must have strong calculus and physics grades, alongside high SAT/ACT math scores if submitting.",
+        "housing_profile": "Mixed residential and commuter.",
+        "student_archetype": "Intensely focused STEM student, heavy research and technical project orientation.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSE 114",
+              "CSE 214",
+              "CSE 215"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Grades of B- or higher required in core prerequisites. Must apply to matriculate from 'Area of Interest' (AOI) status.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": {
+              "core_courses": [
+                "CSE 114 Introduction to Object-Oriented Programming",
+                "CSE 214 Data Structures",
+                "CSE 216 Programming Abstractions",
+                "CSE 220 Systems Fundamentals I",
+                "CSE 300 Technical Communications",
+                "CSE 312 Social, Legal, and Ethical Issues in Computing",
+                "CSE 307 Principles of Programming Languages",
+                "CSE 316 Fundamentals of Software Development",
+                "CSE 320 Systems Fundamentals II",
+                "CSE 373 Analysis of Algorithms"
+              ],
+              "electives": [
+                "CSE 356 Cloud Computing",
+                "CSE 416 Software Engineering"
+              ],
+              "total_units": 120,
+              "major_units": 80
+            },
+            "notable_professors": [
+              "Dr. Michael Bender (Algorithms)",
+              "Dr. Dimitris Samaras (Computer Vision)",
+              "Dr. Michael Ferdman (Computer Architecture)"
+            ],
+            "notes": "AOI students must complete requirements within one year. Transferring into CS from outside the College of Engineering is extremely difficult and relies strictly on capacity."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking pre-med tracks (Biology, Chemistry) or social sciences (Psychology).",
+        "housing_profile": "Mixed residential and commuter.",
+        "student_archetype": "Pre-health track students and natural science researchers.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most popular major at the university with over 600 graduates annually."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly utilized as a primary pathway for pre-med students targeting the Renaissance School of Medicine."
+          }
+        ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with strong math skills aiming for finance or accounting.",
+        "housing_profile": "Mixed residential and commuter.",
+        "student_archetype": "Career-focused, quantitative business student.",
+        "majors": [
+          {
+            "name": "Business Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [],
+            "special_requirements": "Requires strong performance on SAT/ACT math sections if submitting.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the top 3 most popular majors on campus."
+          }
+        ]
+      },
+      {
+        "name": "School of Health Technology and Management",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students committed to clinical health professions (e.g., Nursing, Respiratory Care, Physical Therapy).",
+        "housing_profile": "Commuter and clinical rotation heavy in upper division.",
+        "student_archetype": "Hands-on, clinical-focused health practitioner.",
+        "majors": [
+          {
+            "name": "Health Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "N/A",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Serves as preparatory studies for advanced clinical placements and graduate medical programs."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "SUNY App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Priority deadline for Honors College, WISE, and University Scholars."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Final deadline for restricted programs like Scholars for Medicine."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors College, WISE, University Scholars",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-01",
+        "details": "250 words: Please discuss why you are a good fit for your preferred University Honors Program."
+      },
+      {
+        "target_program": "Scholars for Medicine / Dental Medicine",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-15",
+        "details": "650 words: What aspects about medicine/dental medicine intrigue you? Describe how these aspects influence your life."
+      },
+      {
+        "target_program": "Simons STEM Scholars",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-15",
+        "details": "Three 250-word short responses regarding desire to pursue STEM, obtaining a PhD, and diversity in STEM."
+      },
+      {
+        "target_program": "BFA in Creative Writing",
+        "requirement_type": "Portfolio",
+        "deadline": "2025-01-15",
+        "details": "Submit 10-15 pages of your best and most characteristic writing."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Legacy is explicitly marked as 'Not Considered' to ensure fairness as part of the SUNY system. Deep STEM involvement, high math grades, and research experience heavily tip the scales."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "If targeting Computer Science, strong math grades and test scores are non-negotiable. Applying 'Area of Interest' (AOI) provides a conditional pathway, but carries immense risk as a 3.2 GPA in specific filter classes is required to declare.",
+      "Out-of-state and international applicants face considerably higher acceptance rates compared to in-state candidates, making SBU an excellent target for non-residents.",
+      "Consider Information Systems (ISE) as an alternate major to CS. It shares overlapping foundation courses but has slightly more forgiving entry requirements."
+    ],
+    "college_ranking_tactics": [
+      "Leverage the Honors College application to secure early review and access to priority registration and distinct housing."
+    ],
+    "alternate_major_strategy": "Applying undeclared to circumvent impacted majors is a known but risky strategy. While you can enter the university, internal transfer into capped programs like Computer Science requires near-perfect grades in prerequisite weed-out courses and is constrained by seat availability."
+  },
+  "financials": {
+    "tuition_model": "In-State / Out-of-State Public",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 7070,
+        "total_coa": 33764,
+        "housing": 18196
+      },
+      "out_of_state": {
+        "tuition": 28880,
+        "total_coa": 57744,
+        "supplemental_tuition": 21810
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 15561,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 70.0,
+    "scholarships": [
+      {
+        "name": "Excelsior Scholarship",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Covers full tuition for NYS residents making under $100k/year.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full In-State Tuition",
+        "deadline": "",
+        "benefits": "Covers cost of in-state tuition and fees for highly exceptional applicants.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$3,000/yr",
+        "deadline": "2025-09-15",
+        "benefits": "Additional $2,000 if SBU is listed as top choice.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Honors College Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Most Honors College students receive some level of funding.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "SUNY system guarantees college credit for scores of 3 or higher on AP exams.",
+      "exceptions": [
+        "Engineering and Computer Science programs frequently require a 4 or 5, or direct students to decline the credit in favor of taking the foundational sequences at SBU."
+      ],
+      "usage": "Can satisfy general education requirements or act as elective credit."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4 or higher generally accepted for credit across the SUNY system.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Course Equivalency Database"
+      ],
+      "restrictions": "To fulfill CS core requirements, equivalent courses transferred must have a grade of B- or higher to declare the major from AOI."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High academic rigor, specially in upper-level STEM classes.",
+      "A strong unweighted GPA (3.8+).",
+      "For in-state students, standing out among thousands of highly qualified Long Island and NYC applicants."
+    ],
+    "common_activities": [
+      "Research internships at labs like Brookhaven National Lab.",
+      "Robotics and computer programming clubs.",
+      "Pre-med volunteering at local hospitals."
+    ],
+    "essay_tips": [
+      "Demonstrate a clear, focused path into your major, particularly if it's STEM.",
+      "Show resilience and an ability to navigate a massive, somewhat bureaucratic state school environment."
+    ],
+    "red_flags": [
+      "Low math scores on the SAT/ACT if applying to engineering or business.",
+      "Applying to an impacted major without taking related AP/IB classes in high school."
+    ],
+    "insights": [
+      "SBU has a massive commuter culture; social life requires proactive effort by joining clubs or Greek life.",
+      "Students cite issues with over-enrollment and housing shortages ('temporary tripling' in dorms).",
+      "The 'AOI' (Area of Interest) status for CS is often a trap for students who underestimate the difficulty of maintaining a 3.2 GPA in the foundational 'weed-out' classes."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 70700,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Brookhaven National Laboratory (BNL)",
+      "Northwell Health",
+      "Stony Brook Medicine",
+      "Zebra Technologies Corporation",
+      "Geico"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.75,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 78.0
+  }
+}

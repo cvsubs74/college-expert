@@ -1,0 +1,600 @@
+{
+  "_id": "university_of_massachusetts_lowell",
+  "metadata": {
+    "official_name": "University of Massachusetts Lowell",
+    "location": {
+      "city": "Lowell",
+      "state": "MA",
+      "type": "Public"
+    },
+    "last_updated": "2024-04-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Massachusetts Lowell is a Carnegie R1 public research university located in the Massachusetts technology corridor, known for its exceptional return on investment and pragmatic, career-oriented education. It excels in engineering, computer science, business, and health sciences, offering robust co-op and immersive research programs for undergraduates.",
+    "market_position": "Regional Tech Powerhouse and High-ROI Public Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 151,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "With an overall acceptance rate of approximately 83%, UMass Lowell is widely accessible, though specific impacted majors like Nursing, Computer Science, and Engineering are notably more selective, admitting closer to 70-75% of applicants.",
+        "implication": "Applicants should leverage Early Action and carefully consider their alternate major selections if targeting STEM or healthcare fields."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university heavily emphasizes experiential learning, notably through its Professional Cooperative Education Program and Immersive Scholars program, which provides $4,000 to incoming freshmen for research.",
+        "implication": "Students are well-prepared for the workforce, leading to high employment rates and competitive starting salaries right out of undergrad."
+      },
+      {
+        "category": "Culture",
+        "insight": "Despite growing its residential capacity to house 75% of first-year students, a large portion of the upperclassman student body commutes, which can lead to a quieter campus atmosphere on weekends.",
+        "implication": "Students seeking a vibrant traditional 'college town' weekend social scene may need to be proactive by joining some of the 250+ clubs or Greek Life organizations."
+      },
+      {
+        "category": "Financial",
+        "insight": "UMass Lowell graduates boast a median 10-year earning of $81,163 (College Scorecard), outperforming many peers and generating a highly attractive long-term ROI.",
+        "implication": "The university is an excellent value proposition, particularly for in-state students leveraging the Tuition Break program or Dean's Scholarship."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A diverse, inclusive, and pragmatic student body where nearly half of the students are first-generation. The environment is academically focused, supported by over 250 student organizations and Division I athletics, though noted by students for having a subdued weekend social life due to commuter density.",
+      "transportation_impact": "The campus is split into three main clusters (North, South, and East) separated by the Merrimack River and city traffic. North Campus houses Engineering, Sciences, and Business, while South Campus houses Humanities, Health, and Social Sciences. Bus transit between campuses can take up to 20 minutes, requiring careful course scheduling.",
+      "research_impact": "As an R1 institution, UMass Lowell conducts over $120 million in sponsored research annually. Undergraduates have significant opportunities to participate in funded projects alongside faculty, particularly in robotics, nanotechnology, cybersecurity, and clean energy."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.8295,
+      "in_state_acceptance_rate": 0.8278,
+      "out_of_state_acceptance_rate": 0.825,
+      "international_acceptance_rate": 0.877,
+      "transfer_acceptance_rate": 0.78,
+      "admits_class_size": 2011,
+      "is_test_optional": true,
+      "test_policy_details": "UMass Lowell is test-optional for most programs. Standardized test scores are not required for admission but will be considered if submitted. In a recent class, roughly 27-31% of admitted students chose to submit SAT scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 13676,
+        "admits_total": 11345,
+        "enrolled_total": 2011,
+        "acceptance_rate_overall": 0.8295,
+        "acceptance_rate_in_state": 0.8278,
+        "acceptance_rate_out_of_state": 0.825,
+        "yield_rate": 0.177,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 572,
+          "accepted_spots": 240,
+          "admitted_from_waitlist": 45,
+          "waitlist_admit_rate": 0.1875,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from Common Data Set 2024-2025."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 12416,
+        "admits_total": 10499,
+        "enrolled_total": 1864,
+        "acceptance_rate_overall": 0.845,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.177,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 462,
+          "accepted_spots": 169,
+          "admitted_from_waitlist": 150,
+          "waitlist_admit_rate": 0.887,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from Common Data Set 2021-2022."
+      },
+      {
+        "year": 2019,
+        "cycle_name": "Class of 2023",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2019,
+          "offered_spots": 470,
+          "accepted_spots": 447,
+          "admitted_from_waitlist": 128,
+          "waitlist_admit_rate": 0.286,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from Common Data Set 2019-2020."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.20-3.80",
+        "average_weighted": 3.6,
+        "notes": "Average high school GPA of the incoming first-year class is reported around 3.6 to 3.7."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1370",
+        "sat_reading_middle_50": "590-680",
+        "sat_math_middle_50": "590-690",
+        "act_composite_middle_50": "25-32",
+        "submission_rate": 0.29,
+        "policy_note": "Averages represent students who opted to submit scores under the test-optional policy."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.43,
+        "legacy_percentage": null,
+        "international_percentage": 0.1,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Massachusetts)",
+            "percentage": 0.883
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 6686,
+            "admits": 5471,
+            "acceptance_rate": 0.818
+          },
+          "women": {
+            "applicants": 6976,
+            "admits": 5868,
+            "acceptance_rate": 0.841
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.512,
+          "black_african_american": 0.077,
+          "hispanic_latino": 0.115,
+          "asian": 0.119,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.029,
+          "unknown": 0.073,
+          "non_resident_alien": 0.074
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Francis College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.73,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students highly dedicated to hands-on learning, robotics, and co-op professional placements. Should have robust math and science grades in high school.",
+        "housing_profile": "Located primarily on North Campus. High proportion of residential students relative to the university average.",
+        "student_archetype": "The analytical builder who thrives on applied research and industry internships.",
+        "majors": [
+          {
+            "name": "Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "70-75%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission is selective. Current UMass Lowell students in non-engineering majors can seek admission through a formal program change request by completing key math and science courses early with strong GPAs."
+          }
+        ]
+      },
+      {
+        "name": "Miner School of Computer & Information Sciences (Kennedy College of Sciences)",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": 0.73,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Tech-focused students looking for high ROI and strong local hiring pipelines into Boston's tech corridor.",
+        "housing_profile": "Located primarily on North Campus.",
+        "student_archetype": "The analytical coder targeting software engineering, cybersecurity, or data science roles.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "70-75%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.3,
+            "weeder_courses": [
+              "COMP-1010 Computing I"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.3,
+            "curriculum": {
+              "core_courses": [
+                "COMP-1010 Computing I",
+                "COMP-1020 Computing II",
+                "COMP-2010 Computing III",
+                "COMP-2030 Computer Organization and Assembly Language",
+                "COMP-2040 Computing IV",
+                "COMP-3010 Organization of Programming Languages",
+                "COMP-3040 Foundations of Computer Science",
+                "COMP-3050 Computer Architecture",
+                "COMP-3080 Introduction to Operating Systems",
+                "COMP-4040 Analysis of Algorithms",
+                "EECE-2650 Logic Design",
+                "MATH-1310 Calculus I",
+                "MATH-1320 Calculus II",
+                "MATH-3210 Discrete Structures I",
+                "MATH-3220 Discrete Structures II",
+                "MATH-3860 Statistics for Scientists/Engineers"
+              ],
+              "electives": [
+                "COMP-3090 Database I",
+                "COMP-4200 Artificial Intelligence",
+                "COMP-4210 Data Mining",
+                "COMP-4220 Machine Learning",
+                "COMP-4230 Computer Vision I"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Xinwen Fu (Computer Security and Privacy)",
+              "Yu Cao (Medical Imaging, Artificial Intelligence, Digital Health)",
+              "Charles Thompson (Acoustics, Systems & Field Theory)",
+              "Kavitha Chandra (Communications Networks)"
+            ],
+            "notes": "Internal transfer into CS requires earning a B- or better in Computing I and Lab, and demonstrating the ability to complete the degree within a reasonable timeframe."
+          }
+        ]
+      },
+      {
+        "name": "Zuckerberg College of Health Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students dedicated to clinical health professions, public health, and gerontological care. Strong alignment with regional hospital partners.",
+        "housing_profile": "Located primarily on South Campus.",
+        "student_archetype": "The empathetic care-provider and clinical researcher.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "86%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS.3060 Health Assessment",
+                "NURS.3300 Pharmacology",
+                "NURS.3400 Trends in Nursing",
+                "NURS.4200 Leadership",
+                "NURS.4540 Palliative and End-of-Life Nursing Care",
+                "NUTR.2060 Human Nutrition"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Lisa Marchand (Pediatric obesity, food insecurity)",
+              "Patricia MacCulloch (Gerontological Nursing, Falls Prevention)",
+              "Karen Devereaux Melillo (Geropsychiatric and Gerontological Nursing)"
+            ],
+            "notes": "Internal transfer to Nursing is extremely limited. No exceptions made. Applications are accepted for fall enrollment only; spring submissions are deferred to fall without notification."
+          },
+          {
+            "name": "Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Anatomy and Physiology I and II",
+              "Physics I and II",
+              "Biology I and II"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Internal transfers must have a cumulative GPA of 2.500, and a science GPA of 2.500 in at least one semester of a required science course."
+          }
+        ]
+      },
+      {
+        "name": "Manning School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students eager to engage with corporate partners, leverage Co-op opportunities, and pursue analytics, accounting, or entrepreneurship.",
+        "housing_profile": "Located primarily on North Campus.",
+        "student_archetype": "The pragmatic, network-driven innovator.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FINA.3010 Financial Management",
+                "POMS.3010 Operations Management",
+                "MGMT.3010 Organizational Behavior",
+                "MGMT.3800 Business Ethics",
+                "MGMT.4900 Strategic Management",
+                "ECON.2010 Principles of Microeconomics",
+                "ECON.2020 Principles of Macroeconomics",
+                "LGST.2620 Introduction to Business Law"
+              ],
+              "electives": [
+                "ENTR.3000 Principles of Innovation and Entrepreneurship",
+                "POMS.4020 Global Supply Chain Management",
+                "MKTG.4120 Global Marketing"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "AACSB-accredited business school. Highly popular major."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "UMass Lowell Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-05",
+        "is_binding": false,
+        "notes": "Early Action I. Highly recommended for scholarship consideration (e.g., Dean's Scholarship program)."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": "Early Action II."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-08-15",
+        "is_binding": false,
+        "notes": "Fall Transfer Deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Personal essay required for all applicants."
+      },
+      {
+        "target_program": "Art and Design Majors",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Portfolio of 10 original works of art submitted through Slideroom."
+      },
+      {
+        "target_program": "Music Majors",
+        "requirement_type": "Audition",
+        "deadline": "",
+        "details": "Audition required. Students who fail the audition and do not select an alternate major will automatically be placed by the admissions office."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor (GPA)",
+        "Standardized Test Scores (if submitted)"
+      ],
+      "secondary_factors": [
+        "Personal Essay",
+        "Letters of Recommendation",
+        "Extracurricular Activities",
+        "Demonstrated Interest"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "The admissions team tracks demonstrated interest via virtual and physical campus tours, as well as attendance at high school rep visits. Applying Early Action qualifies students for immediate merit scholarship consideration."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Target Non-Impacted Majors: If applying with borderline academics, consider applying to non-selective programs, as admission into Engineering, Computer Science, and Nursing is noticeably stricter.",
+      "EA Advantage: Applying by the November 5th Early Action deadline is highly advised because it provides an early admission decision and maximizes consideration for the Dean's Scholarship.",
+      "Demonstrate Interest: Given that the admissions office explicitly tracks engagement, prospective students should register for virtual campus events via ZeeMee or the school's Naviance links."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants rejected from their first-choice major are frequently admitted to an alternate major or Undeclared (e.g., Exploratory Track). Internal transfer rules are well-defined: for instance, switching into Computer Science requires achieving a B- or better in 'Computing I' and maintaining a 2.3 GPA, providing a solid backdoor pathway for driven students."
+  },
+  "financials": {
+    "tuition_model": "Public Tuition varies by residency (In-state, Out-of-State, Regional/New England, International).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16966,
+        "total_coa": 35680,
+        "housing": 16148
+      },
+      "out_of_state": {
+        "tuition": 36264,
+        "total_coa": 54978,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Aware with generous automatic Merit Scholarships for high achievers.",
+    "average_need_based_aid": 13518,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.64,
+    "scholarships": [
+      {
+        "name": "UMass Lowell Dean's Scholarship Program",
+        "type": "Merit",
+        "amount": "Half Tuition/Fees",
+        "deadline": "November 5 (EA Deadline)",
+        "benefits": "Covers half of tuition and mandatory fees for admitted freshmen with high academic achievements.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Immersive Scholar Program",
+        "type": "Merit",
+        "amount": "$4,000",
+        "deadline": "",
+        "benefits": "Awards incoming freshmen $4,000 to engage in research, studying abroad, or community work during their undergraduate years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Balmforth Scholars Full Ride Award",
+        "type": "Merit/Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Covers tuition, fees, housing, books, and food for a Massachusetts commuter student pursuing a STEM degree with a 3.5+ GPA.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "International Merit Award",
+        "type": "Merit",
+        "amount": "Up to $20,000/year",
+        "deadline": "",
+        "benefits": "Variable new-student merit scholarships determined during the undergraduate admissions process for international students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Tuition Break Program",
+        "type": "Need/Merit",
+        "amount": "Discounted Tuition",
+        "deadline": "",
+        "benefits": "Discounted regional tuition for residents of CT, ME, NH, RI, and VT pursuing specific approved specialized majors.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants university credit for AP exam scores of 3, 4, and 5.",
+      "exceptions": [],
+      "usage": "Maximum of 30 combined credits awarded across AP, IB, CLEP, and challenge exams. Duplicate credit is not granted for equivalent formal coursework."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) IB exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "MassTransfer"
+      ],
+      "restrictions": "Maximum transfer credits accepted is 60 from a 2-year college and 90 from a 4-year institution. Minimum grade of C- required. Must complete 30 semester hours in-residence at UMass Lowell to earn a degree."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school schedule (AP/IB/Honors classes).",
+      "Demonstrated ability in math and sciences for STEM applicants.",
+      "An upward academic trajectory if early high school grades were lower."
+    ],
+    "common_activities": [
+      "Division I Athletics (Ice Hockey is highly popular)",
+      "Intramural & Club Sports",
+      "National Society of Black Engineers (NSBE)",
+      "Greek Life",
+      "Marching Band",
+      "Professional Co-ops and Internships"
+    ],
+    "essay_tips": [
+      "Emphasize real-world problem-solving skills and career goals.",
+      "Highlight how you will contribute to diversity, equity, and inclusion on campus.",
+      "Articulate how a specific program or experiential learning opportunity at UMass Lowell aligns with your long-term objectives."
+    ],
+    "red_flags": [
+      "A weak background in core mathematics for students applying to Engineering or Computer Science.",
+      "Low academic rigor despite high grades (lack of AP/IB courses if offered at the high school)."
+    ],
+    "insights": [
+      "The university maintains an incredible reputation for Return on Investment (ROI), particularly for in-state students pursuing STEM degrees.",
+      "Students frequently praise the highly approachable and knowledgeable faculty, especially in Business and Engineering.",
+      "A common student complaint relates to the campus dining options lacking variety and the difficulty/time it takes taking the bus between the North and South campuses.",
+      "Despite having robust campus housing options, a large commuter population dictates the campus social pace, which often empties out on the weekends."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 81163,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Lowell General Hospital",
+      "UKG (Kronos)",
+      "IBM",
+      "Commscope Arris",
+      "M/A COM Technology Solutions"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.84,
+    "graduation_rate_4_year": 0.49,
+    "graduation_rate_6_year": 0.65
+  }
+}

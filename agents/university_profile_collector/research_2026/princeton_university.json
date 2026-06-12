@@ -1,0 +1,436 @@
+{
+  "_id": "princeton_university",
+  "metadata": {
+    "official_name": "Princeton University",
+    "location": {
+      "city": "Princeton",
+      "state": "New Jersey",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-26",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Princeton University is a world-renowned private Ivy League research university known for its rigorous undergraduate focus, generous no-loan financial aid, and tight-knit residential college system [cite: 1, 2, 3]. The university uniquely blends the resource depth of a major research institution with the intimacy of a liberal arts college, requiring independent research (junior papers and a senior thesis) from all undergraduate students [cite: 4, 5].",
+    "market_position": "Elite Private Ivy League Research University",
+    "admissions_philosophy": "Holistic review prioritizing academic excellence, intellectual depth, and diversity, administered through a non-binding but restrictive Single-Choice Early Action program [cite: 6, 7, 8].",
+    "us_news_rank": 1,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Princeton's waitlist is highly volatile, accepting anywhere from 0 to 150+ students depending entirely on yield fluctuations in a given cycle [cite: 9, 10].",
+        "implication": "Applicants should view the waitlist as highly unpredictable and must submit a strong Letter of Continued Interest (LOCI) to be considered if spots open [cite: 11]."
+      },
+      {
+        "category": "Financial",
+        "insight": "The university covers the full cost of attendance (tuition, room, board) for most families earning up to $100,000-$150,000 via a pioneering no-loan financial aid program [cite: 3, 12, 13].",
+        "implication": "Princeton offers an exceptional Return on Investment (ROI) and eliminates debt burden for low- and middle-income students [cite: 3, 12]."
+      },
+      {
+        "category": "Academic",
+        "insight": "Princeton is reverting to a test-required admissions policy starting with the 2027-2028 application cycle (Class of 2032), ending its test-optional era [cite: 14, 15].",
+        "implication": "Future applicants must prioritize standardized test preparation, as internal data shows test submitters academically outperform non-submitters [cite: 15, 16]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Centered around a robust residential college system where all first-years and sophomores are required to live and dine, fostering a close-knit and insular undergraduate community [cite: 1].",
+      "transportation_impact": "Located in a picturesque suburban town with immediate train access to New York City and Philadelphia, providing quiet academic focus alongside major metropolitan opportunities [cite: 17].",
+      "research_impact": "Undergraduates benefit from a mandated independent research curriculum, working directly with world-class faculty through junior independent work and a rigorous senior thesis [cite: 1, 4, 5]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 4.62,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 1.91,
+      "admits_class_size": 1868,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through Fall 2026 and Fall 2027 entry. Princeton will require SAT or ACT scores starting with the 2027-2028 cycle (Class of 2032) [cite: 6, 14, 15].",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 5000,
+          "admits": 791,
+          "acceptance_rate": 15.82,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 40468,
+        "admits_total": 1868,
+        "enrolled_total": 1411,
+        "acceptance_rate_overall": 4.62,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 75.5,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1734,
+          "accepted_spots": 1396,
+          "admitted_from_waitlist": 40,
+          "waitlist_admit_rate": 2.87,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Transfer admit rate was 1.91% (38 admitted from 1,985 applicants) [cite: 11, 18, 19, 20]."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 39644,
+        "admits_total": 1782,
+        "enrolled_total": 1366,
+        "acceptance_rate_overall": 4.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1302,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 52,
+          "waitlist_admit_rate": 4.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate can drop to 0% in years with unexpected yield overperformance [cite: 10, 21, 22, 23]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.94-4.00",
+        "average_weighted": null,
+        "notes": "Princeton does not publish official GPA percentiles in its CDS, but average unweighted GPA clusters near 4.0, with the vast majority earning A grades in their school's most rigorous coursework [cite: 6, 23]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1570",
+        "sat_reading_middle_50": "740-780",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 75.0,
+        "policy_note": "Even while test-optional, roughly 75% of enrolled students submitted scores. The university favors test-submitters, finding test scores highly predictive of academic success [cite: 6, 16]."
+      },
+      "demographics": {
+        "first_gen_percentage": 16.7,
+        "legacy_percentage": 12.4,
+        "international_percentage": 14.1,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 21692,
+            "admits": 915,
+            "acceptance_rate": 4.22
+          },
+          "women": {
+            "applicants": 20593,
+            "admits": 953,
+            "acceptance_rate": 4.63
+          }
+        },
+        "racial_breakdown": {
+          "white": 31.3,
+          "black_african_american": 5.0,
+          "hispanic_latino": 9.2,
+          "asian": 27.1,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": 7.7,
+          "unknown": 8.2,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Engineering and Applied Science (B.S.E.)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students with exceptional quantitative skills. Requires rigorous baseline courses in multivariable calculus, physics, and chemistry, making it harder to transfer into later [cite: 5, 24, 25].",
+        "housing_profile": "All students live in Residential Colleges [cite: 1].",
+        "student_archetype": "Rigorous, highly technical problem solvers ready for intense core requirements and applied research [cite: 24].",
+        "majors": [
+          {
+            "name": "Computer Science (B.S.E.)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COS 126",
+              "COS 217",
+              "COS 226",
+              "MAT 202/204/217",
+              "EGR 154"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires at least 1 semester of independent work [cite: 4].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COS 126",
+                "COS 217",
+                "COS 226",
+                "COS 240",
+                "COS 316",
+                "COS 375",
+                "COS 324",
+                "COS 330",
+                "COS 423"
+              ],
+              "electives": [
+                "COS 326",
+                "COS 333",
+                "COS 343",
+                "COS 417",
+                "COS 418",
+                "COS 461"
+              ],
+              "total_units": 36,
+              "major_units": 8
+            },
+            "notable_professors": [
+              "Adam Finkelstein (Computer Graphics)",
+              "Brian Kernighan (Programming Languages/Software Tools)",
+              "Michael Freedman (Systems/Networking)",
+              "Mona Singh (Computational Biology)",
+              "Robert Tarjan (Algorithms)",
+              "Sanjeev Arora (Theoretical Computer Science)"
+            ],
+            "notes": "Students must complete four area requirements: Theoretical CS, Computer Systems, AI/ML, and a Breadth elective [cite: 24, 26, 27, 28, 29, 30]."
+          }
+        ]
+      },
+      {
+        "name": "Bachelor of Arts (A.B.)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students seeking a traditional liberal arts education, including humanities, social sciences, or a more flexible STEM track [cite: 4, 5].",
+        "housing_profile": "All students live in Residential Colleges [cite: 1].",
+        "student_archetype": "Intellectually curious explorers willing to heavily engage in self-directed research and writing [cite: 31].",
+        "majors": [
+          {
+            "name": "Computer Science (A.B.)",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COS 126",
+              "COS 217",
+              "COS 226"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 4 semesters of independent work, including a junior research workshop, an independent work project, and a year-long senior thesis [cite: 4, 5].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COS 126",
+                "COS 217",
+                "COS 226",
+                "COS 240",
+                "COS 316",
+                "COS 375",
+                "COS 324",
+                "COS 330",
+                "COS 423"
+              ],
+              "electives": [
+                "COS 326",
+                "COS 333",
+                "COS 343"
+              ],
+              "total_units": 31,
+              "major_units": 8
+            },
+            "notable_professors": [
+              "Adam Finkelstein (Computer Graphics)",
+              "Brian Kernighan (Programming Languages/Software Tools)",
+              "Michael Freedman (Systems/Networking)",
+              "Mona Singh (Computational Biology)",
+              "Robert Tarjan (Algorithms)",
+              "Sanjeev Arora (Theoretical Computer Science)"
+            ],
+            "notes": "A.B. students skip the heavy engineering math/physics prerequisites but commit to a deeper independent research and writing curriculum (thesis) [cite: 4, 5, 28, 29, 30]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Single-Choice Early Action (SCEA): Non-binding but restrictive. Cannot apply early to any other US private institution [cite: 7, 8]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-01",
+        "is_binding": false,
+        "notes": "Regular Decision [cite: 8]."
+      },
+      {
+        "plan_type": "Transfer",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Transfer application deadline [cite: 8, 18]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Princeton specific supplement questions and an independent Graded Written Paper [cite: 18]."
+      },
+      {
+        "target_program": "Arts",
+        "requirement_type": "Portfolio",
+        "deadline": "2026-03-08",
+        "details": "Optional Arts Supplement deadline for transfers/RD [cite: 18]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Rigor",
+        "GPA",
+        "Extracurricular Excellence",
+        "Essays",
+        "Letters of Recommendation"
+      ],
+      "secondary_factors": [
+        "Legacy Status",
+        "First-Generation Status",
+        "Pell-Eligibility"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Princeton utilizes legacy as a tie-breaker among exceptionally qualified applicants (approx 70% of legacy applicants are rejected). First-generation representation is strongly prioritized, reaching 16-18% in recent classes [cite: 13, 32, 33, 34]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply undecided or to any A.B. major as Princeton does not formally cap or restrict humanities/social science majors at the admissions phase [cite: 35, 36].",
+      "Carefully choose between A.B. and B.S.E. tracks on the application, as B.S.E. requires distinct mathematical and scientific preparation [cite: 5, 26]."
+    ],
+    "college_ranking_tactics": [
+      "Highly qualified candidates should apply SCEA. Historically, SCEA acceptance rates (approx. 10-15%) are significantly higher than Regular Decision rates, though the pool is extremely competitive [cite: 7, 37, 38]."
+    ],
+    "alternate_major_strategy": "Because Princeton admits students to the university broadly rather than into specific majors, changing majors is fluid during the first two years. However, switching from A.B. to B.S.E. is difficult due to the engineering school's strict foundational math/physics requirements [cite: 5, 25, 36]."
+  },
+  "financials": {
+    "tuition_model": "Flat tuition for all students",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 62688.0,
+        "total_coa": 86988.0,
+        "housing": 20250.0
+      },
+      "out_of_state": {
+        "tuition": 62688.0,
+        "total_coa": 86988.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met/Need-Blind",
+    "average_need_based_aid": 74380.0,
+    "average_merit_aid": 0.0,
+    "percent_receiving_aid": 69.0,
+    "scholarships": [
+      {
+        "name": "Princeton University Grant",
+        "type": "Need",
+        "amount": "Varies (Meets 100% of demonstrated need)",
+        "deadline": "",
+        "benefits": "Covers total cost of attendance (tuition, housing, food) without loans. Most families earning up to $100,000-$150,000 pay absolutely nothing [cite: 3, 12, 13].",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Starting in Fall 2025 (Class of 2029), Advanced Standing is eliminated. AP scores are used strictly for placement into higher-level courses or prerequisite fulfillment, but do not reduce the number of credits required to graduate [cite: 39, 40, 41].",
+      "exceptions": [
+        "Fulfills language requirements (AP 5) [cite: 42].",
+        "Math 103 exemption for Calculus BC 5 [cite: 42]."
+      ],
+      "usage": "To place out of introductory courses such as General Chemistry or Calculus, allowing students to access advanced electives sooner [cite: 39, 42]."
+    },
+    "ib_policy": {
+      "general_rule": "Similar to AP, eligible IB higher-level scores may be used for placement but confer no course credit or advanced standing [cite: 40, 42, 43].",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Individual faculty evaluation"
+      ],
+      "restrictions": "Cannot transfer into the senior class. Dual-enrollment credits earned during high school cannot be transferred. Must have at least one full year of postsecondary credit to apply [cite: 18, 44]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Near perfect unweighted GPA in the most rigorous courses available [cite: 6, 23].",
+      "Demonstrated depth in a focused intellectual area (research, high-level writing, or specialized STEM) [cite: 6].",
+      "Genuine alignment with Princeton's residential, undergraduate-focused culture [cite: 6, 17]."
+    ],
+    "common_activities": [
+      "Community service and civic engagement (over 75% of admitted students) [cite: 34].",
+      "Varsity athletics [cite: 34].",
+      "Academic research [cite: 34].",
+      "Employment (highly valued for showcasing maturity) [cite: 34]."
+    ],
+    "essay_tips": [
+      "Reflect authentically on lived experiences and how they will impact conversations in the classroom and dining hall [cite: 7].",
+      "Showcase deep intellectual vitality and readiness for rigorous independent work [cite: 6, 18]."
+    ],
+    "red_flags": [
+      "Applying via SCEA while secretly applying early to other private U.S. institutions [cite: 7, 37].",
+      "Withholding strong standardized test scores in test-optional cycles when demographics suggest access to testing [cite: 6, 16]."
+    ],
+    "insights": [
+      "Waitlist candidates must provide a Letter of Continued Interest (LOCI); without one, admission from the waitlist is nearly impossible [cite: 9, 11].",
+      "Legacy advantage functions strictly as a tie-breaker; around 70% of legacy applicants are still denied [cite: 33, 34]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 108590,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 98.4,
+    "graduation_rate_4_year": 89.0,
+    "graduation_rate_6_year": 97.0
+  }
+}

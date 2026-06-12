@@ -1,0 +1,552 @@
+{
+  "_id": "university_of_massachusetts_amherst",
+  "metadata": {
+    "official_name": "University of Massachusetts Amherst",
+    "location": {
+      "city": "Amherst",
+      "state": "Massachusetts",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Massachusetts Amherst is a premier public land-grant research university and the flagship campus of the UMass system. Known for its R1 research output and membership in the Five College Consortium, it offers robust academic programs across 109 undergraduate majors. The university balances a vibrant, large-scale campus life with increasingly selective, highly ranked programs in computer science, business, and nursing.",
+    "market_position": "Flagship Public Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 64,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Strict internal transfer bans for business majors.",
+        "implication": "Applicants must apply directly to the Isenberg School of Management's BBA programs as first-years, as internal transfers are no longer permitted."
+      },
+      {
+        "category": "Academic",
+        "insight": "Test-optional policy uses a dual-calculation formula.",
+        "implication": "UMass calculates admissions metrics with and without submitted test scores, utilizing whichever formula yields the higher value for the applicant, heavily prioritizing high school GPA."
+      },
+      {
+        "category": "Financial",
+        "insight": "Strong ROI with high median earnings.",
+        "implication": "With median earnings of $78,620 and a low loan default rate of 3.0%, UMass Amherst offers a strong financial return, especially for in-state students."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A large, diverse, and outgoing student body of over 23,000 undergraduates with highly rated campus dining and active community involvement.",
+      "transportation_impact": "Located in the Pioneer Valley, students have access to a robust bus system that connects them to the other institutions within the Five College Consortium.",
+      "research_impact": "As an R1 institution spending over $211 million annually on R&D, undergraduates have access to cutting-edge research opportunities, particularly in STEM fields."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 59.72,
+      "in_state_acceptance_rate": 60.47,
+      "out_of_state_acceptance_rate": 60.95,
+      "international_acceptance_rate": 52.86,
+      "transfer_acceptance_rate": 62.0,
+      "admits_class_size": 5366,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for first-year applicants. The university uses a formula based on high school GPA. If test scores are submitted, the admissions office compares the formula with and without scores and uses the higher value.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 28479,
+          "admits": 17440,
+          "acceptance_rate": 61.2,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 50261,
+        "admits_total": 30020,
+        "enrolled_total": 5366,
+        "acceptance_rate_overall": 59.72,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 17.87,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 9742,
+          "accepted_spots": 6478,
+          "admitted_from_waitlist": 1142,
+          "waitlist_admit_rate": 17.63,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 53519,
+        "admits_total": 29129,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 57.78,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 11588,
+          "accepted_spots": 6628,
+          "admitted_from_waitlist": 1701,
+          "waitlist_admit_rate": 25.66,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 48393,
+        "admits_total": 30873,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 63.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 8531,
+          "accepted_spots": 3681,
+          "admitted_from_waitlist": 74,
+          "waitlist_admit_rate": 2.01,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 45638,
+        "admits_total": 30028,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 65.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 7261,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 2349,
+          "waitlist_admit_rate": 32.35,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.06,
+        "notes": "Incoming freshman weighted GPA average."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1330-1480",
+        "sat_reading_middle_50": "660-740",
+        "sat_math_middle_50": "660-760",
+        "act_composite_middle_50": "30-34",
+        "submission_rate": null,
+        "policy_note": "Test-optional. Averages reflect students who chose to submit."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 7.79,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 55.94,
+          "black_african_american": 4.55,
+          "hispanic_latino": 9.55,
+          "asian": 14.41,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.05,
+          "two_or_more_races": 4.98,
+          "unknown": 2.63,
+          "non_resident_alien": 7.79
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Manning College of Information & Computer Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants should apply directly to the major and possess strong math preparation, ideally through pre-calculus or calculus.",
+        "housing_profile": "Standard university housing systems available.",
+        "student_archetype": "Technically adept, analytical students interested in AI, software engineering, and data science.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CICS 110",
+              "CICS 160",
+              "CICS 210",
+              "COMPSCI 220",
+              "COMPSCI 230",
+              "COMPSCI 240",
+              "COMPSCI 250",
+              "MATH 131",
+              "MATH 132"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "Engineering Calculus I",
+              "Data Structures"
+            ],
+            "special_requirements": "Internal transfers must complete specific math and programming prerequisites with a B or B+ depending on their entry timeline.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "curriculum": {
+              "core_courses": [
+                "CICS 110 Foundations of Programming",
+                "CICS 160 Object-Oriented Programming",
+                "CICS 210 Data Structures",
+                "COMPSCI 220 Programming Methodology",
+                "COMPSCI 230 Computer Systems Principles",
+                "COMPSCI 240 Reasoning Under Uncertainty",
+                "COMPSCI 250 Introduction to Computation",
+                "CICS 305 Social Issues in Computing"
+              ],
+              "electives": [
+                "COMPSCI 453 Computer Networks",
+                "COMPSCI 520 Theory and Practice of Software Engineering",
+                "COMPSCI 513 Logic in Computer Science"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Gordon Anderson (Data Science)"
+            ],
+            "notes": "Internal transfers are capped and not guaranteed even if GPA requirements are met."
+          }
+        ]
+      },
+      {
+        "name": "Isenberg School of Management",
+        "admissions_model": "Direct Admit Only (for BBA)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students seeking traditional business degrees (Finance, Accounting, Marketing) MUST apply as high school seniors. Internal transfer is completely prohibited.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Career-focused, networking-oriented students seeking pathways to corporate finance, Big Four accounting, or top-tier consulting.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 127",
+              "ECON 103",
+              "ECON 104",
+              "ACCOUNTG 221"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must be admitted directly as a freshman.",
+            "admissions_pathway": "Direct Admit Only",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Corporate Finance",
+                "Investments",
+                "Financial Modeling"
+              ],
+              "electives": [
+                "Bank Management",
+                "International Finance",
+                "Alternative Investments",
+                "Advanced Corporate Finance"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Jeffrey G. Robert"
+            ],
+            "notes": "As of Fall 2022, UMass Amherst students cannot internally transfer into Isenberg BBA majors."
+          }
+        ]
+      },
+      {
+        "name": "College of Natural Sciences",
+        "admissions_model": "Pre-Major / Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for pre-med, research-focused STEM students, and those exploring the life sciences.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Research-oriented, inquisitive students preparing for healthcare, laboratory science, or graduate studies.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOLOGY 151",
+              "BIOLOGY 152",
+              "BIOLOGY 153"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOLOGY 151 Introductory Biology I",
+                "BIOLOGY 152 Introductory Biology II",
+                "BIOLOGY 153 Introductory Biology Laboratory",
+                "BIOLOGY 312 Writing in Biology",
+                "PHYSICS 131 Introductory Physics",
+                "CHEM 111 General Chemistry"
+              ],
+              "electives": [
+                "BIOL 285 Cell & Molecular Biology",
+                "BIOL 311 General Genetics",
+                "BIOL 288 Introductory Physiology",
+                "BIOL 287 Introductory Ecology"
+              ],
+              "total_units": 120,
+              "major_units": 67
+            },
+            "notable_professors": [
+              "Lynn Adler",
+              "Akiko Okuso",
+              "Sarah Pallas"
+            ],
+            "notes": ""
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYCH 100 Introductory Psychology",
+                "PSYCH 240 Statistics in Psychology",
+                "PSYCH 241 Methods of Inquiry in Psychology",
+                "PSYCH 337 Writing in Psychological and Brain Sciences"
+              ],
+              "electives": [
+                "PSYCH 315 Cognitive Psychology",
+                "PSYCH 330 Introduction to Neuroscience",
+                "PSYCH 387 Autism Spectrum Disorder"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Most popular major at UMass Amherst based on graduation data."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-05",
+        "is_binding": false,
+        "notes": "Early Action deadline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Personal statement via Common App."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High school GPA",
+        "Rigor of secondary school record"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (if submitted)",
+        "Extracurricular activities",
+        "Personal essay"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal/None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Strongly weighs academic performance in courses directly relevant to the applicant's intended major."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to Isenberg BBA majors, as internal transfers are no longer permitted.",
+      "Apply directly to Computer Science, as internal transfers are severely capped.",
+      "List a less competitive second-choice major if applying to highly impacted programs."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "If rejected from Isenberg BBA programs, consider Resource Economics, Managerial Economics, or Isenberg BS programs (Sport Management/Hospitality) which still allow internal transfers."
+  },
+  "financials": {
+    "tuition_model": "Tiered public university model.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 17006.0,
+        "total_coa": 36380.0,
+        "housing": 16726.0
+      },
+      "out_of_state": {
+        "tuition": 41649.0,
+        "total_coa": 61741.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 22429.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 46.96,
+    "scholarships": [
+      {
+        "name": "Community College Academic Honors Scholarship",
+        "type": "Merit",
+        "amount": "null",
+        "deadline": "",
+        "benefits": "Tuition reduction for transfer students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Honors-to-Honors Scholarship",
+        "type": "Merit",
+        "amount": "null",
+        "deadline": "",
+        "benefits": "Supports high-achieving honors transfer students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Tuition Break Program",
+        "type": "Merit",
+        "amount": "null",
+        "deadline": "",
+        "benefits": "Reduced tuition for qualifying New England residents.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous with APs, strict on major-specific transfer residency.",
+    "ap_policy": {
+      "general_rule": "AP scores of 4 or 5 generally accepted for credit.",
+      "exceptions": [],
+      "usage": "Can satisfy introductory core requirements (e.g., AP Comp Sci for CICS 110)."
+    },
+    "ib_policy": {
+      "general_rule": "Higher Level exams generally accepted.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "MassTransfer"
+      ],
+      "restrictions": "Strict residency rules for upper-level major courses (e.g., maximum 3 transfer courses allowed for upper-level CS electives)."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High GPA (average 4.06 weighted)",
+      "Strong math foundation for STEM/Business",
+      "Demonstrated interest in specific sub-fields for impacted majors"
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Highlight specific intellectual passions to demonstrate 'fit'."
+    ],
+    "red_flags": [
+      "Poor performance in math courses for Business/CS applicants."
+    ],
+    "insights": [
+      "The campus food is consistently ranked #1 in the nation.",
+      "Students describe the environment as highly collaborative rather than cutthroat."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78620,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Mass General Brigham",
+      "Fidelity Investments",
+      "The TJX Companies, Inc.",
+      "PricewaterhouseCoopers",
+      "Beth Israel Lahey Health",
+      "ALKU",
+      "EY LLP",
+      "Amazon",
+      "Deloitte",
+      "Dell Technologies"
+    ],
+    "loan_default_rate": 3.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 92.0,
+    "graduation_rate_4_year": 76.2,
+    "graduation_rate_6_year": 83.4
+  }
+}

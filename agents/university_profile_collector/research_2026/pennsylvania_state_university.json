@@ -1,0 +1,481 @@
+{
+  "_id": "pennsylvania_state_university",
+  "metadata": {
+    "official_name": "The Pennsylvania State University",
+    "location": {
+      "city": "University Park",
+      "state": "Pennsylvania",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The Pennsylvania State University (Penn State) is a massive, state-related land-grant research university known for its fervent school spirit, sprawling alumni network, and highly competitive programs in engineering and business. Operating on a unique '2+2' commonwealth campus model, its flagship University Park campus acts as the academic and social hub. While overall admission is moderately selective, gaining direct entry to the University Park campus for popular majors is significantly more competitive.",
+    "market_position": "Public Flagship / Top Public Research University",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 59,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Penn State relies heavily on a strictly academic review, predominantly evaluating GPA, course rigor, and test scores (if submitted), while intentionally disregarding essays, recommendations, and extracurriculars for general admission.",
+        "implication": "Applicants with lower GPAs cannot rely on 'soft factors' like compelling personal stories or leadership to gain admission to University Park."
+      },
+      {
+        "category": "Academic",
+        "insight": "Almost all students enter in a 'Pre-Major' status and must clear an 'Entrance to Major' (ETM) hurdle involving strict credit windows and high GPA cutoffs (e.g., 3.50 for Finance) in specific filter courses.",
+        "implication": "Getting accepted to Penn State does not guarantee a student will graduate with their intended major; strong academic performance in the first two years is mandatory."
+      },
+      {
+        "category": "Financial",
+        "insight": "Penn State is exceptionally expensive for a public university, with out-of-state total cost of attendance frequently exceeding $70,000 per year.",
+        "implication": "Out-of-state applicants should heavily weigh the ROI, though the massive alumni network provides excellent career mobility."
+      },
+      {
+        "category": "Culture",
+        "insight": "The campus defines the traditional 'Big Ten' college experience with over 1,200 clubs, dominant Greek life, and the world's largest student-run philanthropy (THON).",
+        "implication": "Students seeking a vibrant, high-energy, sports-centric environment will thrive, while those seeking an intimate or quiet liberal arts experience may feel overwhelmed."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A quintessential college town atmosphere in 'Happy Valley' featuring massive football tailgates at Beaver Stadium, highly active Greek life, and widespread participation in THON.",
+      "transportation_impact": "Located in rural central Pennsylvania, the University Park campus is relatively isolated from major urban centers, making it a highly self-contained bubble.",
+      "research_impact": "As an R1 institution, Penn State generates over $1.44 billion in annual research expenditures, providing extensive undergraduate research opportunities, particularly in engineering, earth sciences, and agriculture."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.605,
+      "in_state_acceptance_rate": 0.62,
+      "out_of_state_acceptance_rate": 0.59,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.698,
+      "admits_class_size": 9169,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for the fall 2025 admission cycle. Students may choose to submit SAT or ACT scores, but are not penalized if they do not.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.68,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 88478,
+        "admits_total": 53579,
+        "enrolled_total": 9169,
+        "acceptance_rate_overall": 0.605,
+        "acceptance_rate_in_state": 0.62,
+        "acceptance_rate_out_of_state": 0.59,
+        "yield_rate": 0.171,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1818,
+          "accepted_spots": 1248,
+          "admitted_from_waitlist": 654,
+          "waitlist_admit_rate": 0.524,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate rose slightly to manage declining yield rates, though competitive majors remained highly selective."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 85957,
+        "admits_total": 46605,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.542,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.19,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 4903,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 84,
+          "waitlist_admit_rate": 0.017,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 78578,
+        "admits_total": 45269,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.576,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.84,
+        "notes": "GPA is the primary driving factor in Penn State's formulaic admissions process."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1250-1410",
+        "sat_reading_middle_50": "580-660",
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "27-32",
+        "submission_rate": 0.33,
+        "policy_note": "A majority of admitted students applied test-optional; however, submitting a strong test score (1360+) provides an edge for competitive fields like Smeal or Engineering."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.28,
+        "legacy_percentage": null,
+        "international_percentage": 0.09,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Pennsylvania)",
+            "percentage": 0.51
+          },
+          {
+            "region": "Out-of-State/International",
+            "percentage": 0.49
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 0.5326
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 0.5717
+          }
+        },
+        "racial_breakdown": {
+          "white": null,
+          "black_african_american": null,
+          "hispanic_latino": null,
+          "asian": null,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Smeal College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 0.19,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High-achieving students seeking to enter corporate finance, accounting, or supply chain logistics, willing to withstand rigid prerequisite curves.",
+        "housing_profile": "Traditional residence halls at University Park",
+        "student_archetype": "Driven, corporate-focused, heavily involved in networking and Greek life.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "19%",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 140",
+              "MATH 141"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a cumulative GPA of 3.50 across both overall coursework and specific ETM courses within a credit window of 44 to 59 Penn State credits.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": null,
+              "electives": null,
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly competitive. Known as a pipeline to top consulting and corporate finance roles, though breaking into NYC high finance requires aggressive networking via the Nittany Lion Fund."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong math/science students desiring large-scale resources, robust co-op opportunities, and extensive corporate recruiting pipelines.",
+        "housing_profile": "Traditional residence halls at University Park",
+        "student_archetype": "Analytical, resilient against tough grading curves, focused on practical industry outcomes.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 140",
+              "MATH 141",
+              "PHYS 211",
+              "CMPSC 121",
+              "CMPSC 122",
+              "CMPSC 131",
+              "CMPSC 132"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [
+              "MATH 140",
+              "MATH 141",
+              "PHYS 211",
+              "CMPSC 121",
+              "CMPSC 122"
+            ],
+            "special_requirements": "Must attain a minimum 3.20 GPA and C or better in all ETM courses within a strict 29-55 credit window.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "curriculum": {
+              "core_courses": null,
+              "electives": null,
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "One of the most competitive majors at Penn State. Students who fail to meet the 3.2 GPA threshold by their sophomore year are forced to find alternate majors."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Consistently produces one of the highest numbers of graduates at the university."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "MyPennState"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Non-binding Early Action. Decisions released by December 24."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Recommended submission deadline; applications shift to rolling review afterward, becoming increasingly competitive."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-11-01",
+        "details": "One optional personal statement (650 words) allowing students to share something not reflected elsewhere. One required educational gap statement (only for students with time taken off since high school)."
+      },
+      {
+        "target_program": "Schreyer Honors College",
+        "requirement_type": "Essays",
+        "deadline": "2025-11-01",
+        "details": "Requires an extensive additional application with multiple supplemental essays emphasizing leadership, non-academic impact, and intellectual curiosity."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Course Rigor"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "Minimal",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Penn State's general admission process is explicitly numbers-focused. They do NOT evaluate letters of recommendation, extracurriculars, or character qualities for standard University Park admission."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply DUS (Division of Undergraduate Studies): Applying 'Undecided' (DUS) can be easier than applying directly to highly competitive colleges like Smeal or Engineering, as all students must still pass the same Entry to Major (ETM) prerequisites later.",
+      "Summer Session Start: Indicating a willingness to start during the Summer session can significantly increase admission chances for borderline applicants to University Park."
+    ],
+    "college_ranking_tactics": [
+      "Apply Early Action: With a 68% EA acceptance rate versus a sub-60% RD rate, applying by November 1 is crucial to secure a spot before rolling admissions fills the class."
+    ],
+    "alternate_major_strategy": "The 2+2 Plan: Select an alternate Commonwealth Campus (e.g., Altoona, Abington) on the application. Over 50% of Penn State students begin at a branch campus and transfer to University Park for their junior and senior years seamlessly, provided they meet GPA requirements."
+  },
+  "financials": {
+    "tuition_model": "In-State/Out-of-State Differential",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 20878.0,
+        "total_coa": 46440.0,
+        "housing": 18276.0
+      },
+      "out_of_state": {
+        "tuition": 41790.0,
+        "total_coa": 71636.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": 2500.0,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Provost Award",
+        "type": "Merit",
+        "amount": "$10,000-$14,000",
+        "deadline": "2025-11-01",
+        "benefits": "Tuition reduction for out-of-state students demonstrating exceptional academic ability.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Discover Penn State Award",
+        "type": "Merit",
+        "amount": "$6,000",
+        "deadline": "2025-11-01",
+        "benefits": "Given to out-of-state students enrolling at a Commonwealth Campus; renewable for up to four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Academic Award",
+        "type": "Merit",
+        "amount": "$2,000-$3,000",
+        "deadline": "2025-11-01",
+        "benefits": "Given to high-achieving Pennsylvania residents attending University Park.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Bunton-Waller Scholarship",
+        "type": "Merit/Need",
+        "amount": "$3,200",
+        "deadline": "2025-11-01",
+        "benefits": "Awarded to resident instruction students with high financial need or diverse backgrounds; renewable for four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "RaiseMe Scholarship",
+        "type": "Merit",
+        "amount": "Up to $4,000/yr",
+        "deadline": "2024-12-31",
+        "benefits": "Micro-scholarships earned throughout high school for academic and extracurricular achievements.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 3, 4, or 5 depending on the specific exam.",
+      "exceptions": [
+        "Cannot earn duplicate credit if the student elects to take the equivalent course at Penn State."
+      ],
+      "usage": "Can be applied to degree requirements, General Education, or general electives based on the college of enrollment."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level examinations.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "LionPATH",
+        "Undergraduate Bulletin"
+      ],
+      "restrictions": "Students must be cautious with transfer/AP credits; tuition is immediately increased to the upper-division rate once a student's transcript exceeds 59.1 total credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A rigid focus on high school GPA and course rigor above all else.",
+      "Applying Early Action (by Nov 1) to secure a spot before University Park fills.",
+      "Willingness to start during the Summer Session if borderline.",
+      "Understanding that admission to the university does not guarantee entry into competitive majors like Business or CS without maintaining a high college GPA."
+    ],
+    "common_activities": [
+      "THON (The Penn State IFC/Panhellenic Dance Marathon)",
+      "Greek Life",
+      "Nittany Lion Football and Tailgating",
+      "Nittany Lion Fund (for Finance students)",
+      "Intramural Sports"
+    ],
+    "essay_tips": [
+      "The optional 650-word essay should only be used to explain anomalies, hardships, or compelling factors not visible in the transcript.",
+      "Do not treat the optional essay as a 'Why Penn State' prompt; focus purely on personal traits.",
+      "For the gap-year essay, prioritize clarity and timeline explanations over deep reflection."
+    ],
+    "red_flags": [
+      "Applying Regular Decision as an out-of-state student with average stats; University Park fills quickly.",
+      "Assuming a strong extracurricular resume will make up for a sub-par GPA."
+    ],
+    "insights": [
+      "Penn State operates entirely as a 'Pre-Major' system for most programs; students who fail 'weed-out' classes their freshman year often scramble to find new majors or must transfer.",
+      "The 2+2 program is highly utilizing and destigmatized; roughly 60% of all Penn State students start at a branch campus."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 76659,
+    "employment_rate_2yr": 0.92,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Dell",
+      "Deloitte",
+      "Amazon",
+      "Apple",
+      "Johnson & Johnson"
+    ],
+    "loan_default_rate": 6.59e-05
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.93,
+    "graduation_rate_4_year": 0.69,
+    "graduation_rate_6_year": 0.86
+  }
+}

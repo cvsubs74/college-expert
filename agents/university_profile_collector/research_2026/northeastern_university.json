@@ -1,0 +1,396 @@
+{
+  "_id": "northeastern_university",
+  "metadata": {
+    "official_name": "Northeastern University",
+    "location": {
+      "city": "Boston",
+      "state": "Massachusetts",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Northeastern University is an elite private research institution renowned for its cooperative education (co-op) program, which integrates rigorous academics with full-time professional experience. The university has seen an unprecedented surge in applications, dropping its acceptance rate into the low single digits and driving aggressive global campus expansion.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 46,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Northeastern has an ED admit rate of ~43% compared to an RD rate of ~3.8%.",
+        "implication": "Applicants lacking supplemental essays apply en masse in RD; genuine applicants must use ED to demonstrate commitment and realistically gain admission."
+      },
+      {
+        "category": "Academic",
+        "insight": "The co-op program is mandatory for the majority of the student experience, heavily shifting focus to pre-professional outcomes.",
+        "implication": "Students looking for a traditional, continuous 4-year campus social life may feel displaced by the constant rotation of peers into the workforce."
+      },
+      {
+        "category": "Financial",
+        "insight": "Students do not pay tuition during their 6-month co-op cycles.",
+        "implication": "Despite a high sticker price, the lack of tuition during co-ops and the income earned can significantly offset the total cost of attendance."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Highly pre-professional and driven. Social cohesion can be challenging due to students rotating in and out of Boston for co-ops and study abroad programs.",
+      "transportation_impact": "Embedded seamlessly into urban Boston, with direct access to the MBTA allowing easy commutes to corporate co-ops downtown.",
+      "research_impact": "R1 Doctoral University with extremely high research activity, specifically in health informatics, cybersecurity, and mechanobiology."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 5.6,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 19.74,
+      "admits_class_size": 2759,
+      "is_test_optional": true,
+      "test_policy_details": "Northeastern is fully test-optional. Applicants are not penalized for withholding scores, and only ~31% of enrolled students submit them.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 3466,
+          "admits": 1492,
+          "acceptance_rate": 43.05,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 98425,
+        "admits_total": 5133,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 5.22,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 53.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 105092,
+        "admits_total": 5885,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 5.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.19,
+        "notes": "Average GPA is heavily weighted; unweighted averages for admitted students typically exceed 3.9."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1440-1510",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "33-35",
+        "submission_rate": 31.0,
+        "policy_note": "Superscores both SAT and ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": null,
+        "international_percentage": 14.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 30.7,
+          "black_african_american": 3.71,
+          "hispanic_latino": 7.13,
+          "asian": 15.4,
+          "native_american_alaskan": 0.0399,
+          "pacific_islander": 0.0338,
+          "two_or_more_races": 4.54,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Khoury College of Computer Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students highly dedicated to tech, software engineering, and AI who want 12-18 months of paid industry experience before graduating.",
+        "housing_profile": "Integrated into general university housing.",
+        "student_archetype": "Tech-driven, career-focused builder.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 3000 Algorithms and Data",
+                "CS 3100 Program Design and Implementation 2",
+                "CS 3200 Introduction to Databases",
+                "CS 4530 Fundamentals of Software Engineering"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Elizabeth Hawthorne (Cybersecurity)",
+              "Dr. Paul Hand (Algorithms and AI)",
+              "Dr. Adam C. Powell (Health Informatics)",
+              "Dr. Cody Dunne (Information Visualization)"
+            ],
+            "notes": "Highly integrated with combined major options across other colleges."
+          }
+        ]
+      },
+      {
+        "name": "D'Amore-McKim School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Driven future corporate leaders and entrepreneurs wanting direct exposure to Boston's financial and startup ecosystems.",
+        "housing_profile": "Integrated into general university housing.",
+        "student_archetype": "Pre-professional, networking-oriented.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCT 1201 Financial Accounting",
+                "ECON 1115 Principles of Macroeconomics",
+                "ECON 1116 Principles of Microeconomics",
+                "ECON 2315 Macroeconomic Theory"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Daniel J. McCarthy (Global Management)",
+              "Dr. Hugh Courtney (Strategy and Game Theory)",
+              "Dr. Anand Nair (Supply Chain)",
+              "Dr. Cheryl Mitteness (Entrepreneurship)",
+              "Dr. Steven Kursh (Technology Management)"
+            ],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "ED I"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": "ED II"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Northeastern requires NO supplemental essays."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Standardized test scores",
+        "Recommendations",
+        "Demonstrated Interest"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Lack of supplementals makes demonstrated interest and ED incredibly vital to signal actual intent to enroll."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": ""
+  },
+  "financials": {
+    "tuition_model": "Private Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67990.0,
+        "total_coa": 94137.0,
+        "housing": 13148.0
+      },
+      "out_of_state": {
+        "tuition": 67990.0,
+        "total_coa": 94137.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 35882.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 70.0,
+    "scholarships": [
+      {
+        "name": "Torch Scholarship",
+        "type": "Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Full tuition, room, and board",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grades of 4 or 5",
+      "exceptions": [],
+      "usage": "Max 32 semester hours allowed."
+    },
+    "ib_policy": {
+      "general_rule": "Grades of 5 or higher on Higher Level (HL) exams",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Database"
+      ],
+      "restrictions": "Max 32 combined advanced credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Extremely rigorous high school transcript",
+      "Demonstrated interest (visits, emails, webinars)",
+      "Applying Early Decision"
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Because there is no supplemental essay, the Common App essay must communicate professional maturity, intellectual curiosity, and readiness for the workplace."
+    ],
+    "red_flags": [
+      "Applying Regular Decision with absolutely zero prior contact with the university."
+    ],
+    "insights": [
+      "Co-ops define the campus culture; students alternate between being full-time students and full-time employees."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 101903,
+    "employment_rate_2yr": 97.0,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Apple",
+      "Goldman Sachs",
+      "J.P. Morgan Chase",
+      "Boston Children's Hospital",
+      "Google",
+      "Deloitte"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 97.5,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 91.0
+  }
+}

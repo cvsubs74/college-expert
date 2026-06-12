@@ -1,0 +1,357 @@
+{
+  "_id": "university_of_la_verne",
+  "metadata": {
+    "official_name": "University of La Verne",
+    "location": {
+      "city": "La Verne",
+      "state": "CA",
+      "type": "Private Nonprofit"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of La Verne is a private, nonprofit institution and designated Hispanic-Serving Institution (HSI) in Southern California. It focuses heavily on social mobility, civic engagement, and supporting first-generation college students through values-based education.",
+    "market_position": "Regional Private / Opportunity College",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 196,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The university is broadly accessible with a 71.2% acceptance rate and a test-optional policy.",
+        "implication": "Applicants with average to above-average high school GPAs (3.0+) have a very strong likelihood of admission without needing standardized test scores."
+      },
+      {
+        "category": "Culture",
+        "insight": "44% of the traditional undergraduate population are first-generation students, and the school is an HSI.",
+        "implication": "The campus culture is highly supportive, community-focused, and tailored toward guiding diverse students through higher education."
+      },
+      {
+        "category": "Financial",
+        "insight": "98% of freshmen receive financial aid, resulting in a median debt at graduation of only $23,500.",
+        "implication": "Despite a high sticker price of ~$70k, the institutional discounting makes it an affordable option with a solid ROI."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Quiet, suburban campus located 30 miles east of Los Angeles. Features a tight-knit community feel heavily influenced by a large commuter base and first-generation student support.",
+      "transportation_impact": "Primarily a commuter-friendly campus with access to the broader Los Angeles metropolitan area.",
+      "research_impact": "Undergraduate research is integrated into the curriculum, including a required undergraduate capstone thesis/project in certain science majors."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.712,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 743,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional. The university does not require the SAT or ACT for first-time freshmen students applying for admission.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 7110,
+        "admits_total": 5060,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.712,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.098,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 10813,
+        "admits_total": 5242,
+        "enrolled_total": 743,
+        "acceptance_rate_overall": 0.485,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.141,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 6171,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.735,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.49,
+        "notes": "Data sources refer to a 3.24 to 3.49 average GPA depending on the specific reporting year."
+      },
+      "testing": {
+        "sat_composite_middle_50": "990-1230",
+        "sat_reading_middle_50": "500-660",
+        "sat_math_middle_50": "490-570",
+        "act_composite_middle_50": "18-25",
+        "submission_rate": 0.05,
+        "policy_note": "Test Optional"
+      },
+      "demographics": {
+        "first_gen_percentage": 0.44,
+        "legacy_percentage": null,
+        "international_percentage": 0.04,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.16,
+          "black_african_american": 0.04,
+          "hispanic_latino": 0.49,
+          "asian": 0.04,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": 0.04
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Business & Public Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in corporate leadership, public administration, and accounting.",
+        "housing_profile": null,
+        "student_archetype": null,
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major at the university."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing psychology, biology, and liberal arts.",
+        "housing_profile": null,
+        "student_archetype": null,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The second most popular program."
+          }
+        ]
+      },
+      {
+        "name": "LaFetra College of Education",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Future educators and school administrators.",
+        "housing_profile": null,
+        "student_archetype": null,
+        "majors": [
+          {
+            "name": "Education",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly ranked regionally for social mobility and education pathways."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Institutional Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Rolling admissions process for regular decision."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "Rolling",
+        "details": "Personal statement/essay required for all incoming freshmen."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "College Prep Courses"
+      ],
+      "secondary_factors": [
+        "Letters of Recommendation",
+        "Extracurriculars"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Required",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "The school places a heavy emphasis on access and supporting first-generation and Hispanic students."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "The general high acceptance rate limits the necessity of alternate major gaming strategies for most programs."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 49470.0,
+        "total_coa": 70288.0,
+        "housing": 15830.0
+      },
+      "out_of_state": {
+        "tuition": 49470.0,
+        "total_coa": 70288.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Aware / Heavily Discounted",
+    "average_need_based_aid": 40688.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.98,
+    "scholarships": []
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts AP credit for qualifying scores.",
+      "exceptions": [],
+      "usage": "Can be used to bypass introductory classes."
+    },
+    "ib_policy": {
+      "general_rule": null,
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer credits accepted but may be capped by residency requirements."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [],
+    "common_activities": [],
+    "essay_tips": [],
+    "red_flags": [],
+    "insights": [
+      "The university provides massive financial aid packages to combat the high sticker price.",
+      "A tight-knit, supportive environment where faculty are accessible."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 64109,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.64,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 0.63
+  }
+}

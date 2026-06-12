@@ -1,0 +1,481 @@
+{
+  "_id": "old_dominion_university",
+  "metadata": {
+    "official_name": "Old Dominion University",
+    "location": {
+      "city": "Norfolk",
+      "state": "VA",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "Old Dominion University Common Data Set 2024-2025",
+      "Old Dominion University Common Data Set 2025-2026",
+      "College Scorecard",
+      "IPEDS Data"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Old Dominion University (ODU) is a progressive, metropolitan public research university located in Norfolk, Virginia. Holding an R1 Carnegie Classification for very high research activity, ODU provides a highly accessible educational environment with a strong emphasis on engineering, business, health sciences, and cybersecurity.",
+    "market_position": "Large Public R1 Research University",
+    "admissions_philosophy": "Holistic Review",
+    "us_news_rank": 280,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "With an acceptance rate consistently above 90%, ODU is an accessible institution that offers open opportunities for students seeking entry into a research-focused university.",
+        "implication": "Students with average academic profiles are highly likely to be admitted, making it a reliable target or safety school."
+      },
+      {
+        "category": "Academic",
+        "insight": "ODU maintains a heavy investment in modern, high-demand disciplines, establishing dedicated schools such as the School of Cybersecurity and the School of Data Science.",
+        "implication": "Applicants targeting tech, maritime, and defense-adjacent careers will find strong institutional alignment and employer pipelines."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university has a substantial commuter and part-time population, alongside a very diverse student body and strong military affiliation.",
+        "implication": "The social environment is multifaceted, requiring proactive engagement to fully experience traditional campus life."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly diverse, though heavily influenced by a large commuter and non-traditional student population. Strong school spirit is centered around Division I athletics.",
+      "transportation_impact": "Located in the Hampton Roads region, proximity to naval bases and maritime centers heavily impacts local internship and career opportunities.",
+      "research_impact": "Classified as an R1 Doctoral University, ODU drives significant research initiatives, notably in bioelectronics, modeling and simulation, and coastal resilience."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.904,
+      "in_state_acceptance_rate": 0.924,
+      "out_of_state_acceptance_rate": 0.871,
+      "international_acceptance_rate": 0.928,
+      "transfer_acceptance_rate": 0.878,
+      "admits_class_size": 2697,
+      "is_test_optional": true,
+      "test_policy_details": "Test optional. SAT or ACT scores are not required for admission but are considered if submitted. Scores may be used for academic advising and math/writing placement.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 15100,
+        "admits_total": 13645,
+        "enrolled_total": 2721,
+        "acceptance_rate_overall": 0.904,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.199,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1215,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 567,
+          "waitlist_admit_rate": 0.466,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 15024,
+        "admits_total": 13725,
+        "enrolled_total": 2697,
+        "acceptance_rate_overall": 0.913,
+        "acceptance_rate_in_state": 0.924,
+        "acceptance_rate_out_of_state": 0.871,
+        "yield_rate": 0.196,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed for Fall 2025."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.43,
+        "notes": "Average high school GPA reported for degree-seeking enrollees."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1120-1270",
+        "sat_reading_middle_50": "580-660",
+        "sat_math_middle_50": "540-630",
+        "act_composite_middle_50": "22-27",
+        "submission_rate": 0.07,
+        "policy_note": "Only 7% of enrolled students submitted SAT scores and 1% submitted ACT scores for Fall 2025."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.011,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.94
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.06
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 6454,
+            "admits": 5831,
+            "acceptance_rate": 0.903
+          },
+          "women": {
+            "applicants": 8552,
+            "admits": 7876,
+            "acceptance_rate": 0.921
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.388,
+          "black_african_american": 0.328,
+          "hispanic_latino": 0.116,
+          "asian": 0.052,
+          "native_american_alaskan": 0.002,
+          "pacific_islander": 0.002,
+          "two_or_more_races": 0.077,
+          "unknown": 0.023,
+          "non_resident_alien": 0.011
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Ellmer College of Health Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students pursuing nursing must be highly competitive, maintaining prerequisite GPAs well above minimums.",
+        "housing_profile": "Standard university housing",
+        "student_archetype": "Driven, clinically-focused students",
+        "majors": [
+          {
+            "name": "Nursing (Prelicensure BSN)",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "All non-nursing education prerequisite courses must be fully completed before admission to the nursing major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission is highly competitive; while the minimum GPA is 3.0, admitted cohorts routinely have at least a 3.6 GPA in prerequisites."
+          }
+        ]
+      },
+      {
+        "name": "College of Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Tech-focused students looking for affordable, high-research-activity programs.",
+        "housing_profile": "Standard university housing",
+        "student_archetype": "Analytical and research-driven",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 211",
+              "MATH 212"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "300 and 400 level CS courses require C++ proficiency. Transfer courses not taught in C++ do not meet upper-level prerequisites.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 150",
+                "CS 250",
+                "MATH 211",
+                "MATH 212"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Strome College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students looking to tap into Hampton Roads' maritime, logistics, and management networks.",
+        "housing_profile": "Standard university housing",
+        "student_archetype": "Career-oriented networkers",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Shaomin Li (Business Management)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Batten College of Engineering and Technology",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in aerospace, civil, and environmental engineering.",
+        "housing_profile": "Standard university housing",
+        "student_archetype": "Hands-on problem solvers",
+        "majors": [
+          {
+            "name": "Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 121N",
+              "MATH 102M",
+              "MATH 103M"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Chemistry Placement Exam required unless specific transfer/AP credits (MATH 102M/103M and CHEM 105/106N) are met.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CHEM 121N",
+                "MATH 102M",
+                "MATH 103M"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Old Dominion University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Nonbinding Early Action plan; notifications by Jan 15."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-08-01",
+        "is_binding": false,
+        "notes": "Fall admission deadline. Applications received after are evaluated on a rolling basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Ellmer School of Nursing",
+        "requirement_type": "Separate Application",
+        "deadline": "",
+        "details": "Students must apply to the highly-competitive BSN program separately from their general ODU acceptance."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Class rank",
+        "Application Essay",
+        "Recommendations",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities",
+        "First generation status",
+        "Alumni/ae relation",
+        "State residency",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "As a highly accessible public university, quantitative metrics (GPA/rigor) are the dominant drivers of admission."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Direct admission into ODU does not guarantee admission to specialized clinical programs like Dental Hygiene or Nursing.",
+      "Pre-nursing students should focus on attaining at least a 3.6 GPA in early prerequisite courses to ensure smooth internal transfer."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying undeclared is viable given the open admissions landscape, though internal transfer to impacted health sciences requires high baseline performance in introductory sciences."
+  },
+  "financials": {
+    "tuition_model": "Per-credit hour scaling up to a flat rate for full-time enrollment",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2025-2026",
+      "in_state": {
+        "tuition": 13320.0,
+        "total_coa": 34530.0,
+        "housing": 15720.0
+      },
+      "out_of_state": {
+        "tuition": 33885.0,
+        "total_coa": 55095.0,
+        "supplemental_tuition": 20565.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 13692.0,
+    "average_merit_aid": 8011.0,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Haislip-Rorrer Presidential Scholars Endowment",
+        "type": "Merit/Need",
+        "amount": "Variable",
+        "deadline": "January 1",
+        "benefits": "Financial assistance for entering freshmen with outstanding academic credentials (generally 3.4+ GPA).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Transfer Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$3,500",
+        "deadline": "",
+        "benefits": "Renewable award for in-state transfer students who earned an associate degree with a 4.0 cumulative GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Transfer Monarch Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "",
+        "benefits": "Renewable award for in-state transfer students who earned an associate degree with a 3.8-3.9 cumulative GPA.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "ODU awards advanced standing credit for qualifying AP exam scores.",
+      "exceptions": [],
+      "usage": "Credits may bypass placement exams (e.g., Chemistry Placement or Writing Success Placement Tool) and satisfy prerequisites."
+    },
+    "ib_policy": {
+      "general_rule": "Recognized for credit similarly to AP courses.",
+      "diploma_bonus": null
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Monarch TRANSFERmation database",
+        "VCCS Transfer Equivalency Guide"
+      ],
+      "restrictions": "Remedial coursework does not transfer. Must earn a 'C' or better for equivalent credit. ODU has Guaranteed Admission Agreements with the Virginia Community College System."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A baseline high school GPA around 3.0+ secures admission, while 3.5+ unlocks internal admission to competitive pre-clinical tracks.",
+      "Completing all required non-nursing education courses before applying for major declaration."
+    ],
+    "common_activities": [
+      "Division I Athletics (Sun Belt Conference)",
+      "Greek Life (5% participation for both men and women)",
+      "ROTC"
+    ],
+    "essay_tips": [
+      "Optional for admission, but can provide contextual support for academic advising or scholarship consideration."
+    ],
+    "red_flags": [
+      "Submitting an application with a GPA significantly below the 3.0 threshold without contextual explanations."
+    ],
+    "insights": [
+      "The campus maintains a significant commuter demographic; only 24% of all undergraduates live on campus.",
+      "A quarter of the ODU student body is affiliated with the U.S. military, fostering a mature and highly structured campus environment.",
+      "Adjunct professors are frequently utilized in lower-level classes, leading some students to feel disconnected from full-time faculty early on."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 64472,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Sentara Healthcare",
+      "Anthem, Inc.",
+      "United States Navy",
+      "Virginia Beach City Public Schools",
+      "ADP"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.79,
+    "graduation_rate_4_year": 0.247,
+    "graduation_rate_6_year": 0.43
+  }
+}

@@ -1,0 +1,634 @@
+{
+  "_id": "santa_clara_university",
+  "metadata": {
+    "official_name": "Santa Clara University",
+    "location": {
+      "city": "Santa Clara",
+      "state": "California",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Santa Clara University is a private Jesuit university located in the heart of Silicon Valley. Known for its strong undergraduate teaching, high graduate earnings, and robust business and engineering programs, SCU emphasizes a holistic education rooted in Jesuit values of competence, conscience, and compassion.",
+    "market_position": "Elite Private / Regional Powerhouse",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 59,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "SCU has become increasingly competitive, with an overall acceptance rate dropping to 48% and an ED/EA early pool that expanded to over 12,150 applicants for the Class of 2030.",
+        "implication": "Applicants should strongly consider applying Early Action or Early Decision and must demonstrate high interest, as SCU factors demonstrated interest heavily into yield protection."
+      },
+      {
+        "category": "Financial",
+        "insight": "Graduates boast a median 10-year salary of $108,517 (College Scorecard), placing SCU in the top tier nationally for ROI.",
+        "implication": "Despite a high sticker price, the long-term ROI is exceptionally strong, driven by SCU's Silicon Valley location and powerful alumni network in tech and business."
+      },
+      {
+        "category": "Academic",
+        "insight": "Business and Engineering are SCU's most prominent and selective programs, requiring high math proficiency (Calculus) prior to enrollment.",
+        "implication": "Prospective STEM and Business students must prioritize course rigor in high school, while those applying to the College of Arts and Sciences may face slightly less intense competition."
+      },
+      {
+        "category": "Culture",
+        "insight": "SCU focuses on the Jesuit model of 'cura personalis' (care for the whole person), integrating social justice, ethics, and community service into the core curriculum.",
+        "implication": "Supplemental essays focusing on local community impact, volunteerism, and ethical dilemmas will resonate deeply with the admissions committee."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A mid-sized, tight-knit community where students are highly driven academically but also prioritize a balanced, active social life. Approximately 37% of the student body identifies as Catholic, but the campus is diverse and welcoming to all backgrounds.",
+      "transportation_impact": "Its prime location in Silicon Valley provides unsurpassed access to corporate internships, cooperative education, and networking with tech giants.",
+      "research_impact": "Undergraduates have significant access to research via facilities like the Center for Nanostructures, the Healthcare Innovation and Design program, and the Frugal Innovation Hub."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.4799,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.523,
+      "admits_class_size": 1611,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional policy extended for first-year and transfer admission through the 2025-2026 application cycle.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED/EA",
+          "applications": 12150,
+          "admits": 6000,
+          "acceptance_rate": 0.5,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 18970,
+        "admits_total": 9105,
+        "enrolled_total": 1611,
+        "acceptance_rate_overall": 0.4799,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.1769,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 5871,
+          "accepted_spots": 3312,
+          "admitted_from_waitlist": 197,
+          "waitlist_admit_rate": 0.0595,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 18843,
+        "admits_total": 8261,
+        "enrolled_total": 1552,
+        "acceptance_rate_overall": 0.4385,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.1878,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 4978,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 367,
+          "waitlist_admit_rate": 0.0737,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate calculated against total offered spots as accepted spots were not fully detailed in available snippets."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.521,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 4009,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 8,
+          "waitlist_admit_rate": 0.002,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Highly anomalous low waitlist admit year."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.56-3.87",
+        "average_weighted": null,
+        "notes": "Average unweighted GPA reported as 3.72 for enrolled students."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1360-1480",
+        "sat_reading_middle_50": "670-730",
+        "sat_math_middle_50": "680-760",
+        "act_composite_middle_50": "31-33",
+        "submission_rate": 0.34,
+        "policy_note": "24% submitted SAT, 10% submitted ACT."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.12,
+        "legacy_percentage": null,
+        "international_percentage": 0.06,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8928,
+            "admits": 3975,
+            "acceptance_rate": 0.445
+          },
+          "women": {
+            "applicants": 10042,
+            "admits": 5130,
+            "acceptance_rate": 0.5108
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.3979,
+          "black_african_american": 0.0311,
+          "hispanic_latino": 0.1843,
+          "asian": 0.21,
+          "native_american_alaskan": 0.0007,
+          "pacific_islander": 0.0018,
+          "two_or_more_races": 0.095,
+          "unknown": 0.0172,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": "37% Catholic"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a liberal arts focus or pre-med paths. Can serve as an alternative major choice for those aiming for the more competitive business or engineering programs.",
+        "housing_profile": "First-year students are required to live in Residential Learning Communities.",
+        "student_archetype": "Humanities, social sciences, and natural sciences students.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 1",
+                "PSYC 2",
+                "PSYC 51",
+                "PSYC 52",
+                "PSYC 53",
+                "MATH 8"
+              ],
+              "electives": [
+                "PSYC 117",
+                "PSYC 162",
+                "PSYC 169",
+                "PSYC 196"
+              ],
+              "total_units": 175,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Shauna Shapiro (Mindfulness and Compassion)",
+              "Thomas G. Plante (Applied Spirituality)",
+              "Jerrold Lee Shapiro (Existential Counseling)",
+              "Birgit Koopmann-Holm (Cultural Psychology)"
+            ],
+            "notes": ""
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "COMM 1",
+                "COMM 100",
+                "COMM 101",
+                "COMM 197"
+              ],
+              "electives": [
+                "COMM 10",
+                "COMM 30",
+                "COMM 50",
+                "COMM 80"
+              ],
+              "total_units": 175,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Jennifer Braddock (Digital Communication)",
+              "Melissa Brown (Intersectionality)",
+              "Chad Raphael (Political Communication)",
+              "Christine Bachen (Media Studies)",
+              "Sreela Sarkar (Media and Social Movements)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Leavey School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive; applicants must demonstrate strong quantitative skills (Calculus required by senior year). Fits aspiring Silicon Valley professionals.",
+        "housing_profile": "Integrated into University Residential Learning Communities.",
+        "student_archetype": "Future entrepreneurs, accountants, and tech-focused business leaders.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S. in Commerce",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 11",
+              "MATH 12"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "FNCE 121",
+                "FNCE 124",
+                "FNCE 125",
+                "MGMT 160",
+                "MKTG 181",
+                "BUSN 179",
+                "OMIS 108"
+              ],
+              "electives": [
+                "FNCE 116",
+                "FNCE 126",
+                "FNCE 130",
+                "FNCE 132"
+              ],
+              "total_units": 175,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Hoje Jo (Corporate Finance/CSR)",
+              "Sanjiv Das (Data Science/Machine Learning)",
+              "Meir Statman (Behavioral Finance)",
+              "Hersh Shefrin (Behavioral Finance)"
+            ],
+            "notes": ""
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S. in Commerce",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 30"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACTG 120",
+                "ACTG 130",
+                "ACTG 131",
+                "ACTG 132",
+                "ACTG 134",
+                "ACTG 135",
+                "ACTG 136",
+                "ACTG 138"
+              ],
+              "electives": [
+                "ACTG 140",
+                "ACTG 144",
+                "ACTG 148",
+                "ACTG 150"
+              ],
+              "total_units": 175,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Kevin Li (Earnings/Corporate Governance)",
+              "Michael Calegari (Financial Statement Analysis)",
+              "Haidan Li (Financial Accounting)",
+              "Matthew Cedergren (Management Forecasting)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely competitive due to Silicon Valley pipelines. Requires Calculus and Physics in high school.",
+        "housing_profile": "Integrated into University Residential Learning Communities.",
+        "student_archetype": "Tech innovators and STEM-focused students.",
+        "majors": [
+          {
+            "name": "Computer Science and Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 11",
+              "MATH 12",
+              "PHYS 31",
+              "CHEM 11"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires an Educational Enrichment component (e.g., study abroad, undergraduate research).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 1",
+                "CSEN 11",
+                "CSEN 12",
+                "CSEN 19",
+                "CSEN 20",
+                "CSEN 79",
+                "CSEN 122",
+                "CSEN 146",
+                "CSEN 171",
+                "CSEN 174",
+                "CSEN 175",
+                "CSEN 177",
+                "CSEN 179",
+                "CSEN 192",
+                "MATH 11",
+                "MATH 12",
+                "MATH 13",
+                "MATH 14"
+              ],
+              "electives": [],
+              "total_units": 189,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Yuhong Liu (Trust, Security, and Privacy)",
+              "Kai Lukoff (Human-Computer Interaction)",
+              "Oana Ignat (NLP and Computer Vision)",
+              "Maya Ackerman (AI and Computational Creativity)"
+            ],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED1",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-07",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-07",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "1. 'Why Major?' (50 words); 2. 'Diversity and Community' (150-300 words); 3. 'Ethical Dilemma' (150-300 words)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Volunteer work",
+        "Work experience",
+        "Essays"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Volunteer work and work experience carry the same weight as academics. Demonstrated interest is tracked extensively (visits, virtual events, Bronco Exchange)."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to the College of Arts and Sciences as a primary or secondary choice if you have a softer STEM profile, as Business and Engineering are more competitive.",
+      "Ensure you have taken Calculus by senior year if applying to the Leavey School of Business or School of Engineering."
+    ],
+    "college_ranking_tactics": [
+      "Apply Early Decision to capitalize on an acceptance rate that hovers around 70-80% compared to the overall 48%.",
+      "Open every email from SCU, click links, and interact with Bronco Exchange to maximize demonstrated interest tracking."
+    ],
+    "alternate_major_strategy": "Applicants to the Leavey School of Business or School of Engineering can opt to be considered for the College of Arts and Sciences as an alternate choice. If admitted to an alternate school, students must wait one year before petitioning for an internal transfer."
+  },
+  "financials": {
+    "tuition_model": "Flat rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 60639.0,
+        "total_coa": 86694.0,
+        "housing": 18819.0
+      },
+      "out_of_state": {
+        "tuition": 60639.0,
+        "total_coa": 86694.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware / Does not guarantee 100% need met (Except for specific cohorts like Cristo Rey graduates)",
+    "average_need_based_aid": 27294.0,
+    "average_merit_aid": 4920.0,
+    "percent_receiving_aid": 0.72,
+    "scholarships": [
+      {
+        "name": "Johnson Scholars Award",
+        "type": "Merit",
+        "amount": "Full Tuition, Room & Board",
+        "deadline": "November 1",
+        "benefits": "Full tuition plus standard room & board, summer stipend in sophomore/junior year.",
+        "application_method": "Automatic consideration if applied EA/ED1 and applied to the University Honors Program."
+      },
+      {
+        "name": "Provost Scholarship",
+        "type": "Merit",
+        "amount": "Half Tuition",
+        "deadline": "",
+        "benefits": "Renewable for 12 academic quarters, indexed to tuition increases.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential at Entry Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Merit-based support for first-year students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Institutional support for National Merit Finalists.",
+        "application_method": "Separate (Must list SCU as first choice with NMSC)"
+      },
+      {
+        "name": "Hurtado Scholarship",
+        "type": "Merit/Need",
+        "amount": "Varies",
+        "deadline": "February 1",
+        "benefits": "Financial support specifically designed for DACA, undocumented, or TPS transfer applicants.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Generally awards college credit for scores of 4 or 5.",
+      "exceptions": [
+        "A score of 3 is acceptable in rare cases."
+      ],
+      "usage": "Can satisfy specific core requirements but some foundational sequences (like Critical Thinking & Writing) must be taken at SCU."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts High-Level (HL) exams with scores of 6 or 7.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org",
+        "SCU Transfer Credit Course Equivalency Archive"
+      ],
+      "restrictions": "Students can transfer in a maximum of half of the total quarter units required to graduate. The Mathematics and Computer Science departments do not accept online courses for transfer credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High GPA in rigorous coursework (averaging 3.7+ unweighted).",
+      "Calculus by senior year for Business and Engineering applicants.",
+      "Demonstrated interest via campus visits, virtual events, or email tracking.",
+      "Alignment with Jesuit values of social justice and community service."
+    ],
+    "common_activities": [
+      "Community service and volunteering",
+      "Part-time jobs",
+      "Leadership in school clubs",
+      "Social justice advocacy",
+      "Technology or business-oriented projects"
+    ],
+    "essay_tips": [
+      "Use the 'Why Major' essay to share an 'origin story' or lightbulb moment since it is only 50 words.",
+      "For the 'Ethical Dilemma' essay, focus on a local, actionable issue rather than a grand, unsolvable global crisis.",
+      "Tie your background and identity directly to actionable ways you will contribute to the campus community."
+    ],
+    "red_flags": [
+      "Applying as a stealth applicant with zero demonstrated interest.",
+      "Applying to Business or Engineering without Calculus.",
+      "Writing a policy paper for the ethical dilemma essay instead of a personal reflection."
+    ],
+    "insights": [
+      "The 'Waitlist' is actively used for yield protection. In 2024, SCU offered waitlist spots to over 5,800 applicants and admitted 197.",
+      "SCU's location in Silicon Valley is a major driver of its high graduate earnings and competitive tech recruitment."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 108517,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Google",
+      "Apple",
+      "Cisco",
+      "Amazon/AWS",
+      "NVIDIA",
+      "Microsoft",
+      "Meta",
+      "Salesforce"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.94,
+    "graduation_rate_4_year": 0.85,
+    "graduation_rate_6_year": 0.9
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "_id": "rice_university",
+  "metadata": {
+    "official_name": "William Marsh Rice University",
+    "location": {
+      "city": "Houston",
+      "state": "Texas",
+      "type": "Private"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": [
+      "Common Data Set 2024-2025",
+      "Common Data Set 2022-2023",
+      "IPEDS",
+      "College Scorecard",
+      "NACE First Destination"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "William Marsh Rice University is a highly selective, mid-sized private research university in Houston, Texas, renowned for its 6:1 student-to-faculty ratio, emphasis on undergraduate research, and distinctive residential college system. It effectively pairs the tight-knit, collaborative atmosphere of a liberal arts college with the robust resources and global impact of a premier Tier-1 STEM and research institution.",
+    "market_position": "Elite Private / Southern Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 17,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates have plummeted to the 7.5% - 8% range, driven by a 13% surge in application volume and the popular loan-free 'Rice Investment' financial aid program.",
+        "implication": "Rice is no longer a 'safety' for high-achieving applicants aiming for the Ivy League; it is a full-fledged 'reach' requiring elite academic metrics and distinct extracurricular spikes."
+      },
+      {
+        "category": "Culture",
+        "insight": "Rice employs a Residential College System modeled after Oxford/Cambridge, randomly assigning students to one of 11 (soon to be 12) colleges upon matriculation.",
+        "implication": "This creates an intensely loyal, collaborative, and diverse microcosm of the university, replacing Greek life and preventing the isolation often found at heavy STEM research universities."
+      },
+      {
+        "category": "Financial",
+        "insight": "The Rice Investment policy meets 100% of demonstrated financial need without loans for domestic students, offering full tuition, room, and board for families earning under $75,000, and full tuition for those earning up to $140,000.",
+        "implication": "It is one of the most financially accessible elite private universities in the nation for middle- and low-income families, driving intense applicant competition."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Known for having one of the best qualities of life among US universities. The atmosphere is collaborative rather than cutthroat. The social scene is dominated by the residential colleges, which host intramural sports, theatrical productions, and traditions like the 'Beer Bike' relay race.",
+      "transportation_impact": "Situated on a heavily wooded, 300-acre campus in the Houston Museum District. It provides immediate urban access while maintaining a distinct, enclosed campus feel.",
+      "research_impact": "Exceptional undergraduate access to research due to its proximity to the Texas Medical Center (the largest medical complex in the world) and robust on-campus centers like the Oshman Engineering Design Kitchen (OEDK)."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.075,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.114,
+      "admits_class_size": 1163,
+      "is_test_optional": false,
+      "test_policy_details": "Rice is ending its pandemic-era test-optional policy. Beginning with the Fall 2026 entry term (Class of 2030), applicants will be required to submit SAT or ACT scores, though some hardship exceptions may apply.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED1",
+          "applications": 2886,
+          "admits": 442,
+          "acceptance_rate": 0.153,
+          "class_fill_percentage": 0.38
+        },
+        {
+          "plan_type": "ED2",
+          "applications": 2513,
+          "admits": 151,
+          "acceptance_rate": 0.06,
+          "class_fill_percentage": 0.13
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 32473,
+        "admits_total": 2439,
+        "enrolled_total": 1149,
+        "acceptance_rate_overall": 0.075,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.44,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3920,
+          "accepted_spots": 2794,
+          "admitted_from_waitlist": 122,
+          "waitlist_admit_rate": 0.0437,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Third consecutive year of record-low acceptance rates."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 31443,
+        "admits_total": 2730,
+        "enrolled_total": 1118,
+        "acceptance_rate_overall": 0.077,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.409,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3900,
+          "accepted_spots": 2800,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Yield goals met via initial round; zero students admitted from waitlist."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 29544,
+        "admits_total": 2802,
+        "enrolled_total": 1201,
+        "acceptance_rate_overall": 0.086,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.428,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3900,
+          "accepted_spots": 2802,
+          "admitted_from_waitlist": 7,
+          "waitlist_admit_rate": 0.002,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 23455,
+        "admits_total": 2555,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.109,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 3296,
+          "accepted_spots": 2137,
+          "admitted_from_waitlist": 156,
+          "waitlist_admit_rate": 0.073,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "92% of enrolled students come from the top 10% of their graduating high school class. Unweighted GPAs heavily trend near 4.0."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1490-1570",
+        "sat_reading_middle_50": "720-770",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 0.7,
+        "policy_note": "Rice superscores both the SAT and ACT, considering the highest section scores across multiple test dates."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.12,
+        "legacy_percentage": 0.04,
+        "international_percentage": 0.14,
+        "geographic_breakdown": [
+          {
+            "region": "Texas",
+            "percentage": 0.38
+          },
+          {
+            "region": "Out-of-state Domestic",
+            "percentage": 0.49
+          },
+          {
+            "region": "International",
+            "percentage": 0.14
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 0.073
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 0.08
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.2819,
+          "black_african_american": 0.0792,
+          "hispanic_latino": 0.1547,
+          "asian": 0.2946,
+          "native_american_alaskan": 0.0011,
+          "pacific_islander": 0.0007,
+          "two_or_more_races": 0.048,
+          "unknown": 0.0147,
+          "non_resident_alien": 0.125
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "George R. Brown School of Engineering and Computing",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for top-tier STEM candidates heavily focused on research, entrepreneurship, and hands-on fabrication (via OEDK).",
+        "housing_profile": "All students are randomly sorted into one of 11 residential colleges upon admission regardless of major.",
+        "student_archetype": "Innovative builder/researcher with perfect/near-perfect math SAT/ACT scores and significant independent projects.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Moshe Y. Vardi",
+              "Todd Treangen",
+              "Chris Jermaine",
+              "Devika Subramanian",
+              "Luay Nakhleh"
+            ],
+            "notes": "Unlike at many elite technical institutions, CS at Rice is not capped. Internal transfer merely requires speaking with a major advisor."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 101",
+                "CHEM 121",
+                "CHEM 123"
+              ],
+              "electives": [],
+              "total_units": 127,
+              "major_units": 87
+            },
+            "notable_professors": [
+              "Marcia O'Malley (Robotics/Haptics)",
+              "Geoff Wehmeyer (Nanoscale Heat Transfer)",
+              "Alexander Davydov (Controls/Neural Networks)"
+            ],
+            "notes": "Areas of specialization include Computational Engineering, Mechanics/Dynamics, and Thermal Fluids."
+          },
+          {
+            "name": "Bioengineering",
+            "degree_type": "B.S.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOC 201",
+                "BIOC 341",
+                "CAAM 210",
+                "CHEM 121",
+                "CHEM 123",
+                "CHEM 122",
+                "CHEM 124",
+                "CHEM 211",
+                "MATH 101",
+                "MATH 102",
+                "MATH 211",
+                "MATH 212",
+                "ELEC 243",
+                "MECH 211",
+                "PHYS 101",
+                "PHYS 102",
+                "BIOE 252",
+                "BIOE 320",
+                "BIOE 322",
+                "BIOE 330",
+                "BIOE 332",
+                "BIOE 342",
+                "BIOE 370",
+                "BIOE 372",
+                "BIOE 383"
+              ],
+              "electives": [],
+              "total_units": 134,
+              "major_units": 95
+            },
+            "notable_professors": [
+              "Gang Bao (Nanomedicine)",
+              "Caleb Bashor (Synthetic Biology)",
+              "Michael Diehl",
+              "Oleg Igoshin"
+            ],
+            "notes": "Highly collaborative with the Texas Medical Center. One of the top-ranked bioengineering programs nationally."
+          }
+        ]
+      },
+      {
+        "name": "School of Humanities",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in medical humanities, history, or classical liberal arts with an interdisciplinary twist.",
+        "housing_profile": "Assigned to residential colleges.",
+        "student_archetype": "Pre-meds with a humanities focus or future legal/policy scholars.",
+        "majors": [
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Nathan Citino",
+              "Aysha Pollnitz",
+              "Luis Campos",
+              "Elizabeth Petrick"
+            ],
+            "notes": "Classes heavily capped at 15-25 students to ensure deep faculty mentorship."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition Application",
+      "QuestBridge"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED1",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Accounts for nearly half of the enrolled incoming class."
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-04",
+        "is_binding": true,
+        "notes": "New addition as of the 2024-2025 cycle. Acceptance rate is noticeably lower than ED1."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-04",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Image Upload",
+        "deadline": "At application",
+        "details": "'The Rice Box' - Applicants must upload an image that represents something about themselves, an enduring Rice tradition."
+      },
+      {
+        "target_program": "Architecture",
+        "requirement_type": "Portfolio",
+        "deadline": "At application",
+        "details": "Creative portfolio required."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition",
+        "deadline": "Variable",
+        "details": "Pre-screening and live audition required for Shepherd School of Music."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Rigor of secondary school record",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendations",
+        "Extracurricular activities",
+        "Character/personal qualities"
+      ],
+      "secondary_factors": [
+        "First generation",
+        "Alumni/ae relation",
+        "Geographical residence",
+        "Volunteer work",
+        "Work experience",
+        "Talent/ability"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "Rice places an enormous emphasis on 'Character/personal qualities' to ensure candidates will fit seamlessly into the close-knit, highly collaborative Residential College System."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Rice admits students to the university as a whole, not directly to specific bounded colleges (excluding Music/Architecture).",
+      "Applying to highly selective programs like Computer Science or Bioengineering does not structurally lower your odds due to hard capacity caps, but your profile MUST align with the chosen major.",
+      "Switching majors internally is exceptionally easy, simply requiring a discussion with the desired major's academic advisor."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Because internal transfers are unrestricted and there are virtually no 'impacted' majors structurally gatekept from enrolled undergraduates, there is little need for a deceptive alternate major strategy. Applicants should choose the major that best aligns with their existing high school resume and 'spike'."
+  },
+  "financials": {
+    "tuition_model": "Flat tuition for all enrolled undergraduates",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 62874.0,
+        "total_coa": 86979.0,
+        "housing": 18100.0
+      },
+      "out_of_state": {
+        "tuition": 62874.0,
+        "total_coa": 86979.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 54440.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.61,
+    "scholarships": [
+      {
+        "name": "The Rice Investment",
+        "type": "Need",
+        "amount": "Up to Full COA",
+        "deadline": "With Financial Aid Profile",
+        "benefits": "Families earning <$75k receive full tuition, room, and board. Families $75k-$140k receive full tuition. Families $140k-$200k receive half tuition.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 4 and 5 for course credit.",
+      "exceptions": [
+        "Cannot retain AP credit if taking the equivalent Rice course (e.g., taking PHYS 101 forfeits AP Physics B credit)."
+      ],
+      "usage": "Counts toward major requirements and university distribution requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Accepts scores of 6 and 7 on Higher Level (HL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Does not accept dual credit courses that counted toward high school graduation requirements. Transfer credits evaluated individually by the Registrar only after admission."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Extremely high academic rigor taking the most challenging courses available.",
+      "Cultivating at least one or two 'Tier 1 or Tier 2' extracurricular activities that demonstrate deep leadership or distinct capability.",
+      "Applying Early Decision (ED) historically provided a massive statistical boost, filling nearly half the class."
+    ],
+    "common_activities": [
+      "Undergraduate research (frequently tied to the Texas Medical Center)",
+      "Engineering fabrication projects",
+      "Varsity Athletics (NCAA Division I)",
+      "Residential college leadership / government"
+    ],
+    "essay_tips": [
+      "Use the 'Rice Box' image upload to genuinely showcase a quirky, unique, or highly personal aspect of your character.",
+      "Clearly articulate how your personality aligns with Rice's 'culture of care' and collaborative environment.",
+      "Demonstrate why the Residential College System appeals to you specifically."
+    ],
+    "red_flags": [
+      "Applying to a STEM major with low standardized math scores (e.g., <770 SAT Math).",
+      "Treating the application as a 'safety' for Ivy League schools\u2014lack of demonstrated fit will result in waitlisting."
+    ],
+    "insights": [
+      "Rice is unique among elite universities for lacking 'impacted' majors. This results in some massive CS and Engineering class sizes, but creates incredible intellectual freedom.",
+      "The 'unconventional culture' is a real campus pride point; students are expected to be brilliant but humble and highly social."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 110080,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 0.33,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Meta",
+      "SLB",
+      "Micron Technology",
+      "Accenture",
+      "NASA"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.97,
+    "graduation_rate_4_year": 0.88,
+    "graduation_rate_6_year": 0.946
+  }
+}

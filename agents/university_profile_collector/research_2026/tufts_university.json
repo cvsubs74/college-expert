@@ -1,0 +1,563 @@
+{
+  "_id": "tufts_university",
+  "metadata": {
+    "official_name": "Tufts University",
+    "location": {
+      "city": "Medford/Somerville",
+      "state": "Massachusetts",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-25",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Tufts University is a premier, highly selective private R1 research university located just outside of Boston. It uniquely bridges the gap between a tight-knit liberal arts college and a major global research institution, cultivating a student body known for active citizenship, intellectual curiosity, and collaborative problem-solving.",
+    "market_position": "Elite Private / New Ivy",
+    "admissions_philosophy": "Holistic review with a strong emphasis on character, civic engagement, and demonstrated interest.",
+    "us_news_rank": 36,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate has stabilized around 10% after application volume surged by 70% over the last decade.",
+        "implication": "Tufts is no longer an 'Ivy-adjacent safety' but a primary reach school requiring the same level of academic and extracurricular excellence as top-15 universities."
+      },
+      {
+        "category": "Culture",
+        "insight": "Tufts explicitly evaluates 'Character/Personal Qualities' as a primary factor in admissions.",
+        "implication": "Essays and recommendations that highlight kindness, collaboration, and social justice will outperform applications relying solely on cold academic perfection."
+      },
+      {
+        "category": "Financial",
+        "insight": "Tufts meets 100% of demonstrated need and implemented a Tuition Pact for families earning under $150,000.",
+        "implication": "The university is becoming more accessible for domestic lower-to-middle income families, though international financial aid remains extremely competitive."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Deeply intellectual and collaborative student community that balances rigorous academics with strong social subcultures, quirky traditions (like painting the campus cannon), and DIII athletics.",
+      "transportation_impact": "Located just 5 miles from downtown Boston, students have seamless access to a massive metropolitan hub for internships, biomedical research, and cultural engagement.",
+      "research_impact": "Classified as an R1 Doctoral University with very high research activity, yet maintains an undergraduate-first focus, offering extensive lab and fellowship opportunities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.1,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 1700,
+      "is_test_optional": true,
+      "test_policy_details": "Tufts is test-optional. Approximately 56% to 60% of admitted students choose to submit scores. Standardized test scores are a 'Considered' factor, not a primary driver.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 2500,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": 0.5
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 31198,
+        "admits_total": 3431,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.11,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 2579,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admits dropped to zero during the volatile initial COVID-19 cycles."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 34881,
+        "admits_total": 3381,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.097,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 2664,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 183,
+          "waitlist_admit_rate": 0.0687,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 34003,
+        "admits_total": 3444,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.101,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2565,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 200,
+          "waitlist_admit_rate": 0.078,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 34432,
+        "admits_total": 3957,
+        "enrolled_total": 1700,
+        "acceptance_rate_overall": 0.115,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.45,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2800,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 354,
+          "waitlist_admit_rate": 0.1264,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rates fluctuate slightly depending on reporting methodology, with ranges between 10% and 11.5%."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 33400,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.105,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": 991,
+          "admitted_from_waitlist": 354,
+          "waitlist_admit_rate": 0.3572,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Tufts' waitlist was extremely active for the Class of 2029, resulting in a highly generous 35.72% waitlist acceptance rate for those who accepted their spot."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "notes": "Tufts does not publicly report average GPAs, but 92% of admitted students who attend high schools that rank are in the top 10% of their graduating class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1480-1550",
+        "sat_reading_middle_50": "720-770",
+        "sat_math_middle_50": "750-790",
+        "act_composite_middle_50": "33-35",
+        "submission_rate": 0.56,
+        "policy_note": "Superscores both SAT and ACT. No writing section required."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.12,
+        "legacy_percentage": null,
+        "international_percentage": 0.13,
+        "geographic_breakdown": [
+          {
+            "region": "New England",
+            "percentage": 0.29
+          },
+          {
+            "region": "Mid-Atlantic",
+            "percentage": 0.25
+          },
+          {
+            "region": "Western",
+            "percentage": 0.13
+          },
+          {
+            "region": "South/Southwest",
+            "percentage": 0.11
+          },
+          {
+            "region": "Midwest",
+            "percentage": 0.05
+          },
+          {
+            "region": "International",
+            "percentage": 0.17
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.418,
+          "black_african_american": 0.065,
+          "hispanic_latino": 0.1,
+          "asian": 0.165,
+          "native_american_alaskan": 0.0003,
+          "pacific_islander": 0.0013,
+          "two_or_more_races": 0.078,
+          "unknown": 0.049,
+          "non_resident_alien": 0.122
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for intellectually exploratory students interested in humanities, social sciences (like Economics and International Relations), and the natural sciences. Comprises 74% of the incoming class.",
+        "housing_profile": "Traditional residential campus feel heavily populated with underclassmen living 'Uphill' or 'Downhill'.",
+        "student_archetype": "The 'Quirky Intellectual' who values interdisciplinary learning and civic engagement.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Consistently the most popular major at Tufts, accounting for around 10% of the student body."
+          },
+          {
+            "name": "International Relations",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly prestigious program benefiting heavily from cross-pollination with the Fletcher School of Law and Diplomacy."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "Bio 13: Cells and Organisms",
+                "Bio 14: Organisms and Populations",
+                "Bio 41: General Genetics",
+                "Bio 50: Experiments in Molecular Biology"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students can choose either a BA or BS, though the BS is traditionally viewed as more rigorous for pre-med paths."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students looking for a rigorous, collaborative STEM environment with a strong liberal arts foundation. Comprises 16% of the incoming class.",
+        "housing_profile": "Integrated with Arts and Sciences on the Medford/Somerville campus.",
+        "student_archetype": "The 'Human-Centered Innovator'. Features near gender parity (50% female enrollment in recent classes).",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Students in Arts and Sciences can also major in Computer Science (BA). Transferring internally to the School of Engineering requires a minimum 2.5 cumulative/term GPA and C- or better in all STEM courses."
+          }
+        ]
+      },
+      {
+        "name": "School of the Museum of Fine Arts (SMFA at Tufts)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For strictly artistic students (BFA) or students wanting equal focus on fine arts and liberal arts (BFA+BA/BS Combined Degree).",
+        "housing_profile": "Access to both Medford/Somerville housing and Fenway campus resources.",
+        "student_archetype": "The 'Interdisciplinary Creator'. Requires a robust visual arts portfolio.",
+        "majors": [
+          {
+            "name": "Fine Arts",
+            "degree_type": "B.F.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires visual art portfolio submitted via Digital Portfolio tab.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "You cannot transfer out of the BFA program internally to Arts & Sciences easily without re-evaluating graduation timelines."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application",
+      "QuestBridge Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2025-11-03",
+        "is_binding": true,
+        "notes": "Early Decision I deadline for Fall 2026 matriculation cycle."
+      },
+      {
+        "plan_type": "ED",
+        "date": "2026-01-05",
+        "is_binding": true,
+        "notes": "Early Decision II deadline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-01-05",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "At time of application",
+        "details": "Two short-answer questions are required to gauge intellectual curiosity and fit."
+      },
+      {
+        "target_program": "SMFA BFA",
+        "requirement_type": "Portfolio",
+        "deadline": "At time of application",
+        "details": "Visual art portfolio is required and heavily weighted."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Application Essays",
+        "Recommendations",
+        "Character/Personal Qualities"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "Talent/Ability"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Optional",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Tufts is well-known for prioritizing 'Character/Personal Qualities' as a 'Very Important' metric. The university actively roots out 'arrogance' and seeks kind, highly collaborative civic leaders. Alumni connections (legacy) can act as a tie-breaker among similarly competitive contextual backgrounds, but student and faculty senates are actively pressuring the administration to abolish legacy preferences."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Students apply to one of three distinct schools (Arts & Sciences, Engineering, SMFA) rather than a specific major.",
+      "Internal transfer into Engineering from Arts & Sciences is highly feasible for enrolled students, requiring only a 2.5 GPA and C- grades in core STEM classes. This allows for safe exploration."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Tufts does not restrict or cap specific majors within its School of Arts & Sciences. You are admitted to the school at large, meaning you cannot game the system by applying to an 'easier' major within that school."
+  },
+  "financials": {
+    "tuition_model": "Private",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67844.0,
+        "total_coa": 84600.0,
+        "housing": null
+      },
+      "out_of_state": {
+        "tuition": 67844.0,
+        "total_coa": 84600.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.4,
+    "scholarships": [
+      {
+        "name": "Tufts Tuition Pact",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Guarantees free tuition for U.S. undergraduates from families earning less than $150,000 annually with typical assets.",
+        "application_method": "Automatic via CSS Profile/FAFSA"
+      },
+      {
+        "name": "Tufts National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$2,000",
+        "deadline": "",
+        "benefits": "Awarded as $500 per semester for up to eight semesters.",
+        "application_method": "Automatic for Finalists who name Tufts as first choice"
+      },
+      {
+        "name": "QuestBridge Match Scholarship",
+        "type": "Need",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Covers full cost of attendance including tuition, room, and board.",
+        "application_method": "Separate QuestBridge application"
+      },
+      {
+        "name": "ROTC Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Full or partial tuition support along with monthly stipends. Facilitated via units at MIT.",
+        "application_method": "Separate through military branches"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Awards credit primarily for scores of 4 or 5. A hard cap of 5 pre-matriculation credits exists for Arts & Sciences students, and 27 credits (roughly 8 courses) for Engineering students.",
+      "exceptions": [
+        "Biology, Chemistry, and Physics: A score of 4 grants placement out of intro courses, but a 5 is required for actual degree credit.",
+        "Calculus BC: A score of 4 yields 1 credit; a score of 5 yields 2 credits.",
+        "Computer Science, World History, and US Government: No credit or placement granted regardless of score."
+      ],
+      "usage": "Can be used for placement or to fulfill foundation/distribution requirements, but cannot heavily accelerate graduation timeline due to the 5-credit cap."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exam scores of 6 or 7.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Students must earn a C- or better in external college courses for them to transfer. Only a maximum of 60 credits can be transferred into Tufts from outside institutions."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Unassailable academic rigor coupled with a clear, demonstrated passion for community service or civic engagement.",
+      "Authentic, quirky essay responses that display intellectual curiosity without sounding pretentious.",
+      "Extensive demonstrated interest; applicants who interact with admissions content and thoroughly execute the 'Why Tufts?' essay have a distinct edge."
+    ],
+    "common_activities": [
+      "Local community service and volunteer work",
+      "Political or social justice advocacy",
+      "Independent research projects",
+      "Performing and visual arts"
+    ],
+    "essay_tips": [
+      "Be highly specific in the 'Why Tufts?' essay by citing unique programs like the ExCollege or the Tisch College of Civic Life.",
+      "Emphasize a collaborative mindset rather than a cutthroat, competitive ethos.",
+      "Use the short answers to showcase a unique, quirky interest that highlights intellectual vitality."
+    ],
+    "red_flags": [
+      "Arrogance or elitism in recommendation letters or essays.",
+      "A 'perfect' statistical profile with generic, passionless extracurriculars.",
+      "Failing to demonstrate interest or writing a generic supplemental essay, signaling you are treating Tufts as a backup school."
+    ],
+    "insights": [
+      "Yield protection ('Tufts Syndrome') is historically real. Tufts tracks engagement heavily to ensure the students they accept actually want to attend."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 97474,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 0.2,
+    "top_employers": [
+      "Bain & Company",
+      "Amazon",
+      "McKinsey & Company",
+      "Deloitte",
+      "Apple",
+      "HubSpot",
+      "JP Morgan"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.96,
+    "graduation_rate_4_year": 0.86,
+    "graduation_rate_6_year": 0.94
+  }
+}

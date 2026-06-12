@@ -1,0 +1,547 @@
+{
+  "_id": "san_jose_state_university",
+  "metadata": {
+    "official_name": "San Jos\u00e9 State University",
+    "location": {
+      "city": "San Jose",
+      "state": "California",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "San Jos\u00e9 State University (SJSU) is a highly diverse, public research university and the founding campus of the California State University (CSU) system. Located in the heart of downtown San Jose, SJSU leverages its prime Silicon Valley location to act as a premier talent pipeline for global tech, engineering, and business firms. The university boasts exceptional return on investment and social mobility, utilizing a strictly numbers-driven 'impaction' model for admissions.",
+    "market_position": "Regional Public University / Silicon Valley Tech Feeder",
+    "admissions_philosophy": "Numbers-focused",
+    "us_news_rank": 4,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "All majors are 'impacted', meaning applicants are ranked purely by an Eligibility Index (A-G GPA plus specific local and socioeconomic bumps) rather than holistic essays or extracurriculars.",
+        "implication": "Students with strong GPAs who meet CSU A-G requirements have highly predictable admission chances, especially if they reside in the local Santa Clara county."
+      },
+      {
+        "category": "Academic",
+        "insight": "Engineering and Computer Science programs use a modified impaction index that heavily weighs math GPA.",
+        "implication": "STEM applicants must prioritize high performance in their quantitative high school coursework over general electives."
+      },
+      {
+        "category": "Culture",
+        "insight": "SJSU is a majority-minority, Hispanic-Serving Institution (HSI) and Asian American and Native American Pacific Islander-Serving Institution (AANAPISI) with 41% first-generation students.",
+        "implication": "The campus offers a highly diverse, pragmatic, and socioeconomically transformative environment with strong support for first-generation success."
+      },
+      {
+        "category": "Financial",
+        "insight": "SJSU graduates achieve median earnings of $89,614 ten years post-enrollment, vastly outperforming many universities with higher tuition costs.",
+        "implication": "SJSU provides one of the highest Returns on Investment (ROI) in the nation, making it an optimal choice for cost-conscious students aiming for Silicon Valley careers."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A large, diverse, urban campus with a heavy commuter presence, though it maintains over 450 active student organizations, Division I athletics, and vibrant cultural success centers.",
+      "transportation_impact": "Situated in downtown San Jose, students often face challenges with high parking costs and local traffic, making public transit or walking preferred for those living close to campus.",
+      "research_impact": "Classified as an R2 institution with high research activity, heavily focused on applied engineering, computer science, and biological sciences with close industry partnerships."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 84.62,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 69.85,
+      "admits_class_size": 3948,
+      "is_test_optional": true,
+      "test_policy_details": "Test-Blind. For the Fall 2026 admission cycle and beyond, SJSU will not consider SAT/ACT scores in the review for admission. CSU eligibility is based on A-G coursework GPA.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 37132,
+        "admits_total": 31419,
+        "enrolled_total": 4618,
+        "acceptance_rate_overall": 84.62,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.7,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed. Yield rates have historically declined from ~20% in 2015 to ~14.7% in 2024."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 35780,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 76.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 84.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 67.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2019,
+        "cycle_name": "Class of 2023",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 63.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2019,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.53,
+        "notes": "Average GPA of admitted applicants based on self-reported A-G coursework."
+      },
+      "testing": {
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": null,
+        "policy_note": "SJSU is test-blind; SAT/ACT scores are not used for admission purposes."
+      },
+      "demographics": {
+        "first_gen_percentage": 44.1,
+        "legacy_percentage": null,
+        "international_percentage": 8.5,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (California)",
+            "percentage": 99.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 1.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 62.88
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": 74.48
+          }
+        },
+        "racial_breakdown": {
+          "white": 14.1,
+          "black_african_american": 3.4,
+          "hispanic_latino": 28.2,
+          "asian": 36.1,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.4,
+          "two_or_more_races": 4.7,
+          "unknown": 3.7,
+          "non_resident_alien": 9.7
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Charles W. Davidson College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants are ranked using a modified eligibility index that factors in Math GPA heavily. Must aim for top grades in rigorous high school math courses.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Technically adept, aspiring Silicon Valley software engineers, developers, and hardware specialists.",
+        "majors": [
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH 30",
+                "MATH 31",
+                "PHYS 50",
+                "PHYS 51",
+                "CMPE 195A",
+                "CMPE 195B",
+                "ENGR 195A",
+                "ENGR 195B"
+              ],
+              "electives": [],
+              "total_units": 123,
+              "major_units": 66
+            },
+            "notable_professors": [],
+            "notes": "All courses in the Major Preparation and Core must be completed with a grade of 'C-' or better."
+          }
+        ]
+      },
+      {
+        "name": "College of Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Targeted for students interested in core sciences, computing theory, and bioinformatics.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Analytical problem solvers, future data scientists, and algorithm designers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 100W - Technical Writing Workshop",
+                "CS 146 - Data Structures and Algorithms",
+                "CS 147 - Computer Architecture",
+                "CS 149 - Operating Systems",
+                "CS 151 - Object-Oriented Design",
+                "CS 152 - Programming Paradigms",
+                "CS 154 - Formal Languages and Computability",
+                "CS 157A - Introduction to Database Management Systems",
+                "CS 160 - Software Engineering",
+                "CS 166 - Information Security"
+              ],
+              "electives": [
+                "CS 116A - Introduction to Computer Graphics",
+                "CS 122 - Advanced Programming with Python",
+                "CS 156 - Introduction to Artificial Intelligence",
+                "CS 171 - Introduction to Machine Learning"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Melody Moh (Bioinformatics, Networking)",
+              "Teng-Sheng Moh (Data Science)",
+              "Mark Stamp (Cybersecurity)",
+              "Thomas Austin",
+              "Katerina Potika"
+            ],
+            "notes": "Accredited by the Computing Accreditation Commission of ABET."
+          }
+        ]
+      },
+      {
+        "name": "Lucas College and Graduate School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for future corporate leaders and entrepreneurs wanting direct pipelines into Silicon Valley giants.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Future managers, accountants, and marketing professionals.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Offers concentrations in Finance, Accounting, General Management, Information Technology Management, Human Resources, and Marketing."
+          }
+        ]
+      },
+      {
+        "name": "College of Humanities & the Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students interested in animation, design, and digital media.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Creative artists and future entertainment industry animators.",
+        "majors": [
+          {
+            "name": "Animation & Illustration",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires supplemental drawing exercises submitted within one week after the Cal State Apply deadline.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Failure to submit the portfolio drawing requirement results in applicants being evaluated solely for their alternate major."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Cal State Apply"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "11-30",
+        "is_binding": false,
+        "notes": "Application period strictly strictly opens in Fall. SJSU does not offer Early Decision or Early Action."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Animation & Illustration",
+        "requirement_type": "Portfolio",
+        "deadline": "",
+        "details": "Three short supplemental drawing exercises required. Evaluation of these can result in a GPA bump in the impaction index."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "A-G Coursework GPA",
+        "Math GPA (for Engineering applicants)",
+        "Local Admission Area status (Santa Clara County HS graduates)"
+      ],
+      "secondary_factors": [
+        "Cal State Apply fee waiver eligibility",
+        "First-generation college student status",
+        "U.S. Military Veteran status"
+      ],
+      "essay_importance": "None",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "SJSU relies purely on a point-based Impaction Index. A-G GPA is multiplied by 800. Additional points are added for local status (+200 or 0.25 GPA bump), first-gen (+40), fee waiver (+40), and veteran status (+40). No essays or letters of recommendation are reviewed."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to your genuine first-choice major. Change of major is never guaranteed after admission and is by petition only.",
+      "Select a less impacted alternate major, but be aware SJSU only considers alternate majors if space remains after primary major admits are accommodated.",
+      "For transfer applicants: earn an Associate Degree for Transfer (ADT) to receive a 0.1 GPA bump in the competitive ranking process."
+    ],
+    "college_ranking_tactics": [
+      "Maximize A-G coursework grades rather than focusing on extracurriculars, as SJSU uses a strict mathematical index."
+    ],
+    "alternate_major_strategy": "Entering an alternate major is required. However, many highly impacted majors (like Pre-Nursing or Computer Science) do not have the capacity to admit alternate major applicants. Pick an alternate major with historically lower index cutoffs."
+  },
+  "financials": {
+    "tuition_model": "Public/State",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 8410.0,
+        "total_coa": 34889.0,
+        "housing": 20971.0
+      },
+      "out_of_state": {
+        "tuition": 21010.0,
+        "total_coa": 47489.0,
+        "supplemental_tuition": 12600.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 11311.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 67.0,
+    "scholarships": [
+      {
+        "name": "Global Spartan Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "04-29",
+        "benefits": "Designed specifically to support international students with outstanding academic performance and leadership.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Archimedes Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "04-01",
+        "benefits": "One-time scholarship for College of Science students showing exemplary promise as a scientist.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Davison President's Scholar Endowment",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Four-year full academic scholarship covering fees for first-year Biology/Chemistry majors who are National Merit Finalists/Valedictorians and CA residents.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Middle Class Scholarship",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "03-02",
+        "benefits": "State grant for California residents with family incomes and assets up to $226,000.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Grants up to 6 semester units for AP exam scores of 3, 4, or 5.",
+      "exceptions": [
+        "Students may receive credit for only one calculus exam.",
+        "Maximum of 8 units total granted if more than one AP Physics exam is taken."
+      ],
+      "usage": "Satisfies GE requirements or specific major prerequisites depending on the exam."
+    },
+    "ib_policy": {
+      "general_rule": "Grants up to 6 semester units for Higher Level (HL) exams with a score of 4 or better.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "Maximum of 70 units can be transferred from a community college."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A high raw A-G GPA is the single most critical factor.",
+      "For engineering, an exceptional math GPA is vital.",
+      "Living in the local Santa Clara or Santa Cruz counties provides a massive advantage (+0.25 GPA index bump)."
+    ],
+    "common_activities": [
+      "Commuting to campus from surrounding Bay Area suburbs.",
+      "Securing technical and corporate internships in neighboring Silicon Valley tech hubs.",
+      "Participating in pre-professional organizations and cultural identity centers."
+    ],
+    "essay_tips": [
+      "Do not write essays; they are not required or read for standard admission."
+    ],
+    "red_flags": [
+      "Applying as 'Undeclared' without stellar stats, as Undeclared can have a surprisingly high impaction threshold.",
+      "Failing to submit the drawing portfolio for Animation & Illustration majors."
+    ],
+    "insights": [
+      "SJSU is widely known as a 'commuter school', leading to a quieter weekend social scene, but its ROI is renowned.",
+      "Parking is notoriously difficult and expensive, forcing many to rely on public transit."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 89614,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Apple",
+      "Cisco Systems",
+      "Amazon",
+      "Lockheed Martin",
+      "Google",
+      "City of San Jose",
+      "PwC"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 87.0,
+    "graduation_rate_4_year": 30.0,
+    "graduation_rate_6_year": 69.0
+  }
+}

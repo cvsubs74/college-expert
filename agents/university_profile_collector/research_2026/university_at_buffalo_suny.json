@@ -1,0 +1,499 @@
+{
+  "_id": "university-at-buffalo-suny",
+  "metadata": {
+    "official_name": "University at Buffalo, The State University of New York",
+    "location": {
+      "city": "Buffalo",
+      "state": "NY",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "Common Data Set 2023-2024",
+      "Common Data Set 2024-2025",
+      "IPEDS Data",
+      "US News & World Report",
+      "College Scorecard",
+      "UB Official Admissions Pages"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "The University at Buffalo (UB) is a premier, research-intensive public university and a flagship institution of the SUNY system. Known for its strong engineering, computer science, and health professions programs, UB offers excellent ROI with accessible tuition and high median graduate earnings. The university boasts three distinct campuses and vibrant Division I athletics, serving over 31,000 students in an inclusive environment.",
+    "market_position": "Public Flagship / Research 1 University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 76,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "UB's acceptance rate has climbed from 56% in 2018 to roughly 74% in 2024, showing an accommodation of growing applicant pools while maintaining its flagship public status.",
+        "implication": "Applicants with solid academic records (a 3.7+ average) have a highly favorable chance of standard admission, though specific competitive majors like Computer Science require completing rigorous filter courses to fully declare."
+      },
+      {
+        "category": "Academic",
+        "insight": "Waitlist movement at UB is remarkably volatile. For the Class of 2026 (2022 admissions), the waitlist admit rate was a mere 1.4%, while for the Class of 2028 (2024 admissions), it hovered at 16.5%, and hit 33.9% in 2021.",
+        "implication": "Applicants placed on the waitlist should remain cautiously optimistic but must have backup plans, as administrative decisions heavily depend on fluctuating yearly yield."
+      },
+      {
+        "category": "Financial",
+        "insight": "Median 10-year earnings for UB graduates sit at $71,430 against a median student debt of $19,000.",
+        "implication": "UB presents an outstanding return on investment, particularly for in-state students paying public tuition rates, rivaling the financial outcomes of much more expensive private universities."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "UB offers a vibrant campus life with over 400 student clubs and Division I athletics. There is a strong sense of school spirit ('True Blue'). The social scene is robust but heavily influenced by the winter weather, which pushes many activities indoors.",
+      "transportation_impact": "The university is divided into three campuses: North (suburban Amherst, housing most undergrad programs), South (Northeast Buffalo, housing architecture and health sciences), and Downtown (medical). Transportation between them via shuttle is a significant part of student life.",
+      "research_impact": "As an R1 institution and AAU member with over $400M in annual research expenditures, undergraduates have ample opportunities to engage in high-level research across STEM, medical, and social science fields."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 74.2,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 64.7,
+      "admits_class_size": 4265,
+      "is_test_optional": true,
+      "test_policy_details": "UB does not require SAT and ACT test scores for admissions and scholarship consideration (SUNY-wide test-optional policy). Students can choose to share scores for holistic review.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 40855,
+        "admits_total": 30307,
+        "enrolled_total": 4265,
+        "acceptance_rate_overall": 74.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.1,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 4267,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 706,
+          "waitlist_admit_rate": 16.5,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist admit rate is steady from 2023 but drastically different from older cycles."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 69.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 4267,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 706,
+          "waitlist_admit_rate": 16.6,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 67.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 1948,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 27,
+          "waitlist_admit_rate": 1.4,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Extremely low waitlist clearance due to high regular yield."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 3393,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 1150,
+          "waitlist_admit_rate": 33.9,
+          "is_waitlist_ranked": null
+        },
+        "notes": "COVID-19 pandemic effects led to unusually high waitlist usage."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "null",
+        "unweighted_middle_50": "null",
+        "average_weighted": 3.7,
+        "notes": "Average high school GPA is around 3.70."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1210-1380",
+        "sat_reading_middle_50": "null",
+        "sat_math_middle_50": "null",
+        "act_composite_middle_50": "25-30",
+        "submission_rate": 28.0,
+        "policy_note": "Test-optional since Fall 2020 following SUNY guidelines."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 12.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 19810,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": 21021,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 43.2,
+          "black_african_american": 7.4,
+          "hispanic_latino": 7.1,
+          "asian": 13.5,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": null,
+          "two_or_more_races": 2.5,
+          "unknown": 4.9,
+          "non_resident_alien": 21.2
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools and Colleges",
+    "colleges": [
+      {
+        "name": "School of Engineering and Applied Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking rigorous technical training with abundant research opportunities. A highly regarded school within SUNY.",
+        "housing_profile": "Standard campus dormitories; engineering living-learning communities available.",
+        "student_archetype": "Technically minded, focused, and willing to tackle heavy workloads and rigorous weeder courses.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "null",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSE 115",
+              "CSE 116",
+              "CSE 191",
+              "MTH 141",
+              "MTH 142"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "CSE 115 Introduction to Computer Science I",
+              "CSE 116 Introduction to Computer Science II",
+              "CSE 191 Introduction to Discrete Structures",
+              "CSE 250 Data Structures",
+              "MTH 141 College Calculus I",
+              "MTH 142 College Calculus 2"
+            ],
+            "special_requirements": "Combined BS/MS requires a 3.3 GPA among all required CSE, MTH, and EAS courses to apply.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "CSE 115 Introduction to Computer Science I",
+                "CSE 116 Introduction to Computer Science II",
+                "MTH 141 College Calculus I",
+                "MTH 142 College Calculus 2",
+                "CSE 191 Introduction to Discrete Structures",
+                "CSE 250 Data Structures",
+                "CSE 220 Systems Programming",
+                "CSE 241 Digital Systems"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students are admitted as 'intended' majors and must pass the prerequisite sequence with a minimum 2.8 UB GPA to formally declare."
+          }
+        ]
+      },
+      {
+        "name": "School of Management",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Great for corporate-focused students aiming for careers in finance, accounting, or management in the Northeast.",
+        "housing_profile": "Standard UB Campus Living.",
+        "student_archetype": "Driven, networking-oriented students.",
+        "majors": [
+          {
+            "name": "Business Administration, Management and Operations",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "null",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Most popular undergraduate major at the university."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing humanities, natural sciences, social sciences, or those exploring undeclared pathways.",
+        "housing_profile": "Most undergraduate activity is centered on the North Campus where residence halls are located.",
+        "student_archetype": "Academically curious students seeking a traditional liberal arts education paired with R1 university resources.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. / B.S.",
+            "is_impacted": false,
+            "acceptance_rate": "null",
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Second most popular major at the university by volume of graduates."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "SUNY Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "YYYY-11-01",
+        "is_binding": false,
+        "notes": "Nonbinding Early Action. Candidates receive early response but have until May 1 to deposit."
+      },
+      {
+        "plan_type": "RD",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Rolling admissions process until capacity is reached."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "A personal essay outlining academic goals is generally optional but highly recommended as part of the holistic review."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores",
+        "Application Essay",
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Volunteer work",
+        "Work experience"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "UB explicitly notes evaluating documented creative talent, demonstrated leadership, community service, and overcoming special life circumstances."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "For highly rigorous programs like Computer Science or Engineering, entering as 'Expressed Interest/Intended Major' is common. Ensure high grades in early calculus and intro courses.",
+      "Apply Early Action (Nov 1) to maximize access to merit scholarships and honors programs."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students applying to restricted/impacted majors within Engineering who do not initially qualify may be admitted to the university as an intended major and must pass gateway courses to formally declare."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 10782.0,
+        "total_coa": 33788.0,
+        "housing": 16754.0
+      },
+      "out_of_state": {
+        "tuition": 30572.0,
+        "total_coa": 53578.0,
+        "supplemental_tuition": 19790.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12293.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": null,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition/Cost",
+        "deadline": "",
+        "benefits": "Most selective and highly valued award in the SUNY system. Covers tuition, fees, and includes Honors College admission.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Provost Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Renewable four-year award applied to direct costs of attendance.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Pride of New York Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Available to high-achieving first-year domestic students from NY State to cover non-tuition costs like fees.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "International Student Flagship Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Renewable award for incoming international first-year students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Alison L. Des Forges Memorial Scholarship",
+        "type": "Merit/Need",
+        "amount": "$5,000",
+        "deadline": "YYYY-05-01",
+        "benefits": "Targeted for Buffalo Public or Charter School graduates demonstrating commitment to human rights.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "An official score report showing a minimum score of 3 will guarantee elective credit.",
+      "exceptions": [
+        "AP Calculus has a maximum award of 8 credits total.",
+        "Some specific major or general education requirements may demand a 4 or 5."
+      ],
+      "usage": "Elective credit, major requirements, or UB Curriculum (General Education) requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 5 or higher on Higher Level (HL) exams guarantee credit.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TAURUS (Transfer Articulation System)"
+      ],
+      "restrictions": "Students must complete at least one semester at UB before applying to combined BS/MS programs."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Solid academic foundation (mostly A's/B's with a ~3.7 average).",
+      "Demonstrated commitment to extracurriculars or overcoming personal challenges (holistic review)."
+    ],
+    "common_activities": [
+      "Division I athletics spectating/intramurals",
+      "Over 400 student clubs and organizations",
+      "Campus events (concerts, carnival rides)"
+    ],
+    "essay_tips": [
+      "Not strictly required, but provides vital context for holistic admissions."
+    ],
+    "red_flags": [
+      "Inability to handle large lecture environments (especially in intro STEM classes).",
+      "Falling behind in rigorous early sequence courses (Calc 1/2, Intro CS) for intended engineering majors."
+    ],
+    "insights": [
+      "Students highly praise the ROI and research opportunities but caution about navigating administrative bureaucracy and harsh Buffalo winters.",
+      "The campus is split; the North Campus feels like its own suburban city, while the South Campus is closer to the city and older."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71430,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "M&T Bank",
+      "Citi",
+      "PwC",
+      "EY",
+      "KPMG",
+      "Deloitte",
+      "Amazon",
+      "JP Morgan Chase"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": null,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 73.0
+  }
+}

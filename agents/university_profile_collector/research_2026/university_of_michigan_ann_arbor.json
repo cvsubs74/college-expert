@@ -1,0 +1,550 @@
+{
+  "_id": "university_of_michigan_ann_arbor",
+  "metadata": {
+    "official_name": "University of Michigan-Ann Arbor",
+    "location": {
+      "city": "Ann Arbor",
+      "state": "Michigan",
+      "type": "Public"
+    },
+    "last_updated": "2024-11-04",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Michigan-Ann Arbor is a premier R1 public research university and a founding member of the AAU. Known for its massive scale, deep-rooted athletic traditions, and top-tier academic programs across 14 undergraduate colleges, it serves over 35,000 undergraduate students. The institution boasts highly competitive admissions, massive research expenditures, and exceptional post-graduate career outcomes.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 21,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Admissions are heavily bifurcated by residency, with out-of-state acceptance rates (15-18%) less than half of in-state rates (~39%).",
+        "implication": "Out-of-state and international applicants face statistical selectivity comparable to elite private institutions and must present near-perfect academic profiles."
+      },
+      {
+        "category": "Academic",
+        "insight": "The Computer Science advance selection policy that restricted CS major declarations is being removed as of Spring 2026.",
+        "implication": "Students admitted to LSA or Engineering will once again have open pathways to declare Computer Science upon meeting prerequisite course conditions."
+      },
+      {
+        "category": "Financial",
+        "insight": "The total cost of attendance for out-of-state students exceeds $80,000 annually, with highly constrained non-resident financial aid.",
+        "implication": "Out-of-state applicants without significant financial need or top-tier merit profiles must be prepared to finance private-college equivalent tuition costs."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant, highly active college town atmosphere anchored by heavy participation in over 1,600 student organizations, a massive Greek life presence, and an intense Big Ten athletic culture centered around 'The Big House' stadium.",
+      "transportation_impact": "The university's physical footprint is immense (over 3,100 acres), split distinctly between Central Campus and North Campus, requiring students to rely heavily on a free, extensive university bus system.",
+      "research_impact": "UMich operates with a $1.8 billion research portfolio, ranking 3rd nationally in research volume. Undergraduates participate heavily via the Undergraduate Research Opportunity Program (UROP)."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.1564,
+      "in_state_acceptance_rate": 0.39,
+      "out_of_state_acceptance_rate": 0.18,
+      "international_acceptance_rate": 0.12,
+      "transfer_acceptance_rate": 0.349,
+      "admits_class_size": 15373,
+      "is_test_optional": true,
+      "test_policy_details": "Permanently adopted a test-optional policy in February 2024. Students may submit SAT/ACT scores, but they are not required.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.28,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 98310,
+        "admits_total": 15373,
+        "enrolled_total": 7466,
+        "acceptance_rate_overall": 0.1564,
+        "acceptance_rate_in_state": 0.39,
+        "acceptance_rate_out_of_state": 0.18,
+        "yield_rate": 0.473,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 24804,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 973,
+          "waitlist_admit_rate": 0.0392,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data reflects historical volatility. Accepted spots data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 87632,
+        "admits_total": 15722,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.179,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 26898,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 955,
+          "waitlist_admit_rate": 0.0355,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.177,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 21078,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 77,
+          "waitlist_admit_rate": 0.0037,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.202,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 17805,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 68,
+          "waitlist_admit_rate": 0.0038,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.229,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 20723,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 1248,
+          "waitlist_admit_rate": 0.0602,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.90-4.00",
+        "average_weighted": null,
+        "notes": "UMich unweights all applicant GPAs to a 4.0 scale during the evaluation process."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1360-1530",
+        "sat_reading_middle_50": "680-750",
+        "sat_math_middle_50": "680-780",
+        "act_composite_middle_50": "31-34",
+        "submission_rate": 0.69,
+        "policy_note": "SAT submission rate was roughly 51%; ACT submission rate was 18%."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.16,
+        "legacy_percentage": null,
+        "international_percentage": 0.09,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.52
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.48
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 48101,
+            "admits": 6684,
+            "acceptance_rate": 0.138
+          },
+          "women": {
+            "applicants": 50209,
+            "admits": 8689,
+            "acceptance_rate": 0.173
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.467,
+          "black_african_american": 0.043,
+          "hispanic_latino": 0.0765,
+          "asian": 0.152,
+          "native_american_alaskan": 0.0016,
+          "pacific_islander": 0.000547,
+          "two_or_more_races": 0.0432,
+          "unknown": 0.11,
+          "non_resident_alien": 0.09
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Literature, Science, and the Arts (LSA)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education, or an indirect pathway to Computer Science or Economics. Emphasizes humanities, social sciences, and pure sciences.",
+        "housing_profile": "Standard undergraduate residence halls spread across Central Campus and the Hill.",
+        "student_archetype": "Curious, academically diverse students looking to explore a multitude of subjects before declaring a major.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "Introductory Computer Programming"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "As of Spring 2026, the advance selection restriction for LSA CS has been removed.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EECS 280",
+                "EECS 281",
+                "EECS 370",
+                "EECS 376"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Stephen M. Ross School of Business",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": 0.08,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Targeted at students with high quantitative aptitude, demonstrated leadership, and robust entrepreneurial/business extracurriculars. Preferred Admission is highly selective.",
+        "housing_profile": "Standard UMich housing; no distinct business-only housing required.",
+        "student_archetype": "Ambitious, networking-oriented leaders aiming for high-finance, consulting, or corporate management.",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": "8%",
+            "average_gpa_admitted": 3.95,
+            "prerequisite_courses": [
+              "BA 100",
+              "ACC 300",
+              "First-Year Writing",
+              "Calculus"
+            ],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires an Admissions Portfolio including a 'Why Ross' essay, an artifact, and a business case discussion.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "curriculum": {
+              "core_courses": [
+                "BA 100",
+                "ACC 300",
+                "BCOM 250"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 62
+            },
+            "notable_professors": [
+              "Madeleine Albright (Diplomacy/Policy)",
+              "C.K. Prahalad (Corporate Strategy)",
+              "Gary Hamel (Core Competence)",
+              "Kim S. Cameron (Academic)",
+              "Andrew Hoffman (Business Academic)",
+              "Noel Tichy (Global Development)"
+            ],
+            "notes": "Admitted through either First-Year Preferred Admission or Cross-Campus Transfer during the freshman year."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 0.19,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students with exceptional mathematical and physical science preparation, notably AP Calculus BC and AP Physics.",
+        "housing_profile": "Many engineering students reside on North Campus (e.g., Bursley Hall), close to engineering facilities.",
+        "student_archetype": "Analytically driven students aiming for technical, hardware, software, or applied science careers.",
+        "majors": [
+          {
+            "name": "Computer Science (Engineering)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "Calculus-Based Physics + Lab",
+              "General College Chemistry + Lab",
+              "Computing Course (Engineering 101 or C++)",
+              "English Composition"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Advance selection process restriction lifted as of Spring 2026. External transfers must hold a 3.0 cumulative GPA and 'C' or better in prereqs.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "EECS 280",
+                "EECS 281",
+                "EECS 370",
+                "EECS 376"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding Early Action. Provides decision by late January."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Regular Decision deadline. Decisions released by early April."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "One 500-word 'Why UMich/Why School' essay, and one 300-word Community/Identity essay."
+      },
+      {
+        "target_program": "Ross School of Business",
+        "requirement_type": "Portfolio",
+        "deadline": "2024-11-01",
+        "details": "Admissions Portfolio including an artifact, business case discussion, and specific 'Why Ross' essay."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Essays"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Evaluates students heavily within the context of their specific high school opportunities."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Applying to LSA is statistically less constrained by hard science/math prerequisites compared to Engineering, but requires a cohesive humanities/social science narrative.",
+      "The removal of the CS Advance Selection rule for Spring 2026 means applicants can apply generally to LSA or Engineering and declare CS later without severe upfront gating.",
+      "Applying Early Action is critical, bumping statistical admit rates from ~15% to 25-30%."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applicants who apply for Preferred Admission to Ross Business or specific competitive programs are evaluated for their primary college (e.g., LSA) first; if denied from the specialty program, they may still enroll in the primary college and attempt a cross-campus transfer."
+  },
+  "financials": {
+    "tuition_model": "Per credit and flat-rate combinations based on residency.",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 17736.0,
+        "total_coa": 36932.0,
+        "housing": 15328.0
+      },
+      "out_of_state": {
+        "tuition": 60946.0,
+        "total_coa": 80142.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 20048.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.54,
+    "scholarships": [
+      {
+        "name": "Shipman Scholarship",
+        "type": "Merit",
+        "amount": null,
+        "deadline": "",
+        "benefits": "Highly prestigious university-wide merit award.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Engineering Scholarship of Honor",
+        "type": "Merit",
+        "amount": null,
+        "deadline": "",
+        "benefits": "Renewable for up to four years.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Joseph M. Geisinger Scholarship",
+        "type": "Merit",
+        "amount": null,
+        "deadline": "",
+        "benefits": "College of Engineering specific.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Gloria Wille Bell and Carlos R. Bell Scholarship",
+        "type": "Merit",
+        "amount": null,
+        "deadline": "",
+        "benefits": "College of Engineering specific.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Regents Merit Scholarship",
+        "type": "Merit",
+        "amount": null,
+        "deadline": "",
+        "benefits": "University-wide merit award.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Generally requires scores of 4 or 5 for equivalent credit.",
+      "exceptions": [
+        "College of Engineering does not accept AP Physics 1 or 2, only Physics C."
+      ],
+      "usage": "Used for course placement and credit accumulation, but cannot fulfill LSA distribution requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit only for Higher Level (HL) exams with a score of 5 or above. Standard Level (SL) is not accepted.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Credit Equivalency (TCE) database"
+      ],
+      "restrictions": "LSA requires a minimum of 60 credits to be completed in residence at UMich to earn a degree. Departmental credit transfers as elective credit and cannot be used to satisfy prerequisites without approval."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school courseload, heavily weighted toward AP/IB in the student's intended field.",
+      "Demonstrable leadership and active engagement within the community.",
+      "Authentic alignment with UMich's collaborative and fast-paced academic culture."
+    ],
+    "common_activities": [
+      "Research (UROP alignment)",
+      "High-level athletic or intramural involvement",
+      "Business/Entrepreneurship clubs (DECA, FBLA) for Ross applicants"
+    ],
+    "essay_tips": [
+      "Be highly specific in the 'Why UMich' essay by naming unique programs, courses, and professors.",
+      "Ensure the Community essay highlights a personal growth narrative that aligns with diversity and inclusion.",
+      "For Ross applicants, demonstrate quantitative ability and a clear track record of business leadership."
+    ],
+    "red_flags": [
+      "Lack of demonstrated rigor relative to the high school's offerings.",
+      "Generic 'Why UMich' essays that only mention the football team or broader prestige."
+    ],
+    "insights": [
+      "The 'easier major' strategy is often a misconception; transferring between colleges (like LSA to Engineering) requires strict prerequisite performance."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 96159,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "McKinsey & Company",
+      "PepsiCo",
+      "Google",
+      "Goldman Sachs",
+      "Microsoft",
+      "BCG",
+      "Proctor & Gamble",
+      "Nike",
+      "Accenture"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.975,
+    "graduation_rate_4_year": 0.82,
+    "graduation_rate_6_year": 0.94
+  }
+}

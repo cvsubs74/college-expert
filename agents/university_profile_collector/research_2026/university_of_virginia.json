@@ -1,0 +1,638 @@
+{
+  "_id": "university_of_virginia",
+  "metadata": {
+    "official_name": "University of Virginia",
+    "location": {
+      "city": "Charlottesville",
+      "state": "Virginia",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-26",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Virginia is a top-tier public research university known for its historic campus, rigorous academics, and high student retention. It balances an elite liberal arts education with powerhouse professional schools.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 26,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Out-of-state admission is intensely competitive (13.8% acceptance), functioning much like an elite private university [cite: 2].",
+        "implication": "Out-of-state applicants must present exceptional academic and extracurricular profiles to overcome the in-state preference."
+      },
+      {
+        "category": "Academic",
+        "insight": "Programs like Commerce and Data Science do not admit first-years directly; students must complete prerequisites and apply internally [cite: 11].",
+        "implication": "Students must maintain high GPAs during their first two years to successfully transfer into competitive professional schools."
+      },
+      {
+        "category": "Financial",
+        "insight": "UVA guarantees to meet 100% of demonstrated financial need for admitted students and limits student debt [cite: 5, 14].",
+        "implication": "UVA is highly affordable for low-income and middle-income families, making it an excellent return on investment."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and highly traditional campus culture located in a classic college town, featuring high student involvement in clubs, community service, and athletics [cite: 4, 15].",
+      "transportation_impact": "Charlottesville offers a quintessential college town environment closely integrated with the university campus [cite: 15].",
+      "research_impact": "Classified as an R1 Doctoral University with very high research activity; undergraduates have extensive opportunities to engage in life-changing research projects [cite: 12, 16]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.168,
+      "in_state_acceptance_rate": 0.259,
+      "out_of_state_acceptance_rate": 0.138,
+      "international_acceptance_rate": 0.105,
+      "transfer_acceptance_rate": 0.23,
+      "admits_class_size": 3961,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the Fall 2026 admissions cycle. Standardized test scores are considered an 'important' factor if submitted, and UVA superscores both the SAT and ACT [cite: 3, 17, 18].",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 4461,
+          "admits": 1245,
+          "acceptance_rate": 0.279,
+          "class_fill_percentage": 0.314
+        },
+        {
+          "plan_type": "EA",
+          "applications": 57495,
+          "admits": 7151,
+          "acceptance_rate": 0.124,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 40878,
+        "admits_total": 9230,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.23,
+        "acceptance_rate_in_state": 0.28,
+        "acceptance_rate_out_of_state": 0.15,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 6465,
+          "accepted_spots": 3780,
+          "admitted_from_waitlist": 165,
+          "waitlist_admit_rate": 0.043,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data pulled from 2020-2021 Common Data Set [cite: 19]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 47982,
+        "admits_total": 9951,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.21,
+        "acceptance_rate_in_state": 0.28,
+        "acceptance_rate_out_of_state": 0.15,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 56528,
+        "admits_total": 9533,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.17,
+        "acceptance_rate_in_state": 0.27,
+        "acceptance_rate_out_of_state": 0.13,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 58951,
+        "admits_total": 9909,
+        "enrolled_total": 3961,
+        "acceptance_rate_overall": 0.168,
+        "acceptance_rate_in_state": 0.259,
+        "acceptance_rate_out_of_state": 0.138,
+        "yield_rate": 0.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 10470,
+          "accepted_spots": 6759,
+          "admitted_from_waitlist": 242,
+          "waitlist_admit_rate": 0.035,
+          "is_waitlist_ranked": false
+        },
+        "notes": "90.5% of admitted students reported a 4.0 GPA [cite: 2, 4]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.3,
+        "notes": "90.5% of the Class of 2028 had a 4.0 GPA [cite: 1, 2]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1410-1520",
+        "sat_reading_middle_50": "700-760",
+        "sat_math_middle_50": "710-780",
+        "act_composite_middle_50": "32-35",
+        "submission_rate": 0.594,
+        "policy_note": "45.6% submitted SAT and 13.8% submitted ACT for the Fall 2024 class [cite: 2]."
+      },
+      "demographics": {
+        "first_gen_percentage": 18.8,
+        "legacy_percentage": 12.9,
+        "international_percentage": 5.2,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 66.1
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 33.9
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 46.3,
+          "black_african_american": 9.0,
+          "hispanic_latino": 7.2,
+          "asian": 20.2,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 5.6,
+          "unknown": 6.3,
+          "non_resident_alien": 5.2
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 0.29,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a liberal arts education or acting as a pre-major pathway to internal transfer into the Commerce or Data Science schools [cite: 20].",
+        "housing_profile": "Standard first-year housing; access to special living-learning communities.",
+        "student_archetype": "Intellectually curious and interdisciplinary students.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 1110",
+              "CS 2100"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 1220"
+            ],
+            "special_requirements": "Requires a C+ or higher in CS 2100 to declare [cite: 21].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 2120",
+                "CS 2130",
+                "CS 3100",
+                "CS 3120",
+                "CS 3130",
+                "CS 3140"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Engineering students are not allowed to declare the B.A. in Computer Science as a second major [cite: 21]."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 2010",
+              "ECON 2020"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 2010"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECON 2010",
+                "ECON 2020",
+                "ECON 3010",
+                "ECON 3020",
+                "ECON 3720"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Kenneth Elzinga (Antitrust Economics)",
+              "Dr. Lee Lockwood (Public Finance)",
+              "Dr. Leland Farmer (Macroeconomics)"
+            ],
+            "notes": "Prof. Elzinga's introductory economics class is famously the largest class offered at UVA and highly regarded [cite: 22, 23, 24]."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 2100",
+              "BIOL 2200"
+            ],
+            "minimum_gpa_to_declare": 2.7,
+            "weeder_courses": [
+              "BIOL 2100",
+              "BIOL 2200"
+            ],
+            "special_requirements": "Requires cumulative 2.7 GPA across BIOL 3000, 3010, and 3020 [cite: 25].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 3000",
+                "BIOL 3010",
+                "BIOL 3020"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Required core courses must be completed at the University of Virginia [cite: 25]."
+          },
+          {
+            "name": "Behavioral Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 2005",
+              "PSYC 2200"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PSYC 3006",
+                "PSYC 3160",
+                "PSYC 3200",
+                "PSYC 3235",
+                "PSYC 3250"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Administered under the Department of Psychology [cite: 26]."
+          }
+        ]
+      },
+      {
+        "name": "McIntire School of Commerce",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 0.508,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students targeting elite finance, accounting, or management roles. Students apply internally during their second year [cite: 11].",
+        "housing_profile": "Standard UVA housing.",
+        "student_archetype": "Driven, analytical, and highly pre-professional students.",
+        "majors": [
+          {
+            "name": "Commerce",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "50.8%",
+            "average_gpa_admitted": 3.78,
+            "prerequisite_courses": [
+              "ECON 2010",
+              "ECON 2020"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 2010"
+            ],
+            "special_requirements": "Requires an extensive internal application highlighting co-curricular engagements [cite: 10].",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.78,
+            "curriculum": {
+              "core_courses": [
+                "COMM 3010",
+                "COMM 3020",
+                "COMM 3030",
+                "COMM 3040",
+                "COMM 3050",
+                "COMM 3060",
+                "COMM 3410"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 48
+            },
+            "notable_professors": [],
+            "notes": "The internal transfer acceptance rate for current UVA students is roughly 51%, while the external transfer acceptance rate is 18% [cite: 10, 11]."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering and Applied Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "For students certain about pursuing rigorous technical and STEM pathways.",
+        "housing_profile": "Standard first-year housing with optional engineering living-learning communities.",
+        "student_archetype": "Technically gifted and analytical thinkers.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 1220"
+            ],
+            "special_requirements": "Internal transfers must complete CS 2100 with a C- or better [cite: 27].",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "CS 1110",
+                "CS 2100",
+                "CS 2120",
+                "CS 2130",
+                "CS 3100",
+                "CS 3120",
+                "CS 3130",
+                "CS 3140",
+                "CS 3240"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Requires additional Applied Mathematics and general engineering foundation courses [cite: 28]."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Decisions released mid-December [cite: 29]."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Decisions released mid-February [cite: 30]."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": "Decisions released by April 1 [cite: 29]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "School of Nursing",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Detail a health care-related experience or interaction that has informed your interest in the School of Nursing (300 words) [cite: 3, 6]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course rigor",
+        "Class rank",
+        "GPA",
+        "Character/personal qualities",
+        "State residency"
+      ],
+      "secondary_factors": [
+        "Essay",
+        "Recommendation letters",
+        "Extracurricular activities",
+        "Talent/ability"
+      ],
+      "essay_importance": "Important",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "UVA removed the general supplemental essay for the 2025-2026 cycle for all majors except Nursing to reduce applicant burden. State law now prohibits legacy preferences [cite: 6, 7]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to the College of Arts and Sciences if undecided, as it offers a less specialized admissions hurdle than Kinesiology or Nursing.",
+      "Maximize chances by applying Early Decision (27.9% acceptance rate vs 16.8% overall) [cite: 2].",
+      "Highlight first-generation or unique experiential diversity rather than legacy status, as legacy preferences are no longer utilized [cite: 7]."
+    ],
+    "college_ranking_tactics": [
+      "Out-of-state applicants must possess highly elite metrics comparable to Top 20 private institutions due to the capped OOS enrollment [cite: 18]."
+    ],
+    "alternate_major_strategy": "For highly competitive tracks like Commerce and Data Science, students apply to the College of Arts and Sciences and fulfill prerequisite 'weeder' classes before completing an internal transfer application during their second year [cite: 11]."
+  },
+  "financials": {
+    "tuition_model": "In-State / Out-of-State",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 19472.0,
+        "total_coa": 39422.0,
+        "housing": 14800.0
+      },
+      "out_of_state": {
+        "tuition": 53822.0,
+        "total_coa": 75182.0,
+        "supplemental_tuition": 34350.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 29675.0,
+    "average_merit_aid": 5870.0,
+    "percent_receiving_aid": 44.0,
+    "scholarships": [
+      {
+        "name": "Jefferson Scholarship",
+        "type": "Merit",
+        "amount": "Full Cost of Attendance",
+        "deadline": "2024-12-02",
+        "benefits": "Covers tuition, fees, room, board, and provides funding for summer enrichment and travel.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Walentas Scholarship",
+        "type": "Merit",
+        "amount": "Full Cost of Attendance",
+        "deadline": "2024-12-02",
+        "benefits": "Geared toward outstanding first-generation college students; covers full COA and enrichment funding.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Ridley Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Aims to attract and retain the nation's most meritorious African-American students.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Alumni Family Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Competitive scholarships awarded to incoming students who are children of UVA degree holders.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit and/or placement for scores of 4 or 5 on most AP exams.",
+      "exceptions": [],
+      "usage": "Can be used to bypass introductory courses or satisfy certain major prerequisites [cite: 31]."
+    },
+    "ib_policy": {
+      "general_rule": "Higher Level (HL) exam scores are accepted for advanced credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Virginia",
+        "VCCS Guaranteed Admission Agreement (GAA)"
+      ],
+      "restrictions": "Requires a 3.4 minimum GPA for guaranteed admission via the VCCS to the College of Arts and Sciences [cite: 32]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Nearly perfect unweighted GPA (90.5% of admits have a 4.0) [cite: 2].",
+      "High course rigor including 5-8 AP courses [cite: 18].",
+      "Strong class rank; 97% of enrolled students were in the top 25% of their graduating class [cite: 4]."
+    ],
+    "common_activities": [
+      "Community service (92% of admits participate) [cite: 4]",
+      "Part-time employment (51% of admits hold a paying job) [cite: 4]",
+      "Leadership roles in student organizations",
+      "Athletics"
+    ],
+    "essay_tips": [
+      "Emphasize intellectual curiosity and community impact.",
+      "Be highly specific when discussing community engagement.",
+      "Avoid clich\u00e9s and ensure a direct connection between personal strengths and contributions to the UVA community [cite: 33]."
+    ],
+    "red_flags": [
+      "A drop in senior year grades.",
+      "Lack of rigorous coursework (AP/IB/Dual Enrollment)."
+    ],
+    "insights": [
+      "UVA operates much like a private Ivy for out-of-state applicants.",
+      "The removal of supplemental essays for most majors shifts heavier weight onto the Common App personal statement and quantitative academic metrics [cite: 6]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 91448,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Deloitte",
+      "Capital One Financial Corporation",
+      "KPMG",
+      "JP Morgan",
+      "Bank of America",
+      "Accenture",
+      "Bain & Company"
+    ],
+    "loan_default_rate": 1.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 97.9,
+    "graduation_rate_4_year": 92.0,
+    "graduation_rate_6_year": 95.0
+  }
+}

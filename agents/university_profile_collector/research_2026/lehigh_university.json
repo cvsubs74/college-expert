@@ -1,0 +1,546 @@
+{
+  "_id": "lehigh_university",
+  "metadata": {
+    "official_name": "Lehigh University",
+    "location": {
+      "city": "Bethlehem",
+      "state": "Pennsylvania",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-15",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Lehigh University is a highly selective, medium-sized private research university (R1) located in Bethlehem, Pennsylvania. Known for its rigorous engineering and business programs, Lehigh fosters a collaborative yet intensive academic environment where interdisciplinary studies, dual degrees, and undergraduate research are heavily emphasized.",
+    "market_position": "Elite Private / Hidden Ivy",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 46,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The overall acceptance rate has dropped from nearly 50% in 2020 to roughly 26% for the Class of 2028, largely driven by a record number of applications (>20,000).",
+        "implication": "Lehigh is returning to historical levels of selectivity, making it a highly competitive target/reach school rather than a safety."
+      },
+      {
+        "category": "Financial",
+        "insight": "Graduates boast a median 10-year earnings of $101,748 according to the College Scorecard, paired with relatively modest median debt.",
+        "implication": "Lehigh offers exceptional Return on Investment (ROI), particularly for students in the College of Business and the P.C. Rossin College of Engineering."
+      },
+      {
+        "category": "Academic",
+        "insight": "Boundaries between the three main undergraduate colleges are fluid, allowing students to cross-register or pursue integrated inter-college degrees like CSB and IDEAS.",
+        "implication": "Applicants with varied, cross-disciplinary interests will find it much easier to explore multiple fields or change paths compared to more siloed peer institutions."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant 'work hard, play hard' mentality with strong school spirit, active Greek life, Division I athletics (Mountain Hawks), and over 400 student organizations.",
+      "transportation_impact": "The campus is notoriously built on a mountain, consisting of three main campuses (Asa Packer, Mountaintop, and Murray H. Goodman). It requires significant walking, hiking, and use of campus transit.",
+      "research_impact": "As an R1 institution, Lehigh provides extensive undergraduate research opportunities, with many professors welcoming first-year students into their labs and high-tech facilities."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.2593,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.2425,
+      "admits_class_size": 1535,
+      "is_test_optional": true,
+      "test_policy_details": "Lehigh has adopted an indefinite test-optional policy. Less than 40% of enrolled students in the Class of 2028 submitted test scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 2217,
+          "admits": 996,
+          "acceptance_rate": 0.449,
+          "class_fill_percentage": 0.61
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 20396,
+        "admits_total": 5289,
+        "enrolled_total": 1500,
+        "acceptance_rate_overall": 0.2593,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.283,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Lowest admit rate in five years; 10% rise in total applications."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 18415,
+        "admits_total": 5390,
+        "enrolled_total": 1535,
+        "acceptance_rate_overall": 0.292,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.284,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 15163,
+        "admits_total": 5607,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.3698,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": 2499,
+          "admitted_from_waitlist": 93,
+          "waitlist_admit_rate": 0.037,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 14107,
+        "admits_total": 6485,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.46,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": 2079,
+          "admitted_from_waitlist": 102,
+          "waitlist_admit_rate": 0.049,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 12389,
+        "admits_total": 6138,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.495,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": 1875,
+          "admitted_from_waitlist": 1684,
+          "waitlist_admit_rate": 0.898,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Unusually high waitlist admit rate due to the COVID-19 pandemic and deferrals."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.98,
+        "notes": "61% of enrolled freshmen placed in the top decile of their high school class; 86% were in the top quartile."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1410-1530",
+        "sat_reading_middle_50": "700-750",
+        "sat_math_middle_50": "710-780",
+        "act_composite_middle_50": "32-35",
+        "submission_rate": 0.4,
+        "policy_note": "Data based on the middle 50% for the Class of 2029 profile. Only ~40% of the class submitted scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": 0.13,
+        "international_percentage": 0.08,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10556,
+            "admits": 2551,
+            "acceptance_rate": 0.241
+          },
+          "women": {
+            "applicants": 9834,
+            "admits": 2736,
+            "acceptance_rate": 0.278
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.5958,
+          "black_african_american": 0.0495,
+          "hispanic_latino": 0.1103,
+          "asian": 0.1074,
+          "native_american_alaskan": 0.0008,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.0436,
+          "unknown": 0.0247,
+          "non_resident_alien": 0.0666
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students interested in natural sciences, social sciences, or humanities. The largest college at Lehigh, encompassing 37% of undergraduate enrollment.",
+        "housing_profile": "Traditional first-year residence halls.",
+        "student_archetype": "Intellectually curious students seeking a classic liberal arts foundation paired with research.",
+        "majors": []
+      },
+      {
+        "name": "P.C. Rossin College of Engineering and Applied Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strong math/science students. It is significantly easier to transfer out of the engineering college than to transfer in, so undecided STEM students should start here.",
+        "housing_profile": "Traditional first-year residence halls.",
+        "student_archetype": "Innovators and problem solvers; accounts for 25% of undergrads.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSE 003",
+              "CSE 004",
+              "CSE 007",
+              "CSE 017",
+              "CSE 109",
+              "CSE 140",
+              "MATH 021",
+              "MATH 022"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "The specialized CSB (Computer Science and Business) dual-degree requires transferring in with a minimum 3.25 cumulative GPA and a B- or better in ECO 001, CSE 007, and Calculus.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25,
+            "curriculum": {
+              "core_courses": [
+                "CSE 007 Introduction to Programming",
+                "CSE 017 Programming and Data Structures",
+                "CSE 109 Systems Software",
+                "CSE 140 Foundations of Discrete Structures and Algorithms",
+                "CSE 202 Computer Organization and Architecture",
+                "CSE 216 Software Engineering",
+                "CSE 262 Programming Languages",
+                "CSE 303 Operating System Design",
+                "CSE 340 Design and Analysis of Algorithms"
+              ],
+              "electives": [
+                "CSE 308 Genomics",
+                "CSE 336 Embedded Systems",
+                "CSE 413 Computer Graphics",
+                "CSE 042 Game Design"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Computer Science is offered as a B.S. in Engineering, a B.A. or B.S. in Arts & Sciences, or as part of the highly selective CSB Honors Program."
+          }
+        ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students targeting corporate finance, accounting, or consulting. Accounts for 22% of undergraduates.",
+        "housing_profile": "Traditional first-year residence halls.",
+        "student_archetype": "Future corporate leaders and entrepreneurs.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCT 151",
+              "ECO 001",
+              "MATH 021",
+              "MATH 081"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "To internally transfer into the College of Business, a student must have 24 credits, a 2.0 GPA minimum, and a C- or better in ECO 001 and MATH 021/081.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "FIN 125 Introduction to Finance",
+                "FIN 323 Investments",
+                "FIN 328 Corporate Financial Policy"
+              ],
+              "electives": [
+                "FIN 324 Security Analysis and Portfolio Management",
+                "FIN 330 Financial Markets and Institutions",
+                "FIN 333 Global Finance",
+                "FIN 334 Derivatives and Management of Risk",
+                "FIN 335 Advanced Topics - Financial Management",
+                "FIN 336 Real Estate Finance"
+              ],
+              "total_units": 120,
+              "major_units": 21
+            },
+            "notable_professors": [],
+            "notes": "Finance majors must complete 2 foundation courses and 5 electives (at least 3 with FIN prefix)."
+          }
+        ]
+      },
+      {
+        "name": "Interdisciplinary Programs (IDEAS, CSB, IBE, IBH)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly ambitious students who have equally strong interests across multiple colleges (e.g., Engineering and Business). Admission is highly competitive.",
+        "housing_profile": "Traditional first-year residence halls.",
+        "student_archetype": "High-achieving boundary-crossers; accounts for 11% of enrollment.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application",
+      "Coalition Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED1",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "ED2",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": ""
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-20",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Prompt 1: How did you first learn about Lehigh University and what motivated you to apply? (200 words). Prompt 2: Choice between reflecting on personal background and 'Inspiring the Future Makers' goals OR 'Personal Celebration' of something great in your life. (200-300 words)."
+      },
+      {
+        "target_program": "Specific Majors/Programs",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Prompt 3: How will the unique combination of college, program, major and/or 4+1 program allow you to achieve your goals? (200 words)."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Class rank",
+        "Academic GPA",
+        "Standardized test scores",
+        "Application Essay",
+        "Recommendation(s)"
+      ],
+      "secondary_factors": [
+        "Interview",
+        "Extracurricular activities",
+        "Talent/ability",
+        "Character/personal qualities"
+      ],
+      "essay_importance": "Very Important",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "Lehigh heavily tracks demonstrated interest. Evaluative interviews and campus visits are recorded and viewed as strong indicators of intent to enroll."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Decision: The ED acceptance rate (45%) is significantly higher than the RD rate, and Lehigh fills over 60% of its class during early rounds.",
+      "Select an Alternate Major: Lehigh specifically encourages applicants to list an alternate major, as you are applying directly to one of the undergraduate colleges.",
+      "Start in Engineering if Unsure: Because traditional engineering BS curricula lack flexibility, undecided STEM applicants are advised to start in the Rossin College of Engineering. It is easier to transfer out of engineering to Arts & Sciences than vice-versa."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Applying to highly selective interdisciplinary programs like CSB or IBE requires listing a backup college (e.g., Business or Engineering) on the application, which serves as an automatic fallback if rejected from the honors track."
+  },
+  "financials": {
+    "tuition_model": "Flat rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 63930,
+        "total_coa": 84700,
+        "housing": 17220
+      },
+      "out_of_state": {
+        "tuition": 63930,
+        "total_coa": 84700,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 47917,
+    "average_merit_aid": 21666,
+    "percent_receiving_aid": 0.55,
+    "scholarships": [
+      {
+        "name": "Soaring Together Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2025-02-01",
+        "benefits": "Full tuition for four years, cohort networking, leadership development.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Founder's and Trustees' Scholarships",
+        "type": "Merit",
+        "amount": "Half to Full Tuition",
+        "deadline": "",
+        "benefits": "Given to students in the top tier of the applicant pool; renewable with a 3.0 GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "$15,000 - $25,000",
+        "deadline": "",
+        "benefits": "Recognizes academic excellence and demonstrated leadership.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 - $2,000",
+        "deadline": "",
+        "benefits": "Awarded to National Merit Finalists who list Lehigh as their first choice.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Performing Arts Scholarships in Theatre or Music",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "2025-02-10",
+        "benefits": "Open to any major; requires active presence in the Department of Theatre/Music.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 4 or 5 for credit.",
+      "exceptions": [
+        "Calculus AB requires a 5",
+        "Chemistry requires a 5",
+        "English exams require a 5"
+      ],
+      "usage": "Used for credit and placement, but credit is forfeited if the student takes the equivalent course at Lehigh."
+    },
+    "ib_policy": {
+      "general_rule": "Grants credit for Higher Level (HL) subjects with scores of 5 or higher.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Pre-approval required via petition"
+      ],
+      "restrictions": "Courses must be from regionally accredited institutions, completed with a C or better (no pass/fail). Transfer credits do not calculate into the Lehigh GPA."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school transcript featuring top-decile class rank.",
+      "Substantial Demonstrated Interest (campus tours, evaluative interviews).",
+      "Authentic and highly specific supplemental essays that tie deeply into Lehigh's interdisciplinary culture."
+    ],
+    "common_activities": [
+      "Greek Life (prominent social driver)",
+      "Intramural and D1 Sports (Mountain Hawks)",
+      "Student-run interest groups (e.g., Cheese Club, Outing Club)",
+      "Undergraduate Research & Impact Fellowships"
+    ],
+    "essay_tips": [
+      "For the 'Why Lehigh' prompt, go beyond generic website research; mention specific dual-degree programs (CSB, IDEAS) or specific alumni/faculty interactions.",
+      "For the 'Personal Celebration' prompt, focus on a small, specific, and recent personal win rather than a massive academic accolade.",
+      "Connect your personal background to Lehigh's strategic 'Inspiring the Future Makers' goals (innovate, impact, collaborate)."
+    ],
+    "red_flags": [
+      "Zero demonstrated interest recorded by the admissions office.",
+      "Generic 'Why This College' essays that could apply to any mid-sized university.",
+      "Applying to engineering without strong grades in calculus, physics, and chemistry."
+    ],
+    "insights": [
+      "The 'Lehigh Commitment' guarantees free tuition for families earning under $75,000, broadening the applicant pool.",
+      "Legacy applicants enjoy a notable advantage, with legacy ED admit rates hitting over 90% in recent cycles, though standards remain high."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 101748,
+    "employment_rate_2yr": 0.92,
+    "grad_school_rate": 0.24,
+    "top_employers": [
+      "EY",
+      "Deloitte",
+      "Amazon",
+      "IBM",
+      "Google",
+      "PwC",
+      "Vanguard"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.937,
+    "graduation_rate_4_year": 0.81,
+    "graduation_rate_6_year": 0.89
+  }
+}

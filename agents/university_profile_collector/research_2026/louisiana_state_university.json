@@ -1,0 +1,462 @@
+{
+  "_id": "louisiana_state_university",
+  "metadata": {
+    "official_name": "Louisiana State University and Agricultural & Mechanical College",
+    "location": {
+      "city": "Baton Rouge",
+      "state": "LA",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Louisiana State University and Agricultural & Mechanical College (LSU) is the flagship public research university of Louisiana, boasting a distinguished R1 'Very high research activity' classification. It is one of the elite group of institutions holding land-grant, sea-grant, and space-grant statuses, providing extensive research opportunities for its students.",
+    "market_position": "Flagship Public Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 185,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "LSU maintains a moderately selective overall acceptance rate of approximately 73%, but heavily utilizes a holistic review process that evaluates the whole student.",
+        "implication": "Students with solid, but not necessarily perfect, academic metrics have a strong chance of admission, especially if they demonstrate robust extracurricular leadership and community service."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university holds the rare triple designation as a land, sea, and space-grant institution.",
+        "implication": "Undergraduates have unparalleled access to unique, well-funded research facilities like the PERTT lab for engineering and extensive coastal/environmental science centers."
+      },
+      {
+        "category": "Culture",
+        "insight": "LSU features an exceptionally spirited campus culture dominated by SEC athletics, strong Greek life, and over 450 student organizations.",
+        "implication": "Applicants should be prepared for a massive, highly social campus environment where community engagement and school spirit are central to the student experience."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A highly active, spirited, and diverse campus characterized by a strong unifying passion for LSU athletics ('Death Valley'), vibrant Greek Life, and extensive intramural and club involvement.",
+      "transportation_impact": "Parking is frequently cited as a major challenge by the student body, making the use of commuter plans, campus transit, and early arrivals critical for navigating the large campus.",
+      "research_impact": "LSU's broad research mandate offers undergraduates practical experience in cutting-edge areas ranging from advanced gravitational-wave detection (LIGO) to biomedical research."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.733,
+      "in_state_acceptance_rate": 0.8,
+      "out_of_state_acceptance_rate": 0.65,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.625,
+      "admits_class_size": 7925,
+      "is_test_optional": true,
+      "test_policy_details": "LSU is test-optional for admissions; however, test scores are considered if submitted and may be required for specific merit-based scholarships such as the Louisiana TOPS program.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 47065,
+        "admits_total": 34513,
+        "enrolled_total": 7925,
+        "acceptance_rate_overall": 0.733,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.23,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed for recent cycles."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.76,
+        "notes": "LSU admits generally show a strong high school academic record; the average admitted GPA ranges around 3.76 - 3.82."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1340",
+        "sat_reading_middle_50": "600-680",
+        "sat_math_middle_50": "580-660",
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 0.47,
+        "policy_note": "SAT submission rate was 7%, ACT submission rate was 40%."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": null,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 17199,
+            "admits": 12138,
+            "acceptance_rate": 0.705
+          },
+          "women": {
+            "applicants": 29864,
+            "admits": 22373,
+            "acceptance_rate": 0.749
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.59,
+          "black_african_american": null,
+          "hispanic_latino": null,
+          "asian": null,
+          "native_american_alaskan": null,
+          "pacific_islander": null,
+          "two_or_more_races": null,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "E.J. Ourso College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking a strong foundation in business knowledge with opportunities for practical experience via a simulated trading floor and a broad alumni network.",
+        "housing_profile": null,
+        "student_archetype": "Driven aspiring corporate professionals and innovators.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.6,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum 2.3 business GPA and a minimum 2.3 LSU business GPA to declare.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.6,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Accredited continuously by the AACSB since 1931."
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.6,
+            "weeder_courses": [],
+            "special_requirements": "Requires a minimum 2.3 business GPA.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.6,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Manship School of Mass Communication",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Best for creative thinkers aiming for careers in media, journalism, public relations, or political communication with a desire for hands-on storytelling.",
+        "housing_profile": null,
+        "student_archetype": "Creative communicators and political advocates.",
+        "majors": [
+          {
+            "name": "Journalism",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MC 2010"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Must have completed at least 30 hours of college-level coursework, including MC 2010 (Media Writing) with a 'B' or better.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MC 2000",
+                "MC 2010",
+                "MC 2015",
+                "MC 2035",
+                "MC 3080",
+                "MC 3333",
+                "MC 4090",
+                "MC 2101",
+                "MC 3103",
+                "MC 3005",
+                "MC 4501"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Students are required to complete a minor outside of mass communication."
+          },
+          {
+            "name": "Political Communication",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MC 2010"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Completion of at least 30 hours of college-level course work and 'B' or better in MC 2010.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Graduates possess skills highly sought after in political campaigns, government agencies, and public relations."
+          }
+        ]
+      },
+      {
+        "name": "School of Kinesiology",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Designed for students pursuing healthcare professions including Physical Therapy, Occupational Therapy, and Medicine.",
+        "housing_profile": null,
+        "student_archetype": "Future healthcare professionals, therapists, and sports medicine clinicians.",
+        "majors": [
+          {
+            "name": "Human Movement Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Requires a 2.5 GPA and completion with a C or better in English 1001, Math 1021, Math 1022, Biology 1201, and 1202.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "KIN 2500",
+                "KIN 3519",
+                "KIN 4519"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Amanda Mayeaux",
+              "Dr. Aimee Gros",
+              "Dr. Sarah Myers",
+              "Dr. Shiho Goto",
+              "Dr. Brian Campbell",
+              "Dr. Charles Duncan"
+            ],
+            "notes": "Includes a highly coveted cadaver lab experience which requires an A or B in KIN 2500."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "YYYY-04-15",
+        "is_binding": false,
+        "notes": "Regular decision rolling application deadline."
+      },
+      {
+        "plan_type": "EA",
+        "date": "YYYY-12-15",
+        "is_binding": false,
+        "notes": "Priority deadline to be fully considered for institutional merit scholarships and honors college."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Part of the holistic review process to assess a candidate's character, community service, and personal accomplishments."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic GPA",
+        "Course Rigor"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (If submitted)",
+        "Extracurricular Activities",
+        "Letters of Recommendation",
+        "Essays"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "LSU's holistic process heavily weighs evidence of leadership, community engagement, and the capacity to overcome systemic barriers."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Students targeting highly competitive pre-professional programs (e.g., Manship School of Mass Communication, Kinesiology) must focus on securing a high college GPA in prerequisite core courses.",
+      "Consider applying to a less impacted or generalized major for initial admission, with the plan of meeting the 2.5 - 2.6 GPA floor requirement to transfer internally later."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "LSU allows for the selection of an alternate major. Students rejected from a highly selective first-choice program may be admitted into an alternate path, offering a backdoor to transfer internally once prerequisites are met."
+  },
+  "financials": {
+    "tuition_model": "Public Flagship Differential Tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11954.0,
+        "total_coa": 36064.0,
+        "housing": 15142.0
+      },
+      "out_of_state": {
+        "tuition": 28631.0,
+        "total_coa": 52741.0,
+        "supplemental_tuition": 16677.0
+      }
+    },
+    "aid_philosophy": "Need/Merit-based Blended",
+    "average_need_based_aid": null,
+    "average_merit_aid": 7583.0,
+    "percent_receiving_aid": 0.93,
+    "scholarships": [
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full Cost of Attendance",
+        "deadline": "YYYY-12-15",
+        "benefits": "Covers four years of full COA plus up to $14,000 for enrichment experiences and a one-time laptop stipend.",
+        "application_method": "Automatic via Ogden Honors College application"
+      },
+      {
+        "name": "President's Alumni Scholars Award",
+        "type": "Merit",
+        "amount": "Full Cost of Attendance",
+        "deadline": "YYYY-12-15",
+        "benefits": "Covers four years of full COA plus a $2,000 study abroad stipend.",
+        "application_method": "Automatic via Ogden Honors College application"
+      },
+      {
+        "name": "Louisiana Tiger Legacy Scholarship",
+        "type": "Merit",
+        "amount": "$500 - $1,000",
+        "deadline": "",
+        "benefits": "Stat-automatic tier-based scholarship depending on ACT score (24+).",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Taylor Opportunity Program for Students (TOPS)",
+        "type": "Merit",
+        "amount": "$7,463 - $12,000",
+        "deadline": "",
+        "benefits": "Louisiana's signature state-funded merit program covering tuition for eligible in-state residents.",
+        "application_method": "Separate (via LOSFA/FAFSA)"
+      },
+      {
+        "name": "Louisiana GO Grant",
+        "type": "Need",
+        "amount": "$300 - $3,000",
+        "deadline": "",
+        "benefits": "Need-based grant for Louisiana residents aimed at non-traditional and traditional learners.",
+        "application_method": "Automatic via FAFSA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "LSU grants advanced placement and course credit to freshmen who earn a score of 3, 4, or 5 on appropriate AP subject examinations.",
+      "exceptions": [],
+      "usage": "Can be used to bypass prerequisites and satisfy lower-level general education requirements."
+    },
+    "ib_policy": {
+      "general_rule": "LSU accepts IB credit upon official transcript evaluation.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Tiger Transfer Tables"
+      ],
+      "restrictions": "Transfer students must have 30 college-level hours with a 2.5 cumulative GPA, plus a grade of 'C' or better in college-level English and Math."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A rigorous high school transcript prioritizing academic core subjects.",
+      "Holistic indicators of leadership and community involvement.",
+      "An authentic essay highlighting cultural ties or academic passions."
+    ],
+    "common_activities": [
+      "Greek Life (Sororities & Fraternities)",
+      "Tiger Band",
+      "SEC Athletics & Tailgating",
+      "Student Government",
+      "Community Service Initiatives",
+      "Intramural Sports"
+    ],
+    "essay_tips": [
+      "Demonstrate resilience and the ability to overcome challenges.",
+      "Showcase extensive leadership experiences within your community.",
+      "Connect your personal narrative to Louisiana's distinct culture or the university's academic strengths."
+    ],
+    "red_flags": [
+      "A lack of challenging core coursework during high school.",
+      "Disciplinary records or plummeting grades in the senior year."
+    ],
+    "insights": [
+      "The massive campus size can feel isolating at first; students highly recommend joining 1-2 student groups immediately to find a niche.",
+      "While SEC football and partying are massive aspects of LSU culture, the 'weekend warrior' approach is strongly advised by peers to avoid failing academically.",
+      "Parking on campus is notoriously limited; many students recommend utilizing commuter transit systems or arriving very early."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 66893,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.85,
+    "graduation_rate_4_year": 0.4,
+    "graduation_rate_6_year": 0.69
+  }
+}

@@ -1,0 +1,468 @@
+{
+  "_id": "mercer_university",
+  "metadata": {
+    "official_name": "Mercer University",
+    "location": {
+      "city": "Macon",
+      "state": "Georgia",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-20",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Mercer University is a historic, private R2 research university in Georgia known for its heavy emphasis on community service, health sciences, engineering, and business. It offers a unique blend of a close-knit liberal arts college atmosphere with the academic resources and pre-professional programs of a larger research institution.",
+    "market_position": "Mid-sized Private Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 165,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "High placement rates in health sciences and engineering.",
+        "implication": "Ideal for pre-med, nursing, and engineering students looking for a supportive environment with strong clinical pipelines in Georgia."
+      },
+      {
+        "category": "Culture",
+        "insight": "Mercer on Mission program and historic faith-based roots heavily influence the campus culture.",
+        "implication": "Applicants should highlight community service, leadership, and a desire to make a global impact in their essays."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Demonstrated interest is tracked and heavily weighed.",
+        "implication": "Prospective students must actively engage with admissions counselors and visit campus if possible to improve their odds."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Tight-knit community with a strong emphasis on service, a massive intramural sports program, and active Greek life. The campus is peaceful and beautiful, though some students express mixed feelings about the surrounding Macon area.",
+      "transportation_impact": "The Atlanta campus is heavily commuter-friendly with access to MARTA, while the main Macon campus is a traditional residential environment.",
+      "research_impact": "Classified as an R2 institution with significant undergraduate research opportunities, particularly in rural health disparities and engineering."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.689,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 6760,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional. Students may apply without submitting standardized test scores, though competitive programs may evaluate submitted scores for merit scholarships.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 9813,
+        "admits_total": 6760,
+        "enrolled_total": 889,
+        "acceptance_rate_overall": 0.6888,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.131,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 205,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 116,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist accepting spot data not reported publicly, but 116 students were eventually admitted from the waitlist."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.50-3.75",
+        "average_weighted": 3.86,
+        "notes": "GPA reflects rigorous high school curriculum expectations."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1350",
+        "sat_reading_middle_50": "590-680",
+        "sat_math_middle_50": "570-670",
+        "act_composite_middle_50": "25-31",
+        "submission_rate": 0.32,
+        "policy_note": "17% of admitted students submitted ACT scores; 32% submitted SAT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.03,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.86
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.13
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.427,
+          "black_african_american": 0.332,
+          "hispanic_latino": 0.066,
+          "asian": 0.082,
+          "native_american_alaskan": 0.002,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.032,
+          "unknown": 0.025,
+          "non_resident_alien": 0.033
+        },
+        "religious_affiliation": "Historically Baptist (Cooperative Baptist Fellowship)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Stetson-Hatcher School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for career-oriented students seeking flexible business education with immediate opportunities to transition into an MBA via the Special Consideration Program.",
+        "housing_profile": "Traditional dorms in Macon; commuter-friendly setting in Atlanta.",
+        "student_archetype": "Collaborative, driven leaders with a focus on real-world application.",
+        "majors": [
+          {
+            "name": "General Business",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACC 204",
+              "ACC 205"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ECN 150",
+                "ECN 151",
+                "ACC 204",
+                "ACC 205",
+                "BUS 346",
+                "BUS 349",
+                "BUS 350",
+                "MKT 361",
+                "FIN 362",
+                "MGT 363",
+                "MGT 382",
+                "MGT 498"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [],
+            "notes": "Accounting courses are frequently cited by students as major weed-out classes for second- and third-year students."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strong math and science students looking for rigorous engineering programs mixed with hands-on, service-oriented projects.",
+        "housing_profile": "Macon residential campus.",
+        "student_archetype": "Innovative, hands-on problem solvers.",
+        "majors": [
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EGR 232",
+              "EGR 235",
+              "EGR 236"
+            ],
+            "special_requirements": "Completion of Freshman/Sophomore Engineering Core.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "EGR 107",
+                "EGR 108",
+                "EGR 126",
+                "EGR 232",
+                "EGR 235",
+                "EGR 236",
+                "EGR 244",
+                "EGR 245",
+                "EGR 252"
+              ],
+              "electives": [],
+              "total_units": 129,
+              "major_units": 45
+            },
+            "notable_professors": [
+              "Dr. Richard K. Kunz",
+              "Dr. Hodge E. Jenkins",
+              "Dr. Monika Bubacz"
+            ],
+            "notes": "Statics (EGR 232), Thermodynamics (EGR 235), and Dynamics (EGR 236) are widely considered intense weed-out courses. A supplemental instruction and retest program has been implemented to help retention."
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students pursuing foundational arts and sciences degrees or planning to transfer into the highly competitive Nursing/Pharmacy schools later.",
+        "housing_profile": "Macon residential campus.",
+        "student_archetype": "Intellectually curious and well-rounded.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSC 204",
+                "CSC 205",
+                "CSC 245",
+                "CSC 315",
+                "CSC 335",
+                "CSC 415",
+                "CSC 435",
+                "CSC 499"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 26
+            },
+            "notable_professors": [
+              "Dr. Robert Allen (Computer Science)",
+              "Dr. Andy Digh (Computer Science)"
+            ],
+            "notes": "Offers an ABET-accredited B.S. degree. The Computational Science offshoot pairs math and computer science."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Mercer Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-10-15",
+        "is_binding": false,
+        "notes": "Early Action I. Priority for merit scholarships; ideal for strong applicants."
+      },
+      {
+        "plan_type": "EA",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Early Action II. Still competitive for aid."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-03-01",
+        "is_binding": false,
+        "notes": "Final regular decision deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Real weight is placed on personal essays to determine a candidate's fit for Mercer's faith-based, service-oriented culture."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High school GPA",
+        "Course rigor (AP/IB/Honors)"
+      ],
+      "secondary_factors": [
+        "Demonstrated Interest",
+        "Extracurricular activities",
+        "Leadership",
+        "Service"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Admissions officers heavily prioritize course rigor and service-oriented extracurriculars that match their 'Mercer On Mission' philosophy."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Demonstrate a clear fit for service-heavy programs.",
+      "If interested in graduate programs, leverage the Special Consideration Program (Double Bear) pathways."
+    ],
+    "college_ranking_tactics": [
+      "Visit campus or attend virtual information sessions to maximize demonstrated interest tracking.",
+      "Reach out directly to your assigned regional admissions counselor with specific program questions."
+    ],
+    "alternate_major_strategy": "Consider applying to the College of Liberal Arts and Sciences to fulfill prerequisites if direct admit to nursing or engineering seems too competitive, then transition internally."
+  },
+  "financials": {
+    "tuition_model": "Standard Tuition Rates",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 42012.0,
+        "total_coa": 61534.0,
+        "housing": 7412.0
+      },
+      "out_of_state": {
+        "tuition": 42012.0,
+        "total_coa": 61534.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Generous Merit Aid Provider",
+    "average_need_based_aid": 25862.0,
+    "average_merit_aid": 25086.0,
+    "percent_receiving_aid": 0.94,
+    "scholarships": [
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Covers full tuition, fees, housing, food, an Apple iPad, and a $16,000 enrichment stipend.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Full tuition waiver for 4 years plus a $4,000 annual stipend.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "",
+        "benefits": "Full tuition waiver for 2 years plus a $4,000 annual stipend.",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit based on score and course equivalent as determined by individual departments.",
+      "exceptions": [
+        "No credit awarded for scores of 1 or 2.",
+        "Maximum of 32 hours allowed from all extra-course examinations combined (AP, IB, CLEP)."
+      ],
+      "usage": "Course placement and credit accumulation."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for scores of 5, 6, or 7 on Higher Level (HL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Registrar's Office Credit Equivalency List"
+      ],
+      "restrictions": "Maximum 64 semester credits accepted from 2-year colleges. A minimum of 32 semester credits must be completed in residence at Mercer."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A high school GPA of 3.5 or above with rigorous course selection.",
+      "Strong community service record.",
+      "Clear, trackable demonstrated interest in the university."
+    ],
+    "common_activities": [
+      "Mercer on Mission (international service-learning trips)",
+      "Intramural sports (highly popular massive program)",
+      "Greek life",
+      "Tailgating for NCAA Division I FCS football"
+    ],
+    "essay_tips": [
+      "Highlight personal fit with Mercer's faith-based, service-oriented culture.",
+      "Explain your passion for your chosen field and how it contributes to society."
+    ],
+    "red_flags": [
+      "Apathy toward community service.",
+      "Lack of demonstrated interest."
+    ],
+    "insights": [
+      "The Mercer name carries significant weight across Georgia, especially in healthcare, business, and legal job opportunities.",
+      "The campus is known for its beauty, but some students report mixed feelings regarding limited food options and the surrounding area in Macon.",
+      "Small class sizes foster deep, supportive connections with professors."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71870,
+    "employment_rate_2yr": 0.95,
+    "grad_school_rate": 0.24,
+    "top_employers": [
+      "Atrium Health Navicent",
+      "Coliseum Medical Centers",
+      "PricewaterhouseCoopers (PwC)",
+      "UPS",
+      "State Farm",
+      "Goldman Sachs"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.8216,
+    "graduation_rate_4_year": 0.47,
+    "graduation_rate_6_year": 0.7
+  }
+}

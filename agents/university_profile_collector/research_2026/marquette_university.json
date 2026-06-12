@@ -1,0 +1,629 @@
+{
+  "_id": "marquette_university",
+  "metadata": {
+    "official_name": "Marquette University",
+    "location": {
+      "city": "Milwaukee",
+      "state": "Wisconsin",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-18",
+    "report_source_files": [
+      "Common Data Set 2023-2024",
+      "Common Data Set 2024-2025",
+      "College Scorecard Data",
+      "IPEDS Data"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Marquette University is a highly respected private, Catholic, Jesuit R2 research university located in the heart of Milwaukee, Wisconsin. Renowned for its direct-admit health sciences, nursing, business, and engineering programs, Marquette integrates rigorous pre-professional training with a profound commitment to the liberal arts and community service. Guided by the Jesuit philosophy of 'cura personalis' (care for the whole person), the university challenges students to 'Be The Difference' through civic engagement, extensive clinical/research opportunities, and a strong campus community anchored by Big East athletics.",
+    "market_position": "Elite Midwestern Private / Jesuit Research University",
+    "admissions_philosophy": "Holistic review with a strong emphasis on secondary school rigor, extracurricular engagement, and alignment with institutional values. Test-optional since 2019, the university relies heavily on unweighted GPA and course trajectory.",
+    "us_news_rank": 88,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "While the overall acceptance rate is ~81.3%, direct-admit programs in Nursing, Physical Therapy, and Speech-Language Pathology are significantly more competitive and require specific math/science competencies.",
+        "implication": "Applicants to health professions should not treat Marquette as a safety school; they must present highly competitive STEM profiles and apply early to secure a spot in these capped programs."
+      },
+      {
+        "category": "Financial",
+        "insight": "With a COA of $71,819 and an average financial aid package covering over 58% of tuition, Marquette aggressively discounts tuition to attract strong students.",
+        "implication": "Families should look beyond the sticker price, as 99% of students receive aid and the university automatically considers all applicants for merit scholarships ranging from $1,000 to $27,000."
+      },
+      {
+        "category": "Academic",
+        "insight": "Marquette heavily protects its professional colleges. Internal transfers to Business require a 2.0 GPA (2.5 for Accounting), and Engineering requires a 2.75 GPA with a B- in Calculus and Physics.",
+        "implication": "Students who attempt to 'game' the system by applying undeclared must be prepared to excel in rigorous foundational courses to successfully transfer into impacted colleges."
+      },
+      {
+        "category": "Culture",
+        "insight": "Marquette ranks #1 nationally by the Princeton Review for 'Most Engaged in Community Service'. First-generation students make up 22% of the class.",
+        "implication": "Demonstrating a history of substantive community service and a desire to engage with urban social justice issues is a massive cultural plus in the admissions process."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The social environment is deeply intertwined with Big East basketball, intramural sports, and robust community service traditions (e.g., Hunger Clean-Up). The campus is distinctly Midwestern\u2014friendly, grounded, and spirited\u2014though students must acclimate to intense winters. Greek life exists but does not dominate the social scene.",
+      "transportation_impact": "Situated just over a mile from Lake Michigan and within walking distance of downtown Milwaukee, students have exceptional access to Fortune 500 headquarters, clinical hospitals, and entertainment. The urban setting is a major asset for internships and clinical placements.",
+      "research_impact": "As an R2 institution with $17.5M+ in life sciences research spending, undergraduates have significant access to research. Programs like the Athletic and Human Performance Research Center (AHPRC) offer rare, hands-on clinical and performance analytics experience."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 81.34,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 69.1,
+      "admits_class_size": 2149,
+      "is_test_optional": true,
+      "test_policy_details": "Permanently test-optional for all applicants. If students choose to submit scores, they must include all sections (including ACT Science). Superscoring is utilized. Misrepresentation of self-reported scores results in immediate admission revocation.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 18701,
+        "admits_total": 15212,
+        "enrolled_total": 2149,
+        "acceptance_rate_overall": 81.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.1,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 452,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 113,
+          "waitlist_admit_rate": 25.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate tightened significantly from previous years, reflecting a more precise enrollment management strategy."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 15657,
+        "admits_total": 13697,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 87.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 200,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 70,
+          "waitlist_admit_rate": 35.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate peaked slightly, but waitlist utilization remained moderate."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 15883,
+        "admits_total": 13851,
+        "enrolled_total": 1983,
+        "acceptance_rate_overall": 87.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.3,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 48.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high waitlist admission rate of 48.8% as the university navigated pandemic-era yield unpredictability."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 86.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 567,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 107,
+          "waitlist_admit_rate": 19.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Highly competitive waitlist year with only 19% admission."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.61,
+        "notes": "Average unweighted GPA ranges around 3.61. Marquette places high emphasis on the rigor of the secondary school record over strict GPA calculations."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1220-1350",
+        "sat_reading_middle_50": "610-680",
+        "sat_math_middle_50": "590-680",
+        "act_composite_middle_50": "26-31",
+        "submission_rate": null,
+        "policy_note": "Test-optional. Standardized test scores are 'Considered' if submitted. Students applying to highly competitive direct-admit health science programs often submit scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 22.0,
+        "legacy_percentage": 20.0,
+        "international_percentage": 3.7,
+        "geographic_breakdown": [
+          {
+            "region": "Wisconsin",
+            "percentage": 29.0
+          },
+          {
+            "region": "Illinois",
+            "percentage": 37.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8211,
+            "admits": 6450,
+            "acceptance_rate": 78.5
+          },
+          "women": {
+            "applicants": 10490,
+            "admits": 8762,
+            "acceptance_rate": 83.5
+          }
+        },
+        "racial_breakdown": {
+          "white": 66.8,
+          "black_african_american": 5.3,
+          "hispanic_latino": 13.0,
+          "asian": 6.2,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.1,
+          "unknown": 1.7,
+          "non_resident_alien": 3.7
+        },
+        "religious_affiliation": "Catholic (68% of student body identifies as Catholic, though all faiths are welcomed)"
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Applicants entirely committed to nursing who want guaranteed clinical placements without having to re-apply during their sophomore year. Must show strong high school science preparation.",
+        "housing_profile": "Traditional/Coed Living Learning Communities available.",
+        "student_archetype": "Compassionate, high-achieving STEM students drawn to holistic, patient-centered care and social justice.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "High school Chemistry",
+              "High school Biology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Background check required before clinicals.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 1001",
+                "BISC 2015",
+                "HEAL 1025",
+                "HEAL 4901",
+                "NURS 3965",
+                "NURS 4000"
+              ],
+              "electives": [],
+              "total_units": 127,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Guarantees all required classes and clinical hours upon admission."
+          }
+        ]
+      },
+      {
+        "name": "College of Health Sciences",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for future physical therapists, occupational therapists, physician assistants, and pre-med students who want an accelerated path to a doctorate or master's degree.",
+        "housing_profile": "High integration with pre-professional living communities.",
+        "student_archetype": "Intense, research-focused, clinically-oriented pre-health students.",
+        "majors": [
+          {
+            "name": "Physical Therapy (Early Assurance)",
+            "degree_type": "D.P.T.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1001",
+              "BIOL 1002",
+              "CHEM 1001",
+              "CHEM 1002",
+              "PHYS 1001",
+              "PHYS 1002",
+              "PHTH 1001"
+            ],
+            "minimum_gpa_to_declare": 2.67,
+            "weeder_courses": [],
+            "special_requirements": "Must maintain a 2.67 GPA in prerequisite sciences; no more than two prerequisite courses can have a 'C' grade. Max 4 AP courses can fulfill prerequisites.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "PHTH 1001",
+                "PHTH 4512",
+                "PHTH 7120",
+                "PHTH 7503",
+                "PHTH 7504",
+                "PHTH 7515",
+                "PHTH 7518"
+              ],
+              "electives": [],
+              "total_units": 124,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "A highly coveted 6-year DPT program. Students who fail to gain direct admission can attend Marquette as undergrads and apply competitively later."
+          }
+        ]
+      },
+      {
+        "name": "College of Business Administration",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students seeking immediate access to Milwaukee's financial and corporate sectors. Strong emphasis on ethical leadership and analytics.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Network-driven, analytical, and leadership-oriented.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "FINA 3001"
+            ],
+            "special_requirements": "Must earn at least a C in FINA 3001 to progress in major.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "curriculum": {
+              "core_courses": [
+                "MSF 6500",
+                "MSF 6511",
+                "MSF 6520",
+                "ACCO 6200",
+                "MSF 6504"
+              ],
+              "electives": [],
+              "total_units": 129,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Curriculum data reflects the MS Finance crossover core. Undergraduate degrees require 129 credits with options to waive credits through exams."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Requires a higher GPA (2.5) for internal progression compared to other business majors."
+          }
+        ]
+      },
+      {
+        "name": "Opus College of Engineering",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students interested in a hands-on, rigorous engineering curriculum deeply tied to local manufacturing and tech firms (e.g., Milwaukee Tool).",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Technically adept problem solvers.",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1450",
+              "PHYS 1003"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "GEEN 1200"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": {
+              "core_courses": [
+                "GEEN 1200"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Hyunjae Park (Engineering Discovery)"
+            ],
+            "notes": "Internal transfer requires a 2.75 GPA and B- minimum in Calc 1 and Physics 1. GEEN 1200 is widely known as a foundational filter course."
+          }
+        ]
+      },
+      {
+        "name": "Klingler College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking a broad Jesuit liberal arts education, or pre-med/pre-law students looking to build a strong foundational GPA.",
+        "housing_profile": "Standard campus housing.",
+        "student_archetype": "Intellectually curious, interdisciplinary thinkers.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular major providing an excellent gateway to graduate study or social services."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Marquette University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Early Action is non-binding. Students receive decisions by late December. Highly recommended for direct-admit programs and maximum scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Regular Decision deadline. Applications received after Feb 1 are reviewed on a rolling, space-available basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Physical Therapy (DPT)",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-15",
+        "details": "Requires an essay detailing the applicant's interest in physical therapy as a profession and the experiences that led to this interest."
+      },
+      {
+        "target_program": "Occupational Therapy (OTD)",
+        "requirement_type": "Essays",
+        "deadline": "2025-02-01",
+        "details": "Supplemental essay outlining desire to become an occupational therapist."
+      },
+      {
+        "target_program": "Athletic Training",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-15",
+        "details": "Essay detailing interest in athletic training and relevant past experiences."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Extracurricular activities",
+        "Character/personal qualities",
+        "Volunteer work"
+      ],
+      "essay_importance": "Important",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Marquette intensely values its Jesuit identity. Students whose extracurricular profiles demonstrate a sustained commitment to community service, social justice, and leadership are given a distinct advantage in the holistic review process."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply Early Action (Nov 15) to maximize chances for highly impacted direct-admit programs (Nursing, PT, OT).",
+      "For Health Sciences, emphasize high school STEM rigor; the admissions committee explicitly looks for strong performances in Chemistry and Biology for Nursing, and Calc/Physics for Engineering.",
+      "If undecided, apply to the Klingler College of Arts and Sciences, which offers the most flexibility for internal exploration before declaring a major."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students denied direct admission to the 6-year DPT program can still enroll in the standard Exercise Physiology or Biomedical Sciences tracks at Marquette. They must then compete for entry into the professional phase during their junior year, maintaining a high GPA in prerequisite sciences."
+  },
+  "financials": {
+    "tuition_model": "Private Flat-Rate",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 51170.0,
+        "total_coa": 71819.0,
+        "housing": 19929.0
+      },
+      "out_of_state": {
+        "tuition": 51170.0,
+        "total_coa": 71819.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "Need-Aware (but highly generous with merit and institutional aid)",
+    "average_need_based_aid": 29879.0,
+    "average_merit_aid": 27612.0,
+    "percent_receiving_aid": 99.0,
+    "scholarships": [
+      {
+        "name": "P\u00e8re Marquette Award",
+        "type": "Merit",
+        "amount": "Varies ($1,000 - $27,000)",
+        "deadline": "2024-11-15",
+        "benefits": "Renewable four-year scholarship applied toward tuition.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Burke Scholars Program",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2024-11-15",
+        "benefits": "Full-tuition scholarship for Wisconsin high school seniors demonstrating exceptional commitment to community service.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Michael R. Lovell Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2024-11-15",
+        "benefits": "Highly competitive full scholarship.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "2024-11-15",
+        "benefits": "Four-year award of $3,000. Additive to any other Marquette-sponsored scholarship, meaning it can push total aid beyond full tuition.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for most AP exams with scores of 4 or 5.",
+      "exceptions": [
+        "Pre-medical and pre-dental students are strongly advised by health professions advisors NOT to accept AP credit for foundational sciences (e.g., Physics).",
+        "Science and engineering majors do not receive lab credit for AP exams; labs must be taken in residence."
+      ],
+      "usage": "Can be applied toward Marquette Core Curriculum, majors, minors, or electives."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exams with scores of 4 or better.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology",
+        "CheckMarq"
+      ],
+      "restrictions": "A minimum of 45 degree credits must be earned in residence at Marquette. At least 30 of the final 36 credits must be earned at Marquette. Transfer credits do not carry GPA weight into the Marquette GPA."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong transcript emphasizing rigorous coursework in areas relevant to your intended major.",
+      "A demonstrated, authentic commitment to community service and social justice, mirroring the Jesuit philosophy.",
+      "For health sciences: Exceptional performance in high school calculus, biology, and chemistry."
+    ],
+    "common_activities": [
+      "Hunger Clean-Up (massive campus-wide service event)",
+      "Midnight Madness (Basketball kickoff)",
+      "Intramural Sports",
+      "Volunteering at Milwaukee-area nonprofits",
+      "Greek Life (present but not dominant)"
+    ],
+    "essay_tips": [
+      "Use the personal statement to highlight specific instances of leadership, ethical decision-making, or community impact.",
+      "For supplemental essays (PT/OT/Nursing), clearly trace the origin of your interest in healthcare and connect it directly to Marquette's mission of caring for the vulnerable."
+    ],
+    "red_flags": [
+      "Misrepresentation of standardized test scores (leads to immediate application cancellation or expulsion).",
+      "Lack of demonstrated empathy or community focus in application narrative."
+    ],
+    "insights": [
+      "The campus operates as a close-knit community despite being in a major city. The Jesuit ethos of 'cura personalis' is actively practiced by faculty, who are known for being accessible and highly supportive of undergraduate well-being."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 80228,
+    "employment_rate_2yr": 87.0,
+    "grad_school_rate": 26.0,
+    "top_employers": [
+      "Northwestern Mutual",
+      "Deloitte",
+      "Ernst & Young (EY)",
+      "PwC",
+      "Milwaukee Tool",
+      "Baird",
+      "Associated Bank"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 80.0
+  }
+}

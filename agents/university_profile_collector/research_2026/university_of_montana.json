@@ -1,0 +1,472 @@
+{
+  "_id": "university_of_montana",
+  "metadata": {
+    "official_name": "The University of Montana",
+    "location": {
+      "city": "Missoula",
+      "state": "Montana",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Montana is a public flagship research university (R1) located in Missoula. It is highly accessible and known for its strong experiential learning, outdoor recreation integration, and top-tier programs in environmental studies, wildlife biology, and forestry.",
+    "market_position": "Public Flagship / R1 Research University",
+    "admissions_philosophy": "Highly Accessible / Numbers-focused (Holistic for Honors College)",
+    "us_news_rank": 285,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The university accepts roughly 96% of applicants, making it an accessible institution for a wide range of academic profiles.",
+        "implication": "Students meeting minimum state requirements (2.5 GPA or 22 ACT/1120 SAT) are virtually guaranteed admission to the university, though specific honors or departmental programs may have higher thresholds."
+      },
+      {
+        "category": "Culture",
+        "insight": "Over 33% of the student body are first-generation college students, and there is a rapidly growing Native American student population.",
+        "implication": "The campus culture is highly supportive of non-traditional and first-generation learners, emphasizing inclusive prosperity."
+      },
+      {
+        "category": "Academic",
+        "insight": "The W.A. Franke College of Forestry and Conservation and the Wildlife Biology programs are heavily field-based, utilizing 25,000 acres of managed land including the Lubrecht Experimental Forest.",
+        "implication": "Students interested in environmental sciences and natural resources receive unparalleled hands-on research opportunities rarely found at this scale."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Laid-back, outdoors-oriented, and deeply connected to the Missoula community. Strong emphasis on environmentalism, intramural sports, and Greek life.",
+      "transportation_impact": "Parking is frequently cited by students as a major issue on campus, particularly due to construction and limited overnight spaces.",
+      "research_impact": "UM achieved Carnegie R1 (Very High Research Activity) designation, with research expenditures exceeding $150 million annually."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.959,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.81,
+      "admits_class_size": 1652,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional. Students may apply without submitting standardized test scores, but scores can be used to meet basic admission requirements or for course placement.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 9576,
+        "admits_total": 9180,
+        "enrolled_total": 1652,
+        "acceptance_rate_overall": 0.959,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.179,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed. Yield rate calculated from 1,652 enrolled out of 9,180 admitted."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 9464,
+        "admits_total": 9048,
+        "enrolled_total": 1652,
+        "acceptance_rate_overall": 0.956,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.182,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.39,
+        "notes": "Average high school GPA is 3.39."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1080-1280",
+        "sat_reading_middle_50": "560-670",
+        "sat_math_middle_50": "520-620",
+        "act_composite_middle_50": "21-27",
+        "submission_rate": 0.01,
+        "policy_note": "Only about 1% of admitted students submitted ACT scores, and ~0% submitted SAT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.33,
+        "legacy_percentage": null,
+        "international_percentage": 0.018,
+        "geographic_breakdown": [
+          {
+            "region": "Montana (In-State)",
+            "percentage": 0.69
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 4065,
+            "admits": 3846,
+            "acceptance_rate": 0.946
+          },
+          "women": {
+            "applicants": 5503,
+            "admits": 5328,
+            "acceptance_rate": 0.968
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.681,
+          "black_african_american": 0.0109,
+          "hispanic_latino": 0.0571,
+          "asian": 0.0547,
+          "native_american_alaskan": 0.0316,
+          "pacific_islander": 0.00111,
+          "two_or_more_races": 0.117,
+          "unknown": 0.041,
+          "non_resident_alien": 0.018
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Humanities and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking traditional liberal arts, sciences, and pre-professional tracks with a strong foundation in research.",
+        "housing_profile": "Standard on-campus residence halls.",
+        "student_archetype": "Researchers, tech enthusiasts, and liberal arts scholars.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires M 171 (Calculus I) or M 162 (Applied Calculus) depending on concentration.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSCI 106",
+                "CSCI 150",
+                "CSCI 151",
+                "CSCI 152",
+                "CSCI 222",
+                "CSCI 232",
+                "CSCI 332",
+                "CSCI 315E"
+              ],
+              "electives": [
+                "CSCI 447",
+                "CSCI 460",
+                "CSCI 443"
+              ],
+              "total_units": 120,
+              "major_units": 80
+            },
+            "notable_professors": [
+              "Jesse Johnson (Chair)"
+            ],
+            "notes": "ABET-accredited B.S. program with concentrations in Software Engineering, Data Science, and Algorithm Development."
+          }
+        ]
+      },
+      {
+        "name": "W.A. Franke College of Forestry and Conservation",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for outdoor-focused students pursuing careers in environmental stewardship, forestry, and wildlife management.",
+        "housing_profile": "Standard on-campus residence halls.",
+        "student_archetype": "Environmentalists and outdoor recreation enthusiasts.",
+        "majors": [
+          {
+            "name": "Wildlife Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Minimum cumulative GPA of 2.5 required to graduate. Requires minimum of 2 credits of experiential learning.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "BIOB 160N",
+                "BIOB 161N",
+                "WILD 470",
+                "WILD 499",
+                "WILD 410",
+                "PTRM 482"
+              ],
+              "electives": [
+                "BIOL 342",
+                "BIOL 452",
+                "BIOL 454"
+              ],
+              "total_units": 120,
+              "major_units": 71
+            },
+            "notable_professors": [
+              "Chad Bishop (Director)"
+            ],
+            "notes": "Offers terrestrial and aquatic concentrations. Heavily field-based utilizing Lubrecht Experimental Forest and Flathead Lake Biological Station."
+          }
+        ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing finance, accounting, and management with a desire for hands-on internships.",
+        "housing_profile": "Standard on-campus residence halls.",
+        "student_archetype": "Future entrepreneurs and corporate leaders.",
+        "majors": [
+          {
+            "name": "Business Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Minimum GPA of 2.0 required in business courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACTG 201",
+                "BGEN 220E",
+                "BFIN 322",
+                "BMGT 448",
+                "COMX 111A",
+                "BGEN 360"
+              ],
+              "electives": [
+                "BGEN 445"
+              ],
+              "total_units": 120,
+              "major_units": 54
+            },
+            "notable_professors": [
+              "Jakki Mohr (Marketing/Biomimicry)",
+              "Emily Plant (Operations)",
+              "Jason Triche (Information Systems)"
+            ],
+            "notes": "Includes primary and secondary lower core requirements before progressing to upper-division major core."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Apply Montana",
+      "University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "Rolling",
+        "is_binding": false,
+        "notes": "Recommended fall deadline is November 1. Priority financial aid and scholarship deadline is March 1. Final deadline is one week before the term."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Davidson Honors College",
+        "requirement_type": "Essays",
+        "deadline": "December 1 (Priority)",
+        "details": "Requires short-answer responses and essays as a supplement to the UM application."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA"
+      ],
+      "secondary_factors": [
+        "Standardized test scores (if submitted)"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Not Considered",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "General admission is primarily numbers-driven (2.5 GPA or 22 ACT or top half of class), but honors admission uses holistic review."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply directly to the desired major, as general admission is highly accessible (96% admit rate) across most programs.",
+      "Apply by the December 1 priority deadline for Davidson Honors College to maximize merit scholarship consideration.",
+      "Submit applications early to secure optimal housing choices, despite the rolling admissions policy."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Not generally necessary for admission given the open accessibility, but students should enroll in pre-requisite tracks for selective professional programs (e.g., nursing or pharmacy) early."
+  },
+  "financials": {
+    "tuition_model": "Per credit and residency-based",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 11176.0,
+        "total_coa": 34086.0,
+        "housing": 13744.0
+      },
+      "out_of_state": {
+        "tuition": 36384.0,
+        "total_coa": 60454.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Does not meet 100% of need",
+    "average_need_based_aid": null,
+    "average_merit_aid": 9799.0,
+    "percent_receiving_aid": 0.91,
+    "scholarships": [
+      {
+        "name": "UM Academic Achievement Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 to $17,000",
+        "deadline": "July 1",
+        "benefits": "Tuition reduction",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Western Undergraduate Exchange (WUE)",
+        "type": "Merit",
+        "amount": "Varies (WUE COA is $39,334)",
+        "deadline": "July 1",
+        "benefits": "Reduced out-of-state tuition for residents of WICHE states",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Presidential Leadership Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "December 1",
+        "benefits": "Top-tier merit award for Davidson Honors College admits",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Andrew and Wendy Davidson Scholarship",
+        "type": "Need/Merit",
+        "amount": "Varies",
+        "deadline": "March 15",
+        "benefits": "Support for Montana residents in business or health majors",
+        "application_method": "Separate"
+      },
+      {
+        "name": "Montana University System Honor Scholarship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "Varies",
+        "benefits": "Waives tuition for eligible Montana high school graduates",
+        "application_method": "Separate"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for AP exam scores of 3 or higher.",
+      "exceptions": [
+        "Biology requires a 4+ for full sequence credit (BIOB 160/161N and 170/171N); a 3 grants partial/substitute credit."
+      ],
+      "usage": "Credits awarded are assigned a grade of AP3, AP4, or AP5. Students with an AP Capstone Diploma receive priority consideration for Davidson Honors College."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) and some Standard Level (SL) exams with scores of 4 or higher.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Student Center",
+        "TransferEvaluations@mso.umt.edu"
+      ],
+      "restrictions": "Must complete a minimum of 30 credits at UM to earn a bachelor's degree. Transfer students must earn 39 upper-division credits and at least 30 from UM."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "2.5 cumulative high school GPA or ACT composite of 22 or SAT combined of 1120.",
+      "Graduation from an accredited high school.",
+      "Completion of college prep curriculum (4 years English, 3 years Math)."
+    ],
+    "common_activities": [
+      "Outdoors Club",
+      "Intramural Sports",
+      "Greek Life",
+      "Foresters Ball",
+      "Kyiyo Pow Wow"
+    ],
+    "essay_tips": [
+      "Essays are not required for general admission, but are critical for the Davidson Honors College application.",
+      "Emphasize community impact, outdoor engagement, or leadership for Honors essays."
+    ],
+    "red_flags": [
+      "Failing to submit required immunization records prior to enrollment.",
+      "Missing the priority deadlines for housing and financial aid."
+    ],
+    "insights": [
+      "Students deeply appreciate the access to the surrounding Rocky Mountains and hands-on environmental research.",
+      "Parking is a consistent complaint among students living on or commuting to campus.",
+      "The campus culture is very friendly, inclusive, and unpretentious, reflecting the 'Montana Way.'"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 50928,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 0.395,
+    "top_employers": [
+      "University of Montana",
+      "State of Montana",
+      "U.S. Department of Agriculture (USDA)",
+      "Providence Healthcare",
+      "City of Missoula",
+      "Albertsons Companies"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.772,
+    "graduation_rate_4_year": 0.455,
+    "graduation_rate_6_year": 0.53
+  }
+}

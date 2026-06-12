@@ -1,0 +1,499 @@
+{
+  "_id": "wayne_state_university",
+  "metadata": {
+    "official_name": "Wayne State University",
+    "location": {
+      "city": "Detroit",
+      "state": "Michigan",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": [
+      "Common Data Set 2023-2024",
+      "Common Data Set 2024-2025",
+      "College Scorecard",
+      "IPEDS",
+      "U.S. News & World Report 2025"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Wayne State University is a premier urban public research institution located in the heart of Midtown Detroit, holding the prestigious Carnegie R1 classification for very high research activity. Known for its strong integration with the local community, the university serves as an engine of social mobility, offering extensive hands-on learning, internships, and clinical experiences through its close ties to Detroit's healthcare and business sectors. The introduction of the Wayne State Guarantee has further solidified its commitment to accessibility by offering tuition-free pathways to eligible Michigan residents.",
+    "market_position": "Public Urban Research University (Carnegie R1)",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 179,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "General undergraduate admission is lightly selective with a 77.86% acceptance rate, primarily driven by high school GPA.",
+        "implication": "Students meeting the minimum academic thresholds (average 3.4 GPA) are highly likely to be admitted, making it an excellent match or safety school."
+      },
+      {
+        "category": "Financial",
+        "insight": "The 'Wayne State Guarantee' provides free tuition to Michigan families earning under $80,000 annually with assets under $50,000.",
+        "implication": "In-state students from lower and middle-income families experience an exceptional return on investment with zero out-of-pocket tuition costs."
+      },
+      {
+        "category": "Academic",
+        "insight": "The university retains its R1 status and ranks highly for social mobility and research expenditures ($291.7 million in FY2024).",
+        "implication": "Undergraduates have vast opportunities to participate in high-level, funded research, particularly in the health sciences and engineering, through the UROP program."
+      },
+      {
+        "category": "Culture",
+        "insight": "While traditionally a commuter school, the 203-acre campus is heavily embedded in Detroit's urban fabric.",
+        "implication": "Students seeking a traditional, isolated college town experience may find the environment lacking, but those wanting an urban, real-world, culturally diverse setting will thrive."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Wayne State offers a diverse and liberal campus community with over 500 recognized student organizations. Though often perceived as a commuter school, it has a sprawling downtown campus with mid-century and modern facilities, offering numerous activities like Festifall and Winterfest.",
+      "transportation_impact": "Highly integrated into Detroit's transit system. Students receive free access to the Q-line, local buses, and MoGo ride-share bikes, making navigation around Midtown and downtown Detroit seamless.",
+      "research_impact": "As a Carnegie R1 institution, research is central to the undergraduate experience. The Undergraduate Research Opportunities Program (UROP) allows students to work alongside faculty on groundbreaking projects, particularly in medicine, public health, and engineering."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.7786,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.518,
+      "transfer_acceptance_rate": 0.6938,
+      "admits_class_size": 3085,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional for both admission and merit scholarships. Students who do not submit scores are evaluated primarily on their high school GPA. Submitting a strong test score after admission can increase merit aid without penalty.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 17699,
+        "admits_total": 13781,
+        "enrolled_total": 3085,
+        "acceptance_rate_overall": 0.7786,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.2238,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Wayne State University does not have a waitlist policy for first-time, first-year students according to the Common Data Set 2024-2025."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 15190,
+        "admits_total": 12461,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.82,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 14002,
+        "admits_total": 10542,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.753,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 11093,
+        "admits_total": 9036,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.81,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.4,
+        "notes": "14.47% of enrolled students had a 4.0 GPA, while 32.48% had between a 3.5 and 3.99."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1060-1260",
+        "sat_reading_middle_50": "540-640",
+        "sat_math_middle_50": "520-630",
+        "act_composite_middle_50": "23-29",
+        "submission_rate": 0.42,
+        "policy_note": "40% submitted SAT scores and 2% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 0.022,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.913
+          },
+          {
+            "region": "Metro Detroit",
+            "percentage": 0.869
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 6604,
+            "admits": 5243,
+            "acceptance_rate": 0.7939
+          },
+          "women": {
+            "applicants": 9758,
+            "admits": 8059,
+            "acceptance_rate": 0.8258
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.5224,
+          "black_african_american": 0.177,
+          "hispanic_latino": 0.077,
+          "asian": 0.148,
+          "native_american_alaskan": 0.0021,
+          "pacific_islander": 0.0003,
+          "two_or_more_races": 0.0446,
+          "unknown": 0.0062,
+          "non_resident_alien": 0.022
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students pursuing widespread disciplines spanning humanities, natural sciences, and social sciences, notably psychology and biology.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Researchers, pre-med students, and liberal arts scholars.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "The most popular major at the university."
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular due to the university's proximity to and partnerships with Detroit healthcare networks."
+          }
+        ]
+      },
+      {
+        "name": "Mike Ilitch School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking connections to Detroit's business community, focusing on management, marketing, and supply chain.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Future corporate leaders and entrepreneurs.",
+        "majors": [
+          {
+            "name": "Business Administration and Management",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Benefits from dedicated scholarships specifically for business students."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Direct Admit/Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly driven students fully committed to a nursing career, capable of demonstrating community service and strong academic performance.",
+        "housing_profile": "General university housing.",
+        "student_archetype": "Compassionate, high-achieving future healthcare professionals.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires a comprehensive, holistic admission process involving an essay detailing personal attributes and proof of community service.",
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Admission is highly competitive and primarily contingent upon academic performance, volunteerism, and the required essay."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "University Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2025-08-01",
+        "is_binding": false,
+        "notes": "Rolling admissions, but August 1 is the final deadline for scholarship consideration for the Fall semester."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Nursing BSN",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "Fulfillment of community service requirements and the submission of an essay detailing personal attributes and experiences."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Grade Point Average (GPA)"
+      ],
+      "secondary_factors": [
+        "Rigor of secondary school record",
+        "Standardized test scores",
+        "Recommendations"
+      ],
+      "essay_importance": "Not Considered",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "General admissions rely heavily on objective academic criteria (GPA). However, specialized programs like Nursing and honors paths utilize a holistic approach requiring essays and service."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply via the exploratory track if undecided to receive specialized advising.",
+      "Apply directly to the BSN program if pursuing nursing, as the College of Nursing utilizes an intensive holistic review separate from general admission."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Students aiming for highly competitive tracks like Nursing or Pre-Med should ensure their applications demonstrate significant volunteerism and community impact, as these are formally evaluated."
+  },
+  "financials": {
+    "tuition_model": "Flat Rate Tuition (Undergraduates taking 12-18 credits are charged a flat rate. Credits above 18 incur per-credit fees).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16159.0,
+        "total_coa": 36085.0,
+        "housing": 14252.0
+      },
+      "out_of_state": {
+        "tuition": 34650.0,
+        "total_coa": 54576.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 10661.0,
+    "average_merit_aid": 11189.0,
+    "percent_receiving_aid": 0.78,
+    "scholarships": [
+      {
+        "name": "Wayne State Guarantee",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "2025-04-01",
+        "benefits": "Covers the full cost of tuition and standard fees for Michigan residents with family incomes of $80,000 or less and assets of $50,000 or less.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "President's Award for National Merit Scholarship Finalists",
+        "type": "Merit",
+        "amount": "$12,000",
+        "deadline": "2025-08-01",
+        "benefits": "Provides $12,000 annually, plus $5,000 per year toward on-campus room and board, and up to $2,500 for one-time study abroad funding.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Warrior Award",
+        "type": "Merit",
+        "amount": "$6,500",
+        "deadline": "2025-08-01",
+        "benefits": "Renewable merit award requiring a cumulative 3.0 GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Gold Award",
+        "type": "Merit",
+        "amount": "$4,500",
+        "deadline": "2025-08-01",
+        "benefits": "Renewable merit award requiring a cumulative 3.0 GPA.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Green Award",
+        "type": "Merit",
+        "amount": "$2,500",
+        "deadline": "2025-08-01",
+        "benefits": "Renewable merit award requiring a cumulative 3.0 GPA.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Credits are typically awarded for scores of 3, 4, or 5. Wayne State does not grant any credit for scores of 1 or 2. There is no limit to the number of AP credits that can be applied to a degree.",
+      "exceptions": [
+        "Physics C: Mechanics & E&M requires a score of 4 or 5 (no credit for 3).",
+        "Calculus AB/BC score of 2 satisfies the Quantitative Experience (QE) General Education requirement but awards no actual credits.",
+        "Art Studio scores require a portfolio review for Art majors."
+      ],
+      "usage": "AP credits can satisfy General Education requirements and be used as course equivalencies."
+    },
+    "ib_policy": {
+      "general_rule": "Only Higher Level (HL) exams are granted credit. A score of 4 or 5 yields credit for one course. A score of 6 or 7 yields credit for two courses (except for Chemistry and Mathematics).",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Self-Service (TESS)"
+      ],
+      "restrictions": "No limit to the number of credit hours for a combination of AP, IB, and CLEP."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A solid high school GPA (generally 3.0+ for comfortable admission).",
+      "Demonstrated resilience and ability to navigate a large, urban administrative environment.",
+      "A desire to engage with a city-integrated campus rather than a traditional, isolated college town."
+    ],
+    "common_activities": [
+      "Participating in Undergraduate Research Opportunities Program (UROP)",
+      "Engaging in community service and urban development projects in Detroit",
+      "Joining one of over 500 recognized student organizations",
+      "Attending campus traditions like Festifall and Winterfest"
+    ],
+    "essay_tips": [
+      "While general admission does not require an essay, competitive programs (like Nursing) do.",
+      "Highlight specific community service experiences.",
+      "Connect your personal attributes to the goal of urban community betterment."
+    ],
+    "red_flags": [
+      "Expecting a traditional 'party school' atmosphere; WSU is heavily a commuter school, though residential life is growing.",
+      "Frustration with administrative bureaucracy, which students note can occasionally be slow or confusing."
+    ],
+    "insights": [
+      "The campus provides extensive hands-on learning through internships and research, deeply connected to Detroit's economic and healthcare systems.",
+      "Tuition initiatives make it one of the best ROI universities in the state for lower-to-middle-income Michigan residents."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 68551,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.921,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 0.5846
+  }
+}

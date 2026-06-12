@@ -1,0 +1,582 @@
+{
+  "_id": "new_york_university",
+  "metadata": {
+    "official_name": "New York University",
+    "location": {
+      "city": "New York",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "New York University is an elite, private global research university characterized by its deep integration into New York City and its international degree-granting campuses in Abu Dhabi and Shanghai. It has experienced a staggering surge in selectivity over the past decade, driven by record application volumes and rising prestige in business, arts, and engineering.",
+    "market_position": "Elite Private Global Research University",
+    "admissions_philosophy": "Holistic review with a heavy emphasis on academic rigor, transcript performance, and 'fit' for specific colleges. NYU highly values diversity and first-generation status, utilizing a highly flexible test-optional policy.",
+    "us_news_rank": 32,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates dropped from ~35% a decade ago to 7.7% for the Class of 2029, with over 120,000 applications received.",
+        "implication": "NYU can no longer be considered a 'target' or 'likely' school for even highly qualified applicants; it is a 'reach' on par with Ivy League institutions for its most competitive programs."
+      },
+      {
+        "category": "Financial",
+        "insight": "The total Cost of Attendance has surpassed $92,000 per year, but NYU now meets 100% of demonstrated need for admitted first-years and offers free tuition for families earning under $100,000.",
+        "implication": "While the sticker price is intimidating, institutional financial aid has vastly improved, making the university accessible to lower- and middle-income students."
+      },
+      {
+        "category": "Academic",
+        "insight": "Over 50% of the incoming class is filled through Early Decision rounds.",
+        "implication": "Applicants face a significant strategic disadvantage if they apply in the Regular Decision round; ED is the strongest lever for admission."
+      },
+      {
+        "category": "Culture",
+        "insight": "NYU lacks a traditional gated campus or heavy Greek life/sports culture; Washington Square Park serves as the unofficial quad.",
+        "implication": "Students must be highly independent, self-motivated, and proactive in seeking out communities, clubs, and internships in the city."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Dispersed, city-centric environment where classrooms, dorms, and the city grid blur together. Social life revolves around exploring NYC, internships, and over 300 student organizations rather than traditional campus events.",
+      "transportation_impact": "Excellent access to NYC's subway and bus systems, plus an NYU Shuttle Bus system connecting the Washington Square campus in Manhattan to the Tandon School of Engineering in Brooklyn.",
+      "research_impact": "As a Tier 1 research university, NYU provides robust undergraduate research opportunities (e.g., SPUR at Stern, Dean's Undergraduate Research Fund), allowing students to work directly with renowned faculty and postdocs."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.077,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.22,
+      "admits_class_size": 9288,
+      "is_test_optional": true,
+      "test_policy_details": "Highly flexible test-optional policy through the 2026-2027 cycle. If submitting, applicants may use SAT, ACT, IB Diploma, 3 AP exams, 3 IB HL exams, or approved international exams.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 25000,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": 0.5
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 120633,
+        "admits_total": 9288,
+        "enrolled_total": 5662,
+        "acceptance_rate_overall": 0.077,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.55,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed by NYU in recent Common Data Sets."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 118000,
+        "admits_total": 9440,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.08,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 120000,
+        "admits_total": 10000,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.0833,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 105000,
+        "admits_total": 12810,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.122,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 95308,
+        "admits_total": 12199,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.128,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.81,
+        "notes": "94% of enrolled students possessed a high school GPA of 3.5 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1480-1550",
+        "sat_reading_middle_50": "720-760",
+        "sat_math_middle_50": "760-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 0.38,
+        "policy_note": "28% of enrolled students submitted SAT scores and 10% submitted ACT scores due to the test-optional policy."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.2,
+        "legacy_percentage": null,
+        "international_percentage": 0.253,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 45100,
+            "admits": 4097,
+            "acceptance_rate": 0.0908
+          },
+          "women": {
+            "applicants": 65707,
+            "admits": 6135,
+            "acceptance_rate": 0.0933
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.234,
+          "black_african_american": 0.042,
+          "hispanic_latino": 0.098,
+          "asian": 0.268,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.052,
+          "unknown": 0.052,
+          "non_resident_alien": 0.253
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Science (CAS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.049,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking a rigorous liberal arts and sciences foundation who want access to a vast array of disciplines, global study, and strong research pipelines.",
+        "housing_profile": "Traditional NYU housing, highly integrated into Greenwich Village.",
+        "student_archetype": "Intellectually curious, independent, interdisciplinary thinker.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "MATH-UA 120",
+                "MATH-UA 121",
+                "CSCI-UA 101",
+                "CSCI-UA 102",
+                "CSCI-UA 201",
+                "CSCI-UA 202",
+                "CSCI-UA 310"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": 32
+            },
+            "notable_professors": [],
+            "notes": "Students from Tandon CS looking to transfer to CAS CS are recommended to complete 1114, 1134, and 2124 sequence first."
+          },
+          {
+            "name": "Pre-Health / Chemistry",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Organic Chemistry"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Maitland Jones Jr. (Former)"
+            ],
+            "notes": "Organic Chemistry is historically noted as a severe weed-out class for pre-med students."
+          }
+        ]
+      },
+      {
+        "name": "Leonard N. Stern School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.049,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Targeted at highly ambitious, quantitatively strong students seeking direct pipelines into Wall Street, consulting, and global business.",
+        "housing_profile": "Traditional NYU housing.",
+        "student_archetype": "Driven, networking-oriented, highly competitive.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Intro to Microeconomics",
+              "Statistics and Regression",
+              "Financial Accounting"
+            ],
+            "minimum_gpa_to_declare": 3.8,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfers must demonstrate extremely high performance in prerequisite quantitative courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.8,
+            "curriculum": {
+              "core_courses": [
+                "FINC-UB 2",
+                "FINC-UB 7"
+              ],
+              "electives": [
+                "ACCT-UB 23",
+                "ECON-UB 230",
+                "ECON-UB 233",
+                "MULT-UB 24",
+                "MULT-UB 27",
+                "MULT-UB 80",
+                "OPMG-UB 30",
+                "MATH-GA 2048",
+                "MATH-GA 2708",
+                "MATH-GA 2751",
+                "MATH-GA 2791",
+                "MATH-GA 2792"
+              ],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Prof. Yakov Amihud",
+              "Prof. Jarl Kallberg"
+            ],
+            "notes": "Internal transfer to Stern is notoriously difficult with an approximate 10% acceptance rate for internal applicants."
+          }
+        ]
+      },
+      {
+        "name": "Rory Meyers College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.049,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For students entirely committed to nursing and healthcare clinical practice.",
+        "housing_profile": "Traditional NYU housing.",
+        "student_archetype": "Compassionate, scientifically rigorous, resilient.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "APSY-UE 1271",
+              "CHEM-UA 120",
+              "NURSE-UN 70",
+              "NURSE-UN 75",
+              "NURSE-UN 80",
+              "NUTR-UE 119"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All prerequisite courses must be completed with a C or better for internal transition.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "ED1",
+        "date": "YYYY-11-01",
+        "is_binding": true,
+        "notes": "Decisions by December 15."
+      },
+      {
+        "plan_type": "ED2",
+        "date": "YYYY-01-01",
+        "is_binding": true,
+        "notes": "Decisions in February."
+      },
+      {
+        "plan_type": "RD",
+        "date": "YYYY-01-05",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "",
+        "details": "NYU features an optional (but highly recommended) supplemental essay."
+      },
+      {
+        "target_program": "Tisch School of the Arts / Steinhardt Studio Art and Music",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "",
+        "details": "Requires submission of artistic portfolios or scheduling of auditions."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Rigor of secondary school record",
+        "Academic GPA",
+        "Recommendations",
+        "Application Essay"
+      ],
+      "secondary_factors": [
+        "Character/personal qualities",
+        "Talent/ability",
+        "Extracurricular activities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal/None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "NYU heavily values diversity, admitting a 20% first-generation and 20% Pell Grant recipient cohort. The holistic review process scrutinizes 'fit' for the specific college applied to."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Avoid applying undecided if aiming for Stern, Tandon, or Tisch due to heavy prerequisite integration.",
+      "Liberal Studies Core is often seen as a softer entry point, but transition into hyper-competitive majors later requires excellent collegiate performance.",
+      "Apply Early Decision: With over 50% of the class filled via ED, it provides the most significant statistical advantage."
+    ],
+    "college_ranking_tactics": [
+      "Recognize that Stern, CAS, and Nursing sub-5% acceptance rates drag down the overall 7.7% rate; apply to these only with top-tier math and science scores."
+    ],
+    "alternate_major_strategy": "NYU asks applicants to list alternate programs or campuses (Abu Dhabi, Shanghai) on the Common App. Checking flexibility can grant admission to an alternate school, but internal transfer later is strictly governed by capacity and GPA."
+  },
+  "financials": {
+    "tuition_model": "Flat rate across most schools, with some variations (Stern/Tisch are more expensive).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 62796.0,
+        "total_coa": 92052.0,
+        "housing": 23520.0
+      },
+      "out_of_state": {
+        "tuition": 62796.0,
+        "total_coa": 92052.0,
+        "supplemental_tuition": 0.0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 48269.0,
+    "average_merit_aid": 23737.0,
+    "percent_receiving_aid": 0.49,
+    "scholarships": [
+      {
+        "name": "NYU Promise",
+        "type": "Need",
+        "amount": "Full Tuition",
+        "deadline": "FAFSA/CSS Deadline",
+        "benefits": "Covers full tuition for admitted first-year families with household incomes under $100,000.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "September 11 Scholarships",
+        "type": "Need/Merit",
+        "amount": "Full Ride",
+        "deadline": "",
+        "benefits": "Full tuition, fees, room, board, and books for dependents/spouses of 9/11 victims or responders.",
+        "application_method": "Separate"
+      },
+      {
+        "name": "MLK Scholars Program",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Leadership program cohort of ~60 students, travel opportunities.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Community College Transfer Opportunity Program (CCTOP)",
+        "type": "Need/Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Financial aid and transition support for transferring community college students.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Phi Theta Kappa Scholars",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "Awards for high-achieving transfer students.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Awards credit for scores of 4 or 5, typically yielding 4-8 credits applied to general electives.",
+      "exceptions": [
+        "If a student uses AP credit to bypass a prerequisite but then takes the equivalent NYU course, the AP credit is revoked."
+      ],
+      "usage": "Usually applied as elective credit rather than fulfilling core major requirements, max 32 advanced standing credits."
+    },
+    "ib_policy": {
+      "general_rule": "Awards 8 credits per Higher Level (HL) exam with a score of 6 or 7. No credit for Standard Level (SL).",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "SRAR (Self-Reported Academic Record)"
+      ],
+      "restrictions": "Maximum of 64 transfer credits accepted from external institutions. Transfer students cannot receive credit for mathematics courses below the level of precalculus."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Top-decile academic performance (3.8+ GPA, highly rigorous coursework).",
+      "A high degree of personal independence and maturity to navigate an urban 'campus'.",
+      "Clear, directed career or academic ambitions, especially for Stern or Tisch.",
+      "Demonstrated ability to embrace diversity and global perspectives."
+    ],
+    "common_activities": [
+      "In-semester professional internships in NYC.",
+      "Engaging in global study-away programs (NYU sends more students abroad than any other US university).",
+      "Participation in over 300 pre-professional and cultural student organizations.",
+      "Exploring NYC's arts, culture, dining, and nightlife."
+    ],
+    "essay_tips": [
+      "Articulate exactly why NYU's unique 'In and of the City' model fits your learning style.",
+      "Demonstrate maturity and self-reliance; prove you won't be overwhelmed by the lack of a gated campus.",
+      "Connect your specific academic interests to NYU's global sites or New York City's professional ecosystems."
+    ],
+    "red_flags": [
+      "Expecting a traditional collegiate experience with a centralized quad, heavy Greek life, or dominant D1 sports culture.",
+      "Lack of self-motivation or needing significant hand-holding.",
+      "Applying to Stern or CAS without top-tier quantitative preparedness."
+    ],
+    "insights": [
+      "NYU students often feel that the city itself is the campus, which can be simultaneously exhilarating and isolating.",
+      "The value of an NYU education is heavily tied to the networking and internship access it provides.",
+      "Housing is expensive and highly sought after, with many upperclassmen moving to off-campus apartments in Brooklyn or outer Manhattan."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 89427,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "JP Morgan Chase & Co.",
+      "Amazon",
+      "Amazon Web Services",
+      "Apple",
+      "Citi",
+      "EY",
+      "Morgan Stanley",
+      "Google",
+      "BNP Paribas",
+      "BNY Mellon"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.96,
+    "graduation_rate_4_year": 0.76,
+    "graduation_rate_6_year": 0.89
+  }
+}

@@ -1,0 +1,477 @@
+{
+  "_id": "worcester_polytechnic_institute",
+  "metadata": {
+    "official_name": "Worcester Polytechnic Institute",
+    "location": {
+      "city": "Worcester",
+      "state": "Massachusetts",
+      "type": "Private"
+    },
+    "last_updated": "2024-11-13",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Worcester Polytechnic Institute (WPI) is a premier private STEM-focused research university renowned for its distinctive project-based curriculum known as the WPI Plan. Operating on a fast-paced 7-week term system, students are challenged with hands-on, real-world learning, culminating in the Interactive Qualifying Project (IQP) and Major Qualifying Project (MQP).",
+    "market_position": "Elite Private STEM / R1 Research University",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 86,
+    "analyst_takeaways": [
+      {
+        "category": "Academic",
+        "insight": "WPI operates on a unique term system with four 7-week terms (A, B, C, D) per academic year, where students typically take only three courses at a time.",
+        "implication": "The fast-paced structure requires excellent time management. Missing a single day of class is equivalent to missing nearly a week in a traditional semester system."
+      },
+      {
+        "category": "Culture",
+        "insight": "The university does not employ 'weed-out' classes and fosters a collaborative rather than cutthroat environment.",
+        "implication": "Students benefit from a supportive atmosphere, focusing heavily on group work and project-based learning."
+      },
+      {
+        "category": "Admissions",
+        "insight": "WPI recently concluded a test-blind pilot (2021-2024) and has permanently returned to a test-optional policy for Fall 2026 and beyond.",
+        "implication": "Applicants with strong test scores can submit them without penalty ('do no harm' policy), but scores are not required to gain admission."
+      },
+      {
+        "category": "Financial",
+        "insight": "WPI is a need-aware institution in its admissions process for students on the cusp, though it offers significant merit and need-based aid.",
+        "implication": "Students requiring significant financial aid may face a slightly higher hurdle in admissions, though a strong academic profile can still secure substantial institutional funding."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A close-knit, collaborative campus with over 235 clubs and organizations. Greek life is active (27% of women, 22% of men participate). Some students note that dining options and dorms are of average quality.",
+      "transportation_impact": "Located in the second largest city in New England, with easy train access to Boston via Union Station. The university also offers a SNAP transportation service.",
+      "research_impact": "Classified as an R1 (Very High Research Activity) university. Undergraduate research is mandatory and globally integrated through the IQP and MQP programs at over 50 global project centers."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.6015,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 0.647,
+      "admits_class_size": 1366,
+      "is_test_optional": true,
+      "test_policy_details": "Test-Optional indefinitely (reverted from a 2021-2024 test-blind pilot). 'Do no harm' policy means submitted scores will only be used if they strengthen the application. WPI superscores the SAT and considers the highest composite ACT.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 6859,
+          "admits": 4416,
+          "acceptance_rate": 0.6438,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 12559,
+        "admits_total": 7555,
+        "enrolled_total": 1365,
+        "acceptance_rate_overall": 0.602,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.181,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2475,
+          "accepted_spots": 1111,
+          "admitted_from_waitlist": 392,
+          "waitlist_admit_rate": 0.158,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist dynamics have been highly variable, ranging from 0% to 19.9% over recent cycles."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 11809,
+        "admits_total": 6908,
+        "enrolled_total": 1357,
+        "acceptance_rate_overall": 0.585,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.196,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 2580,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 285,
+          "waitlist_admit_rate": 0.1105,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 11599,
+        "admits_total": 6667,
+        "enrolled_total": 1354,
+        "acceptance_rate_overall": 0.575,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.203,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3109,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 574,
+          "waitlist_admit_rate": 0.1846,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 11092,
+        "admits_total": 6679,
+        "enrolled_total": 1410,
+        "acceptance_rate_overall": 0.602,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.211,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 2413,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": null
+        },
+        "notes": ""
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.75-4.00",
+        "unweighted_middle_50": null,
+        "average_weighted": 3.85,
+        "notes": "56% of enrolled students have a 4.0 GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1340-1480",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "30-34",
+        "submission_rate": null,
+        "policy_note": "Score ranges reflect the entering Fall 2021 class, the last cohort with test data before the multi-year test-blind pilot."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 6.4,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8795,
+            "admits": 5105,
+            "acceptance_rate": 0.58
+          },
+          "women": {
+            "applicants": 3752,
+            "admits": 2439,
+            "acceptance_rate": 0.65
+          }
+        },
+        "racial_breakdown": {
+          "white": 64.2,
+          "black_african_american": 2.7,
+          "hispanic_latino": 8.5,
+          "asian": 12.6,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.6,
+          "unknown": 1.8,
+          "non_resident_alien": 6.4
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Undergraduate University",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 0.6015,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students are admitted to the university rather than a specific major, offering extreme flexibility for exploring STEM fields.",
+        "housing_profile": "College offers housing to students; 45% of students live in college housing.",
+        "student_archetype": "Collaborative problem-solver willing to engage in intense, rapid project-based sprints.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 1101 Introduction to Program Design",
+                "CS 1102 Accelerated Introduction to Program Design",
+                "CS 2022 Discrete Mathematics",
+                "CS 2102 Object-Oriented Design Concepts",
+                "CS 2223 Algorithms",
+                "CS 2303 Systems Programming Concepts",
+                "CS 3013 Operating Systems",
+                "CS 3041 Human-Computer Interaction",
+                "CS 3431 Database Systems I",
+                "CS 3733 Software Engineering"
+              ],
+              "electives": [
+                "CS 4241 Webware",
+                "CS 4432 Database Systems II"
+              ],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Most popular major at WPI with ~255 graduates annually. No weed-out courses reported; students can switch in at any time."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Second most popular major with ~231 graduates annually."
+          },
+          {
+            "name": "Bioengineering and Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Highly popular life-sciences engineering program with ~111 graduates annually."
+          },
+          {
+            "name": "Robotics and Automation Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Yanhua Liang (Machine Learning, Sustainability, Advanced Manufacturing)"
+            ],
+            "notes": "WPI is renowned for early adoption and strength in Robotics Engineering."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Early Action I"
+      },
+      {
+        "plan_type": "ED",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Early Decision I"
+      },
+      {
+        "plan_type": "EA",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": "Early Action II"
+      },
+      {
+        "plan_type": "ED",
+        "date": "2025-01-05",
+        "is_binding": true,
+        "notes": "Early Decision II"
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Regular Decision"
+      }
+    ],
+    "supplemental_requirements": [],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "College Prep Courses",
+        "Recommendations (Teacher & Counselor)"
+      ],
+      "secondary_factors": [
+        "High School Rank",
+        "Extracurricular Activities",
+        "Standardized Test Scores (Optional)"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "WPI strongly values students who demonstrate hands-on experience, collaborative abilities, and alignment with their core values: Achievement, Innovation, Inclusion, Community, and Respect."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "WPI admits students to the university as a whole, not to specific majors. Attempting to 'game' by choosing a less selective major is unnecessary and provides little to no advantage."
+    ],
+    "college_ranking_tactics": [
+      "Women in STEM have historically seen higher acceptance rates at WPI (e.g., 65% for women vs. 58% for men in 2024)."
+    ],
+    "alternate_major_strategy": "Since all majors are open to enrolled students, indicating an alternate major is not a strict necessity for admission."
+  },
+  "financials": {
+    "tuition_model": "Flat rate for full-time enrollment",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 60765,
+        "total_coa": 84546,
+        "housing": 18900
+      },
+      "out_of_state": {
+        "tuition": 60765,
+        "total_coa": 84546,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "Need-Aware",
+    "average_need_based_aid": 38924,
+    "average_merit_aid": 22761,
+    "percent_receiving_aid": 96.0,
+    "scholarships": [
+      {
+        "name": "WPI Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$21,000 - $22,000",
+        "deadline": "Automatic consideration with admission",
+        "benefits": "Renewable tuition discount",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Awards credit for AP exam scores of 4 or 5.",
+      "exceptions": [
+        "Only 1/3 of AP credit can be used toward the WPI Humanities and Arts requirement."
+      ],
+      "usage": "Course credit is posted to the student's record with an 'L' on the transcript."
+    },
+    "ib_policy": {
+      "general_rule": "Awards credit for Higher Level (HL) exam scores of 6 or 7. No credit is awarded for Standard Level (SL) exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Scores included on a high school transcript are not considered official; official certificates must be sent directly to the Registrar."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong time management to handle the intense 7-week term structure (A-D terms).",
+      "Collaborative mindset, as nearly all classes revolve around group work and projects.",
+      "Readiness to engage in real-world application of theories through the IQP and MQP."
+    ],
+    "common_activities": [
+      "FIRST Robotics Alumni",
+      "Student Government Association",
+      "Club and Intramural Sports",
+      "Greek Life (Fraternities and Sororities)"
+    ],
+    "essay_tips": [
+      "Emphasize tangible projects, teamwork experiences, and real-world problem-solving.",
+      "Showcase alignment with WPI's motto 'Lehr und Kunst' (Theory and Practice)."
+    ],
+    "red_flags": [
+      "Inability to handle fast-paced environments (missing a day is equivalent to missing nearly a week of normal classes).",
+      "Dislike for group projects or collaborative grading structures."
+    ],
+    "insights": [
+      "Students often praise the 'no weed-out' culture, noting that professors generally want students to succeed.",
+      "Food/dining options and the quality of some older dorms are common points of critique.",
+      "WPI is viewed as an excellent engine for social mobility and ROI, producing highly employable graduates with extensive project portfolios."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 105724,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Raytheon",
+      "Amazon"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.94,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 0.897
+  }
+}

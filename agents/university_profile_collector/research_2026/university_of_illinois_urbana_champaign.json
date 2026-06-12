@@ -1,0 +1,515 @@
+{
+  "_id": "university_of_illinois_urbana_champaign",
+  "metadata": {
+    "official_name": "University of Illinois Urbana-Champaign",
+    "location": {
+      "city": "Champaign-Urbana",
+      "state": "Illinois",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-18",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Illinois Urbana-Champaign is an elite public land-grant flagship renowned globally for its Grainger College of Engineering and Gies College of Business. It employs a strict direct-to-major admissions model that creates immense selectivity variations between academic programs, with Computer Science acceptance rates dropping below 8%.",
+    "market_position": "Public Flagship / R1 Research University",
+    "admissions_philosophy": "Holistic review with a dominant emphasis on unweighted GPA, course rigor, and major-specific essay alignment.",
+    "us_news_rank": 36,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Engineering CS is officially closed to internal transfers. Applicants must be admitted as freshmen.",
+        "implication": "Students cannot use a 'backdoor' major strategy for Computer Science; they must apply directly or target a CS + X program."
+      },
+      {
+        "category": "Financial",
+        "insight": "The Illinois Commitment covers tuition and fees for in-state families earning under $75,000.",
+        "implication": "UIUC is a remarkably high-ROI option for lower- and middle-income Illinois residents."
+      },
+      {
+        "category": "Academic",
+        "insight": "Acceptance rates fluctuate dramatically by college, ranging from 20.9% for Business and 21.2% for Engineering to 53.4% for Exploratory Studies.",
+        "implication": "Overall acceptance rate (42.4%) is an inaccurate gauge of competitiveness for STEM/Business applicants."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A classic Big Ten experience featuring highly active Greek life, Division I athletics, and a vibrant micro-urban college town setting.",
+      "transportation_impact": "Situated in the twin cities of Champaign and Urbana, heavily supported by a reliable local mass transit system.",
+      "research_impact": "A premier R1 institution exceeding $600M in annual research funding, featuring a massive on-campus Research Park hosting Fortune 500 tech firms."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 42.4,
+      "in_state_acceptance_rate": 54.0,
+      "out_of_state_acceptance_rate": 36.0,
+      "international_acceptance_rate": 33.5,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 9008,
+      "is_test_optional": true,
+      "test_policy_details": "Test-optional through the 2025-2026 application cycle. The university does not superscore.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 73742,
+        "admits_total": 31247,
+        "enrolled_total": 9008,
+        "acceptance_rate_overall": 42.4,
+        "acceptance_rate_in_state": 54.0,
+        "acceptance_rate_out_of_state": 36.0,
+        "yield_rate": 28.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2794,
+          "accepted_spots": 1874,
+          "admitted_from_waitlist": 1,
+          "waitlist_admit_rate": 0.05,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Lowest waitlist admission rate in the university's recent history."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 67398,
+        "admits_total": 29446,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 44.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3073,
+          "accepted_spots": 1881,
+          "admitted_from_waitlist": 56,
+          "waitlist_admit_rate": 3.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 63257,
+        "admits_total": 28354,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 45.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 6423,
+          "accepted_spots": 4080,
+          "admitted_from_waitlist": 166,
+          "waitlist_admit_rate": 4.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 47593,
+        "admits_total": 28395,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 60.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 2455,
+          "accepted_spots": 1517,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": ""
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 43412,
+        "admits_total": 27483,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 63.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 1935,
+          "accepted_spots": 1204,
+          "admitted_from_waitlist": 468,
+          "waitlist_admit_rate": 38.9,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Pre-pandemic application cycle shows significantly higher acceptance and waitlist yield."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.70-4.00",
+        "average_weighted": null,
+        "notes": "GPA metrics reflect unweighted performance in academic core courses only."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1420-1540",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "31-35",
+        "submission_rate": 41.0,
+        "policy_note": "14% of the enrolled class submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 22.0,
+        "legacy_percentage": null,
+        "international_percentage": 21.0,
+        "geographic_breakdown": [
+          {
+            "region": "Illinois",
+            "percentage": 72.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 46.3,
+          "black_african_american": 7.0,
+          "hispanic_latino": 16.3,
+          "asian": 26.1,
+          "native_american_alaskan": 0.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 4.3,
+          "unknown": null,
+          "non_resident_alien": 22.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "Grainger College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 21.2,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Targeted towards elite STEM candidates with extensive calculus and physics backgrounds.",
+        "housing_profile": null,
+        "student_archetype": "Technically gifted innovators.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": "7.2%",
+            "average_gpa_admitted": 3.95,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CS 173",
+              "CS 225"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CS 124",
+                "CS 128",
+                "CS 173",
+                "CS 222",
+                "CS 225",
+                "CS 233",
+                "CS 341",
+                "CS 357",
+                "CS 361",
+                "CS 374",
+                "CS 421"
+              ],
+              "electives": [],
+              "total_units": 128,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Indranil Gupta (Distributed Systems)",
+              "Dr. Abdussalam Alawini (Databases)",
+              "Dr. Jeff Erickson (Algorithms)",
+              "Dr. Timothy Chan (Algorithms)",
+              "Dr. Aishwarya Ganesan (Machine Learning for Systems)"
+            ],
+            "notes": "Completely closed to internal/on-campus transfers as of Fall 2022."
+          }
+        ]
+      },
+      {
+        "name": "Gies College of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 20.9,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For students aiming for corporate leadership, finance, and top-tier accounting careers.",
+        "housing_profile": null,
+        "student_archetype": "Driven communicators and quantitative analysts.",
+        "majors": [
+          {
+            "name": "Business / Accountancy",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.91,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ACCY 201",
+                "ACCY 202",
+                "BADM 210",
+                "BADM 211"
+              ],
+              "electives": [],
+              "total_units": null,
+              "major_units": null
+            },
+            "notable_professors": [
+              "Dr. Brooke Elliott (Accounting)",
+              "Dr. Michael Bednar (Corporate Governance)",
+              "Dr. Eric C. Larson (Business Analytics)",
+              "Dr. Julia Fonseca (Finance)",
+              "Dr. Nehemiah Scott (Supply Chain)"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 36.4,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students seeking interdisciplinary combinations of technical computing and liberal arts.",
+        "housing_profile": null,
+        "student_archetype": "Versatile thinkers bridging technology and humanities.",
+        "majors": [
+          {
+            "name": "Mathematics & Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CS 173",
+              "CS 225"
+            ],
+            "minimum_gpa_to_declare": 3.67,
+            "weeder_courses": [
+              "CS 173",
+              "CS 225"
+            ],
+            "special_requirements": "Requires portfolio submission for internal transfer consideration.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.67,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "One of the highly sought 'CS + X' equivalents offering a backdoor to computer science, though highly restricted."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "myIllini"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Required for full merit scholarship consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-01-05",
+        "details": "Three required 150-word prompts dealing with experiences related to the first-choice major, post-graduation goals related to the major, and an explanation of the second-choice major."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Essays",
+        "Talent",
+        "Character",
+        "First-Generation Status"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "The admissions evaluation is hyper-focused on an applicant's specific academic preparation for their declared major."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to CS+X programs (like CS + Crop Sciences) to study computer science with marginally better odds than Grainger Engineering CS.",
+      "Never apply to Engineering Computer Science with the intent to transfer in later, as the program is completely closed to internal transfers."
+    ],
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Always utilize the second-choice major option. Ensure the second-choice major is in a less impacted college (like ACES or LAS) if the first choice is Engineering or Business."
+  },
+  "financials": {
+    "tuition_model": "Fixed/Tiered by Residency and Program",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 18267.0,
+        "total_coa": 36489.0,
+        "housing": 14522.0
+      },
+      "out_of_state": {
+        "tuition": 40096.0,
+        "total_coa": 58318.0,
+        "supplemental_tuition": null
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": null,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 61.0,
+    "scholarships": [
+      {
+        "name": "Illinois Commitment",
+        "type": "Need",
+        "amount": "Full Tuition & Fees",
+        "deadline": "",
+        "benefits": "Covers tuition and fees for four years for in-state residents with family income under $75,000.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "AIM HIGH Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "",
+        "benefits": "State-funded merit award for high-achieving Illinois residents.",
+        "application_method": "Automatic"
+      },
+      {
+        "name": "Illinois Achievement Scholarship",
+        "type": "Merit/Need",
+        "amount": "$10,000",
+        "deadline": "",
+        "benefits": "Renewable award for non-resident freshmen demonstrating financial need and strong academics.",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Accepts scores of 3, 4, and 5.",
+      "exceptions": [
+        "Scores of 3 often only yield general elective credit rather than direct course equivalents."
+      ],
+      "usage": "Can be used to bypass lower-division general education requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Credit awarded for Higher Level exams.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "Certain core engineering and CS courses must be taken in residence."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Nearly straight A's in the most rigorous AP/IB curriculum available.",
+      "Clear, demonstrable passion for the specific major requested on the application."
+    ],
+    "common_activities": [],
+    "essay_tips": [
+      "Use all 150 words to provide extreme detail on your specific exposure to your first-choice major.",
+      "Link future career aspirations directly to specific tools or concepts learned in your major."
+    ],
+    "red_flags": [
+      "Applying undeclared with the secret intent of transferring into CS or Business.",
+      "Lack of advanced calculus/physics coursework when applying to Grainger."
+    ],
+    "insights": [
+      "The 'work hard, play hard' dynamic is very real; students routinely balance intense technical coursework with active Big Ten social lives."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 79628,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Archer Daniels Midland",
+      "Caterpillar",
+      "Deloitte",
+      "Epic Systems",
+      "Google",
+      "Microsoft"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.0,
+    "graduation_rate_4_year": 85.0,
+    "graduation_rate_6_year": 86.0
+  }
+}

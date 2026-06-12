@@ -1,0 +1,435 @@
+{
+  "_id": "University_of_South_Florida",
+  "metadata": {
+    "official_name": "University of South Florida",
+    "location": {
+      "city": "Tampa",
+      "state": "Florida",
+      "type": "Public"
+    },
+    "last_updated": "2024-05-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of South Florida is a Preeminent State Research University and AAU member known for high social mobility, rapid rankings ascent, and exceptional value. Spanning three campuses in the Tampa Bay area, it offers a robust R1 research environment coupled with increasingly selective admissions.",
+    "market_position": "Preeminent Public Research University / AAU Member",
+    "admissions_philosophy": "Numbers-focused Holistic (High school GPA and course rigor are heavily prioritized alongside mandatory test scores)",
+    "us_news_rank": 88,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates have stabilized around 43%, but the academic profile of admitted students continues to rise.",
+        "implication": "Average students may struggle to gain admission; applicants need highly rigorous coursework and strong standardized test scores to be competitive."
+      },
+      {
+        "category": "Academic",
+        "insight": "USF was recently invited to join the AAU, making it one of only two public institutions in Florida with this designation.",
+        "implication": "Undergraduates have vast access to tier-one research opportunities, particularly in STEM and health sciences."
+      },
+      {
+        "category": "Financial",
+        "insight": "With an in-state tuition of $6,410 and high social mobility rankings, USF offers exceptional ROI.",
+        "implication": "In-state residents receive an elite-level education at a fraction of the cost of comparable private or out-of-state public universities."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Vibrant and diverse student body with growing residential traditions, Greek life, and staple events like 'Bull Market' Wednesdays.",
+      "transportation_impact": "Historically a commuter-heavy campus, though expanding on-campus housing is shifting it toward a more traditional residential feel.",
+      "research_impact": "R1 university with over $738 million in annual research funding, providing extensive undergraduate research opportunities, especially via USF Health."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.432,
+      "in_state_acceptance_rate": 0.428,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.899,
+      "transfer_acceptance_rate": 0.564,
+      "admits_class_size": 6700,
+      "is_test_optional": false,
+      "test_policy_details": "Standardized tests (SAT, ACT, or CLT) are strictly required for all freshman applicants per Florida Board of Governors mandate.",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 0.6,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 68576,
+        "admits_total": 29621,
+        "enrolled_total": 6700,
+        "acceptance_rate_overall": 0.432,
+        "acceptance_rate_in_state": 0.428,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 0.226,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 65187,
+        "admits_total": 26699,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.41,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.03-4.55",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.18,
+        "notes": "Summer admits have slightly lower GPA ranges (3.61-4.18)."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1260-1410",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "27-31",
+        "submission_rate": 100.0,
+        "policy_note": "Test scores are strictly required for all incoming freshmen."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.192,
+        "legacy_percentage": 0.0,
+        "international_percentage": 0.109,
+        "geographic_breakdown": [
+          {
+            "region": "In-State",
+            "percentage": 0.8
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 0.13
+          },
+          {
+            "region": "International",
+            "percentage": 0.07
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.447,
+          "black_african_american": 0.084,
+          "hispanic_latino": 0.207,
+          "asian": 0.074,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.001,
+          "two_or_more_races": 0.038,
+          "unknown": 0.039,
+          "non_resident_alien": 0.109
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive; best for students with exceptionally strong science and math backgrounds who are prepared to maintain a high college GPA during prerequisite courses.",
+        "housing_profile": "Access to the Rising Health Professions Living Learning Community.",
+        "student_archetype": "Future healthcare professionals seeking hands-on clinical experience via USF Health.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "General Chemistry",
+              "Microbiology",
+              "Human Anatomy",
+              "Human Physiology",
+              "College Algebra"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admitted as Pre-Nursing. Requires completion of state-mandated prerequisites and a separate upper-division application to the College of Nursing.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Nursing is a limited access major at USF, making upper-division entry highly competitive."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students with rigorous high school STEM preparation (AP Physics, AP Calculus).",
+        "housing_profile": null,
+        "student_archetype": "Innovation-driven problem solvers aiming for careers in high-tech industries or advanced research.",
+        "majors": [
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Chemistry",
+              "Physics",
+              "Calculus",
+              "Biology"
+            ],
+            "minimum_gpa_to_declare": 3.6,
+            "weeder_courses": [],
+            "special_requirements": "Minimum SAT Math 640 or ACT Math 27 or CLT 27 for incoming first-year consideration.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Extremely rigorous limited-access program requiring distinct academic benchmarks."
+          }
+        ]
+      },
+      {
+        "name": "Muma College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Aspiring corporate leaders and entrepreneurs wanting to leverage Tampa's booming business market.",
+        "housing_profile": null,
+        "student_archetype": "Career-focused, networking-oriented students.",
+        "majors": [
+          {
+            "name": "Entrepreneurship",
+            "degree_type": "B.S./B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACG X071 Managerial Accounting",
+              "CGS X100 Computers in Business",
+              "ECO X013 Principles of Macroeconomics",
+              "ECO X023 Principles of Microeconomics",
+              "MAC X233 Business Calculus"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": "Minimum of 60 semester hours of college credit earned to declare upper-level major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "Like all business majors at USF, it is a limited access program."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "USF Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "EA",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Highly recommended. Best option for admission, preferred campus placement, and merit aid consideration."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2025-12-15",
+        "is_binding": false,
+        "notes": "Regular Decision deadline."
+      },
+      {
+        "plan_type": "RD",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Rolling admission deadline; space available basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Nursing",
+        "requirement_type": "Separate Application",
+        "deadline": "",
+        "details": "Requires upper-division application after completion of required prerequisites."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "High School GPA",
+        "Rigor of secondary school record",
+        "Standardized test scores"
+      ],
+      "secondary_factors": [
+        "Extracurricular activities",
+        "First-generation status"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "USF strictly adheres to Florida's Preeminence metrics, meaning hard stats (test scores, GPA) operate as firm thresholds for many programs."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Select an alternate non-impacted major if applying to Engineering or Business to ensure general admission if you miss the strict test score cutoffs.",
+      "Consider applying for the Summer entry term, which historically accepts students with slightly lower GPA and test score profiles than the Fall term."
+    ],
+    "college_ranking_tactics": [
+      "Submit applications by the November 1 Early Action deadline, as rolling spaces and merit aid heavily favor early applicants."
+    ],
+    "alternate_major_strategy": "Apply as an exploratory or non-limited access major in the College of Arts and Sciences if your math/science grades are border-line, then use the FUSE program or internal transfers after building a strong college GPA."
+  },
+  "financials": {
+    "tuition_model": "Per credit hour",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 6410.0,
+        "total_coa": 26516.0,
+        "housing": 14440.0
+      },
+      "out_of_state": {
+        "tuition": 17324.0,
+        "total_coa": 37430.0,
+        "supplemental_tuition": 10914.0
+      }
+    },
+    "aid_philosophy": "Merit and Need-Based Public Model",
+    "average_need_based_aid": 10012.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 88.0,
+    "scholarships": [
+      {
+        "name": "Green to Gold Grant",
+        "type": "Need",
+        "amount": "Full Tuition, Fees, and Books",
+        "deadline": "",
+        "benefits": "Combined with Pell Grant, covers total cost of tuition, fees, and books.",
+        "application_method": "Automatic via FAFSA for zero EFC students"
+      },
+      {
+        "name": "Admissions Merit Scholarships",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "2026-01-15",
+        "benefits": "Tuition reduction.",
+        "application_method": "Automatic consideration if application is complete by January 15."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous (state-mandated)",
+    "ap_policy": {
+      "general_rule": "Grants credit for scores of 3 or higher per the Florida Board of Governors articulation agreement.",
+      "exceptions": [],
+      "usage": "Course credit and placement"
+    },
+    "ib_policy": {
+      "general_rule": "Grants college credit for passing IB exam scores.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "FUSE Transfer Program"
+      ],
+      "restrictions": "FUSE guarantees admission to specific limited access programs at USF for students completing an Associate degree at partner Florida College System institutions with a minimum 2.0 GPA."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Rigorous high school coursework (AP, IB, Dual Enrollment).",
+      "Above-average standardized test scores to meet Florida Board of Governors metrics.",
+      "Early application submission (before November 1)."
+    ],
+    "common_activities": [
+      "Part-time work",
+      "Community service",
+      "Athletics or band"
+    ],
+    "essay_tips": [
+      "Highlight resilience, first-generation status, or diverse background.",
+      "Connect career goals to specific USF research opportunities or Tampa Bay community needs."
+    ],
+    "red_flags": [
+      "Applying late in the cycle (post-January), drastically reducing scholarship and admission chances.",
+      "Low math test scores when applying to limited access Engineering or Business programs."
+    ],
+    "insights": [
+      "The campus is highly diverse with excellent resources for social mobility.",
+      "Undergraduate research is highly accessible and heavily funded.",
+      "The FUSE program is an incredible safety net for students starting at local community colleges."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": null,
+    "employment_rate_2yr": 0.73,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Citi",
+      "Moffitt Cancer Center",
+      "BayCare Health System",
+      "PwC",
+      "Pinellas County Schools",
+      "Amazon",
+      "Microsoft"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 53.0,
+    "graduation_rate_6_year": 77.0
+  }
+}

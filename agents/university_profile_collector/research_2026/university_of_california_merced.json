@@ -1,0 +1,423 @@
+{
+  "_id": "university_of_california_merced",
+  "metadata": {
+    "official_name": "University of California, Merced",
+    "location": {
+      "city": "Merced",
+      "state": "California",
+      "type": "Public"
+    },
+    "last_updated": "2024-10-24",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Founded in 2005, the University of California, Merced is the newest campus in the UC system and the first American research university of the 21st century [cite: 1]. As an R1 institution and a Hispanic-Serving Institution (HSI), UC Merced focuses heavily on social mobility, sustainability, and expanding educational access to first-generation and low-income students in California's San Joaquin Valley [cite: 2, 3].",
+    "market_position": "Public Research University (R1) / Hispanic-Serving Institution",
+    "admissions_philosophy": "Holistic",
+    "us_news_rank": 60,
+    "analyst_takeaways": [
+      {
+        "category": "Culture",
+        "insight": "Highly diverse and first-generation focused, with 71% of students identifying as first-generation and over 50% as Hispanic [cite: 3, 4].",
+        "implication": "The university provides specialized and comprehensive support networks, such as the Fiat Lux Scholars Program, creating a tight-knit and inclusive environment."
+      },
+      {
+        "category": "Academic",
+        "insight": "Categorized as an R1 research institution with a 21:1 student-to-faculty ratio [cite: 5, 6].",
+        "implication": "Undergraduates have high accessibility to cutting-edge research opportunities, particularly in sustainability, environmental sciences, and bioengineering."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "Overall admission rate approaches 90%, but specific STEM majors (like Computer Science) within the School of Engineering remain selective [cite: 7, 8].",
+        "implication": "While general admission is accessible, applicants aiming for Engineering or Natural Sciences must display strong quantitative backgrounds and are advised to utilize alternate major strategies [cite: 9]."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Described by students as friendly, hardworking, and tight-knit; it features a quieter, more studious atmosphere typical of a rural campus rather than a loud party scene [cite: 10, 11].",
+      "transportation_impact": "Situated in a rural area 5 miles north of the city of Merced and adjacent to Lake Yosemite, limiting immediate urban entertainment but providing a scenic and focused academic setting [cite: 11, 12].",
+      "research_impact": "Living laboratories are prevalent due to the Sierra Nevada Research Institute and proximity to Yosemite National Park, strongly driving environmental and sustainability research [cite: 10, 13]."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 0.905,
+      "in_state_acceptance_rate": 0.91,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 0.615,
+      "transfer_acceptance_rate": 0.659,
+      "admits_class_size": 2172,
+      "is_test_optional": true,
+      "test_policy_details": "Test-Blind. SAT/ACT scores are not considered for admissions decisions or scholarship awarding, but may be used for post-enrollment course placement [cite: 8, 14].",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 30017,
+        "admits_total": 26595,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.885,
+        "acceptance_rate_in_state": 0.91,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 15, 16]."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 28895,
+        "admits_total": 25862,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 0.895,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Waitlist data not publicly disclosed [cite: 15]."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.59,
+        "notes": "The average weighted GPA for admitted students generally ranges around 3.57-3.59 [cite: 10, 17]."
+      },
+      "testing": {
+        "sat_composite_middle_50": "960-1140",
+        "sat_reading_middle_50": "480-570",
+        "sat_math_middle_50": "480-570",
+        "act_composite_middle_50": "19-24",
+        "submission_rate": null,
+        "policy_note": "Test-blind institution; historic scores displayed for context only [cite: 8, 18]."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.71,
+        "legacy_percentage": 0.0,
+        "international_percentage": 0.01,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (California)",
+            "percentage": 0.99
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 15900,
+            "admits": 14286,
+            "acceptance_rate": 0.898
+          },
+          "women": {
+            "applicants": 16028,
+            "admits": 14620,
+            "acceptance_rate": 0.912
+          }
+        },
+        "racial_breakdown": {
+          "white": 0.098,
+          "black_african_american": 0.045,
+          "hispanic_latino": 0.523,
+          "asian": 0.202,
+          "native_american_alaskan": 0.001,
+          "pacific_islander": 0.003,
+          "two_or_more_races": 0.038,
+          "unknown": 0.011,
+          "non_resident_alien": 0.079
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges/Schools",
+    "colleges": [
+      {
+        "name": "School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Ideal for students seeking high research engagement and hands-on lab experience; applicants should have strong math and physics preparation [cite: 8, 19].",
+        "housing_profile": "First-year students have the option to join the Professional Engineering Living Learning Community [cite: 20].",
+        "student_archetype": "Technically minded, innovation-focused, aiming for careers in Silicon Valley or advanced academic research.",
+        "majors": [
+          {
+            "name": "Computer Science and Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSE 20",
+              "CSE 21",
+              "MATH 21",
+              "MATH 22",
+              "MATH 23",
+              "MATH 24",
+              "PHYS 8",
+              "PHYS 9"
+            ],
+            "minimum_gpa_to_declare": 2.4,
+            "weeder_courses": [
+              "MATH 11"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "CSE 100 Algorithm Design and Analysis",
+                "CSE 111 Database Systems",
+                "CSE 115 Discrete Mathematics",
+                "CSE 120 Software Engineering",
+                "CSE 140 Computer Architecture",
+                "CSE 150 Operating Systems",
+                "CSE 160 Computer Networks"
+              ],
+              "electives": [
+                "CSE 106 Exploratory Computing",
+                "CSE 107 Introduction to Image Processing",
+                "CSE 175 Introduction to Artificial Intelligence",
+                "CSE 176 Introduction to Machine Learning",
+                "CSE 180 Introduction to Robotics"
+              ],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "Highly sought-after and selective major within the campus; admitted by major [cite: 8, 21]."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "ENGR 065 Circuit Theory",
+                "ME 120 Component Design",
+                "ENGR 120 Fluid Mechanics",
+                "ENGR 151 Strength of Materials",
+                "ME 021 Engineering Computing"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": null
+            },
+            "notable_professors": [],
+            "notes": "ABET accredited with specializations available in Aerospace and Agricultural Technology [cite: 22, 23]."
+          }
+        ]
+      },
+      {
+        "name": "School of Natural Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Suited for pre-health students and prospective natural researchers.",
+        "housing_profile": null,
+        "student_archetype": "Pre-med, ecological conservationists, and hard science researchers.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIO 1"
+            ],
+            "special_requirements": "",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "curriculum": null,
+            "notable_professors": [],
+            "notes": "BIO 1 is noted as a rigorous filter course with a heavy emphasis on memorization and textbook engagement [cite: 24]."
+          }
+        ]
+      },
+      {
+        "name": "School of Social Sciences, Humanities and Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Excellent fit for students interested in psychology, economics, or interdisciplinary studies within an accessible UC context.",
+        "housing_profile": null,
+        "student_archetype": "Civic-minded, future educators, psychological researchers.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "University of California Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "RD",
+        "date": "2024-11-30",
+        "is_binding": false,
+        "notes": "UC-wide application deadline [cite: 18]."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-30",
+        "details": "Requires answering 4 of 8 Personal Insight Questions (PIQs), each limited to 350 words [cite: 25]."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "A-G Course Completion",
+        "Academic Grade Point Average",
+        "Personal Insight Questions"
+      ],
+      "secondary_factors": [
+        "First-Generation Status",
+        "Extracurricular Activities",
+        "Local Eligibility (Top 9% Context)"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "UC Merced relies on a 13-point comprehensive review. It is heavily mission-driven towards social mobility, making context of achievement (such as attending an under-resourced high school or being first-generation) a major positive factor [cite: 2, 14]."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to an alternate major: While campus choice dictates the initial review, if a primary selective major (e.g., Computer Science) is full, admissions will evaluate for the listed alternate major [cite: 8, 9]."
+    ],
+    "college_ranking_tactics": [
+      "For transfer students or high school applicants with borderline GPAs, choosing non-impacted majors in the School of Social Sciences, Humanities and Arts generally offers higher probabilities of admission compared to Engineering [cite: 26]."
+    ],
+    "alternate_major_strategy": "Always list a non-impacted alternate major on the UC application if your first choice is in the highly selective College of Engineering or School of Natural Sciences to ensure a fallback path into the university [cite: 8, 9, 27]."
+  },
+  "financials": {
+    "tuition_model": "Public UC System Tiered Tuition",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 14653.0,
+        "total_coa": 42996.0,
+        "housing": 27297.0
+      },
+      "out_of_state": {
+        "tuition": 46541.0,
+        "total_coa": 74884.0,
+        "supplemental_tuition": 31888.0
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 24780.0,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 0.85,
+    "scholarships": [
+      {
+        "name": "Fiat Lux Scholars Program",
+        "type": "Need",
+        "amount": "$25,000",
+        "deadline": "March 2",
+        "benefits": "Guarantees a minimum of $100,000 in grants/scholarships over 4 years ($25,000 minimum per year) for eligible low-income, first-generation California residents. Includes Living Learning Community housing, faculty networking, and targeted academic counseling [cite: 28, 29].",
+        "application_method": "Automatic"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or higher on Advanced Placement Exams earn unit credit [cite: 30, 31].",
+      "exceptions": [],
+      "usage": "Can be applied for subject credit, graduation credit, or toward general education breadth requirements. Duplication of college courses voids AP credit [cite: 30]."
+    },
+    "ib_policy": {
+      "general_rule": "Students completing IB HL exams with a score of 5 or above earn 8 quarter/5.3 semester units per exam [cite: 32].",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org",
+        "Transfer Admission Guarantee (TAG)"
+      ],
+      "restrictions": "A maximum of 70 semester units of lower-division transfer credit can be applied toward the degree [cite: 33]."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong foundation in A-G coursework with a high school GPA prioritizing academic rigor.",
+      "Clear articulation of personal context and resilience in the PIQs, particularly for first-generation students [cite: 34].",
+      "An upward grade trend, specifically recovering from a weaker freshman year [cite: 34]."
+    ],
+    "common_activities": [
+      "Community service and advocacy",
+      "Employment/Part-time work (frequently noted among first-gen demographics)",
+      "Undergraduate research (highly accessible early on) [cite: 10]"
+    ],
+    "essay_tips": [
+      "Use 'I' statements to keep the focus strictly on yourself, rather than family members [cite: 25].",
+      "Avoid overly wordy sentences and unnecessary adverbs; prioritize direct and clear narrative [cite: 25].",
+      "Discuss specific challenges overcome in the context of your academic timeline, such as lower freshman grades, to contextualize your performance [cite: 34]."
+    ],
+    "red_flags": [
+      "Focusing PIQs on other people instead of your own growth [cite: 25].",
+      "Failing to detail the 'why' behind extracurricular activities and community service hours [cite: 34]."
+    ],
+    "insights": [
+      "Students appreciate the lack of cutthroat competition found at older UC campuses; the vibe is highly collaborative and supportive [cite: 35].",
+      "The campus is known for being slightly isolated; students who are proactive in joining clubs or utilizing the Living Learning Communities thrive the most socially [cite: 11, 20]."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 65410,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Genentech",
+      "Google",
+      "Target",
+      "Amazon",
+      "Pacific Gas and Electric Company",
+      "Merced County Office of Education"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 0.82,
+    "graduation_rate_4_year": 0.49,
+    "graduation_rate_6_year": 0.69
+  }
+}
