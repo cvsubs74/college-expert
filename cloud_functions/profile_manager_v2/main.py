@@ -63,6 +63,7 @@ from essay_copilot import (
     generate_essay_outline
 )
 from fit_computation import calculate_fit_for_college
+from fit_staleness import get_kb_updates
 from email_service import send_signup_welcome_email
 
 # Configure logging
@@ -434,6 +435,35 @@ def profile_manager_v2_http_entry(request):
             result = delete_fit_analysis(user_email, university_id)
             return add_cors_headers(result)
         
+        # --- CHECK FIT RECOMPUTATION (profile-driven + KB-staleness) ---
+        elif resource_type == 'check-fit-recomputation' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+            else:
+                user_email = request.args.get('user_email')
+
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+
+            profile = get_student_profile(user_email) or {}
+            fits = get_all_fits(user_email)
+            kb_updates = get_kb_updates(fits)
+
+            return add_cors_headers({
+                'success': True,
+                # Existing profile-driven signal (what the frontend reads
+                # off /search today):
+                'needs_recomputation': profile.get('needs_fit_recomputation') is True,
+                'reason': profile.get('last_change_reason'),
+                'changes': profile.get('last_change_details') or [],
+                'profile_updated_at': profile.get('profile_updated_at'),
+                'fits_computed_at': profile.get('fits_computed_at'),
+                # New KB-driven signal (design §2, #204): one entry per
+                # saved fit whose KB inputs are stale.
+                'kb_updates': kb_updates,
+            })
+
         # --- COMPUTE SINGLE FIT ---
         elif resource_type == 'compute-single-fit' and request.method == 'POST':
             data = request.get_json()
