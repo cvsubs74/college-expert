@@ -33,7 +33,9 @@ import requests
 # exactly what the server will enforce.
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / 'cloud_functions' / 'knowledge_base_manager_universities_v2'))
-from versioning import coerce_year, merge_cycle_refresh, validate_profile  # noqa: E402
+from versioning import (  # noqa: E402
+    coerce_year, merge_cycle_refresh, normalize_percentages, validate_profile,
+)
 
 DEFAULT_URL = "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 
@@ -83,6 +85,10 @@ def main():
             failed += 1
             continue
 
+        fixed = normalize_percentages(profile)
+        if fixed:
+            print(f"  norm  {path.name}: {fixed} fraction-style percent fields → percents")
+
         if args.merge_with_current:
             try:
                 resp = requests.get(args.url, params={"id": profile.get('_id')}, timeout=60)
@@ -91,6 +97,9 @@ def main():
                 current = None
             if current:
                 profile = merge_cycle_refresh(current, profile)
+                # The base may carry fraction-style fields from a prior bad
+                # ingest — normalize the merged result too.
+                normalize_percentages(profile)
                 print(f"  merge {path.name}: cycle-sensitive sections refreshed onto current profile")
             else:
                 print(f"  merge {path.name}: no current profile in KB — ingesting fresh as-is")

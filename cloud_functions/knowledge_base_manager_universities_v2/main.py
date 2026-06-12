@@ -13,7 +13,7 @@ from google import genai
 from google.genai import types
 
 from firestore_db import get_db
-from versioning import coerce_year, validate_profile
+from versioning import coerce_year, normalize_percentages, validate_profile
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -258,6 +258,9 @@ def ingest_university(profile: dict, year: int = None) -> dict:
         db = get_db()
 
         year = coerce_year(year)
+        fixed = normalize_percentages(profile)
+        if fixed:
+            logger.info(f"[ingest:{profile.get('_id')}] normalized {fixed} fraction-style percent fields")
         errors, warnings = validate_profile(profile, year)
         if errors:
             return {
