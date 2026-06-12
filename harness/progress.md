@@ -96,3 +96,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Reviewer: approved (comment review); raise_for_status + test-name notes applied.
 - Discovered: /compute-all-fits never existed in v2 (frontend call no-ops) → filed #208.
 - Note: gh token lacks 'project' scope → board status not moved; run `gh auth refresh -s project,read:org` when convenient.
+
+## 2026-06-12 14:45 — #205 + #206 shipped: fit-staleness UX complete (epic #203 done)
+- PRs: #210 (history archival + nudge suppression, backend), #211 (vintage chips + refresh banner + review screen + fit history UI + roadmap deadline annotation). Both squash-merged; #205/#206 auto-closed; epic #203 complete (with #209/#204 earlier).
+- UX shipped: chips on Discover/Launchpad/fit-modal showing the cycle vintage; one dismissible banner per cycle when material changes hit the student's list; review screen with old→new facts + projected shift; student-applied updates with prior analyses archived (college_fits/{id}/history/{year}); applied/accepted colleges never nudged; moved roadmap deadlines annotated, not silently swapped.
+- Live bug fixed en route: undeclared setRecomputingFits in UniversityExplorer crashed the profile-driven recompute path and aborted fits loading.
+- Reviewer caught a real one: banner dismissal memory broke when kbUpdates arrived after mount (lazy useState init with year=undefined) — fixed + regression test.
+- Suites at merge: backend 904, frontend 218, builds green. Auto-deploy on merge covers profile-v2, counselor-agent, KB v2, frontend.
+- Note: #211 needed a merge of main after #210's squash landed (-X ours; branch was a strict superset).
