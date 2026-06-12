@@ -161,7 +161,8 @@ class TestGetKbUpdates:
         assert len(updates) == 1  # ghost skipped (no current data)
         assert updates[0]['university_id'] == 'northeastern'
 
-    def test_empty_fits_no_fetch(self):
+    def test_empty_fits_returns_empty(self):
         called = []
         updates = fs.get_kb_updates([], fetch_batch=lambda ids: called.append(ids) or {})
         assert updates == []
+        assert called == [[]]  # fetcher sees an empty id list, returns nothing

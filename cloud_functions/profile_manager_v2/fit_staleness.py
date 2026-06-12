@@ -229,6 +229,7 @@ def _batch_fetch_universities(university_ids: List[str]) -> Dict[str, Dict]:
             json={'university_ids': university_ids},
             timeout=30,
         )
+        resp.raise_for_status()
         body = resp.json()
         return {
             u.get('university_id'): u
