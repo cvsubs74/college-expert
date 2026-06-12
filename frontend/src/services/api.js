@@ -1558,33 +1558,56 @@ export const getBalancedList = async (userEmail, excludeIds = []) => {
 
 
 /**
- * Check if fit recomputation is needed (based on profile changes)
+ * Check if fit recomputation is needed — profile-driven flags PLUS the
+ * KB-staleness diff (kb_updates) from the dedicated backend endpoint
+ * (design DESIGN-kb-refresh-fit-staleness.md §2).
  * @param {string} userEmail - User's email
- * @returns {Promise<{needs_recomputation: boolean, reason: string|null, changes: array}>}
+ * @returns {Promise<{needs_recomputation: boolean, reason: string|null, changes: array, kb_updates: array}>}
  */
 export const checkFitRecomputationNeeded = async (userEmail) => {
+  const empty = { needs_recomputation: false, reason: null, changes: [], kb_updates: [] };
   try {
     const baseUrl = getProfileManagerUrl();
-    const response = await axios.post(`${baseUrl}/search`, {
-      user_id: userEmail
+    const response = await axios.post(`${baseUrl}/check-fit-recomputation`, {
+      user_email: userEmail
     }, {
       headers: { 'X-User-Email': userEmail }
     });
 
-    if (response.data.success && response.data.profiles?.length > 0) {
-      const profile = response.data.profiles[0];
+    if (response.data.success) {
       return {
-        needs_recomputation: profile.needs_fit_recomputation === true,
-        reason: profile.last_change_reason || null,
-        changes: profile.last_change_details || [],
-        profile_updated_at: profile.profile_updated_at || null,
-        fits_computed_at: profile.fits_computed_at || null
+        needs_recomputation: response.data.needs_recomputation === true,
+        reason: response.data.reason || null,
+        changes: response.data.changes || [],
+        profile_updated_at: response.data.profile_updated_at || null,
+        fits_computed_at: response.data.fits_computed_at || null,
+        kb_updates: response.data.kb_updates || []
       };
     }
-    return { needs_recomputation: false, reason: null, changes: [] };
+    return empty;
   } catch (error) {
     console.error('Error checking fit recomputation status:', error);
-    return { needs_recomputation: false, reason: null, changes: [] };
+    return empty;
+  }
+};
+
+/**
+ * Archived prior-cycle fit analyses for a university (newest first).
+ * @returns {Promise<array>} history entries ({history_key, fit_category, ...})
+ */
+export const getFitHistory = async (userEmail, universityId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/get-fit-history`, {
+      user_email: userEmail,
+      university_id: universityId
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data.success ? (response.data.history || []) : [];
+  } catch (error) {
+    console.error('Error fetching fit history:', error);
+    return [];
   }
 };
 

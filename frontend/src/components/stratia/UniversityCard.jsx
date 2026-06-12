@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ExclamationTriangleIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
+import FitVintageChip from '../FitVintageChip';
 
 /**
  * UniversityCard - Rich, interactive M3 card for university listings
@@ -40,7 +41,9 @@ const UniversityCard = ({
         us_news_rank,
         selected_major,
         available_majors = [],
-        application_status = null  // planning, in_progress, submitted, decision_pending, decision
+        application_status = null,  // planning, in_progress, submitted, decision_pending, decision
+        kb_data_year = null,        // KB cycle year the saved fit was computed on
+        kb_update = null            // staleness entry from check-fit-recomputation
     } = university || {};
 
     // Handle major selection with confirmation
@@ -137,6 +140,9 @@ const UniversityCard = ({
                             <span className={`stratia-chip ${chipStyles[fit_category] || chipStyles.TARGET}`}>
                                 {chipLabels[fit_category] || 'Target'}
                             </span>
+
+                            {/* Fit vintage — which cycle's data produced the fit */}
+                            <FitVintageChip fit={{ kb_data_year }} kbUpdate={kb_update} />
 
                             {/* Application Status Badge */}
                             {application_status && (
