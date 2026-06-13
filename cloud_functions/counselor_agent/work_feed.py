@@ -197,7 +197,9 @@ def _normalize_scholarships(scholarships: list, today) -> list:
         status = (s.get('status') or '').lower()
         if status in ('received', 'not_eligible'):
             continue
-        due = _parse_iso_date(s.get('deadline'))
+        # Prefer the structured deadline_date when present (#191); fall back to
+        # parsing the free-text deadline for records that predate it.
+        due = _parse_iso_date(s.get('deadline_date') or s.get('deadline'))
         sch_id = s.get('scholarship_id')
         out.append({
             'id': str(sch_id or ''),

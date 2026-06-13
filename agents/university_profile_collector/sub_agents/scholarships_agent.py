@@ -41,6 +41,7 @@ OUTPUT JSON with EXACTLY this structure:
     "type": "Merit",
     "amount": "$40,000 over 4 years",
     "deadline": "Automatic consideration",
+    "deadline_date": null,
     "benefits": "Priority registration, special advising, honors housing",
     "application_method": "Automatic Consideration"
   ),
@@ -48,7 +49,8 @@ OUTPUT JSON with EXACTLY this structure:
     "name": "Chancellor's Achievement Award",
     "type": "Merit",
     "amount": "$10,000/year",
-    "deadline": "2025-02-01",
+    "deadline": "February 1, 2026 (separate application)",
+    "deadline_date": "2026-02-01",
     "benefits": "Research funding opportunity",
     "application_method": "Separate Application"
   ),
@@ -57,10 +59,16 @@ OUTPUT JSON with EXACTLY this structure:
     "type": "Need",
     "amount": "Varies based on FAFSA",
     "deadline": "FAFSA deadline",
+    "deadline_date": null,
     "benefits": "",
     "application_method": "FAFSA"
   )
 ]
+
+For "deadline_date": give the scholarship's application deadline as ISO
+"YYYY-MM-DD" for the UPCOMING cycle, or null when there is no separate fixed
+date (Automatic Consideration, "Varies", "Rolling", or FAFSA/CSS-driven).
+Always keep the human-readable description in "deadline".
 
 Include 5-7 scholarships.
 Use ( ) instead of curly braces.

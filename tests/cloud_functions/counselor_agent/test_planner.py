@@ -497,3 +497,49 @@ class TestNormalizeScholarshipDeadline:
         assert out is not None
         rolled = datetime.strptime(out, '%Y-%m-%d')
         assert rolled.date() >= self.NOW.date()
+
+
+# ---------------------------------------------------------------------------
+# _scholarship_due_date — structured deadline_date wins; explicit null drops;
+# records predating the field fall back to free-text parsing (#191).
+# ---------------------------------------------------------------------------
+
+class TestScholarshipDueDate:
+    NOW = datetime(2026, 5, 28)
+
+    def test_future_deadline_date_used_as_is(self):
+        sch = {'name': 'X', 'deadline_date': '2026-11-01', 'deadline': 'ignored text'}
+        assert p._scholarship_due_date(sch, self.NOW) == '2026-11-01'
+
+    def test_past_deadline_date_rolls_forward(self):
+        sch = {'name': 'X', 'deadline_date': '2026-01-15', 'deadline': 'January 15'}
+        assert p._scholarship_due_date(sch, self.NOW) == '2027-01-15'
+
+    def test_explicit_null_deadline_date_drops(self):
+        # Key present but null = "no fixed date" → drop, do NOT fall back to text.
+        sch = {'name': 'X', 'deadline_date': None, 'deadline': '2026-12-01'}
+        assert p._scholarship_due_date(sch, self.NOW) is None
+
+    def test_deadline_date_preferred_over_text(self):
+        sch = {'name': 'X', 'deadline_date': '2026-09-01', 'deadline': '2026-12-31'}
+        assert p._scholarship_due_date(sch, self.NOW) == '2026-09-01'
+
+    def test_absent_key_falls_back_to_text_parse(self):
+        # Phase-2 records lacking the field keep working via the text parser.
+        assert p._scholarship_due_date({'name': 'X', 'deadline': '2026-01-16'}, self.NOW) == '2027-01-16'
+        assert p._scholarship_due_date({'name': 'X', 'deadline': 'Automatic'}, self.NOW) is None
+        assert p._scholarship_due_date({'name': 'X'}, self.NOW) is None
+
+
+class TestRollForwardIso:
+    NOW = datetime(2026, 5, 28)
+
+    def test_rolls_past_to_next_year(self):
+        assert p._roll_forward_iso('2025-11-30', self.NOW) == '2026-11-30'
+
+    def test_future_unchanged(self):
+        assert p._roll_forward_iso('2026-12-01', self.NOW) == '2026-12-01'
+
+    @pytest.mark.parametrize('value', [None, '', '2026', 12345, ['2026-01-01']])
+    def test_unusable_returns_none(self, value):
+        assert p._roll_forward_iso(value, self.NOW) is None
