@@ -23,12 +23,18 @@ date that is already present onto its own cycle. Docs without a data_year
 import argparse
 import copy
 import os
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 DEFAULT_PROJECT = "college-counselling-478115"
+
+# Only ever rewrite a value that is EXACTLY an ISO date — never a free-text or
+# multi-date string (e.g. "2024-11-08 (EA), 2025-01-09 (RD)"), which a naive
+# year-shift would silently truncate. Those need structured fields, not a sweep.
+_STRICT_ISO = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def cycle_year(month, data_year):
@@ -40,10 +46,10 @@ def cycle_year(month, data_year):
 def fix_iso_year(date_str, data_year):
     """Return a year-corrected ISO date, or None if unparseable or already
     correct for the cycle."""
-    if not isinstance(date_str, str) or len(date_str) < 10:
+    if not isinstance(date_str, str) or not _STRICT_ISO.match(date_str.strip()):
         return None
     try:
-        d = datetime.strptime(date_str[:10], "%Y-%m-%d")
+        d = datetime.strptime(date_str.strip(), "%Y-%m-%d")
     except ValueError:
         return None
     cy = cycle_year(d.month, data_year)
@@ -64,13 +70,30 @@ def normalize_doc(doc):
         return new_doc, changes  # unversioned — don't touch
     profile = new_doc.get("profile") or {}
 
-    for dl in (profile.get("application_process") or {}).get("application_deadlines") or []:
+    app_process = profile.get("application_process") or {}
+
+    for dl in app_process.get("application_deadlines") or []:
+        if not isinstance(dl, dict):
+            continue
         fixed = fix_iso_year(dl.get("date"), dy)
         if fixed:
             changes.append(f"app_deadline[{dl.get('plan_type', '?')}]: {dl.get('date')} -> {fixed}")
             dl["date"] = fixed
 
+    # Supplemental-requirement deadlines are ISO only sometimes; fix_iso_year's
+    # strict guard leaves annotated/multi-date strings untouched. Entries are
+    # occasionally plain strings rather than objects — skip those.
+    for sr in app_process.get("supplemental_requirements") or []:
+        if not isinstance(sr, dict):
+            continue
+        fixed = fix_iso_year(sr.get("deadline"), dy)
+        if fixed:
+            changes.append(f"supplemental[{sr.get('type') or sr.get('name')}].deadline: {sr.get('deadline')} -> {fixed}")
+            sr["deadline"] = fixed
+
     for s in (profile.get("financials") or {}).get("scholarships") or []:
+        if not isinstance(s, dict):
+            continue
         fixed = fix_iso_year(s.get("deadline_date"), dy)
         if fixed:
             changes.append(f"scholarship[{s.get('name')!r}].deadline_date: {s.get('deadline_date')} -> {fixed}")

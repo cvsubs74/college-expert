@@ -41,6 +41,11 @@ class TestFixIsoYear:
     def test_unparseable_returns_none(self, bad):
         assert m.fix_iso_year(bad, 2026) is None
 
+    def test_annotated_or_multidate_string_is_left_untouched(self):
+        # Truncating these to the first date would lose data — never touch them.
+        assert m.fix_iso_year("2024-11-08 (Single-Choice Early Action), 2025-01-09 (RD)", 2026) is None
+        assert m.fix_iso_year("2024-11-01 (priority)", 2026) is None
+
     def test_leap_day_falls_back_to_feb_28(self):
         assert m.fix_iso_year("2024-02-29", 2027) == "2027-02-28"
 
@@ -61,6 +66,25 @@ def _doc(year=2026):
     }
 
 
+def _doc_with_supplementals():
+    return {
+        "data_year": 2026,
+        "profile": {"application_process": {"supplemental_requirements": [
+            {"type": "Portfolio", "deadline": "2024-12-01"},          # clean ISO, stale
+            {"type": "Audition", "deadline": "2024-11-08 (EA), 2025-01-09 (RD)"},  # annotated
+            {"type": "None", "deadline": None},
+        ]}},
+    }
+
+
+def test_normalize_doc_fixes_clean_supplemental_deadline_only():
+    new_doc, changes = m.normalize_doc(_doc_with_supplementals())
+    srs = new_doc["profile"]["application_process"]["supplemental_requirements"]
+    assert srs[0]["deadline"] == "2025-12-01"                              # clean ISO shifted
+    assert srs[1]["deadline"] == "2024-11-08 (EA), 2025-01-09 (RD)"        # annotated left intact
+    assert len(changes) == 1
+
+
 def test_normalize_doc_fixes_stale_years_only():
     new_doc, changes = m.normalize_doc(_doc())
     dls = new_doc["profile"]["application_process"]["application_deadlines"]
@@ -71,6 +95,22 @@ def test_normalize_doc_fixes_stale_years_only():
     assert sch[0]["amount"] == "$5k"                 # other fields preserved
     assert sch[1]["deadline_date"] is None
     assert len(changes) == 2
+
+
+def test_normalize_doc_tolerates_string_entries():
+    # Real data sometimes stores supplemental_requirements as plain strings.
+    doc = {
+        "data_year": 2026,
+        "profile": {"application_process": {
+            "supplemental_requirements": ["Portfolio required", {"type": "P", "deadline": "2024-11-15"}],
+            "application_deadlines": ["see website", {"plan_type": "RD", "date": "2024-11-30"}],
+        }},
+    }
+    new_doc, changes = m.normalize_doc(doc)
+    assert len(changes) == 2  # the two dict entries fixed; strings ignored
+    srs = new_doc["profile"]["application_process"]["supplemental_requirements"]
+    assert srs[0] == "Portfolio required"
+    assert srs[1]["deadline"] == "2025-11-15"
 
 
 def test_normalize_doc_skips_unversioned():
