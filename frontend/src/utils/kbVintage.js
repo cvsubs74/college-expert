@@ -44,8 +44,10 @@ export function vintageChip(fit, kbUpdate) {
   if (kbUpdate) {
     const fromLabel = cycleLabel(kbUpdate.fit_kb_year);
     if (!fromLabel) {
-      const vintage = 'Computed before data versioning';
-      return { tone: 'unknown', label: `${vintage} — update available`, vintage };
+      // Legacy fit with no recorded cycle — don't surface internal "data
+      // versioning" wording. Just signal a refresh is available; on the card
+      // the chip stays silent (the Update button carries the action).
+      return { tone: 'unknown', label: 'Update available', vintage: null };
     }
     const vintage = `${fromLabel} data`;
     return { tone: 'stale', label: `${vintage} — update available`, vintage };
@@ -87,7 +89,7 @@ export function describeChange(change) {
     case 'kb_data_year':
       return 'Newer cycle data available (no major changes detected)';
     case 'provenance':
-      return 'Analysis predates data versioning';
+      return 'Newer data available';
     default:
       return change.detail || `${change.field} changed`;
   }

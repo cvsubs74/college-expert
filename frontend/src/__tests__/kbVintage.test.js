@@ -74,9 +74,12 @@ describe('vintageChip', () => {
     expect(chip.tone).toBe('stale');
   });
 
-  it('legacy fit with a kb_update → unknown tone', () => {
+  it('legacy fit with a kb_update → unknown tone, neutral "Update available", silent vintage', () => {
     const chip = vintageChip({}, { fit_kb_year: null, current_kb_year: 2026 });
     expect(chip.tone).toBe('unknown');
+    expect(chip.label).toBe('Update available');
+    expect(chip.label).not.toMatch(/data versioning/i);
+    expect(chip.vintage).toBeNull();  // card chip stays silent; button carries the CTA
   });
 
   it('legacy fit with no staleness info → silent (no clutter)', () => {

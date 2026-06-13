@@ -16,9 +16,15 @@ export default function FitUpdateBanner({ kbUpdate, onUpdate }) {
 
   const fromLabel = cycleLabel(kbUpdate.fit_kb_year);
   const toLabel = cycleLabel(kbUpdate.current_kb_year);
-  const fromText = fromLabel
-    ? `This analysis is based on ${fromLabel} data`
-    : 'This analysis predates data versioning';
+  const newerText = toLabel
+    ? `Newer ${toLabel} admissions data is available`
+    : 'Newer admissions data is available';
+  // For a legacy fit we have no cycle to name, so lead with the actionable
+  // message instead of internal "data versioning" wording.
+  const headline = fromLabel ? `This analysis is based on ${fromLabel} data` : newerText;
+  const subline = fromLabel
+    ? `${newerText} — refresh for an up-to-date assessment.`
+    : 'Refresh for an up-to-date assessment.';
 
   const handleUpdate = async () => {
     if (updating) return;
@@ -44,12 +50,8 @@ export default function FitUpdateBanner({ kbUpdate, onUpdate }) {
         <div className="flex items-start gap-2.5">
           <span className="text-lg leading-none" aria-hidden="true">🗓️</span>
           <div className="text-sm">
-            <p className="font-medium text-amber-900">{fromText}</p>
-            <p className="text-amber-700">
-              {toLabel
-                ? `Newer ${toLabel} admissions data is available — refresh for an up-to-date assessment.`
-                : 'Newer admissions data is available — refresh for an up-to-date assessment.'}
-            </p>
+            <p className="font-medium text-amber-900">{headline}</p>
+            <p className="text-amber-700">{subline}</p>
             {failed && (
               <p className="mt-1 text-red-600" role="alert">
                 Update failed — please try again.

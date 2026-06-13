@@ -15,8 +15,10 @@ export default function FitVintageChip({ fit, kbUpdate, vintageOnly = false, cla
   const chip = vintageChip(fit, kbUpdate);
   if (!chip) return null;
   // `vintageOnly` drops the "— update available" CTA for surfaces that carry
-  // the action elsewhere (the Launchpad card's "Update Fit" button).
+  // the action elsewhere (the Launchpad card's "Update Fit" button). Legacy
+  // fits have no vintage to state, so the chip stays silent there.
   const text = vintageOnly ? chip.vintage : chip.label;
+  if (!text) return null;
   return (
     <span
       data-testid="fit-vintage-chip"

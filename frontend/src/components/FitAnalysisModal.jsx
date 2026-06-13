@@ -470,7 +470,7 @@ const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCatego
                                 <div className="mt-4 space-y-3">
                                     {fitHistory.map((h) => {
                                         const label = cycleLabel(h.kb_data_year) ||
-                                            (h.history_key === 'pre-versioning' ? 'Before data versioning' : h.history_key);
+                                            (h.history_key === 'pre-versioning' ? 'Earlier analysis' : h.history_key);
                                         const changed = h.fit_category && fitAnalysis.fit_category &&
                                             h.fit_category !== fitAnalysis.fit_category;
                                         return (
