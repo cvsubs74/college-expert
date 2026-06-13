@@ -100,6 +100,17 @@ describe('FitVintageChip', () => {
     expect(screen.queryByTestId('fit-vintage-chip')).toBeNull();
   });
 
+  it('legacy fit: neutral "Update available" in full mode, silent on the card', () => {
+    const legacy = { fit_kb_year: null, current_kb_year: 2026 };
+    const { rerender } = render(<FitVintageChip fit={{}} kbUpdate={legacy} />);
+    const chip = screen.getByTestId('fit-vintage-chip');
+    expect(chip).toHaveTextContent('Update available');
+    expect(chip).not.toHaveTextContent(/data versioning/i);
+    // vintageOnly (the Launchpad card): nothing to state → no chip.
+    rerender(<FitVintageChip fit={{}} kbUpdate={legacy} vintageOnly />);
+    expect(screen.queryByTestId('fit-vintage-chip')).toBeNull();
+  });
+
   it('vintageOnly drops the "update available" CTA (button carries it)', () => {
     render(
       <FitVintageChip

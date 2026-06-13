@@ -21,9 +21,12 @@ describe('FitUpdateBanner', () => {
     expect(btn).toHaveTextContent('Updating…');
   });
 
-  it('handles a legacy (pre-versioning) fit with no fit year', () => {
+  it('legacy fit (no fit year): leads with the actionable message, no "data versioning" wording', () => {
     render(<FitUpdateBanner kbUpdate={{ fit_kb_year: null, current_kb_year: 2026 }} onUpdate={vi.fn()} />);
-    expect(screen.getByTestId('fit-update-banner')).toHaveTextContent('predates data versioning');
+    const banner = screen.getByTestId('fit-update-banner');
+    expect(banner).toHaveTextContent('Newer 2026–27 admissions data is available');
+    expect(banner).not.toHaveTextContent(/data versioning|predates/i);
+    expect(screen.getByRole('button', { name: /update analysis/i })).toBeInTheDocument();
   });
 
   it('surfaces an error and re-enables the button on failure', async () => {
