@@ -19,11 +19,12 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { checkCredits, deductCredit } from '../services/api';
 import FitInfographicView from './FitInfographicView';
+import FitUpdateBanner from './FitUpdateBanner';
 
 // ============================================================================
 // FIT ANALYSIS PAGE - Complete display of all fit analysis data
 // ============================================================================
-const FitAnalysisPage = ({ college, onBack }) => {
+const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null }) => {
     const { currentUser } = useAuth();
     const [activeTab, setActiveTab] = useState('snapshot'); // 'snapshot', 'scores', 'strategy', 'timeline', 'tips'
     // Removed infographicUrl state - using HTML template instead
@@ -138,6 +139,11 @@ const FitAnalysisPage = ({ college, onBack }) => {
                     </div>
                 </div>
             </div>
+            {/* Newer-data-available banner — view the current analysis, then
+                recompute in place with old→new cycle context. */}
+            {kbUpdate && onUpdateFit && (
+                <FitUpdateBanner kbUpdate={kbUpdate} onUpdate={() => onUpdateFit(college)} />
+            )}
             {/* Tab Navigation */}
             <div className="max-w-6xl mx-auto px-4 pt-6">
                 <div className="flex gap-1 p-1.5 bg-[#F5F5F0] rounded-2xl overflow-x-auto border border-gray-200">
