@@ -782,6 +782,12 @@ class Scholarship(BaseModel):
         default="",
         description="[OPTIONAL] Application deadline if separate from regular admission"
     )
+    deadline_date: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Machine-readable application deadline as ISO 'YYYY-MM-DD' "
+                    "for the upcoming cycle, or null when there is no separate fixed date "
+                    "(e.g. 'Automatic'/'Varies'/'Rolling'). Keep the human text in 'deadline'."
+    )
     benefits: str = Field(
         default="",
         description="[REQUIRED] Non-monetary benefits. Examples: 'Priority Registration', 'Housing Guarantee', 'Mentorship'"

@@ -794,33 +794,20 @@ _NON_DATE_DEADLINES = frozenset({
 })
 
 
-def _normalize_scholarship_deadline(deadline_str, now=None):
-    """Normalize a KB scholarship deadline into an upcoming ISO date.
+def _roll_forward_iso(iso_str, now=None):
+    """Roll an annual ISO 'YYYY-MM-DD' deadline forward to its next on/after-today
+    occurrence. Returns ISO 'YYYY-MM-DD', or None if there's no usable date.
 
-    Scholarship deadlines recur annually, but the KB often stores a fixed date
-    from a past cycle (or free text like "Varies"/"Rolling"). To keep the
-    Roadmap honest for, say, a junior:
-
-      - free-text / unparseable / "automatic" values return None (the caller
-        drops the task rather than showing a bogus or NaN date), and
-      - a parseable date is rolled forward to its next on-or-after-today
-        occurrence, so a past cycle reads as the upcoming one instead of
-        "N days overdue".
-
-    Returns an ISO 'YYYY-MM-DD' string, or None when there is no usable date.
+    Scholarship/application deadlines recur annually but the KB stores a fixed
+    date; a past cycle should read as the upcoming one, not "N days overdue".
     """
-    if not isinstance(deadline_str, str):
-        return None
-    s = deadline_str.strip()
-    if len(s) < 10 or s.lower() in _NON_DATE_DEADLINES:
+    if not isinstance(iso_str, str) or len(iso_str) < 10:
         return None
     try:
-        d = datetime.strptime(s[:10], '%Y-%m-%d')
+        d = datetime.strptime(iso_str[:10], '%Y-%m-%d')
     except ValueError:
         return None
-
     today = now or datetime.now()
-    # Roll the annual deadline forward to the next occurrence on/after today.
     while d.date() < today.date():
         try:
             d = d.replace(year=d.year + 1)
@@ -828,6 +815,35 @@ def _normalize_scholarship_deadline(deadline_str, now=None):
             # Feb 29 in a non-leap target year → fall back to Feb 28.
             d = d.replace(month=2, day=28, year=d.year + 1)
     return d.strftime('%Y-%m-%d')
+
+
+def _normalize_scholarship_deadline(deadline_str, now=None):
+    """Normalize a free-text KB scholarship deadline into an upcoming ISO date.
+
+    Free-text / unparseable / "automatic" values return None (the caller drops
+    the task rather than showing a bogus or NaN date); a parseable date is
+    rolled forward. Fallback for records that predate structured deadline_date
+    (Phase-2 schools) — see #191.
+    """
+    if not isinstance(deadline_str, str):
+        return None
+    s = deadline_str.strip()
+    if len(s) < 10 or s.lower() in _NON_DATE_DEADLINES:
+        return None
+    return _roll_forward_iso(s, now)
+
+
+def _scholarship_due_date(scholarship, now=None):
+    """Upcoming ISO due date for a KB scholarship, or None to drop it.
+
+    Prefers the structured `deadline_date` (#191): when the key is present we
+    trust it — a real ISO date rolls forward; an explicit null means "no fixed
+    date" so the task is dropped. Records that predate the field fall back to
+    parsing the free-text `deadline` so behavior never regresses.
+    """
+    if 'deadline_date' in scholarship:
+        return _roll_forward_iso(scholarship.get('deadline_date'), now)
+    return _normalize_scholarship_deadline(scholarship.get('deadline'), now)
 
 
 def generate_personalized_tasks(user_email):
@@ -937,11 +953,10 @@ def generate_personalized_tasks(user_email):
             # Add scholarship tasks for schools with separate applications
             for scholarship in scholarships:
                 if scholarship.get('application_method') and 'separate' in scholarship.get('application_method', '').lower():
-                    # Roll past annual deadlines forward; drop free-text/unparseable
-                    # ones so they don't render as "overdue" or "NaN days left" (#187).
-                    scholarship_deadline = _normalize_scholarship_deadline(
-                        scholarship.get('deadline'), current_date
-                    )
+                    # Prefer the structured deadline_date; roll past annual
+                    # deadlines forward; drop null/free-text/unparseable ones so
+                    # they don't render as "overdue" or "NaN days left" (#191, #187).
+                    scholarship_deadline = _scholarship_due_date(scholarship, current_date)
                     if scholarship_deadline:
                         tasks.append({
                             'task_id': f"scholarship_{uni_id}_{scholarship.get('name', 'general').lower().replace(' ', '_')}",
