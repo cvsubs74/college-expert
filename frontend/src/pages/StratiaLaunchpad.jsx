@@ -248,6 +248,28 @@ const StratiaLaunchpad = () => {
         setKbUpdates(prev => prev.filter(u => u.university_id !== universityId));
     };
 
+    // "Update Fit" on a card: recompute against the current KB cycle, then open
+    // the refreshed analysis. The replaced analysis is archived server-side.
+    const handleUpdateFit = async (university) => {
+        const universityId = university.university_id;
+        const result = await computeSingleFit(currentUser.email, universityId);
+        if (!result?.success) {
+            throw new Error(result?.error || 'Fit update failed');
+        }
+        const fresh = result.fit_analysis || {};
+        const current = collegeList.find(c => c.university_id === universityId) || university;
+        const refreshed = {
+            ...current,
+            fit_analysis: { ...current.fit_analysis, ...fresh, match_score: fresh.match_percentage ?? current.fit_analysis?.match_score }
+        };
+        setCollegeList(prev => prev.map(college =>
+            college.university_id === universityId ? refreshed : college
+        ));
+        setKbUpdates(prev => prev.filter(u => u.university_id !== universityId));
+        // Surface the freshly recomputed analysis.
+        setFitModalCollege(refreshed);
+    };
+
     // Handlers
     const handleViewAnalysis = (college) => {
         // Store scroll position before navigating
@@ -752,6 +774,7 @@ const StratiaLaunchpad = () => {
                                         onViewAnalysis={handleViewAnalysis}
                                         onOpenChat={handleOpenChat}
                                         onEssayHelp={handleEssayHelp}
+                                        onUpdateFit={handleUpdateFit}
                                         onMajorChange={handleMajorChange}
                                         canRemove={!isFreeTier}
                                         onRemove={handleRemoveCollege}

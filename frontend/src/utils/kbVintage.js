@@ -32,7 +32,10 @@ export function materialUpdates(kbUpdates) {
 
 /**
  * Chip state for a rendered fit:
- *   { tone: 'current'|'stale'|'unknown', label } or null (nothing to show).
+ *   { tone: 'current'|'stale'|'unknown', label, vintage } or null.
+ * `label` carries the "— update available" call-to-action; `vintage` is the
+ * bare data-cycle statement for surfaces that carry the CTA elsewhere (e.g.
+ * the Launchpad card, whose Fit Analysis button morphs into "Update Fit").
  * Vintage chips render even when nudges are suppressed — passive
  * transparency is the point (design §3e).
  */
@@ -41,13 +44,32 @@ export function vintageChip(fit, kbUpdate) {
   if (kbUpdate) {
     const fromLabel = cycleLabel(kbUpdate.fit_kb_year);
     if (!fromLabel) {
-      return { tone: 'unknown', label: 'Computed before data versioning — update available' };
+      const vintage = 'Computed before data versioning';
+      return { tone: 'unknown', label: `${vintage} — update available`, vintage };
     }
-    return { tone: 'stale', label: `${fromLabel} data — update available` };
+    const vintage = `${fromLabel} data`;
+    return { tone: 'stale', label: `${vintage} — update available`, vintage };
   }
   const label = cycleLabel(fitYear);
   if (!label) return null; // legacy fit, no staleness info — say nothing
-  return { tone: 'current', label: `Based on ${label} data` };
+  const vintage = `Based on ${label} data`;
+  return { tone: 'current', label: vintage, vintage };
+}
+
+/**
+ * True when a saved fit was computed against superseded KB data and a fresh
+ * recompute is available. Drives the "Update Fit" affordance on the card.
+ */
+export function fitUpdateAvailable(kbUpdate) {
+  return Boolean(kbUpdate);
+}
+
+/** "New 2026–27 admissions data available" tooltip line, or a generic fallback. */
+export function updateTooltip(kbUpdate) {
+  const cycle = cycleLabel(kbUpdate?.current_kb_year);
+  return cycle
+    ? `New ${cycle} admissions data available — refresh your fit analysis`
+    : 'New admissions data available — refresh your fit analysis';
 }
 
 /** One-line human summary of a kb_updates entry's changes (for cards). */

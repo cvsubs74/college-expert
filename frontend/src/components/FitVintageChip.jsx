@@ -11,9 +11,12 @@ const TONE_CLASSES = {
   unknown: 'bg-amber-50 text-amber-800 border-amber-300',
 };
 
-export default function FitVintageChip({ fit, kbUpdate, className = '' }) {
+export default function FitVintageChip({ fit, kbUpdate, vintageOnly = false, className = '' }) {
   const chip = vintageChip(fit, kbUpdate);
   if (!chip) return null;
+  // `vintageOnly` drops the "— update available" CTA for surfaces that carry
+  // the action elsewhere (the Launchpad card's "Update Fit" button).
+  const text = vintageOnly ? chip.vintage : chip.label;
   return (
     <span
       data-testid="fit-vintage-chip"
@@ -21,7 +24,7 @@ export default function FitVintageChip({ fit, kbUpdate, className = '' }) {
       className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium border whitespace-nowrap ${TONE_CLASSES[chip.tone]} ${className}`}
     >
       {chip.tone !== 'current' && <span aria-hidden="true">🗓️</span>}
-      {chip.label}
+      {text}
     </span>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ExclamationTriangleIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ExclamationTriangleIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import FitVintageChip from '../FitVintageChip';
+import { fitUpdateAvailable, updateTooltip } from '../../utils/kbVintage';
 
 /**
  * UniversityCard - Rich, interactive M3 card for university listings
@@ -21,6 +22,7 @@ const UniversityCard = ({
     onViewNotes,
     onOpenChat,
     onEssayHelp,
+    onUpdateFit,
     onRemove,
     onMajorChange,
     canRemove = false
@@ -28,6 +30,8 @@ const UniversityCard = ({
     const [isRemoving, setIsRemoving] = useState(false);
     const [showMajorConfirm, setShowMajorConfirm] = useState(false);
     const [pendingMajor, setPendingMajor] = useState(null);
+    const [isUpdatingFit, setIsUpdatingFit] = useState(false);
+    const [updateFailed, setUpdateFailed] = useState(false);
 
     const {
         university_name,
@@ -66,6 +70,30 @@ const UniversityCard = ({
     const cancelMajorChange = () => {
         setShowMajorConfirm(false);
         setPendingMajor(null);
+    };
+
+    // The saved fit was computed on superseded KB data → the primary button
+    // morphs from "Fit Analysis" into "Update Fit" (design: signal lives on
+    // the button itself, not just a passive chip).
+    const updateAvailable = fitUpdateAvailable(kb_update);
+
+    const handleFitClick = async () => {
+        if (!updateAvailable) {
+            onViewAnalysis?.(university);
+            return;
+        }
+        if (isUpdatingFit) return;
+        setUpdateFailed(false);
+        setIsUpdatingFit(true);
+        try {
+            // onUpdateFit recomputes the fit and opens the refreshed analysis;
+            // on success this card unmounts, so we only reset state on failure.
+            await onUpdateFit?.(university);
+        } catch (err) {
+            console.error('[UniversityCard] Fit update failed:', err);
+            setIsUpdatingFit(false);
+            setUpdateFailed(true);
+        }
     };
 
     // Use logo_url (from API) or image_url as fallback
@@ -141,8 +169,11 @@ const UniversityCard = ({
                                 {chipLabels[fit_category] || 'Target'}
                             </span>
 
-                            {/* Fit vintage — which cycle's data produced the fit */}
-                            <FitVintageChip fit={{ kb_data_year }} kbUpdate={kb_update} />
+                            {/* Fit vintage — which cycle's data produced the fit.
+                                vintageOnly: the "update available" CTA lives on
+                                the Fit Analysis button below, so the chip just
+                                states the data cycle here. */}
+                            <FitVintageChip fit={{ kb_data_year }} kbUpdate={kb_update} vintageOnly />
 
                             {/* Application Status Badge */}
                             {application_status && (
@@ -239,20 +270,40 @@ const UniversityCard = ({
                 <div className="mt-4 pt-4 border-t border-[#E0DED8] flex justify-between items-center">
                     {/* Action Buttons - Colored with Icons & Tooltips */}
                     <div className="flex items-center gap-2">
-                        {/* Fit Analysis Button */}
+                        {/* Fit Analysis Button — morphs to "Update Fit" (amber)
+                            when the saved fit predates the current KB cycle. */}
                         <div className="relative group/tooltip">
                             <button
-                                onClick={() => onViewAnalysis?.(university)}
-                                className="px-3 py-2 bg-[#4A7C59] text-white hover:bg-[#3D6B4A] rounded-lg transition-all shadow-sm flex items-center gap-2"
+                                onClick={handleFitClick}
+                                disabled={isUpdatingFit}
+                                aria-label={updateAvailable ? 'Update fit analysis with new data' : 'View fit analysis'}
+                                className={`px-3 py-2 text-white rounded-lg transition-all shadow-sm flex items-center gap-2 disabled:opacity-80 disabled:cursor-wait ${updateAvailable
+                                    ? 'bg-amber-500 hover:bg-amber-600'
+                                    : 'bg-[#4A7C59] hover:bg-[#3D6B4A]'}`}
                             >
-                                <ChartBarIcon className="h-5 w-5" />
-                                <span className="text-sm font-medium">Fit Analysis</span>
+                                {isUpdatingFit ? (
+                                    <ArrowPathIcon className="h-5 w-5 animate-spin" />
+                                ) : updateAvailable ? (
+                                    <ArrowPathIcon className="h-5 w-5" />
+                                ) : (
+                                    <ChartBarIcon className="h-5 w-5" />
+                                )}
+                                <span className="text-sm font-medium">
+                                    {isUpdatingFit ? 'Updating…' : updateAvailable ? 'Update Fit' : 'Fit Analysis'}
+                                </span>
                             </button>
                             {/* Tooltip */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                                View detailed fit analysis and recommendations
+                                {updateAvailable
+                                    ? updateTooltip(kb_update)
+                                    : 'View detailed fit analysis and recommendations'}
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                             </div>
+                            {updateFailed && (
+                                <p className="absolute top-full left-0 mt-1 text-[11px] text-red-600 whitespace-nowrap" role="alert">
+                                    Update failed — try again.
+                                </p>
+                            )}
                         </div>
 
                         {/* Essay Help Button */}
