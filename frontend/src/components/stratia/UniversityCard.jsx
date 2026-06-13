@@ -296,16 +296,16 @@ const UniversityCard = ({
                                             onClick={handleUpdateClick}
                                             disabled={isUpdatingFit}
                                             aria-label="Update fit analysis with new data"
-                                            className="h-full px-2.5 py-2 bg-amber-500 text-white hover:bg-amber-600 rounded-r-lg border-l border-amber-300/60 transition-all flex items-center gap-1.5 disabled:cursor-wait"
+                                            className="h-full px-2.5 py-2 bg-[#1A4D2E] text-white hover:bg-[#143D24] rounded-r-lg border-l border-white/20 transition-all flex items-center gap-1.5 disabled:cursor-wait"
                                         >
                                             <ArrowPathIcon className={`h-5 w-5 ${isUpdatingFit ? 'animate-spin' : ''}`} />
                                             {isUpdatingFit && <span className="text-sm font-medium">Updating…</span>}
                                         </button>
-                                        {/* Pulsing "update available" dot */}
+                                        {/* Pulsing terracotta "update available" dot */}
                                         {!isUpdatingFit && (
                                             <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5" aria-hidden="true">
-                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500 border border-white"></span>
+                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C05838] opacity-75"></span>
+                                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C05838] border border-white"></span>
                                             </span>
                                         )}
                                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/update:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
