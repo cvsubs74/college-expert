@@ -5,6 +5,8 @@ import {
   materialUpdates,
   vintageChip,
   describeChange,
+  fitUpdateAvailable,
+  updateTooltip,
 } from '../utils/kbVintage';
 
 describe('cycleLabel', () => {
@@ -51,7 +53,7 @@ describe('materialUpdates (banner gating)', () => {
 describe('vintageChip', () => {
   it('current fit → neutral chip with cycle label', () => {
     const chip = vintageChip({ kb_data_year: 2026 }, null);
-    expect(chip).toEqual({ tone: 'current', label: 'Based on 2026–27 data' });
+    expect(chip).toEqual({ tone: 'current', label: 'Based on 2026–27 data', vintage: 'Based on 2026–27 data' });
   });
 
   it('stale fit → amber update-available chip', () => {
@@ -61,6 +63,7 @@ describe('vintageChip', () => {
     );
     expect(chip.tone).toBe('stale');
     expect(chip.label).toBe('2025–26 data — update available');
+    expect(chip.vintage).toBe('2025–26 data');
   });
 
   it('suppressed entries still get a chip (passive transparency)', () => {
@@ -79,6 +82,23 @@ describe('vintageChip', () => {
   it('legacy fit with no staleness info → silent (no clutter)', () => {
     expect(vintageChip({}, null)).toBeNull();
     expect(vintageChip(null, null)).toBeNull();
+  });
+});
+
+describe('fitUpdateAvailable / updateTooltip', () => {
+  it('is true exactly when a kb_update is present', () => {
+    expect(fitUpdateAvailable({ fit_kb_year: 2025, current_kb_year: 2026 })).toBe(true);
+    expect(fitUpdateAvailable(null)).toBe(false);
+    expect(fitUpdateAvailable(undefined)).toBe(false);
+  });
+
+  it('builds a cycle-aware tooltip, with a generic fallback', () => {
+    expect(updateTooltip({ current_kb_year: 2026 })).toBe(
+      'New 2026–27 admissions data available — refresh your fit analysis'
+    );
+    expect(updateTooltip({})).toBe(
+      'New admissions data available — refresh your fit analysis'
+    );
   });
 });
 

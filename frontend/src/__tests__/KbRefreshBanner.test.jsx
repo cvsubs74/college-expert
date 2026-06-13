@@ -99,4 +99,18 @@ describe('FitVintageChip', () => {
     render(<FitVintageChip fit={{}} kbUpdate={null} />);
     expect(screen.queryByTestId('fit-vintage-chip')).toBeNull();
   });
+
+  it('vintageOnly drops the "update available" CTA (button carries it)', () => {
+    render(
+      <FitVintageChip
+        fit={{ kb_data_year: 2025 }}
+        kbUpdate={{ fit_kb_year: 2025, current_kb_year: 2026 }}
+        vintageOnly
+      />
+    );
+    const chip = screen.getByTestId('fit-vintage-chip');
+    expect(chip).toHaveAttribute('data-tone', 'stale');
+    expect(chip).toHaveTextContent('2025–26 data');
+    expect(chip).not.toHaveTextContent('update available');
+  });
 });
