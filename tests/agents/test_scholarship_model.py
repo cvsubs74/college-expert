@@ -2,6 +2,12 @@
 import sys
 from pathlib import Path
 
+import pytest
+
+# The collector model needs pydantic, which the lightweight CI backend-tests
+# image doesn't install. Skip there; this runs in the full dev venv.
+pytest.importorskip("pydantic")
+
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "agents" / "university_profile_collector"))
 
