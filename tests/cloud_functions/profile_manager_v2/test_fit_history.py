@@ -79,6 +79,43 @@ class TestSaveArchivesPriorFit:
         assert history == [{'history_key': '2025'}]
 
 
+class TestMatchFieldSync:
+    """#217 — a recompute emits only match_percentage, but the save is a
+    Firestore merge and legacy docs carry match_score. Without syncing, the
+    stale legacy match_score survives and shadows the fresh value on readers
+    that prefer it (FitAnalysisPage, essay copilot, fit chat)."""
+
+    def _saved(self, fit_data):
+        db = MagicMock()
+        db.get_college_fit.return_value = None  # skip archival branch
+        db.save_college_fit.return_value = True
+        with patch.object(fit_analysis, 'get_db', return_value=db):
+            fit_analysis.save_fit_analysis('s@test.com', 'duke', fit_data)
+        return db.save_college_fit.call_args.args[2]
+
+    def test_match_percentage_mirrored_into_match_score(self):
+        saved = self._saved({'fit_category': 'SUPER_REACH', 'match_percentage': 34})
+        assert saved['match_percentage'] == 34
+        assert saved['match_score'] == 34  # legacy field overwritten, not orphaned
+
+    def test_recompute_overwrites_a_stale_legacy_match_score(self):
+        # The exact deployed-repro shape: fresh percentage + leftover legacy score.
+        saved = self._saved({'fit_category': 'SUPER_REACH',
+                             'match_percentage': 34, 'match_score': 99})
+        assert saved['match_score'] == 34
+        assert saved['match_percentage'] == 34
+
+    def test_legacy_only_match_score_backfills_match_percentage(self):
+        saved = self._saved({'fit_category': 'REACH', 'match_score': 71})
+        assert saved['match_percentage'] == 71
+        assert saved['match_score'] == 71
+
+    def test_no_match_fields_left_untouched(self):
+        saved = self._saved({'fit_category': 'TARGET'})
+        assert 'match_score' not in saved
+        assert 'match_percentage' not in saved
+
+
 class TestMarkSuppressed:
     def _updates(self):
         return [{'university_id': 'northeastern', 'changes': []},

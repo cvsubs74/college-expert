@@ -42,6 +42,18 @@ def save_fit_analysis(user_id: str, university_id: str, fit_data: dict) -> dict:
         fit_data['computed_at'] = datetime.utcnow().isoformat()
         fit_data['university_id'] = university_id
 
+        # Keep the two match fields in lockstep. The LLM recompute emits only
+        # match_percentage, but legacy (ES-era) docs carry match_score, and the
+        # save is a Firestore merge — so without this an orphaned legacy
+        # match_score survives every recompute and shadows the fresh value on
+        # readers that prefer it (FitAnalysisPage, essay copilot, fit chat). #217
+        match = fit_data.get('match_percentage')
+        if match is None:
+            match = fit_data.get('match_score')
+        if match is not None:
+            fit_data['match_percentage'] = match
+            fit_data['match_score'] = match
+
         success = db.save_college_fit(user_id, university_id, fit_data)
         
         if success:

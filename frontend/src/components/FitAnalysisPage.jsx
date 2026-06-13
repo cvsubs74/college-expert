@@ -19,11 +19,12 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { checkCredits, deductCredit } from '../services/api';
 import FitInfographicView from './FitInfographicView';
+import FitUpdateBanner from './FitUpdateBanner';
 
 // ============================================================================
 // FIT ANALYSIS PAGE - Complete display of all fit analysis data
 // ============================================================================
-const FitAnalysisPage = ({ college, onBack }) => {
+const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null }) => {
     const { currentUser } = useAuth();
     const [activeTab, setActiveTab] = useState('snapshot'); // 'snapshot', 'scores', 'strategy', 'timeline', 'tips'
     // Removed infographicUrl state - using HTML template instead
@@ -132,12 +133,17 @@ const FitAnalysisPage = ({ college, onBack }) => {
                             {(fitAnalysis.fit_category || college.soft_fit_category || 'UNKNOWN').replace('_', ' ')}
                         </span>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-[#1A4D2E]">{fitAnalysis.match_score || fitAnalysis.match_percentage || 0}</div>
+                            <div className="text-3xl font-bold text-[#1A4D2E]">{fitAnalysis.match_percentage || fitAnalysis.match_score || 0}</div>
                             <div className="text-xs text-gray-500">Match Score</div>
                         </div>
                     </div>
                 </div>
             </div>
+            {/* Newer-data-available banner — view the current analysis, then
+                recompute in place with old→new cycle context. */}
+            {kbUpdate && onUpdateFit && (
+                <FitUpdateBanner kbUpdate={kbUpdate} onUpdate={() => onUpdateFit(college)} />
+            )}
             {/* Tab Navigation */}
             <div className="max-w-6xl mx-auto px-4 pt-6">
                 <div className="flex gap-1 p-1.5 bg-[#F5F5F0] rounded-2xl overflow-x-auto border border-gray-200">
@@ -173,7 +179,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                             title: `Your Fit Analysis: ${college.university_name}`,
                             subtitle: 'Personalized assessment based on your academic profile',
                             themeColor: (fitAnalysis.fit_category || 'TARGET').includes('REACH') ? 'orange' : 'emerald',
-                            matchScore: fitAnalysis.match_score || fitAnalysis.match_percentage || 0,
+                            matchScore: fitAnalysis.match_percentage || fitAnalysis.match_score || 0,
                             fitCategory: fitAnalysis.fit_category || 'TARGET',
                             explanation: fitAnalysis.explanation || '',
                             universityInfo: {

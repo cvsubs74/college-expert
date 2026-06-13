@@ -587,6 +587,8 @@ const StratiaLaunchpad = () => {
                 <FitAnalysisPage
                     college={fitModalCollege}
                     onBack={handleCloseFitModal}
+                    kbUpdate={kbUpdateFor(kbUpdates, fitModalCollege.university_id)}
+                    onUpdateFit={handleUpdateFit}
                 />
 
                 {/* Chat FAB */}
