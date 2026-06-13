@@ -132,7 +132,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                             {(fitAnalysis.fit_category || college.soft_fit_category || 'UNKNOWN').replace('_', ' ')}
                         </span>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-[#1A4D2E]">{fitAnalysis.match_score || fitAnalysis.match_percentage || 0}</div>
+                            <div className="text-3xl font-bold text-[#1A4D2E]">{fitAnalysis.match_percentage || fitAnalysis.match_score || 0}</div>
                             <div className="text-xs text-gray-500">Match Score</div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                             title: `Your Fit Analysis: ${college.university_name}`,
                             subtitle: 'Personalized assessment based on your academic profile',
                             themeColor: (fitAnalysis.fit_category || 'TARGET').includes('REACH') ? 'orange' : 'emerald',
-                            matchScore: fitAnalysis.match_score || fitAnalysis.match_percentage || 0,
+                            matchScore: fitAnalysis.match_percentage || fitAnalysis.match_score || 0,
                             fitCategory: fitAnalysis.fit_category || 'TARGET',
                             explanation: fitAnalysis.explanation || '',
                             universityInfo: {
