@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { listResearch, deleteResearch, getCollegeList } from '../services/api';
 import { kindsPresent, kindMeta } from '../utils/research';
 import ResearchCard from '../components/research/ResearchCard';
-import { BeakerIcon, ArrowPathIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import ResearchEditorModal from '../components/research/ResearchEditorModal';
+import { BeakerIcon, ArrowPathIcon, PlusIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 /**
  * Research Notebook — durable, structured research saved from Claude (via the
@@ -13,9 +15,12 @@ import { BeakerIcon, ArrowPathIcon, SparklesIcon } from '@heroicons/react/24/out
 export default function ResearchNotebook() {
   const { currentUser: user } = useAuth();
   const [notes, setNotes] = useState([]);
+  const [colleges, setColleges] = useState([]);
   const [collegeNames, setCollegeNames] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [activeKind, setActiveKind] = useState('all');
+  const [editorOpen, setEditorOpen] = useState(false);
+  const [editing, setEditing] = useState(null); // a note (edit) or null (create)
 
   const load = async () => {
     if (!user?.email) return;
@@ -26,8 +31,10 @@ export default function ResearchNotebook() {
         getCollegeList(user.email),
       ]);
       if (research?.success) setNotes(research.research || []);
+      const raw = list?.colleges || list?.college_list || [];
+      setColleges(raw);
       const names = {};
-      for (const c of (list?.colleges || list?.college_list || [])) {
+      for (const c of raw) {
         const id = c.university_id || c.id;
         if (id) names[id] = c.university_name || c.name || id;
       }
@@ -36,6 +43,9 @@ export default function ResearchNotebook() {
       setIsLoading(false);
     }
   };
+
+  const openNew = () => { setEditing(null); setEditorOpen(true); };
+  const openEdit = (note) => { setEditing(note); setEditorOpen(true); };
 
   useEffect(() => {
     load();
@@ -68,19 +78,30 @@ export default function ResearchNotebook() {
             Research Notebook
           </h1>
           <p className="mt-1 max-w-2xl text-sm text-gray-600">
-            Analyses you save from Claude land here — comparisons, timelines, essay angles,
-            scholarship plans and strategy — linked to your colleges, with the data cycle they
-            were based on so you know when they go stale.
+            Comparisons, timelines, essay angles, scholarship plans and strategy — linked to your
+            colleges, with the data cycle they were based on so you know when they go stale. Add
+            research yourself, or let a connected AI agent save it for you.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={load}
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
-        >
-          <ArrowPathIcon className="h-4 w-4" />
-          Refresh
-        </button>
+        <div className="flex shrink-0 items-center gap-2">
+          <button
+            type="button"
+            onClick={load}
+            aria-label="Refresh"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          >
+            <ArrowPathIcon className="h-4 w-4" />
+            Refresh
+          </button>
+          <button
+            type="button"
+            onClick={openNew}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#1A4D2E] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#2D6B45]"
+          >
+            <PlusIcon className="h-4 w-4" />
+            New research
+          </button>
+        </div>
       </div>
 
       {!isLoading && notes.length > 0 && availableKinds.length > 1 && (
@@ -100,7 +121,7 @@ export default function ResearchNotebook() {
       {isLoading ? (
         <div className="mt-10 text-center text-gray-500">Loading your research…</div>
       ) : notes.length === 0 ? (
-        <EmptyState />
+        <EmptyState onNew={openNew} />
       ) : (
         <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
           {visible.map((note) => (
@@ -109,10 +130,20 @@ export default function ResearchNotebook() {
               note={note}
               collegeNames={collegeNames}
               onDelete={handleDelete}
+              onEdit={openEdit}
             />
           ))}
         </div>
       )}
+
+      <ResearchEditorModal
+        userEmail={user?.email}
+        isOpen={editorOpen}
+        onClose={() => setEditorOpen(false)}
+        onSaved={load}
+        colleges={colleges}
+        existing={editing}
+      />
     </div>
   );
 }
@@ -135,7 +166,7 @@ function FilterChip({ active, onClick, label }) {
   );
 }
 
-function EmptyState() {
+function EmptyState({ onNew }) {
   return (
     <div
       data-testid="research-empty"
@@ -144,10 +175,18 @@ function EmptyState() {
       <SparklesIcon className="mx-auto h-8 w-8 text-indigo-400" />
       <h2 className="mt-2 text-lg font-semibold text-gray-900">No research saved yet</h2>
       <p className="mx-auto mt-1 max-w-md text-sm text-gray-600">
-        Connect the <span className="font-medium">Stratia Admissions</span> connector in Claude,
-        then ask Claude to analyze your colleges. When it produces something useful, tell it to
-        “save this to my Stratia notebook” — it’ll appear here, linked to your schools.
+        Write up a comparison, timeline or strategy yourself — or{' '}
+        <Link to="/connect" className="font-medium text-indigo-600 hover:text-indigo-800">connect an AI agent</Link>{' '}
+        (Claude, ChatGPT and more) and have it save research here, linked to your colleges.
       </p>
+      <button
+        type="button"
+        onClick={onNew}
+        className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[#1A4D2E] px-4 py-2 text-sm font-medium text-white hover:bg-[#2D6B45]"
+      >
+        <PlusIcon className="h-4 w-4" />
+        New research
+      </button>
     </div>
   );
 }

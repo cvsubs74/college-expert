@@ -2086,6 +2086,36 @@ export const deleteResearch = async (userEmail, researchId) => {
 };
 
 /**
+ * Update fields of an existing research note (partial — only provided fields change).
+ * @param {string} userEmail
+ * @param {string} researchId
+ * @param {{title?: string, summary?: string, bodyMarkdown?: string, kind?: string,
+ *   universityIds?: string[], tags?: string[]}} patch
+ */
+export const updateResearch = async (userEmail, researchId, patch = {}) => {
+  if (!userEmail || !researchId) {
+    return { success: false, error: 'user_email and research_id are required' };
+  }
+  try {
+    const body = { user_email: userEmail, research_id: researchId };
+    if (patch.title !== undefined) body.title = patch.title;
+    if (patch.summary !== undefined) body.summary = patch.summary;
+    if (patch.bodyMarkdown !== undefined) body.body_markdown = patch.bodyMarkdown;
+    if (patch.kind !== undefined) body.kind = patch.kind;
+    if (patch.universityIds !== undefined) body.university_ids = patch.universityIds;
+    if (patch.tags !== undefined) body.tags = patch.tags;
+    const response = await axios.post(`${getProfileManagerUrl()}/update-research`, body, {
+      timeout: 15000,
+      headers: { 'X-User-Email': userEmail },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error updating research:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
  * Create a user-authored task in the user's roadmap_tasks subcollection.
  * Stamps `created_by: 'user'` so future surfaces can distinguish manually
  * added tasks from template-translated ones. Uses the existing generic

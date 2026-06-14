@@ -8,6 +8,7 @@ import {
     RocketLaunchIcon,
     StarIcon,
     BeakerIcon,
+    CpuChipIcon,
     ArrowRightOnRectangleIcon,
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
@@ -31,6 +32,7 @@ const NAV_LINKS = [
     { path: '/launchpad', label: 'Launchpad', icon: RocketLaunchIcon, requiresAuth: true },
     { path: '/roadmap', label: 'Roadmap', icon: SparklesIcon, requiresAuth: true },
     { path: '/research', label: 'Research', icon: BeakerIcon, requiresAuth: true },
+    { path: '/connect', label: 'Agents', icon: CpuChipIcon, requiresAuth: true },
     { path: '/resources', label: 'Resources', icon: BookOpenIcon, requiresAuth: false },
 ];
 

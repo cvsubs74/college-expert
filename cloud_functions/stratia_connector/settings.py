@@ -92,7 +92,17 @@ class Settings:
         env = os.environ.get("ALLOWED_ORIGINS", "")
         if env:
             return [o.strip() for o in env.split(",") if o.strip()]
-        return sorted({f"https://{cls.public_host()}", "https://claude.ai"})
+        # Web MCP clients send their own web Origin header; with DNS-rebinding
+        # protection on, an un-allowed Origin is rejected before auth. Allow the
+        # supported web clients (Claude.ai, ChatGPT). CLI/IDE clients (Claude
+        # Code, Cursor, VS Code, Goose, Gemini CLI) send no Origin and are
+        # unaffected. Override via ALLOWED_ORIGINS to add more.
+        return sorted({
+            f"https://{cls.public_host()}",
+            "https://claude.ai",
+            "https://chatgpt.com",
+            "https://chat.openai.com",
+        })
 
     # The MCP resource (RFC 8707 audience) this connector binds tokens to.
     @classmethod

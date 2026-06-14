@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { TrashIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import { TrashIcon, ChevronDownIcon, ChevronUpIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
 import { kindMeta, researchProvenance } from '../../utils/research';
 
 /** `duke_university` → "Duke University" (fallback when no display name known). */
@@ -18,9 +18,9 @@ function prettyId(id) {
  * chips, an expandable Markdown body, and a provenance/staleness footer.
  *
  * @param {{ note: object, collegeNames?: Record<string,string>,
- *   onDelete?: (researchId: string) => void }} props
+ *   onDelete?: (researchId: string) => void, onEdit?: (note: object) => void }} props
  */
-export default function ResearchCard({ note, collegeNames = {}, onDelete }) {
+export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit }) {
   const [open, setOpen] = useState(false);
   const meta = kindMeta(note.kind);
   const prov = researchProvenance(note);
@@ -47,16 +47,28 @@ export default function ResearchCard({ note, collegeNames = {}, onDelete }) {
           </h3>
           {note.summary && <p className="mt-1 text-sm text-gray-600">{note.summary}</p>}
         </div>
-        {onDelete && (
-          <button
-            type="button"
-            aria-label="Delete research"
-            onClick={() => onDelete(note.research_id)}
-            className="shrink-0 rounded-md p-1.5 text-gray-400 hover:bg-red-50 hover:text-red-600"
-          >
-            <TrashIcon className="h-4 w-4" />
-          </button>
-        )}
+        <div className="flex shrink-0 items-center gap-1">
+          {onEdit && (
+            <button
+              type="button"
+              aria-label="Edit research"
+              onClick={() => onEdit(note)}
+              className="rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
+            >
+              <PencilSquareIcon className="h-4 w-4" />
+            </button>
+          )}
+          {onDelete && (
+            <button
+              type="button"
+              aria-label="Delete research"
+              onClick={() => onDelete(note.research_id)}
+              className="rounded-md p-1.5 text-gray-400 hover:bg-red-50 hover:text-red-600"
+            >
+              <TrashIcon className="h-4 w-4" />
+            </button>
+          )}
+        </div>
       </div>
 
       {colleges.length > 0 && (
