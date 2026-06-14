@@ -10,6 +10,10 @@ env.yaml
 **/env.yaml
 cloud_functions/knowledge_base_manager_ES/env.yaml
 cloud_functions/profile_manager_es/env.yaml
+# Exception: the Stratia connector's env.yaml is NON-secret (only public URLs,
+# the Google client ID, flags); the real secret is in Secret Manager. It is
+# tracked config the deploy reads via --env-vars-file. Keep it committed.
+!cloud_functions/stratia_connector/env.yaml
 # deploy.sh writes env.deploy.yaml with plaintext secrets during deploy; never commit it
 env.deploy.yaml
 **/env.deploy.yaml
