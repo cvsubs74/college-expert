@@ -25,9 +25,16 @@ class TestPkce:
 class TestStore:
     def test_client_round_trip(self):
         s = OAuthStore(use_firestore=False)
-        s.put_client("c1", {"client_id": "c1", "x": 1})
-        assert s.get_client("c1")["x"] == 1
+        s.put_client("c1", {"client_id": "c1", "x": 1}, ttl=60)
+        got = s.get_client("c1")
+        assert got["x"] == 1
+        assert "_exp" not in got  # internal field stripped (not in OAuth schema)
         assert s.get_client("missing") is None
+
+    def test_expired_client_pruned(self):
+        s = OAuthStore(use_firestore=False)
+        s.put_client("c1", {"client_id": "c1"}, ttl=-1)
+        assert s.get_client("c1") is None
 
     def test_state_is_one_time(self):
         s = OAuthStore(use_firestore=False)
@@ -57,7 +64,12 @@ class TestStore:
 
     def test_refresh_round_trip_and_delete(self):
         s = OAuthStore(use_firestore=False)
-        s.put_refresh("rt", {"email": "a@b.com", "client_id": "c1", "scopes": ["stratia"]})
+        s.put_refresh("rt", {"email": "a@b.com", "client_id": "c1", "scopes": ["stratia"]}, ttl=60)
         assert s.get_refresh("rt")["email"] == "a@b.com"
         s.delete_refresh("rt")
+        assert s.get_refresh("rt") is None
+
+    def test_expired_refresh_pruned(self):
+        s = OAuthStore(use_firestore=False)
+        s.put_refresh("rt", {"email": "a@b.com", "client_id": "c1", "scopes": []}, ttl=-1)
         assert s.get_refresh("rt") is None

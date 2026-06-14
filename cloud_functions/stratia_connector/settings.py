@@ -45,10 +45,17 @@ class Settings:
         e.strip().lower() for e in os.environ.get("ALLOWED_EMAILS", "").split(",") if e.strip()
     )
 
-    # Lifetimes (seconds).
-    CODE_TTL = int(os.environ.get("OAUTH_CODE_TTL", "300"))           # 5 min
+    # Kill switch: when false the MCP endpoint + OAuth discovery return 404,
+    # so the connector can be disabled without a redeploy (mirrors ACP's
+    # ACP_CONNECTOR_ENABLED). /health stays up for probes.
+    CONNECTOR_ENABLED = os.environ.get("CONNECTOR_ENABLED", "true").lower() == "true"
+
+    # Lifetimes (seconds). Everything is TTL'd — abandoned records self-expire.
+    CODE_TTL = int(os.environ.get("OAUTH_CODE_TTL", "300"))                 # 5 min
     ACCESS_TOKEN_TTL = int(os.environ.get("OAUTH_ACCESS_TOKEN_TTL", "3600"))   # 1 h
-    STATE_TTL = int(os.environ.get("OAUTH_STATE_TTL", "600"))         # 10 min
+    STATE_TTL = int(os.environ.get("OAUTH_STATE_TTL", "600"))              # 10 min
+    REFRESH_TOKEN_TTL = int(os.environ.get("OAUTH_REFRESH_TOKEN_TTL", str(30 * 24 * 3600)))  # 30 d
+    CLIENT_TTL = int(os.environ.get("OAUTH_CLIENT_TTL", str(90 * 24 * 3600)))  # 90 d
 
     # Persist OAuth state in Firestore (required on multi-instance Cloud Run).
     # Falls back to in-memory when false (local/dev/tests).
@@ -64,6 +71,18 @@ class Settings:
     @classmethod
     def email_allowed(cls, email: str) -> bool:
         return (not cls.ALLOWED_EMAILS) or (email or "").lower() in cls.ALLOWED_EMAILS
+
+    @classmethod
+    def resource_ok(cls, resource) -> bool:
+        """RFC 8707 audience check: a token request's `resource` must target
+        THIS connector. Compares scheme+host+port origin (path/trailing-slash
+        agnostic) so cross-server tokens can't be replayed here. Absent
+        resource passes (older clients omit it)."""
+        if not resource:
+            return True
+        from urllib.parse import urlsplit
+        want, got = urlsplit(cls.PUBLIC_BASE_URL), urlsplit(str(resource))
+        return (want.scheme, want.netloc) == (got.scheme, got.netloc)
 
 
 settings = Settings()

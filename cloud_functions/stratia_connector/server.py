@@ -173,5 +173,21 @@ async def health(_request: Request):
     return JSONResponse({"status": "ok", "service": "stratia-connector"})
 
 
-# ASGI app for uvicorn (Procfile: `web: uvicorn main:app ...`).
+# ASGI app for uvicorn (Procfile: `web: uvicorn server:app ...`).
 app = mcp.streamable_http_app()
+
+# Kill switch: when CONNECTOR_ENABLED is false, 404 everything except /health
+# (and forward lifespan/websocket scopes so the session manager still starts).
+# Lets the connector be disabled via env without a redeploy. See settings.py.
+if not settings.CONNECTOR_ENABLED:
+    from starlette.responses import PlainTextResponse
+
+    _inner = app
+
+    async def app(scope, receive, send):  # noqa: F811 - intentional ASGI wrapper
+        if scope.get("type") == "http" and scope.get("path") != "/health":
+            await PlainTextResponse("connector disabled", status_code=404)(scope, receive, send)
+            return
+        await _inner(scope, receive, send)
+
+    logger.warning("CONNECTOR_ENABLED=false — serving 404 for all routes except /health")

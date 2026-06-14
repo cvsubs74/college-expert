@@ -54,6 +54,57 @@ def test_verify_unknown_token_returns_none():
     assert asyncio.run(p.verify_token("nope")) is None
 
 
+def test_auth_code_is_single_use():
+    p = _provider()
+    p.store.put_code("mcp_x", {
+        "client_id": "c1", "redirect_uri": "https://claude.ai/cb",
+        "redirect_uri_provided_explicitly": True, "code_challenge": "chal",
+        "scopes": ["stratia"], "resource": None, "email": "stu@x.com",
+    }, ttl=60)
+    code = asyncio.run(p.load_authorization_code(_Client("c1"), "mcp_x"))
+    asyncio.run(p.exchange_authorization_code(_Client("c1"), code))  # first ok
+    import pytest
+    with pytest.raises(ValueError):
+        asyncio.run(p.exchange_authorization_code(_Client("c1"), code))  # replay rejected
+
+
+def test_audience_mismatch_rejected_at_exchange():
+    p = _provider()
+    p.store.put_code("mcp_y", {
+        "client_id": "c1", "redirect_uri": "https://claude.ai/cb",
+        "redirect_uri_provided_explicitly": True, "code_challenge": "chal",
+        "scopes": ["stratia"], "resource": "https://evil.example.com/mcp",
+        "email": "stu@x.com",
+    }, ttl=60)
+    code = asyncio.run(p.load_authorization_code(_Client("c1"), "mcp_y"))
+    import pytest
+    with pytest.raises(ValueError):
+        asyncio.run(p.exchange_authorization_code(_Client("c1"), code))
+
+
+def test_google_login_requires_verified_email(monkeypatch):
+    import pytest
+    p = _provider()
+    p.store.put_state("st1", {
+        "client_id": "c1", "redirect_uri": "https://claude.ai/cb",
+        "redirect_uri_provided_explicitly": True, "code_challenge": "chal",
+        "scopes": ["stratia"], "client_state": "abc", "resource": None,
+    }, ttl=60)
+
+    import auth_provider as ap
+
+    class _Tok:
+        def raise_for_status(self): pass
+        def json(self): return {"id_token": "fake"}
+
+    monkeypatch.setattr(ap.requests, "post", lambda *a, **k: _Tok())
+    # Google returns an UNVERIFIED email → must be rejected.
+    monkeypatch.setattr(ap.google_id_token, "verify_oauth2_token",
+                       lambda *a, **k: {"email": "stu@x.com", "email_verified": False})
+    with pytest.raises(ValueError):
+        p.complete_google_login("g_code", "st1")
+
+
 class _Client:
     def __init__(self, cid):
         self.client_id = cid

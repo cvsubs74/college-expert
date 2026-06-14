@@ -47,7 +47,8 @@ class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
         return OAuthClientInformationFull.model_validate(rec) if rec else None
 
     async def register_client(self, client_info: OAuthClientInformationFull):
-        self.store.put_client(client_info.client_id, client_info.model_dump(mode="json"))
+        self.store.put_client(client_info.client_id, client_info.model_dump(mode="json"),
+                             ttl=settings.CLIENT_TTL)
 
     # -- Authorization: redirect the user to Google ------------------------
     async def authorize(self, client: OAuthClientInformationFull, params: AuthorizationParams) -> str:
@@ -138,6 +139,10 @@ class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
         if not rec:
             raise ValueError("authorization code expired")
         self.store.delete_code(authorization_code.code)  # one-time use
+        # RFC 8707 audience binding: refuse to mint a token whose requested
+        # resource targets a different server (confused-deputy protection).
+        if not settings.resource_ok(rec.get("resource")):
+            raise ValueError("resource/audience mismatch")
         return self._issue_tokens(rec["client_id"], rec["scopes"], rec["email"])
 
     # -- Refresh -----------------------------------------------------------
@@ -177,7 +182,8 @@ class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
         refresh = pkce.new_token("rt_")
         self.store.put_access(access, {"client_id": client_id, "scopes": scopes, "email": email},
                              ttl=settings.ACCESS_TOKEN_TTL)
-        self.store.put_refresh(refresh, {"client_id": client_id, "scopes": scopes, "email": email})
+        self.store.put_refresh(refresh, {"client_id": client_id, "scopes": scopes, "email": email},
+                              ttl=settings.REFRESH_TOKEN_TTL)
         return OAuthToken(access_token=access, token_type="Bearer",
                          expires_in=settings.ACCESS_TOKEN_TTL, scope=" ".join(scopes),
                          refresh_token=refresh)

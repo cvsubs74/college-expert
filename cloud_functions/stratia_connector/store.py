@@ -60,11 +60,18 @@ class OAuthStore:
         self._b = _FirestoreBackend(project) if use_firestore else _MemoryBackend()
 
     # -- clients (Dynamic Client Registration) ------------------------------
-    def put_client(self, client_id: str, info: dict):
-        self._b.put("client", client_id, info)
+    def put_client(self, client_id: str, info: dict, ttl: int):
+        self._b.put("client", client_id, {**info, "_exp": time.time() + ttl})
 
     def get_client(self, client_id: str) -> Optional[dict]:
-        return self._b.get("client", client_id)
+        rec = self._b.get("client", client_id)
+        if rec is None:
+            return None
+        if rec.get("_exp", 0) < time.time():
+            self._b.delete("client", client_id)
+            return None
+        rec.pop("_exp", None)  # not part of the OAuthClientInformationFull schema
+        return rec
 
     # -- in-flight login state (our state → context for the Google round-trip)
     def put_state(self, state: str, ctx: dict, ttl: int):
@@ -108,12 +115,18 @@ class OAuthStore:
     def delete_access(self, token: str):
         self._b.delete("access", token)
 
-    # -- refresh tokens (long-lived; rotated on use) ------------------------
-    def put_refresh(self, token: str, ctx: dict):
-        self._b.put("refresh", token, dict(ctx))
+    # -- refresh tokens (long-lived; rotated on use; TTL'd) -----------------
+    def put_refresh(self, token: str, ctx: dict, ttl: int):
+        self._b.put("refresh", token, {**ctx, "_exp": time.time() + ttl})
 
     def get_refresh(self, token: str) -> Optional[dict]:
-        return self._b.get("refresh", token)
+        rec = self._b.get("refresh", token)
+        if rec is None:
+            return None
+        if rec.get("_exp", 0) < time.time():
+            self._b.delete("refresh", token)
+            return None
+        return rec
 
     def delete_refresh(self, token: str):
         self._b.delete("refresh", token)
