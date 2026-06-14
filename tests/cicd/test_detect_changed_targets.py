@@ -51,6 +51,12 @@ class TestTargetsForFiles:
         ])
         assert out == ["frontend", "profile-v2"]
 
+    def test_stratia_connector_change_maps_to_target(self):
+        import detect_changed_targets as d
+        assert d.targets_for_files([
+            "cloud_functions/stratia_connector/main.py",
+        ]) == ["stratia-connector"]
+
     def test_docs_only_change_emits_no_targets(self):
         import detect_changed_targets as d
         assert d.targets_for_files([

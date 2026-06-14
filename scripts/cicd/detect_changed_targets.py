@@ -50,6 +50,7 @@ PATH_TARGET_MAP: list[tuple[str, str]] = [
     ("cloud_functions/profile_manager_v2/",                       "profile-v2"),
     ("cloud_functions/payment_manager_v2/",                       "payment-v2"),
     ("cloud_functions/counselor_agent/",                          "counselor-agent"),
+    ("cloud_functions/stratia_connector/",                        "stratia-connector"),
     ("cloud_functions/contact_form/",                             "contact"),
     ("cloud_functions/knowledge_base_manager_universities_v2/",   "knowledge-universities-v2"),
     # NOTE: order matters here — the v2 path above is checked first so the

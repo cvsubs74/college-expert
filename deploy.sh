@@ -49,6 +49,7 @@ PAYMENT_MANAGER_FUNCTION="payment-manager"
 PAYMENT_MANAGER_V2_FUNCTION="payment-manager-v2"
 UNIVERSITY_COLLECTOR_SERVICE_NAME="university-profile-collector"
 COUNSELOR_AGENT_FUNCTION="counselor-agent"
+STRATIA_CONNECTOR_SERVICE_NAME="stratia-connector"
 FRONTEND_SITE_NAME="college-counselor"
 
 # Parse command line arguments
@@ -1165,8 +1166,46 @@ EOF
 
     COUNSELOR_AGENT_URL=$(gcloud functions describe $COUNSELOR_AGENT_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
     echo -e "${GREEN}✓ Counselor Agent deployed: ${COUNSELOR_AGENT_URL}${NC}"
-    
+
     rm -f env.deploy.yaml
+    cd ../..
+}
+
+deploy_stratia_connector() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Stratia Connector (remote MCP server, Cloud Run)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+
+    cd cloud_functions/stratia_connector
+
+    # This service is an ASGI app (FastMCP streamable-http via uvicorn), so it
+    # deploys to Cloud Run from source (buildpacks read the Procfile) rather
+    # than as a functions-framework Gen2 function. Non-secret config comes from
+    # env.yaml; the Google OAuth client secret comes from Secret Manager.
+    #
+    # One-time secret provisioning (see README):
+    #   gcloud secrets create stratia-google-oauth-secret --replication-policy=automatic
+    #   printf '%s' "<client-secret>" | gcloud secrets versions add stratia-google-oauth-secret --data-file=-
+    gcloud run deploy $STRATIA_CONNECTOR_SERVICE_NAME \
+        --source=. \
+        --region=$REGION \
+        --project=$PROJECT_ID \
+        --allow-unauthenticated \
+        --env-vars-file=env.yaml \
+        --set-secrets=GOOGLE_CLIENT_SECRET=stratia-google-oauth-secret:latest \
+        --timeout=300s \
+        --memory=512Mi \
+        --min-instances=0 \
+        --max-instances=5
+
+    STRATIA_CONNECTOR_URL=$(gcloud run services describe $STRATIA_CONNECTOR_SERVICE_NAME \
+        --region=$REGION --project=$PROJECT_ID --format='value(status.url)')
+    echo -e "${GREEN}✓ Stratia Connector deployed: ${STRATIA_CONNECTOR_URL}${NC}"
+    echo -e "${YELLOW}  MCP endpoint (add in Claude): ${STRATIA_CONNECTOR_URL}/mcp${NC}"
+    echo -e "${YELLOW}  If PUBLIC_BASE_URL in env.yaml != ${STRATIA_CONNECTOR_URL}, update it + the${NC}"
+    echo -e "${YELLOW}  Google OAuth client's redirect URI (${STRATIA_CONNECTOR_URL}/auth/google/callback), then redeploy.${NC}"
+
     cd ../..
 }
 
@@ -1356,6 +1395,9 @@ case "$DEPLOY_TARGET" in
         ;;
     "counselor-agent")
         deploy_counselor_agent
+        ;;
+    "stratia-connector")
+        deploy_stratia_connector
         ;;
     "sourcery-frontend")
         deploy_sourcery_frontend
