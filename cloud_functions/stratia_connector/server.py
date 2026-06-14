@@ -33,11 +33,13 @@ provider = GoogleOAuthProvider(store)
 mcp = FastMCP(
     "Stratia Admissions",
     instructions=(
-        "Access the signed-in student's Stratia Admissions data: their college "
-        "list, college-fit analyses, upcoming application/scholarship deadlines, "
-        "and academic profile. You can also search the university knowledge base "
-        "and make safe changes (add/remove a college, recompute a fit, update a "
-        "profile field). All per-student data is scoped to the authenticated user."
+        "Access the signed-in student's Stratia Admissions data: college list, "
+        "complete college-fit analyses (scores, gap analysis, strategy, timeline, "
+        "scholarships, essay angles), fit history, the full university knowledge "
+        "base, the student's academic profile, roadmap tasks, essays, financial-aid "
+        "packages, scholarship tracker, and credit balance. You can also make safe "
+        "changes (add/remove a college, recompute a fit, update a profile field). "
+        "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
     json_response=True,
@@ -103,8 +105,12 @@ def search_universities(query: str, limit: int = 10,
 
 @mcp.tool(annotations=ToolAnnotations(title="Get university details", readOnlyHint=True, openWorldHint=True))
 def get_university(university_id: str) -> dict:
-    """Full Stratia knowledge-base profile for one university by id:
-    location, acceptance rate, application deadlines, and scholarships."""
+    """Full Stratia knowledge-base profile for one university: identity + every
+    section — admissions data (acceptance/test policy, longitudinal trends,
+    admitted-student profile), academic structure & majors, application process
+    & deadlines, application strategy, financials & cost of attendance,
+    scholarships, credit policies, student insights, outcomes, strategic
+    profile."""
     return sc.get_university(university_id)
 
 
@@ -117,9 +123,19 @@ def get_college_list() -> list:
 
 @mcp.tool(annotations=ToolAnnotations(title="Get fit analysis", readOnlyHint=True, openWorldHint=True))
 def get_fit_analysis(university_id: str) -> dict:
-    """The student's college-fit analysis for one university: fit category,
-    match percentage, the KB data year it used, explanation, recommendations."""
+    """The student's COMPLETE college-fit analysis for one university — every
+    detail the app shows across its tabs: fit category & match %, scored factors,
+    gap analysis, full explanation, prioritized recommendations, test strategy,
+    major strategy, essay angles, application timeline, scholarship matches,
+    demonstrated-interest tips and red flags, plus KB-data provenance."""
     return sc.get_fit_analysis(_email(), university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get fit history", readOnlyHint=True, openWorldHint=True))
+def get_fit_history(university_id: str) -> dict:
+    """Prior-cycle fit analyses for one university — how the student's fit
+    category and match percentage have evolved across admission cycles."""
+    return sc.get_fit_history(_email(), university_id)
 
 
 @mcp.tool(annotations=ToolAnnotations(title="Get upcoming deadlines", readOnlyHint=True, openWorldHint=True))
@@ -131,9 +147,53 @@ def get_deadlines() -> list:
 
 @mcp.tool(annotations=ToolAnnotations(title="Get my profile", readOnlyHint=True, openWorldHint=True))
 def get_profile() -> dict:
-    """A summary of the student's academic profile (intended major, grade,
-    GPA, test scores, graduation year, activities)."""
+    """The student's FULL academic profile: personal info, intended major,
+    GPA & academics, test scores, course history (with grades), AP/IB scores,
+    extracurriculars & achievements, leadership roles, special programs, awards,
+    and work experience."""
     return sc.get_profile(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get my roadmap tasks", readOnlyHint=True, openWorldHint=True))
+def get_roadmap(status: str | None = None, university_id: str | None = None) -> dict:
+    """The student's roadmap tasks (what to do next): titles, due dates, status,
+    and the university each relates to. Optionally filter by status or university."""
+    return sc.get_roadmap(_email(), status, university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get my essays", readOnlyHint=True, openWorldHint=True))
+def get_essays(university_id: str | None = None) -> dict:
+    """The student's essay tracker: prompts, word limits, status, word counts,
+    and latest drafts. Optionally scope to one university."""
+    return sc.get_essays(_email(), university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get financial-aid packages", readOnlyHint=True, openWorldHint=True))
+def get_aid_packages() -> dict:
+    """The student's saved financial-aid packages per university: cost of
+    attendance, grants/scholarships, loans, work-study, and net cost."""
+    return sc.get_aid_packages(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get my scholarship tracker", readOnlyHint=True, openWorldHint=True))
+def get_scholarships() -> dict:
+    """The student's tracked scholarships: name, amount, deadline, eligibility
+    match, and status."""
+    return sc.get_scholarships(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get my credit balance", readOnlyHint=True, openWorldHint=True))
+def get_credits() -> dict:
+    """The student's Stratia credit balance and subscription tier. (recompute_fit
+    spends 1 credit.)"""
+    return sc.get_credits(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Check for stale fits", readOnlyHint=True, openWorldHint=True))
+def check_fit_recomputation() -> dict:
+    """Which saved fits are stale (profile changes or newer KB data) and worth
+    recomputing — so you know when spending a credit on recompute_fit pays off."""
+    return sc.check_fit_recomputation(_email())
 
 
 # ---------------------------------------------------------------------------

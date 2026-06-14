@@ -23,9 +23,12 @@ import server  # noqa: E402
 from starlette.testclient import TestClient  # noqa: E402
 
 EXPECTED_TOOLS = {
+    # reads
     "search_universities", "get_university", "get_college_list", "get_fit_analysis",
-    "get_deadlines", "get_profile", "add_college", "remove_college",
-    "recompute_fit", "update_profile_field",
+    "get_fit_history", "get_deadlines", "get_profile", "get_roadmap", "get_essays",
+    "get_aid_packages", "get_scholarships", "get_credits", "check_fit_recomputation",
+    # safe writes
+    "add_college", "remove_college", "recompute_fit", "update_profile_field",
 }
 
 
@@ -40,6 +43,7 @@ def client():
 def test_all_tools_registered():
     names = {t.name for t in asyncio.run(server.mcp.list_tools())}
     assert EXPECTED_TOOLS <= names
+    assert len(names) >= 17
 
 
 def test_tools_have_safety_annotations():
