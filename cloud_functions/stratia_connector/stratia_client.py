@@ -316,3 +316,82 @@ def update_profile_field(email, field_path, value, operation="set"):
     if not data.get("success"):
         raise StratiaError(data.get("error") or "update_profile_field failed")
     return {"updated": field_path}
+
+
+# ----------------------------------------------------------------------------
+# Research notebook — save Claude's analysis back into the app (and read it
+# back so a later session can build on it).
+# ----------------------------------------------------------------------------
+
+def save_research(email, title, body_markdown, kind="note", summary="",
+                  university_ids=None, tags=None, kb_year=None, research_id=None):
+    """Persist a research artifact to the student's Stratia notebook."""
+    body = {
+        "user_email": email, "title": title, "body_markdown": body_markdown,
+        "kind": kind, "summary": summary,
+        "university_ids": university_ids or [], "tags": tags or [],
+        "source": "claude_mcp", "model": "claude",
+    }
+    if kb_year is not None:
+        body["kb_year"] = kb_year
+    if research_id:
+        body["research_id"] = research_id
+    data = _post(_pm("save-research"), body, email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "save_research failed")
+    return {"saved": data.get("research_id"), "research": _prune(data.get("research") or {})}
+
+
+def list_research(email, kind=None, university_id=None):
+    """The student's saved research notes (newest first), id + metadata only —
+    use get_research for a note's full body."""
+    params = {"user_email": email}
+    if kind:
+        params["kind"] = kind
+    if university_id:
+        params["university_id"] = university_id
+    data = _get(_pm("get-research"), params)
+    out = []
+    for r in (data.get("research") or [])[:50]:
+        out.append({
+            "research_id": r.get("research_id"),
+            "title": r.get("title"),
+            "kind": r.get("kind"),
+            "summary": r.get("summary"),
+            "university_ids": r.get("university_ids"),
+            "tags": r.get("tags"),
+            "created_at": r.get("created_at"),
+        })
+    return {"research": out, "count": len(out)}
+
+
+def get_research(email, research_id):
+    """One research note in full (title, body, links, provenance)."""
+    data = _get(_pm("get-research"), {"user_email": email, "research_id": research_id})
+    r = data.get("research")
+    if not r:
+        raise StratiaError(f"research '{research_id}' not found")
+    return _prune(r, text_caps={"body_markdown": 12000})
+
+
+def update_research(email, research_id, title=None, body_markdown=None, kind=None,
+                    summary=None, university_ids=None, tags=None):
+    """Update fields of an existing research note (only provided fields change)."""
+    body = {"user_email": email, "research_id": research_id}
+    for key, val in (("title", title), ("body_markdown", body_markdown),
+                     ("kind", kind), ("summary", summary),
+                     ("university_ids", university_ids), ("tags", tags)):
+        if val is not None:
+            body[key] = val
+    data = _post(_pm("update-research"), body, email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "update_research failed")
+    return {"updated": research_id}
+
+
+def delete_research(email, research_id):
+    """Delete a research note from the student's notebook."""
+    data = _post(_pm("delete-research"), {"user_email": email, "research_id": research_id}, email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "delete_research failed")
+    return {"deleted": research_id}

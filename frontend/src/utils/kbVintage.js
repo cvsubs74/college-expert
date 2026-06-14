@@ -14,6 +14,16 @@ export function cycleLabel(year) {
   return `${y}–${String((y + 1) % 100).padStart(2, '0')}`;
 }
 
+/**
+ * The current admissions-cycle (KB data) year. The new cycle's data lands
+ * around August, so we roll forward then. Used to flag saved research/fits
+ * that were produced against a now-superseded cycle.
+ */
+export function currentCycleYear(now = new Date()) {
+  const y = now.getFullYear();
+  return now.getMonth() >= 7 ? y + 1 : y; // month 7 = August
+}
+
 /** The kb_updates entry for one university, or null. */
 export function kbUpdateFor(kbUpdates, universityId) {
   if (!Array.isArray(kbUpdates)) return null;
