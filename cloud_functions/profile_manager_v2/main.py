@@ -692,7 +692,6 @@ def profile_manager_v2_http_entry(request):
             
             db = get_db()
             import json
-            from datetime import datetime
             
             # Generate conversation ID if not provided (new conversation)
             if not conversation_id:
@@ -874,7 +873,6 @@ def profile_manager_v2_http_entry(request):
             
             db = get_db()
             import json
-            from datetime import datetime
             
             # Generate conversation ID if not provided
             if not conversation_id:
@@ -998,7 +996,6 @@ def profile_manager_v2_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'user_email and task_id required'}, 400)
             
             db = get_db()
-            from datetime import datetime
             completed_at = datetime.utcnow().isoformat() if status == 'completed' else None
             success = db.update_task_status(user_email, task_id, status, completed_at)
             return add_cors_headers({
