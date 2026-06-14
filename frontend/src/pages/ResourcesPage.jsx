@@ -6,6 +6,7 @@ import PaperCard from '../components/resources/PaperCard';
 import Navigation from '../components/Navigation';
 import MarketingHeader from '../components/MarketingHeader';
 import { useAuth } from '../context/AuthContext';
+import { useSidebar, sidebarContentPad } from '../context/SidebarContext';
 
 // /resources hub. Public-readable. Lists every whitepaper as a card.
 //
@@ -15,13 +16,14 @@ import { useAuth } from '../context/AuthContext';
 
 const ResourcesPage = () => {
     const { currentUser } = useAuth();
+    const { collapsed } = useSidebar();
 
     useEffect(() => {
         document.title = 'Resources — Stratia Admissions';
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#FDFCF7]">
+        <div className={`min-h-screen bg-[#FDFCF7] ${currentUser ? `${sidebarContentPad(collapsed)} transition-[padding] duration-300` : ''}`}>
             {/* Logged-out visitors get the marketing-style header so the
                 Landing → Resources transition stays continuous. Signed-in
                 users get the in-app Navigation so Resources feels part of

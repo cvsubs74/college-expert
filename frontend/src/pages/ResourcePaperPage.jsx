@@ -8,6 +8,7 @@ import PaperSection from '../components/resources/PaperSection';
 import Navigation from '../components/Navigation';
 import MarketingHeader from '../components/MarketingHeader';
 import { useAuth } from '../context/AuthContext';
+import { useSidebar, sidebarContentPad } from '../context/SidebarContext';
 
 // /resources/<slug> — long-form reading view for a single whitepaper.
 //
@@ -20,6 +21,7 @@ const ResourcePaperPage = () => {
     const { slug } = useParams();
     const paper = getPaperBySlug(slug);
     const { currentUser } = useAuth();
+    const { collapsed } = useSidebar();
 
     useEffect(() => {
         if (paper) {
@@ -55,7 +57,7 @@ const ResourcePaperPage = () => {
         papers.find((p) => p.slug !== paper.slug) || null;
 
     return (
-        <div className="min-h-screen bg-[#FDFCF7]">
+        <div className={`min-h-screen bg-[#FDFCF7] ${currentUser ? `${sidebarContentPad(collapsed)} transition-[padding] duration-300` : ''}`}>
             {/* Logged-out visitors get the marketing-style header so the
                 Landing → Resources → paper transition stays continuous.
                 Signed-in users get the in-app Navigation. */}

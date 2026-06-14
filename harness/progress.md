@@ -161,7 +161,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tests: frontend 256 (ResearchEditorModal, ConnectAgents, updated Notebook); backend/connector 1011 (allowed_origins). Build OK.
 - Shipped: PR #230 squash-merged (6e598e50). cloudbuild-main deployed stratia-connector-00013-bfd + frontend (bundle index-BqW5NnKD.js contains the hub + authoring). /research + /connect → 200.
 
-## 2026-06-14 — Fix: research mislabeled "From Claude" for all MCP clients (#233, PR #234, in review)
+## 2026-06-14 — Collapsible left sidebar navigation (#231, PR #232)
+- Operator ask: move the global nav to the left as a collapsible/expandable pane, referencing RegInsights /inbox. Stratia's nav was a sticky TOP bar — so "move to the left" was literal here.
+- New SidebarContext (collapsed state → localStorage; shared so content offsets beside the fixed rail). Navigation.jsx rewritten: desktop fixed left rail (240px expanded / 64px icon-rail with tooltips, chevron toggle, persisted); mobile off-canvas drawer from a slim sticky top bar (hamburger + backdrop). Logo to top; user/Upgrade/Sign-out (or Sign in/Try Stratia) in the footer; aria-current active route; single Primary nav landmark.
+- App.jsx: SidebarProvider around routes; AppLayout <main> offsets lg:pl-16/60. ResourcesPage + ResourcePaperPage offset when signed-in (shared Navigation); logged-out keeps MarketingHeader. Navigation.test.jsx rewritten for the sidebar.
+- Verify: npm run build OK; 259 frontend tests pass (38 files). PR #232 (Closes #231). Follow-up noted: mobile drawer needs Escape/focus-trap/scroll-lock (a11y).
+
+## 2026-06-14 — Fix: research mislabeled "From Claude" for all MCP clients (#233, PR #234)
 - Operator: research saved from a ChatGPT session showed "From Claude". Root cause in 3 layers all defaulting to Claude: connector hardcoded source=claude_mcp/model=claude on save_research; profile_manager defaulted missing source to claude_mcp; frontend mapped claude_mcp→"From Claude".
 - Server is stateless_http, so initialize clientInfo isn't available at tool-call — but the OAuth token carries client_id and each client's DCR client_name is stored. server._client_attribution() maps client_id→client_name→(source,model) for ChatGPT/Claude/Claude Code/Cursor/Windsurf/Cline/Goose/Gemini/VS Code; honest fallback keeps an unknown client's real name else neutral mcp/"an AI agent" (never Claude); logs unmapped names. save_research takes source/model; pm default claude_mcp→mcp; frontend SOURCE_LABELS map + fallback (legacy claude_mcp still "From Claude").
 - Tests: connector _client_attribution parametrized + save_research pass-through/neutral-default; frontend per-client labels + fallback. Full frontend 257, connector 34, pm research 7 — green. PR #234 (Closes #233).

@@ -26,6 +26,7 @@ import ResearchNotebook from './pages/ResearchNotebook';
 import ConnectAgents from './pages/ConnectAgents';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Navigation from './components/Navigation';
+import { SidebarProvider, useSidebar, sidebarContentPad } from './context/SidebarContext';
 import OnboardingModal from './components/OnboardingModal';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ApproachProvider } from './context/ApproachContext';
@@ -45,6 +46,7 @@ import './index.css';
 // Layout component for protected routes with onboarding
 function AppLayout() {
   const { currentUser } = useAuth();
+  const { collapsed } = useSidebar();
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [onboardingChecked, setOnboardingChecked] = useState(false);
 
@@ -130,8 +132,10 @@ function AppLayout() {
   return (
     <div className="min-h-screen bg-[#FDFCF7]">
       <Navigation />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Outlet />
+      <main className={`${sidebarContentPad(collapsed)} transition-[padding] duration-300`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Outlet />
+        </div>
       </main>
 
       {/* Onboarding Modal */}
@@ -153,6 +157,7 @@ function App() {
         <PaymentProvider>
           <ApproachProvider>
             <ToastProvider>
+              <SidebarProvider>
               <Routes>
                 {/* Public routes */}
                 <Route path="/" element={<LandingPage />} />
@@ -214,6 +219,7 @@ function App() {
                 </Route>
               </Routes>
               <UpgradeModal />
+              </SidebarProvider>
             </ToastProvider>
           </ApproachProvider>
         </PaymentProvider>
