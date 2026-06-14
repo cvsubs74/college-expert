@@ -249,6 +249,128 @@ def update_user_purchases(user_id, grants, purchase_details):
         return False
 
 
+def _as_dict(obj):
+    """Normalize a Stripe object to a plain nested dict.
+
+    stripe-python v12+ changed StripeObject so it is NO LONGER a dict and has no
+    .get() — calling obj.get('x') triggers __getattr__('get') → AttributeError('get').
+    All of our webhook/provisioning code is written against plain dicts (.get(),
+    subscripting), so every event payload and every stripe.*.retrieve() result
+    must pass through here first. No-op for real dicts (e.g. unit tests, and the
+    test-mode json.loads webhook branch)."""
+    if obj is None:
+        return {}
+    if isinstance(obj, dict):
+        return obj
+    fn = getattr(obj, '_to_dict_recursive', None)  # stable internal recursive serializer
+    if callable(fn):
+        try:
+            return fn()
+        except Exception:
+            pass
+    try:
+        return json.loads(str(obj))  # StripeObject.__str__ emits JSON — public fallback
+    except Exception:
+        try:
+            return dict(obj)
+        except Exception:
+            return {}
+
+
+def _subscription_period_end_iso(subscription):
+    """Current-period-end as an ISO string, or None. Newer Stripe API versions
+    moved current_period_end OFF the subscription and ONTO each line item, so
+    check both (top-level first, then the first item)."""
+    sub = _as_dict(subscription)
+    ts = sub.get('current_period_end')
+    if not ts:
+        item = (sub.get('items', {}).get('data') or [{}])[0]
+        ts = item.get('current_period_end')
+    if not ts:
+        return None
+    try:
+        return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+    except Exception:
+        return None
+
+
+def _resolve_customer_email(subscription=None, invoice=None):
+    """Best-effort email for the customer behind a sub/invoice (invoice carries
+    customer_email directly; otherwise retrieve the Customer)."""
+    subscription = _as_dict(subscription)  # StripeObject has no .get() in v12+
+    invoice = _as_dict(invoice)
+    if invoice.get('customer_email'):
+        return invoice['customer_email']
+    cust_id = subscription.get('customer') or invoice.get('customer')
+    try:
+        if cust_id:
+            return _as_dict(stripe.Customer.retrieve(cust_id)).get('email')
+    except Exception as e:
+        logger.error(f"Failed to retrieve customer {cust_id}: {e}")
+    return None
+
+
+def _stratia_subscription_grants(subscription):
+    """(grants, purchase_details, plan) for a Stratia recurring subscription,
+    or None. Plan is derived from the price's billing INTERVAL (year→Season
+    Pass, month→Monthly) so it's robust to price-ID changes across product
+    recreations. Gated to our own product (name starts with 'Stratia') so we
+    never provision another business's subscriptions even on a shared account."""
+    try:
+        subscription = _as_dict(subscription)
+        item = (subscription.get('items', {}).get('data') or [{}])[0]
+        price = item.get('price') or {}
+        interval = (price.get('recurring') or {}).get('interval')
+        if interval not in ('month', 'year'):
+            return None
+        product_id = price.get('product')
+        try:
+            pname = _as_dict(stripe.Product.retrieve(product_id)).get('name', '') if product_id else ''
+        except Exception:
+            pname = ''
+        if not pname.lower().startswith('stratia'):
+            logger.info(f"Skipping non-Stratia subscription product: {pname!r}")
+            return None
+        plan = 'annual' if interval == 'year' else 'monthly'
+        prod_key = 'subscription_annual' if plan == 'annual' else 'subscription_monthly'
+        credits = PRODUCTS[prod_key]['grants']['fit_analysis']
+        grants = {'access_full': True, 'ai_messages': -1, 'fit_analysis': credits}
+        details = {
+            'product_id': prod_key,
+            'product_name': PRODUCTS[prod_key]['name'],
+            'plan': plan,
+            'stripe_customer_id': subscription.get('customer'),
+            'stripe_subscription_id': subscription.get('id'),
+            'payment_status': 'paid',
+        }
+        period_end = _subscription_period_end_iso(subscription)
+        if period_end:
+            details['subscription_current_period_end'] = period_end
+        return grants, details, plan
+    except Exception as e:
+        logger.error(f"Failed to build grants from subscription: {e}")
+        return None
+
+
+def provision_subscription(subscription, source='webhook'):
+    """Grant/refresh a Stratia subscriber's plan + credits from a Stripe
+    Subscription, writing BOTH the purchases and credits docs (idempotent).
+    No-op for non-Stratia subs. This is what makes subscriptions created ANY
+    way (checkout, dashboard, migration) and renewals (incl. annual) sync to
+    the app — the central fix for 'charged but shows Free'."""
+    subscription = _as_dict(subscription)  # StripeObject has no .get() in v12+
+    built = _stratia_subscription_grants(subscription)
+    if not built:
+        return False
+    grants, details, plan = built
+    email = _resolve_customer_email(subscription=subscription)
+    if not email:
+        logger.warning(f"provision_subscription: no email for sub {subscription.get('id')}")
+        return False
+    logger.info(f"Provisioning Stratia {plan} subscription for {email} (source={source})")
+    return update_user_purchases(email, grants, details)
+
+
 def handle_create_checkout(request, user_id):
     """Create Stripe Checkout session"""
     try:
@@ -302,7 +424,7 @@ def handle_create_checkout(request, user_id):
                         logger.info(f"Attempting direct upgrade for {user_id} from {current_plan} to {target_plan}")
                         
                         # Get current subscription item
-                        sub = stripe.Subscription.retrieve(subscription_id)
+                        sub = _as_dict(stripe.Subscription.retrieve(subscription_id))
                         item_id = sub['items']['data'][0]['id']
                         new_price_id = STRIPE_PRICES[product_id]
                         
@@ -327,9 +449,7 @@ def handle_create_checkout(request, user_id):
                             'stripe_customer_id': customer_id,
                             'plan': product.get('interval', 'monthly'),
                             'payment_status': 'paid',
-                            'subscription_current_period_end': datetime.fromtimestamp(
-                                updated_sub.current_period_end, tz=timezone.utc
-                            ).isoformat()
+                            'subscription_current_period_end': _subscription_period_end_iso(updated_sub)
                         }
                         
                         update_success = update_user_purchases(user_id, upgraded_grants, purchase_details)
@@ -426,10 +546,16 @@ def handle_webhook(request):
     
     try:
         if STRIPE_WEBHOOK_SECRET:
-            event = stripe.Webhook.construct_event(payload, sig_header, STRIPE_WEBHOOK_SECRET)
+            # construct_event returns StripeObjects (no .get() in stripe v12+);
+            # normalize to plain dicts so every downstream handler can use .get().
+            event = _as_dict(stripe.Webhook.construct_event(payload, sig_header, STRIPE_WEBHOOK_SECRET))
+        elif stripe.api_key.startswith('sk_live_'):
+            # Never process unverified events against a live key.
+            logger.error("❌ STRIPE_WEBHOOK_SECRET missing on a LIVE key — refusing unsigned webhook")
+            return add_cors_headers({'error': 'Webhook signature secret not configured'}, 500)
         else:
             event = json.loads(payload)
-            logger.warning("⚠️  Webhook signature verification SKIPPED - SECURITY RISK in production!")
+            logger.warning("⚠️  Webhook signature verification SKIPPED (test mode only)")
         
         if event['type'] == 'checkout.session.completed':
             session = event['data']['object']
@@ -506,6 +632,7 @@ def handle_create_portal_session(request, user_id):
 def handle_successful_payment(session):
     """Process successful payment and grant access"""
     try:
+        session = _as_dict(session)  # defensive: StripeObject has no .get() in v12+
         user_id = session.get('client_reference_id')
         metadata = session.get('metadata', {})
         product_id = metadata.get('product_id')
@@ -548,10 +675,8 @@ def handle_successful_payment(session):
             purchase_details['plan'] = product.get('interval', 'monthly')
             if session.get('subscription'):
                 try:
-                    subscription = stripe.Subscription.retrieve(session['subscription'])
-                    purchase_details['subscription_current_period_end'] = datetime.fromtimestamp(
-                        subscription.current_period_end, tz=timezone.utc
-                    ).isoformat()
+                    subscription = _as_dict(stripe.Subscription.retrieve(session['subscription']))
+                    purchase_details['subscription_current_period_end'] = _subscription_period_end_iso(subscription)
                 except Exception as e:
                     logger.error(f"Error retrieving subscription details: {e}")
         
@@ -581,51 +706,51 @@ def handle_successful_payment(session):
 
 def handle_subscription_lifecycle_webhooks(event):
     """Process subscription lifecycle webhook events - uses Firestore"""
+    event = _as_dict(event)  # defensive: handler must not assume caller normalized
     event_type = event['type']
-    
+
     try:
         db = get_payment_db()
         
         if event_type == 'customer.subscription.created':
             subscription = event['data']['object']
-            customer_id = subscription.get('customer')
             subscription_id = subscription.get('id')
-            logger.info(f"Subscription created: {subscription_id} for customer: {customer_id}")
-            
+            logger.info(f"Subscription created: {subscription_id}, status={subscription.get('status')}")
+            # Provision on creation so subs made ANY way (dashboard, migration,
+            # or checkout) grant access — not just app-checkout subs.
+            if subscription.get('status') in ('active', 'trialing'):
+                provision_subscription(subscription, source='subscription.created')
+
         elif event_type == 'customer.subscription.updated':
             subscription = event['data']['object']
             customer_id = subscription.get('customer')
             subscription_id = subscription.get('id')
             cancel_at_period_end = subscription.get('cancel_at_period_end', False)
-            
-            logger.info(f"Subscription updated: {subscription_id}, cancel_at_period_end={cancel_at_period_end}")
-            
-            # Get user email from Stripe customer
+            status = subscription.get('status')
+            logger.info(f"Subscription updated: {subscription_id}, status={status}, cancel_at_period_end={cancel_at_period_end}")
+
             try:
-                customer = stripe.Customer.retrieve(customer_id)
-                user_email = customer.get('email')
-                
-                if user_email:
-                    purchases = db.get_purchases(user_email)
-                    if purchases and purchases.get('stripe_subscription_id') == subscription_id:
-                        purchases['subscription_cancel_at_period_end'] = cancel_at_period_end
-                        purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
-                        
-                        if subscription.get('current_period_end'):
-                            purchases['subscription_current_period_end'] = datetime.fromtimestamp(
-                                subscription.get('current_period_end'), timezone.utc
-                            ).isoformat()
-                        
-                        db.save_purchases(user_email, purchases)
-                        logger.info(f"Updated subscription for {user_email}: cancel_at_period_end={cancel_at_period_end}")
-                    else:
-                        logger.info(f"Ignoring subscription update for {user_email} (ID mismatch: likely other app)")
-                else:
+                user_email = _resolve_customer_email(subscription=subscription)
+                if not user_email:
                     logger.warning(f"No email found for customer: {customer_id}")
-                    
+                elif status in ('active', 'trialing'):
+                    purchases = db.get_purchases(user_email) or {}
+                    if not purchases.get('subscription_active'):
+                        # Self-heal: active in Stripe but app never provisioned it
+                        # (e.g. created outside checkout). Grant the plan now.
+                        provision_subscription(subscription, source='subscription.updated')
+                    else:
+                        # Already provisioned — keep status/period/cancel flags in
+                        # sync WITHOUT resetting credits (updates fire often).
+                        purchases['subscription_cancel_at_period_end'] = cancel_at_period_end
+                        period_end = _subscription_period_end_iso(subscription)
+                        if period_end:
+                            purchases['subscription_current_period_end'] = period_end
+                        db.save_purchases(user_email, purchases)
+                        logger.info(f"Synced subscription flags for {user_email}")
             except Exception as e:
                 logger.error(f"Error updating user for subscription {subscription_id}: {e}")
-            
+
         elif event_type == 'customer.subscription.deleted':
             subscription = event['data']['object']
             customer_id = subscription.get('customer')
@@ -634,9 +759,9 @@ def handle_subscription_lifecycle_webhooks(event):
             logger.info(f"Subscription deleted: {subscription_id}")
             
             try:
-                customer = stripe.Customer.retrieve(customer_id)
+                customer = _as_dict(stripe.Customer.retrieve(customer_id))
                 user_email = customer.get('email')
-                
+
                 if user_email:
                     purchases = db.get_purchases(user_email)
                     if purchases and purchases.get('stripe_subscription_id') == subscription_id:
@@ -673,105 +798,35 @@ def handle_subscription_lifecycle_webhooks(event):
             invoice = event['data']['object']
             subscription_id = invoice.get('subscription')
             billing_reason = invoice.get('billing_reason')  # 'subscription_cycle' for renewals
-            customer_id = invoice.get('customer')
-            
-            if subscription_id and billing_reason in ['subscription_cycle', 'subscription_update']:
-                # This is a renewal OR an immediate upgrade - reset/grant credits
-                logger.info(f"Subscription payment succeeded ({billing_reason}): {subscription_id}")
-                
+            if subscription_id and billing_reason in ['subscription_cycle', 'subscription_update', 'subscription_create']:
+                # Renewal / upgrade / first cycle — (re)grant the plan's credits.
+                # provision_subscription handles BOTH monthly AND annual (the old
+                # annual branch wrote nothing — the indentation bug) and self-heals
+                # subs created outside checkout (no stored sub-id guard needed).
+                logger.info(f"Invoice paid ({billing_reason}) for subscription {subscription_id}")
                 try:
-                    customer = stripe.Customer.retrieve(customer_id)
-                    user_email = customer.get('email')
-                    
-                    if user_email:
-                        purchases = db.get_purchases(user_email)
-                        if purchases and purchases.get('stripe_subscription_id') == subscription_id:
-                            # CRITICAL: Fetch fresh subscription from Stripe to get authoritative plan
-                            # This avoids Firestore race conditions and is safer than parsing invoice lines (due to proration)
-                            try:
-                                stripe_sub = stripe.Subscription.retrieve(subscription_id)
-                                price_id = stripe_sub['items']['data'][0]['price']['id']
-                                
-                                # Reverse lookup to find internal plan name
-                                valid_prices = {v: k for k, v in STRIPE_PRICES.items()}
-                                if price_id in valid_prices:
-                                    product_key = valid_prices[price_id]
-                                    subscription_plan = PRODUCTS[product_key].get('interval', 'monthly')
-                                    logger.info(f"Retrieved authoritative plan from Stripe: {subscription_plan}")
-                                else:
-                                    logger.warning(f"Unknown price ID in webhook: {price_id}")
-                                    subscription_plan = purchases.get('subscription_plan', 'monthly')
-                            except Exception as stripe_err:
-                                logger.error(f"Failed to retrieve subscription in webhook: {stripe_err}")
-                                subscription_plan = purchases.get('subscription_plan', 'monthly')
-
-
-                            # Determine credits to grant based on plan
-                            if subscription_plan == 'annual':
-                                # Annual plans / Season Pass -> 150 credits
-                                # note: 'season_pass' and 'annual' are treated same in logic
-                                new_credits = PRODUCTS.get('subscription_annual', {}).get('grants', {}).get('fit_analysis', 150)
-                                logger.info(f"Processing Annual/Season Pass payment - setting {new_credits} credits")
-                            else:
-                                # Monthly plan -> 20 credits
-                                new_credits = PRODUCTS.get('subscription_monthly', {}).get('grants', {}).get('fit_analysis', 20)
-                                
-                                purchases['fit_analysis_credits'] = new_credits
-                                purchases['credits_reset_date'] = datetime.now(timezone.utc).isoformat()
-                                purchases['payment_failed'] = False  # Clear any previous failure flag
-                                purchases['updated_at'] = datetime.now(timezone.utc).isoformat()
-                                
-                                # Update subscription end date
-                                subscription = stripe.Subscription.retrieve(subscription_id)
-                                if subscription.get('current_period_end'):
-                                    purchases['subscription_end_date'] = datetime.fromtimestamp(
-                                        subscription.get('current_period_end'), timezone.utc
-                                    ).isoformat()
-                                    purchases['subscription_current_period_end'] = purchases['subscription_end_date']
-                                
-                                db.save_purchases(user_email, purchases)
-                                
-                                # Sync credits collection
-                                db.save_credits(user_email, {
-                                    'credits_remaining': new_credits,
-                                    'credits_total': new_credits,
-                                    'credits_reset_date': purchases['credits_reset_date'],
-                                    'subscription_active': True,
-                                    'subscription_expires': purchases.get('subscription_end_date'),
-                                    'tier': 'monthly'
-                                })
-                                
-                                logger.info(f"Monthly credits reset for {user_email}: {new_credits} credits granted")
-                                
-                                # Send renewal success email
-                                try:
-                                    next_billing = purchases.get('subscription_end_date', '')
-                                    if next_billing:
-                                        # Format date nicely
-                                        next_billing_dt = datetime.fromisoformat(next_billing.replace('Z', '+00:00'))
-                                        next_billing_display = next_billing_dt.strftime("%B %d, %Y")
-                                    else:
-                                        next_billing_display = "Next billing cycle"
-                                    
-                                    send_renewal_success_email(
-                                        user_email,
-                                        "Stratia Admissions Monthly",
-                                        new_credits,
-                                        next_billing_display
-                                    )
-                                    logger.info(f"Renewal success email sent to {user_email}")
-                                except Exception as email_err:
-                                    logger.error(f"Failed to send renewal email: {email_err}")
-                        else:
-                            logger.warning(f"Subscription ID mismatch for renewal: {user_email}")
-                    else:
-                        logger.warning(f"No email found for customer: {customer_id}")
-                        
+                    sub = _as_dict(stripe.Subscription.retrieve(subscription_id))
+                    built = _stratia_subscription_grants(sub)
+                    if built and provision_subscription(sub, source=f'invoice.{billing_reason}'):
+                        _, details, plan = built
+                        email = _resolve_customer_email(subscription=sub, invoice=invoice)
+                        try:
+                            end = details.get('subscription_current_period_end', '')
+                            nb = (datetime.fromisoformat(end.replace('Z', '+00:00')).strftime("%B %d, %Y")
+                                  if end else "Next billing cycle")
+                            prod_key = 'subscription_annual' if plan == 'annual' else 'subscription_monthly'
+                            if email:
+                                send_renewal_success_email(
+                                    email, PRODUCTS[prod_key]['name'],
+                                    PRODUCTS[prod_key]['grants']['fit_analysis'], nb)
+                                logger.info(f"Renewal success email sent to {email}")
+                        except Exception as email_err:
+                            logger.error(f"Failed to send renewal email: {email_err}")
                 except Exception as e:
                     logger.error(f"Error processing renewal for subscription {subscription_id}: {e}")
             else:
                 logger.info(f"Payment succeeded for subscription: {subscription_id} (reason: {billing_reason})")
-                
+
         elif event_type == 'invoice.payment_failed':
             invoice = event['data']['object']
             subscription_id = invoice.get('subscription')
@@ -785,7 +840,7 @@ def handle_subscription_lifecycle_webhooks(event):
             # Update user's purchase record to flag payment failure
             try:
                 if customer_id:
-                    customer = stripe.Customer.retrieve(customer_id)
+                    customer = _as_dict(stripe.Customer.retrieve(customer_id))
                     user_email = customer.get('email') or customer_email
                     
                     if user_email:

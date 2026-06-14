@@ -11,6 +11,14 @@ from google.cloud import firestore
 logger = logging.getLogger(__name__)
 
 
+def _norm(user_id):
+    """Canonicalize the email used as a Firestore document id. Stripe customer
+    emails and app-login emails can differ only by case/whitespace (e.g.
+    'Pradeepthi@gmail.com' vs 'pradeepthi@gmail.com'); without this they become
+    two different docs and the app reads the wrong (empty) one → shows Free."""
+    return (user_id or "").strip().lower()
+
+
 class PaymentFirestoreDB:
     """Firestore database client for payment and subscription operations."""
     
@@ -32,13 +40,13 @@ class PaymentFirestoreDB:
             Purchase dict or None if not found
         """
         try:
-            doc_ref = self.db.collection('users').document(user_id).collection('purchases').document('data')
+            doc_ref = self.db.collection('users').document(_norm(user_id)).collection('purchases').document('data')
             doc = doc_ref.get()
-            
+
             if doc.exists:
                 return doc.to_dict()
             return None
-            
+
         except Exception as e:
             logger.error(f"[PaymentFirestore] Error getting purchases for {user_id}: {e}")
             return None
@@ -55,6 +63,7 @@ class PaymentFirestoreDB:
             True if successful, False otherwise
         """
         try:
+            user_id = _norm(user_id)
             doc_ref = self.db.collection('users').document(user_id).collection('purchases').document('data')
             purchases_data['updated_at'] = datetime.now(timezone.utc).isoformat()
             purchases_data['user_email'] = user_id
@@ -71,7 +80,7 @@ class PaymentFirestoreDB:
     def get_credits(self, user_id: str) -> Optional[Dict]:
         """Get user's credit information (for reading unified state)."""
         try:
-            doc_ref = self.db.collection('users').document(user_id).collection('credits').document('data')
+            doc_ref = self.db.collection('users').document(_norm(user_id)).collection('credits').document('data')
             doc = doc_ref.get()
             return doc.to_dict() if doc.exists else None
         except Exception as e:
@@ -81,7 +90,7 @@ class PaymentFirestoreDB:
     def save_credits(self, user_id: str, credits_data: Dict) -> bool:
         """Save user's credit information (for updating unified state)."""
         try:
-            doc_ref = self.db.collection('users').document(user_id).collection('credits').document('data')
+            doc_ref = self.db.collection('users').document(_norm(user_id)).collection('credits').document('data')
             credits_data['updated_at'] = datetime.now(timezone.utc).isoformat()
             doc_ref.set(credits_data, merge=True)
             logger.info(f"[PaymentFirestore] Saved credits for {user_id}")
@@ -102,7 +111,7 @@ class PaymentFirestoreDB:
             True if successful
         """
         try:
-            history_ref = self.db.collection('users').document(user_id).collection('purchase_history')
+            history_ref = self.db.collection('users').document(_norm(user_id)).collection('purchase_history')
             purchase_details['timestamp'] = datetime.now(timezone.utc).isoformat()
             history_ref.add(purchase_details)
             

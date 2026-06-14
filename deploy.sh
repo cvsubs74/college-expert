@@ -807,10 +807,32 @@ deploy_payment_manager_v2() {
     echo ""
     
     cd cloud_functions/payment_manager_v2
-    
-    # Payment Manager V2 uses env.yaml directly with actual values (not placeholders)
-    # The env.yaml in payment_manager_v2 already has the live Stripe keys
-    
+
+    # Render env.deploy.yaml from the committed (secret-free) template, filling the
+    # Stripe placeholders from Secret Manager. Both secrets belong to the Stratia
+    # Admissions account (acct_1SqNZkIaK5CUG9Yl). The old flow read a gitignored
+    # env.yaml directly, which broke the deploy whenever that untracked file was
+    # absent ("Unable to read file [env.yaml]"); this regenerates it instead.
+    STRIPE_SECRET_KEY=$(gcloud secrets versions access latest --secret=stratia-stripe-secret-key --project=$PROJECT_ID 2>/dev/null || echo "")
+    STRIPE_WEBHOOK_SECRET=$(gcloud secrets versions access latest --secret=stratia-stripe-webhook-secret --project=$PROJECT_ID 2>/dev/null || echo "")
+
+    if [ -z "$STRIPE_SECRET_KEY" ] || [ -z "$STRIPE_WEBHOOK_SECRET" ]; then
+        echo -e "${RED}✗ Missing Stratia Stripe secrets in Secret Manager${NC}"
+        echo -e "${YELLOW}  Expected: stratia-stripe-secret-key, stratia-stripe-webhook-secret${NC}"
+        echo -e "${YELLOW}  Create with:${NC}"
+        echo -e "    printf '%s' 'sk_live_...' | gcloud secrets create stratia-stripe-secret-key --data-file=- --project=$PROJECT_ID"
+        echo -e "    printf '%s' 'whsec_...'   | gcloud secrets create stratia-stripe-webhook-secret --data-file=- --project=$PROJECT_ID"
+        cd ../..
+        return 1
+    fi
+
+    cp env.yaml.template env.deploy.yaml
+    sed -i.bak \
+        -e "s|\${STRIPE_SECRET_KEY}|${STRIPE_SECRET_KEY}|g" \
+        -e "s|\${STRIPE_WEBHOOK_SECRET}|${STRIPE_WEBHOOK_SECRET}|g" \
+        env.deploy.yaml
+    rm -f env.deploy.yaml.bak
+
     gcloud functions deploy $PAYMENT_MANAGER_V2_FUNCTION \
         --gen2 \
         --runtime=python312 \
@@ -819,14 +841,17 @@ deploy_payment_manager_v2() {
         --entry-point=payment_manager_v2 \
         --trigger-http \
         --allow-unauthenticated \
-        --env-vars-file=env.yaml \
+        --env-vars-file=env.deploy.yaml \
         --timeout=60s \
         --memory=512MB \
         --max-instances=10
-    
+
+    # Clean up deploy-time env file (contains plaintext secrets)
+    rm -f env.deploy.yaml
+
     PAYMENT_MANAGER_V2_URL=$(gcloud functions describe $PAYMENT_MANAGER_V2_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
     echo -e "${GREEN}✓ Payment Manager V2 deployed: ${PAYMENT_MANAGER_V2_URL}${NC}"
-    
+
     cd ../..
 }
 
