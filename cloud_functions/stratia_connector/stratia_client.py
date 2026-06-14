@@ -503,7 +503,9 @@ def get_all_research(email, full=True, offset=0, limit=20):
     docs = _all_research_docs(email)
     total = len(docs)
     offset = max(0, _safe_int(offset) or 0)
-    limit = max(1, min(_safe_int(limit) or 20, 50))
+    # Cap at 25 so even a full page of trimmed bodies (25 × 2500 ≈ 62k chars)
+    # stays well under the ~120k tool-result limit; agents paginate for more.
+    limit = max(1, min(_safe_int(limit) or 20, 25))
     out = []
     for d in docs[offset:offset + limit]:
         item = {
@@ -534,7 +536,7 @@ def research_overview(email, now=None):
         for u in (d.get("university_ids") or []):
             by_college[u] = by_college.get(u, 0) + 1
         ky = _safe_int(_kb_year(d))
-        if ky is not None and ky < cur:
+        if ky is not None and ky < cur and _cycle_label(ky):
             stale += 1
         if d.get("pinned"):
             pinned += 1
@@ -557,7 +559,7 @@ def list_stale_research(email, now=None):
     out = []
     for d in _all_research_docs(email):
         ky = _safe_int(_kb_year(d))
-        if ky is not None and ky < cur:
+        if ky is not None and ky < cur and _cycle_label(ky):
             out.append({
                 "research_id": d.get("research_id"), "title": d.get("title"), "kind": d.get("kind"),
                 "summary": d.get("summary"), "university_ids": d.get("university_ids"),
