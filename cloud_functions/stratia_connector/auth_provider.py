@@ -26,6 +26,7 @@ from mcp.server.auth.provider import (
     AuthorizationParams,
     OAuthAuthorizationServerProvider,
     RefreshToken,
+    TokenError,
     construct_redirect_uri,
 )
 from mcp.shared.auth import OAuthClientInformationFull, OAuthToken
@@ -137,35 +138,44 @@ class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
     async def exchange_authorization_code(self, client, authorization_code: AuthorizationCode) -> OAuthToken:
         rec = self.store.get_code(authorization_code.code)
         if not rec:
-            raise ValueError("authorization code expired")
+            raise TokenError("invalid_grant", "authorization code expired or already used")
         self.store.delete_code(authorization_code.code)  # one-time use
         # RFC 8707 audience binding: refuse to mint a token whose requested
         # resource targets a different server (confused-deputy protection).
         if not settings.resource_ok(rec.get("resource")):
-            raise ValueError("resource/audience mismatch")
-        return self._issue_tokens(rec["client_id"], rec["scopes"], rec["email"])
+            raise TokenError("invalid_request", "resource/audience mismatch")
+        return self._issue_tokens(rec["client_id"], rec["scopes"], rec["email"],
+                                 rec.get("resource"))
 
     # -- Refresh -----------------------------------------------------------
     async def load_refresh_token(self, client, refresh_token: str):
         rec = self.store.get_refresh(refresh_token)
         if not rec or rec["client_id"] != client.client_id:
             return None
-        return RefreshToken(token=refresh_token, client_id=rec["client_id"], scopes=rec["scopes"])
+        return RefreshToken(token=refresh_token, client_id=rec["client_id"],
+                           scopes=rec["scopes"], expires_at=int(rec["_exp"]),
+                           subject=rec.get("email"))
 
     async def exchange_refresh_token(self, client, refresh_token: RefreshToken, scopes) -> OAuthToken:
         rec = self.store.get_refresh(refresh_token.token)
         if not rec:
-            raise ValueError("invalid refresh token")
+            raise TokenError("invalid_grant", "invalid or expired refresh token")
         self.store.delete_refresh(refresh_token.token)  # rotate
-        return self._issue_tokens(rec["client_id"], scopes or rec["scopes"], rec["email"])
+        return self._issue_tokens(rec["client_id"], scopes or rec["scopes"], rec["email"],
+                                 rec.get("resource"))
 
     # -- Token verification (resource server) ------------------------------
     async def load_access_token(self, token: str):
         rec = self.store.get_access(token)
         if not rec:
             return None
+        # Resource-server audience check: the token must be bound to THIS
+        # connector (it always is, since we only mint our own resource).
+        if not settings.resource_ok(rec.get("resource")):
+            return None
         return AccessToken(token=token, client_id=rec["client_id"],
-                          scopes=rec["scopes"], expires_at=int(rec["_exp"]))
+                          scopes=rec["scopes"], expires_at=int(rec["_exp"]),
+                          resource=rec.get("resource"), subject=rec.get("email"))
 
     async def verify_token(self, token: str):
         return await self.load_access_token(token)
@@ -177,13 +187,16 @@ class GoogleOAuthProvider(OAuthAuthorizationServerProvider):
         self.store.delete_refresh(raw)
 
     # -- helpers -----------------------------------------------------------
-    def _issue_tokens(self, client_id, scopes, email) -> OAuthToken:
+    def _issue_tokens(self, client_id, scopes, email, resource=None) -> OAuthToken:
+        # Bind the token to this connector's resource (RFC 8707). When the
+        # client omitted `resource`, bind to our own so the token is never
+        # audience-unconstrained.
+        aud = resource or settings.mcp_resource()
         access = pkce.new_token("at_")
         refresh = pkce.new_token("rt_")
-        self.store.put_access(access, {"client_id": client_id, "scopes": scopes, "email": email},
-                             ttl=settings.ACCESS_TOKEN_TTL)
-        self.store.put_refresh(refresh, {"client_id": client_id, "scopes": scopes, "email": email},
-                              ttl=settings.REFRESH_TOKEN_TTL)
+        ctx = {"client_id": client_id, "scopes": scopes, "email": email, "resource": aud}
+        self.store.put_access(access, ctx, ttl=settings.ACCESS_TOKEN_TTL)
+        self.store.put_refresh(refresh, ctx, ttl=settings.REFRESH_TOKEN_TTL)
         return OAuthToken(access_token=access, token_type="Bearer",
                          expires_in=settings.ACCESS_TOKEN_TTL, scope=" ".join(scopes),
                          refresh_token=refresh)

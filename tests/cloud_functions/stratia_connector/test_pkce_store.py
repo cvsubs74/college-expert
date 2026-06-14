@@ -73,3 +73,11 @@ class TestStore:
         s = OAuthStore(use_firestore=False)
         s.put_refresh("rt", {"email": "a@b.com", "client_id": "c1", "scopes": []}, ttl=-1)
         assert s.get_refresh("rt") is None
+
+    def test_rate_allow_fixed_window(self):
+        s = OAuthStore(use_firestore=False)
+        now = 1000.0
+        assert all(s.rate_allow("k", 3, 60, now=now) for _ in range(3))  # 3 allowed
+        assert s.rate_allow("k", 3, 60, now=now) is False                # 4th blocked
+        assert s.rate_allow("k", 3, 60, now=now + 61) is True            # next window resets
+        assert s.rate_allow("other", 3, 60, now=now) is True             # per-key

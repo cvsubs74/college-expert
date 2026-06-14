@@ -54,6 +54,14 @@ def test_verify_unknown_token_returns_none():
     assert asyncio.run(p.verify_token("nope")) is None
 
 
+def test_issued_token_is_audience_bound_and_carries_subject():
+    p = _provider()
+    tok = p._issue_tokens("c1", ["stratia"], "stu@x.com", resource=None)
+    at = asyncio.run(p.verify_token(tok.access_token))
+    assert at.subject == "stu@x.com"           # RFC 9068 sub
+    assert at.resource and at.resource.endswith("/mcp")  # RFC 8707 audience-bound
+
+
 def test_auth_code_is_single_use():
     p = _provider()
     p.store.put_code("mcp_x", {
@@ -64,7 +72,8 @@ def test_auth_code_is_single_use():
     code = asyncio.run(p.load_authorization_code(_Client("c1"), "mcp_x"))
     asyncio.run(p.exchange_authorization_code(_Client("c1"), code))  # first ok
     import pytest
-    with pytest.raises(ValueError):
+    from mcp.server.auth.provider import TokenError
+    with pytest.raises(TokenError):
         asyncio.run(p.exchange_authorization_code(_Client("c1"), code))  # replay rejected
 
 
@@ -78,7 +87,8 @@ def test_audience_mismatch_rejected_at_exchange():
     }, ttl=60)
     code = asyncio.run(p.load_authorization_code(_Client("c1"), "mcp_y"))
     import pytest
-    with pytest.raises(ValueError):
+    from mcp.server.auth.provider import TokenError
+    with pytest.raises(TokenError):
         asyncio.run(p.exchange_authorization_code(_Client("c1"), code))
 
 

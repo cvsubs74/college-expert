@@ -57,12 +57,47 @@ class Settings:
     REFRESH_TOKEN_TTL = int(os.environ.get("OAUTH_REFRESH_TOKEN_TTL", str(30 * 24 * 3600)))  # 30 d
     CLIENT_TTL = int(os.environ.get("OAUTH_CLIENT_TTL", str(90 * 24 * 3600)))  # 90 d
 
+    # Per-user rate limits (abuse + credit-spend throttling).
+    RATE_WRITES_PER_MIN = int(os.environ.get("RATE_WRITES_PER_MIN", "20"))
+    RATE_RECOMPUTE_PER_HOUR = int(os.environ.get("RATE_RECOMPUTE_PER_HOUR", "15"))
+
     # Persist OAuth state in Firestore (required on multi-instance Cloud Run).
     # Falls back to in-memory when false (local/dev/tests).
     USE_FIRESTORE = os.environ.get("OAUTH_USE_FIRESTORE", "true").lower() == "true"
     FIRESTORE_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT", "college-counselling-478115")
 
     GOOGLE_REDIRECT_PATH = "/auth/google/callback"
+
+    # Transport security (MCP G2): validate Host/Origin to block DNS-rebinding.
+    # Defaults derive from PUBLIC_BASE_URL; override via env for local/tests.
+    ENABLE_DNS_REBINDING_PROTECTION = (
+        os.environ.get("ENABLE_DNS_REBINDING_PROTECTION", "true").lower() == "true"
+    )
+
+    @classmethod
+    def public_host(cls) -> str:
+        from urllib.parse import urlsplit
+        return urlsplit(cls.PUBLIC_BASE_URL).netloc
+
+    @classmethod
+    def allowed_hosts(cls):
+        env = os.environ.get("ALLOWED_HOSTS", "")
+        if env:
+            return [h.strip() for h in env.split(",") if h.strip()]
+        # Cloud Run assigns two run.app domains for the same service; allow both.
+        return sorted({cls.public_host(), "stratia-connector-808989169388.us-east1.run.app"})
+
+    @classmethod
+    def allowed_origins(cls):
+        env = os.environ.get("ALLOWED_ORIGINS", "")
+        if env:
+            return [o.strip() for o in env.split(",") if o.strip()]
+        return sorted({f"https://{cls.public_host()}", "https://claude.ai"})
+
+    # The MCP resource (RFC 8707 audience) this connector binds tokens to.
+    @classmethod
+    def mcp_resource(cls) -> str:
+        return f"{cls.PUBLIC_BASE_URL}/mcp"
 
     @classmethod
     def google_redirect_uri(cls) -> str:

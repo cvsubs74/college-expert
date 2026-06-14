@@ -16,6 +16,8 @@ from starlette.responses import HTMLResponse, JSONResponse, RedirectResponse
 from mcp.server.fastmcp import FastMCP
 from mcp.server.auth.settings import AuthSettings, ClientRegistrationOptions
 from mcp.server.auth.middleware.auth_context import get_access_token
+from mcp.server.transport_security import TransportSecuritySettings
+from mcp.types import ToolAnnotations
 
 import stratia_client as sc
 from auth_provider import GoogleOAuthProvider
@@ -40,6 +42,12 @@ mcp = FastMCP(
     stateless_http=True,
     json_response=True,
     host="0.0.0.0",
+    # Validate Host/Origin (MCP transport G2) to block DNS-rebinding.
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=settings.ENABLE_DNS_REBINDING_PROTECTION,
+        allowed_hosts=settings.allowed_hosts(),
+        allowed_origins=settings.allowed_origins(),
+    ),
     # As the authorization server, FastMCP derives token verification from the
     # provider (load_access_token) — passing token_verifier too is rejected.
     auth_server_provider=provider,
@@ -59,17 +67,31 @@ mcp = FastMCP(
 def _email() -> str:
     """The Stratia email behind the current request's bearer token."""
     at = get_access_token()
-    email = provider.email_for_token(at.token) if at else None
+    # `subject` is stamped on the AccessToken by the provider; fall back to a
+    # store lookup for robustness.
+    email = (getattr(at, "subject", None) or provider.email_for_token(at.token)) if at else None
     if not email:
         raise ValueError("not authenticated")
     return email
+
+
+def _rate_guard(email: str, action: str, limit: int, window: int):
+    """Raise (→ surfaced as a tool error) when `email` exceeds `limit` per
+    `window` seconds for `action`."""
+    if not store.rate_allow(f"{action}:{email}", limit, window):
+        raise ValueError(
+            f"Rate limit reached for '{action}'. Please wait and try again."
+        )
 
 
 # ---------------------------------------------------------------------------
 # Read tools
 # ---------------------------------------------------------------------------
 
-@mcp.tool()
+# Read tools are marked readOnlyHint so the host knows they never mutate.
+# openWorldHint=True: they reach an external system (the Stratia backends).
+
+@mcp.tool(annotations=ToolAnnotations(title="Search universities", readOnlyHint=True, openWorldHint=True))
 def search_universities(query: str, limit: int = 10,
                         max_acceptance_rate: float | None = None,
                         state: str | None = None) -> list:
@@ -79,35 +101,35 @@ def search_universities(query: str, limit: int = 10,
     return sc.search_universities(query, limit, max_acceptance_rate, state)
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(title="Get university details", readOnlyHint=True, openWorldHint=True))
 def get_university(university_id: str) -> dict:
     """Full Stratia knowledge-base profile for one university by id:
     location, acceptance rate, application deadlines, and scholarships."""
     return sc.get_university(university_id)
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(title="Get my college list", readOnlyHint=True, openWorldHint=True))
 def get_college_list() -> list:
     """The signed-in student's saved college list (id, name, application
     status, and current fit category for each)."""
     return sc.get_college_list(_email())
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(title="Get fit analysis", readOnlyHint=True, openWorldHint=True))
 def get_fit_analysis(university_id: str) -> dict:
     """The student's college-fit analysis for one university: fit category,
     match percentage, the KB data year it used, explanation, recommendations."""
     return sc.get_fit_analysis(_email(), university_id)
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(title="Get upcoming deadlines", readOnlyHint=True, openWorldHint=True))
 def get_deadlines() -> list:
     """Upcoming application deadlines across the student's college list,
     as a flat list of {university, deadline_type, date}."""
     return sc.get_deadlines(_email())
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(title="Get my profile", readOnlyHint=True, openWorldHint=True))
 def get_profile() -> dict:
     """A summary of the student's academic profile (intended major, grade,
     GPA, test scores, graduation year, activities)."""
@@ -115,34 +137,51 @@ def get_profile() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Safe write tools
+# Safe write tools — annotated so the host can prompt for confirmation.
 # ---------------------------------------------------------------------------
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(
+    title="Add a college to my list", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
 def add_college(university_id: str, name: str) -> dict:
     """Add a university (by id and display name) to the student's college list."""
-    return sc.add_college(_email(), university_id, name)
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.add_college(email, university_id, name)
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(
+    title="Remove a college from my list", readOnlyHint=False,
+    destructiveHint=True, idempotentHint=True, openWorldHint=True))
 def remove_college(university_id: str, name: str = "") -> dict:
     """Remove a university (by id) from the student's college list."""
-    return sc.remove_college(_email(), university_id, name)
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.remove_college(email, university_id, name)
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(
+    title="Recompute fit (uses 1 credit)", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=False, openWorldHint=True))
 def recompute_fit(university_id: str) -> dict:
     """Recompute the student's college-fit analysis for one university against
     the latest knowledge-base data. Note: this consumes 1 Stratia credit."""
-    return sc.recompute_fit(_email(), university_id)
+    email = _email()
+    # Tighter limit — this spends a credit and calls the LLM.
+    _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
+    return sc.recompute_fit(email, university_id)
 
 
-@mcp.tool()
+@mcp.tool(annotations=ToolAnnotations(
+    title="Update a profile field", readOnlyHint=False,
+    destructiveHint=True, idempotentHint=False, openWorldHint=True))
 def update_profile_field(field_path: str, value: str, operation: str = "set") -> dict:
     """Update one field of the student's profile. `field_path` is dotted
     (e.g. 'intended_major'); `operation` is 'set' (default), 'append', or
-    'remove'."""
-    return sc.update_profile_field(_email(), field_path, value, operation)
+    'remove' (remove can delete data)."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.update_profile_field(email, field_path, value, operation)
 
 
 # ---------------------------------------------------------------------------

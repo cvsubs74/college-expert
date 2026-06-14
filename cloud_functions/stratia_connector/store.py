@@ -18,6 +18,7 @@ _COLLECTIONS = {
     "code": "oauth_codes",
     "access": "oauth_access_tokens",
     "refresh": "oauth_refresh_tokens",
+    "rate": "oauth_rate_limits",
 }
 
 
@@ -130,6 +131,21 @@ class OAuthStore:
 
     def delete_refresh(self, token: str):
         self._b.delete("refresh", token)
+
+    # -- rate limiting (fixed window; soft, read-modify-write) --------------
+    def rate_allow(self, key: str, limit: int, window: int, now: float = None) -> bool:
+        """True if `key` is under `limit` for the current `window`-second bucket,
+        else False. Increments the bucket count. Soft across instances (no
+        transaction) — adequate for abuse/credit-spend throttling."""
+        now = now if now is not None else time.time()
+        bucket = int(now // window)
+        bkey = f"{key}:{bucket}"
+        rec = self._b.get("rate", bkey)
+        count = (rec or {}).get("count", 0)
+        if count >= limit:
+            return False
+        self._b.put("rate", bkey, {"count": count + 1, "_exp": now + window})
+        return True
 
     # -- helpers ------------------------------------------------------------
     def _pop_if_fresh(self, kind, key):

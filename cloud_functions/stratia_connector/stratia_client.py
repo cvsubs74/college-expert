@@ -41,15 +41,14 @@ def _post(url, body, timeout=30, email=None):
 # ----------------------------------------------------------------------------
 
 def search_universities(query, limit=10, max_acceptance_rate=None, state=None):
-    body = {"query": query, "limit": int(limit)}
-    filters = {}
+    # The KB's keyword search is the GET ?search= endpoint (the POST {query}
+    # variant is semantic/offline and returns nothing).
+    params = {"search": query, "limit": int(limit)}
     if max_acceptance_rate is not None:
-        filters["max_acceptance_rate"] = max_acceptance_rate
+        params["max_acceptance"] = max_acceptance_rate
     if state:
-        filters["state"] = state
-    if filters:
-        body["filters"] = filters
-    data = _post(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, body)
+        params["state"] = state
+    data = _get(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, params)
     out = []
     for u in (data.get("universities") or [])[:limit]:
         out.append({

@@ -37,7 +37,7 @@ def captured(monkeypatch):
 
 
 def test_search_universities_trims_and_limits(captured):
-    captured["_post_payload"] = {"universities": [
+    captured["_get_payload"] = {"universities": [
         {"university_id": "duke_university", "official_name": "Duke", "acceptance_rate": 5,
          "summary": "x" * 1000, "extra": "dropped"},
     ]}
@@ -46,7 +46,8 @@ def test_search_universities_trims_and_limits(captured):
     assert out[0]["name"] == "Duke"
     assert len(out[0]["summary"]) == 400          # trimmed
     assert "extra" not in out[0]
-    assert captured["post"]["json"]["filters"] == {"max_acceptance_rate": 10, "state": "NC"}
+    # Uses the KB GET ?search= keyword endpoint (not the offline POST semantic one).
+    assert captured["get"]["params"] == {"search": "duke", "limit": 5, "max_acceptance": 10, "state": "NC"}
 
 
 def test_get_university_shape(captured):

@@ -16,6 +16,8 @@ pytest.importorskip("google.auth")
 os.environ.setdefault("OAUTH_USE_FIRESTORE", "false")
 os.environ.setdefault("GOOGLE_CLIENT_ID", "dummy.apps.googleusercontent.com")
 os.environ.setdefault("PUBLIC_BASE_URL", "http://localhost:8080")
+# TestClient sends Host: testserver — allow it past DNS-rebinding protection.
+os.environ.setdefault("ALLOWED_HOSTS", "testserver,localhost")
 
 import server  # noqa: E402
 from starlette.testclient import TestClient  # noqa: E402
@@ -38,6 +40,17 @@ def client():
 def test_all_tools_registered():
     names = {t.name for t in asyncio.run(server.mcp.list_tools())}
     assert EXPECTED_TOOLS <= names
+
+
+def test_tools_have_safety_annotations():
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    # Reads are readOnly; writes are not; destructive ops flagged.
+    assert tools["search_universities"].annotations.readOnlyHint is True
+    assert tools["get_college_list"].annotations.readOnlyHint is True
+    assert tools["add_college"].annotations.readOnlyHint is False
+    assert tools["remove_college"].annotations.destructiveHint is True
+    assert tools["update_profile_field"].annotations.destructiveHint is True
+    assert tools["recompute_fit"].annotations.idempotentHint is False
 
 
 def test_health_ok(client):
