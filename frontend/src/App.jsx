@@ -23,6 +23,7 @@ import TermsOfService from './pages/TermsOfService';
 import FinancialAidComparison from './pages/FinancialAidComparison';
 import RoadmapPage from './pages/RoadmapPage';
 import ResearchNotebook from './pages/ResearchNotebook';
+import ConnectAgents from './pages/ConnectAgents';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Navigation from './components/Navigation';
 import OnboardingModal from './components/OnboardingModal';
@@ -195,6 +196,7 @@ function App() {
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
                   <Route path="/roadmap" element={<RoadmapPage />} />
                   <Route path="/research" element={<ResearchNotebook />} />
+                  <Route path="/connect" element={<ConnectAgents />} />
                   {/* Legacy routes redirect to the corresponding inner tab on
                       the consolidated /roadmap surface. `replace` on the
                       Navigate so back-button doesn't bounce between the old
