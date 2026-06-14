@@ -177,13 +177,24 @@ def test_save_research_posts_structured_payload(captured):
     captured["_post_payload"] = {"success": True, "research_id": "rsh_1",
                                  "research": {"title": "Duke vs UCSD", "kind": "comparison"}}
     out = sc.save_research("a@b.com", "Duke vs UCSD", "## body", kind="comparison",
-                           summary="tl;dr", university_ids=["duke_university"], kb_year=2026)
+                           summary="tl;dr", university_ids=["duke_university"], kb_year=2026,
+                           source="chatgpt", model="ChatGPT")
     assert out["saved"] == "rsh_1"
     body = captured["post"]["json"]
     assert body["title"] == "Duke vs UCSD" and body["body_markdown"] == "## body"
-    assert body["kind"] == "comparison" and body["source"] == "claude_mcp"
+    assert body["kind"] == "comparison"
+    # #233: the real calling client is stamped through, not hardcoded to Claude.
+    assert body["source"] == "chatgpt" and body["model"] == "ChatGPT"
     assert body["university_ids"] == ["duke_university"] and body["kb_year"] == 2026
     assert captured["post"]["headers"]["X-User-Email"] == "a@b.com"
+
+
+def test_save_research_defaults_to_neutral_source_not_claude(captured):
+    # When the server can't identify the client it must not default to Claude.
+    captured["_post_payload"] = {"success": True, "research_id": "rsh_2", "research": {}}
+    sc.save_research("a@b.com", "t", "b")
+    body = captured["post"]["json"]
+    assert body["source"] == "mcp" and body["source"] != "claude_mcp"
 
 
 def test_save_research_failure_raises(captured):

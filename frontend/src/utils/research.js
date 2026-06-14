@@ -47,10 +47,37 @@ export function formatDate(iso) {
  * flag "newer data available") — this is the notebook's version of the
  * fit-staleness signal.
  */
+// Maps a note's `source` to a "From X" footer label. The MCP connector stamps
+// the real calling client (#233); `claude_mcp`/`claude` are legacy values for
+// notes saved before per-client attribution existed. Unknown clients fall back
+// to the display name the connector stored in `provenance.model`, then to a
+// neutral agent label — never to a specific vendor.
+const SOURCE_LABELS = {
+  app: 'Added in app',
+  manual: 'Added in app',
+  claude_mcp: 'From Claude',
+  claude: 'From Claude',
+  claude_code: 'From Claude Code',
+  chatgpt: 'From ChatGPT',
+  cursor: 'From Cursor',
+  windsurf: 'From Windsurf',
+  cline: 'From Cline',
+  goose: 'From Goose',
+  gemini: 'From Gemini',
+  vscode: 'From VS Code',
+};
+
+export function researchSourceLabel(source, prov = {}) {
+  if (!source || source === 'app' || source === 'manual') return 'Added in app';
+  if (SOURCE_LABELS[source]) return SOURCE_LABELS[source];
+  const display = (prov.model && String(prov.model).trim()) || 'an AI agent';
+  return `From ${display}`;
+}
+
 export function researchProvenance(note, now = new Date()) {
   const prov = (note && note.provenance) || {};
   const source = note?.source || prov.source;
-  const sourceLabel = source === 'claude_mcp' ? 'From Claude' : 'Added in app';
+  const sourceLabel = researchSourceLabel(source, prov);
   const when = formatDate(note?.created_at || prov.generated_at);
   const kbYear = prov.kb_year;
   const cycle = cycleLabel(kbYear);
