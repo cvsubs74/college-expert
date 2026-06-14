@@ -9,6 +9,7 @@ fields (which lost most of it), each tool returns EVERYTHING via `_prune`
 (drops internal/embedding/housekeeping keys, caps runaway lists/strings) and a
 final `_cap_size` guard so results stay under Claude's ~150k-char tool limit.
 """
+import datetime as _dt
 import json
 
 import requests
@@ -400,3 +401,213 @@ def delete_research(email, research_id):
     if not data.get("success"):
         raise StratiaError(data.get("error") or "delete_research failed")
     return {"deleted": research_id}
+
+
+# ----------------------------------------------------------------------------
+# Research notebook — analysis helpers over the saved notes (#236).
+# The get-research list endpoint already returns FULL docs (body + provenance);
+# search / get-all / overview / stale all work client-side over that one call,
+# so none of these need a new backend endpoint.
+# ----------------------------------------------------------------------------
+
+_RESEARCH_KINDS = ("comparison", "timeline", "essay_angle", "scholarship",
+                   "school_deep_dive", "strategy", "note")
+
+
+def _all_research_docs(email):
+    """Every saved note as a full doc, newest first."""
+    data = _get(_pm("get-research"), {"user_email": email})
+    docs = data.get("research") or []
+    if isinstance(docs, dict):  # defensive: single-doc shape
+        docs = [docs]
+    docs.sort(key=lambda r: r.get("created_at") or "", reverse=True)
+    return docs
+
+
+def _current_cycle_year(now=None):
+    # Mirrors frontend kbVintage.currentCycleYear: the new cycle's data lands
+    # ~August, so roll forward then (month index 7 = August).
+    now = now or _dt.datetime.utcnow()
+    return now.year + 1 if now.month >= 8 else now.year
+
+
+def _cycle_label(year):
+    y = _safe_int(year)
+    if y is None or y < 2000 or y > 2100:
+        return None
+    return f"{y}–{(y + 1) % 100:02d}"
+
+
+def _safe_int(v):
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _kb_year(doc):
+    prov = doc.get("provenance") or {}
+    return prov.get("kb_year") if prov.get("kb_year") is not None else doc.get("kb_year")
+
+
+def _snippet(text, terms, width=240):
+    text = text or ""
+    low = text.lower()
+    pos = -1
+    for t in terms:
+        i = low.find(t)
+        if i != -1 and (pos == -1 or i < pos):
+            pos = i
+    if pos == -1:
+        return text[:width]
+    start = max(0, pos - width // 3)
+    end = start + width
+    return ("…" if start > 0 else "") + text[start:end].strip() + ("…" if end < len(text) else "")
+
+
+def search_research(email, query, kind=None, university_id=None, limit=10):
+    """Keyword-rank the student's saved notes by `query` over title/summary/
+    body/tags; returns the best matches with a snippet. Use this to recall and
+    build on prior analysis before producing new work."""
+    terms = [t for t in (query or "").lower().split() if t]
+    if not terms:
+        raise StratiaError("query is required")
+    scored = []
+    for d in _all_research_docs(email):
+        if kind and d.get("kind") != kind:
+            continue
+        if university_id and university_id not in (d.get("university_ids") or []):
+            continue
+        title = (d.get("title") or "").lower()
+        summary = (d.get("summary") or "").lower()
+        body = (d.get("body_markdown") or "").lower()
+        tags = " ".join(d.get("tags") or []).lower()
+        score = sum(5 * title.count(t) + 3 * summary.count(t) + 2 * tags.count(t) + body.count(t)
+                    for t in terms)
+        if score:
+            scored.append((score, d))
+    scored.sort(key=lambda s: s[0], reverse=True)
+    matches = [{
+        "research_id": d.get("research_id"), "title": d.get("title"), "kind": d.get("kind"),
+        "summary": d.get("summary"), "university_ids": d.get("university_ids"),
+        "tags": d.get("tags"), "created_at": d.get("created_at"), "score": score,
+        "snippet": _snippet(d.get("body_markdown") or d.get("summary") or "", terms),
+    } for score, d in scored[:max(1, _safe_int(limit) or 10)]]
+    return {"query": query, "count": len(matches), "matches": matches}
+
+
+def get_all_research(email, full=True, offset=0, limit=20):
+    """The whole notebook in one call for cross-note analysis. Bodies are
+    trimmed and results paginated (offset/limit + has_more) to stay under the
+    tool-result size cap; full=False returns metadata only."""
+    docs = _all_research_docs(email)
+    total = len(docs)
+    offset = max(0, _safe_int(offset) or 0)
+    limit = max(1, min(_safe_int(limit) or 20, 50))
+    out = []
+    for d in docs[offset:offset + limit]:
+        item = {
+            "research_id": d.get("research_id"), "title": d.get("title"), "kind": d.get("kind"),
+            "summary": d.get("summary"), "university_ids": d.get("university_ids"),
+            "tags": d.get("tags"), "created_at": d.get("created_at"), "pinned": bool(d.get("pinned")),
+        }
+        if full:
+            body = d.get("body_markdown") or ""
+            item["body_markdown"] = body[:2500]
+            item["body_truncated"] = len(body) > 2500
+        out.append(item)
+    return {"total": total, "offset": offset, "limit": limit,
+            "has_more": offset + limit < total, "research": out}
+
+
+def research_overview(email, now=None):
+    """A bird's-eye view of the notebook: totals, coverage by kind and college,
+    how much is stale, what's pinned, and which kinds are missing — use to
+    orient and suggest what to research next."""
+    docs = _all_research_docs(email)
+    cur = _current_cycle_year(now)
+    by_kind, by_college = {}, {}
+    stale = pinned = 0
+    last_updated = ""
+    for d in docs:
+        by_kind[d.get("kind") or "note"] = by_kind.get(d.get("kind") or "note", 0) + 1
+        for u in (d.get("university_ids") or []):
+            by_college[u] = by_college.get(u, 0) + 1
+        ky = _safe_int(_kb_year(d))
+        if ky is not None and ky < cur:
+            stale += 1
+        if d.get("pinned"):
+            pinned += 1
+        upd = d.get("updated_at") or d.get("created_at") or ""
+        if upd > last_updated:
+            last_updated = upd
+    return {
+        "total": len(docs), "by_kind": by_kind, "by_college": by_college,
+        "kinds_present": [k for k in _RESEARCH_KINDS if k in by_kind],
+        "kinds_absent": [k for k in _RESEARCH_KINDS if k not in by_kind],
+        "stale_count": stale, "pinned_count": pinned,
+        "current_cycle": _cycle_label(cur), "last_updated": last_updated,
+    }
+
+
+def list_stale_research(email, now=None):
+    """Notes based on an older KB data cycle than the current one — candidates
+    to refresh against current data."""
+    cur = _current_cycle_year(now)
+    out = []
+    for d in _all_research_docs(email):
+        ky = _safe_int(_kb_year(d))
+        if ky is not None and ky < cur:
+            out.append({
+                "research_id": d.get("research_id"), "title": d.get("title"), "kind": d.get("kind"),
+                "summary": d.get("summary"), "university_ids": d.get("university_ids"),
+                "kb_year": ky, "cycle": _cycle_label(ky),
+            })
+    return {"current_cycle": _cycle_label(cur), "count": len(out), "stale": out}
+
+
+def pin_research(email, research_id, pinned=True):
+    """Pin (or unpin) a note so it surfaces first in the notebook and as the
+    agent's primary context."""
+    data = _post(_pm("update-research"),
+                 {"user_email": email, "research_id": research_id, "pinned": bool(pinned)},
+                 email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "pin_research failed")
+    return {"research_id": research_id, "pinned": bool(pinned)}
+
+
+def research_to_tasks(email, research_id, tasks):
+    """Create roadmap tasks from a research note's recommendations. Pass the
+    tasks you derived from the note (each at least a `title`; optional
+    `description`, `university_id`, `due_date`); each is created in the roadmap
+    linked back to the note via `source_research_id`."""
+    if not tasks:
+        raise StratiaError("tasks is required (a list of {title, ...})")
+    note = _get(_pm("get-research"), {"user_email": email, "research_id": research_id}).get("research")
+    if not note:
+        raise StratiaError(f"research '{research_id}' not found")
+    base = _dt.datetime.utcnow().strftime("%Y%m%d%H%M%S%f")
+    created = []
+    for i, t in enumerate(tasks):
+        t = t if isinstance(t, dict) else {"title": str(t)}
+        title = (t.get("title") or "").strip()
+        if not title:
+            continue
+        task_id = f"tsk_{base}_{i}"
+        task_data = {
+            "title": title,
+            "description": t.get("description") or "",
+            "status": "pending",
+            "university_id": t.get("university_id"),
+            # due_date must be present — get-roadmap-tasks orders by it and
+            # Firestore excludes docs missing the ordered field.
+            "due_date": t.get("due_date") or "",
+            "category": "research",
+            "source_research_id": research_id,
+        }
+        resp = _post(_pm("save-roadmap-task"),
+                     {"user_email": email, "task_id": task_id, "task_data": task_data}, email=email)
+        if resp.get("success"):
+            created.append(task_id)
+    return {"research_id": research_id, "created": created, "count": len(created)}

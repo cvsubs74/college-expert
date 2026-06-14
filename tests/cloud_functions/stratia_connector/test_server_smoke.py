@@ -46,6 +46,13 @@ def test_all_tools_registered():
     assert len(names) >= 17
 
 
+def test_research_notebook_tools_registered():
+    # #236: analysis tools over the saved-notes notebook.
+    names = {t.name for t in asyncio.run(server.mcp.list_tools())}
+    assert {"search_research", "get_all_research", "research_overview",
+            "list_stale_research", "pin_research", "research_to_tasks"} <= names
+
+
 def test_tools_have_safety_annotations():
     tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
     # Reads are readOnly; writes are not; destructive ops flagged.
