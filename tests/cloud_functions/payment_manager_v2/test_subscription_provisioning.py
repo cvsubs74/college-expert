@@ -47,6 +47,107 @@ def _sub(interval, product_name, sub_id="sub_1", cust="cus_1", period_end=189345
     }
 
 
+class _V15Obj:
+    """Mimics stripe-python v12+ StripeObject: subscriptable + attribute access
+    for existing keys, but NO .get() — `obj.get('x')` raises AttributeError('get'),
+    exactly like the real object that silently broke every webhook ('charged but
+    Free'). Plain dicts have .get(); this is what the old code wrongly assumed."""
+    def __init__(self, data):
+        self._data = {
+            k: (_V15Obj(v) if isinstance(v, dict)
+                else [_V15Obj(i) if isinstance(i, dict) else i for i in v] if isinstance(v, list)
+                else v)
+            for k, v in data.items()
+        }
+
+    def __getitem__(self, k):
+        return self._data[k]
+
+    def __contains__(self, k):
+        return k in self._data
+
+    def __bool__(self):
+        return bool(self._data)
+
+    def __getattr__(self, k):
+        # match StripeObject.__getattr__: missing key surfaces as AttributeError(key)
+        try:
+            return object.__getattribute__(self, "_data")[k]
+        except KeyError:
+            raise AttributeError(k)
+
+    def __str__(self):
+        def enc(o):
+            if isinstance(o, _V15Obj):
+                return {k: enc(v) for k, v in o._data.items()}
+            if isinstance(o, list):
+                return [enc(i) for i in o]
+            return o
+        import json as _json
+        return _json.dumps(enc(self))
+
+
+class TestStripeObjectV15Compat:
+    """Regression guard for the stripe-python v12+ break: StripeObject has no
+    .get(), so the dict-style handler code threw AttributeError('get') on the
+    first access and provisioned nobody."""
+
+    def test_v15_object_has_no_get(self):
+        obj = _V15Obj({"customer": "cus_x"})
+        import pytest
+        with pytest.raises(AttributeError):
+            obj.get("customer")          # proves the fake reproduces the v15 break
+
+    def test_as_dict_converts_v15_object(self):
+        d = main._as_dict(_V15Obj({"customer": "cus_x", "items": {"data": [{"id": "si_1"}]}}))
+        assert isinstance(d, dict)
+        assert d.get("customer") == "cus_x"                       # .get() works now
+        assert d["items"]["data"][0]["id"] == "si_1"             # nested converted too
+
+    def test_as_dict_passthrough_dict_and_none(self):
+        src = {"a": 1}
+        assert main._as_dict(src) is src                          # no-op for real dicts
+        assert main._as_dict(None) == {}
+
+    def test_period_end_falls_back_to_item_level(self):
+        # newer API: current_period_end is None on the sub, set on the line item
+        sub = {"current_period_end": None,
+               "items": {"data": [{"current_period_end": 1893456000}]}}
+        assert main._subscription_period_end_iso(sub).startswith("2030-")
+
+    def test_provision_accepts_v15_subscription_object(self, monkeypatch):
+        # the headline regression: a real-shaped StripeObject (no .get) must still provision
+        calls = {}
+        monkeypatch.setattr(main, "update_user_purchases",
+                            lambda email, grants, details: calls.update(email=email, grants=grants, plan=details["plan"]) or True)
+        stripe.Customer._store["cus_v15"] = {"email": "v15@example.com"}
+        sub = _V15Obj(_sub("month", "Stratia Admissions Monthly", cust="cus_v15"))
+        assert main.provision_subscription(sub, source="test") is True
+        assert calls["email"] == "v15@example.com"
+        assert calls["grants"]["fit_analysis"] == 20 and calls["plan"] == "monthly"
+
+    def test_lifecycle_updated_self_heals_v15_event(self, monkeypatch):
+        # end-to-end: a customer.subscription.updated event delivered as StripeObjects,
+        # user not yet active in Firestore → handler self-heals and writes premium credits
+        saved = {}
+
+        class FakeDB:
+            def get_purchases(self, e): return {}                 # not active → self-heal
+            def save_purchases(self, e, d): saved[("purchases", e)] = d; return True
+            def get_credits(self, e): return {}
+            def save_credits(self, e, d): saved[("credits", e)] = d; return True
+            def add_purchase_record(self, e, d): return True
+
+        monkeypatch.setattr(main, "get_payment_db", lambda: FakeDB())
+        stripe.Customer._store["cus_v15b"] = {"email": "stu@example.com"}
+        event = _V15Obj({"type": "customer.subscription.updated",
+                         "data": {"object": _sub("month", "Stratia Admissions Monthly", cust="cus_v15b")}})
+        main.handle_subscription_lifecycle_webhooks(event)        # must not raise
+        cred = saved[("credits", "stu@example.com")]
+        assert cred["subscription_active"] is True and cred["tier"] == "monthly"
+        assert cred["credits_remaining"] == 20
+
+
 class TestNormalizeEmail:
     def test_lowercases_and_trims(self):
         assert firestore_db._norm("  Pradeepthi@Gmail.com ") == "pradeepthi@gmail.com"

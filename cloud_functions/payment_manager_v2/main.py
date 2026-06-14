@@ -249,15 +249,62 @@ def update_user_purchases(user_id, grants, purchase_details):
         return False
 
 
+def _as_dict(obj):
+    """Normalize a Stripe object to a plain nested dict.
+
+    stripe-python v12+ changed StripeObject so it is NO LONGER a dict and has no
+    .get() — calling obj.get('x') triggers __getattr__('get') → AttributeError('get').
+    All of our webhook/provisioning code is written against plain dicts (.get(),
+    subscripting), so every event payload and every stripe.*.retrieve() result
+    must pass through here first. No-op for real dicts (e.g. unit tests, and the
+    test-mode json.loads webhook branch)."""
+    if obj is None:
+        return {}
+    if isinstance(obj, dict):
+        return obj
+    fn = getattr(obj, '_to_dict_recursive', None)  # stable internal recursive serializer
+    if callable(fn):
+        try:
+            return fn()
+        except Exception:
+            pass
+    try:
+        return json.loads(str(obj))  # StripeObject.__str__ emits JSON — public fallback
+    except Exception:
+        try:
+            return dict(obj)
+        except Exception:
+            return {}
+
+
+def _subscription_period_end_iso(subscription):
+    """Current-period-end as an ISO string, or None. Newer Stripe API versions
+    moved current_period_end OFF the subscription and ONTO each line item, so
+    check both (top-level first, then the first item)."""
+    sub = _as_dict(subscription)
+    ts = sub.get('current_period_end')
+    if not ts:
+        item = (sub.get('items', {}).get('data') or [{}])[0]
+        ts = item.get('current_period_end')
+    if not ts:
+        return None
+    try:
+        return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+    except Exception:
+        return None
+
+
 def _resolve_customer_email(subscription=None, invoice=None):
     """Best-effort email for the customer behind a sub/invoice (invoice carries
     customer_email directly; otherwise retrieve the Customer)."""
-    if invoice and invoice.get('customer_email'):
+    subscription = _as_dict(subscription)  # StripeObject has no .get() in v12+
+    invoice = _as_dict(invoice)
+    if invoice.get('customer_email'):
         return invoice['customer_email']
-    cust_id = (subscription or {}).get('customer') or (invoice or {}).get('customer')
+    cust_id = subscription.get('customer') or invoice.get('customer')
     try:
         if cust_id:
-            return stripe.Customer.retrieve(cust_id).get('email')
+            return _as_dict(stripe.Customer.retrieve(cust_id)).get('email')
     except Exception as e:
         logger.error(f"Failed to retrieve customer {cust_id}: {e}")
     return None
@@ -270,6 +317,7 @@ def _stratia_subscription_grants(subscription):
     recreations. Gated to our own product (name starts with 'Stratia') so we
     never provision another business's subscriptions even on a shared account."""
     try:
+        subscription = _as_dict(subscription)
         item = (subscription.get('items', {}).get('data') or [{}])[0]
         price = item.get('price') or {}
         interval = (price.get('recurring') or {}).get('interval')
@@ -277,7 +325,7 @@ def _stratia_subscription_grants(subscription):
             return None
         product_id = price.get('product')
         try:
-            pname = stripe.Product.retrieve(product_id).get('name', '') if product_id else ''
+            pname = _as_dict(stripe.Product.retrieve(product_id)).get('name', '') if product_id else ''
         except Exception:
             pname = ''
         if not pname.lower().startswith('stratia'):
@@ -295,9 +343,9 @@ def _stratia_subscription_grants(subscription):
             'stripe_subscription_id': subscription.get('id'),
             'payment_status': 'paid',
         }
-        if subscription.get('current_period_end'):
-            details['subscription_current_period_end'] = datetime.fromtimestamp(
-                subscription['current_period_end'], tz=timezone.utc).isoformat()
+        period_end = _subscription_period_end_iso(subscription)
+        if period_end:
+            details['subscription_current_period_end'] = period_end
         return grants, details, plan
     except Exception as e:
         logger.error(f"Failed to build grants from subscription: {e}")
@@ -310,6 +358,7 @@ def provision_subscription(subscription, source='webhook'):
     No-op for non-Stratia subs. This is what makes subscriptions created ANY
     way (checkout, dashboard, migration) and renewals (incl. annual) sync to
     the app — the central fix for 'charged but shows Free'."""
+    subscription = _as_dict(subscription)  # StripeObject has no .get() in v12+
     built = _stratia_subscription_grants(subscription)
     if not built:
         return False
@@ -375,7 +424,7 @@ def handle_create_checkout(request, user_id):
                         logger.info(f"Attempting direct upgrade for {user_id} from {current_plan} to {target_plan}")
                         
                         # Get current subscription item
-                        sub = stripe.Subscription.retrieve(subscription_id)
+                        sub = _as_dict(stripe.Subscription.retrieve(subscription_id))
                         item_id = sub['items']['data'][0]['id']
                         new_price_id = STRIPE_PRICES[product_id]
                         
@@ -400,9 +449,7 @@ def handle_create_checkout(request, user_id):
                             'stripe_customer_id': customer_id,
                             'plan': product.get('interval', 'monthly'),
                             'payment_status': 'paid',
-                            'subscription_current_period_end': datetime.fromtimestamp(
-                                updated_sub.current_period_end, tz=timezone.utc
-                            ).isoformat()
+                            'subscription_current_period_end': _subscription_period_end_iso(updated_sub)
                         }
                         
                         update_success = update_user_purchases(user_id, upgraded_grants, purchase_details)
@@ -499,7 +546,9 @@ def handle_webhook(request):
     
     try:
         if STRIPE_WEBHOOK_SECRET:
-            event = stripe.Webhook.construct_event(payload, sig_header, STRIPE_WEBHOOK_SECRET)
+            # construct_event returns StripeObjects (no .get() in stripe v12+);
+            # normalize to plain dicts so every downstream handler can use .get().
+            event = _as_dict(stripe.Webhook.construct_event(payload, sig_header, STRIPE_WEBHOOK_SECRET))
         elif stripe.api_key.startswith('sk_live_'):
             # Never process unverified events against a live key.
             logger.error("❌ STRIPE_WEBHOOK_SECRET missing on a LIVE key — refusing unsigned webhook")
@@ -583,6 +632,7 @@ def handle_create_portal_session(request, user_id):
 def handle_successful_payment(session):
     """Process successful payment and grant access"""
     try:
+        session = _as_dict(session)  # defensive: StripeObject has no .get() in v12+
         user_id = session.get('client_reference_id')
         metadata = session.get('metadata', {})
         product_id = metadata.get('product_id')
@@ -625,10 +675,8 @@ def handle_successful_payment(session):
             purchase_details['plan'] = product.get('interval', 'monthly')
             if session.get('subscription'):
                 try:
-                    subscription = stripe.Subscription.retrieve(session['subscription'])
-                    purchase_details['subscription_current_period_end'] = datetime.fromtimestamp(
-                        subscription.current_period_end, tz=timezone.utc
-                    ).isoformat()
+                    subscription = _as_dict(stripe.Subscription.retrieve(session['subscription']))
+                    purchase_details['subscription_current_period_end'] = _subscription_period_end_iso(subscription)
                 except Exception as e:
                     logger.error(f"Error retrieving subscription details: {e}")
         
@@ -658,8 +706,9 @@ def handle_successful_payment(session):
 
 def handle_subscription_lifecycle_webhooks(event):
     """Process subscription lifecycle webhook events - uses Firestore"""
+    event = _as_dict(event)  # defensive: handler must not assume caller normalized
     event_type = event['type']
-    
+
     try:
         db = get_payment_db()
         
@@ -694,9 +743,9 @@ def handle_subscription_lifecycle_webhooks(event):
                         # Already provisioned — keep status/period/cancel flags in
                         # sync WITHOUT resetting credits (updates fire often).
                         purchases['subscription_cancel_at_period_end'] = cancel_at_period_end
-                        if subscription.get('current_period_end'):
-                            purchases['subscription_current_period_end'] = datetime.fromtimestamp(
-                                subscription.get('current_period_end'), timezone.utc).isoformat()
+                        period_end = _subscription_period_end_iso(subscription)
+                        if period_end:
+                            purchases['subscription_current_period_end'] = period_end
                         db.save_purchases(user_email, purchases)
                         logger.info(f"Synced subscription flags for {user_email}")
             except Exception as e:
@@ -710,9 +759,9 @@ def handle_subscription_lifecycle_webhooks(event):
             logger.info(f"Subscription deleted: {subscription_id}")
             
             try:
-                customer = stripe.Customer.retrieve(customer_id)
+                customer = _as_dict(stripe.Customer.retrieve(customer_id))
                 user_email = customer.get('email')
-                
+
                 if user_email:
                     purchases = db.get_purchases(user_email)
                     if purchases and purchases.get('stripe_subscription_id') == subscription_id:
@@ -756,7 +805,7 @@ def handle_subscription_lifecycle_webhooks(event):
                 # subs created outside checkout (no stored sub-id guard needed).
                 logger.info(f"Invoice paid ({billing_reason}) for subscription {subscription_id}")
                 try:
-                    sub = stripe.Subscription.retrieve(subscription_id)
+                    sub = _as_dict(stripe.Subscription.retrieve(subscription_id))
                     built = _stratia_subscription_grants(sub)
                     if built and provision_subscription(sub, source=f'invoice.{billing_reason}'):
                         _, details, plan = built
@@ -791,7 +840,7 @@ def handle_subscription_lifecycle_webhooks(event):
             # Update user's purchase record to flag payment failure
             try:
                 if customer_id:
-                    customer = stripe.Customer.retrieve(customer_id)
+                    customer = _as_dict(stripe.Customer.retrieve(customer_id))
                     user_email = customer.get('email') or customer_email
                     
                     if user_email:
