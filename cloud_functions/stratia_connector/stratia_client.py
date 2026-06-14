@@ -324,13 +324,18 @@ def update_profile_field(email, field_path, value, operation="set"):
 # ----------------------------------------------------------------------------
 
 def save_research(email, title, body_markdown, kind="note", summary="",
-                  university_ids=None, tags=None, kb_year=None, research_id=None):
-    """Persist a research artifact to the student's Stratia notebook."""
+                  university_ids=None, tags=None, kb_year=None, research_id=None,
+                  source="mcp", model="an AI agent"):
+    """Persist a research artifact to the student's Stratia notebook.
+
+    `source`/`model` identify the MCP client that produced this — passed in by
+    the server from the authenticated client's OAuth registration (#233), not
+    hardcoded, so ChatGPT/Cursor/etc. saves aren't mislabeled as Claude."""
     body = {
         "user_email": email, "title": title, "body_markdown": body_markdown,
         "kind": kind, "summary": summary,
         "university_ids": university_ids or [], "tags": tags or [],
-        "source": "claude_mcp", "model": "claude",
+        "source": source, "model": model,
     }
     if kb_year is not None:
         body["kb_year"] = kb_year
