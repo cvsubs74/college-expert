@@ -39,6 +39,11 @@ mcp = FastMCP(
         "base, the student's academic profile, roadmap tasks, essays, financial-aid "
         "packages, scholarship tracker, and credit balance. You can also make safe "
         "changes (add/remove a college, recompute a fit, update a profile field). "
+        "When you produce analysis worth keeping — a college comparison, an "
+        "application timeline, essay angles, a scholarship plan, a school deep-dive, "
+        "or an overall strategy — offer to save it with save_research so it lands in "
+        "the student's Research Notebook in the app, linked to the relevant colleges; "
+        "list_research / get_research let you revisit and build on earlier work. "
         "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
@@ -242,6 +247,79 @@ def update_profile_field(field_path: str, value: str, operation: str = "set") ->
     email = _email()
     _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
     return sc.update_profile_field(email, field_path, value, operation)
+
+
+# ---------------------------------------------------------------------------
+# Research notebook — save the analysis you do here back into the student's app
+# so it's tracked, linked to their colleges, and readable in a later session.
+# ---------------------------------------------------------------------------
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Save research to my notebook", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=False, openWorldHint=True))
+def save_research(title: str, body_markdown: str, kind: str = "note",
+                  summary: str = "", university_ids: list[str] | None = None,
+                  tags: list[str] | None = None, kb_year: int | None = None) -> dict:
+    """Save a piece of research/analysis to the student's Stratia Research
+    Notebook so it persists in the app. Use this whenever you produce something
+    worth keeping — a college comparison, an application timeline, essay angles,
+    a scholarship plan, a school deep-dive, or an overall strategy.
+
+    - `kind`: one of comparison | timeline | essay_angle | scholarship |
+      school_deep_dive | strategy | note (defaults to note).
+    - `body_markdown`: the full analysis in Markdown.
+    - `summary`: a one-line TL;DR shown in the notebook feed.
+    - `university_ids`: ids of the colleges this is about, to link it to their
+      cards (use ids from get_college_list / search_universities).
+    - `kb_year`: the knowledge-base admission cycle your analysis was based on
+      (e.g. 2026) so the app can flag the note if newer data arrives later.
+
+    Returns the new research_id and the stored record."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.save_research(email, title, body_markdown, kind=kind, summary=summary,
+                            university_ids=university_ids, tags=tags, kb_year=kb_year)
+
+
+@mcp.tool(annotations=ToolAnnotations(title="List my research notes", readOnlyHint=True, openWorldHint=True))
+def list_research(kind: str | None = None, university_id: str | None = None) -> dict:
+    """List the student's saved research notes (newest first) — id, title, kind,
+    summary, linked colleges, and date. Optionally filter by kind or a linked
+    university_id. Use get_research for a note's full body."""
+    return sc.list_research(_email(), kind=kind, university_id=university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get a research note", readOnlyHint=True, openWorldHint=True))
+def get_research(research_id: str) -> dict:
+    """Get one saved research note in full — title, Markdown body, linked
+    colleges, tags, and provenance (source/model/KB cycle). Use this to build on
+    or revise earlier work."""
+    return sc.get_research(_email(), research_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Update a research note", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def update_research(research_id: str, title: str | None = None,
+                    body_markdown: str | None = None, kind: str | None = None,
+                    summary: str | None = None, university_ids: list[str] | None = None,
+                    tags: list[str] | None = None) -> dict:
+    """Update an existing research note. Only the fields you pass are changed —
+    e.g. revise body_markdown after recomputing a fit, or add university_ids."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.update_research(email, research_id, title=title, body_markdown=body_markdown,
+                              kind=kind, summary=summary, university_ids=university_ids, tags=tags)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Delete a research note", readOnlyHint=False,
+    destructiveHint=True, idempotentHint=True, openWorldHint=True))
+def delete_research(research_id: str) -> dict:
+    """Delete a research note from the student's notebook (cannot be undone)."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.delete_research(email, research_id)
 
 
 # ---------------------------------------------------------------------------

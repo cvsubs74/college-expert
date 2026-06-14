@@ -1992,6 +1992,99 @@ export const getRoadmapTasks = async (userEmail, status = null, universityId = n
   }
 };
 
+// ============== RESEARCH NOTEBOOK ==============
+// Research artifacts saved from Claude (via the MCP connector) or the app,
+// stored at users/{email}/research on profile_manager_v2.
+
+/**
+ * List the user's saved research notes (newest first).
+ * @param {string} userEmail
+ * @param {{kind?: string, universityId?: string}} [opts]
+ * @returns {Promise<{success: boolean, research: object[], count?: number}>}
+ */
+export const listResearch = async (userEmail, { kind = null, universityId = null } = {}) => {
+  try {
+    const params = { user_email: userEmail };
+    if (kind) params.kind = kind;
+    if (universityId) params.university_id = universityId;
+    const response = await axios.get(`${getProfileManagerUrl()}/get-research`, {
+      params,
+      timeout: 15000,
+      headers: { 'X-User-Email': userEmail },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error listing research:', error);
+    return { success: false, research: [] };
+  }
+};
+
+/**
+ * Get one research note in full (includes body_markdown + provenance).
+ * @returns {Promise<{success: boolean, research: object|null}>}
+ */
+export const getResearch = async (userEmail, researchId) => {
+  try {
+    const response = await axios.get(`${getProfileManagerUrl()}/get-research`, {
+      params: { user_email: userEmail, research_id: researchId },
+      timeout: 15000,
+      headers: { 'X-User-Email': userEmail },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting research:', error);
+    return { success: false, research: null };
+  }
+};
+
+/**
+ * Create/save a research note from the app.
+ * @param {string} userEmail
+ * @param {{title: string, bodyMarkdown: string, kind?: string, summary?: string,
+ *   universityIds?: string[], tags?: string[]}} input
+ */
+export const saveResearch = async (userEmail, input) => {
+  if (!userEmail || !input?.title?.trim() || !input?.bodyMarkdown?.trim()) {
+    return { success: false, error: 'user_email, title and bodyMarkdown are required' };
+  }
+  try {
+    const body = {
+      user_email: userEmail,
+      title: input.title.trim(),
+      body_markdown: input.bodyMarkdown,
+      kind: input.kind || 'note',
+      summary: input.summary || '',
+      university_ids: input.universityIds || [],
+      tags: input.tags || [],
+      source: 'app',
+    };
+    const response = await axios.post(`${getProfileManagerUrl()}/save-research`, body, {
+      timeout: 15000,
+      headers: { 'X-User-Email': userEmail },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving research:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Delete a research note.
+ * @returns {Promise<{success: boolean, research_id?: string}>}
+ */
+export const deleteResearch = async (userEmail, researchId) => {
+  try {
+    const response = await axios.post(`${getProfileManagerUrl()}/delete-research`,
+      { user_email: userEmail, research_id: researchId },
+      { timeout: 15000, headers: { 'X-User-Email': userEmail } });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error deleting research:', error);
+    return { success: false, error: error.message };
+  }
+};
+
 /**
  * Create a user-authored task in the user's roadmap_tasks subcollection.
  * Stamps `created_by: 'user'` so future surfaces can distinguish manually

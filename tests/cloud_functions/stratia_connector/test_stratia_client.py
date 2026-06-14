@@ -169,3 +169,65 @@ def test_get_roadmap_and_credits_wrappers(captured):
     captured["_get_payload"] = {"credits_balance": 12, "subscription_tier": "pro"}
     cr = sc.get_credits("a@b.com")
     assert cr["credits_balance"] == 12 and cr["subscription_tier"] == "pro"
+
+
+# --- research notebook --------------------------------------------------------
+
+def test_save_research_posts_structured_payload(captured):
+    captured["_post_payload"] = {"success": True, "research_id": "rsh_1",
+                                 "research": {"title": "Duke vs UCSD", "kind": "comparison"}}
+    out = sc.save_research("a@b.com", "Duke vs UCSD", "## body", kind="comparison",
+                           summary="tl;dr", university_ids=["duke_university"], kb_year=2026)
+    assert out["saved"] == "rsh_1"
+    body = captured["post"]["json"]
+    assert body["title"] == "Duke vs UCSD" and body["body_markdown"] == "## body"
+    assert body["kind"] == "comparison" and body["source"] == "claude_mcp"
+    assert body["university_ids"] == ["duke_university"] and body["kb_year"] == 2026
+    assert captured["post"]["headers"]["X-User-Email"] == "a@b.com"
+
+
+def test_save_research_failure_raises(captured):
+    captured["_post_payload"] = {"success": False, "error": "boom"}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.save_research("a@b.com", "t", "b")
+    assert "boom" in str(e.value)
+
+
+def test_list_research_maps_rows(captured):
+    captured["_get_payload"] = {"success": True, "research": [
+        {"research_id": "rsh_1", "title": "T", "kind": "timeline", "summary": "s",
+         "university_ids": ["x"], "tags": ["a"], "created_at": "2026-06-14", "body_markdown": "dropped"}]}
+    out = sc.list_research("a@b.com", kind="timeline")
+    assert out["count"] == 1
+    row = out["research"][0]
+    assert row["research_id"] == "rsh_1" and row["kind"] == "timeline"
+    assert "body_markdown" not in row  # list view is metadata-only
+    assert captured["get"]["params"]["kind"] == "timeline"
+
+
+def test_get_research_returns_full_body(captured):
+    captured["_get_payload"] = {"success": True, "research": {
+        "research_id": "rsh_1", "title": "T", "body_markdown": "x" * 100,
+        "provenance": {"kb_year": 2026}}}
+    out = sc.get_research("a@b.com", "rsh_1")
+    assert out["body_markdown"].startswith("x")
+    assert out["provenance"]["kb_year"] == 2026
+
+
+def test_get_research_not_found_raises(captured):
+    captured["_get_payload"] = {"success": True, "research": None}
+    with pytest.raises(sc.StratiaError):
+        sc.get_research("a@b.com", "nope")
+
+
+def test_update_research_sends_only_provided_fields(captured):
+    captured["_post_payload"] = {"success": True}
+    sc.update_research("a@b.com", "rsh_1", body_markdown="new", summary="s2")
+    body = captured["post"]["json"]
+    assert body["research_id"] == "rsh_1" and body["body_markdown"] == "new" and body["summary"] == "s2"
+    assert "title" not in body and "kind" not in body  # untouched fields omitted
+
+
+def test_delete_research(captured):
+    captured["_post_payload"] = {"success": True, "research_id": "rsh_1"}
+    assert sc.delete_research("a@b.com", "rsh_1") == {"deleted": "rsh_1"}

@@ -692,7 +692,6 @@ def profile_manager_v2_http_entry(request):
             
             db = get_db()
             import json
-            from datetime import datetime
             
             # Generate conversation ID if not provided (new conversation)
             if not conversation_id:
@@ -874,7 +873,6 @@ def profile_manager_v2_http_entry(request):
             
             db = get_db()
             import json
-            from datetime import datetime
             
             # Generate conversation ID if not provided
             if not conversation_id:
@@ -998,7 +996,6 @@ def profile_manager_v2_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'user_email and task_id required'}, 400)
             
             db = get_db()
-            from datetime import datetime
             completed_at = datetime.utcnow().isoformat() if status == 'completed' else None
             success = db.update_task_status(user_email, task_id, status, completed_at)
             return add_cors_headers({
@@ -1035,6 +1032,121 @@ def profile_manager_v2_http_entry(request):
                 'message': 'Application status updated' if success else 'Failed to update'
             }, 200 if success else 400)
         
+        # --- RESEARCH NOTEBOOK: SAVE ---
+        # Durable, structured research saved from Claude (MCP connector) or app.
+        elif resource_type == 'save-research' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            title = (data.get('title') or '').strip()
+            body = data.get('body_markdown') or data.get('body') or ''
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            if not title or not body:
+                return add_cors_headers({'success': False, 'error': 'title and body_markdown required'}, 400)
+
+            VALID_KINDS = {'comparison', 'timeline', 'essay_angle', 'scholarship',
+                           'school_deep_dive', 'strategy', 'note'}
+            kind = data.get('kind') or 'note'
+            if kind not in VALID_KINDS:
+                kind = 'note'
+            source = data.get('source') or 'claude_mcp'
+            # research_id: caller-supplied (update-by-id) else timestamped + unique.
+            research_id = data.get('research_id') or f"rsh_{datetime.utcnow().strftime('%Y%m%d%H%M%S%f')}"
+            university_ids = data.get('university_ids') or []
+            if not isinstance(university_ids, list):
+                university_ids = [university_ids]
+            tags = data.get('tags') or []
+            if not isinstance(tags, list):
+                tags = [tags]
+
+            research_data = {
+                'title': title[:200],
+                'summary': (data.get('summary') or '')[:500],
+                'body_markdown': body,
+                'kind': kind,
+                'university_ids': [str(u) for u in university_ids][:25],
+                'tags': [str(t) for t in tags][:20],
+                'source': source,
+                'pinned': bool(data.get('pinned', False)),
+                # Provenance is the "interesting" bit: who produced it, against
+                # which KB cycle, when — drives the app's staleness signal.
+                'provenance': {
+                    'source': source,
+                    'model': data.get('model'),
+                    'kb_year': data.get('kb_year'),
+                    'generated_at': datetime.utcnow().isoformat(),
+                },
+            }
+            db = get_db()
+            success = db.save_research(user_email, research_id, research_data)
+            return add_cors_headers({
+                'success': success,
+                'research_id': research_id,
+                'research': db.get_research(user_email, research_id) if success else None,
+                'message': 'Research saved' if success else 'Failed to save research',
+            }, 200 if success else 400)
+
+        # --- RESEARCH NOTEBOOK: GET (list or single) ---
+        elif resource_type == 'get-research' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            research_id = data.get('research_id') or request.args.get('research_id')
+            kind = data.get('kind') or request.args.get('kind')
+            university_id = data.get('university_id') or request.args.get('university_id')
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+
+            db = get_db()
+            if research_id:
+                item = db.get_research(user_email, research_id)
+                if not item:
+                    return add_cors_headers({'success': False, 'error': 'not found'}, 404)
+                return add_cors_headers({'success': True, 'research': item})
+            items = db.get_research_list(user_email, kind=kind, university_id=university_id)
+            return add_cors_headers({'success': True, 'research': items, 'count': len(items)})
+
+        # --- RESEARCH NOTEBOOK: UPDATE (partial merge) ---
+        elif resource_type == 'update-research' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            research_id = data.get('research_id')
+            if not user_email or not research_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and research_id required'}, 400)
+
+            db = get_db()
+            if not db.get_research(user_email, research_id):
+                return add_cors_headers({'success': False, 'error': 'not found'}, 404)
+            patch = {}
+            for f in ('title', 'summary', 'body_markdown', 'kind', 'tags', 'university_ids', 'pinned'):
+                if f in data:
+                    patch[f] = data[f]
+            if not patch:
+                return add_cors_headers({'success': False, 'error': 'no updatable fields provided'}, 400)
+            success = db.save_research(user_email, research_id, patch)
+            return add_cors_headers({
+                'success': success,
+                'research_id': research_id,
+                'research': db.get_research(user_email, research_id) if success else None,
+            }, 200 if success else 400)
+
+        # --- RESEARCH NOTEBOOK: DELETE ---
+        elif resource_type == 'delete-research' and request.method in ['POST', 'DELETE']:
+            data = request.get_json(silent=True) or {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            research_id = data.get('research_id') or request.args.get('research_id')
+            if not user_email or not research_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and research_id required'}, 400)
+            db = get_db()
+            success = db.delete_research(user_email, research_id)
+            return add_cors_headers({
+                'success': success,
+                'research_id': research_id,
+                'message': 'Research deleted' if success else 'Failed to delete',
+            }, 200 if success else 400)
+
         # --- ESSAY SAVE ---
         elif resource_type == 'save-essay' and request.method == 'POST':
             data = request.get_json() or {}

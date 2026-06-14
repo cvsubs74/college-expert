@@ -692,8 +692,67 @@ class FirestoreDB:
             logger.error(f"[Firestore] Error updating task status: {e}")
             return False
 
+    # ==================== RESEARCH NOTEBOOK ====================
+    # Durable, structured research artifacts saved from Claude (via the MCP
+    # connector) or the app — stored at users/{uid}/research/{research_id}.
+    # Reads filter/sort in Python (per-user counts are small) so no composite
+    # Firestore index is needed for kind + university + recency together.
+
+    def save_research(self, user_id: str, research_id: str, research_data: Dict) -> bool:
+        """Create or update a research note (idempotent on research_id)."""
+        try:
+            doc_ref = self.db.collection('users').document(user_id).collection('research').document(research_id)
+            research_data['updated_at'] = datetime.utcnow().isoformat()
+            if 'created_at' not in research_data:
+                existing = doc_ref.get()
+                if existing.exists:
+                    research_data['created_at'] = existing.to_dict().get('created_at', research_data['updated_at'])
+                else:
+                    research_data['created_at'] = research_data['updated_at']
+            doc_ref.set(research_data, merge=True)
+            logger.info(f"[Firestore] Saved research {research_id} for {user_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving research: {e}")
+            return False
+
+    def get_research_list(self, user_id: str, kind: str = None, university_id: str = None) -> List[Dict]:
+        """All research notes for a user, newest first, optionally filtered by
+        kind or a linked university_id."""
+        try:
+            ref = self.db.collection('users').document(user_id).collection('research')
+            items = [{'research_id': doc.id, **doc.to_dict()} for doc in ref.stream()]
+            if kind:
+                items = [r for r in items if r.get('kind') == kind]
+            if university_id:
+                items = [r for r in items if university_id in (r.get('university_ids') or [])]
+            items.sort(key=lambda r: r.get('created_at', ''), reverse=True)
+            return items
+        except Exception as e:
+            logger.error(f"[Firestore] Error listing research: {e}")
+            return []
+
+    def get_research(self, user_id: str, research_id: str) -> Optional[Dict]:
+        """One research note, or None."""
+        try:
+            doc = self.db.collection('users').document(user_id).collection('research').document(research_id).get()
+            return {'research_id': doc.id, **doc.to_dict()} if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting research {research_id}: {e}")
+            return None
+
+    def delete_research(self, user_id: str, research_id: str) -> bool:
+        """Delete a research note."""
+        try:
+            self.db.collection('users').document(user_id).collection('research').document(research_id).delete()
+            logger.info(f"[Firestore] Deleted research {research_id} for {user_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error deleting research {research_id}: {e}")
+            return False
+
     # ==================== ESSAY TRACKER ====================
-    
+
     def get_essay_tracker(self, user_id: str) -> List[Dict]:
         """Get all essay tracker entries for a user."""
         try:

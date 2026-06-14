@@ -22,6 +22,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import FinancialAidComparison from './pages/FinancialAidComparison';
 import RoadmapPage from './pages/RoadmapPage';
+import ResearchNotebook from './pages/ResearchNotebook';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Navigation from './components/Navigation';
 import OnboardingModal from './components/OnboardingModal';
@@ -193,6 +194,7 @@ function App() {
                   <Route path="/universities" element={<UniversityExplorer />} />
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
                   <Route path="/roadmap" element={<RoadmapPage />} />
+                  <Route path="/research" element={<ResearchNotebook />} />
                   {/* Legacy routes redirect to the corresponding inner tab on
                       the consolidated /roadmap surface. `replace` on the
                       Navigate so back-button doesn't bounce between the old
