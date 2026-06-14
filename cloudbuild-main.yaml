@@ -47,6 +47,18 @@ steps:
         pip install --quiet --disable-pip-version-check -r requirements-test.txt
         pytest -q
 
+  # Stratia connector OAuth/MCP tests — isolated (own deps; fresh process so the
+  # counselor_agent conftest's fake `google` stub can't shadow google.auth).
+  - name: 'python:3.12-slim'
+    id: 'connector-tests'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -euo pipefail
+        pip install --quiet --disable-pip-version-check -r requirements-test.txt -r cloud_functions/stratia_connector/requirements.txt
+        pytest -q tests/cloud_functions/stratia_connector
+
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'bash-syntax'
     entrypoint: 'bash'
@@ -100,7 +112,7 @@ steps:
 
   - name: 'gcr.io/cloud-builders/git'
     id: 'detect-targets'
-    waitFor: ['backend-tests', 'bash-syntax', 'frontend']
+    waitFor: ['backend-tests', 'connector-tests', 'bash-syntax', 'frontend']
     entrypoint: 'bash'
     args:
       - '-c'

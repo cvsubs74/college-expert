@@ -35,6 +35,21 @@ steps:
         pip install --quiet --disable-pip-version-check -r requirements-test.txt
         pytest -q
 
+  # 1b. Stratia connector OAuth/MCP tests — isolated step so the connector's
+  #     runtime deps (mcp, google-auth) install only here, AND so they run in a
+  #     fresh process where the counselor_agent conftest's fake `google` package
+  #     can't shadow the real google.auth. Covers the OAuth provider lifecycle
+  #     + server-boot/discovery contract that the main step skips.
+  - name: 'python:3.12-slim'
+    id: 'connector-tests'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -euo pipefail
+        pip install --quiet --disable-pip-version-check -r requirements-test.txt -r cloud_functions/stratia_connector/requirements.txt
+        pytest -q tests/cloud_functions/stratia_connector
+
   # 2. Shell-script syntax check.
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'bash-syntax'
