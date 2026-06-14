@@ -78,3 +78,31 @@ def test_protected_resource_metadata(client):
 def test_mcp_endpoint_requires_auth(client):
     r = client.post("/mcp", json={"jsonrpc": "2.0", "id": 1, "method": "tools/list"})
     assert r.status_code == 401
+
+
+# --- #233: per-client research attribution -------------------------------------
+
+@pytest.mark.parametrize("client_name,expected", [
+    ("ChatGPT", ("chatgpt", "ChatGPT")),
+    ("openai-mcp", ("chatgpt", "ChatGPT")),
+    ("Claude", ("claude", "Claude")),
+    ("claude-ai", ("claude", "Claude")),
+    ("Claude Code", ("claude_code", "Claude Code")),  # more specific than "Claude"
+    ("Cursor (VS Code)", ("cursor", "Cursor")),
+    ("Some New Agent", ("mcp", "Some New Agent")),     # unknown → keep its real name
+    ("", ("mcp", "an AI agent")),                       # nameless → neutral, never Claude
+])
+def test_client_attribution_maps_the_calling_client(monkeypatch, client_name, expected):
+    class _Token:
+        client_id = "cid-1"
+
+    monkeypatch.setattr(server, "get_access_token", lambda: _Token())
+    monkeypatch.setattr(server.store, "get_client", lambda cid: {"client_name": client_name})
+    assert server._client_attribution() == expected
+
+
+def test_client_attribution_without_a_token_is_generic_not_claude(monkeypatch):
+    monkeypatch.setattr(server, "get_access_token", lambda: None)
+    source, model = server._client_attribution()
+    assert (source, model) == ("mcp", "an AI agent")
+    assert source != "claude" and model != "Claude"

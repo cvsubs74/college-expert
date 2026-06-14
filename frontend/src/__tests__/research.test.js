@@ -4,6 +4,7 @@ import {
   kindsPresent,
   formatDate,
   researchProvenance,
+  researchSourceLabel,
 } from '../utils/research';
 
 describe('research utils', () => {
@@ -44,9 +45,19 @@ describe('research utils', () => {
   describe('researchProvenance', () => {
     const now = new Date('2026-06-01T00:00:00Z'); // currentCycleYear → 2026
 
-    it('labels Claude vs app source', () => {
-      expect(researchProvenance({ source: 'claude_mcp' }, now).sourceLabel).toBe('From Claude');
+    it('labels per-client source (legacy Claude, ChatGPT, Cursor, app)', () => {
+      // #233: research is attributed to the real MCP client, not always Claude.
+      expect(researchProvenance({ source: 'claude_mcp' }, now).sourceLabel).toBe('From Claude'); // legacy notes
+      expect(researchProvenance({ source: 'chatgpt' }, now).sourceLabel).toBe('From ChatGPT');
+      expect(researchProvenance({ source: 'cursor' }, now).sourceLabel).toBe('From Cursor');
       expect(researchProvenance({ source: 'app' }, now).sourceLabel).toBe('Added in app');
+    });
+
+    it('falls back to the stored model name for an unmapped client — never "Claude"', () => {
+      const named = { source: 'mcp', provenance: { source: 'mcp', model: 'Acme Agent' } };
+      expect(researchProvenance(named, now).sourceLabel).toBe('From Acme Agent');
+      const unnamed = { source: 'mcp', provenance: { source: 'mcp' } };
+      expect(researchProvenance(unnamed, now).sourceLabel).toBe('From an AI agent');
     });
 
     it('marks a note stale when its KB cycle is older than the current one', () => {

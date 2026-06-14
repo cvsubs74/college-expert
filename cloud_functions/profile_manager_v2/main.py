@@ -1049,7 +1049,9 @@ def profile_manager_v2_http_entry(request):
             kind = data.get('kind') or 'note'
             if kind not in VALID_KINDS:
                 kind = 'note'
-            source = data.get('source') or 'claude_mcp'
+            # Neutral default: the MCP connector now stamps the real calling
+            # client (#233). Don't assume Claude for a missing/unknown source.
+            source = data.get('source') or 'mcp'
             # research_id: caller-supplied (update-by-id) else timestamped + unique.
             research_id = data.get('research_id') or f"rsh_{datetime.utcnow().strftime('%Y%m%d%H%M%S%f')}"
             university_ids = data.get('university_ids') or []

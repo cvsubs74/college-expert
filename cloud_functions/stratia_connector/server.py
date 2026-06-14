@@ -82,6 +82,48 @@ def _email() -> str:
     return email
 
 
+# Map a calling MCP client (by its DCR-registered client_name) to a stable
+# (source, model) attribution. Substring match, case-insensitive; order matters
+# (more specific first — Claude Code before Claude). #233.
+_CLIENT_ATTRIBUTION = (
+    (("chatgpt", "openai"), ("chatgpt", "ChatGPT")),
+    (("claude code", "claude-code", "claude_code"), ("claude_code", "Claude Code")),
+    (("claude", "anthropic"), ("claude", "Claude")),
+    (("cursor",), ("cursor", "Cursor")),
+    (("windsurf",), ("windsurf", "Windsurf")),
+    (("cline",), ("cline", "Cline")),
+    (("goose",), ("goose", "Goose")),
+    (("gemini",), ("gemini", "Gemini")),
+    (("vscode", "vs code", "visual studio code"), ("vscode", "VS Code")),
+)
+
+
+def _client_attribution() -> tuple[str, str]:
+    """(source, model) for the MCP client behind the current request, derived
+    from its OAuth registration. Best-effort and honest: an unrecognized client
+    keeps its registered name (or a neutral agent label) — it is never
+    mislabeled as Claude. (Server is stateless_http, so the initialize-time
+    clientInfo isn't available here; the token's client_id is.)"""
+    name = ""
+    at = get_access_token()
+    client_id = getattr(at, "client_id", None) if at else None
+    if client_id:
+        try:
+            rec = store.get_client(client_id) or {}
+            name = (rec.get("client_name") or "").strip()
+        except Exception:  # noqa: BLE001 — attribution must never block a save
+            logger.warning("client attribution lookup failed", exc_info=True)
+    low = name.lower()
+    for needles, attribution in _CLIENT_ATTRIBUTION:
+        if any(n in low for n in needles):
+            return attribution
+    if name:
+        logger.info("save_research: unmapped MCP client_name=%r", name)
+        return "mcp", name
+    logger.info("save_research: no client_name on token; generic agent attribution")
+    return "mcp", "an AI agent"
+
+
 def _rate_guard(email: str, action: str, limit: int, window: int):
     """Raise (→ surfaced as a tool error) when `email` exceeds `limit` per
     `window` seconds for `action`."""
@@ -277,8 +319,10 @@ def save_research(title: str, body_markdown: str, kind: str = "note",
     Returns the new research_id and the stored record."""
     email = _email()
     _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    source, model = _client_attribution()
     return sc.save_research(email, title, body_markdown, kind=kind, summary=summary,
-                            university_ids=university_ids, tags=tags, kb_year=kb_year)
+                            university_ids=university_ids, tags=tags, kb_year=kb_year,
+                            source=source, model=model)
 
 
 @mcp.tool(annotations=ToolAnnotations(title="List my research notes", readOnlyHint=True, openWorldHint=True))
