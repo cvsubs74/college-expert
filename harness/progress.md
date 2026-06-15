@@ -236,3 +236,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Board: set-status FAILED — gh token missing 'read:project' scope (cosmetic; issues are source of truth). Fix with: gh auth refresh -s project,read:org
 - Deploy: push to main triggers cloudbuild-main.yaml → frontend (Firebase Hosting) + profile_manager_v2 (firestore_db.py weekly buckets).
 - Quick-win bundle live after pipeline: pinned toggle, Balance Ring, Trending Popular. Trending fills in as agents save >=2-step workflows.
+
+## 2026-06-15 — Resources: third whitepaper "How Stratia Works With AI Agents" (PR #254, open)
+- GOAL: add a Resources paper on how Stratia exposes itself as MCP so AI agents can work with it; ground it in the recent MCP features.
+- BRANCHED off main (resources-mcp-agent-paper) — NOT the in-flight issue-247 branch — since this is a standalone content task.
+- WROTE paper how-stratia-works-with-ai-agents.js (cat: Platform & Architecture, violet/fuchsia). 7 sections: app-vs-agent-operable thesis → the connector (remote MCP, Google OAuth+DCR, Cloud Run) → 31-tool surface (read/act/remember) → per-user safety model → the write-back round trip → honest-about-itself (attribution + workflows + Decision Ledger) → what-this-gets-you. Every claim grounded in shipped code: #222/#226 connector, #229/#236 notebook, #233 attribution, #238 profile-from-agent, #241/#242 workflows, #247 Decision Ledger.
+- BUILT 3 inline visuals + registered: AgentBridgeFlow (hero: agents⇄connector⇄data), ToolSurfaceGrid (31 tools, ASKS FIRST/1 CREDIT badges), ClosedLoopDiagram (ask→read→reason→save_research → notebook note w/ provenance + spun-out roadmap task). Matched the existing visual idioms (framer-motion useInView, palette).
+- Hub hero copy: two papers → three.
+- TEST: generalized per-paper render test to it.each over ALL papers (mounts every hero+section visual → catches bad icon/visual refs). vitest 307 passed (+2); build clean.
+- VERIFIED visually: rendered logged-out at localhost:3000, screenshotted hub + hero + both inline visuals — all on-brand. (Local dev needed a throwaway .env.local with fake Firebase keys to mount AuthProvider; removed after.)
+- NOT merged: PR #254 left open — merging to main auto-deploys frontend to prod (needs user go-ahead). Paper goes live at stratiaadmissions.com/resources on merge.
