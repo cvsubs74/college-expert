@@ -1145,6 +1145,11 @@ def profile_manager_v2_http_entry(request):
             }
             db = get_db()
             success = db.save_research(user_email, research_id, research_data)
+            # Aggregate the workflow's tool-sequence signature (no user text) into
+            # the cross-user Popular Workflows stats. Only real tool sequences.
+            sig = research_data['workflow_signature']
+            if success and sig:
+                db.upsert_workflow_stat(sig, [s['tool'] for s in workflow if s.get('tool')], kind)
             return add_cors_headers({
                 'success': success,
                 'research_id': research_id,
@@ -1212,6 +1217,21 @@ def profile_manager_v2_http_entry(request):
                 'research_id': research_id,
                 'message': 'Research deleted' if success else 'Failed to delete',
             }, 200 if success else 400)
+
+        # --- POPULAR WORKFLOWS (cross-user aggregate; PII-free) ---
+        elif resource_type == 'get-popular-workflows' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            try:
+                limit = int(data.get('limit') or request.args.get('limit') or 20)
+            except (TypeError, ValueError):
+                limit = 20
+            limit = max(1, min(limit, 50))
+            db = get_db()
+            workflows = db.get_popular_workflows(limit=limit)
+            return add_cors_headers({'success': True, 'workflows': workflows, 'count': len(workflows)})
 
         # --- ESSAY SAVE ---
         elif resource_type == 'save-essay' and request.method == 'POST':

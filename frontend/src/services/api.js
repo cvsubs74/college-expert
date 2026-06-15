@@ -2020,6 +2020,25 @@ export const listResearch = async (userEmail, { kind = null, universityId = null
 };
 
 /**
+ * Cross-user Popular Workflows (aggregate tool-sequence signatures + run counts;
+ * no user data). Newest/most-run first.
+ * @returns {Promise<{success: boolean, workflows: object[], count?: number}>}
+ */
+export const getPopularWorkflows = async (userEmail, limit = 20) => {
+  try {
+    const response = await axios.get(`${getProfileManagerUrl()}/get-popular-workflows`, {
+      params: { limit },
+      timeout: 15000,
+      headers: userEmail ? { 'X-User-Email': userEmail } : {},
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting popular workflows:', error);
+    return { success: false, workflows: [] };
+  }
+};
+
+/**
  * Get one research note in full (includes body_markdown + provenance).
  * @returns {Promise<{success: boolean, research: object|null}>}
  */

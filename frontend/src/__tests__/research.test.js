@@ -139,3 +139,24 @@ describe('workflow grouping (workflows as reusable algorithms)', () => {
     expect(workflowName(A1)).toBe('compare two colleges');
   });
 });
+
+import { toolLabel, popularWorkflowName, popularWorkflowPrompt } from '../utils/research';
+
+describe('popular workflow helpers', () => {
+  it('toolLabel maps known tools and prettifies unknown', () => {
+    expect(toolLabel('get_fit_analysis')).toBe('Get fit analysis');
+    expect(toolLabel('some_new_tool')).toBe('Some New Tool');
+  });
+  it('popularWorkflowName builds a kind + step summary', () => {
+    const wf = { kind: 'comparison', tools: ['get_profile', 'get_fit_analysis', 'save_research'] };
+    expect(popularWorkflowName(wf)).toBe('Comparison: Get profile → Get fit analysis → Save research');
+  });
+  it('popularWorkflowPrompt is generic and PII-free', () => {
+    const p = popularWorkflowPrompt({ kind: 'comparison', tools: ['get_profile', 'get_fit_analysis'] });
+    expect(p).toContain('Get profile, then Get fit analysis');
+    expect(p).toMatch(/save the result to my research notebook/i);
+  });
+  it('falls back to the signature when tools are absent', () => {
+    expect(popularWorkflowName({ kind: 'note', signature: 'a>b' })).toContain('A → B');
+  });
+});

@@ -172,3 +172,59 @@ export function groupByWorkflow(notes) {
     || byId(b.representative).localeCompare(byId(a.representative)));
   return out;
 }
+
+// --- popular (cross-user) workflows: aggregate tool-sequence signatures --------
+
+/** Friendly names for connector tool ids (Popular Workflows shows generic, PII-free steps). */
+export const TOOL_LABELS = {
+  search_universities: 'Search universities',
+  get_university: 'Get university details',
+  get_college_list: 'Get college list',
+  get_fit_analysis: 'Get fit analysis',
+  get_fit_history: 'Get fit history',
+  get_deadlines: 'Get deadlines',
+  get_profile: 'Get profile',
+  get_roadmap: 'Get roadmap',
+  get_essays: 'Get essays',
+  get_aid_packages: 'Get aid packages',
+  get_scholarships: 'Get scholarships',
+  get_credits: 'Get credits',
+  check_fit_recomputation: 'Check stale fits',
+  add_college: 'Add a college',
+  remove_college: 'Remove a college',
+  recompute_fit: 'Recompute fit',
+  update_profile_field: 'Update a profile field',
+  update_student_profile: 'Build/update profile',
+  save_research: 'Save research',
+  research_to_tasks: 'Turn research into tasks',
+};
+
+/** A friendly label for a tool id (falls back to title-casing the id). */
+export function toolLabel(tool) {
+  if (TOOL_LABELS[tool]) return TOOL_LABELS[tool];
+  return String(tool || '').split('_').filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+/** Tool ids for a popular-workflow record (from `tools` or the signature). */
+function popularTools(wf) {
+  if (Array.isArray(wf?.tools) && wf.tools.length) return wf.tools;
+  return String(wf?.signature || '').split('>').filter(Boolean);
+}
+
+/** Display name for a popular workflow: "<Kind>: step → step → …". */
+export function popularWorkflowName(wf) {
+  const kindLabel = kindMeta(wf?.kind).label;
+  const steps = popularTools(wf).map(toolLabel);
+  if (!steps.length) return kindLabel;
+  return `${kindLabel}: ${steps.slice(0, 3).join(' → ')}${steps.length > 3 ? ' → …' : ''}`;
+}
+
+/** A generic, PII-free prompt that re-runs a popular workflow for the current user. */
+export function popularWorkflowPrompt(wf) {
+  const steps = popularTools(wf).map(toolLabel);
+  const kindLabel = kindMeta(wf?.kind).label.toLowerCase();
+  return steps.length
+    ? `Run a Stratia ${kindLabel} workflow that does the following with my data: ${steps.join(', then ')}. Then save the result to my research notebook.`
+    : `Run a Stratia ${kindLabel} workflow and save the result to my research notebook.`;
+}
