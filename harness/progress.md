@@ -294,3 +294,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - TESTS: frontend 336 passed (+7), build green. No backend change.
 - NOT shipped: PR #256 open (merge auto-deploys frontend to prod — needs user go-ahead). Remaining picks: #249, #250, #252.
 - NOTE: unrelated untracked agents/university_profile_collector/* files (KB-collector redesign work) present in tree — kept OUT of this PR (unstaged). Not mine.
+
+## 2026-06-15 16:05 — shipped #251 (Research → Roadmap loop, PR #256)
+- PR #256 squash-merged (924e078c) → #251 auto-closed. ("/ship 256" matched the current branch — clean.)
+- Tracking: #251 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge → cloudbuild-main.yaml → frontend (Turn-into-tasks hand-off on research cards/workflow groups + "From research" back-link chip on roadmap tasks). Frontend-only; no backend target changed.
+- Remaining picks: #249 Profile-aware Popular templates, #250 Balance Ring personalized-fit join, #252 Fit Drift Timeline.
