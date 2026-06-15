@@ -179,3 +179,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
   - Cycle staleness mirrors frontend kbVintage (current cycle = year, +1 from August); functions take now= for deterministic tests.
   - University/KB research tools left untouched per operator.
 - Tests: 10 new connector tests (rank/filter/paginate/aggregate/stale/pin/to-tasks/missing-note) + registration smoke. Full connector suite 69 green; both files compile. 28 MCP tools total.
+
+## 2026-06-15 — Build a student profile from an agent (MCP tool + bulk-upsert route) (PR #238, shipped)
+- GOAL: a student uploads a transcript/résumé in Claude/ChatGPT and the agent creates their Stratia profile.
+- Backend: POST /update-structured-profile (profile_manager_v2) — bulk merge-upsert of a structured profile dict via the existing index_student_profile primitive (smart scalar/array merge, per-field source provenance). Returns merged profile. Imported index_student_profile into main.
+- Connector: update_student_profile(profile, source?, source_text?) MCP tool + client; tool description carries the full canonical schema (name/grade/GPA/SAT/ACT, ap_exams, courses, extracurriculars, leadership_roles, special_programs, awards, work_experience) so the agent fills it from the doc; rate-guarded write; returns merged profile (internal/bulky keys stripped). Server instructions tell the agent to build the profile when a doc is shared.
+- Frontend: "Build my profile from my transcript" prompt on /connect for discoverability.
+- Verified live (profile-manager-v2-00104-tot, stratia-connector-00017-hb7): built a profile from a 'transcript' → persisted → second doc enriched without clobbering (name preserved, ACT added, courses merged+deduped) → cleaned up test data via source-aware delete-profile (profile back to empty). Used QA user duser8531; delete-profile by source filename is the surgical cleanup (field_sources provenance).
+- Tests: backend 2 (create + smart merge via fake DB; stubs file_processing/profile_extraction/gcs_storage to avoid fitz), connector 3. Full suite 1026 passed.
+- Note: `research_to_tasks` MCP tool already existed in main from prior research-notebook work (not added this session). Frontend /save-onboarding-profile route referenced by api.js does NOT exist in main.py (latent dead path; onboarding could reuse /update-structured-profile).
+- Shipped: PR #238 squash-merged (5f522814); main pipeline redeploys profile-v2 + connector.
