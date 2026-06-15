@@ -2144,6 +2144,42 @@ export const pinResearch = async (userEmail, researchId, pinned = true) =>
   updateResearch(userEmail, researchId, { pinned });
 
 /**
+ * Decision Ledger: each college with its predicted fit category + recorded
+ * admission decision (predicted-vs-actual). Read-only; no credits.
+ * @returns {Promise<{success: boolean, outcomes: object[], decided_count: number, total: number}>}
+ */
+export const getOutcomeCalibration = async (userEmail) => {
+  try {
+    const response = await axios.get(`${getProfileManagerUrl()}/get-outcome-calibration`, {
+      params: { user_email: userEmail },
+      timeout: 15000,
+      headers: { 'X-User-Email': userEmail },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error getting outcome calibration:', error);
+    return { success: false, outcomes: [], decided_count: 0, total: 0 };
+  }
+};
+
+/**
+ * Record (or clear, with '') a college's admission decision — the OUTCOME field,
+ * kept separate from the application process status.
+ * @returns {Promise<{success: boolean}>}
+ */
+export const setApplicationDecision = async (userEmail, universityId, decision) => {
+  try {
+    const response = await axios.post(`${getProfileManagerUrl()}/update-application-status`,
+      { user_email: userEmail, university_id: universityId, decision: decision || '' },
+      { timeout: 15000, headers: { 'X-User-Email': userEmail } });
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error setting application decision:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
  * Create a user-authored task in the user's roadmap_tasks subcollection.
  * Stamps `created_by: 'user'` so future surfaces can distinguish manually
  * added tasks from template-translated ones. Uses the existing generic

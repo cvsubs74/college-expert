@@ -227,6 +227,41 @@ class FirestoreDB:
         except Exception as e:
             logger.error(f"[Firestore] Error updating application status: {e}")
             return False
+
+    def get_outcome_calibration(self, user_id: str) -> Dict:
+        """Join recorded admission decisions (on the college_list docs) with the
+        predicted fit category (from college_fits) — the data behind the
+        Decision Ledger's "predicted vs actual" view. Read-only: no LLM, no
+        credits. The `decision` outcome (accepted/waitlisted/denied/...) is kept
+        SEPARATE from the process `status` (planning/submitted/...)."""
+        try:
+            fits = {f.get('university_id'): f for f in self.get_all_fits(user_id)}
+            outcomes = []
+            for c in self.get_college_list(user_id):
+                uid = c.get('university_id')
+                fit = fits.get(uid, {})
+                decision = c.get('decision') or None
+                outcomes.append({
+                    'university_id': uid,
+                    'name': c.get('university_name') or c.get('name') or uid,
+                    # Predicted band: prefer the personalized fit, fall back to the
+                    # population (admit-rate) category so the ledger isn't blank.
+                    'predicted': fit.get('fit_category') or c.get('soft_fit_category'),
+                    'decision': decision,
+                    'match_percentage': fit.get('match_percentage') or fit.get('match_score'),
+                    'decided_at': (c.get('decided_at') or c.get('status_updated_at')) if decision else None,
+                })
+            # Decided first (newest decision first), then undecided by name — a
+            # stable order the Decision Ledger renders directly.
+            decided = sorted([o for o in outcomes if o['decision']],
+                             key=lambda o: o.get('decided_at') or '', reverse=True)
+            undecided = sorted([o for o in outcomes if not o['decision']],
+                               key=lambda o: o.get('name') or '')
+            return {'outcomes': decided + undecided,
+                    'decided_count': len(decided), 'total': len(outcomes)}
+        except Exception as e:
+            logger.error(f"[Firestore] Error building outcome calibration: {e}")
+            return {'outcomes': [], 'decided_count': 0, 'total': 0}
     
     # ==================== ESSAYS ====================
     
