@@ -2,9 +2,10 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { listResearch, deleteResearch, getCollegeList } from '../services/api';
-import { kindsPresent, kindMeta } from '../utils/research';
+import { kindsPresent, kindMeta, groupByWorkflow } from '../utils/research';
 import ResearchCard from '../components/research/ResearchCard';
 import ResearchEditorModal from '../components/research/ResearchEditorModal';
+import WorkflowGroupCard from '../components/research/WorkflowGroupCard';
 import { BeakerIcon, ArrowPathIcon, PlusIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 /**
@@ -21,6 +22,7 @@ export default function ResearchNotebook() {
   const [activeKind, setActiveKind] = useState('all');
   const [editorOpen, setEditorOpen] = useState(false);
   const [editing, setEditing] = useState(null); // a note (edit) or null (create)
+  const [viewMode, setViewMode] = useState('research'); // 'research' | 'workflows'
 
   const load = async () => {
     if (!user?.email) return;
@@ -64,6 +66,7 @@ export default function ResearchNotebook() {
   };
 
   const availableKinds = useMemo(() => kindsPresent(notes), [notes]);
+  const workflowGroups = useMemo(() => groupByWorkflow(notes), [notes]);
   const visible = useMemo(
     () => (activeKind === 'all' ? notes : notes.filter((n) => (n.kind || 'note') === activeKind)),
     [notes, activeKind]
@@ -104,8 +107,15 @@ export default function ResearchNotebook() {
         </div>
       </div>
 
-      {!isLoading && notes.length > 0 && availableKinds.length > 1 && (
-        <div className="mt-5 flex flex-wrap gap-2" role="tablist" aria-label="Filter by kind">
+      {!isLoading && notes.length > 0 && (
+        <div className="mt-5 flex gap-1 rounded-lg border border-gray-200 bg-white p-1 w-max" role="tablist" aria-label="View mode">
+          <ViewTab active={viewMode === 'research'} onClick={() => setViewMode('research')} label="Research" />
+          <ViewTab active={viewMode === 'workflows'} onClick={() => setViewMode('workflows')} label={`Workflows${workflowGroups.length ? ` (${workflowGroups.length})` : ''}`} />
+        </div>
+      )}
+
+      {!isLoading && notes.length > 0 && viewMode === 'research' && availableKinds.length > 1 && (
+        <div className="mt-3 flex flex-wrap gap-2" role="tablist" aria-label="Filter by kind">
           <FilterChip active={activeKind === 'all'} onClick={() => setActiveKind('all')} label={`All (${notes.length})`} />
           {availableKinds.map((k) => (
             <FilterChip
@@ -122,6 +132,19 @@ export default function ResearchNotebook() {
         <div className="mt-10 text-center text-gray-500">Loading your research…</div>
       ) : notes.length === 0 ? (
         <EmptyState onNew={openNew} />
+      ) : viewMode === 'workflows' ? (
+        workflowGroups.length === 0 ? (
+          <div className="mt-8 rounded-xl border border-dashed border-gray-300 bg-gray-50 p-8 text-center text-sm text-gray-600">
+            No saved workflows yet. When an AI agent saves research, the steps it ran are
+            captured here as a reusable workflow — with everything that workflow produced.
+          </div>
+        ) : (
+          <div className="mt-5 space-y-4">
+            {workflowGroups.map((g) => (
+              <WorkflowGroupCard key={g.signature} group={g} />
+            ))}
+          </div>
+        )
       ) : (
         <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
           {visible.map((note) => (
@@ -145,6 +168,22 @@ export default function ResearchNotebook() {
         existing={editing}
       />
     </div>
+  );
+}
+
+function ViewTab({ active, onClick, label }) {
+  return (
+    <button
+      type="button"
+      role="tab"
+      aria-selected={active}
+      onClick={onClick}
+      className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
+        active ? 'bg-[#1A4D2E] text-white' : 'text-gray-600 hover:bg-gray-50'
+      }`}
+    >
+      {label}
+    </button>
   );
 }
 

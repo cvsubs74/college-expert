@@ -1104,6 +1104,21 @@ def profile_manager_v2_http_entry(request):
             if not isinstance(tags, list):
                 tags = [tags]
 
+            # Workflow capture (agent-reported; no instrumentation): the user's
+            # original ask + the ordered steps the agent ran to produce this.
+            # Powers the "Repeat this workflow" widget on the research card.
+            source_prompt = (data.get('source_prompt') or '')[:1000]
+            raw_workflow = data.get('workflow')
+            workflow = []
+            if isinstance(raw_workflow, list):
+                for step in raw_workflow[:40]:
+                    if isinstance(step, dict):
+                        label = str(step.get('label') or step.get('tool') or '')[:200]
+                        if label:
+                            workflow.append({'tool': str(step.get('tool') or '')[:60], 'label': label})
+                    elif isinstance(step, str) and step.strip():
+                        workflow.append({'tool': '', 'label': step.strip()[:200]})
+
             research_data = {
                 'title': title[:200],
                 'summary': (data.get('summary') or '')[:500],
@@ -1113,6 +1128,12 @@ def profile_manager_v2_http_entry(request):
                 'tags': [str(t) for t in tags][:20],
                 'source': source,
                 'pinned': bool(data.get('pinned', False)),
+                'source_prompt': source_prompt,
+                'workflow': workflow,
+                # Stable identity for the workflow (ordered tool sequence) so the
+                # app can group every research produced by the "same" workflow —
+                # i.e. a reusable, user-built algorithm and its outputs.
+                'workflow_signature': '>'.join([s['tool'] for s in workflow if s.get('tool')]),
                 # Provenance is the "interesting" bit: who produced it, against
                 # which KB cycle, when — drives the app's staleness signal.
                 'provenance': {

@@ -19,6 +19,9 @@ vi.mock('../components/research/ResearchCard', () => ({
 vi.mock('../components/research/ResearchEditorModal', () => ({
   default: ({ isOpen }) => (isOpen ? <div data-testid="editor-modal" /> : null),
 }));
+vi.mock('../components/research/WorkflowGroupCard', () => ({
+  default: ({ group }) => <div data-testid="wf-group">{group.name}</div>,
+}));
 
 import ResearchNotebook from '../pages/ResearchNotebook';
 
@@ -69,5 +72,25 @@ describe('ResearchNotebook', () => {
     const cards = screen.getAllByTestId('card');
     expect(cards).toHaveLength(1);
     expect(cards[0]).toHaveTextContent('Application timeline');
+  });
+});
+
+describe('ResearchNotebook — workflows view', () => {
+  beforeEach(() => {
+    listResearch.mockReset();
+    getCollegeList.mockResolvedValue({ success: true, colleges: [] });
+  });
+
+  it('switches to the Workflows view and shows grouped workflows', async () => {
+    listResearch.mockResolvedValue({ success: true, research: [
+      { research_id: 'a', title: 'Duke vs UCSD', kind: 'comparison', created_at: '2026-06-01', source_prompt: 'compare colleges', workflow_signature: 'get_profile>get_fit', workflow: [{ tool: 'get_profile', label: 'profile' }] },
+      { research_id: 'b', title: 'UCLA vs Cal', kind: 'comparison', created_at: '2026-06-10', source_prompt: 'compare colleges', workflow_signature: 'get_profile>get_fit', workflow: [{ tool: 'get_profile', label: 'profile' }] },
+    ] });
+    renderPage();
+    await waitFor(() => expect(screen.getAllByTestId('card')).toHaveLength(2));
+    fireEvent.click(screen.getByRole('tab', { name: /Workflows/ }));
+    // the two researches share one workflow → one group
+    expect(screen.getAllByTestId('wf-group')).toHaveLength(1);
+    expect(screen.getByText('compare colleges')).toBeInTheDocument();
   });
 });

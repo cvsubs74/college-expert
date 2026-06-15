@@ -84,3 +84,91 @@ export function researchProvenance(note, now = new Date()) {
   const stale = Boolean(cycle) && Number(kbYear) < currentCycleYear(now);
   return { sourceLabel, when, cycle, stale };
 }
+
+// --- workflow (how the research was produced; powers "Repeat this workflow") ---
+
+/** Ordered workflow steps for a note (each {tool, label}), or []. */
+export function workflowSteps(note) {
+  return (Array.isArray(note?.workflow) ? note.workflow : [])
+    .map((s) => (typeof s === 'string' ? { tool: '', label: s } : s))
+    .filter((s) => s && s.label);
+}
+
+/** True when a note carries enough to repeat it (an original ask or steps). */
+export function hasWorkflow(note) {
+  return Boolean((note?.source_prompt || '').trim()) || workflowSteps(note).length > 0;
+}
+
+/**
+ * A ready-to-send prompt that reproduces the note's workflow in an AI agent.
+ * Prefers the user's original ask; otherwise synthesizes one from the steps.
+ */
+export function repeatPrompt(note) {
+  const original = (note?.source_prompt || '').trim();
+  if (original) return original;
+  const steps = workflowSteps(note).map((s) => s.label);
+  const base = note?.title ? `Re-run my "${note.title}" Stratia workflow` : 'Re-run this Stratia workflow';
+  return steps.length
+    ? `${base}: ${steps.join('; ')}. Then save the updated result to my Stratia research notebook.`
+    : `${base} and save the updated result to my Stratia research notebook.`;
+}
+
+/**
+ * Stable identity for a note's workflow — the ordered tool sequence (prefers the
+ * server-stored signature). Falls back to the ask/title so label-only workflows
+ * still group. Two researches with the same signature came from the same
+ * reusable "algorithm".
+ */
+export function workflowSignature(note) {
+  if (note?.workflow_signature) return note.workflow_signature;
+  const raw = Array.isArray(note?.workflow) ? note.workflow : [];
+  const tools = raw.map((s) => (s && typeof s === 'object' ? s.tool : '')).filter(Boolean);
+  if (tools.length) return tools.join('>');
+  const ask = (note?.source_prompt || '').trim().toLowerCase();
+  if (ask) return `p:${ask}`;
+  const title = (note?.title || '').trim().toLowerCase();
+  return title ? `t:${title}` : '';
+}
+
+/** A short human name for a workflow given its representative note. */
+export function workflowName(note) {
+  const ask = (note?.source_prompt || '').trim();
+  if (ask) return ask.length > 80 ? `${ask.slice(0, 77)}…` : ask;
+  const steps = workflowSteps(note).map((s) => s.label);
+  if (steps.length) return steps.slice(0, 3).join(' → ') + (steps.length > 3 ? ' → …' : '');
+  return note?.title || 'Workflow';
+}
+
+/**
+ * Group researches by workflow into reusable "algorithms". Each group lists the
+ * researches it produced (what) and the steps (how), newest-first, then by how
+ * many times the workflow was run.
+ * @returns {Array<{signature, name, steps, representative, researches}>}
+ */
+export function groupByWorkflow(notes) {
+  const byId = (n) => n.created_at || '';
+  const groups = new Map();
+  for (const n of (notes || [])) {
+    if (!hasWorkflow(n)) continue;
+    const sig = workflowSignature(n);
+    if (!sig) continue;
+    if (!groups.has(sig)) groups.set(sig, []);
+    groups.get(sig).push(n);
+  }
+  const out = [];
+  for (const [signature, items] of groups) {
+    items.sort((a, b) => (byId(b)).localeCompare(byId(a))); // newest first
+    const representative = items[0];
+    out.push({
+      signature,
+      name: workflowName(representative),
+      steps: workflowSteps(representative),
+      representative,
+      researches: items,
+    });
+  }
+  // Most-run first, then most-recent
+  out.sort((a, b) => b.researches.length - a.researches.length
+    || byId(b.representative).localeCompare(byId(a.representative)));
+  return out;
+}

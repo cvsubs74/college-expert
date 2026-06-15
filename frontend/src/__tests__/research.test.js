@@ -80,3 +80,62 @@ describe('research utils', () => {
     });
   });
 });
+
+import { workflowSteps, hasWorkflow, repeatPrompt } from '../utils/research';
+
+describe('research workflow helpers', () => {
+  it('workflowSteps coerces strings and filters empties', () => {
+    const note = { workflow: [{ tool: 'get_profile', label: 'Pulled profile' }, 'Compared schools', { label: '' }, null] };
+    const steps = workflowSteps(note);
+    expect(steps).toHaveLength(2);
+    expect(steps[1]).toEqual({ tool: '', label: 'Compared schools' });
+    expect(workflowSteps({})).toEqual([]);
+  });
+
+  it('hasWorkflow is true with an ask OR steps, false otherwise', () => {
+    expect(hasWorkflow({ source_prompt: 'compare X and Y' })).toBe(true);
+    expect(hasWorkflow({ workflow: [{ label: 'step' }] })).toBe(true);
+    expect(hasWorkflow({ source_prompt: '   ', workflow: [] })).toBe(false);
+    expect(hasWorkflow({})).toBe(false);
+  });
+
+  it('repeatPrompt prefers the original ask', () => {
+    expect(repeatPrompt({ source_prompt: 'Compare Duke and UCSD' })).toBe('Compare Duke and UCSD');
+  });
+
+  it('repeatPrompt synthesizes from steps + title when no ask', () => {
+    const p = repeatPrompt({ title: 'Duke vs UCSD', workflow: [{ label: 'Pulled profile' }, { label: 'Got fit' }] });
+    expect(p).toContain('Duke vs UCSD');
+    expect(p).toContain('Pulled profile; Got fit');
+    expect(p).toMatch(/save the updated result/i);
+  });
+});
+
+import { workflowSignature, workflowName, groupByWorkflow } from '../utils/research';
+
+describe('workflow grouping (workflows as reusable algorithms)', () => {
+  const A1 = { research_id: 'a1', title: 'Duke vs UCSD', created_at: '2026-06-01', source_prompt: 'compare two colleges', workflow_signature: 'get_profile>get_fit_analysis', workflow: [{ tool: 'get_profile', label: 'profile' }, { tool: 'get_fit_analysis', label: 'fit' }] };
+  const A2 = { research_id: 'a2', title: 'UCLA vs Cal', created_at: '2026-06-10', source_prompt: 'compare two colleges', workflow_signature: 'get_profile>get_fit_analysis', workflow: [{ tool: 'get_profile', label: 'profile' }, { tool: 'get_fit_analysis', label: 'fit' }] };
+  const B1 = { research_id: 'b1', title: 'Timeline', created_at: '2026-06-05', source_prompt: 'build my timeline', workflow_signature: 'get_roadmap>get_deadlines', workflow: [{ tool: 'get_roadmap', label: 'roadmap' }] };
+  const NOWF = { research_id: 'n1', title: 'manual note', created_at: '2026-06-02' };
+
+  it('signature prefers the stored value, falls back to tools then ask/title', () => {
+    expect(workflowSignature(A1)).toBe('get_profile>get_fit_analysis');
+    expect(workflowSignature({ workflow: [{ tool: 'x' }, { tool: 'y' }] })).toBe('x>y');
+    expect(workflowSignature({ source_prompt: 'Hi There' })).toBe('p:hi there');
+    expect(workflowSignature({})).toBe('');
+  });
+
+  it('groups researches by workflow, newest-first within a group, most-run first', () => {
+    const groups = groupByWorkflow([A1, A2, B1, NOWF]);
+    expect(groups).toHaveLength(2); // NOWF excluded (no workflow)
+    expect(groups[0].researches).toHaveLength(2); // the 2-run workflow first
+    expect(groups[0].researches[0].research_id).toBe('a2'); // newest first
+    expect(groups[0].signature).toBe('get_profile>get_fit_analysis');
+    expect(groups[1].researches).toHaveLength(1);
+  });
+
+  it('names a workflow from its representative ask', () => {
+    expect(workflowName(A1)).toBe('compare two colleges');
+  });
+});

@@ -341,7 +341,9 @@ def update_student_profile(profile: dict, source: str = "agent-import",
     destructiveHint=False, idempotentHint=False, openWorldHint=True))
 def save_research(title: str, body_markdown: str, kind: str = "note",
                   summary: str = "", university_ids: list[str] | None = None,
-                  tags: list[str] | None = None, kb_year: int | None = None) -> dict:
+                  tags: list[str] | None = None, kb_year: int | None = None,
+                  source_prompt: str | None = None,
+                  workflow: list[dict] | None = None) -> dict:
     """Save a piece of research/analysis to the student's Stratia Research
     Notebook so it persists in the app. Use this whenever you produce something
     worth keeping — a college comparison, an application timeline, essay angles,
@@ -356,13 +358,23 @@ def save_research(title: str, body_markdown: str, kind: str = "note",
     - `kb_year`: the knowledge-base admission cycle your analysis was based on
       (e.g. 2026) so the app can flag the note if newer data arrives later.
 
+    ALSO capture how you produced this, so the student can repeat it later:
+    - `source_prompt`: the student's original request in their own voice
+      (e.g. "Compare Duke and UCSD for CS and tell me which is more realistic").
+    - `workflow`: the ordered steps you ran, each as
+      {"tool": "<tool name>", "label": "<short human description>"} — e.g.
+      [{"tool":"get_profile","label":"Pulled my profile"},
+       {"tool":"get_fit_analysis","label":"Got Duke & UCSD fit"}]. Keep labels
+      short and PII-free (describe the step, don't dump data).
+
     Returns the new research_id and the stored record."""
     email = _email()
     _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
     source, model = _client_attribution()
     return sc.save_research(email, title, body_markdown, kind=kind, summary=summary,
                             university_ids=university_ids, tags=tags, kb_year=kb_year,
-                            source=source, model=model)
+                            source=source, model=model,
+                            source_prompt=source_prompt, workflow=workflow)
 
 
 @mcp.tool(annotations=ToolAnnotations(title="List my research notes", readOnlyHint=True, openWorldHint=True))
