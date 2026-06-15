@@ -160,3 +160,32 @@ describe('popular workflow helpers', () => {
     expect(popularWorkflowName({ kind: 'note', signature: 'a>b' })).toContain('A → B');
   });
 });
+
+import { isoWeekKey, workflowTrend, isNewToUser } from '../utils/research';
+
+describe('popular workflow trending', () => {
+  it('isoWeekKey matches ISO-8601 week numbering (and the Python backend)', () => {
+    expect(isoWeekKey(new Date('2026-06-15T12:00:00Z'))).toBe('2026-W25'); // a Monday
+    expect(isoWeekKey(new Date('2026-01-01T00:00:00Z'))).toBe('2026-W01'); // Thursday → wk 1
+    expect(isoWeekKey(new Date('2021-01-01T00:00:00Z'))).toBe('2020-W53'); // Friday → prev year wk 53
+  });
+
+  it('workflowTrend flags a real week-over-week jump and ignores noise', () => {
+    const now = new Date('2026-06-15T00:00:00Z');
+    const thisW = isoWeekKey(now);
+    const lastW = isoWeekKey(new Date(now.getTime() - 7 * 86400000));
+    expect(workflowTrend({ count: 20, weeks: { [thisW]: 8, [lastW]: 2 } }, now).trending).toBe(true);
+    expect(workflowTrend({ count: 4, weeks: { [thisW]: 8, [lastW]: 2 } }, now).trending).toBe(false);  // too few all-time
+    expect(workflowTrend({ count: 9, weeks: { [thisW]: 1 } }, now).trending).toBe(false);              // single run
+    expect(workflowTrend({ count: 9, weeks: { [thisW]: 4, [lastW]: 4 } }, now).trending).toBe(false);  // flat
+    expect(workflowTrend({ count: 9 }, now)).toEqual({ thisWeek: 0, lastWeek: 0, trending: false });   // no buckets
+  });
+
+  it('isNewToUser is true only when the signature is not in the user set', () => {
+    const own = new Set(['get_profile>get_fit_analysis']);
+    expect(isNewToUser({ signature: 'search_universities>add_college' }, own)).toBe(true);
+    expect(isNewToUser({ signature: 'get_profile>get_fit_analysis' }, own)).toBe(false);
+    expect(isNewToUser({ signature: 'x' }, ['x'])).toBe(false); // accepts arrays too
+    expect(isNewToUser({}, own)).toBe(false);                   // no signature → not "new"
+  });
+});

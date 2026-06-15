@@ -228,3 +228,46 @@ export function popularWorkflowPrompt(wf) {
     ? `Run a Stratia ${kindLabel} workflow that does the following with my data: ${steps.join(', then ')}. Then save the result to my research notebook.`
     : `Run a Stratia ${kindLabel} workflow and save the result to my research notebook.`;
 }
+
+// --- trending + "new to you" for popular workflows (per-ISO-week buckets) -------
+
+/**
+ * ISO-week key 'YYYY-Www' for a Date — must match the backend's `_iso_week_key`
+ * (Python isocalendar) so this-week / last-week buckets line up across the wire.
+ */
+export function isoWeekKey(date = new Date()) {
+  const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+  const day = d.getUTCDay() || 7;             // Mon=1 … Sun=7 (ISO)
+  d.setUTCDate(d.getUTCDate() + 4 - day);     // shift to the week's Thursday
+  const isoYear = d.getUTCFullYear();
+  const yearStart = new Date(Date.UTC(isoYear, 0, 1));
+  const week = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+  return `${isoYear}-W${String(week).padStart(2, '0')}`;
+}
+
+/**
+ * This-week vs last-week run counts for a popular workflow, plus a `trending`
+ * flag. Trending requires enough all-time runs to be real (>=5) AND a clear
+ * week-over-week jump (this week >=3 and >1.5x last week) so a tiny cohort or a
+ * single new run can't light the flame.
+ */
+export function workflowTrend(wf, now = new Date()) {
+  const weeks = (wf && wf.weeks && typeof wf.weeks === 'object') ? wf.weeks : {};
+  const thisWeek = Number(weeks[isoWeekKey(now)] || 0);
+  const lastWeek = Number(weeks[isoWeekKey(new Date(now.getTime() - 7 * 86400000))] || 0);
+  const count = Number(wf?.count || 0);
+  const trending = count >= 5 && thisWeek >= 3 && thisWeek > 1.5 * lastWeek;
+  return { thisWeek, lastWeek, trending };
+}
+
+/**
+ * True when a popular workflow's signature isn't one the current user has run
+ * themselves — i.e. "new to you", worth discovering. `ownSignatures` is the set
+ * of the user's own workflow signatures (from groupByWorkflow).
+ */
+export function isNewToUser(wf, ownSignatures) {
+  const sig = wf?.signature;
+  if (!sig) return false;
+  const set = ownSignatures instanceof Set ? ownSignatures : new Set(ownSignatures || []);
+  return !set.has(sig);
+}

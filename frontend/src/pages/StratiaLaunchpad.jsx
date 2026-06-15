@@ -11,6 +11,8 @@ import {
     SmartDiscoveryAlert,
     UniversityCard
 } from '../components/stratia';
+import BalanceRing from '../components/stratia/BalanceRing';
+import { askLinks } from '../utils/mcpClients';
 
 // Existing components for modals and widgets
 import FitChatWidget from '../components/FitChatWidget';
@@ -27,9 +29,14 @@ import {
     RocketLaunchIcon
 } from '@heroicons/react/24/outline';
 
+// Hand-off prompt for "Fix my balance" — explicitly tells the agent to fill the
+// gap with safeties/targets WITHOUT recomputing fits (so it can't silently burn
+// the student's credits), then capture the change as a strategy note.
+const FIX_BALANCE_PROMPT = "Look at my Stratia college list and its reach/target/safety balance. If it's unbalanced, search for and add 1–2 schools that fill the gap — especially a safety I'd genuinely be happy to attend — using my profile. Do NOT recompute any fits or spend credits. Then save a short strategy note explaining what you changed and why.";
+
 /**
  * StratiaLaunchpad - Main dashboard with Digital Ivy M3 design
- * 
+ *
  * "Ivy League Library meets Modern Tech" aesthetic
  * - Warm cream backgrounds
  * - Serif headlines (Playfair Display)
@@ -207,6 +214,15 @@ const StratiaLaunchpad = () => {
         target: categorizedColleges.TARGET.length,
         safety: categorizedColleges.SAFETY.length
     }), [collegeList, categorizedColleges]);
+
+    // How many colleges fall back to admit-rate categories rather than a
+    // personalized fit (so the balance ring can be honest about it).
+    const estimatedFits = useMemo(
+        () => collegeList.filter((c) => !c.fit_analysis?.fit_category).length,
+        [collegeList]
+    );
+    // "Fix my balance" hand-off to the connected agent (computed once).
+    const fixBalanceLinks = useMemo(() => askLinks(FIX_BALANCE_PROMPT), []);
 
     // Filter colleges based on category and search
     const filteredColleges = useMemo(() => {
@@ -629,6 +645,19 @@ const StratiaLaunchpad = () => {
                 isTooAmbitious={stats.superReach > stats.target + stats.safety && stats.total > 2}
                 onFindSchools={() => handleOpenDiscovery('SAFETY')}
             />
+
+            {/* Reach/Target/Safety balance at a glance (needs a few schools to be meaningful) */}
+            {stats.total >= 3 && (
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                    <BalanceRing
+                        reach={stats.superReach}
+                        target={stats.target}
+                        safety={stats.safety}
+                        estimated={estimatedFits}
+                        fixLinks={fixBalanceLinks}
+                    />
+                </div>
+            )}
 
             {/* Yearly KB refresh moment (design §3a) */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">

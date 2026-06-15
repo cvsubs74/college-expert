@@ -22,18 +22,28 @@ class _Snap:
         return dict(self._d)
 
 
+def _apply(cur, data):
+    """Mirror Firestore set(merge=True): apply Increment sentinels and merge
+    nested maps (so weeks['YYYY-Www']: INC accrues into the existing map)."""
+    for k, v in data.items():
+        if isinstance(v, tuple) and v and v[0] == "INC":
+            cur[k] = cur.get(k, 0) + v[1]
+        elif isinstance(v, dict):
+            sub = dict(cur.get(k) or {})
+            _apply(sub, v)
+            cur[k] = sub
+        else:
+            cur[k] = v
+    return cur
+
+
 class _StatDoc:
     def __init__(self, store, sid):
         self.store, self.sid = store, sid
 
     def set(self, data, merge=False):
         cur = dict(self.store.get(self.sid, {})) if merge else {}
-        for k, v in data.items():
-            if isinstance(v, tuple) and v and v[0] == "INC":
-                cur[k] = cur.get(k, 0) + v[1]
-            else:
-                cur[k] = v
-        self.store[self.sid] = cur
+        self.store[self.sid] = _apply(cur, data)
 
 
 class _StatColl:
@@ -97,3 +107,32 @@ def test_get_popular_returns_top_by_count_desc():
     top = db.get_popular_workflows(limit=10)
     assert [w["signature"] for w in top] == ["a>b", "c>d"]   # most-run first
     assert top[0]["count"] == 3
+
+
+def test_upsert_accrues_current_week_bucket():
+    db = _db()
+    sig = "get_profile>get_fit_analysis"
+    db.upsert_workflow_stat(sig, ["get_profile", "get_fit_analysis"], "comparison")
+    db.upsert_workflow_stat(sig, ["get_profile", "get_fit_analysis"], "comparison")
+    weeks = db.db.store[sig]["weeks"]
+    # Both runs land in (whatever) the current ISO week — one bucket, count 2.
+    assert len(weeks) == 1
+    assert sum(weeks.values()) == 2
+    # Bucket key is the same 'YYYY-Www' shape the frontend computes.
+    (key,) = weeks.keys()
+    assert key.startswith("20") and "-W" in key
+
+
+def test_get_popular_trims_weeks_to_recent_window():
+    db = _db()
+    # Seed a doc that has been popular for a year (52 week buckets).
+    weeks = {f"2025-W{w:02d}": w for w in range(1, 53)}
+    db.db.store["x>y"] = {
+        "signature": "x>y", "tools": ["x", "y"], "kind": "note",
+        "count": sum(weeks.values()), "weeks": dict(weeks), "updated_at": "2025-12-31",
+    }
+    top = db.get_popular_workflows(limit=10)
+    trimmed = top[0]["weeks"]
+    assert len(trimmed) == 8                                  # bounded payload
+    assert set(trimmed) == {f"2025-W{w:02d}" for w in range(45, 53)}  # newest kept
+    assert db.db.store["x>y"]["count"] == sum(weeks.values())  # read doesn't mutate the count
