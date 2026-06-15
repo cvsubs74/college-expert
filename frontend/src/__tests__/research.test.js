@@ -247,3 +247,43 @@ describe('research → roadmap loop', () => {
     expect(researchTitleMap(null)).toEqual({});
   });
 });
+
+describe('popularWorkflowPrompt personalization (#249)', () => {
+  const wf = { kind: 'comparison', tools: ['get_profile', 'get_fit_analysis'] };
+
+  it('stays the generic PII-free template with no profile/colleges', () => {
+    const generic = popularWorkflowPrompt(wf);
+    expect(generic).not.toMatch(/Use my real data/);
+    expect(popularWorkflowPrompt(wf, {})).toBe(generic);
+    expect(popularWorkflowPrompt(wf, { profile: {}, collegeList: [] })).toBe(generic);
+  });
+
+  it('interpolates guarded profile + college fields', () => {
+    const p = popularWorkflowPrompt(wf, {
+      profile: { intended_major: 'CS', gpa_unweighted: 3.95, sat_total: 1530 },
+      collegeList: [{ university_name: 'Stanford' }, { name: 'UC Berkeley' }],
+    });
+    expect(p).toContain('Use my real data');
+    expect(p).toContain('intended major CS');
+    expect(p).toContain('3.95 GPA/1530 SAT');
+    expect(p).toContain('my college list (Stanford, UC Berkeley)');
+  });
+
+  it('omits fields that are missing (partial profile)', () => {
+    const p = popularWorkflowPrompt(wf, { profile: { intended_major: 'Biology' } });
+    expect(p).toContain('intended major Biology');
+    expect(p).not.toMatch(/GPA|SAT|ACT|college list/);
+  });
+
+  it('prefers SAT but falls back to ACT', () => {
+    expect(popularWorkflowPrompt(wf, { profile: { act_composite: 34 } })).toContain('34 ACT');
+    expect(popularWorkflowPrompt(wf, { profile: { sat_total: 1480, act_composite: 34 } })).toContain('1480 SAT');
+  });
+
+  it('caps the embedded college list at 4 names', () => {
+    const colleges = Array.from({ length: 6 }, (_, i) => ({ university_name: `U${i}` }));
+    const p = popularWorkflowPrompt(wf, { collegeList: colleges });
+    expect(p).toContain('U0, U1, U2, U3');
+    expect(p).not.toContain('U4');
+  });
+});

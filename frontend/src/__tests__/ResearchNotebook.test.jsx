@@ -3,13 +3,15 @@ import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Mock the API layer + auth so the page renders in isolation.
-const { listResearch, getCollegeList, deleteResearch, getPopularWorkflows } = vi.hoisted(() => ({
+const { listResearch, getCollegeList, deleteResearch, getPopularWorkflows, pinResearch, fetchUserProfile } = vi.hoisted(() => ({
   listResearch: vi.fn(),
   getCollegeList: vi.fn().mockResolvedValue({ success: true, colleges: [] }),
   deleteResearch: vi.fn().mockResolvedValue({ success: true }),
   getPopularWorkflows: vi.fn().mockResolvedValue({ success: true, workflows: [] }),
+  pinResearch: vi.fn().mockResolvedValue({ success: true }),
+  fetchUserProfile: vi.fn().mockResolvedValue({ success: true, profile: {} }),
 }));
-vi.mock('../services/api', () => ({ listResearch, getCollegeList, deleteResearch, getPopularWorkflows }));
+vi.mock('../services/api', () => ({ listResearch, getCollegeList, deleteResearch, getPopularWorkflows, pinResearch, fetchUserProfile }));
 vi.mock('../context/AuthContext', () => ({
   useAuth: () => ({ currentUser: { email: 'stu@example.com' } }),
 }));

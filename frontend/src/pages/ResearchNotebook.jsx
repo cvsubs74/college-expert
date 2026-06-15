@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { listResearch, deleteResearch, getCollegeList, getPopularWorkflows, pinResearch } from '../services/api';
+import { listResearch, deleteResearch, getCollegeList, getPopularWorkflows, pinResearch, fetchUserProfile } from '../services/api';
 import { kindsPresent, kindMeta, groupByWorkflow, latestWeeklyPlan } from '../utils/research';
 import { askLinks, WEEKLY_PLAN_PROMPT } from '../utils/mcpClients';
 import ResearchCard from '../components/research/ResearchCard';
@@ -27,18 +27,21 @@ export default function ResearchNotebook() {
   const [editing, setEditing] = useState(null); // a note (edit) or null (create)
   const [viewMode, setViewMode] = useState('research'); // 'research' | 'workflows' | 'popular'
   const [popular, setPopular] = useState([]);
+  const [profile, setProfile] = useState(null); // for personalizing Popular launch prompts
 
   const load = async () => {
     if (!user?.email) return;
     setIsLoading(true);
     try {
-      const [research, list, pop] = await Promise.all([
+      const [research, list, pop, prof] = await Promise.all([
         listResearch(user.email),
         getCollegeList(user.email),
         getPopularWorkflows(user.email),
+        fetchUserProfile(user.email).catch(() => null), // best-effort; personalization degrades to generic
       ]);
       if (research?.success) setNotes(research.research || []);
       if (pop?.success) setPopular(pop.workflows || []);
+      if (prof?.success) setProfile(prof.profile || null);
       const raw = list?.colleges || list?.college_list || [];
       setColleges(raw);
       const names = {};
@@ -168,7 +171,13 @@ export default function ResearchNotebook() {
         ) : (
           <div className="mt-5 space-y-4">
             {popular.map((wf) => (
-              <PopularWorkflowCard key={wf.signature} wf={wf} ownSignatures={ownSignatures} />
+              <PopularWorkflowCard
+                key={wf.signature}
+                wf={wf}
+                ownSignatures={ownSignatures}
+                profile={profile}
+                collegeList={colleges}
+              />
             ))}
           </div>
         )

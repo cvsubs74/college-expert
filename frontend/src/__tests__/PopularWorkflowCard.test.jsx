@@ -46,4 +46,15 @@ describe('PopularWorkflowCard', () => {
     rerender(<PopularWorkflowCard wf={WF} ownSignatures={new Set([WF.signature])} />);
     expect(screen.queryByTestId('new-to-you-chip')).not.toBeInTheDocument();
   });
+
+  it('personalizes the run link from profile + college list, generic otherwise', () => {
+    const { rerender } = render(<PopularWorkflowCard wf={WF} />);
+    const generic = screen.getByRole('link', { name: /run in claude/i }).getAttribute('href');
+    expect(generic).not.toContain(encodeURIComponent('Use my real data'));
+
+    rerender(<PopularWorkflowCard wf={WF} profile={{ intended_major: 'CS', sat_total: 1530 }} collegeList={[{ university_name: 'MIT' }]} />);
+    const href = screen.getByRole('link', { name: /run in claude/i }).getAttribute('href');
+    expect(href).toContain(encodeURIComponent('intended major CS'));
+    expect(href).toContain(encodeURIComponent('MIT'));
+  });
 });
