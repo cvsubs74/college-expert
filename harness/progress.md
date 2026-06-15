@@ -197,3 +197,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - BACKEND (/update-structured-profile): coerce object-array fields to lists (dict→[dict]; un-structurable string→drop) + leadership_roles string→[string], so an agent passing a string can't corrupt the profile. Verified live (profile-manager-v2-00106-yom): posting extracurriculars as a string → stored as list[0] (dropped), not a string.
 - Tests: ProfileViewCard (well-formed across tabs / sane counts for string fields / no-crash + blob surfaced / empty profile). Frontend 264 passed; backend 1026 passed; build OK.
 - Shipped: PR #239 squash-merged (0bb459e9); main pipeline deploys frontend + profile-v2. Existing corrupted profiles now display gracefully; re-import via upload/agent restores structured cards.
+
+## 2026-06-15 — Repeatable workflows: capture + repeat widget + workflows-as-algorithms (PR #241, shipped)
+- GOAL/steer: save the tool-call workflows behind researches (NO BigQuery, NO instrumentation), let users repeat them, and associate each workflow with the researches it produced (workflows = reusable custom algorithms). Design: docs/design/tool-call-telemetry.md (PR #240).
+- KEY INSIGHT: no instrumentation/correlation needed — the agent self-reports the workflow when it calls save_research (it knows its own steps). Rides on the research doc in Firestore.
+- Capture: save_research accepts source_prompt (user's ask) + workflow ([{tool,label}]); backend sanitizes + stores + computes workflow_signature (ordered tool sequence). MCP tool description instructs the agent to include them (PII-free labels). Connector client passes them through.
+- Repeat widget: ResearchCard Workflow section (steps) + 'Run again in Claude/ChatGPT' (repeat-prompt via /connect askLinks) + copy. App never executes tools — repeat = re-run in the agent.
+- Workflows-as-algorithms: ResearchNotebook Research|Workflows toggle; Workflows view groups researches by workflow_signature → WorkflowGroupCard shows HOW (steps) + WHAT it produced (its researches, expandable inline) + Run-again. utils: workflowSteps/hasWorkflow/repeatPrompt/workflowSignature/workflowName/groupByWorkflow.
+- Verified live (profile-manager-v2-00108-zaj + connector redeploy): save-research stores workflow/source_prompt/signature; get-research returns them.
+- Tests: frontend 279; backend 1026 + connector workflow params; build OK.
+- Shipped: PR #241 squash-merged (9e0117c3); main pipeline deploys frontend.
