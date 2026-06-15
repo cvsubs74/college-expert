@@ -229,3 +229,10 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - REVIEW: adversarial reviewer agent APPROVED — ISO-week JS/Python parity cross-checked 2018-2031 (0 mismatches), nested-Increment merge atomic/key-preserving, no-NaN gating, optimistic rollback verified. Verdict posted as PR comment (self-approve blocked by GitHub).
 - TESTS: backend 1032 passed (+2 weekly-bucket/trim), frontend 305 passed (+19), build green.
 - NOT shipped: PR #246 left open for review/merge — merging to main auto-deploys to prod (needs user go-ahead). Trending populates once agents save >=2-step workflows post-merge.
+
+## 2026-06-15 14:40 — shipped #243 #244 #245 (PR #246)
+- PR #246, squash-merged (afe6951a), branch deleted.
+- Tracking: #243 #244 #245 all auto-closed (Closes lines).
+- Board: set-status FAILED — gh token missing 'read:project' scope (cosmetic; issues are source of truth). Fix with: gh auth refresh -s project,read:org
+- Deploy: push to main triggers cloudbuild-main.yaml → frontend (Firebase Hosting) + profile_manager_v2 (firestore_db.py weekly buckets).
+- Quick-win bundle live after pipeline: pinned toggle, Balance Ring, Trending Popular. Trending fills in as agents save >=2-step workflows.
