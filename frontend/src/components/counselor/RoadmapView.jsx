@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircleIcon, CalendarIcon, ExclamationCircleIcon, SparklesIcon, ArrowPathIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleSolidIcon } from '@heroicons/react/24/solid';
 import { useAuth } from '../../context/AuthContext';
-import { markRoadmapTask, getRoadmapTasks, generateRoadmapTasks, updateTaskStatus } from '../../services/api';
+import { markRoadmapTask, getRoadmapTasks, generateRoadmapTasks, updateTaskStatus, listResearch } from '../../services/api';
 import { getDaysUntil, getUrgencyColor, deadlineLabel } from '../../utils/roadmapDeadlines';
+import { researchTitleMap } from '../../utils/research';
 
 const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
     const navigate = useNavigate();
@@ -15,6 +16,8 @@ const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
     const [personalizedTasks, setPersonalizedTasks] = useState([]);
     const [isLoadingTasks, setIsLoadingTasks] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
+    // research_id → title, so a task created from research can link back to it.
+    const [researchTitles, setResearchTitles] = useState({});
 
     // Update state when initialProgress changes (e.g., fetched from server)
     useEffect(() => {
@@ -73,6 +76,14 @@ const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
             }
         };
         loadPersonalizedTasks();
+    }, [user]);
+
+    // Titles for the "From research" back-link on tasks created via research_to_tasks.
+    useEffect(() => {
+        if (!user?.email) return;
+        listResearch(user.email)
+            .then((res) => { if (res?.success) setResearchTitles(researchTitleMap(res.research || [])); })
+            .catch(() => { /* back-link title is best-effort */ });
     }, [user]);
 
     // Generate personalized tasks
@@ -211,6 +222,23 @@ const RoadmapView = ({ roadmap, isLoading, error, initialProgress = {} }) => {
                                                 </span>
                                                 {task.university_name && (
                                                     <span className="text-xs text-stone-500 truncate">{task.university_name}</span>
+                                                )}
+                                                {task.source_research_id && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => navigate('/research')}
+                                                        title={researchTitles[task.source_research_id]
+                                                            ? `From your research: ${researchTitles[task.source_research_id]}`
+                                                            : 'From your research'}
+                                                        className="inline-flex max-w-[12rem] items-center gap-1 truncate rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-700 hover:bg-indigo-100"
+                                                    >
+                                                        <SparklesIcon className="h-3 w-3 shrink-0" />
+                                                        <span className="truncate">
+                                                            {researchTitles[task.source_research_id]
+                                                                ? `From: ${researchTitles[task.source_research_id]}`
+                                                                : 'From research'}
+                                                        </span>
+                                                    </button>
                                                 )}
                                             </div>
                                         </div>

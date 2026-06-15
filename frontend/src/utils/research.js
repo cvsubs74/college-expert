@@ -146,6 +146,30 @@ export function workflowSignature(note) {
   return title ? `t:${title}` : '';
 }
 
+/**
+ * A ready-to-send agent prompt that turns a research note into roadmap tasks.
+ * The AGENT derives the tasks (via its research_to_tasks tool) — the app never
+ * extracts them itself, which keeps this honest and inside the no-in-app-LLM
+ * constraint.
+ */
+export function researchToTasksPrompt(note) {
+  const title = (note?.title || '').trim();
+  const ref = title ? `my Stratia research "${title}"` : 'my latest Stratia research';
+  return `Read ${ref} and turn it into concrete roadmap tasks: call research_to_tasks to create the specific next actions with due dates, linked to the relevant colleges. Skip anything I've already done.`;
+}
+
+/**
+ * Map of research_id → title, for back-linking a roadmap task to the research
+ * note it came from (tasks carry source_research_id but not the title).
+ */
+export function researchTitleMap(notes) {
+  const map = {};
+  for (const n of (notes || [])) {
+    if (n && n.research_id) map[n.research_id] = n.title || '';
+  }
+  return map;
+}
+
 /** A short human name for a workflow given its representative note. */
 export function workflowName(note) {
   const ask = (note?.source_prompt || '').trim();
