@@ -192,6 +192,7 @@ export const MCP_CLIENTS = [
  * tools to answer).
  */
 export const ASK_PROMPTS = [
+  { title: 'Build my profile from my transcript', prompt: "I'm attaching my transcript / résumé. Read it and build my Stratia student profile — extract my GPA, test scores, courses, AP exams, activities, leadership, awards and intended major, then save it to my profile." },
   { title: 'Analyze my fit for a dream school', prompt: 'Pull my profile and my saved fit analysis for Stanford. Tell me my match category and the 3 biggest gaps holding me back, then give me a concrete plan to close them.' },
   { title: "What's due next across my list", prompt: 'Show every upcoming deadline across my college list, sorted by date. Flag which are Early Decision vs Early Action vs Regular, and tell me what to prioritize this month.' },
   { title: 'Find scholarships I actually qualify for', prompt: "Look at my profile and scholarship tracker, then surface scholarships I'm eligible for that I haven't started yet. Rank them by award amount and deadline." },

@@ -39,6 +39,9 @@ mcp = FastMCP(
         "base, the student's academic profile, roadmap tasks, essays, financial-aid "
         "packages, scholarship tracker, and credit balance. You can also make safe "
         "changes (add/remove a college, recompute a fit, update a profile field). "
+        "If the student shares a document (transcript, résumé, brag sheet, Common App "
+        "activities list), read it and call update_student_profile once with the "
+        "extracted fields to build or enrich their profile. "
         "When you produce analysis worth keeping — a college comparison, an "
         "application timeline, essay angles, a scholarship plan, a school deep-dive, "
         "or an overall strategy — offer to save it with save_research so it lands in "
@@ -289,6 +292,43 @@ def update_profile_field(field_path: str, value: str, operation: str = "set") ->
     email = _email()
     _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
     return sc.update_profile_field(email, field_path, value, operation)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Build/update my student profile", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def update_student_profile(profile: dict, source: str = "agent-import",
+                           source_text: str | None = None) -> dict:
+    """Create or update the student's Stratia profile in ONE call by passing a
+    structured `profile` object. Use this to build a profile from a document the
+    student shared (transcript, résumé, brag sheet, Common App activities, etc.):
+    read the document, extract every field present, and pass them here. It MERGES
+    into any existing profile (new non-null values win; list items are
+    de-duplicated) — safe to call repeatedly and to enrich over time.
+
+    `profile` fields (include only what you found; use null/omit when unknown):
+      name, school, location: strings
+      grade: "9"|"10"|"11"|"12"; graduation_year: int; intended_major: string
+      gpa_weighted, gpa_unweighted, gpa_uc: float; class_rank: "15/400"
+      sat_total, sat_math, sat_reading, act_composite: int
+      ap_exams: [{subject, score (1-5)}]
+      courses: [{name, type: AP|Honors|IB|Regular, grade_level (9-12),
+                 semester1_grade, semester2_grade}]
+      extracurriculars: [{name, role, description, grades (e.g. "9-12"),
+                          hours_per_week, achievements: [str]}]
+      leadership_roles: [str]
+      special_programs: [{name, description, grade}]
+      awards: [{name, grade, description}]
+      work_experience: [{employer, role, grades, hours_per_week, description}]
+
+    `source` is a short label for where the data came from (e.g. the file name);
+    pass the document's plain text as `source_text` to keep it on record.
+    Returns the merged profile. Extract thoroughly — don't summarize."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    if not isinstance(profile, dict) or not profile:
+        raise ValueError("profile must be a non-empty object of profile fields")
+    return sc.update_student_profile(email, profile, source=source, source_text=source_text)
 
 
 # ---------------------------------------------------------------------------
