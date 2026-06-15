@@ -57,6 +57,31 @@ describe('ResearchCard', () => {
     fireEvent.click(screen.getByRole('button', { name: /delete research/i }));
     expect(onDelete).toHaveBeenCalledWith('rsh_1');
   });
+
+  it('shows no pin control unless onTogglePin is provided', () => {
+    render(<ResearchCard note={baseNote} />);
+    expect(screen.queryByRole('button', { name: /pin research/i })).not.toBeInTheDocument();
+  });
+
+  it('toggles pin: unpinned note pins on click', () => {
+    const onTogglePin = vi.fn();
+    render(<ResearchCard note={baseNote} onTogglePin={onTogglePin} />);
+    const btn = screen.getByRole('button', { name: /pin research/i });
+    expect(btn).toHaveAttribute('aria-pressed', 'false');
+    fireEvent.click(btn);
+    expect(onTogglePin).toHaveBeenCalledWith(baseNote, true);
+  });
+
+  it('renders a pinned note as pressed/highlighted and unpins on click', () => {
+    const onTogglePin = vi.fn();
+    const pinned = { ...baseNote, pinned: true };
+    render(<ResearchCard note={pinned} onTogglePin={onTogglePin} />);
+    expect(screen.getByTestId('research-card')).toHaveAttribute('data-pinned', 'true');
+    const btn = screen.getByRole('button', { name: /unpin research/i });
+    expect(btn).toHaveAttribute('aria-pressed', 'true');
+    fireEvent.click(btn);
+    expect(onTogglePin).toHaveBeenCalledWith(pinned, false);
+  });
 });
 
 describe('ResearchCard — repeat workflow widget', () => {

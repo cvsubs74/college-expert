@@ -26,6 +26,19 @@ NOTES_COLLECTIONS = frozenset({
     'aid_packages',
 })
 
+# How many recent ISO-week buckets to return per workflow_stat. Bounds the
+# payload (and the surface the "Trending" math needs); the frontend's isoWeekKey
+# must match _iso_week_key below so this/last-week line up across the boundary.
+WORKFLOW_WEEKS_KEEP = 8
+
+
+def _iso_week_key(dt: datetime) -> str:
+    """ISO-week key 'YYYY-Www' for a datetime (matches JS isoWeekKey in
+    utils/research.js and Python's isocalendar, so write-side and read-side
+    agree on which bucket "this week" is)."""
+    iso = dt.isocalendar()  # (ISO year, ISO week, weekday)
+    return f"{iso[0]}-W{iso[1]:02d}"
+
 
 class FirestoreDB:
     """Firestore database client with methods for all profile operations."""
@@ -757,15 +770,22 @@ class FirestoreDB:
     # readable across users to power the Popular Workflows view.
 
     def upsert_workflow_stat(self, signature: str, tools: List[str], kind: str = None) -> bool:
-        """Increment the run count for a workflow signature (atomic)."""
+        """Increment the run count for a workflow signature (atomic).
+
+        Also increments a per-ISO-week bucket (`weeks['YYYY-Www']`) so the app
+        can flag "Trending" workflows. The week bucket uses a nested Increment so
+        the write stays a single atomic, read-free merge; it carries only counts
+        (PII-free, like the rest of this cross-user aggregate)."""
         try:
+            now = datetime.utcnow()
             ref = self.db.collection('workflow_stats').document(signature)
             ref.set({
                 'signature': signature,
                 'tools': tools or [],
                 'kind': kind or 'note',
                 'count': firestore.Increment(1),
-                'updated_at': datetime.utcnow().isoformat(),
+                'weeks': {_iso_week_key(now): firestore.Increment(1)},
+                'updated_at': now.isoformat(),
             }, merge=True)
             return True
         except Exception as e:
@@ -774,12 +794,25 @@ class FirestoreDB:
 
     def get_popular_workflows(self, limit: int = 20) -> List[Dict]:
         """Top workflows by run count (descending). Ties broken deterministically
-        by recency (in Python, so no composite index is required)."""
+        by recency (in Python, so no composite index is required). The per-week
+        bucket map in the RETURNED payload is trimmed to the most-recent
+        WORKFLOW_WEEKS_KEEP weeks (the stored doc keeps every week — ~52 small
+        ints/year, negligible against Firestore's 1 MiB doc limit; what we cap is
+        read bandwidth + the surface the trend math needs)."""
         try:
             q = (self.db.collection('workflow_stats')
                  .order_by('count', direction=firestore.Query.DESCENDING)
                  .limit(limit))
-            items = [{**doc.to_dict()} for doc in q.stream()]
+            items = []
+            for doc in q.stream():
+                rec = {**doc.to_dict()}
+                weeks = rec.get('weeks')
+                if isinstance(weeks, dict) and len(weeks) > WORKFLOW_WEEKS_KEEP:
+                    # Week keys sort lexically in chronological order ('2025-W52'
+                    # < '2026-W01'); keep the newest WORKFLOW_WEEKS_KEEP.
+                    recent = sorted(weeks.keys())[-WORKFLOW_WEEKS_KEEP:]
+                    rec['weeks'] = {k: weeks[k] for k in recent}
+                items.append(rec)
             items.sort(key=lambda w: (w.get('count', 0), w.get('updated_at', '')), reverse=True)
             return items
         except Exception as e:

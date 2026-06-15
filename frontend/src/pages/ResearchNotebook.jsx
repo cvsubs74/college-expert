@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { listResearch, deleteResearch, getCollegeList, getPopularWorkflows } from '../services/api';
+import { listResearch, deleteResearch, getCollegeList, getPopularWorkflows, pinResearch } from '../services/api';
 import { kindsPresent, kindMeta, groupByWorkflow } from '../utils/research';
 import ResearchCard from '../components/research/ResearchCard';
 import ResearchEditorModal from '../components/research/ResearchEditorModal';
@@ -69,12 +69,25 @@ export default function ResearchNotebook() {
     if (!res?.success) setNotes(prev); // rollback on failure
   };
 
+  const handleTogglePin = async (note, pinned) => {
+    if (!user?.email || !note?.research_id) return;
+    const prev = notes;
+    setNotes((n) => n.map((r) => (r.research_id === note.research_id ? { ...r, pinned } : r))); // optimistic
+    const res = await pinResearch(user.email, note.research_id, pinned);
+    if (!res?.success) setNotes(prev); // rollback on failure
+  };
+
   const availableKinds = useMemo(() => kindsPresent(notes), [notes]);
   const workflowGroups = useMemo(() => groupByWorkflow(notes), [notes]);
-  const visible = useMemo(
-    () => (activeKind === 'all' ? notes : notes.filter((n) => (n.kind || 'note') === activeKind)),
-    [notes, activeKind]
-  );
+  // Signatures of workflows the user has already run — lets the Popular tab flag
+  // which crowd workflows are "new to you".
+  const ownSignatures = useMemo(() => new Set(workflowGroups.map((g) => g.signature)), [workflowGroups]);
+  const visible = useMemo(() => {
+    const filtered = activeKind === 'all' ? notes : notes.filter((n) => (n.kind || 'note') === activeKind);
+    // Pinned first, otherwise keep the backend's newest-first order. Array.sort
+    // is stable in modern engines, so same-pinned items keep their order.
+    return [...filtered].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
+  }, [notes, activeKind]);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
@@ -144,7 +157,7 @@ export default function ResearchNotebook() {
         ) : (
           <div className="mt-5 space-y-4">
             {popular.map((wf) => (
-              <PopularWorkflowCard key={wf.signature} wf={wf} />
+              <PopularWorkflowCard key={wf.signature} wf={wf} ownSignatures={ownSignatures} />
             ))}
           </div>
         )
@@ -172,6 +185,7 @@ export default function ResearchNotebook() {
               collegeNames={collegeNames}
               onDelete={handleDelete}
               onEdit={openEdit}
+              onTogglePin={handleTogglePin}
             />
           ))}
         </div>

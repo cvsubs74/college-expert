@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { TrashIcon, ChevronDownIcon, ChevronUpIcon, PencilSquareIcon, PlayIcon, ClipboardDocumentIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { TrashIcon, ChevronDownIcon, ChevronUpIcon, PencilSquareIcon, PlayIcon, ClipboardDocumentIcon, CheckIcon, BookmarkIcon } from '@heroicons/react/24/outline';
+import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/24/solid';
 import { kindMeta, researchProvenance, workflowSteps, hasWorkflow, repeatPrompt } from '../../utils/research';
 import { askLinks } from '../../utils/mcpClients';
 
@@ -19,7 +20,8 @@ function prettyId(id) {
  * chips, an expandable Markdown body, and a provenance/staleness footer.
  *
  * @param {{ note: object, collegeNames?: Record<string,string>,
- *   onDelete?: (researchId: string) => void, onEdit?: (note: object) => void }} props
+ *   onDelete?: (researchId: string) => void, onEdit?: (note: object) => void,
+ *   onTogglePin?: (note: object, pinned: boolean) => void }} props
  */
 // "Repeat this workflow" — shows how the research was produced (the original ask
 // + ordered steps the agent ran) and lets the student re-run it in their agent.
@@ -89,18 +91,22 @@ function WorkflowWidget({ note }) {
   );
 }
 
-export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit }) {
+export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit, onTogglePin }) {
   const [open, setOpen] = useState(false);
   const meta = kindMeta(note.kind);
   const prov = researchProvenance(note);
   const colleges = note.university_ids || [];
   const tags = note.tags || [];
+  const pinned = Boolean(note.pinned);
 
   return (
     <div
       data-testid="research-card"
       data-kind={note.kind || 'note'}
-      className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md"
+      data-pinned={pinned ? 'true' : 'false'}
+      className={`rounded-xl border bg-white p-4 shadow-sm transition hover:shadow-md ${
+        pinned ? 'border-indigo-200 ring-1 ring-indigo-100' : 'border-gray-200'
+      }`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
@@ -117,6 +123,19 @@ export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit
           {note.summary && <p className="mt-1 text-sm text-gray-600">{note.summary}</p>}
         </div>
         <div className="flex shrink-0 items-center gap-1">
+          {onTogglePin && (
+            <button
+              type="button"
+              aria-label={pinned ? 'Unpin research' : 'Pin research'}
+              aria-pressed={pinned}
+              onClick={() => onTogglePin(note, !pinned)}
+              className={`rounded-md p-1.5 hover:bg-gray-100 ${
+                pinned ? 'text-indigo-600' : 'text-gray-400 hover:text-gray-700'
+              }`}
+            >
+              {pinned ? <BookmarkSolidIcon className="h-4 w-4" /> : <BookmarkIcon className="h-4 w-4" />}
+            </button>
+          )}
           {onEdit && (
             <button
               type="button"

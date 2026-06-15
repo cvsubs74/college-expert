@@ -2123,6 +2123,7 @@ export const updateResearch = async (userEmail, researchId, patch = {}) => {
     if (patch.kind !== undefined) body.kind = patch.kind;
     if (patch.universityIds !== undefined) body.university_ids = patch.universityIds;
     if (patch.tags !== undefined) body.tags = patch.tags;
+    if (patch.pinned !== undefined) body.pinned = patch.pinned;
     const response = await axios.post(`${getProfileManagerUrl()}/update-research`, body, {
       timeout: 15000,
       headers: { 'X-User-Email': userEmail },
@@ -2133,6 +2134,14 @@ export const updateResearch = async (userEmail, researchId, patch = {}) => {
     return { success: false, error: error.message };
   }
 };
+
+/**
+ * Pin or unpin a research note (thin wrapper over updateResearch). The backend
+ * already persists `pinned` on the research doc; this surfaces it to the app.
+ * @returns {Promise<{success: boolean, research?: object}>}
+ */
+export const pinResearch = async (userEmail, researchId, pinned = true) =>
+  updateResearch(userEmail, researchId, { pinned });
 
 /**
  * Create a user-authored task in the user's roadmap_tasks subcollection.

@@ -217,3 +217,15 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Verified live (profile-manager-v2-00111-cit): ranking by count, PII dropped, single/unknown not aggregated; all seeded data cleaned up (research + workflow_stats docs via Firestore REST DELETE).
 - Tests: backend 1030 (+ workflow_stats), frontend 286 (+ popular helpers/card/tab); build OK.
 - Shipped: PR #242 squash-merged (61661666); main pipeline deploys frontend. Populates as agents save >=2-step workflows (reconnect connector so save_research sends workflow).
+
+## 2026-06-15 — Agents+Research: feature ideation + quick-win bundle (PR #246, open)
+- GOAL: suggest useful + cool features around the Agents (MCP connector) and Research surface, then build picks.
+- IDEATION (Workflow wf_a73d2daf-35c, 44 agents): map real surface → 8-lens ideation (40 ideas) → cluster (15) → 2-lens adversarial scoring → synthesis. Top picks: Decision Ledger (flagship), This Week's 3 Things, Profile-aware Popular templates, Balance Ring, Research→Roadmap loop, Fit Drift Timeline. Filed the 6 as backlog: #247-#252.
+- STEER: user chose the "quick-win bundle" (3 S-effort features) for this session; filed #243/#244/#245.
+- BUILT (PR #246, Closes #243/#244/#245):
+  - #243 Revive pinned: `pinned` was persisted by the connector (update-research whitelists it) but had ZERO frontend consumers. Added api.pinResearch + pinned passthrough, optimistic pin toggle on ResearchCard, pinned-first ordering in the Research tab.
+  - #244 Balance Ring: pure utils/listBalance (verdict/segments) + presentational BalanceRing on the Launchpad over the EXISTING categorizedColleges/stats (merges personalized fit_category) — summarizes exactly what the page shows, can't lie. Gated >=3; honest "N estimated" caption; "Fix my balance" hands off to the agent with an explicit NO-recompute prompt (no credit burn).
+  - #245 Trending Popular: upsert_workflow_stat also increments per-ISO-week bucket weeks[YYYY-Www] (atomic nested Increment, read-free); get_popular_workflows trims returned weeks to recent window (read-bandwidth bounded; stored doc keeps all, ~52 ints/yr = negligible). Frontend isoWeekKey/workflowTrend/isNewToUser (ISO week matches Python isocalendar) → 🔥 Trending badge (count>=5 AND this>1.5x last) + ✨ New-to-you chip. Aggregate stays PII-free.
+- REVIEW: adversarial reviewer agent APPROVED — ISO-week JS/Python parity cross-checked 2018-2031 (0 mismatches), nested-Increment merge atomic/key-preserving, no-NaN gating, optimistic rollback verified. Verdict posted as PR comment (self-approve blocked by GitHub).
+- TESTS: backend 1032 passed (+2 weekly-bucket/trim), frontend 305 passed (+19), build green.
+- NOT shipped: PR #246 left open for review/merge — merging to main auto-deploys to prod (needs user go-ahead). Trending populates once agents save >=2-step workflows post-merge.
