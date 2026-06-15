@@ -263,3 +263,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - FIXED ⇄ arrow rotation in resources AgentBridgeFlow (was vertical on desktop; now horizontal between side-by-side columns; vertical on mobile stack).
 - VERIFIED: vitest 307 passed; build clean; screenshotted the landing band on desktop AND mobile (390px) — bridge stacks correctly, all on-brand, no page errors.
 - Same branch/PR #254 (scope broadened): title now "surface the AI-agent (MCP) capability — resources whitepaper + landing section".
+
+## 2026-06-15 15:32 — shipped #253 (Decision Ledger / #247) + #254 (AI-agents whitepaper)
+- PR #253 squash-merged (15aa6300) → #247 auto-closed. Decision Ledger live after pipeline: connector tools set_application_status/get_outcome_calibration, backend get-outcome-calibration, Launchpad DecisionLedger strip.
+- PR #254 squash-merged (dc9b57f1). Resolved a harness/progress.md conflict (both branches appended) by merging origin/main into the branch (no force-push) + re-running CI. Reviewed #254 before merge (reviewer APPROVED: whitepaper claims cross-checked against the real 31-tool connector; JSX/registry/route correct). Whitepaper + landing band live after pipeline.
+- Board: #247 set-status skipped (gh token lacks read:project; cosmetic).
+- Deploy: both merges trigger cloudbuild-main.yaml → connector + profile_manager_v2 + frontend to prod.
