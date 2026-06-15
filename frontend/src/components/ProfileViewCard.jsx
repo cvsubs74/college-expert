@@ -17,6 +17,23 @@ import {
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 
 // ============================================================================
+// DEFENSIVE COERCION
+// Profile array fields can be malformed (e.g. a legacy/agent import that stored
+// a string blob instead of a list). Never let that crash a tab via .map() or
+// inflate a count via a string's .length.
+// ============================================================================
+const asArray = (v) => (Array.isArray(v) ? v : []);
+const asObjects = (v) => asArray(v).filter((x) => x && typeof x === 'object');
+const strBlob = (v) => (typeof v === 'string' && v.trim() ? v.trim() : '');
+
+// Renders a string field that should have been a list, so the data isn't hidden.
+const RawTextNote = ({ text }) => (
+    <div className="bg-white rounded-xl p-4 border border-amber-200 text-sm text-gray-700 whitespace-pre-wrap">
+        {text}
+    </div>
+);
+
+// ============================================================================
 // TAB NAVIGATION - Amber theme matching landing page
 // ============================================================================
 const TabButton = ({ id, label, icon: Icon, isActive, onClick }) => {
@@ -149,9 +166,9 @@ const ActivityCard = ({ activity }) => {
                     </span>
                 )}
             </div>
-            {activity.achievements && activity.achievements.length > 0 && (
+            {asArray(activity.achievements).length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1">
-                    {activity.achievements.map((a, i) => (
+                    {asArray(activity.achievements).map((a, i) => (
                         <span key={i} className="inline-flex items-center gap-1 px-2 py-1 bg-[#D6E8D5] text-[#1A4D2E] rounded-lg text-xs border border-[#D6E8D5]">
                             <TrophyIcon className="h-3 w-3" /> {a}
                         </span>
@@ -293,10 +310,11 @@ const OverviewTab = ({ profileData }) => {
     const satReading = profileData.sat_reading;
     const actComposite = profileData.act_composite;
 
-    // Calculate quick stats
-    const apCount = profileData.ap_exams?.length || 0;
-    const activityCount = profileData.extracurriculars?.length || 0;
-    const awardCount = profileData.awards?.length || 0;
+    // Calculate quick stats — array-only so a malformed string field can't
+    // report its character count as a total.
+    const apCount = asArray(profileData.ap_exams).length;
+    const activityCount = asArray(profileData.extracurriculars).length;
+    const awardCount = asArray(profileData.awards).length;
 
     return (
         <div className="space-y-6">
@@ -387,8 +405,9 @@ const OverviewTab = ({ profileData }) => {
 // ============================================================================
 const AcademicsTab = ({ profileData }) => {
     // Flat fields - ap_exams and courses are at top level
-    const apExams = profileData.ap_exams || [];
-    const courses = profileData.courses || [];
+    const apExams = asObjects(profileData.ap_exams);
+    const courses = asObjects(profileData.courses);
+    const coursesBlob = strBlob(profileData.courses);
 
     // Group courses by grade level
     const coursesByGrade = {};
@@ -447,6 +466,10 @@ const AcademicsTab = ({ profileData }) => {
                         ))}
                     </div>
                 </SectionCard>
+            ) : coursesBlob ? (
+                <SectionCard title="Academic Courses" icon={BookOpenIcon} color="blue">
+                    <RawTextNote text={coursesBlob} />
+                </SectionCard>
             ) : (
                 <EmptyState icon={BookOpenIcon} title="No courses added yet" subtitle="Add your academic courses to showcase your rigor" />
             )}
@@ -458,9 +481,10 @@ const AcademicsTab = ({ profileData }) => {
 // ACTIVITIES TAB
 // ============================================================================
 const ActivitiesTab = ({ profileData }) => {
-    const extracurriculars = profileData.extracurriculars || [];
-    const leadership = profileData.leadership_roles || [];
-    const specialPrograms = profileData.special_programs || [];
+    const extracurriculars = asObjects(profileData.extracurriculars);
+    const extracurricularsBlob = strBlob(profileData.extracurriculars);
+    const leadership = asArray(profileData.leadership_roles).filter(Boolean);
+    const specialPrograms = asObjects(profileData.special_programs);
 
     return (
         <div className="space-y-6">
@@ -478,6 +502,10 @@ const ActivitiesTab = ({ profileData }) => {
                         ))}
                     </div>
                 </SectionCard>
+            ) : extracurricularsBlob ? (
+                <SectionCard title="Extracurricular Activities" icon={SparklesIcon} color="rose">
+                    <RawTextNote text={extracurricularsBlob} />
+                </SectionCard>
             ) : (
                 <EmptyState icon={SparklesIcon} title="No activities added yet" subtitle="Add your extracurricular activities" />
             )}
@@ -486,12 +514,16 @@ const ActivitiesTab = ({ profileData }) => {
             {leadership.length > 0 && (
                 <SectionCard title="Leadership Roles" icon={UserGroupIcon} color="green">
                     <div className="flex flex-wrap gap-2">
-                        {leadership.map((role, i) => (
-                            <span key={i} className="bg-white px-4 py-2 rounded-xl text-sm font-medium text-gray-700 border border-green-200 flex items-center gap-2">
-                                <CheckCircleIcon className="h-4 w-4 text-green-500" />
-                                {role}
-                            </span>
-                        ))}
+                        {leadership.map((role, i) => {
+                            const label = typeof role === 'string' ? role : (role?.title || role?.name || '');
+                            if (!label) return null;
+                            return (
+                                <span key={i} className="bg-white px-4 py-2 rounded-xl text-sm font-medium text-gray-700 border border-green-200 flex items-center gap-2">
+                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    {label}
+                                </span>
+                            );
+                        })}
                     </div>
                 </SectionCard>
             )}
@@ -518,7 +550,8 @@ const ActivitiesTab = ({ profileData }) => {
 // ACHIEVEMENTS TAB
 // ============================================================================
 const AchievementsTab = ({ profileData }) => {
-    const awards = profileData.awards || [];
+    const awards = asObjects(profileData.awards);
+    const awardsBlob = strBlob(profileData.awards);
 
     return (
         <div className="space-y-6">
@@ -543,6 +576,10 @@ const AchievementsTab = ({ profileData }) => {
                         ))}
                     </div>
                 </SectionCard>
+            ) : awardsBlob ? (
+                <SectionCard title="Awards & Honors" icon={TrophyIcon} color="stratia">
+                    <RawTextNote text={awardsBlob} />
+                </SectionCard>
             ) : (
                 <EmptyState icon={TrophyIcon} title="No awards added yet" subtitle="Add your awards and honors to highlight your achievements" />
             )}
@@ -554,7 +591,8 @@ const AchievementsTab = ({ profileData }) => {
 // EXPERIENCE TAB
 // ============================================================================
 const ExperienceTab = ({ profileData }) => {
-    const workExperience = profileData.work_experience || [];
+    const workExperience = asObjects(profileData.work_experience);
+    const workBlob = strBlob(profileData.work_experience);
 
     return (
         <div className="space-y-6">
@@ -585,6 +623,10 @@ const ExperienceTab = ({ profileData }) => {
                             </div>
                         ))}
                     </div>
+                </SectionCard>
+            ) : workBlob ? (
+                <SectionCard title="Work Experience" icon={BriefcaseIcon} color="teal">
+                    <RawTextNote text={workBlob} />
                 </SectionCard>
             ) : (
                 <EmptyState icon={BriefcaseIcon} title="No work experience added yet" subtitle="Add any jobs, internships, or volunteer positions" />
