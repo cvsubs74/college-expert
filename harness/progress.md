@@ -236,3 +236,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Board: set-status FAILED — gh token missing 'read:project' scope (cosmetic; issues are source of truth). Fix with: gh auth refresh -s project,read:org
 - Deploy: push to main triggers cloudbuild-main.yaml → frontend (Firebase Hosting) + profile_manager_v2 (firestore_db.py weekly buckets).
 - Quick-win bundle live after pipeline: pinned toggle, Balance Ring, Trending Popular. Trending fills in as agents save >=2-step workflows.
+
+## 2026-06-15 14:58 — Decision Ledger (flagship, PR #253, open) — #247
+- GOAL/steer: user said "proceed" → build the next pick. Built #247 Decision Ledger end-to-end via the pipeline (one issue/session).
+- WHAT: agent (or student in-app) records real admission OUTCOMES; app shows predicted (fit category) vs actual (decision). The "graded against reality" flagship from the ideation workflow.
+- Connector: set_application_status (safe-write, rate-guarded) + get_outcome_calibration (read). decision (accepted/waitlisted/denied/deferred/enrolled) kept SEPARATE from process status; synonyms normalized, unknowns REJECTED symmetric with frontend (no junk stored); '' clears.
+- Backend: firestore_db.get_outcome_calibration joins college_list.decision ⋈ college_fits.fit_category (soft fallback), decided newest-first; route get-outcome-calibration; update-application-status stamps decided_at. Read-only, no LLM/credits.
+- Frontend: pure utils/outcomes.js (normalize/predictedBand/calibrationOutcome/calibrationSummary — reach-admit = "beat the odds" not a hit, so hit-rate never overclaims; headline suppressed <3 decisions). DecisionLedger strip on Launchpad (predicted band + decision selector + predicted-vs-actual marker), optimistic setter; api getOutcomeCalibration + setApplicationDecision.
+- REVIEW: reviewer agent APPROVED (decision/status separation, join+normalization parity, no cross-user leak verified); both NITs fixed. Verdict posted as PR comment.
+- TESTS: backend 1040 passed (+8), frontend 320 passed (+16 across 2 files), build green.
+- NOT shipped: PR #253 open for review/merge (merge auto-deploys connector + profile_manager_v2 + frontend to prod — needs user go-ahead). Remaining backlog picks: #248-#252.
