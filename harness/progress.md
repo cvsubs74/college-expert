@@ -237,7 +237,16 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Deploy: push to main triggers cloudbuild-main.yaml → frontend (Firebase Hosting) + profile_manager_v2 (firestore_db.py weekly buckets).
 - Quick-win bundle live after pipeline: pinned toggle, Balance Ring, Trending Popular. Trending fills in as agents save >=2-step workflows.
 
-## 2026-06-15 — Resources: third whitepaper "How Stratia Works With AI Agents" (PR #254, open)
+## 2026-06-15 14:58 — Decision Ledger (flagship, PR #253) — #247
+- GOAL/steer: user said "proceed" → build the next pick. Built #247 Decision Ledger end-to-end via the pipeline (one issue/session).
+- WHAT: agent (or student in-app) records real admission OUTCOMES; app shows predicted (fit category) vs actual (decision). The "graded against reality" flagship from the ideation workflow.
+- Connector: set_application_status (safe-write, rate-guarded) + get_outcome_calibration (read). decision (accepted/waitlisted/denied/deferred/enrolled) kept SEPARATE from process status; synonyms normalized, unknowns REJECTED symmetric with frontend (no junk stored); '' clears.
+- Backend: firestore_db.get_outcome_calibration joins college_list.decision ⋈ college_fits.fit_category (soft fallback), decided newest-first; route get-outcome-calibration; update-application-status stamps decided_at. Read-only, no LLM/credits.
+- Frontend: pure utils/outcomes.js (normalize/predictedBand/calibrationOutcome/calibrationSummary — reach-admit = "beat the odds" not a hit, so hit-rate never overclaims; headline suppressed <3 decisions). DecisionLedger strip on Launchpad (predicted band + decision selector + predicted-vs-actual marker), optimistic setter; api getOutcomeCalibration + setApplicationDecision.
+- REVIEW: reviewer agent APPROVED (decision/status separation, join+normalization parity, no cross-user leak verified); both NITs fixed. Verdict posted as PR comment.
+- TESTS: backend 1040 passed (+8), frontend 320 passed (+16 across 2 files), build green.
+
+## 2026-06-15 — Resources: third whitepaper "How Stratia Works With AI Agents" (PR #254)
 - GOAL: add a Resources paper on how Stratia exposes itself as MCP so AI agents can work with it; ground it in the recent MCP features.
 - BRANCHED off main (resources-mcp-agent-paper) — NOT the in-flight issue-247 branch — since this is a standalone content task.
 - WROTE paper how-stratia-works-with-ai-agents.js (cat: Platform & Architecture, violet/fuchsia). 7 sections: app-vs-agent-operable thesis → the connector (remote MCP, Google OAuth+DCR, Cloud Run) → 31-tool surface (read/act/remember) → per-user safety model → the write-back round trip → honest-about-itself (attribution + workflows + Decision Ledger) → what-this-gets-you. Every claim grounded in shipped code: #222/#226 connector, #229/#236 notebook, #233 attribution, #238 profile-from-agent, #241/#242 workflows, #247 Decision Ledger.
@@ -253,4 +262,4 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - /connect is auth-gated, so the secondary CTA points at the PUBLIC whitepaper (clean funnel) and primary uses the existing handleGetStarted.
 - FIXED ⇄ arrow rotation in resources AgentBridgeFlow (was vertical on desktop; now horizontal between side-by-side columns; vertical on mobile stack).
 - VERIFIED: vitest 307 passed; build clean; screenshotted the landing band on desktop AND mobile (390px) — bridge stacks correctly, all on-brand, no page errors.
-- Same branch/PR #254 (scope broadened): title now "surface the AI-agent (MCP) capability — resources whitepaper + landing section". Still NOT merged — merge auto-deploys frontend to prod (needs user go-ahead).
+- Same branch/PR #254 (scope broadened): title now "surface the AI-agent (MCP) capability — resources whitepaper + landing section".

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit, checkFitRecomputationNeeded } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit, checkFitRecomputationNeeded, getOutcomeCalibration, setApplicationDecision } from '../services/api';
 import KbRefreshBanner from '../components/KbRefreshBanner';
 import KbRefreshReviewModal from '../components/KbRefreshReviewModal';
 import { kbUpdateFor } from '../utils/kbVintage';
@@ -12,6 +12,7 @@ import {
     UniversityCard
 } from '../components/stratia';
 import BalanceRing from '../components/stratia/BalanceRing';
+import DecisionLedger from '../components/stratia/DecisionLedger';
 import { askLinks } from '../utils/mcpClients';
 
 // Existing components for modals and widgets
@@ -223,6 +224,35 @@ const StratiaLaunchpad = () => {
     );
     // "Fix my balance" hand-off to the connected agent (computed once).
     const fixBalanceLinks = useMemo(() => askLinks(FIX_BALANCE_PROMPT), []);
+
+    // Decision Ledger — predicted (fit) vs actual (decision). Fetched separately
+    // (it joins college_list decisions with college_fits) and refetched when the
+    // list size changes so newly-added colleges show up as rows to record.
+    const [calibration, setCalibration] = useState({ outcomes: [], decided_count: 0, total: 0 });
+
+    const reloadCalibration = async () => {
+        if (!currentUser?.email) return;
+        const res = await getOutcomeCalibration(currentUser.email);
+        if (res?.success) setCalibration(res);
+    };
+
+    useEffect(() => {
+        reloadCalibration();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentUser?.email, collegeList.length]);
+
+    const handleSetDecision = async (universityId, decision) => {
+        if (!currentUser?.email) return;
+        // Optimistic: reflect the choice immediately, then re-sync from the
+        // server (which recomputes decided_count + ordering authoritatively).
+        setCalibration((prev) => ({
+            ...prev,
+            outcomes: (prev.outcomes || []).map((o) =>
+                o.university_id === universityId ? { ...o, decision: decision || null } : o),
+        }));
+        await setApplicationDecision(currentUser.email, universityId, decision);
+        reloadCalibration();
+    };
 
     // Filter colleges based on category and search
     const filteredColleges = useMemo(() => {
@@ -656,6 +686,13 @@ const StratiaLaunchpad = () => {
                         estimated={estimatedFits}
                         fixLinks={fixBalanceLinks}
                     />
+                </div>
+            )}
+
+            {/* Decision Ledger — record outcomes; grade Stratia's fit calls (predicted vs actual) */}
+            {calibration.outcomes.length > 0 && (
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                    <DecisionLedger outcomes={calibration.outcomes} onSetDecision={handleSetDecision} />
                 </div>
             )}
 

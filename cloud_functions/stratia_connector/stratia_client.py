@@ -319,6 +319,66 @@ def update_profile_field(email, field_path, value, operation="set"):
     return {"updated": field_path}
 
 
+# Canonical admission outcomes for the Decision Ledger. Agent-supplied synonyms
+# are normalized so "admitted"/"rejected" land in the same bucket as
+# "accepted"/"denied"; unknown values pass through lowercased.
+_DECISION_CANON = {
+    "accepted": "accepted", "accept": "accepted", "admit": "accepted",
+    "admitted": "accepted", "in": "accepted",
+    "waitlisted": "waitlisted", "waitlist": "waitlisted",
+    "wait-listed": "waitlisted", "wl": "waitlisted",
+    "denied": "denied", "deny": "denied", "reject": "denied", "rejected": "denied",
+    "deferred": "deferred", "defer": "deferred",
+    "enrolled": "enrolled", "committed": "enrolled", "attending": "enrolled",
+}
+
+
+def _normalize_decision(value):
+    """Canonical decision key, or None for empty/unknown — symmetric with the
+    frontend's normalizeDecision so a value one side accepts the other doesn't
+    silently render blank."""
+    if value is None:
+        return None
+    key = str(value).strip().lower()
+    if not key:
+        return None
+    return _DECISION_CANON.get(key)
+
+
+def set_application_status(email, university_id, decision=None, status=None):
+    """Record an admission OUTCOME (decision) and/or process status for a college
+    already on the student's list. The decision is kept separate from status.
+    An empty-string decision clears it; an unrecognized one is rejected (rather
+    than stored as junk that the app can't render)."""
+    body = {"user_email": email, "university_id": university_id}
+    if decision is not None:
+        norm = _normalize_decision(decision)
+        if str(decision).strip() and norm is None:
+            raise StratiaError(
+                f"unknown decision '{decision}' — use accepted, waitlisted, "
+                "denied, deferred, or enrolled (or '' to clear)")
+        body["decision"] = norm or ""   # store '' to clear, matching the app's clear path
+    if status is not None:
+        body["status"] = status
+    if "decision" not in body and "status" not in body:
+        raise StratiaError("provide a decision or a status to set")
+    data = _post(_pm("update-application-status"), body, email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "set_application_status failed")
+    return {"updated": university_id,
+            "decision": body.get("decision"), "status": body.get("status")}
+
+
+def get_outcome_calibration(email):
+    """Predicted (fit) vs actual (decision) for every college on the list."""
+    data = _get(_pm("get-outcome-calibration"), {"user_email": email}) or {}
+    return {
+        "outcomes": data.get("outcomes") or [],
+        "decided_count": data.get("decided_count") or 0,
+        "total": data.get("total") or 0,
+    }
+
+
 def update_student_profile(email, profile_data, source="agent-import", source_text=None):
     """Merge a whole structured profile (scalars + arrays) into the student's
     Stratia profile in one call (create-or-update). Returns the merged profile."""

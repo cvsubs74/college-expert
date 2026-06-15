@@ -1086,11 +1086,16 @@ def profile_manager_v2_http_entry(request):
             if 'checklist' in data:
                 status_data['checklist'] = data['checklist']
             if 'decision' in data:
+                # The admission OUTCOME (accepted/waitlisted/denied/...), kept
+                # separate from the process `status`. Stamp when it was recorded
+                # so the Decision Ledger can order by recency.
                 status_data['decision'] = data['decision']
-            
+                if data['decision']:
+                    status_data['decided_at'] = datetime.utcnow().isoformat()
+
             if not user_email or not university_id:
                 return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
-            
+
             db = get_db()
             success = db.update_application_status(user_email, university_id, status_data)
             return add_cors_headers({
@@ -1099,6 +1104,17 @@ def profile_manager_v2_http_entry(request):
                 'status_data': status_data,
                 'message': 'Application status updated' if success else 'Failed to update'
             }, 200 if success else 400)
+
+        # --- DECISION LEDGER: predicted (fit) vs actual (decision) calibration ---
+        elif resource_type == 'get-outcome-calibration' and request.method in ['GET', 'POST']:
+            data = request.get_json(silent=True) or {}
+            user_email = (data.get('user_email') or request.args.get('user_email')
+                          or request.headers.get('X-User-Email'))
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            db = get_db()
+            result = db.get_outcome_calibration(user_email)
+            return add_cors_headers({'success': True, **result})
         
         # --- RESEARCH NOTEBOOK: SAVE ---
         # Durable, structured research saved from Claude (MCP connector) or app.

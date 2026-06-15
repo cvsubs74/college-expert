@@ -331,6 +331,38 @@ def update_student_profile(profile: dict, source: str = "agent-import",
     return sc.update_student_profile(email, profile, source=source, source_text=source_text)
 
 
+@mcp.tool(annotations=ToolAnnotations(
+    title="Record an admission decision", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def set_application_status(university_id: str, decision: str | None = None,
+                           status: str | None = None) -> dict:
+    """Record the real-world OUTCOME (and/or process status) for a college on the
+    student's list. This powers the Decision Ledger, which grades Stratia's fit
+    predictions against what actually happened.
+
+    `decision` = the admission outcome: 'accepted', 'waitlisted', 'denied',
+    'deferred', or 'enrolled' (synonyms like 'admitted'/'rejected' are accepted;
+    pass an empty string to clear). `status` = the optional application PROCESS
+    state ('planning', 'in_progress', 'submitted', 'decision_pending') — kept
+    SEPARATE from the decision. Provide at least one. The college must already be
+    on the student's list (use add_college first if needed)."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.set_application_status(email, university_id, decision=decision, status=status)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Decision Ledger (predicted vs actual)", readOnlyHint=True, openWorldHint=True))
+def get_outcome_calibration() -> dict:
+    """How Stratia's fit predictions compare to real admission decisions. Returns
+    each college with its predicted fit category and the recorded decision, plus
+    counts — so you can tell the student how calibrated their list was (e.g.
+    "Stratia called Michigan a Target and you got in; Cornell was a Reach and you
+    were waitlisted"). Read-only."""
+    email = _email()
+    return sc.get_outcome_calibration(email)
+
+
 # ---------------------------------------------------------------------------
 # Research notebook — save the analysis you do here back into the student's app
 # so it's tracked, linked to their colleges, and readable in a later session.
