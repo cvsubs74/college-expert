@@ -300,3 +300,12 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #251 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge → cloudbuild-main.yaml → frontend (Turn-into-tasks hand-off on research cards/workflow groups + "From research" back-link chip on roadmap tasks). Frontend-only; no backend target changed.
 - Remaining picks: #249 Profile-aware Popular templates, #250 Balance Ring personalized-fit join, #252 Fit Drift Timeline.
+
+## 2026-06-15 16:13 — Profile-aware Popular templates (PR #257, open) — #249
+- GOAL/steer: user said "Yes 249" → built #249. Frontend-only; cross-user aggregate untouched.
+- WHAT: personalize the Popular Workflows launch prompt client-side from profile + college list (e.g. "...Use my real data — intended major CS; 3.95/1530; my college list (...)"). Generic PII-free fallback preserved exactly when nothing usable.
+- research.js: popularWorkflowPrompt(wf, {profile, collegeList}) + guarded personalContext helper (every field hard-guarded; '' → byte-for-byte generic). PopularWorkflowCard threads profile/collegeList. ResearchNotebook best-effort fetchUserProfile in the parallel load (.catch → generic) + passes profile + colleges.
+- SCOPE: kind-filter chips deliberately NOT added (issue note: defer until prod kind-distribution checked).
+- REVIEW: reviewer agent APPROVED (aggregate untouched, hard-guarding, backward compat, graceful degradation, field paths). Verdict posted as PR comment.
+- TESTS: frontend 342 passed (+6), build green. No backend change. Also fixed ResearchNotebook test mock (added pinResearch + fetchUserProfile).
+- NOT shipped: PR #257 open (merge auto-deploys frontend to prod — needs user go-ahead). Remaining picks: #250 Balance Ring personalized-fit join, #252 Fit Drift Timeline.

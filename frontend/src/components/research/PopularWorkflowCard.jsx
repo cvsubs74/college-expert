@@ -10,13 +10,15 @@ import { askLinks } from '../../utils/mcpClients';
  * "Run" that re-runs it for the current user in their AI agent. Flags
  * "Trending" (a week-over-week jump) and "New to you" (the user hasn't run it).
  *
- * @param {{ wf: {signature, tools?, kind, count, weeks?}, ownSignatures?: Set<string> }} props
+ * @param {{ wf: {signature, tools?, kind, count, weeks?}, ownSignatures?: Set<string>,
+ *   profile?: object, collegeList?: object[] }} props
  */
-export default function PopularWorkflowCard({ wf, ownSignatures }) {
+export default function PopularWorkflowCard({ wf, ownSignatures, profile, collegeList }) {
   const tools = (Array.isArray(wf.tools) && wf.tools.length)
     ? wf.tools
     : String(wf.signature || '').split('>').filter(Boolean);
-  const links = askLinks(popularWorkflowPrompt(wf));
+  // Personalize the launch prompt client-side (guarded; the aggregate is untouched).
+  const links = askLinks(popularWorkflowPrompt(wf, { profile, collegeList }));
   const count = wf.count || 0;
   const { trending } = workflowTrend(wf);
   const isNew = isNewToUser(wf, ownSignatures);

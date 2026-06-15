@@ -260,13 +260,45 @@ export function popularWorkflowName(wf) {
   return `${kindLabel}: ${steps.slice(0, 3).join(' → ')}${steps.length > 3 ? ' → …' : ''}`;
 }
 
-/** A generic, PII-free prompt that re-runs a popular workflow for the current user. */
-export function popularWorkflowPrompt(wf) {
+/**
+ * A short "use my real data" clause for a popular-workflow prompt, built from the
+ * already-loaded profile + college list. EVERY field is hard-guarded: anything
+ * missing is simply omitted, and with nothing usable this returns '' so the
+ * prompt is byte-for-byte the generic template. Personalization happens here,
+ * client-side, at launch — the cross-user aggregate stores none of this.
+ */
+function personalContext(profile, collegeList) {
+  const bits = [];
+  const major = String(profile?.intended_major || '').trim();
+  if (major) bits.push(`intended major ${major}`);
+  const gpa = profile?.gpa_unweighted || profile?.gpa_weighted || profile?.gpa_uc;
+  const stats = [];
+  if (gpa) stats.push(`${gpa} GPA`);
+  if (profile?.sat_total) stats.push(`${profile.sat_total} SAT`);
+  else if (profile?.act_composite) stats.push(`${profile.act_composite} ACT`);
+  if (stats.length) bits.push(stats.join('/'));
+  const names = (Array.isArray(collegeList) ? collegeList : [])
+    .map((c) => c?.university_name || c?.name)
+    .filter(Boolean)
+    .slice(0, 4);
+  if (names.length) bits.push(`my college list (${names.join(', ')})`);
+  return bits.length ? `Use my real data — ${bits.join('; ')}.` : '';
+}
+
+/**
+ * A prompt that re-runs a popular workflow for the current user. Generic and
+ * PII-free by default; when `profile`/`collegeList` are supplied it appends a
+ * guarded "use my real data" clause so the crowd's workflow launches already
+ * personalized (e.g. "…Use my real data — intended major CS; 3.95/1530…").
+ */
+export function popularWorkflowPrompt(wf, { profile, collegeList } = {}) {
   const steps = popularTools(wf).map(toolLabel);
   const kindLabel = kindMeta(wf?.kind).label.toLowerCase();
-  return steps.length
+  const base = steps.length
     ? `Run a Stratia ${kindLabel} workflow that does the following with my data: ${steps.join(', then ')}. Then save the result to my research notebook.`
     : `Run a Stratia ${kindLabel} workflow and save the result to my research notebook.`;
+  const ctx = personalContext(profile, collegeList);
+  return ctx ? `${base} ${ctx}` : base;
 }
 
 // --- trending + "new to you" for popular workflows (per-ISO-week buckets) -------
