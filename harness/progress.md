@@ -207,3 +207,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Verified live (profile-manager-v2-00108-zaj + connector redeploy): save-research stores workflow/source_prompt/signature; get-research returns them.
 - Tests: frontend 279; backend 1026 + connector workflow params; build OK.
 - Shipped: PR #241 squash-merged (9e0117c3); main pipeline deploys frontend.
+
+## 2026-06-15 — Popular Workflows: cross-user aggregate (PR #242, shipped)
+- Built the Popular Workflows view: a third "Popular" tab in the Research Notebook surfacing the most-run workflows across all users as launchable templates. No BigQuery.
+- Backend: firestore_db.upsert_workflow_stat (atomic Increment on root workflow_stats/{signature}) + get_popular_workflows (top-N by count, Python tie-break by recency). save-research upserts the stat. get-popular-workflows route (limit 1..50). NEW ROOT COLLECTION workflow_stats (cross-user readable via the endpoint; firestore.rules default-deny direct client reads).
+- PRIVACY (key design): aggregate stores ONLY allowlisted tool-sequence signature + tools + kind + count + updated_at — NO user text. Server-side _KNOWN_WORKFLOW_TOOLS allowlist (_workflow_agg_tools) drops free-form/unknown tools so no PII can leak into the cross-user surface and tool names can't break the doc id; requires >=2 known tools.
+- Frontend: api.getPopularWorkflows; utils tool-label map + popularWorkflowName/Prompt; PopularWorkflowCard (run count, friendly steps, Run in Claude/ChatGPT generic re-run prompt); Popular tab in ResearchNotebook (shown even with no personal research).
+- ADVERSARIAL REVIEW (workflow, 2 lenses → verifier, 5 confirmed): fixed the free-form-tool privacy leak + doc-id-slash via the allowlist (verified live: a "John Smith ssn 123" tool was dropped, never aggregated); single-step gate; deterministic tie-break. ACCEPTED/known: profile_manager_v2 is --allow-unauthenticated and trusts X-User-Email (connector is the auth gateway) → count-inflation possible but bounded to legit signatures by the allowlist; endpoint auth is a separate cross-cutting change.
+- Verified live (profile-manager-v2-00111-cit): ranking by count, PII dropped, single/unknown not aggregated; all seeded data cleaned up (research + workflow_stats docs via Firestore REST DELETE).
+- Tests: backend 1030 (+ workflow_stats), frontend 286 (+ popular helpers/card/tab); build OK.
+- Shipped: PR #242 squash-merged (61661666); main pipeline deploys frontend. Populates as agents save >=2-step workflows (reconnect connector so save_research sends workflow).
