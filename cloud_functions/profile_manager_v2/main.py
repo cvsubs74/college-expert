@@ -1129,7 +1129,7 @@ def profile_manager_v2_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'title and body_markdown required'}, 400)
 
             VALID_KINDS = {'comparison', 'timeline', 'essay_angle', 'scholarship',
-                           'school_deep_dive', 'strategy', 'note'}
+                           'school_deep_dive', 'strategy', 'weekly_plan', 'note'}
             kind = data.get('kind') or 'note'
             if kind not in VALID_KINDS:
                 kind = 'note'

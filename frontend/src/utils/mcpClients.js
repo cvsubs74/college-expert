@@ -191,7 +191,12 @@ export const MCP_CLIENTS = [
  * be copied or opened directly in Claude / ChatGPT (the connected agent runs the
  * tools to answer).
  */
+// A weekly-plan prompt that explicitly asks the agent to save a `weekly_plan`
+// note, so the app pins it to the top of the Research Notebook as "This week".
+export const WEEKLY_PLAN_PROMPT = "Look at my Stratia deadlines, roadmap tasks, and any stale fits, then tell me the 3 most important things to do this week — each one short action tied to a real deadline or task. Save it to my research notebook as a weekly_plan so it pins to the top.";
+
 export const ASK_PROMPTS = [
+  { title: "What should I do this week?", prompt: WEEKLY_PLAN_PROMPT },
   { title: 'Build my profile from my transcript', prompt: "I'm attaching my transcript / résumé. Read it and build my Stratia student profile — extract my GPA, test scores, courses, AP exams, activities, leadership, awards and intended major, then save it to my profile." },
   { title: 'Analyze my fit for a dream school', prompt: 'Pull my profile and my saved fit analysis for Stanford. Tell me my match category and the 3 biggest gaps holding me back, then give me a concrete plan to close them.' },
   { title: "What's due next across my list", prompt: 'Show every upcoming deadline across my college list, sorted by date. Flag which are Early Decision vs Early Action vs Regular, and tell me what to prioritize this month.' },

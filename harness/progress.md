@@ -269,3 +269,12 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - PR #254 squash-merged (dc9b57f1). Resolved a harness/progress.md conflict (both branches appended) by merging origin/main into the branch (no force-push) + re-running CI. Reviewed #254 before merge (reviewer APPROVED: whitepaper claims cross-checked against the real 31-tool connector; JSX/registry/route correct). Whitepaper + landing band live after pipeline.
 - Board: #247 set-status skipped (gh token lacks read:project; cosmetic).
 - Deploy: both merges trigger cloudbuild-main.yaml → connector + profile_manager_v2 + frontend to prod.
+
+## 2026-06-15 15:42 — This Week's 3 Things — weekly_plan banner (PR #255, open) — #248
+- GOAL/steer: user said "proceed" → built #248, the next pick (builds on the now-live pinned field #243).
+- WHAT: agent saves a kind=weekly_plan note (<=3 next actions); Research Notebook pins the newest as a "This week" banner; cold-start nudge when none exists. App never runs the agent — "Refresh" re-runs the plan in the student's Claude/ChatGPT.
+- Backend: weekly_plan added to save-research VALID_KINDS (else degrades to note). Connector: weekly_plan documented in save_research tool.
+- Frontend: research.js weekly_plan meta + WEEKLY_PLAN_KIND + latestWeeklyPlan (newest, pinned-first, null-safe); mcpClients WEEKLY_PLAN_PROMPT + ASK_PROMPTS entry; WeeklyPlanBanner (markdown body + Refresh-in-agent, or cold-start with run links + /connect); wired atop ResearchNotebook.
+- REVIEW: reviewer agent APPROVED (5-way kind-string consistency, null-safe selection, empty-state non-interference, Router safety, no-crash on partial links). Verdict posted as PR comment.
+- TESTS: frontend 329 passed (+9), touched backend 199 passed, build green.
+- NOT shipped: PR #255 open (merge auto-deploys profile_manager_v2 + connector + frontend to prod — needs user go-ahead). Remaining picks: #249, #250, #251, #252.
