@@ -220,3 +220,30 @@ describe('weekly plan banner selection', () => {
     expect(plan.research_id).toBe('pinned');
   });
 });
+
+import { researchToTasksPrompt, researchTitleMap } from '../utils/research';
+
+describe('research → roadmap loop', () => {
+  it('researchToTasksPrompt names the note and calls research_to_tasks (agent-derived)', () => {
+    const p = researchToTasksPrompt({ title: 'Duke vs UCSD for CS' });
+    expect(p).toContain('Duke vs UCSD for CS');
+    expect(p).toContain('research_to_tasks');
+    expect(p).toMatch(/roadmap tasks/i);
+  });
+
+  it('researchToTasksPrompt falls back gracefully without a title', () => {
+    expect(researchToTasksPrompt({})).toContain('my latest Stratia research');
+    expect(researchToTasksPrompt(null)).toContain('research_to_tasks');
+  });
+
+  it('researchTitleMap maps research_id → title, skipping id-less/null notes', () => {
+    const m = researchTitleMap([
+      { research_id: 'r1', title: 'A' },
+      { research_id: 'r2', title: 'B' },
+      { title: 'no id' },
+      null,
+    ]);
+    expect(m).toEqual({ r1: 'A', r2: 'B' });
+    expect(researchTitleMap(null)).toEqual({});
+  });
+});

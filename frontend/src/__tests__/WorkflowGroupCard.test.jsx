@@ -43,6 +43,14 @@ describe('WorkflowGroupCard', () => {
   it('offers run-again links built from the workflow', () => {
     render(<WorkflowGroupCard group={GROUP} />);
     expect(screen.getByRole('link', { name: /run in claude/i }).getAttribute('href')).toContain('claude.ai');
-    expect(screen.getByRole('link', { name: /chatgpt/i }).getAttribute('href')).toContain('chatgpt.com');
+    // The card also has a Turn-into-tasks ChatGPT link; the run-again one is the
+    // one seeded with the repeat prompt.
+    const chatgpt = screen.getAllByRole('link', { name: /chatgpt/i });
+    expect(chatgpt.some((a) => a.getAttribute('href').includes(encodeURIComponent('compare two colleges')))).toBe(true);
+  });
+
+  it('offers a Turn-into-tasks hand-off for the produced research', () => {
+    render(<WorkflowGroupCard group={GROUP} />);
+    expect(screen.getByTestId('turn-into-tasks')).toBeInTheDocument();
   });
 });

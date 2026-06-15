@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import ResearchCard from '../components/research/ResearchCard';
 
 const baseNote = {
@@ -58,6 +58,15 @@ describe('ResearchCard', () => {
     expect(onDelete).toHaveBeenCalledWith('rsh_1');
   });
 
+  it('offers a "Turn into tasks" agent hand-off on every card', () => {
+    render(<ResearchCard note={baseNote} />);
+    const tt = screen.getByTestId('turn-into-tasks');
+    expect(tt).toBeInTheDocument();
+    // baseNote has no workflow, so the only run-link is the turn-into-tasks one.
+    const claude = screen.getByRole('link', { name: /^claude$/i });
+    expect(claude.getAttribute('href')).toContain('claude.ai');
+  });
+
   it('shows no pin control unless onTogglePin is provided', () => {
     render(<ResearchCard note={baseNote} />);
     expect(screen.queryByRole('button', { name: /pin research/i })).not.toBeInTheDocument();
@@ -96,11 +105,13 @@ describe('ResearchCard — repeat workflow widget', () => {
 
   it('renders Run-in-agent links built from the repeat prompt', () => {
     render(<ResearchCard note={wfNote} />);
-    expect(screen.getByTestId('research-workflow')).toBeInTheDocument();
-    const claude = screen.getByRole('link', { name: /run in claude/i });
+    // Scope to the workflow widget — the card also has a Turn-into-tasks hand-off
+    // with its own Claude/ChatGPT links.
+    const wf = within(screen.getByTestId('research-workflow'));
+    const claude = wf.getByRole('link', { name: /run in claude/i });
     expect(claude.getAttribute('href')).toContain('claude.ai');
     expect(claude.getAttribute('href')).toContain(encodeURIComponent('Compare Duke and UCSD for CS'));
-    expect(screen.getByRole('link', { name: /chatgpt/i }).getAttribute('href')).toContain('chatgpt.com');
+    expect(wf.getByRole('link', { name: /chatgpt/i }).getAttribute('href')).toContain('chatgpt.com');
   });
 
   it('expands to show the original ask and ordered steps', () => {

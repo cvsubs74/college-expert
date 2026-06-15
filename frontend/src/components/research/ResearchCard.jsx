@@ -5,6 +5,7 @@ import { TrashIcon, ChevronDownIcon, ChevronUpIcon, PencilSquareIcon, PlayIcon, 
 import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/24/solid';
 import { kindMeta, researchProvenance, workflowSteps, hasWorkflow, repeatPrompt } from '../../utils/research';
 import { askLinks } from '../../utils/mcpClients';
+import TurnIntoTasks from './TurnIntoTasks';
 
 /** `duke_university` → "Duke University" (fallback when no display name known). */
 function prettyId(id) {
@@ -196,6 +197,8 @@ export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit
       )}
 
       <WorkflowWidget note={note} />
+
+      <TurnIntoTasks note={note} className="mt-3" />
 
       <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-gray-100 pt-2 text-[11px] text-gray-500">
         <span className="font-medium text-gray-600">{prov.sourceLabel}</span>

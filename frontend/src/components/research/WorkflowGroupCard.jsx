@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { PlayIcon, ChevronDownIcon, ChevronRightIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
 import { repeatPrompt, formatDate, kindMeta } from '../../utils/research';
 import { askLinks } from '../../utils/mcpClients';
+import TurnIntoTasks from './TurnIntoTasks';
 
 /**
  * One reusable workflow ("custom algorithm") and everything it produced.
@@ -87,6 +88,8 @@ export default function WorkflowGroupCard({ group }) {
           })}
         </ul>
       </div>
+
+      <TurnIntoTasks note={group.representative} className="mt-3 border-t border-gray-100 pt-3" />
     </div>
   );
 }

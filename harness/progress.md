@@ -284,3 +284,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #248 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge triggers cloudbuild-main.yaml → profile_manager_v2 (VALID_KINDS) + connector + frontend (weekly_plan banner). Live after pipeline; populates once an agent saves a weekly_plan note.
 - Remaining picks: #249 Profile-aware Popular templates, #250 Balance Ring personalized-fit join, #251 Research→Roadmap loop, #252 Fit Drift Timeline.
+
+## 2026-06-15 16:02 — Research → Roadmap loop (PR #256, open) — #251
+- GOAL/steer: user said "Yes 251" → built #251, the most user-facing remaining pick. Frontend-only (research_to_tasks + source_research_id already shipped).
+- WHAT: close the loop from a saved research note → dated roadmap tasks, WITHOUT in-app extraction (the agent derives tasks via research_to_tasks — honest, within Gemini-only-in-app constraint).
+- research.js: researchToTasksPrompt(note) (names note, instructs research_to_tasks, null-safe) + researchTitleMap. TurnIntoTasks.jsx hand-off (Run-in-Claude/ChatGPT) on ResearchCard + WorkflowGroupCard (group.representative). RoadmapView: "From: <title>" back-link chip on tasks with source_research_id (best-effort title via listResearch; fallback "From research"; → /research).
+- Two pre-existing run-again tests rescoped past the new turn-into-tasks links (intent preserved: still assert workflow run-again → claude.ai/chatgpt.com w/ repeat prompt).
+- REVIEW: reviewer agent APPROVED (no in-app extraction, effect mirrors existing [user] pattern, chip gating + route valid, rescopes preserve intent). Verdict posted as PR comment.
+- TESTS: frontend 336 passed (+7), build green. No backend change.
+- NOT shipped: PR #256 open (merge auto-deploys frontend to prod — needs user go-ahead). Remaining picks: #249, #250, #252.
+- NOTE: unrelated untracked agents/university_profile_collector/* files (KB-collector redesign work) present in tree — kept OUT of this PR (unstaged). Not mine.
