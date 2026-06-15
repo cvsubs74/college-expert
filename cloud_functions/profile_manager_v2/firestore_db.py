@@ -751,6 +751,41 @@ class FirestoreDB:
             logger.error(f"[Firestore] Error deleting research {research_id}: {e}")
             return False
 
+    # ==================== WORKFLOW STATS (cross-user, aggregate) ====================
+    # Root collection keyed by a workflow's tool-sequence signature. Aggregate
+    # ONLY: tool sequence + kind + run count. Never any user text/PII — this is
+    # readable across users to power the Popular Workflows view.
+
+    def upsert_workflow_stat(self, signature: str, tools: List[str], kind: str = None) -> bool:
+        """Increment the run count for a workflow signature (atomic)."""
+        try:
+            ref = self.db.collection('workflow_stats').document(signature)
+            ref.set({
+                'signature': signature,
+                'tools': tools or [],
+                'kind': kind or 'note',
+                'count': firestore.Increment(1),
+                'updated_at': datetime.utcnow().isoformat(),
+            }, merge=True)
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error upserting workflow stat: {e}")
+            return False
+
+    def get_popular_workflows(self, limit: int = 20) -> List[Dict]:
+        """Top workflows by run count (descending). Ties broken deterministically
+        by recency (in Python, so no composite index is required)."""
+        try:
+            q = (self.db.collection('workflow_stats')
+                 .order_by('count', direction=firestore.Query.DESCENDING)
+                 .limit(limit))
+            items = [{**doc.to_dict()} for doc in q.stream()]
+            items.sort(key=lambda w: (w.get('count', 0), w.get('updated_at', '')), reverse=True)
+            return items
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting popular workflows: {e}")
+            return []
+
     # ==================== ESSAY TRACKER ====================
 
     def get_essay_tracker(self, user_id: str) -> List[Dict]:

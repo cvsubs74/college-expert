@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { listResearch, deleteResearch, getCollegeList } from '../services/api';
+import { listResearch, deleteResearch, getCollegeList, getPopularWorkflows } from '../services/api';
 import { kindsPresent, kindMeta, groupByWorkflow } from '../utils/research';
 import ResearchCard from '../components/research/ResearchCard';
 import ResearchEditorModal from '../components/research/ResearchEditorModal';
 import WorkflowGroupCard from '../components/research/WorkflowGroupCard';
+import PopularWorkflowCard from '../components/research/PopularWorkflowCard';
 import { BeakerIcon, ArrowPathIcon, PlusIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 /**
@@ -22,17 +23,20 @@ export default function ResearchNotebook() {
   const [activeKind, setActiveKind] = useState('all');
   const [editorOpen, setEditorOpen] = useState(false);
   const [editing, setEditing] = useState(null); // a note (edit) or null (create)
-  const [viewMode, setViewMode] = useState('research'); // 'research' | 'workflows'
+  const [viewMode, setViewMode] = useState('research'); // 'research' | 'workflows' | 'popular'
+  const [popular, setPopular] = useState([]);
 
   const load = async () => {
     if (!user?.email) return;
     setIsLoading(true);
     try {
-      const [research, list] = await Promise.all([
+      const [research, list, pop] = await Promise.all([
         listResearch(user.email),
         getCollegeList(user.email),
+        getPopularWorkflows(user.email),
       ]);
       if (research?.success) setNotes(research.research || []);
+      if (pop?.success) setPopular(pop.workflows || []);
       const raw = list?.colleges || list?.college_list || [];
       setColleges(raw);
       const names = {};
@@ -107,10 +111,11 @@ export default function ResearchNotebook() {
         </div>
       </div>
 
-      {!isLoading && notes.length > 0 && (
+      {!isLoading && (notes.length > 0 || popular.length > 0) && (
         <div className="mt-5 flex gap-1 rounded-lg border border-gray-200 bg-white p-1 w-max" role="tablist" aria-label="View mode">
           <ViewTab active={viewMode === 'research'} onClick={() => setViewMode('research')} label="Research" />
           <ViewTab active={viewMode === 'workflows'} onClick={() => setViewMode('workflows')} label={`Workflows${workflowGroups.length ? ` (${workflowGroups.length})` : ''}`} />
+          <ViewTab active={viewMode === 'popular'} onClick={() => setViewMode('popular')} label={`Popular${popular.length ? ` (${popular.length})` : ''}`} />
         </div>
       )}
 
@@ -130,6 +135,19 @@ export default function ResearchNotebook() {
 
       {isLoading ? (
         <div className="mt-10 text-center text-gray-500">Loading your research…</div>
+      ) : viewMode === 'popular' ? (
+        popular.length === 0 ? (
+          <div className="mt-8 rounded-xl border border-dashed border-gray-300 bg-gray-50 p-8 text-center text-sm text-gray-600">
+            No popular workflows yet. As people run multi-step workflows in their AI agents and
+            save the results, the most-used ones show up here to launch with one click.
+          </div>
+        ) : (
+          <div className="mt-5 space-y-4">
+            {popular.map((wf) => (
+              <PopularWorkflowCard key={wf.signature} wf={wf} />
+            ))}
+          </div>
+        )
       ) : notes.length === 0 ? (
         <EmptyState onNew={openNew} />
       ) : viewMode === 'workflows' ? (

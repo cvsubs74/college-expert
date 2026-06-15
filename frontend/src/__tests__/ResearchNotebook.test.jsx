@@ -3,12 +3,13 @@ import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Mock the API layer + auth so the page renders in isolation.
-const { listResearch, getCollegeList, deleteResearch } = vi.hoisted(() => ({
+const { listResearch, getCollegeList, deleteResearch, getPopularWorkflows } = vi.hoisted(() => ({
   listResearch: vi.fn(),
   getCollegeList: vi.fn().mockResolvedValue({ success: true, colleges: [] }),
   deleteResearch: vi.fn().mockResolvedValue({ success: true }),
+  getPopularWorkflows: vi.fn().mockResolvedValue({ success: true, workflows: [] }),
 }));
-vi.mock('../services/api', () => ({ listResearch, getCollegeList, deleteResearch }));
+vi.mock('../services/api', () => ({ listResearch, getCollegeList, deleteResearch, getPopularWorkflows }));
 vi.mock('../context/AuthContext', () => ({
   useAuth: () => ({ currentUser: { email: 'stu@example.com' } }),
 }));
@@ -21,6 +22,9 @@ vi.mock('../components/research/ResearchEditorModal', () => ({
 }));
 vi.mock('../components/research/WorkflowGroupCard', () => ({
   default: ({ group }) => <div data-testid="wf-group">{group.name}</div>,
+}));
+vi.mock('../components/research/PopularWorkflowCard', () => ({
+  default: ({ wf }) => <div data-testid="popular-wf">{wf.signature}</div>,
 }));
 
 import ResearchNotebook from '../pages/ResearchNotebook';
@@ -92,5 +96,23 @@ describe('ResearchNotebook — workflows view', () => {
     // the two researches share one workflow → one group
     expect(screen.getAllByTestId('wf-group')).toHaveLength(1);
     expect(screen.getByText('compare colleges')).toBeInTheDocument();
+  });
+});
+
+describe('ResearchNotebook — popular workflows view', () => {
+  beforeEach(() => {
+    listResearch.mockResolvedValue({ success: true, research: [{ research_id: 'a', title: 'T', kind: 'note' }] });
+    getCollegeList.mockResolvedValue({ success: true, colleges: [] });
+    getPopularWorkflows.mockResolvedValue({ success: true, workflows: [
+      { signature: 'get_profile>get_fit_analysis', tools: ['get_profile', 'get_fit_analysis'], kind: 'comparison', count: 9 },
+      { signature: 'get_roadmap>get_deadlines', tools: ['get_roadmap', 'get_deadlines'], kind: 'timeline', count: 4 },
+    ] });
+  });
+
+  it('shows popular workflows when the Popular tab is selected', async () => {
+    renderPage();
+    await waitFor(() => expect(screen.getByRole('tab', { name: /Popular/ })).toBeInTheDocument());
+    fireEvent.click(screen.getByRole('tab', { name: /Popular/ }));
+    expect(screen.getAllByTestId('popular-wf')).toHaveLength(2);
   });
 });

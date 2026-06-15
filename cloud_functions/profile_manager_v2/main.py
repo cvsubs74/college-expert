@@ -72,6 +72,31 @@ from email_service import send_signup_welcome_email
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Allowlist of connector tool names that may appear in the CROSS-USER Popular
+# Workflows aggregate. The workflow's `tool` fields are free-form agent input, so
+# the aggregate (signature = doc id, readable by all users) is restricted to this
+# fixed vocabulary — no arbitrary/PII text can leak in or break the Firestore
+# document path. Unknown tools are dropped from the aggregate (the per-user
+# research doc still keeps the full workflow).
+_KNOWN_WORKFLOW_TOOLS = frozenset({
+    'search_universities', 'get_university', 'get_college_list', 'get_fit_analysis',
+    'get_fit_history', 'get_deadlines', 'get_profile', 'get_roadmap', 'get_essays',
+    'get_aid_packages', 'get_scholarships', 'get_credits', 'check_fit_recomputation',
+    'add_college', 'remove_college', 'recompute_fit', 'update_profile_field',
+    'update_student_profile', 'save_research', 'list_research', 'get_research',
+    'update_research', 'delete_research', 'research_to_tasks',
+})
+
+
+def _workflow_agg_tools(workflow):
+    """Allowlisted tool names for the cross-user Popular Workflows aggregate, or
+    None when this isn't a genuine multi-step workflow (>= 2 known tools).
+    Drops unknown/free-form tools so nothing arbitrary reaches the shared surface."""
+    tools = [s.get('tool') for s in (workflow or [])
+             if isinstance(s, dict) and s.get('tool') in _KNOWN_WORKFLOW_TOOLS]
+    return tools if len(tools) >= 2 else None
+
+
 # Get configuration
 GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID")
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME", "college-counselling-478115-student-profiles")
@@ -1145,6 +1170,13 @@ def profile_manager_v2_http_entry(request):
             }
             db = get_db()
             success = db.save_research(user_email, research_id, research_data)
+            # Aggregate into the cross-user Popular Workflows stats using ONLY
+            # allowlisted tool names (no free-form/PII text, safe doc id), and only
+            # for genuine multi-step workflows (>= 2 known tools).
+            if success:
+                agg_tools = [s['tool'] for s in workflow if s.get('tool') in _KNOWN_WORKFLOW_TOOLS]
+                if len(agg_tools) >= 2:
+                    db.upsert_workflow_stat('>'.join(agg_tools), agg_tools, kind)
             return add_cors_headers({
                 'success': success,
                 'research_id': research_id,
@@ -1212,6 +1244,21 @@ def profile_manager_v2_http_entry(request):
                 'research_id': research_id,
                 'message': 'Research deleted' if success else 'Failed to delete',
             }, 200 if success else 400)
+
+        # --- POPULAR WORKFLOWS (cross-user aggregate; PII-free) ---
+        elif resource_type == 'get-popular-workflows' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            try:
+                limit = int(data.get('limit') or request.args.get('limit') or 20)
+            except (TypeError, ValueError):
+                limit = 20
+            limit = max(1, min(limit, 50))
+            db = get_db()
+            workflows = db.get_popular_workflows(limit=limit)
+            return add_cors_headers({'success': True, 'workflows': workflows, 'count': len(workflows)})
 
         # --- ESSAY SAVE ---
         elif resource_type == 'save-essay' and request.method == 'POST':
