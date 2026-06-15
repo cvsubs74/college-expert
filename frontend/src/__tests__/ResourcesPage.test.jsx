@@ -66,17 +66,27 @@ describe('ResourcesPage hub', () => {
 });
 
 describe('ResourcePaperPage per-paper view', () => {
-    it('renders the title, subtitle, and at least one section for paper 1', () => {
-        const paper1 = papers[0];
-        renderAt(`/resources/${paper1.slug}`);
+    // Render every registered paper's page — this mounts the hero visual and
+    // every section visual, so a broken visual reference (e.g. a bad heroicon
+    // name) surfaces here rather than only in production.
+    it.each(papers.map((p) => [p.title, p]))(
+        'renders the title, subtitle, and first section for "%s"',
+        (_title, paper) => {
+            renderAt(`/resources/${paper.slug}`);
 
-        // The paper title and subtitle render inside PaperHero
-        expect(screen.getByRole('heading', { level: 1, name: paper1.title })).toBeInTheDocument();
-        expect(screen.getByText(paper1.subtitle)).toBeInTheDocument();
+            // The paper title and subtitle render inside PaperHero
+            expect(screen.getByRole('heading', { level: 1, name: paper.title })).toBeInTheDocument();
+            expect(screen.getByText(paper.subtitle)).toBeInTheDocument();
 
-        // First section's title rendered
-        expect(screen.getByRole('heading', { level: 2, name: new RegExp(paper1.sections[0].title.split(':')[0], 'i') })).toBeInTheDocument();
-    });
+            // First section's title rendered
+            expect(
+                screen.getByRole('heading', {
+                    level: 2,
+                    name: new RegExp(paper.sections[0].title.split(':')[0], 'i'),
+                })
+            ).toBeInTheDocument();
+        }
+    );
 
     it('renders the cross-promo footer pointing at the other paper', () => {
         const [paper1, paper2] = papers;

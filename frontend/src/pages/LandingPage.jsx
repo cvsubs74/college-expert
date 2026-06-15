@@ -10,7 +10,12 @@ import {
   AcademicCapIcon,
   ChartBarIcon,
   PencilSquareIcon,
-  SparklesIcon
+  SparklesIcon,
+  PuzzlePieceIcon,
+  ArrowsRightLeftIcon,
+  EyeIcon,
+  BoltIcon,
+  BookmarkIcon
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
 import { motion, useInView } from 'framer-motion';
@@ -99,6 +104,8 @@ const LandingPage = () => {
   const statsVisible = useInView(statsRef, { once: true, amount: 0.3 });
   const howItWorksRef = useRef(null);
   const howItWorksVisible = useInView(howItWorksRef, { once: true, amount: 0.2 });
+  const agentRef = useRef(null);
+  const agentVisible = useInView(agentRef, { once: true, amount: 0.2 });
 
   const handleSignIn = async () => {
     try {
@@ -400,6 +407,187 @@ const LandingPage = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          WORKS WITH YOUR AI AGENT (MCP connector)
+          ============================================ */}
+      <section
+        ref={agentRef}
+        className="py-20 lg:py-28 px-6 lg:px-8 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] overflow-hidden"
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={agentVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full text-sm font-medium mb-5">
+              <SparklesIcon className="h-4 w-4" />
+              New · Works with your AI agent
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight mb-5">
+              Already use Claude or ChatGPT?
+              <br />
+              <span className="text-[#D6E8D5]">Now they work with Stratia.</span>
+            </h2>
+            <p className="text-xl text-[#D6E8D5] max-w-3xl mx-auto leading-relaxed">
+              Stratia plugs into the AI assistant you already use. Add one secure connector and your
+              agent can read your real college data, take actions you approve, and save the work it
+              does straight back into your app.
+            </p>
+          </motion.div>
+
+          {/* Bridge graphic: your agent ⇄ Stratia ⇄ your data */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={agentVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl mb-10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1.05fr_auto_1fr] gap-4 lg:gap-3 items-center">
+              {/* Agents */}
+              <div className="space-y-2">
+                <div className="text-[11px] uppercase tracking-wider text-[#8A8A8A] font-semibold text-center lg:text-left mb-1">
+                  The AI you already use
+                </div>
+                {[
+                  { label: 'Claude', dot: 'bg-orange-400' },
+                  { label: 'ChatGPT', dot: 'bg-emerald-500' },
+                  { label: '+ more MCP agents', dot: 'bg-[#1A4D2E]', muted: true }
+                ].map((a) => (
+                  <div
+                    key={a.label}
+                    className={`flex items-center gap-3 rounded-xl border p-3 ${
+                      a.muted ? 'border-dashed border-[#D0CFC8]' : 'border-[#E0DED8]'
+                    }`}
+                  >
+                    <span className={`h-2.5 w-2.5 rounded-full flex-shrink-0 ${a.dot}`} />
+                    <span className={`text-sm font-bold ${a.muted ? 'text-[#8A8A8A] italic' : 'text-[#2A2A2A]'}`}>
+                      {a.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Arrow */}
+              <div className="flex lg:flex-col items-center justify-center gap-1 text-[#2D6B45]">
+                <ArrowsRightLeftIcon className="h-6 w-6 lg:rotate-0 rotate-90" />
+                <div className="flex lg:flex-col items-center gap-x-2 text-[9px] font-semibold uppercase tracking-wide leading-tight">
+                  <span className="text-[#1A4D2E]">read</span>
+                  <span className="text-[#FF8C42]">write&nbsp;back</span>
+                </div>
+              </div>
+
+              {/* Stratia connector */}
+              <div className="bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-2xl p-5 text-white shadow-lg">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="bg-white/15 p-2 rounded-lg">
+                    <PuzzlePieceIcon className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-[#D6E8D5] font-bold">
+                      Secure connector
+                    </div>
+                    <div className="text-sm font-bold leading-tight">Stratia</div>
+                  </div>
+                </div>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex justify-between bg-white/10 rounded-lg px-2.5 py-1.5">
+                    <span className="text-[#D6E8D5]">Sign in</span>
+                    <span className="font-bold">once, with Google</span>
+                  </div>
+                  <div className="flex justify-between bg-white/10 rounded-lg px-2.5 py-1.5">
+                    <span className="text-[#D6E8D5]">Scope</span>
+                    <span className="font-bold">your data only</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="flex lg:flex-col items-center justify-center gap-1 text-[#2D6B45]">
+                <ArrowsRightLeftIcon className="h-6 w-6 lg:rotate-0 rotate-90" />
+                <div className="flex lg:flex-col items-center gap-x-2 text-[9px] font-semibold uppercase tracking-wide leading-tight">
+                  <span className="text-[#1A4D2E]">read</span>
+                  <span className="text-[#FF8C42]">write&nbsp;back</span>
+                </div>
+              </div>
+
+              {/* Data */}
+              <div className="space-y-2">
+                <div className="text-[11px] uppercase tracking-wider text-[#8A8A8A] font-semibold text-center lg:text-left mb-1">
+                  Your Stratia data
+                </div>
+                {['Profile', 'College list', 'Fit scores', 'Roadmap & research'].map((d) => (
+                  <div key={d} className="flex items-center gap-3 rounded-xl border border-[#E0DED8] p-2.5">
+                    <CheckCircleIcon className="h-4 w-4 text-[#2E7D32] flex-shrink-0" />
+                    <span className="text-sm font-semibold text-[#2A2A2A]">{d}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Three capabilities */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                icon: EyeIcon,
+                title: 'Reads your real data',
+                description:
+                  'Your profile, college list, and fit scores — so the answer is grounded in your situation, not a generic guess.'
+              },
+              {
+                icon: BoltIcon,
+                title: 'Acts on your behalf',
+                description:
+                  'Add a school, recompute a fit, or update your profile from a transcript — with your approval on anything that changes.'
+              },
+              {
+                icon: BookmarkIcon,
+                title: 'Saves the work back',
+                description:
+                  "Comparisons, timelines, and strategy land in your Research Notebook — tracked and labeled — instead of lost in a chat."
+              }
+            ].map((cap, index) => (
+              <motion.div
+                key={cap.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={agentVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.4 + index * 0.12, duration: 0.5 }}
+                className="bg-white/10 rounded-2xl p-6"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-4">
+                  <cap.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-white mb-2">{cap.title}</h3>
+                <p className="text-[#D6E8D5] leading-relaxed text-sm">{cap.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA row */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.button
+              onClick={handleGetStarted}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1A4D2E] font-bold rounded-xl text-lg hover:bg-[#F8F6F0] transition-all shadow-lg"
+            >
+              Get started free
+              <ArrowRightIcon className="h-5 w-5" />
+            </motion.button>
+            <Link
+              to="/resources/how-stratia-works-with-ai-agents"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-semibold rounded-xl text-lg border border-white/30 hover:bg-white/10 transition-all"
+            >
+              See how it works
+              <ArrowRightIcon className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
