@@ -48,7 +48,7 @@ const Bridge = ({ inView, delay }) => (
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay }}
     >
-        <ArrowsRightLeftIcon className="h-6 w-6 lg:rotate-90 rotate-0" />
+        <ArrowsRightLeftIcon className="h-6 w-6 lg:rotate-0 rotate-90" />
         <div className="flex lg:flex-col items-center gap-x-2 text-[9px] font-semibold uppercase tracking-wide leading-tight">
             <span className="text-violet-600">read</span>
             <span className="text-fuchsia-600">write&nbsp;back</span>
