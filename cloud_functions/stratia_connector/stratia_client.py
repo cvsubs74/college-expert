@@ -319,6 +319,24 @@ def update_profile_field(email, field_path, value, operation="set"):
     return {"updated": field_path}
 
 
+def update_student_profile(email, profile_data, source="agent-import", source_text=None):
+    """Merge a whole structured profile (scalars + arrays) into the student's
+    Stratia profile in one call (create-or-update). Returns the merged profile."""
+    body = {"user_email": email, "profile_data": profile_data, "source": source}
+    if source_text:
+        body["source_text"] = source_text
+    data = _post(_pm("update-structured-profile"), body, email=email, timeout=60)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "update_student_profile failed")
+    return _prune(
+        data.get("profile") or {},
+        deny={"raw_content", "field_sources", "indexed_at", "uploaded_files", "original_filename"},
+        list_caps={"courses": 80, "extracurriculars": 40, "awards": 40,
+                   "ap_exams": 40, "work_experience": 30, "leadership_roles": 30,
+                   "special_programs": 30},
+    )
+
+
 # ----------------------------------------------------------------------------
 # Research notebook — save Claude's analysis back into the app (and read it
 # back so a later session can build on it).

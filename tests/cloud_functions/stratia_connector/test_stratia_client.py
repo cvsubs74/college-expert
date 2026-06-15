@@ -344,3 +344,39 @@ def test_research_to_tasks_missing_note_raises(captured):
     captured["_get_payload"] = {"research": None}
     with pytest.raises(sc.StratiaError):
         sc.research_to_tasks("a@b.com", "nope", [{"title": "x"}])
+
+
+# --- build/update student profile -------------------------------------------
+
+def test_update_student_profile_posts_profile_and_returns_merged(captured):
+    captured["_post_payload"] = {"success": True, "profile": {
+        "name": "Ada", "intended_major": "CS", "sat_total": 1500,
+        "courses": [{"name": "AP CS", "type": "AP"}],
+        "raw_content": "DROP big blob", "field_sources": {"name": ["t.pdf"]},
+        "name_embedding": [0.1],
+    }}
+    prof = {"name": "Ada", "intended_major": "CS", "sat_total": 1500,
+            "courses": [{"name": "AP CS", "type": "AP"}]}
+    out = sc.update_student_profile("a@b.com", prof, source="transcript.pdf", source_text="raw text")
+    body = captured["post"]["json"]
+    assert body["profile_data"] == prof
+    assert body["source"] == "transcript.pdf" and body["source_text"] == "raw text"
+    assert captured["post"]["headers"]["X-User-Email"] == "a@b.com"
+    # merged profile returned; internal/bulky keys stripped
+    assert out["name"] == "Ada" and out["intended_major"] == "CS"
+    assert out["courses"][0]["name"] == "AP CS"
+    assert "raw_content" not in out and "field_sources" not in out and "name_embedding" not in out
+
+
+def test_update_student_profile_omits_source_text_when_absent(captured):
+    captured["_post_payload"] = {"success": True, "profile": {"name": "Bo"}}
+    sc.update_student_profile("a@b.com", {"name": "Bo"})
+    body = captured["post"]["json"]
+    assert "source_text" not in body and body["source"] == "agent-import"
+
+
+def test_update_student_profile_failure_raises(captured):
+    captured["_post_payload"] = {"success": False, "error": "bad profile"}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.update_student_profile("a@b.com", {"name": "x"})
+    assert "bad profile" in str(e.value)

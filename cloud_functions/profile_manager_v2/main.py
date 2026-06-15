@@ -15,6 +15,7 @@ from flask import jsonify, request
 from firestore_db import get_db, NOTES_COLLECTIONS
 from profile_operations import (
     process_and_index_profile,
+    index_student_profile,
     get_student_profile,
     cleanup_profile_on_document_delete,
     update_profile_field
@@ -275,8 +276,34 @@ def profile_manager_v2_http_entry(request):
             
             result = update_profile_field(user_id, field_path, value, operation)
             return add_cors_headers(result, 200 if result.get('success') else 400)
-        
-        
+
+        # --- BULK STRUCTURED PROFILE UPSERT ---
+        # Merge a whole structured profile (scalars + arrays) into the user's
+        # profile in one call. Used by AI agents (e.g. Claude reads an uploaded
+        # transcript/résumé, extracts the fields, and calls this once) and by the
+        # app's onboarding. Reuses the same smart merge as document upload.
+        elif resource_type == 'update-structured-profile' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_id = data.get('user_email') or data.get('user_id')
+            profile_data = data.get('profile_data') or data.get('profile')
+            source = data.get('source') or 'agent-import'
+            source_text = data.get('source_text') or ''
+
+            if not user_id:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            if not isinstance(profile_data, dict) or not profile_data:
+                return add_cors_headers({'success': False, 'error': 'profile_data (object) required'}, 400)
+
+            result = index_student_profile(
+                user_id, filename=source, content_markdown=source_text,
+                metadata=None, profile_data=profile_data,
+            )
+            merged = get_student_profile(user_id) if result.get('success') else None
+            return add_cors_headers(
+                {**result, 'profile': merged},
+                200 if result.get('success') else 400,
+            )
+
         # --- SEARCH ENDPOINT (for fit recomputation check) ---
         elif resource_type == 'search' and request.method == 'POST':
             data = request.get_json() or {}
