@@ -366,6 +366,75 @@ def delete_research(research_id: str) -> dict:
     return sc.delete_research(email, research_id)
 
 
+# --- Research notebook: analysis over the whole notebook (#236) -----------------
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Search my research notes", readOnlyHint=True, openWorldHint=True))
+def search_research(query: str, kind: str | None = None,
+                    university_id: str | None = None, limit: int = 10) -> dict:
+    """Keyword-search the student's saved research notes by relevance (title,
+    summary, body, tags) and return the best matches with a snippet. Use this to
+    recall and build on earlier analysis BEFORE producing new work — e.g. search
+    "Duke essay" or "scholarship" to find what's already been done. Optionally
+    filter by `kind` or a linked `university_id`."""
+    return sc.search_research(_email(), query, kind=kind,
+                              university_id=university_id, limit=limit)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Get all my research", readOnlyHint=True, openWorldHint=True))
+def get_all_research(full: bool = True, offset: int = 0, limit: int = 20) -> dict:
+    """The whole Research Notebook in one call, for cross-note analysis or
+    synthesis (e.g. "pull everything into one application strategy"). Bodies are
+    trimmed and results paginated — when `has_more` is true, call again with a
+    higher `offset`. `full=false` returns metadata only (lighter)."""
+    return sc.get_all_research(_email(), full=full, offset=offset, limit=limit)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Research notebook overview", readOnlyHint=True, openWorldHint=True))
+def research_overview() -> dict:
+    """A bird's-eye view of the notebook: total notes, counts by kind and by
+    college, how many are stale, how many pinned, which kinds are missing, and
+    when it was last updated. Use to orient yourself and suggest what to research
+    next (e.g. "you have deep-dives but no application timeline")."""
+    return sc.research_overview(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="List stale research", readOnlyHint=True, openWorldHint=True))
+def list_stale_research() -> dict:
+    """Research notes based on an OLDER admissions-data cycle than the current
+    one — candidates to refresh against current data. Use to offer the student a
+    refresh of outdated analysis."""
+    return sc.list_stale_research(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Pin a research note", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def pin_research(research_id: str, pinned: bool = True) -> dict:
+    """Pin (or unpin, with pinned=false) a research note so it surfaces first in
+    the notebook and as your primary context — e.g. pin the master strategy."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.pin_research(email, research_id, pinned=pinned)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Turn research into roadmap tasks", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=False, openWorldHint=True))
+def research_to_tasks(research_id: str, tasks: list[dict]) -> dict:
+    """Create roadmap tasks from a research note's recommendations so research
+    becomes action. Read the note (get_research), derive the concrete next steps,
+    and pass them as `tasks` — each item needs a `title` and may include
+    `description`, `university_id`, `due_date` (YYYY-MM-DD). Each task is added to
+    the student's roadmap linked back to the note via `source_research_id`."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.research_to_tasks(email, research_id, tasks)
+
+
 # ---------------------------------------------------------------------------
 # Custom HTTP routes (unauthenticated): Google OAuth callback + health
 # ---------------------------------------------------------------------------

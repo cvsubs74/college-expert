@@ -1,5 +1,7 @@
 """Stratia API client wrapper — request building + response trimming + errors.
 Monkeypatches `requests`; CI-safe (requests is in requirements-test.txt)."""
+from datetime import datetime
+
 import pytest
 
 import stratia_client as sc
@@ -242,3 +244,103 @@ def test_update_research_sends_only_provided_fields(captured):
 def test_delete_research(captured):
     captured["_post_payload"] = {"success": True, "research_id": "rsh_1"}
     assert sc.delete_research("a@b.com", "rsh_1") == {"deleted": "rsh_1"}
+
+
+# --- #236: research-notebook analysis tools ------------------------------------
+
+def test_search_research_ranks_by_query(captured):
+    captured["_get_payload"] = {"research": [
+        {"research_id": "r1", "title": "Duke essay angles", "summary": "essay strategy",
+         "body_markdown": "essay essay essay", "kind": "essay_angle", "tags": ["essays"],
+         "university_ids": ["duke_university"], "created_at": "2026-06-01"},
+        {"research_id": "r2", "title": "UC timeline", "summary": "deadlines",
+         "body_markdown": "no match here", "kind": "timeline", "tags": [],
+         "university_ids": ["uc"], "created_at": "2026-06-02"},
+    ]}
+    out = sc.search_research("a@b.com", "essay")
+    assert out["count"] == 1
+    assert out["matches"][0]["research_id"] == "r1"
+    assert out["matches"][0]["snippet"]
+
+
+def test_search_research_requires_query(captured):
+    captured["_get_payload"] = {"research": []}
+    with pytest.raises(sc.StratiaError):
+        sc.search_research("a@b.com", "   ")
+
+
+def test_search_research_filters_by_college(captured):
+    captured["_get_payload"] = {"research": [
+        {"research_id": "r1", "title": "scholarship plan", "body_markdown": "scholarship",
+         "university_ids": ["duke"], "tags": [], "summary": ""},
+        {"research_id": "r2", "title": "scholarship plan", "body_markdown": "scholarship",
+         "university_ids": ["uc"], "tags": [], "summary": ""},
+    ]}
+    out = sc.search_research("a@b.com", "scholarship", university_id="duke")
+    assert out["count"] == 1 and out["matches"][0]["research_id"] == "r1"
+
+
+def test_get_all_research_paginates_and_trims(captured):
+    docs = [{"research_id": f"r{i}", "title": f"t{i}", "kind": "note",
+             "body_markdown": "x" * 5000, "created_at": f"2026-06-{i:02d}"} for i in range(1, 6)]
+    captured["_get_payload"] = {"research": docs}
+    out = sc.get_all_research("a@b.com", full=True, offset=0, limit=2)
+    assert out["total"] == 5 and out["has_more"] is True and len(out["research"]) == 2
+    assert out["research"][0]["research_id"] == "r5"   # newest first
+    assert len(out["research"][0]["body_markdown"]) == 2500
+    assert out["research"][0]["body_truncated"] is True
+    meta = sc.get_all_research("a@b.com", full=False)
+    assert "body_markdown" not in meta["research"][0] and meta["has_more"] is False
+
+
+def test_research_overview_aggregates(captured):
+    captured["_get_payload"] = {"research": [
+        {"research_id": "r1", "kind": "comparison", "university_ids": ["duke", "uc"],
+         "provenance": {"kb_year": 2020}, "pinned": True, "updated_at": "2026-06-02"},
+        {"research_id": "r2", "kind": "comparison", "university_ids": ["duke"],
+         "provenance": {"kb_year": 2026}, "updated_at": "2026-06-01"},
+    ]}
+    out = sc.research_overview("a@b.com", now=datetime(2026, 6, 1))
+    assert out["total"] == 2 and out["by_kind"]["comparison"] == 2
+    assert out["by_college"]["duke"] == 2 and out["by_college"]["uc"] == 1
+    assert out["pinned_count"] == 1 and out["stale_count"] == 1
+    assert "comparison" in out["kinds_present"] and "timeline" in out["kinds_absent"]
+    assert out["last_updated"] == "2026-06-02"
+
+
+def test_list_stale_research_flags_old_cycle(captured):
+    captured["_get_payload"] = {"research": [
+        {"research_id": "r1", "title": "old", "provenance": {"kb_year": 2024}},
+        {"research_id": "r2", "title": "current", "provenance": {"kb_year": 2026}},
+        {"research_id": "r3", "title": "none"},
+    ]}
+    out = sc.list_stale_research("a@b.com", now=datetime(2026, 6, 1))
+    assert out["count"] == 1 and out["stale"][0]["research_id"] == "r1"
+    assert out["stale"][0]["cycle"] == "2024–25"
+
+
+def test_pin_research_posts_pinned(captured):
+    captured["_post_payload"] = {"success": True}
+    out = sc.pin_research("a@b.com", "r1", pinned=True)
+    assert out == {"research_id": "r1", "pinned": True}
+    assert captured["post"]["json"]["pinned"] is True
+    assert captured["post"]["json"]["research_id"] == "r1"
+
+
+def test_research_to_tasks_creates_linked_tasks(captured):
+    captured["_get_payload"] = {"research": {"research_id": "r1", "title": "Strategy"}}
+    captured["_post_payload"] = {"success": True}
+    out = sc.research_to_tasks("a@b.com", "r1", [
+        {"title": "Draft Duke essay", "university_id": "duke", "due_date": "2026-10-01"},
+        {"title": "Finalize college list"},
+    ])
+    assert out["count"] == 2 and len(out["created"]) == 2
+    td = captured["post"]["json"]["task_data"]   # last task created
+    assert td["source_research_id"] == "r1" and td["status"] == "pending"
+    assert td["category"] == "research" and td["due_date"] == ""
+
+
+def test_research_to_tasks_missing_note_raises(captured):
+    captured["_get_payload"] = {"research": None}
+    with pytest.raises(sc.StratiaError):
+        sc.research_to_tasks("a@b.com", "nope", [{"title": "x"}])

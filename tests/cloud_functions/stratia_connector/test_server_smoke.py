@@ -46,6 +46,20 @@ def test_all_tools_registered():
     assert len(names) >= 17
 
 
+def test_research_notebook_tools_registered():
+    # #236: analysis tools over the saved-notes notebook.
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    assert {"search_research", "get_all_research", "research_overview",
+            "list_stale_research", "pin_research", "research_to_tasks"} <= set(tools)
+    # Reads are readOnly; pin is an idempotent write; to-tasks a non-idempotent write.
+    for r in ("search_research", "get_all_research", "research_overview", "list_stale_research"):
+        assert tools[r].annotations.readOnlyHint is True
+    assert tools["pin_research"].annotations.readOnlyHint is False
+    assert tools["pin_research"].annotations.idempotentHint is True
+    assert tools["research_to_tasks"].annotations.readOnlyHint is False
+    assert tools["research_to_tasks"].annotations.idempotentHint is False
+
+
 def test_tools_have_safety_annotations():
     tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
     # Reads are readOnly; writes are not; destructive ops flagged.
