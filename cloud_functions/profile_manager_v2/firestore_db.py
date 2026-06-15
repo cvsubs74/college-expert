@@ -773,12 +773,15 @@ class FirestoreDB:
             return False
 
     def get_popular_workflows(self, limit: int = 20) -> List[Dict]:
-        """Top workflows by run count (descending)."""
+        """Top workflows by run count (descending). Ties broken deterministically
+        by recency (in Python, so no composite index is required)."""
         try:
             q = (self.db.collection('workflow_stats')
                  .order_by('count', direction=firestore.Query.DESCENDING)
                  .limit(limit))
-            return [{**doc.to_dict()} for doc in q.stream()]
+            items = [{**doc.to_dict()} for doc in q.stream()]
+            items.sort(key=lambda w: (w.get('count', 0), w.get('updated_at', '')), reverse=True)
+            return items
         except Exception as e:
             logger.error(f"[Firestore] Error getting popular workflows: {e}")
             return []
