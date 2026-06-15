@@ -399,3 +399,55 @@ def test_save_research_omits_workflow_when_absent(captured):
     sc.save_research("a@b.com", "T", "b")
     body = captured["post"]["json"]
     assert "workflow" not in body and "source_prompt" not in body
+
+
+# --- decision ledger: set_application_status + get_outcome_calibration --------
+
+def test_normalize_decision_canonicalizes_synonyms():
+    assert sc._normalize_decision("Admitted") == "accepted"
+    assert sc._normalize_decision("REJECTED") == "denied"
+    assert sc._normalize_decision("wait-listed") == "waitlisted"
+    assert sc._normalize_decision("enrolled") == "enrolled"
+    assert sc._normalize_decision(None) is None
+
+
+def test_set_application_status_normalizes_and_posts_decision(captured):
+    captured["_post_payload"] = {"success": True}
+    out = sc.set_application_status("a@b.com", "umich", decision="admitted")
+    assert out["updated"] == "umich" and out["decision"] == "accepted"
+    body = captured["post"]["json"]
+    assert body["university_id"] == "umich" and body["decision"] == "accepted"
+    assert captured["post"]["headers"]["X-User-Email"] == "a@b.com"
+
+
+def test_set_application_status_requires_a_field(captured):
+    with pytest.raises(sc.StratiaError):
+        sc.set_application_status("a@b.com", "umich")  # neither decision nor status
+
+
+def test_set_application_status_rejects_unknown_decision(captured):
+    with pytest.raises(sc.StratiaError) as e:
+        sc.set_application_status("a@b.com", "umich", decision="gap year")
+    assert "unknown decision" in str(e.value)
+
+
+def test_set_application_status_clears_with_empty_string(captured):
+    captured["_post_payload"] = {"success": True}
+    sc.set_application_status("a@b.com", "umich", decision="")
+    assert captured["post"]["json"]["decision"] == ""   # cleared, not junk
+
+
+def test_set_application_status_failure_raises(captured):
+    captured["_post_payload"] = {"success": False, "error": "not on list"}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.set_application_status("a@b.com", "x", decision="accepted")
+    assert "not on list" in str(e.value)
+
+
+def test_get_outcome_calibration_passes_through(captured):
+    captured["_get_payload"] = {"success": True, "decided_count": 2, "total": 3, "outcomes": [
+        {"university_id": "umich", "predicted": "TARGET", "decision": "accepted"}]}
+    out = sc.get_outcome_calibration("a@b.com")
+    assert out["decided_count"] == 2 and out["total"] == 3
+    assert out["outcomes"][0]["university_id"] == "umich"
+    assert captured["get"]["params"]["user_email"] == "a@b.com"
