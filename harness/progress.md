@@ -309,3 +309,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - REVIEW: reviewer agent APPROVED (aggregate untouched, hard-guarding, backward compat, graceful degradation, field paths). Verdict posted as PR comment.
 - TESTS: frontend 342 passed (+6), build green. No backend change. Also fixed ResearchNotebook test mock (added pinResearch + fetchUserProfile).
 - NOT shipped: PR #257 open (merge auto-deploys frontend to prod — needs user go-ahead). Remaining picks: #250 Balance Ring personalized-fit join, #252 Fit Drift Timeline.
+
+## 2026-06-15 16:17 — shipped #249 (Profile-aware Popular templates, PR #257)
+- PR #257 squash-merged (ea913518) → #249 auto-closed.
+- Tracking: #249 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge → cloudbuild-main.yaml → frontend (Popular launch prompts now personalized client-side; aggregate untouched).
+- Remaining picks: #250 Balance Ring personalized-fit join (last backend touch), #252 Fit Drift Timeline (ideation said defer until recompute loop has volume).
