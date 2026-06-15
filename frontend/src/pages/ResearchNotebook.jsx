@@ -2,11 +2,13 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { listResearch, deleteResearch, getCollegeList, getPopularWorkflows, pinResearch } from '../services/api';
-import { kindsPresent, kindMeta, groupByWorkflow } from '../utils/research';
+import { kindsPresent, kindMeta, groupByWorkflow, latestWeeklyPlan } from '../utils/research';
+import { askLinks, WEEKLY_PLAN_PROMPT } from '../utils/mcpClients';
 import ResearchCard from '../components/research/ResearchCard';
 import ResearchEditorModal from '../components/research/ResearchEditorModal';
 import WorkflowGroupCard from '../components/research/WorkflowGroupCard';
 import PopularWorkflowCard from '../components/research/PopularWorkflowCard';
+import WeeklyPlanBanner from '../components/research/WeeklyPlanBanner';
 import { BeakerIcon, ArrowPathIcon, PlusIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 /**
@@ -88,6 +90,9 @@ export default function ResearchNotebook() {
     // is stable in modern engines, so same-pinned items keep their order.
     return [...filtered].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
   }, [notes, activeKind]);
+  // The agent-authored "This week" plan to pin atop the notebook (newest, pinned-first).
+  const weeklyPlan = useMemo(() => latestWeeklyPlan(notes), [notes]);
+  const weeklyPlanLinks = useMemo(() => askLinks(WEEKLY_PLAN_PROMPT), []);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
@@ -123,6 +128,12 @@ export default function ResearchNotebook() {
           </button>
         </div>
       </div>
+
+      {/* "This week" — agent-authored weekly plan pinned to the top (or a
+          cold-start nudge once the student has any research). */}
+      {!isLoading && (weeklyPlan || notes.length > 0) && (
+        <WeeklyPlanBanner plan={weeklyPlan} promptLinks={weeklyPlanLinks} />
+      )}
 
       {!isLoading && (notes.length > 0 || popular.length > 0) && (
         <div className="mt-5 flex gap-1 rounded-lg border border-gray-200 bg-white p-1 w-max" role="tablist" aria-label="View mode">

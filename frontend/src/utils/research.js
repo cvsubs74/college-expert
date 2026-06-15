@@ -16,8 +16,24 @@ export const RESEARCH_KINDS = {
   scholarship: { label: 'Scholarship', emoji: '💰', tone: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
   school_deep_dive: { label: 'Deep dive', emoji: '🔬', tone: 'bg-amber-50 text-amber-800 border-amber-200' },
   strategy: { label: 'Strategy', emoji: '🎯', tone: 'bg-purple-50 text-purple-700 border-purple-200' },
+  weekly_plan: { label: 'This week', emoji: '📌', tone: 'bg-teal-50 text-teal-700 border-teal-200' },
   note: { label: 'Note', emoji: '📝', tone: 'bg-gray-50 text-gray-600 border-gray-200' },
 };
+
+/** Kind for an agent-authored "what to do this week" note (the pinned banner). */
+export const WEEKLY_PLAN_KIND = 'weekly_plan';
+
+/**
+ * The note to surface as the "This week" banner: the newest weekly_plan,
+ * preferring a pinned one. Returns null when the student has no weekly plan yet.
+ */
+export function latestWeeklyPlan(notes) {
+  const plans = (notes || []).filter((n) => n && n.kind === WEEKLY_PLAN_KIND);
+  if (!plans.length) return null;
+  plans.sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0)
+    || String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  return plans[0];
+}
 
 /** Metadata for a kind, always defined (defaults to `note`). */
 export function kindMeta(kind) {

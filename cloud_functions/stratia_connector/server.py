@@ -382,7 +382,10 @@ def save_research(title: str, body_markdown: str, kind: str = "note",
     a scholarship plan, a school deep-dive, or an overall strategy.
 
     - `kind`: one of comparison | timeline | essay_angle | scholarship |
-      school_deep_dive | strategy | note (defaults to note).
+      school_deep_dive | strategy | weekly_plan | note (defaults to note). Use
+      `weekly_plan` for a short "what to do this week" note (<=3 next actions
+      from the student's deadlines + roadmap) — the app pins the newest one to
+      the top of the Research Notebook as a "This week" card.
     - `body_markdown`: the full analysis in Markdown.
     - `summary`: a one-line TL;DR shown in the notebook feed.
     - `university_ids`: ids of the colleges this is about, to link it to their

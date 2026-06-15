@@ -189,3 +189,34 @@ describe('popular workflow trending', () => {
     expect(isNewToUser({}, own)).toBe(false);                   // no signature → not "new"
   });
 });
+
+import { latestWeeklyPlan } from '../utils/research';
+
+describe('weekly plan banner selection', () => {
+  it('kindMeta knows the weekly_plan kind', () => {
+    expect(kindMeta('weekly_plan').label).toBe('This week');
+  });
+
+  it('returns null when there is no weekly_plan note', () => {
+    expect(latestWeeklyPlan([{ kind: 'note' }, { kind: 'strategy' }])).toBeNull();
+    expect(latestWeeklyPlan([])).toBeNull();
+    expect(latestWeeklyPlan(null)).toBeNull();
+  });
+
+  it('picks the newest weekly_plan', () => {
+    const plan = latestWeeklyPlan([
+      { kind: 'weekly_plan', research_id: 'old', created_at: '2026-06-01' },
+      { kind: 'note', research_id: 'n' },
+      { kind: 'weekly_plan', research_id: 'new', created_at: '2026-06-14' },
+    ]);
+    expect(plan.research_id).toBe('new');
+  });
+
+  it('prefers a pinned weekly_plan over a newer unpinned one', () => {
+    const plan = latestWeeklyPlan([
+      { kind: 'weekly_plan', research_id: 'newer', created_at: '2026-06-14' },
+      { kind: 'weekly_plan', research_id: 'pinned', created_at: '2026-06-10', pinned: true },
+    ]);
+    expect(plan.research_id).toBe('pinned');
+  });
+});
