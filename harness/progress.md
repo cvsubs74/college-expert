@@ -189,3 +189,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tests: backend 2 (create + smart merge via fake DB; stubs file_processing/profile_extraction/gcs_storage to avoid fitz), connector 3. Full suite 1026 passed.
 - Note: `research_to_tasks` MCP tool already existed in main from prior research-notebook work (not added this session). Frontend /save-onboarding-profile route referenced by api.js does NOT exist in main.py (latent dead path; onboarding could reuse /update-structured-profile).
 - Shipped: PR #238 squash-merged (5f522814); main pipeline redeploys profile-v2 + connector.
+
+## 2026-06-15 — Fix: Profile page blank tabs / nonsensical counts (PR #239, shipped)
+- BUG: /profile View Profile showed garbage counts (284 Activities, 176 Awards) and blank Academics/Activities/Achievements/Experience tabs.
+- ROOT CAUSE: array fields (extracurriculars/awards/...) stored as STRING blobs on some accounts → OverviewTab rendered the string's char length as a count; detail tabs crashed calling .map() on a string → blank. (Confirmed live: stratiaadmissions profile is well-formed arrays-of-dicts and renders fine; the affected account's fields are strings.)
+- FRONTEND (ProfileViewCard): asArray/asObjects coercion everywhere → array-only counts (string field reads 0, not its length), tabs never .map() a non-array (no crash); guard ActivityCard.achievements + leadership_roles items that may be objects (object-as-React-child crashes); string blobs surfaced as readable text (RawTextNote) instead of hidden.
+- BACKEND (/update-structured-profile): coerce object-array fields to lists (dict→[dict]; un-structurable string→drop) + leadership_roles string→[string], so an agent passing a string can't corrupt the profile. Verified live (profile-manager-v2-00106-yom): posting extracurriculars as a string → stored as list[0] (dropped), not a string.
+- Tests: ProfileViewCard (well-formed across tabs / sane counts for string fields / no-crash + blob surfaced / empty profile). Frontend 264 passed; backend 1026 passed; build OK.
+- Shipped: PR #239 squash-merged (0bb459e9); main pipeline deploys frontend + profile-v2. Existing corrupted profiles now display gracefully; re-import via upload/agent restores structured cards.
