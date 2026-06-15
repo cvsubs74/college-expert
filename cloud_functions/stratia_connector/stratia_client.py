@@ -344,12 +344,16 @@ def update_student_profile(email, profile_data, source="agent-import", source_te
 
 def save_research(email, title, body_markdown, kind="note", summary="",
                   university_ids=None, tags=None, kb_year=None, research_id=None,
-                  source="mcp", model="an AI agent"):
+                  source="mcp", model="an AI agent", source_prompt=None, workflow=None):
     """Persist a research artifact to the student's Stratia notebook.
 
     `source`/`model` identify the MCP client that produced this — passed in by
     the server from the authenticated client's OAuth registration (#233), not
-    hardcoded, so ChatGPT/Cursor/etc. saves aren't mislabeled as Claude."""
+    hardcoded, so ChatGPT/Cursor/etc. saves aren't mislabeled as Claude.
+
+    `source_prompt`/`workflow` capture how the research was produced (the user's
+    original ask + the ordered steps run), powering the app's 'Repeat this
+    workflow' affordance — no server-side instrumentation needed."""
     body = {
         "user_email": email, "title": title, "body_markdown": body_markdown,
         "kind": kind, "summary": summary,
@@ -360,6 +364,10 @@ def save_research(email, title, body_markdown, kind="note", summary="",
         body["kb_year"] = kb_year
     if research_id:
         body["research_id"] = research_id
+    if source_prompt:
+        body["source_prompt"] = source_prompt
+    if workflow:
+        body["workflow"] = workflow
     data = _post(_pm("save-research"), body, email=email)
     if not data.get("success"):
         raise StratiaError(data.get("error") or "save_research failed")

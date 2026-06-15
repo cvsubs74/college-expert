@@ -380,3 +380,22 @@ def test_update_student_profile_failure_raises(captured):
     with pytest.raises(sc.StratiaError) as e:
         sc.update_student_profile("a@b.com", {"name": "x"})
     assert "bad profile" in str(e.value)
+
+
+def test_save_research_sends_workflow_and_source_prompt(captured):
+    captured["_post_payload"] = {"success": True, "research_id": "rsh_2", "research": {"title": "T"}}
+    sc.save_research("a@b.com", "Duke vs UCSD", "## body", kind="comparison",
+                     source_prompt="compare duke and ucsd",
+                     workflow=[{"tool": "get_profile", "label": "Pulled profile"},
+                               {"tool": "get_fit_analysis", "label": "Got fit"}])
+    body = captured["post"]["json"]
+    assert body["source_prompt"] == "compare duke and ucsd"
+    assert body["workflow"][0]["tool"] == "get_profile"
+    assert len(body["workflow"]) == 2
+
+
+def test_save_research_omits_workflow_when_absent(captured):
+    captured["_post_payload"] = {"success": True, "research_id": "rsh_3", "research": {}}
+    sc.save_research("a@b.com", "T", "b")
+    body = captured["post"]["json"]
+    assert "workflow" not in body and "source_prompt" not in body

@@ -58,3 +58,36 @@ describe('ResearchCard', () => {
     expect(onDelete).toHaveBeenCalledWith('rsh_1');
   });
 });
+
+describe('ResearchCard — repeat workflow widget', () => {
+  const wfNote = {
+    research_id: 'rsh_w', title: 'Duke vs UCSD', kind: 'comparison', body_markdown: 'x', source: 'claude',
+    source_prompt: 'Compare Duke and UCSD for CS',
+    workflow: [
+      { tool: 'get_profile', label: 'Pulled profile' },
+      { tool: 'get_fit_analysis', label: 'Got Duke & UCSD fit' },
+    ],
+  };
+
+  it('renders Run-in-agent links built from the repeat prompt', () => {
+    render(<ResearchCard note={wfNote} />);
+    expect(screen.getByTestId('research-workflow')).toBeInTheDocument();
+    const claude = screen.getByRole('link', { name: /run in claude/i });
+    expect(claude.getAttribute('href')).toContain('claude.ai');
+    expect(claude.getAttribute('href')).toContain(encodeURIComponent('Compare Duke and UCSD for CS'));
+    expect(screen.getByRole('link', { name: /chatgpt/i }).getAttribute('href')).toContain('chatgpt.com');
+  });
+
+  it('expands to show the original ask and ordered steps', () => {
+    render(<ResearchCard note={wfNote} />);
+    fireEvent.click(screen.getByRole('button', { name: /^workflow/i }));
+    expect(screen.getByText(/Compare Duke and UCSD for CS/)).toBeInTheDocument();
+    expect(screen.getByText(/Pulled profile/)).toBeInTheDocument();
+    expect(screen.getByText(/Got Duke & UCSD fit/)).toBeInTheDocument();
+  });
+
+  it('hides the widget when the note has no workflow', () => {
+    render(<ResearchCard note={{ research_id: 'x', title: 't', kind: 'note', body_markdown: 'b' }} />);
+    expect(screen.queryByTestId('research-workflow')).not.toBeInTheDocument();
+  });
+});

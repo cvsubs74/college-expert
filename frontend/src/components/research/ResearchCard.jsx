@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { TrashIcon, ChevronDownIcon, ChevronUpIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
-import { kindMeta, researchProvenance } from '../../utils/research';
+import { TrashIcon, ChevronDownIcon, ChevronUpIcon, PencilSquareIcon, PlayIcon, ClipboardDocumentIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { kindMeta, researchProvenance, workflowSteps, hasWorkflow, repeatPrompt } from '../../utils/research';
+import { askLinks } from '../../utils/mcpClients';
 
 /** `duke_university` → "Duke University" (fallback when no display name known). */
 function prettyId(id) {
@@ -20,6 +21,74 @@ function prettyId(id) {
  * @param {{ note: object, collegeNames?: Record<string,string>,
  *   onDelete?: (researchId: string) => void, onEdit?: (note: object) => void }} props
  */
+// "Repeat this workflow" — shows how the research was produced (the original ask
+// + ordered steps the agent ran) and lets the student re-run it in their agent.
+function WorkflowWidget({ note }) {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  if (!hasWorkflow(note)) return null;
+  const steps = workflowSteps(note);
+  const prompt = repeatPrompt(note);
+  const links = askLinks(prompt);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* clipboard blocked — no-op */
+    }
+  };
+  return (
+    <div data-testid="research-workflow" className="mt-3 rounded-lg border border-gray-100 bg-gray-50/60 p-3">
+      <div className="flex items-center justify-between gap-2">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-gray-700"
+        >
+          {open ? <ChevronUpIcon className="h-3.5 w-3.5" /> : <ChevronDownIcon className="h-3.5 w-3.5" />}
+          Workflow{steps.length ? ` · ${steps.length} step${steps.length > 1 ? 's' : ''}` : ''}
+        </button>
+        <div className="flex shrink-0 items-center gap-1.5">
+          <a href={links.claude} target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-1 rounded-md bg-[#1A4D2E] px-2 py-1 text-[11px] font-medium text-white hover:bg-[#2D6B45]">
+            <PlayIcon className="h-3 w-3" /> Run in Claude
+          </a>
+          <a href={links.chatgpt} target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-2 py-1 text-[11px] font-medium text-gray-700 hover:bg-gray-50">
+            <PlayIcon className="h-3 w-3" /> ChatGPT
+          </a>
+          <button type="button" onClick={copy} aria-label="Copy workflow prompt"
+            className="rounded-md border border-gray-300 bg-white p-1 text-gray-500 hover:bg-gray-50">
+            {copied ? <CheckIcon className="h-3.5 w-3.5 text-green-600" /> : <ClipboardDocumentIcon className="h-3.5 w-3.5" />}
+          </button>
+        </div>
+      </div>
+      {open && (
+        <div className="mt-2 space-y-2">
+          {note.source_prompt && (
+            <p className="text-xs text-gray-600">
+              <span className="font-medium text-gray-700">Asked:</span> “{note.source_prompt}”
+            </p>
+          )}
+          {steps.length > 0 && (
+            <ol className="list-decimal space-y-1 pl-5 text-xs text-gray-600 marker:text-gray-400">
+              {steps.map((s, i) => (
+                <li key={i}>
+                  {s.label}
+                  {s.tool ? <span className="ml-1 text-gray-400">({s.tool})</span> : null}
+                </li>
+              ))}
+            </ol>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit }) {
   const [open, setOpen] = useState(false);
   const meta = kindMeta(note.kind);
@@ -106,6 +175,8 @@ export default function ResearchCard({ note, collegeNames = {}, onDelete, onEdit
           )}
         </>
       )}
+
+      <WorkflowWidget note={note} />
 
       <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-gray-100 pt-2 text-[11px] text-gray-500">
         <span className="font-medium text-gray-600">{prov.sourceLabel}</span>
