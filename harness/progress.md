@@ -278,3 +278,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - REVIEW: reviewer agent APPROVED (5-way kind-string consistency, null-safe selection, empty-state non-interference, Router safety, no-crash on partial links). Verdict posted as PR comment.
 - TESTS: frontend 329 passed (+9), touched backend 199 passed, build green.
 - NOT shipped: PR #255 open (merge auto-deploys profile_manager_v2 + connector + frontend to prod — needs user go-ahead). Remaining picks: #249, #250, #251, #252.
+
+## 2026-06-15 15:51 — shipped #248 (This Week's 3 Things, PR #255)
+- PR #255 squash-merged (60d3a6bd) → #248 auto-closed. ("/ship #244" was a misfire — #244 already live; user confirmed they meant #255.)
+- Tracking: #248 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge triggers cloudbuild-main.yaml → profile_manager_v2 (VALID_KINDS) + connector + frontend (weekly_plan banner). Live after pipeline; populates once an agent saves a weekly_plan note.
+- Remaining picks: #249 Profile-aware Popular templates, #250 Balance Ring personalized-fit join, #251 Research→Roadmap loop, #252 Fit Drift Timeline.
