@@ -294,6 +294,22 @@ def profile_manager_v2_http_entry(request):
             if not isinstance(profile_data, dict) or not profile_data:
                 return add_cors_headers({'success': False, 'error': 'profile_data (object) required'}, 400)
 
+            # Coerce array fields to lists so a non-list value (e.g. an agent
+            # passing a string blob) can't corrupt the stored profile — the
+            # merge would otherwise persist a string where the UI expects a list.
+            _OBJ_ARRAYS = ('ap_exams', 'courses', 'extracurriculars',
+                           'special_programs', 'awards', 'work_experience')
+            for _f in _OBJ_ARRAYS:
+                if _f in profile_data and not isinstance(profile_data[_f], list):
+                    _v = profile_data.pop(_f)
+                    if isinstance(_v, dict):
+                        profile_data[_f] = [_v]   # single object → one-item list
+                    # a string/scalar can't be structured into objects → drop it
+            if 'leadership_roles' in profile_data and not isinstance(profile_data['leadership_roles'], list):
+                _v = profile_data.pop('leadership_roles')
+                if isinstance(_v, str) and _v.strip():
+                    profile_data['leadership_roles'] = [_v.strip()]
+
             result = index_student_profile(
                 user_id, filename=source, content_markdown=source_text,
                 metadata=None, profile_data=profile_data,
