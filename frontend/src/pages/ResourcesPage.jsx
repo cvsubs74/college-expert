@@ -67,9 +67,10 @@ const ResourcesPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Two whitepapers, written for students, parents, and counselors. The first
-                        explains the problem worth solving. The second walks through the algorithm
-                        underneath the product.
+                        Whitepapers written for students, parents, and counselors. The first
+                        explains the problem worth solving, the second walks through the algorithm
+                        underneath the product, and the third shows how any AI agent can work
+                        with Stratia on your behalf.
                     </motion.p>
 
                     <motion.div

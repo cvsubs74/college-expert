@@ -3,10 +3,12 @@
 
 import hiddenCostOfResearch from './hidden-cost-of-research';
 import howStratiaBuildsRoadmap from './how-stratia-builds-roadmap';
+import howStratiaWorksWithAiAgents from './how-stratia-works-with-ai-agents';
 
 export const papers = [
     hiddenCostOfResearch,
     howStratiaBuildsRoadmap,
+    howStratiaWorksWithAiAgents,
 ];
 
 export const papersBySlug = Object.fromEntries(
