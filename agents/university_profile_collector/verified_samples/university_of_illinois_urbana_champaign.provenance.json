@@ -1,0 +1,616 @@
+{
+  "trust_report": {
+    "university": "University of Illinois Urbana-Champaign",
+    "id": "university_of_illinois_urbana_champaign",
+    "cycle": "Fall 2024",
+    "cds_edition_used": "2024-2025",
+    "ipeds_unitid": "145637",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 21,
+      "held_null": 27
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 17,
+      "conflict_nulled": 10,
+      "unverified_nulled": 17,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "UNVERIFIED",
+        "out_of_state_acceptance_rate": "UNVERIFIED",
+        "transfer_acceptance_rate": "UNVERIFIED",
+        "international_acceptance_rate": "UNVERIFIED",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CORROBORATED",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CORROBORATED",
+        "test_submission_rate": "UNVERIFIED",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "UNVERIFIED",
+        "race_white": "INVARIANT_FAIL",
+        "race_black": "INVARIANT_FAIL",
+        "race_hispanic": "INVARIANT_FAIL",
+        "race_asian": "INVARIANT_FAIL",
+        "race_native_american": "INVARIANT_FAIL",
+        "race_pacific_islander": "INVARIANT_FAIL",
+        "race_two_or_more": "INVARIANT_FAIL",
+        "race_unknown": "INVARIANT_FAIL",
+        "race_international": "INVARIANT_FAIL",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "UNVERIFIED",
+        "graduation_rate_6_year": "CANONICAL_SINGLE",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "UNVERIFIED",
+        "total_coa_out_of_state": "UNVERIFIED",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "acceptance_rate_published": 42.37,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 42.37,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C117 Total first-time, first-year students who applied = 73742; C118 Total first-time, first-year students who were admitted = 31247 (31247/73742 = 42.37%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "in_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "transfer_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 73742,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C117 | Total first-time, first-year students who applied | 73742",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 31247,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C118 | Total first-time, first-year students who were admitted | 31247",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9008,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C119 | Total first-time, first-year students who enrolled | 9008",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 28.83,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C118 admitted = 31247; C119 enrolled = 9008 (9008/31247 = 28.83%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9008,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C119 | Total first-time, first-year students who enrolled | 9008 (enrolled first-year class size)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "1390-1520",
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C905 SAT Composite: 25th Percentile | 1390 ... C907 SAT Composite: 75th Percentile | 1520",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "680-750",
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C908 SAT Evidence-Based Reading and Writing: 25th Percentile | 680 ... C910 SAT Evidence-Based Reading and Writing: 75th Percentile | 750",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "700-790",
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C911 SAT Math: 25th Percentile | 700 ... C913 SAT Math: 75th Percentile | 790",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "act_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "30-34",
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C914 ACT Composite: 25th Percentile | 30 ... C916 ACT Composite: 75th Percentile | 34",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "test_submission_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "race_white": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B204 | White, non-Hispanic | 3112 (first-time, first-year degree-seeking cohort; B210 TOTAL | 9008 = 34.55%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_black": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B203 | Black or African American, non-Hispanic | 443 (of B210 TOTAL 9008 = 4.92%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_hispanic": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B202 | Hispanic/Latino | 1434 (of B210 TOTAL 9008 = 15.92%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_asian": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B206 | Asian, non-Hispanic | 2153 (of B210 TOTAL 9008 = 23.90%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_native_american": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B205 | American Indian or Alaska Native, non-Hispanic | 3 (of B210 TOTAL 9008 = 0.03%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_pacific_islander": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B207 | Native Hawaiian or other Pacific Islander, non-Hispanic | 2 (of B210 TOTAL 9008 = 0.02%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_two_or_more": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B208 | Two or more races, non-Hispanic | 392 (of B210 TOTAL 9008 = 4.35%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_unknown": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B209 | Race and/or ethnicity unknown | 219 (of B210 TOTAL 9008 = 2.43%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "race_international": {
+      "status": "INVARIANT_FAIL",
+      "confidence": "medium",
+      "value": null,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B201 | Nonresidents | 1250 (first-time, first-year cohort; of B210 TOTAL 9008 = 13.88%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)",
+      "reason": "race sum=9008%"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.88,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B201 Nonresidents | 1250 of B210 TOTAL | 9008 first-time first-year (1250/9008 = 13.88%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 94.8,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B2201 For the cohort of all full-time bachelor's degree-seeking undergraduate students who entered ... as first-year students in Fall 2023 ... what percentage was enrolled ... as of ... Fall 2024 | 0.948",
+      "as_of_cycle": "Fall 2023 entering cohort, retained to Fall 2024 (CDS 2024-2025)"
+    },
+    "graduation_rate_4_year": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "graduation_rate_6_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 85.1,
+      "source": "University of Illinois Urbana-Champaign \u2014 Common Data Set 2024-2025 (Division of Management Information, official institutional source), corroborated by the U.S. Dept. of Education College Scorecard API",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "From the official UIUC CDS 2024-2025 file, sheet CDS-B: completers within 150% of normal time (six years) \u2014 B428 Total = 6464; the corresponding cohort \u2014 B412 Total = 7593; and the computed rate \u2014 B432 Total = 0.851310417 (i.e., 6464 / 7593 = 85.13%). Independently corroborated by the College Scorecard API field \"latest.completion.completion_rate_4yr_150nt\": 0.8513 for \"University of Illinois Urbana-Champaign\".",
+      "as_of_cycle": "2024-2025 Common Data Set (Fall 2018 entering first-time, full-time bachelor's cohort; six-year / 150%-of-normal-time completion measured as of Aug 31, 2024)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 12992,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "G104 | Tuition: In-state (out-of-district): | 12992 (CDS G1 base tuition; UIUC tuition varies by program per G401/G402)",
+      "as_of_cycle": "2024-2025 (CDS 2024-2025 section G)"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "33344",
+        "verifier": "$33,344 (out-of-state base tuition; first-time first-year, tuition only, excludes the $5,056 required fees). Note: the companion CDS line \"Tuition: Non-resident\" reads $34,338. UIUC tuition varies by program (CDS G401=Y), so this is the published base rate; ~68.71% of full-time undergrads pay more (CDS G402)."
+      }
+    },
+    "total_coa_in_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "total_coa_out_of_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 81054,
+      "source": "U.S. Dept of Education College Scorecard (school id 145637)",
+      "url": "https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign",
+      "quote": "College Scorecard API field latest.earnings.10_yrs_after_entry.median = 81054 for school.name \"University of Illinois Urbana-Champaign\" (id 145637)",
+      "as_of_cycle": "Latest available (College Scorecard latest)"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "true",
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C802 SAT or ACT | Not required for admission, but considered if submitted; C8F clarify test policies | test optional",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "Test optional: SAT or ACT not required for admission, but considered if submitted (institution does use scores for academic advising)",
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C801 Does your institution make use of SAT or ACT scores in admission decisions ...? | Y; C802 SAT or ACT | Not required for admission, but considered if submitted; C8D ... use applicants' test scores for academic advising? | Y; C8F | test optional",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2794,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C202 | Number of qualified applicants offered a place on waiting list: | 2794",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1874,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C203 | Number accepting a place on the waiting list: | 1874",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C204 | Number of wait-listed students admitted: | 1",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.05,
+      "source": "University of Illinois Urbana-Champaign Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C203 accepting a place on waiting list | 1874; C204 wait-listed students admitted | 1 (1/1874 = 0.05%)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    }
+  },
+  "section_sources": [
+    {
+      "section": "strategic_profile",
+      "sources": [
+        "https://www.admissions.illinois.edu/apply/freshman/admit-rate",
+        "https://siebelschool.illinois.edu/about/facts-and-rankings",
+        "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/",
+        "https://grad.illinois.edu/grad-student-life/living-and-visiting-cu/transportation",
+        "https://en.wikipedia.org/wiki/University_of_Illinois_Urbana-Champaign",
+        "https://www.champaigncountyedc.org/ncsas-blue-waters-project-provides-1-08-billion-direct-return-to-illinois-economy",
+        "https://research.illinois.edu/national-science-foundation-awards-40m-university-illinois-urbana-champaign"
+      ]
+    },
+    {
+      "section": "academic_structure",
+      "sources": [
+        "https://catalog.illinois.edu/undergraduate/",
+        "https://catalog.illinois.edu/schools/",
+        "https://catalog.illinois.edu/undergraduate/minors/",
+        "https://www.admissions.illinois.edu/policies",
+        "https://www.admissions.illinois.edu/apply/transfer/gpa-guidelines",
+        "https://grainger.illinois.edu/academics/undergraduate/changing-majors",
+        "https://grainger.illinois.edu/academics/undergraduate/engineering-undeclared/transferring-to-eu"
+      ]
+    },
+    {
+      "section": "application_process",
+      "sources": [
+        "https://www.admissions.illinois.edu/",
+        "https://admissions.illinois.edu/Apply/Freshman/dates",
+        "https://admissions.illinois.edu/Apply/Freshman/process",
+        "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+        "https://web.archive.org/web/20231210074541/https://www.admissions.illinois.edu/apply/freshman/dates",
+        "https://web.archive.org/web/20230927093058/https://www.admissions.illinois.edu/apply/freshman/process",
+        "https://web.archive.org/web/20231113035948/https://www.admissions.illinois.edu/apply/freshman/help-with-applying"
+      ]
+    },
+    {
+      "section": "financials",
+      "sources": [
+        "https://www.admissions.illinois.edu/invest/financial-aid",
+        "https://www.admissions.illinois.edu/invest/scholarships",
+        "https://www.osfa.illinois.edu/types-of-aid/scholarships/merit-based-scholarships/",
+        "https://www.admissions.illinois.edu/commitment",
+        "https://www.osfa.illinois.edu/types-of-aid/other-aid/illinois-commitment/",
+        "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx"
+      ]
+    },
+    {
+      "section": "credit_policies",
+      "sources": [
+        "https://www.admissions.illinois.edu/policies",
+        "https://www.admissions.illinois.edu/faq/advanced-placement",
+        "https://www.admissions.illinois.edu/apply/freshman/college-credit",
+        "https://www.admissions.illinois.edu/apply/transfer/transferring-credit",
+        "https://registrar.illinois.edu/academic-records/trans-credit/",
+        "https://citl.illinois.edu/test-placement-proficiency/proficiency-testing/advanced-placement-ap-credit/advanced-placement-ap-credit-1",
+        "https://citl.illinois.edu/test-placement-proficiency/current-cutoffs/international-baccalaureate-ib-program",
+        "https://citl.illinois.edu/international-baccalaureate-ib-credit",
+        "https://citl.illinois.edu/legislation-faq"
+      ]
+    },
+    {
+      "section": "student_insights",
+      "sources": [
+        "https://talk.collegeconfidential.com/t/university-of-illinois-urbana-champaign-class-of-2029-official-rd-thread/3679997",
+        "https://talk.collegeconfidential.com/t/university-of-illinois-urbana-champaign-early-action-for-fall-2025-admissions/3671789",
+        "https://talk.collegeconfidential.com/t/university-of-illinois-urbana-champaign-class-of-2030-official-rd-thread/3698623",
+        "https://www.collegeadvisor.com/how-to-get-into/how-to-get-into-uiuc-guide/",
+        "https://www.collegeessayguy.com/blog/university-illinois-urbana-champaign-supplemental-essays",
+        "https://www.collegetransitions.com/blog/uiuc-supplemental-essays/",
+        "https://www.collegeessayadvisors.com/supplemental-essay/university-of-illinois-urbana-champaign-supplemental-essay-guide/",
+        "https://www.cosmic.nyc/blog/university-of-illinois-urbana-champaign-essays-2025-2026",
+        "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/admissions/"
+      ]
+    },
+    {
+      "section": "application_strategy",
+      "sources": [
+        "https://grainger.illinois.edu/admissions/undergraduate/faq",
+        "https://grainger.illinois.edu/admissions/undergraduate/first-year",
+        "https://www.admissions.illinois.edu/faq/applicant-freshman",
+        "https://www.admissions.illinois.edu/apply/freshman/decisions",
+        "https://www.collegevine.com/faq/26245/trying-for-undeclared-what-s-the-uiuc-acceptance-rate",
+        "https://transferhandbook.illinois.edu/eng/computer-science/"
+      ]
+    },
+    {
+      "section": "outcomes_extra",
+      "sources": [
+        "https://illinisuccess.illinois.edu/23-24-annual-report",
+        "https://illinisuccess.illinois.edu/24-25-annual-report",
+        "https://www.collegefactual.com/colleges/university-of-illinois-at-urbana-champaign/paying-for-college/student-loan-debt/"
+      ]
+    }
+  ]
+}
