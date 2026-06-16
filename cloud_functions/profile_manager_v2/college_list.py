@@ -126,10 +126,20 @@ def get_college_list(user_id: str) -> List[Dict]:
     try:
         db = get_db()
         items = db.get_college_list(user_id)
-        
+
         if not items:
             return []
-        
+
+        # Personalized fits (cached) for this student, keyed by university_id —
+        # so each list item can carry the student's REAL reach/target/safety
+        # (fit_category) instead of only the population-level soft_fit_category.
+        # Read-only: no recompute, no LLM, no credit spend.
+        try:
+            fits_by_id = {f.get('university_id'): f for f in (db.get_all_fits(user_id) or [])}
+        except Exception as e:
+            logger.warning(f"[COLLEGE_LIST] Could not load fits for join: {e}")
+            fits_by_id = {}
+
         # Collect university IDs for batch lookup
         university_ids = [item.get('university_id') for item in items if item.get('university_id')]
         
@@ -190,7 +200,8 @@ def get_college_list(user_id: str) -> List[Dict]:
         for item in items:
             uni_id = item.get('university_id')
             uni_info = university_data.get(uni_id, {})
-            
+            fit = fits_by_id.get(uni_id) or {}
+
             # Build enriched item
             enriched_item = {
                 'university_id': uni_id,
@@ -207,6 +218,10 @@ def get_college_list(user_id: str) -> List[Dict]:
                 'us_news_rank': uni_info.get('us_news_rank') or item.get('us_news_rank'),
                 'summary': uni_info.get('summary') or item.get('summary'),
                 'logo_url': uni_info.get('logo_url') or item.get('logo_url'),
+                # Personalized fit (when computed) — the student's real band, kept
+                # distinct from the population-level soft_fit_category above.
+                'fit_category': fit.get('fit_category'),
+                'match_percentage': fit.get('match_percentage') or fit.get('match_score'),
             }
             enriched_items.append(enriched_item)
         

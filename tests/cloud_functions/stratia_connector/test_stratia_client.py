@@ -444,6 +444,30 @@ def test_set_application_status_failure_raises(captured):
     assert "not on list" in str(e.value)
 
 
+def test_get_college_list_reads_top_level_fit_category(captured):
+    # The enriched endpoint returns personalized fit_category top-level (#250).
+    captured["_get_payload"] = {"college_list": [
+        {"university_id": "umich", "university_name": "Michigan",
+         "soft_fit_category": "REACH", "fit_category": "TARGET", "match_percentage": 72},
+        {"university_id": "msu", "university_name": "Michigan State", "soft_fit_category": "SAFETY"},
+    ]}
+    out = sc.get_college_list("a@b.com")
+    by_id = {c["university_id"]: c for c in out}
+    assert by_id["umich"]["fit_category"] == "TARGET" and by_id["umich"]["match_percentage"] == 72
+    assert by_id["umich"]["soft_fit_category"] == "REACH"
+    assert by_id["msu"]["fit_category"] is None and by_id["msu"]["soft_fit_category"] == "SAFETY"
+
+
+def test_get_college_list_falls_back_to_nested_fit_analysis(captured):
+    # Older response shape: fit nested under fit_analysis still works.
+    captured["_get_payload"] = {"college_list": [
+        {"university_id": "duke", "university_name": "Duke",
+         "fit_analysis": {"fit_category": "SUPER_REACH", "match_score": 34}},
+    ]}
+    out = sc.get_college_list("a@b.com")
+    assert out[0]["fit_category"] == "SUPER_REACH" and out[0]["match_percentage"] == 34
+
+
 def test_get_outcome_calibration_passes_through(captured):
     captured["_get_payload"] = {"success": True, "decided_count": 2, "total": 3, "outcomes": [
         {"university_id": "umich", "predicted": "TARGET", "decision": "accepted"}]}

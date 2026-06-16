@@ -13,6 +13,27 @@ export const BALANCE_BANDS = [
 ];
 
 /**
+ * The category to bucket a college into for the balance ring: the student's
+ * PERSONALIZED fit first (from a computed fit analysis, surfaced either nested
+ * as `fit_analysis.fit_category` or top-level `fit_category` by the enriched
+ * endpoint), then the population-level `soft_fit_category`. Null when neither.
+ */
+export function collegeFitCategory(college) {
+  return college?.fit_analysis?.fit_category
+    || college?.fit_category
+    || college?.soft_fit_category
+    || null;
+}
+
+/**
+ * True when a college's band is only an admit-rate ESTIMATE — i.e. it has no
+ * personalized fit (so the ring can honestly say how many are estimated).
+ */
+export function isEstimatedFit(college) {
+  return !(college?.fit_analysis?.fit_category || college?.fit_category);
+}
+
+/**
  * Donut segments for the ring: each band with its count and fraction of the
  * total. Empty bands keep a zero fraction (so the legend can still list them).
  * @param {{reach?:number,target?:number,safety?:number}} counts

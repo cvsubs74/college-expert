@@ -168,8 +168,11 @@ def get_college_list(email):
             "application_status": c.get("application_status"),
             "category": c.get("category"),
             "soft_fit_category": c.get("soft_fit_category"),
-            "fit_category": fa.get("fit_category"),
-            "match_percentage": fa.get("match_percentage") or fa.get("match_score"),
+            # Personalized band now comes top-level from the enriched endpoint;
+            # fall back to a nested fit_analysis for older response shapes.
+            "fit_category": c.get("fit_category") or fa.get("fit_category"),
+            "match_percentage": (c.get("match_percentage")
+                                 or fa.get("match_percentage") or fa.get("match_score")),
             "selected_major": c.get("selected_major"),
             "notes": c.get("notes"),
             "location": c.get("location"),
