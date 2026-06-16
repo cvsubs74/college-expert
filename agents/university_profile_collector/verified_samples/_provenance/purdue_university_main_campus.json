@@ -1,0 +1,2661 @@
+{
+  "trust_report": {
+    "university": "Purdue University-Main Campus",
+    "id": "purdue_university_main_campus",
+    "cycle": "Fall 2026",
+    "cds_edition_used": "2025-2026 (latest available; 2026-2027 not yet posted as of 2026-06-16)",
+    "ipeds_unitid": "243780",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 34,
+      "held_null": 14
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 30,
+      "conflict_nulled": 1,
+      "unverified_nulled": 13,
+      "fields": {
+        "overall_acceptance_rate": "CANONICAL_SINGLE",
+        "in_state_acceptance_rate": "CANONICAL_SINGLE",
+        "out_of_state_acceptance_rate": "CANONICAL_SINGLE",
+        "transfer_acceptance_rate": "UNVERIFIED",
+        "international_acceptance_rate": "CANONICAL_SINGLE",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CORROBORATED",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CORROBORATED",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "CANONICAL_SINGLE",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "UNVERIFIED",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "UNVERIFIED",
+        "total_coa_out_of_state": "UNVERIFIED",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "UNVERIFIED",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 179,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 43.4,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 43.4,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1 (Fall 2025): Total first-time, first-year (degree-seeking) who applied = 87220; who were admitted = 37881. 37881/87220 = 43.4%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "in_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 71.1,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1 residency table (Fall 2025): In-State applied = 12040, In-State admitted = 8559. 8559/12040 = 71.1%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 43.6,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1 residency table (Fall 2025): Out-of-State applied = 58853, Out-of-State admitted = 25650. 25650/58853 = 43.6%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "transfer_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 22.5,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1 residency table (Fall 2025): International applied = 16327, International admitted = 3672. 3672/16327 = 22.5%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 87220,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1: 'Total first-time, first-year (degree-seeking) who applied ... Total | 87220' (Fall 2025); also gender split 53833 males + 33387 females = 87220.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 37881,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1: 'Total first-time, first-year (degree-seeking) who were admitted ... Total | 37881' (Fall 2025); gender split 21509 males + 16372 females = 37881.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9656,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1: 'Total first-time, first-year (degree-seeking) who enrolled ... Total | 9656' (Fall 2025); gender split 5708 males + 3948 females = 9656.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 25.5,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1 (Fall 2025): enrolled 9656 / admitted 37881 = 25.5% yield.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9656,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C1: 'Total first-time, first-year (degree-seeking) who enrolled ... Total | 9656' = entering first-year class size (Fall 2025).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "1220-1470",
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C9: 'SAT Composite | 25th Percentile 1220 | 50th Percentile 1360 | 75th Percentile 1470' (Fall 2025 enrolled first-year).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "610-730",
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C9: 'SAT Evidence-Based Reading and Writing | 25th 610 | 50th 670 | 75th 730' (Fall 2025).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "600-760",
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C9: 'SAT Math | 25th 600 | 50th 680 | 75th 760' (Fall 2025).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "act_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "28-34",
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C9: 'ACT Composite | 25th 28 | 50th 32 | 75th 34' (Fall 2025).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 83.8,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C9: 'Submitting SAT Scores | 0.8384424192212097 | 8096' and 'Submitting ACT Scores | 0.22649130074565038 | 2187'. Reporting SAT submission rate = 83.8% (8096 enrollees); ACT submission rate separately = 22.6% (2187). CDS reports these separately, not a single combined any-test rate.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.81,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C12: 'Average high school GPA of all degree-seeking, first-time, first-year students who submitted GPA: | 3.81' (4.0 scale; 92.8% submitted GPA).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 49.7,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'White, non-Hispanic | 4801'. 4801/9656 enrolled = 49.7%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2.5,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Black or African American, non-Hispanic | 240'. 240/9656 = 2.5%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8.1,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Hispanic/Latino | 783'. 783/9656 = 8.1%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 23.7,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Asian, non-Hispanic | 2290'. 2290/9656 = 23.7%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.2,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'American Indian or Alaska Native, non-Hispanic | 18'. 18/9656 = 0.2%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Native Hawaiian or other Pacific Islander, non-Hispanic | 4'. 4/9656 = 0.04% (rounds to 0.0%).",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 6.3,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Two or more races, non-Hispanic | 610'. 610/9656 = 6.3%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.9,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Race and/or ethnicity unknown | 374'. 374/9656 = 3.9%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 5.6,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Nonresidents | 536' (international/nonresident). 536/9656 = 5.6%.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 5.6,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B2 (first-time first-year column): 'Nonresidents | 536' out of 9656 enrolled first-year = 5.6% international/nonresident.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 92.4,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B22: Fall 2024 first-time full-time cohort = 11357; still enrolled Fall 2025 = 10490; 'percentage of the Fall 2024 entering cohort who remained enrolled = 0.9236594170995862' = 92.4%.",
+      "as_of_cycle": "Fall 2024 entering cohort (CDS 2025-2026)"
+    },
+    "graduation_rate_4_year": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 83.9,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS B (Graduation Rates) line H: 'Six-year graduation rate for 2019 cohort (G divided by C) ... Total | 0.8388008354834746' = 83.9% (G=6827 graduated / C=8139 final cohort).",
+      "as_of_cycle": "Fall 2019 cohort (CDS 2025-2026)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9718,
+      "source": "Purdue University Common Data Set 2025-2026, Section G-PWL (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS G1 (2026-2027 academic year, public institution): 'Tuition: In-state (out-of-district): | 9718' (first-year undergraduate). Required Fees listed separately as 274.",
+      "as_of_cycle": "2026-2027 academic year (CDS 2025-2026, Section G)"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "28520",
+        "verifier": "$28,794"
+      }
+    },
+    "total_coa_in_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "total_coa_out_of_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 72424,
+      "source": "U.S. Dept of Education College Scorecard API (api.data.gov)",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=latest.earnings.10_yrs_after_entry.median",
+      "quote": "College Scorecard API for id 243780 (Purdue University-Main Campus): {\"latest.earnings.10_yrs_after_entry.median\":72424,\"school.name\":\"Purdue University-Main Campus\",\"id\":243780}. Field = median earnings 10 years after entry.",
+      "as_of_cycle": "College Scorecard latest release (2024-2025 data file)"
+    },
+    "is_test_optional": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "Test-required: SAT or ACT required to be considered for admission",
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C8 (policies for students applying for Fall 2027): 'SAT or ACT | [x] Required to be considered for admission'. C8A = Yes (institution uses SAT/ACT in admission decisions). C8D: uses scores for academic advising = No.",
+      "as_of_cycle": "Fall 2027 policy (stated in CDS 2025-2026 C8)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8981,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C2 (Fall 2025): 'Number of qualified applicants offered a place on waiting list: | 8981'.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4047,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C2 (Fall 2025): 'Number accepting a place on the waiting list: | 4047'.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3916,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C2 (Fall 2025): 'Number of wait-listed students admitted: | 3916'.",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 96.8,
+      "source": "Purdue University Common Data Set 2025-2026 (West Lafayette / Main Campus)",
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "quote": "CDS C2 (Fall 2025): admitted off waitlist 3916 / accepted place on waitlist 4047 = 96.8%. (If computed against offered 8981, the rate is 43.6%; reporting admit-of-accepted per standard waitlist-admit-rate definition.)",
+      "as_of_cycle": "Fall 2025 (CDS 2025-2026)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "roles": [
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:application_process",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "in_state_acceptance_rate",
+        "out_of_state_acceptance_rate",
+        "international_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "admits_class_size",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "gpa_unweighted_avg",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "test_policy_details",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "Direct download of latest CDS edition (2025-2026); fetched successfully as 976.7KB xlsx binary, confirming the link is live. 2026-2027 file does not yet exist on the index.",
+        "Primary source. Parsed sheets CDS-A (confirmed West Lafayette/Main Campus), CDS-C (C1/C2/C8/C9/C12 admissions, test, GPA), CDS-B (B2 race, B22 retention, B 6-year graduation), CDS-G-PWL (2026-2027 cost of attendance components).",
+        "CDS C1 (Fall 2025): Total first-time, first-year (degree-seeking) who applied = 87220; who were admitted = 37881. 37881/87220 = 43.4%.",
+        "CDS C1 residency table (Fall 2025): In-State applied = 12040, In-State admitted = 8559. 8559/12040 = 71.1%.",
+        "CDS C1 residency table (Fall 2025): Out-of-State applied = 58853, Out-of-State admitted = 25650. 25650/58853 = 43.6%.",
+        "CDS section D (Transfer Admission) was not retrieved/parsed; no transfer applicant/admit counts confirmed. Not reporting to avoid inference."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=latest.earnings.10_yrs_after_entry.median",
+      "roles": [
+        "anchor",
+        "anchor:median_earnings_10yr"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "Authoritative College Scorecard API call (HTTP 200 with site API key + Referer/Origin headers). Returned median earnings 10 years after entry = 72424, admission_rate.overall=0.4987, cost.attendance.academic_year=24591.",
+        "College Scorecard API for id 243780 (Purdue University-Main Campus): {\"latest.earnings.10_yrs_after_entry.median\":72424,\"school.name\":\"Purdue University-Main Campus\",\"id\":243780}. Field = median earnings 10 years after entry."
+      ]
+    },
+    {
+      "url": "https://admission.purdue.edu/transfercredit/collegeboardap.php",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Legacy AP URL variant; not fetched directly. Superseded by current /become-student/transfer/credit/ap/ page."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/",
+      "roles": [
+        "resolve:admissions",
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official Purdue Office of Admissions site (root); used as official_admissions_url."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/apply/applicationprocess.php",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "404 Not Found \u2014 page does not exist at this path."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/apply/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official apply page. Confirmed 'Use the Common App to apply as a first-year degree-seeking student' for West Lafayette and Indianapolis; separate Purdue application only for Polytechnic statewide (not Main Campus)."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/deadlines/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official deadlines hub; confirmed deadlines are 11:59 p.m. Eastern and linked to the first-year deadlines page."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/first-year-criteria/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source for the two review criteria (academic preparedness for desired program; competitiveness within pool based on available space) and major/space-specific review."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/guide/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source for primary + alternate location/major slot, 'select an alternate only if truly interested,' and 'changing majors or locations is never guaranteed.'"
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/transfer/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transfer landing/checklist page; surfaced in search. Underlying credit detail taken from the /credit/ subpage instead."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/transfer/credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY transfer source. Quoted: regionally-accredited / college-level / grade-of-at-least-C- acceptance criteria, 'Only credit transfers, your grades will not.', the 32 upper-division credit-hours residency rule, and the Transfer Credit Course Equivalency Guide tool sentence."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/transfer/credit/ap/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY AP source. Quoted: Economics combined Macro+Micro rule, '1XXXX' undistributed-credit definition, College Board code 1631 submission line, and 'AP transfer credit criteria are subject to change without notice.'"
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/transfer/credit/ib/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY IB source. Quoted: 'Effective fall 2025, IB exams are scored on a 1\u20137 scale', 'Students must earn a score of 4 or higher to receive Purdue credit', SL+HL eligibility line, submission line, and disclaimer. Verified NO IB Diploma bonus and NO HL-only restriction on re-fetch."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/become-student/transfer/engineering-transfer-criteria/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search for engineering FYE/transfer criteria; not fetched in detail. FYE/T2M facts taken from the Engineering enrollment-policy search snippet."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/cost-financial-aid/",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "CONFIRMED official Purdue 'Cost and Financial Aid' page on admissions.purdue.edu; used as financial_aid_url.",
+        "Anchor cost page. Took aid philosophy framing (tuition freeze / affordability + accessibility land-grant mission) and links to the scholarships, DFA, Indy Scholars, and net-price-calculator pages. Tuition/COA dollar figures intentionally not restated."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/cost-financial-aid/indy-scholars/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed Indy Scholars details: $10,000/year minimum, 3.00 GPA, combinable with Presidential/Trustees, Common App campus-choice application method, Nov. 1 Early Action deadline, and entrepreneurship-certificate/career-consulting benefits. Confirmed international students generally ineligible."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/cost-financial-aid/scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary source for named scholarships (Trustees, Presidential, Lilly Scholars, Indy Scholars, National Recognition Programs) with exact amounts, residency differences, Nov. 1 (firm) deadline, automatic-consideration framing, and the quoted 'about 15% of applicants receive a merit award' figure used for percent_receiving_aid."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/deadlines/first-year-college-student/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official first-year deadlines page. PRIMARY SOURCE for deadlines: app opens Aug. 1, EA Nov. 1, RD Jan. 15, EA decision Jan. 15, RD decision by March 31, and the list of competitive priority-deadline majors. Common App platform. $60 fee."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/majors/a-to-z/engineering-first-year.php",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source for First-Year Engineering being the entry point for all WL engineering students, specialty chosen in year two, and Nov 1 competitive priority deadline."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/majors/a-to-z/exploratory-studies-for-undecided-students.php",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source for Exploratory Studies: earn degree in program of choice, up to four terms to declare, four-year track maintained."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/transfercredit/ibcredit.php",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Legacy IB URL variant surfaced in search. Used current /become-student/transfer/credit/ib/ page instead for verbatim quotes."
+      ]
+    },
+    {
+      "url": "https://admissions.purdue.edu/transfercredit/index.php",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Legacy transfer-credit index. Superseded by current /become-student/transfer/credit/ page."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/purdue-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "section:strategic_profile",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator (AdmissionSight). Class of 2030 / Fall 2026 figures described as predictions only; official stats not released. Rejected \u2014 speculative, not canonical.",
+        "Class of 2030 admissions blog. Offered only preliminary/directional Fall 2026 numbers; excluded because not final and not the target cycle's published CDS.",
+        "Third-party search result; not used."
+      ]
+    },
+    {
+      "url": "https://admitreport.com/blog/how-to-get-into-purdue",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&api_key=DEMO_KEY",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "DEMO_KEY was hard rate-limited (HTTP 429 OVER_RATE_LIMIT). Replaced by the official site key extracted from the Scorecard page config."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=...admission_rate.overall&api_key=DEMO_KEY",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API query for Purdue (243780). Returned OVER_RATE_LIMIT on DEMO_KEY both attempts \u2014 no value obtained. Would in any case reflect a ~2022-2023 cohort, not Fall 2026."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=...retention_rate...",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API with DEMO_KEY returned OVER_RATE_LIMIT error; no data retrieved."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=id,school.name,school.city,school.state,school.ownership&api_key=DEMO_KEY",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted Scorecard API cross-check; HTTP 429 rate-limited on DEMO_KEY. Identity instead confirmed via College Navigator."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=latest.aid.cohort_default_rate",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "OVER_RATE_LIMIT every attempt (DEMO_KEY)"
+      ]
+    },
+    {
+      "url": "https://appybara.org/blog/purdue-university-admissions-statistics-and-acceptance-rate",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog claiming 'Class of 2030 (Latest)'. Content is prediction/early-data based; official Fall 2026 stats not released. Rejected \u2014 speculative."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/how-to-write-the-purdue-university-essays",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultancy essay guide. Source for do's/don'ts: couple specific programs to interests, 'depth is better than breadth,' and the list of mistakes (vague intros, name-dropping professors, sounding like settling, generic conclusions)."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-does-it-really-take-to-get-into-purdue-university-west-lafayette",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions-tips blog; not used for any value."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-is-purdue-university-known-for",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "General overview; redundant with stronger primary sources, not quoted."
+      ]
+    },
+    {
+      "url": "https://business.purdue.edu/careers/outcomes/undergraduate.php",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Daniels School only, not university-wide; not used"
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Purdue Catalog; confirmed current edition is '2026-2027 University Catalog' and pointed to programs list at catoid=19&navoid=25586."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=16&navoid=20119",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Undergraduate Programs List but for the OLDER 2023-2024 catalog; superseded by the 2026-2027 catoid=19 list, so not used."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=19&navoid=25481",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Undergraduate Minors list URL (located in catalog nav) \u2014 referenced in minors_certificates; individual minor names not enumerated this pass."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=19&navoid=25483",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Undergraduate Certificates list URL (located in catalog nav) \u2014 referenced in minors_certificates; individual certificate names not enumerated this pass."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=19&navoid=25484",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Master Undergraduate Programs List \u2014 primary source for the per-college major lists and exact degree codes (BSCHE, BSAAE, BSVN, etc.)."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=19&navoid=25586",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "CONFIRMED 2026-2027 'Graduate and Undergraduate Programs Lists' index; links to Undergraduate Programs List, Minors, Certificates. Used as majors_catalog_url (current cycle).",
+        "Official 2026-2027 catalog index \u2014 confirmed the 12 colleges/schools + Honors + Exploratory and overall structure_type."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=19&navoid=25597",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College of Engineering landing page \u2014 returned only marketing prose, no major enumeration; majors taken from navoid=25484 instead."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/content.php?catoid=19&navoid=25603",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College of Science landing page \u2014 marketing prose only, did not enumerate departments/majors; used navoid=25484 instead."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/preview_program.php?catoid=13&poid=18330",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Older-cycle (catoid=13) CS CODO page stating 'Minimum GPA: 2.75' + B in CS 18000 + one math course. Rejected as stale in favor of current CS dept page; discrepancy flagged in notes."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/preview_program.php?catoid=16&poid=25203",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2025-2026 Nursing, BSN program page \u2014 did not surface CODO/space-restriction text in the excerpt; used the dedicated CODO page instead."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/preview_program.php?catoid=17&poid=30911",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "2024-2025 Nursing CODO page \u2014 'SPACE AVAILABLE BASIS ONLY... Space is limited'; min cumulative GPA 3.0; 6 credits bio/chem w/ labs at 3.0. Basis for Nursing is_impacted=true; figures pinned to 2024-2025 cycle."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/preview_program.php?catoid=18&poid=33121",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CNIT/CSAD/DATA (Polytechnic) CODO page surfaced in search; not fetched. Polytechnic computing majors treated as not space-restricted absent explicit catalog 'space available' language."
+      ]
+    },
+    {
+      "url": "https://catalog.purdue.edu/preview_program.php?catoid=18&poid=33611",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "2025-2026 Business CODO page \u2014 'Major is open with no anticipated space restrictions'; min cumulative GPA 2.5; named prereqs. Basis for business is_impacted=false and internal_transfer_gpa=2.5."
+      ]
+    },
+    {
+      "url": "https://collegedunia.com/usa/article/c-2187-purdue-university-acceptance-rate-2026",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary source for Fall 2025 acceptance-rate context (43.4%, ~86,953 apps, by-college/by-residency splits). Search snippet only; used as attributed reporting in admissions_philosophy, NOT as a verified fact."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/_nuxt/builds/latest.json",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Nuxt build manifest; used only to navigate the SPA structure, no statistics."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/_nuxt/Cey6aFi7.js",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Scorecard entry JS bundle; inspected for API key/host but the runtime config (key + apiUrl) was actually in the page's inline window.__NUXT__.config instead."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/api/?op=GetSchoolDirectory&id=243780",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted directory API call; HTTP 404. Not a valid endpoint."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/app/data/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted to find API docs for retention field; returned HTTP 404."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/app/v1/schools/?id=243780",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Guessed API path; HTTP 404."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Scorecard SPA page; static HTML had no data values but its window.__NUXT__.config exposed the official api.data.gov API key (B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr) and apiUrl used to query authenticated earnings data.",
+        "College Scorecard profile page for Purdue Main Campus (IPEDS 243780). WebFetch returned only site nav/header, no admission-rate value. Note: Scorecard's 'latest' admission rate lags to ~2022-2023 IPEDS cohort, so it cannot supply a Fall 2026 figure regardless.",
+        "College Scorecard school profile (UNITID 243780). Fetch returned only nav/header markup with no retention data \u2014 could not extract a verifiable quote."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus=",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard located",
+        "Official College Scorecard school URL; embeds UnitID 243780 mapped to 'Purdue-University-Main-Campus'. Page shell loaded (data rendered client-side); URL is the canonical Scorecard page.",
+        "JS SPA, no data values"
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/v1/api.json?id=243780",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Tried as a possible frontend API proxy; returned 404 NoSuchKey (not a real endpoint)."
+      ]
+    },
+    {
+      "url": "https://commondataset.org/wp-content/uploads/2025/11/CDS-PDF-2025-2026_PDF_Template.pdf",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Generic blank CDS template, not Purdue data. Skipped."
+      ]
+    },
+    {
+      "url": "https://cs.purdue.edu/undergraduate/codo-requirements.html",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source: A- in CS 18000, B+ in approved Calculus, minimum 3.00 GPA for highest consideration; all CODO approvals space-available and reviewed against all applicants."
+      ]
+    },
+    {
+      "url": "https://cs.purdue.edu/undergraduate/codo.html",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source: CS majors are space restricted programs; CODO decisions are final and may not be appealed."
+      ]
+    },
+    {
+      "url": "https://digitwin2024.polytechnic.purdue.edu/ENE/Academics/Undergrad/FYE/T2M",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Polytechnic mirror of Transition-to-Major; corroborates FYE\u2192T2M but used the main admissions engineering-first-year page for the verbatim quote."
+      ]
+    },
+    {
+      "url": "https://educationdata.urban.org/api/v1/college-university/scorecard/default-rates/2021/?unitid=243780",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Cloudflare-blocked"
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/purdue-acceptance-rate-2029/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator (Empowerly). Cites Fall 2025 43.4%; no official Fall 2026 figure. Rejected \u2014 not primary source.",
+        "Third-party blog from search results; not canonical. Rejected.",
+        "Third-party search result; not used."
+      ]
+    },
+    {
+      "url": "https://engineering.purdue.edu/Engr/Academics/Undergraduate/current-students/academic/academic-policies/enrollment-policy",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Engineering enrollment policy (via search snippet) \u2014 FYE completion (nine courses, GPA>=2.00, EAI>=2.00, C- or better each) then T2M; West Lafayette not direct-admit-to-major, Indianapolis is. Basis for Engineering college-level restriction and admissions_pathway text."
+      ]
+    },
+    {
+      "url": "https://engineering.purdue.edu/ME/News/2025/purdue-me-is-number-2",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "ScholarGPS-based ME ranking, a third-party metric not US News. Considered but excluded as off-scope for a US News rank and too narrow for the profile."
+      ]
+    },
+    {
+      "url": "https://engineering.purdue.edu/ME/Undergraduate/Admissions",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "ME admissions page surfaced in search \u2014 snippet referenced ~3.2 GPA / 3.2 EAI guarantee. Flagged 'verify' in data, not asserted as a hard cutoff; page not fetched in full."
+      ]
+    },
+    {
+      "url": "https://gwhof.galib.uga.edu/what-is-purdue-ap-credit-simplified-guide",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Non-official third-party 'guide' (UGA-hosted hub). Rejected \u2014 not an official source."
+      ]
+    },
+    {
+      "url": "https://hhs.purdue.edu/nur/students/undergraduate/majors/nursing.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Returned HTTP 429 Too Many Requests on two attempts; could not retrieve. Nursing data sourced from catalog CODO page instead."
+      ]
+    },
+    {
+      "url": "https://honors.purdue.edu/admissions/future-first-year.php",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM source: indicate Honors College interest on the Purdue Common Application before the Nov 1 Early Action deadline; holistic criteria (GPA, scores, interdisciplinary aptitude, leadership/engagement)."
+      ]
+    },
+    {
+      "url": "https://honors.purdue.edu/future-students/future-first-year-students.php",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate Honors first-year landing page from search; not fetched \u2014 used the admissions/future-first-year.php page for quotes."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/?id=243780",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CONFIRMED identity: 'Purdue University-Main Campus', Hovde Hall of Administration, West Lafayette, Indiana 47907-2040, 4-year Public. Cross-checks name+city+state to UnitID 243780."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/institution-profile/243780",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS institution profile for UnitID 243780; WebFetch failed with too-many-redirects, could not read directly."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/reported-data/243780",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS reported-data page for UnitID 243780; WebFetch failed with too-many-redirects."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/purdue-university-admission-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator. Rejected \u2014 not canonical.",
+        "Third-party admissions blog from search results; not canonical. Rejected.",
+        "Third-party admissions-stats aggregator; not canonical, not cycle-verifiable. Skipped.",
+        "Third-party search result; not used."
+      ]
+    },
+    {
+      "url": "https://notcommonapp.org/blog/purdue-university-admissions-statistics-and-acceptance-rate",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog. Rejected \u2014 not canonical."
+      ]
+    },
+    {
+      "url": "https://puhonorscollege.tawk.help/article/first-time-student-selection-criteria",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Help-center article on Honors selection criteria; corroborative only, not quoted."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?university=Purdue+University+-+West+Lafayette",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IBO recognition statement for West Lafayette (correct campus). Not fetched in detail because the official admissions IB page provided the authoritative verbatim policy; listed for completeness."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?university=Purdue+University+Fort+Wayne",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IBO recognition page for Purdue FORT WAYNE \u2014 a different campus, not Main/West Lafayette. Rejected (wrong campus)."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?university=Purdue+University+Global",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue Global \u2014 a different (online) institution, not Main Campus. Rejected."
+      ]
+    },
+    {
+      "url": "https://research.com/best-colleges/purdue-university/admissions",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party search result; some stated 'February 1' RD deadline which conflicts with official Jan. 15 \u2014 rejected in favor of official page."
+      ]
+    },
+    {
+      "url": "https://research.com/best-colleges/purdue-university/graduation-rate-and-career",
+      "roles": [
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search hit citing ~92% retention; secondary aggregator, not canonical, no cycle pinned \u2014 rejected in favor of the primary CDS.",
+        "Third-party aggregator; rejected, not a canonical primary source.",
+        "Aggregator; rejected"
+      ]
+    },
+    {
+      "url": "https://sayhellocollege.com/blog/write-the-purdue-supplemental-essays/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in essay-tips search results; not fetched because four other essay guides already gave corroborating, sufficient coverage."
+      ]
+    },
+    {
+      "url": "https://scholarshipbasket.com/scholarships-for-undergraduate-students/purdue-university-trustees-scholarship/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used (non-official)."
+      ]
+    },
+    {
+      "url": "https://scholarshipsfuture.com/purdue-university-scholarships-2026-27/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used (non-official)."
+      ]
+    },
+    {
+      "url": "https://selfservice.mypurdue.purdue.edu/prod/bzwtxcrd.p_select_info",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate self-service transfer-credit lookup endpoint. Not used; the sswis course-equivalency guide is the primary named tool."
+      ]
+    },
+    {
+      "url": "https://skillnation.in/posts/presidential-scholarship-purdue/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used (non-official)."
+      ]
+    },
+    {
+      "url": "https://skillnation.in/posts/purdue-university-niche/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator republishing verbatim Niche student-review snippets in quotes \u2014 source for academics reputation (engineering/pharmacy/nursing/speech path), 'unwind and have fun by joining a club,' Ross-Ade Brigade/Paint Crew, Grand Prix 'Greatest Spectacle in College Racing,' 'always something fun to do on campus,' and career-development strength."
+      ]
+    },
+    {
+      "url": "https://sswis.mypurdue.purdue.edu/PurdueStudentSS/transferCreditCourseGuide/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "The official Transfer Credit Course Equivalency Guide tool URL (the real equivalent of the prompt's 'TransferTrax', which does not exist at Purdue). Recorded as the articulation tool."
+      ]
+    },
+    {
+      "url": "https://status.asucd.ucdavis.edu/purdue-ap-credits",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Non-official third-party aggregator (UC Davis status hub). Rejected \u2014 not an official Purdue page."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/purdue-alternate-major/1866463",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Forum thread; anecdotal, not authoritative \u2014 skipped."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/what-are-my-chances-at-purdue-west-lafayette-cs-as-well-as-others-international-student-3-86-uw-1420-sat/3669351",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct College Confidential thread. Source for 'CS is a very high reach' (vwlizard), the rejected-strong-applicant anecdote, weak essays/recs as a hidden cause of rejection, and international-status selectivity."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/what-are-my-chances-at-purdue-west-lafayette-cs-as-well-as-others-international-student-3-86-uw-1420-sat/3669351?page=2",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Page 2 of same CC thread. Source for Mapk's 'retake the SAT and aim for above 1500' advice and Thumper1's holistic-context remarks."
+      ]
+    },
+    {
+      "url": "https://test-ninjas.com/college-sat-act/purdue-university",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party test-prep site from search results; not canonical. Rejected."
+      ]
+    },
+    {
+      "url": "https://testbook.com/en-us/college/purdue-university-admissions",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party site from search results; not canonical. Rejected."
+      ]
+    },
+    {
+      "url": "https://uscanadacolleges.com/schools/243780-purdue-edu-acceptance-rate-sat-act-score/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator reporting 27\u201334 'admitted students'; not enrolled-cohort, not cycle-pinned. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.admissions.purdue.edu/apply/apply.php",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 429 rate-limited on attempts; platform info obtained from become-student/apply/ and Common App pages instead."
+      ]
+    },
+    {
+      "url": "https://www.admissions.purdue.edu/apply/essay.php",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official essay page. PRIMARY SOURCE for supplemental requirements: required Common App essay (250-650), two required Purdue 250-word essays with exact prompts, optional Honors College essays (\u2264500), self-reported grades + test scores."
+      ]
+    },
+    {
+      "url": "https://www.admissions.purdue.edu/become-student/guide",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Same guide page (non-trailing-slash variant) \u2014 first WebFetch attempt hit HTTP 429; succeeded via the trailing-slash URL above."
+      ]
+    },
+    {
+      "url": "https://www.admissions.purdue.edu/transfercredit/collegeboardap.php",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; older/legacy AP path. Used the current /become-student/transfer/credit/ap/ page instead for verbatim quotes."
+      ]
+    },
+    {
+      "url": "https://www.bachelorsportal.com/scholarships/3867/trustees-scholarship.html",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used (non-official)."
+      ]
+    },
+    {
+      "url": "https://www.careerbliss.com/purdue-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; employer/employee reviews, not student admissions opinion \u2014 out of scope, not fetched."
+      ]
+    },
+    {
+      "url": "https://www.cco.purdue.edu/data/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Outcomes dashboard; figures in unreadable Tableau embed"
+      ]
+    },
+    {
+      "url": "https://www.cco.purdue.edu/Employers/PurdueStudentAndAlumniData?tab=NextStepSurveyData",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Only knowledge rate 85-90%; no rates/employers"
+      ]
+    },
+    {
+      "url": "https://www.cco.purdue.edu/Students/Post-GradDataAndSurveys?tab=WherePurdueStudentsGo",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Employers in embedded dashboard; none named"
+      ]
+    },
+    {
+      "url": "https://www.cla.purdue.edu/academic/history/courses/ap.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College-of-Liberal-Arts department-specific AP page (History dept). Out of scope for university-wide policy; not used."
+      ]
+    },
+    {
+      "url": "https://www.clastify.com/blog/score-requirements/purdue-university",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog from search results; not canonical. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.cogn-iq.org/admissions/purdue-university-main-campus/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result reported ACT 27\u201334 (admitted, not enrolled); conflicts with official CDS enrolled figure and unclear cycle. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/purdue-university-main-campus/academic-life/graduation-and-retention/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary aggregator (College Factual) citing ~93%; not canonical and cycle ambiguous \u2014 rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/purdue-university-main-campus/applying/entering-class-stats/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator; not canonical. Skipped."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/purdue-university-main-campus/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "4.6% but no cohort year; not primary; rejected"
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/indiana/purdue-university-main-campus/admission",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator; not canonical. Skipped."
+      ]
+    },
+    {
+      "url": "https://www.collegetransitions.com/blog/how-to-get-into-purdue-university/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party strategy blog; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegetransitions.com/blog/purdue-university-supplemental-essay-prompts/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultancy essay guide. Source for essay tips (research specific offerings, depth over breadth, avoid two unrelated majors) and the 'essays rated very important / equal weight to GPA and rigor' claim."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator echoing UnitID 243780; corroborating but not authoritative, rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/admission/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result aggregator; reported median 31 / 25th 27 / 75th 34 from IPEDS-derived data \u2014 conflicts with official CDS (25th=28) and not cycle-pinned to Fall 2026, so rejected in favor of the primary CDS."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/graduation/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator (collegetuitioncompare); not consulted in detail / not authoritative vs. official bursar page."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/25957/purdue-admissions-major-based",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party FAQ asserting major-based admission; not quoted \u2014 confirmed directly from admissions.purdue.edu."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/questions/55862/does-what-i-choose-for-my-alternate-major-for-purdue-on-the-common-app-affect-my-chances-for-admission",
+      "roles": [
+        "section:student_insights",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Community Q&A page contained only the question, no rendered answer \u2014 could not extract advice.",
+        "Third-party Q&A surfaced in search; not used \u2014 relied on official Purdue pages for verbatim policy instead."
+      ]
+    },
+    {
+      "url": "https://www.commonapp.org/explore/purdue-university",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed Common App as Purdue's first-year platform; 'No letter of recommendation required - First Year'; EA Nov. 1 with Jan. 15 decision."
+      ]
+    },
+    {
+      "url": "https://www.cosmic.nyc/blog/purdue-university-essays-2025-2026",
+      "roles": [
+        "section:application_process",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party essay-guide search result; essay data taken from official essay.php instead.",
+        "Consultancy essay guide. Source for 'open with a compelling personal anecdote,' connect to a specific subfield/research center, and the alternate-major 'don't sound like you're settling' red flag."
+      ]
+    },
+    {
+      "url": "https://www.cs.purdue.edu/corporate/placement/index.html",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CS dept only; not used"
+      ]
+    },
+    {
+      "url": "https://www.cs.purdue.edu/future-students/faq.html",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CS dept FAQ from search; not used \u2014 used the dedicated CODO pages for verbatim policy."
+      ]
+    },
+    {
+      "url": "https://www.cs.purdue.edu/undergraduate/codo-requirements.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Authoritative CS department CODO page \u2014 'SPACE AVAILABLE BASIS', CS 18000 required, 3.00 cumulative GPA for highest consideration. Basis for CS/DS/AI is_impacted=true and internal_transfer_gpa=3.0."
+      ]
+    },
+    {
+      "url": "https://www.fastweb.com/college-scholarships/scholarships/176842-trustees-scholarship-purdue-university",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used (non-official)."
+      ]
+    },
+    {
+      "url": "https://www.goodgoblin.ai/blog/LifeAtPurdueUniversity2025",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Synthesis article that explicitly attributes specific student sentiment to 'Reddit r/Purdue and Niche': CoRec rec center as a campus highlight, dining variety/extended hours, and the framing 'work hard with a supportive community.' Provides attribution but NOT verbatim Reddit quotes \u2014 used as paraphrase-level Reddit signal."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/purdue-university",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS visualization; not authoritative, rejected.",
+        "Third-party CDS visualizer. Not a primary source; rejected in favor of Purdue's own CDS file.",
+        "Third-party CDS aggregator; not the primary source. Not fetched; rejected in favor of Purdue's own file.",
+        "Third-party CDS visualizer; not the canonical primary source. Skipped in favor of official xlsx.",
+        "Third-party CDS visualizer; not used \u2014 went directly to Purdue's official xlsx instead.",
+        "Third-party 'visualized CDS' site; rejected in favor of the original CDS file."
+      ]
+    },
+    {
+      "url": "https://www.greekrank.net/uni/48/greek-life/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary source corroborating large Greek system at Purdue. Used as attributed context for social_environment."
+      ]
+    },
+    {
+      "url": "https://www.gyandhan.com/study-abroad/usa/universities/purdue-university/admission",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party. Cross-check only; listed deadlines as 'Closed' and platform commonapp.org. Not used for any figure."
+      ]
+    },
+    {
+      "url": "https://www.homeofpurdue.com/plan/transportation/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary source for regional airport access (Indianapolis ~1hr, Chicago ~2-3hr) referenced in transportation_impact context. Search snippet."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/purdue-university-admissions-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog. Rejected \u2014 not canonical; no official Fall 2026 figure."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/purdue-university/campus-life/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary source for social_environment: 1,000+ orgs, large Greek presence, limited town nightlife. Search snippet only; attributed and hedged in JSON.",
+        "Direct fetch returned HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/purdue-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct fetch returned HTTP 403 Forbidden; could not extract verbatim reviews directly. Niche review content reached only via search summary + aggregator below."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/purdue-university/students/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not fetched (sibling Niche pages were 403)."
+      ]
+    },
+    {
+      "url": "https://www.pfw.edu/registrar/transfer-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue Fort Wayne registrar \u2014 wrong campus. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.pfw.edu/sites/default/files/documents-2025/05/New%20Credit%20Through%20Testing.pdf",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue Fort Wayne PDF \u2014 wrong campus. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.pnw.edu/testing-center/for-students/learning-equivalencies/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue Northwest \u2014 different campus. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/dfa/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Division of Financial Aid. Took the verbatim aid-philosophy mission statement ('committed to making Purdue's world-class education affordable, accessible and valuable to Boilermakers and their families'). No aid statistics published here."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/dfa/cost/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue Division of Financial Aid cost page \u2014 does not display dollar figures, just links back to the bursar Rates and Fees page. No independent value."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/hhs/nur/students/undergraduate/majors/nursing.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Redirects (302) to hhs.purdue.edu; follow-up fetch blocked by HTTP 429 rate-limit, so not used. Nursing data sourced from catalog CODO page."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/idata/about/faq/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "iData FAQ; not fetched in detail, navigational only."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/idata/documents/CDS/CDS_2022-2023.pdf",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Old 2022-2023 CDS surfaced in search; wrong cycle, not used."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/idata/documents/CDS/CDS_2025-2026.pdf",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted PDF path \u2014 HTTP 404. Purdue serves CDS as XLSX, not PDF, so this URL pattern is invalid.",
+        "Tried a guessed PDF URL pattern for the 2025-2026 CDS; returned HTTP 404. Purdue now publishes CDS as .xlsx, not PDF."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/idata/products-services/common-data-set/",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:application_process",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CDS located (2025-2026 (latest available; 2026-2027 not yet posted as of 2026-06-16))",
+        "Official Purdue Institutional Data CDS index. Lists editions 2014-15 through 2025-26 (.xlsx). 2026-2027 NOT posted; most recent is 2025-26. This is the authoritative CDS landing/index page.",
+        "Index page listing CDS files by year; confirmed the most recent published CDS is 2025-2026 (no 2026-2027 yet) and gave the .xlsx download URL.",
+        "Purdue's official CDS index page (Institutional Data Analytics + Assessment). Lists CDS files; most recent is 2025-2026.xlsx. The 2026-2027 CDS (Fall 2026 cohort) does NOT exist yet \u2014 confirms target cycle unavailable.",
+        "C1 | First-time, first-year students: Provide the number of degree-seeking, first-time, first-year students who applied, were admitted, and enrolled (full- or part-time) in Fall 2025. ... Total first-time, first-year (degree-seeking) who applied | ... | 87220 ... Total first-time, first-year (degree-seeking) who were admitted | ... | 37881",
+        "Official Purdue CDS index. Confirmed the most recent edition is 2025-2026 (no 2026-2027 exists). Provided the XLSX download URL. Noted methodology changed beginning 2024-25 to expand scope beyond West Lafayette."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/01/CDS_2025-2026.pdf",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "404 Not Found \u2014 superseded by the .xlsx version; not used."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx (curl attempt)",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct curl download returned an F5/TSPD bot-challenge HTML page, not the file. Rejected; retrieved the real binary via WebFetch instead."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/newsroom/2025/Q2/trustees-approve-2026-budget-frozen-base-tuition-for-main-campus-and-no-increase-for-indiana-residents-at-purdue-northwest-and-purdue-fort-wayne-for-2025-26-2026-27/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Purdue newsroom: Board of Trustees froze base undergraduate tuition; corroborates $28,794 out-of-state for 2026-27 (per search snippet). Page text itself did not quote the dollar amount, but confirms the freeze keeping the figure unchanged through 2026-27."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/newsroom/2025/Q3/demand-for-purdue-education-breaks-record-across-undergrad-master-and-doctoral-levels-most-selective-incoming-class-and-highest-graduation-rate",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue newsroom press release surfaced in search re: Fall 2025 'most selective incoming class.' Not fetched/quoted; pertains to Fall 2025, not the target Fall 2026 cycle.",
+        "Purdue newsroom press release cited an 84.6% all-time-high six-year rate; NOT used because it is a marketing figure not tied to a specific CDS cohort/cycle and could not be quoted from the canonical CDS instrument."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/newsroom/2025/Q3/purdue-research-expenditures-rise-9-in-2024-25-in-sharp-contrast-to-big-ten-national-trend",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary Purdue research article. WebFetch returned HTTP 429 Too Many Requests \u2014 could not read. The $1B figure was instead taken from the Q4 article above."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/newsroom/2025/Q4/purdue-surpasses-1b-in-total-research-expenditures-for-the-first-time",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY SOURCE, successfully fetched. Quoted: FY2025 over $1B research expenditures, up 12% YoY / ~40% over 3 years; Lilly up-to-$250M; 'Purdue research remains robust and continues to grow' vs peers. Used in research_impact + takeaway."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/newsroom/2026/Q2/12-purdue-graduate-programs-ranked-in-top-10-in-u-s-news-world-report-2026-list",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Search-result title used as secondary corroboration that 12 Purdue grad programs ranked top-10 in U.S. News 2026. Page not directly fetched; treated as attributed reporting, not a hard fact."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/operations/blog/2025/08/12/new-west-lafayette-campus-transit-routes-and-schedule-set-for-fall-semester/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY SOURCE, successfully fetched. Quoted free Campus Transit, SP+ operator, launched Aug 14 2025, three fixed routes + on-demand, CityBus $49 pass. Used in transportation_impact."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/provost/teachinglearning/news-pages/06_28_23.html",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetch 404; not verifiable"
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/registrar//currentStudents/Transfer%20Credit.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Registrar transfer-credit page (double-slash URL from search). Not used; admissions page was authoritative for the quoted criteria."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/registrar/currentStudents/students/credit_evaluation.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Registrar credit-evaluation page for current students. Not fetched in detail; admissions transfer page provided the restrictions quotes."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/science/future-students/Admissions.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College of Science admissions page; not the university-wide credit policy. Not used."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/treasurer/finance/bursar-office/tuition/fee-rates-2025-2026/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official bursar 2025-2026 rates page \u2014 prior cycle, not the Fall 2026 target; noted only to confirm a separate 2026-2027 page exists."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/treasurer/finance/bursar-office/tuition/fee-rates-2026-2027/undergraduate-tuition-and-fees-2026-2027/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CANONICAL official Purdue bursar page for 2026-2027 undergraduate (West Lafayette). Non-resident per-semester components: General Service $4,859 + Fitness/Wellness $117 + Activity $20 + Nonresident Tuition $9,401 = $14,397/semester sub-total; Academic Year Total $28,794. This is the value used.",
+        "Non-Resident, Per Semester: General Service $4,859.00; Student Fitness and Wellness Fee $117.00; Student Activity Fee $20.00; Nonresident Tuition $9,401.00 \u2014 Sub-Total Tuition Per Semester $14,397.00; Academic Year Total $28,794.00"
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/vpec/policies/west-lafayette/wl-6/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Purdue WL-6 admissions POLICY document, not the prospective-student admissions site; rejected in favor of admissions.purdue.edu."
+      ]
+    },
+    {
+      "url": "https://www.purdue.edu/vpsl/leadership/Scholarships_Awards/index.html",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Leadership/VPSL scholarships page; not used \u2014 out of scope for first-year admission/merit awards."
+      ]
+    },
+    {
+      "url": "https://www.quadeducationgroup.com/blog/how-to-get-into-purdue-university-acceptance-rate-tips",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultancy admissions guide. Source for what admissions evaluate (major-related grades, grade trends, curriculum strength), AP/IB recommendation, and 'the essay lets you sell yourself.'"
+      ]
+    },
+    {
+      "url": "https://www.quora.com/I-applied-to-Purdue-was-rejected-from-CS-my-1st-choice-but-was-admitted-to-Econ-my-2nd-choice...",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quora anecdote on CS rejection + 2nd choice; illustrative only, not quoted."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/I-got-admitted-into-Purdue-but-can-I-switch-from-the-major-I-got",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quora anecdote on switching majors; not used \u2014 used official CODO pages."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/Purdue/search.json?q=admissions+advice&restrict_sr=1&sort=relevance&limit=15",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Tool could not fetch from www.reddit.com (blocked). No direct Reddit content obtained; Reddit sentiment routed through goodgoblin synthesis instead."
+      ]
+    },
+    {
+      "url": "https://www.scholarships.com/scholarships/purdue-university-trustees-scholarship",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search; not used \u2014 superseded by the official admissions scholarships page which gave verbatim amounts and deadlines."
+      ]
+    },
+    {
+      "url": "https://www.scribd.com/document/920163350/CDS-G",
+      "roles": [
+        "resolve",
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party re-host of a CDS PDF; not authoritative, rejected.",
+        "Scribd-hosted Purdue CDS 2024-25 \u2014 wrong cycle and unofficial host; rejected."
+      ]
+    },
+    {
+      "url": "https://www.shiksha.com/studyabroad/usa/universities/purdue-university/placement",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator; rejected"
+      ]
+    },
+    {
+      "url": "https://www.shiksha.com/studyabroad/usa/universities/purdue-university/ranking",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party ranking aggregator; not US News primary, excluded for us_news_rank."
+      ]
+    },
+    {
+      "url": "https://www.teamblind.com/post/is-purdue-too-far-from-big-tech-for-good-internships-uxf4rcjy",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in ROI/job-placement search; not fetched (would have added a single-source point not corroborated elsewhere)."
+      ]
+    },
+    {
+      "url": "https://www.thecollegemonk.com/blog/purdue-university-sat-scores-act-gpa-2026",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog from search results; not canonical, figures (1180-1410) conflicted with official CDS and were unsourced. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.unigo.com/scholarships/high-school-students/scholarships-for-high-school-seniors/purdue-university-trustees-scholarship",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used (non-official)."
+      ]
+    },
+    {
+      "url": "https://www.univstats.com/colleges/purdue-university-main-campus/admission/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator; not canonical. Skipped."
+      ]
+    },
+    {
+      "url": "https://www.univstats.com/colleges/purdue-university-main-campus/graduation-rate/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; rejected."
+      ]
+    },
+    {
+      "url": "https://www.upgrad.com/study-abroad/university/usa/purdue-university-152/acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator. Rejected \u2014 not primary source."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825",
+      "roles": [
+        "resolve",
+        "verify:graduation_rate_6_year",
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News profile; third-party, used only as a sanity check on public status, not as a cited source.",
+        "US News profile; rejected, secondary source.",
+        "Target US News profile page for us_news_rank. WebFetch timed out (60s) on two attempts \u2014 bot protection. Could NOT quote exact rank text, so us_news_rank left null."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News overall-rankings sub-page. WebFetch timed out twice \u2014 could not load to quote rank. Not used for the fact."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825/paying",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News paying page; secondary aggregator, not used."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News 2026 National Universities list. WebFetch timed out \u2014 could not verify Purdue's line item. Not used."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-graduate-schools/top-engineering-schools/purdue-university-main-campus-02057",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News engineering grad ranking page. WebFetch failed (socket closed). Engineering No.5 figure came only from search snippet, not this page."
+      ]
+    },
+    {
+      "url": "https://www.wthr.com/article/news/education/purdue-freezing-tuition-14th-straight-year-increase-approved-faculty-staff-salaries-salary-university-west-lafayette-indiana-mung-chiang/531-52ca0a96-6851-4171-ae77-c590c0ae622c",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Local news (WTHR) reporting the tuition freeze and citing $28,794 out-of-state; consistent but secondary, not used as the authoritative source."
+      ]
+    }
+  ]
+}

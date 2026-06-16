@@ -1,0 +1,247 @@
+# Sources consulted — Purdue University-Main Campus (cycle Fall 2026)
+
+Every URL the collector searched or fetched, for full transparency — **179 distinct URLs**: 2 backed a published deterministic value, 51 informed a section, 126 were consulted but **not used** (each with the reason).
+
+## 1. Backed a published deterministic value (2)
+- <https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx>
+    - **fields:** overall_acceptance_rate, in_state_acceptance_rate, out_of_state_acceptance_rate, international_acceptance_rate, applications_total, admits_total, enrolled_total, yield_rate, admits_class_size, sat_composite_middle_50, sat_reading_middle_50, sat_math_middle_50, act_composite_middle_50, test_submission_rate, gpa_unweighted_avg, race_white, race_black, race_hispanic, race_asian, race_native_american, race_pacific_islander, race_two_or_more, race_unknown, race_international, international_percentage, freshman_retention_rate, graduation_rate_6_year, in_state_tuition, test_policy_details, waitlist_offered, waitlist_accepted, waitlist_admitted, waitlist_admit_rate
+    - roles: resolve, anchor, anchor:overall_acceptance_rate, anchor:in_state_acceptance_rate, anchor:out_of_state_acceptance_rate, anchor:transfer_acceptance_rate, anchor:international_acceptance_rate, anchor:applications_total, anchor:admits_total, anchor:enrolled_total, anchor:yield_rate, anchor:admits_class_size, anchor:sat_composite_middle_50, anchor:sat_reading_middle_50, anchor:sat_math_middle_50, anchor:act_composite_middle_50, anchor:test_submission_rate, anchor:gpa_weighted_avg, anchor:gpa_unweighted_avg, anchor:race_white, anchor:race_black, anchor:race_hispanic, anchor:race_asian, anchor:race_native_american, anchor:race_pacific_islander, anchor:race_two_or_more, anchor:race_unknown, anchor:race_international, anchor:first_gen_percentage, anchor:international_percentage, anchor:freshman_retention_rate, anchor:graduation_rate_4_year, anchor:graduation_rate_6_year, anchor:in_state_tuition, anchor:out_of_state_tuition, anchor:total_coa_in_state, anchor:total_coa_out_of_state, anchor:is_test_optional, anchor:test_policy_details, anchor:ed_applications, anchor:ed_admits, anchor:ed_acceptance_rate, anchor:ea_applications, anchor:ea_admits, anchor:ea_acceptance_rate, anchor:waitlist_offered, anchor:waitlist_accepted, anchor:waitlist_admitted, anchor:waitlist_admit_rate, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, section:application_process, section:financials
+    - “Direct download of latest CDS edition (2025-2026); fetched successfully as 976.7KB xlsx binary, confirming the link is live. 2026-2027 file does not yet exist on the index.”
+    - “Primary source. Parsed sheets CDS-A (confirmed West Lafayette/Main Campus), CDS-C (C1/C2/C8/C9/C12 admissions, test, GPA), CDS-B (B2 race, B22 retention, B 6-year graduation), CDS-G-PWL (2026-2027 cost of attendance components).”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=latest.earnings.10_yrs_after_entry.median>
+    - **fields:** median_earnings_10yr
+    - roles: anchor, anchor:median_earnings_10yr
+    - “Authoritative College Scorecard API call (HTTP 200 with site API key + Referer/Origin headers). Returned median earnings 10 years after entry = 72424, admission_rate.overall=0.4987, cost.attendance.academic_year=24591.”
+    - “College Scorecard API for id 243780 (Purdue University-Main Campus): {"latest.earnings.10_yrs_after_entry.median":72424,"school.name":"Purdue University-Main Campus","id":243780}. Field = median earnings 10 years after entry.”
+
+## 2. Informed an official/community section (51)
+- <https://admissions.purdue.edu/> — resolve:admissions, resolve
+    - “official admissions page”
+- <https://admissions.purdue.edu/become-student/apply/> — section:application_process
+    - “Official apply page. Confirmed 'Use the Common App to apply as a first-year degree-seeking student' for West Lafayette and Indianapolis; separate Purdue application only for Polytechnic statewide (not Main Campus).”
+- <https://admissions.purdue.edu/become-student/deadlines/> — section:application_process
+    - “Official deadlines hub; confirmed deadlines are 11:59 p.m. Eastern and linked to the first-year deadlines page.”
+- <https://admissions.purdue.edu/become-student/first-year-criteria/> — section:application_strategy
+    - “VERBATIM source for the two review criteria (academic preparedness for desired program; competitiveness within pool based on available space) and major/space-specific review.”
+- <https://admissions.purdue.edu/become-student/guide/> — section:application_strategy
+    - “VERBATIM source for primary + alternate location/major slot, 'select an alternate only if truly interested,' and 'changing majors or locations is never guaranteed.'”
+- <https://admissions.purdue.edu/become-student/transfer/credit/> — section:credit_policies
+    - “PRIMARY transfer source. Quoted: regionally-accredited / college-level / grade-of-at-least-C- acceptance criteria, 'Only credit transfers, your grades will not.', the 32 upper-division credit-hours residency rule, and the Transfer Credit Co”
+- <https://admissions.purdue.edu/become-student/transfer/credit/ap/> — section:credit_policies
+    - “PRIMARY AP source. Quoted: Economics combined Macro+Micro rule, '1XXXX' undistributed-credit definition, College Board code 1631 submission line, and 'AP transfer credit criteria are subject to change without notice.'”
+- <https://admissions.purdue.edu/become-student/transfer/credit/ib/> — section:credit_policies
+    - “PRIMARY IB source. Quoted: 'Effective fall 2025, IB exams are scored on a 1–7 scale', 'Students must earn a score of 4 or higher to receive Purdue credit', SL+HL eligibility line, submission line, and disclaimer. Verified NO IB Diploma bonu”
+- <https://admissions.purdue.edu/cost-financial-aid/> — resolve:financial_aid, resolve, section:financials
+    - “financial-aid page”
+- <https://admissions.purdue.edu/cost-financial-aid/indy-scholars/> — section:financials
+    - “Confirmed Indy Scholars details: $10,000/year minimum, 3.00 GPA, combinable with Presidential/Trustees, Common App campus-choice application method, Nov. 1 Early Action deadline, and entrepreneurship-certificate/career-consulting benefits. ”
+- <https://admissions.purdue.edu/cost-financial-aid/scholarships/> — section:financials
+    - “Primary source for named scholarships (Trustees, Presidential, Lilly Scholars, Indy Scholars, National Recognition Programs) with exact amounts, residency differences, Nov. 1 (firm) deadline, automatic-consideration framing, and the quoted ”
+- <https://admissions.purdue.edu/deadlines/first-year-college-student/> — section:application_process
+    - “Official first-year deadlines page. PRIMARY SOURCE for deadlines: app opens Aug. 1, EA Nov. 1, RD Jan. 15, EA decision Jan. 15, RD decision by March 31, and the list of competitive priority-deadline majors. Common App platform. $60 fee.”
+- <https://admissions.purdue.edu/majors/a-to-z/engineering-first-year.php> — section:application_strategy
+    - “VERBATIM source for First-Year Engineering being the entry point for all WL engineering students, specialty chosen in year two, and Nov 1 competitive priority deadline.”
+- <https://admissions.purdue.edu/majors/a-to-z/exploratory-studies-for-undecided-students.php> — section:application_strategy
+    - “VERBATIM source for Exploratory Studies: earn degree in program of choice, up to four terms to declare, four-year track maintained.”
+- <https://blog.collegevine.com/how-to-write-the-purdue-university-essays> — section:student_insights
+    - “Consultancy essay guide. Source for do's/don'ts: couple specific programs to interests, 'depth is better than breadth,' and the list of mistakes (vague intros, name-dropping professors, sounding like settling, generic conclusions).”
+- <https://catalog.purdue.edu/> — resolve
+    - “Official Purdue Catalog; confirmed current edition is '2026-2027 University Catalog' and pointed to programs list at catoid=19&navoid=25586.”
+- <https://catalog.purdue.edu/content.php?catoid=19&navoid=25481> — section:academic_structure
+    - “Undergraduate Minors list URL (located in catalog nav) — referenced in minors_certificates; individual minor names not enumerated this pass.”
+- <https://catalog.purdue.edu/content.php?catoid=19&navoid=25483> — section:academic_structure
+    - “Undergraduate Certificates list URL (located in catalog nav) — referenced in minors_certificates; individual certificate names not enumerated this pass.”
+- <https://catalog.purdue.edu/content.php?catoid=19&navoid=25484> — section:academic_structure
+    - “Master Undergraduate Programs List — primary source for the per-college major lists and exact degree codes (BSCHE, BSAAE, BSVN, etc.).”
+- <https://catalog.purdue.edu/content.php?catoid=19&navoid=25586> — resolve:catalog, resolve, section:academic_structure
+    - “majors/catalog page”
+- <https://catalog.purdue.edu/preview_program.php?catoid=17&poid=30911> — section:academic_structure
+    - “2024-2025 Nursing CODO page — 'SPACE AVAILABLE BASIS ONLY... Space is limited'; min cumulative GPA 3.0; 6 credits bio/chem w/ labs at 3.0. Basis for Nursing is_impacted=true; figures pinned to 2024-2025 cycle.”
+- <https://catalog.purdue.edu/preview_program.php?catoid=18&poid=33611> — section:academic_structure
+    - “2025-2026 Business CODO page — 'Major is open with no anticipated space restrictions'; min cumulative GPA 2.5; named prereqs. Basis for business is_impacted=false and internal_transfer_gpa=2.5.”
+- <https://collegedunia.com/usa/article/c-2187-purdue-university-acceptance-rate-2026> — section:strategic_profile
+    - “Secondary source for Fall 2025 acceptance-rate context (43.4%, ~86,953 apps, by-college/by-residency splits). Search snippet only; used as attributed reporting in admissions_philosophy, NOT as a verified fact.”
+- <https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus> — anchor, verify:overall_acceptance_rate, verify:freshman_retention_rate
+    - “Scorecard SPA page; static HTML had no data values but its window.__NUXT__.config exposed the official api.data.gov API key (B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr) and apiUrl used to query authenticated earnings data.”
+- <https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus=> — resolve:scorecard, resolve, section:outcomes_extra
+    - “College Scorecard located”
+- <https://cs.purdue.edu/undergraduate/codo-requirements.html> — section:application_strategy
+    - “VERBATIM source: A- in CS 18000, B+ in approved Calculus, minimum 3.00 GPA for highest consideration; all CODO approvals space-available and reviewed against all applicants.”
+- <https://cs.purdue.edu/undergraduate/codo.html> — section:application_strategy
+    - “VERBATIM source: CS majors are space restricted programs; CODO decisions are final and may not be appealed.”
+- <https://engineering.purdue.edu/Engr/Academics/Undergraduate/current-students/academic/academic-policies/enrollment-policy> — section:academic_structure
+    - “Engineering enrollment policy (via search snippet) — FYE completion (nine courses, GPA>=2.00, EAI>=2.00, C- or better each) then T2M; West Lafayette not direct-admit-to-major, Indianapolis is. Basis for Engineering college-level restriction”
+- <https://honors.purdue.edu/admissions/future-first-year.php> — section:application_strategy
+    - “VERBATIM source: indicate Honors College interest on the Purdue Common Application before the Nov 1 Early Action deadline; holistic criteria (GPA, scores, interdisciplinary aptitude, leadership/engagement).”
+- <https://nces.ed.gov/collegenavigator/?id=243780> — resolve
+    - “CONFIRMED identity: 'Purdue University-Main Campus', Hovde Hall of Administration, West Lafayette, Indiana 47907-2040, 4-year Public. Cross-checks name+city+state to UnitID 243780.”
+- <https://skillnation.in/posts/purdue-university-niche/> — section:student_insights
+    - “Third-party aggregator republishing verbatim Niche student-review snippets in quotes — source for academics reputation (engineering/pharmacy/nursing/speech path), 'unwind and have fun by joining a club,' Ross-Ade Brigade/Paint Crew, Grand P”
+- <https://sswis.mypurdue.purdue.edu/PurdueStudentSS/transferCreditCourseGuide/> — section:credit_policies
+    - “The official Transfer Credit Course Equivalency Guide tool URL (the real equivalent of the prompt's 'TransferTrax', which does not exist at Purdue). Recorded as the articulation tool.”
+- <https://talk.collegeconfidential.com/t/what-are-my-chances-at-purdue-west-lafayette-cs-as-well-as-others-international-student-3-86-uw-1420-sat/3669351> — section:student_insights
+    - “Direct College Confidential thread. Source for 'CS is a very high reach' (vwlizard), the rejected-strong-applicant anecdote, weak essays/recs as a hidden cause of rejection, and international-status selectivity.”
+- <https://talk.collegeconfidential.com/t/what-are-my-chances-at-purdue-west-lafayette-cs-as-well-as-others-international-student-3-86-uw-1420-sat/3669351?page=2> — section:student_insights
+    - “Page 2 of same CC thread. Source for Mapk's 'retake the SAT and aim for above 1500' advice and Thumper1's holistic-context remarks.”
+- <https://www.admissions.purdue.edu/apply/essay.php> — section:application_process
+    - “Official essay page. PRIMARY SOURCE for supplemental requirements: required Common App essay (250-650), two required Purdue 250-word essays with exact prompts, optional Honors College essays (≤500), self-reported grades + test scores.”
+- <https://www.collegetransitions.com/blog/purdue-university-supplemental-essay-prompts/> — section:student_insights
+    - “Consultancy essay guide. Source for essay tips (research specific offerings, depth over breadth, avoid two unrelated majors) and the 'essays rated very important / equal weight to GPA and rigor' claim.”
+- <https://www.commonapp.org/explore/purdue-university> — section:application_process
+    - “Confirmed Common App as Purdue's first-year platform; 'No letter of recommendation required - First Year'; EA Nov. 1 with Jan. 15 decision.”
+- <https://www.cosmic.nyc/blog/purdue-university-essays-2025-2026> — section:application_process, section:student_insights
+    - “Third-party essay-guide search result; essay data taken from official essay.php instead.”
+- <https://www.cs.purdue.edu/undergraduate/codo-requirements.html> — section:academic_structure
+    - “Authoritative CS department CODO page — 'SPACE AVAILABLE BASIS', CS 18000 required, 3.00 cumulative GPA for highest consideration. Basis for CS/DS/AI is_impacted=true and internal_transfer_gpa=3.0.”
+- <https://www.goodgoblin.ai/blog/LifeAtPurdueUniversity2025> — section:student_insights
+    - “Synthesis article that explicitly attributes specific student sentiment to 'Reddit r/Purdue and Niche': CoRec rec center as a campus highlight, dining variety/extended hours, and the framing 'work hard with a supportive community.' Provides”
+- <https://www.greekrank.net/uni/48/greek-life/> — section:strategic_profile
+    - “Secondary source corroborating large Greek system at Purdue. Used as attributed context for social_environment.”
+- <https://www.homeofpurdue.com/plan/transportation/> — section:strategic_profile
+    - “Secondary source for regional airport access (Indianapolis ~1hr, Chicago ~2-3hr) referenced in transportation_impact context. Search snippet.”
+- <https://www.niche.com/colleges/purdue-university/campus-life/> — section:strategic_profile, section:student_insights
+    - “Secondary source for social_environment: 1,000+ orgs, large Greek presence, limited town nightlife. Search snippet only; attributed and hedged in JSON.”
+- <https://www.purdue.edu/dfa/> — section:financials
+    - “Division of Financial Aid. Took the verbatim aid-philosophy mission statement ('committed to making Purdue's world-class education affordable, accessible and valuable to Boilermakers and their families'). No aid statistics published here.”
+- <https://www.purdue.edu/idata/products-services/common-data-set/> — resolve:common_data_set, resolve, anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, section:application_process, section:financials
+    - “CDS located (2025-2026 (latest available; 2026-2027 not yet posted as of 2026-06-16))”
+- <https://www.purdue.edu/newsroom/2025/Q2/trustees-approve-2026-budget-frozen-base-tuition-for-main-campus-and-no-increase-for-indiana-residents-at-purdue-northwest-and-purdue-fort-wayne-for-2025-26-2026-27/> — verify:out_of_state_tuition
+    - “Official Purdue newsroom: Board of Trustees froze base undergraduate tuition; corroborates $28,794 out-of-state for 2026-27 (per search snippet). Page text itself did not quote the dollar amount, but confirms the freeze keeping the figure u”
+- <https://www.purdue.edu/newsroom/2025/Q4/purdue-surpasses-1b-in-total-research-expenditures-for-the-first-time> — section:strategic_profile
+    - “PRIMARY SOURCE, successfully fetched. Quoted: FY2025 over $1B research expenditures, up 12% YoY / ~40% over 3 years; Lilly up-to-$250M; 'Purdue research remains robust and continues to grow' vs peers. Used in research_impact + takeaway.”
+- <https://www.purdue.edu/newsroom/2026/Q2/12-purdue-graduate-programs-ranked-in-top-10-in-u-s-news-world-report-2026-list> — section:strategic_profile
+    - “Search-result title used as secondary corroboration that 12 Purdue grad programs ranked top-10 in U.S. News 2026. Page not directly fetched; treated as attributed reporting, not a hard fact.”
+- <https://www.purdue.edu/operations/blog/2025/08/12/new-west-lafayette-campus-transit-routes-and-schedule-set-for-fall-semester/> — section:strategic_profile
+    - “PRIMARY SOURCE, successfully fetched. Quoted free Campus Transit, SP+ operator, launched Aug 14 2025, three fixed routes + on-demand, CityBus $49 pass. Used in transportation_impact.”
+- <https://www.purdue.edu/treasurer/finance/bursar-office/tuition/fee-rates-2026-2027/undergraduate-tuition-and-fees-2026-2027/> — verify:out_of_state_tuition
+    - “CANONICAL official Purdue bursar page for 2026-2027 undergraduate (West Lafayette). Non-resident per-semester components: General Service $4,859 + Fitness/Wellness $117 + Activity $20 + Nonresident Tuition $9,401 = $14,397/semester sub-tota”
+- <https://www.quadeducationgroup.com/blog/how-to-get-into-purdue-university-acceptance-rate-tips> — section:student_insights
+    - “Consultancy admissions guide. Source for what admissions evaluate (major-related grades, grade trends, curriculum strength), AP/IB recommendation, and 'the essay lets you sell yourself.'”
+
+## 3. Consulted but NOT used — with reason (126)
+- <https://admission.purdue.edu/transfercredit/collegeboardap.php> — section:credit_policies — Legacy AP URL variant; not fetched directly. Superseded by current /become-student/transfer/credit/ap/ page.
+- <https://admissions.purdue.edu/apply/applicationprocess.php> — section:application_process — 404 Not Found — page does not exist at this path.
+- <https://admissions.purdue.edu/become-student/transfer/> — section:credit_policies — Transfer landing/checklist page; surfaced in search. Underlying credit detail taken from the /credit/ subpage instead.
+- <https://admissions.purdue.edu/become-student/transfer/engineering-transfer-criteria/> — section:academic_structure — Surfaced in search for engineering FYE/transfer criteria; not fetched in detail. FYE/T2M facts taken from the Engineering enrollment-policy search snippet.
+- <https://admissions.purdue.edu/transfercredit/ibcredit.php> — section:credit_policies — Legacy IB URL variant surfaced in search. Used current /become-student/transfer/credit/ib/ page instead for verbatim quotes.
+- <https://admissions.purdue.edu/transfercredit/index.php> — section:credit_policies — Legacy transfer-credit index. Superseded by current /become-student/transfer/credit/ page.
+- <https://admissionsight.com/purdue-acceptance-rate/> — verify:overall_acceptance_rate, section:strategic_profile, section:application_process — Third-party aggregator (AdmissionSight). Class of 2030 / Fall 2026 figures described as predictions only; official stats not released. Rejected — speculative, not canonical.
+- <https://admitreport.com/blog/how-to-get-into-purdue> — section:application_strategy — Third-party blog; not used.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&api_key=DEMO_KEY> — anchor — DEMO_KEY was hard rate-limited (HTTP 429 OVER_RATE_LIMIT). Replaced by the official site key extracted from the Scorecard page config.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=...admission_rate.overall&api_key=DEMO_KEY> — verify:overall_acceptance_rate — College Scorecard API query for Purdue (243780). Returned OVER_RATE_LIMIT on DEMO_KEY both attempts — no value obtained. Would in any case reflect a ~2022-2023 cohort, not Fall 2026.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=...retention_rate...> — verify:freshman_retention_rate — College Scorecard API with DEMO_KEY returned OVER_RATE_LIMIT error; no data retrieved.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=id,school.name,school.city,school.state,school.ownership&api_key=DEMO_KEY> — resolve — Attempted Scorecard API cross-check; HTTP 429 rate-limited on DEMO_KEY. Identity instead confirmed via College Navigator.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243780&fields=latest.aid.cohort_default_rate> — section:outcomes_extra — OVER_RATE_LIMIT every attempt (DEMO_KEY)
+- <https://appybara.org/blog/purdue-university-admissions-statistics-and-acceptance-rate> — verify:overall_acceptance_rate — Third-party blog claiming 'Class of 2030 (Latest)'. Content is prediction/early-data based; official Fall 2026 stats not released. Rejected — speculative.
+- <https://blog.collegevine.com/what-does-it-really-take-to-get-into-purdue-university-west-lafayette> — section:application_strategy — Third-party admissions-tips blog; not used for any value.
+- <https://blog.collegevine.com/what-is-purdue-university-known-for> — section:strategic_profile — General overview; redundant with stronger primary sources, not quoted.
+- <https://business.purdue.edu/careers/outcomes/undergraduate.php> — section:outcomes_extra — Daniels School only, not university-wide; not used
+- <https://catalog.purdue.edu/content.php?catoid=16&navoid=20119> — resolve — Undergraduate Programs List but for the OLDER 2023-2024 catalog; superseded by the 2026-2027 catoid=19 list, so not used.
+- <https://catalog.purdue.edu/content.php?catoid=19&navoid=25597> — section:academic_structure — College of Engineering landing page — returned only marketing prose, no major enumeration; majors taken from navoid=25484 instead.
+- <https://catalog.purdue.edu/content.php?catoid=19&navoid=25603> — section:academic_structure — College of Science landing page — marketing prose only, did not enumerate departments/majors; used navoid=25484 instead.
+- <https://catalog.purdue.edu/preview_program.php?catoid=13&poid=18330> — section:academic_structure — Older-cycle (catoid=13) CS CODO page stating 'Minimum GPA: 2.75' + B in CS 18000 + one math course. Rejected as stale in favor of current CS dept page; discrepancy flagged in notes.
+- <https://catalog.purdue.edu/preview_program.php?catoid=16&poid=25203> — section:academic_structure — 2025-2026 Nursing, BSN program page — did not surface CODO/space-restriction text in the excerpt; used the dedicated CODO page instead.
+- <https://catalog.purdue.edu/preview_program.php?catoid=18&poid=33121> — section:academic_structure — CNIT/CSAD/DATA (Polytechnic) CODO page surfaced in search; not fetched. Polytechnic computing majors treated as not space-restricted absent explicit catalog 'space available' language.
+- <https://collegescorecard.ed.gov/_nuxt/builds/latest.json> — anchor — Nuxt build manifest; used only to navigate the SPA structure, no statistics.
+- <https://collegescorecard.ed.gov/_nuxt/Cey6aFi7.js> — anchor — Scorecard entry JS bundle; inspected for API key/host but the runtime config (key + apiUrl) was actually in the page's inline window.__NUXT__.config instead.
+- <https://collegescorecard.ed.gov/api/?op=GetSchoolDirectory&id=243780> — resolve — Attempted directory API call; HTTP 404. Not a valid endpoint.
+- <https://collegescorecard.ed.gov/app/data/> — verify:freshman_retention_rate — Attempted to find API docs for retention field; returned HTTP 404.
+- <https://collegescorecard.ed.gov/app/v1/schools/?id=243780> — anchor — Guessed API path; HTTP 404.
+- <https://collegescorecard.ed.gov/v1/api.json?id=243780> — anchor — Tried as a possible frontend API proxy; returned 404 NoSuchKey (not a real endpoint).
+- <https://commondataset.org/wp-content/uploads/2025/11/CDS-PDF-2025-2026_PDF_Template.pdf> — verify:act_composite_middle_50 — Generic blank CDS template, not Purdue data. Skipped.
+- <https://digitwin2024.polytechnic.purdue.edu/ENE/Academics/Undergrad/FYE/T2M> — section:application_strategy — Polytechnic mirror of Transition-to-Major; corroborates FYE→T2M but used the main admissions engineering-first-year page for the verbatim quote.
+- <https://educationdata.urban.org/api/v1/college-university/scorecard/default-rates/2021/?unitid=243780> — section:outcomes_extra — Cloudflare-blocked
+- <https://empowerly.com/applications/purdue-acceptance-rate-2029/> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, section:application_process — Third-party aggregator (Empowerly). Cites Fall 2025 43.4%; no official Fall 2026 figure. Rejected — not primary source.
+- <https://engineering.purdue.edu/ME/News/2025/purdue-me-is-number-2> — section:strategic_profile — ScholarGPS-based ME ranking, a third-party metric not US News. Considered but excluded as off-scope for a US News rank and too narrow for the profile.
+- <https://engineering.purdue.edu/ME/Undergraduate/Admissions> — section:academic_structure — ME admissions page surfaced in search — snippet referenced ~3.2 GPA / 3.2 EAI guarantee. Flagged 'verify' in data, not asserted as a hard cutoff; page not fetched in full.
+- <https://gwhof.galib.uga.edu/what-is-purdue-ap-credit-simplified-guide> — section:credit_policies — Non-official third-party 'guide' (UGA-hosted hub). Rejected — not an official source.
+- <https://hhs.purdue.edu/nur/students/undergraduate/majors/nursing.html> — section:academic_structure — Returned HTTP 429 Too Many Requests on two attempts; could not retrieve. Nursing data sourced from catalog CODO page instead.
+- <https://honors.purdue.edu/future-students/future-first-year-students.php> — section:application_strategy — Alternate Honors first-year landing page from search; not fetched — used the admissions/future-first-year.php page for quotes.
+- <https://nces.ed.gov/ipeds/institution-profile/243780> — resolve — IPEDS institution profile for UnitID 243780; WebFetch failed with too-many-redirects, could not read directly.
+- <https://nces.ed.gov/ipeds/reported-data/243780> — resolve — IPEDS reported-data page for UnitID 243780; WebFetch failed with too-many-redirects.
+- <https://nextgenadmit.com/purdue-university-admission-statistics/> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, section:application_process — Third-party aggregator. Rejected — not canonical.
+- <https://notcommonapp.org/blog/purdue-university-admissions-statistics-and-acceptance-rate> — verify:overall_acceptance_rate — Third-party blog. Rejected — not canonical.
+- <https://puhonorscollege.tawk.help/article/first-time-student-selection-criteria> — section:application_strategy — Help-center article on Honors selection criteria; corroborative only, not quoted.
+- <https://recognition.ibo.org/en-US/university-statements/?university=Purdue+University+-+West+Lafayette> — section:credit_policies — IBO recognition statement for West Lafayette (correct campus). Not fetched in detail because the official admissions IB page provided the authoritative verbatim policy; listed for completeness.
+- <https://recognition.ibo.org/en-US/university-statements/?university=Purdue+University+Fort+Wayne> — section:credit_policies — IBO recognition page for Purdue FORT WAYNE — a different campus, not Main/West Lafayette. Rejected (wrong campus).
+- <https://recognition.ibo.org/en-US/university-statements/?university=Purdue+University+Global> — section:credit_policies — Purdue Global — a different (online) institution, not Main Campus. Rejected.
+- <https://research.com/best-colleges/purdue-university/admissions> — section:application_process — Third-party search result; some stated 'February 1' RD deadline which conflicts with official Jan. 15 — rejected in favor of official page.
+- <https://research.com/best-colleges/purdue-university/graduation-rate-and-career> — verify:freshman_retention_rate, verify:graduation_rate_6_year, section:outcomes_extra — Search hit citing ~92% retention; secondary aggregator, not canonical, no cycle pinned — rejected in favor of the primary CDS.
+- <https://sayhellocollege.com/blog/write-the-purdue-supplemental-essays/> — section:student_insights — Appeared in essay-tips search results; not fetched because four other essay guides already gave corroborating, sufficient coverage.
+- <https://scholarshipbasket.com/scholarships-for-undergraduate-students/purdue-university-trustees-scholarship/> — section:financials — Third-party aggregator; not used (non-official).
+- <https://scholarshipsfuture.com/purdue-university-scholarships-2026-27/> — section:financials — Third-party blog; not used (non-official).
+- <https://selfservice.mypurdue.purdue.edu/prod/bzwtxcrd.p_select_info> — section:credit_policies — Alternate self-service transfer-credit lookup endpoint. Not used; the sswis course-equivalency guide is the primary named tool.
+- <https://skillnation.in/posts/presidential-scholarship-purdue/> — section:financials — Third-party blog; not used (non-official).
+- <https://status.asucd.ucdavis.edu/purdue-ap-credits> — section:credit_policies — Non-official third-party aggregator (UC Davis status hub). Rejected — not an official Purdue page.
+- <https://talk.collegeconfidential.com/t/purdue-alternate-major/1866463> — section:application_strategy — Forum thread; anecdotal, not authoritative — skipped.
+- <https://test-ninjas.com/college-sat-act/purdue-university> — verify:sat_composite_middle_50 — Third-party test-prep site from search results; not canonical. Rejected.
+- <https://testbook.com/en-us/college/purdue-university-admissions> — verify:sat_composite_middle_50 — Third-party site from search results; not canonical. Rejected.
+- <https://uscanadacolleges.com/schools/243780-purdue-edu-acceptance-rate-sat-act-score/> — verify:act_composite_middle_50 — Aggregator reporting 27–34 'admitted students'; not enrolled-cohort, not cycle-pinned. Rejected.
+- <https://www.admissions.purdue.edu/apply/apply.php> — section:application_process — HTTP 429 rate-limited on attempts; platform info obtained from become-student/apply/ and Common App pages instead.
+- <https://www.admissions.purdue.edu/become-student/guide> — section:application_strategy — Same guide page (non-trailing-slash variant) — first WebFetch attempt hit HTTP 429; succeeded via the trailing-slash URL above.
+- <https://www.admissions.purdue.edu/transfercredit/collegeboardap.php> — section:credit_policies — Appeared in search results; older/legacy AP path. Used the current /become-student/transfer/credit/ap/ page instead for verbatim quotes.
+- <https://www.bachelorsportal.com/scholarships/3867/trustees-scholarship.html> — section:financials — Third-party aggregator; not used (non-official).
+- <https://www.careerbliss.com/purdue-university/reviews/> — section:student_insights — Surfaced in search; employer/employee reviews, not student admissions opinion — out of scope, not fetched.
+- <https://www.cco.purdue.edu/data/> — section:outcomes_extra — Outcomes dashboard; figures in unreadable Tableau embed
+- <https://www.cco.purdue.edu/Employers/PurdueStudentAndAlumniData?tab=NextStepSurveyData> — section:outcomes_extra — Only knowledge rate 85-90%; no rates/employers
+- <https://www.cco.purdue.edu/Students/Post-GradDataAndSurveys?tab=WherePurdueStudentsGo> — section:outcomes_extra — Employers in embedded dashboard; none named
+- <https://www.cla.purdue.edu/academic/history/courses/ap.html> — section:credit_policies — College-of-Liberal-Arts department-specific AP page (History dept). Out of scope for university-wide policy; not used.
+- <https://www.clastify.com/blog/score-requirements/purdue-university> — verify:sat_composite_middle_50 — Third-party blog from search results; not canonical. Rejected.
+- <https://www.cogn-iq.org/admissions/purdue-university-main-campus/> — verify:act_composite_middle_50 — Search result reported ACT 27–34 (admitted, not enrolled); conflicts with official CDS enrolled figure and unclear cycle. Rejected.
+- <https://www.collegefactual.com/colleges/purdue-university-main-campus/academic-life/graduation-and-retention/> — verify:freshman_retention_rate — Secondary aggregator (College Factual) citing ~93%; not canonical and cycle ambiguous — rejected.
+- <https://www.collegefactual.com/colleges/purdue-university-main-campus/applying/entering-class-stats/> — verify:act_composite_middle_50 — Aggregator; not canonical. Skipped.
+- <https://www.collegefactual.com/colleges/purdue-university-main-campus/paying-for-college/student-loan-debt/> — section:outcomes_extra — 4.6% but no cohort year; not primary; rejected
+- <https://www.collegesimply.com/colleges/indiana/purdue-university-main-campus/admission> — verify:act_composite_middle_50 — Aggregator; not canonical. Skipped.
+- <https://www.collegetransitions.com/blog/how-to-get-into-purdue-university/> — section:application_strategy — Third-party strategy blog; not used.
+- <https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/> — resolve — Third-party aggregator echoing UnitID 243780; corroborating but not authoritative, rejected.
+- <https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/admission/> — verify:act_composite_middle_50 — Search result aggregator; reported median 31 / 25th 27 / 75th 34 from IPEDS-derived data — conflicts with official CDS (25th=28) and not cycle-pinned to Fall 2026, so rejected in favor of the primary 
+- <https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/graduation/> — verify:graduation_rate_6_year — Third-party aggregator; rejected.
+- <https://www.collegetuitioncompare.com/edu/243780/purdue-university-main-campus/tuition/> — verify:out_of_state_tuition — Third-party aggregator (collegetuitioncompare); not consulted in detail / not authoritative vs. official bursar page.
+- <https://www.collegevine.com/faq/25957/purdue-admissions-major-based> — section:application_strategy — Third-party FAQ asserting major-based admission; not quoted — confirmed directly from admissions.purdue.edu.
+- <https://www.collegevine.com/questions/55862/does-what-i-choose-for-my-alternate-major-for-purdue-on-the-common-app-affect-my-chances-for-admission> — section:student_insights, section:application_strategy — Community Q&A page contained only the question, no rendered answer — could not extract advice.
+- <https://www.cs.purdue.edu/corporate/placement/index.html> — section:outcomes_extra — CS dept only; not used
+- <https://www.cs.purdue.edu/future-students/faq.html> — section:application_strategy — CS dept FAQ from search; not used — used the dedicated CODO pages for verbatim policy.
+- <https://www.fastweb.com/college-scholarships/scholarships/176842-trustees-scholarship-purdue-university> — section:financials — Third-party aggregator; not used (non-official).
+- <https://www.gradgpt.com/common-data-set/purdue-university> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, verify:out_of_state_tuition, section:application_process — Third-party CDS visualization; not authoritative, rejected.
+- <https://www.gyandhan.com/study-abroad/usa/universities/purdue-university/admission> — section:application_process — Third-party. Cross-check only; listed deadlines as 'Closed' and platform commonapp.org. Not used for any figure.
+- <https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/purdue-university-admissions-statistics/> — verify:overall_acceptance_rate — Third-party blog. Rejected — not canonical; no official Fall 2026 figure.
+- <https://www.niche.com/colleges/purdue-university/reviews/> — section:student_insights — Direct fetch returned HTTP 403 Forbidden; could not extract verbatim reviews directly. Niche review content reached only via search summary + aggregator below.
+- <https://www.niche.com/colleges/purdue-university/students/> — section:student_insights — Appeared in search results; not fetched (sibling Niche pages were 403).
+- <https://www.pfw.edu/registrar/transfer-credit> — section:credit_policies — Purdue Fort Wayne registrar — wrong campus. Rejected.
+- <https://www.pfw.edu/sites/default/files/documents-2025/05/New%20Credit%20Through%20Testing.pdf> — section:credit_policies — Purdue Fort Wayne PDF — wrong campus. Rejected.
+- <https://www.pnw.edu/testing-center/for-students/learning-equivalencies/> — section:credit_policies — Purdue Northwest — different campus. Rejected.
+- <https://www.purdue.edu/dfa/cost/> — verify:out_of_state_tuition — Purdue Division of Financial Aid cost page — does not display dollar figures, just links back to the bursar Rates and Fees page. No independent value.
+- <https://www.purdue.edu/hhs/nur/students/undergraduate/majors/nursing.html> — section:academic_structure — Redirects (302) to hhs.purdue.edu; follow-up fetch blocked by HTTP 429 rate-limit, so not used. Nursing data sourced from catalog CODO page.
+- <https://www.purdue.edu/idata/about/faq/> — verify:graduation_rate_6_year — iData FAQ; not fetched in detail, navigational only.
+- <https://www.purdue.edu/idata/documents/CDS/CDS_2022-2023.pdf> — verify:graduation_rate_6_year — Old 2022-2023 CDS surfaced in search; wrong cycle, not used.
+- <https://www.purdue.edu/idata/documents/CDS/CDS_2025-2026.pdf> — verify:sat_composite_middle_50, verify:graduation_rate_6_year — Attempted PDF path — HTTP 404. Purdue serves CDS as XLSX, not PDF, so this URL pattern is invalid.
+- <https://www.purdue.edu/idata/wp-content/uploads/2026/01/CDS_2025-2026.pdf> — section:financials — 404 Not Found — superseded by the .xlsx version; not used.
+- <https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx (curl attempt)> — section:financials — Direct curl download returned an F5/TSPD bot-challenge HTML page, not the file. Rejected; retrieved the real binary via WebFetch instead.
+- <https://www.purdue.edu/newsroom/2025/Q3/demand-for-purdue-education-breaks-record-across-undergrad-master-and-doctoral-levels-most-selective-incoming-class-and-highest-graduation-rate> — verify:overall_acceptance_rate, verify:graduation_rate_6_year — Purdue newsroom press release surfaced in search re: Fall 2025 'most selective incoming class.' Not fetched/quoted; pertains to Fall 2025, not the target Fall 2026 cycle.
+- <https://www.purdue.edu/newsroom/2025/Q3/purdue-research-expenditures-rise-9-in-2024-25-in-sharp-contrast-to-big-ten-national-trend> — section:strategic_profile — Primary Purdue research article. WebFetch returned HTTP 429 Too Many Requests — could not read. The $1B figure was instead taken from the Q4 article above.
+- <https://www.purdue.edu/provost/teachinglearning/news-pages/06_28_23.html> — section:outcomes_extra — Fetch 404; not verifiable
+- <https://www.purdue.edu/registrar//currentStudents/Transfer%20Credit.html> — section:credit_policies — Registrar transfer-credit page (double-slash URL from search). Not used; admissions page was authoritative for the quoted criteria.
+- <https://www.purdue.edu/registrar/currentStudents/students/credit_evaluation.html> — section:credit_policies — Registrar credit-evaluation page for current students. Not fetched in detail; admissions transfer page provided the restrictions quotes.
+- <https://www.purdue.edu/science/future-students/Admissions.html> — section:credit_policies — College of Science admissions page; not the university-wide credit policy. Not used.
+- <https://www.purdue.edu/treasurer/finance/bursar-office/tuition/fee-rates-2025-2026/> — verify:out_of_state_tuition — Official bursar 2025-2026 rates page — prior cycle, not the Fall 2026 target; noted only to confirm a separate 2026-2027 page exists.
+- <https://www.purdue.edu/vpec/policies/west-lafayette/wl-6/> — resolve — Purdue WL-6 admissions POLICY document, not the prospective-student admissions site; rejected in favor of admissions.purdue.edu.
+- <https://www.purdue.edu/vpsl/leadership/Scholarships_Awards/index.html> — section:financials — Leadership/VPSL scholarships page; not used — out of scope for first-year admission/merit awards.
+- <https://www.quora.com/I-applied-to-Purdue-was-rejected-from-CS-my-1st-choice-but-was-admitted-to-Econ-my-2nd-choice...> — section:application_strategy — Quora anecdote on CS rejection + 2nd choice; illustrative only, not quoted.
+- <https://www.quora.com/I-got-admitted-into-Purdue-but-can-I-switch-from-the-major-I-got> — section:application_strategy — Quora anecdote on switching majors; not used — used official CODO pages.
+- <https://www.reddit.com/r/Purdue/search.json?q=admissions+advice&restrict_sr=1&sort=relevance&limit=15> — section:student_insights — Tool could not fetch from www.reddit.com (blocked). No direct Reddit content obtained; Reddit sentiment routed through goodgoblin synthesis instead.
+- <https://www.scholarships.com/scholarships/purdue-university-trustees-scholarship> — section:financials — Third-party aggregator surfaced in search; not used — superseded by the official admissions scholarships page which gave verbatim amounts and deadlines.
+- <https://www.scribd.com/document/920163350/CDS-G> — resolve, verify:out_of_state_tuition — Third-party re-host of a CDS PDF; not authoritative, rejected.
+- <https://www.shiksha.com/studyabroad/usa/universities/purdue-university/placement> — section:outcomes_extra — Aggregator; rejected
+- <https://www.shiksha.com/studyabroad/usa/universities/purdue-university/ranking> — section:strategic_profile — Third-party ranking aggregator; not US News primary, excluded for us_news_rank.
+- <https://www.teamblind.com/post/is-purdue-too-far-from-big-tech-for-good-internships-uxf4rcjy> — section:student_insights — Surfaced in ROI/job-placement search; not fetched (would have added a single-source point not corroborated elsewhere).
+- <https://www.thecollegemonk.com/blog/purdue-university-sat-scores-act-gpa-2026> — verify:sat_composite_middle_50 — Third-party blog from search results; not canonical, figures (1180-1410) conflicted with official CDS and were unsourced. Rejected.
+- <https://www.unigo.com/scholarships/high-school-students/scholarships-for-high-school-seniors/purdue-university-trustees-scholarship> — section:financials — Third-party aggregator; not used (non-official).
+- <https://www.univstats.com/colleges/purdue-university-main-campus/admission/> — verify:act_composite_middle_50 — Aggregator; not canonical. Skipped.
+- <https://www.univstats.com/colleges/purdue-university-main-campus/graduation-rate/> — verify:graduation_rate_6_year — Third-party aggregator; rejected.
+- <https://www.upgrad.com/study-abroad/university/usa/purdue-university-152/acceptance-rate/> — verify:overall_acceptance_rate — Third-party aggregator. Rejected — not primary source.
+- <https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825> — resolve, verify:graduation_rate_6_year, section:strategic_profile — US News profile; third-party, used only as a sanity check on public status, not as a cited source.
+- <https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825/overall-rankings> — section:strategic_profile — US News overall-rankings sub-page. WebFetch timed out twice — could not load to quote rank. Not used for the fact.
+- <https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825/paying> — verify:out_of_state_tuition — US News paying page; secondary aggregator, not used.
+- <https://www.usnews.com/best-colleges/rankings/national-universities> — section:strategic_profile — US News 2026 National Universities list. WebFetch timed out — could not verify Purdue's line item. Not used.
+- <https://www.usnews.com/best-graduate-schools/top-engineering-schools/purdue-university-main-campus-02057> — section:strategic_profile — US News engineering grad ranking page. WebFetch failed (socket closed). Engineering No.5 figure came only from search snippet, not this page.
+- <https://www.wthr.com/article/news/education/purdue-freezing-tuition-14th-straight-year-increase-approved-faculty-staff-salaries-salary-university-west-lafayette-indiana-mung-chiang/531-52ca0a96-6851-4171-ae77-c590c0ae622c> — verify:out_of_state_tuition — Local news (WTHR) reporting the tuition freeze and citing $28,794 out-of-state; consistent but secondary, not used as the authoritative source.
