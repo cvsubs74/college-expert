@@ -31,8 +31,14 @@ export const meta = {
 }
 
 // --------------------------------------------------------------------------- inputs
-const UNIVERSITY = (args && args.university) || 'University of Illinois Urbana-Champaign';
-const YEAR = (args && Number(args.year)) || 2024;          // entering-cohort Fall year
+// args may arrive as an object OR a JSON string — parse defensively so a stringified
+// arg never silently falls back to the default school.
+let INPUT = args;
+if (typeof INPUT === 'string') { try { INPUT = JSON.parse(INPUT); } catch (e) { INPUT = {}; } }
+INPUT = INPUT || {};
+const UNIVERSITY = INPUT.university || 'University of Illinois Urbana-Champaign';
+const YEAR = Number(INPUT.year) || 2026;                   // entering-cohort Fall year
+log(`INPUT → university="${UNIVERSITY}", year=${YEAR}${INPUT.university ? '' : ' (DEFAULT — no university in args!)'}`);
 const CDS_EDITION = `${YEAR}-${YEAR + 1}`;                  // e.g. "2024-2025"
 const CYCLE = `Fall ${YEAR}`;
 const SLUG = UNIVERSITY.toLowerCase()
@@ -309,6 +315,7 @@ const AS = D('application_strategy');
 const SI = D('student_insights');
 const OX = D('outcomes_extra');
 const CP = D('credit_policies');
+const FIN = D('financials');
 
 const earlyStats = [];
 if (pub('ed_applications') != null || pub('ed_acceptance_rate') != null)
@@ -412,17 +419,21 @@ const profile = {
     alternate_major_strategy: typeof AS.alternate_major_strategy === 'string' ? AS.alternate_major_strategy : (toStr(AS.alternate_major_strategy) || ''),
   },
   financials: {
-    tuition_model: D('financials').tuition_model || '',
+    tuition_model: toStr(FIN.tuition_model) || '',
     cost_of_attendance_breakdown: {
       academic_year: CDS_EDITION,
       in_state: { tuition: pub('in_state_tuition'), total_coa: pub('total_coa_in_state'), housing: null },
       out_of_state: { tuition: pub('out_of_state_tuition'), total_coa: pub('total_coa_out_of_state'), supplemental_tuition: null },
     },
-    aid_philosophy: D('financials').aid_philosophy || '',
-    average_need_based_aid: D('financials').average_need_based_aid ?? null,
-    average_merit_aid: D('financials').average_merit_aid ?? null,
-    percent_receiving_aid: D('financials').percent_receiving_aid ?? null,
-    scholarships: D('financials').scholarships || [],
+    aid_philosophy: toStr(FIN.aid_philosophy) || '',
+    average_need_based_aid: numN(FIN.average_need_based_aid),
+    average_merit_aid: numN(FIN.average_merit_aid),
+    percent_receiving_aid: numN(FIN.percent_receiving_aid),
+    scholarships: (Array.isArray(FIN.scholarships) ? FIN.scholarships : []).map((s) => ({
+      name: toStr(s.name) || 'Unnamed Scholarship', type: toStr(s.type) || 'General', amount: toStr(s.amount) || '',
+      deadline: toStr(s.deadline) || '', deadline_date: s.deadline_date == null ? null : toStr(s.deadline_date),
+      benefits: toStr(s.benefits) || '', application_method: toStr(s.application_method) || '',
+    })),
   },
   credit_policies: {
     philosophy: toStr(CP.philosophy) || '',

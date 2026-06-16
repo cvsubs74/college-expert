@@ -1,0 +1,2702 @@
+{
+  "trust_report": {
+    "university": "University of Michigan-Ann Arbor",
+    "id": "university_of_michigan_ann_arbor",
+    "cycle": "Fall 2026",
+    "cds_edition_used": "2025-2026 (latest available; 2026-2027 not yet posted)",
+    "ipeds_unitid": "170976",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 33,
+      "held_null": 15
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 29,
+      "conflict_nulled": 1,
+      "unverified_nulled": 14,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "UNVERIFIED",
+        "out_of_state_acceptance_rate": "UNVERIFIED",
+        "transfer_acceptance_rate": "UNVERIFIED",
+        "international_acceptance_rate": "UNVERIFIED",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CORROBORATED",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CANONICAL_SINGLE",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "CANONICAL_SINGLE",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "CANONICAL_SINGLE",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "UNVERIFIED",
+        "total_coa_out_of_state": "UNVERIFIED",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 181,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 16.42,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 16.42,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C1 residency totals: 'Total first-time, first-years who applied 109,112' / 'Total first-time, first-years who were admitted 17,915'. Acceptance rate computed 17,915/109,112 = 16.42% (CDS reports counts, not the rate).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "in_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "transfer_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 109112,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C1: 'Total first-time, first-years who applied         109,112' (residency Total column). Corroborated by sex totals: males 53,044 + females 56,068 = 109,112.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 17915,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C1: 'Total first-time, first-years who were admitted         17,915'. Corroborated by sex totals: males admitted 7,593 + females admitted 10,322 = 17,915.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8178,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C1: 'Total first-time, first-years who enrolled         8,178'. Corroborated by sex totals: males enrolled 3,499 + females enrolled 4,679 = 8,178; and B2 first-year Total = 8,178.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 45.65,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "Computed from C1 verbatim counts: enrolled 8,178 / admitted 17,915 = 45.65%. (CDS does not print a yield rate.)",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8178,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C1: 'Total first-time, first-years who enrolled         8,178' \u2014 the enrolled first-year class size.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "1370-1530",
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C9: 'SAT Composite  25th Percentile 1370  50th Percentile 1470  75th Percentile 1530'. Middle-50 = 25th-75th = 1370-1530.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "690-750",
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C9: 'SAT Evidence-Based Reading and Writing  25th 690  50th 730  75th 750'. Middle-50 = 690-750.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "680-780",
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C9: 'SAT Math  25th 680  50th 740  75th 780'. Middle-50 = 680-780.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "act_composite_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "32-34",
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C9: 'ACT Composite  25th 32  50th 33  75th 34'. Middle-50 = 32-34.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 73,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C9: 'Submitting SAT Scores 55% 4,503' and 'Submitting ACT Scores 18% 1,462'. Combined share submitting any test = 55% + 18% = 73% (4,503 + 1,462 = 5,965 of 8,178 enrolled).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.9,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C12: 'Average high school GPA: 3.9'; C12 'Percent submitting high school GPA: 97.8%'. C11 reports GPA distribution 'using 4.0 scale', so 3.9 is the unweighted (4.0-scale) average.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 44.22,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (Degree-seeking First-time First-year column): 'White, non-Hispanic 3,616'. Of first-year Total 8,178 \u2192 44.22%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 5.96,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Black or African American, non-Hispanic 487'. Of Total 8,178 \u2192 5.96%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.03,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Hispanic/Latino 1,066'. Of Total 8,178 \u2192 13.03%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 18.71,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Asian, non-Hispanic 1,530'. Of Total 8,178 \u2192 18.71%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.23,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'American Indian or Alaska Native, non-Hispanic 19'. Of Total 8,178 \u2192 0.23%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.16,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Native Hawaiian or other Pacific Islander, non-Hispanic 13'. Of Total 8,178 \u2192 0.16%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 6.24,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Two or more races, non-Hispanic 510'. Of Total 8,178 \u2192 6.24%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 6.68,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Race and/or ethnicity unknown 546'. Of Total 8,178 \u2192 6.68%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.78,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Nonresidents 391' (international students reported only under Nonresidents). Of Total 8,178 \u2192 4.78%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.78,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B2 (first-year column): 'Nonresidents 391' of Total 8,178 \u2192 4.78% of the entering first-year class are international (nonresident).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 97,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B22 Retention Rates: cohort entering Fall 2024 = 7,251; still enrolled Fall 2025 = 7,068; 'Calculate the percentage of the Fall 2024 entering cohort who remained enrolled... 97%'.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2024 cohort retained to Fall 2025)"
+    },
+    "graduation_rate_4_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 82.27,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B (2019 cohort): line C 'Final 2019 cohort, after adjusting for allowable exclusions ... Total 6,808'; line D 'completed the program in four years or less (by Aug. 31, 2023) ... Total 5,601'. 4-yr rate = 5,601/6,808 = 82.27% (CDS prints the underlying counts but not this percentage).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2019 entering cohort)"
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 93,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "B line H: 'Six-year graduation rate for 2019 cohort (G divided by C) ... Total 93%' (same 93% reported for the 2018 cohort).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2019 entering cohort)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 17864,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "G1 (PUBLIC INSTITUTION FIRST-YEAR UNDERGRADUATES, tuition only): 'Tuition: In-district: $17,864 $19,015'; 'In-state (out-of-district)' blank. First column $17,864 reported (a second column shows $19,015). Scorecard latest in-state tuition = $17,736 corroborates.",
+      "as_of_cycle": "2025-2026 CDS (G1 lists 2026-2027 academic-year costs; first column $17,864)"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "63480",
+        "verifier": "$63,480"
+      }
+    },
+    "total_coa_in_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "total_coa_out_of_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 83648,
+      "source": "U.S. Dept of Education College Scorecard API",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=170976",
+      "quote": "College Scorecard data (UNITID 170976) field 'latest.earnings.10_yrs_after_entry.median': 83648 \u2014 median earnings of students 10 years after entry, $83,648.",
+      "as_of_cycle": "College Scorecard latest data release"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "true",
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C8: 'Does your institution make use of SAT or ACT scores in admission decisions...: Yes'. The 'SAT or ACT' row is checked under 'Recommended' / 'Not required for admission, but considered if submitted' \u2014 i.e., tests are not required (test-optional).",
+      "as_of_cycle": "2025-2026 (policies stated for Fall 2027)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "Test-optional: SAT/ACT recommended but not required; considered if submitted. Latest SAT/ACT receipt date 2/1. Not used for academic advising. Institutional exam used for placement.",
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C8: SAT or ACT row checked 'Recommended' (and 'Not required for admission, but considered if submitted'); C8E 'Latest date by which SAT or ACT scores must be received for fall-term admission: 2/1'; C8D advising use: 'No'.",
+      "as_of_cycle": "2025-2026 (policies stated for Fall 2027)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 24447,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C2 WAITING LIST: 'Number of qualified applicants offered a place on waiting list: 24,447'.",
+      "as_of_cycle": "2025-2026 (Fall 2025 admissions)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 18435,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C2 WAITING LIST: 'Number accepting a place on the waiting list: 18,435'.",
+      "as_of_cycle": "2025-2026 (Fall 2025 admissions)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1663,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "C2 WAITING LIST: 'Number of wait-listed students admitted: 1,663'.",
+      "as_of_cycle": "2025-2026 (Fall 2025 admissions)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9.02,
+      "source": "University of Michigan-Ann Arbor Common Data Set 2025-2026",
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "quote": "Computed from C2: admitted 1,663 / accepted a waitlist place 18,435 = 9.02% (admit rate among those who accepted a waitlist spot; vs 6.80% of the 24,447 offered). CDS does not print this rate.",
+      "as_of_cycle": "2025-2026 (Fall 2025 admissions)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "admits_class_size",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "gpa_unweighted_avg",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_4_year",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "is_test_optional",
+        "test_policy_details",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "CDS located (2025-2026 (latest available; 2026-2027 not yet posted))",
+        "VERIFIED CDS source. Downloaded 67-page PDF; page 1 reads exactly 'Common Data Set 2025-2026'; A1 address shows 'University of Michigan', 'City: Ann Arbor', 'State: Michigan', 'Zip: 48109'. This is the most recent CDS edition available.",
+        "UMich official Common Data Set 2025-2026 PDF (67 pages). Extracted via pypdf to /tmp/cds_full.txt. Source for C1/C2 admissions+waitlist, C8 test policy, C9 SAT/ACT percentiles & % submitting, C11/C12 GPA, B2 race/ethnicity counts, B22 retention (97%), B graduation grids (6-yr 93%, 4-yr derived 82.27%), G1/G5 tuition & expense components. Note: this is the 2025-2026 CDS (Fall 2025 entering class), NOT a 2026-2027 CDS \u2014 that cycle is not yet published; G1 cost lines are labeled 2026-2027 academic year.",
+        "C1 residency totals: 'Total first-time, first-years who applied 109,112' / 'Total first-time, first-years who were admitted 17,915'. Acceptance rate computed 17,915/109,112 = 16.42% (CDS reports counts, not the rate).",
+        "C1 residency table 'First-Time, First-Year Student Applicants In-State Out-of-State International Unknown Total' has the In-State/Out-of-State/International columns left blank; only the Total column (109,112 / 17,915 / 8,178) is populated, so no in-state acceptance rate is reported.",
+        "C1 residency table In-State/Out-of-State/International columns are blank; only Total applied/admitted/enrolled (109,112 / 17,915 / 8,178) reported. No out-of-state acceptance rate available."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=170976",
+      "roles": [
+        "anchor",
+        "anchor:median_earnings_10yr"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "Official College Scorecard API (UNITID 170976). Source for median_earnings_10yr = $83,648 (latest.earnings.10_yrs_after_entry.median). Also returned corroborating admission_rate 0.1564, completion_rate_4yr_150nt 0.932, tuition in_state 17,736 / out_of_state 60,946, COA academic_year 34,654, SAT average 1465 \u2014 used only to cross-check CDS values. Authenticated with the Scorecard app's embedded public api_key plus Referer/Origin headers (DEMO_KEY was rate-limited).",
+        "College Scorecard data (UNITID 170976) field 'latest.earnings.10_yrs_after_entry.median': 83648 \u2014 median earnings of students 10 years after entry, $83,648."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=...go-blue-guarantee-eligibility",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API returned no snapshot for the GBG eligibility or 2026-2027 aid URLs \u2014 confirms the live target pages aren't archived."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Internet Archive Wayback Machine \u2014 retrieval mechanism for all five Cloudflare-blocked umich.edu official pages (raw id_ snapshots de-gzipped and HTML-stripped locally)."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/cdx/search/cdx?url=admissions.umich.edu/...",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback CDX API used to enumerate available archived snapshots of the official admissions pages and select Fall-2026-cycle captures (Dec 2025 and May 2026)."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/cdx/search/cdx?url=finaid.umich.edu",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback CDX index \u2014 used to locate which finaid.umich.edu pages have archived 200-status snapshots; confirmed no 2026-2027 finaid snapshot exists yet."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/",
+      "roles": [
+        "resolve:admissions",
+        "resolve",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official undergraduate admissions homepage. WebFetch/curl returned HTTP 403 (Cloudflare 'Just a moment...' challenge), but search confirms it is the live official page. Used as official_admissions_url.",
+        "Target official site landing page. Returned HTTP 403 (bot protection) on every fetch attempt (WebFetch and curl). Could not read directly; content obtained via Wayback captures of its subpages instead."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/academics-majors",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "Official undergraduate academics/majors landing page. Blocked by Cloudflare (403) for automated fetch but confirmed live and official via search. Used as majors_catalog_url.",
+        "Target official catalog page \u2014 returned HTTP 403 to the fetch tool; could not retrieve directly."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/ap-ib-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official AP/IB landing page (via Wayback 2026-06-08). Source of the philosophy/advanced-standing quote. Direct fetch 403 (Cloudflare); used archived copy."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/ap-ib-credit/ap-guidelines",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official AP Guidelines (via Wayback 2026 timegate). Source for cross-college default, '4 or 5' chart thresholds, Ross 30-credit cap, Engineering exclusions, 'current as of 2026'. Direct fetch 403."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/ap-ib-credit/ib-guidelines",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official IB Guidelines (via Wayback 2026-05-30). Source for 'only awards credit for IB Higher Level examinations', 'current as of 2026', and verified absence of any diploma bonus. Direct fetch 403."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/essay-questions",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official essay questions page. Read via Wayback raw capture 20260530. Source for the two required U-M-specific supplemental essays (300-word leadership/contribution essay; 550-word 'why this college/school' essay) and the Common App personal essay."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/first-year-application-plans",
+      "roles": [
+        "section:academic_structure",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official application-plans page \u2014 returned HTTP 403; could not retrieve directly.",
+        "Official application plans page. 403 on live fetch; read via Wayback raw capture 20260530 (May 2026, Fall 2026 cycle). Primary source for ED/EA/RD deadlines, binding status, financial aid deadlines, decision dates, and commitment dates. Confirms ED is new and binding for fall 2026."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/requirements-deadlines",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official requirements & deadlines page. 403 on live fetch; read via Wayback raw capture 20251231 (Fall 2026 cycle). Source for platforms (Common Application, $75 fee), application checklist, required materials, plan deadlines/notification dates, SMTD Dec 1 deadline, and 'Schools and Colleges With Additional Application Requirements' (portfolios, CS major selection)."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/first-year-applicants/selection-process",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Michigan Selection Process page. WebFetch 403'd, but the holistic-review wording ('designed to consider all aspects... not intended to admit applicants solely on the basis of GPA, test scores, or any other single criterion') was captured via WebSearch snippet and used for admissions_philosophy."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/apply/transfer-applicants/requirements-deadlines",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CS selection policy text: students admitted Fall 2023+ must be selected for CS before declaring; same in LSA and Engineering. Read via WebSearch summary (page 403'd to direct fetch)."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/explore-visit/blog/explanation-u-ms-holistic-review-process",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Michigan blog explaining holistic review. WebFetch 403'd; not directly quotable, content overlapped with the Selection Process page already used."
+      ]
+    },
+    {
+      "url": "https://admissions.umich.edu/major/data-science-bs",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Data Science (BS) major page; returned HTTP 403 to WebFetch. DS-not-subject-to-CS-policy fact came from a WebSearch summary of the transfer requirements/CSE pages instead."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/university-of-michigan-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not canonical; rejected."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/where-is-the-university-of-michigan-located/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched successfully. Source for campus_dynamics: Central vs North Campus split, ~3,200 acres, free Blue Bus system, free TheRide transit with MCard, Ann Arbor as WalletHub 2025 No. 2 college town, the Diag. Primary source for transportation_impact and social_environment."
+      ]
+    },
+    {
+      "url": "https://admitreport.com/blog/university-of-michigan-common-data-set",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog about using the UMich CDS; not a primary source, rejected."
+      ]
+    },
+    {
+      "url": "https://americabynumbers.com/colleges/university-of-michigan-ann-arbor/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator (2024 Scorecard mirror) \u2014 HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=170976&fields=...&api_key=DEMO_KEY",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Federal College Scorecard API for 3-yr default rate / earnings \u2014 returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY exhausted; no personal key)."
+      ]
+    },
+    {
+      "url": "https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/1195",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Board AP policy search for U-M. Third-party aggregator, not an official U-M page; skipped in favor of U-M's own AP Guidelines."
+      ]
+    },
+    {
+      "url": "https://bestfullyfundedscholarships.com/35-fully-funded-scholarships-university-of-michigan-ann-arbor-2026/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not authoritative; not used."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/university-of-michigan-essay-examples",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched twice. Admitted-student essay topics (coaching 'Thunderdragons', drawing/peer feedback, literacy campaign, psych lab, parliamentary debate, newspaper, Ross app). Major source for common_activities + essay_tips + a red flag (focusing on UMich not yourself)."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-is-the-university-of-michigan-ann-arbor-acceptance-rate",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used \u2014 non-canonical.",
+        "Fetched. Quotable Common Data Set factor weightings (Course Rigor + Academic GPA 'Very Important'; essays/tests/recs 'Important'; ECs 'Considered'), GPA ~3.9 / ~39% at 4.0, test middle-50% ranges. The only verifiable-fact anchor in the section."
+      ]
+    },
+    {
+      "url": "https://blog.prepscholar.com/university-of-michigan-supplemental-essays",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Detailed do/avoid lists for community + Why Michigan essays (specificity, imagery, no clich\u00e9s, no overlap, no typos). Primary essay_tips + a red_flag source."
+      ]
+    },
+    {
+      "url": "https://bridgemi.com/talent-education/u-m-shifts-funding-from-dei-into-its-free-tuition-program-go-blue-guarantee/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Bridge Michigan (fetched successfully) \u2014 corroborated current $125,000 income/asset GBG threshold, 2026 expansion to full cost of attendance incl. housing for teacher-prep/nursing + master's, and $55.97M to 6,387 students in 2026."
+      ]
+    },
+    {
+      "url": "https://bulletin.engin.umich.edu/admissions-3/accepted-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College of Engineering accepted-credit bulletin. Wayback snapshot exists (2026-02-08) but not extracted \u2014 Engineering specifics already covered via AP Guidelines exclusions; not needed for the LSA-default answer."
+      ]
+    },
+    {
+      "url": "https://bulletin.engin.umich.edu/admissions-3/cross-campus-transfer/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Engineering bulletin cross-campus transfer page; returned HTTP 403 to WebFetch. Same thresholds obtained from the engin.umich.edu current-students page."
+      ]
+    },
+    {
+      "url": "https://bulletin.engin.umich.edu/ug-ed/degrees/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Engineering bulletin degrees page \u2014 returned HTTP 403; could not retrieve directly."
+      ]
+    },
+    {
+      "url": "https://career.engin.umich.edu/students/michigan-engineering-student-salary-information/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Engineering Career Resource Center salary/employer data \u2014 HTTP 403 / Cloudflare 'Just a moment' bot wall; could not read or quote employer list."
+      ]
+    },
+    {
+      "url": "https://careercenter.umich.edu/article/first-destination-profile",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "U-M University Career Center First Destination Profile \u2014 primary source for employment rate + top employers, but returned HTTP 403 Forbidden; could not read or quote."
+      ]
+    },
+    {
+      "url": "https://collegedunia.com/usa/university/921-university-of-michigan-ann-arbor/admission",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator. Not used \u2014 non-official."
+      ]
+    },
+    {
+      "url": "https://collegedunia.com/usa/university/921-university-of-michigan-ann-arbor/ranking",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator ranking page returned in search; not fetched/used \u2014 relied on more authoritative or official-adjacent sources instead."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Scorecard homepage HTML \u2014 used to extract the embedded Nuxt config public api_key (B2QoBnDD...) and apiUrl (api.data.gov/ed/collegescorecard/v1/) so the data API could be queried after DEMO_KEY hit its rate limit."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?170976-University-of-Michigan-Ann-Arbor",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard profile \u2014 page is a JS app; WebFetch returned only nav/header/footer with no tuition data. Scorecard also lags by a cycle (would reflect an earlier year, not Fall 2026), so not used."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?170976-University-of-Michigan-Ann-Arbor=",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "anchor",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard located",
+        "Canonical College Scorecard page for UnitID 170976. WebFetch returned only the site shell (client-rendered), but the URL itself is the verified Scorecard identifier embedding name+UnitID.",
+        "Scorecard profile page is a client-side JS (Nuxt) app; WebFetch returned only chrome/nav with no data. Used to discover the embedded production API key and api.data.gov base URL.",
+        "College Scorecard (secondary canonical source). WebFetch returned only nav/header/footer shell, no retention value \u2014 could not extract a figure. Not used; official CDS already provided a verbatim value.",
+        "Secondary canonical source; page renders data client-side, static fetch returned only nav/header, no graduation rate. Scorecard reports an 8-year rate anyway, not the CDS six-year metric.",
+        "Federal College Scorecard school page \u2014 WebFetch returned only nav/footer shell, no data."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/170976",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Short-form Scorecard URL \u2014 HTTP 404. Rejected in favor of the working query-string form."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/v1/institutions.json",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted direct Scorecard API query for completion_rate_4yr_150nt; keyless endpoint returned 404 NoSuchKey (requires api.data.gov key). Not used."
+      ]
+    },
+    {
+      "url": "https://cse.engin.umich.edu/academics/undergraduate/admissions",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CSE undergrad admissions page; returned HTTP 403 to WebFetch. CS facts obtained from the TeamDynamix KB article instead."
+      ]
+    },
+    {
+      "url": "https://datausa.io/profile/university/university-of-michigan-ann-arbor",
+      "roles": [
+        "verify:freshman_retention_rate",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search. Not canonical; not consulted further.",
+        "Quoted default rate '0.0192% (2022 cohort), 1 of 5,199 borrowers' \u2014 reflects COVID-era federal payment-pause (~0% CDR everywhere), not representative; rejected for loan_default_rate."
+      ]
+    },
+    {
+      "url": "https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/2021/?unitid=170976",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Urban Institute Education Data API mirror \u2014 blocked by a Cloudflare challenge (HTTP 403). Not used."
+      ]
+    },
+    {
+      "url": "https://eliteprep.com/blog/umich-early-decision",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog on the new ED plan. Not used \u2014 ED details verified from official admissions page."
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/how-to-get-into-the-university-of-michigan/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not fetched. Themes (binding ED for 2025-26, test-required for Class of 2030, holistic review) noted from snippet but not relied on for any reported value."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/College_of_Literature,_Science,_and_the_Arts",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Successfully fetched. Confirmed LSA's three-division department structure; did not provide degree-type/major counts."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ford_School_of_Public_Policy",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wikipedia; appeared in results but Ford facts taken from the official Ford School page summary instead."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stamps_School_of_Art_and_Design",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wikipedia; appeared in results but Stamps program facts taken from the official Stamps site summary instead."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/University_of_Michigan",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "General encyclopedia entry; not canonical for cycle-specific admit rate; not used."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/University_of_Michigan_College_of_Engineering",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Successfully fetched. Source for the 18 Engineering undergraduate majors and 14 departments (incl. CS, Data Science, Robotics)."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "Official Financial Aid homepage. Blocked by Cloudflare (403) for automated fetch; confirmed live/official via search. Used as financial_aid_url.",
+        "Anchor homepage. HTTP 403 \u2014 Cloudflare 'Just a moment' bot challenge blocked both WebFetch and curl. Could not read directly."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/2026-2027-fallwinter-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Target 2026-2027 aid page. Direct fetch 403 (Cloudflare); used via WebSearch result extract for 2026-2027 FAFSA+CSS Profile requirement and Nov 15 / Dec 15 / March 1 deadlines + school code 002325."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/about",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Financial Aid 'about' page \u2014 blocked by Cloudflare (403). Used the root finaid.umich.edu instead."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/apply-aid/key-information",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Key Information page. Direct fetch blocked; used via WebSearch extract for 2026-2027 deadlines (Nov 15 ED, March 1 EA/RD, Dec 15 suggested filing)."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/apply-aid/new-undergraduates/deadlines",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not separately fetched."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/apply-aid/new-undergraduates/michigan-residents/go-blue-guarantee-eligibility",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Go Blue Guarantee eligibility page. Direct fetch 403; used via WebSearch extract: GBG = scholarships/grants totaling at least tuition+mandatory fees, comprised of Pell/FSEOG/Michigan Achievement/institutional/non-UM aid."
+      ]
+    },
+    {
+      "url": "https://finaid.umich.edu/getting-started/dates-deadlines",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; corroborates deadlines but not separately fetched (Cloudflare). Deadlines taken from key-information extract."
+      ]
+    },
+    {
+      "url": "https://fordschool.umich.edu/application/ba/process",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Ford School page (via search summary). Source for Public Policy BA as internal-only, sophomore-year application, junior standing (55 credits), and essay/resume/transcript requirements."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+university+of+michigan+ann+arbor+accepted+extracurriculars+stats",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched as search proxy; surfaced a culture thread URL (unfetchable). URL-discovery only."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+university+of+michigan+supplemental+essay+tips+why+michigan",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched as a search proxy to locate Reddit thread URLs (since WebSearch blocks reddit.com). Surfaced two thread URLs (both later unfetchable). No substantive content used beyond URL discovery."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/advising/class-registration-grade/transferring-credit1.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Newnan Advising transferring-credit page; overlaps the LSA transfer policy already quoted. Not separately extracted."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/english/undergraduate/advising/apCredit.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "LSA English department AP page; department-specific, not needed for institution-level policy."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/academics/lsa-academic-policies-and-procedures/credit-policies/test-credit--ap--ib--etc--.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official LSA Test Credit policy (via Wayback 2026-02-12). Source for AP/IB usage rules (distribution, language, electives, out-of-residence) and Credit-by-Examination delegation. Direct fetch 403."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/academics/lsa-academic-policies-and-procedures/credit-policies/transfer-information---residence-policy.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official LSA Transfer Credit Policy 'Effective May 2024' (via Wayback 2025-12-24). Source for TCE/MTA tools, C-or-better rule, 60/62 cap, accreditation, no-double-counting, residency. Direct fetch 403."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/academics/lsa-degrees.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official LSA degrees page (via search summary). Source for LSA granting AB(BA), BS, BGS, and BS Chem; '120 credits, 2.0 GPA minimum'; BS '60 credits in physical/natural science and math'."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/academics/majors-minors.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official LSA majors/minors page (via search summary). Source for 'more than 85 majors... and more than 100 minors' and named natural-science majors (Biology, Chemistry, Physics, Earth and Environmental Sciences)."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/academics/majors-minors/data-science-major.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official LSA Data Science page (via search summary). Source for Data Science as a joint LSA-Statistics/CSE major declared via the Statistics declaration process; NOT officially flagged as capped (so is_impacted=false)."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/current-students/undergraduate-students/outcomes-and-possibilities.html",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "LSA outcomes page \u2014 HTTP 403 Forbidden. Search summary paraphrased '96% employed or in grad school' but could not open/quote the primary page."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/prospective-students/undergraduate/admissions.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official LSA admissions page \u2014 returned HTTP 403; could not retrieve directly."
+      ]
+    },
+    {
+      "url": "https://lsa.umich.edu/lsa/prospective-students/undergraduate/admissions/undergraduate-application.html",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "LSA undergraduate application page; returned HTTP 403 to WebFetch, could not read."
+      ]
+    },
+    {
+      "url": "https://marsal.umich.edu/academics-admissions/degrees/bachelors",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Marsal page (via search summary). Source for Elementary and Secondary Teacher Education now offering first-year admission, BA/BS in Education + certification, LEAPS four-year degree, Education for Empowerment minor."
+      ]
+    },
+    {
+      "url": "https://michiganross.umich.edu/undergraduate/bba/admissions/admissions-blog/2025/01/13/2025-decision-release-timeline-michigan",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Ross decision-release-timeline blog; appeared in search results but not needed for tactics."
+      ]
+    },
+    {
+      "url": "https://michiganross.umich.edu/undergraduate/bba/admissions/first-year-applicants",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Ross page (via search summary). Source for Ross as a first-year admitting unit, single BBA major with specializations, and ~80% via Preferred Admission / sophomore transfer.",
+        "Official Ross first-year applicants page: Ross is a First-Year Admitting Unit (Fall 2024+); Preferred Admission is a sophomore dual-degree route through engineering, kinesiology (sport management only), art & design, and MT&D. Read via WebSearch summary (direct fetch unavailable)."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/?id=170976",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "AUTHORITATIVE identity confirmation: returned 'University of Michigan-Ann Arbor', 'Ann Arbor, Michigan 48109', '4-year, Public'. Binds UnitID 170976 to name+city+state."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=170976",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted secondary federal confirmation of name+city+state; WebFetch hit a redirect loop (session-based). Not needed \u2014 College Navigator already provided authoritative confirmation."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/institution-profile/170976",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS institution profile surfaced in search. Not fetched; CDS already provided the value."
+      ]
+    },
+    {
+      "url": "https://news.umich.edu/?p=197486",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "U-M expands Go Blue Guarantee press release. HTTP 403 (Cloudflare) on both WebFetch and curl; content obtained instead via the Bridge Michigan article and WebSearch summary."
+      ]
+    },
+    {
+      "url": "https://news.umich.edu/context-counts-holistic-admissions-boosts-college-success-and-diversity-u-m-study-shows/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "U-M News article on holistic admissions and its effect on student success/diversity. WebFetch 403'd, but the headline claim (holistic admissions boosts success and diversity) was captured via search and used in admissions_philosophy."
+      ]
+    },
+    {
+      "url": "https://news.umich.edu/u-m-expands-go-blue-guarantee/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate URL for the GBG expansion release \u2014 also 403 Cloudflare."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/university-of-michigan-admission-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions-stats blog; not canonical; rejected.",
+        "Third-party admission-stats blog; not used \u2014 non-canonical.",
+        "Third-party admissions-stats blog; not canonical, rejected.",
+        "Third-party stats site. Not used \u2014 non-official."
+      ]
+    },
+    {
+      "url": "https://nursing.umich.edu/admissions-aid/admission-requirements",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Nursing page (via search summary). Source for BSN first-year + sophomore-transfer entry and the sophomore-transfer prerequisite course list (no first-year direct-admit GPA stated)."
+      ]
+    },
+    {
+      "url": "https://nursing.umich.edu/admissions-aid/application-information/requirements/bsn-program-sophomore-transfer",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Nursing sophomore-transfer page (via search summary). Corroborated transfer prerequisites and 'up to 40 credits' transfer."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/campus-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official OBP campus-statistics index page; attempted fetch returned HTTP 403 Forbidden. Could not enumerate CDS editions from it, but the CDS PDF was reached directly."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/campus-statistics/common-data-set/",
+      "roles": [
+        "resolve",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official CDS index page, but blocked by Cloudflare bot protection (HTTP 403 via WebFetch and curl). Could not read the link listing directly; used the direct PDF URL from search instead.",
+        "Official OBP CDS index page; returned HTTP 403 on fetch, so could not enumerate editions from it directly \u2014 relied on search-surfaced official PDF URLs instead.",
+        "Official UMich OBP CDS index page; returned HTTP 403 to WebFetch so could not enumerate editions directly, but it is the canonical landing page that links to per-year CDS PDFs.",
+        "Official OBP CDS index page. WebFetch returned HTTP 403 Forbidden; could not read listing directly. Relied on direct PDF URLs found via search instead.",
+        "Official UMich CDS index page; WebFetch returned 403 Forbidden, could not enumerate editions from it.",
+        "UM CDS index page \u2014 returned HTTP 403 Forbidden to WebFetch; could not enumerate editions directly. Got the CDS PDF link from web search instead."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/CDS_2023-24_UMAA_10-25-24.pdf",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "section:application_process",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official but older (Fall 2023 cycle); surfaced in search; not used.",
+        "Older 2023-24 CDS surfaced in search. Not used \u2014 superseded by the more recent 2025-2026 CDS.",
+        "Official U-M Office of Budget & Planning Common Data Set 2023-2024 (filed 10/25/2024, Fall 2022 cohort). Verbatim source for avg need-based grant $26,613 (H2K), avg institutional merit grant $6,213 (H2O), 92%/91% need met (H2I). NOT Cloudflare-blocked. Pinned to 2023-2024 cycle, not 2026-2027."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/CDS_2024-25_UMAA.pdf",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official but older edition (Fall 2024 cycle); not the most recent; not used.",
+        "Prior-cycle (2024-2025) official CDS surfaced in search; not used because a newer cycle (2025-2026) is available.",
+        "Prior-year (2024-2025/Fall 2024) CDS surfaced in search; even further from the Fall 2026 target, not fetched.",
+        "Older 2024-25 CDS surfaced in search; not fetched, superseded by the 2025-26 edition."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2026-2027_umaa.pdf",
+      "roles": [
+        "resolve",
+        "verify:act_composite_middle_50"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Probed 2026-2027 CDS URL (full-year pattern) \u2014 HTTP 404. Confirms 2026-2027 CDS is not yet published (expected: it uses Fall 2026 enrollment data finalized in late 2026/early 2027).",
+        "Long-form-year probe for the 2026-2027 CDS: HTTP 404. Confirms target-cycle source is unpublished."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2026-27_umaa.pdf",
+      "roles": [
+        "resolve",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Probed 2026-2027 CDS URL (lowercase pattern) \u2014 HTTP 404. Edition not yet posted.",
+        "Attempted the predicted 2026-2027 (Fall 2026 target) CDS URL \u2014 returned HTTP 404 Not Found. Confirms the target-cycle CDS is not yet published.",
+        "Probed for the target Fall 2026 (2026-2027) CDS: HTTP 404. Does not exist yet.",
+        "Attempted the target 2026-2027 CDS at the expected URL by naming convention \u2014 returned HTTP 404. Not yet published. This is why found is pinned to 2025-2026, not Fall 2026.",
+        "Tried predictable URL for the TARGET 2026-2027 CDS \u2014 returned HTTP 404 Not Found. The 2026-2027 edition is not yet published.",
+        "Tested the predicted URL for a standalone 2026-2027 CDS edition \u2014 returned HTTP 404. A 2026-2027 CDS does not exist yet; consistent with UM's note that final 2026-2027 costs publish 7/18/2026. The 2026-2027 figures live inside the 2025-26 CDS Section G."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/CDS_2026-27_UMAA.pdf",
+      "roles": [
+        "resolve",
+        "verify:act_composite_middle_50"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Probed 2026-2027 CDS URL (uppercase pattern) \u2014 HTTP 404. Edition not yet posted.",
+        "Alternate-casing probe for the 2026-2027 CDS: HTTP 404."
+      ]
+    },
+    {
+      "url": "https://obp.umich.edu/wp-content/uploads/pubdata/mandatoryreports/Section_245_Report_Card_2024-25.pdf",
+      "roles": [
+        "verify:freshman_retention_rate",
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; search snippet cited 97% for the Fall 2023 cohort. Not fetched/parsed by me directly, so not used as the verbatim source \u2014 the CDS PDF was authoritative and fully extracted.",
+        "OFFICIAL U-M Sec. 245 Performance Report Card (dated 4/10/2025). Quotable first-destination outcomes for Class of 2024: FT employment 54%, part-time 7%, further education 26%, other 13%, response rate 58%. Source of the only verified employment/grad-school figures (but they are ~9-month first-destination, not 2-year, so fields left null). Contains NO loan default rate and NO employer list."
+      ]
+    },
+    {
+      "url": "https://orieladmissions.com/how-to-get-into-michigan-ross/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant breakdown of direct first-year Ross vs cross-campus transfer: recruiting-timing advantage of early entry, ~30-35% transfer admit among qualified, and the standard fallback majors (Econ, IOE, Information Analysis). Used for tactical framing only; its 'Preferred Admission' terminology conflicts with official U-M usage, so I deferred to U-M for definitions."
+      ]
+    },
+    {
+      "url": "https://pharmacy.umich.edu/pharmacy-programs/bs-in-pharmaceutical-sciences/curriculum/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Pharmacy page (via search summary). Source for BS in Pharmaceutical Sciences as the first-year admitting program and the early-PharmD pathway."
+      ]
+    },
+    {
+      "url": "https://plexuss.com/f/does-umich-ann-arbor-accept-ap-credits",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party Q&A site; not authoritative. Rejected."
+      ]
+    },
+    {
+      "url": "https://premium.usnews.com/best-colleges/university-of-michigan-ann-arbor-9092",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Premium US News subdomain attempt to bypass block. WebFetch timed out. Not quotable."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?id=40816043-f1a1-ed11-aad1-000d3a85c377&university=University+of+Michigan+-+Ann+Arbor",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official IB organisation university-statement for U-M Ann Arbor. Corroborated 'only awards credit for IB Higher Level examinations' and confirmed no diploma bonus. Fetched directly (non-umich domain)."
+      ]
+    },
+    {
+      "url": "https://record.umich.edu/?p=126041",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "University Record GBG expansion article \u2014 HTTP 403 Cloudflare; not readable."
+      ]
+    },
+    {
+      "url": "https://record.umich.edu/articles/u-m-receivesrecord-numberof-applicationsfor-fall-2025/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Record article on application volume; not needed for structure."
+      ]
+    },
+    {
+      "url": "https://record.umich.edu/articles/u-m-to-offer-new-programs-processes-for-fall-26-applicants/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official University Record article on Fall 2026 application changes. Returned HTTP 403 on every fetch (same bot protection as admissions.umich.edu). Its key facts (new binding ED) were instead verified directly from the official admissions plans page via Wayback."
+      ]
+    },
+    {
+      "url": "https://record.umich.edu/articles/undergraduate-admissions-changes-coming-for-fall-2025",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official U-M Record. Source for the 10 first-year admitting units and the fall-2025 expansion (Ross, Pharmacy added; Taubman additional-program option). Page itself 403'd but content quoted in search summaries.",
+        "U-M Record article on Fall 2025 admissions changes; returned HTTP 403 to WebFetch, could not read directly."
+      ]
+    },
+    {
+      "url": "https://research.com/best-colleges/university-of-michigan-ann-arbor/graduation-rate-and-career",
+      "roles": [
+        "verify:graduation_rate_6_year",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search; not consulted for the value \u2014 used only the official CDS PDF.",
+        "Aggregator of Scorecard/career data \u2014 HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://research.umich.edu/news-and-issues/research-annual-reports/fy25-research-annual-report/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official FY25 research report. WebFetch 403'd, but the FY2025 ~$2.16B record figure was captured via search snippet and used in research_impact and executive_summary."
+      ]
+    },
+    {
+      "url": "https://ro.umich.edu/tuition-residency/tuition-fees",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "UM Registrar tuition/fees page \u2014 HTTP 403 Forbidden to WebFetch. Search snippet indicated 2026-2027 rates post in July 2026."
+      ]
+    },
+    {
+      "url": "https://smtd.umich.edu/admissions/undergraduate/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official SMTD admissions/degree pages (via search summaries, incl. individual BFA/BM/BTA degree pages). Source for the BFA/BM/BA/BMA/BTA program list."
+      ]
+    },
+    {
+      "url": "https://sph.umich.edu/admissions/undergraduate-application-checklist.html",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official School of Public Health page (via search summary). Source for sophomore-year application, junior-year entry, and 54-credit requirement."
+      ]
+    },
+    {
+      "url": "https://stamps.umich.edu/undergraduate-programs/bfa",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Stamps page (via search summary). Source for Art & Design (BFA/BA), Interarts Performance BFA, dual/joint degree, and studio-area list."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/c/colleges-and-universities/university-of-michigan/581",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Confirmed active community forum (chance-me threads, survey, RD/EA threads, 115k+ applications). Establishes CC as a genuine community source; thin on quotable individual stats."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/changing-major-college-before-admission/2089168",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Community thread confirming LSA->Engineering cross-campus transfer is straightforward with min GPA + prereqs + supplemental essay before Feb 1; cannot change major pre-enrollment."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/university-of-michigan-class-of-2029-official-rd-thread/3680050",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. In-state ~39% vs OOS ~14% figures cited by users; deferral/postponement posts. Fed the OOS what_it_takes point and OOS red flag (user-cited, labeled opinion)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/university-of-michigan-class-of-2030-official-rd-thread/3698663",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. User quotes (DroidsLookingFor, evergreen5, edd2025, Knowsstuff) on ED/timing/OOS small-school context and 'above the norm' heuristic. Supports OOS insight; little hard stat data."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/university-michigan-ann-arbor/1376047-supplemental-essay-help.html",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 legacy CC URL dead. Not used."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/what-my-chances/1514251-university-michigan-out-state-chances.html",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 legacy CC URL dead. Not used."
+      ]
+    },
+    {
+      "url": "https://taubmancollege.umich.edu/news/2026/01/14/taubman-college-launches-new-architecture-minor/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Taubman news (via search summary). Source for the Architecture minor launched winter 2026."
+      ]
+    },
+    {
+      "url": "https://teamdynamix.umich.edu/TDClient/154/Portal/KB/ArticleDet?ID=7539",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official U-M KB 'BS in Architecture' (via search summary). Confirmed Taubman BS in Architecture structure (liberal-arts yrs 1-2, specialized yrs 3-4) and BS in Urban Technology; dual-degree options with LSA/Engineering/Stamps."
+      ]
+    },
+    {
+      "url": "https://teamdynamix.umich.edu/TDClient/154/Portal/KB/PrintArticle?ID=7515",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official U-M KB (TeamDynamix) \u2014 successfully fetched. Source for CS being capacity-limited/capped in BOTH Engineering and LSA, the advance-selection pathway, Enrolled Discoverer window (Apr 1-May 16), and that NO GPA requirement is published.",
+        "Official U-M Computer Science Major KB article. KEY source: first-year admission is independent of CS selection; advance selection via Common App; Enrolled Discoverer pathway for Fall 2023+ enrollees. Fetched successfully."
+      ]
+    },
+    {
+      "url": "https://thesuntimesnews.com/university-of-michigan-named-a-new-ivy-as-america-rethinks-higher-education/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Reports Forbes 2025 'New Ivy' designation. WebFetch 403'd, but the 'New Ivy' / Public Ivy framing was corroborated by multiple search snippets and used in market_position and analyst_takeaways."
+      ]
+    },
+    {
+      "url": "https://thesuntimesnews.com/university-of-michigan-surpasses-2-billion-in-annual-research-expenditures-for-fy-2024/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Source (via search snippet) for FY2024 ~$2.04B research milestone, ~$663M internal / ~$1.17B federal funding split, 615 inventions, 28 startups. Used in research_impact."
+      ]
+    },
+    {
+      "url": "https://transfercredit.ugadmiss.umich.edu/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "The official Transfer Credit Equivalency (TCE) tool itself \u2014 captured as tool_url. URL confirmed inside the LSA transfer policy text."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20240225072034id_/https://finaid.umich.edu/types-aid/scholarships",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Archived official Scholarships overview \u2014 'automatically considered for undergraduate scholarships' framing."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20240616090704id_/https://finaid.umich.edu/types-aid/scholarships/undergraduate/ofa-scholarship-listing",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Archived (2024-2025 cycle) official OFA Scholarship Listing \u2014 verbatim source for Fairfax, Tappan, Detroit Promise, Wolverine Pathways, and the 'awarded automatically upon admission' philosophy."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20240616152737id_/https://finaid.umich.edu/types-aid/grants/need-based-grants",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Archived official Need-based Grants page \u2014 verbatim source for the original $75,000 income/asset Go Blue Guarantee language and 'comprised of federal and institutional grant aid'; also Michigan Achievement Scholarship terms."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20240616153539id_/https://finaid.umich.edu/types-aid/grants/non-need-based-grants",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Archived official Non-need-based Grants page \u2014 context on U-M non-need-based grants (Wolverine Access Grant closed to new awards, CBO Award) and that FAFSA+CSS Profile are needed."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/2025/https://careercenter.umich.edu/article/first-destination-profile",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback copy of the Career Center page \u2014 WebFetch is unable to fetch web.archive.org in this environment."
+      ]
+    },
+    {
+      "url": "https://www.collegechoicecounseling.com/post/freshman-apply-directly-u-of-m-ross",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Counselor post on applying directly to Ross; corroborated the first-year-admitting-unit change but added nothing beyond official Ross page, so not relied upon."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/university-of-michigan-ann-arbor/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator. Quoted default rate '1.8%' as a 2-year cohort default rate, 5,496 borrowers, but stated NO year. Conflicts with other sources; not cycle-pinned; rejected for loan_default_rate."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/university-of-michigan-ann-arbor/scorecard/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator scorecard mirror. Quoted default rate '1.1%' but NO cohort year; earnings 'following graduation $56,000 / mid-career $79,000' with no defined timeframe. Not cycle-pinned; rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegeraptor.com/colleges/majors/University-of-Michigan-Ann-Arbor-MI--170976",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party major aggregator; not used (preferred official pages)."
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/michigan/university-of-michigan-ann-arbor/admission/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used \u2014 non-canonical."
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/michigan/university-of-michigan-ann-arbor/majors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party major aggregator; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/michigan/university-of-michigan-ann-arbor/outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator outcomes page \u2014 HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/19112/university-of-michigan-essays-tips",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Essay advice: specificity, answer all parts of prompt, authentic voice. Fed essay_tips."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/19753/need-help-with-university-of-michigan-s-supplemental-essays",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search; not fetched separately \u2014 redundant with the two CollegeVine FAQ/essay pages already extracted."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/29476/majors-at-michigan-lsa",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; fetched. Used only to corroborate named LSA majors (Economics, Political Science, Psychology, English, Computer Science joint with Engineering, Environmental Science) \u2014 cross-checked against official LSA pages."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/74321/what-kind-of-student-qualifications-impress-university-of-michigan",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Community/expert FAQ: GPA + rigor + class rank, 'commitment and leadership over breadth,' essays/recs in holistic review, 'spike' concept. Core what_it_takes + common_activities source."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/74601/what-prerequisites-does-the-university-of-michigan-look-for",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Course prerequisites (4 yr English/math, 3 yr science/social, foreign language) and Tier 1-2 activities framing; commitment over a long thin list."
+      ]
+    },
+    {
+      "url": "https://www.engin.umich.edu/about/facts-figures/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Engineering facts & figures \u2014 HTTP 403 Forbidden; could not quote any employer list or placement rate."
+      ]
+    },
+    {
+      "url": "https://www.engin.umich.edu/academics/majors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Engineering majors page \u2014 returned HTTP 403; major list instead sourced from the fetched Wikipedia article."
+      ]
+    },
+    {
+      "url": "https://www.engin.umich.edu/admissions-aid/undergraduate/apply/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Engineering apply landing page; superseded by the more specific current-U-M-students cross-campus transfer page."
+      ]
+    },
+    {
+      "url": "https://www.engin.umich.edu/admissions-aid/undergraduate/apply/current-u-m-students/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official cross-campus transfer thresholds into Engineering: 2.5 cumulative + 2.5 prereq GPA, prereq course list, <55 credits, one year in home unit, not guaranteed. Read via WebSearch summary of this page."
+      ]
+    },
+    {
+      "url": "https://www.goodgoblin.ai/blog/HowToGetIntoUniversityofMichigan2025",
+      "roles": [
+        "section:strategic_profile",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Search snippet source for reported ~18% acceptance rate. Used in market_position and selectivity takeaway as a reported (not verified-by-fetch) figure; flagged as reported.",
+        "Third-party admissions blog. Not used \u2014 not an official source; all figures sourced from official CDS/admissions pages."
+      ]
+    },
+    {
+      "url": "https://www.goodgoblin.ai/blog/UMichAdmissionStatistics2025",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not canonical; rejected.",
+        "Third-party blog surfaced when searching CDS; not authoritative; CDS figures taken from the official obp.umich.edu PDF instead."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=reddit+University+of+Michigan+accepted+stats+extracurriculars+advice",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Redirected to Google consent wall (consent.google.com) \u2014 could not retrieve results. Not used."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan-Ann+Arbor+College+Scorecard+collegescorecard.ed.gov",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced the canonical College Scorecard URL embedding UnitID 170976: /school/?170976-University-of-Michigan-Ann-Arbor="
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan-Ann+Arbor+Common+Data+Set+2026-2027",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Search surfaced the official obp.umich.edu CDS index plus direct PDF links to cds_2025-26_umaa.pdf and CDS_2024-25_UMAA.pdf. No 2026-2027 link present, indicating that edition is not yet posted."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan+Ann+Arbor+IPEDS+UnitID+NCES+College+Navigator",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed IPEDS UnitID 170976 appears consistently across multiple NCES/IPEDS DFR and data-center URLs."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan+Ann+Arbor+Office+of+Financial+Aid+official+finaid.umich.edu",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed finaid.umich.edu is the official Office of Financial Aid site; federal school code 002325."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan+Ann+Arbor+undergraduate+admissions+official+site+admissions.umich.edu",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed admissions.umich.edu is the official Office of Undergraduate Admissions homepage; surfaced /academics-majors and /apply pages."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan+Ann+Arbor+undergraduate+majors+list+bulletin+catalog",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed admissions.umich.edu/academics-majors as the official undergraduate academics/majors listing (280+ programs across 19 schools/colleges)."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=University+of+Michigan+LSA+course+catalog+bulletin+official+site",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced lsa.umich.edu course guide/bulletin, but that is LSA-college-only. Preferred the university-wide admissions.umich.edu/academics-majors for the majors catalog field. Consulted, not used."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/university-of-michigan-ann-arbor",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party 'visualized 2026 CDS' aggregator \u2014 not canonical, not quoted; skipped in favor of the primary OBP PDF.",
+        "Third-party CDS visualizer; rejected in favor of the official OBP PDF as the canonical source.",
+        "Third-party 'visualized CDS' aggregator titled '2026'; not a canonical primary source, rejected in favor of the official OBP PDF.",
+        "Third-party 'CDS visualized' page. Confirmed it does NOT report retention rate (only admissions/cost/diversity). Rejected \u2014 not canonical and no retention figure.",
+        "Third-party CDS-visualization site; not authoritative, not used for the value."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/how-to-get-into-the-university-of-michigan/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions-consultant blog; not canonical, rejected."
+      ]
+    },
+    {
+      "url": "https://www.joinleland.com/library/a/university-of-michigan-acceptance-rate",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog citing ~15.6% for Class of 2028; not canonical and conflicts with primary CDS counts; rejected in favor of official figures.",
+        "Third-party blog; not used \u2014 non-canonical."
+      ]
+    },
+    {
+      "url": "https://www.kines.umich.edu/academics/undergraduate-programs",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Kinesiology pages (via search summary). Source for the three majors (Movement Science, Applied Exercise Science, Sport Management), Sport Management's required secondary admission application, and Applied Exercise Science's minimum-grade progression requirement."
+      ]
+    },
+    {
+      "url": "https://www.koppelmangroup.com/blog/2024/7/5/the-best-majors-at-the-university-of-michigan",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; fetched. Corroborated existence of LSA International Studies and Communication and Media majors; not used for any restriction/GPA claim."
+      ]
+    },
+    {
+      "url": "https://www.koppelmangroup.com/blog/2025/4/13/the-university-of-michigan-legacy-policies-and-guide",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog on UMich legacy policy. Not used \u2014 legacy status sourced directly from CDS C7 (Not Considered)."
+      ]
+    },
+    {
+      "url": "https://www.linkedin.com/school/umich-ann-arbor/people/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "LinkedIn alumni 'where they work' list \u2014 HTTP 999 (bot-blocked); could not read employer counts."
+      ]
+    },
+    {
+      "url": "https://www.michigandaily.com/news/academics/ross-announces-changes-to-admissions-process-for-fall-2025/",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Student paper on Ross fall-2025 changes; corroborative only, Ross facts taken from official Ross page.",
+        "Confirmed Ross became a selectable First-Year Admitting Unit on the Common App and the Preferred Admission sophomore route persists; via WebSearch summary."
+      ]
+    },
+    {
+      "url": "https://www.michigandaily.com/news/academics/what-students-need-to-know-about-apply-in-majors-at-umich/",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Student paper; surfaced apply-in framing and CS Fall-2023 restriction context via search summary. Direct fetch repeatedly returned 429 (rate-limited).",
+        "Apply-in majors explainer; repeatedly returned HTTP 429 (rate limit) on WebFetch, could not read directly. Did not rely on it; equivalent facts sourced from official U-M pages instead."
+      ]
+    },
+    {
+      "url": "https://www.michigannewssource.com/2025/11/u-m-cracks-the-top-20-in-u-s-news-rankings/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary news source that DID fetch successfully and quoted 'No. 20 among national universities... No. 3 among public universities' for the fall 2025 / 2026-edition US News rankings. Used to corroborate market_position narrative, but NOT used to set us_news_rank because it is not the US News page itself (rule requires a US News fetch)."
+      ]
+    },
+    {
+      "url": "https://www.naceweb.org/docs/default-source/default-document-library/2024/publication/free-report/nace-first-destinations-for-the-class-of-2023.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "NACE national first-destination report (Class of 2023) \u2014 national aggregate, not UMich-specific; not used."
+      ]
+    },
+    {
+      "url": "https://www.natecation.com/michigan-application/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Community 'Guide to Applying to Michigan': Ross Preferred Admission framing and that re-applying to Ross is discouraged. Used for context; did not have selectivity/major-odds detail."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-michigan-ann-arbor/academics/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Reputation/academic-strength context (Public Ivy, research output) via search snippet. Used in market_position."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-michigan-ann-arbor/admissions/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 on direct fetch \u2014 could not retrieve page body. Niche admissions content used only via search-result aggregate snippets, not this page."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-michigan-ann-arbor/after-college/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche after-college (default rate / earnings / placement) \u2014 HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-michigan-ann-arbor/campus-life/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Campus life / Big Ten athletics / Greek life details surfaced via search snippet (The Big House 100,000+ capacity, strong school spirit, competitive Greek life). Used for social_environment. Direct fetch of the niche.com homepage 403'd.",
+        "Surfaced in search; campus-life aggregate (1,600+ orgs via Maize Pages, ~20% Greek, intramural/club sports, Festifall/Diag booths) used as multi-source support for common_activities. Snippet-level only \u2014 page not directly fetched."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-michigan-ann-arbor/majors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; not used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-michigan-ann-arbor/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 on direct fetch. Niche review themes (work-hard-play-hard, diversity, supportive faculty, 3.99/5 over 5,010 reviews) came only from the WebSearch snippet, used cautiously as aggregate opinion."
+      ]
+    },
+    {
+      "url": "https://www.quadeducationgroup.com/blog/how-to-get-into-the-university-of-michigan",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Rigor emphasis, GPA ~3.9, 'every type of involvement counts' UMich quote (weekend job/caregiving), generic-essay failure mode. Fed what_it_takes, common_activities (work/family), red_flags."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/uofm/comments/c3uusk/any_tips_on_the_supplement_essays_for_michigan/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "REDDIT BLOCKED. WebFetch returned 'Claude Code is unable to fetch from www.reddit.com'; old.reddit and .json variants also failed. No content extracted \u2014 zero Reddit attribution in output."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/uofm/comments/swj7tl/whats_the_culture_like_at_umich/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "REDDIT BLOCKED \u2014 same failure. Identified via DuckDuckGo but unfetchable. Not used."
+      ]
+    },
+    {
+      "url": "https://www.shiksha.com/studyabroad/usa/universities/university-of-michigan/admissions",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator. Not used \u2014 non-official."
+      ]
+    },
+    {
+      "url": "https://www.si.umich.edu/programs/bachelor-science-information/how-do-i-apply",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official UMSI page (via search summary). Source for BSI as a sophomore/junior cross-campus/transfer program, 54 transferable credits + prerequisites before junior year, holistic transfer review."
+      ]
+    },
+    {
+      "url": "https://www.studocu.com/en-us/document/.../common-data-set-2024-25-university-of-michigan-umaa",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party re-host of an older 2024-25 CDS. Rejected \u2014 used the official obp.umich.edu CDS instead."
+      ]
+    },
+    {
+      "url": "https://www.studocu.com/en-us/document/.../common-data-set-2024-25-university-of-michigan-umaa/156059007",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Studocu re-host of a UMich CDS; not used \u2014 went to the official obp.umich.edu CDS PDF directly."
+      ]
+    },
+    {
+      "url": "https://www.theeduledger.com/students/article/15822000/university-of-michigan-go-blue-guarantee-more-than-doubles-financial-aid-awards",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "EDU Ledger article on GBG \u2014 HTTP 403; could not read; current GBG terms taken from Bridge Michigan + WebSearch instead."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News national-universities rankings list. WebFetch failed (socket closed). Not quotable."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/university-of-michigan-ann-arbor-9092",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Target US News profile page for the authoritative national/public rank. WebFetch failed repeatedly (HTTP 403 / timeout). Could not obtain a quotable page, so us_news_rank left null."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/university-of-michigan-ann-arbor-9092/academics",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party rankings page; not consulted for any structural value."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-graduate-schools/top-business-schools/university-of-michigan-ann-arbor-01121",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Ross MBA ranking (No. 13 Best Business Schools) surfaced via search snippet. Used in analyst_takeaways academic-strength bullet. Page itself not fetched (US News blocked)."
+      ]
+    },
+    {
+      "url": "https://www.wemakescholars.com/university/university-of-michigan/scholarships",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party scholarship aggregator surfaced in search; not an official source, not used \u2014 named scholarships taken only from the archived official OFA listing."
+      ]
+    },
+    {
+      "url": "https://yocket.com/universities/university-of-michigan-ann-arbor-737/rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator returned in search; not used."
+      ]
+    }
+  ]
+}
