@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { balanceSegments, balanceVerdict, BALANCE_BANDS } from '../utils/listBalance';
+import { balanceSegments, balanceVerdict, BALANCE_BANDS, collegeFitCategory, isEstimatedFit } from '../utils/listBalance';
 
 describe('listBalance', () => {
   describe('balanceSegments', () => {
@@ -40,6 +40,22 @@ describe('listBalance', () => {
       const v = balanceVerdict({ reach: 3, target: 4, safety: 2 });
       expect(v.tone).toBe('good');
       expect(v.headline).toMatch(/balanced/i);
+    });
+  });
+
+  describe('collegeFitCategory / isEstimatedFit (#250)', () => {
+    it('prefers personalized fit (nested or top-level) over the soft category', () => {
+      expect(collegeFitCategory({ fit_analysis: { fit_category: 'TARGET' }, soft_fit_category: 'REACH' })).toBe('TARGET');
+      expect(collegeFitCategory({ fit_category: 'SAFETY', soft_fit_category: 'REACH' })).toBe('SAFETY');
+      expect(collegeFitCategory({ soft_fit_category: 'REACH' })).toBe('REACH');
+      expect(collegeFitCategory({})).toBeNull();
+    });
+
+    it('isEstimatedFit is true only when there is no personalized fit', () => {
+      expect(isEstimatedFit({ soft_fit_category: 'REACH' })).toBe(true);  // soft only → estimate
+      expect(isEstimatedFit({})).toBe(true);
+      expect(isEstimatedFit({ fit_category: 'TARGET' })).toBe(false);
+      expect(isEstimatedFit({ fit_analysis: { fit_category: 'SAFETY' } })).toBe(false);
     });
   });
 });

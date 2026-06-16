@@ -13,6 +13,7 @@ import {
 } from '../components/stratia';
 import BalanceRing from '../components/stratia/BalanceRing';
 import DecisionLedger from '../components/stratia/DecisionLedger';
+import { collegeFitCategory, isEstimatedFit } from '../utils/listBalance';
 import { askLinks } from '../utils/mcpClients';
 
 // Existing components for modals and widgets
@@ -195,9 +196,7 @@ const StratiaLaunchpad = () => {
         };
 
         collegeList.forEach(college => {
-            const fitCategory = college.fit_analysis?.fit_category
-                || college.soft_fit_category
-                || 'TARGET';
+            const fitCategory = collegeFitCategory(college) || 'TARGET';
             if (categories[fitCategory]) {
                 categories[fitCategory].push(college);
             } else {
@@ -219,7 +218,7 @@ const StratiaLaunchpad = () => {
     // How many colleges fall back to admit-rate categories rather than a
     // personalized fit (so the balance ring can be honest about it).
     const estimatedFits = useMemo(
-        () => collegeList.filter((c) => !c.fit_analysis?.fit_category).length,
+        () => collegeList.filter(isEstimatedFit).length,
         [collegeList]
     );
     // "Fix my balance" hand-off to the connected agent (computed once).
