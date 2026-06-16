@@ -326,3 +326,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - TESTS: backend 1048 passed (+ join/connector), frontend 344 passed (+ helpers), build green.
 - NOT shipped: PR #258 open (merge auto-deploys profile_manager_v2 + connector + frontend to prod — needs user go-ahead).
 - THAT'S ALL BUILD-NOW PICKS. Only #252 Fit Drift Timeline remains, which the ideation flagged to DEFER until the recompute loop has fit-history volume.
+
+## 2026-06-16 12:29 — shipped #250 (Balance Ring personalized-fit join, PR #258)
+- PR #258 squash-merged (87a1b39c) → #250 auto-closed.
+- Tracking: #250 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge → cloudbuild-main.yaml → profile_manager_v2 (get-college-list fit join) + connector + frontend.
+- ROADMAP COMPLETE: all 3 quick-wins (#243-245) + all 6 top features (Decision Ledger #247, This Week's 3 Things #248, Profile-aware Popular #249, Balance Ring fit-join #250, Research→Roadmap #251) + AI-agents whitepaper/landing #254 are shipped. Only #252 Fit Drift Timeline remains — deliberately deferred (ideation: wait until the recompute loop has fit-history volume).
