@@ -66,8 +66,24 @@ const OBS_SCHEMA = (fieldEnum) => ({
         },
       },
     },
+    sources_consulted: SRC_LIST,
   },
 });
+
+// every agent returns this: the full list of URLs it touched, for end-to-end transparency
+const SRC_LIST = {
+  type: 'array',
+  description: 'EVERY URL searched or fetched while answering — used OR rejected',
+  items: {
+    type: 'object', required: ['url'],
+    properties: {
+      url: { type: 'string' },
+      used: { type: 'boolean', description: 'true if it contributed to a value, false if consulted but not used' },
+      note: { type: 'string', description: 'what was taken from it, or why it was skipped/rejected' },
+    },
+  },
+};
+const LOG_SOURCES = ' TRANSPARENCY REQUIREMENT: also return sources_consulted = EVERY URL you searched or fetched while answering this (used OR rejected), each with used:true/false and a one-line note on what you took from it or why you skipped it. Completeness is the point — this is the public record of how the data was assembled.';
 
 // --------------------------------------------------------------------------- 1. RESOLVE
 phase('Resolve');
@@ -93,12 +109,13 @@ const RESOLVE_SCHEMA = {
         majors_catalog_url: { type: 'string' },
       },
     },
+    sources_consulted: SRC_LIST,
   },
 };
 const resolved = await agent(
   `Resolve canonical identity and the AUTHORITATIVE data sources for "${UNIVERSITY}" for the ${CYCLE} admissions cycle.\n` +
   `1) Confirm the official name, city, state, Public/Private, and the IPEDS UnitID — cross-check the UnitID on name+city+state via the NCES/IPEDS institution lookup or College Scorecard; if you cannot confirm it unambiguously, return "".\n` +
-  `2) Locate, by fetching pages: the school's Common Data Set for ${CDS_EDITION} (the actual PDF/xlsx URL — search "${UNIVERSITY} Common Data Set ${CDS_EDITION}"; if that edition isn't posted yet, give the most recent and say which), its College Scorecard page, official admissions page, financial-aid page, and undergraduate majors/catalog page.\n${NO_GUESS}`,
+  `2) Locate, by fetching pages: the school's Common Data Set for ${CDS_EDITION} (the actual PDF/xlsx URL — search "${UNIVERSITY} Common Data Set ${CDS_EDITION}"; if that edition isn't posted yet, give the most recent and say which), its College Scorecard page, official admissions page, financial-aid page, and undergraduate majors/catalog page.\n${NO_GUESS}${LOG_SOURCES}`,
   { label: 'resolve', phase: 'Resolve', schema: RESOLVE_SCHEMA }
 );
 const ID = resolved.id_slug || SLUG;
@@ -127,7 +144,7 @@ const anchor = await agent(
   `the school's Common Data Set ${CDS_EDITION} (${resolved.sources.common_data_set_url}) and the U.S. Dept of Education College Scorecard (${resolved.sources.scorecard_url}). Fetch them and read the actual tables/cells.\n` +
   `CDS map: C1=applications/admits/enrolled & acceptance; C2=waitlist; C8=test policy; C9=SAT/ACT percentiles & GPA & % submitting; B2=race/ethnicity; B22=retention; B=4/6-yr graduation; G=cost of attendance/tuition. median_earnings_10yr comes from College Scorecard ONLY.\n` +
   `Return one observation per field key below. For rates use a plain number string ("42.4"); for ranges use "low-high" ("1390-1520"); for counts a plain integer string; for is_test_optional "true"/"false". Cite the exact CDS cell/section or Scorecard field in the quote.\n\n` +
-  `FIELD KEYS: ${DET_FIELDS.join(', ')}\n\n${NO_GUESS}`,
+  `FIELD KEYS: ${DET_FIELDS.join(', ')}\n\n${NO_GUESS}${LOG_SOURCES}`,
   { label: 'anchor:cds+scorecard', phase: 'Anchor', schema: OBS_SCHEMA(DET_FIELDS) }
 );
 
@@ -151,12 +168,13 @@ const ONE_OBS = {
     found: { type: 'boolean' }, value: { type: 'string' },
     source_name: { type: 'string' }, source_url: { type: 'string' },
     verbatim_quote: { type: 'string' }, as_of_cycle: { type: 'string' },
+    sources_consulted: SRC_LIST,
   },
 };
 const verifications = await parallel(VERIFY_FIELDS.map((f) => () =>
   agent(
     `BLIND VERIFIER. Independently establish ONE value for "${resolved.official_name}", ${CYCLE}: the ${f.what}.\n` +
-    `You are NOT told any prior value — find it yourself from the most canonical source (the school's ${CDS_EDITION} Common Data Set, or College Scorecard). Fetch the page, quote the exact figure, record the cycle. Your prior is to REJECT: if you cannot independently confirm a value with a verbatim quote, return found=false.\n${NO_GUESS}`,
+    `You are NOT told any prior value — find it yourself from the most canonical source (the school's ${CDS_EDITION} Common Data Set, or College Scorecard). Fetch the page, quote the exact figure, record the cycle. Your prior is to REJECT: if you cannot independently confirm a value with a verbatim quote, return found=false.\n${NO_GUESS}${LOG_SOURCES}`,
     { label: `verify:${f.key}`, phase: 'Verify', schema: ONE_OBS }
   ).then((v) => ({ key: f.key, v }))
 )).then((r) => r.filter(Boolean));
@@ -231,10 +249,10 @@ log(`Gate: ${trust.corroborated} corroborated, ${trust.canonical_single} canonic
 // --------------------------------------------------------------------------- 4. SECTIONS (official-unstructured + subjective)
 phase('Sections');
 const SECTION_SCHEMA = {
-  type: 'object', required: ['data', 'sources'],
+  type: 'object', required: ['data', 'sources_consulted'],
   properties: {
     data: { type: 'object', additionalProperties: true, description: 'the section JSON in the requested shape' },
-    sources: { type: 'array', items: { type: 'string' }, description: 'URLs actually fetched and used' },
+    sources_consulted: SRC_LIST,
     notes: { type: 'string' },
   },
 };
@@ -257,7 +275,7 @@ const SECTIONS = [
     `Build the non-earnings parts of outcomes for ${resolved.official_name}: {employment_rate_2yr (number or null), grad_school_rate (number or null), top_employers:[5-7 from the career-center outcomes report or LinkedIn alumni], loan_default_rate (number or null)}. median_earnings comes from the anchor. Quote the career-outcomes source; null unknowns.` },
 ];
 const sectionResults = await parallel(SECTIONS.map((s) => () =>
-  agent(`${s.prompt}\n\nReturn {data:<the section JSON>, sources:[urls fetched], notes}. ${NO_GUESS}`,
+  agent(`${s.prompt}\n\nReturn {data:<the section JSON>, notes}. ${NO_GUESS}${LOG_SOURCES}`,
     { label: `section:${s.key}`, phase: 'Sections', schema: SECTION_SCHEMA })
     .then((r) => ({ key: s.key, ...r }))
 )).then((r) => r.filter(Boolean));
@@ -363,7 +381,11 @@ const profile = {
       },
     },
   },
-  academic_structure: D('academic_structure').colleges ? D('academic_structure') : { structure_type: 'Colleges', colleges: [], minors_certificates: [] },
+  academic_structure: (() => {
+    const AC = D('academic_structure');
+    if (!AC || !Array.isArray(AC.colleges) || !AC.colleges.length) return { structure_type: 'Colleges', colleges: [], minors_certificates: [] };
+    return { ...AC, structure_type: toStr(AC.structure_type) || 'Colleges', minors_certificates: toStrArr(AC.minors_certificates) };
+  })(),
   application_process: (() => {
     const AP = D('application_process');
     if (!AP || !AP.application_deadlines) return null;
@@ -427,6 +449,51 @@ const profile = {
   },
 };
 
+// ---------- COMPLETE SOURCE LEDGER: every URL consulted across every stage ----------
+const ledger = new Map(); // url -> { url, roles:Set, notes:[], consulted_only:bool, backed_published_fields:[] }
+function addSrc(url, role, note, used) {
+  if (!url || typeof url !== 'string') return;
+  const u = url.trim();
+  if (!/^https?:\/\//i.test(u)) return;
+  if (!ledger.has(u)) ledger.set(u, { url: u, roles: new Set(), notes: [], used: false, backed_published_fields: [] });
+  const e = ledger.get(u);
+  e.roles.add(role);
+  if (note && e.notes.length < 6 && !e.notes.includes(note)) e.notes.push(note);
+  if (used) e.used = true;
+}
+// resolve stage
+if (resolved.sources) {
+  addSrc(resolved.sources.common_data_set_url, 'resolve:common_data_set', `CDS located (${resolved.sources.common_data_set_cycle_found || '?'})`, true);
+  addSrc(resolved.sources.scorecard_url, 'resolve:scorecard', 'College Scorecard located', true);
+  addSrc(resolved.sources.official_admissions_url, 'resolve:admissions', 'official admissions page', false);
+  addSrc(resolved.sources.financial_aid_url, 'resolve:financial_aid', 'financial-aid page', false);
+  addSrc(resolved.sources.majors_catalog_url, 'resolve:catalog', 'majors/catalog page', false);
+}
+(resolved.sources_consulted || []).forEach((s) => addSrc(s.url, 'resolve', s.note, s.used));
+// anchor stage (both the full consulted list and every per-field source)
+(anchor.sources_consulted || []).forEach((s) => addSrc(s.url, 'anchor', s.note, s.used));
+(anchor.observations || []).forEach((o) => { if (o.source_url) addSrc(o.source_url, `anchor:${o.field}`, o.verbatim_quote, o.found !== false); });
+// blind-verify stage
+verifications.forEach((x) => {
+  (x.v.sources_consulted || []).forEach((s) => addSrc(s.url, `verify:${x.key}`, s.note, s.used));
+  if (x.v.source_url) addSrc(x.v.source_url, `verify:${x.key}`, x.v.verbatim_quote, x.v.found !== false);
+});
+// section stage
+sectionResults.forEach((s) => (s.sources_consulted || []).forEach((src) => addSrc(src.url, `section:${s.key}`, src.note, src.used)));
+// tag URLs that actually backed a PUBLISHED deterministic field
+for (const key of DET_FIELDS) {
+  const p = prov[key];
+  if (p && p.value != null && p.url) { const e = ledger.get(String(p.url).trim()); if (e) e.backed_published_fields.push(key); }
+}
+const source_ledger = Array.from(ledger.values()).map((e) => ({
+  url: e.url,
+  roles: Array.from(e.roles),
+  used: e.used || e.backed_published_fields.length > 0,
+  backed_published_fields: e.backed_published_fields,
+  notes: e.notes,
+})).sort((a, b) => (b.backed_published_fields.length - a.backed_published_fields.length) || a.url.localeCompare(b.url));
+log(`Source ledger: ${source_ledger.length} distinct URLs consulted; ${source_ledger.filter((s) => s.backed_published_fields.length).length} backed a published value.`);
+
 const detTotal = DET_FIELDS.length;
 const detPublished = DET_FIELDS.filter((k) => detVal[k] != null).length;
 const trust_report = {
@@ -434,11 +501,13 @@ const trust_report = {
   ipeds_unitid: resolved.ipeds_unitid || null,
   deterministic_fields: { total: detTotal, published: detPublished, held_null: detTotal - detPublished },
   verification: trust,
+  total_sources_consulted: source_ledger.length,
+  sources_backing_published_values: source_ledger.filter((s) => s.backed_published_fields.length).length,
   acceptance_rate_published: profile.admissions_data.current_status.overall_acceptance_rate,
   ingest_ready: !!(profile._id && profile.metadata.official_name),
-  doctrine: 'null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated',
+  doctrine: 'null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged',
 };
 
 log(`Assembled ${resolved.official_name}: ${detPublished}/${detTotal} deterministic fields published, ${detTotal - detPublished} honestly null.`);
 
-return { profile, _provenance: prov, _trust_report: trust_report, _section_sources: sectionResults.map((s) => ({ section: s.key, sources: s.sources })) };
+return { profile, _provenance: prov, _trust_report: trust_report, _source_ledger: source_ledger };

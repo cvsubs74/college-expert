@@ -1,0 +1,214 @@
+# Sources consulted — University of Illinois Urbana-Champaign (cycle Fall 2024)
+
+Every URL the collector searched or fetched, for full transparency — **145 distinct URLs**: 2 backed a published deterministic value, 53 informed a section, 90 were consulted but **not used** (each with the reason).
+
+## 1. Backed a published deterministic value (2)
+- <https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx>
+    - **fields:** overall_acceptance_rate, applications_total, admits_total, enrolled_total, yield_rate, admits_class_size, sat_composite_middle_50, sat_reading_middle_50, sat_math_middle_50, act_composite_middle_50, test_submission_rate, race_white, race_black, race_hispanic, race_asian, race_native_american, race_pacific_islander, race_two_or_more, race_unknown, race_international, international_percentage, freshman_retention_rate, graduation_rate_6_year, in_state_tuition, total_coa_in_state, total_coa_out_of_state, is_test_optional, test_policy_details, waitlist_offered, waitlist_accepted, waitlist_admitted, waitlist_admit_rate
+    - roles: resolve:common_data_set, resolve, anchor, anchor:overall_acceptance_rate, anchor:in_state_acceptance_rate, anchor:out_of_state_acceptance_rate, anchor:transfer_acceptance_rate, anchor:international_acceptance_rate, anchor:applications_total, anchor:admits_total, anchor:enrolled_total, anchor:yield_rate, anchor:admits_class_size, anchor:sat_composite_middle_50, anchor:sat_reading_middle_50, anchor:sat_math_middle_50, anchor:act_composite_middle_50, anchor:test_submission_rate, anchor:gpa_weighted_avg, anchor:gpa_unweighted_avg, anchor:race_white, anchor:race_black, anchor:race_hispanic, anchor:race_asian, anchor:race_native_american, anchor:race_pacific_islander, anchor:race_two_or_more, anchor:race_unknown, anchor:race_international, anchor:first_gen_percentage, anchor:international_percentage, anchor:freshman_retention_rate, anchor:graduation_rate_4_year, anchor:graduation_rate_6_year, anchor:in_state_tuition, anchor:out_of_state_tuition, anchor:total_coa_in_state, anchor:total_coa_out_of_state, anchor:is_test_optional, anchor:test_policy_details, anchor:ed_applications, anchor:ed_admits, anchor:ed_acceptance_rate, anchor:ea_applications, anchor:ea_admits, anchor:ea_acceptance_rate, anchor:waitlist_offered, anchor:waitlist_accepted, anchor:waitlist_admitted, anchor:waitlist_admit_rate, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, verify:out_of_state_tuition, section:application_process, section:financials
+    - “CDS located (2024-2025)”
+    - “AUTHORITATIVE 2024-2025 Common Data Set. curl -I returned HTTP 200, content-type application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, 265780 bytes, last-modified Thu 15 May 2025. The actual xlsx file.”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=145637&fields=school.name,latest.earnings.10_yrs_after_entry.median>
+    - **fields:** median_earnings_10yr
+    - roles: anchor:median_earnings_10yr
+    - “College Scorecard API returned: "latest.earnings.10_yrs_after_entry.median":81054 for "school.name":"University of Illinois Urbana-Champaign".”
+
+## 2. Informed an official/community section (53)
+- <http://archive.org/wayback/available?url=admissions.illinois.edu/Apply/Freshman/dates&timestamp=20231101> — section:application_process
+    - “Wayback availability API (this endpoint was reachable) — returned the closest Fall-2023 snapshot URL/timestamp (20230928065543), but the snapshot itself could not be fetched.”
+- <https://admissionsight.com/where-is-uiuc-located/> — section:strategic_profile
+    - “Informed campus_dynamics.transportation_impact via search summary (walkable campus, remote C-U location). Attributed as search summary.”
+- <https://advising.grainger.illinois.edu/degree-programs/changing-majors> — section:application_strategy
+    - “Official Grainger advising page grounding the internal-transfer caveat: 'competitive and acceptance is not guaranteed'; second major-change requests only for majors not in high demand.”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?api_key=DEMO_KEY&id=145637&fields=school.name,latest.earnings.10_yrs_after_entry.median,latest.admissions.admission_rate.overall> — anchor
+    - “College Scorecard API (id=145637). Returned latest.earnings.10_yrs_after_entry.median = 81054 (median_earnings_10yr) and admission_rate.overall = 0.4237 (cross-check of CDS-derived 42.37% overall acceptance).”
+- <https://blog.prepscholar.com/uiuc-essay-prompts-examples> — section:student_insights
+    - “Fetched directly — three essay tips (story not list, show passion, proofread), essay as only place to show personality, 150-word limit.”
+- <https://catalog.illinois.edu/degree-programs/undergraduate_index/> — resolve:catalog, resolve, section:academic_structure
+    - “majors/catalog page”
+- <https://catalog.illinois.edu/schools/gies-business/> — section:academic_structure
+    - “Confirmed Gies major list and 2.0 graduation GPA requirement; no direct-admit/cap text on this page (admission detail came from admissions.illinois.edu).”
+- <https://catalog.illinois.edu/undergraduate/> — section:academic_structure
+    - “Confirmed the roster of degree-granting colleges/schools (ACES, AHS, Business/Gies, Education, Engineering, FAA, LAS, iSchool, Media, Social Work). No admissions detail.”
+- <https://citl.illinois.edu/international-baccalaureate-ib-credit> — section:credit_policies
+    - “Official CITL IB credit page — corroborated mid-July score receipt, immediate posting, 'law that requires credit be awarded for IB scores of 4, 5, 6, and 7,' and confirmed no diploma bonus mentioned; page itself referenced 2023-2024 enrollm”
+- <https://citl.illinois.edu/test-placement-proficiency/current-cutoffs/international-baccalaureate-ib-program> — section:credit_policies
+    - “Official CITL IB current-cutoffs page — explicitly applies to Summer 2024 / Fall 2024 / Spring 2025 (= target cycle); verbatim HL/SL + scores 4-7 structure, elective-credit (1--/2--) definition, 'Only scores resulting in credit are shown,' ”
+- <https://citl.illinois.edu/test-placement-proficiency/proficiency-testing/advanced-placement-ap-credit> — section:credit_policies
+    - “Official CITL AP credit page — verbatim AP general rule (law for scores 3/4/5; auto-posting), decline-credit exception, higher-placement exception, AP philosophy quote. Page currently labels the 2026-2027 cycle (living page rolled forward).”
+- <https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign=> — resolve:scorecard, resolve
+    - “College Scorecard located”
+- <https://dmi.illinois.edu/stuenr/index.htm> — verify:freshman_retention_rate
+    - “UIUC DMI Student Enrollment index page; used to obtain the exact official URL for the 2024-25 CDS xlsx file.”
+- <https://education.illinois.edu/about/news-events/news/article/2026/03/03/as-u.-of-i.-admissions-become-increasingly-competitive--illinois-residents-retain-edge> — section:strategic_profile
+    - “Fetched successfully. Primary source for admissions_philosophy (whole-context holistic review, Sara Hanson quote), selectivity trend (63.3% 2020 to 36.6% 2025), and in-state edge (49.3% / 29% / 30.5%, ~71.5% in-state freshmen) for the 2024-”
+- <https://grainger.illinois.edu/admissions/undergraduate/faq> — section:application_strategy
+    - “PRIMARY official source for engineering tactics. Verbatim: 'Listing a second choice major is in your best interest...', the named adjacent-major substitutions (Engineering Mechanics, Industrial Engineering, Systems Engineering and Design, A”
+- <https://html.duckduckgo.com/html/?q=niche+University+of+Illinois+Urbana-Champaign+student+reviews+academics+campus+rigorous+competitive> — section:student_insights
+    - “Partial — surfaced Niche summary language (strong eng/CS programs, accessible professors, college-town vibe) but few individual review quotes.”
+- <https://html.duckduckgo.com/html/?q=reddit+r%2FUIUC+chance+me+CS+engineering+GPA+rank+extracurriculars+accepted> — section:student_insights
+    - “Surfaced Reddit snippets: STEM middle-50 ~1430-1530/32-35, sample applicant ECs (speech, MSA volunteering, debate, lit magazine, coding club), pre-engineering transfer note.”
+- <https://html.duckduckgo.com/html/?q=reddit+UIUC+admissions+how+to+get+in+CS+engineering+essay+activities+major> — section:student_insights
+    - “Surfaced real Reddit snippets: r/ApplyingToCollege 'essay and fit' deciding quote, 'essays make a huge difference', r/UIUC summer camp essay advice.”
+- <https://html.duckduckgo.com/html/?q=reddit+UIUC+admissions+red+flag+mistake+rejected+out+of+state+wrong+major+test+optional> — section:student_insights
+    - “Surfaced red-flag quotes: bio major in-state still rejected, 'UIUC likes test scores' sub-1530 rejected from CS/CS+X, test-optional risk, competitiveness rising.”
+- <https://html.duckduckgo.com/html/?q=reddit+UIUC+common+activities+research+RSO+clubs+hackathon+HackIllinois+resume+CS+engineering> — section:student_insights
+    - “Confirmed RSOs ('Join an RSO' standard advice) and HackIllinois (36-hour hackathon) as common activities.”
+- <https://html.duckduckgo.com/html/?q=reddit+UIUC+CS+admissions+apply+early+action+second+choice+major+strategy+advice> — section:student_insights
+    - “Surfaced Reddit threads on first vs second choice major, CS+X RD vs CS EA, rising competitiveness.”
+- <https://html.duckduckgo.com/html/?q=reddit+UIUC+CS+admissions+file+essay+made+difference+research+hackathon+projects> — section:student_insights
+    - “Surfaced 'I read my admissions file' quotes confirming essay was decisive; admitted near deadline.”
+- <https://illinisuccess.illinois.edu/23-24-vertical-report> — section:outcomes_extra
+    - “Official UIUC Illini Success outcomes report for Aug2023/Dec2023/May2024 cohorts: 67% knowledge rate, 90% first destination, 50% employed, 40% continuing education, top employers (Amazon, PwC, UIUC, Deloitte, KPMG 30+ hires). Used as the al”
+- <https://mechse.illinois.edu/news/university-illinois-ranked-near-top-worldE28099s-best-universities-engineeringtechnology-and-compute> — section:strategic_profile
+    - “Informed market_position engineering reputation (ARWU third in engineering/technology and computer sciences) via search summary.”
+- <https://nces.ed.gov/collegenavigator/?id=145637> — resolve
+    - “NCES College Navigator. Fetched: confirmed official name 'University of Illinois Urbana-Champaign', address '601 E John Street, Champaign, Illinois 61820-5711', and '4-year, Public'. Cross-confirms IPEDS UnitID 145637 on name+city+state.”
+- <https://nces.ed.gov/ipeds/dfr/2024/ReportHTML.aspx?unitId=145637> — resolve
+    - “IPEDS 2024 Data Feedback Report for unitId 145637; confirms UnitID is current for the 2024 cycle.”
+- <https://nces.ed.gov/ipeds/reported-data/145637> — resolve
+    - “IPEDS reported-data page keyed to unitId 145637; corroborates the UnitID for this institution.”
+- <https://news.illinois.edu/illini-success-report-highlights-increase-in-employment-starting-salaries-among-recent-illinois-graduates/> — section:outcomes_extra
+    - “PRIMARY source. Most recent Illini Success report (Aug2024/Dec2024/May2025 grads): 93% first destination, 58% started job, 34% additional education, <1% volunteer; top employers (10+ hires) list; avg salary $79,516. Provided employment_rate”
+- <https://registrar.illinois.edu/academic-records/trans-credit/> — section:credit_policies
+    - “Official Office of the Registrar transfer-credit page — verbatim Transferology use, 'do not constitute a contract' caveat, contact-college-office requirement, official-transcript requirement.”
+- <https://talk.collegeconfidential.com/t/chance-me-for-admission-into-uiuc-cs-international-student-3-67-gpa-1480-sat/3624479> — section:student_insights
+    - “Fetched directly — quotes on international/OOS being very tough, middle-50% GPA 3.76-4.0, math awards may help.”
+- <https://talk.collegeconfidential.com/t/uiuc-computer-engineering-chances/2060506> — section:student_insights
+    - “Fetched directly — verbatim quotes on Grainger <20% admit, major-by-major selectivity (CS/Mech/Bio very selective, EE/CE one tier down), OOS no financial aid, STEM hard for Asian males, reach for everyone.”
+- <https://talk.collegeconfidential.com/t/uiuc-ea-major-selection/3675220> — section:student_insights
+    - “Fetched directly — quotes on first vs second choice major strategy, Grainger 24.2% / CS+X 18.1% for class of 2028, not a safety for OOS, supplementals important.”
+- <https://www.admissions.illinois.edu/> — resolve:admissions, resolve, section:application_process
+    - “official admissions page”
+- <https://www.admissions.illinois.edu/apply/freshman/college-credit> — section:credit_policies
+    - “Official admissions College Credit page — verbatim philosophy quotes ('don't provide automatic credit'; AP/IB credit overview); also A-Level 'grade of C or better' note (not used in output).”
+- <https://www.admissions.illinois.edu/Apply/Freshman/dates> — section:application_process
+    - “Official deadlines page. Source for EA Nov 1 / RD Jan 5 month-day and 'Early action is non-binding' quote. CAVEAT: currently renders the Fall 2026 cycle (notification Jan 30 / Mar 6), NOT Fall 2024, so notification/commitment dates were not”
+- <https://www.admissions.illinois.edu/apply/freshman/decisions> — section:application_strategy
+    - “Official source for the first-choice waitlist behavior: admitted to alternate but still wait-listed for first choice; notified if space opens even after declining alternate.”
+- <https://www.admissions.illinois.edu/Apply/Freshman/process> — section:application_process
+    - “Official. Source for platform (Common App) and all program-specific supplemental requirements (Art & Design portfolio, Dance audition, Music audition/interview, Theatre interview+audition/portfolio, required writing prompts). Quoted verbati”
+- <https://www.admissions.illinois.edu/apply/transfer/gpa-guidelines> — section:academic_structure
+    - “Off-campus transfer GPA guideline range 2.0-3.5; specific figures for Gies/Grainger (3.5), Landscape Architecture & Sustainable Design (2.5), Social Work (2.5), Psychology (3.0), CS combos (3.5), Early Childhood (2.0). Recorded in pathway t”
+- <https://www.admissions.illinois.edu/apply/transfer/process> — section:academic_structure
+    - “VERBATIM list of majors unavailable as a second choice: all Gies, all Grainger, all CS+X, all X+Data Science, all Music except Music BA, and three ACE economics programs.”
+- <https://www.admissions.illinois.edu/apply/transfer/transferring-credit> — section:credit_policies
+    - “Official admissions Transferring Credit page — verbatim Transferology tool, 'no cap' on hours, 45-hour/21-upper-level residency rule, grade-forgiveness-not-honored, transcript requirements.”
+- <https://www.admissions.illinois.edu/faq/advanced-placement> — section:credit_policies
+    - “Official admissions AP FAQ — verbatim AP usage categories (major/Gen Ed/elective), annual department review, Seminar vs Psychology examples.”
+- <https://www.admissions.illinois.edu/faq/applicant-freshman> — section:application_strategy
+    - “PRIMARY official source. Verbatim: second-choice helps not hurts, full exclusion list of majors not available as second choice, second-choice essay requirement, and the non-resident Undeclared/Exploratory Studies space-constraint caveat. Fe”
+- <https://www.admissions.illinois.edu/invest/financial-aid> — resolve:financial_aid, resolve, section:financials
+    - “financial-aid page”
+- <https://www.admissions.illinois.edu/invest/scholarships> — section:financials
+    - “Admissions scholarships page. Quote on how scholarships are 'generally awarded on a variety of factors'; automatic merit consideration on admission; links to OSFA merit database.”
+- <https://www.admissions.illinois.edu/policies> — section:academic_structure
+    - “VERBATIM restricted-college quote: Gies Business and Grainger Engineering only accept off-campus transfers directly; no on-campus transfer into those colleges. Basis for restricted/direct-admit flags.”
+- <https://www.collegetransitions.com/blog/uiuc-supplemental-essays/> — section:student_insights
+    - “Fetched directly — exact prompt wording, 'cite specific programs/professors', fit framing, essays rated 'important'.”
+- <https://www.dmi.illinois.edu/stuenr/> — resolve, verify:act_composite_middle_50, verify:out_of_state_tuition, section:financials
+    - “UIUC Division of Management Information (official institutional research office) student enrollment page; listed the full CDS file index including the direct 2024-2025 xlsx link.”
+- <https://www.hpcwire.com/off-the-wire/ncsa-marks-one-year-of-illinois-computes-celebrating-over-230-new-research-projects-and-expansive-growth/> — section:strategic_profile
+    - “Informed research_impact via search summary: 250+ new research projects, 10 colleges leveraging Illinois Computes by 2024.”
+- <https://www.ncsa.illinois.edu/2023/04/05/uiuc-u-of-i-system-commit-50-million-to-support-ncsa-services-for-campus-researchers/> — section:strategic_profile
+    - “Informed research_impact via search summary: Illinois Computes $30M UIUC + $20M system = $50M commitment.”
+- <https://www.niche.com/colleges/university-of-illinois-urbana-champaign/> — section:student_insights
+    - “Niche main page via WebSearch summary — confirmed avg ~3.8 stars across 5,221 reviewers and that admission is competitive for Engineering/Business, must declare major, transfers difficult.”
+- <https://www.niche.com/colleges/university-of-illinois-urbana-champaign/campus-life/> — section:strategic_profile
+    - “Informed campus_dynamics.social_environment via WebSearch summary (Greek life prominence, vibrant orgs, isolation concern, on/off-campus split). Attributed as search summary, not independently fetched.”
+- <https://www.osfa.illinois.edu/types-of-aid/scholarships/merit-based-scholarships/> — section:financials
+    - “OSFA merit-based scholarships page. Named scholarships and amounts (Illinois Achievement $10,000, Stamps up to COA, Provost full tuition, PAP up to $5,000 / PAP Honors up to $10,000, Anthony & Blackshear full tuition+fees, Matthews Scholars”
+- <https://www.usnews.com/best-graduate-schools/top-computer-science-schools/university-of-illinois-at-urbana-champaign-43032> — section:strategic_profile
+    - “Informed market_position #5 CS claim via WebSearch summary; not independently fetched and not used for the us_news_rank FACT field (which is undergraduate National Universities rank, left null).”
+
+## 3. Consulted but NOT used — with reason (90)
+- <http://timetravel.mementoweb.org/api/json/20231015000000/https://www.admissions.illinois.edu/Apply/Freshman/dates> — section:application_process — Memento Time Travel aggregator to find a Fall-2024 archived snapshot — connection refused (ECONNREFUSED).
+- <http://web.archive.org/web/20230928065543/https://www.admissions.illinois.edu/apply/freshman/dates> — section:application_process — Direct Fall-2023 snapshot fetch — blocked (web.archive.org unreachable).
+- <https://admissionsight.com/uiuc-acceptance-rate/> — verify:overall_acceptance_rate — Third-party admissions-consulting page returned by search; not used.
+- <https://admissionsight.com/uiuc-early-action-and-regular-decision-deadlines-2023-2024/> — section:application_process — Third-party. Despite the '2023-2024' URL slug it describes the Class of 2029 / Fall 2025 cycle; confirmed Common App + EA non-binding but not used for Fall 2024 dates (wrong cycle, non-official).
+- <https://amberstudent.com/blog/post/university-of-illinois-urbana-champaign-scholarships> — section:financials — Third-party blog; not used.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=145637&fields=...out_of_state...> — verify:out_of_state_tuition — College Scorecard API (independent canonical source). Returned out_of_state=35124, in_state=16004, but academic_year field not returned and reflects Scorecard's 'latest' reporting year (lags the CDS /
+- <https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/1192> — section:credit_policies — College Board search-policies page, not a UIUC official page — not fetched/used.
+- <https://archive.ph/https://www.admissions.illinois.edu/Apply/Freshman/dates> — section:application_process — archive.ph snapshot list — blocked (archive.ph unreachable).
+- <https://blog.admissions.illinois.edu/applying-to-uiuc/> — section:application_strategy — Returned HTTP 404 Not Found — could not be fetched, contributed nothing.
+- <https://blog.collegevine.com/what-does-it-take-to-get-into-the-university-of-illinois-urbana-champaign> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, section:application_process — Third-party blog (CollegeVine) returned by search; not a canonical source, not fetched/used.
+- <https://catalog.illinois.edu/minors/> — section:academic_structure — HTTP 404 — dedicated minors index not at this path; full minors/certificates list therefore NOT compiled (only the two 'Minor only' programs from the index are included).
+- <https://catalog.illinois.edu/schools/engineering/> — section:academic_structure — Correct Grainger catalog URL identified via search but not separately fetched; engineering major list already verified from the undergraduate index.
+- <https://catalog.illinois.edu/schools/grainger-engineering/> — section:academic_structure — HTTP 404 — wrong slug; correct path is /schools/engineering/ (found via search but not separately fetched; major list already obtained from the undergraduate index).
+- <https://catalog.illinois.edu/undergraduate/business/> — section:academic_structure — HTTP 404 — page does not exist at this path.
+- <https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/cutoff-scores-archives/cutoffs-2024-2025/2024-advanced-placement-program> — section:credit_policies — Archive-path variant for the 2024 AP cutoffs — also redirected to the current landing page; no 2024 verbatim content retrieved.
+- <https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/cutoffs-2024-2025/2024-advanced-placement-program> — section:credit_policies — Attempted year-stamped 2024-2025 AP cutoffs page — redirected to the current Placement & Proficiency landing page (Summer 2026/Fall 2026/Spring 2027), did not serve 2024 archive content. Could not pin
+- <https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/cutoffs-2024-2025/2024-international-baccalaureate-program> — section:credit_policies — 2024 IB program path — returned only a link to the IB Program 2026 page, no policy body.
+- <https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/proficiency-testing/advanced-placement-(ap)-credit> — section:credit_policies — First AP URL attempt — page returned only a link to the AP credit page, no policy body. Superseded by the redirect-target URL below.
+- <https://citl.illinois.edu/international-baccalaureate-ib-program-2024> — section:credit_policies — Direct 2024 IB program short URL — HTTP 404.
+- <https://citl.illinois.edu/test-placement-proficiency/current-cutoffs/advanced-placement-program> — section:credit_policies — AP current-cutoffs URL guess — HTTP 404.
+- <https://collegegazette.com/uiuc-transfer-acceptance-rate-gpa-requirements/> — section:application_strategy — Third-party transfer-stats blog; not used — internal-transfer caveat sourced from official Grainger advising page.
+- <https://collegereadyparent.org/university-of-illinois-scholarships/> — section:financials — Third-party scholarship blog; not used — relied on official OSFA and admissions pages.
+- <https://collegescorecard.ed.gov/school?145637-University-of-Illinois-Urbana-Champaign> — verify:graduation_rate_6_year — College Scorecard listed as alternative canonical source; not fetched because the primary canonical source (official UIUC 2024-2025 CDS xlsx) was successfully obtained and parsed with an exact verbati
+- <https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign> — anchor, verify:out_of_state_tuition, section:outcomes_extra — JavaScript-rendered profile page returned only nav/header via WebFetch; no data extractable. Switched to the Scorecard API instead.
+- <https://collegescorecard.ed.gov/v1/?api_key=DEMO_KEY&id=145637&fields=...> — anchor — Initial Scorecard API URL guess returned HTTP 404; corrected to the api.data.gov endpoint which succeeded.
+- <https://collegewiz.com/uiuc-acceptance-rate/> — section:student_insights — Search result only; not a community source, not fetched.
+- <https://dailyillini.com/news-stories/university-news/2026/03/02/ui-increasingly-competitive/> — section:strategic_profile — Daily Illini coverage of the same competitiveness story — returned HTTP 403 Forbidden; not retrievable. The Illinois College of Education article covered the same material.
+- <https://datausa.io/profile/university/university-of-illinois-urbana-champaign> — verify:freshman_retention_rate — Appeared in search; a search-summary mentioned a rounded '95%' retention with no cited cycle. Not fetched/used — not canonical and not cycle-pinned to the 2024-2025 CDS.
+- <https://dmi.illinois.edu/> — verify:sat_composite_middle_50 — DMI institutional research landing page; used to confirm DMI is the official IR office hosting the CDS, but no SAT figure on it directly.
+- <https://en.wikipedia.org/wiki/University_of_Illinois_Urbana-Champaign> — resolve, verify:act_composite_middle_50 — Wikipedia; not used as an authoritative source for any reported value.
+- <https://enrollmentmanagement.illinois.edu/reports-data/> — verify:graduation_rate_6_year, section:application_process — UIUC Enrollment Management reports page. Checked for a CDS link but it only lists 10th-Day Enrollment Reports, not the Common Data Set. No graduation-rate figure taken.
+- <https://gary-app.datausa.io/profile/university/university-of-illinois-urbana-champaign> — section:outcomes_extra — Search snippet reported 0% default rate for FY2020 (0 of 5,833 borrowers). Rejected — FY2020 was distorted by the COVID repayment moratorium and conflicts with CollegeFactual's 2.9%; not a reliable si
+- <https://giesbusiness.illinois.edu/apply/admissions/intercollegiate-transfer-(ict)> — section:academic_structure — Appeared in search results describing Gies ICT as holistic with no fixed cutoff; not fetched/quoted directly, so not used as a sourced value.
+- <https://innovatives.blog/uiuc-ap-scores-credit-guide> — section:credit_policies — Third-party blog, not an official UIUC page — rejected per official-source-only rule.
+- <https://music.illinois.edu/admissions/undergraduate-programs-and-application/application-process/undergraduate-applicant-important-dates/> — section:application_process — School of Music dates (2025-26 cycle); not used — supplemental Music requirement taken from the central /process page.
+- <https://nces.ed.gov/ipeds/dfr/2021/ReportPDF.aspx?unitId=145637> — resolve — 2021 IPEDS DFR; older cycle, only used to corroborate the UnitID, not for any figure.
+- <https://nextgenadmit.com/university-of-illinois-urbana-champaign-admission-statistics/> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, section:application_process — Third-party admissions stats blog; rejected as non-authoritative.
+- <https://orieladmissions.com/how-to-get-into-uiuc-for-engineering/> — section:application_strategy — Third-party admissions-consulting blog; appeared in search but not fetched/quoted — all tactics sourced from official UIUC pages instead.
+- <https://prpa.illinoisstate.edu/downloads/CDS-2024-2025_ISU_FINAL.pdf> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate — This is Illinois STATE University's CDS, not UIUC. Wrong institution; rejected.
+- <https://registrar.illinois.edu/academic-calendars/fall-academic-calendar-24> — section:application_process — Appeared in search (academic calendar, not admissions deadlines); not used.
+- <https://registrar.illinois.edu/tuition-fees/tuition-fee-rates/tf-rates-term/ug-tuition-cr-2425/> — verify:out_of_state_tuition — Registrar Fall 2024 & Spring 2025 undergrad rates by credit range — found via search, not fetched (CDS already authoritative).
+- <https://registrar.illinois.edu/ug-tuition-rates-2425/> — verify:out_of_state_tuition — UIUC Registrar 2024-2025 undergrad tuition rates page; figures are behind a cost-calculator (cost.illinois.edu), no numeric values rendered in fetched HTML. Could not extract a verbatim figure; not us
+- <https://research.com/best-colleges/university-of-illinois-urbana-champaign/graduation-rate-and-career> — verify:graduation_rate_6_year — Aggregator surfaced in scorecard search; not used.
+- <https://scholarships360.org/colleges/illinois/university-of-illinois-urbana-champaign/> — section:financials — Third-party aggregator; not used.
+- <https://talk.collegeconfidential.com/t/uiuc-engineering-chances/1551727> — section:student_insights — Fetched but page content was unrelated (LACs for education majors / Jewish population) — wrong/stale thread, rejected.
+- <https://transferology.com/school/illinois> — section:credit_policies — Transferology landing for UIUC — third-party tool page, used only to confirm the tool name (the official UIUC pages already cite Transferology); not quoted.
+- <https://waf.collegedata.com/college-search/university-of-illinois-at-urbana-champaign> — verify:act_composite_middle_50 — CollegeData overview; not fetched — secondary aggregator.
+- <https://waf.collegedata.com/college-search/university-of-illinois-at-urbana-champaign/admission> — verify:overall_acceptance_rate — Third-party CollegeData aggregator returned by search; not canonical, not used.
+- <https://web.archive.org/web/2023*/https://www.admissions.illinois.edu/Apply/Freshman/dates> — section:application_process — Wayback calendar query — blocked (web.archive.org unreachable).
+- <https://web.archive.org/web/20230928065543/https://www.admissions.illinois.edu/apply/freshman/dates> — section:application_process — Sept 2023 Wayback snapshot that WOULD pin the Fall 2024 official deadlines — but web.archive.org fetches are blocked in this environment, so it could not be retrieved.
+- <https://web.archive.org/web/20231101000000*/admissions.illinois.edu/Apply/Freshman/dates> — section:application_process — Wayback wildcard query — blocked.
+- <https://www.admissions.illinois.edu/apply/freshman/admit-rate> — verify:overall_acceptance_rate — Official UIUC admit-rate page, but it currently shows the Fall 2025 cycle ('Following are our first-year admit rates for 2025' — Total Admit Rate 36.6%), NOT Fall 2024. Rejected for the target cycle; 
+- <https://www.admissions.illinois.edu/apply/freshman/college-credit-ib> — section:credit_policies — Admissions IB page — 301-redirects to the CITL current-cutoffs hub (already captured); no separate content.
+- <https://www.admissions.illinois.edu/apply/freshman/profile> — verify:sat_composite_middle_50 — Official UIUC admissions page, but gives middle 50% of ADMITTED students (1420-1540) averaged over the past three years, not the Fall 2024 enrolled-first-year CDS figure. Wrong population and wrong (m
+- <https://www.admissions.illinois.edu/apply/freshman/requirements> — section:academic_structure — Fetched to confirm direct-admit and audition/portfolio requirements; page did not contain quotable text on direct admission or supplemental review, so no verbatim claim drawn from it.
+- <https://www.admissions.illinois.edu/Apply/Freshman/requirements> — section:application_process — Official requirements page; listed general required materials but contained no program-specific supplemental detail — superseded by the /process page which had it explicitly.
+- <https://www.admissions.illinois.edu/invest/tuition> — verify:out_of_state_tuition — UIUC Admissions tuition page — shows 2025-2026 cycle only ('Tuition & Fees: $38,398-$46,498' nonresident), not the 2024-2025 target cycle. Rejected for cycle mismatch.
+- <https://www.admitodds.com/blog/chances-of-getting-into-uiuc> — section:application_strategy — Third-party odds blog surfaced in search; not fetched or quoted.
+- <https://www.bing.com/search?q=reddit+r%2FUIUC+how+to+get+in+CS+engineering+admissions+advice+activities+essay> — section:student_insights — Returned only generic Bing/Reddit chrome, no usable thread snippets.
+- <https://www.collegeadvisor.com/how-to-get-into/how-to-get-into-uiuc-guide/> — section:student_insights, section:application_strategy — Appeared in search results; not fetched — third-party advice blog, not a community/crowdsourced source per task scope.
+- <https://www.collegefactual.com/colleges/university-of-illinois-at-urbana-champaign/academic-life/academic-majors/> — resolve — Third-party majors aggregator; rejected in favor of the official catalog index.
+- <https://www.collegefactual.com/colleges/university-of-illinois-at-urbana-champaign/paying-for-college/student-loan-debt/> — section:outcomes_extra — States '2-year cohort default rate: 2.9%' over 5,535 borrowers but does NOT specify the fiscal/cohort year. Rejected — cannot pin to a cycle; conflicts with other sources.
+- <https://www.collegesimply.com/colleges/illinois/university-of-illinois-at-urbana-champaign/> — resolve — Third-party aggregator; rejected as non-authoritative.
+- <https://www.collegetuitioncompare.com/edu/145637/university-of-illinois-at-urbana-champaign/graduation/> — verify:graduation_rate_6_year — Third-party aggregator surfaced in search; stated 85% six-year rate. Consistent with the official figure but NOT relied upon (non-canonical, no cycle precision).
+- <https://www.collegetuitioncompare.com/edu/145637/university-of-illinois-at-urbana-champaign/tuition/> — verify:out_of_state_tuition — Third-party aggregator; not canonical, not used.
+- <https://www.collegevine.com/faq/30742/uiuc-in-state-acceptance-rate> — section:strategic_profile — Surfaced in search on in-state vs out-of-state rates; superseded by the more authoritative Illinois College of Education article; not fetched.
+- <https://www.collegevine.com/faq/98102/deadlines-for-uiuc-applications> — section:application_process — Third-party FAQ; ~2022, no cycle pin (EA Nov 1 / RD Jan 5 generically). Not used — corroboration only, not official and not Fall-2024-specific.
+- <https://www.collegevine.com/faq/98104/uiuc-deadline-clarification> — section:application_process — Appeared in search results; not fetched/used — third-party, no Fall-2024 official pin.
+- <https://www.dmi.illinois.edu/cds/> — verify:sat_composite_middle_50 — Guessed CDS index path; returned HTTP 404. Not used.
+- <https://www.dmi.illinois.edu/cp/> — verify:act_composite_middle_50 — 2025-2026 Campus Profile (Campus Total) appeared in search results; not fetched — wrong cycle (2025-2026) and the CDS XLSX is the more canonical source for the 2024-2025 figure.
+- <https://www.dmi.illinois.edu/DMI_Surveys.html> — resolve — DMI Institutional Surveys page; only linked to the CDS section anchor, not the per-year file list. The /stuenr/ page had the direct file links instead.
+- <https://www.dmi.illinois.edu/factsfigures.htm> — resolve — DMI facts & figures landing page; not needed once the direct CDS xlsx index was found.
+- <https://www.dmi.illinois.edu/stuenr/misc/cds_2023_2024.xlsx> — resolve, verify:freshman_retention_rate — Prior-cycle (2023-2024) CDS surfaced in search; superseded by the confirmed 2024-2025 file.
+- <https://www.fox32chicago.com/news/illinois-universities-featured-2025-u-s-news-best-colleges-rankings> — section:strategic_profile — Surfaced in search as reporting 2025 US News rankings, but a news article is not a US News page so it cannot satisfy the rank-source rule; not fetched.
+- <https://www.google.com/search?q=site:reddit.com+r/UIUC+how+to+get+in+CS+engineering+GPA+activities+essay> — section:student_insights — Blocked by EU consent.google.com redirect; could not retrieve.
+- <https://www.gradgpt.com/common-data-set/university-of-illinois-at-urbana-champaign> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, section:application_process, section:financials — Third-party CDS aggregator; rejected — not an authoritative/official source.
+- <https://www.insidehighered.com/admissions/article/2022/10/03/some-universities-admit-major> — section:application_strategy — Third-party context confirming UIUC admits by major and Grainger overall ~21% vs General Studies ~49%; not used for any reported value because I preferred official UIUC sources and did not need the ra
+- <https://www.niche.com/colleges/university-of-illinois-urbana-champaign/admissions/> — section:student_insights — Niche admissions page — HTTP 403 Forbidden to direct WebFetch.
+- <https://www.niche.com/colleges/university-of-illinois-urbana-champaign/rankings/> — section:strategic_profile — Niche rankings — not a US News page and not independently fetched; only informed general context via search summary.
+- <https://www.niche.com/colleges/university-of-illinois-urbana-champaign/reviews/> — section:student_insights — Niche student reviews page — target source, but returned HTTP 403 Forbidden to direct WebFetch; could not read.
+- <https://www.osfa.illinois.edu/cost/undergraduate-cost/undergraduate-non-resident-cost/> — verify:out_of_state_tuition — UIUC Office of Student Financial Aid non-resident cost page — found via search, not fetched; CDS already provided the verbatim figure.
+- <https://www.quadeducationgroup.com/blog/how-to-get-into-uiuc> — section:student_insights — Search result only; third-party advisory blog, not crowdsourced community, not used.
+- <https://www.quora.com/At-UIUC-if-you-are-admitted-to-your-2nd-choice-major-do-they-put-in-a-waiting-list-for-the-1st-choice-major-and-then-automatically-offer-you-the-first-choice-major-in-case-spots-open-up> — section:application_strategy — User-generated Quora thread on the first-choice waitlist question; not used — verified the same fact from the official Decisions page instead.
+- <https://www.quora.com/Do-people-apply-to-less-competitive-majors-at-UIUC-engineering-Industrial-Agricultural-Systems-etc-with-the-intention-of-switching-into-more-competitive-majors-mechanical-CS-Computer-Engineering> — section:application_strategy — Quora thread describing the back-door switch strategy; informed my decision to add a caveat, but the caveat itself is grounded in the official Grainger changing-majors page, not this thread.
+- <https://www.univstats.com/colleges/university-of-illinois-at-urbana-champaign/cost-of-attendance/> — verify:out_of_state_tuition — Third-party aggregator (search result) quoting $40,096 out-of-state tuition+fees 2024-2025; not a canonical primary source and bundles fees, so rejected.
+- <https://www.univstats.com/colleges/university-of-illinois-at-urbana-champaign/graduation-rate/> — verify:graduation_rate_6_year — Third-party aggregator (univstats); cited 6,464/7,593 within 150% time. Numbers match the official CDS but not relied upon as a primary source.
+- <https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775> — resolve, section:strategic_profile — US News profile; rejected as non-authoritative/paywalled aggregator.
+- <https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775/applying> — section:strategic_profile — US News applying sub-page — timed out; not retrievable.
+- <https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775/overall-rankings> — section:strategic_profile — US News overall-rankings sub-page — also timed out repeatedly; not retrievable.
+- <https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775/paying> — section:financials — Attempted fetch timed out (60s). Not needed — official CDS provided all figures directly.

@@ -1,0 +1,2273 @@
+{
+  "trust_report": {
+    "university": "University of Illinois Urbana-Champaign",
+    "id": "university_of_illinois_urbana_champaign",
+    "cycle": "Fall 2024",
+    "cds_edition_used": "2024-2025",
+    "ipeds_unitid": "145637",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 33,
+      "held_null": 15
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 29,
+      "conflict_nulled": 1,
+      "unverified_nulled": 14,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "UNVERIFIED",
+        "out_of_state_acceptance_rate": "UNVERIFIED",
+        "transfer_acceptance_rate": "UNVERIFIED",
+        "international_acceptance_rate": "UNVERIFIED",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CORROBORATED",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CORROBORATED",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "UNVERIFIED",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "UNVERIFIED",
+        "graduation_rate_6_year": "CANONICAL_SINGLE",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "CANONICAL_SINGLE",
+        "total_coa_out_of_state": "CANONICAL_SINGLE",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 145,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 42.37,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 42.37,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C117 Total first-time, first-year students who applied = 73742; C118 Total first-time, first-year students who were admitted = 31247 (31247/73742 = 42.37%). Confirmed by College Scorecard latest.admissions.admission_rate.overall = 0.4237.",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "in_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "transfer_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 73742,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C117 | Total first-time, first-year students who applied | 73742",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 31247,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C118 | Total first-time, first-year students who were admitted | 31247",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9008,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C119 | Total first-time, first-year students who enrolled | 9008",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 28.83,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "Computed from CDS-C cells: C119 enrolled 9008 / C118 admitted 31247 = 28.83% yield.",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9008,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C119 | Total first-time, first-year students who enrolled | 9008 (entering first-year class size).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "1390-1520",
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C905 SAT Composite: 25th Percentile = 1390; C907 SAT Composite: 75th Percentile = 1520",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "680-750",
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C908 SAT Evidence-Based Reading and Writing: 25th Percentile = 680; C910 75th Percentile = 750",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "700-790",
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C911 SAT Math: 25th Percentile = 700; C913 SAT Math: 75th Percentile = 790",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "act_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "30-34",
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C914 ACT Composite: 25th Percentile = 30; C916 ACT Composite: 75th Percentile = 34",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 55.61,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C901 Submitting SAT Scores = 0.4128 (41.28%) and C902 Submitting ACT Scores = 0.1433 (14.33%); combined share submitting SAT and/or ACT = 55.61%.",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 34.55,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B204 White, non-Hispanic = 3112 of B210 TOTAL = 9008 first-time first-year enrolled (3112/9008 = 34.55%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.92,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B203 Black or African American, non-Hispanic = 443 of TOTAL 9008 (443/9008 = 4.92%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 15.92,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B202 Hispanic/Latino = 1434 of TOTAL 9008 (1434/9008 = 15.92%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 23.9,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B206 Asian, non-Hispanic = 2153 of TOTAL 9008 (2153/9008 = 23.90%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.03,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B205 American Indian or Alaska Native, non-Hispanic = 3 of TOTAL 9008 (3/9008 = 0.03%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.02,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B207 Native Hawaiian or other Pacific Islander, non-Hispanic = 2 of TOTAL 9008 (2/9008 = 0.02%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.35,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B208 Two or more races, non-Hispanic = 392 of TOTAL 9008 (392/9008 = 4.35%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2.43,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B209 Race and/or ethnicity unknown = 219 of TOTAL 9008 (219/9008 = 2.43%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.88,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B201 Nonresidents (international) = 1250 of TOTAL 9008 first-time first-year enrolled (1250/9008 = 13.88%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.88,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B201 Nonresidents = 1250 of B210 TOTAL 9008 first-time first-year enrolled (1250/9008 = 13.88%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 94.8,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "B2201 | For the cohort of all full-time bachelor's degree-seeking undergraduate students who entered ... as first-year students in Fall 2023 ..., what percentage was enrolled ... in Fall 2024 | 0.948 (94.8%).",
+      "as_of_cycle": "Fall 2023 cohort retained to Fall 2024 (CDS 2024-2025)"
+    },
+    "graduation_rate_4_year": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "graduation_rate_6_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 85.13,
+      "source": "University of Illinois Urbana-Champaign \u2014 2024-2025 Common Data Set, Section B (Enrollment and Persistence), item \"Six-year graduation rate for 2018 cohort (G divided by C)\" (CDS B11), official xlsx published by UIUC Division of Management Information (DMI)",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "Six-year graduation rate for 2018 cohort (G divided by C) | Total = 0.85131041699999999  [cell B432; numerator \"Total graduating within six years (sum of lines D, E, and F)\" Total = 6464 (B428); denominator \"Final 2018 cohort, after adjusting for allowable exclusions\" Total = 7593 (B412); 6464/7593 = 0.85131]. Section header: \"Initial 2018 cohort of first-time, full-time, bachelor's (or equivalent) degree-seeking undergraduate students\"; completion measured \"(after Aug. 31, 2023 and by Aug. 31, 2024)\".",
+      "as_of_cycle": "Fall 2024 reporting (2024-2025 Common Data Set); graduation-rate cohort = first-time full-time bachelor's-seeking students who entered Fall 2018, measured through Aug. 31, 2024"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 12992,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "CDS-G G104 Tuition: In-state (out-of-district) = 12992 (G002 marks 2025-2026 costs as not yet available, so the populated G1 column reflects 2024-2025).",
+      "as_of_cycle": "2024-2025 (CDS 2024-2025)"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "33344",
+        "verifier": "$33,344"
+      }
+    },
+    "total_coa_in_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 36932,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "Sum of CDS-G components: G104 in-state tuition 12992 + G111 required fees 5056 + G112 food and housing 15184 + G501 books/supplies 1200 + G502 transportation 500 + G503 other expenses 2000 = 36932.",
+      "as_of_cycle": "2024-2025 (CDS 2024-2025)"
+    },
+    "total_coa_out_of_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 57284,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "Sum of CDS-G components: G105 out-of-state tuition 33344 + G111 required fees 5056 + G112 food and housing 15184 + G501 books/supplies 1200 + G502 transportation 500 + G503 other expenses 2000 = 57284.",
+      "as_of_cycle": "2024-2025 (CDS 2024-2025)"
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 81054,
+      "source": "U.S. Dept of Education College Scorecard (API id=145637)",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=145637&fields=school.name,latest.earnings.10_yrs_after_entry.median",
+      "quote": "College Scorecard API returned: \"latest.earnings.10_yrs_after_entry.median\":81054 for \"school.name\":\"University of Illinois Urbana-Champaign\".",
+      "as_of_cycle": "Latest (College Scorecard)"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "true",
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C802 SAT or ACT = 'Not required for admission, but considered if submitted'; C8F clarification = 'test optional'.",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "Test optional: SAT/ACT not required for admission, but considered if submitted",
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C801 'Does your institution make use of SAT or ACT scores in admission decisions ...' = Y; C802/C803/C804 = 'Not required for admission, but considered if submitted'; C8F = 'test optional'.",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2794,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C202 | Number of qualified applicants offered a place on waiting list: | 2794",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1874,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C203 | Number accepting a place on the waiting list: | 1874",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "C204 | Number of wait-listed students admitted: | 1",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.05,
+      "source": "UIUC Common Data Set 2024-2025",
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "quote": "Computed from CDS-C C2: C204 wait-listed admitted 1 / C203 accepting place on waitlist 1874 = 0.05% (0.0534%).",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2024_2025.xlsx",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "admits_class_size",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "total_coa_in_state",
+        "total_coa_out_of_state",
+        "is_test_optional",
+        "test_policy_details",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "CDS located (2024-2025)",
+        "AUTHORITATIVE 2024-2025 Common Data Set. curl -I returned HTTP 200, content-type application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, 265780 bytes, last-modified Thu 15 May 2025. The actual xlsx file.",
+        "UIUC official Common Data Set 2024-2025 xlsx; downloaded and parsed sheets CDS-C (admissions, test scores, waitlist, test policy), CDS-B (race/ethnicity B201-B210, retention B2201, graduation cohorts = N/A), CDS-G (tuition/fees/COA). Source of nearly all fields.",
+        "C117 Total first-time, first-year students who applied = 73742; C118 Total first-time, first-year students who were admitted = 31247 (31247/73742 = 42.37%). Confirmed by College Scorecard latest.admissions.admission_rate.overall = 0.4237.",
+        "CDS-C subgroups C120-C131 are labeled only 'Total first-time, first-year who applied/were admitted/enrolled' with no residency (in-state/out-of-state/international) label, so an in-state acceptance rate cannot be verified from the table.",
+        "CDS-C subgroups C120-C131 carry no out-of-state label ('Total first-time, first-year who applied' only); not verifiable."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=145637&fields=school.name,latest.earnings.10_yrs_after_entry.median",
+      "roles": [
+        "anchor:median_earnings_10yr"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "College Scorecard API returned: \"latest.earnings.10_yrs_after_entry.median\":81054 for \"school.name\":\"University of Illinois Urbana-Champaign\"."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=admissions.illinois.edu/Apply/Freshman/dates&timestamp=20231101",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API (this endpoint was reachable) \u2014 returned the closest Fall-2023 snapshot URL/timestamp (20230928065543), but the snapshot itself could not be fetched."
+      ]
+    },
+    {
+      "url": "http://timetravel.mementoweb.org/api/json/20231015000000/https://www.admissions.illinois.edu/Apply/Freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Memento Time Travel aggregator to find a Fall-2024 archived snapshot \u2014 connection refused (ECONNREFUSED)."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20230928065543/https://www.admissions.illinois.edu/apply/freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct Fall-2023 snapshot fetch \u2014 blocked (web.archive.org unreachable)."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/uiuc-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions-consulting page returned by search; not used."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/uiuc-early-action-and-regular-decision-deadlines-2023-2024/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party. Despite the '2023-2024' URL slug it describes the Class of 2029 / Fall 2025 cycle; confirmed Common App + EA non-binding but not used for Fall 2024 dates (wrong cycle, non-official)."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/where-is-uiuc-located/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Informed campus_dynamics.transportation_impact via search summary (walkable campus, remote C-U location). Attributed as search summary."
+      ]
+    },
+    {
+      "url": "https://advising.grainger.illinois.edu/degree-programs/changing-majors",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Grainger advising page grounding the internal-transfer caveat: 'competitive and acceptance is not guaranteed'; second major-change requests only for majors not in high demand."
+      ]
+    },
+    {
+      "url": "https://amberstudent.com/blog/post/university-of-illinois-urbana-champaign-scholarships",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?api_key=DEMO_KEY&id=145637&fields=school.name,latest.earnings.10_yrs_after_entry.median,latest.admissions.admission_rate.overall",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API (id=145637). Returned latest.earnings.10_yrs_after_entry.median = 81054 (median_earnings_10yr) and admission_rate.overall = 0.4237 (cross-check of CDS-derived 42.37% overall acceptance)."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=145637&fields=...out_of_state...",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API (independent canonical source). Returned out_of_state=35124, in_state=16004, but academic_year field not returned and reflects Scorecard's 'latest' reporting year (lags the CDS / different fee inclusion), so not used for the Fall-2024 CDS-pinned value. Corroborates same order of magnitude."
+      ]
+    },
+    {
+      "url": "https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/1192",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Board search-policies page, not a UIUC official page \u2014 not fetched/used."
+      ]
+    },
+    {
+      "url": "https://archive.ph/https://www.admissions.illinois.edu/Apply/Freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "archive.ph snapshot list \u2014 blocked (archive.ph unreachable)."
+      ]
+    },
+    {
+      "url": "https://blog.admissions.illinois.edu/applying-to-uiuc/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Returned HTTP 404 Not Found \u2014 could not be fetched, contributed nothing."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-does-it-take-to-get-into-the-university-of-illinois-urbana-champaign",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog (CollegeVine) returned by search; not a canonical source, not fetched/used.",
+        "Third-party blog surfaced in search; not a canonical source \u2014 not consulted for the value.",
+        "CollegeVine blog; not fetched \u2014 secondary source.",
+        "Third-party admissions blog; not used \u2014 holistic factors taken from official CDS."
+      ]
+    },
+    {
+      "url": "https://blog.prepscholar.com/uiuc-essay-prompts-examples",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly \u2014 three essay tips (story not list, show passion, proofread), essay as only place to show personality, 150-word limit."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/degree-programs/undergraduate_index/",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "Official UIUC course catalog 'Undergraduate Program Index' (currently 2026-2027 edition); curl HTTP 200; lists all undergraduate majors/degree programs by college.",
+        "PRIMARY SOURCE. Official undergraduate degree-programs index (2026-2027 catalog). Provided the full list of 13 degree-granting colleges/schools and every major with degree type; also flagged Global Labor Studies and Legal Studies as 'Minor only'."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/minors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 dedicated minors index not at this path; full minors/certificates list therefore NOT compiled (only the two 'Minor only' programs from the index are included)."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/schools/engineering/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Correct Grainger catalog URL identified via search but not separately fetched; engineering major list already verified from the undergraduate index."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/schools/gies-business/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed Gies major list and 2.0 graduation GPA requirement; no direct-admit/cap text on this page (admission detail came from admissions.illinois.edu)."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/schools/grainger-engineering/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 wrong slug; correct path is /schools/engineering/ (found via search but not separately fetched; major list already obtained from the undergraduate index)."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/undergraduate/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed the roster of degree-granting colleges/schools (ACES, AHS, Business/Gies, Education, Engineering, FAA, LAS, iSchool, Media, Social Work). No admissions detail."
+      ]
+    },
+    {
+      "url": "https://catalog.illinois.edu/undergraduate/business/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 page does not exist at this path."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/cutoff-scores-archives/cutoffs-2024-2025/2024-advanced-placement-program",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Archive-path variant for the 2024 AP cutoffs \u2014 also redirected to the current landing page; no 2024 verbatim content retrieved."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/cutoffs-2024-2025/2024-advanced-placement-program",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted year-stamped 2024-2025 AP cutoffs page \u2014 redirected to the current Placement & Proficiency landing page (Summer 2026/Fall 2026/Spring 2027), did not serve 2024 archive content. Could not pin AP table to 2024 cycle from here."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/cutoffs-2024-2025/2024-international-baccalaureate-program",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2024 IB program path \u2014 returned only a link to the IB Program 2026 page, no policy body."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/citl-101/measurement-evaluation/placement-proficiency/proficiency-testing/advanced-placement-(ap)-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "First AP URL attempt \u2014 page returned only a link to the AP credit page, no policy body. Superseded by the redirect-target URL below."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/international-baccalaureate-ib-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official CITL IB credit page \u2014 corroborated mid-July score receipt, immediate posting, 'law that requires credit be awarded for IB scores of 4, 5, 6, and 7,' and confirmed no diploma bonus mentioned; page itself referenced 2023-2024 enrollment wording (living page)."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/international-baccalaureate-ib-program-2024",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct 2024 IB program short URL \u2014 HTTP 404."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/test-placement-proficiency/current-cutoffs/advanced-placement-program",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "AP current-cutoffs URL guess \u2014 HTTP 404."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/test-placement-proficiency/current-cutoffs/international-baccalaureate-ib-program",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official CITL IB current-cutoffs page \u2014 explicitly applies to Summer 2024 / Fall 2024 / Spring 2025 (= target cycle); verbatim HL/SL + scores 4-7 structure, elective-credit (1--/2--) definition, 'Only scores resulting in credit are shown,' no diploma bonus, IB philosophy quote."
+      ]
+    },
+    {
+      "url": "https://citl.illinois.edu/test-placement-proficiency/proficiency-testing/advanced-placement-ap-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official CITL AP credit page \u2014 verbatim AP general rule (law for scores 3/4/5; auto-posting), decline-credit exception, higher-placement exception, AP philosophy quote. Page currently labels the 2026-2027 cycle (living page rolled forward)."
+      ]
+    },
+    {
+      "url": "https://collegegazette.com/uiuc-transfer-acceptance-rate-gpa-requirements/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party transfer-stats blog; not used \u2014 internal-transfer caveat sourced from official Grainger advising page."
+      ]
+    },
+    {
+      "url": "https://collegereadyparent.org/university-of-illinois-scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party scholarship blog; not used \u2014 relied on official OSFA and admissions pages."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school?145637-University-of-Illinois-Urbana-Champaign",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard listed as alternative canonical source; not fetched because the primary canonical source (official UIUC 2024-2025 CDS xlsx) was successfully obtained and parsed with an exact verbatim figure for the target Fall 2024 cycle."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign",
+      "roles": [
+        "anchor",
+        "verify:out_of_state_tuition",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "JavaScript-rendered profile page returned only nav/header via WebFetch; no data extractable. Switched to the Scorecard API instead.",
+        "Scorecard HTML profile page returned only nav/header/footer chrome, no tuition figures rendered server-side. Skipped.",
+        "JS-rendered navigation shell only; returned no school profile data or default/repayment figures on fetch. Could not verify."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign=",
+      "roles": [
+        "resolve:scorecard",
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard located",
+        "Official College Scorecard page keyed to UnitID 145637; curl -I returned HTTP 200."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/v1/?api_key=DEMO_KEY&id=145637&fields=...",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Initial Scorecard API URL guess returned HTTP 404; corrected to the api.data.gov endpoint which succeeded."
+      ]
+    },
+    {
+      "url": "https://collegewiz.com/uiuc-acceptance-rate/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only; not a community source, not fetched."
+      ]
+    },
+    {
+      "url": "https://dailyillini.com/news-stories/university-news/2026/03/02/ui-increasingly-competitive/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Daily Illini coverage of the same competitiveness story \u2014 returned HTTP 403 Forbidden; not retrievable. The Illinois College of Education article covered the same material."
+      ]
+    },
+    {
+      "url": "https://datausa.io/profile/university/university-of-illinois-urbana-champaign",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search; a search-summary mentioned a rounded '95%' retention with no cited cycle. Not fetched/used \u2014 not canonical and not cycle-pinned to the 2024-2025 CDS."
+      ]
+    },
+    {
+      "url": "https://dmi.illinois.edu/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "DMI institutional research landing page; used to confirm DMI is the official IR office hosting the CDS, but no SAT figure on it directly."
+      ]
+    },
+    {
+      "url": "https://dmi.illinois.edu/stuenr/index.htm",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "UIUC DMI Student Enrollment index page; used to obtain the exact official URL for the 2024-25 CDS xlsx file."
+      ]
+    },
+    {
+      "url": "https://education.illinois.edu/about/news-events/news/article/2026/03/03/as-u.-of-i.-admissions-become-increasingly-competitive--illinois-residents-retain-edge",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched successfully. Primary source for admissions_philosophy (whole-context holistic review, Sara Hanson quote), selectivity trend (63.3% 2020 to 36.6% 2025), and in-state edge (49.3% / 29% / 30.5%, ~71.5% in-state freshmen) for the 2024-2025 cycle."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/University_of_Illinois_Urbana-Champaign",
+      "roles": [
+        "resolve",
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wikipedia; not used as an authoritative source for any reported value.",
+        "Wikipedia; not fetched \u2014 not a primary test-score source."
+      ]
+    },
+    {
+      "url": "https://enrollmentmanagement.illinois.edu/reports-data/",
+      "roles": [
+        "verify:graduation_rate_6_year",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "UIUC Enrollment Management reports page. Checked for a CDS link but it only lists 10th-Day Enrollment Reports, not the Common Data Set. No graduation-rate figure taken.",
+        "Official CDS index page (appeared in search); not separately fetched \u2014 direct dmi.illinois.edu Excel link was sufficient and authoritative."
+      ]
+    },
+    {
+      "url": "https://gary-app.datausa.io/profile/university/university-of-illinois-urbana-champaign",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search snippet reported 0% default rate for FY2020 (0 of 5,833 borrowers). Rejected \u2014 FY2020 was distorted by the COVID repayment moratorium and conflicts with CollegeFactual's 2.9%; not a reliable single value."
+      ]
+    },
+    {
+      "url": "https://giesbusiness.illinois.edu/apply/admissions/intercollegiate-transfer-(ict)",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results describing Gies ICT as holistic with no fixed cutoff; not fetched/quoted directly, so not used as a sourced value."
+      ]
+    },
+    {
+      "url": "https://grainger.illinois.edu/admissions/undergraduate/faq",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY official source for engineering tactics. Verbatim: 'Listing a second choice major is in your best interest...', the named adjacent-major substitutions (Engineering Mechanics, Industrial Engineering, Systems Engineering and Design, Agricultural & Biological Engineering), and the Early Action recommendation for competitive majors."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=niche+University+of+Illinois+Urbana-Champaign+student+reviews+academics+campus+rigorous+competitive",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Partial \u2014 surfaced Niche summary language (strong eng/CS programs, accessible professors, college-town vibe) but few individual review quotes."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+r%2FUIUC+chance+me+CS+engineering+GPA+rank+extracurriculars+accepted",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced Reddit snippets: STEM middle-50 ~1430-1530/32-35, sample applicant ECs (speech, MSA volunteering, debate, lit magazine, coding club), pre-engineering transfer note."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+UIUC+admissions+how+to+get+in+CS+engineering+essay+activities+major",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced real Reddit snippets: r/ApplyingToCollege 'essay and fit' deciding quote, 'essays make a huge difference', r/UIUC summer camp essay advice."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+UIUC+admissions+red+flag+mistake+rejected+out+of+state+wrong+major+test+optional",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced red-flag quotes: bio major in-state still rejected, 'UIUC likes test scores' sub-1530 rejected from CS/CS+X, test-optional risk, competitiveness rising."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+UIUC+common+activities+research+RSO+clubs+hackathon+HackIllinois+resume+CS+engineering",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed RSOs ('Join an RSO' standard advice) and HackIllinois (36-hour hackathon) as common activities."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+UIUC+CS+admissions+apply+early+action+second+choice+major+strategy+advice",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced Reddit threads on first vs second choice major, CS+X RD vs CS EA, rising competitiveness."
+      ]
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=reddit+UIUC+CS+admissions+file+essay+made+difference+research+hackathon+projects",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced 'I read my admissions file' quotes confirming essay was decisive; admitted near deadline."
+      ]
+    },
+    {
+      "url": "https://illinisuccess.illinois.edu/23-24-vertical-report",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official UIUC Illini Success outcomes report for Aug2023/Dec2023/May2024 cohorts: 67% knowledge rate, 90% first destination, 50% employed, 40% continuing education, top employers (Amazon, PwC, UIUC, Deloitte, KPMG 30+ hires). Used as the alternate/older-cycle reference; primary figures taken from the more recent report."
+      ]
+    },
+    {
+      "url": "https://innovatives.blog/uiuc-ap-scores-credit-guide",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog, not an official UIUC page \u2014 rejected per official-source-only rule."
+      ]
+    },
+    {
+      "url": "https://mechse.illinois.edu/news/university-illinois-ranked-near-top-worldE28099s-best-universities-engineeringtechnology-and-compute",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Informed market_position engineering reputation (ARWU third in engineering/technology and computer sciences) via search summary."
+      ]
+    },
+    {
+      "url": "https://music.illinois.edu/admissions/undergraduate-programs-and-application/application-process/undergraduate-applicant-important-dates/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "School of Music dates (2025-26 cycle); not used \u2014 supplemental Music requirement taken from the central /process page."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/?id=145637",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES College Navigator. Fetched: confirmed official name 'University of Illinois Urbana-Champaign', address '601 E John Street, Champaign, Illinois 61820-5711', and '4-year, Public'. Cross-confirms IPEDS UnitID 145637 on name+city+state."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2021/ReportPDF.aspx?unitId=145637",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2021 IPEDS DFR; older cycle, only used to corroborate the UnitID, not for any figure."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2024/ReportHTML.aspx?unitId=145637",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS 2024 Data Feedback Report for unitId 145637; confirms UnitID is current for the 2024 cycle."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/reported-data/145637",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS reported-data page keyed to unitId 145637; corroborates the UnitID for this institution."
+      ]
+    },
+    {
+      "url": "https://news.illinois.edu/illini-success-report-highlights-increase-in-employment-starting-salaries-among-recent-illinois-graduates/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source. Most recent Illini Success report (Aug2024/Dec2024/May2025 grads): 93% first destination, 58% started job, 34% additional education, <1% volunteer; top employers (10+ hires) list; avg salary $79,516. Provided employment_rate, grad_school_rate, and top_employers."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/university-of-illinois-urbana-champaign-admission-statistics/",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions stats blog; rejected as non-authoritative.",
+        "Third-party aggregator returned by search; not canonical, not used.",
+        "Third-party admissions-stats aggregator; not canonical \u2014 not used.",
+        "Third-party admissions-stats blog; not fetched \u2014 secondary/marketing source, not canonical.",
+        "Third-party stats; not used \u2014 official CDS obtained directly."
+      ]
+    },
+    {
+      "url": "https://orieladmissions.com/how-to-get-into-uiuc-for-engineering/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions-consulting blog; appeared in search but not fetched/quoted \u2014 all tactics sourced from official UIUC pages instead."
+      ]
+    },
+    {
+      "url": "https://prpa.illinoisstate.edu/downloads/CDS-2024-2025_ISU_FINAL.pdf",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "This is Illinois STATE University's CDS, not UIUC. Wrong institution; rejected.",
+        "This is ILLINOIS STATE UNIVERSITY's CDS, a different institution \u2014 surfaced by a misleading search snippet. Explicitly rejected.",
+        "This is Illinois STATE University's (ISU) CDS, not UIUC \u2014 wrong institution. Rejected.",
+        "This is Illinois STATE University's CDS, not UIUC. Wrong institution \u2014 rejected."
+      ]
+    },
+    {
+      "url": "https://registrar.illinois.edu/academic-calendars/fall-academic-calendar-24",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search (academic calendar, not admissions deadlines); not used."
+      ]
+    },
+    {
+      "url": "https://registrar.illinois.edu/academic-records/trans-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Office of the Registrar transfer-credit page \u2014 verbatim Transferology use, 'do not constitute a contract' caveat, contact-college-office requirement, official-transcript requirement."
+      ]
+    },
+    {
+      "url": "https://registrar.illinois.edu/tuition-fees/tuition-fee-rates/tf-rates-term/ug-tuition-cr-2425/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Registrar Fall 2024 & Spring 2025 undergrad rates by credit range \u2014 found via search, not fetched (CDS already authoritative)."
+      ]
+    },
+    {
+      "url": "https://registrar.illinois.edu/ug-tuition-rates-2425/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "UIUC Registrar 2024-2025 undergrad tuition rates page; figures are behind a cost-calculator (cost.illinois.edu), no numeric values rendered in fetched HTML. Could not extract a verbatim figure; not used."
+      ]
+    },
+    {
+      "url": "https://research.com/best-colleges/university-of-illinois-urbana-champaign/graduation-rate-and-career",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator surfaced in scorecard search; not used."
+      ]
+    },
+    {
+      "url": "https://scholarships360.org/colleges/illinois/university-of-illinois-urbana-champaign/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/chance-me-for-admission-into-uiuc-cs-international-student-3-67-gpa-1480-sat/3624479",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly \u2014 quotes on international/OOS being very tough, middle-50% GPA 3.76-4.0, math awards may help."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/uiuc-computer-engineering-chances/2060506",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly \u2014 verbatim quotes on Grainger <20% admit, major-by-major selectivity (CS/Mech/Bio very selective, EE/CE one tier down), OOS no financial aid, STEM hard for Asian males, reach for everyone."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/uiuc-ea-major-selection/3675220",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly \u2014 quotes on first vs second choice major strategy, Grainger 24.2% / CS+X 18.1% for class of 2028, not a safety for OOS, supplementals important."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/uiuc-engineering-chances/1551727",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched but page content was unrelated (LACs for education majors / Jewish population) \u2014 wrong/stale thread, rejected."
+      ]
+    },
+    {
+      "url": "https://transferology.com/school/illinois",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transferology landing for UIUC \u2014 third-party tool page, used only to confirm the tool name (the official UIUC pages already cite Transferology); not quoted."
+      ]
+    },
+    {
+      "url": "https://waf.collegedata.com/college-search/university-of-illinois-at-urbana-champaign",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CollegeData overview; not fetched \u2014 secondary aggregator."
+      ]
+    },
+    {
+      "url": "https://waf.collegedata.com/college-search/university-of-illinois-at-urbana-champaign/admission",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CollegeData aggregator returned by search; not canonical, not used."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/2023*/https://www.admissions.illinois.edu/Apply/Freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback calendar query \u2014 blocked (web.archive.org unreachable)."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20230928065543/https://www.admissions.illinois.edu/apply/freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Sept 2023 Wayback snapshot that WOULD pin the Fall 2024 official deadlines \u2014 but web.archive.org fetches are blocked in this environment, so it could not be retrieved."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20231101000000*/admissions.illinois.edu/Apply/Freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback wildcard query \u2014 blocked."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/",
+      "roles": [
+        "resolve:admissions",
+        "resolve",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official UIUC Undergraduate Admissions homepage; WebFetch confirmed heading 'University of Illinois Undergraduate Admissions' (curl 404 was a bot-block, real browser fetch renders fine).",
+        "Official UIUC admissions home; provided the link map to Apply/Freshman/dates, /process, /requirements, /review."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/freshman/admit-rate",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official UIUC admit-rate page, but it currently shows the Fall 2025 cycle ('Following are our first-year admit rates for 2025' \u2014 Total Admit Rate 36.6%), NOT Fall 2024. Rejected for the target cycle; confirms a different, more recent cycle exists."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/freshman/college-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official admissions College Credit page \u2014 verbatim philosophy quotes ('don't provide automatic credit'; AP/IB credit overview); also A-Level 'grade of C or better' note (not used in output)."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/freshman/college-credit-ib",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions IB page \u2014 301-redirects to the CITL current-cutoffs hub (already captured); no separate content."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/Apply/Freshman/dates",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official deadlines page. Source for EA Nov 1 / RD Jan 5 month-day and 'Early action is non-binding' quote. CAVEAT: currently renders the Fall 2026 cycle (notification Jan 30 / Mar 6), NOT Fall 2024, so notification/commitment dates were not used for Fall 2024."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/freshman/decisions",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official source for the first-choice waitlist behavior: admitted to alternate but still wait-listed for first choice; notified if space opens even after declining alternate."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/Apply/Freshman/process",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official. Source for platform (Common App) and all program-specific supplemental requirements (Art & Design portfolio, Dance audition, Music audition/interview, Theatre interview+audition/portfolio, required writing prompts). Quoted verbatim."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/freshman/profile",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official UIUC admissions page, but gives middle 50% of ADMITTED students (1420-1540) averaged over the past three years, not the Fall 2024 enrolled-first-year CDS figure. Wrong population and wrong (multi-year) cycle \u2014 rejected."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/freshman/requirements",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched to confirm direct-admit and audition/portfolio requirements; page did not contain quotable text on direct admission or supplemental review, so no verbatim claim drawn from it."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/Apply/Freshman/requirements",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official requirements page; listed general required materials but contained no program-specific supplemental detail \u2014 superseded by the /process page which had it explicitly."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/transfer/gpa-guidelines",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Off-campus transfer GPA guideline range 2.0-3.5; specific figures for Gies/Grainger (3.5), Landscape Architecture & Sustainable Design (2.5), Social Work (2.5), Psychology (3.0), CS combos (3.5), Early Childhood (2.0). Recorded in pathway text; NOT used as internal_transfer_gpa."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/transfer/process",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM list of majors unavailable as a second choice: all Gies, all Grainger, all CS+X, all X+Data Science, all Music except Music BA, and three ACE economics programs."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/apply/transfer/transferring-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official admissions Transferring Credit page \u2014 verbatim Transferology tool, 'no cap' on hours, 45-hour/21-upper-level residency rule, grade-forgiveness-not-honored, transcript requirements."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/faq/advanced-placement",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official admissions AP FAQ \u2014 verbatim AP usage categories (major/Gen Ed/elective), annual department review, Seminar vs Psychology examples."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/faq/applicant-freshman",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY official source. Verbatim: second-choice helps not hurts, full exclusion list of majors not available as second choice, second-choice essay requirement, and the non-resident Undeclared/Exploratory Studies space-constraint caveat. Fetched twice for consistency."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/invest/financial-aid",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "Official UIUC undergraduate financial aid page; WebFetch confirmed heading 'Financial Aid, Undergraduate Admissions, University of Illinois Urbana-Champaign' and links to osfa.illinois.edu.",
+        "Anchor page. Aid-mix breakdown (scholarships/grants 67%, loans 28%, employment 5%); aid philosophy quote; Illinois Commitment ($75,000 income, effective fall 2025; '1 in 4 incoming Illinois residents received Illinois Commitment in 2024-2025'); FAFSA priority deadline March 15; no need-based aid for international undergrads."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/invest/scholarships",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions scholarships page. Quote on how scholarships are 'generally awarded on a variety of factors'; automatic merit consideration on admission; links to OSFA merit database."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/invest/tuition",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "UIUC Admissions tuition page \u2014 shows 2025-2026 cycle only ('Tuition & Fees: $38,398-$46,498' nonresident), not the 2024-2025 target cycle. Rejected for cycle mismatch."
+      ]
+    },
+    {
+      "url": "https://www.admissions.illinois.edu/policies",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "VERBATIM restricted-college quote: Gies Business and Grainger Engineering only accept off-campus transfers directly; no on-campus transfer into those colleges. Basis for restricted/direct-admit flags."
+      ]
+    },
+    {
+      "url": "https://www.admitodds.com/blog/chances-of-getting-into-uiuc",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party odds blog surfaced in search; not fetched or quoted."
+      ]
+    },
+    {
+      "url": "https://www.bing.com/search?q=reddit+r%2FUIUC+how+to+get+in+CS+engineering+admissions+advice+activities+essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Returned only generic Bing/Reddit chrome, no usable thread snippets."
+      ]
+    },
+    {
+      "url": "https://www.collegeadvisor.com/how-to-get-into/how-to-get-into-uiuc-guide/",
+      "roles": [
+        "section:student_insights",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not fetched \u2014 third-party advice blog, not a community/crowdsourced source per task scope.",
+        "Third-party guide surfaced in search; not used, official sources covered every tactic."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/university-of-illinois-at-urbana-champaign/academic-life/academic-majors/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party majors aggregator; rejected in favor of the official catalog index."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/university-of-illinois-at-urbana-champaign/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "States '2-year cohort default rate: 2.9%' over 5,535 borrowers but does NOT specify the fiscal/cohort year. Rejected \u2014 cannot pin to a cycle; conflicts with other sources."
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/illinois/university-of-illinois-at-urbana-champaign/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; rejected as non-authoritative."
+      ]
+    },
+    {
+      "url": "https://www.collegetransitions.com/blog/uiuc-supplemental-essays/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly \u2014 exact prompt wording, 'cite specific programs/professors', fit framing, essays rated 'important'."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/145637/university-of-illinois-at-urbana-champaign/graduation/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search; stated 85% six-year rate. Consistent with the official figure but NOT relied upon (non-canonical, no cycle precision)."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/145637/university-of-illinois-at-urbana-champaign/tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not canonical, not used."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/30742/uiuc-in-state-acceptance-rate",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search on in-state vs out-of-state rates; superseded by the more authoritative Illinois College of Education article; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/98102/deadlines-for-uiuc-applications",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party FAQ; ~2022, no cycle pin (EA Nov 1 / RD Jan 5 generically). Not used \u2014 corroboration only, not official and not Fall-2024-specific."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/98104/uiuc-deadline-clarification",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not fetched/used \u2014 third-party, no Fall-2024 official pin."
+      ]
+    },
+    {
+      "url": "https://www.dmi.illinois.edu/cds/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Guessed CDS index path; returned HTTP 404. Not used."
+      ]
+    },
+    {
+      "url": "https://www.dmi.illinois.edu/cp/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2025-2026 Campus Profile (Campus Total) appeared in search results; not fetched \u2014 wrong cycle (2025-2026) and the CDS XLSX is the more canonical source for the 2024-2025 figure."
+      ]
+    },
+    {
+      "url": "https://www.dmi.illinois.edu/DMI_Surveys.html",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "DMI Institutional Surveys page; only linked to the CDS section anchor, not the per-year file list. The /stuenr/ page had the direct file links instead."
+      ]
+    },
+    {
+      "url": "https://www.dmi.illinois.edu/factsfigures.htm",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "DMI facts & figures landing page; not needed once the direct CDS xlsx index was found."
+      ]
+    },
+    {
+      "url": "https://www.dmi.illinois.edu/stuenr/",
+      "roles": [
+        "resolve",
+        "verify:act_composite_middle_50",
+        "verify:out_of_state_tuition",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "UIUC Division of Management Information (official institutional research office) student enrollment page; listed the full CDS file index including the direct 2024-2025 xlsx link.",
+        "UIUC DMI Student Enrollment landing page; confirmed it links to the Common Data Set 2024-2025 file at the cds_2024_2025.xlsx URL, establishing provenance of the data file as official.",
+        "DMI landing page; confirmed cds_2024_2025.xlsx is the official 2024-2025 Common Data Set file and that only xlsx (no PDF/HTML) is published. Lists all CDS years 2003-04 through 2025-26.",
+        "DMI student enrollment index page; used only to locate the CDS 2024-2025 xlsx link."
+      ]
+    },
+    {
+      "url": "https://www.dmi.illinois.edu/stuenr/misc/cds_2023_2024.xlsx",
+      "roles": [
+        "resolve",
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Prior-cycle (2023-2024) CDS surfaced in search; superseded by the confirmed 2024-2025 file.",
+        "UIUC's prior-year (2023-2024) CDS, surfaced in search. Wrong cycle for the Fall 2024 target \u2014 not used."
+      ]
+    },
+    {
+      "url": "https://www.fox32chicago.com/news/illinois-universities-featured-2025-u-s-news-best-colleges-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search as reporting 2025 US News rankings, but a news article is not a US News page so it cannot satisfy the rank-source rule; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=site:reddit.com+r/UIUC+how+to+get+in+CS+engineering+GPA+activities+essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Blocked by EU consent.google.com redirect; could not retrieve."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/university-of-illinois-at-urbana-champaign",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:application_process",
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS aggregator; rejected \u2014 not an authoritative/official source.",
+        "Third-party CDS visualizer (labeled '2026'); not canonical, not used.",
+        "Third-party CDS visualizer; not authoritative \u2014 rejected in favor of the primary Excel file.",
+        "Third-party CDS aggregator (labeled '2026'); not fetched \u2014 secondary source, official DMI CDS used instead.",
+        "Third-party CDS visualizer; page covered a different cycle and did not contain a retention rate / B22 figure. Rejected \u2014 not canonical and no usable value.",
+        "Third-party CDS visualizer surfaced in search; not fetched/used \u2014 went to the official primary xlsx instead."
+      ]
+    },
+    {
+      "url": "https://www.hpcwire.com/off-the-wire/ncsa-marks-one-year-of-illinois-computes-celebrating-over-230-new-research-projects-and-expansive-growth/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Informed research_impact via search summary: 250+ new research projects, 10 colleges leveraging Illinois Computes by 2024."
+      ]
+    },
+    {
+      "url": "https://www.insidehighered.com/admissions/article/2022/10/03/some-universities-admit-major",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party context confirming UIUC admits by major and Grainger overall ~21% vs General Studies ~49%; not used for any reported value because I preferred official UIUC sources and did not need the rate figures for tactics."
+      ]
+    },
+    {
+      "url": "https://www.ncsa.illinois.edu/2023/04/05/uiuc-u-of-i-system-commit-50-million-to-support-ncsa-services-for-campus-researchers/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Informed research_impact via search summary: Illinois Computes $30M UIUC + $20M system = $50M commitment."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche main page via WebSearch summary \u2014 confirmed avg ~3.8 stars across 5,221 reviewers and that admission is competitive for Engineering/Business, must declare major, transfers difficult."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/admissions/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche admissions page \u2014 HTTP 403 Forbidden to direct WebFetch."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/campus-life/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Informed campus_dynamics.social_environment via WebSearch summary (Greek life prominence, vibrant orgs, isolation concern, on/off-campus split). Attributed as search summary, not independently fetched."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/rankings/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche rankings \u2014 not a US News page and not independently fetched; only informed general context via search summary."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/university-of-illinois-urbana-champaign/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche student reviews page \u2014 target source, but returned HTTP 403 Forbidden to direct WebFetch; could not read."
+      ]
+    },
+    {
+      "url": "https://www.osfa.illinois.edu/cost/undergraduate-cost/undergraduate-non-resident-cost/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "UIUC Office of Student Financial Aid non-resident cost page \u2014 found via search, not fetched; CDS already provided the verbatim figure."
+      ]
+    },
+    {
+      "url": "https://www.osfa.illinois.edu/types-of-aid/scholarships/merit-based-scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "OSFA merit-based scholarships page. Named scholarships and amounts (Illinois Achievement $10,000, Stamps up to COA, Provost full tuition, PAP up to $5,000 / PAP Honors up to $10,000, Anthony & Blackshear full tuition+fees, Matthews Scholars $2,000/yr, etc.). CAVEAT: page references 2026-2027 FAFSA cycle, not 2024-2025; amounts reported with that caveat. No deadlines/application methods stated for most."
+      ]
+    },
+    {
+      "url": "https://www.quadeducationgroup.com/blog/how-to-get-into-uiuc",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only; third-party advisory blog, not crowdsourced community, not used."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/At-UIUC-if-you-are-admitted-to-your-2nd-choice-major-do-they-put-in-a-waiting-list-for-the-1st-choice-major-and-then-automatically-offer-you-the-first-choice-major-in-case-spots-open-up",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "User-generated Quora thread on the first-choice waitlist question; not used \u2014 verified the same fact from the official Decisions page instead."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/Do-people-apply-to-less-competitive-majors-at-UIUC-engineering-Industrial-Agricultural-Systems-etc-with-the-intention-of-switching-into-more-competitive-majors-mechanical-CS-Computer-Engineering",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quora thread describing the back-door switch strategy; informed my decision to add a caveat, but the caveat itself is grounded in the official Grainger changing-majors page, not this thread."
+      ]
+    },
+    {
+      "url": "https://www.univstats.com/colleges/university-of-illinois-at-urbana-champaign/cost-of-attendance/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator (search result) quoting $40,096 out-of-state tuition+fees 2024-2025; not a canonical primary source and bundles fees, so rejected."
+      ]
+    },
+    {
+      "url": "https://www.univstats.com/colleges/university-of-illinois-at-urbana-champaign/graduation-rate/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator (univstats); cited 6,464/7,593 within 150% time. Numbers match the official CDS but not relied upon as a primary source."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775",
+      "roles": [
+        "resolve",
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News profile; rejected as non-authoritative/paywalled aggregator.",
+        "Canonical US News profile page \u2014 required to quote the rank, but timed out on multiple WebFetch attempts; could not fetch, so rank left null."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775/applying",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News applying sub-page \u2014 timed out; not retrievable."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News overall-rankings sub-page \u2014 also timed out repeatedly; not retrievable."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775/paying",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted fetch timed out (60s). Not needed \u2014 official CDS provided all figures directly."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-graduate-schools/top-computer-science-schools/university-of-illinois-at-urbana-champaign-43032",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Informed market_position #5 CS claim via WebSearch summary; not independently fetched and not used for the us_news_rank FACT field (which is undergraduate National Universities rank, left null)."
+      ]
+    }
+  ]
+}

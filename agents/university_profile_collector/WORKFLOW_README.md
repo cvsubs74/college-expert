@@ -6,10 +6,12 @@ The self-verifying replacement for the ADK/Gemini collector. Takes a **universit
 
 ```
 Input:  args = { university: "<name>", year: <Fall entering-cohort year, e.g. 2024> }
-Output: { profile, _provenance, _trust_report, _section_sources }
-        profile      → UniversityProfile JSON (model.py schema), ingest-ready
-        _provenance  → per-field { status, confidence, source, url, quote, as_of_cycle }
-        _trust_report→ counts of corroborated / canonical-single / nulled fields
+Output: { profile, _provenance, _trust_report, _source_ledger }
+        profile       → UniversityProfile JSON (model.py schema), ingest-ready
+        _provenance   → per-field { status, confidence, source, url, quote, as_of_cycle }
+        _trust_report → counts of corroborated / canonical-single / nulled fields + source totals
+        _source_ledger→ EVERY URL consulted across all stages (used or rejected), deduped,
+                        annotated with which stage/field used it and whether it backed a published value
 ```
 
 `year` pins everything: which Common Data Set edition (`<year>-<year+1>`), which Scorecard cycle, the `as_of_cycle` tags, and `metadata.cycle_year`. Re-running a later year produces a new snapshot (ADR 0002 year-versioning), it does not overwrite prior years.
@@ -51,6 +53,20 @@ python scripts/ingest_universities.py --file agents/university_profile_collector
 - **Subjective** (vibe, tactics, tips): synthesized from multiple community sources, labeled opinion, never presented as fact.
 
 Every published field carries `{source, url, verbatim_quote, as_of_cycle, status, confidence}` in `_provenance`.
+
+## Full transparency: the source ledger
+
+Beyond per-field provenance, **every URL any agent searched or fetched is logged** — used *or* rejected — so the assembly of the data is completely auditable with no human in the loop. Each agent (resolve, anchor, blind-verifiers, all 8 sections) returns a `sources_consulted` list; the assembly stage dedupes them into `_source_ledger`:
+
+```jsonc
+{ "url": "https://www.dmi.illinois.edu/.../cds_2024_2025.xlsx",
+  "roles": ["resolve:common_data_set", "anchor:overall_acceptance_rate", "verify:overall_acceptance_rate", ...],
+  "used": true,
+  "backed_published_fields": ["overall_acceptance_rate", "sat_composite_middle_50", ...],
+  "notes": ["C117 applied=73742; C118 admitted=31247 ..."] }
+```
+
+`save_profile.py` writes a human-readable **`<id>.sources.md`** report (every URL grouped into "backed a published value" vs "other consulted", with the verbatim quote) alongside the profile, plus the full ledger in `_provenance/<id>.json`. `_trust_report` carries `total_sources_consulted` and `sources_backing_published_values`. So for any number in the profile you can trace: which field → which source URL → which verbatim quote → which cycle — and also see every other source that was looked at and *not* used.
 
 ## Proven result (UIUC, year 2024 — a school *not* in the legacy IPEDS dict)
 
