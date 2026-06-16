@@ -315,3 +315,14 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #249 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge → cloudbuild-main.yaml → frontend (Popular launch prompts now personalized client-side; aggregate untouched).
 - Remaining picks: #250 Balance Ring personalized-fit join (last backend touch), #252 Fit Drift Timeline (ideation said defer until recompute loop has volume).
+
+## 2026-06-16 12:24 — Balance Ring personalized-fit join (PR #258, open) — #250
+- GOAL/steer: user said "Yes 250" → built #250, the last build-now pick + the one remaining backend touch.
+- INSIGHT: the Launchpad ring was ALREADY personalized (it merges getPrecomputedFits). The real gap was the get-college-list ENDPOINT (used by the connector/agent), which returned only soft_fit_category. #250 fixes the agent's view.
+- Backend: college_list.get_college_list joins cached college_fits → per-item top-level fit_category + match_percentage, distinct from soft_fit_category. Read-only (no recompute/LLM/credits); fits fetch try/except → degrades to no-fit.
+- Connector: stratia_client.get_college_list reads top-level fit_category (fallback to nested fit_analysis).
+- Frontend: listBalance.collegeFitCategory (personalized nested|top-level → soft → null) + isEstimatedFit; Launchpad buckets by personalized fit + estimatedFits counts only true fallbacks.
+- REVIEW: reviewer agent APPROVED (no credit spend, soft/personalized separation, backward compat, no miscount, graceful failure). Verdict posted as PR comment.
+- TESTS: backend 1048 passed (+ join/connector), frontend 344 passed (+ helpers), build green.
+- NOT shipped: PR #258 open (merge auto-deploys profile_manager_v2 + connector + frontend to prod — needs user go-ahead).
+- THAT'S ALL BUILD-NOW PICKS. Only #252 Fit Drift Timeline remains, which the ideation flagged to DEFER until the recompute loop has fit-history volume.
