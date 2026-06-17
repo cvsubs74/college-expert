@@ -371,3 +371,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - REVIEW: reviewer agent APPROVED (no config regression, deep links/URL intact, node --check, test assertions match). Verdict posted as PR comment.
 - TESTS: frontend 354 passed (+6), build green. No backend change.
 - NOT shipped: PR #267 open (merge auto-deploys frontend to prod — needs user go-ahead).
+
+## 2026-06-17 23:01 — shipped #266 (fix /connect MCP steps for all clients, PR #267)
+- PR #267 squash-merged (653ee55c) -> #266 auto-closed.
+- Tracking: #266 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge -> cloudbuild-main.yaml -> frontend. Corrected/simplified MCP connect steps now live (Gemini CLI: -s user + /mcp auth stratia; plus Claude.ai/ChatGPT/Cline/Goose/Windsurf/Claude Code fixes).
+- Open follow-up: Windsurf is medium-confidence (DCR not doc-confirmed) — worth one manual click-through. #252 Fit Drift Timeline still deferred.
