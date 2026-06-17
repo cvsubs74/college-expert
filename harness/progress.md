@@ -341,3 +341,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - TESTS: ConnectAgents asserts gemini/grok links; frontend 344 passed, build green. No backend change.
 - NOT shipped: PR #263 open (merge auto-deploys frontend to prod — needs user go-ahead).
 - NOTE: deep-link prefill for Gemini/Grok is best-effort (can't verify without a live browser); Copy is the guaranteed path, consistent with the existing Claude/ChatGPT links.
+
+## 2026-06-17 11:01 — shipped #262 (Ask-something Gemini + xAI buttons, PR #263)
+- PR #263 squash-merged (740b4945) → #262 auto-closed.
+- Tracking: #262 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge → cloudbuild-main.yaml → frontend. /connect Ask-something cards now offer Ask-in-Gemini + Ask-in-Grok (xAI) alongside Claude/ChatGPT.
+- Caveat: Gemini/Grok deep-link prefill is best-effort (Copy is the guaranteed path), same contract as the existing Claude/ChatGPT links.
